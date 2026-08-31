@@ -1,0 +1,1114 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PartiuIF - Plataforma de Revisão de Matemática</title>
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        brand: {
+                            50: '#f0fdf4',
+                            100: '#dcfce7',
+                            200: '#bbf7d0',
+                            300: '#86efac',
+                            400: '#4ade80',
+                            500: '#22c55e',
+                            600: '#16a34a',
+                            700: '#15803d',
+                            800: '#166534',
+                            900: '#14532d',
+                            950: '#052e16',
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+    <!-- Lucide Icons -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <!-- KaTeX para Renderização de Equações -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.8/dist/katex.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/katex@0.16.8/dist/katex.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/katex@0.16.8/dist/contrib/auto-render.min.js"></script>
+    <style>
+        .custom-scrollbar::-webkit-scrollbar { width: 6px; }
+        .custom-scrollbar::-webkit-scrollbar-track { background: #f1f1f1; }
+        .custom-scrollbar::-webkit-scrollbar-thumb { background: #16a34a; border-radius: 4px; }
+        .gradient-header { background: linear-gradient(135deg, #15803d 0%, #166534 100%); }
+        .opt-selected { border-color: #22c55e !important; background-color: #f0fdf4 !important; }
+        .opt-selected .opt-icon { color: #16a34a !important; fill: #dcfce7; }
+        .opt-wrong { border-color: #ef4444 !important; background-color: #fef2f2 !important; }
+        .opt-wrong .opt-icon { color: #dc2626 !important; fill: #fee2e2; }
+        
+        /* Ajuste fino para matemática inline em botões */
+        .katex-display { margin: 0.5em 0 !important; }
+        button .katex { font-size: 1.05em; }
+        
+        @keyframes slideInRight {
+            from { transform: translateX(100%); opacity: 0; }
+            to { transform: translateX(0); opacity: 1; }
+        }
+        .toast-enter { animation: slideInRight 0.3s ease-out forwards; }
+    </style>
+</head>
+<body class="bg-gray-50 text-gray-800 font-sans antialiased min-h-screen flex flex-col">
+
+    <!-- Header / Navbar Principal -->
+    <header class="gradient-header text-white shadow-lg sticky top-0 z-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex items-center justify-between h-16">
+                <!-- Logo & Título -->
+                <div class="flex items-center space-x-3 cursor-pointer" onclick="navigateTo('home')">
+                    <div class="bg-white p-2 rounded-xl text-brand-700 font-bold shadow-md flex items-center justify-center">
+                        <i data-lucide="graduation-cap" class="w-6 h-6"></i>
+                    </div>
+                    <div>
+                        <span class="font-extrabold text-xl tracking-tight text-white flex items-center gap-1">
+                            Partiu<span class="text-brand-300">IF</span>
+                        </span>
+                        <p class="text-xs text-brand-100 hidden sm:block flex items-center gap-1">
+                            <i data-lucide="save" class="w-3 h-3"></i> Progresso local ativado
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Navegação Desktop -->
+                <nav class="hidden md:flex space-x-1">
+                    <button onclick="navigateTo('home')" class="nav-btn px-3 py-2 rounded-md text-sm font-medium hover:bg-brand-800 transition flex items-center gap-1.5">
+                        <i data-lucide="home" class="w-4 h-4"></i> Início
+                    </button>
+                    <button onclick="navigateTo('block', 1)" class="nav-btn px-3 py-2 rounded-md text-sm font-medium hover:bg-brand-800 transition flex items-center gap-1.5">
+                        <i data-lucide="binary" class="w-4 h-4"></i> Bloco 1
+                    </button>
+                    <button onclick="navigateTo('block', 2)" class="nav-btn px-3 py-2 rounded-md text-sm font-medium hover:bg-brand-800 transition flex items-center gap-1.5">
+                        <i data-lucide="variable" class="w-4 h-4"></i> Bloco 2
+                    </button>
+                    <button onclick="navigateTo('block', 3)" class="nav-btn px-3 py-2 rounded-md text-sm font-medium hover:bg-brand-800 transition flex items-center gap-1.5">
+                        <i data-lucide="shapes" class="w-4 h-4"></i> Bloco 3
+                    </button>
+                    <button onclick="navigateTo('block', 4)" class="nav-btn px-3 py-2 rounded-md text-sm font-medium hover:bg-brand-800 transition flex items-center gap-1.5">
+                        <i data-lucide="bar-chart-3" class="w-4 h-4"></i> Bloco 4
+                    </button>
+                </nav>
+
+                <!-- Ações do Usuário -->
+                <div class="flex items-center gap-3">
+                    <button onclick="navigateTo('simulado')" class="bg-brand-500 hover:bg-brand-400 text-white font-semibold px-3 py-1.5 rounded-lg text-sm transition flex items-center gap-1.5 shadow">
+                        <i data-lucide="award" class="w-4 h-4"></i> Simulado IF
+                    </button>
+                    <button id="mobile-menu-btn" class="md:hidden p-2 rounded-lg text-brand-100 hover:text-white hover:bg-brand-800">
+                        <i data-lucide="menu" class="w-6 h-6"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Menu Mobile -->
+        <div id="mobile-menu" class="hidden md:hidden bg-brand-900 border-t border-brand-800 px-4 pt-2 pb-4 space-y-1">
+            <button onclick="navigateTo('home')" class="w-full text-left px-3 py-2 rounded-md text-base font-medium hover:bg-brand-800 text-white">Início (Indexador)</button>
+            <button onclick="navigateTo('block', 1)" class="w-full text-left px-3 py-2 rounded-md text-base font-medium hover:bg-brand-800 text-white">Bloco 1: Números</button>
+            <button onclick="navigateTo('block', 2)" class="w-full text-left px-3 py-2 rounded-md text-base font-medium hover:bg-brand-800 text-white">Bloco 2: Álgebra</button>
+            <button onclick="navigateTo('block', 3)" class="w-full text-left px-3 py-2 rounded-md text-base font-medium hover:bg-brand-800 text-white">Bloco 3: Geometria</button>
+            <button onclick="navigateTo('block', 4)" class="w-full text-left px-3 py-2 rounded-md text-base font-medium hover:bg-brand-800 text-white">Bloco 4: Medidas & Est.</button>
+        </div>
+    </header>
+
+    <main id="main-content" class="flex-grow max-w-7xl w-full mx-auto px-4 sm:px-6 lg:px-8 py-8"></main>
+
+    <footer class="bg-brand-950 text-white border-t border-brand-800 mt-12 py-8">
+        <div class="max-w-7xl mx-auto px-4 text-center sm:text-left grid grid-cols-1 md:grid-cols-3 gap-6 text-sm">
+            <div>
+                <div class="flex items-center justify-center sm:justify-start gap-2 text-lg font-bold text-brand-300 mb-2">
+                    <i data-lucide="book-open-check" class="w-5 h-5"></i> PartiuIF - Matemática
+                </div>
+                <p class="text-brand-200">Plataforma baseada na Matriz de Referência Oficial.</p>
+                <div class="mt-4 inline-flex items-center gap-2 bg-brand-900 px-3 py-1.5 rounded-lg border border-brand-800 text-brand-300">
+                    <i data-lucide="hard-drive" class="w-4 h-4"></i> Progresso salvo no seu navegador
+                </div>
+            </div>
+            <div>
+                <h4 class="font-semibold text-white mb-2">Eixos Temáticos</h4>
+                <ul class="space-y-1 text-brand-200">
+                    <li>• Números e Operações</li>
+                    <li>• Álgebra e Funções</li>
+                    <li>• Geometria Plana e Espacial</li>
+                    <li>• Grandezas, Medidas e Probabilidade</li>
+                </ul>
+            </div>
+            <div>
+                <h4 class="font-semibold text-white mb-2">Status da Preparação</h4>
+                <div class="w-full bg-brand-900 rounded-full h-3 overflow-hidden border border-brand-700 mb-1">
+                    <div id="footer-progress" class="bg-brand-400 h-full w-0 transition-all duration-500"></div>
+                </div>
+                <span id="footer-progress-text" class="text-xs text-brand-300 block mb-4">0% concluído</span>
+                
+                <button onclick="resetProgress()" class="text-xs text-red-400 hover:text-red-300 underline flex items-center justify-center sm:justify-start gap-1 transition">
+                    <i data-lucide="trash-2" class="w-3.5 h-3.5"></i> Zerar Todo o Meu Progresso
+                </button>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Container de Notificações (Toasts) -->
+    <div id="toast-container" class="fixed bottom-5 right-5 z-50 flex flex-col gap-2"></div>
+
+    <script>
+        // Função universal para renderizar o LaTeX dinamicamente (garante sintaxe inline com $)
+        function renderLatex(element) {
+            if (window.renderMathInElement) {
+                renderMathInElement(element, {
+                    delimiters: [
+                        {left: '$$', right: '$$', display: true},
+                        {left: '$', right: '$', display: false} // Essencial para renderizar formulas nos textos!
+                    ],
+                    throwOnError: false
+                });
+            }
+        }
+
+        const mathData = {
+            1: {
+                title: "Bloco 1: Números e Operações",
+                description: "Domínio numérico, frações, porcentagem, proporção e notação.",
+                icon: "binary",
+                topics: [
+                    {
+                        id: "b1-t1",
+                        title: "Sistema de Numeração e Comparação",
+                        bncc: "EF06MA01, EF06MA02, EF07MA07",
+                        summary: "Compreensão do Sistema de Numeração Decimal, valor posicional e comparação de números.",
+                        detailedTheory: "O Sistema de Numeração Decimal (SND) é posicional e possui base $10$. O valor de um algarismo depende inteiramente da posição que ele ocupa (unidade, dezena, centena, etc.). Na representação de decimais na reta numérica, quanto mais à direita, maior é o valor. Para comparar decimais, igualamos o número de casas após a vírgula adicionando zeros à direita.",
+                        keyPoints: ["Na reta numérica, o número mais à direita é sempre maior.", "Atenção ao valor posicional dos zeros intercalados e finais nas casas decimais."],
+                        formula: "123{,}45 = (1 \\times 10^2) + (2 \\times 10^1) + (3 \\times 10^0) + (4 \\times 10^{-1}) + (5 \\times 10^{-2})",
+                        solvedExample: {
+                            problem: "Ordene os decimais em ordem crescente: $0{,}509$, $0{,}51$, $0{,}059$ e $0{,}499$.",
+                            solution: "Igualamos as casas decimais com zeros: $0{,}509$, $0{,}510$, $0{,}059$ e $0{,}499$. Comparando a parte decimal: $059 < 499 < 509 < 510$. Ordem correta: $0{,}059 < 0{,}499 < 0{,}509 < 0{,}51$."
+                        },
+                        questions: [
+                            { q: "Qual número representa 'quatrocentos e dois mil e quarenta'?", options: ["$420.040$", "$402.040$", "$402.400$", "$400.240$"], correct: 1, explanation: "402 milhares ($402.000$) e 40 unidades ($40$) = $402.040$." },
+                            { q: "Na reta numérica, que número está exatamentente no meio de $-2$ e $4$?", options: ["$0$", "$1$", "$2$", "$-1$"], correct: 1, explanation: "O ponto médio é a média aritmética: $\\frac{-2 + 4}{2} = \\frac{2}{2} = 1$." },
+                            { q: "Dentre os decimais a seguir, qual é o maior número?", options: ["$0{,}509$", "$0{,}51$", "$0{,}059$", "$0{,}499$"], correct: 1, explanation: "Igualando as casas ($0{,}510$, $0{,}509$, $0{,}499$, $0{,}059$), vemos que $0{,}510$ é o maior." },
+                            { q: "O valor posicional do algarismo $7$ no número $3.478.000$ é:", options: ["$7$ milhares", "$7$ dezenas de milhar", "$7$ centenas de milhar", "$7$ milhões"], correct: 1, explanation: "O algarismo $7$ ocupa a casa das dezenas de milhar, equivalendo a $70.000$." },
+                            { q: "Uma pontuação formada por $5$ centenas, $3$ dezenas e $8$ milésimos corresponde a:", options: ["$530{,}008$", "$503{,}08$", "$53{,}008$", "$530{,}08$"], correct: 0, explanation: "$500 + 30 + 0{,}008 = 530{,}008$." }
+                        ]
+                    },
+                    {
+                        id: "b1-t2",
+                        title: "Operações com Naturais e Estimativas",
+                        bncc: "EF06MA03",
+                        summary: "As quatro operações fundamentais, cálculo mental e prioridades matemáticas.",
+                        detailedTheory: "A resolução de expressões numéricas exige o cumprimento estrito da ordem de precedência das operações. Primeiro, resolvem-se as potenciações/radiciações. Em seguida, multiplicações/divisões (da esquerda para a direita). Por fim, adições/subtrações. Arredondamentos são usados para avaliar a coerência dos resultados rapidamente.",
+                        keyPoints: ["Ordem: Parênteses/Expoentes $\\rightarrow$ Multiplicação/Divisão $\\rightarrow$ Adição/Subtração.", "Arredondamento: se o algarismo seguinte for $\\ge 5$, arredonda-se para cima."],
+                        formula: "a^n = a \\times a \\times \\dots \\times a \\quad (n \\text{ fatores})",
+                        solvedExample: {
+                            problem: "Calcule: $18 + 2 \\times (3^2 - 4) \\div 2$.",
+                            solution: "1º Potência: $3^2 = 9$. Ficamos com $18 + 2 \\times (9 - 4) \\div 2$.\n2º Parênteses: $9 - 4 = 5$. Temos $18 + 2 \\times 5 \\div 2$.\n3º Multiplicação/Divisão (esquerda p/ direita): $2 \\times 5 = 10$, e $10 \\div 2 = 5$.\n4º Soma: $18 + 5 = 23$."
+                        },
+                        questions: [
+                            { q: "Qual o resultado final da expressão $15 + 5 \\times 2$?", options: ["$40$", "$25$", "$30$", "$100$"], correct: 1, explanation: "Multiplicação primeiro: $5 \\times 2 = 10$. Depois soma: $15 + 10 = 25$." },
+                            { q: "Um auditório do IF tem $25$ fileiras com $18$ poltronas em cada. O total de poltronas é:", options: ["$400$", "$420$", "$450$", "$480$"], correct: 2, explanation: "$25 \\times 18 = 450$ poltronas." },
+                            { q: "Arredondando $4.567$ para a centena mais próxima, obtemos:", options: ["$4.500$", "$4.600$", "$4.570$", "$5.000$"], correct: 1, explanation: "A dezena é $6$ ($6 \\ge 5$), então arredondamos a centena para cima, resultando em $4.600$." },
+                            { q: "O valor numérico do cálculo $2^3 + 3^2$ é igual a:", options: ["$12$", "$17$", "$25$", "$13$"], correct: 1, explanation: "$2^3 = 8$ e $3^2 = 9$. Soma: $8 + 9 = 17$." },
+                            { q: "O resto da divisão inteira do número $145$ por $7$ é:", options: ["$5$", "$3$", "$2$", "$1$"], correct: 0, explanation: "$145 \\div 7 = $ quociente $20$ e resto $5$ ($20 \\times 7 = 140$, mais $5$)." }
+                        ]
+                    },
+                    {
+                        id: "b1-t3",
+                        title: "Múltiplos, Divisores e Critérios",
+                        bncc: "EF06MA04, EF06MA05",
+                        summary: "Números primos, MMC, MDC e regras de divisibilidade.",
+                        detailedTheory: "Múltiplos resultam da multiplicação por inteiros. Divisores dividem sem deixar resto. Números primos possuem exatamente dois divisores distintos (o $1$ e ele mesmo). O Mínimo Múltiplo Comum ($MMC$) resolve problemas de encontros periódicos, e o Máximo Divisor Comum ($MDC$) aplica-se à divisão em partes iguais e de maior tamanho possível.",
+                        keyPoints: ["Divisibilidade por 3: a soma de seus algarismos deve ser divisível por 3.", "O MMC é usado para calcular intervalos temporais coincidentes."],
+                        formula: "\\text{MDC}(a,b) \\times \\text{MMC}(a,b) = a \\times b",
+                        solvedExample: {
+                            problem: "Duas lâmpadas piscam: uma a cada 12 segundos e outra a cada 18 segundos. Se piscaram juntas agora, em quantos segundos piscarão juntas novamente?",
+                            solution: "Para coincidências, usamos o $MMC(12, 18)$. Fatorando ambos:\n12, 18 | 2\n 6,  9 | 2\n 3,  9 | 3\n 1,  3 | 3\n 1,  1\n$MMC = 2 \\cdot 2 \\cdot 3 \\cdot 3 = 36$ segundos."
+                        },
+                        questions: [
+                            { q: "O número $34.5X2$ será divisível por 3 se o valor de $X$ for:", options: ["$1$", "$0$", "$3$", "$2$"], correct: 0, explanation: "Soma: $3+4+5+X+2 = 14+X$. Se $X=1$, a soma é $15$ (divisível por 3)." },
+                            { q: "Qual é o valor do MMC entre $12$ e $18$?", options: ["$24$", "$36$", "$72$", "$6$"], correct: 1, explanation: "Os múltiplos comuns são $36, 72, 108\\dots$ O menor é $36$." },
+                            { q: "O Máximo Divisor Comum (MDC) entre os números $20$ e $30$ é:", options: ["$10$", "$5$", "$60$", "$2$"], correct: 0, explanation: "Divisores de 20: $\\{1,2,4,5,10,20\\}$. Divisores de 30: $\\{1,2,3,5,6,10,15,30\\}$. O maior comum é $10$." },
+                            { q: "Quantos números primos existem no intervalo de $1$ a $10$?", options: ["$3$", "$4$", "$5$", "$2$"], correct: 1, explanation: "Primos de 1 a 10: $2, 3, 5$ e $7$. São $4$ no total." },
+                            { q: "Três ônibus partem a cada $10$, $15$ e $20$ minutos. Eles partirão juntos novamente em:", options: ["$30$ min", "$45$ min", "$60$ min", "$120$ min"], correct: 2, explanation: "$MMC(10, 15, 20) = 60$ minutos (1 hora)." }
+                        ]
+                    },
+                    {
+                        id: "b1-t4",
+                        title: "Frações I: Significados e Equivalência",
+                        bncc: "EF06MA06, EF06MA07",
+                        summary: "Parte-todo, frações equivalentes e conversão para decimal.",
+                        detailedTheory: "Frações representam partes de um inteiro. Frações equivalentes são aquelas que representam a mesma quantidade (encontradas multiplicando ou dividindo o numerador e denominador pelo mesmo valor). Para comparar frações com denominadores distintos, igualamos os denominadores pelo MMC ou transformamos a fração em número decimal.",
+                        keyPoints: ["Frações equivalentes mantêm a mesma proporção.", "Para comparar, você pode converter tudo para números decimais (dividindo)."],
+                        formula: "\\frac{a}{b} = \\frac{a \\cdot k}{b \\cdot k} \\quad (k \\neq 0)",
+                        solvedExample: {
+                            problem: "Compare $\\frac{3}{4}$ e $\\frac{4}{5}$ para determinar a maior.",
+                            solution: "Via MMC (20):\n$\\frac{3}{4} = \\frac{15}{20}$ e $\\frac{4}{5} = \\frac{16}{20}$. Como $16 > 15$, logo $\\frac{4}{5} > \\frac{3}{4}$.\nVia decimais:\n$\\frac{3}{4} = 0{,}75$ e $\\frac{4}{5} = 0{,}80$. Como $0{,}80 > 0{,}75$, $\\frac{4}{5}$ é maior."
+                        },
+                        questions: [
+                            { q: "A fração equivalente a $\\frac{15}{25}$, após simplificação completa, é:", options: ["$\\frac{3}{5}$", "$\\frac{1}{2}$", "$\\frac{5}{3}$", "$\\frac{4}{5}$"], correct: 0, explanation: "Dividindo o numerador e o denominador por $5$, chegamos a $\\frac{3}{5}$." },
+                            { q: "Qual opção traz uma fração estritamente maior do que $\\frac{1}{2}$?", options: ["$\\frac{2}{5}$", "$\\frac{3}{8}$", "$\\frac{4}{9}$", "$\\frac{5}{8}$"], correct: 3, explanation: "Convertendo em decimal: $\\frac{1}{2} = 0{,}5$. A fração $\\frac{5}{8} = 0{,}625$ (maior que $0{,}5$)." },
+                            { q: "O decimal $0{,}75$ é exatamente equivalente a qual fração?", options: ["$\\frac{1}{4}$", "$\\frac{3}{4}$", "$\\frac{4}{5}$", "$\\frac{7}{10}$"], correct: 1, explanation: "$0{,}75 = \\frac{75}{100}$. Simplificando por $25$: $\\frac{3}{4}$." },
+                            { q: "Ao repartir $3$ pizzas de forma igual entre $4$ pessoas, cada uma receberá:", options: ["$\\frac{4}{3}$ de pizza", "$\\frac{3}{4}$ de pizza", "$\\frac{1}{2}$ de pizza", "$\\frac{3}{8}$ de pizza"], correct: 1, explanation: "Divisão direta: $3$ pizzas / $4$ pessoas = $\\frac{3}{4}$ por pessoa." },
+                            { q: "Em uma turma com $40$ alunos, $\\frac{1}{4}$ são meninos. Quantas são as meninas?", options: ["$10$", "$25$", "$30$", "$20$"], correct: 2, explanation: "Meninos = $40 \\div 4 = 10$. Meninas = $40 - 10 = 30$." }
+                        ]
+                    },
+                    {
+                        id: "b1-t5",
+                        title: "Frações II: Operações Básicas",
+                        bncc: "EF06MA08, EF06MA09",
+                        summary: "Adição, subtração, multiplicação e divisão de frações.",
+                        detailedTheory: "Para adição ou subtração, os denominadores devem ser iguais (usa-se o $MMC$ caso não sejam). Na multiplicação, multiplica-se 'o de cima pelo de cima' (numeradores) e 'o de baixo pelo de baixo' (denominadores). Para a divisão, a regra prática é: mantenha a primeira fração e multiplique pelo inverso da segunda fração.",
+                        keyPoints: ["Divisão de frações: mantém a primeira e multiplica pelo inverso da segunda.", "Soma e subtração exigem denominadores iguais."],
+                        formula: "\\frac{a}{b} \\div \\frac{c}{d} = \\frac{a}{b} \\cdot \\frac{d}{c}",
+                        solvedExample: {
+                            problem: "Efetue: $\\left(\\frac{2}{3} + \\frac{1}{4}\\right) \\div \\frac{11}{6}$.",
+                            solution: "1º Soma: $MMC(3,4)=12$. $\\frac{8}{12} + \\frac{3}{12} = \\frac{11}{12}$.\n2º Divisão: $\\frac{11}{12} \\div \\frac{11}{6} = \\frac{11}{12} \\times \\frac{6}{11}$.\nCortamos o $11$ e fica $\\frac{6}{12} = \\frac{1}{2}$."
+                        },
+                        questions: [
+                            { q: "A soma das frações $\\frac{1}{2}$ e $\\frac{1}{3}$ é:", options: ["$\\frac{2}{5}$", "$\\frac{1}{6}$", "$\\frac{5}{6}$", "$\\frac{1}{5}$"], correct: 2, explanation: "$MMC(2,3) = 6$. Logo: $\\frac{3}{6} + \\frac{2}{6} = \\frac{5}{6}$." },
+                            { q: "A multiplicação de $\\frac{2}{5}$ por $\\frac{3}{4}$ resulta em:", options: ["$\\frac{5}{9}$", "$\\frac{6}{20}$", "$\\frac{8}{15}$", "$\\frac{1}{2}$"], correct: 1, explanation: "$(2 \\times 3) / (5 \\times 4) = \\frac{6}{20}$ (que simplificado é $\\frac{3}{10}$)." },
+                            { q: "O triplo da fração $\\frac{1}{6}$ corresponde a:", options: ["$\\frac{3}{6}$", "$\\frac{1}{18}$", "$\\frac{1}{2}$", "Ambas A e C"], correct: 3, explanation: "$3 \\times (1/6) = \\frac{3}{6}$. E simplificando $\\frac{3}{6}$ por $3$, temos $\\frac{1}{2}$. Logo A e C estão certas." },
+                            { q: "A diferença calculada em $\\frac{3}{4} - \\frac{1}{2}$ é igual a:", options: ["$\\frac{2}{2}$", "$\\frac{1}{4}$", "$\\frac{1}{2}$", "$\\frac{3}{2}$"], correct: 1, explanation: "Transformando $\\frac{1}{2}$ em $\\frac{2}{4}$. Calculando $\\frac{3}{4} - \\frac{2}{4} = \\frac{1}{4}$." },
+                            { q: "Ao dividir a fração $\\frac{1}{2}$ pela fração $\\frac{1}{4}$, obtemos:", options: ["$\\frac{1}{8}$", "$2$", "$4$", "$\\frac{1}{2}$"], correct: 1, explanation: "$(\\frac{1}{2}) \\times (\\frac{4}{1}) = \\frac{4}{2} = 2$." }
+                        ]
+                    },
+                    {
+                        id: "b1-t6",
+                        title: "Porcentagem e Finanças",
+                        bncc: "EF06MA12, EF08MA04",
+                        summary: "Cálculos percentuais e descontos/acréscimos simples.",
+                        detailedTheory: "Um aumento de $p\\%$ corresponde a multiplicar por um fator $(1 + \\frac{p}{100})$. Um desconto corresponde a multiplicar por $(1 - \\frac{p}{100})$. Para calcular aumentos ou descontos sucessivos, multiplicam-se os fatores em sequência (NUNCA some as porcentagens diretamente).",
+                        keyPoints: ["Aumento de $10\\%$ = multiplicar por $1{,}10$.", "Descontos sucessivos não são somados diretamente."],
+                        formula: "V_f = V_i \\cdot (1 \\pm i)",
+                        solvedExample: {
+                            problem: "Um tênis de R$ $200$ teve aumento de $10\\%$ e depois desconto de $10\\%$. Qual o preço final?",
+                            solution: "1º Aumento: $200 \\times 1{,}10 = \\text{R\\$} 220,00$.\n2º Desconto: $220 \\times 0{,}90 = \\text{R\\$} 198,00$.\nO preço não volta aos 200 reais!"
+                        },
+                        questions: [
+                            { q: "O cálculo de $20\\%$ sobre R$ $150,00$ resulta em:", options: ["R$ $20$", "R$ $30$", "R$ $25$", "R$ $35$"], correct: 1, explanation: "$0{,}20 \\times 150 = \\text{R\\$} 30$." },
+                            { q: "Um produto de R$ $80$ sofreu acréscimo de $15\\%$. O novo preço é:", options: ["R$ $95$", "R$ $92$", "R$ $88$", "R$ $90$"], correct: 1, explanation: "$15\\%$ de $80 = 12$. Preço: $80 + 12 = \\text{R\\$} 92$." },
+                            { q: "Um desconto de $10\\%$ seguido de outro de $10\\%$ equivale a um desconto real de:", options: ["$20\\%$", "$19\\%$", "$21\\%$", "$18\\%$"], correct: 1, explanation: "Fator final: $0{,}90 \\times 0{,}90 = 0{,}81$ (mantém $81\\%$). Desconto acumulado = $19\\%$." },
+                            { q: "Se $30\\%$ da dívida corresponde a R$ $60,00$, a dívida total é:", options: ["R$ $200$", "R$ $180$", "R$ $150$", "R$ $300$"], correct: 0, explanation: "$0{,}30 \\times X = 60 \\rightarrow X = 60 \\div 0{,}30 = \\text{R\\$} 200$." },
+                            { q: "A fração equivalente a $\\frac{3}{5}$ corresponde a:", options: ["$30\\%$", "$50\\%$", "$60\\%$", "$75\\%$"], correct: 2, explanation: "$\\frac{3}{5} = 0{,}60 = 60\\%$." }
+                        ]
+                    },
+                    {
+                        id: "b1-t7",
+                        title: "Notação Científica e Potências",
+                        bncc: "EF08MA01, EF09MA03",
+                        summary: "Escrita de grandes números e propriedades da potência.",
+                        detailedTheory: "A Notação Científica ($a \\times 10^n$) simplifica números muito grandes ou pequenos. A mantissa '$a$' deve estar entre $1$ (incluso) e $10$ (excluso). Vírgula para a esquerda = expoente positivo; vírgula para a direita = expoente negativo. Na multiplicação de potências de mesma base, conserva-se a base e somam-se os expoentes.",
+                        keyPoints: ["Na notação científica: a mantissa deve estar entre 1 e 10.", "Multiplicação de potências iguais: soma-se os expoentes."],
+                        formula: "N = a \\cdot 10^n \\quad (1 \\le a < 10, \\ n \\in \\mathbb{Z})",
+                        solvedExample: {
+                            problem: "Multiplique: $(4{,}2 \\times 10^{-6}) \\times (2 \\times 10^8)$.",
+                            solution: "Multiplica-se as mantissas: $4{,}2 \\times 2 = 8{,}4$.\nMultiplica-se as potências somando os expoentes: $-6 + 8 = 2$.\nResultado: $8{,}4 \\times 10^2 = 840$."
+                        },
+                        questions: [
+                            { q: "O número $4.500.000$ em notação científica é:", options: ["$45 \\times 10^5$", "$4{,}5 \\times 10^6$", "$4{,}5 \\times 10^5$", "$0{,}45 \\times 10^7$"], correct: 1, explanation: "Vírgula 6 posições para a esquerda: $4{,}5 \\times 10^6$." },
+                            { q: "$0{,}00023$ em notação científica é:", options: ["$2{,}3 \\times 10^{-4}$", "$2{,}3 \\times 10^{-3}$", "$23 \\times 10^{-5}$", "$2{,}3 \\times 10^4$"], correct: 0, explanation: "Vírgula 4 casas para a direita (negativo): $2{,}3 \\times 10^{-4}$." },
+                            { q: "A simplificação de $2^5 \\times 2^3$ resulta em:", options: ["$2^8$", "$4^8$", "$2^{15}$", "$4^{15}$"], correct: 0, explanation: "Conserva-se a base (2) e soma-se os expoentes ($5+3=8$): $2^8$." },
+                            { q: "Todo número real não nulo elevado a zero resulta em:", options: ["Ele mesmo", "Zero", "$1$", "$-1$"], correct: 2, explanation: "Regra fundamental: $a^0 = 1$." },
+                            { q: "O dobro de $2^{10}$ é igual a:", options: ["$2^{20}$", "$4^{10}$", "$2^{11}$", "$4^{20}$"], correct: 2, explanation: "O dobro é multiplicar por $2^1$. Então: $2^1 \\times 2^{10} = 2^{11}$." }
+                        ]
+                    }
+                ]
+            },
+            2: {
+                title: "Bloco 2: Álgebra",
+                description: "Linguagem algébrica, equações, proporção e funções.",
+                icon: "variable",
+                topics: [
+                    {
+                        id: "b2-t1",
+                        title: "Linguagem Algébrica",
+                        bncc: "EF07MA10",
+                        summary: "Tradução verbal para matemática. Incógnitas e variáveis.",
+                        detailedTheory: "A álgebra traduz situações descritas em linguagem verbal para expressões simbólicas. 'Incógnita' é um valor desconhecido, mas fixo. 'Variável' pode mudar seu valor. É vital dominar termos como dobro ($2x$), triplo ($3x$), quadrado ($x^2$), sucessor ($x+1$) e diferença ($-$).",
+                        keyPoints: ["O antecessor de um número é $x - 1$.", "O valor numérico é obtido substituindo a letra pelo valor numérico dado e calculando."],
+                        formula: "y = ax + b",
+                        solvedExample: {
+                            problem: "Traduza: 'O quadrado de um número somado ao seu triplo' e ache o valor numérico para $x = 3$.",
+                            solution: "1º 'Quadrado' = $x^2$; 'seu triplo' = $3x$. Expressão: $x^2 + 3x$.\n2º Para $x = 3$: $(3)^2 + 3(3) = 9 + 9 = 18$."
+                        },
+                        questions: [
+                            { q: "A expressão para 'o quadrado de um número somado a $5$' é:", options: ["$2x + 5$", "$x^2 + 5$", "$(x+5)^2$", "$x + 5^2$"], correct: 1, explanation: "Quadrado do número é $x^2$, adicionado de $5$ fica $x^2 + 5$." },
+                            { q: "A representação de 'o triplo do antecessor de $y$' é:", options: ["$3y - 1$", "$3(y + 1)$", "$3(y - 1)$", "$3y + 1$"], correct: 2, explanation: "O antecessor de $y$ é $(y - 1)$. Seu triplo é $3(y - 1)$." },
+                            { q: "O valor numérico de $3x - 2$ para $x = 4$ é:", options: ["$10$", "$12$", "$14$", "$8$"], correct: 0, explanation: "Substituindo: $3(4) - 2 = 12 - 2 = 10$." },
+                            { q: "A diferença entre a metade de '$a$' e o dobro de '$b$' escreve-se:", options: ["$\\frac{a}{2} - 2b$", "$2a - \\frac{b}{2}$", "$\\frac{a-b}{2}$", "$a - \\frac{2b}{2}$"], correct: 0, explanation: "Metade de '$a$' é $\\frac{a}{2}$. Dobro de '$b$' é $2b$. Logo: $\\frac{a}{2} - 2b$." },
+                            { q: "A soma $x + (x+1) + (x+2)$ representa a soma de 3 números:", options: ["Pares", "Ímpares", "Consecutivos", "Primos"], correct: 2, explanation: "Elementos que somam de $1$ em $1$ formam números inteiros consecutivos." }
+                        ]
+                    },
+                    {
+                        id: "b2-t2",
+                        title: "Grandezas e Proporções",
+                        bncc: "EF07MA13",
+                        summary: "Regra de três, razão, proporção direta e inversa.",
+                        detailedTheory: "Grandezas Diretamente Proporcionais: se uma aumenta, a outra aumenta na mesma razão (multiplica-se cruzado). Grandezas Inversamente Proporcionais: se uma aumenta, a outra diminui proporcionalmente (multiplica-se em linha reta). A identificação prévia do comportamento das grandezas é essencial antes de montar a conta.",
+                        keyPoints: ["Diretas: $\\frac{a}{b} = \\frac{c}{d}$ (multiplica em cruz).", "Inversas: $a \\cdot b = c \\cdot d$ (multiplica em linha)."],
+                        formula: "\\text{Direta: } \\frac{y}{x} = k, \\quad \\text{Inversa: } y \\cdot x = k",
+                        solvedExample: {
+                            problem: "Se 6 operários constroem um muro em 10 dias, em quantos dias 15 operários construirão o mesmo muro?",
+                            solution: "Mais operários $\\rightarrow$ MENOS dias (Inversamente proporcionais).\nMultiplica em linha: $15 \\cdot x = 6 \\cdot 10 \\rightarrow 15x = 60 \\rightarrow x = 4$ dias."
+                        },
+                        questions: [
+                            { q: "Uma torneira enche um tanque em $6$h. Duas torneiras idênticas encherão em:", options: ["$12$h", "$8$h", "$3$h", "$4$h"], correct: 2, explanation: "Grandezas inversas: o dobro de torneiras corta o tempo pela metade ($3$h)." },
+                            { q: "Na escala $1:100$, $5\\text{ cm}$ no papel representa no real:", options: ["$5\\text{ m}$", "$50\\text{ m}$", "$0{,}5\\text{ m}$", "$500\\text{ m}$"], correct: 0, explanation: "$5\\text{ cm} \\times 100 = 500\\text{ cm}$, que equivale a $5\\text{ metros}$." },
+                            { q: "Se $4\\text{ kg}$ de um produto custam R$ $120$, quanto custarão $6\\text{ kg}$?", options: ["R$ $160$", "R$ $180$", "R$ $200$", "R$ $150$"], correct: 1, explanation: "$1\\text{ kg}$ custa $120/4 = 30$. Logo, $6\\text{ kg} = 6 \\times 30 = \\text{R\\$} 180$." },
+                            { q: "A razão entre uma pista de $400\\text{ m}$ e uma rua de $2\\text{ km}$ é:", options: ["$\\frac{1}{5}$", "$\\frac{2}{1}$", "$\\frac{1}{20}$", "$\\frac{4}{2}$"], correct: 0, explanation: "$2\\text{ km} = 2000\\text{ m}$. A razão é $\\frac{400}{2000} = \\frac{1}{5}$." },
+                            { q: "Para um bolo, usam-se $2$ ovos para $3$ xícaras de farinha. Para $9$ xícaras de farinha, serão:", options: ["$4$ ovos", "$5$ ovos", "$6$ ovos", "$8$ ovos"], correct: 2, explanation: "Farinha triplicou (3 para 9), logo os ovos também triplicam ($2 \\times 3 = 6$)." }
+                        ]
+                    },
+                    {
+                        id: "b2-t3",
+                        title: "Equações e Sistemas do 1º Grau",
+                        bncc: "EF07MA14, EF08MA08",
+                        summary: "Resolução de equações lineares e sistemas de duas variáveis.",
+                        detailedTheory: "Uma equação do 1º grau busca o valor que torna a igualdade verdadeira, operando ambos os lados igualmente. Sistemas com duas incógnitas buscam um par ordenado $(x, y)$ que satisfaça duas equações ao mesmo tempo. Os métodos de Substituição e Adição são os principais.",
+                        keyPoints: ["O que for feito de um lado da equação deve ser feito do outro.", "No Método da Adição, busca-se eliminar uma variável somando as equações."],
+                        formula: "\\begin{cases} a_1 x + b_1 y = c_1 \\\\ a_2 x + b_2 y = c_2 \\end{cases}",
+                        solvedExample: {
+                            problem: "Resolva: $\\begin{cases} x + y = 12 \\\\ 2x - y = 9 \\end{cases}$",
+                            solution: "Somando as equações (Adição):\n$(x + 2x) + (y - y) = 12 + 9 \\rightarrow 3x = 21 \\rightarrow x = 7$.\nSubstituindo $x=7$: $7 + y = 12 \\rightarrow y = 5$. Solução: $(7, 5)$."
+                        },
+                        questions: [
+                            { q: "A raiz da equação $3x - 5 = 16$ é:", options: ["$5$", "$7$", "$6$", "$8$"], correct: 1, explanation: "$3x = 16 + 5 \\rightarrow 3x = 21 \\rightarrow x = 7$." },
+                            { q: "No sistema $(x + y = 10)$ e $(x - y = 4)$, o valor numérico de $x$ é:", options: ["$6$", "$5$", "$7$", "$3$"], correct: 2, explanation: "Somando as equações: $2x = 14 \\rightarrow x = 7$." },
+                            { q: "O dobro de um número menos $4$ é $12$. Que número é esse?", options: ["$10$", "$6$", "$8$", "$16$"], correct: 2, explanation: "$2x - 4 = 12 \\rightarrow 2x = 16 \\rightarrow x = 8$." },
+                            { q: "$2$ canetas e $1$ lápis custam R$ $7,00$. A caneta custa o triplo do lápis. O lápis custa:", options: ["R$ $1,00$", "R$ $2,00$", "R$ $1,50$", "R$ $0,50$"], correct: 0, explanation: "$C = 3L$. Então $2(3L) + L = 7 \\rightarrow 7L = 7 \\rightarrow L = 1$." },
+                            { q: "A solução real da equação $2(x + 3) = 14$ é:", options: ["$3$", "$4$", "$5$", "$10$"], correct: 1, explanation: "Distributiva: $2x + 6 = 14 \\rightarrow 2x = 8 \\rightarrow x = 4$." }
+                        ]
+                    },
+                    {
+                        id: "b2-t4",
+                        title: "Produtos Notáveis e Fatoração",
+                        bncc: "EF09MA09",
+                        summary: "Identidades algébricas fundamentais e fatoração.",
+                        detailedTheory: "Produtos Notáveis são multiplicações algébricas com padrões fixos: Quadrado da Soma $(a+b)^2$, Quadrado da Diferença $(a-b)^2$ e o Produto da Soma pela Diferença $(a+b)(a-b)$. A fatoração transforma uma soma algébrica em um produto, sendo as principais: fator comum em evidência e diferença de dois quadrados.",
+                        keyPoints: ["$(a+b)^2 = a^2 + 2ab + b^2$", "$a^2 - b^2 = (a+b)(a-b)$"],
+                        formula: "(a+b)(a-b) = a^2 - b^2",
+                        solvedExample: {
+                            problem: "Simplifique a fração algébrica $\\frac{x^2 - 9}{(x - 3)}$ para $x \\neq 3$.",
+                            solution: "Fatorar o numerador (Diferença de Dois Quadrados): $x^2 - 9 = (x + 3)(x - 3)$.\nDividindo por $(x - 3)$:\n$\\frac{(x + 3)(x - 3)}{(x - 3)} = x + 3$."
+                        },
+                        questions: [
+                            { q: "O desenvolvimento do produto notável $(x - 3)^2$ é:", options: ["$x^2 - 9$", "$x^2 - 6x + 9$", "$x^2 + 6x - 9$", "$x^2 - 3x + 9$"], correct: 1, explanation: "Quadrado do primeiro, menos duas vezes o primeiro pelo segundo, mais o quadrado do segundo: $x^2 - 6x + 9$." },
+                            { q: "Fatorando $x^2 - 25$, obtemos:", options: ["$(x-5)(x-5)$", "$(x-25)(x+1)$", "$(x+5)(x-5)$", "$(x+25)^2$"], correct: 2, explanation: "Diferença de quadrados $a^2 - b^2 = (a+b)(a-b)$, com $a=x$ e $b=5$." },
+                            { q: "O fator comum em evidência para $4x^3 + 6x^2$ é:", options: ["$2x$", "$4x^2$", "$2x^2$", "$x^2$"], correct: 2, explanation: "O MDC numérico é $2$ e a menor potência literal é $x^2$. Fator: $2x^2$." },
+                            { q: "A expressão correspondente a $(a + b)(a - b)$ é:", options: ["$a^2 + b^2$", "$a^2 - b^2$", "$a^2 - 2ab + b^2$", "$2a - 2b$"], correct: 1, explanation: "Produto da soma pela diferença é a diferença dos quadrados ($a^2 - b^2$)." },
+                            { q: "Colocando o fator em evidência em $3x + 3y$, temos:", options: ["$3xy$", "$3(x+y)$", "$6(xy)$", "$(3+x)y$"], correct: 1, explanation: "O $3$ é comum a ambos: $3(x + y)$." }
+                        ]
+                    },
+                    {
+                        id: "b2-t5",
+                        title: "Equações do 2º Grau e Funções",
+                        bncc: "EF09MA06",
+                        summary: "Fórmula resolutiva (Bhaskara) e noções de função.",
+                        detailedTheory: "Uma equação de 2º grau ($ax^2+bx+c=0$) é resolvida pela fórmula de Bhaskara. O discriminante ($\\Delta = b^2 - 4ac$) determina as raízes: $\\Delta > 0$ (2 reais diferentes), $\\Delta = 0$ (2 reais iguais), $\\Delta < 0$ (nenhuma raiz real). Na função afim ($y = ax + b$), o coeficiente angular '$a$' determina se a reta sobe ou desce.",
+                        keyPoints: ["Bhaskara: $x = \\frac{-b \\pm \\sqrt{\\Delta}}{2a}$.", "Na função $f(x) = ax + b$, $a > 0$ é reta crescente, $a < 0$ decrescente."],
+                        formula: "\\Delta = b^2 - 4ac, \\quad x = \\frac{-b \\pm \\sqrt{\\Delta}}{2a}",
+                        solvedExample: {
+                            problem: "Encontre as raízes reais da equação $x^2 - 7x + 10 = 0$.",
+                            solution: "$\\Delta = (-7)^2 - 4(1)(10) = 49 - 40 = 9$.\n$x = \\frac{7 \\pm \\sqrt{9}}{2} = \\frac{7 \\pm 3}{2}$.\n$x_1 = 10 / 2 = 5$ e $x_2 = 4 / 2 = 2$."
+                        },
+                        questions: [
+                            { q: "As raízes da equação $x^2 - 5x + 6 = 0$ são:", options: ["$2$ e $3$", "$-2$ e $-3$", "$1$ e $6$", "$0$ e $6$"], correct: 0, explanation: "Soma=$5$ e Produto=$6$, as raízes são $2$ e $3$." },
+                            { q: "Qual o valor do discriminante Delta ($\\Delta$) em $x^2 - 4x + 4 = 0$?", options: ["$4$", "$-4$", "$16$", "$0$"], correct: 3, explanation: "$\\Delta = (-4)^2 - 4(1)(4) = 16 - 16 = 0$." },
+                            { q: "Dada a função $f(x) = 2x - 3$, o valor de $f(5)$ é:", options: ["$10$", "$7$", "$13$", "$2$"], correct: 1, explanation: "$f(5) = 2(5) - 3 = 10 - 3 = 7$." },
+                            { q: "Na equação $x^2 - 9 = 0$, as raízes são:", options: ["$3$", "$-3$", "$3$ e $-3$", "$9$"], correct: 2, explanation: "$x^2 = 9 \\rightarrow x = \\pm\\sqrt{9} \\rightarrow x = 3$ e $-3$." },
+                            { q: "O gráfico da função afim $y = -3x + 1$ é uma reta:", options: ["Crescente", "Decrescente", "Horizontal", "Vertical"], correct: 1, explanation: "Como $a = -3$ (negativo), a função é decrescente." }
+                        ]
+                    }
+                ]
+            },
+            3: {
+                title: "Bloco 3: Geometria",
+                description: "Estudo de ângulos, figuras planas, Pitágoras e sólidos.",
+                icon: "shapes",
+                topics: [
+                    {
+                        id: "b3-t1",
+                        title: "Ângulos, Triângulos e Polígonos",
+                        bncc: "EF07MA22",
+                        summary: "Soma de ângulos internos, classificação geométrica.",
+                        detailedTheory: "Em qualquer triângulo, a soma dos ângulos internos é $180^\\circ$. Para um polígono de $n$ lados, a soma interna é $S_i = (n - 2) \\times 180^\\circ$. Triângulos classificam-se pelos lados (Equilátero = 3 iguais, Isósceles = 2 iguais, Escaleno = 0 iguais) e pelos ângulos (Acutângulo = agudos, Retângulo = $90^\\circ$, Obtusângulo > $90^\\circ$).",
+                        keyPoints: ["Triângulo sempre soma $180^\\circ$ internamente.", "Complementares somam $90^\\circ$; Suplementares somam $180^\\circ$."],
+                        formula: "S_i = (n - 2) \\cdot 180^\\circ",
+                        solvedExample: {
+                            problem: "Calcule a medida de cada ângulo interno de um hexágono regular.",
+                            solution: "$S_i = (6 - 2) \\times 180^\\circ = 4 \\times 180^\\circ = 720^\\circ$.\nDividindo pela quantidade de ângulos (6): $a_i = \\frac{720^\\circ}{6} = 120^\\circ$."
+                        },
+                        questions: [
+                            { q: "A soma dos ângulos internos de um quadrilátero é:", options: ["$180^\\circ$", "$360^\\circ$", "$540^\\circ$", "$720^\\circ$"], correct: 1, explanation: "$(4 - 2) \\times 180^\\circ = 360^\\circ$." },
+                            { q: "Um triângulo que possui todos os três lados iguais é o:", options: ["Isósceles", "Escaleno", "Retângulo", "Equilátero"], correct: 3, explanation: "Equiláteros possuem os 3 lados e 3 ângulos congruentes ($60^\\circ$)." },
+                            { q: "Se dois ângulos de um triângulo medem $40^\\circ$ e $60^\\circ$, o terceiro mede:", options: ["$80^\\circ$", "$90^\\circ$", "$100^\\circ$", "$60^\\circ$"], correct: 0, explanation: "$180^\\circ - (40^\\circ + 60^\\circ) = 180^\\circ - 100^\\circ = 80^\\circ$." },
+                            { q: "Dois ângulos que somam exatamente $180^\\circ$ são:", options: ["Complementares", "Suplementares", "Opostos", "Replementares"], correct: 1, explanation: "Soma $90^\\circ$ = complementares; Soma $180^\\circ$ = suplementares." },
+                            { q: "O ângulo interno de um pentágono regular mede:", options: ["$108^\\circ$", "$72^\\circ$", "$120^\\circ$", "$90^\\circ$"], correct: 0, explanation: "Soma = $3 \\times 180^\\circ = 540^\\circ$. $540^\\circ \\div 5 = 108^\\circ$." }
+                        ]
+                    },
+                    {
+                        id: "b3-t2",
+                        title: "Teorema de Pitágoras e Semelhança",
+                        bncc: "EF09MA13",
+                        summary: "Triângulos retângulos e proporção geométrica.",
+                        detailedTheory: "O Teorema de Pitágoras ($a^2 = b^2 + c^2$) relaciona os lados exclusivamente em triângulos retângulos, onde a hipotenusa ($a$) é o lado maior, oposto ao ângulo de $90^\\circ$. Semelhança de triângulos ocorre quando as formas são iguais, mas os tamanhos são proporcionais (ângulos congruentes, lados homólogos proporcionais).",
+                        keyPoints: ["Aplica-se Pitágoras APENAS a triângulos retângulos.", "Terno pitagórico principal: $3, 4, 5$."],
+                        formula: "a^2 = b^2 + c^2 \\quad (a = \\text{hipotenusa})",
+                        solvedExample: {
+                            problem: "Uma escada de $5\\text{ m}$ está apoiada a $3\\text{ m}$ de distância do muro. Qual a altura alcançada?",
+                            solution: "Hipotenusa=5, Cateto=3, Altura=h.\n$5^2 = 3^2 + h^2 \\rightarrow 25 = 9 + h^2 \\rightarrow h^2 = 16 \\rightarrow h = 4\\text{ m}$."
+                        },
+                        questions: [
+                            { q: "Em um triângulo retângulo de catetos $3\\text{ cm}$ e $4\\text{ cm}$, a hipotenusa é:", options: ["$5\\text{ cm}$", "$6\\text{ cm}$", "$7\\text{ cm}$", "$25\\text{ cm}$"], correct: 0, explanation: "$h^2 = 3^2 + 4^2 = 25 \\rightarrow h = 5\\text{ cm}$." },
+                            { q: "Hipotenusa $10\\text{ m}$, cateto $8\\text{ m}$. O outro cateto é:", options: ["$4\\text{ m}$", "$5\\text{ m}$", "$6\\text{ m}$", "$7\\text{ m}$"], correct: 2, explanation: "$10^2 = 8^2 + c^2 \\rightarrow 100 = 64 + c^2 \\rightarrow c^2 = 36 \\rightarrow c = 6\\text{ m}$." },
+                            { q: "Dois triângulos semelhantes têm razão $2$. Se a base do menor é $4\\text{ cm}$, a do maior é:", options: ["$6\\text{ cm}$", "$8\\text{ cm}$", "$2\\text{ cm}$", "$16\\text{ cm}$"], correct: 1, explanation: "Base do maior = $4\\text{ cm} \\times 2 = 8\\text{ cm}$." },
+                            { q: "A diagonal de um quadrado de lado $5\\text{ cm}$ é:", options: ["$10\\text{ cm}$", "$25\\text{ cm}$", "$5\\sqrt{2}\\text{ cm}$", "$5\\text{ cm}$"], correct: 2, explanation: "Diagonal do quadrado = Lado $\\times \\sqrt{2} = 5\\sqrt{2}\\text{ cm}$." },
+                            { q: "O Teorema de Pitágoras é válido para triângulos:", options: ["Equiláteros", "Acutângulos", "Obtusângulos", "Retângulos"], correct: 3, explanation: "Apenas para triângulos com um ângulo reto ($90^\\circ$)." }
+                        ]
+                    },
+                    {
+                        id: "b3-t3",
+                        title: "Círculo e Circunferência",
+                        bncc: "EF08MA16",
+                        summary: "Área e perímetro (comprimento) do círculo.",
+                        detailedTheory: "A circunferência é a borda (linha). O círculo é a região preenchida. Diâmetro é a corda máxima, e vale o dobro do raio ($D = 2r$). O comprimento/perímetro (contorno) calcula-se com $C = 2\\pi r$, e a área de superfície com $A = \\pi r^2$.",
+                        keyPoints: ["O valor de $\\pi$ (pi) geralmente é aproximado para $3{,}14$ nas provas.", "Diâmetro = $2 \\times \\text{Raio}$."],
+                        formula: "C = 2\\pi r, \\quad A = \\pi r^2",
+                        solvedExample: {
+                            problem: "Calcule a área de um círculo de raio $10\\text{ m}$ (adote $\\pi = 3{,}14$).",
+                            solution: "$A = \\pi \\cdot r^2 = 3{,}14 \\cdot (10)^2 = 3{,}14 \\cdot 100 = 314\\text{ m}^2$."
+                        },
+                        questions: [
+                            { q: "O comprimento de uma circunferência de raio $5\\text{ cm}$ ($\\pi = 3$) é:", options: ["$15\\text{ cm}$", "$30\\text{ cm}$", "$75\\text{ cm}$", "$10\\text{ cm}$"], correct: 1, explanation: "$C = 2 \\times 3 \\times 5 = 30\\text{ cm}$." },
+                            { q: "A área de um círculo de raio $4\\text{ cm}$ ($\\pi = 3$) é:", options: ["$24\\text{ cm}^2$", "$12\\text{ cm}^2$", "$48\\text{ cm}^2$", "$36\\text{ cm}^2$"], correct: 2, explanation: "$A = 3 \\times 4^2 = 3 \\times 16 = 48\\text{ cm}^2$." },
+                            { q: "Se o diâmetro é $20\\text{ cm}$, o raio mede:", options: ["$40\\text{ cm}$", "$10\\text{ cm}$", "$5\\text{ cm}$", "$31{,}4\\text{ cm}$"], correct: 1, explanation: "Raio = Diâmetro / $2 = 20 / 2 = 10\\text{ cm}$." },
+                            { q: "O segmento que une o centro à borda do círculo é o:", options: ["Diâmetro", "Corda", "Raio", "Arco"], correct: 2, explanation: "Por definição, essa é a medida do raio." },
+                            { q: "O ângulo central correspondente a uma meia-volta é:", options: ["$90^\\circ$", "$180^\\circ$", "$270^\\circ$", "$360^\\circ$"], correct: 1, explanation: "Uma volta inteira é $360^\\circ$, logo meia-volta é $180^\\circ$." }
+                        ]
+                    },
+                    {
+                        id: "b3-t4",
+                        title: "Sólidos e Vistas",
+                        bncc: "EF06MA16",
+                        summary: "Poliedros, corpos redondos e Relação de Euler.",
+                        detailedTheory: "Poliedros são compostos só por superfícies planas (faces poligonais). A Relação de Euler ($V - A + F = 2$) liga Vértices, Arestas e Faces de poliedros convexos. Corpos Redondos (cilindro, cone, esfera) possuem partes arredondadas. Vistas ortogonais são as imagens planas que vemos ao olhar o sólido exatamente de frente, de cima ou do lado.",
+                        keyPoints: ["Relação de Euler: $V + F = A + 2$.", "Prismas: 2 bases. Pirâmides: 1 base."],
+                        formula: "V - A + F = 2",
+                        solvedExample: {
+                            problem: "Um poliedro tem 6 faces e 8 vértices. Quantas arestas ele tem?",
+                            solution: "$V - A + F = 2 \\rightarrow 8 - A + 6 = 2 \\rightarrow 14 - A = 2 \\rightarrow A = 12$ arestas."
+                        },
+                        questions: [
+                            { q: "Um hexaedro regular (cubo) possui quantas faces?", options: ["$4$", "$6$", "$8$", "$12$"], correct: 1, explanation: "O cubo tem 6 faces quadradas." },
+                            { q: "Poliedro com 8 vértices e 6 faces tem quantas arestas?", options: ["$12$", "$14$", "$10$", "$16$"], correct: 0, explanation: "$V - A + F = 2 \\rightarrow 8 - A + 6 = 2 \\rightarrow A = 12$." },
+                            { q: "O cilindro é um sólido geométrico classificado como:", options: ["Poliedro", "Prisma", "Corpo Redondo", "Pirâmide"], correct: 2, explanation: "Por ter superfície curva (que rola), é um corpo redondo." },
+                            { q: "A vista ortogonal superior de um cone de base apoiada é:", options: ["Triângulo", "Círculo com ponto", "Quadrado", "Ponto"], correct: 1, explanation: "Olhando de cima, vê-se a base circular e o vértice central como um ponto." },
+                            { q: "Todo prisma regular possui obrigatoriamente quantas bases paralelas?", options: ["$1$", "$2$", "$3$", "Nenhuma"], correct: 1, explanation: "Prismas caracterizam-se por duas bases idênticas e paralelas." }
+                        ]
+                    }
+                ]
+            },
+            4: {
+                title: "Bloco 4: Medidas e Estatística",
+                description: "Áreas, volumes, probabilidade e análise de dados.",
+                icon: "bar-chart-3",
+                topics: [
+                    {
+                        id: "b4-t1",
+                        title: "Áreas de Figuras Planas",
+                        bncc: "EF07MA25",
+                        summary: "Cálculo de área (quadrado, retângulo, triângulo, trapézio).",
+                        detailedTheory: "Área mede superfície bidimensional. Fórmulas comuns: Quadrado ($L^2$), Retângulo ($b \\cdot h$), Triângulo ($\\frac{b \\cdot h}{2}$), Trapézio ($\\frac{(B+b) \\cdot h}{2}$). Não confunda área com perímetro (que é a soma dos contornos lineares).",
+                        keyPoints: ["Triângulo: Área é metade do retângulo base $\\times$ altura.", "Perímetro é contorno, Área é o preenchimento interno."],
+                        formula: "A_{\\text{Trapézio}} = \\frac{(B + b) \\cdot h}{2}",
+                        solvedExample: {
+                            problem: "Área de um trapézio de bases $10\\text{ cm}$, $6\\text{ cm}$ e altura $5\\text{ cm}$.",
+                            solution: "$A = \\frac{(10 + 6) \\cdot 5}{2} = \\frac{16 \\cdot 5}{2} = \\frac{80}{2} = 40 \\text{ cm}^2$."
+                        },
+                        questions: [
+                            { q: "A área de uma sala de $8\\text{ m}$ por $5\\text{ m}$ é:", options: ["$13\\text{ m}^2$", "$26\\text{ m}^2$", "$40\\text{ m}^2$", "$20\\text{ m}^2$"], correct: 2, explanation: "Base $\\times$ Altura = $8 \\times 5 = 40\\text{ m}^2$." },
+                            { q: "Triângulo de base $10\\text{ cm}$ e altura $6\\text{ cm}$ tem área:", options: ["$60\\text{ cm}^2$", "$30\\text{ cm}^2$", "$16\\text{ cm}^2$", "$20\\text{ cm}^2$"], correct: 1, explanation: "$(10 \\times 6) / 2 = 30\\text{ cm}^2$." },
+                            { q: "Terreno quadrado com perímetro $20\\text{ m}$ tem área:", options: ["$20\\text{ m}^2$", "$25\\text{ m}^2$", "$100\\text{ m}^2$", "$40\\text{ m}^2$"], correct: 1, explanation: "Lado = $20/4 = 5\\text{ m}$. Área = $5^2 = 25\\text{ m}^2$." },
+                            { q: "Trapézio (bases $8$ e $4$, altura $5$). A área é:", options: ["$30\\text{ cm}^2$", "$60\\text{ cm}^2$", "$20\\text{ cm}^2$", "$40\\text{ cm}^2$"], correct: 0, explanation: "$[(8 + 4) \\times 5] / 2 = (12 \\times 5) / 2 = 30\\text{ cm}^2$." },
+                            { q: "A unidade metro quadrado ($\\text{m}^2$) mede:", options: ["Volume", "Comprimento", "Capacidade", "Área"], correct: 3, explanation: "Unidades ao quadrado referem-se sempre a superfícies (áreas)." }
+                        ]
+                    },
+                    {
+                        id: "b4-t2",
+                        title: "Volume e Capacidade",
+                        bncc: "EF08MA17",
+                        summary: "Volumes de prismas, cilindros e equivalência de litros.",
+                        detailedTheory: "Volume mede espaço ocupado 3D ($V = A_{\\text{base}} \\times h$). Capacidade é o volume líquido abrigável. Relações vitais para a prova do IF: $1\\text{ m}^3 = 1000\\text{ Litros}$ e $1\\text{ dm}^3 = 1\\text{ Litro}$ ($1\\text{ L} = 1000\\text{ mL}$).",
+                        keyPoints: ["Para calcular Litros, converta primeiro para $\\text{m}^3$ e multiplique por $1000$.", "Volume do bloco retangular = comprimento $\\times$ largura $\\times$ altura."],
+                        formula: "V = A_{\\text{base}} \\cdot h",
+                        solvedExample: {
+                            problem: "Caixa d'água $2\\text{ m} \\times 1{,}5\\text{ m} \\times 1\\text{ m}$. Capacidade em Litros?",
+                            solution: "$V = 2 \\times 1{,}5 \\times 1 = 3 \\text{ m}^3$.\nComo $1 \\text{ m}^3 = 1000 \\text{ L}$, temos $3 \\times 1000 = 3000 \\text{ Litros}$."
+                        },
+                        questions: [
+                            { q: "O volume do bloco $2\\text{ m} \\times 3\\text{ m} \\times 4\\text{ m}$ é:", options: ["$9\\text{ m}^3$", "$24\\text{ m}^3$", "$20\\text{ m}^3$", "$18\\text{ m}^3$"], correct: 1, explanation: "$2 \\times 3 \\times 4 = 24\\text{ m}^3$." },
+                            { q: "Reservatório de $2\\text{ m}^3$ comporta quantos Litros?", options: ["$2.000\\text{ L}$", "$20\\text{ L}$", "$200\\text{ L}$", "$20.000\\text{ L}$"], correct: 0, explanation: "$2\\text{ m}^3 \\times 1000 = 2.000\\text{ Litros}$." },
+                            { q: "Cubo com aresta $3\\text{ cm}$ tem volume de:", options: ["$9\\text{ cm}^3$", "$12\\text{ cm}^3$", "$27\\text{ cm}^3$", "$18\\text{ cm}^3$"], correct: 2, explanation: "Aresta$^3 = 3^3 = 27\\text{ cm}^3$." },
+                            { q: "Cilindro de área da base $10\\text{ cm}^2$ e altura $5\\text{ cm}$. Volume:", options: ["$50\\text{ cm}^3$", "$15\\text{ cm}^3$", "$150\\text{ cm}^3$", "$25\\text{ cm}^3$"], correct: 0, explanation: "Área da base $\\times$ Altura = $10 \\times 5 = 50\\text{ cm}^3$." },
+                            { q: "$500\\text{ mL}$ de água equivale a:", options: ["$5\\text{ Litros}$", "$0{,}5\\text{ Litro}$", "$0{,}05\\text{ Litro}$", "$50\\text{ Litros}$"], correct: 1, explanation: "$500 / 1000 = 0{,}5\\text{ Litro}$." }
+                        ]
+                    },
+                    {
+                        id: "b4-t3",
+                        title: "Probabilidade",
+                        bncc: "EF07MA28",
+                        summary: "Eventos possíveis x favoráveis.",
+                        detailedTheory: "Probabilidade indica a chance de ocorrência de um evento. A fórmula é a razão entre o que você QUER (casos favoráveis) e TUDO O QUE PODE ACONTECER (casos possíveis ou espaço amostral). O resultado é uma fração, decimal ou porcentagem entre $0$ (impossível) e $1$ ou $100\\%$ (certo).",
+                        keyPoints: ["Conte com precisão todos os resultados possíveis antes do cálculo.", "$P = \\frac{\\text{Favorável}}{\\text{Total}}$"],
+                        formula: "P(E) = \\frac{n(E)}{n(\\Omega)}",
+                        solvedExample: {
+                            problem: "Urna com 6 bolas vermelhas e 4 azuis. Chance de tirar azul?",
+                            solution: "Total de bolas = 10 (Espaço amostral).\nBolas Azuis (favoráveis) = 4.\n$P = \\frac{4}{10} = 0{,}4 = 40\\%$."
+                        },
+                        questions: [
+                            { q: "Lançando uma moeda, a probabilidade de dar 'cara' é:", options: ["$\\frac{1}{3}$", "$\\frac{1}{4}$", "$\\frac{1}{2}$", "$1$"], correct: 2, explanation: "1 evento favorável (cara) em 2 possíveis (cara ou coroa): $\\frac{1}{2}$." },
+                            { q: "No dado de $6$ faces, a chance de sair número par é:", options: ["$\\frac{1}{6}$", "$\\frac{2}{6}$", "$\\frac{1}{2}$", "$\\frac{4}{6}$"], correct: 2, explanation: "Pares são $\\{2,4,6\\}$. Logo, 3 casos num total de 6: $\\frac{3}{6} = \\frac{1}{2}$." },
+                            { q: "Sacola com 3 bolas vermelhas e 2 azuis. Chance da azul:", options: ["$\\frac{2}{5}$", "$\\frac{3}{5}$", "$\\frac{1}{2}$", "$\\frac{2}{3}$"], correct: 0, explanation: "2 azuis num total de 5 bolas = $\\frac{2}{5}$." },
+                            { q: "Probabilidade de sortear um número de $1$ a $10$ e ele ser o $7$:", options: ["$\\frac{7}{10}$", "$\\frac{1}{10}$", "$\\frac{1}{7}$", "$10\\%$"], correct: 1, explanation: "Só existe um '7' entre dez opções possíveis: $\\frac{1}{10}$." },
+                            { q: "Baralho (52 cartas), a chance de um Ás (existem 4) é:", options: ["$\\frac{1}{13}$", "$\\frac{1}{52}$", "$\\frac{4}{13}$", "$\\frac{1}{4}$"], correct: 0, explanation: "$\\frac{4}{52}$. Simplificando por 4 fica $\\frac{1}{13}$." }
+                        ]
+                    },
+                    {
+                        id: "b4-t4",
+                        title: "Estatística Básica",
+                        bncc: "EF08MA22",
+                        summary: "Média aritmética, moda e mediana.",
+                        detailedTheory: "Estatística descritiva resume dados. A Média Aritmética soma tudo e divide pela quantidade de itens. A Moda é o valor mais frequente. A Mediana é o valor do centro (exige ROL, ou seja, ordenar os números antes de verificar). Se a quantidade de dados for par, a mediana é a média dos dois números centrais.",
+                        keyPoints: ["Mediana DEVE ter os dados em ROL (ordenados).", "Moda pode não existir (amodal) ou haver mais de uma (bimodal)."],
+                        formula: "\\bar{x} = \\frac{\\sum x_i}{n}",
+                        solvedExample: {
+                            problem: "Dados: $[4, 7, 7, 8, 9]$. Ache Média, Moda e Mediana.",
+                            solution: "Média: $\\frac{4+7+7+8+9}{5} = \\frac{35}{5} = 7$.\nModa: $7$ (aparece mais vezes).\nMediana: O 3º termo na lista já ordenada é $7$."
+                        },
+                        questions: [
+                            { q: "A média aritmética simples entre $6$, $8$ e $10$ é:", options: ["$7$", "$8$", "$9$", "$24$"], correct: 1, explanation: "$\\frac{6 + 8 + 10}{3} = \\frac{24}{3} = 8$." },
+                            { q: "Nas idades ($12, 14, 14, 15, 16$), a moda é:", options: ["$12$", "$15$", "$14$", "$16$"], correct: 2, explanation: "O $14$ aparece mais vezes ($2x$)." },
+                            { q: "A mediana do conjunto ordenado ($3, 5, 7, 9, 11$) é:", options: ["$5$", "$7$", "$9$", "$35$"], correct: 1, explanation: "Lista de 5 itens. O central é o 3º termo: $7$." },
+                            { q: "Se a soma de 4 notas é $28$, a média é:", options: ["$4$", "$7$", "$28$", "$112$"], correct: 1, explanation: "Média = Soma / Quantidade = $28 / 4 = 7$." },
+                            { q: "No conjunto par ($2, 2, 4, 8$), a mediana é:", options: ["$2$", "$3$", "$4$", "$6$"], correct: 1, explanation: "Média dos dois centrais: $\\frac{2 + 4}{2} = 3$." }
+                        ]
+                    }
+                ]
+            }
+        };
+
+        // Gerenciamento de Estado Local
+        let completedTopics = JSON.parse(localStorage.getItem('partiuif_completed') || '[]');
+        let savedAnswers = JSON.parse(localStorage.getItem('partiuif_answers') || '{}');
+        let userSelections = {}; 
+
+        // Sistema de Toasts (Notificações Flutuantes)
+        function showToast(message, type = 'success') {
+            const container = document.getElementById('toast-container');
+            const toast = document.createElement('div');
+            
+            let icon = 'info';
+            let bgClass = 'bg-white border-gray-200 text-gray-800';
+            let iconClass = 'text-brand-500';
+
+            if (type === 'success') {
+                icon = 'check-circle';
+                bgClass = 'bg-brand-50 border-brand-200 text-brand-900';
+                iconClass = 'text-brand-500';
+            } else if (type === 'error') {
+                icon = 'x-circle';
+                bgClass = 'bg-red-50 border-red-200 text-red-900';
+                iconClass = 'text-red-500';
+            }
+
+            toast.className = `toast-enter flex items-center gap-3 p-4 rounded-xl border shadow-lg ${bgClass} font-medium text-sm`;
+            toast.innerHTML = `<i data-lucide="${icon}" class="w-5 h-5 ${iconClass}"></i> ${message}`;
+            
+            container.appendChild(toast);
+            lucide.createIcons();
+
+            setTimeout(() => {
+                toast.style.opacity = '0';
+                toast.style.transform = 'translateX(100%)';
+                toast.style.transition = 'all 0.3s ease-out';
+                setTimeout(() => toast.remove(), 300);
+            }, 3000);
+        }
+
+        function resetProgress() {
+            if (confirm("ATENÇÃO: Você tem certeza que deseja zerar TODAS as suas respostas e tópicos concluídos? Essa ação não pode ser desfeita.")) {
+                localStorage.removeItem('partiuif_completed');
+                localStorage.removeItem('partiuif_answers');
+                completedTopics = [];
+                savedAnswers = {};
+                showToast('Progresso zerado com sucesso!', 'success');
+                navigateTo('home');
+            }
+        }
+
+        // Eventos Globais de UI
+        document.getElementById('mobile-menu-btn').addEventListener('click', () => {
+            document.getElementById('mobile-menu').classList.toggle('hidden');
+        });
+
+        // Controle de Navegação Principal
+        function navigateTo(page, param = null) {
+            const main = document.getElementById('main-content');
+            document.getElementById('mobile-menu').classList.add('hidden');
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+
+            if (page === 'home') renderHome(main);
+            else if (page === 'block') renderBlockView(main, param);
+            else if (page === 'topic') renderTopicView(main, param.blockId, param.topicId);
+            else if (page === 'simulado') renderSimuladoView(main);
+            
+            updateProgress();
+        }
+
+        function renderHome(container) {
+            let html = `
+                <div class="bg-gradient-to-r from-brand-700 to-brand-900 rounded-2xl p-6 sm:p-10 text-white shadow-xl mb-10 relative overflow-hidden">
+                    <div class="absolute -right-10 -bottom-10 opacity-10 text-white">
+                        <i data-lucide="calculator" class="w-80 h-80"></i>
+                    </div>
+                    <div class="relative z-10 max-w-2xl">
+                        <span class="bg-brand-500/30 text-brand-200 border border-brand-400/30 text-xs font-semibold px-3 py-1 rounded-full uppercase tracking-wider mb-3 inline-block">
+                            Indexador de Estudos
+                        </span>
+                        <h1 class="text-3xl sm:text-4xl font-extrabold tracking-tight mb-3">Matriz de Referência IF: Matemática</h1>
+                        <p class="text-brand-100 text-sm sm:text-base mb-6 leading-relaxed">
+                            Navegue pelos 4 blocos fundamentais. Acesse explicações completas com teoria, fórmulas, exemplos passo a passo e 100 exercícios de fixação, salvos localmente.
+                        </p>
+                        <button onclick="navigateTo('simulado')" class="bg-white text-brand-800 font-bold px-5 py-2.5 rounded-xl text-sm shadow hover:bg-brand-50 transition flex items-center gap-2">
+                            <i data-lucide="play-circle" class="w-4 h-4"></i> Iniciar Simulado Geral
+                        </button>
+                    </div>
+                </div>
+                <div class="mb-12">
+                    <h2 class="text-2xl font-bold text-gray-900 mb-6 flex items-center gap-2 border-l-4 border-brand-600 pl-3">Blocos de Conteúdo</h2>
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+            `;
+
+            for (let bId in mathData) {
+                const block = mathData[bId];
+                const completedInBlock = block.topics.filter(t => completedTopics.includes(t.id)).length;
+                const percent = Math.round((completedInBlock / block.topics.length) * 100);
+
+                html += `
+                    <div class="bg-white border border-gray-200 rounded-2xl p-6 shadow-sm flex flex-col justify-between">
+                        <div>
+                            <div class="flex items-center justify-between mb-4">
+                                <div class="w-12 h-12 bg-brand-100 text-brand-700 rounded-xl flex justify-center items-center font-bold shadow-inner">
+                                    <i data-lucide="${block.icon}" class="w-6 h-6"></i>
+                                </div>
+                                <span class="text-xs font-semibold px-2.5 py-1 rounded-full bg-brand-50 text-brand-700 border border-brand-200">${block.topics.length} Tópicos</span>
+                            </div>
+                            <h3 class="text-xl font-bold text-gray-900 mb-2">${block.title}</h3>
+                            <p class="text-gray-600 text-sm mb-4 leading-relaxed">${block.description}</p>
+                            <div class="mb-4">
+                                <div class="flex justify-between text-xs text-gray-500 mb-1">
+                                    <span>Progresso do Bloco</span><span class="font-semibold text-brand-700">${percent}%</span>
+                                </div>
+                                <div class="w-full bg-gray-100 rounded-full h-2 overflow-hidden">
+                                    <div class="bg-brand-600 h-full transition-all" style="width: ${percent}%"></div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="border-t border-gray-100 pt-4 mt-2">
+                            <button onclick="navigateTo('block', ${bId})" class="w-full bg-brand-50 hover:bg-brand-100 text-brand-800 font-semibold py-2 px-4 rounded-xl text-sm transition">
+                                Acessar Bloco
+                            </button>
+                        </div>
+                    </div>
+                `;
+            }
+            html += `</div></div>`;
+            container.innerHTML = html;
+            lucide.createIcons();
+            renderLatex(container);
+        }
+
+        function renderBlockView(container, blockId) {
+            const block = mathData[blockId];
+            let html = `
+                <button onclick="navigateTo('home')" class="text-brand-700 hover:text-brand-900 mb-4 text-sm font-medium flex items-center gap-1">
+                    <i data-lucide="arrow-left" class="w-4 h-4"></i> Voltar
+                </button>
+                <div class="bg-white border border-gray-200 rounded-2xl p-6 shadow-sm mb-6">
+                    <h1 class="text-3xl font-extrabold text-gray-900 flex items-center gap-3"><i data-lucide="${block.icon}" class="text-brand-600"></i> ${block.title}</h1>
+                    <p class="text-gray-600 mt-2">${block.description}</p>
+                </div>
+                <div class="grid grid-cols-1 gap-4">
+            `;
+
+            block.topics.forEach((t, idx) => {
+                const isDone = completedTopics.includes(t.id);
+                html += `
+                    <div class="bg-white border border-gray-200 rounded-xl p-5 shadow-sm flex flex-col sm:flex-row sm:items-center justify-between gap-4">
+                        <div class="flex items-start gap-3">
+                            <i data-lucide="${isDone ? 'check-circle-2' : 'circle'}" class="w-6 h-6 mt-1 ${isDone ? 'text-brand-600' : 'text-gray-300'}"></i>
+                            <div>
+                                <span class="text-xs font-semibold text-brand-600 bg-brand-50 px-2 py-0.5 rounded">Tópico 0${idx+1}</span>
+                                <h3 class="text-lg font-bold text-gray-900 mt-1">${t.title}</h3>
+                                <p class="text-sm text-gray-600 line-clamp-1">${t.summary}</p>
+                            </div>
+                        </div>
+                        <button onclick="navigateTo('topic', {blockId: ${blockId}, topicId: '${t.id}'})" class="bg-brand-600 text-white font-medium px-4 py-2 rounded-lg text-sm hover:bg-brand-700 transition">
+                            Estudar e Resolver
+                        </button>
+                    </div>
+                `;
+            });
+            html += `</div>`;
+            container.innerHTML = html;
+            lucide.createIcons();
+            renderLatex(container);
+        }
+
+        function renderTopicView(container, blockId, topicId) {
+            const block = mathData[blockId];
+            const topic = block.topics.find(t => t.id === topicId);
+            const isDone = completedTopics.includes(topic.id);
+
+            let html = `
+                <!-- Cabeçalho -->
+                <div class="bg-white rounded-2xl p-6 shadow-sm mb-6 border border-gray-200 flex flex-col sm:flex-row justify-between sm:items-center">
+                    <div>
+                        <span class="bg-brand-100 text-brand-800 text-xs font-bold px-2.5 py-0.5 rounded-full">BNCC: ${topic.bncc}</span>
+                        <h1 class="text-2xl font-extrabold text-gray-900 mt-2">${topic.title}</h1>
+                    </div>
+                    <button onclick="toggleTopicDone('${topic.id}')" class="mt-4 sm:mt-0 px-4 py-2 rounded-xl text-sm font-semibold border ${isDone ? 'bg-brand-100 text-brand-800 border-brand-300' : 'bg-gray-100 text-gray-700 border-gray-300'} flex items-center gap-2">
+                        <i data-lucide="${isDone ? 'check-square' : 'square'}" class="w-4 h-4"></i> ${isDone ? 'Concluído' : 'Marcar Concluído'}
+                    </button>
+                </div>
+
+                <div class="grid grid-cols-1 lg:grid-cols-3 gap-6">
+                    <div class="lg:col-span-2 space-y-6">
+                        <!-- Explicação do Tema -->
+                        <div class="bg-white border border-gray-200 rounded-2xl p-6 shadow-sm">
+                            <h2 class="text-xl font-bold text-gray-900 mb-3 flex items-center gap-2 text-brand-800">
+                                <i data-lucide="book-open" class="w-5 h-5 text-brand-600"></i> Teoria e Conceitos Chave
+                            </h2>
+                            <p class="text-gray-700 leading-relaxed text-sm sm:text-base mb-4">${topic.detailedTheory}</p>
+                            
+                            <h3 class="text-sm font-bold text-gray-900 uppercase tracking-wider mb-2 text-brand-800">Dicas para o IF</h3>
+                            <ul class="space-y-2">
+                                ${topic.keyPoints.map(point => `
+                                    <li class="flex items-start gap-2 text-xs sm:text-sm text-gray-600">
+                                        <i data-lucide="check" class="w-4 h-4 text-brand-600 flex-shrink-0 mt-0.5"></i>
+                                        <span>${point}</span>
+                                    </li>
+                                `).join('')}
+                            </ul>
+                        </div>
+
+                        <!-- Fórmulas -->
+                        <div class="bg-brand-900 text-white rounded-2xl p-6 shadow-md border border-brand-800">
+                            <h2 class="text-brand-300 text-xs font-bold uppercase tracking-wider mb-3 flex items-center gap-1.5">
+                                <i data-lucide="sigma" class="w-4 h-4"></i> Fórmulas e Relações Fundamentais
+                            </h2>
+                            <div class="text-xl sm:text-2xl text-center py-4 bg-brand-950/50 rounded-xl overflow-x-auto text-brand-100 font-mono border border-brand-800">
+                                $$${topic.formula}$$
+                            </div>
+                        </div>
+
+                        <!-- Exemplo Resolvido -->
+                        <div class="bg-emerald-50/60 border border-brand-200 rounded-2xl p-6 shadow-sm">
+                            <h2 class="text-lg font-bold text-brand-900 mb-3 flex items-center gap-2">
+                                <i data-lucide="file-check-2" class="w-5 h-5 text-brand-700"></i> Exemplo Resolvido
+                            </h2>
+                            <p class="text-sm font-semibold text-gray-800 mb-3">${topic.solvedExample.problem}</p>
+                            <div class="bg-white border border-brand-100 rounded-xl p-4 text-xs sm:text-sm text-gray-700 leading-relaxed whitespace-pre-line">
+                                <strong class="text-brand-800">Resolução:</strong>\n${topic.solvedExample.solution}
+                            </div>
+                        </div>
+
+                        <!-- Lista de Exercícios -->
+                        <div class="bg-white border border-gray-200 rounded-2xl p-6 shadow-sm">
+                            <div class="flex items-center justify-between mb-6">
+                                <h2 class="text-xl font-bold text-brand-800 flex items-center gap-2">
+                                    <i data-lucide="list-checks" class="w-6 h-6"></i> Exercícios de Fixação
+                                </h2>
+                                <span class="text-xs text-gray-400">Progresso auto-salvo</span>
+                            </div>
+            `;
+
+            topic.questions.forEach((q, qIdx) => {
+                const qId = `${topic.id}-q${qIdx}`;
+                const hasSavedAnswer = savedAnswers.hasOwnProperty(qId);
+                const savedOpt = hasSavedAnswer ? savedAnswers[qId].opt : -1;
+                const isCorrect = hasSavedAnswer ? savedAnswers[qId].correct : false;
+
+                html += `
+                    <div class="mb-8 border-b border-gray-100 pb-6 last:border-0 last:pb-0" id="q-container-${qId}">
+                        <p class="font-medium text-gray-800 mb-4"><strong>${qIdx+1}.</strong> ${q.q}</p>
+                        <div class="space-y-2 mb-4" id="opts-${qId}">
+                            ${q.options.map((opt, optIdx) => {
+                                let btnClasses = "w-full text-left p-3 rounded-xl border border-gray-200 hover:border-brand-300 transition text-sm text-gray-700 flex items-center justify-between group";
+                                let iconHTML = `<i data-lucide="circle" class="w-4 h-4 text-gray-300 opt-icon group-hover:text-brand-300"></i>`;
+                                
+                                if (hasSavedAnswer) {
+                                    btnClasses = "w-full text-left p-3 rounded-xl border border-gray-200 text-sm text-gray-700 flex items-center justify-between opacity-80 cursor-not-allowed";
+                                    if (optIdx === savedOpt) {
+                                        if (isCorrect) {
+                                            btnClasses += " opt-selected";
+                                            iconHTML = `<i data-lucide="check-circle" class="w-4 h-4 text-brand-600 opt-icon"></i>`;
+                                        } else {
+                                            btnClasses += " opt-wrong";
+                                            iconHTML = `<i data-lucide="x-circle" class="w-4 h-4 text-red-600 opt-icon"></i>`;
+                                        }
+                                    } else if (optIdx === q.correct && !isCorrect) {
+                                        btnClasses += " border-brand-300 bg-brand-50/50";
+                                        iconHTML = `<i data-lucide="check" class="w-4 h-4 text-brand-600"></i>`;
+                                    }
+                                }
+
+                                return `
+                                    <button ${hasSavedAnswer ? 'disabled' : ''} onclick="selectOption('${qId}', ${optIdx})" id="btn-${qId}-${optIdx}" class="${btnClasses}">
+                                        <span>${String.fromCharCode(65 + optIdx)}) ${opt}</span>
+                                        ${iconHTML}
+                                    </button>
+                                `;
+                            }).join('')}
+                        </div>
+                        <div class="flex items-center gap-3">
+                            ${!hasSavedAnswer ? `
+                                <button id="submit-btn-${qId}" onclick="submitAnswer(${blockId}, '${topic.id}', ${qIdx})" class="bg-brand-600 hover:bg-brand-700 text-white px-4 py-2 rounded-lg text-sm font-semibold transition">
+                                    Enviar Resposta
+                                </button>
+                            ` : ''}
+                        </div>
+                        <div id="feedback-${qId}" class="${hasSavedAnswer ? 'p-4 rounded-xl text-sm mt-4' : 'hidden'} ${isCorrect ? 'bg-green-50 border border-green-200 text-green-900' : 'bg-red-50 border border-red-200 text-red-900'}">
+                            ${hasSavedAnswer ? 
+                                (isCorrect 
+                                    ? `<strong class="text-green-700 flex items-center gap-1"><i data-lucide="check" class="w-4 h-4"></i> Correto!</strong> <p class="mt-1">${q.explanation}</p>`
+                                    : `<strong class="text-red-700 flex items-center gap-1"><i data-lucide="x" class="w-4 h-4"></i> Incorreto.</strong> <p class="mt-1">A correta era a <b>${String.fromCharCode(65 + q.correct)}</b>. ${q.explanation}</p>`
+                                ) : ''
+                            }
+                        </div>
+                    </div>
+                `;
+            });
+
+            html += `
+                        </div>
+                    </div>
+                    <div class="space-y-6">
+                        <div class="bg-white border border-gray-200 rounded-2xl p-5 shadow-sm sticky top-20">
+                            <h3 class="text-sm font-bold text-gray-900 uppercase tracking-wider mb-4 border-b pb-2">Outros Tópicos</h3>
+                            ${block.topics.map(t => `
+                                <button onclick="navigateTo('topic', {blockId: ${blockId}, topicId: '${t.id}'})" class="w-full text-left p-2 rounded-lg text-xs font-medium transition flex items-center justify-between ${t.id === topic.id ? 'bg-brand-100 text-brand-900' : 'text-gray-600 hover:bg-gray-100'}">
+                                    <span class="truncate">${t.title}</span>
+                                </button>
+                            `).join('')}
+                        </div>
+                    </div>
+                </div>
+            `;
+            container.innerHTML = html;
+            lucide.createIcons();
+            
+            // Força renderização do LaTeX após popular HTML
+            renderLatex(container);
+            userSelections = {};
+        }
+
+        function selectOption(qId, optIdx) {
+            userSelections[qId] = optIdx;
+            const parent = document.getElementById(`opts-${qId}`);
+            const buttons = parent.querySelectorAll('button');
+            buttons.forEach(btn => {
+                btn.classList.remove('opt-selected', 'border-brand-500', 'bg-brand-50');
+                const icon = btn.querySelector('.opt-icon');
+                if(icon) { icon.setAttribute('data-lucide', 'circle'); icon.className = 'w-4 h-4 text-gray-300 opt-icon group-hover:text-brand-300'; }
+            });
+
+            const selectedBtn = document.getElementById(`btn-${qId}-${optIdx}`);
+            selectedBtn.classList.add('border-brand-500', 'bg-brand-50');
+            const icon = selectedBtn.querySelector('.opt-icon');
+            if(icon) { icon.setAttribute('data-lucide', 'check-circle'); icon.className = 'w-4 h-4 text-brand-600 opt-icon'; }
+            
+            lucide.createIcons();
+        }
+
+        function submitAnswer(blockId, topicId, qIdx) {
+            const qId = `${topicId}-q${qIdx}`;
+            if (userSelections[qId] === undefined) {
+                alert("Selecione uma alternativa primeiro!");
+                return;
+            }
+
+            const topic = mathData[blockId].topics.find(t => t.id === topicId);
+            const question = topic.questions[qIdx];
+            const selected = userSelections[qId];
+            const isCorrect = (selected === question.correct);
+            
+            savedAnswers[qId] = { opt: selected, correct: isCorrect };
+            localStorage.setItem('partiuif_answers', JSON.stringify(savedAnswers));
+            showToast('Resposta salva automaticamente!', 'success');
+
+            const feedbackDiv = document.getElementById(`feedback-${qId}`);
+            if (isCorrect) {
+                feedbackDiv.className = "p-4 rounded-xl text-sm mt-4 border bg-green-50 border-green-200 text-green-900";
+                feedbackDiv.innerHTML = `<strong class="text-green-700 flex items-center gap-1"><i data-lucide="check" class="w-4 h-4"></i> Correto!</strong> <p class="mt-1">${question.explanation}</p>`;
+            } else {
+                feedbackDiv.className = "p-4 rounded-xl text-sm mt-4 border bg-red-50 border-red-200 text-red-900";
+                feedbackDiv.innerHTML = `<strong class="text-red-700 flex items-center gap-1"><i data-lucide="x" class="w-4 h-4"></i> Incorreto.</strong> <p class="mt-1">A correta era a <b>${String.fromCharCode(65 + question.correct)}</b>. ${question.explanation}</p>`;
+            }
+            feedbackDiv.classList.remove('hidden');
+
+            const parent = document.getElementById(`opts-${qId}`);
+            const buttons = parent.querySelectorAll('button');
+            buttons.forEach((btn, idx) => {
+                btn.disabled = true;
+                btn.classList.remove('border-brand-500', 'bg-brand-50', 'hover:border-brand-300', 'group');
+                btn.classList.add('opacity-80', 'cursor-not-allowed');
+                
+                if (idx === selected) {
+                    if (isCorrect) {
+                        btn.classList.add('opt-selected');
+                        btn.querySelector('i').setAttribute('data-lucide', 'check-circle');
+                        btn.querySelector('i').className = 'w-4 h-4 text-brand-600';
+                    } else {
+                        btn.classList.add('opt-wrong');
+                        btn.querySelector('i').setAttribute('data-lucide', 'x-circle');
+                        btn.querySelector('i').className = 'w-4 h-4 text-red-600';
+                    }
+                } else if (idx === question.correct) {
+                    btn.classList.add('border-brand-300', 'bg-brand-50/50');
+                    btn.querySelector('i').setAttribute('data-lucide', 'check');
+                    btn.querySelector('i').className = 'w-4 h-4 text-brand-600';
+                }
+            });
+
+            document.getElementById(`submit-btn-${qId}`).style.display = 'none';
+
+            lucide.createIcons();
+            
+            // Crucial: O KaTeX renderiza as explicações exibidas
+            renderLatex(feedbackDiv);
+        }
+
+        function toggleTopicDone(topicId) {
+            if (completedTopics.includes(topicId)) {
+                completedTopics = completedTopics.filter(id => id !== topicId);
+                showToast('Tópico desmarcado.', 'info');
+            } else {
+                completedTopics.push(topicId);
+                showToast('Tópico marcado como concluído!', 'success');
+            }
+            localStorage.setItem('partiuif_completed', JSON.stringify(completedTopics));
+            
+            const btn = document.querySelector(`button[onclick="toggleTopicDone('${topicId}')"]`);
+            if(btn) {
+                const isDone = completedTopics.includes(topicId);
+                btn.className = `mt-4 sm:mt-0 px-4 py-2 rounded-xl text-sm font-semibold border flex items-center gap-2 ${isDone ? 'bg-brand-100 text-brand-800 border-brand-300' : 'bg-gray-100 text-gray-700 border-gray-300'}`;
+                btn.innerHTML = `<i data-lucide="${isDone ? 'check-square' : 'square'}" class="w-4 h-4"></i> ${isDone ? 'Concluído' : 'Marcar Concluído'}`;
+                lucide.createIcons();
+            }
+            updateProgress();
+        }
+
+        function renderSimuladoView(container) {
+            let allQuestions = [];
+            for (let bId in mathData) {
+                mathData[bId].topics.forEach(t => {
+                    t.questions.forEach(q => allQuestions.push({ ...q, topicTitle: t.title, bId: bId, tId: t.id }));
+                });
+            }
+            allQuestions.sort(() => Math.random() - 0.5);
+            const simQuestions = allQuestions.slice(0, 10);
+
+            let html = `
+                <div class="max-w-3xl mx-auto">
+                    <button onclick="navigateTo('home')" class="text-brand-700 hover:text-brand-900 mb-4 text-sm font-medium flex items-center gap-1">
+                        <i data-lucide="arrow-left" class="w-4 h-4"></i> Voltar
+                    </button>
+                    <div class="bg-white border rounded-2xl p-6 shadow-sm mb-8 text-center">
+                        <h1 class="text-2xl font-bold text-gray-900">Simulado Express - Matemática (10 Questões)</h1>
+                        <p class="text-sm text-gray-600 mt-2">Neste modo aleatório, as respostas não são salvas no progresso, servindo puramente como teste prático.</p>
+                    </div>
+                    <div class="space-y-6">
+            `;
+
+            simQuestions.forEach((q, idx) => {
+                const qId = `sim-q${idx}`;
+                html += `
+                    <div class="bg-white border rounded-2xl p-6 shadow-sm">
+                        <div class="flex justify-between text-xs text-gray-500 mb-3 border-b pb-2">
+                            <span class="font-bold text-brand-700">Questão ${idx+1}/10</span>
+                            <span class="bg-gray-100 px-2 py-0.5 rounded">${q.topicTitle}</span>
+                        </div>
+                        <p class="font-medium text-gray-800 mb-4">${q.q}</p>
+                        <div class="space-y-2 mb-4" id="opts-${qId}">
+                            ${q.options.map((opt, optIdx) => `
+                                <button onclick="selectOption('${qId}', ${optIdx})" id="btn-${qId}-${optIdx}" class="w-full text-left p-3 rounded-xl border hover:border-brand-300 transition text-sm flex justify-between group">
+                                    <span>${String.fromCharCode(65 + optIdx)}) ${opt}</span>
+                                    <i data-lucide="circle" class="w-4 h-4 text-gray-300 opt-icon"></i>
+                                </button>
+                            `).join('')}
+                        </div>
+                        <button onclick="submitSimuladoAnswer(${idx}, ${q.correct}, '${q.explanation.replace(/'/g, "\\'")}')" class="bg-brand-600 hover:bg-brand-700 text-white px-4 py-2 rounded-lg text-sm font-semibold transition">
+                            Conferir
+                        </button>
+                        <div id="feedback-${qId}" class="hidden p-4 rounded-xl text-sm mt-4"></div>
+                    </div>
+                `;
+            });
+
+            html += `</div></div>`;
+            container.innerHTML = html;
+            lucide.createIcons();
+            
+            // Garantir LaTeX no simulado
+            renderLatex(container);
+            userSelections = {};
+        }
+
+        function submitSimuladoAnswer(idx, correctOpt, explanation) {
+            const qId = `sim-q${idx}`;
+            if (userSelections[qId] === undefined) {
+                alert("Selecione uma alternativa.");
+                return;
+            }
+
+            const selected = userSelections[qId];
+            const feedbackDiv = document.getElementById(`feedback-${qId}`);
+
+            if (selected === correctOpt) {
+                feedbackDiv.className = "p-4 rounded-xl text-sm mt-4 bg-green-50 border border-green-200 text-green-900";
+                feedbackDiv.innerHTML = `<strong>Correto!</strong> ${explanation}`;
+            } else {
+                feedbackDiv.className = "p-4 rounded-xl text-sm mt-4 bg-red-50 border border-red-200 text-red-900";
+                feedbackDiv.innerHTML = `<strong>Incorreto!</strong> A certa era a letra ${String.fromCharCode(65 + correctOpt)}. ${explanation}`;
+            }
+            feedbackDiv.classList.remove('hidden');
+            
+            // Processa eventuais LaTeX na explicação do simulado
+            renderLatex(feedbackDiv);
+
+            const parent = document.getElementById(`opts-${qId}`);
+            const buttons = parent.querySelectorAll('button');
+            buttons.forEach(btn => { btn.disabled = true; btn.classList.add('opacity-70', 'cursor-not-allowed'); });
+        }
+
+        function updateProgress() {
+            const total = 20;
+            const count = completedTopics.length;
+            const percent = Math.round((count / total) * 100);
+            
+            const bar = document.getElementById('footer-progress');
+            const txt = document.getElementById('footer-progress-text');
+            if(bar) bar.style.width = `${percent}%`;
+            if(txt) txt.innerText = `${percent}% concluído (${count}/${total})`;
+        }
+
+        window.addEventListener('DOMContentLoaded', () => { navigateTo('home'); });
+    </script>
+</body>
+</html>
