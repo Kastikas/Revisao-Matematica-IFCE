@@ -972,16 +972,16 @@
                 if (idx === selected) {
                     if (isCorrect) {
                         btn.classList.add('opt-selected');
-                        btn.querySelector('i').setAttribute('data-lucide', 'check-circle');
+                        btn.querySelector('i')?.setAttribute('data-lucide', 'check-circle');
                         btn.querySelector('i').className = 'w-4 h-4 text-brand-600';
                     } else {
                         btn.classList.add('opt-wrong');
-                        btn.querySelector('i').setAttribute('data-lucide', 'x-circle');
+                        btn.querySelector('i')?.setAttribute('data-lucide', 'x-circle');
                         btn.querySelector('i').className = 'w-4 h-4 text-red-600';
                     }
                 } else if (idx === question.correct) {
                     btn.classList.add('border-brand-300', 'bg-brand-50/50');
-                    btn.querySelector('i').setAttribute('data-lucide', 'check');
+                    btn.querySelector('i')?.setAttribute('data-lucide', 'check');
                     btn.querySelector('i').className = 'w-4 h-4 text-brand-600';
                 }
             });
