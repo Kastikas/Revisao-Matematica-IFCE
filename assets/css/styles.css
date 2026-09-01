@@ -1,0 +1,76 @@
+/* PartiuIF - Custom Styles */
+.custom-scrollbar::-webkit-scrollbar { width: 6px; height: 6px; }
+.custom-scrollbar::-webkit-scrollbar-track { background: #f1f1f1; }
+.custom-scrollbar::-webkit-scrollbar-thumb { background: #16a34a; border-radius: 4px; }
+.custom-scrollbar::-webkit-scrollbar-thumb:hover { background: #15803d; }
+
+.gradient-header { 
+    background: linear-gradient(135deg, #15803d 0%, #14532d 100%); 
+}
+
+.gradient-hero {
+    background: linear-gradient(135deg, #15803d 0%, #166534 50%, #052e16 100%);
+}
+
+.opt-selected { 
+    border-color: #22c55e !important; 
+    background-color: #f0fdf4 !important; 
+    box-shadow: 0 0 0 1px #22c55e;
+}
+.opt-selected .opt-icon { 
+    color: #16a34a !important; 
+    fill: #dcfce7; 
+}
+
+.opt-wrong { 
+    border-color: #ef4444 !important; 
+    background-color: #fef2f2 !important; 
+    box-shadow: 0 0 0 1px #ef4444;
+}
+.opt-wrong .opt-icon { 
+    color: #dc2626 !important; 
+    fill: #fee2e2; 
+}
+
+/* KaTeX adjustments */
+.katex-display { 
+    margin: 0.75em 0 !important; 
+    overflow-x: auto;
+    overflow-y: hidden;
+    padding: 0.5rem 0;
+}
+.katex { 
+    font-size: 1.08em; 
+}
+button .katex { 
+    font-size: 1.02em; 
+}
+
+/* Toast animation */
+@keyframes slideInRight {
+    from { transform: translateX(100%); opacity: 0; }
+    to { transform: translateX(0); opacity: 1; }
+}
+.toast-enter { 
+    animation: slideInRight 0.3s ease-out forwards; 
+}
+
+/* Card hover smooth transitions */
+.hover-card {
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+.hover-card:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.08), 0 8px 10px -6px rgba(0, 0, 0, 0.04);
+}
+
+/* Print styling */
+@media print {
+    header, footer, .no-print {
+        display: none !important;
+    }
+    body {
+        background: white !important;
+        color: black !important;
+    }
+}

@@ -1,0 +1,814 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bloco 5: Provas Anteriores IFSC | PartiuIF</title>
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        brand: {
+                            50: '#f0fdf4',
+                            100: '#dcfce7',
+                            200: '#bbf7d0',
+                            300: '#86efac',
+                            400: '#4ade80',
+                            500: '#22c55e',
+                            600: '#16a34a',
+                            700: '#15803d',
+                            800: '#166534',
+                            900: '#14532d',
+                            950: '#052e16',
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+    <!-- Lucide Icons -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <!-- KaTeX para Renderização de Equações -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.8/dist/katex.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/katex@0.16.8/dist/katex.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/katex@0.16.8/dist/contrib/auto-render.min.js"></script>
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="../assets/css/styles.css">
+</head>
+<body class="bg-gray-50 text-gray-800 font-sans antialiased min-h-screen flex flex-col">
+
+    <!-- Header / Navbar Principal -->
+    <header class="gradient-header text-white shadow-lg sticky top-0 z-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex items-center justify-between h-16">
+                <!-- Logo & Título -->
+                <a href="../index.html" class="flex items-center space-x-3 group">
+                    <div class="bg-white p-2 rounded-xl text-brand-700 font-bold shadow-md flex items-center justify-center group-hover:scale-105 transition">
+                        <i data-lucide="graduation-cap" class="w-6 h-6"></i>
+                    </div>
+                    <div>
+                        <span class="font-extrabold text-xl tracking-tight text-white flex items-center gap-1">
+                            Partiu<span class="text-brand-300">IF</span>
+                        </span>
+                        <p class="text-xs text-brand-100 hidden sm:flex items-center gap-1">
+                            <i data-lucide="save" class="w-3 h-3 text-brand-300"></i> Progresso local ativado
+                        </p>
+                    </div>
+                </a>
+
+                <!-- Navegação Desktop -->
+                <nav class="hidden md:flex space-x-1">
+                    <a href="../index.html" class="px-3 py-2 rounded-lg text-sm transition flex items-center gap-1.5 text-brand-100 hover:bg-brand-800/70 hover:text-white">
+            <i data-lucide="home" class="w-4 h-4"></i> Início
+        </a><a href="../bloco-1-numeros/index.html" class="px-3 py-2 rounded-lg text-sm transition flex items-center gap-1.5 text-brand-100 hover:bg-brand-800/70 hover:text-white">
+            <i data-lucide="binary" class="w-4 h-4"></i> Bloco 1
+        </a><a href="../bloco-2-algebra/index.html" class="px-3 py-2 rounded-lg text-sm transition flex items-center gap-1.5 text-brand-100 hover:bg-brand-800/70 hover:text-white">
+            <i data-lucide="variable" class="w-4 h-4"></i> Bloco 2
+        </a><a href="../bloco-3-geometria/index.html" class="px-3 py-2 rounded-lg text-sm transition flex items-center gap-1.5 text-brand-100 hover:bg-brand-800/70 hover:text-white">
+            <i data-lucide="shapes" class="w-4 h-4"></i> Bloco 3
+        </a><a href="../bloco-4-medidas-e-estatistica/index.html" class="px-3 py-2 rounded-lg text-sm transition flex items-center gap-1.5 text-brand-100 hover:bg-brand-800/70 hover:text-white">
+            <i data-lucide="bar-chart-3" class="w-4 h-4"></i> Bloco 4
+        </a><a href="../bloco-5-provas-ifsc/index.html" class="px-3 py-2 rounded-lg text-sm transition flex items-center gap-1.5 bg-brand-800 text-white font-semibold shadow-inner">
+            <i data-lucide="file-text" class="w-4 h-4"></i> Provas IFSC
+        </a>
+                </nav>
+
+                <!-- Ações do Usuário -->
+                <div class="flex items-center gap-3">
+                    <a href="../simulado.html" class="bg-brand-500 hover:bg-brand-400 text-white font-semibold px-3.5 py-1.5 rounded-lg text-sm transition flex items-center gap-1.5 shadow hover:shadow-md">
+                        <i data-lucide="award" class="w-4 h-4"></i> Simulado IF
+                    </a>
+                    <button id="mobile-menu-btn" class="md:hidden p-2 rounded-lg text-brand-100 hover:text-white hover:bg-brand-800" aria-label="Abrir menu">
+                        <i data-lucide="menu" class="w-6 h-6"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Menu Mobile -->
+        <div id="mobile-menu" class="hidden md:hidden bg-brand-900 border-t border-brand-800 px-4 pt-2 pb-4 space-y-1">
+            <a href="../index.html" class="block px-3 py-2 rounded-md text-base font-medium text-white flex items-center gap-2 hover:bg-brand-800/60">
+            <i data-lucide="home" class="w-4 h-4"></i> Início
+        </a><a href="../bloco-1-numeros/index.html" class="block px-3 py-2 rounded-md text-base font-medium text-white flex items-center gap-2 hover:bg-brand-800/60">
+            <i data-lucide="binary" class="w-4 h-4"></i> Bloco 1
+        </a><a href="../bloco-2-algebra/index.html" class="block px-3 py-2 rounded-md text-base font-medium text-white flex items-center gap-2 hover:bg-brand-800/60">
+            <i data-lucide="variable" class="w-4 h-4"></i> Bloco 2
+        </a><a href="../bloco-3-geometria/index.html" class="block px-3 py-2 rounded-md text-base font-medium text-white flex items-center gap-2 hover:bg-brand-800/60">
+            <i data-lucide="shapes" class="w-4 h-4"></i> Bloco 3
+        </a><a href="../bloco-4-medidas-e-estatistica/index.html" class="block px-3 py-2 rounded-md text-base font-medium text-white flex items-center gap-2 hover:bg-brand-800/60">
+            <i data-lucide="bar-chart-3" class="w-4 h-4"></i> Bloco 4
+        </a><a href="../bloco-5-provas-ifsc/index.html" class="block px-3 py-2 rounded-md text-base font-medium text-white flex items-center gap-2 bg-brand-800 font-bold">
+            <i data-lucide="file-text" class="w-4 h-4"></i> Provas IFSC
+        </a>
+            <a href="../simulado.html" class="block px-3 py-2 rounded-md text-base font-bold bg-brand-600 text-white flex items-center gap-2 mt-2">
+                <i data-lucide="award" class="w-4 h-4"></i> Simulado IF Geral
+            </a>
+        </div>
+    </header>
+
+
+    <main class="flex-grow max-w-7xl w-full mx-auto px-4 sm:px-6 lg:px-8 py-8">
+        
+        <!-- Breadcrumbs -->
+        <nav class="flex items-center gap-2 text-xs sm:text-sm text-gray-500 mb-6">
+            <a href="../index.html" class="hover:text-brand-700 flex items-center gap-1"><i data-lucide="home" class="w-3.5 h-3.5"></i> Início</a>
+            <span class="text-gray-300">/</span>
+            <span class="text-gray-800 font-semibold">Bloco 5: Provas Anteriores IFSC</span>
+        </nav>
+
+        <!-- Banner do Bloco -->
+        <div class="bg-gradient-to-r from-brand-800 to-brand-950 rounded-3xl p-6 sm:p-10 text-white shadow-xl mb-10 relative overflow-hidden">
+            <div class="relative z-10 max-w-3xl">
+                <div class="flex items-center gap-3 mb-4">
+                    <div class="w-12 h-12 bg-white/10 rounded-2xl flex items-center justify-center text-brand-300 border border-white/20">
+                        <i data-lucide="file-text" class="w-6 h-6"></i>
+                    </div>
+                    <div>
+                        <span class="bg-brand-500/30 text-brand-200 border border-brand-400/30 text-xs font-bold px-3 py-1 rounded-full uppercase tracking-wider">
+                            Eixo Temático
+                        </span>
+                    </div>
+                </div>
+                <h1 class="text-3xl sm:text-4xl font-extrabold tracking-tight mb-3">Bloco 5: Provas Anteriores IFSC</h1>
+                <p class="text-brand-100 text-sm sm:text-base mb-6 leading-relaxed">
+                    Resolução e simulados completos de 16 provas oficiais do Exame de Classificação do IFSC (2017 a 2026).
+                </p>
+
+                <!-- Progresso e Ações -->
+                <div class="bg-brand-900/60 border border-brand-700/60 rounded-2xl p-4 sm:p-5 max-w-xl mb-6">
+                    <div class="flex justify-between text-xs text-brand-200 mb-2 font-medium">
+                        <span>Progresso de Conclusão do Bloco</span>
+                        <span id="block-progress-txt-5" class="font-bold text-brand-300">0%</span>
+                    </div>
+                    <div class="w-full bg-brand-950 rounded-full h-3 overflow-hidden border border-brand-800">
+                        <div id="block-progress-bar-5" class="bg-brand-400 h-full w-0 transition-all duration-500"></div>
+                    </div>
+                </div>
+
+                <div class="flex flex-wrap items-center gap-3">
+                    <a href="./prova-ifsc-20171.html" class="bg-white hover:bg-brand-50 text-brand-900 font-bold px-5 py-2.5 rounded-xl text-sm transition flex items-center gap-2 shadow">
+                        <i data-lucide="play-circle" class="w-4 h-4 text-brand-700"></i> Começar pelo Tópico 01
+                    </a>
+                    <a href="../simulado.html" class="bg-brand-600 hover:bg-brand-500 text-white font-bold px-5 py-2.5 rounded-xl text-sm transition flex items-center gap-2 border border-brand-400/40">
+                        <i data-lucide="award" class="w-4 h-4"></i> Fazer Simulado Geral
+                    </a>
+                </div>
+            </div>
+        </div>
+
+        <!-- Seção de Subtópicos -->
+        <div class="mb-12">
+            <div class="flex flex-col sm:flex-row justify-between sm:items-center gap-4 mb-6">
+                <div>
+                    <h2 class="text-2xl font-bold text-gray-900 flex items-center gap-2 border-l-4 border-brand-600 pl-3">
+                        Subtópicos e Provas
+                    </h2>
+                    <p class="text-xs sm:text-sm text-gray-500 mt-1 pl-3">Clique em qualquer subtópico para estudar a teoria, fórmulas, exemplos e resolver as questões.</p>
+                </div>
+                <span class="text-xs font-semibold px-3 py-1.5 rounded-xl bg-gray-100 text-gray-700 self-start sm:self-auto">
+                    Total: 16 Subtópicos
+                </span>
+            </div>
+
+            <!-- Grade de Cards de Subtópicos -->
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                
+            <div class="bg-white border border-gray-200 rounded-2xl p-6 shadow-sm hover-card flex flex-col justify-between" data-topic-id="ifsc-2017-1-matematica">
+                <div>
+                    <div class="flex items-center justify-between mb-3">
+                        <span class="text-xs font-bold text-brand-700 bg-brand-50 px-2.5 py-1 rounded-lg border border-brand-100">
+                            Tópico 01
+                        </span>
+                        <span id="status-badge-ifsc-2017-1-matematica" class="text-xs font-medium px-2 py-0.5 rounded-full bg-gray-100 text-gray-600 border border-gray-200">
+                            Pendente
+                        </span>
+                    </div>
+                    <h3 class="text-lg font-bold text-gray-900 mb-1.5">Prova IFSC 2017.1</h3>
+                    <div class="mb-3">
+                        <span class="text-xs font-semibold text-gray-500 bg-gray-50 px-2 py-0.5 rounded border border-gray-200">
+                            BNCC: Revisão Geral
+                        </span>
+                    </div>
+                    <p class="text-gray-600 text-xs sm:text-sm leading-relaxed mb-4 line-clamp-2">10 questões de Matemática aplicadas no Exame de Classificação 2017.1 do IFSC para Cursos Técnicos Integrados.</p>
+                </div>
+
+                <div class="pt-4 border-t border-gray-100 flex items-center justify-between gap-2">
+                    <span class="text-xs text-gray-500 flex items-center gap-1">
+                        <i data-lucide="help-circle" class="w-3.5 h-3.5 text-brand-600"></i> 10 Questões
+                    </span>
+                    <div class="flex items-center gap-2">
+                        
+                <a href="../ifsc/PROVA_INTEGRADO_VersaoFinal.pdf" download class="bg-gray-100 hover:bg-gray-200 text-gray-700 font-semibold px-3 py-2 rounded-xl text-xs transition flex items-center gap-1.5" title="Baixar Prova Oficial">
+                    <i data-lucide="download" class="w-3.5 h-3.5 text-brand-700"></i> PDF Oficial
+                </a>
+            
+                        <a href="./prova-ifsc-20171.html" class="bg-brand-600 hover:bg-brand-700 text-white font-semibold px-4 py-2 rounded-xl text-xs transition flex items-center gap-1.5 shadow-sm">
+                            Estudar <i data-lucide="arrow-right" class="w-3.5 h-3.5"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        
+            <div class="bg-white border border-gray-200 rounded-2xl p-6 shadow-sm hover-card flex flex-col justify-between" data-topic-id="ifsc-2017-2-matematica">
+                <div>
+                    <div class="flex items-center justify-between mb-3">
+                        <span class="text-xs font-bold text-brand-700 bg-brand-50 px-2.5 py-1 rounded-lg border border-brand-100">
+                            Tópico 02
+                        </span>
+                        <span id="status-badge-ifsc-2017-2-matematica" class="text-xs font-medium px-2 py-0.5 rounded-full bg-gray-100 text-gray-600 border border-gray-200">
+                            Pendente
+                        </span>
+                    </div>
+                    <h3 class="text-lg font-bold text-gray-900 mb-1.5">Prova IFSC 2017.2</h3>
+                    <div class="mb-3">
+                        <span class="text-xs font-semibold text-gray-500 bg-gray-50 px-2 py-0.5 rounded border border-gray-200">
+                            BNCC: Revisão Geral
+                        </span>
+                    </div>
+                    <p class="text-gray-600 text-xs sm:text-sm leading-relaxed mb-4 line-clamp-2">10 questões de Matemática aplicadas no Exame de Classificação 2017.2 do IFSC para Cursos Técnicos Integrados.</p>
+                </div>
+
+                <div class="pt-4 border-t border-gray-100 flex items-center justify-between gap-2">
+                    <span class="text-xs text-gray-500 flex items-center gap-1">
+                        <i data-lucide="help-circle" class="w-3.5 h-3.5 text-brand-600"></i> 10 Questões
+                    </span>
+                    <div class="flex items-center gap-2">
+                        
+                <a href="../ifsc/EC-PROVA-2017-2.pdf" download class="bg-gray-100 hover:bg-gray-200 text-gray-700 font-semibold px-3 py-2 rounded-xl text-xs transition flex items-center gap-1.5" title="Baixar Prova Oficial">
+                    <i data-lucide="download" class="w-3.5 h-3.5 text-brand-700"></i> PDF Oficial
+                </a>
+            
+                        <a href="./prova-ifsc-20172.html" class="bg-brand-600 hover:bg-brand-700 text-white font-semibold px-4 py-2 rounded-xl text-xs transition flex items-center gap-1.5 shadow-sm">
+                            Estudar <i data-lucide="arrow-right" class="w-3.5 h-3.5"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        
+            <div class="bg-white border border-gray-200 rounded-2xl p-6 shadow-sm hover-card flex flex-col justify-between" data-topic-id="ifsc-2018-1-matematica">
+                <div>
+                    <div class="flex items-center justify-between mb-3">
+                        <span class="text-xs font-bold text-brand-700 bg-brand-50 px-2.5 py-1 rounded-lg border border-brand-100">
+                            Tópico 03
+                        </span>
+                        <span id="status-badge-ifsc-2018-1-matematica" class="text-xs font-medium px-2 py-0.5 rounded-full bg-gray-100 text-gray-600 border border-gray-200">
+                            Pendente
+                        </span>
+                    </div>
+                    <h3 class="text-lg font-bold text-gray-900 mb-1.5">Prova IFSC 2018.1</h3>
+                    <div class="mb-3">
+                        <span class="text-xs font-semibold text-gray-500 bg-gray-50 px-2 py-0.5 rounded border border-gray-200">
+                            BNCC: Revisão Geral
+                        </span>
+                    </div>
+                    <p class="text-gray-600 text-xs sm:text-sm leading-relaxed mb-4 line-clamp-2">10 questões de Matemática aplicadas no Exame de Classificação 2018.1 do IFSC para Cursos Técnicos Integrados.</p>
+                </div>
+
+                <div class="pt-4 border-t border-gray-100 flex items-center justify-between gap-2">
+                    <span class="text-xs text-gray-500 flex items-center gap-1">
+                        <i data-lucide="help-circle" class="w-3.5 h-3.5 text-brand-600"></i> 10 Questões
+                    </span>
+                    <div class="flex items-center gap-2">
+                        
+                <a href="../ifsc/20181-Prova.pdf" download class="bg-gray-100 hover:bg-gray-200 text-gray-700 font-semibold px-3 py-2 rounded-xl text-xs transition flex items-center gap-1.5" title="Baixar Prova Oficial">
+                    <i data-lucide="download" class="w-3.5 h-3.5 text-brand-700"></i> PDF Oficial
+                </a>
+            
+                        <a href="./prova-ifsc-20181.html" class="bg-brand-600 hover:bg-brand-700 text-white font-semibold px-4 py-2 rounded-xl text-xs transition flex items-center gap-1.5 shadow-sm">
+                            Estudar <i data-lucide="arrow-right" class="w-3.5 h-3.5"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        
+            <div class="bg-white border border-gray-200 rounded-2xl p-6 shadow-sm hover-card flex flex-col justify-between" data-topic-id="ifsc-2018-2-matematica">
+                <div>
+                    <div class="flex items-center justify-between mb-3">
+                        <span class="text-xs font-bold text-brand-700 bg-brand-50 px-2.5 py-1 rounded-lg border border-brand-100">
+                            Tópico 04
+                        </span>
+                        <span id="status-badge-ifsc-2018-2-matematica" class="text-xs font-medium px-2 py-0.5 rounded-full bg-gray-100 text-gray-600 border border-gray-200">
+                            Pendente
+                        </span>
+                    </div>
+                    <h3 class="text-lg font-bold text-gray-900 mb-1.5">Prova IFSC 2018.2</h3>
+                    <div class="mb-3">
+                        <span class="text-xs font-semibold text-gray-500 bg-gray-50 px-2 py-0.5 rounded border border-gray-200">
+                            BNCC: Revisão Geral
+                        </span>
+                    </div>
+                    <p class="text-gray-600 text-xs sm:text-sm leading-relaxed mb-4 line-clamp-2">10 questões de Matemática aplicadas no Exame de Classificação 2018.2 do IFSC para Cursos Técnicos Integrados.</p>
+                </div>
+
+                <div class="pt-4 border-t border-gray-100 flex items-center justify-between gap-2">
+                    <span class="text-xs text-gray-500 flex items-center gap-1">
+                        <i data-lucide="help-circle" class="w-3.5 h-3.5 text-brand-600"></i> 10 Questões
+                    </span>
+                    <div class="flex items-center gap-2">
+                        
+                <a href="../ifsc/PROVA CORRETA - PUBLICAR.pdf" download class="bg-gray-100 hover:bg-gray-200 text-gray-700 font-semibold px-3 py-2 rounded-xl text-xs transition flex items-center gap-1.5" title="Baixar Prova Oficial">
+                    <i data-lucide="download" class="w-3.5 h-3.5 text-brand-700"></i> PDF Oficial
+                </a>
+            
+                        <a href="./prova-ifsc-20182.html" class="bg-brand-600 hover:bg-brand-700 text-white font-semibold px-4 py-2 rounded-xl text-xs transition flex items-center gap-1.5 shadow-sm">
+                            Estudar <i data-lucide="arrow-right" class="w-3.5 h-3.5"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        
+            <div class="bg-white border border-gray-200 rounded-2xl p-6 shadow-sm hover-card flex flex-col justify-between" data-topic-id="ifsc-2019-1-matematica">
+                <div>
+                    <div class="flex items-center justify-between mb-3">
+                        <span class="text-xs font-bold text-brand-700 bg-brand-50 px-2.5 py-1 rounded-lg border border-brand-100">
+                            Tópico 05
+                        </span>
+                        <span id="status-badge-ifsc-2019-1-matematica" class="text-xs font-medium px-2 py-0.5 rounded-full bg-gray-100 text-gray-600 border border-gray-200">
+                            Pendente
+                        </span>
+                    </div>
+                    <h3 class="text-lg font-bold text-gray-900 mb-1.5">Prova IFSC 2019.1</h3>
+                    <div class="mb-3">
+                        <span class="text-xs font-semibold text-gray-500 bg-gray-50 px-2 py-0.5 rounded border border-gray-200">
+                            BNCC: Revisão Geral
+                        </span>
+                    </div>
+                    <p class="text-gray-600 text-xs sm:text-sm leading-relaxed mb-4 line-clamp-2">10 questões de Matemática aplicadas no Exame de Classificação 2019.1 do IFSC para Cursos Técnicos Integrados.</p>
+                </div>
+
+                <div class="pt-4 border-t border-gray-100 flex items-center justify-between gap-2">
+                    <span class="text-xs text-gray-500 flex items-center gap-1">
+                        <i data-lucide="help-circle" class="w-3.5 h-3.5 text-brand-600"></i> 10 Questões
+                    </span>
+                    <div class="flex items-center gap-2">
+                        
+                <a href="../ifsc/2019 1 INT - PROVA.pdf" download class="bg-gray-100 hover:bg-gray-200 text-gray-700 font-semibold px-3 py-2 rounded-xl text-xs transition flex items-center gap-1.5" title="Baixar Prova Oficial">
+                    <i data-lucide="download" class="w-3.5 h-3.5 text-brand-700"></i> PDF Oficial
+                </a>
+            
+                        <a href="./prova-ifsc-20191.html" class="bg-brand-600 hover:bg-brand-700 text-white font-semibold px-4 py-2 rounded-xl text-xs transition flex items-center gap-1.5 shadow-sm">
+                            Estudar <i data-lucide="arrow-right" class="w-3.5 h-3.5"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        
+            <div class="bg-white border border-gray-200 rounded-2xl p-6 shadow-sm hover-card flex flex-col justify-between" data-topic-id="ifsc-2019-2-matematica">
+                <div>
+                    <div class="flex items-center justify-between mb-3">
+                        <span class="text-xs font-bold text-brand-700 bg-brand-50 px-2.5 py-1 rounded-lg border border-brand-100">
+                            Tópico 06
+                        </span>
+                        <span id="status-badge-ifsc-2019-2-matematica" class="text-xs font-medium px-2 py-0.5 rounded-full bg-gray-100 text-gray-600 border border-gray-200">
+                            Pendente
+                        </span>
+                    </div>
+                    <h3 class="text-lg font-bold text-gray-900 mb-1.5">Prova IFSC 2019.2</h3>
+                    <div class="mb-3">
+                        <span class="text-xs font-semibold text-gray-500 bg-gray-50 px-2 py-0.5 rounded border border-gray-200">
+                            BNCC: Revisão Geral
+                        </span>
+                    </div>
+                    <p class="text-gray-600 text-xs sm:text-sm leading-relaxed mb-4 line-clamp-2">10 questões de Matemática aplicadas no Exame de Classificação 2019.2 do IFSC para Cursos Técnicos Integrados.</p>
+                </div>
+
+                <div class="pt-4 border-t border-gray-100 flex items-center justify-between gap-2">
+                    <span class="text-xs text-gray-500 flex items-center gap-1">
+                        <i data-lucide="help-circle" class="w-3.5 h-3.5 text-brand-600"></i> 10 Questões
+                    </span>
+                    <div class="flex items-center gap-2">
+                        
+                <a href="../ifsc/PROVA 2019.2 - FINAL.pdf" download class="bg-gray-100 hover:bg-gray-200 text-gray-700 font-semibold px-3 py-2 rounded-xl text-xs transition flex items-center gap-1.5" title="Baixar Prova Oficial">
+                    <i data-lucide="download" class="w-3.5 h-3.5 text-brand-700"></i> PDF Oficial
+                </a>
+            
+                        <a href="./prova-ifsc-20192.html" class="bg-brand-600 hover:bg-brand-700 text-white font-semibold px-4 py-2 rounded-xl text-xs transition flex items-center gap-1.5 shadow-sm">
+                            Estudar <i data-lucide="arrow-right" class="w-3.5 h-3.5"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        
+            <div class="bg-white border border-gray-200 rounded-2xl p-6 shadow-sm hover-card flex flex-col justify-between" data-topic-id="ifsc-2020-1-matematica">
+                <div>
+                    <div class="flex items-center justify-between mb-3">
+                        <span class="text-xs font-bold text-brand-700 bg-brand-50 px-2.5 py-1 rounded-lg border border-brand-100">
+                            Tópico 07
+                        </span>
+                        <span id="status-badge-ifsc-2020-1-matematica" class="text-xs font-medium px-2 py-0.5 rounded-full bg-gray-100 text-gray-600 border border-gray-200">
+                            Pendente
+                        </span>
+                    </div>
+                    <h3 class="text-lg font-bold text-gray-900 mb-1.5">Prova IFSC 2020.1</h3>
+                    <div class="mb-3">
+                        <span class="text-xs font-semibold text-gray-500 bg-gray-50 px-2 py-0.5 rounded border border-gray-200">
+                            BNCC: Revisão Geral
+                        </span>
+                    </div>
+                    <p class="text-gray-600 text-xs sm:text-sm leading-relaxed mb-4 line-clamp-2">10 questões de Matemática aplicadas no Exame de Classificação 2020.1 do IFSC para Cursos Técnicos Integrados.</p>
+                </div>
+
+                <div class="pt-4 border-t border-gray-100 flex items-center justify-between gap-2">
+                    <span class="text-xs text-gray-500 flex items-center gap-1">
+                        <i data-lucide="help-circle" class="w-3.5 h-3.5 text-brand-600"></i> 10 Questões
+                    </span>
+                    <div class="flex items-center gap-2">
+                        
+                <a href="../ifsc/2020 1 INT PROVA_FINAL-1.pdf" download class="bg-gray-100 hover:bg-gray-200 text-gray-700 font-semibold px-3 py-2 rounded-xl text-xs transition flex items-center gap-1.5" title="Baixar Prova Oficial">
+                    <i data-lucide="download" class="w-3.5 h-3.5 text-brand-700"></i> PDF Oficial
+                </a>
+            
+                        <a href="./prova-ifsc-20201.html" class="bg-brand-600 hover:bg-brand-700 text-white font-semibold px-4 py-2 rounded-xl text-xs transition flex items-center gap-1.5 shadow-sm">
+                            Estudar <i data-lucide="arrow-right" class="w-3.5 h-3.5"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        
+            <div class="bg-white border border-gray-200 rounded-2xl p-6 shadow-sm hover-card flex flex-col justify-between" data-topic-id="ifsc-2022-1-matematica">
+                <div>
+                    <div class="flex items-center justify-between mb-3">
+                        <span class="text-xs font-bold text-brand-700 bg-brand-50 px-2.5 py-1 rounded-lg border border-brand-100">
+                            Tópico 08
+                        </span>
+                        <span id="status-badge-ifsc-2022-1-matematica" class="text-xs font-medium px-2 py-0.5 rounded-full bg-gray-100 text-gray-600 border border-gray-200">
+                            Pendente
+                        </span>
+                    </div>
+                    <h3 class="text-lg font-bold text-gray-900 mb-1.5">Prova IFSC 2022.1</h3>
+                    <div class="mb-3">
+                        <span class="text-xs font-semibold text-gray-500 bg-gray-50 px-2 py-0.5 rounded border border-gray-200">
+                            BNCC: Revisão Geral
+                        </span>
+                    </div>
+                    <p class="text-gray-600 text-xs sm:text-sm leading-relaxed mb-4 line-clamp-2">10 questões de Matemática aplicadas no Exame de Classificação 2022.1 do IFSC para Cursos Técnicos Integrados.</p>
+                </div>
+
+                <div class="pt-4 border-t border-gray-100 flex items-center justify-between gap-2">
+                    <span class="text-xs text-gray-500 flex items-center gap-1">
+                        <i data-lucide="help-circle" class="w-3.5 h-3.5 text-brand-600"></i> 10 Questões
+                    </span>
+                    <div class="flex items-center gap-2">
+                        
+                <a href="../ifsc/PRV 2022.pdf" download class="bg-gray-100 hover:bg-gray-200 text-gray-700 font-semibold px-3 py-2 rounded-xl text-xs transition flex items-center gap-1.5" title="Baixar Prova Oficial">
+                    <i data-lucide="download" class="w-3.5 h-3.5 text-brand-700"></i> PDF Oficial
+                </a>
+            
+                        <a href="./prova-ifsc-20221.html" class="bg-brand-600 hover:bg-brand-700 text-white font-semibold px-4 py-2 rounded-xl text-xs transition flex items-center gap-1.5 shadow-sm">
+                            Estudar <i data-lucide="arrow-right" class="w-3.5 h-3.5"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        
+            <div class="bg-white border border-gray-200 rounded-2xl p-6 shadow-sm hover-card flex flex-col justify-between" data-topic-id="ifsc-2022-2-matematica">
+                <div>
+                    <div class="flex items-center justify-between mb-3">
+                        <span class="text-xs font-bold text-brand-700 bg-brand-50 px-2.5 py-1 rounded-lg border border-brand-100">
+                            Tópico 09
+                        </span>
+                        <span id="status-badge-ifsc-2022-2-matematica" class="text-xs font-medium px-2 py-0.5 rounded-full bg-gray-100 text-gray-600 border border-gray-200">
+                            Pendente
+                        </span>
+                    </div>
+                    <h3 class="text-lg font-bold text-gray-900 mb-1.5">Prova IFSC 2022.2</h3>
+                    <div class="mb-3">
+                        <span class="text-xs font-semibold text-gray-500 bg-gray-50 px-2 py-0.5 rounded border border-gray-200">
+                            BNCC: Revisão Geral
+                        </span>
+                    </div>
+                    <p class="text-gray-600 text-xs sm:text-sm leading-relaxed mb-4 line-clamp-2">10 questões de Matemática aplicadas no Exame de Classificação 2022.2 do IFSC para Cursos Técnicos Integrados.</p>
+                </div>
+
+                <div class="pt-4 border-t border-gray-100 flex items-center justify-between gap-2">
+                    <span class="text-xs text-gray-500 flex items-center gap-1">
+                        <i data-lucide="help-circle" class="w-3.5 h-3.5 text-brand-600"></i> 10 Questões
+                    </span>
+                    <div class="flex items-center gap-2">
+                        
+                <a href="../ifsc/2022_2_EC_INT_PROVA_OFICIAL_impressão.pdf" download class="bg-gray-100 hover:bg-gray-200 text-gray-700 font-semibold px-3 py-2 rounded-xl text-xs transition flex items-center gap-1.5" title="Baixar Prova Oficial">
+                    <i data-lucide="download" class="w-3.5 h-3.5 text-brand-700"></i> PDF Oficial
+                </a>
+            
+                        <a href="./prova-ifsc-20222.html" class="bg-brand-600 hover:bg-brand-700 text-white font-semibold px-4 py-2 rounded-xl text-xs transition flex items-center gap-1.5 shadow-sm">
+                            Estudar <i data-lucide="arrow-right" class="w-3.5 h-3.5"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        
+            <div class="bg-white border border-gray-200 rounded-2xl p-6 shadow-sm hover-card flex flex-col justify-between" data-topic-id="ifsc-2023-2-matematica">
+                <div>
+                    <div class="flex items-center justify-between mb-3">
+                        <span class="text-xs font-bold text-brand-700 bg-brand-50 px-2.5 py-1 rounded-lg border border-brand-100">
+                            Tópico 010
+                        </span>
+                        <span id="status-badge-ifsc-2023-2-matematica" class="text-xs font-medium px-2 py-0.5 rounded-full bg-gray-100 text-gray-600 border border-gray-200">
+                            Pendente
+                        </span>
+                    </div>
+                    <h3 class="text-lg font-bold text-gray-900 mb-1.5">Prova IFSC 2023.2</h3>
+                    <div class="mb-3">
+                        <span class="text-xs font-semibold text-gray-500 bg-gray-50 px-2 py-0.5 rounded border border-gray-200">
+                            BNCC: Revisão Geral
+                        </span>
+                    </div>
+                    <p class="text-gray-600 text-xs sm:text-sm leading-relaxed mb-4 line-clamp-2">10 questões de Matemática aplicadas no Exame de Classificação 2023.2 do IFSC para Cursos Técnicos Integrados.</p>
+                </div>
+
+                <div class="pt-4 border-t border-gray-100 flex items-center justify-between gap-2">
+                    <span class="text-xs text-gray-500 flex items-center gap-1">
+                        <i data-lucide="help-circle" class="w-3.5 h-3.5 text-brand-600"></i> 10 Questões
+                    </span>
+                    <div class="flex items-center gap-2">
+                        
+                <a href="../ifsc/2023-2 EC INT PROVA TITULAR.pdf" download class="bg-gray-100 hover:bg-gray-200 text-gray-700 font-semibold px-3 py-2 rounded-xl text-xs transition flex items-center gap-1.5" title="Baixar Prova Oficial">
+                    <i data-lucide="download" class="w-3.5 h-3.5 text-brand-700"></i> PDF Oficial
+                </a>
+            
+                        <a href="./prova-ifsc-20232.html" class="bg-brand-600 hover:bg-brand-700 text-white font-semibold px-4 py-2 rounded-xl text-xs transition flex items-center gap-1.5 shadow-sm">
+                            Estudar <i data-lucide="arrow-right" class="w-3.5 h-3.5"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        
+            <div class="bg-white border border-gray-200 rounded-2xl p-6 shadow-sm hover-card flex flex-col justify-between" data-topic-id="ifsc-2024-1-matematica">
+                <div>
+                    <div class="flex items-center justify-between mb-3">
+                        <span class="text-xs font-bold text-brand-700 bg-brand-50 px-2.5 py-1 rounded-lg border border-brand-100">
+                            Tópico 011
+                        </span>
+                        <span id="status-badge-ifsc-2024-1-matematica" class="text-xs font-medium px-2 py-0.5 rounded-full bg-gray-100 text-gray-600 border border-gray-200">
+                            Pendente
+                        </span>
+                    </div>
+                    <h3 class="text-lg font-bold text-gray-900 mb-1.5">Prova IFSC 2024.1</h3>
+                    <div class="mb-3">
+                        <span class="text-xs font-semibold text-gray-500 bg-gray-50 px-2 py-0.5 rounded border border-gray-200">
+                            BNCC: Revisão Geral
+                        </span>
+                    </div>
+                    <p class="text-gray-600 text-xs sm:text-sm leading-relaxed mb-4 line-clamp-2">8 questões de Matemática aplicadas no Exame de Classificação 2024.1 do IFSC para Cursos Técnicos Integrados.</p>
+                </div>
+
+                <div class="pt-4 border-t border-gray-100 flex items-center justify-between gap-2">
+                    <span class="text-xs text-gray-500 flex items-center gap-1">
+                        <i data-lucide="help-circle" class="w-3.5 h-3.5 text-brand-600"></i> 8 Questões
+                    </span>
+                    <div class="flex items-center gap-2">
+                        
+                <a href="../ifsc/2024-1 EC INT PROVA TITULAR.pdf" download class="bg-gray-100 hover:bg-gray-200 text-gray-700 font-semibold px-3 py-2 rounded-xl text-xs transition flex items-center gap-1.5" title="Baixar Prova Oficial">
+                    <i data-lucide="download" class="w-3.5 h-3.5 text-brand-700"></i> PDF Oficial
+                </a>
+            
+                        <a href="./prova-ifsc-20241.html" class="bg-brand-600 hover:bg-brand-700 text-white font-semibold px-4 py-2 rounded-xl text-xs transition flex items-center gap-1.5 shadow-sm">
+                            Estudar <i data-lucide="arrow-right" class="w-3.5 h-3.5"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        
+            <div class="bg-white border border-gray-200 rounded-2xl p-6 shadow-sm hover-card flex flex-col justify-between" data-topic-id="ifsc-2024-2-matematica">
+                <div>
+                    <div class="flex items-center justify-between mb-3">
+                        <span class="text-xs font-bold text-brand-700 bg-brand-50 px-2.5 py-1 rounded-lg border border-brand-100">
+                            Tópico 012
+                        </span>
+                        <span id="status-badge-ifsc-2024-2-matematica" class="text-xs font-medium px-2 py-0.5 rounded-full bg-gray-100 text-gray-600 border border-gray-200">
+                            Pendente
+                        </span>
+                    </div>
+                    <h3 class="text-lg font-bold text-gray-900 mb-1.5">Prova IFSC 2024.2</h3>
+                    <div class="mb-3">
+                        <span class="text-xs font-semibold text-gray-500 bg-gray-50 px-2 py-0.5 rounded border border-gray-200">
+                            BNCC: Revisão Geral
+                        </span>
+                    </div>
+                    <p class="text-gray-600 text-xs sm:text-sm leading-relaxed mb-4 line-clamp-2">7 questões de Matemática aplicadas no Exame de Classificação 2024.2 do IFSC para Cursos Técnicos Integrados.</p>
+                </div>
+
+                <div class="pt-4 border-t border-gray-100 flex items-center justify-between gap-2">
+                    <span class="text-xs text-gray-500 flex items-center gap-1">
+                        <i data-lucide="help-circle" class="w-3.5 h-3.5 text-brand-600"></i> 7 Questões
+                    </span>
+                    <div class="flex items-center gap-2">
+                        
+                <a href="../ifsc/P-B 2024-2 EC INT PROVA TITULAR.pdf" download class="bg-gray-100 hover:bg-gray-200 text-gray-700 font-semibold px-3 py-2 rounded-xl text-xs transition flex items-center gap-1.5" title="Baixar Prova Oficial">
+                    <i data-lucide="download" class="w-3.5 h-3.5 text-brand-700"></i> PDF Oficial
+                </a>
+            
+                        <a href="./prova-ifsc-20242.html" class="bg-brand-600 hover:bg-brand-700 text-white font-semibold px-4 py-2 rounded-xl text-xs transition flex items-center gap-1.5 shadow-sm">
+                            Estudar <i data-lucide="arrow-right" class="w-3.5 h-3.5"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        
+            <div class="bg-white border border-gray-200 rounded-2xl p-6 shadow-sm hover-card flex flex-col justify-between" data-topic-id="ifsc-2025-1-matematica">
+                <div>
+                    <div class="flex items-center justify-between mb-3">
+                        <span class="text-xs font-bold text-brand-700 bg-brand-50 px-2.5 py-1 rounded-lg border border-brand-100">
+                            Tópico 013
+                        </span>
+                        <span id="status-badge-ifsc-2025-1-matematica" class="text-xs font-medium px-2 py-0.5 rounded-full bg-gray-100 text-gray-600 border border-gray-200">
+                            Pendente
+                        </span>
+                    </div>
+                    <h3 class="text-lg font-bold text-gray-900 mb-1.5">Prova IFSC 2025.1</h3>
+                    <div class="mb-3">
+                        <span class="text-xs font-semibold text-gray-500 bg-gray-50 px-2 py-0.5 rounded border border-gray-200">
+                            BNCC: Revisão Geral
+                        </span>
+                    </div>
+                    <p class="text-gray-600 text-xs sm:text-sm leading-relaxed mb-4 line-clamp-2">7 questões de Matemática aplicadas no Exame de Classificação 2025.1 do IFSC para Cursos Técnicos Integrados.</p>
+                </div>
+
+                <div class="pt-4 border-t border-gray-100 flex items-center justify-between gap-2">
+                    <span class="text-xs text-gray-500 flex items-center gap-1">
+                        <i data-lucide="help-circle" class="w-3.5 h-3.5 text-brand-600"></i> 7 Questões
+                    </span>
+                    <div class="flex items-center gap-2">
+                        
+                <a href="../ifsc/2025-1 EC INT PROVA TITULAR - IFSC.pdf" download class="bg-gray-100 hover:bg-gray-200 text-gray-700 font-semibold px-3 py-2 rounded-xl text-xs transition flex items-center gap-1.5" title="Baixar Prova Oficial">
+                    <i data-lucide="download" class="w-3.5 h-3.5 text-brand-700"></i> PDF Oficial
+                </a>
+            
+                        <a href="./prova-ifsc-20251.html" class="bg-brand-600 hover:bg-brand-700 text-white font-semibold px-4 py-2 rounded-xl text-xs transition flex items-center gap-1.5 shadow-sm">
+                            Estudar <i data-lucide="arrow-right" class="w-3.5 h-3.5"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        
+            <div class="bg-white border border-gray-200 rounded-2xl p-6 shadow-sm hover-card flex flex-col justify-between" data-topic-id="ifsc-2025-2-matematica">
+                <div>
+                    <div class="flex items-center justify-between mb-3">
+                        <span class="text-xs font-bold text-brand-700 bg-brand-50 px-2.5 py-1 rounded-lg border border-brand-100">
+                            Tópico 014
+                        </span>
+                        <span id="status-badge-ifsc-2025-2-matematica" class="text-xs font-medium px-2 py-0.5 rounded-full bg-gray-100 text-gray-600 border border-gray-200">
+                            Pendente
+                        </span>
+                    </div>
+                    <h3 class="text-lg font-bold text-gray-900 mb-1.5">Prova IFSC 2025.2</h3>
+                    <div class="mb-3">
+                        <span class="text-xs font-semibold text-gray-500 bg-gray-50 px-2 py-0.5 rounded border border-gray-200">
+                            BNCC: Revisão Geral
+                        </span>
+                    </div>
+                    <p class="text-gray-600 text-xs sm:text-sm leading-relaxed mb-4 line-clamp-2">7 questões de Matemática aplicadas no Exame de Classificação 2025.2 do IFSC para Cursos Técnicos Integrados.</p>
+                </div>
+
+                <div class="pt-4 border-t border-gray-100 flex items-center justify-between gap-2">
+                    <span class="text-xs text-gray-500 flex items-center gap-1">
+                        <i data-lucide="help-circle" class="w-3.5 h-3.5 text-brand-600"></i> 7 Questões
+                    </span>
+                    <div class="flex items-center gap-2">
+                        
+                <a href="../ifsc/2025-2 EC INT PROVA TITULAR - IFSC.pdf" download class="bg-gray-100 hover:bg-gray-200 text-gray-700 font-semibold px-3 py-2 rounded-xl text-xs transition flex items-center gap-1.5" title="Baixar Prova Oficial">
+                    <i data-lucide="download" class="w-3.5 h-3.5 text-brand-700"></i> PDF Oficial
+                </a>
+            
+                        <a href="./prova-ifsc-20252.html" class="bg-brand-600 hover:bg-brand-700 text-white font-semibold px-4 py-2 rounded-xl text-xs transition flex items-center gap-1.5 shadow-sm">
+                            Estudar <i data-lucide="arrow-right" class="w-3.5 h-3.5"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        
+            <div class="bg-white border border-gray-200 rounded-2xl p-6 shadow-sm hover-card flex flex-col justify-between" data-topic-id="ifsc-2026-1-matematica">
+                <div>
+                    <div class="flex items-center justify-between mb-3">
+                        <span class="text-xs font-bold text-brand-700 bg-brand-50 px-2.5 py-1 rounded-lg border border-brand-100">
+                            Tópico 015
+                        </span>
+                        <span id="status-badge-ifsc-2026-1-matematica" class="text-xs font-medium px-2 py-0.5 rounded-full bg-gray-100 text-gray-600 border border-gray-200">
+                            Pendente
+                        </span>
+                    </div>
+                    <h3 class="text-lg font-bold text-gray-900 mb-1.5">Prova IFSC 2026.1</h3>
+                    <div class="mb-3">
+                        <span class="text-xs font-semibold text-gray-500 bg-gray-50 px-2 py-0.5 rounded border border-gray-200">
+                            BNCC: Revisão Geral
+                        </span>
+                    </div>
+                    <p class="text-gray-600 text-xs sm:text-sm leading-relaxed mb-4 line-clamp-2">7 questões de Matemática aplicadas no Exame de Classificação 2026.1 do IFSC para Cursos Técnicos Integrados.</p>
+                </div>
+
+                <div class="pt-4 border-t border-gray-100 flex items-center justify-between gap-2">
+                    <span class="text-xs text-gray-500 flex items-center gap-1">
+                        <i data-lucide="help-circle" class="w-3.5 h-3.5 text-brand-600"></i> 7 Questões
+                    </span>
+                    <div class="flex items-center gap-2">
+                        
+                <a href="../ifsc/2026-1 EC INT PROVA - IFSC.pdf" download class="bg-gray-100 hover:bg-gray-200 text-gray-700 font-semibold px-3 py-2 rounded-xl text-xs transition flex items-center gap-1.5" title="Baixar Prova Oficial">
+                    <i data-lucide="download" class="w-3.5 h-3.5 text-brand-700"></i> PDF Oficial
+                </a>
+            
+                        <a href="./prova-ifsc-20261.html" class="bg-brand-600 hover:bg-brand-700 text-white font-semibold px-4 py-2 rounded-xl text-xs transition flex items-center gap-1.5 shadow-sm">
+                            Estudar <i data-lucide="arrow-right" class="w-3.5 h-3.5"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        
+            <div class="bg-white border border-gray-200 rounded-2xl p-6 shadow-sm hover-card flex flex-col justify-between" data-topic-id="ifsc-2026-2-matematica">
+                <div>
+                    <div class="flex items-center justify-between mb-3">
+                        <span class="text-xs font-bold text-brand-700 bg-brand-50 px-2.5 py-1 rounded-lg border border-brand-100">
+                            Tópico 016
+                        </span>
+                        <span id="status-badge-ifsc-2026-2-matematica" class="text-xs font-medium px-2 py-0.5 rounded-full bg-gray-100 text-gray-600 border border-gray-200">
+                            Pendente
+                        </span>
+                    </div>
+                    <h3 class="text-lg font-bold text-gray-900 mb-1.5">Prova IFSC 2026.2</h3>
+                    <div class="mb-3">
+                        <span class="text-xs font-semibold text-gray-500 bg-gray-50 px-2 py-0.5 rounded border border-gray-200">
+                            BNCC: Revisão Geral
+                        </span>
+                    </div>
+                    <p class="text-gray-600 text-xs sm:text-sm leading-relaxed mb-4 line-clamp-2">7 questões de Matemática aplicadas no Exame de Classificação 2026.2 do IFSC para Cursos Técnicos Integrados.</p>
+                </div>
+
+                <div class="pt-4 border-t border-gray-100 flex items-center justify-between gap-2">
+                    <span class="text-xs text-gray-500 flex items-center gap-1">
+                        <i data-lucide="help-circle" class="w-3.5 h-3.5 text-brand-600"></i> 7 Questões
+                    </span>
+                    <div class="flex items-center gap-2">
+                        
+                <a href="../ifsc/2026-2 EC INT PROVA TITULAR - IFSC.pdf" download class="bg-gray-100 hover:bg-gray-200 text-gray-700 font-semibold px-3 py-2 rounded-xl text-xs transition flex items-center gap-1.5" title="Baixar Prova Oficial">
+                    <i data-lucide="download" class="w-3.5 h-3.5 text-brand-700"></i> PDF Oficial
+                </a>
+            
+                        <a href="./prova-ifsc-20262.html" class="bg-brand-600 hover:bg-brand-700 text-white font-semibold px-4 py-2 rounded-xl text-xs transition flex items-center gap-1.5 shadow-sm">
+                            Estudar <i data-lucide="arrow-right" class="w-3.5 h-3.5"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        
+            </div>
+        </div>
+    </main>
+
+    <footer class="bg-brand-950 text-white border-t border-brand-800 mt-16 py-10">
+        <div class="max-w-7xl mx-auto px-4 grid grid-cols-1 md:grid-cols-3 gap-8 text-sm">
+            <div>
+                <div class="flex items-center gap-2 text-lg font-bold text-brand-300 mb-2">
+                    <i data-lucide="book-open-check" class="w-5 h-5"></i> PartiuIF - Matemática
+                </div>
+                <p class="text-brand-200 text-xs leading-relaxed">
+                    Plataforma completa de revisão estruturada por subtópicos, teoria detalhada, fórmulas KaTeX e simulados com 16 provas oficiais do IFSC.
+                </p>
+                <div class="mt-4 inline-flex items-center gap-2 bg-brand-900/80 px-3 py-1.5 rounded-lg border border-brand-800 text-xs text-brand-300">
+                    <i data-lucide="hard-drive" class="w-3.5 h-3.5"></i> Progresso salvo no seu navegador
+                </div>
+            </div>
+            <div>
+                <h4 class="font-semibold text-white mb-3 text-sm flex items-center gap-1.5">
+                    <i data-lucide="layers" class="w-4 h-4 text-brand-400"></i> Eixos Temáticos
+                </h4>
+                <ul class="space-y-1.5 text-xs text-brand-200">
+                    <li><a href="../bloco-1-numeros/index.html" class="hover:text-white transition flex items-center gap-1">• Bloco 1: Números e Operações</a></li>
+                    <li><a href="../bloco-2-algebra/index.html" class="hover:text-white transition flex items-center gap-1">• Bloco 2: Álgebra e Funções</a></li>
+                    <li><a href="../bloco-3-geometria/index.html" class="hover:text-white transition flex items-center gap-1">• Bloco 3: Geometria Plana e Espacial</a></li>
+                    <li><a href="../bloco-4-medidas-e-estatistica/index.html" class="hover:text-white transition flex items-center gap-1">• Bloco 4: Medidas, Prob. e Estatística</a></li>
+                    <li><a href="../bloco-5-provas-ifsc/index.html" class="hover:text-white transition flex items-center gap-1">• Bloco 5: Provas Oficiais IFSC (2017-2026)</a></li>
+                </ul>
+            </div>
+            <div>
+                <h4 class="font-semibold text-white mb-2 text-sm flex items-center gap-1.5">
+                    <i data-lucide="trending-up" class="w-4 h-4 text-brand-400"></i> Status Geral da Preparação
+                </h4>
+                <div class="w-full bg-brand-900 rounded-full h-3 overflow-hidden border border-brand-700 mb-1.5">
+                    <div id="footer-progress" class="bg-brand-400 h-full w-0 transition-all duration-500"></div>
+                </div>
+                <span id="footer-progress-text" class="text-xs text-brand-300 block mb-4">Carregando progresso...</span>
+                
+                <button onclick="resetProgress()" class="text-xs text-red-400 hover:text-red-300 underline flex items-center gap-1 transition">
+                    <i data-lucide="trash-2" class="w-3.5 h-3.5"></i> Zerar Todo o Meu Progresso
+                </button>
+            </div>
+        </div>
+        <div class="max-w-7xl mx-auto px-4 mt-8 pt-4 border-t border-brand-900 text-center text-xs text-brand-400">
+            PartiuIF &copy; 2026 - Plataforma Educacional de Revisão para os Institutos Federais.
+        </div>
+    </footer>
+
+    <!-- Scripts da Aplicação -->
+    <script src="../assets/js/data.js"></script>
+    <script src="../assets/js/app.js"></script>
+
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            updateGlobalProgress();
+        });
+    </script>
+</body>
+</html>

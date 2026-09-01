@@ -1,0 +1,547 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Porcentagem e Finanças - Bloco 1: Números e Operações | PartiuIF</title>
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        brand: {
+                            50: '#f0fdf4',
+                            100: '#dcfce7',
+                            200: '#bbf7d0',
+                            300: '#86efac',
+                            400: '#4ade80',
+                            500: '#22c55e',
+                            600: '#16a34a',
+                            700: '#15803d',
+                            800: '#166534',
+                            900: '#14532d',
+                            950: '#052e16',
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+    <!-- Lucide Icons -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <!-- KaTeX para Renderização de Equações -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.8/dist/katex.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/katex@0.16.8/dist/katex.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/katex@0.16.8/dist/contrib/auto-render.min.js"></script>
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="../assets/css/styles.css">
+</head>
+<body class="bg-gray-50 text-gray-800 font-sans antialiased min-h-screen flex flex-col">
+
+    <!-- Header / Navbar Principal -->
+    <header class="gradient-header text-white shadow-lg sticky top-0 z-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex items-center justify-between h-16">
+                <!-- Logo & Título -->
+                <a href="../index.html" class="flex items-center space-x-3 group">
+                    <div class="bg-white p-2 rounded-xl text-brand-700 font-bold shadow-md flex items-center justify-center group-hover:scale-105 transition">
+                        <i data-lucide="graduation-cap" class="w-6 h-6"></i>
+                    </div>
+                    <div>
+                        <span class="font-extrabold text-xl tracking-tight text-white flex items-center gap-1">
+                            Partiu<span class="text-brand-300">IF</span>
+                        </span>
+                        <p class="text-xs text-brand-100 hidden sm:flex items-center gap-1">
+                            <i data-lucide="save" class="w-3 h-3 text-brand-300"></i> Progresso local ativado
+                        </p>
+                    </div>
+                </a>
+
+                <!-- Navegação Desktop -->
+                <nav class="hidden md:flex space-x-1">
+                    <a href="../index.html" class="px-3 py-2 rounded-lg text-sm transition flex items-center gap-1.5 text-brand-100 hover:bg-brand-800/70 hover:text-white">
+            <i data-lucide="home" class="w-4 h-4"></i> Início
+        </a><a href="../bloco-1-numeros/index.html" class="px-3 py-2 rounded-lg text-sm transition flex items-center gap-1.5 bg-brand-800 text-white font-semibold shadow-inner">
+            <i data-lucide="binary" class="w-4 h-4"></i> Bloco 1
+        </a><a href="../bloco-2-algebra/index.html" class="px-3 py-2 rounded-lg text-sm transition flex items-center gap-1.5 text-brand-100 hover:bg-brand-800/70 hover:text-white">
+            <i data-lucide="variable" class="w-4 h-4"></i> Bloco 2
+        </a><a href="../bloco-3-geometria/index.html" class="px-3 py-2 rounded-lg text-sm transition flex items-center gap-1.5 text-brand-100 hover:bg-brand-800/70 hover:text-white">
+            <i data-lucide="shapes" class="w-4 h-4"></i> Bloco 3
+        </a><a href="../bloco-4-medidas-e-estatistica/index.html" class="px-3 py-2 rounded-lg text-sm transition flex items-center gap-1.5 text-brand-100 hover:bg-brand-800/70 hover:text-white">
+            <i data-lucide="bar-chart-3" class="w-4 h-4"></i> Bloco 4
+        </a><a href="../bloco-5-provas-ifsc/index.html" class="px-3 py-2 rounded-lg text-sm transition flex items-center gap-1.5 text-brand-100 hover:bg-brand-800/70 hover:text-white">
+            <i data-lucide="file-text" class="w-4 h-4"></i> Provas IFSC
+        </a>
+                </nav>
+
+                <!-- Ações do Usuário -->
+                <div class="flex items-center gap-3">
+                    <a href="../simulado.html" class="bg-brand-500 hover:bg-brand-400 text-white font-semibold px-3.5 py-1.5 rounded-lg text-sm transition flex items-center gap-1.5 shadow hover:shadow-md">
+                        <i data-lucide="award" class="w-4 h-4"></i> Simulado IF
+                    </a>
+                    <button id="mobile-menu-btn" class="md:hidden p-2 rounded-lg text-brand-100 hover:text-white hover:bg-brand-800" aria-label="Abrir menu">
+                        <i data-lucide="menu" class="w-6 h-6"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Menu Mobile -->
+        <div id="mobile-menu" class="hidden md:hidden bg-brand-900 border-t border-brand-800 px-4 pt-2 pb-4 space-y-1">
+            <a href="../index.html" class="block px-3 py-2 rounded-md text-base font-medium text-white flex items-center gap-2 hover:bg-brand-800/60">
+            <i data-lucide="home" class="w-4 h-4"></i> Início
+        </a><a href="../bloco-1-numeros/index.html" class="block px-3 py-2 rounded-md text-base font-medium text-white flex items-center gap-2 bg-brand-800 font-bold">
+            <i data-lucide="binary" class="w-4 h-4"></i> Bloco 1
+        </a><a href="../bloco-2-algebra/index.html" class="block px-3 py-2 rounded-md text-base font-medium text-white flex items-center gap-2 hover:bg-brand-800/60">
+            <i data-lucide="variable" class="w-4 h-4"></i> Bloco 2
+        </a><a href="../bloco-3-geometria/index.html" class="block px-3 py-2 rounded-md text-base font-medium text-white flex items-center gap-2 hover:bg-brand-800/60">
+            <i data-lucide="shapes" class="w-4 h-4"></i> Bloco 3
+        </a><a href="../bloco-4-medidas-e-estatistica/index.html" class="block px-3 py-2 rounded-md text-base font-medium text-white flex items-center gap-2 hover:bg-brand-800/60">
+            <i data-lucide="bar-chart-3" class="w-4 h-4"></i> Bloco 4
+        </a><a href="../bloco-5-provas-ifsc/index.html" class="block px-3 py-2 rounded-md text-base font-medium text-white flex items-center gap-2 hover:bg-brand-800/60">
+            <i data-lucide="file-text" class="w-4 h-4"></i> Provas IFSC
+        </a>
+            <a href="../simulado.html" class="block px-3 py-2 rounded-md text-base font-bold bg-brand-600 text-white flex items-center gap-2 mt-2">
+                <i data-lucide="award" class="w-4 h-4"></i> Simulado IF Geral
+            </a>
+        </div>
+    </header>
+
+
+    <main class="flex-grow max-w-7xl w-full mx-auto px-4 sm:px-6 lg:px-8 py-8">
+        
+        <!-- Breadcrumbs -->
+        <nav class="flex items-center gap-2 text-xs sm:text-sm text-gray-500 mb-6 flex-wrap">
+            <a href="../index.html" class="hover:text-brand-700 flex items-center gap-1"><i data-lucide="home" class="w-3.5 h-3.5"></i> Início</a>
+            <span class="text-gray-300">/</span>
+            <a href="./index.html" class="hover:text-brand-700">Bloco 1: Números e Operações</a>
+            <span class="text-gray-300">/</span>
+            <span class="text-gray-800 font-semibold">Porcentagem e Finanças</span>
+        </nav>
+
+        <!-- Cabeçalho do Subtópico -->
+        <div class="bg-white rounded-2xl p-6 sm:p-8 shadow-sm mb-8 border border-gray-200 flex flex-col md:flex-row justify-between md:items-center gap-4">
+            <div>
+                <div class="flex items-center gap-2 mb-2">
+                    <span class="bg-brand-100 text-brand-800 text-xs font-bold px-3 py-1 rounded-full border border-brand-200">
+                        BNCC: EF06MA12, EF08MA04
+                    </span>
+                    <span class="text-xs text-gray-500 font-medium">Subtópico 06 de 07</span>
+                </div>
+                <h1 class="text-2xl sm:text-3xl font-extrabold text-gray-900">Porcentagem e Finanças</h1>
+                <p class="text-gray-600 text-sm sm:text-base mt-2 max-w-3xl leading-relaxed">Cálculos percentuais e descontos/acréscimos simples.</p>
+            </div>
+            
+            <div class="flex flex-col sm:flex-row md:flex-col lg:flex-row items-start sm:items-center gap-3">
+                
+                <button id="btn-toggle-done-b1-t6" onclick="toggleTopicDone('b1-t6')" class="px-4 py-2 rounded-xl text-sm font-semibold border bg-white text-gray-700 border-gray-300 hover:bg-gray-50 transition flex items-center gap-2 shadow-sm">
+                    <i data-lucide="square" class="w-4 h-4 text-gray-400"></i> Marcar como Concluído
+                </button>
+            </div>
+        </div>
+
+        <!-- Layout de Conteúdo: 2 Colunas de Estudo + 1 Coluna Lateral -->
+        <div class="grid grid-cols-1 lg:grid-cols-3 gap-8">
+            
+            <!-- Coluna Principal de Estudos (2 Colunas) -->
+            <div class="lg:col-span-2 space-y-8">
+                
+                <!-- 1. Teoria e Dicas -->
+                <section class="bg-white border border-gray-200 rounded-2xl p-6 sm:p-8 shadow-sm">
+                    <h2 class="text-xl font-bold text-gray-900 mb-4 flex items-center gap-2.5 text-brand-800">
+                        <i data-lucide="book-open" class="w-5 h-5 text-brand-600"></i> Teoria e Conceitos Chave
+                    </h2>
+                    <div class="text-gray-700 leading-relaxed text-sm sm:text-base mb-6 space-y-3">
+                        <p>Um aumento de $p\%$ corresponde a multiplicar por um fator $(1 + \frac{p}{100})$. Um desconto corresponde a multiplicar por $(1 - \frac{p}{100})$. Para calcular aumentos ou descontos sucessivos, multiplicam-se os fatores em sequência (NUNCA some as porcentagens diretamente).</p>
+                    </div>
+                    
+                    <div class="bg-brand-50/70 border border-brand-200 rounded-xl p-5">
+                        <h3 class="text-xs font-bold text-brand-900 uppercase tracking-wider mb-3 flex items-center gap-1.5">
+                            <i data-lucide="lightbulb" class="w-4 h-4 text-brand-600"></i> Dicas Essenciais para o Exame IF
+                        </h3>
+                        <ul class="space-y-2">
+                            
+            <li class="flex items-start gap-2 text-xs sm:text-sm text-gray-700">
+                <i data-lucide="check" class="w-4 h-4 text-brand-600 flex-shrink-0 mt-0.5"></i>
+                <span>Aumento de $10\%$ = multiplicar por $1{}10$.</span>
+            </li>
+        
+            <li class="flex items-start gap-2 text-xs sm:text-sm text-gray-700">
+                <i data-lucide="check" class="w-4 h-4 text-brand-600 flex-shrink-0 mt-0.5"></i>
+                <span>Descontos sucessivos não são somados diretamente.</span>
+            </li>
+        
+                        </ul>
+                    </div>
+                </section>
+
+                <!-- 2. Fórmulas Fundamentais -->
+                <section class="bg-brand-900 text-white rounded-2xl p-6 sm:p-8 shadow-md border border-brand-800">
+                    <h2 class="text-brand-300 text-xs font-bold uppercase tracking-wider mb-3 flex items-center gap-2">
+                        <i data-lucide="sigma" class="w-4 h-4"></i> Fórmulas e Relações Fundamentais
+                    </h2>
+                    <div class="text-lg sm:text-2xl text-center py-4 px-2 bg-brand-950/60 rounded-xl overflow-x-auto text-brand-100 font-mono border border-brand-800">
+                        $$V_f = V_i \cdot (1 \pm i)$$
+                    </div>
+                </section>
+
+                <!-- 3. Exemplo Resolvido Passo a Passo -->
+                <section class="bg-emerald-50/60 border border-brand-200 rounded-2xl p-6 sm:p-8 shadow-sm">
+                    <h2 class="text-lg font-bold text-brand-900 mb-3 flex items-center gap-2">
+                        <i data-lucide="file-check-2" class="w-5 h-5 text-brand-700"></i> Exemplo Resolvido Passo a Passo
+                    </h2>
+                    <div class="bg-white border border-brand-100 rounded-xl p-5 shadow-inner">
+                        <p class="text-sm sm:text-base font-semibold text-gray-800 mb-3">Um tênis de R$ $200$ teve aumento de $10\%$ e depois desconto de $10\%$. Qual o preço final?</p>
+                        <div class="text-xs sm:text-sm text-gray-700 leading-relaxed whitespace-pre-line border-t border-gray-100 pt-3">
+                            <strong class="text-brand-800 block mb-1">Resolução Detalhada:</strong>
+                            1º Aumento: $200 \times 1{}10 = \text{R\$} 220,00$.
+2º Desconto: $220 \times 0{}90 = \text{R\$} 198,00$.
+O preço não volta aos 200 reais!
+                        </div>
+                    </div>
+                </section>
+
+                <!-- 4. Exercícios de Fixação / Questões da Prova -->
+                <section class="bg-white border border-gray-200 rounded-2xl p-6 sm:p-8 shadow-sm">
+                    <div class="flex items-center justify-between mb-6 pb-4 border-b border-gray-100">
+                        <div>
+                            <h2 class="text-xl font-bold text-brand-800 flex items-center gap-2">
+                                <i data-lucide="list-checks" class="w-6 h-6 text-brand-600"></i> Questões e Exercícios
+                            </h2>
+                            <p class="text-xs text-gray-500 mt-1">Resolva as questões para fixar o conteúdo. Suas respostas são salvas automaticamente.</p>
+                        </div>
+                        <span class="text-xs font-semibold px-2.5 py-1 rounded-full bg-brand-50 text-brand-700 border border-brand-200">
+                            5 Questões
+                        </span>
+                    </div>
+
+                    
+                <div class="mb-8 border-b border-gray-100 pb-6 last:border-0 last:pb-0" id="q-container-b1-t6-q0">
+                    <div class="flex items-center justify-between mb-2">
+                        <span class="text-xs font-bold uppercase tracking-wider text-brand-700 bg-brand-50 px-2.5 py-0.5 rounded-full border border-brand-100">Questão 1</span>
+                    </div>
+                    <p class="font-medium text-gray-800 mb-4 text-sm sm:text-base leading-relaxed">O cálculo de $20\%$ sobre R$ $150,00$ resulta em:</p>
+                    <div class="space-y-2 mb-4" id="opts-b1-t6-q0">
+                        
+                    <button onclick="selectOption('b1-t6-q0', 0)" id="btn-b1-t6-q0-0" class="w-full text-left p-3.5 rounded-xl border border-gray-200 hover:border-brand-400 hover:bg-brand-50/40 transition text-sm text-gray-700 flex items-center justify-between group">
+                        <span class="flex items-center gap-2"><strong class="text-brand-700 font-bold">A)</strong> R$ $20$</span>
+                        <i data-lucide="circle" class="w-4 h-4 text-gray-300 opt-icon group-hover:text-brand-400 flex-shrink-0"></i>
+                    </button>
+                
+                    <button onclick="selectOption('b1-t6-q0', 1)" id="btn-b1-t6-q0-1" class="w-full text-left p-3.5 rounded-xl border border-gray-200 hover:border-brand-400 hover:bg-brand-50/40 transition text-sm text-gray-700 flex items-center justify-between group">
+                        <span class="flex items-center gap-2"><strong class="text-brand-700 font-bold">B)</strong> R$ $30$</span>
+                        <i data-lucide="circle" class="w-4 h-4 text-gray-300 opt-icon group-hover:text-brand-400 flex-shrink-0"></i>
+                    </button>
+                
+                    <button onclick="selectOption('b1-t6-q0', 2)" id="btn-b1-t6-q0-2" class="w-full text-left p-3.5 rounded-xl border border-gray-200 hover:border-brand-400 hover:bg-brand-50/40 transition text-sm text-gray-700 flex items-center justify-between group">
+                        <span class="flex items-center gap-2"><strong class="text-brand-700 font-bold">C)</strong> R$ $25$</span>
+                        <i data-lucide="circle" class="w-4 h-4 text-gray-300 opt-icon group-hover:text-brand-400 flex-shrink-0"></i>
+                    </button>
+                
+                    <button onclick="selectOption('b1-t6-q0', 3)" id="btn-b1-t6-q0-3" class="w-full text-left p-3.5 rounded-xl border border-gray-200 hover:border-brand-400 hover:bg-brand-50/40 transition text-sm text-gray-700 flex items-center justify-between group">
+                        <span class="flex items-center gap-2"><strong class="text-brand-700 font-bold">D)</strong> R$ $35$</span>
+                        <i data-lucide="circle" class="w-4 h-4 text-gray-300 opt-icon group-hover:text-brand-400 flex-shrink-0"></i>
+                    </button>
+                
+                    </div>
+                    <div class="flex items-center gap-3">
+                        <button id="submit-btn-b1-t6-q0" onclick="submitAnswer('1', 'b1-t6', 0)" class="bg-brand-600 hover:bg-brand-700 text-white px-4 py-2 rounded-lg text-sm font-semibold transition flex items-center gap-1.5 shadow-sm">
+                            <i data-lucide="send" class="w-4 h-4"></i> Enviar Resposta
+                        </button>
+                    </div>
+                    <div id="feedback-b1-t6-q0" class="hidden p-4 rounded-xl text-sm mt-4"></div>
+                </div>
+            
+                <div class="mb-8 border-b border-gray-100 pb-6 last:border-0 last:pb-0" id="q-container-b1-t6-q1">
+                    <div class="flex items-center justify-between mb-2">
+                        <span class="text-xs font-bold uppercase tracking-wider text-brand-700 bg-brand-50 px-2.5 py-0.5 rounded-full border border-brand-100">Questão 2</span>
+                    </div>
+                    <p class="font-medium text-gray-800 mb-4 text-sm sm:text-base leading-relaxed">Um produto de R$ $80$ sofreu acréscimo de $15\%$. O novo preço é:</p>
+                    <div class="space-y-2 mb-4" id="opts-b1-t6-q1">
+                        
+                    <button onclick="selectOption('b1-t6-q1', 0)" id="btn-b1-t6-q1-0" class="w-full text-left p-3.5 rounded-xl border border-gray-200 hover:border-brand-400 hover:bg-brand-50/40 transition text-sm text-gray-700 flex items-center justify-between group">
+                        <span class="flex items-center gap-2"><strong class="text-brand-700 font-bold">A)</strong> R$ $95$</span>
+                        <i data-lucide="circle" class="w-4 h-4 text-gray-300 opt-icon group-hover:text-brand-400 flex-shrink-0"></i>
+                    </button>
+                
+                    <button onclick="selectOption('b1-t6-q1', 1)" id="btn-b1-t6-q1-1" class="w-full text-left p-3.5 rounded-xl border border-gray-200 hover:border-brand-400 hover:bg-brand-50/40 transition text-sm text-gray-700 flex items-center justify-between group">
+                        <span class="flex items-center gap-2"><strong class="text-brand-700 font-bold">B)</strong> R$ $92$</span>
+                        <i data-lucide="circle" class="w-4 h-4 text-gray-300 opt-icon group-hover:text-brand-400 flex-shrink-0"></i>
+                    </button>
+                
+                    <button onclick="selectOption('b1-t6-q1', 2)" id="btn-b1-t6-q1-2" class="w-full text-left p-3.5 rounded-xl border border-gray-200 hover:border-brand-400 hover:bg-brand-50/40 transition text-sm text-gray-700 flex items-center justify-between group">
+                        <span class="flex items-center gap-2"><strong class="text-brand-700 font-bold">C)</strong> R$ $88$</span>
+                        <i data-lucide="circle" class="w-4 h-4 text-gray-300 opt-icon group-hover:text-brand-400 flex-shrink-0"></i>
+                    </button>
+                
+                    <button onclick="selectOption('b1-t6-q1', 3)" id="btn-b1-t6-q1-3" class="w-full text-left p-3.5 rounded-xl border border-gray-200 hover:border-brand-400 hover:bg-brand-50/40 transition text-sm text-gray-700 flex items-center justify-between group">
+                        <span class="flex items-center gap-2"><strong class="text-brand-700 font-bold">D)</strong> R$ $90$</span>
+                        <i data-lucide="circle" class="w-4 h-4 text-gray-300 opt-icon group-hover:text-brand-400 flex-shrink-0"></i>
+                    </button>
+                
+                    </div>
+                    <div class="flex items-center gap-3">
+                        <button id="submit-btn-b1-t6-q1" onclick="submitAnswer('1', 'b1-t6', 1)" class="bg-brand-600 hover:bg-brand-700 text-white px-4 py-2 rounded-lg text-sm font-semibold transition flex items-center gap-1.5 shadow-sm">
+                            <i data-lucide="send" class="w-4 h-4"></i> Enviar Resposta
+                        </button>
+                    </div>
+                    <div id="feedback-b1-t6-q1" class="hidden p-4 rounded-xl text-sm mt-4"></div>
+                </div>
+            
+                <div class="mb-8 border-b border-gray-100 pb-6 last:border-0 last:pb-0" id="q-container-b1-t6-q2">
+                    <div class="flex items-center justify-between mb-2">
+                        <span class="text-xs font-bold uppercase tracking-wider text-brand-700 bg-brand-50 px-2.5 py-0.5 rounded-full border border-brand-100">Questão 3</span>
+                    </div>
+                    <p class="font-medium text-gray-800 mb-4 text-sm sm:text-base leading-relaxed">Um desconto de $10\%$ seguido de outro de $10\%$ equivale a um desconto real de:</p>
+                    <div class="space-y-2 mb-4" id="opts-b1-t6-q2">
+                        
+                    <button onclick="selectOption('b1-t6-q2', 0)" id="btn-b1-t6-q2-0" class="w-full text-left p-3.5 rounded-xl border border-gray-200 hover:border-brand-400 hover:bg-brand-50/40 transition text-sm text-gray-700 flex items-center justify-between group">
+                        <span class="flex items-center gap-2"><strong class="text-brand-700 font-bold">A)</strong> $20\%$</span>
+                        <i data-lucide="circle" class="w-4 h-4 text-gray-300 opt-icon group-hover:text-brand-400 flex-shrink-0"></i>
+                    </button>
+                
+                    <button onclick="selectOption('b1-t6-q2', 1)" id="btn-b1-t6-q2-1" class="w-full text-left p-3.5 rounded-xl border border-gray-200 hover:border-brand-400 hover:bg-brand-50/40 transition text-sm text-gray-700 flex items-center justify-between group">
+                        <span class="flex items-center gap-2"><strong class="text-brand-700 font-bold">B)</strong> $19\%$</span>
+                        <i data-lucide="circle" class="w-4 h-4 text-gray-300 opt-icon group-hover:text-brand-400 flex-shrink-0"></i>
+                    </button>
+                
+                    <button onclick="selectOption('b1-t6-q2', 2)" id="btn-b1-t6-q2-2" class="w-full text-left p-3.5 rounded-xl border border-gray-200 hover:border-brand-400 hover:bg-brand-50/40 transition text-sm text-gray-700 flex items-center justify-between group">
+                        <span class="flex items-center gap-2"><strong class="text-brand-700 font-bold">C)</strong> $21\%$</span>
+                        <i data-lucide="circle" class="w-4 h-4 text-gray-300 opt-icon group-hover:text-brand-400 flex-shrink-0"></i>
+                    </button>
+                
+                    <button onclick="selectOption('b1-t6-q2', 3)" id="btn-b1-t6-q2-3" class="w-full text-left p-3.5 rounded-xl border border-gray-200 hover:border-brand-400 hover:bg-brand-50/40 transition text-sm text-gray-700 flex items-center justify-between group">
+                        <span class="flex items-center gap-2"><strong class="text-brand-700 font-bold">D)</strong> $18\%$</span>
+                        <i data-lucide="circle" class="w-4 h-4 text-gray-300 opt-icon group-hover:text-brand-400 flex-shrink-0"></i>
+                    </button>
+                
+                    </div>
+                    <div class="flex items-center gap-3">
+                        <button id="submit-btn-b1-t6-q2" onclick="submitAnswer('1', 'b1-t6', 2)" class="bg-brand-600 hover:bg-brand-700 text-white px-4 py-2 rounded-lg text-sm font-semibold transition flex items-center gap-1.5 shadow-sm">
+                            <i data-lucide="send" class="w-4 h-4"></i> Enviar Resposta
+                        </button>
+                    </div>
+                    <div id="feedback-b1-t6-q2" class="hidden p-4 rounded-xl text-sm mt-4"></div>
+                </div>
+            
+                <div class="mb-8 border-b border-gray-100 pb-6 last:border-0 last:pb-0" id="q-container-b1-t6-q3">
+                    <div class="flex items-center justify-between mb-2">
+                        <span class="text-xs font-bold uppercase tracking-wider text-brand-700 bg-brand-50 px-2.5 py-0.5 rounded-full border border-brand-100">Questão 4</span>
+                    </div>
+                    <p class="font-medium text-gray-800 mb-4 text-sm sm:text-base leading-relaxed">Se $30\%$ da dívida corresponde a R$ $60,00$, a dívida total é:</p>
+                    <div class="space-y-2 mb-4" id="opts-b1-t6-q3">
+                        
+                    <button onclick="selectOption('b1-t6-q3', 0)" id="btn-b1-t6-q3-0" class="w-full text-left p-3.5 rounded-xl border border-gray-200 hover:border-brand-400 hover:bg-brand-50/40 transition text-sm text-gray-700 flex items-center justify-between group">
+                        <span class="flex items-center gap-2"><strong class="text-brand-700 font-bold">A)</strong> R$ $200$</span>
+                        <i data-lucide="circle" class="w-4 h-4 text-gray-300 opt-icon group-hover:text-brand-400 flex-shrink-0"></i>
+                    </button>
+                
+                    <button onclick="selectOption('b1-t6-q3', 1)" id="btn-b1-t6-q3-1" class="w-full text-left p-3.5 rounded-xl border border-gray-200 hover:border-brand-400 hover:bg-brand-50/40 transition text-sm text-gray-700 flex items-center justify-between group">
+                        <span class="flex items-center gap-2"><strong class="text-brand-700 font-bold">B)</strong> R$ $180$</span>
+                        <i data-lucide="circle" class="w-4 h-4 text-gray-300 opt-icon group-hover:text-brand-400 flex-shrink-0"></i>
+                    </button>
+                
+                    <button onclick="selectOption('b1-t6-q3', 2)" id="btn-b1-t6-q3-2" class="w-full text-left p-3.5 rounded-xl border border-gray-200 hover:border-brand-400 hover:bg-brand-50/40 transition text-sm text-gray-700 flex items-center justify-between group">
+                        <span class="flex items-center gap-2"><strong class="text-brand-700 font-bold">C)</strong> R$ $150$</span>
+                        <i data-lucide="circle" class="w-4 h-4 text-gray-300 opt-icon group-hover:text-brand-400 flex-shrink-0"></i>
+                    </button>
+                
+                    <button onclick="selectOption('b1-t6-q3', 3)" id="btn-b1-t6-q3-3" class="w-full text-left p-3.5 rounded-xl border border-gray-200 hover:border-brand-400 hover:bg-brand-50/40 transition text-sm text-gray-700 flex items-center justify-between group">
+                        <span class="flex items-center gap-2"><strong class="text-brand-700 font-bold">D)</strong> R$ $300$</span>
+                        <i data-lucide="circle" class="w-4 h-4 text-gray-300 opt-icon group-hover:text-brand-400 flex-shrink-0"></i>
+                    </button>
+                
+                    </div>
+                    <div class="flex items-center gap-3">
+                        <button id="submit-btn-b1-t6-q3" onclick="submitAnswer('1', 'b1-t6', 3)" class="bg-brand-600 hover:bg-brand-700 text-white px-4 py-2 rounded-lg text-sm font-semibold transition flex items-center gap-1.5 shadow-sm">
+                            <i data-lucide="send" class="w-4 h-4"></i> Enviar Resposta
+                        </button>
+                    </div>
+                    <div id="feedback-b1-t6-q3" class="hidden p-4 rounded-xl text-sm mt-4"></div>
+                </div>
+            
+                <div class="mb-8 border-b border-gray-100 pb-6 last:border-0 last:pb-0" id="q-container-b1-t6-q4">
+                    <div class="flex items-center justify-between mb-2">
+                        <span class="text-xs font-bold uppercase tracking-wider text-brand-700 bg-brand-50 px-2.5 py-0.5 rounded-full border border-brand-100">Questão 5</span>
+                    </div>
+                    <p class="font-medium text-gray-800 mb-4 text-sm sm:text-base leading-relaxed">A fração equivalente a $\frac{3}{5}$ corresponde a:</p>
+                    <div class="space-y-2 mb-4" id="opts-b1-t6-q4">
+                        
+                    <button onclick="selectOption('b1-t6-q4', 0)" id="btn-b1-t6-q4-0" class="w-full text-left p-3.5 rounded-xl border border-gray-200 hover:border-brand-400 hover:bg-brand-50/40 transition text-sm text-gray-700 flex items-center justify-between group">
+                        <span class="flex items-center gap-2"><strong class="text-brand-700 font-bold">A)</strong> $30\%$</span>
+                        <i data-lucide="circle" class="w-4 h-4 text-gray-300 opt-icon group-hover:text-brand-400 flex-shrink-0"></i>
+                    </button>
+                
+                    <button onclick="selectOption('b1-t6-q4', 1)" id="btn-b1-t6-q4-1" class="w-full text-left p-3.5 rounded-xl border border-gray-200 hover:border-brand-400 hover:bg-brand-50/40 transition text-sm text-gray-700 flex items-center justify-between group">
+                        <span class="flex items-center gap-2"><strong class="text-brand-700 font-bold">B)</strong> $50\%$</span>
+                        <i data-lucide="circle" class="w-4 h-4 text-gray-300 opt-icon group-hover:text-brand-400 flex-shrink-0"></i>
+                    </button>
+                
+                    <button onclick="selectOption('b1-t6-q4', 2)" id="btn-b1-t6-q4-2" class="w-full text-left p-3.5 rounded-xl border border-gray-200 hover:border-brand-400 hover:bg-brand-50/40 transition text-sm text-gray-700 flex items-center justify-between group">
+                        <span class="flex items-center gap-2"><strong class="text-brand-700 font-bold">C)</strong> $60\%$</span>
+                        <i data-lucide="circle" class="w-4 h-4 text-gray-300 opt-icon group-hover:text-brand-400 flex-shrink-0"></i>
+                    </button>
+                
+                    <button onclick="selectOption('b1-t6-q4', 3)" id="btn-b1-t6-q4-3" class="w-full text-left p-3.5 rounded-xl border border-gray-200 hover:border-brand-400 hover:bg-brand-50/40 transition text-sm text-gray-700 flex items-center justify-between group">
+                        <span class="flex items-center gap-2"><strong class="text-brand-700 font-bold">D)</strong> $75\%$</span>
+                        <i data-lucide="circle" class="w-4 h-4 text-gray-300 opt-icon group-hover:text-brand-400 flex-shrink-0"></i>
+                    </button>
+                
+                    </div>
+                    <div class="flex items-center gap-3">
+                        <button id="submit-btn-b1-t6-q4" onclick="submitAnswer('1', 'b1-t6', 4)" class="bg-brand-600 hover:bg-brand-700 text-white px-4 py-2 rounded-lg text-sm font-semibold transition flex items-center gap-1.5 shadow-sm">
+                            <i data-lucide="send" class="w-4 h-4"></i> Enviar Resposta
+                        </button>
+                    </div>
+                    <div id="feedback-b1-t6-q4" class="hidden p-4 rounded-xl text-sm mt-4"></div>
+                </div>
+            
+                </section>
+
+                <!-- 5. Navegação Inferior de Tópicos -->
+                <nav class="flex items-center justify-between gap-4 pt-4 border-t border-gray-200 flex-wrap">
+                    
+                <a href="./fracoes-ii-operacoes-basicas.html" class="bg-white border border-gray-200 hover:bg-gray-50 text-gray-700 font-semibold px-4 py-2.5 rounded-xl text-sm transition flex items-center gap-2 shadow-sm">
+                    <i data-lucide="arrow-left" class="w-4 h-4"></i> Anterior: Frações II: Operações Básicas
+                </a>
+            
+            <a href="./index.html" class="bg-brand-50 border border-brand-200 text-brand-800 hover:bg-brand-100 font-semibold px-4 py-2.5 rounded-xl text-sm transition flex items-center gap-2 shadow-sm">
+                <i data-lucide="grid" class="w-4 h-4"></i> Todos os Tópicos
+            </a>
+        
+                <a href="./notacao-cientifica-e-potencias.html" class="bg-brand-600 hover:bg-brand-700 text-white font-semibold px-4 py-2.5 rounded-xl text-sm transition flex items-center gap-2 shadow-sm ml-auto">
+                    Próximo: Notação Científica e Potências <i data-lucide="arrow-right" class="w-4 h-4"></i>
+                </a>
+            
+                </nav>
+            </div>
+
+            <!-- Coluna Lateral (Sidebar com Subtópicos do Bloco) -->
+            <div class="space-y-6">
+                
+                <!-- Card de Progresso do Bloco -->
+                <div class="bg-white border border-gray-200 rounded-2xl p-5 shadow-sm">
+                    <h3 class="text-xs font-bold text-gray-500 uppercase tracking-wider mb-2">Progresso no Bloco</h3>
+                    <div class="flex justify-between text-xs text-gray-600 mb-1.5 font-medium">
+                        <span>Conclusão</span>
+                        <span id="block-progress-txt-1" class="font-bold text-brand-700">0%</span>
+                    </div>
+                    <div class="w-full bg-gray-100 rounded-full h-2.5 overflow-hidden">
+                        <div id="block-progress-bar-1" class="bg-brand-600 h-full w-0 transition-all duration-500"></div>
+                    </div>
+                </div>
+
+                <!-- Lista de Subtópicos do Bloco -->
+                <div class="bg-white border border-gray-200 rounded-2xl p-5 shadow-sm sticky top-20">
+                    <div class="flex items-center justify-between mb-4 border-b pb-3">
+                        <h3 class="text-sm font-bold text-gray-900 uppercase tracking-wider">Subtópicos do Bloco</h3>
+                        <a href="./index.html" class="text-xs text-brand-600 hover:text-brand-800 font-semibold">Ver Todos</a>
+                    </div>
+                    <div class="space-y-1.5 custom-scrollbar max-h-[60vh] overflow-y-auto pr-1">
+                        
+                <a href="./sistema-de-numeracao-e-comparacao.html" class="w-full text-left py-2 px-2.5 rounded-lg text-xs transition flex items-center justify-between text-gray-600 hover:bg-gray-100 pl-2">
+                    <span class="truncate pr-2">1. Sistema de Numeração e Comparação</span>
+                    <i id="status-icon-b1-t1" data-lucide="circle" class="w-4 h-4 text-gray-300 flex-shrink-0"></i>
+                </a>
+            
+                <a href="./operacoes-com-naturais-e-estimativas.html" class="w-full text-left py-2 px-2.5 rounded-lg text-xs transition flex items-center justify-between text-gray-600 hover:bg-gray-100 pl-2">
+                    <span class="truncate pr-2">2. Operações com Naturais e Estimativas</span>
+                    <i id="status-icon-b1-t2" data-lucide="circle" class="w-4 h-4 text-gray-300 flex-shrink-0"></i>
+                </a>
+            
+                <a href="./multiplos-divisores-e-criterios.html" class="w-full text-left py-2 px-2.5 rounded-lg text-xs transition flex items-center justify-between text-gray-600 hover:bg-gray-100 pl-2">
+                    <span class="truncate pr-2">3. Múltiplos, Divisores e Critérios</span>
+                    <i id="status-icon-b1-t3" data-lucide="circle" class="w-4 h-4 text-gray-300 flex-shrink-0"></i>
+                </a>
+            
+                <a href="./fracoes-i-significados-e-equivalencia.html" class="w-full text-left py-2 px-2.5 rounded-lg text-xs transition flex items-center justify-between text-gray-600 hover:bg-gray-100 pl-2">
+                    <span class="truncate pr-2">4. Frações I: Significados e Equivalência</span>
+                    <i id="status-icon-b1-t4" data-lucide="circle" class="w-4 h-4 text-gray-300 flex-shrink-0"></i>
+                </a>
+            
+                <a href="./fracoes-ii-operacoes-basicas.html" class="w-full text-left py-2 px-2.5 rounded-lg text-xs transition flex items-center justify-between text-gray-600 hover:bg-gray-100 pl-2">
+                    <span class="truncate pr-2">5. Frações II: Operações Básicas</span>
+                    <i id="status-icon-b1-t5" data-lucide="circle" class="w-4 h-4 text-gray-300 flex-shrink-0"></i>
+                </a>
+            
+                <a href="./porcentagem-e-financas.html" class="w-full text-left py-2 px-2.5 rounded-lg text-xs transition flex items-center justify-between bg-brand-100 text-brand-900 font-bold border-l-4 border-brand-600 pl-3">
+                    <span class="truncate pr-2">6. Porcentagem e Finanças</span>
+                    <i id="status-icon-b1-t6" data-lucide="circle" class="w-4 h-4 text-gray-300 flex-shrink-0"></i>
+                </a>
+            
+                <a href="./notacao-cientifica-e-potencias.html" class="w-full text-left py-2 px-2.5 rounded-lg text-xs transition flex items-center justify-between text-gray-600 hover:bg-gray-100 pl-2">
+                    <span class="truncate pr-2">7. Notação Científica e Potências</span>
+                    <i id="status-icon-b1-t7" data-lucide="circle" class="w-4 h-4 text-gray-300 flex-shrink-0"></i>
+                </a>
+            
+                    </div>
+                    
+                    <div class="mt-6 pt-4 border-t border-gray-100">
+                        <a href="../simulado.html" class="w-full bg-brand-50 hover:bg-brand-100 text-brand-800 font-semibold py-2.5 px-4 rounded-xl text-xs transition flex items-center justify-center gap-1.5">
+                            <i data-lucide="play" class="w-3.5 h-3.5"></i> Iniciar Simulado Geral
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <footer class="bg-brand-950 text-white border-t border-brand-800 mt-16 py-10">
+        <div class="max-w-7xl mx-auto px-4 grid grid-cols-1 md:grid-cols-3 gap-8 text-sm">
+            <div>
+                <div class="flex items-center gap-2 text-lg font-bold text-brand-300 mb-2">
+                    <i data-lucide="book-open-check" class="w-5 h-5"></i> PartiuIF - Matemática
+                </div>
+                <p class="text-brand-200 text-xs leading-relaxed">
+                    Plataforma completa de revisão estruturada por subtópicos, teoria detalhada, fórmulas KaTeX e simulados com 16 provas oficiais do IFSC.
+                </p>
+                <div class="mt-4 inline-flex items-center gap-2 bg-brand-900/80 px-3 py-1.5 rounded-lg border border-brand-800 text-xs text-brand-300">
+                    <i data-lucide="hard-drive" class="w-3.5 h-3.5"></i> Progresso salvo no seu navegador
+                </div>
+            </div>
+            <div>
+                <h4 class="font-semibold text-white mb-3 text-sm flex items-center gap-1.5">
+                    <i data-lucide="layers" class="w-4 h-4 text-brand-400"></i> Eixos Temáticos
+                </h4>
+                <ul class="space-y-1.5 text-xs text-brand-200">
+                    <li><a href="../bloco-1-numeros/index.html" class="hover:text-white transition flex items-center gap-1">• Bloco 1: Números e Operações</a></li>
+                    <li><a href="../bloco-2-algebra/index.html" class="hover:text-white transition flex items-center gap-1">• Bloco 2: Álgebra e Funções</a></li>
+                    <li><a href="../bloco-3-geometria/index.html" class="hover:text-white transition flex items-center gap-1">• Bloco 3: Geometria Plana e Espacial</a></li>
+                    <li><a href="../bloco-4-medidas-e-estatistica/index.html" class="hover:text-white transition flex items-center gap-1">• Bloco 4: Medidas, Prob. e Estatística</a></li>
+                    <li><a href="../bloco-5-provas-ifsc/index.html" class="hover:text-white transition flex items-center gap-1">• Bloco 5: Provas Oficiais IFSC (2017-2026)</a></li>
+                </ul>
+            </div>
+            <div>
+                <h4 class="font-semibold text-white mb-2 text-sm flex items-center gap-1.5">
+                    <i data-lucide="trending-up" class="w-4 h-4 text-brand-400"></i> Status Geral da Preparação
+                </h4>
+                <div class="w-full bg-brand-900 rounded-full h-3 overflow-hidden border border-brand-700 mb-1.5">
+                    <div id="footer-progress" class="bg-brand-400 h-full w-0 transition-all duration-500"></div>
+                </div>
+                <span id="footer-progress-text" class="text-xs text-brand-300 block mb-4">Carregando progresso...</span>
+                
+                <button onclick="resetProgress()" class="text-xs text-red-400 hover:text-red-300 underline flex items-center gap-1 transition">
+                    <i data-lucide="trash-2" class="w-3.5 h-3.5"></i> Zerar Todo o Meu Progresso
+                </button>
+            </div>
+        </div>
+        <div class="max-w-7xl mx-auto px-4 mt-8 pt-4 border-t border-brand-900 text-center text-xs text-brand-400">
+            PartiuIF &copy; 2026 - Plataforma Educacional de Revisão para os Institutos Federais.
+        </div>
+    </footer>
+
+    <!-- Scripts da Aplicação -->
+    <script src="../assets/js/data.js"></script>
+    <script src="../assets/js/app.js"></script>
+
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            initQuestionStates('b1-t6', '1');
+            updateTopicDoneButtonUI('b1-t6');
+        });
+    </script>
+</body>
+</html>
