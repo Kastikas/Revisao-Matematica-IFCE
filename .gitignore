@@ -1,0 +1,5 @@
+# PDF exam documents
+*.pdf
+ifsc/
+pdf/
+provas/
