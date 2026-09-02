@@ -1634,7 +1634,7 @@
             "explanation": "Dividindo os coeficientes por $3$: $x^2 + 3x - 40 = 0$. Fatorando: $(x + 8)(x - 5) = 0 \\Rightarrow x = -8$ e $x = 5$."
           },
           {
-            "q": "Na feira, um pé de alface que custava R$ $1{}50$ passou a custar R$ $2{}85$. Qual o percentual de aumento que esse produto sofreu?",
+            "q": "Na feira, um pé de alface que custava $\\text{R\\$} 1{,}50$ passou a custar $\\text{R\\$} 2{,}85$. Qual o percentual de aumento que esse produto sofreu?",
             "options": [
               "$185\\%$",
               "$85\\%$",
@@ -1670,7 +1670,7 @@
             "explanation": "Pelo Teorema de Pitágoras: $d = \\sqrt{150^2 + 200^2} = \\sqrt{22500 + 40000} = \\sqrt{62500} = 250\\text{ m}$. Caminhando em linha reta, a economia de trajeto é $350\\text{ m} - 250\\text{ m} = 100\\text{ m}$."
           },
           {
-            "q": "Analise as afirmações sobre produtos notáveis e fatoração (V ou F):\\n( ) $(3x - 2)^2 = 9x^2 - 12x + 4$\\n( ) $(x + 4)^2 = x^2 + 16$\\n( ) $64x^2 - 49 = (8x + 7)(8x - 7)$\\n( ) $4x^2 + 16x = 4x(x + 4)$\\n( ) $x^2 - 8x + 16 = (x - 4)^2$",
+            "q": "Analise as afirmações sobre produtos notáveis e fatoração (V ou F):<br>( ) $(3x - 2)^2 = 9x^2 - 12x + 4$<br>( ) $(x + 4)^2 = x^2 + 16$<br>( ) $64x^2 - 49 = (8x + 7)(8x - 7)$<br>( ) $4x^2 + 16x = 4x(x + 4)$<br>( ) $x^2 - 8x + 16 = (x - 4)^2$",
             "options": [
               "V, F, V, F, V",
               "V, V, F, F, F",
@@ -1694,7 +1694,7 @@
             "explanation": "$150\\text{ t} = 150.000\\text{ kg}$. Como a ração é $20\\%$ da matéria-prima ($M$): $0{}20 M = 150.000 \\Rightarrow M = \\frac{150.000}{0{}20} = 750.000\\text{ kg}$."
           },
           {
-            "q": "Nas Olimpíadas 2016 foram servidas $11\\text{ milhões}$ de refeições e a arrecadação de ingressos foi de R$ $1{}2\\text{ bilhão}$ para $7{}5\\text{ milhões}$ de ingressos. Analise as afirmações:\\nI. $11\\text{ milhões} = 1{}1 \\times 10^7$ refeições.\\nII. Preço médio do ingresso $= \\frac{1{}2 \\times 10^9}{7{}5 \\times 10^6} = \\text{R\\$} 160,00$.",
+            "q": "Nas Olimpíadas 2016 foram servidas $11\\text{ milhões}$ de refeições e a arrecadação de ingressos foi de $\\text{R\\$} 1{,}2\\text{ bilhão}$ para $7{,}5\\text{ milhões}$ de ingressos. Analise as afirmações:<br>I. $11\\text{ milhões} = 1{,}1 \\times 10^7$ refeições.<br>II. Preço médio do ingresso $= \\frac{1{,}2 \\times 10^9}{7{,}5 \\times 10^6} = \\text{R\\$} 160{,}00$.",
             "options": [
               "Apenas II e III",
               "Apenas I e II",
@@ -1718,13 +1718,13 @@
             "explanation": "Como todos os lados são iguais: $3x + y = 2x + y + 2 \\Rightarrow x = 2$. Igualando $AB$ e $BC$: $3(2) + y = 2 + 3y \\Rightarrow 6 + y = 2 + 3y \\Rightarrow 2y = 4 \\Rightarrow y = 2$. O lado mede $3(2) + 2 = 8\\text{ u.c.}$ O perímetro é $3 \\times 8 = 24\\text{ u.c.}$"
           },
           {
-            "q": "Uma família pegou um empréstimo no valor de $30\\%$ de sua renda média (R$ $1.368,00$). Pagará juros compostos de $2\\%$ ao mês em $2$ meses. Quanto pegou emprestado e qual o montante final?",
+            "q": "Uma família pegou um empréstimo no valor de $30\\%$ de sua renda média ($\\text{R\\$} 1.368{,}00$). Pagará juros compostos de $2\\%$ ao mês em $2$ meses. Quanto pegou emprestado e qual o montante final?",
             "options": [
-              "R$ $407,40$ e R$ $423,86$",
-              "R$ $410,40$ e R$ $425,94$",
-              "R$ $409,40$ e R$ $424,90$",
-              "R$ $409,40$ e R$ $425,94$",
-              "R$ $410,40$ e R$ $426,98$"
+              "$\\text{R\\$} 407{,}40$ e $\\text{R\\$} 423{,}86$",
+              "$\\text{R\\$} 410{,}40$ e $\\text{R\\$} 425{,}94$",
+              "$\\text{R\\$} 409{,}40$ e $\\text{R\\$} 424{,}90$",
+              "$\\text{R\\$} 409{,}40$ e $\\text{R\\$} 425{,}94$",
+              "$\\text{R\\$} 410{,}40$ e $\\text{R\\$} 426{,}98$"
             ],
             "correct": 4,
             "explanation": "Empréstimo: $0{}30 \\times 1368 = \\text{R\\$} 410,40$. Montante com juros compostos: $M = 410{}40 \\times (1{}02)^2 = 410{}40 \\times 1{}0404 = \\text{R\\$} 426,98$."
@@ -1749,21 +1749,21 @@
         ],
         "formula": "V_{\\text{cilindro}} = \\pi r^2 h, \\quad J = C \\cdot i \\cdot t, \\quad A = b \\cdot h",
         "solvedExample": {
-          "problem": "Sistema de cédulas: 47 notas totalizando R$ 580,00 com notas de R$ 5,00 e R$ 20,00.",
-          "solution": "Seja $x$ as notas de R$ 5 e $y$ as notas de R$ 20:\n$\\begin{cases} x + y = 47 \\\\ 5x + 20y = 580 \\end{cases}$\nMultiplicando a 1ª por $-5$: $-5x - 5y = -235$.\nSomando: $15y = 345 \\Rightarrow y = 23$ notas de R$ 20.\n$x = 47 - 23 = 24$ notas de R$ 5."
+          "problem": "Sistema de cédulas: 47 notas totalizando $\\text{R\\$} 580{,}00$ com notas de $\\text{R\\$} 5{,}00$ e $\\text{R\\$} 20{,}00$.",
+          "solution": "Seja $x$ as notas de $\\text{R\\$} 5$ e $y$ as notas de $\\text{R\\$} 20$:\n$\\begin{cases} x + y = 47 \\\\ 5x + 20y = 580 \\end{cases}$\nMultiplicando a 1ª por $-5$: $-5x - 5y = -235$.\nSomando: $15y = 345 \\Rightarrow y = 23$ notas de $\\text{R\\$} 20$.\n$x = 47 - 23 = 24$ notas de $\\text{R\\$} 5$."
         },
         "questions": [
           {
-            "q": "Um cliente sacou R$ $580,00$ no caixa eletrônico e recebeu toda a quantia em $47$ notas de R$ $5,00$ e R$ $20,00$. Quantas notas de cada valor ele recebeu?",
+            "q": "Um cliente sacou $\\text{R\\$} 580{,}00$ no caixa eletrônico e recebeu toda a quantia em $47$ notas de $\\text{R\\$} 5{,}00$ e $\\text{R\\$} 20{,}00$. Quantas notas de cada valor ele recebeu?",
             "options": [
-              "$25$ notas de R$ $5,00$ e $22$ notas de R$ $20,00$",
-              "$20$ notas de R$ $5,00$ e $27$ notas de R$ $20,00$",
-              "$24$ notas de R$ $5,00$ e $23$ notas de R$ $20,00$",
-              "$22$ notas de R$ $5,00$ e $25$ notas de R$ $20,00$",
-              "$23$ notas de R$ $5,00$ e $24$ notas de R$ $20,00$"
+              "$25$ notas de $\\text{R\\$} 5{,}00$ e $22$ notas de $\\text{R\\$} 20{,}00$",
+              "$20$ notas de $\\text{R\\$} 5{,}00$ e $27$ notas de $\\text{R\\$} 20{,}00$",
+              "$24$ notas de $\\text{R\\$} 5{,}00$ e $23$ notas de $\\text{R\\$} 20{,}00$",
+              "$22$ notas de $\\text{R\\$} 5{,}00$ e $25$ notas de $\\text{R\\$} 20{,}00$",
+              "$23$ notas de $\\text{R\\$} 5{,}00$ e $24$ notas de $\\text{R\\$} 20{,}00$"
             ],
             "correct": 2,
-            "explanation": "Sistema: $x + y = 47$ e $5x + 20y = 580$. Multiplicando a 1ª por $-5$: $15y = 345 \\Rightarrow y = 23$ (notas de R$ 20) e $x = 24$ (notas de R$ 5)."
+            "explanation": "Sistema: $x + y = 47$ e $5x + 20y = 580$. Multiplicando a 1ª por $-5$: $15y = 345 \\Rightarrow y = 23$ (notas de $\\text{R\\$} 20$) e $x = 24$ (notas de $\\text{R\\$} 5$)."
           },
           {
             "q": "Considerando a equação $-5(3x - 8) = -45$, é CORRETO afirmar que ela é equivalente a:",
@@ -1814,7 +1814,7 @@
             "explanation": "Perímetro $= 2(C + L) = 2(2L + 5 + L) = 6L + 10 = 70 \\Rightarrow 6L = 60 \\Rightarrow L = 10\\text{ m}$. Comprimento $C = 2(10) + 5 = 25\\text{ m}$. Área $= 25 \\times 10 = 250\\text{ m}^2$."
           },
           {
-            "q": "Seu João emprestou R$ $1.000,00$ a juros simples e pagou montante de R$ $1.320,00$ após $4\\text{ meses}$. Dona Maria emprestou R$ $1.200,00$ e pagou R$ $1.680,00$ após $5\\text{ meses}$. As taxas mensais de juros simples de João e Maria foram respectivamente:",
+            "q": "Seu João emprestou $\\text{R\\$} 1.000{,}00$ a juros simples e pagou montante de $\\text{R\\$} 1.320{,}00$ após $4\\text{ meses}$. Dona Maria emprestou $\\text{R\\$} 1.200{,}00$ e pagou $\\text{R\\$} 1.680{,}00$ após $5\\text{ meses}$. As taxas mensais de juros simples de João e Maria foram respectivamente:",
             "options": [
               "$8\\%\\text{ a.m.}$ e $8\\%\\text{ a.m.}$",
               "$6\\%\\text{ a.m.}$ e $8\\%\\text{ a.m.}$",
@@ -1838,13 +1838,13 @@
             "explanation": "$V = \\pi r^2 h = 3{}14 \\times 5^2 \\times 10 = 3{}14 \\times 25 \\times 10 = 785\\text{ m}^3$. Em litros: $785 \\times 1000 = 785.000\\text{ Litros}$."
           },
           {
-            "q": "Um produto eletrônico que custava R$ $800,00$ sofreu um aumento de $15\\%$ antes do Natal e, em janeiro, sofreu um desconto de $10\\%$ sobre o novo preço. O valor final pago em janeiro foi:",
+            "q": "Um produto eletrônico que custava $\\text{R\\$} 800{,}00$ sofreu um aumento de $15\\%$ antes do Natal e, em janeiro, sofreu um desconto de $10\\%$ sobre o novo preço. O valor final pago em janeiro foi:",
             "options": [
-              "R$ $828,00$",
-              "R$ $840,00$",
-              "R$ $800,00$",
-              "R$ $832,00$",
-              "R$ $850,00$"
+              "$\\text{R\\$} 828{,}00$",
+              "$\\text{R\\$} 840{,}00$",
+              "$\\text{R\\$} 800{,}00$",
+              "$\\text{R\\$} 832{,}00$",
+              "$\\text{R\\$} 850{,}00$"
             ],
             "correct": 0,
             "explanation": "1º Aumento: $800 \\times 1{}15 = \\text{R\\$} 920,00$. 2º Desconto: $920 \\times 0{}90 = \\text{R\\$} 828,00$."
@@ -1893,7 +1893,7 @@
         ],
         "formula": "V(x) = ax + b, \\quad V_{\\text{bloco}} = c \\cdot l \\cdot h, \\quad a^2 = b^2 + c^2",
         "solvedExample": {
-          "problem": "Função afim da corrida de táxi: bandeirada fixa de R$ 5,00 e R$ 2,50 por km rodado.",
+          "problem": "Função afim da corrida de táxi: bandeirada fixa de $\\text{R\\$} 5{,}00$ e $\\text{R\\$} 2{,}50$ por km rodado.",
           "solution": "Equação da corrida: $V(x) = 2{}50x + 5{}00$.\nPara uma distância de $12\\text{ km}$:\n$V(12) = 2{}50(12) + 5{}00 = 30{}00 + 5{}00 = \\text{R\\$} 35{}00$."
         },
         "questions": [
@@ -1910,7 +1910,7 @@
             "explanation": "Perímetro do retângulo: $2 \\times (1{}20 + 1{}50) = 2 \\times 2{}70 = 5{}40\\text{ metros}$."
           },
           {
-            "q": "Em uma corrida de táxi, cobra-se uma bandeirada fixa de R$ $5{}20$ mais R$ $2{}40$ por quilômetro rodado. Se um passageiro pagou R$ $41{}20$, quantos quilômetros foram percorridos?",
+            "q": "Em uma corrida de táxi, cobra-se uma bandeirada fixa de $\\text{R\\$} 5{,}20$ mais $\\text{R\\$} 2{,}40$ por quilômetro rodado. Se um passageiro pagou $\\text{R\\$} 41{,}20$, quantos quilômetros foram percorridos?",
             "options": [
               "$12\\text{ km}$",
               "$15\\text{ km}$",
@@ -1994,13 +1994,13 @@
             "explanation": "Média $= \\frac{6{}0 + 7{}5 + 8{}0 + 8{}5}{4} = \\frac{30{}0}{4} = 7{}50$."
           },
           {
-            "q": "Em uma loja, um televisor de R$ $2.400,00$ foi comprado com $20\\%$ de entrada e o restante dividido em $4$ parcelas iguais sem juros. O valor de cada parcela é:",
+            "q": "Em uma loja, um televisor de $\\text{R\\$} 2.400{,}00$ foi comprado com $20\\%$ de entrada e o restante dividido em $4$ parcelas iguais sem juros. O valor de cada parcela é:",
             "options": [
-              "R$ $420,00$",
-              "R$ $450,00$",
-              "R$ $480,00$",
-              "R$ $500,00$",
-              "R$ $520,00$"
+              "$\\text{R\\$} 420{,}00$",
+              "$\\text{R\\$} 450{,}00$",
+              "$\\text{R\\$} 480{,}00$",
+              "$\\text{R\\$} 500{,}00$",
+              "$\\text{R\\$} 520{,}00$"
             ],
             "correct": 2,
             "explanation": "Entrada de $20\\% = 0{}20 \\times 2400 = \\text{R\\$} 480,00$. Restante: $2400 - 480 = \\text{R\\$} 1.920,00$. Valor de cada uma das 4 parcelas: $\\frac{1920}{4} = \\text{R\\$} 480,00$."
@@ -2102,13 +2102,13 @@
             "explanation": "Para ser par, o último dígito deve ser $2$ ou $4$ (2 opções). Para a 1ª posição restam 4 algarismos e para a 2ª restam 3 algarismos. Total $= 4 \\times 3 \\times 2 = 24$ números."
           },
           {
-            "q": "Um produto anunciado por R$ $450,00$ recebeu um desconto de $12\\%$ para pagamento à vista. Qual o valor pago à vista?",
+            "q": "Um produto anunciado por $\\text{R\\$} 450{,}00$ recebeu um desconto de $12\\%$ para pagamento à vista. Qual o valor pago à vista?",
             "options": [
-              "R$ $396,00$",
-              "R$ $386,00$",
-              "R$ $400,00$",
-              "R$ $405,00$",
-              "R$ $390,00$"
+              "$\\text{R\\$} 396{,}00$",
+              "$\\text{R\\$} 386{,}00$",
+              "$\\text{R\\$} 400{,}00$",
+              "$\\text{R\\$} 405{,}00$",
+              "$\\text{R\\$} 390{,}00$"
             ],
             "correct": 0,
             "explanation": "Desconto: $0{}12 \\times 450 = \\text{R\\$} 54,00$. Valor pago: $450 - 54 = \\text{R\\$} 396,00$."
@@ -2198,13 +2198,13 @@
             "explanation": "Área total do pátio: $12 \\times 8 = 96\\text{ m}^2$. Área do canteiro circular: $A = 3{}14 \\times 2^2 = 12{}56\\text{ m}^2$. Área lajotada: $96 - 12{}56 = 83{}44\\text{ m}^2$."
           },
           {
-            "q": "Um produto que custava R$ $250,00$ sofreu um desconto de $20\\%$ e, na semana seguinte, um novo desconto de $10\\%$ sobre o valor já com desconto. O preço final é:",
+            "q": "Um produto que custava $\\text{R\\$} 250{,}00$ sofreu um desconto de $20\\%$ e, na semana seguinte, um novo desconto de $10\\%$ sobre o valor já com desconto. O preço final é:",
             "options": [
-              "R$ $175,00$",
-              "R$ $180,00$",
-              "R$ $190,00$",
-              "R$ $200,00$",
-              "R$ $170,00$"
+              "$\\text{R\\$} 175{,}00$",
+              "$\\text{R\\$} 180{,}00$",
+              "$\\text{R\\$} 190{,}00$",
+              "$\\text{R\\$} 200{,}00$",
+              "$\\text{R\\$} 170{,}00$"
             ],
             "correct": 1,
             "explanation": "1º Desconto ($20\\%$): $250 \\times 0{}80 = 200$. 2º Desconto ($10\\%$): $200 \\times 0{}90 = \\text{R\\$} 180,00$."
@@ -2366,7 +2366,7 @@
             "explanation": "Desenvolvendo: $-(3x^2 - 20x + 12) = 6x - x^2 + 8 \\Rightarrow -3x^2 + 20x - 12 = -x^2 + 6x + 8 \\Rightarrow -2x^2 + 14x - 20 = 0 \\Rightarrow x^2 - 7x + 10 = 0$. Soma das raízes $= 7$. Terça parte $= 7/3$. Quadrado da terça parte $= (7/3)^2 = 49/9$."
           },
           {
-            "q": "Analise as afirmações sobre números primos e divisibilidade (V ou F):\\n( ) Os números $220$ e $284$ são amigos (soma dos divisores próprios de um é igual ao outro).\\n( ) Todo número natural que termina em $6$ é divisível por $3$.\\n( ) O número $153$ possui $6$ divisores naturais.\\n( ) O número $14367$ é um número primo.\\n( ) O máximo divisor comum entre $510$ e $238$ é $34$.",
+            "q": "Analise as afirmações sobre números primos e divisibilidade (V ou F):<br>( ) Os números $220$ e $284$ são amigos (soma dos divisores próprios de um é igual ao outro).<br>( ) Todo número natural que termina em $6$ é divisível por $3$.<br>( ) O número $153$ possui $6$ divisores naturais.<br>( ) O número $14367$ é um número primo.<br>( ) O máximo divisor comum entre $510$ e $238$ é $34$.",
             "options": [
               "V – F – V – F – V",
               "V – F – F – V – F",
@@ -2414,19 +2414,19 @@
             "explanation": "Produção horária: $\\frac{5625}{9 \\times 5} = \\frac{5625}{45} = 125\\text{ kg/h}$. Para $5000\\text{ kg}$ em 4 dias: Horas totais $= \\frac{5000}{125} = 40\\text{ h}$. Horas por dia $= \\frac{40}{4} = 10\\text{ horas por dia}$."
           },
           {
-            "q": "O carro de Marcos consome $4\\text{ litros}$ de gasolina a cada $48\\text{ km}$. Para uma viagem de ida e volta entre duas cidades distantes $360\\text{ km}$ entre si, com a gasolina a R$ $4{}50$ o litro, o gasto mínimo será:",
+            "q": "O carro de Marcos consome $4\\text{ litros}$ de gasolina a cada $48\\text{ km}$. Para uma viagem de ida e volta entre duas cidades distantes $360\\text{ km}$ entre si, com a gasolina a $\\text{R\\$} 4{,}50$ o litro, o gasto mínimo será:",
             "options": [
-              "R$ $270,00$",
-              "R$ $250,50$",
-              "R$ $280,50$",
-              "R$ $300,00$",
-              "R$ $290,50$"
+              "$\\text{R\\$} 270{,}00$",
+              "$\\text{R\\$} 250{,}50$",
+              "$\\text{R\\$} 280{,}50$",
+              "$\\text{R\\$} 300{,}00$",
+              "$\\text{R\\$} 290{,}50$"
             ],
             "correct": 0,
             "explanation": "Rendimento: $\\frac{48}{4} = 12\\text{ km/L}$. Distância total (ida e volta): $360 \\times 2 = 720\\text{ km}$. Litros necessários: $\\frac{720}{12} = 60\\text{ L}$. Custo: $60 \\times 4{}50 = \\text{R\\$} 270,00$."
           },
           {
-            "q": "Quatro amigas (Isabelle, Fabiana, Sofia e Clara) contaram seus montes de areia:\\n• Isabelle, Fabiana e Sofia: $27$ montes\\n• Fabiana, Sofia e Clara: $32$ montes\\n• Sofia, Clara e Isabelle: $28$ montes\\n• Clara, Isabelle e Fabiana: $33$ montes\\nQuantos montes de areia foram feitos pelas $4$ meninas juntas?",
+            "q": "Quatro amigas (Isabelle, Fabiana, Sofia e Clara) contaram seus montes de areia:<br>• Isabelle, Fabiana e Sofia: $27$ montes<br>• Fabiana, Sofia e Clara: $32$ montes<br>• Sofia, Clara e Isabelle: $28$ montes<br>• Clara, Isabelle e Fabiana: $33$ montes<br>Quantos montes de areia foram feitos pelas $4$ meninas juntas?",
             "options": [
               "$80\\text{ montes}$",
               "$120\\text{ montes}$",
@@ -2522,16 +2522,16 @@
             "explanation": "Interseções exclusivas: A e B apenas $= 7-5=2$; A e C apenas $= 8-5=3$; B e C apenas $= 6-5=1$. Total que leu pelo menos um: $10 + 12 + 15 + 2 + 3 + 1 + 5 = 48$. Não leram nenhum: $75 - 48 = 27$."
           },
           {
-            "q": "Uma loja vende 5 produtos com preços: A (R$ 350), B (R$ 437,50), C (R$ 292,70), D (R$ 195) e E (R$ 280). O vendedor ganha salário fixo de R$ 1.080 mais 10% de comissão. É correto afirmar que:",
+            "q": "Uma loja vende 5 produtos com preços: A ($\\text{R\\$} 350$), B ($\\text{R\\$} 437{,}50$), C ($\\text{R\\$} 292{,}70$), D ($\\text{R\\$} 195$) e E ($\\text{R\\$} 280$). O vendedor ganha salário fixo de $\\text{R\\$} 1.080$ mais $10\\%$ de comissão. É correto afirmar que:",
             "options": [
-              "Vendendo 1 de cada, o valor adicional será superior a R$ 200,00.",
+              "Vendendo 1 de cada, o valor adicional será superior a $\\text{R\\$} 200{,}00$.",
               "Vendendo 1 de cada, o valor adicional será mais de 20% do salário-base.",
-              "Vendendo 5 de cada, seu salário total será superior a R$ 2.000,00.",
+              "Vendendo 5 de cada, seu salário total será superior a $\\text{R\\$} 2.000{,}00$.",
               "Vendendo 5 de cada, o adicional será mais de 70% do salário-base.",
               "Vendendo 5 de cada, o adicional será igual ao salário-base."
             ],
             "correct": 3,
-            "explanation": "Soma de 1 unidade de cada: R$ $1.555,20$. Adicional unitário ($10\\%$) = R$ $155,52$. Vendendo 5 de cada, o adicional é $5 \\times 155,52 = \\text{R\\$} 777,60$. Como $70\\%$ do salário base ($1.080$) é R$ $756,00$, o adicional supera $70\\%$ do salário."
+            "explanation": "Soma de 1 unidade de cada: $\\text{R\\$} 1.555{,}20$. Adicional unitário ($10\\%$) = $\\text{R\\$} 155{,}52$. Vendendo 5 de cada, o adicional é $5 \\times 155,52 = \\text{R\\$} 777,60$. Como $70\\%$ do salário base ($1.080$) é $\\text{R\\$} 756{,}00$, o adicional supera $70\\%$ do salário."
           },
           {
             "q": "A partir do desenho da peça plana, analise as afirmações: I. Coordenadas de H são $(120, 60)$; II. O segmento IJ mede $20\\sqrt{2}\\text{ cm}$; III. O arco BC mede $0,1\\pi\\text{ m}$; IV. O perímetro da peça é maior que $0,29\\text{ m}$. Quantas afirmações estão corretas?",
@@ -2798,7 +2798,7 @@
             "explanation": "Taxa: $\\frac{25}{20} = 1{}25$. Para 400 pessoas: $400 \\times 1{}25 = 500$ novos infectados."
           },
           {
-            "q": "Uma microempreendedora comprou $100$ toalhas (médias e grandes) por R$ $1.800,00$. A toalha média custou R$ $15,00$ e a grande R$ $25,00$. Quantas toalhas grandes foram compradas?",
+            "q": "Uma microempreendedora comprou $100$ toalhas (médias e grandes) por $\\text{R\\$} 1.800{,}00$. A toalha média custou $\\text{R\\$} 15{,}00$ e a grande $\\text{R\\$} 25{,}00$. Quantas toalhas grandes foram compradas?",
             "options": [
               "$30$",
               "$40$",
@@ -2810,13 +2810,13 @@
             "explanation": "Sistema: $m + g = 100$ e $15m + 25g = 1800$. Multiplicando a 1ª por $-15$: $10g = 300 \\Rightarrow g = 30$ toalhas grandes (e $m = 70$)."
           },
           {
-            "q": "Dois trabalhadores realizam um serviço em $9\\text{ dias}$, recebendo R$ $10.000,00$. Quanto receberão se trabalharem por $15\\text{ dias}$ no mesmo ritmo diário?",
+            "q": "Dois trabalhadores realizam um serviço em $9\\text{ dias}$, recebendo $\\text{R\\$} 10.000{,}00$. Quanto receberão se trabalharem por $15\\text{ dias}$ no mesmo ritmo diário?",
             "options": [
-              "R$ $15.000,00$",
-              "R$ $16.666,67$",
-              "R$ $18.000,00$",
-              "R$ $14.500,00$",
-              "R$ $16.000,00$"
+              "$\\text{R\\$} 15.000{,}00$",
+              "$\\text{R\\$} 16.666{,}67$",
+              "$\\text{R\\$} 18.000{,}00$",
+              "$\\text{R\\$} 14.500{,}00$",
+              "$\\text{R\\$} 16.000{,}00$"
             ],
             "correct": 1,
             "explanation": "Valor por dia: $\\frac{10000}{9} \\approx 1111{}11$. Para 15 dias: $15 \\times \\frac{10000}{9} = \\frac{50000}{3} = \\text{R\\$} 16.666,67$."
@@ -2870,13 +2870,13 @@
             "explanation": "Estudo dos sinais com as raízes $-5, 1, 2$: o produto é positivo nos intervalos $]-5, 1[$ e $]2, +\\infty[$."
           },
           {
-            "q": "Uma empresa rodoviária cobra uma taxa fixa de R$ $12,00$ mais R$ $0{}45$ por quilômetro na linha São Miguel do Oeste/Florianópolis ($680\\text{ km}$). A passagem custa:",
+            "q": "Uma empresa rodoviária cobra uma taxa fixa de $\\text{R\\$} 12{,}00$ mais $\\text{R\\$} 0{,}45$ por quilômetro na linha São Miguel do Oeste/Florianópolis ($680\\text{ km}$). A passagem custa:",
             "options": [
-              "R$ $318,00$",
-              "R$ $306,00$",
-              "R$ $320,00$",
-              "R$ $295,00$",
-              "R$ $325,00$"
+              "$\\text{R\\$} 318{,}00$",
+              "$\\text{R\\$} 306{,}00$",
+              "$\\text{R\\$} 320{,}00$",
+              "$\\text{R\\$} 295{,}00$",
+              "$\\text{R\\$} 325{,}00$"
             ],
             "correct": 0,
             "explanation": "Preço: $P(680) = 12 + 0{}45 \\times 680 = 12 + 306 = \\text{R\\$} 318,00$."
@@ -2918,31 +2918,31 @@
             "explanation": "Como ambos possuem a mesma ordenada ($y=30$), a distância horizontal é $160 - 40 = 120\\text{ mm}$."
           },
           {
-            "q": "Um rodízio de pizzas que custava R$ $60,00$ ofereceu uma promoção: 'Na compra de 4 rodízios, o 4º tem $50\\%$ de desconto'. O valor médio pago por pessoa no grupo de 4 é:",
+            "q": "Um rodízio de pizzas que custava $\\text{R\\$} 60{,}00$ ofereceu uma promoção: 'Na compra de 4 rodízios, o 4º tem $50\\%$ de desconto'. O valor médio pago por pessoa no grupo de 4 é:",
             "options": [
-              "R$ $52,50$",
-              "R$ $50,00$",
-              "R$ $45,00$",
-              "R$ $55,00$",
-              "R$ $48,00$"
+              "$\\text{R\\$} 52{,}50$",
+              "$\\text{R\\$} 50{,}00$",
+              "$\\text{R\\$} 45{,}00$",
+              "$\\text{R\\$} 55{,}00$",
+              "$\\text{R\\$} 48{,}00$"
             ],
             "correct": 0,
             "explanation": "Total pago: $60 + 60 + 60 + 30 = \\text{R\\$} 210,00$. Média por pessoa: $\\frac{210}{4} = \\text{R\\$} 52,50$."
           },
           {
-            "q": "Carlos, Fabiano e Bruna compraram uma barraca. Fabiano pagou $60\\%$, Carlos pagou R$ $150,00$ e Bruna pagou os R$ $90,00$ restantes. Qual o preço total da barraca?",
+            "q": "Carlos, Fabiano e Bruna compraram uma barraca. Fabiano pagou $60\\%$, Carlos pagou $\\text{R\\$} 150{,}00$ e Bruna pagou os $\\text{R\\$} 90{,}00$ restantes. Qual o preço total da barraca?",
             "options": [
-              "R$ $600,00$",
-              "R$ $500,00$",
-              "R$ $450,00$",
-              "R$ $750,00$",
-              "R$ $800,00$"
+              "$\\text{R\\$} 600{,}00$",
+              "$\\text{R\\$} 500{,}00$",
+              "$\\text{R\\$} 450{,}00$",
+              "$\\text{R\\$} 750{,}00$",
+              "$\\text{R\\$} 800{,}00$"
             ],
             "correct": 0,
             "explanation": "Carlos e Bruna pagaram juntos $150 + 90 = \\text{R\\$} 240,00$, que corresponde a $40\\%$ do total ($100\\% - 60\\%$). Total: $\\frac{240}{0{}40} = \\text{R\\$} 600,00$."
           },
           {
-            "q": "Sobre números primos, analise as afirmativas:\\nI. Todo número primo é ímpar.\\nII. Existem infinitos números primos.\\nIII. O número 1 é primo.\\nÉ correto o que se afirma em:",
+            "q": "Sobre números primos, analise as afirmativas:<br>I. Todo número primo é ímpar.<br>II. Existem infinitos números primos.<br>III. O número 1 é primo.<br>É correto o que se afirma em:",
             "options": [
               "Apenas II",
               "Apenas I e II",
@@ -2990,7 +2990,7 @@
             "explanation": "$40\\%$ de $11.500 = 0{}40 \\times 11.500 = 4.600\\text{ km}^2$."
           },
           {
-            "q": "Uma sala de cinema de $156$ lugares ficou lotada. A entrada inteira custava R$ $36,00$ e a meia R$ $18,00$, totalizando R$ $3.888,00$ arrecadados. Quantas pessoas pagaram meia-entrada?",
+            "q": "Uma sala de cinema de $156$ lugares ficou lotada. A entrada inteira custava $\\text{R\\$} 36{,}00$ e a meia $\\text{R\\$} 18{,}00$, totalizando $\\text{R\\$} 3.888{,}00$ arrecadados. Quantas pessoas pagaram meia-entrada?",
             "options": [
               "$96$",
               "$60$",
@@ -3062,7 +3062,7 @@
             "explanation": "$A_1 = 10 \\times 12 = 120\\text{ cm}^2$. $A_2 = 11 \\times 13 = 143\\text{ cm}^2$. Área total $= 120 + 143 - 24 = 239\\text{ cm}^2$."
           },
           {
-            "q": "Um grupo de estudantes arrecadou R$ $1.440,00$ vendendo rifas para castração de animais abandonados. Se cada castração custa R$ $160,00$, quantos animais puderam ser castrados?",
+            "q": "Um grupo de estudantes arrecadou $\\text{R\\$} 1.440{,}00$ vendendo rifas para castração de animais abandonados. Se cada castração custa $\\text{R\\$} 160{,}00$, quantos animais puderam ser castrados?",
             "options": [
               "$9$",
               "$8$",
@@ -3230,19 +3230,19 @@
             "explanation": "Massa em gramas: $727 \\times 0{}2 = 145{}4\\text{ g}$. Em notação científica: $1{}454 \\times 10^2\\text{ gramas}$."
           },
           {
-            "q": "Na regra de orçamento 50-35-15, $35\\%$ do salário deve ser destinado a gastos pessoais. Um indivíduo gastou exatamente R$ $903,00$ nessa categoria. Seu salário total é:",
+            "q": "Na regra de orçamento 50-35-15, $35\\%$ do salário deve ser destinado a gastos pessoais. Um indivíduo gastou exatamente $\\text{R\\$} 903{,}00$ nessa categoria. Seu salário total é:",
             "options": [
-              "R$ $387,00$",
-              "R$ $1.290,00$",
-              "R$ $1.806,00$",
-              "R$ $2.580,00$",
-              "R$ $3.160,00$"
+              "$\\text{R\\$} 387{,}00$",
+              "$\\text{R\\$} 1.290{,}00$",
+              "$\\text{R\\$} 1.806{,}00$",
+              "$\\text{R\\$} 2.580{,}00$",
+              "$\\text{R\\$} 3.160{,}00$"
             ],
             "correct": 3,
             "explanation": "Salário total $S = \\frac{903}{0{}35} = \\text{R\\$} 2.580,00$."
           },
           {
-            "q": "No gráfico de casos prováveis de dengue em 2024, as semanas 1 a 4 registraram: $53.354$, $65.860$, $90.532$ e $105.875$ casos, enquanto a semana 3 de 2023 registrou $17.951$ casos. Analise as afirmações:\\nI. O total das 4 primeiras semanas de 2024 ultrapassa 300 mil casos.\\nII. Na Semana 3, os casos de 2024 representam cerca de 500% dos de 2023.\\nAssinale a alternativa correta:",
+            "q": "No gráfico de casos prováveis de dengue em 2024, as semanas 1 a 4 registraram: $53.354$, $65.860$, $90.532$ e $105.875$ casos, enquanto a semana 3 de 2023 registrou $17.951$ casos. Analise as afirmações:<br>I. O total das 4 primeiras semanas de 2024 ultrapassa 300 mil casos.<br>II. Na Semana 3, os casos de 2024 representam cerca de $500\\%$ dos de 2023.<br>Assinale a alternativa correta:",
             "options": [
               "Apenas o item I está correto.",
               "Apenas os itens I e II estão corretos.",
@@ -3273,7 +3273,7 @@
         ],
         "formula": "\\frac{P_{\\text{etanol}}}{P_{\\text{gasolina}}} < 0{}70, \\quad v = \\frac{\\Delta s}{\\Delta t}, \\quad A = A_1 + A_2",
         "solvedExample": {
-          "problem": "Paridade de combustível: gasolina a R$ 6,00 e etanol a R$ 4,00.",
+          "problem": "Paridade de combustível: gasolina a $\\text{R\\$} 6{,}00$ e etanol a $\\text{R\\$} 4{,}00$.",
           "solution": "Razão: $\\frac{4{}00}{6{}00} = 0{}667 = 66{}7\\%$.\nComo $66{}7\\% < 70\\%$, é financeiramente vantajoso abastecer com etanol."
         },
         "questions": [
@@ -3314,7 +3314,7 @@
             "explanation": "Taxa por habitante: $\\frac{150.000}{7.500.000} = 0{}02$. Por $100\\text{ mil}$ habitantes: $0{}02 \\times 100.000 = 2.000$ casos por 100 mil habitantes."
           },
           {
-            "q": "Sabendo que a gasolina custa R$ $5{}80$ o litro e o etanol R$ $3{}90$ o litro, a razão entre o preço do etanol e da gasolina é aproximadamente:",
+            "q": "Sabendo que a gasolina custa $\\text{R\\$} 5{,}80$ o litro e o etanol $\\text{R\\$} 3{,}90$ o litro, a razão entre o preço do etanol e da gasolina é aproximadamente:",
             "options": [
               "$67{}2\\%$",
               "$72{}5\\%$",
@@ -3410,7 +3410,7 @@
             "explanation": "Área do trapézio: $A = \\frac{(12 + 8) \\times 5}{2} = \\frac{20 \\times 5}{2} = 50\\text{ m}^2$. Área com painéis: $50 \\times 0{}80 = 40\\text{ m}^2$. Produção diária: $40 \\times 1{}2 = 48\\text{ kWh}$."
           },
           {
-            "q": "Alice analisou o número formado pelos 11 dígitos do seu CPF ($65.434.212.988$) e fez as seguintes afirmações:\\nI. É um número divisível por 2.\\nII. É um número divisível por 3.\\nIII. É um número divisível por 4.\\nIV. Não é um número divisível por 5.\\nAssinale a alternativa CORRETA:",
+            "q": "Alice analisou o número formado pelos 11 dígitos do seu CPF ($65.434.212.988$) e fez as seguintes afirmações:<br>I. É um número divisível por 2.<br>II. É um número divisível por 3.<br>III. É um número divisível por 4.<br>IV. Não é um número divisível por 5.<br>Assinale a alternativa CORRETA:",
             "options": [
               "Todos os itens estão corretos.",
               "Apenas os itens I, III e IV estão corretos.",
@@ -3458,13 +3458,13 @@
             "explanation": "Pessoas com glitter: $0{}40 \\times 1.400.000 = 560.000$. Massa de glitter: $560.000 \\times 1{}5 = 840.000\\text{ g}$. Total de partículas: $840.000 \\times 20.000 = 16.800.000.000$. Animais mortos: $\\frac{16.800.000.000}{100.000} = 168.000\\text{ animais}$ ($168\\text{ mil}$)."
           },
           {
-            "q": "Um turista argentino comprou 3 Big Macs em Buenos Aires (US$ $6{}95$ cada). No Brasil, o mesmo sanduíche custa US$ $4{}02$. Com a cotação do dólar a R$ $6{}00$, qual o valor em reais (R$) que ele economizaria se fizesse a compra no Brasil?",
+            "q": "Um turista argentino comprou 3 Big Macs em Buenos Aires ($\\text{US\\$} 6{,}95$ cada). No Brasil, o mesmo sanduíche custa $\\text{US\\$} 4{,}02$. Com a cotação do dólar a $\\text{R\\$} 6{,}00$, qual o valor em reais ($\\text{R\\$}$) que ele economizaria se fizesse a compra no Brasil?",
             "options": [
-              "R$ $8,79$",
-              "R$ $17,58$",
-              "R$ $17,64$",
-              "R$ $52,74$",
-              "R$ $101,16$"
+              "$\\text{R\\$} 8{,}79$",
+              "$\\text{R\\$} 17{,}58$",
+              "$\\text{R\\$} 17{,}64$",
+              "$\\text{R\\$} 52{,}74$",
+              "$\\text{R\\$} 101{,}16$"
             ],
             "correct": 3,
             "explanation": "Diferença por sanduíche: $\\text{US\\$} 6{}95 - 4{}02 = \\text{US\\$} 2{}93$. Para 3 sanduíches: $3 \\times 2{}93 = \\text{US\\$} 8{}79$. Convertendo em reais: $8{}79 \\times 6{}00 = \\text{R\\$} 52,74$."
@@ -3506,13 +3506,13 @@
             "explanation": "Porcentagem conjunta: $30\\% + 25\\% = 55\\%$. Horas diárias: $0{}55 \\times 24 = 13{}2\\text{ horas}$ ($13\\text{h } 12\\text{min}$)."
           },
           {
-            "q": "Manoela comprou $3\\text{ kg}$ de maçãs e $2\\text{ kg}$ de bananas na feira por R$ $27,00$. Se o quilo da maçã é R$ $1,50$ mais caro que o quilo da banana, qual é o preço do quilo da maçã?",
+            "q": "Manoela comprou $3\\text{ kg}$ de maçãs e $2\\text{ kg}$ de bananas na feira por $\\text{R\\$} 27{,}00$. Se o quilo da maçã é $\\text{R\\$} 1{,}50$ mais caro que o quilo da banana, qual é o preço do quilo da maçã?",
             "options": [
-              "R$ $6,00$",
-              "R$ $4,50$",
-              "R$ $5,50$",
-              "R$ $7,00$",
-              "R$ $6,50$"
+              "$\\text{R\\$} 6{,}00$",
+              "$\\text{R\\$} 4{,}50$",
+              "$\\text{R\\$} 5{,}50$",
+              "$\\text{R\\$} 7{,}00$",
+              "$\\text{R\\$} 6{,}50$"
             ],
             "correct": 0,
             "explanation": "Sendo $b$ o quilo da banana e $m = b + 1{}50$: $3(b + 1{}50) + 2b = 27 \\Rightarrow 5b + 4{}50 = 27 \\Rightarrow 5b = 22{}50 \\Rightarrow b = 4{}50$. Logo, o quilo da maçã é $4{}50 + 1{}50 = \\text{R\\$} 6,00$."
@@ -3542,13 +3542,13 @@
             "explanation": "Média: $\\frac{12000 + 15000 + 18000 + 19000}{4} = \\frac{64000}{4} = 16.000$ visitantes."
           },
           {
-            "q": "Uma televisão de R$ $3.200,00$ é oferecida com $15\\%$ de desconto para pagamento à vista. Qual o valor pago à vista?",
+            "q": "Uma televisão de $\\text{R\\$} 3.200{,}00$ é oferecida com $15\\%$ de desconto para pagamento à vista. Qual o valor pago à vista?",
             "options": [
-              "R$ $2.720,00$",
-              "R$ $2.800,00$",
-              "R$ $2.680,00$",
-              "R$ $2.750,00$",
-              "R$ $2.850,00$"
+              "$\\text{R\\$} 2.720{,}00$",
+              "$\\text{R\\$} 2.800{,}00$",
+              "$\\text{R\\$} 2.680{,}00$",
+              "$\\text{R\\$} 2.750{,}00$",
+              "$\\text{R\\$} 2.850{,}00$"
             ],
             "correct": 0,
             "explanation": "Desconto: $0{}15 \\times 3200 = \\text{R\\$} 480,00$. Preço à vista: $3200 - 480 = \\text{R\\$} 2.720,00$."
@@ -3602,7 +3602,7 @@
         },
         "questions": [
           {
-            "q": "Com base nos dados de uma pesquisa sobre uso de redes sociais por jovens de 9 a 17 anos ($85\\%$ usam YouTube, $70\\%$ Instagram e $60\\%$ TikTok), analise as afirmativas:\\nI. O YouTube é a rede social mais utilizada entre as citadas.\\nII. Menos da metade dos entrevistados utiliza o TikTok.\\nÉ correto o que se afirma em:",
+            "q": "Com base nos dados de uma pesquisa sobre uso de redes sociais por jovens de 9 a 17 anos ($85\\%$ usam YouTube, $70\\%$ Instagram e $60\\%$ TikTok), analise as afirmativas:<br>I. O YouTube é a rede social mais utilizada entre as citadas.<br>II. Menos da metade dos entrevistados utiliza o TikTok.<br>É correto o que se afirma em:",
             "options": [
               "Apenas I",
               "Apenas II",
