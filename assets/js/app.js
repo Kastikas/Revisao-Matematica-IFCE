@@ -298,6 +298,18 @@ function updateGlobalProgress() {
     const globalQuestionsEl = document.getElementById("global-answered-questions");
     if (globalQuestionsEl) globalQuestionsEl.innerText = `${answeredQuestions}/${totalQuestions}`;
 
+    const globalExamsEl = document.getElementById("global-official-exams");
+    if (globalExamsEl) {
+        let totalOfficial = 0;
+        for (let bId in mathData) {
+            const titleLower = (mathData[bId].title || "").toLowerCase();
+            if (titleLower.includes("provas") || titleLower.includes("oficiais")) {
+                totalOfficial += mathData[bId].topics.length;
+            }
+        }
+        globalExamsEl.innerText = `${totalOfficial} Edições`;
+    }
+
     if (window.lucide) lucide.createIcons();
 }
 
@@ -314,6 +326,64 @@ function resetProgress() {
     }
 }
 
+// Localizador Rápido de Subtópicos
+function initTopicSearch() {
+    const searchInput = document.getElementById('topic-search-input');
+    const searchResults = document.getElementById('search-results-container');
+
+    if (!searchInput || !searchResults || !window.mathData) return;
+
+    const allTopicsList = [];
+    for (let bId in mathData) {
+        const block = mathData[bId];
+        const defaultFolder = block.folder || (block.topics[0] && block.topics[0].folder) || `bloco-${bId}`;
+        block.topics.forEach(t => {
+            allTopicsList.push({
+                id: t.id,
+                title: t.title,
+                bncc: t.bncc || '',
+                summary: t.summary || '',
+                folder: t.folder || defaultFolder,
+                filename: t.filename,
+                blockTitle: block.title
+            });
+        });
+    }
+
+    searchInput.addEventListener('input', (e) => {
+        const query = e.target.value.toLowerCase().trim();
+        if (!query) {
+            searchResults.classList.add('hidden');
+            searchResults.innerHTML = '';
+            return;
+        }
+
+        const filtered = allTopicsList.filter(t => 
+            t.title.toLowerCase().includes(query) || 
+            t.bncc.toLowerCase().includes(query) || 
+            t.summary.toLowerCase().includes(query) ||
+            t.blockTitle.toLowerCase().includes(query)
+        );
+
+        if (filtered.length === 0) {
+            searchResults.classList.remove('hidden');
+            searchResults.innerHTML = '<div class="col-span-full p-4 text-center text-xs text-gray-500 bg-gray-50 rounded-xl">Nenhum subtópico encontrado com esse termo.</div>';
+        } else {
+            searchResults.classList.remove('hidden');
+            searchResults.innerHTML = filtered.map(t => `
+                <a href="./${t.folder}/${t.filename}" class="p-3 rounded-xl border border-brand-200 hover:border-brand-500 bg-brand-50/40 hover:bg-brand-50 transition flex items-center justify-between group">
+                    <div>
+                        <span class="text-[10px] font-bold text-brand-700 uppercase block">${t.blockTitle}</span>
+                        <strong class="text-xs sm:text-sm font-semibold text-gray-900 group-hover:text-brand-900">${t.title}</strong>
+                    </div>
+                    <i data-lucide="arrow-right" class="w-4 h-4 text-brand-600 flex-shrink-0"></i>
+                </a>
+            `).join('');
+            if (window.lucide) lucide.createIcons();
+        }
+    });
+}
+
 // Configurações e Menu Mobile
 function initMobileMenu() {
     const btn = document.getElementById("mobile-menu-btn");
@@ -328,6 +398,7 @@ function initMobileMenu() {
 // Execução ao carregar a página
 document.addEventListener("DOMContentLoaded", () => {
     initMobileMenu();
+    initTopicSearch();
     if (window.lucide) lucide.createIcons();
     renderLatex();
     updateGlobalProgress();

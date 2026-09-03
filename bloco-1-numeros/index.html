@@ -114,297 +114,273 @@
     </header>
 
 
-    <main class="flex-grow max-w-7xl w-full mx-auto px-4 sm:px-6 lg:px-8 py-8">
-        
+    <main class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 flex-grow">
         <!-- Breadcrumbs -->
-        <nav class="flex items-center gap-2 text-xs sm:text-sm text-gray-500 mb-6">
-            <a href="../index.html" class="hover:text-brand-700 flex items-center gap-1"><i data-lucide="home" class="w-3.5 h-3.5"></i> Início</a>
-            <span class="text-gray-300">/</span>
-            <span class="text-gray-800 font-semibold">Bloco 1: Números e Operações</span>
+        <nav class="flex text-xs font-medium text-gray-500 mb-6" aria-label="Breadcrumb">
+            <ol class="inline-flex items-center space-x-1 sm:space-x-2">
+                <li><a href="../index.html" class="hover:text-brand-700 flex items-center gap-1"><i data-lucide="home" class="w-3.5 h-3.5"></i> Início</a></li>
+                <li><span class="text-gray-400">/</span></li>
+                <li class="text-gray-800 font-semibold">Bloco 1: Números e Operações</li>
+            </ol>
         </nav>
 
-        <!-- Banner do Bloco -->
-        <div class="bg-gradient-to-r from-brand-800 to-brand-950 rounded-3xl p-6 sm:p-10 text-white shadow-xl mb-10 relative overflow-hidden">
+        <!-- Hero do Bloco -->
+        <div class="bg-gradient-to-r from-brand-800 to-brand-950 rounded-3xl p-6 sm:p-10 text-white mb-10 shadow-xl relative overflow-hidden">
             <div class="relative z-10 max-w-3xl">
-                <div class="flex items-center gap-3 mb-4">
-                    <div class="w-12 h-12 bg-white/10 rounded-2xl flex items-center justify-center text-brand-300 border border-white/20">
-                        <i data-lucide="binary" class="w-6 h-6"></i>
-                    </div>
-                    <div>
-                        <span class="bg-brand-500/30 text-brand-200 border border-brand-400/30 text-xs font-bold px-3 py-1 rounded-full uppercase tracking-wider">
-                            Eixo Temático
-                        </span>
-                    </div>
+                <div class="inline-flex items-center gap-2 bg-brand-700/60 border border-brand-500/40 px-3 py-1 rounded-full text-xs font-bold text-brand-200 uppercase tracking-wider mb-4">
+                    <i data-lucide="binary" class="w-3.5 h-3.5 text-brand-300"></i> Eixo Temático
                 </div>
                 <h1 class="text-3xl sm:text-4xl font-extrabold tracking-tight mb-3">Bloco 1: Números e Operações</h1>
-                <p class="text-brand-100 text-sm sm:text-base mb-6 leading-relaxed">
-                    Domínio numérico, frações, porcentagem, proporção e notação.
-                </p>
-
-                <!-- Progresso e Ações -->
-                <div class="bg-brand-900/60 border border-brand-700/60 rounded-2xl p-4 sm:p-5 max-w-xl mb-6">
-                    <div class="flex justify-between text-xs text-brand-200 mb-2 font-medium">
-                        <span>Progresso de Conclusão do Bloco</span>
-                        <span id="block-progress-txt-1" class="font-bold text-brand-300">0%</span>
-                    </div>
-                    <div class="w-full bg-brand-950 rounded-full h-3 overflow-hidden border border-brand-800">
-                        <div id="block-progress-bar-1" class="bg-brand-400 h-full w-0 transition-all duration-500"></div>
-                    </div>
-                </div>
-
-                <div class="flex flex-wrap items-center gap-3">
-                    <a href="./sistema-de-numeracao-e-comparacao.html" class="bg-white hover:bg-brand-50 text-brand-900 font-bold px-5 py-2.5 rounded-xl text-sm transition flex items-center gap-2 shadow">
-                        <i data-lucide="play-circle" class="w-4 h-4 text-brand-700"></i> Começar pelo Tópico 01
+                <p class="text-brand-100 text-sm sm:text-base leading-relaxed mb-6">Domínio numérico, frações, porcentagem, proporção e notação.</p>
+                <div class="flex flex-wrap items-center gap-4">
+                    <a href="./sistema-de-numeracao-e-comparacao.html" class="bg-white hover:bg-brand-50 text-brand-900 font-bold px-6 py-3 rounded-xl text-sm transition flex items-center gap-2 shadow-lg">
+                        Começar pelo Tópico 01 <i data-lucide="arrow-right" class="w-4 h-4 text-brand-700"></i>
                     </a>
-                    <a href="../simulado.html" class="bg-brand-600 hover:bg-brand-500 text-white font-bold px-5 py-2.5 rounded-xl text-sm transition flex items-center gap-2 border border-brand-400/40">
-                        <i data-lucide="award" class="w-4 h-4"></i> Fazer Simulado Geral
+                    <a href="../simulado.html?block=1" class="bg-brand-700/80 hover:bg-brand-700 text-white font-bold px-5 py-3 rounded-xl text-sm transition flex items-center gap-2 border border-brand-500/30">
+                        <i data-lucide="award" class="w-4 h-4"></i> Simulado deste Bloco
                     </a>
                 </div>
             </div>
         </div>
 
-        <!-- Seção de Subtópicos -->
-        <div class="mb-12">
-            <div class="flex flex-col sm:flex-row justify-between sm:items-center gap-4 mb-6">
-                <div>
-                    <h2 class="text-2xl font-bold text-gray-900 flex items-center gap-2 border-l-4 border-brand-600 pl-3">
-                        Subtópicos e Provas
-                    </h2>
-                    <p class="text-xs sm:text-sm text-gray-500 mt-1 pl-3">Clique em qualquer subtópico para estudar a teoria, fórmulas, exemplos e resolver as questões.</p>
-                </div>
-                <span class="text-xs font-semibold px-3 py-1.5 rounded-xl bg-gray-100 text-gray-700 self-start sm:self-auto">
-                    Total: 7 Subtópicos
-                </span>
+        <!-- Barra de Progresso do Bloco -->
+        <div class="bg-white border border-gray-200 rounded-2xl p-5 shadow-sm mb-8">
+            <div class="flex justify-between items-center text-xs font-semibold text-gray-700 mb-2">
+                <span>Progresso do Bloco</span>
+                <span id="block-progress-txt-1" class="text-brand-700">0% (0/7)</span>
             </div>
+            <div class="w-full bg-gray-100 rounded-full h-2.5 overflow-hidden">
+                <div id="block-progress-bar-1" class="bg-brand-600 h-full w-0 transition-all duration-500"></div>
+            </div>
+        </div>
 
-            <!-- Grade de Cards de Subtópicos -->
-            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-                
-            <div class="bg-white border border-gray-200 rounded-2xl p-6 shadow-sm hover-card flex flex-col justify-between" data-topic-id="b1-t1">
-                <div>
-                    <div class="flex items-center justify-between mb-3">
-                        <span class="text-xs font-bold text-brand-700 bg-brand-50 px-2.5 py-1 rounded-lg border border-brand-100">
-                            Tópico 01
-                        </span>
-                        <span id="status-badge-b1-t1" class="text-xs font-medium px-2 py-0.5 rounded-full bg-gray-100 text-gray-600 border border-gray-200">
-                            Pendente
-                        </span>
+        <!-- Grade de Subtópicos -->
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+            
+                <div class="bg-white border border-gray-200 rounded-2xl p-6 shadow-sm hover-card flex flex-col justify-between" data-topic-id="b1-t1">
+                    <div>
+                        <div class="flex items-center justify-between mb-3">
+                            <span class="text-xs font-bold text-brand-700 bg-brand-50 px-2.5 py-1 rounded-lg border border-brand-100">
+                                Tópico 01
+                            </span>
+                            <span id="status-badge-b1-t1" class="text-xs font-medium px-2 py-0.5 rounded-full bg-gray-100 text-gray-600 border border-gray-200">
+                                Pendente
+                            </span>
+                        </div>
+                        <h3 class="text-lg font-bold text-gray-900 mb-1.5">Sistema de Numeração e Comparação</h3>
+                        <div class="mb-3">
+                            <span class="text-xs font-semibold text-gray-500 bg-gray-50 px-2 py-0.5 rounded border border-gray-200">
+                                BNCC: EF06MA01, EF06MA02, EF07MA07
+                            </span>
+                        </div>
+                        <p class="text-gray-600 text-xs sm:text-sm leading-relaxed mb-4 line-clamp-2">Compreensão do Sistema de Numeração Decimal, valor posicional e comparação de números.</p>
                     </div>
-                    <h3 class="text-lg font-bold text-gray-900 mb-1.5">Sistema de Numeração e Comparação</h3>
-                    <div class="mb-3">
-                        <span class="text-xs font-semibold text-gray-500 bg-gray-50 px-2 py-0.5 rounded border border-gray-200">
-                            BNCC: EF06MA01, EF06MA02, EF07MA07
-                        </span>
-                    </div>
-                    <p class="text-gray-600 text-xs sm:text-sm leading-relaxed mb-4 line-clamp-2">Compreensão do Sistema de Numeração Decimal, valor posicional e comparação de números.</p>
-                </div>
 
-                <div class="pt-4 border-t border-gray-100 flex items-center justify-between gap-2">
-                    <span class="text-xs text-gray-500 flex items-center gap-1">
-                        <i data-lucide="help-circle" class="w-3.5 h-3.5 text-brand-600"></i> 5 Questões
-                    </span>
-                    <div class="flex items-center gap-2">
-                        
-                        <a href="./sistema-de-numeracao-e-comparacao.html" class="bg-brand-600 hover:bg-brand-700 text-white font-semibold px-4 py-2 rounded-xl text-xs transition flex items-center gap-1.5 shadow-sm">
-                            Estudar <i data-lucide="arrow-right" class="w-3.5 h-3.5"></i>
-                        </a>
+                    <div class="pt-4 border-t border-gray-100 flex items-center justify-between gap-2">
+                        <span class="text-xs text-gray-500 flex items-center gap-1">
+                            <i data-lucide="help-circle" class="w-3.5 h-3.5 text-brand-600"></i> 5 Questões
+                        </span>
+                        <div class="flex items-center gap-2">
+                            
+                            <a href="./sistema-de-numeracao-e-comparacao.html" class="bg-brand-600 hover:bg-brand-700 text-white font-semibold px-4 py-2 rounded-xl text-xs transition flex items-center gap-1.5 shadow-sm">
+                                Estudar <i data-lucide="arrow-right" class="w-3.5 h-3.5"></i>
+                            </a>
+                        </div>
                     </div>
                 </div>
-            </div>
-        
-            <div class="bg-white border border-gray-200 rounded-2xl p-6 shadow-sm hover-card flex flex-col justify-between" data-topic-id="b1-t2">
-                <div>
-                    <div class="flex items-center justify-between mb-3">
-                        <span class="text-xs font-bold text-brand-700 bg-brand-50 px-2.5 py-1 rounded-lg border border-brand-100">
-                            Tópico 02
-                        </span>
-                        <span id="status-badge-b1-t2" class="text-xs font-medium px-2 py-0.5 rounded-full bg-gray-100 text-gray-600 border border-gray-200">
-                            Pendente
-                        </span>
+            
+                <div class="bg-white border border-gray-200 rounded-2xl p-6 shadow-sm hover-card flex flex-col justify-between" data-topic-id="b1-t2">
+                    <div>
+                        <div class="flex items-center justify-between mb-3">
+                            <span class="text-xs font-bold text-brand-700 bg-brand-50 px-2.5 py-1 rounded-lg border border-brand-100">
+                                Tópico 02
+                            </span>
+                            <span id="status-badge-b1-t2" class="text-xs font-medium px-2 py-0.5 rounded-full bg-gray-100 text-gray-600 border border-gray-200">
+                                Pendente
+                            </span>
+                        </div>
+                        <h3 class="text-lg font-bold text-gray-900 mb-1.5">Operações com Naturais e Estimativas</h3>
+                        <div class="mb-3">
+                            <span class="text-xs font-semibold text-gray-500 bg-gray-50 px-2 py-0.5 rounded border border-gray-200">
+                                BNCC: EF06MA03
+                            </span>
+                        </div>
+                        <p class="text-gray-600 text-xs sm:text-sm leading-relaxed mb-4 line-clamp-2">As quatro operações fundamentais, cálculo mental e prioridades matemáticas.</p>
                     </div>
-                    <h3 class="text-lg font-bold text-gray-900 mb-1.5">Operações com Naturais e Estimativas</h3>
-                    <div class="mb-3">
-                        <span class="text-xs font-semibold text-gray-500 bg-gray-50 px-2 py-0.5 rounded border border-gray-200">
-                            BNCC: EF06MA03
-                        </span>
-                    </div>
-                    <p class="text-gray-600 text-xs sm:text-sm leading-relaxed mb-4 line-clamp-2">As quatro operações fundamentais, cálculo mental e prioridades matemáticas.</p>
-                </div>
 
-                <div class="pt-4 border-t border-gray-100 flex items-center justify-between gap-2">
-                    <span class="text-xs text-gray-500 flex items-center gap-1">
-                        <i data-lucide="help-circle" class="w-3.5 h-3.5 text-brand-600"></i> 5 Questões
-                    </span>
-                    <div class="flex items-center gap-2">
-                        
-                        <a href="./operacoes-com-naturais-e-estimativas.html" class="bg-brand-600 hover:bg-brand-700 text-white font-semibold px-4 py-2 rounded-xl text-xs transition flex items-center gap-1.5 shadow-sm">
-                            Estudar <i data-lucide="arrow-right" class="w-3.5 h-3.5"></i>
-                        </a>
+                    <div class="pt-4 border-t border-gray-100 flex items-center justify-between gap-2">
+                        <span class="text-xs text-gray-500 flex items-center gap-1">
+                            <i data-lucide="help-circle" class="w-3.5 h-3.5 text-brand-600"></i> 5 Questões
+                        </span>
+                        <div class="flex items-center gap-2">
+                            
+                            <a href="./operacoes-com-naturais-e-estimativas.html" class="bg-brand-600 hover:bg-brand-700 text-white font-semibold px-4 py-2 rounded-xl text-xs transition flex items-center gap-1.5 shadow-sm">
+                                Estudar <i data-lucide="arrow-right" class="w-3.5 h-3.5"></i>
+                            </a>
+                        </div>
                     </div>
                 </div>
-            </div>
-        
-            <div class="bg-white border border-gray-200 rounded-2xl p-6 shadow-sm hover-card flex flex-col justify-between" data-topic-id="b1-t3">
-                <div>
-                    <div class="flex items-center justify-between mb-3">
-                        <span class="text-xs font-bold text-brand-700 bg-brand-50 px-2.5 py-1 rounded-lg border border-brand-100">
-                            Tópico 03
-                        </span>
-                        <span id="status-badge-b1-t3" class="text-xs font-medium px-2 py-0.5 rounded-full bg-gray-100 text-gray-600 border border-gray-200">
-                            Pendente
-                        </span>
+            
+                <div class="bg-white border border-gray-200 rounded-2xl p-6 shadow-sm hover-card flex flex-col justify-between" data-topic-id="b1-t3">
+                    <div>
+                        <div class="flex items-center justify-between mb-3">
+                            <span class="text-xs font-bold text-brand-700 bg-brand-50 px-2.5 py-1 rounded-lg border border-brand-100">
+                                Tópico 03
+                            </span>
+                            <span id="status-badge-b1-t3" class="text-xs font-medium px-2 py-0.5 rounded-full bg-gray-100 text-gray-600 border border-gray-200">
+                                Pendente
+                            </span>
+                        </div>
+                        <h3 class="text-lg font-bold text-gray-900 mb-1.5">Múltiplos, Divisores e Critérios</h3>
+                        <div class="mb-3">
+                            <span class="text-xs font-semibold text-gray-500 bg-gray-50 px-2 py-0.5 rounded border border-gray-200">
+                                BNCC: EF06MA04, EF06MA05
+                            </span>
+                        </div>
+                        <p class="text-gray-600 text-xs sm:text-sm leading-relaxed mb-4 line-clamp-2">Números primos, MMC, MDC e regras de divisibilidade.</p>
                     </div>
-                    <h3 class="text-lg font-bold text-gray-900 mb-1.5">Múltiplos, Divisores e Critérios</h3>
-                    <div class="mb-3">
-                        <span class="text-xs font-semibold text-gray-500 bg-gray-50 px-2 py-0.5 rounded border border-gray-200">
-                            BNCC: EF06MA04, EF06MA05
-                        </span>
-                    </div>
-                    <p class="text-gray-600 text-xs sm:text-sm leading-relaxed mb-4 line-clamp-2">Números primos, MMC, MDC e regras de divisibilidade.</p>
-                </div>
 
-                <div class="pt-4 border-t border-gray-100 flex items-center justify-between gap-2">
-                    <span class="text-xs text-gray-500 flex items-center gap-1">
-                        <i data-lucide="help-circle" class="w-3.5 h-3.5 text-brand-600"></i> 5 Questões
-                    </span>
-                    <div class="flex items-center gap-2">
-                        
-                        <a href="./multiplos-divisores-e-criterios.html" class="bg-brand-600 hover:bg-brand-700 text-white font-semibold px-4 py-2 rounded-xl text-xs transition flex items-center gap-1.5 shadow-sm">
-                            Estudar <i data-lucide="arrow-right" class="w-3.5 h-3.5"></i>
-                        </a>
+                    <div class="pt-4 border-t border-gray-100 flex items-center justify-between gap-2">
+                        <span class="text-xs text-gray-500 flex items-center gap-1">
+                            <i data-lucide="help-circle" class="w-3.5 h-3.5 text-brand-600"></i> 5 Questões
+                        </span>
+                        <div class="flex items-center gap-2">
+                            
+                            <a href="./multiplos-divisores-e-criterios.html" class="bg-brand-600 hover:bg-brand-700 text-white font-semibold px-4 py-2 rounded-xl text-xs transition flex items-center gap-1.5 shadow-sm">
+                                Estudar <i data-lucide="arrow-right" class="w-3.5 h-3.5"></i>
+                            </a>
+                        </div>
                     </div>
                 </div>
-            </div>
-        
-            <div class="bg-white border border-gray-200 rounded-2xl p-6 shadow-sm hover-card flex flex-col justify-between" data-topic-id="b1-t4">
-                <div>
-                    <div class="flex items-center justify-between mb-3">
-                        <span class="text-xs font-bold text-brand-700 bg-brand-50 px-2.5 py-1 rounded-lg border border-brand-100">
-                            Tópico 04
-                        </span>
-                        <span id="status-badge-b1-t4" class="text-xs font-medium px-2 py-0.5 rounded-full bg-gray-100 text-gray-600 border border-gray-200">
-                            Pendente
-                        </span>
+            
+                <div class="bg-white border border-gray-200 rounded-2xl p-6 shadow-sm hover-card flex flex-col justify-between" data-topic-id="b1-t4">
+                    <div>
+                        <div class="flex items-center justify-between mb-3">
+                            <span class="text-xs font-bold text-brand-700 bg-brand-50 px-2.5 py-1 rounded-lg border border-brand-100">
+                                Tópico 04
+                            </span>
+                            <span id="status-badge-b1-t4" class="text-xs font-medium px-2 py-0.5 rounded-full bg-gray-100 text-gray-600 border border-gray-200">
+                                Pendente
+                            </span>
+                        </div>
+                        <h3 class="text-lg font-bold text-gray-900 mb-1.5">Frações I: Significados e Equivalência</h3>
+                        <div class="mb-3">
+                            <span class="text-xs font-semibold text-gray-500 bg-gray-50 px-2 py-0.5 rounded border border-gray-200">
+                                BNCC: EF06MA06, EF06MA07
+                            </span>
+                        </div>
+                        <p class="text-gray-600 text-xs sm:text-sm leading-relaxed mb-4 line-clamp-2">Parte-todo, frações equivalentes e conversão para decimal.</p>
                     </div>
-                    <h3 class="text-lg font-bold text-gray-900 mb-1.5">Frações I: Significados e Equivalência</h3>
-                    <div class="mb-3">
-                        <span class="text-xs font-semibold text-gray-500 bg-gray-50 px-2 py-0.5 rounded border border-gray-200">
-                            BNCC: EF06MA06, EF06MA07
-                        </span>
-                    </div>
-                    <p class="text-gray-600 text-xs sm:text-sm leading-relaxed mb-4 line-clamp-2">Parte-todo, frações equivalentes e conversão para decimal.</p>
-                </div>
 
-                <div class="pt-4 border-t border-gray-100 flex items-center justify-between gap-2">
-                    <span class="text-xs text-gray-500 flex items-center gap-1">
-                        <i data-lucide="help-circle" class="w-3.5 h-3.5 text-brand-600"></i> 5 Questões
-                    </span>
-                    <div class="flex items-center gap-2">
-                        
-                        <a href="./fracoes-i-significados-e-equivalencia.html" class="bg-brand-600 hover:bg-brand-700 text-white font-semibold px-4 py-2 rounded-xl text-xs transition flex items-center gap-1.5 shadow-sm">
-                            Estudar <i data-lucide="arrow-right" class="w-3.5 h-3.5"></i>
-                        </a>
+                    <div class="pt-4 border-t border-gray-100 flex items-center justify-between gap-2">
+                        <span class="text-xs text-gray-500 flex items-center gap-1">
+                            <i data-lucide="help-circle" class="w-3.5 h-3.5 text-brand-600"></i> 5 Questões
+                        </span>
+                        <div class="flex items-center gap-2">
+                            
+                            <a href="./fracoes-i-significados-e-equivalencia.html" class="bg-brand-600 hover:bg-brand-700 text-white font-semibold px-4 py-2 rounded-xl text-xs transition flex items-center gap-1.5 shadow-sm">
+                                Estudar <i data-lucide="arrow-right" class="w-3.5 h-3.5"></i>
+                            </a>
+                        </div>
                     </div>
                 </div>
-            </div>
-        
-            <div class="bg-white border border-gray-200 rounded-2xl p-6 shadow-sm hover-card flex flex-col justify-between" data-topic-id="b1-t5">
-                <div>
-                    <div class="flex items-center justify-between mb-3">
-                        <span class="text-xs font-bold text-brand-700 bg-brand-50 px-2.5 py-1 rounded-lg border border-brand-100">
-                            Tópico 05
-                        </span>
-                        <span id="status-badge-b1-t5" class="text-xs font-medium px-2 py-0.5 rounded-full bg-gray-100 text-gray-600 border border-gray-200">
-                            Pendente
-                        </span>
+            
+                <div class="bg-white border border-gray-200 rounded-2xl p-6 shadow-sm hover-card flex flex-col justify-between" data-topic-id="b1-t5">
+                    <div>
+                        <div class="flex items-center justify-between mb-3">
+                            <span class="text-xs font-bold text-brand-700 bg-brand-50 px-2.5 py-1 rounded-lg border border-brand-100">
+                                Tópico 05
+                            </span>
+                            <span id="status-badge-b1-t5" class="text-xs font-medium px-2 py-0.5 rounded-full bg-gray-100 text-gray-600 border border-gray-200">
+                                Pendente
+                            </span>
+                        </div>
+                        <h3 class="text-lg font-bold text-gray-900 mb-1.5">Frações II: Operações Básicas</h3>
+                        <div class="mb-3">
+                            <span class="text-xs font-semibold text-gray-500 bg-gray-50 px-2 py-0.5 rounded border border-gray-200">
+                                BNCC: EF06MA08, EF06MA09
+                            </span>
+                        </div>
+                        <p class="text-gray-600 text-xs sm:text-sm leading-relaxed mb-4 line-clamp-2">Adição, subtração, multiplicação e divisão de frações.</p>
                     </div>
-                    <h3 class="text-lg font-bold text-gray-900 mb-1.5">Frações II: Operações Básicas</h3>
-                    <div class="mb-3">
-                        <span class="text-xs font-semibold text-gray-500 bg-gray-50 px-2 py-0.5 rounded border border-gray-200">
-                            BNCC: EF06MA08, EF06MA09
-                        </span>
-                    </div>
-                    <p class="text-gray-600 text-xs sm:text-sm leading-relaxed mb-4 line-clamp-2">Adição, subtração, multiplicação e divisão de frações.</p>
-                </div>
 
-                <div class="pt-4 border-t border-gray-100 flex items-center justify-between gap-2">
-                    <span class="text-xs text-gray-500 flex items-center gap-1">
-                        <i data-lucide="help-circle" class="w-3.5 h-3.5 text-brand-600"></i> 5 Questões
-                    </span>
-                    <div class="flex items-center gap-2">
-                        
-                        <a href="./fracoes-ii-operacoes-basicas.html" class="bg-brand-600 hover:bg-brand-700 text-white font-semibold px-4 py-2 rounded-xl text-xs transition flex items-center gap-1.5 shadow-sm">
-                            Estudar <i data-lucide="arrow-right" class="w-3.5 h-3.5"></i>
-                        </a>
+                    <div class="pt-4 border-t border-gray-100 flex items-center justify-between gap-2">
+                        <span class="text-xs text-gray-500 flex items-center gap-1">
+                            <i data-lucide="help-circle" class="w-3.5 h-3.5 text-brand-600"></i> 5 Questões
+                        </span>
+                        <div class="flex items-center gap-2">
+                            
+                            <a href="./fracoes-ii-operacoes-basicas.html" class="bg-brand-600 hover:bg-brand-700 text-white font-semibold px-4 py-2 rounded-xl text-xs transition flex items-center gap-1.5 shadow-sm">
+                                Estudar <i data-lucide="arrow-right" class="w-3.5 h-3.5"></i>
+                            </a>
+                        </div>
                     </div>
                 </div>
-            </div>
-        
-            <div class="bg-white border border-gray-200 rounded-2xl p-6 shadow-sm hover-card flex flex-col justify-between" data-topic-id="b1-t6">
-                <div>
-                    <div class="flex items-center justify-between mb-3">
-                        <span class="text-xs font-bold text-brand-700 bg-brand-50 px-2.5 py-1 rounded-lg border border-brand-100">
-                            Tópico 06
-                        </span>
-                        <span id="status-badge-b1-t6" class="text-xs font-medium px-2 py-0.5 rounded-full bg-gray-100 text-gray-600 border border-gray-200">
-                            Pendente
-                        </span>
+            
+                <div class="bg-white border border-gray-200 rounded-2xl p-6 shadow-sm hover-card flex flex-col justify-between" data-topic-id="b1-t6">
+                    <div>
+                        <div class="flex items-center justify-between mb-3">
+                            <span class="text-xs font-bold text-brand-700 bg-brand-50 px-2.5 py-1 rounded-lg border border-brand-100">
+                                Tópico 06
+                            </span>
+                            <span id="status-badge-b1-t6" class="text-xs font-medium px-2 py-0.5 rounded-full bg-gray-100 text-gray-600 border border-gray-200">
+                                Pendente
+                            </span>
+                        </div>
+                        <h3 class="text-lg font-bold text-gray-900 mb-1.5">Porcentagem e Finanças</h3>
+                        <div class="mb-3">
+                            <span class="text-xs font-semibold text-gray-500 bg-gray-50 px-2 py-0.5 rounded border border-gray-200">
+                                BNCC: EF06MA12, EF08MA04
+                            </span>
+                        </div>
+                        <p class="text-gray-600 text-xs sm:text-sm leading-relaxed mb-4 line-clamp-2">Cálculos percentuais e descontos/acréscimos simples.</p>
                     </div>
-                    <h3 class="text-lg font-bold text-gray-900 mb-1.5">Porcentagem e Finanças</h3>
-                    <div class="mb-3">
-                        <span class="text-xs font-semibold text-gray-500 bg-gray-50 px-2 py-0.5 rounded border border-gray-200">
-                            BNCC: EF06MA12, EF08MA04
-                        </span>
-                    </div>
-                    <p class="text-gray-600 text-xs sm:text-sm leading-relaxed mb-4 line-clamp-2">Cálculos percentuais e descontos/acréscimos simples.</p>
-                </div>
 
-                <div class="pt-4 border-t border-gray-100 flex items-center justify-between gap-2">
-                    <span class="text-xs text-gray-500 flex items-center gap-1">
-                        <i data-lucide="help-circle" class="w-3.5 h-3.5 text-brand-600"></i> 5 Questões
-                    </span>
-                    <div class="flex items-center gap-2">
-                        
-                        <a href="./porcentagem-e-financas.html" class="bg-brand-600 hover:bg-brand-700 text-white font-semibold px-4 py-2 rounded-xl text-xs transition flex items-center gap-1.5 shadow-sm">
-                            Estudar <i data-lucide="arrow-right" class="w-3.5 h-3.5"></i>
-                        </a>
+                    <div class="pt-4 border-t border-gray-100 flex items-center justify-between gap-2">
+                        <span class="text-xs text-gray-500 flex items-center gap-1">
+                            <i data-lucide="help-circle" class="w-3.5 h-3.5 text-brand-600"></i> 5 Questões
+                        </span>
+                        <div class="flex items-center gap-2">
+                            
+                            <a href="./porcentagem-e-financas.html" class="bg-brand-600 hover:bg-brand-700 text-white font-semibold px-4 py-2 rounded-xl text-xs transition flex items-center gap-1.5 shadow-sm">
+                                Estudar <i data-lucide="arrow-right" class="w-3.5 h-3.5"></i>
+                            </a>
+                        </div>
                     </div>
                 </div>
-            </div>
-        
-            <div class="bg-white border border-gray-200 rounded-2xl p-6 shadow-sm hover-card flex flex-col justify-between" data-topic-id="b1-t7">
-                <div>
-                    <div class="flex items-center justify-between mb-3">
-                        <span class="text-xs font-bold text-brand-700 bg-brand-50 px-2.5 py-1 rounded-lg border border-brand-100">
-                            Tópico 07
-                        </span>
-                        <span id="status-badge-b1-t7" class="text-xs font-medium px-2 py-0.5 rounded-full bg-gray-100 text-gray-600 border border-gray-200">
-                            Pendente
-                        </span>
+            
+                <div class="bg-white border border-gray-200 rounded-2xl p-6 shadow-sm hover-card flex flex-col justify-between" data-topic-id="b1-t7">
+                    <div>
+                        <div class="flex items-center justify-between mb-3">
+                            <span class="text-xs font-bold text-brand-700 bg-brand-50 px-2.5 py-1 rounded-lg border border-brand-100">
+                                Tópico 07
+                            </span>
+                            <span id="status-badge-b1-t7" class="text-xs font-medium px-2 py-0.5 rounded-full bg-gray-100 text-gray-600 border border-gray-200">
+                                Pendente
+                            </span>
+                        </div>
+                        <h3 class="text-lg font-bold text-gray-900 mb-1.5">Notação Científica e Potências</h3>
+                        <div class="mb-3">
+                            <span class="text-xs font-semibold text-gray-500 bg-gray-50 px-2 py-0.5 rounded border border-gray-200">
+                                BNCC: EF08MA01, EF09MA03
+                            </span>
+                        </div>
+                        <p class="text-gray-600 text-xs sm:text-sm leading-relaxed mb-4 line-clamp-2">Escrita de grandes números e propriedades da potência.</p>
                     </div>
-                    <h3 class="text-lg font-bold text-gray-900 mb-1.5">Notação Científica e Potências</h3>
-                    <div class="mb-3">
-                        <span class="text-xs font-semibold text-gray-500 bg-gray-50 px-2 py-0.5 rounded border border-gray-200">
-                            BNCC: EF08MA01, EF09MA03
-                        </span>
-                    </div>
-                    <p class="text-gray-600 text-xs sm:text-sm leading-relaxed mb-4 line-clamp-2">Escrita de grandes números e propriedades da potência.</p>
-                </div>
 
-                <div class="pt-4 border-t border-gray-100 flex items-center justify-between gap-2">
-                    <span class="text-xs text-gray-500 flex items-center gap-1">
-                        <i data-lucide="help-circle" class="w-3.5 h-3.5 text-brand-600"></i> 5 Questões
-                    </span>
-                    <div class="flex items-center gap-2">
-                        
-                        <a href="./notacao-cientifica-e-potencias.html" class="bg-brand-600 hover:bg-brand-700 text-white font-semibold px-4 py-2 rounded-xl text-xs transition flex items-center gap-1.5 shadow-sm">
-                            Estudar <i data-lucide="arrow-right" class="w-3.5 h-3.5"></i>
-                        </a>
+                    <div class="pt-4 border-t border-gray-100 flex items-center justify-between gap-2">
+                        <span class="text-xs text-gray-500 flex items-center gap-1">
+                            <i data-lucide="help-circle" class="w-3.5 h-3.5 text-brand-600"></i> 5 Questões
+                        </span>
+                        <div class="flex items-center gap-2">
+                            
+                            <a href="./notacao-cientifica-e-potencias.html" class="bg-brand-600 hover:bg-brand-700 text-white font-semibold px-4 py-2 rounded-xl text-xs transition flex items-center gap-1.5 shadow-sm">
+                                Estudar <i data-lucide="arrow-right" class="w-3.5 h-3.5"></i>
+                            </a>
+                        </div>
                     </div>
                 </div>
-            </div>
-        
-            </div>
+            
         </div>
     </main>
 
@@ -415,7 +391,7 @@
                     <i data-lucide="book-open-check" class="w-5 h-5"></i> PartiuIF - Matemática
                 </div>
                 <p class="text-brand-200 text-xs leading-relaxed">
-                    Plataforma completa de revisão estruturada por subtópicos, teoria detalhada, fórmulas KaTeX e simulados com 21 provas oficiais do IFSC e IFCE.
+                    Plataforma completa de revisão estruturada por subtópicos, teoria detalhada, fórmulas KaTeX e simulados com 26 provas oficiais do IFSC e IFCE.
                 </p>
                 <div class="mt-4 inline-flex items-center gap-2 bg-brand-900/80 px-3 py-1.5 rounded-lg border border-brand-800 text-xs text-brand-300">
                     <i data-lucide="hard-drive" class="w-3.5 h-3.5"></i> Progresso salvo no seu navegador
@@ -426,12 +402,7 @@
                     <i data-lucide="layers" class="w-4 h-4 text-brand-400"></i> Eixos Temáticos
                 </h4>
                 <ul class="space-y-1.5 text-xs text-brand-200">
-                    <li><a href="../bloco-1-numeros/index.html" class="hover:text-white transition flex items-center gap-1">• Bloco 1: Números e Operações</a></li>
-                    <li><a href="../bloco-2-algebra/index.html" class="hover:text-white transition flex items-center gap-1">• Bloco 2: Álgebra e Funções</a></li>
-                    <li><a href="../bloco-3-geometria/index.html" class="hover:text-white transition flex items-center gap-1">• Bloco 3: Geometria Plana e Espacial</a></li>
-                    <li><a href="../bloco-4-medidas-e-estatistica/index.html" class="hover:text-white transition flex items-center gap-1">• Bloco 4: Medidas, Prob. e Estatística</a></li>
-                    <li><a href="../bloco-5-provas-ifsc/index.html" class="hover:text-white transition flex items-center gap-1">• Bloco 5: Provas Oficiais IFSC (2017-2026)</a></li>
-                    <li><a href="../bloco-6-provas-ifce/index.html" class="hover:text-white transition flex items-center gap-1">• Bloco 6: Provas Oficiais IFCE (2023-2025)</a></li>
+                    <li><a href="../bloco-1-numeros/index.html" class="hover:text-white transition flex items-center gap-1">• Bloco 1: Números e Operações</a></li><li><a href="../bloco-2-algebra/index.html" class="hover:text-white transition flex items-center gap-1">• Bloco 2: Álgebra</a></li><li><a href="../bloco-3-geometria/index.html" class="hover:text-white transition flex items-center gap-1">• Bloco 3: Geometria</a></li><li><a href="../bloco-4-medidas-e-estatistica/index.html" class="hover:text-white transition flex items-center gap-1">• Bloco 4: Medidas e Estatística</a></li><li><a href="../bloco-5-provas-ifsc/index.html" class="hover:text-white transition flex items-center gap-1">• Bloco 5: Provas Anteriores IFSC</a></li><li><a href="../bloco-6-provas-ifce/index.html" class="hover:text-white transition flex items-center gap-1">• Bloco 6: Provas Anteriores IFCE</a></li>
                 </ul>
             </div>
             <div>
@@ -453,7 +424,7 @@
         </div>
     </footer>
 
-    <!-- Scripts da Aplicação -->
+    <!-- Scripts Globais da Aplicação -->
     <script src="../assets/js/data.js"></script>
     <script src="../assets/js/app.js"></script>
 

@@ -114,15 +114,8 @@
     </header>
 
 
-    <main class="flex-grow max-w-5xl w-full mx-auto px-4 sm:px-6 lg:px-8 py-8">
+    <main class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 py-8 flex-grow">
         
-        <!-- Breadcrumbs -->
-        <nav class="flex items-center gap-2 text-xs sm:text-sm text-gray-500 mb-6">
-            <a href="./index.html" class="hover:text-brand-700 flex items-center gap-1"><i data-lucide="home" class="w-3.5 h-3.5"></i> Início</a>
-            <span class="text-gray-300">/</span>
-            <span class="text-gray-800 font-semibold">Simulado IF</span>
-        </nav>
-
         <!-- CONTAINER 1: Configuração do Simulado (Visível Inicialmente) -->
         <div id="simulado-setup" class="space-y-8">
             <div class="bg-gradient-to-r from-brand-800 to-brand-950 rounded-3xl p-6 sm:p-10 text-white shadow-xl">
@@ -136,7 +129,7 @@
                 </div>
                 <h1 class="text-3xl sm:text-4xl font-extrabold tracking-tight mb-3">Simulado IF de Matemática</h1>
                 <p class="text-brand-100 text-sm sm:text-base max-w-2xl leading-relaxed">
-                    Personalize seu simulado com questões retiradas do banco oficial dos 6 blocos e das 21 provas oficiais do IFSC e IFCE. Ao final, veja seu desempenho e a resolução comentada de cada questão.
+                    Personalize seu simulado com questões retiradas do banco oficial dos 6 blocos e das 26 provas oficiais do IFSC e IFCE. Ao final, veja seu desempenho e a resolução comentada de cada questão.
                 </p>
             </div>
 
@@ -149,34 +142,42 @@
                 <div>
                     <label class="block text-xs font-bold text-gray-700 uppercase tracking-wider mb-2">Selecione o Eixo de Conteúdo:</label>
                     <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-3" id="sim-source-options">
-                        <label class="cursor-pointer p-3.5 rounded-xl border border-brand-500 bg-brand-50/60 flex items-center gap-3 text-sm font-semibold text-gray-900 transition hover:border-brand-500">
-                            <input type="radio" name="sim-source" value="all" checked class="text-brand-600 focus:ring-brand-500">
-                            <span>Todos os Blocos (Geral)</span>
-                        </label>
-                        <label class="cursor-pointer p-3.5 rounded-xl border border-gray-200 hover:border-brand-300 flex items-center gap-3 text-sm font-medium text-gray-800 transition">
-                            <input type="radio" name="sim-source" value="1" class="text-brand-600 focus:ring-brand-500">
-                            <span>Bloco 1: Números</span>
-                        </label>
-                        <label class="cursor-pointer p-3.5 rounded-xl border border-gray-200 hover:border-brand-300 flex items-center gap-3 text-sm font-medium text-gray-800 transition">
-                            <input type="radio" name="sim-source" value="2" class="text-brand-600 focus:ring-brand-500">
-                            <span>Bloco 2: Álgebra</span>
-                        </label>
-                        <label class="cursor-pointer p-3.5 rounded-xl border border-gray-200 hover:border-brand-300 flex items-center gap-3 text-sm font-medium text-gray-800 transition">
-                            <input type="radio" name="sim-source" value="3" class="text-brand-600 focus:ring-brand-500">
-                            <span>Bloco 3: Geometria</span>
-                        </label>
-                        <label class="cursor-pointer p-3.5 rounded-xl border border-gray-200 hover:border-brand-300 flex items-center gap-3 text-sm font-medium text-gray-800 transition">
-                            <input type="radio" name="sim-source" value="4" class="text-brand-600 focus:ring-brand-500">
-                            <span>Bloco 4: Medidas & Estatística</span>
-                        </label>
-                        <label class="cursor-pointer p-3.5 rounded-xl border border-gray-200 hover:border-brand-300 flex items-center gap-3 text-sm font-medium text-gray-800 transition">
-                            <input type="radio" name="sim-source" value="5" class="text-brand-600 focus:ring-brand-500">
-                            <span>Bloco 5: Provas IFSC</span>
-                        </label>
-                        <label class="cursor-pointer p-3.5 rounded-xl border border-gray-200 hover:border-brand-300 flex items-center gap-3 text-sm font-medium text-gray-800 transition">
-                            <input type="radio" name="sim-source" value="6" class="text-brand-600 focus:ring-brand-500">
-                            <span>Bloco 6: Provas IFCE</span>
-                        </label>
+                        
+        <label class="cursor-pointer p-3.5 rounded-xl border border-brand-500 bg-brand-50/60 flex items-center gap-3 text-sm font-semibold text-gray-900 transition hover:border-brand-500">
+            <input type="radio" name="sim-source" value="all" checked class="text-brand-600 focus:ring-brand-500">
+            <span>Todos os Blocos (Geral)</span>
+        </label>
+    
+            <label class="cursor-pointer p-3.5 rounded-xl border border-gray-200 hover:border-brand-300 flex items-center gap-3 text-sm font-medium text-gray-800 transition">
+                <input type="radio" name="sim-source" value="1" class="text-brand-600 focus:ring-brand-500">
+                <span>Bloco 1: Números e Operações</span>
+            </label>
+        
+            <label class="cursor-pointer p-3.5 rounded-xl border border-gray-200 hover:border-brand-300 flex items-center gap-3 text-sm font-medium text-gray-800 transition">
+                <input type="radio" name="sim-source" value="2" class="text-brand-600 focus:ring-brand-500">
+                <span>Bloco 2: Álgebra</span>
+            </label>
+        
+            <label class="cursor-pointer p-3.5 rounded-xl border border-gray-200 hover:border-brand-300 flex items-center gap-3 text-sm font-medium text-gray-800 transition">
+                <input type="radio" name="sim-source" value="3" class="text-brand-600 focus:ring-brand-500">
+                <span>Bloco 3: Geometria</span>
+            </label>
+        
+            <label class="cursor-pointer p-3.5 rounded-xl border border-gray-200 hover:border-brand-300 flex items-center gap-3 text-sm font-medium text-gray-800 transition">
+                <input type="radio" name="sim-source" value="4" class="text-brand-600 focus:ring-brand-500">
+                <span>Bloco 4: Medidas e Estatística</span>
+            </label>
+        
+            <label class="cursor-pointer p-3.5 rounded-xl border border-gray-200 hover:border-brand-300 flex items-center gap-3 text-sm font-medium text-gray-800 transition">
+                <input type="radio" name="sim-source" value="5" class="text-brand-600 focus:ring-brand-500">
+                <span>Bloco 5: Provas Anteriores IFSC</span>
+            </label>
+        
+            <label class="cursor-pointer p-3.5 rounded-xl border border-gray-200 hover:border-brand-300 flex items-center gap-3 text-sm font-medium text-gray-800 transition">
+                <input type="radio" name="sim-source" value="6" class="text-brand-600 focus:ring-brand-500">
+                <span>Bloco 6: Provas Anteriores IFCE</span>
+            </label>
+        
                     </div>
                 </div>
 
@@ -229,12 +230,12 @@
 
             <!-- Navegador de Bolinhas das Questões -->
             <div id="sim-palette" class="bg-white border border-gray-200 rounded-2xl p-4 shadow-sm flex flex-wrap gap-2">
-                <!-- Preenchido pelo JS -->
+                <!-- Preenchido pelo módulo simulado.js -->
             </div>
 
             <!-- Card da Questão Atual -->
             <div id="sim-question-card" class="bg-white border border-gray-200 rounded-2xl p-6 sm:p-8 shadow-sm">
-                <!-- Preenchido dinamicamente -->
+                <!-- Preenchido dinamicamente pelo módulo simulado.js -->
             </div>
 
             <!-- Navegação Inferior do Simulado -->
@@ -250,7 +251,7 @@
 
         <!-- CONTAINER 3: Resultados e Resoluções (Oculto Inicialmente) -->
         <div id="simulado-results" class="hidden space-y-8">
-            <!-- Preenchido pelo JS -->
+            <!-- Preenchido pelo módulo simulado.js -->
         </div>
 
     </main>
@@ -262,7 +263,7 @@
                     <i data-lucide="book-open-check" class="w-5 h-5"></i> PartiuIF - Matemática
                 </div>
                 <p class="text-brand-200 text-xs leading-relaxed">
-                    Plataforma completa de revisão estruturada por subtópicos, teoria detalhada, fórmulas KaTeX e simulados com 21 provas oficiais do IFSC e IFCE.
+                    Plataforma completa de revisão estruturada por subtópicos, teoria detalhada, fórmulas KaTeX e simulados com 26 provas oficiais do IFSC e IFCE.
                 </p>
                 <div class="mt-4 inline-flex items-center gap-2 bg-brand-900/80 px-3 py-1.5 rounded-lg border border-brand-800 text-xs text-brand-300">
                     <i data-lucide="hard-drive" class="w-3.5 h-3.5"></i> Progresso salvo no seu navegador
@@ -273,12 +274,7 @@
                     <i data-lucide="layers" class="w-4 h-4 text-brand-400"></i> Eixos Temáticos
                 </h4>
                 <ul class="space-y-1.5 text-xs text-brand-200">
-                    <li><a href="./bloco-1-numeros/index.html" class="hover:text-white transition flex items-center gap-1">• Bloco 1: Números e Operações</a></li>
-                    <li><a href="./bloco-2-algebra/index.html" class="hover:text-white transition flex items-center gap-1">• Bloco 2: Álgebra e Funções</a></li>
-                    <li><a href="./bloco-3-geometria/index.html" class="hover:text-white transition flex items-center gap-1">• Bloco 3: Geometria Plana e Espacial</a></li>
-                    <li><a href="./bloco-4-medidas-e-estatistica/index.html" class="hover:text-white transition flex items-center gap-1">• Bloco 4: Medidas, Prob. e Estatística</a></li>
-                    <li><a href="./bloco-5-provas-ifsc/index.html" class="hover:text-white transition flex items-center gap-1">• Bloco 5: Provas Oficiais IFSC (2017-2026)</a></li>
-                    <li><a href="./bloco-6-provas-ifce/index.html" class="hover:text-white transition flex items-center gap-1">• Bloco 6: Provas Oficiais IFCE (2023-2025)</a></li>
+                    <li><a href="./bloco-1-numeros/index.html" class="hover:text-white transition flex items-center gap-1">• Bloco 1: Números e Operações</a></li><li><a href="./bloco-2-algebra/index.html" class="hover:text-white transition flex items-center gap-1">• Bloco 2: Álgebra</a></li><li><a href="./bloco-3-geometria/index.html" class="hover:text-white transition flex items-center gap-1">• Bloco 3: Geometria</a></li><li><a href="./bloco-4-medidas-e-estatistica/index.html" class="hover:text-white transition flex items-center gap-1">• Bloco 4: Medidas e Estatística</a></li><li><a href="./bloco-5-provas-ifsc/index.html" class="hover:text-white transition flex items-center gap-1">• Bloco 5: Provas Anteriores IFSC</a></li><li><a href="./bloco-6-provas-ifce/index.html" class="hover:text-white transition flex items-center gap-1">• Bloco 6: Provas Anteriores IFCE</a></li>
                 </ul>
             </div>
             <div>
@@ -300,282 +296,12 @@
         </div>
     </footer>
 
-    <!-- Scripts da Aplicação -->
+    <!-- Scripts Globais da Aplicação -->
     <script src="./assets/js/data.js"></script>
     <script src="./assets/js/app.js"></script>
 
 
-    <!-- Motor do Simulado em JavaScript -->
-    <script>
-        let currentSimQuestions = [];
-        let currentSimAnswers = {}; // idx -> selectedOpt
-        let currentSimIndex = 0;
-
-        function startSimulado() {
-            const source = document.querySelector('input[name="sim-source"]:checked').value;
-            const count = parseInt(document.querySelector('input[name="sim-count"]:checked').value, 10);
-
-            let questionPool = [];
-            for (let bId in mathData) {
-                if (source === "all" || source === bId) {
-                    const block = mathData[bId];
-                    block.topics.forEach(t => {
-                        t.questions.forEach((q, qIdx) => {
-                            questionPool.push({
-                                ...q,
-                                blockId: bId,
-                                blockTitle: block.title,
-                                topicId: t.id,
-                                topicTitle: t.title,
-                                originalQIdx: qIdx
-                            });
-                        });
-                    });
-                }
-            }
-
-            if (questionPool.length === 0) {
-                showToast("Nenhuma questão encontrada para os critérios selecionados.", "error");
-                return;
-            }
-
-            // Embaralha as questões
-            questionPool.sort(() => Math.random() - 0.5);
-            currentSimQuestions = questionPool.slice(0, Math.min(count, questionPool.length));
-            currentSimAnswers = {};
-            currentSimIndex = 0;
-
-            document.getElementById('simulado-setup').classList.add('hidden');
-            document.getElementById('simulado-results').classList.add('hidden');
-            document.getElementById('simulado-running').classList.remove('hidden');
-
-            renderSimQuestionPalette();
-            renderCurrentSimQuestion();
-            window.scrollTo({ top: 0, behavior: 'smooth' });
-        }
-
-        function renderSimQuestionPalette() {
-            const palette = document.getElementById('sim-palette');
-            palette.innerHTML = currentSimQuestions.map((_, idx) => {
-                const isAnswered = currentSimAnswers.hasOwnProperty(idx);
-                const isCurrent = (idx === currentSimIndex);
-                let btnClasses = "w-8 h-8 rounded-lg text-xs font-bold transition flex items-center justify-center ";
-                
-                if (isCurrent) {
-                    btnClasses += "ring-2 ring-brand-600 bg-brand-600 text-white shadow-md ";
-                } else if (isAnswered) {
-                    btnClasses += "bg-brand-100 text-brand-900 border border-brand-300 ";
-                } else {
-                    btnClasses += "bg-gray-100 text-gray-700 hover:bg-gray-200 ";
-                }
-
-                return `<button onclick="jumpToSimQuestion(${idx})" class="${btnClasses}">${idx + 1}</button>`;
-            }).join('');
-        }
-
-        function renderCurrentSimQuestion() {
-            const q = currentSimQuestions[currentSimIndex];
-            const qContainer = document.getElementById('sim-question-card');
-            const indicator = document.getElementById('sim-progress-indicator');
-            const topicTitle = document.getElementById('sim-topic-title');
-
-            indicator.innerText = `Questão ${currentSimIndex + 1} de ${currentSimQuestions.length}`;
-            topicTitle.innerText = `${q.blockTitle} &bull; ${q.topicTitle}`;
-
-            const selectedOpt = currentSimAnswers[currentSimIndex];
-
-            let optionsHtml = q.options.map((opt, optIdx) => {
-                const letter = String.fromCharCode(65 + optIdx);
-                const isSelected = (selectedOpt === optIdx);
-                const activeClass = isSelected ? "opt-selected" : "border-gray-200 hover:border-brand-300 hover:bg-brand-50/30";
-                const iconName = isSelected ? "check-circle" : "circle";
-                const iconClass = isSelected ? "w-4 h-4 text-brand-600 opt-icon" : "w-4 h-4 text-gray-300 opt-icon";
-
-                return `
-                    <button onclick="selectSimAnswer(${currentSimIndex}, ${optIdx})" class="w-full text-left p-3.5 rounded-xl border ${activeClass} transition text-sm text-gray-700 flex items-center justify-between group">
-                        <span class="flex items-center gap-2"><strong class="text-brand-700 font-bold">${letter})</strong> ${opt}</span>
-                        <i data-lucide="${iconName}" class="${iconClass}"></i>
-                    </button>
-                `;
-            }).join('');
-
-            qContainer.innerHTML = `
-                <div class="mb-2">
-                    <span class="text-xs font-bold text-gray-400 uppercase tracking-wider block mb-2">${q.topicTitle}</span>
-                    <p class="font-medium text-gray-800 text-base leading-relaxed mb-6">${q.q}</p>
-                </div>
-                <div class="space-y-2.5 mb-2">
-                    ${optionsHtml}
-                </div>
-            `;
-
-            // Botões anterior/próximo
-            const prevBtn = document.getElementById('sim-prev-btn');
-            const nextBtn = document.getElementById('sim-next-btn');
-
-            if (currentSimIndex === 0) {
-                prevBtn.classList.add('opacity-50', 'pointer-events-none');
-            } else {
-                prevBtn.classList.remove('opacity-50', 'pointer-events-none');
-            }
-
-            if (currentSimIndex === currentSimQuestions.length - 1) {
-                nextBtn.innerHTML = `Finalizar <i data-lucide="check" class="w-4 h-4"></i>`;
-                nextBtn.onclick = finishSimulado;
-            } else {
-                nextBtn.innerHTML = `Próxima <i data-lucide="arrow-right" class="w-4 h-4"></i>`;
-                nextBtn.onclick = nextSimQuestion;
-            }
-
-            if (window.lucide) lucide.createIcons();
-            renderLatex(qContainer);
-            renderSimQuestionPalette();
-        }
-
-        function selectSimAnswer(qIdx, optIdx) {
-            currentSimAnswers[qIdx] = optIdx;
-            renderCurrentSimQuestion();
-        }
-
-        function jumpToSimQuestion(idx) {
-            currentSimIndex = idx;
-            renderCurrentSimQuestion();
-        }
-
-        function prevSimQuestion() {
-            if (currentSimIndex > 0) {
-                currentSimIndex--;
-                renderCurrentSimQuestion();
-            }
-        }
-
-        function nextSimQuestion() {
-            if (currentSimIndex < currentSimQuestions.length - 1) {
-                currentSimIndex++;
-                renderCurrentSimQuestion();
-            } else {
-                finishSimulado();
-            }
-        }
-
-        function confirmExitSimulado() {
-            if (confirm("Deseja realmente sair deste simulado? Suas respostas não finalizadas serão perdidas.")) {
-                document.getElementById('simulado-running').classList.add('hidden');
-                document.getElementById('simulado-setup').classList.remove('hidden');
-                window.scrollTo({ top: 0, behavior: 'smooth' });
-            }
-        }
-
-        function finishSimulado() {
-            const total = currentSimQuestions.length;
-            const answeredCount = Object.keys(currentSimAnswers).length;
-            
-            if (answeredCount < total) {
-                if (!confirm(`Você respondeu ${answeredCount} de ${total} questões. Deseja finalizar mesmo assim?`)) {
-                    return;
-                }
-            }
-
-            let correctCount = 0;
-            let reviewHtml = [];
-
-            currentSimQuestions.forEach((q, idx) => {
-                const userOpt = currentSimAnswers[idx];
-                const hasAnswered = (userOpt !== undefined);
-                const isCorrect = hasAnswered && (userOpt === q.correct);
-                if (isCorrect) correctCount++;
-
-                let optionsReview = q.options.map((opt, optIdx) => {
-                    const letter = String.fromCharCode(65 + optIdx);
-                    let optClass = "p-3 rounded-xl border text-xs sm:text-sm flex items-center justify-between ";
-                    let iconHtml = `<i data-lucide="circle" class="w-4 h-4 text-gray-300"></i>`;
-
-                    if (optIdx === q.correct) {
-                        optClass += "bg-emerald-50 border-emerald-300 font-bold text-emerald-900";
-                        iconHtml = `<i data-lucide="check-circle" class="w-4 h-4 text-emerald-600"></i>`;
-                    } else if (optIdx === userOpt && !isCorrect) {
-                        optClass += "bg-red-50 border-red-300 font-medium text-red-900";
-                        iconHtml = `<i data-lucide="x-circle" class="w-4 h-4 text-red-600"></i>`;
-                    } else {
-                        optClass += "bg-white border-gray-200 text-gray-600 opacity-60";
-                    }
-
-                    return `
-                        <div class="${optClass}">
-                            <span><strong>${letter})</strong> ${opt}</span>
-                            ${iconHtml}
-                        </div>
-                    `;
-                }).join('');
-
-                reviewHtml.push(`
-                    <div class="bg-white border border-gray-200 rounded-2xl p-6 shadow-sm">
-                        <div class="flex items-center justify-between mb-3 pb-2 border-b border-gray-100">
-                            <span class="text-xs font-bold uppercase tracking-wider text-brand-700">Questão ${idx + 1} de ${total}</span>
-                            <span class="text-xs font-bold px-2.5 py-0.5 rounded-full ${isCorrect ? 'bg-emerald-100 text-emerald-800' : 'bg-red-100 text-red-800'}">
-                                ${isCorrect ? 'Correta' : 'Incorreta'}
-                            </span>
-                        </div>
-                        <span class="text-xs text-gray-400 block mb-2">${q.blockTitle} &bull; ${q.topicTitle}</span>
-                        <p class="font-semibold text-gray-900 text-sm sm:text-base mb-4">${q.q}</p>
-                        
-                        <div class="space-y-2 mb-4">
-                            ${optionsReview}
-                        </div>
-
-                        <div class="bg-gray-50 border border-gray-200 rounded-xl p-4 text-xs sm:text-sm text-gray-700 leading-relaxed">
-                            <strong class="text-brand-900 block mb-1">Explicação Passo a Passo:</strong>
-                            ${q.explanation}
-                        </div>
-                    </div>
-                `);
-            });
-
-            const percent = Math.round((correctCount / total) * 100);
-
-            const resultsContainer = document.getElementById('simulado-results');
-            resultsContainer.innerHTML = `
-                <div class="bg-gradient-to-r from-brand-800 to-brand-950 rounded-3xl p-6 sm:p-10 text-white shadow-xl text-center">
-                    <span class="bg-brand-500/30 text-brand-200 border border-brand-400/30 text-xs font-bold px-3 py-1 rounded-full uppercase tracking-wider mb-3 inline-block">
-                        Resultado do Simulado
-                    </span>
-                    <h1 class="text-3xl sm:text-4xl font-extrabold mb-2">Seu Desempenho Geral</h1>
-                    <div class="my-6 inline-flex flex-col items-center bg-white/10 backdrop-blur-md rounded-2xl p-6 border border-white/20">
-                        <span class="text-5xl sm:text-6xl font-black text-brand-300 mb-1">${percent}%</span>
-                        <span class="text-sm text-brand-100 font-semibold">Você acertou ${correctCount} de ${total} questões</span>
-                    </div>
-                    <div class="flex justify-center gap-3">
-                        <button onclick="window.location.reload()" class="bg-white hover:bg-brand-50 text-brand-900 font-bold px-6 py-3 rounded-xl text-sm transition shadow-lg">
-                            Fazer Novo Simulado
-                        </button>
-                    </div>
-                </div>
-
-                <div class="space-y-6">
-                    <h2 class="text-2xl font-bold text-gray-900 flex items-center gap-2 border-l-4 border-brand-600 pl-3">
-                        Gabarito Detalhado e Resoluções
-                    </h2>
-                    ${reviewHtml.join('')}
-                </div>
-            `;
-
-            document.getElementById('simulado-running').classList.add('hidden');
-            resultsContainer.classList.remove('hidden');
-
-            if (window.lucide) lucide.createIcons();
-            renderLatex(resultsContainer);
-            window.scrollTo({ top: 0, behavior: 'smooth' });
-        }
-
-        // Se passado o parâmetro ?block=X na URL, pré-seleciona a fonte
-        document.addEventListener('DOMContentLoaded', () => {
-            const urlParams = new URLSearchParams(window.location.search);
-            const blockParam = urlParams.get('block');
-            if (blockParam) {
-                const targetRadio = document.querySelector(`input[name="sim-source"][value="${blockParam}"]`);
-                if (targetRadio) targetRadio.checked = true;
-            }
-        });
-    </script>
+    <!-- Motor Dedicado do Simulado -->
+    <script src="./assets/js/simulado.js"></script>
 </body>
 </html>

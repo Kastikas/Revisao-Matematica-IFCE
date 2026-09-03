@@ -17,7 +17,7 @@
         "formula": "123{}45 = (1 \\times 10^2) + (2 \\times 10^1) + (3 \\times 10^0) + (4 \\times 10^{-1}) + (5 \\times 10^{-2})",
         "solvedExample": {
           "problem": "Ordene os decimais em ordem crescente: $0{}509$, $0{}51$, $0{}059$ e $0{}499$.",
-          "solution": "Igualamos as casas decimais com zeros: $0{}509$, $0{}510$, $0{}059$ e $0{}499$. Comparando a parte decimal: $059 < 499 < 509 < 510$. Ordem correta: $0{}059 < 0{}499 < 0{}509 < 0{}51$."
+          "solution": "Igualamos as casas decimais com zeros: $0{,}509$, $0{,}510$, $0{,}059$ e $0{,}499$. Comparando a parte decimal: $059 < 499 < 509 < 510$. Ordem correta: $0{,}059 < 0{,}499 < 0{,}509 < 0{,}51$."
         },
         "questions": [
           {
@@ -75,7 +75,12 @@
             "correct": 0,
             "explanation": "$500 + 30 + 0{}008 = 530{}008$."
           }
-        ]
+        ],
+        "slug": "sistema-de-numeracao-e-comparacao",
+        "filename": "sistema-de-numeracao-e-comparacao.html",
+        "folder": "bloco-1-numeros",
+        "blockId": "1",
+        "pdf": null
       },
       {
         "id": "b1-t2",
@@ -90,7 +95,7 @@
         "formula": "a^n = a \\times a \\times \\dots \\times a \\quad (n \\text{ fatores})",
         "solvedExample": {
           "problem": "Calcule: $18 + 2 \\times (3^2 - 4) \\div 2$.",
-          "solution": "1º Potência: $3^2 = 9$. Ficamos com $18 + 2 \\times (9 - 4) \\div 2$.\n2º Parênteses: $9 - 4 = 5$. Temos $18 + 2 \\times 5 \\div 2$.\n3º Multiplicação/Divisão (esquerda p/ direita): $2 \\times 5 = 10$, e $10 \\div 2 = 5$.\n4º Soma: $18 + 5 = 23$."
+          "solution": "1º Potência: $3^2 = 9$. Ficamos com $18 + 2 \\times (9 - 4) \\div 2$.<br>2º Parênteses: $9 - 4 = 5$. Temos $18 + 2 \\times 5 \\div 2$.<br>3º Multiplicação/Divisão (esquerda p/ direita): $2 \\times 5 = 10$, e $10 \\div 2 = 5$.<br>4º Soma: $18 + 5 = 23$."
         },
         "questions": [
           {
@@ -148,7 +153,12 @@
             "correct": 0,
             "explanation": "$145 \\div 7 = $ quociente $20$ e resto $5$ ($20 \\times 7 = 140$, mais $5$)."
           }
-        ]
+        ],
+        "slug": "operacoes-com-naturais-e-estimativas",
+        "filename": "operacoes-com-naturais-e-estimativas.html",
+        "folder": "bloco-1-numeros",
+        "blockId": "1",
+        "pdf": null
       },
       {
         "id": "b1-t3",
@@ -163,7 +173,7 @@
         "formula": "\\text{MDC}(a,b) \\times \\text{MMC}(a,b) = a \\times b",
         "solvedExample": {
           "problem": "Duas lâmpadas piscam: uma a cada 12 segundos e outra a cada 18 segundos. Se piscaram juntas agora, em quantos segundos piscarão juntas novamente?",
-          "solution": "Para coincidências, usamos o $MMC(12, 18)$. Fatorando ambos:\n12, 18 | 2\n 6,  9 | 2\n 3,  9 | 3\n 1,  3 | 3\n 1,  1\n$MMC = 2 \\cdot 2 \\cdot 3 \\cdot 3 = 36$ segundos."
+          "solution": "Para coincidências, usamos o $MMC(12, 18)$. Fatorando ambos:<br>12, 18 | 2<br> 6,  9 | 2<br> 3,  9 | 3<br> 1,  3 | 3<br> 1,  1<br>$MMC = 2 \\cdot 2 \\cdot 3 \\cdot 3 = 36$ segundos."
         },
         "questions": [
           {
@@ -221,7 +231,12 @@
             "correct": 2,
             "explanation": "$MMC(10, 15, 20) = 60$ minutos (1 hora)."
           }
-        ]
+        ],
+        "slug": "multiplos-divisores-e-criterios",
+        "filename": "multiplos-divisores-e-criterios.html",
+        "folder": "bloco-1-numeros",
+        "blockId": "1",
+        "pdf": null
       },
       {
         "id": "b1-t4",
@@ -236,7 +251,7 @@
         "formula": "\\frac{a}{b} = \\frac{a \\cdot k}{b \\cdot k} \\quad (k \\neq 0)",
         "solvedExample": {
           "problem": "Compare $\\frac{3}{4}$ e $\\frac{4}{5}$ para determinar a maior.",
-          "solution": "Via MMC (20):\n$\\frac{3}{4} = \\frac{15}{20}$ e $\\frac{4}{5} = \\frac{16}{20}$. Como $16 > 15$, logo $\\frac{4}{5} > \\frac{3}{4}$.\nVia decimais:\n$\\frac{3}{4} = 0{}75$ e $\\frac{4}{5} = 0{}80$. Como $0{}80 > 0{}75$, $\\frac{4}{5}$ é maior."
+          "solution": "Via MMC (20):<br>$\\frac{3}{4} = \\frac{15}{20}$ e $\\frac{4}{5} = \\frac{16}{20}$. Como $16 > 15$, logo $\\frac{4}{5} > \\frac{3}{4}$.<br>Via decimais:<br>$\\frac{3}{4} = 0{,}75$ e $\\frac{4}{5} = 0{,}80$. Como $0{,}80 > 0{,}75$, $\\frac{4}{5}$ é maior."
         },
         "questions": [
           {
@@ -294,7 +309,12 @@
             "correct": 2,
             "explanation": "Meninos = $40 \\div 4 = 10$. Meninas = $40 - 10 = 30$."
           }
-        ]
+        ],
+        "slug": "fracoes-i-significados-e-equivalencia",
+        "filename": "fracoes-i-significados-e-equivalencia.html",
+        "folder": "bloco-1-numeros",
+        "blockId": "1",
+        "pdf": null
       },
       {
         "id": "b1-t5",
@@ -309,7 +329,7 @@
         "formula": "\\frac{a}{b} \\div \\frac{c}{d} = \\frac{a}{b} \\cdot \\frac{d}{c}",
         "solvedExample": {
           "problem": "Efetue: $\\left(\\frac{2}{3} + \\frac{1}{4}\\right) \\div \\frac{11}{6}$.",
-          "solution": "1º Soma: $MMC(3,4)=12$. $\\frac{8}{12} + \\frac{3}{12} = \\frac{11}{12}$.\n2º Divisão: $\\frac{11}{12} \\div \\frac{11}{6} = \\frac{11}{12} \\times \\frac{6}{11}$.\nCortamos o $11$ e fica $\\frac{6}{12} = \\frac{1}{2}$."
+          "solution": "1º Soma: $MMC(3,4)=12$. $\\frac{8}{12} + \\frac{3}{12} = \\frac{11}{12}$.<br>2º Divisão: $\\frac{11}{12} \\div \\frac{11}{6} = \\frac{11}{12} \\times \\frac{6}{11}$.<br>Cortamos o $11$ e fica $\\frac{6}{12} = \\frac{1}{2}$."
         },
         "questions": [
           {
@@ -367,7 +387,12 @@
             "correct": 1,
             "explanation": "$(\\frac{1}{2}) \\times (\\frac{4}{1}) = \\frac{4}{2} = 2$."
           }
-        ]
+        ],
+        "slug": "fracoes-ii-operacoes-basicas",
+        "filename": "fracoes-ii-operacoes-basicas.html",
+        "folder": "bloco-1-numeros",
+        "blockId": "1",
+        "pdf": null
       },
       {
         "id": "b1-t6",
@@ -381,31 +406,31 @@
         ],
         "formula": "V_f = V_i \\cdot (1 \\pm i)",
         "solvedExample": {
-          "problem": "Um tênis de R$ $200$ teve aumento de $10\\%$ e depois desconto de $10\\%$. Qual o preço final?",
-          "solution": "1º Aumento: $200 \\times 1{}10 = \\text{R\\$} 220,00$.\n2º Desconto: $220 \\times 0{}90 = \\text{R\\$} 198,00$.\nO preço não volta aos 200 reais!"
+          "problem": "Um tênis de $\\text{R\\$} 200{,}00$ teve aumento de $10\\%$ e depois desconto de $10\\%$. Qual o preço final?",
+          "solution": "1º Aumento: $200 \\times 1{,}10 = \\text{R\\$} 220,00$.<br>2º Desconto: $220 \\times 0{,}90 = \\text{R\\$} 198,00$.<br>O preço não volta aos 200 reais!"
         },
         "questions": [
           {
-            "q": "O cálculo de $20\\%$ sobre R$ $150,00$ resulta em:",
+            "q": "O cálculo de $20\\%$ sobre $\\text{R\\$} 150{,}00$ resulta em:",
             "options": [
-              "R$ $20$",
-              "R$ $30$",
-              "R$ $25$",
-              "R$ $35$"
+              "$\\text{R\\$} 20{,}00$",
+              "$\\text{R\\$} 30{,}00$",
+              "$\\text{R\\$} 25{,}00$",
+              "$\\text{R\\$} 35{,}00$"
             ],
             "correct": 1,
-            "explanation": "$0{}20 \\times 150 = \\text{R\\$} 30$."
+            "explanation": "$0{,}20 \\times 150{,}00 = \\text{R\\$} 30{,}00$."
           },
           {
-            "q": "Um produto de R$ $80$ sofreu acréscimo de $15\\%$. O novo preço é:",
+            "q": "Um produto de $\\text{R\\$} 80{,}00$ sofreu acréscimo de $15\\%$. O novo preço é:",
             "options": [
-              "R$ $95$",
-              "R$ $92$",
-              "R$ $88$",
-              "R$ $90$"
+              "$\\text{R\\$} 95{,}00$",
+              "$\\text{R\\$} 92{,}00$",
+              "$\\text{R\\$} 88{,}00$",
+              "$\\text{R\\$} 90{,}00$"
             ],
             "correct": 1,
-            "explanation": "$15\\%$ de $80 = 12$. Preço: $80 + 12 = \\text{R\\$} 92$."
+            "explanation": "$15\\%$ de $80 = 12$. Preço final: $80 + 12 = \\text{R\\$} 92{,}00$."
           },
           {
             "q": "Um desconto de $10\\%$ seguido de outro de $10\\%$ equivale a um desconto real de:",
@@ -419,15 +444,15 @@
             "explanation": "Fator final: $0{}90 \\times 0{}90 = 0{}81$ (mantém $81\\%$). Desconto acumulado = $19\\%$."
           },
           {
-            "q": "Se $30\\%$ da dívida corresponde a R$ $60,00$, a dívida total é:",
+            "q": "Se $30\\%$ da dívida corresponde a $\\text{R\\$} 60{,}00$, a dívida total é:",
             "options": [
-              "R$ $200$",
-              "R$ $180$",
-              "R$ $150$",
-              "R$ $300$"
+              "$\\text{R\\$} 200{,}00$",
+              "$\\text{R\\$} 180{,}00$",
+              "$\\text{R\\$} 150{,}00$",
+              "$\\text{R\\$} 300{,}00$"
             ],
             "correct": 0,
-            "explanation": "$0{}30 \\times X = 60 \\rightarrow X = 60 \\div 0{}30 = \\text{R\\$} 200$."
+            "explanation": "$0{,}30 \\times X = 60 \\implies X = \\frac{60}{0{,}30} = \\text{R\\$} 200{,}00$."
           },
           {
             "q": "A fração equivalente a $\\frac{3}{5}$ corresponde a:",
@@ -440,7 +465,12 @@
             "correct": 2,
             "explanation": "$\\frac{3}{5} = 0{}60 = 60\\%$."
           }
-        ]
+        ],
+        "slug": "porcentagem-e-financas",
+        "filename": "porcentagem-e-financas.html",
+        "folder": "bloco-1-numeros",
+        "blockId": "1",
+        "pdf": null
       },
       {
         "id": "b1-t7",
@@ -455,7 +485,7 @@
         "formula": "N = a \\cdot 10^n \\quad (1 \\le a < 10, \\ n \\in \\mathbb{Z})",
         "solvedExample": {
           "problem": "Multiplique: $(4{}2 \\times 10^{-6}) \\times (2 \\times 10^8)$.",
-          "solution": "Multiplica-se as mantissas: $4{}2 \\times 2 = 8{}4$.\nMultiplica-se as potências somando os expoentes: $-6 + 8 = 2$.\nResultado: $8{}4 \\times 10^2 = 840$."
+          "solution": "Multiplica-se as mantissas: $4{,}2 \\times 2 = 8{,}4$.<br>Multiplica-se as potências somando os expoentes: $-6 + 8 = 2$.<br>Resultado: $8{,}4 \\times 10^2 = 840$."
         },
         "questions": [
           {
@@ -513,7 +543,12 @@
             "correct": 2,
             "explanation": "O dobro é multiplicar por $2^1$. Então: $2^1 \\times 2^{10} = 2^{11}$."
           }
-        ]
+        ],
+        "slug": "notacao-cientifica-e-potencias",
+        "filename": "notacao-cientifica-e-potencias.html",
+        "folder": "bloco-1-numeros",
+        "blockId": "1",
+        "pdf": null
       }
     ]
   },
@@ -535,7 +570,7 @@
         "formula": "y = ax + b",
         "solvedExample": {
           "problem": "Traduza: 'O quadrado de um número somado ao seu triplo' e ache o valor numérico para $x = 3$.",
-          "solution": "1º 'Quadrado' = $x^2$; 'seu triplo' = $3x$. Expressão: $x^2 + 3x$.\n2º Para $x = 3$: $(3)^2 + 3(3) = 9 + 9 = 18$."
+          "solution": "1º 'Quadrado' = $x^2$; 'seu triplo' = $3x$. Expressão: $x^2 + 3x$.<br>2º Para $x = 3$: $(3)^2 + 3(3) = 9 + 9 = 18$."
         },
         "questions": [
           {
@@ -593,7 +628,12 @@
             "correct": 2,
             "explanation": "Elementos que somam de $1$ em $1$ formam números inteiros consecutivos."
           }
-        ]
+        ],
+        "slug": "linguagem-algebrica",
+        "filename": "linguagem-algebrica.html",
+        "folder": "bloco-2-algebra",
+        "blockId": "2",
+        "pdf": null
       },
       {
         "id": "b2-t2",
@@ -608,7 +648,7 @@
         "formula": "\\text{Direta: } \\frac{y}{x} = k, \\quad \\text{Inversa: } y \\cdot x = k",
         "solvedExample": {
           "problem": "Se 6 operários constroem um muro em 10 dias, em quantos dias 15 operários construirão o mesmo muro?",
-          "solution": "Mais operários $\\rightarrow$ MENOS dias (Inversamente proporcionais).\nMultiplica em linha: $15 \\cdot x = 6 \\cdot 10 \\rightarrow 15x = 60 \\rightarrow x = 4$ dias."
+          "solution": "Mais operários $\\rightarrow$ MENOS dias (Inversamente proporcionais).<br>Multiplica em linha: $15 \\cdot x = 6 \\cdot 10 \\rightarrow 15x = 60 \\rightarrow x = 4$ dias."
         },
         "questions": [
           {
@@ -634,15 +674,15 @@
             "explanation": "$5\\text{ cm} \\times 100 = 500\\text{ cm}$, que equivale a $5\\text{ metros}$."
           },
           {
-            "q": "Se $4\\text{ kg}$ de um produto custam R$ $120$, quanto custarão $6\\text{ kg}$?",
+            "q": "Se $4\\text{ kg}$ de um produto custam $\\text{R\\$} 120{,}00$, quanto custarão $6\\text{ kg}$?",
             "options": [
-              "R$ $160$",
-              "R$ $180$",
-              "R$ $200$",
-              "R$ $150$"
+              "$\\text{R\\$} 160{,}00$",
+              "$\\text{R\\$} 180{,}00$",
+              "$\\text{R\\$} 200{,}00$",
+              "$\\text{R\\$} 150{,}00$"
             ],
             "correct": 1,
-            "explanation": "$1\\text{ kg}$ custa $120/4 = 30$. Logo, $6\\text{ kg} = 6 \\times 30 = \\text{R\\$} 180$."
+            "explanation": "$1\\text{ kg}$ custa $\\frac{120}{4} = \\text{R\\$} 30{,}00$. Logo, $6\\text{ kg} = 6 \\times 30 = \\text{R\\$} 180{,}00$."
           },
           {
             "q": "A razão entre uma pista de $400\\text{ m}$ e uma rua de $2\\text{ km}$ é:",
@@ -666,7 +706,12 @@
             "correct": 2,
             "explanation": "Farinha triplicou (3 para 9), logo os ovos também triplicam ($2 \\times 3 = 6$)."
           }
-        ]
+        ],
+        "slug": "grandezas-e-proporcoes",
+        "filename": "grandezas-e-proporcoes.html",
+        "folder": "bloco-2-algebra",
+        "blockId": "2",
+        "pdf": null
       },
       {
         "id": "b2-t3",
@@ -681,7 +726,7 @@
         "formula": "\\begin{cases} a_1 x + b_1 y = c_1 \\\\ a_2 x + b_2 y = c_2 \\end{cases}",
         "solvedExample": {
           "problem": "Resolva: $\\begin{cases} x + y = 12 \\\\ 2x - y = 9 \\end{cases}$",
-          "solution": "Somando as equações (Adição):\n$(x + 2x) + (y - y) = 12 + 9 \\rightarrow 3x = 21 \\rightarrow x = 7$.\nSubstituindo $x=7$: $7 + y = 12 \\rightarrow y = 5$. Solução: $(7, 5)$."
+          "solution": "Somando as equações (Adição):<br>$(x + 2x) + (y - y) = 12 + 9 \\rightarrow 3x = 21 \\rightarrow x = 7$.<br>Substituindo $x=7$: $7 + y = 12 \\rightarrow y = 5$. Solução: $(7, 5)$."
         },
         "questions": [
           {
@@ -718,15 +763,15 @@
             "explanation": "$2x - 4 = 12 \\rightarrow 2x = 16 \\rightarrow x = 8$."
           },
           {
-            "q": "$2$ canetas e $1$ lápis custam R$ $7,00$. A caneta custa o triplo do lápis. O lápis custa:",
+            "q": "$2$ canetas e $1$ lápis custam $\\text{R\\$} 7{,}00$. A caneta custa o triplo do lápis. O lápis custa:",
             "options": [
-              "R$ $1,00$",
-              "R$ $2,00$",
-              "R$ $1,50$",
-              "R$ $0,50$"
+              "$\\text{R\\$} 1{,}00$",
+              "$\\text{R\\$} 2{,}00$",
+              "$\\text{R\\$} 1{,}50$",
+              "$\\text{R\\$} 0{,}50$"
             ],
             "correct": 0,
-            "explanation": "$C = 3L$. Então $2(3L) + L = 7 \\rightarrow 7L = 7 \\rightarrow L = 1$."
+            "explanation": "Seja $L$ o preço do lápis e $C = 3L$ o preço da caneta. Então $2(3L) + L = 7 \\implies 7L = 7 \\implies L = \\text{R\\$} 1{,}00$."
           },
           {
             "q": "A solução real da equação $2(x + 3) = 14$ é:",
@@ -739,7 +784,12 @@
             "correct": 1,
             "explanation": "Distributiva: $2x + 6 = 14 \\rightarrow 2x = 8 \\rightarrow x = 4$."
           }
-        ]
+        ],
+        "slug": "equacoes-e-sistemas-do-1o-grau",
+        "filename": "equacoes-e-sistemas-do-1o-grau.html",
+        "folder": "bloco-2-algebra",
+        "blockId": "2",
+        "pdf": null
       },
       {
         "id": "b2-t4",
@@ -754,7 +804,7 @@
         "formula": "(a+b)(a-b) = a^2 - b^2",
         "solvedExample": {
           "problem": "Simplifique a fração algébrica $\\frac{x^2 - 9}{(x - 3)}$ para $x \\neq 3$.",
-          "solution": "Fatorar o numerador (Diferença de Dois Quadrados): $x^2 - 9 = (x + 3)(x - 3)$.\nDividindo por $(x - 3)$:\n$\\frac{(x + 3)(x - 3)}{(x - 3)} = x + 3$."
+          "solution": "Fatorar o numerador (Diferença de Dois Quadrados): $x^2 - 9 = (x + 3)(x - 3)$.<br>Dividindo por $(x - 3)$:<br>$\\frac{(x + 3)(x - 3)}{(x - 3)} = x + 3$."
         },
         "questions": [
           {
@@ -812,7 +862,12 @@
             "correct": 1,
             "explanation": "O $3$ é comum a ambos: $3(x + y)$."
           }
-        ]
+        ],
+        "slug": "produtos-notaveis-e-fatoracao",
+        "filename": "produtos-notaveis-e-fatoracao.html",
+        "folder": "bloco-2-algebra",
+        "blockId": "2",
+        "pdf": null
       },
       {
         "id": "b2-t5",
@@ -827,7 +882,7 @@
         "formula": "\\Delta = b^2 - 4ac, \\quad x = \\frac{-b \\pm \\sqrt{\\Delta}}{2a}",
         "solvedExample": {
           "problem": "Encontre as raízes reais da equação $x^2 - 7x + 10 = 0$.",
-          "solution": "$\\Delta = (-7)^2 - 4(1)(10) = 49 - 40 = 9$.\n$x = \\frac{7 \\pm \\sqrt{9}}{2} = \\frac{7 \\pm 3}{2}$.\n$x_1 = 10 / 2 = 5$ e $x_2 = 4 / 2 = 2$."
+          "solution": "$\\Delta = (-7)^2 - 4(1)(10) = 49 - 40 = 9$.<br>$x = \\frac{7 \\pm \\sqrt{9}}{2} = \\frac{7 \\pm 3}{2}$.<br>$x_1 = 10 / 2 = 5$ e $x_2 = 4 / 2 = 2$."
         },
         "questions": [
           {
@@ -885,7 +940,12 @@
             "correct": 1,
             "explanation": "Como $a = -3$ (negativo), a função é decrescente."
           }
-        ]
+        ],
+        "slug": "equacoes-do-2o-grau-e-funcoes",
+        "filename": "equacoes-do-2o-grau-e-funcoes.html",
+        "folder": "bloco-2-algebra",
+        "blockId": "2",
+        "pdf": null
       }
     ]
   },
@@ -907,7 +967,7 @@
         "formula": "S_i = (n - 2) \\cdot 180^\\circ",
         "solvedExample": {
           "problem": "Calcule a medida de cada ângulo interno de um hexágono regular.",
-          "solution": "$S_i = (6 - 2) \\times 180^\\circ = 4 \\times 180^\\circ = 720^\\circ$.\nDividindo pela quantidade de ângulos (6): $a_i = \\frac{720^\\circ}{6} = 120^\\circ$."
+          "solution": "$S_i = (6 - 2) \\times 180^\\circ = 4 \\times 180^\\circ = 720^\\circ$.<br>Dividindo pela quantidade de ângulos (6): $a_i = \\frac{720^\\circ}{6} = 120^\\circ$."
         },
         "questions": [
           {
@@ -965,7 +1025,12 @@
             "correct": 0,
             "explanation": "Soma = $3 \\times 180^\\circ = 540^\\circ$. $540^\\circ \\div 5 = 108^\\circ$."
           }
-        ]
+        ],
+        "slug": "angulos-triangulos-e-poligonos",
+        "filename": "angulos-triangulos-e-poligonos.html",
+        "folder": "bloco-3-geometria",
+        "blockId": "3",
+        "pdf": null
       },
       {
         "id": "b3-t2",
@@ -980,7 +1045,7 @@
         "formula": "a^2 = b^2 + c^2 \\quad (a = \\text{hipotenusa})",
         "solvedExample": {
           "problem": "Uma escada de $5\\text{ m}$ está apoiada a $3\\text{ m}$ de distância do muro. Qual a altura alcançada?",
-          "solution": "Hipotenusa=5, Cateto=3, Altura=h.\n$5^2 = 3^2 + h^2 \\rightarrow 25 = 9 + h^2 \\rightarrow h^2 = 16 \\rightarrow h = 4\\text{ m}$."
+          "solution": "Hipotenusa=5, Cateto=3, Altura=h.<br>$5^2 = 3^2 + h^2 \\rightarrow 25 = 9 + h^2 \\rightarrow h^2 = 16 \\rightarrow h = 4\\text{ m}$."
         },
         "questions": [
           {
@@ -1038,7 +1103,12 @@
             "correct": 3,
             "explanation": "Apenas para triângulos com um ângulo reto ($90^\\circ$)."
           }
-        ]
+        ],
+        "slug": "teorema-de-pitagoras-e-semelhanca",
+        "filename": "teorema-de-pitagoras-e-semelhanca.html",
+        "folder": "bloco-3-geometria",
+        "blockId": "3",
+        "pdf": null
       },
       {
         "id": "b3-t3",
@@ -1053,7 +1123,7 @@
         "formula": "C = 2\\pi r, \\quad A = \\pi r^2",
         "solvedExample": {
           "problem": "Calcule a área de um círculo de raio $10\\text{ m}$ (adote $\\pi = 3{}14$).",
-          "solution": "$A = \\pi \\cdot r^2 = 3{}14 \\cdot (10)^2 = 3{}14 \\cdot 100 = 314\\text{ m}^2$."
+          "solution": "$A = \\pi \\cdot r^2 = 3{,}14 \\cdot (10)^2 = 3{,}14 \\cdot 100 = 314\\text{ m}^2$."
         },
         "questions": [
           {
@@ -1111,7 +1181,12 @@
             "correct": 1,
             "explanation": "Uma volta inteira é $360^\\circ$, logo meia-volta é $180^\\circ$."
           }
-        ]
+        ],
+        "slug": "circulo-e-circunferencia",
+        "filename": "circulo-e-circunferencia.html",
+        "folder": "bloco-3-geometria",
+        "blockId": "3",
+        "pdf": null
       },
       {
         "id": "b3-t4",
@@ -1184,7 +1259,12 @@
             "correct": 1,
             "explanation": "Prismas caracterizam-se por duas bases idênticas e paralelas."
           }
-        ]
+        ],
+        "slug": "solidos-e-vistas",
+        "filename": "solidos-e-vistas.html",
+        "folder": "bloco-3-geometria",
+        "blockId": "3",
+        "pdf": null
       }
     ]
   },
@@ -1264,7 +1344,12 @@
             "correct": 3,
             "explanation": "Unidades ao quadrado referem-se sempre a superfícies (áreas)."
           }
-        ]
+        ],
+        "slug": "areas-de-figuras-planas",
+        "filename": "areas-de-figuras-planas.html",
+        "folder": "bloco-4-medidas-e-estatistica",
+        "blockId": "4",
+        "pdf": null
       },
       {
         "id": "b4-t2",
@@ -1279,7 +1364,7 @@
         "formula": "V = A_{\\text{base}} \\cdot h",
         "solvedExample": {
           "problem": "Caixa d'água $2\\text{ m} \\times 1{}5\\text{ m} \\times 1\\text{ m}$. Capacidade em Litros?",
-          "solution": "$V = 2 \\times 1{}5 \\times 1 = 3 \\text{ m}^3$.\nComo $1 \\text{ m}^3 = 1000 \\text{ L}$, temos $3 \\times 1000 = 3000 \\text{ Litros}$."
+          "solution": "$V = 2 \\times 1{,}5 \\times 1 = 3 \\text{ m}^3$.<br>Como $1 \\text{ m}^3 = 1000 \\text{ L}$, temos $3 \\times 1000 = 3000 \\text{ Litros}$."
         },
         "questions": [
           {
@@ -1337,7 +1422,12 @@
             "correct": 1,
             "explanation": "$500 / 1000 = 0{}5\\text{ Litro}$."
           }
-        ]
+        ],
+        "slug": "volume-e-capacidade",
+        "filename": "volume-e-capacidade.html",
+        "folder": "bloco-4-medidas-e-estatistica",
+        "blockId": "4",
+        "pdf": null
       },
       {
         "id": "b4-t3",
@@ -1352,7 +1442,7 @@
         "formula": "P(E) = \\frac{n(E)}{n(\\Omega)}",
         "solvedExample": {
           "problem": "Urna com 6 bolas vermelhas e 4 azuis. Chance de tirar azul?",
-          "solution": "Total de bolas = 10 (Espaço amostral).\nBolas Azuis (favoráveis) = 4.\n$P = \\frac{4}{10} = 0{}4 = 40\\%$."
+          "solution": "Total de bolas = 10 (Espaço amostral).<br>Bolas Azuis (favoráveis) = 4.<br>$P = \\frac{4}{10} = 0{,}4 = 40\\%$."
         },
         "questions": [
           {
@@ -1410,7 +1500,12 @@
             "correct": 0,
             "explanation": "$\\frac{4}{52}$. Simplificando por 4 fica $\\frac{1}{13}$."
           }
-        ]
+        ],
+        "slug": "probabilidade",
+        "filename": "probabilidade.html",
+        "folder": "bloco-4-medidas-e-estatistica",
+        "blockId": "4",
+        "pdf": null
       },
       {
         "id": "b4-t4",
@@ -1425,7 +1520,7 @@
         "formula": "\\bar{x} = \\frac{\\sum x_i}{n}",
         "solvedExample": {
           "problem": "Dados: $[4, 7, 7, 8, 9]$. Ache Média, Moda e Mediana.",
-          "solution": "Média: $\\frac{4+7+7+8+9}{5} = \\frac{35}{5} = 7$.\nModa: $7$ (aparece mais vezes).\nMediana: O 3º termo na lista já ordenada é $7$."
+          "solution": "Média: $\\frac{4+7+7+8+9}{5} = \\frac{35}{5} = 7$.<br>Moda: $7$ (aparece mais vezes).<br>Mediana: O 3º termo na lista já ordenada é $7$."
         },
         "questions": [
           {
@@ -1483,7 +1578,12 @@
             "correct": 1,
             "explanation": "Média dos dois centrais: $\\frac{2 + 4}{2} = 3$."
           }
-        ]
+        ],
+        "slug": "estatistica-basica",
+        "filename": "estatistica-basica.html",
+        "folder": "bloco-4-medidas-e-estatistica",
+        "blockId": "4",
+        "pdf": null
       }
     ]
   },
@@ -1506,7 +1606,7 @@
         "formula": "M = C(1+i)^t, \\quad a^2 = b^2 + c^2, \\quad MMC(a, b)",
         "solvedExample": {
           "problem": "Equação do 2º grau: $3x^2 + 9x - 120 = 0$.",
-          "solution": "Dividindo toda a equação por 3: $x^2 + 3x - 40 = 0$.\nPor Soma e Produto: Soma $= -3$ e Produto $= -40$.\nAs raízes que satisfazem essas condições são $x_1 = -8$ e $x_2 = 5$."
+          "solution": "Dividindo toda a equação por 3: $x^2 + 3x - 40 = 0$.<br>Por Soma e Produto: Soma $= -3$ e Produto $= -40$.<br>As raízes que satisfazem essas condições são $x_1 = -8$ e $x_2 = 5$."
         },
         "questions": [
           {
@@ -1629,7 +1729,12 @@
             "correct": 4,
             "explanation": "Empréstimo: $0{}30 \\times 1368 = \\text{R\\$} 410,40$. Montante com juros compostos: $M = 410{}40 \\times (1{}02)^2 = 410{}40 \\times 1{}0404 = \\text{R\\$} 426,98$."
           }
-        ]
+        ],
+        "slug": "prova-ifsc-20171",
+        "filename": "prova-ifsc-20171.html",
+        "folder": "bloco-5-provas-ifsc",
+        "blockId": "5",
+        "pdf": "PROVA_INTEGRADO_VersaoFinal.pdf"
       },
       {
         "id": "ifsc-2017-2-matematica",
@@ -1645,7 +1750,7 @@
         "formula": "V_{\\text{cilindro}} = \\pi r^2 h, \\quad J = C \\cdot i \\cdot t, \\quad A = b \\cdot h",
         "solvedExample": {
           "problem": "Sistema de cédulas: 47 notas totalizando $\\text{R\\$} 580{,}00$ com notas de $\\text{R\\$} 5{,}00$ e $\\text{R\\$} 20{,}00$.",
-          "solution": "Seja $x$ as notas de $\\text{R\\$} 5$ e $y$ as notas de $\\text{R\\$} 20$:\n$\\begin{cases} x + y = 47 \\\\ 5x + 20y = 580 \\end{cases}$\nMultiplicando a 1ª por $-5$: $-5x - 5y = -235$.\nSomando: $15y = 345 \\Rightarrow y = 23$ notas de $\\text{R\\$} 20$.\n$x = 47 - 23 = 24$ notas de $\\text{R\\$} 5$."
+          "solution": "Seja $x$ as notas de $\\text{R\\$} 5$ e $y$ as notas de $\\text{R\\$} 20$:<br>$\\begin{cases} x + y = 47 \\\\ 5x + 20y = 580 \\end{cases}$<br>Multiplicando a 1ª por $-5$: $-5x - 5y = -235$.<br>Somando: $15y = 345 \\Rightarrow y = 23$ notas de $\\text{R\\$} 20$.<br>$x = 47 - 23 = 24$ notas de $\\text{R\\$} 5$."
         },
         "questions": [
           {
@@ -1768,7 +1873,12 @@
             "correct": 1,
             "explanation": "Das $19\\text{h } 45\\text{min}$ até às $20\\text{h } 00\\text{min}$ são $15\\text{ min}$. Das $20\\text{h } 00\\text{min}$ até às $21\\text{h } 20\\text{min}$ são $1\\text{h } 20\\text{min}$. Total: $15\\text{ min} + 1\\text{h } 20\\text{min} = 1\\text{h } 35\\text{min}$."
           }
-        ]
+        ],
+        "slug": "prova-ifsc-20172",
+        "filename": "prova-ifsc-20172.html",
+        "folder": "bloco-5-provas-ifsc",
+        "blockId": "5",
+        "pdf": "EC-PROVA-2017-2.pdf"
       },
       {
         "id": "ifsc-2018-1-matematica",
@@ -1784,7 +1894,7 @@
         "formula": "V(x) = ax + b, \\quad V_{\\text{bloco}} = c \\cdot l \\cdot h, \\quad a^2 = b^2 + c^2",
         "solvedExample": {
           "problem": "Função afim da corrida de táxi: bandeirada fixa de $\\text{R\\$} 5{,}00$ e $\\text{R\\$} 2{,}50$ por km rodado.",
-          "solution": "Equação da corrida: $V(x) = 2{}50x + 5{}00$.\nPara uma distância de $12\\text{ km}$:\n$V(12) = 2{}50(12) + 5{}00 = 30{}00 + 5{}00 = \\text{R\\$} 35{}00$."
+          "solution": "Equação da corrida: $V(x) = 2{,}50x + 5{,}00$.<br>Para uma distância de $12\\text{ km}$:<br>$V(12) = 2{,}50(12) + 5{,}00 = 30{,}00 + 5{,}00 = \\text{R\\$} 35{,}00$."
         },
         "questions": [
           {
@@ -1907,7 +2017,12 @@
             "correct": 2,
             "explanation": "Da 2ª equação: $y = x - 4$. Substituindo na 1ª: $2x + 3(x - 4) = 23 \\Rightarrow 5x - 12 = 23 \\Rightarrow 5x = 35 \\Rightarrow x = 7$ (e $y = 3$)."
           }
-        ]
+        ],
+        "slug": "prova-ifsc-20181",
+        "filename": "prova-ifsc-20181.html",
+        "folder": "bloco-5-provas-ifsc",
+        "blockId": "5",
+        "pdf": "20181-Prova.pdf"
       },
       {
         "id": "ifsc-2018-2-matematica",
@@ -1923,7 +2038,7 @@
         "formula": "\\frac{a}{b} = \\frac{c}{d}, \\quad S = -\\frac{b}{a}, \\quad P = \\frac{c}{a}",
         "solvedExample": {
           "problem": "Teorema de Tales: segmentos 4 e 6 em uma transversal e 6 e x na outra.",
-          "solution": "Montando a proporção direta:\n$\\frac{4}{6} = \\frac{6}{x} \\Rightarrow 4x = 36 \\Rightarrow x = 9$."
+          "solution": "Montando a proporção direta:<br>$\\frac{4}{6} = \\frac{6}{x} \\Rightarrow 4x = 36 \\Rightarrow x = 9$."
         },
         "questions": [
           {
@@ -2046,7 +2161,12 @@
             "correct": 0,
             "explanation": "Gostam de pelo menos um: $n(A \\cup B) = 120 + 100 - 40 = 180$. Não gostam de nenhum: $200 - 180 = 20$ pessoas."
           }
-        ]
+        ],
+        "slug": "prova-ifsc-20182",
+        "filename": "prova-ifsc-20182.html",
+        "folder": "bloco-5-provas-ifsc",
+        "blockId": "5",
+        "pdf": "PROVA CORRETA - PUBLICAR.pdf"
       },
       {
         "id": "ifsc-2019-1-matematica",
@@ -2062,7 +2182,7 @@
         "formula": "A_{\\text{útil}} = A_{\\text{total}} - A_{\\text{recorte}}, \\quad P = \\frac{n(E)}{n(\\Omega)}, \\quad v = \\frac{\\Delta s}{\\Delta t}",
         "solvedExample": {
           "problem": "Conversão de velocidade: 72 km/h para m/s.",
-          "solution": "Dividindo por 3,6:\n$72 \\div 3{}6 = 20\\text{ m/s}$."
+          "solution": "Dividindo por 3,6:<br>$72 \\div 3{,}6 = 20\\text{ m/s}$."
         },
         "questions": [
           {
@@ -2185,7 +2305,12 @@
             "correct": 0,
             "explanation": "Os dois lados congruentes somam $36 - 10 = 26\\text{ cm}$, logo cada um mede $13\\text{ cm}$. A altura divide a base em dois segmentos de $5\\text{ cm}$. Por Pitágoras: $h = \\sqrt{13^2 - 5^2} = \\sqrt{169 - 25} = 12\\text{ cm}$. Área $= \\frac{10 \\times 12}{2} = 60\\text{ cm}^2$."
           }
-        ]
+        ],
+        "slug": "prova-ifsc-20191",
+        "filename": "prova-ifsc-20191.html",
+        "folder": "bloco-5-provas-ifsc",
+        "blockId": "5",
+        "pdf": "2019 1 INT - PROVA.pdf"
       },
       {
         "id": "ifsc-2019-2-matematica",
@@ -2201,7 +2326,7 @@
         "formula": "V_{\\text{cilindro}} = \\pi r^2 h, \\quad \\text{Postes} = \\frac{2(C + L)}{\\text{MDC}(C, L)}, \\quad a^2 = b^2 + c^2",
         "solvedExample": {
           "problem": "Postes na praça retangular de 195 m por 255 m nos vértices e com espaçamento máximo igual.",
-          "solution": "MDC(195, 255): $195 = 15 \\times 13$ e $255 = 15 \\times 17$. MDC = 15 m.\nPerímetro $= 2(195 + 255) = 2(450) = 900\\text{ m}$.\nQuantidade mínima de postes $= 900 / 15 = 60$ postes."
+          "solution": "MDC(195, 255): $195 = 15 \\times 13$ e $255 = 15 \\times 17$. MDC = 15 m.<br>Perímetro $= 2(195 + 255) = 2(450) = 900\\text{ m}$.<br>Quantidade mínima de postes $= 900 / 15 = 60$ postes."
         },
         "questions": [
           {
@@ -2324,7 +2449,12 @@
             "correct": 0,
             "explanation": "O retângulo tem comprimento $AB = 2r$ e altura $AD = r$. Sua área é $2r \\cdot r = 2r^2 = 8 \\Rightarrow r^2 = 4$. A área do círculo completo é $A = \\pi r^2 = 4\\pi\\text{ m}^2$."
           }
-        ]
+        ],
+        "slug": "prova-ifsc-20192",
+        "filename": "prova-ifsc-20192.html",
+        "folder": "bloco-5-provas-ifsc",
+        "blockId": "5",
+        "pdf": "PROVA 2019.2 - FINAL.pdf"
       },
       {
         "id": "ifsc-2020-1-matematica",
@@ -2340,7 +2470,7 @@
         "formula": "\\frac{h_1}{s_1} = \\frac{h_2}{s_2}, \\quad (a^m)^n = a^{m \\cdot n}, \\quad \\text{IMC} = \\frac{P}{h^2}",
         "solvedExample": {
           "problem": "Potências equivalentes: compare $x = 20^{100}$ e $y = 400^{50}$.",
-          "solution": "Como $400 = 20^2$, temos $y = (20^2)^{50} = 20^{100}$.\nLogo, $x = y$."
+          "solution": "Como $400 = 20^2$, temos $y = (20^2)^{50} = 20^{100}$.<br>Logo, $x = y$."
         },
         "questions": [
           {
@@ -2463,7 +2593,12 @@
             "correct": 2,
             "explanation": "Regra de três composta: $\\frac{4}{x} = \\frac{4}{3} \\times \\frac{80}{160} = \\frac{4}{3} \\times \\frac{1}{2} = \\frac{4}{6} \\Rightarrow x = 6\\text{ horas}$."
           }
-        ]
+        ],
+        "slug": "prova-ifsc-20201",
+        "filename": "prova-ifsc-20201.html",
+        "folder": "bloco-5-provas-ifsc",
+        "blockId": "5",
+        "pdf": "2020 1 INT PROVA_FINAL-1.pdf"
       },
       {
         "id": "ifsc-2022-1-matematica",
@@ -2479,7 +2614,7 @@
         "formula": "1 + i_{\\text{real}} = \\frac{1 + i_{\\text{sal}}}{1 + i_{\\text{inf}}}, \\quad V = \\pi r^2 h, \\quad S = x_1 + x_2",
         "solvedExample": {
           "problem": "Raízes primas de $x^2 - 55x + c = 0$.",
-          "solution": "A soma das raízes é 55. Como 55 é ímpar, uma raiz prima é 2 e a outra é 53.\nO produto das raízes é $c = 2 \\times 53 = 106$."
+          "solution": "A soma das raízes é 55. Como 55 é ímpar, uma raiz prima é 2 e a outra é 53.<br>O produto das raízes é $c = 2 \\times 53 = 106$."
         },
         "questions": [
           {
@@ -2602,7 +2737,12 @@
             "correct": 0,
             "explanation": "A soma das raízes é $55$ (número ímpar). A única forma de somar dois primos e obter ímpar é quando um dos primos é $2$. Logo, o outro primo é $55 - 2 = 53$. O valor de $c = 2 \\times 53 = 106$."
           }
-        ]
+        ],
+        "slug": "prova-ifsc-20221",
+        "filename": "prova-ifsc-20221.html",
+        "folder": "bloco-5-provas-ifsc",
+        "blockId": "5",
+        "pdf": "PRV 2022.pdf"
       },
       {
         "id": "ifsc-2022-2-matematica",
@@ -2618,7 +2758,7 @@
         "formula": "H = d \\cdot \\tan(\\theta) + h_{\\text{obs}}, \\quad (x-r_1)(x-r_2)(x-r_3) > 0, \\quad C(x) = ax + b",
         "solvedExample": {
           "problem": "Inequação produto: $(x+5)(x-1)(x-2) > 0$.",
-          "solution": "As raízes são $-5$, $1$ e $2$.\nFazendo o varal de sinais:\nPara $x < -5$: $(-)(-)(-) = -$ (negativo)\nPara $-5 < x < 1$: $(+)(-)(-) = +$ (positivo)\nPara $1 < x < 2$: $(+)(+)(-) = -$ (negativo)\nPara $x > 2$: $(+)(+)(+) = +$ (positivo)\nSolução: $]-5, 1[ \\cup ]2, +\\infty[$."
+          "solution": "As raízes são $-5$, $1$ e $2$.<br>Fazendo o varal de sinais:<br>Para $x < -5$: $(-)(-)(-) = -$ (negativo)<br>Para $-5 < x < 1$: $(+)(-)(-) = +$ (positivo)<br>Para $1 < x < 2$: $(+)(+)(-) = -$ (negativo)<br>Para $x > 2$: $(+)(+)(+) = +$ (positivo)<br>Solução: $]-5, 1[ \\cup ]2, +\\infty[$."
         },
         "questions": [
           {
@@ -2741,7 +2881,12 @@
             "correct": 0,
             "explanation": "Preço: $P(680) = 12 + 0{}45 \\times 680 = 12 + 306 = \\text{R\\$} 318,00$."
           }
-        ]
+        ],
+        "slug": "prova-ifsc-20222",
+        "filename": "prova-ifsc-20222.html",
+        "folder": "bloco-5-provas-ifsc",
+        "blockId": "5",
+        "pdf": "2022_2_EC_INT_PROVA_OFICIAL_impressão.pdf"
       },
       {
         "id": "ifsc-2023-2-matematica",
@@ -2757,7 +2902,7 @@
         "formula": "\\rho = \\frac{m}{V}, \\quad C = 2\\pi r, \\quad \\begin{cases} x + y = T \\\\ P_1 x + P_2 y = V_T \\end{cases}",
         "solvedExample": {
           "problem": "Densidade do cubo de 6 cm com massa de 1620 g.",
-          "solution": "Volume do cubo $= 6^3 = 216\\text{ cm}^3$.\nDensidade $\\rho = \\frac{1620}{216} = 7{}5\\text{ g/cm}^3$."
+          "solution": "Volume do cubo $= 6^3 = 216\\text{ cm}^3$.<br>Densidade $\\rho = \\frac{1620}{216} = 7{,}5\\text{ g/cm}^3$."
         },
         "questions": [
           {
@@ -2880,7 +3025,12 @@
             "correct": 0,
             "explanation": "Área do quadrado maior: $12^2 = 144\\text{ cm}^2$. Área do quadrado médio: $8^2 = 64\\text{ cm}^2$. Diferença: $144 - 64 = 80\\text{ cm}^2$."
           }
-        ]
+        ],
+        "slug": "prova-ifsc-20232",
+        "filename": "prova-ifsc-20232.html",
+        "folder": "bloco-5-provas-ifsc",
+        "blockId": "5",
+        "pdf": "2023-2 EC INT PROVA TITULAR.pdf"
       },
       {
         "id": "ifsc-2024-1-matematica",
@@ -2896,7 +3046,7 @@
         "formula": "A_{\\text{hex}} = 2\\sqrt{3} r^2, \\quad V = \\pi r^2 h, \\quad A(A \\cup B) = A(A) + A(B) - A(A \\cap B)",
         "solvedExample": {
           "problem": "Retângulos sobrepostos de 10x12 cm e 11x13 cm com interseção de 4x6 cm.",
-          "solution": "Área 1 $= 10 \\times 12 = 120\\text{ cm}^2$.\nÁrea 2 $= 11 \\times 13 = 143\\text{ cm}^2$.\nInterseção $= 4 \\times 6 = 24\\text{ cm}^2$.\nÁrea total da união $= 120 + 143 - 24 = 239\\text{ cm}^2$."
+          "solution": "Área 1 $= 10 \\times 12 = 120\\text{ cm}^2$.<br>Área 2 $= 11 \\times 13 = 143\\text{ cm}^2$.<br>Interseção $= 4 \\times 6 = 24\\text{ cm}^2$.<br>Área total da união $= 120 + 143 - 24 = 239\\text{ cm}^2$."
         },
         "questions": [
           {
@@ -2995,7 +3145,12 @@
             "correct": 0,
             "explanation": "Por definição geométrica, em qualquer polígono circunscrito a uma circunferência, o apótema do polígono coincide exatamente com o raio do círculo inscrito (razão $= 1$)."
           }
-        ]
+        ],
+        "slug": "prova-ifsc-20241",
+        "filename": "prova-ifsc-20241.html",
+        "folder": "bloco-5-provas-ifsc",
+        "blockId": "5",
+        "pdf": "2024-1 EC INT PROVA TITULAR.pdf"
       },
       {
         "id": "ifsc-2024-2-matematica",
@@ -3011,7 +3166,7 @@
         "formula": "MMC(t_1, t_2, t_3), \\quad x^2 + y^2 = d^2, \\quad a \\cdot 10^n",
         "solvedExample": {
           "problem": "Dois navios com velocidades iguais e trajetórias perpendiculares estão a $5\\sqrt{2}\\text{ km}$ um do outro.",
-          "solution": "Como as velocidades são iguais, as distâncias são $d$ e $d$.\nPor Pitágoras: $d^2 + d^2 = (5\\sqrt{2})^2 \\Rightarrow 2d^2 = 50 \\Rightarrow d^2 = 25 \\Rightarrow d = 5\\text{ km}$ do porto."
+          "solution": "Como as velocidades são iguais, as distâncias são $d$ e $d$.<br>Por Pitágoras: $d^2 + d^2 = (5\\sqrt{2})^2 \\Rightarrow 2d^2 = 50 \\Rightarrow d^2 = 25 \\Rightarrow d = 5\\text{ km}$ do porto."
         },
         "questions": [
           {
@@ -3098,7 +3253,12 @@
             "correct": 3,
             "explanation": "Soma das 4 semanas de 2024 $= 53.354 + 65.860 + 90.532 + 105.875 = 315.621 > 300.000$ (I correto). Na Semana 3: $\\frac{90.532}{17.951} \\approx 5{}04 = 504\\% \\approx 500\\%$ (IV correto)."
           }
-        ]
+        ],
+        "slug": "prova-ifsc-20242",
+        "filename": "prova-ifsc-20242.html",
+        "folder": "bloco-5-provas-ifsc",
+        "blockId": "5",
+        "pdf": "P-B 2024-2 EC INT PROVA TITULAR.pdf"
       },
       {
         "id": "ifsc-2025-1-matematica",
@@ -3114,7 +3274,7 @@
         "formula": "\\frac{P_{\\text{etanol}}}{P_{\\text{gasolina}}} < 0{}70, \\quad v = \\frac{\\Delta s}{\\Delta t}, \\quad A = A_1 + A_2",
         "solvedExample": {
           "problem": "Paridade de combustível: gasolina a $\\text{R\\$} 6{,}00$ e etanol a $\\text{R\\$} 4{,}00$.",
-          "solution": "Razão: $\\frac{4{}00}{6{}00} = 0{}667 = 66{}7\\%$.\nComo $66{}7\\% < 70\\%$, é financeiramente vantajoso abastecer com etanol."
+          "solution": "Razão: $\\frac{4{,}00}{6{,}00} = 0{,}667 = 66{,}7\\%$.<br>Como $66{,}7\\% < 70\\%$, é financeiramente vantajoso abastecer com etanol."
         },
         "questions": [
           {
@@ -3201,7 +3361,12 @@
             "correct": 0,
             "explanation": "Área do campo $= 100 \\times 60 = 6.000\\text{ m}^2$. Área do círculo central $= 3{}14 \\times 9^2 = 3{}14 \\times 81 = 254{}34\\text{ m}^2$. Área restante $= 6000 - 254{}34 = 5.745{}66\\text{ m}^2$."
           }
-        ]
+        ],
+        "slug": "prova-ifsc-20251",
+        "filename": "prova-ifsc-20251.html",
+        "folder": "bloco-5-provas-ifsc",
+        "blockId": "5",
+        "pdf": "2025-1 EC INT PROVA TITULAR - IFSC.pdf"
       },
       {
         "id": "ifsc-2025-2-matematica",
@@ -3217,7 +3382,7 @@
         "formula": "A_{\\text{trapézio}} = \\frac{(B+b)h}{2}, \\quad P_n = n!, \\quad E(x) = ax^2 + bx + c",
         "solvedExample": {
           "problem": "Anagramas com as letras L, I, V, H, R (5 letras distintas).",
-          "solution": "Permutação simples de 5 elementos:\n$P_5 = 5! = 5 \\times 4 \\times 3 \\times 2 \\times 1 = 120$ nomes possíveis."
+          "solution": "Permutação simples de 5 elementos:<br>$P_5 = 5! = 5 \\times 4 \\times 3 \\times 2 \\times 1 = 120$ nomes possíveis."
         },
         "questions": [
           {
@@ -3304,7 +3469,12 @@
             "correct": 3,
             "explanation": "Diferença por sanduíche: $\\text{US\\$} 6{}95 - 4{}02 = \\text{US\\$} 2{}93$. Para 3 sanduíches: $3 \\times 2{}93 = \\text{US\\$} 8{}79$. Convertendo em reais: $8{}79 \\times 6{}00 = \\text{R\\$} 52,74$."
           }
-        ]
+        ],
+        "slug": "prova-ifsc-20252",
+        "filename": "prova-ifsc-20252.html",
+        "folder": "bloco-5-provas-ifsc",
+        "blockId": "5",
+        "pdf": "2025-2 EC INT PROVA TITULAR - IFSC.pdf"
       },
       {
         "id": "ifsc-2026-1-matematica",
@@ -3320,7 +3490,7 @@
         "formula": "t = d \\times 24, \\quad V = A_b \\cdot h, \\quad V_{\\text{desconto}} = V_i \\cdot (1 - d)",
         "solvedExample": {
           "problem": "Conversão de 2,9 dias em horas e minutos.",
-          "solution": "$2{}9 \\times 24 = 69{}6\\text{ horas} = 69\\text{h} + (0{}6 \\times 60\\text{min}) = 69\\text{h } 36\\text{min}$."
+          "solution": "$2{,}9 \\times 24 = 69{,}6\\text{ horas} = 69\\text{h} + (0{,}6 \\times 60\\text{min}) = 69\\text{h } 36\\text{min}$."
         },
         "questions": [
           {
@@ -3407,7 +3577,12 @@
             "correct": 0,
             "explanation": "$3\\text{ m}^3 = 3.000\\text{ Litros}$. Duração: $\\frac{45000}{3000} = 15\\text{ dias}$."
           }
-        ]
+        ],
+        "slug": "prova-ifsc-20261",
+        "filename": "prova-ifsc-20261.html",
+        "folder": "bloco-5-provas-ifsc",
+        "blockId": "5",
+        "pdf": "2026-1 EC INT PROVA - IFSC.pdf"
       },
       {
         "id": "ifsc-2026-2-matematica",
@@ -3423,7 +3598,7 @@
         "formula": "1\\text{ ha} = 10.000\\text{ m}^2, \\quad V = \\pi r^2 h, \\quad P(E) = \\frac{n(E)}{n(\\Omega)}",
         "solvedExample": {
           "problem": "Conversão de 15 hectares para campos de futebol de 7.500 m² cada.",
-          "solution": "$15\\text{ ha} = 150.000\\text{ m}^2$.\nNúmero de campos $= \\frac{150.000}{7.500} = 20$ campos de futebol."
+          "solution": "$15\\text{ ha} = 150.000\\text{ m}^2$.<br>Número de campos $= \\frac{150.000}{7.500} = 20$ campos de futebol."
         },
         "questions": [
           {
@@ -3510,13 +3685,18 @@
             "correct": 0,
             "explanation": "Área total em $\\text{m}^2$: $60 \\times 10.000 = 600.000\\text{ m}^2$. Número de campos: $\\frac{600.000}{7.500} = 80\\text{ campos de futebol}$."
           }
-        ]
+        ],
+        "slug": "prova-ifsc-20262",
+        "filename": "prova-ifsc-20262.html",
+        "folder": "bloco-5-provas-ifsc",
+        "blockId": "5",
+        "pdf": "2026-2 EC INT PROVA TITULAR - IFSC.pdf"
       }
     ]
   },
   "6": {
     "title": "Bloco 6: Provas Anteriores IFCE",
-    "description": "Resoluções completas, gabaritos comentados e simulados das 5 provas mais recentes do processo seletivo do IFCE (Cursos Técnicos Integrados).",
+    "description": "Resoluções completas, gabaritos comentados e simulados de 10 provas oficiais do IFCE (Cursos Técnicos Integrados e Vestibulares).",
     "icon": "award",
     "topics": [
       {
@@ -4233,6 +4413,618 @@
         "folder": "bloco-6-provas-ifce",
         "blockId": "6",
         "pdf": "Ensino Técnico Integrado 2022.pdf"
+      },
+      {
+        "id": "ifce-2022-2-matematica",
+        "title": "Prova IFCE 2022.2",
+        "bncc": "Revisão Geral",
+        "summary": "10 questões de Matemática aplicadas no Processo Seletivo 2022.2 do IFCE para os Cursos Técnicos Integrados (Campus Fortaleza).",
+        "detailedTheory": "O Processo Seletivo 2022.2 do IFCE abordou os seguintes tópicos fundamentais da matemática: contagem de subconjuntos de um conjunto finito e subconjuntos não vazios (potência de 2); determinação da quantidade de divisores positivos por meio da fatoração em primos canônica; cálculo de porcentagem e acréscimo percentual em compras parceladas comparadas a compras à vista; regra de três composta envolvendo trabalhadores/máquinas, produção e dias de trabalho; resolução de inequações do primeiro grau e classificação de números inteiros (par, ímpar, divisibilidade); conversão de grandezas volumétricas de centímetros cúbicos (cm³) para litros; simplificação e propriedades operatórias de potenciação e radiciação com expoentes fracionários; resolução de sistemas de equações lineares de duas incógnitas; determinação das coordenadas do vértice de parábolas em funções quadráticas; e aplicação do Teorema de Pitágoras e cálculo do perímetro em triângulos retângulos.",
+        "keyPoints": [
+          "Um conjunto com $n$ elementos possui exatamente $2^n$ subconjuntos, dos quais $2^n - 1$ são não vazios.",
+          "A quantidade de divisores positivos de $N = p_1^{a_1} \\cdot p_2^{a_2} \\dots p_k^{a_k}$ é calculada por $(a_1 + 1)(a_2 + 1)\\dots(a_k + 1)$.",
+          "Na conversão de unidades de volume e capacidade, $1\\text{ litro} = 1000\\text{ cm}^3 = 1\\text{ dm}^3$."
+        ],
+        "formula": "2^n - 1, \\quad d(N) = \\prod (a_i + 1), \\quad x_v = -\\frac{b}{2a}, \\quad a^2 + b^2 = c^2",
+        "solvedExample": {
+          "problem": "Um conjunto $A$ possui $63$ subconjuntos não vazios. Quantos elementos pertencem a $A$?",
+          "solution": "1. O total de subconjuntos não vazios é dado pela fórmula $2^n - 1$, onde $n$ é o número de elementos.<br>2. Igualamos: $2^n - 1 = 63 \\implies 2^n = 64$.<br>3. Como $64 = 2^6$, concluímos que $n = 6$ elementos."
+        },
+        "questions": [
+          {
+            "q": "O conjunto $V$ possui exatamente $127$ subconjuntos não vazios. Se $3 \\notin V$, é CORRETO afirmar que a quantidade de subconjuntos não vazios de $V \\cup \\{3\\}$ é:",
+            "options": [
+              "$128$",
+              "$256$",
+              "$254$",
+              "$255$",
+              "$130$"
+            ],
+            "correct": 3,
+            "explanation": "O número de subconjuntos não vazios de um conjunto com $n$ elementos é dado por $2^n - 1$.<br>$$2^n - 1 = 127 \\implies 2^n = 128 = 2^7 \\implies n = 7$$<br>Como $3 \\notin V$, a união $V \\cup \\{3\\}$ possui $n + 1 = 8$ elementos.<br>A quantidade de subconjuntos não vazios de $V \\cup \\{3\\}$ é:<br>$$2^8 - 1 = 256 - 1 = 255$$"
+          },
+          {
+            "q": "Para certo valor inteiro $q$, o número $2^q \\cdot 45$ possui exatamente $66$ divisores positivos. Para esse mesmo valor de $q$, o número $q + 2$ possui exatamente:",
+            "options": [
+              "$11$ divisores positivos.",
+              "$6$ divisores positivos.",
+              "$8$ divisores positivos.",
+              "$10$ divisores positivos.",
+              "$4$ divisores positivos."
+            ],
+            "correct": 1,
+            "explanation": "Fatorando $45$, temos $45 = 3^2 \\cdot 5^1$. Logo, a fatoração prima do número é:<br>$$N = 2^q \\cdot 3^2 \\cdot 5^1$$<br>A quantidade de divisores positivos é dada pelo produto dos expoentes acrescidos de $1$:<br>$$d(N) = (q + 1)(2 + 1)(1 + 1) = (q + 1) \\cdot 3 \\cdot 2 = 6(q + 1)$$<br>Como $d(N) = 66$:<br>$$6(q + 1) = 66 \\implies q + 1 = 11 \\implies q = 10$$<br>Assim, $q + 2 = 10 + 2 = 12$. Fatorando $12$ em fatores primos:<br>$$12 = 2^2 \\cdot 3^1$$<br>A quantidade de divisores positivos de $12$ é:<br>$$(2 + 1)(1 + 1) = 3 \\cdot 2 = 6\\text{ divisores positivos}$$"
+          },
+          {
+            "q": "Um produto custa $\\text{R\\$} 140{,}00$ à vista e seu pagamento pode ser feito também em quatro parcelas de $\\text{R\\$} 40{,}00$. Em relação ao preço à vista, o aumento percentual total da compra parcelada é de, aproximadamente:",
+            "options": [
+              "$12\\%$",
+              "$20\\%$",
+              "$14\\%$",
+              "$10\\%$",
+              "$18\\%$"
+            ],
+            "correct": 2,
+            "explanation": "O valor total pago a prazo em quatro parcelas de $\\text{R\\$} 40{,}00$ é:<br>$$4 \\times \\text{R\\$} 40{,}00 = \\text{R\\$} 160{,}00$$<br>O acréscimo em relação ao valor à vista ($\\text{R\\$} 140{,}00$) é:<br>$$\\text{R\\$} 160{,}00 - \\text{R\\$} 140{,}00 = \\text{R\\$} 20{,}00$$<br>Calculamos a taxa percentual de aumento:<br>$$\\frac{20}{140} = \\frac{1}{7} \\approx 0{,}142857 \\approx 14{,}29\\% \\approx 14\\%$$"
+          },
+          {
+            "q": "Uma máquina trabalhando $8\\text{ horas}$ por dia produz $4.000\\text{ peças}$ em $6\\text{ dias}$. Para produzir $12.000\\text{ peças}$ em $20\\text{ dias}$, essa máquina deverá trabalhar, por dia:",
+            "options": [
+              "$5\\text{h } 20\\text{min}$",
+              "$6\\text{h } 14\\text{min}$",
+              "$8\\text{h } 15\\text{min}$",
+              "$9\\text{h } 18\\text{min}$",
+              "$7\\text{h } 12\\text{min}$"
+            ],
+            "correct": 4,
+            "explanation": "Montamos a regra de três composta:<br>• Horas/dia ($h$): de $8$ para $x$<br>• Peças: de $4.000$ para $12.000$ (diretamente proporcional ao tempo diário)<br>• Dias: de $6$ para $20$ (inversamente proporcional ao tempo diário)<br>$$\\frac{8}{x} = \\frac{4.000}{12.000} \\times \\frac{20}{6}$$<br>$$\\frac{8}{x} = \\frac{1}{3} \\times \\frac{10}{3} = \\frac{10}{9}$$<br>$$10x = 8 \\times 9 = 72 \\implies x = 7{,}2\\text{ horas}$$<br>Convertendo a parte decimal para minutos:<br>$$0{,}2\\text{ h} = 0{,}2 \\times 60\\text{ min} = 12\\text{ min}$$<br>Logo, o tempo diário necessário é $7\\text{h } 12\\text{min}$."
+          },
+          {
+            "q": "O maior valor inteiro que pertence à solução da inequação $3x - 1 < 280$ é um número:",
+            "options": [
+              "múltiplo de 5 e maior que 70.",
+              "divisível por 7 e menor que 100.",
+              "par e maior que 50.",
+              "divisível por 2 e não divisível por 3.",
+              "ímpar e maior que 80."
+            ],
+            "correct": 4,
+            "explanation": "Resolvendo a inequação de 1º grau:<br>$$3x - 1 < 280 \\implies 3x < 281 \\implies x < \\frac{281}{3}$$<br>Como $\\frac{281}{3} = 93{,}666\\dots$, o maior número inteiro que satisfaz essa condição é $x = 93$.<br>Analisando as alternativas para o número $93$:<br>• $93$ é ímpar e é estritamente maior que $80$ ($93 > 80$), tornando o item correto."
+          },
+          {
+            "q": "Em uma campanha de vacinação contra a Covid-19, é aplicada uma dose de $0{,}3\\text{ cm}^3$ em cada indivíduo. Para aplicar uma dose dessa vacina em uma população de dois milhões de habitantes, o volume de imunizante necessário, em litros, é igual a:",
+            "options": [
+              "$2.000$",
+              "$4.000$",
+              "$30.000$",
+              "$600$",
+              "$15.000$"
+            ],
+            "correct": 3,
+            "explanation": "Calculamos o volume total da vacina em centímetros cúbicos:<br>$$V = 2.000.000 \\times 0{,}3\\text{ cm}^3 = 600.000\\text{ cm}^3$$<br>Lembrando que $1\\text{ litro} = 1000\\text{ cm}^3$, fazemos a conversão dividindo por $1000$:<br>$$V = \\frac{600.000}{1000} = 600\\text{ litros}$$"
+          },
+          {
+            "q": "Para cada número real positivo $Y$, a expressão $\\frac{\\sqrt[3]{Y \\cdot \\sqrt{Y}} \\cdot \\sqrt{Y \\cdot \\sqrt[3]{Y}}}{Y^{1/6}}$ é equivalente a:",
+            "options": [
+              "$Y$",
+              "$6Y$",
+              "$\\sqrt[6]{Y}$",
+              "$\\frac{1}{Y}$",
+              "$Y^6$"
+            ],
+            "correct": 0,
+            "explanation": "Escrevemos todos os radicais em forma de expoente fracionário:<br>1. $\\sqrt[3]{Y \\cdot \\sqrt{Y}} = \\sqrt[3]{Y \\cdot Y^{1/2}} = \\sqrt[3]{Y^{3/2}} = (Y^{3/2})^{1/3} = Y^{1/2}$<br>2. $\\sqrt{Y \\cdot \\sqrt[3]{Y}} = \\sqrt{Y \\cdot Y^{1/3}} = \\sqrt{Y^{4/3}} = (Y^{4/3})^{1/2} = Y^{2/3}$<br>Multiplicando os termos do numerador:<br>$$Y^{1/2} \\cdot Y^{2/3} = Y^{1/2 + 2/3} = Y^{7/6}$$<br>Dividindo pelo denominador $Y^{1/6}$:<br>$$\\frac{Y^{7/6}}{Y^{1/6}} = Y^{7/6 - 1/6} = Y^{6/6} = Y^1 = Y$$"
+          },
+          {
+            "q": "Os números reais $x$ e $y$ são tais que $2x + 3 = 3y$ e $8x - 5 = -y$. Para esses mesmos números reais, o valor de $x + y$ é:",
+            "options": [
+              "$\\frac{17}{13}$",
+              "$\\frac{6}{13}$",
+              "$\\frac{23}{13}$",
+              "$-\\frac{1}{13}$",
+              "$\\frac{14}{13}$"
+            ],
+            "correct": 2,
+            "explanation": "Organizamos o sistema linear:<br>$$\\begin{cases} 2x - 3y = -3 \\\\ 8x + y = 5 \\end{cases}$$<br>Da segunda equação, isolamos $y$:<br>$$y = 5 - 8x$$<br>Substituindo na primeira equação:<br>$$2x - 3(5 - 8x) = -3 \\implies 2x - 15 + 24x = -3 \\implies 26x = 12 \\implies x = \\frac{12}{26} = \\frac{6}{13}$$<br>Calculando o valor de $y$:<br>$$y = 5 - 8\\left(\\frac{6}{13}\\right) = \\frac{65 - 48}{13} = \\frac{17}{13}$$<br>Portanto, a soma $x + y$ vale:<br>$$x + y = \\frac{6}{13} + \\frac{17}{13} = \\frac{23}{13}$$"
+          },
+          {
+            "q": "O gráfico da função quadrática $f(x) = x^2 + mx + n$ é uma parábola cujo vértice é o ponto $(4, 5)$. Nessas condições, o valor de $m - n$ é igual a:",
+            "options": [
+              "$49$",
+              "$-29$",
+              "$9$",
+              "$39$",
+              "$-19$"
+            ],
+            "correct": 1,
+            "explanation": "As coordenadas do vértice de uma função quadrática $f(x) = ax^2 + bx + c$ com $a = 1$ são dadas por:<br>$$x_v = -\\frac{b}{2a} = -\\frac{m}{2}$$<br>Como $x_v = 4$, temos:<br>$$-\\frac{m}{2} = 4 \\implies m = -8$$<br>A função é então $f(x) = x^2 - 8x + n$. Como o ponto $(4, 5)$ pertence à parábola, $f(4) = 5$:<br>$$4^2 - 8(4) + n = 5 \\implies 16 - 32 + n = 5 \\implies -16 + n = 5 \\implies n = 21$$<br>Calculando a diferença pedida:<br>$$m - n = -8 - 21 = -29$$"
+          },
+          {
+            "q": "Em um triângulo retângulo, um dos catetos mede $7\\text{ cm}$, enquanto o outro cateto mede $1\\text{ cm}$ a menos que a hipotenusa. O perímetro desse triângulo, em cm, é igual a:",
+            "options": [
+              "$56$",
+              "$48$",
+              "$50$",
+              "$42$",
+              "$60$"
+            ],
+            "correct": 0,
+            "explanation": "Seja $c$ a hipotenusa do triângulo retângulo. O cateto menor mede $a = 7\\text{ cm}$ e o outro cateto mede $b = c - 1\\text{ cm}$.<br>Aplicando o Teorema de Pitágoras ($a^2 + b^2 = c^2$):<br>$$7^2 + (c - 1)^2 = c^2$$<br>$$49 + c^2 - 2c + 1 = c^2$$<br>$$50 - 2c = 0 \\implies 2c = 50 \\implies c = 25\\text{ cm}$$<br>O cateto $b$ mede $b = 25 - 1 = 24\\text{ cm}$.<br>Calculamos o perímetro somando os três lados:<br>$$P = a + b + c = 7 + 24 + 25 = 56\\text{ cm}$$"
+          }
+        ],
+        "slug": "prova-ifce-20222",
+        "filename": "prova-ifce-20222.html",
+        "folder": "bloco-6-provas-ifce",
+        "blockId": "6",
+        "pdf": "Prova_Ensino Técnico Integrado 2022.pdf"
+      },
+      {
+        "id": "ifce-2019-1-matematica",
+        "title": "Prova IFCE 2019.1",
+        "bncc": "Revisão Geral",
+        "summary": "10 questões de Matemática aplicadas no Processo Seletivo 2019.1 do IFCE para os Cursos Técnicos Integrados (Campi Caucaia e Fortaleza).",
+        "detailedTheory": "O Processo Seletivo 2019.1 do IFCE avaliou competências em: teoria dos conjuntos finitos com análise crítica de propriedades de união, intersecção e diferença; cálculo com frações numéricas, simplificação para fração irredutível e potenciação de frações; fatoração em fatores primos e propriedades de números quase-primos; interpretação interdisciplinar com poesia (soneto e versos alexandrinos com contagem de sílabas métricas); resolução de equações literais fracionárias e razões proporcionais; resolução ágil de sistemas lineares com combinações lineares de coeficientes; equações do 2º grau completas com coeficientes contendo raízes quadradas irracionais; geometria plana de áreas de triângulos utilizando conceitos de pontos médios e proporção de bases; propriedades métricas de quadriláteros com diagonais perpendiculares e ângulos retos via Teorema de Pitágoras; e trigonometria básica em triângulos isósceles divididos pela bissetriz/altura.",
+        "keyPoints": [
+          "Para conjuntos finitos quaisquer, se $B \\subseteq A$, a união $A \\cup B$ é igual ao próprio $A$, não possuindo mais elementos que $A$.",
+          "A altura traçada a partir do ponto médio de um lado de um triângulo é igual à metade da altura relativa à base daquele mesmo vértice (Teorema da Base Média).",
+          "A bissetriz do ângulo do vértice em um triângulo isósceles coincide com a altura e mediana relativas à base oposta."
+        ],
+        "formula": "\\left(\\frac{x}{y} - z\\right)^2, \\quad x = \\frac{-b \\pm \\sqrt{\\Delta}}{2a}, \\quad \\operatorname{sen} 20^\\circ = \\frac{w}{14}",
+        "solvedExample": {
+          "problem": "Calcule a razão entre $(m + n)$ e $(m - n)$ sabendo que $m = 5n$ com $n \\neq 0$.",
+          "solution": "1. Substituímos $m = 5n$ na fração:<br>$$\\frac{m + n}{m - n} = \\frac{5n + n}{5n - n} = \\frac{6n}{4n}$$<br>2. Cancelamos a incógnita não-nula $n$ e simplificamos a fração por $2$:<br>$$\\frac{6}{4} = \\frac{3}{2}$$"
+        },
+        "questions": [
+          {
+            "q": "Sobre os conjuntos finitos e não vazios $A$ e $B$, são feitas as seguintes afirmativas:<br>I. $A \\cup B$ tem mais elementos que $A$.<br>II. $A \\cap B$ tem menos elementos que $A$.<br>III. $A - B$ tem menos elementos que $A$.<br>Dentre as afirmativas acima, é(são) necessariamente verdadeira(s):",
+            "options": [
+              "apenas I e III.",
+              "nenhuma delas.",
+              "apenas I e II.",
+              "apenas II e III.",
+              "I, II e III."
+            ],
+            "correct": 1,
+            "explanation": "Analisamos contraexemplos para cada afirmação considerando conjuntos finitos e não vazios:<br>• I: Se $B \\subseteq A$ (ex.: $A = \\{1, 2\\}$ e $B = \\{1\\}$), temos $A \\cup B = A$, logo a quantidade de elementos é igual, não maior.<br>• II: Se $B = A$, temos $A \\cap B = A$, possuindo o mesmo número de elementos de $A$, e não menos.<br>• III: Se $A$ e $B$ forem disjuntos ($A \\cap B = \\emptyset$, ex.: $A = \\{1, 2\\}$ e $B = \\{3\\}$), temos $A - B = A$, mantendo a mesma quantidade de elementos.<br>Portanto, nenhuma das afirmativas é necessariamente verdadeira."
+          },
+          {
+            "q": "Para os números $x = \\frac{2}{5}$, $y = \\frac{3}{7}$ e $z = \\frac{1}{3}$, quando escrevemos $\\left(\\frac{x}{y} - z\\right)^2$ como fração irredutível, obtemos numerador e denominador que somam:",
+            "options": [
+              "$24$",
+              "$12$",
+              "$15$",
+              "$34$",
+              "$52$"
+            ],
+            "correct": 3,
+            "explanation": "1. Calculamos a divisão $\\frac{x}{y}$:<br>$$\\frac{x}{y} = \\frac{2/5}{3/7} = \\frac{2}{5} \\times \\frac{7}{3} = \\frac{14}{15}$$<br>2. Subtraímos $z = \\frac{1}{3}$:<br>$$\\frac{x}{y} - z = \\frac{14}{15} - \\frac{1}{3} = \\frac{14 - 5}{15} = \\frac{9}{15} = \\frac{3}{5}$$<br>3. Elevamos ao quadrado:<br>$$\\left(\\frac{3}{5}\\right)^2 = \\frac{9}{25}$$<br>Como $\\text{MDC}(9, 25) = 1$, a fração já é irredutível. A soma do numerador com o denominador é:<br>$$9 + 25 = 34$$"
+          },
+          {
+            "q": "Um número natural é quase-primo quando é o produto de dois números primos distintos. Por exemplo, $91$ é quase-primo, pois $91 = 7 \\times 13$. Outros dois números quase-primos são $2018$ e $2019$. Nessas condições, também é um número quase-primo o resultado de:",
+            "options": [
+              "$673 \\times 1009$",
+              "$2018 \\times 2019$",
+              "$91 \\times 13$",
+              "$2020 \\times 2021$",
+              "$20 \\times 1009$"
+            ],
+            "correct": 0,
+            "explanation": "Pela definição fornecida no enunciado:<br>• $2018 = 2 \\times 1009$, o que garante que $1009$ é primo (pois $2$ é primo e $2018$ é quase-primo).<br>• $2019 = 3 \\times 673$, o que garante que $673$ é primo (pois $3$ é primo e $2019$ é quase-primo).<br>Como $673$ e $1009$ são ambos números primos distintos entre si, o produto $673 \\times 1009$ é por definição um número quase-primo."
+          },
+          {
+            "q": "O soneto é uma forma de poema que tem em sua composição quatro estrofes, das quais as duas primeiras têm quatro versos cada e as duas últimas têm três versos cada. Um verso é dito ser alexandrino quando possui exatamente doze sílabas métricas. Um soneto formado apenas de versos alexandrinos possui um total de ______ sílabas métricas:",
+            "options": [
+              "$200$",
+              "$144$",
+              "$140$",
+              "$196$",
+              "$168$"
+            ],
+            "correct": 4,
+            "explanation": "Calculamos o total de versos de um soneto:<br>$$4 + 4 + 3 + 3 = 14\\text{ versos}$$<br>Como cada verso alexandrino tem exatamente $12$ sílabas métricas:<br>$$14 \\times 12 = 168\\text{ sílabas métricas}$$"
+          },
+          {
+            "q": "Os números reais $m$ e $n$ são tais que a razão entre $m + n$ e $3m - 2n$, nessa ordem, vale $\\frac{1}{4}$. A razão entre os números $m + 2n$ e $2m + n$, nessa ordem, vale:",
+            "options": [
+              "$\\frac{3}{7}$",
+              "$\\frac{8}{13}$",
+              "$\\frac{2}{3}$",
+              "$\\frac{4}{11}$",
+              "$\\frac{6}{5}$"
+            ],
+            "correct": 3,
+            "explanation": "A partir da primeira proporção:<br>$$\\frac{m + n}{3m - 2n} = \\frac{1}{4} \\implies 4(m + n) = 3m - 2n \\implies 4m + 4n = 3m - 2n \\implies m = -6n$$<br>Substituímos $m = -6n$ na razão desejada:<br>$$\\frac{m + 2n}{2m + n} = \\frac{-6n + 2n}{2(-6n) + n} = \\frac{-4n}{-12n + n} = \\frac{-4n}{-11n} = \\frac{4}{11}$$"
+          },
+          {
+            "q": "Os números reais $j$ e $k$ são tais que $3j + 2k = 18$ e $5j - k = 21$. O valor de $j + 5k$ é o número:",
+            "options": [
+              "$30$",
+              "$20$",
+              "$10$",
+              "$25$",
+              "$15$"
+            ],
+            "correct": 4,
+            "explanation": "Podemos obter $j + 5k$ como uma combinação linear direta das equações:<br>Note que multiplicando a primeira equação por $2$ e subtraindo a segunda:<br>$$2(3j + 2k) - (5j - k) = (6j + 4k) - (5j - k) = j + 5k$$<br>Substituindo os valores conhecidos:<br>$$j + 5k = 2(18) - (21) = 36 - 21 = 15$$"
+          },
+          {
+            "q": "A solução real positiva da equação $x^2 - \\sqrt{2} \\cdot x - 12 = 0$ é o número:",
+            "options": [
+              "$2\\sqrt{2}$",
+              "$3\\sqrt{2}$",
+              "$\\sqrt{2}$",
+              "$4\\sqrt{2}$",
+              "$5\\sqrt{2}$"
+            ],
+            "correct": 1,
+            "explanation": "Aplicamos a fórmula de Bhaskara com $a = 1$, $b = -\\sqrt{2}$ e $c = -12$:<br>$$\\Delta = b^2 - 4ac = (-\\sqrt{2})^2 - 4(1)(-12) = 2 + 48 = 50$$<br>$$\\sqrt{\\Delta} = \\sqrt{50} = \\sqrt{25 \\times 2} = 5\\sqrt{2}$$<br>As raízes são dadas por:<br>$$x = \\frac{-(-\\sqrt{2}) \\pm 5\\sqrt{2}}{2} = \\frac{\\sqrt{2} \\pm 5\\sqrt{2}}{2}$$<br>Tomando a raiz estritamente positiva:<br>$$x = \\frac{\\sqrt{2} + 5\\sqrt{2}}{2} = \\frac{6\\sqrt{2}}{2} = 3\\sqrt{2}$$"
+          },
+          {
+            "q": "O triângulo $ABC$ tem área $72\\text{ cm}^2$ e nos seus lados são marcados os pontos $M, N$ e $P$ tais que:<br>• $M$ é o ponto médio de $AC$;<br>• $N$ é o ponto médio de $BC$;<br>• $P$ é o ponto médio de $BN$.<br>Nessas condições, a área do triângulo $MNP$, em $\\text{cm}^2$, vale:",
+            "options": [
+              "$24$",
+              "$36$",
+              "$9$",
+              "$18$",
+              "$32$"
+            ],
+            "correct": 2,
+            "explanation": "1. Como $N$ é ponto médio de $BC$, o segmento $BN$ mede $\\frac{1}{2} BC$. Sendo $P$ o ponto médio de $BN$, o segmento $NP$ mede metade de $BN$, ou seja, $NP = \\frac{1}{4} BC$.<br>2. Ambos $N$ e $P$ estão sobre a reta suporte do lado $BC$, portanto o segmento $NP$ pode ser tomado como a base do triângulo $MNP$.<br>3. O ponto $M$ é o ponto médio de $AC$. Pelo teorema da base média, a distância (altura) de $M$ até a base $BC$ é exatamente metade da altura $h_A$ do vértice $A$ até $BC$: $h_M = \\frac{1}{2} h_A$.<br>4. A área do triângulo $MNP$ é:<br>$$\\text{Área}(MNP) = \\frac{1}{2} \\cdot NP \\cdot h_M = \\frac{1}{2} \\cdot \\left(\\frac{1}{4} BC\\right) \\cdot \\left(\\frac{1}{2} h_A\\right) = \\frac{1}{8} \\left(\\frac{1}{2} BC \\cdot h_A\\right) = \\frac{1}{8} \\text{Área}(ABC)$$<br>$$\\text{Área}(MNP) = \\frac{72}{8} = 9\\text{ cm}^2$$"
+          },
+          {
+            "q": "O quadrilátero $ABCD$ é tal que os ângulos $\\widehat{ABC}$ e $\\widehat{ADC}$ são retos. Sabendo que os lados $AB, BC$ e $CD$ medem $7\\text{ m}, 24\\text{ m}$ e $20\\text{ m}$, respectivamente, podemos concluir que o perímetro desse quadrilátero, em m, vale:",
+            "options": [
+              "$66$",
+              "$62$",
+              "$51$",
+              "$54$",
+              "$70$"
+            ],
+            "correct": 0,
+            "explanation": "1. O triângulo $ABC$ é retângulo em $B$. Pelo Teorema de Pitágoras, determinamos a diagonal $AC$:<br>$$AC^2 = AB^2 + BC^2 = 7^2 + 24^2 = 49 + 576 = 625 \\implies AC = 25\\text{ m}$$<br>2. O triângulo $ADC$ também é retângulo, agora em $D$, tendo a hipotenusa $AC = 25\\text{ m}$ e o cateto $CD = 20\\text{ m}$:<br>$$AC^2 = AD^2 + CD^2 \\implies 25^2 = AD^2 + 20^2 \\implies 625 = AD^2 + 400 \\implies AD^2 = 225 \\implies AD = 15\\text{ m}$$<br>3. O perímetro do quadrilátero $ABCD$ é a soma dos seus quatro lados:<br>$$P = AB + BC + CD + DA = 7 + 24 + 20 + 15 = 66\\text{ m}$$"
+          },
+          {
+            "q": "Em um triângulo isósceles, os lados de mesma medida formam um ângulo de $40^\\circ$ e medem $7\\text{ cm}$ cada. Se denotarmos por $w$ a medida, em cm, do terceiro lado do triângulo, é verdade que:",
+            "options": [
+              "$\\operatorname{sen} 20^\\circ = \\frac{w}{7}$",
+              "$\\operatorname{sen} 40^\\circ = \\frac{w}{7}$",
+              "$\\operatorname{sen} 20^\\circ = \\frac{w}{14}$",
+              "$\\operatorname{sen} 40^\\circ = \\frac{2w}{7}$",
+              "$\\operatorname{sen} 20^\\circ = \\frac{2w}{7}$"
+            ],
+            "correct": 2,
+            "explanation": "Traçando a altura relativa ao terceiro lado (base $w$) de um triângulo isósceles:<br>• A altura é também bissetriz e mediana, dividindo o ângulo do vértice de $40^\\circ$ em dois ângulos congruentes de $20^\\circ$.<br>• Ela divide a base $w$ em dois segmentos de medida $\\frac{w}{2}$.<br>Em qualquer um dos dois triângulos retângulos formados, o cateto oposto ao ângulo de $20^\\circ$ é $\\frac{w}{2}$ e a hipotenusa mede $7\\text{ cm}$:<br>$$\\operatorname{sen} 20^\\circ = \\frac{\\text{cateto oposto}}{\\text{hipotenusa}} = \\frac{w/2}{7} = \\frac{w}{14}$$"
+          }
+        ],
+        "slug": "prova-ifce-20191",
+        "filename": "prova-ifce-20191.html",
+        "folder": "bloco-6-provas-ifce",
+        "blockId": "6",
+        "pdf": "ensino-tc3a9cnico-integrado-2019-1-prova.pdf"
+      },
+      {
+        "id": "ifce-2010-2-matematica",
+        "title": "Prova IFCE 2010.2",
+        "bncc": "Revisão Geral",
+        "summary": "7 questões de Matemática aplicadas no Processo Seletivo / Vestibular 2010.2 do IFCE (Campus Fortaleza).",
+        "detailedTheory": "O Vestibular 2010.2 do IFCE envolveu temas de: conversão de grandezas pluviométricas para volume total sobre área urbana em quilômetros quadrados e metros cúbicos; álgebra linear no estudo de matrizes nilpotentes e potências de matrizes com a matriz identidade; análise combinatória envolvendo contagem de números de algarismos distintos divisíveis por 3 com restrição de zero à esquerda; álgebra de sistemas simétricos em grades numéricas matriciais; funções reais (conceitos de injetividade e sobrejetividade com função quociente contendo valor absoluto); geometria plana e álgebra financeira em otimização de perímetro de molduras compostas e economia percentual; e identidades trigonométricas na tangente da soma de dois ângulos expressos por funções trigonométricas inversas (arco-tangente).",
+        "keyPoints": [
+          "Uma precipitação de $1\\text{ mm}$ equivale a $1\\text{ litro}$ por metro quadrado, e $1\\text{ m}^3 = 1000\\text{ litros} = 1000\\text{ dm}^3$.",
+          "Se $A^2 = 0$ e $IA = AI$, todas as potências de grau 2 ou superior no binômio de Newton de $(I + A)^n$ se anulam.",
+          "Para arcos com $\\operatorname{arctg} x + \\operatorname{arctg} y = \\frac{\\pi}{4}$, a fórmula da tangente da soma resulta em $x + xy + y = 1$."
+        ],
+        "formula": "V = A \\cdot h, \\quad (I+A)^5 = I + 5A, \\quad \\tan(\\alpha + \\beta) = \\frac{\\tan \\alpha + \\tan \\beta}{1 - \\tan \\alpha \\tan \\beta}",
+        "solvedExample": {
+          "problem": "Seja $A$ uma matriz quadrada tal que $A^2 = 0$. Calcule $(I + A)^3$.",
+          "solution": "1. Aplicamos o binômio de Newton: $(I + A)^3 = I^3 + 3I^2 A + 3I A^2 + A^3$.<br>2. Como $A^2 = 0$, temos $A^3 = A \\cdot A^2 = 0$.<br>3. Logo, $(I + A)^3 = I + 3A$."
+        },
+        "questions": [
+          {
+            "q": "A cidade de Fortaleza tem área superficial igual a $313{,}140\\text{ km}^2$. No dia 24 de abril de 1997, a cidade foi banhada por uma chuva de $270\\text{ mm}$. Sabendo-se que $1\\text{ mm}$ de chuva equivale a $1\\text{ litro}$ de água por metro quadrado e que $1\\text{ litro}$ corresponde a $1\\text{ decímetro cúbico}$, o volume de água que caiu sobre a cidade, naquele dia, foi de aproximadamente:",
+            "options": [
+              "$84{,}5$ milhões de metros cúbicos.",
+              "$84{,}5$ milhões de litros.",
+              "$84{,}5$ bilhões de metros cúbicos.",
+              "$84{,}5$ bilhões de litros.",
+              "$84{,}5$ trilhões de metros cúbicos."
+            ],
+            "correct": 0,
+            "explanation": "1. A área territorial de Fortaleza é de $313{,}140\\text{ km}^2$. Convertendo para metros quadrados:<br>$$313{,}140 \\times 10^6\\text{ m}^2 = 313.140.000\\text{ m}^2$$<br>2. A lâmina de água de $270\\text{ mm}$ corresponde a $0{,}27\\text{ m}$.<br>Calculamos o volume em metros cúbicos ($V = A \\times h$):<br>$$V = 313.140.000\\text{ m}^2 \\times 0{,}27\\text{ m} = 84.547.800\\text{ m}^3 \\approx 84{,}5\\text{ milhões de metros cúbicos}$$<br>(Observação: esse volume também corresponde a $84{,}5\\text{ bilhões de litros}$, sendo as alternativas equivalentes sob as unidades apresentadas no exame oficial)."
+          },
+          {
+            "q": "Dizemos que uma matriz quadrada $A$ é nilpotente, se existe um inteiro positivo $n$, tal que $A^n = 0$, onde $0$ é a matriz nula e $A^n = A \\times \\dots \\times A$ ($n$ vezes). Se $n$ é o menor inteiro positivo, tal que $A^n = 0$, dizemos que $A$ é nilpotente de índice $n$. Se $A$ é nilpotente de índice $2$ e $I$ denota a matriz identidade, então $A(I + A)^5$ vale:",
+            "options": [
+              "$0$",
+              "$A$",
+              "$I$",
+              "$5A$",
+              "$-A$"
+            ],
+            "correct": 1,
+            "explanation": "Como a matriz identidade $I$ e a matriz $A$ comutam ($IA = AI = A$), podemos aplicar o binômio de Newton:<br>$$(I + A)^5 = I^5 + 5I^4 A + 10I^3 A^2 + 10I^2 A^3 + 5I A^4 + A^5$$<br>Dado que $A$ é nilpotente de índice $2$, temos $A^2 = 0$, e portanto todas as potências $A^k = 0$ para todo $k \\ge 2$.<br>Logo:<br>$$(I + A)^5 = I + 5A$$<br>Multiplicando à esquerda por $A$:<br>$$A(I + A)^5 = A(I + 5A) = AI + 5A^2 = A + 5(0) = A$$"
+          },
+          {
+            "q": "Utilizando-se os algarismos $0, 2, 3, 5$ e $8$, podem ser formados _____ múltiplos de $3$ com quatro algarismos distintos:",
+            "options": [
+              "$96$",
+              "$48$",
+              "$42$",
+              "$24$",
+              "$18$"
+            ],
+            "correct": 2,
+            "explanation": "A soma dos cinco algarismos dados é $0 + 2 + 3 + 5 + 8 = 18$ (que é múltiplo de $3$).<br>Para que um número de $4$ algarismos distintos seja divisível por $3$, a soma dos seus algarismos deve ser divisível por $3$. Isso significa que o algarismo descartado dentre os $5$ deve ser também um múltiplo de $3$, ou seja, devemos descartar o $0$ ou o $3$:<br><br>• Caso 1: Descartando o $0$ (algarismos $\\{2, 3, 5, 8\\}$):<br>Como nenhum algarismo é zero, qualquer permutação é válida:<br>$$P_4 = 4! = 24\\text{ números}$$<br>• Caso 2: Descartando o $3$ (algarismos $\\{0, 2, 5, 8\\}$):<br>O primeiro algarismo não pode ser $0$ ($3$ escolhas: $2, 5$ ou $8$). Os outros $3$ algarismos podem ser ordenados de $3! = 6$ maneiras:<br>$$3 \\times 3! = 3 \\times 6 = 18\\text{ números}$$<br>Somando os dois casos:<br>$$24 + 18 = 42\\text{ múltiplos de } 3$$"
+          },
+          {
+            "q": "Considere a seguinte tabela, formada por números reais:<br>$$\\begin{matrix} 1 & 1 & 1 & 1 \\\\ 1 & a & b & 1 \\\\ 1 & c & d & 1 \\\\ 1 & 1 & 1 & 1 \\end{matrix}$$<br>Essa tabela possui a seguinte propriedade: cada um dos elementos internos da tabela ($a, b, c, d$) é igual à soma dos elementos que o cercam. Assim, por exemplo, $a = 1 + 1 + 1 + 1 + b + 1 + c + d$. O valor de $a^2 + b^2 + c^2 + d^2$ é:",
+            "options": [
+              "$-10$",
+              "$-5$",
+              "$5$",
+              "$10$",
+              "$25$"
+            ],
+            "correct": 4,
+            "explanation": "Cada elemento interno é cercado por $8$ vizinhos: cinco números $1$ na borda e as outras três variáveis internas.<br>Assim:<br>$$a = 5 + b + c + d$$<br>$$b = 5 + a + c + d$$<br>$$c = 5 + a + b + d$$<br>$$d = 5 + a + b + c$$<br>Pela simetria do sistema, subtraindo as equações duas a duas, concluímos que $a = b = c = d$.<br>Substituindo $b = c = d = a$ na primeira equação:<br>$$a = 5 + 3a \\implies -2a = 5 \\implies a = -\\frac{5}{2}$$<br>Logo, $a = b = c = d = -\\frac{5}{2}$. Calculando a soma dos quadrados:<br>$$a^2 + b^2 + c^2 + d^2 = 4 \\times \\left(-\\frac{5}{2}\\right)^2 = 4 \\times \\frac{25}{4} = 25$$"
+          },
+          {
+            "q": "Seja $A$ o conjunto dos números reais não-nulos e $B$ o conjunto dos números reais positivos. A função $f: A \\to B$ dada por $f(x) = \\frac{x^2}{|x|}$:",
+            "options": [
+              "é sobrejetora e injetora.",
+              "é sobrejetora, mas não é injetora.",
+              "é injetora, mas não é sobrejetora.",
+              "não é sobrejetora nem injetora.",
+              "tem como imagem um subconjunto próprio de B."
+            ],
+            "correct": 1,
+            "explanation": "Para todo $x \\in A = \\mathbb{R}^*$, sabemos que $x^2 = |x|^2$. Assim:<br>$$f(x) = \\frac{|x|^2}{|x|} = |x|$$<br>• Injetividade: Como $f(-2) = |-2| = 2$ e $f(2) = |2| = 2$, elementos distintos possuem a mesma imagem ($f(-2) = f(2)$ com $-2 \\neq 2$). Logo, $f$ **não é injetora**.<br>• Sobrejetividade: Para qualquer $y \\in B = \\mathbb{R}_+^*$, escolhendo $x = y > 0$, temos $f(x) = |y| = y$. Logo, todo elemento do contradomínio $B$ possui elemento pré-imagem em $A$. Portanto, a imagem coincide com $B$ e $f$ **é sobrejetora**.<br>Conclusão: $f$ é sobrejetora, mas não é injetora."
+          },
+          {
+            "q": "Sueli possui três quadros retangulares de mesmo tamanho, com largura medindo o dobro da altura. Ela deseja emoldurá-los juntos, obtendo um único quadro com três imagens, podendo fazer isso de dois modos: no Modo (I), os três quadros são empilhados na vertical; no Modo (II), os três quadros são enfileirados lado a lado na horizontal. A moldura é cobrada por comprimento a $\\text{R\\$} 18{,}65$ o metro. Qual dos dois modos é o mais econômico e qual o percentual de economia em relação ao outro?",
+            "options": [
+              "O modo (I) é 40% mais econômico que o modo (II).",
+              "O modo (I) é 12,5% mais econômico que o modo (II).",
+              "O modo (I) é 12,5% mais caro que o modo (II).",
+              "O modo (II) é 12,5% mais caro que o modo (I).",
+              "O modo (II) é 40% mais caro que o modo (I)."
+            ],
+            "correct": 1,
+            "explanation": "Seja $h$ a altura e $2h$ a largura de cada quadro.<br>• No Modo (I) (quadros empilhados verticalmente), a altura total é $3h$ e a largura é $2h$. A moldura contorna o perímetro e faz duas divisórias horizontais de comprimento $2h$:<br>$$\\text{Comprimento}_I = 2(2h + 3h) + 2(2h) = 10h + 4h = 14h$$<br>• No Modo (II) (quadros colocados lado a lado), a largura total é $3(2h) = 6h$ e a altura é $h$. A moldura contorna o perímetro e faz duas divisórias verticais de comprimento $h$:<br>$$\\text{Comprimento}_{II} = 2(6h + h) + 2(h) = 14h + 2h = 16h$$<br>Como $14h < 16h$, o Modo (I) é mais econômico. Calculamos a economia percentual do Modo (I) em relação ao Modo (II):<br>$$\\text{Economia} = \\frac{16h - 14h}{16h} = \\frac{2h}{16h} = \\frac{1}{8} = 0{,}125 = 12{,}5\\%$$"
+          },
+          {
+            "q": "Sejam $x$ e $y$ reais, tais que $\\operatorname{arctg} x + \\operatorname{arctg} y = \\frac{\\pi}{4}$. Então, o valor de $x + xy + y$ é:",
+            "options": [
+              "$-1$",
+              "$-\\frac{\\sqrt{2}}{2}$",
+              "$0$",
+              "$\\frac{\\sqrt{2}}{2}$",
+              "$1$"
+            ],
+            "correct": 4,
+            "explanation": "Sejam $\\alpha = \\operatorname{arctg} x$ e $\\beta = \\operatorname{arctg} y$, com $\\tan \\alpha = x$ e $\\tan \\beta = y$. Temos $\\alpha + \\beta = \\frac{\\pi}{4}$.<br>Aplicamos a fórmula da tangente da soma de dois arcos:<br>$$\\tan(\\alpha + \\beta) = \\frac{\\tan \\alpha + \\tan \\beta}{1 - \\tan \\alpha \\tan \\beta}$$<br>$$\\tan\\left(\\frac{\\pi}{4}\\right) = \\frac{x + y}{1 - xy}$$<br>Como $\\tan(\\pi/4) = 1$:<br>$$1 = \\frac{x + y}{1 - xy} \\implies 1 - xy = x + y \\implies x + xy + y = 1$$"
+          }
+        ],
+        "slug": "prova-ifce-20102",
+        "filename": "prova-ifce-20102.html",
+        "folder": "bloco-6-provas-ifce",
+        "blockId": "6",
+        "pdf": "ifce_prova_2010_2.pdf"
+      },
+      {
+        "id": "ifce-2010-1-matematica",
+        "title": "Prova IFCE 2010.1",
+        "bncc": "Revisão Geral",
+        "summary": "7 questões de Matemática aplicadas no Processo Seletivo / Vestibular 2010.1 do IFCE.",
+        "detailedTheory": "O exame 2010.1 do IFCE compreendeu temas de: sistemas lineares aplicados a problemas com moedas e valores monetários; composição e álgebra de funções reais com operadores de diferenças $g(x) = f(x+1) - f(x)$; notação científica e propriedades logarítmicas de potências com expoentes inteiros grandes; polinômios e o Teorema do Resto de D'Alembert na divisão por binômios de 1º grau; trigonometria com equações quadráticas envolvendo seno e cosseno de arcos de quadrantes notáveis; geometria analítica no cálculo da área de triângulos equiláteros a partir das coordenadas dos vértices; e geometria espacial métrica na determinação da distância de planos paralelos de seções de áreas iguais entre esfera e cone circular reto.",
+        "keyPoints": [
+          "Pelo Teorema do Resto de D'Alembert, o resto da divisão de $p(x)$ por $(x - a)$ é exatamente o valor numérico $p(a)$.",
+          "A área de um triângulo equilátero de lado $L$ no plano cartesiano é dada por $\\frac{L^2 \\sqrt{3}}{4}$.",
+          "A área da seção plana circular de uma esfera de raio $R$ a uma distância $d$ do centro é dada por $A = \\pi(R^2 - d^2)$."
+        ],
+        "formula": "p(a) = R, \\quad A = \\frac{L^2 \\sqrt{3}}{4}, \\quad A_{\\text{seção}} = \\pi r^2",
+        "solvedExample": {
+          "problem": "Determine o resto da divisão do polinômio $P(x) = x^3 - 3x + 7$ por $x - 2$.",
+          "solution": "1. Pelo Teorema do Resto, calculamos $P(2)$:<br>$$P(2) = 2^3 - 3(2) + 7 = 8 - 6 + 7 = 9$$<br>2. Logo, o resto da divisão é $9$."
+        },
+        "questions": [
+          {
+            "q": "João tem, em seu bolso, $\\text{R\\$} 15{,}00$ em moedas de $10$ centavos e de $25$ centavos. Sabendo-se que o número de moedas de $25$ centavos é o dobro do número de moedas de $10$ centavos, o total de moedas, no bolso, é:",
+            "options": [
+              "$75$",
+              "$78$",
+              "$68$",
+              "$81$",
+              "$84$"
+            ],
+            "correct": 0,
+            "explanation": "Seja $x$ a quantidade de moedas de $10$ centavos ($\\text{R\\$} 0{,}10$). O número de moedas de $25$ centavos ($\\text{R\\$} 0{,}25$) é $2x$.<br>Montamos a equação do valor total em reais:<br>$$0{,}10x + 0{,}25(2x) = 15{,}00$$<br>$$0{,}10x + 0{,}50x = 15{,}00 \\implies 0{,}60x = 15{,}00 \\implies x = \\frac{15}{0{,}60} = 25$$<br>Portanto, são $25$ moedas de $10$ centavos e $2 \\times 25 = 50$ moedas de $25$ centavos.<br>O total de moedas no bolso é:<br>$$25 + 50 = 75\\text{ moedas}$$"
+          },
+          {
+            "q": "Sabendo-se que $f(x) = x^2 + 1$ e $g(x) = f(x + 1) - f(x)$, calculando $g(f(x))$, obtém-se:",
+            "options": [
+              "$x$",
+              "$2x$",
+              "$2x^2$",
+              "$2x^2 - 3$",
+              "$2x^2 + 3$"
+            ],
+            "correct": 4,
+            "explanation": "1. Determinamos a expressão de $g(x)$:<br>$$f(x+1) = (x+1)^2 + 1 = x^2 + 2x + 1 + 1 = x^2 + 2x + 2$$<br>$$g(x) = f(x+1) - f(x) = (x^2 + 2x + 2) - (x^2 + 1) = 2x + 1$$<br>2. Calculamos a função composta $g(f(x))$ substituindo $f(x) = x^2 + 1$ no lugar da variável de $g$:<br>$$g(f(x)) = 2(f(x)) + 1 = 2(x^2 + 1) + 1 = 2x^2 + 2 + 1 = 2x^2 + 3$$"
+          },
+          {
+            "q": "Usando-se $\\log 2 = 0{,}3$, o número $2^{255}$ é escrito na forma $m \\cdot 10^n$, onde $n \\in \\mathbb{Z}$ e $m$ é um número real tal que $1 \\le m < 10$. O valor de $m$ é:",
+            "options": [
+              "$\\sqrt{10}$",
+              "$\\sqrt{3}$",
+              "$\\sqrt{2}$",
+              "$\\sqrt{1{,}1}$",
+              "$\\sqrt{1{,}2}$"
+            ],
+            "correct": 0,
+            "explanation": "Aplicamos o logaritmo decimal na potência $x = 2^{255}$:<br>$$\\log_{10} x = \\log_{10}(2^{255}) = 255 \\cdot \\log_{10} 2 = 255 \\times 0{,}3 = 76{,}5$$<br>Isolando $x$ pela definição de logaritmo:<br>$$x = 10^{76{,}5} = 10^{0{,}5 + 76} = 10^{0{,}5} \\cdot 10^{76}$$<br>Como $10^{0{,}5} = 10^{1/2} = \\sqrt{10} \\approx 3{,}162$, que satisfaz perfeitamente $1 \\le m < 10$, temos:<br>$$m = \\sqrt{10} \\quad \\text{e} \\quad n = 76$$"
+          },
+          {
+            "q": "O resto da divisão de $p(x) = 4x^3 + 2x^2 - mx + 5$ por $D(x) = x + 2$ é igual a $1$. Então $m$ é igual a:",
+            "options": [
+              "$12$",
+              "$-15$",
+              "$15$",
+              "$10$",
+              "$-10$"
+            ],
+            "correct": 3,
+            "explanation": "Pelo Teorema do Resto (D'Alembert), o resto da divisão de $p(x)$ pelo binômio de 1º grau $x - a = x + 2$ é o valor numérico de $p(-2)$:<br>$$p(-2) = 4(-2)^3 + 2(-2)^2 - m(-2) + 5$$<br>$$p(-2) = 4(-8) + 2(4) + 2m + 5 = -32 + 8 + 2m + 5 = 2m - 19$$<br>Como o enunciado informa que o resto é igual a $1$:<br>$$2m - 19 = 1 \\implies 2m = 20 \\implies m = 10$$"
+          },
+          {
+            "q": "Considere a função quadrática $g(x) = x^2 + x \\cdot \\cos\\theta + \\operatorname{sen}\\theta$. Se a resolvermos para $\\theta = \\frac{3\\pi}{2}$ e $g(x) = 0$, a solução será:",
+            "options": [
+              "$\\pm 1$",
+              "$\\pm 2$",
+              "$\\pm 3$",
+              "$\\pm 4$",
+              "$\\pm 5$"
+            ],
+            "correct": 0,
+            "explanation": "No ciclo trigonométrico, para o arco $\\theta = \\frac{3\\pi}{2}$ ($270^\\circ$):<br>$$\\cos\\left(\\frac{3\\pi}{2}\\right) = 0 \\quad \\text{e} \\quad \\operatorname{sen}\\left(\\frac{3\\pi}{2}\\right) = -1$$<br>Substituindo esses valores na equação quadrática $g(x) = 0$:<br>$$x^2 + x(0) + (-1) = 0 \\implies x^2 - 1 = 0 \\implies x^2 = 1 \\implies x = \\pm 1$$"
+          },
+          {
+            "q": "Um triângulo equilátero cujos vértices são $A = (-1, 1)$, $B = (1, 3)$ e $C = (-\\sqrt{3}, 2 + \\sqrt{3})$, tem o valor de área expressa pelo numeral:",
+            "options": [
+              "$\\sqrt{3}\\text{ u.a.}$",
+              "$2\\sqrt{3}\\text{ u.a.}$",
+              "$3\\sqrt{3}\\text{ u.a.}$",
+              "$4\\sqrt{3}\\text{ u.a.}$",
+              "$5\\sqrt{3}\\text{ u.a.}$"
+            ],
+            "correct": 1,
+            "explanation": "Calculamos a medida do lado $L$ do triângulo pela distância entre os vértices $A(-1, 1)$ e $B(1, 3)$:<br>$$L^2 = d(A, B)^2 = (1 - (-1))^2 + (3 - 1)^2 = 2^2 + 2^2 = 4 + 4 = 8$$<br>A fórmula da área de um triângulo equilátero em função do lado $L$ é:<br>$$\\text{Área} = \\frac{L^2 \\sqrt{3}}{4}$$<br>Substituindo $L^2 = 8$:<br>$$\\text{Área} = \\frac{8\\sqrt{3}}{4} = 2\\sqrt{3}\\text{ u.a.}$$"
+          },
+          {
+            "q": "Uma esfera com raio de comprimento $1\\text{ dm}$ e um cone circular reto de revolução com raio da base de comprimento $1\\text{ dm}$ e altura com comprimento $2\\text{ dm}$, apoiam-se sobre um plano horizontal $\\alpha$. A distância do plano $\\alpha$ para um plano $\\beta$, paralelo a $\\alpha$, tal que secciona os sólidos em secções que possuem valores numéricos de áreas iguais, é igual a:",
+            "options": [
+              "$0{,}1\\text{ dm}$",
+              "$0{,}2\\text{ dm}$",
+              "$0{,}3\\text{ dm}$",
+              "$0{,}4\\text{ dm}$",
+              "$0{,}5\\text{ dm}$"
+            ],
+            "correct": 3,
+            "explanation": "Seja $z$ a cota vertical (distância do plano $\\alpha$ ao plano $\\beta$), onde $0 < z < 2\\text{ dm}$.<br>• Para a esfera de raio $R = 1\\text{ dm}$ apoiada em $\\alpha$, seu centro fica a uma altura $z_0 = 1$. A uma altura $z$, a distância vertical ao centro é $|z - 1|$. O raio da seção circular é dado por $r_{\\text{esfera}}^2 = R^2 - (z - 1)^2 = 1 - (z^2 - 2z + 1) = 2z - z^2$.<br>A área da seção é $A_{\\text{esfera}} = \\pi (2z - z^2)$.<br>• Para o cone com base apoiada no plano $\\alpha$, raio da base $1\\text{ dm}$ e vértice no topo a uma altura $2\\text{ dm}$, a distância do plano $\\beta$ ao vértice é $2 - z$. Por semelhança de triângulos, o raio da seção é $r_{\\text{cone}} = 1 \\cdot \\frac{2 - z}{2} = \\frac{2 - z}{2}$.<br>A área da seção é $A_{\\text{cone}} = \\pi \\left(\\frac{2 - z}{2}\\right)^2 = \\pi \\frac{(2 - z)^2}{4}$.<br>Igualando as duas áreas:<br>$$\\pi (2z - z^2) = \\pi \\frac{(2 - z)^2}{4} \\implies z(2 - z) = \\frac{(2 - z)^2}{4}$$<br>Como $z < 2$, dividimos ambos os membros por $(2 - z)$:<br>$$z = \\frac{2 - z}{4} \\implies 4z = 2 - z \\implies 5z = 2 \\implies z = 0{,}4\\text{ dm}$$"
+          }
+        ],
+        "slug": "prova-ifce-20101",
+        "filename": "prova-ifce-20101.html",
+        "folder": "bloco-6-provas-ifce",
+        "blockId": "6",
+        "pdf": "ifce_prova_2010_1.pdf"
+      },
+      {
+        "id": "ifce-2009-2-matematica",
+        "title": "Prova IFCE 2009.2",
+        "bncc": "Revisão Geral",
+        "summary": "7 questões de Matemática aplicadas no Processo Seletivo / Vestibular 2009.2 do IFCE.",
+        "detailedTheory": "O Processo Seletivo / Vestibular 2009.2 do IFCE cobrou: geometria analítica cartesiana na enumeração exata de pares ordenados de coordenadas inteiras no disco fechado $x^2 + y^2 \\le 4$ (problema de pontos de reticulado); álgebra financeira na análise de sensibilidade e variação percentual do custo total de compras com preços variáveis e proporções de consumo; equações logarítmicas resolvidas mediante a propriedade de mudança de base; geometria plana estabelecendo relações entre diagonais, perímetros e áreas de quadrados e retângulos via produtos notáveis; simplificação de expressões numéricas com radicais, denominadores irracionais e expoentes negativos; teoria algébrica de polinômios e quociente exato de somas de progressões geométricas finitas; e análise combinatória de arranjos em fila indiana com restrições simultâneas de não adjacência entre homens e contiguidade obrigatória de um casal.",
+        "keyPoints": [
+          "Os pontos com coordenadas inteiras $(x, y)$ em $x^2 + y^2 \\le 4$ são identificados limitando os valores inteiros de $x$ e calculando os possíveis $y$.",
+          "Pela mudança de base, $\\log_a x = \\frac{\\log_b x}{\\log_b a}$, permitindo transformar produtos de logaritmos em equações do 2º grau simples.",
+          "Para filas indianas com restrições de alternância de gêneros, identificamos os padrões válidos de posições e multiplicamos pelas permutações dos elementos."
+        ],
+        "formula": "x^2 + y^2 \\le 4, \\quad \\log_a x = \\frac{\\log_b x}{\\log_b a}, \\quad A_R = 14 A_Q",
+        "solvedExample": {
+          "problem": "Quantos pares ordenados $(x, y) \\in \\mathbb{Z}^2$ satisfazem a desigualdade $x^2 + y^2 \\le 1$?",
+          "solution": "1. Se $x = 0$, $y^2 \\le 1 \\implies y \\in \\{-1, 0, 1\\}$ ($3$ pares).<br>2. Se $x = 1$ ou $x = -1$, $y^2 \\le 0 \\implies y = 0$ ($2$ pares).<br>Total: $3 + 2 = 5$ pares ordenados de números inteiros."
+        },
+        "questions": [
+          {
+            "q": "Em um sistema de coordenadas cartesianas ortogonais $xy$, considere o círculo $x^2 + y^2 \\le 4$. Sendo $\\mathbb{Z}$ o conjunto dos números inteiros, a quantidade de pares ordenados $(a, b)$ em $\\mathbb{Z} \\times \\mathbb{Z}$ que estão nesse círculo é:",
+            "options": [
+              "$4$",
+              "$5$",
+              "$9$",
+              "$13$",
+              "$21$"
+            ],
+            "correct": 3,
+            "explanation": "Buscamos todos os pares inteiros $(a, b) \\in \\mathbb{Z}^2$ tais que $a^2 + b^2 \\le 4$. Como $a^2 \\le 4$, temos $a \\in \\{-2, -1, 0, 1, 2\\}$:<br>• Se $a = 0$: $b^2 \\le 4 \\implies b \\in \\{-2, -1, 0, 1, 2\\}$ ($5$ pares: $(0,-2), (0,-1), (0,0), (0,1), (0,2)$)<br>• Se $a = 1$ ou $a = -1$: $a^2 = 1 \\implies b^2 \\le 3 \\implies b \\in \\{-1, 0, 1\\}$ ($2 \\times 3 = 6$ pares)<br>• Se $a = 2$ ou $a = -2$: $a^2 = 4 \\implies b^2 \\le 0 \\implies b = 0$ ($2 \\times 1 = 2$ pares: $(2,0)$ e $(-2,0)$)<br>Somando todos os pares possíveis:<br>$$5 + 6 + 2 = 13\\text{ pares ordenados}$$"
+          },
+          {
+            "q": "Seu José compra todos os meses $x\\text{ kg}$ de feijão e $y\\text{ kg}$ de carne. No mês de janeiro, o preço de um quilograma de carne custava $4$ vezes o preço de um quilograma de feijão. No mês de fevereiro, o preço do quilograma de feijão sofreu um aumento de $20\\%$, enquanto o preço do quilograma de carne teve uma redução de $5\\%$. Com base nesses dados, é correto dizer-se que:",
+            "options": [
+              "se $x = y$, Seu José gastou, em fevereiro, 12% a mais do que em janeiro.",
+              "se $x = 6y$, Seu José gastou, em fevereiro, 4% a menos do que em janeiro.",
+              "se $x = 4y$, Seu José gastou, em fevereiro, 7,5% a mais do que em janeiro.",
+              "se $x = 12y$, Seu José gastou, em fevereiro, 10% a menos do que em janeiro.",
+              "Seu José sempre gastará mais em fevereiro do que em janeiro, quaisquer que sejam $x$ e $y$."
+            ],
+            "correct": 2,
+            "explanation": "Seja $p$ o preço do quilo de feijão em janeiro. O preço da carne era $4p$.<br>Gasto em janeiro: $G_J = x \\cdot p + y \\cdot 4p = p(x + 4y)$.<br>Em fevereiro, o quilo do feijão passou a custar $1{,}20p$ e o da carne $4p \\times 0{,}95 = 3{,}80p$.<br>Gasto em fevereiro: $G_F = x(1{,}20p) + y(3{,}80p) = p(1{,}2x + 3{,}8y)$.<br>A variação percentual dos gastos é dada por:<br>$$\\Delta = \\frac{G_F - G_J}{G_J} = \\frac{1{,}2x + 3{,}8y - (x + 4y)}{x + 4y} = \\frac{0{,}2(x - y)}{x + 4y}$$<br>Testando a condição do item C ($x = 4y$):<br>$$\\Delta = \\frac{0{,}2(4y - y)}{4y + 4y} = \\frac{0{,}2(3y)}{8y} = \\frac{0{,}6}{8} = 0{,}075 = +7{,}5\\%$$<br>Logo, Seu José gastou exatamente $7{,}5\\%$ a mais em fevereiro."
+          },
+          {
+            "q": "Seja $a$ um número real maior do que $1$. Contém todas as soluções da equação $(\\log_a x) \\cdot (\\log_3 x) = \\log_a 3$ a opção:",
+            "options": [
+              "$3$ e $1/3$.",
+              "$\\sqrt{3}$ e $1/3$.",
+              "$3$ e $1/9$.",
+              "$-3$ e $1/3$.",
+              "$1$ e $3$."
+            ],
+            "correct": 0,
+            "explanation": "Mudamos os logaritmos para a base $3$:<br>$$\\log_a x = \\frac{\\log_3 x}{\\log_3 a} \\quad \\text{e} \\quad \\log_a 3 = \\frac{1}{\\log_3 a}$$<br>Substituindo na equação:<br>$$\\left(\\frac{\\log_3 x}{\\log_3 a}\\right) \\cdot (\\log_3 x) = \\frac{1}{\\log_3 a}$$<br>Multiplicando ambos os membros por $\\log_3 a$ (visto que $a > 1 \\implies \\log_3 a \\neq 0$):<br>$$(\\log_3 x)^2 = 1$$<br>Isso nos dá duas soluções reais:<br>• $\\log_3 x = 1 \\implies x = 3^1 = 3$<br>• $\\log_3 x = -1 \\implies x = 3^{-1} = \\frac{1}{3}$<br>Portanto, as soluções são $3$ e $1/3$."
+          },
+          {
+            "q": "Seja $Q$ um quadrado cuja diagonal mede $d$, e seja $R$ um retângulo cuja diagonal mede $2d$. Sabendo-se que o perímetro de $R$ é o triplo do perímetro de $Q$, a área de $R$ é:",
+            "options": [
+              "igual à área de Q.",
+              "o dobro da área de Q.",
+              "quatro vezes a área de Q.",
+              "oito vezes a área de Q.",
+              "quatorze vezes a área de Q."
+            ],
+            "correct": 4,
+            "explanation": "• Para o quadrado $Q$: lado $L = \\frac{d}{\\sqrt{2}}$, área $A_Q = L^2 = \\frac{d^2}{2}$, perímetro $P_Q = 4L = 4\\frac{d}{\\sqrt{2}} = 2\\sqrt{2} d$.<br>• Para o retângulo $R$ de dimensões $a$ e $b$:<br>Diagonal: $a^2 + b^2 = (2d)^2 = 4d^2$.<br>Perímetro: $2(a + b) = 3 P_Q = 3(2\\sqrt{2} d) = 6\\sqrt{2} d \\implies a + b = 3\\sqrt{2} d$.<br>Elevando ao quadrado ambos os membros da soma:<br>$$(a + b)^2 = (3\\sqrt{2} d)^2 \\implies a^2 + 2ab + b^2 = 18d^2$$<br>Substituindo $a^2 + b^2 = 4d^2$:<br>$$4d^2 + 2ab = 18d^2 \\implies 2ab = 14d^2 \\implies ab = 7d^2$$<br>A área de $R$ é $A_R = ab = 7d^2$. Como a área de $Q$ é $A_Q = \\frac{d^2}{2} \\implies d^2 = 2A_Q$, temos:<br>$$A_R = 7(2A_Q) = 14 A_Q$$<br>Portanto, a área de $R$ é quatorze vezes a área de $Q$."
+          },
+          {
+            "q": "O valor de $\\left[ \\sqrt[6]{6} \\cdot \\left(\\sqrt{\\frac{3}{2}} - \\sqrt{\\frac{2}{3}}\\right) \\right]^{-3}$ é:",
+            "options": [
+              "$1$",
+              "$\\frac{\\sqrt{6}}{6}$",
+              "$\\frac{\\sqrt[3]{6}}{6}$",
+              "$6$",
+              "$6\\sqrt{6}$"
+            ],
+            "correct": 3,
+            "explanation": "1. Simplificamos a diferença entre as raízes dentro do parêntese:<br>$$\\sqrt{\\frac{3}{2}} - \\sqrt{\\frac{2}{3}} = \\frac{\\sqrt{3}}{\\sqrt{2}} - \\frac{\\sqrt{2}}{\\sqrt{3}} = \\frac{\\sqrt{3}\\sqrt{3} - \\sqrt{2}\\sqrt{2}}{\\sqrt{6}} = \\frac{3 - 2}{\\sqrt{6}} = \\frac{1}{\\sqrt{6}} = 6^{-1/2}$$<br>2. Multiplicamos pelo termo $\\sqrt[6]{6} = 6^{1/6}$:<br>$$6^{1/6} \\cdot 6^{-1/2} = 6^{1/6 - 3/6} = 6^{-2/6} = 6^{-1/3}$$<br>3. Elevamos toda a expressão ao expoente $-3$:<br>$$(6^{-1/3})^{-3} = 6^{(-1/3) \\times (-3)} = 6^1 = 6$$"
+          },
+          {
+            "q": "O quociente e o resto da divisão do polinômio $x^{2n-1} + x^{2n-2} + \\dots + x^2 + x + 1$ por $x^{n-1} + x^{n-2} + \\dots + x^2 + x + 1$ são:",
+            "options": [
+              "$x^n - 1$ e $x + 1$.",
+              "$x^n + 1$ e $-1$.",
+              "$x^n + 1$ e $0$.",
+              "$x^n - 1$ e $0$.",
+              "$x^n - x - 1$ e $0$."
+            ],
+            "correct": 2,
+            "explanation": "Representamos as somas dos termos usando a fórmula da soma de progressão geométrica:<br>$$P(x) = x^{2n-1} + x^{2n-2} + \\dots + 1 = \\frac{x^{2n} - 1}{x - 1}$$<br>$$D(x) = x^{n-1} + x^{n-2} + \\dots + 1 = \\frac{x^n - 1}{x - 1}$$<br>Fatoramos a diferença de quadrados no numerador $x^{2n} - 1 = (x^n - 1)(x^n + 1)$:<br>$$P(x) = \\frac{(x^n - 1)(x^n + 1)}{x - 1} = \\left(\\frac{x^n - 1}{x - 1}\\right) \\cdot (x^n + 1) = D(x) \\cdot (x^n + 1)$$<br>Como a divisão é exata, o quociente é $x^n + 1$ e o resto é $0$."
+          },
+          {
+            "q": "Um grupo de $3$ mulheres e $3$ homens, dentre os quais José e Maria, que são casados entre si, deve formar uma fila indiana em que não haja dois homens juntos. A quantidade de filas em que José e Maria não estarão separados por qualquer outra pessoa é:",
+            "options": [
+              "$24$",
+              "$40$",
+              "$72$",
+              "$120$",
+              "$720$"
+            ],
+            "correct": 2,
+            "explanation": "Para que nenhum par de homens fique junto em uma fila de 6 pessoas (3 homens e 3 mulheres), os homens devem ser separados pelas mulheres.<br>Existem 4 configurações possíveis para o sexo das posições:<br>1. H M H M H M (homens nas posições 1, 3, 5)<br>2. H M H M M H (homens nas posições 1, 3, 6)<br>3. H M M H M H (homens nas posições 1, 4, 6)<br>4. M H M H M H (homens nas posições 2, 4, 6)<br><br>Como José é homem e Maria é mulher, para ficarem juntos na fila devem ocupar posições vizinhas de sexo oposto (HM ou MH):<br>• No padrão 1, as posições adjacentes de sexo oposto são (1,2), (2,3), (3,4), (4,5), (5,6) $\\to 5$ pares. Para cada par, os outros 2 homens permutem em $2!$ e as outras 2 mulheres em $2!$: $5 \\times 4 = 20$ filas.<br>• No padrão 2, os pares de sexo oposto adjacentes são (1,2), (2,3), (3,4), (5,6) $\\to 4$ pares: $4 \\times 4 = 16$ filas.<br>• No padrão 3, os pares de sexo oposto adjacentes são (1,2), (3,4), (4,5), (5,6) $\\to 4$ pares: $4 \\times 4 = 16$ filas.<br>• No padrão 4, os pares de sexo oposto adjacentes são (1,2), (2,3), (3,4), (4,5), (5,6) $\\to 5$ pares: $5 \\times 4 = 20$ filas.<br><br>Somando todas as filas possíveis:<br>$$20 + 16 + 16 + 20 = 72\\text{ filas}$$"
+          }
+        ],
+        "slug": "prova-ifce-20092",
+        "filename": "prova-ifce-20092.html",
+        "folder": "bloco-6-provas-ifce",
+        "blockId": "6",
+        "pdf": "ifce_prova_2009_2.pdf"
       }
     ]
   }

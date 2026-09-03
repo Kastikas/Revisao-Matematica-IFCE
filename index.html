@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>PartiuIF - Plataforma de Revisão de Matemática para o IF</title>
+    <title>PartiuIF - Plataforma de Matemática para Institutos Federais</title>
     <!-- Tailwind CSS -->
     <script src="https://cdn.tailwindcss.com"></script>
     <script>
@@ -114,14 +114,10 @@
     </header>
 
 
-    <main class="flex-grow max-w-7xl w-full mx-auto px-4 sm:px-6 lg:px-8 py-8">
+    <main class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 flex-grow">
         
-        <!-- Hero Banner Principal -->
-        <div class="bg-gradient-to-r from-brand-800 via-brand-900 to-brand-950 rounded-3xl p-6 sm:p-12 text-white shadow-2xl mb-10 relative overflow-hidden">
-            <div class="absolute -right-12 -bottom-12 opacity-10 text-white pointer-events-none hidden md:block">
-                <i data-lucide="calculator" class="w-96 h-96"></i>
-            </div>
-            
+        <!-- Hero Principal -->
+        <div class="gradient-hero rounded-3xl p-6 sm:p-12 text-white mb-10 shadow-2xl relative overflow-hidden">
             <div class="relative z-10 max-w-3xl">
                 <span class="bg-brand-500/30 text-brand-200 border border-brand-400/30 text-xs font-bold px-3 py-1 rounded-full uppercase tracking-wider mb-4 inline-flex items-center gap-1.5">
                     <i data-lucide="sparkles" class="w-3.5 h-3.5 text-brand-300"></i> Plataforma Oficial Multi-Páginas
@@ -132,7 +128,7 @@
                 </h1>
                 
                 <p class="text-brand-100 text-sm sm:text-base mb-8 leading-relaxed">
-                    Preparação modular completa para o Exame de Classificação dos Institutos Federais. Cada subtópico possui sua própria página com teoria detalhada, fórmulas KaTeX, exemplos resolvidos e 293 exercícios salvos no navegador.
+                    Preparação modular completa para o Exame de Classificação dos Institutos Federais. Cada subtópico possui sua própria página com teoria detalhada, fórmulas KaTeX, exemplos resolvidos e 334 exercícios salvos no navegador.
                 </p>
 
                 <div class="flex flex-wrap items-center gap-4">
@@ -154,7 +150,7 @@
                 </div>
                 <div>
                     <span class="text-xs text-gray-500 font-medium block">Tópicos Concluídos</span>
-                    <strong id="global-completed-count" class="text-xl font-black text-gray-900">0/41</strong>
+                    <strong id="global-completed-count" class="text-xl font-black text-gray-900">0/46</strong>
                 </div>
             </div>
 
@@ -174,7 +170,7 @@
                 </div>
                 <div>
                     <span class="text-xs text-gray-500 font-medium block">Questões Salvas</span>
-                    <strong id="global-answered-questions" class="text-xl font-black text-blue-900">0/293</strong>
+                    <strong id="global-answered-questions" class="text-xl font-black text-blue-900">0/334</strong>
                 </div>
             </div>
 
@@ -184,7 +180,7 @@
                 </div>
                 <div>
                     <span class="text-xs text-gray-500 font-medium block">Provas Oficiais</span>
-                    <strong class="text-xl font-black text-purple-900">21 Edições</strong>
+                    <strong id="global-official-exams" class="text-xl font-black text-purple-900">26 Edições</strong>
                 </div>
             </div>
         </div>
@@ -201,16 +197,16 @@
             </div>
             
             <div class="relative">
-                <input type="text" id="topic-search-input" placeholder="Digite para filtrar os 41 subtópicos..." class="w-full bg-gray-50 border border-gray-300 rounded-xl px-4 py-3 pl-11 text-sm focus:outline-none focus:ring-2 focus:ring-brand-500 focus:bg-white transition">
+                <input type="text" id="topic-search-input" placeholder="Digite para filtrar os 46 subtópicos..." class="w-full bg-gray-50 border border-gray-300 rounded-xl px-4 py-3 pl-11 text-sm focus:outline-none focus:ring-2 focus:ring-brand-500 focus:bg-white transition">
                 <i data-lucide="search" class="w-5 h-5 text-gray-400 absolute left-3.5 top-3.5"></i>
             </div>
             
             <div id="search-results-container" class="hidden mt-4 pt-4 border-t border-gray-100 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3">
-                <!-- Preenchido dinamicamente pelo JS -->
+                <!-- Preenchido dinamicamente pelo módulo app.js -->
             </div>
         </div>
 
-        <!-- Grade dos 6 Blocos de Conteúdo -->
+        <!-- Grade dos Blocos de Conteúdo -->
         <section id="blocos" class="mb-14">
             <div class="flex flex-col sm:flex-row justify-between sm:items-center gap-4 mb-6">
                 <div>
@@ -223,896 +219,801 @@
 
             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
                 
-        <div class="bg-white border border-gray-200 rounded-3xl p-6 sm:p-7 shadow-sm hover-card flex flex-col justify-between">
-            <div>
-                <div class="flex items-center justify-between mb-4">
-                    <div class="w-12 h-12 bg-brand-100 text-brand-800 rounded-2xl flex items-center justify-center font-bold shadow-inner">
-                        <i data-lucide="binary" class="w-6 h-6 text-brand-700"></i>
+            <div class="bg-white border border-gray-200 rounded-3xl p-6 sm:p-7 shadow-sm hover-card flex flex-col justify-between">
+                <div>
+                    <div class="flex items-center justify-between mb-4">
+                        <div class="w-12 h-12 bg-brand-100 text-brand-800 rounded-2xl flex items-center justify-center font-bold shadow-inner">
+                            <i data-lucide="binary" class="w-6 h-6 text-brand-700"></i>
+                        </div>
+                        <span class="text-xs font-bold px-3 py-1 rounded-full bg-brand-50 text-brand-700 border border-brand-200">
+                            7 Subtópicos
+                        </span>
                     </div>
-                    <span class="text-xs font-bold px-3 py-1 rounded-full bg-brand-50 text-brand-700 border border-brand-200">
-                        7 Subtópicos
-                    </span>
-                </div>
-                
-                <h3 class="text-xl font-extrabold text-gray-900 mb-2">Bloco 1: Números e Operações</h3>
-                <p class="text-gray-600 text-xs sm:text-sm leading-relaxed mb-5">Domínio numérico, frações, porcentagem, proporção e notação.</p>
-
-                <!-- Barra de Progresso do Bloco -->
-                <div class="mb-5 bg-gray-50 border border-gray-100 p-3 rounded-xl">
-                    <div class="flex justify-between text-xs text-gray-500 mb-1.5 font-medium">
-                        <span>Progresso do Bloco</span>
-                        <span id="block-progress-txt-1" class="font-bold text-brand-700">0%</span>
-                    </div>
-                    <div class="w-full bg-gray-200 rounded-full h-2 overflow-hidden">
-                        <div id="block-progress-bar-1" class="bg-brand-600 h-full w-0 transition-all duration-500"></div>
-                    </div>
-                </div>
-
-                <!-- Subtópicos em Destaque -->
-                <div class="space-y-1 mb-5">
-                    <span class="text-[11px] font-bold text-gray-400 uppercase tracking-wider block mb-1">Destaques:</span>
                     
-            <a href="./bloco-1-numeros/sistema-de-numeracao-e-comparacao.html" class="flex items-center justify-between py-1.5 px-2 rounded-lg text-xs text-gray-700 hover:bg-brand-50 hover:text-brand-900 transition">
-                <span class="truncate pr-2">• Sistema de Numeração e Comparação</span>
-                <i data-lucide="arrow-right" class="w-3 h-3 text-brand-600 flex-shrink-0"></i>
-            </a>
-        
-            <a href="./bloco-1-numeros/operacoes-com-naturais-e-estimativas.html" class="flex items-center justify-between py-1.5 px-2 rounded-lg text-xs text-gray-700 hover:bg-brand-50 hover:text-brand-900 transition">
-                <span class="truncate pr-2">• Operações com Naturais e Estimativas</span>
-                <i data-lucide="arrow-right" class="w-3 h-3 text-brand-600 flex-shrink-0"></i>
-            </a>
-        
-            <a href="./bloco-1-numeros/multiplos-divisores-e-criterios.html" class="flex items-center justify-between py-1.5 px-2 rounded-lg text-xs text-gray-700 hover:bg-brand-50 hover:text-brand-900 transition">
-                <span class="truncate pr-2">• Múltiplos, Divisores e Critérios</span>
-                <i data-lucide="arrow-right" class="w-3 h-3 text-brand-600 flex-shrink-0"></i>
-            </a>
-        
-                </div>
-            </div>
+                    <h3 class="text-xl font-extrabold text-gray-900 mb-2">Bloco 1: Números e Operações</h3>
+                    <p class="text-gray-600 text-xs sm:text-sm leading-relaxed mb-5">Domínio numérico, frações, porcentagem, proporção e notação.</p>
 
-            <div class="pt-4 border-t border-gray-100">
-                <a href="./bloco-1-numeros/index.html" class="w-full bg-brand-50 hover:bg-brand-100 text-brand-900 font-bold py-2.5 px-4 rounded-xl text-xs sm:text-sm transition flex items-center justify-center gap-2">
-                    Acessar Bloco Completo <i data-lucide="arrow-right" class="w-4 h-4"></i>
+                    <div class="mb-5 bg-gray-50 border border-gray-100 p-3 rounded-xl">
+                        <div class="flex justify-between text-xs text-gray-500 mb-1.5 font-medium">
+                            <span>Progresso do Bloco</span>
+                            <span id="block-progress-txt-1" class="font-bold text-brand-700">0%</span>
+                        </div>
+                        <div class="w-full bg-gray-200 rounded-full h-2 overflow-hidden">
+                            <div id="block-progress-bar-1" class="bg-brand-600 h-full w-0 transition-all duration-500"></div>
+                        </div>
+                    </div>
+
+                    <div class="space-y-1 mb-5">
+                        <span class="text-[11px] font-bold text-gray-400 uppercase tracking-wider block mb-1">Destaques:</span>
+                        
+                <a href="./bloco-1-numeros/sistema-de-numeracao-e-comparacao.html" class="flex items-center justify-between py-1.5 px-2 rounded-lg text-xs text-gray-700 hover:bg-brand-50 hover:text-brand-900 transition">
+                    <span class="truncate pr-2">• Sistema de Numeração e Comparação</span>
+                    <i data-lucide="arrow-right" class="w-3 h-3 text-brand-600 flex-shrink-0"></i>
                 </a>
+            
+                <a href="./bloco-1-numeros/operacoes-com-naturais-e-estimativas.html" class="flex items-center justify-between py-1.5 px-2 rounded-lg text-xs text-gray-700 hover:bg-brand-50 hover:text-brand-900 transition">
+                    <span class="truncate pr-2">• Operações com Naturais e Estimativas</span>
+                    <i data-lucide="arrow-right" class="w-3 h-3 text-brand-600 flex-shrink-0"></i>
+                </a>
+            
+                <a href="./bloco-1-numeros/multiplos-divisores-e-criterios.html" class="flex items-center justify-between py-1.5 px-2 rounded-lg text-xs text-gray-700 hover:bg-brand-50 hover:text-brand-900 transition">
+                    <span class="truncate pr-2">• Múltiplos, Divisores e Critérios</span>
+                    <i data-lucide="arrow-right" class="w-3 h-3 text-brand-600 flex-shrink-0"></i>
+                </a>
+            
+                    </div>
+                </div>
+
+                <div class="pt-4 border-t border-gray-100">
+                    <a href="./bloco-1-numeros/index.html" class="w-full bg-brand-50 hover:bg-brand-100 text-brand-900 font-bold py-2.5 px-4 rounded-xl text-xs sm:text-sm transition flex items-center justify-center gap-2">
+                        Acessar Bloco Completo <i data-lucide="arrow-right" class="w-4 h-4"></i>
+                    </a>
+                </div>
             </div>
-        </div>
-    
-        <div class="bg-white border border-gray-200 rounded-3xl p-6 sm:p-7 shadow-sm hover-card flex flex-col justify-between">
-            <div>
-                <div class="flex items-center justify-between mb-4">
-                    <div class="w-12 h-12 bg-brand-100 text-brand-800 rounded-2xl flex items-center justify-center font-bold shadow-inner">
-                        <i data-lucide="variable" class="w-6 h-6 text-brand-700"></i>
+        
+            <div class="bg-white border border-gray-200 rounded-3xl p-6 sm:p-7 shadow-sm hover-card flex flex-col justify-between">
+                <div>
+                    <div class="flex items-center justify-between mb-4">
+                        <div class="w-12 h-12 bg-brand-100 text-brand-800 rounded-2xl flex items-center justify-center font-bold shadow-inner">
+                            <i data-lucide="variable" class="w-6 h-6 text-brand-700"></i>
+                        </div>
+                        <span class="text-xs font-bold px-3 py-1 rounded-full bg-brand-50 text-brand-700 border border-brand-200">
+                            5 Subtópicos
+                        </span>
                     </div>
-                    <span class="text-xs font-bold px-3 py-1 rounded-full bg-brand-50 text-brand-700 border border-brand-200">
-                        5 Subtópicos
-                    </span>
-                </div>
-                
-                <h3 class="text-xl font-extrabold text-gray-900 mb-2">Bloco 2: Álgebra</h3>
-                <p class="text-gray-600 text-xs sm:text-sm leading-relaxed mb-5">Linguagem algébrica, equações, proporção e funções.</p>
-
-                <!-- Barra de Progresso do Bloco -->
-                <div class="mb-5 bg-gray-50 border border-gray-100 p-3 rounded-xl">
-                    <div class="flex justify-between text-xs text-gray-500 mb-1.5 font-medium">
-                        <span>Progresso do Bloco</span>
-                        <span id="block-progress-txt-2" class="font-bold text-brand-700">0%</span>
-                    </div>
-                    <div class="w-full bg-gray-200 rounded-full h-2 overflow-hidden">
-                        <div id="block-progress-bar-2" class="bg-brand-600 h-full w-0 transition-all duration-500"></div>
-                    </div>
-                </div>
-
-                <!-- Subtópicos em Destaque -->
-                <div class="space-y-1 mb-5">
-                    <span class="text-[11px] font-bold text-gray-400 uppercase tracking-wider block mb-1">Destaques:</span>
                     
-            <a href="./bloco-2-algebra/linguagem-algebrica.html" class="flex items-center justify-between py-1.5 px-2 rounded-lg text-xs text-gray-700 hover:bg-brand-50 hover:text-brand-900 transition">
-                <span class="truncate pr-2">• Linguagem Algébrica</span>
-                <i data-lucide="arrow-right" class="w-3 h-3 text-brand-600 flex-shrink-0"></i>
-            </a>
-        
-            <a href="./bloco-2-algebra/grandezas-e-proporcoes.html" class="flex items-center justify-between py-1.5 px-2 rounded-lg text-xs text-gray-700 hover:bg-brand-50 hover:text-brand-900 transition">
-                <span class="truncate pr-2">• Grandezas e Proporções</span>
-                <i data-lucide="arrow-right" class="w-3 h-3 text-brand-600 flex-shrink-0"></i>
-            </a>
-        
-            <a href="./bloco-2-algebra/equacoes-e-sistemas-do-1o-grau.html" class="flex items-center justify-between py-1.5 px-2 rounded-lg text-xs text-gray-700 hover:bg-brand-50 hover:text-brand-900 transition">
-                <span class="truncate pr-2">• Equações e Sistemas do 1º Grau</span>
-                <i data-lucide="arrow-right" class="w-3 h-3 text-brand-600 flex-shrink-0"></i>
-            </a>
-        
-                </div>
-            </div>
+                    <h3 class="text-xl font-extrabold text-gray-900 mb-2">Bloco 2: Álgebra</h3>
+                    <p class="text-gray-600 text-xs sm:text-sm leading-relaxed mb-5">Linguagem algébrica, equações, proporção e funções.</p>
 
-            <div class="pt-4 border-t border-gray-100">
-                <a href="./bloco-2-algebra/index.html" class="w-full bg-brand-50 hover:bg-brand-100 text-brand-900 font-bold py-2.5 px-4 rounded-xl text-xs sm:text-sm transition flex items-center justify-center gap-2">
-                    Acessar Bloco Completo <i data-lucide="arrow-right" class="w-4 h-4"></i>
+                    <div class="mb-5 bg-gray-50 border border-gray-100 p-3 rounded-xl">
+                        <div class="flex justify-between text-xs text-gray-500 mb-1.5 font-medium">
+                            <span>Progresso do Bloco</span>
+                            <span id="block-progress-txt-2" class="font-bold text-brand-700">0%</span>
+                        </div>
+                        <div class="w-full bg-gray-200 rounded-full h-2 overflow-hidden">
+                            <div id="block-progress-bar-2" class="bg-brand-600 h-full w-0 transition-all duration-500"></div>
+                        </div>
+                    </div>
+
+                    <div class="space-y-1 mb-5">
+                        <span class="text-[11px] font-bold text-gray-400 uppercase tracking-wider block mb-1">Destaques:</span>
+                        
+                <a href="./bloco-2-algebra/linguagem-algebrica.html" class="flex items-center justify-between py-1.5 px-2 rounded-lg text-xs text-gray-700 hover:bg-brand-50 hover:text-brand-900 transition">
+                    <span class="truncate pr-2">• Linguagem Algébrica</span>
+                    <i data-lucide="arrow-right" class="w-3 h-3 text-brand-600 flex-shrink-0"></i>
                 </a>
+            
+                <a href="./bloco-2-algebra/grandezas-e-proporcoes.html" class="flex items-center justify-between py-1.5 px-2 rounded-lg text-xs text-gray-700 hover:bg-brand-50 hover:text-brand-900 transition">
+                    <span class="truncate pr-2">• Grandezas e Proporções</span>
+                    <i data-lucide="arrow-right" class="w-3 h-3 text-brand-600 flex-shrink-0"></i>
+                </a>
+            
+                <a href="./bloco-2-algebra/equacoes-e-sistemas-do-1o-grau.html" class="flex items-center justify-between py-1.5 px-2 rounded-lg text-xs text-gray-700 hover:bg-brand-50 hover:text-brand-900 transition">
+                    <span class="truncate pr-2">• Equações e Sistemas do 1º Grau</span>
+                    <i data-lucide="arrow-right" class="w-3 h-3 text-brand-600 flex-shrink-0"></i>
+                </a>
+            
+                    </div>
+                </div>
+
+                <div class="pt-4 border-t border-gray-100">
+                    <a href="./bloco-2-algebra/index.html" class="w-full bg-brand-50 hover:bg-brand-100 text-brand-900 font-bold py-2.5 px-4 rounded-xl text-xs sm:text-sm transition flex items-center justify-center gap-2">
+                        Acessar Bloco Completo <i data-lucide="arrow-right" class="w-4 h-4"></i>
+                    </a>
+                </div>
             </div>
-        </div>
-    
-        <div class="bg-white border border-gray-200 rounded-3xl p-6 sm:p-7 shadow-sm hover-card flex flex-col justify-between">
-            <div>
-                <div class="flex items-center justify-between mb-4">
-                    <div class="w-12 h-12 bg-brand-100 text-brand-800 rounded-2xl flex items-center justify-center font-bold shadow-inner">
-                        <i data-lucide="shapes" class="w-6 h-6 text-brand-700"></i>
+        
+            <div class="bg-white border border-gray-200 rounded-3xl p-6 sm:p-7 shadow-sm hover-card flex flex-col justify-between">
+                <div>
+                    <div class="flex items-center justify-between mb-4">
+                        <div class="w-12 h-12 bg-brand-100 text-brand-800 rounded-2xl flex items-center justify-center font-bold shadow-inner">
+                            <i data-lucide="shapes" class="w-6 h-6 text-brand-700"></i>
+                        </div>
+                        <span class="text-xs font-bold px-3 py-1 rounded-full bg-brand-50 text-brand-700 border border-brand-200">
+                            4 Subtópicos
+                        </span>
                     </div>
-                    <span class="text-xs font-bold px-3 py-1 rounded-full bg-brand-50 text-brand-700 border border-brand-200">
-                        4 Subtópicos
-                    </span>
-                </div>
-                
-                <h3 class="text-xl font-extrabold text-gray-900 mb-2">Bloco 3: Geometria</h3>
-                <p class="text-gray-600 text-xs sm:text-sm leading-relaxed mb-5">Estudo de ângulos, figuras planas, Pitágoras e sólidos.</p>
-
-                <!-- Barra de Progresso do Bloco -->
-                <div class="mb-5 bg-gray-50 border border-gray-100 p-3 rounded-xl">
-                    <div class="flex justify-between text-xs text-gray-500 mb-1.5 font-medium">
-                        <span>Progresso do Bloco</span>
-                        <span id="block-progress-txt-3" class="font-bold text-brand-700">0%</span>
-                    </div>
-                    <div class="w-full bg-gray-200 rounded-full h-2 overflow-hidden">
-                        <div id="block-progress-bar-3" class="bg-brand-600 h-full w-0 transition-all duration-500"></div>
-                    </div>
-                </div>
-
-                <!-- Subtópicos em Destaque -->
-                <div class="space-y-1 mb-5">
-                    <span class="text-[11px] font-bold text-gray-400 uppercase tracking-wider block mb-1">Destaques:</span>
                     
-            <a href="./bloco-3-geometria/angulos-triangulos-e-poligonos.html" class="flex items-center justify-between py-1.5 px-2 rounded-lg text-xs text-gray-700 hover:bg-brand-50 hover:text-brand-900 transition">
-                <span class="truncate pr-2">• Ângulos, Triângulos e Polígonos</span>
-                <i data-lucide="arrow-right" class="w-3 h-3 text-brand-600 flex-shrink-0"></i>
-            </a>
-        
-            <a href="./bloco-3-geometria/teorema-de-pitagoras-e-semelhanca.html" class="flex items-center justify-between py-1.5 px-2 rounded-lg text-xs text-gray-700 hover:bg-brand-50 hover:text-brand-900 transition">
-                <span class="truncate pr-2">• Teorema de Pitágoras e Semelhança</span>
-                <i data-lucide="arrow-right" class="w-3 h-3 text-brand-600 flex-shrink-0"></i>
-            </a>
-        
-            <a href="./bloco-3-geometria/circulo-e-circunferencia.html" class="flex items-center justify-between py-1.5 px-2 rounded-lg text-xs text-gray-700 hover:bg-brand-50 hover:text-brand-900 transition">
-                <span class="truncate pr-2">• Círculo e Circunferência</span>
-                <i data-lucide="arrow-right" class="w-3 h-3 text-brand-600 flex-shrink-0"></i>
-            </a>
-        
-                </div>
-            </div>
+                    <h3 class="text-xl font-extrabold text-gray-900 mb-2">Bloco 3: Geometria</h3>
+                    <p class="text-gray-600 text-xs sm:text-sm leading-relaxed mb-5">Estudo de ângulos, figuras planas, Pitágoras e sólidos.</p>
 
-            <div class="pt-4 border-t border-gray-100">
-                <a href="./bloco-3-geometria/index.html" class="w-full bg-brand-50 hover:bg-brand-100 text-brand-900 font-bold py-2.5 px-4 rounded-xl text-xs sm:text-sm transition flex items-center justify-center gap-2">
-                    Acessar Bloco Completo <i data-lucide="arrow-right" class="w-4 h-4"></i>
+                    <div class="mb-5 bg-gray-50 border border-gray-100 p-3 rounded-xl">
+                        <div class="flex justify-between text-xs text-gray-500 mb-1.5 font-medium">
+                            <span>Progresso do Bloco</span>
+                            <span id="block-progress-txt-3" class="font-bold text-brand-700">0%</span>
+                        </div>
+                        <div class="w-full bg-gray-200 rounded-full h-2 overflow-hidden">
+                            <div id="block-progress-bar-3" class="bg-brand-600 h-full w-0 transition-all duration-500"></div>
+                        </div>
+                    </div>
+
+                    <div class="space-y-1 mb-5">
+                        <span class="text-[11px] font-bold text-gray-400 uppercase tracking-wider block mb-1">Destaques:</span>
+                        
+                <a href="./bloco-3-geometria/angulos-triangulos-e-poligonos.html" class="flex items-center justify-between py-1.5 px-2 rounded-lg text-xs text-gray-700 hover:bg-brand-50 hover:text-brand-900 transition">
+                    <span class="truncate pr-2">• Ângulos, Triângulos e Polígonos</span>
+                    <i data-lucide="arrow-right" class="w-3 h-3 text-brand-600 flex-shrink-0"></i>
                 </a>
+            
+                <a href="./bloco-3-geometria/teorema-de-pitagoras-e-semelhanca.html" class="flex items-center justify-between py-1.5 px-2 rounded-lg text-xs text-gray-700 hover:bg-brand-50 hover:text-brand-900 transition">
+                    <span class="truncate pr-2">• Teorema de Pitágoras e Semelhança</span>
+                    <i data-lucide="arrow-right" class="w-3 h-3 text-brand-600 flex-shrink-0"></i>
+                </a>
+            
+                <a href="./bloco-3-geometria/circulo-e-circunferencia.html" class="flex items-center justify-between py-1.5 px-2 rounded-lg text-xs text-gray-700 hover:bg-brand-50 hover:text-brand-900 transition">
+                    <span class="truncate pr-2">• Círculo e Circunferência</span>
+                    <i data-lucide="arrow-right" class="w-3 h-3 text-brand-600 flex-shrink-0"></i>
+                </a>
+            
+                    </div>
+                </div>
+
+                <div class="pt-4 border-t border-gray-100">
+                    <a href="./bloco-3-geometria/index.html" class="w-full bg-brand-50 hover:bg-brand-100 text-brand-900 font-bold py-2.5 px-4 rounded-xl text-xs sm:text-sm transition flex items-center justify-center gap-2">
+                        Acessar Bloco Completo <i data-lucide="arrow-right" class="w-4 h-4"></i>
+                    </a>
+                </div>
             </div>
-        </div>
-    
-        <div class="bg-white border border-gray-200 rounded-3xl p-6 sm:p-7 shadow-sm hover-card flex flex-col justify-between">
-            <div>
-                <div class="flex items-center justify-between mb-4">
-                    <div class="w-12 h-12 bg-brand-100 text-brand-800 rounded-2xl flex items-center justify-center font-bold shadow-inner">
-                        <i data-lucide="bar-chart-3" class="w-6 h-6 text-brand-700"></i>
+        
+            <div class="bg-white border border-gray-200 rounded-3xl p-6 sm:p-7 shadow-sm hover-card flex flex-col justify-between">
+                <div>
+                    <div class="flex items-center justify-between mb-4">
+                        <div class="w-12 h-12 bg-brand-100 text-brand-800 rounded-2xl flex items-center justify-center font-bold shadow-inner">
+                            <i data-lucide="bar-chart-3" class="w-6 h-6 text-brand-700"></i>
+                        </div>
+                        <span class="text-xs font-bold px-3 py-1 rounded-full bg-brand-50 text-brand-700 border border-brand-200">
+                            4 Subtópicos
+                        </span>
                     </div>
-                    <span class="text-xs font-bold px-3 py-1 rounded-full bg-brand-50 text-brand-700 border border-brand-200">
-                        4 Subtópicos
-                    </span>
-                </div>
-                
-                <h3 class="text-xl font-extrabold text-gray-900 mb-2">Bloco 4: Medidas e Estatística</h3>
-                <p class="text-gray-600 text-xs sm:text-sm leading-relaxed mb-5">Áreas, volumes, probabilidade e análise de dados.</p>
-
-                <!-- Barra de Progresso do Bloco -->
-                <div class="mb-5 bg-gray-50 border border-gray-100 p-3 rounded-xl">
-                    <div class="flex justify-between text-xs text-gray-500 mb-1.5 font-medium">
-                        <span>Progresso do Bloco</span>
-                        <span id="block-progress-txt-4" class="font-bold text-brand-700">0%</span>
-                    </div>
-                    <div class="w-full bg-gray-200 rounded-full h-2 overflow-hidden">
-                        <div id="block-progress-bar-4" class="bg-brand-600 h-full w-0 transition-all duration-500"></div>
-                    </div>
-                </div>
-
-                <!-- Subtópicos em Destaque -->
-                <div class="space-y-1 mb-5">
-                    <span class="text-[11px] font-bold text-gray-400 uppercase tracking-wider block mb-1">Destaques:</span>
                     
-            <a href="./bloco-4-medidas-e-estatistica/areas-de-figuras-planas.html" class="flex items-center justify-between py-1.5 px-2 rounded-lg text-xs text-gray-700 hover:bg-brand-50 hover:text-brand-900 transition">
-                <span class="truncate pr-2">• Áreas de Figuras Planas</span>
-                <i data-lucide="arrow-right" class="w-3 h-3 text-brand-600 flex-shrink-0"></i>
-            </a>
-        
-            <a href="./bloco-4-medidas-e-estatistica/volume-e-capacidade.html" class="flex items-center justify-between py-1.5 px-2 rounded-lg text-xs text-gray-700 hover:bg-brand-50 hover:text-brand-900 transition">
-                <span class="truncate pr-2">• Volume e Capacidade</span>
-                <i data-lucide="arrow-right" class="w-3 h-3 text-brand-600 flex-shrink-0"></i>
-            </a>
-        
-            <a href="./bloco-4-medidas-e-estatistica/probabilidade.html" class="flex items-center justify-between py-1.5 px-2 rounded-lg text-xs text-gray-700 hover:bg-brand-50 hover:text-brand-900 transition">
-                <span class="truncate pr-2">• Probabilidade</span>
-                <i data-lucide="arrow-right" class="w-3 h-3 text-brand-600 flex-shrink-0"></i>
-            </a>
-        
-                </div>
-            </div>
+                    <h3 class="text-xl font-extrabold text-gray-900 mb-2">Bloco 4: Medidas e Estatística</h3>
+                    <p class="text-gray-600 text-xs sm:text-sm leading-relaxed mb-5">Áreas, volumes, probabilidade e análise de dados.</p>
 
-            <div class="pt-4 border-t border-gray-100">
-                <a href="./bloco-4-medidas-e-estatistica/index.html" class="w-full bg-brand-50 hover:bg-brand-100 text-brand-900 font-bold py-2.5 px-4 rounded-xl text-xs sm:text-sm transition flex items-center justify-center gap-2">
-                    Acessar Bloco Completo <i data-lucide="arrow-right" class="w-4 h-4"></i>
+                    <div class="mb-5 bg-gray-50 border border-gray-100 p-3 rounded-xl">
+                        <div class="flex justify-between text-xs text-gray-500 mb-1.5 font-medium">
+                            <span>Progresso do Bloco</span>
+                            <span id="block-progress-txt-4" class="font-bold text-brand-700">0%</span>
+                        </div>
+                        <div class="w-full bg-gray-200 rounded-full h-2 overflow-hidden">
+                            <div id="block-progress-bar-4" class="bg-brand-600 h-full w-0 transition-all duration-500"></div>
+                        </div>
+                    </div>
+
+                    <div class="space-y-1 mb-5">
+                        <span class="text-[11px] font-bold text-gray-400 uppercase tracking-wider block mb-1">Destaques:</span>
+                        
+                <a href="./bloco-4-medidas-e-estatistica/areas-de-figuras-planas.html" class="flex items-center justify-between py-1.5 px-2 rounded-lg text-xs text-gray-700 hover:bg-brand-50 hover:text-brand-900 transition">
+                    <span class="truncate pr-2">• Áreas de Figuras Planas</span>
+                    <i data-lucide="arrow-right" class="w-3 h-3 text-brand-600 flex-shrink-0"></i>
                 </a>
+            
+                <a href="./bloco-4-medidas-e-estatistica/volume-e-capacidade.html" class="flex items-center justify-between py-1.5 px-2 rounded-lg text-xs text-gray-700 hover:bg-brand-50 hover:text-brand-900 transition">
+                    <span class="truncate pr-2">• Volume e Capacidade</span>
+                    <i data-lucide="arrow-right" class="w-3 h-3 text-brand-600 flex-shrink-0"></i>
+                </a>
+            
+                <a href="./bloco-4-medidas-e-estatistica/probabilidade.html" class="flex items-center justify-between py-1.5 px-2 rounded-lg text-xs text-gray-700 hover:bg-brand-50 hover:text-brand-900 transition">
+                    <span class="truncate pr-2">• Probabilidade</span>
+                    <i data-lucide="arrow-right" class="w-3 h-3 text-brand-600 flex-shrink-0"></i>
+                </a>
+            
+                    </div>
+                </div>
+
+                <div class="pt-4 border-t border-gray-100">
+                    <a href="./bloco-4-medidas-e-estatistica/index.html" class="w-full bg-brand-50 hover:bg-brand-100 text-brand-900 font-bold py-2.5 px-4 rounded-xl text-xs sm:text-sm transition flex items-center justify-center gap-2">
+                        Acessar Bloco Completo <i data-lucide="arrow-right" class="w-4 h-4"></i>
+                    </a>
+                </div>
             </div>
-        </div>
-    
-        <div class="bg-white border border-gray-200 rounded-3xl p-6 sm:p-7 shadow-sm hover-card flex flex-col justify-between">
-            <div>
-                <div class="flex items-center justify-between mb-4">
-                    <div class="w-12 h-12 bg-brand-100 text-brand-800 rounded-2xl flex items-center justify-center font-bold shadow-inner">
-                        <i data-lucide="file-text" class="w-6 h-6 text-brand-700"></i>
+        
+            <div class="bg-white border border-gray-200 rounded-3xl p-6 sm:p-7 shadow-sm hover-card flex flex-col justify-between">
+                <div>
+                    <div class="flex items-center justify-between mb-4">
+                        <div class="w-12 h-12 bg-brand-100 text-brand-800 rounded-2xl flex items-center justify-center font-bold shadow-inner">
+                            <i data-lucide="file-text" class="w-6 h-6 text-brand-700"></i>
+                        </div>
+                        <span class="text-xs font-bold px-3 py-1 rounded-full bg-brand-50 text-brand-700 border border-brand-200">
+                            16 Subtópicos
+                        </span>
                     </div>
-                    <span class="text-xs font-bold px-3 py-1 rounded-full bg-brand-50 text-brand-700 border border-brand-200">
-                        16 Subtópicos
-                    </span>
-                </div>
-                
-                <h3 class="text-xl font-extrabold text-gray-900 mb-2">Bloco 5: Provas Anteriores IFSC</h3>
-                <p class="text-gray-600 text-xs sm:text-sm leading-relaxed mb-5">Resolução e simulados completos de 16 provas oficiais do Exame de Classificação do IFSC (2017 a 2026).</p>
-
-                <!-- Barra de Progresso do Bloco -->
-                <div class="mb-5 bg-gray-50 border border-gray-100 p-3 rounded-xl">
-                    <div class="flex justify-between text-xs text-gray-500 mb-1.5 font-medium">
-                        <span>Progresso do Bloco</span>
-                        <span id="block-progress-txt-5" class="font-bold text-brand-700">0%</span>
-                    </div>
-                    <div class="w-full bg-gray-200 rounded-full h-2 overflow-hidden">
-                        <div id="block-progress-bar-5" class="bg-brand-600 h-full w-0 transition-all duration-500"></div>
-                    </div>
-                </div>
-
-                <!-- Subtópicos em Destaque -->
-                <div class="space-y-1 mb-5">
-                    <span class="text-[11px] font-bold text-gray-400 uppercase tracking-wider block mb-1">Destaques:</span>
                     
-            <a href="./bloco-5-provas-ifsc/prova-ifsc-20171.html" class="flex items-center justify-between py-1.5 px-2 rounded-lg text-xs text-gray-700 hover:bg-brand-50 hover:text-brand-900 transition">
-                <span class="truncate pr-2">• Prova IFSC 2017.1</span>
-                <i data-lucide="arrow-right" class="w-3 h-3 text-brand-600 flex-shrink-0"></i>
-            </a>
-        
-            <a href="./bloco-5-provas-ifsc/prova-ifsc-20172.html" class="flex items-center justify-between py-1.5 px-2 rounded-lg text-xs text-gray-700 hover:bg-brand-50 hover:text-brand-900 transition">
-                <span class="truncate pr-2">• Prova IFSC 2017.2</span>
-                <i data-lucide="arrow-right" class="w-3 h-3 text-brand-600 flex-shrink-0"></i>
-            </a>
-        
-            <a href="./bloco-5-provas-ifsc/prova-ifsc-20181.html" class="flex items-center justify-between py-1.5 px-2 rounded-lg text-xs text-gray-700 hover:bg-brand-50 hover:text-brand-900 transition">
-                <span class="truncate pr-2">• Prova IFSC 2018.1</span>
-                <i data-lucide="arrow-right" class="w-3 h-3 text-brand-600 flex-shrink-0"></i>
-            </a>
-        
-                </div>
-            </div>
+                    <h3 class="text-xl font-extrabold text-gray-900 mb-2">Bloco 5: Provas Anteriores IFSC</h3>
+                    <p class="text-gray-600 text-xs sm:text-sm leading-relaxed mb-5">Resolução e simulados completos de 16 provas oficiais do Exame de Classificação do IFSC (2017 a 2026).</p>
 
-            <div class="pt-4 border-t border-gray-100">
-                <a href="./bloco-5-provas-ifsc/index.html" class="w-full bg-brand-50 hover:bg-brand-100 text-brand-900 font-bold py-2.5 px-4 rounded-xl text-xs sm:text-sm transition flex items-center justify-center gap-2">
-                    Acessar Bloco Completo <i data-lucide="arrow-right" class="w-4 h-4"></i>
+                    <div class="mb-5 bg-gray-50 border border-gray-100 p-3 rounded-xl">
+                        <div class="flex justify-between text-xs text-gray-500 mb-1.5 font-medium">
+                            <span>Progresso do Bloco</span>
+                            <span id="block-progress-txt-5" class="font-bold text-brand-700">0%</span>
+                        </div>
+                        <div class="w-full bg-gray-200 rounded-full h-2 overflow-hidden">
+                            <div id="block-progress-bar-5" class="bg-brand-600 h-full w-0 transition-all duration-500"></div>
+                        </div>
+                    </div>
+
+                    <div class="space-y-1 mb-5">
+                        <span class="text-[11px] font-bold text-gray-400 uppercase tracking-wider block mb-1">Destaques:</span>
+                        
+                <a href="./bloco-5-provas-ifsc/prova-ifsc-20171.html" class="flex items-center justify-between py-1.5 px-2 rounded-lg text-xs text-gray-700 hover:bg-brand-50 hover:text-brand-900 transition">
+                    <span class="truncate pr-2">• Prova IFSC 2017.1</span>
+                    <i data-lucide="arrow-right" class="w-3 h-3 text-brand-600 flex-shrink-0"></i>
                 </a>
+            
+                <a href="./bloco-5-provas-ifsc/prova-ifsc-20172.html" class="flex items-center justify-between py-1.5 px-2 rounded-lg text-xs text-gray-700 hover:bg-brand-50 hover:text-brand-900 transition">
+                    <span class="truncate pr-2">• Prova IFSC 2017.2</span>
+                    <i data-lucide="arrow-right" class="w-3 h-3 text-brand-600 flex-shrink-0"></i>
+                </a>
+            
+                <a href="./bloco-5-provas-ifsc/prova-ifsc-20181.html" class="flex items-center justify-between py-1.5 px-2 rounded-lg text-xs text-gray-700 hover:bg-brand-50 hover:text-brand-900 transition">
+                    <span class="truncate pr-2">• Prova IFSC 2018.1</span>
+                    <i data-lucide="arrow-right" class="w-3 h-3 text-brand-600 flex-shrink-0"></i>
+                </a>
+            
+                    </div>
+                </div>
+
+                <div class="pt-4 border-t border-gray-100">
+                    <a href="./bloco-5-provas-ifsc/index.html" class="w-full bg-brand-50 hover:bg-brand-100 text-brand-900 font-bold py-2.5 px-4 rounded-xl text-xs sm:text-sm transition flex items-center justify-center gap-2">
+                        Acessar Bloco Completo <i data-lucide="arrow-right" class="w-4 h-4"></i>
+                    </a>
+                </div>
             </div>
-        </div>
-    
-        <div class="bg-white border border-gray-200 rounded-3xl p-6 sm:p-7 shadow-sm hover-card flex flex-col justify-between">
-            <div>
-                <div class="flex items-center justify-between mb-4">
-                    <div class="w-12 h-12 bg-brand-100 text-brand-800 rounded-2xl flex items-center justify-center font-bold shadow-inner">
-                        <i data-lucide="award" class="w-6 h-6 text-brand-700"></i>
+        
+            <div class="bg-white border border-gray-200 rounded-3xl p-6 sm:p-7 shadow-sm hover-card flex flex-col justify-between">
+                <div>
+                    <div class="flex items-center justify-between mb-4">
+                        <div class="w-12 h-12 bg-brand-100 text-brand-800 rounded-2xl flex items-center justify-center font-bold shadow-inner">
+                            <i data-lucide="award" class="w-6 h-6 text-brand-700"></i>
+                        </div>
+                        <span class="text-xs font-bold px-3 py-1 rounded-full bg-brand-50 text-brand-700 border border-brand-200">
+                            10 Subtópicos
+                        </span>
                     </div>
-                    <span class="text-xs font-bold px-3 py-1 rounded-full bg-brand-50 text-brand-700 border border-brand-200">
-                        5 Subtópicos
-                    </span>
-                </div>
-                
-                <h3 class="text-xl font-extrabold text-gray-900 mb-2">Bloco 6: Provas Anteriores IFCE</h3>
-                <p class="text-gray-600 text-xs sm:text-sm leading-relaxed mb-5">Resoluções completas, gabaritos comentados e simulados das 5 provas mais recentes do processo seletivo do IFCE (Cursos Técnicos Integrados).</p>
-
-                <!-- Barra de Progresso do Bloco -->
-                <div class="mb-5 bg-gray-50 border border-gray-100 p-3 rounded-xl">
-                    <div class="flex justify-between text-xs text-gray-500 mb-1.5 font-medium">
-                        <span>Progresso do Bloco</span>
-                        <span id="block-progress-txt-6" class="font-bold text-brand-700">0%</span>
-                    </div>
-                    <div class="w-full bg-gray-200 rounded-full h-2 overflow-hidden">
-                        <div id="block-progress-bar-6" class="bg-brand-600 h-full w-0 transition-all duration-500"></div>
-                    </div>
-                </div>
-
-                <!-- Subtópicos em Destaque -->
-                <div class="space-y-1 mb-5">
-                    <span class="text-[11px] font-bold text-gray-400 uppercase tracking-wider block mb-1">Destaques:</span>
                     
-            <a href="./bloco-6-provas-ifce/prova-ifce-20252.html" class="flex items-center justify-between py-1.5 px-2 rounded-lg text-xs text-gray-700 hover:bg-brand-50 hover:text-brand-900 transition">
-                <span class="truncate pr-2">• Prova IFCE 2025.2</span>
-                <i data-lucide="arrow-right" class="w-3 h-3 text-brand-600 flex-shrink-0"></i>
-            </a>
-        
-            <a href="./bloco-6-provas-ifce/prova-ifce-20251.html" class="flex items-center justify-between py-1.5 px-2 rounded-lg text-xs text-gray-700 hover:bg-brand-50 hover:text-brand-900 transition">
-                <span class="truncate pr-2">• Prova IFCE 2025.1</span>
-                <i data-lucide="arrow-right" class="w-3 h-3 text-brand-600 flex-shrink-0"></i>
-            </a>
-        
-            <a href="./bloco-6-provas-ifce/prova-ifce-20242.html" class="flex items-center justify-between py-1.5 px-2 rounded-lg text-xs text-gray-700 hover:bg-brand-50 hover:text-brand-900 transition">
-                <span class="truncate pr-2">• Prova IFCE 2024.2</span>
-                <i data-lucide="arrow-right" class="w-3 h-3 text-brand-600 flex-shrink-0"></i>
-            </a>
-        
+                    <h3 class="text-xl font-extrabold text-gray-900 mb-2">Bloco 6: Provas Anteriores IFCE</h3>
+                    <p class="text-gray-600 text-xs sm:text-sm leading-relaxed mb-5">Resoluções completas, gabaritos comentados e simulados de 10 provas oficiais do IFCE (Cursos Técnicos Integrados e Vestibulares).</p>
+
+                    <div class="mb-5 bg-gray-50 border border-gray-100 p-3 rounded-xl">
+                        <div class="flex justify-between text-xs text-gray-500 mb-1.5 font-medium">
+                            <span>Progresso do Bloco</span>
+                            <span id="block-progress-txt-6" class="font-bold text-brand-700">0%</span>
+                        </div>
+                        <div class="w-full bg-gray-200 rounded-full h-2 overflow-hidden">
+                            <div id="block-progress-bar-6" class="bg-brand-600 h-full w-0 transition-all duration-500"></div>
+                        </div>
+                    </div>
+
+                    <div class="space-y-1 mb-5">
+                        <span class="text-[11px] font-bold text-gray-400 uppercase tracking-wider block mb-1">Destaques:</span>
+                        
+                <a href="./bloco-6-provas-ifce/prova-ifce-20252.html" class="flex items-center justify-between py-1.5 px-2 rounded-lg text-xs text-gray-700 hover:bg-brand-50 hover:text-brand-900 transition">
+                    <span class="truncate pr-2">• Prova IFCE 2025.2</span>
+                    <i data-lucide="arrow-right" class="w-3 h-3 text-brand-600 flex-shrink-0"></i>
+                </a>
+            
+                <a href="./bloco-6-provas-ifce/prova-ifce-20251.html" class="flex items-center justify-between py-1.5 px-2 rounded-lg text-xs text-gray-700 hover:bg-brand-50 hover:text-brand-900 transition">
+                    <span class="truncate pr-2">• Prova IFCE 2025.1</span>
+                    <i data-lucide="arrow-right" class="w-3 h-3 text-brand-600 flex-shrink-0"></i>
+                </a>
+            
+                <a href="./bloco-6-provas-ifce/prova-ifce-20242.html" class="flex items-center justify-between py-1.5 px-2 rounded-lg text-xs text-gray-700 hover:bg-brand-50 hover:text-brand-900 transition">
+                    <span class="truncate pr-2">• Prova IFCE 2024.2</span>
+                    <i data-lucide="arrow-right" class="w-3 h-3 text-brand-600 flex-shrink-0"></i>
+                </a>
+            
+                    </div>
+                </div>
+
+                <div class="pt-4 border-t border-gray-100">
+                    <a href="./bloco-6-provas-ifce/index.html" class="w-full bg-brand-50 hover:bg-brand-100 text-brand-900 font-bold py-2.5 px-4 rounded-xl text-xs sm:text-sm transition flex items-center justify-center gap-2">
+                        Acessar Bloco Completo <i data-lucide="arrow-right" class="w-4 h-4"></i>
+                    </a>
                 </div>
             </div>
-
-            <div class="pt-4 border-t border-gray-100">
-                <a href="./bloco-6-provas-ifce/index.html" class="w-full bg-brand-50 hover:bg-brand-100 text-brand-900 font-bold py-2.5 px-4 rounded-xl text-xs sm:text-sm transition flex items-center justify-center gap-2">
-                    Acessar Bloco Completo <i data-lucide="arrow-right" class="w-4 h-4"></i>
-                </a>
-            </div>
-        </div>
-    
+        
             </div>
         </section>
 
-        <!-- Índice Completo de Todos os 41 Subtópicos -->
+        <!-- Diretório Completo de Todos os Subtópicos -->
         <section class="mb-12">
             <div class="mb-6">
                 <h2 class="text-2xl font-extrabold text-gray-900 flex items-center gap-2 border-l-4 border-brand-600 pl-3">
-                    Diretório Completo de Subtópicos (41 Páginas)
+                    Diretório Completo de Subtópicos (46 Páginas)
                 </h2>
                 <p class="text-xs sm:text-sm text-gray-500 mt-1 pl-3">Acesse cada página individual para estudar e resolver as questões com auto-salvamento.</p>
             </div>
 
             
-        <div class="bg-white border border-gray-200 rounded-2xl p-6 shadow-sm mb-6">
-            <div class="flex items-center justify-between mb-4 border-b border-gray-100 pb-3">
-                <div class="flex items-center gap-2.5">
-                    <div class="w-8 h-8 bg-brand-100 text-brand-800 rounded-lg flex items-center justify-center font-bold">
-                        <i data-lucide="binary" class="w-4 h-4 text-brand-700"></i>
+            <div class="mb-8 bg-white border border-gray-200 rounded-2xl p-5 sm:p-6 shadow-sm">
+                <div class="flex flex-col sm:flex-row justify-between sm:items-center gap-2 mb-4 pb-3 border-b border-gray-100">
+                    <div class="flex items-center gap-3">
+                        <div class="w-8 h-8 rounded-lg bg-brand-100 text-brand-800 flex items-center justify-center font-bold text-sm">
+                            1
+                        </div>
+                        <h3 class="text-base sm:text-lg font-extrabold text-gray-900">Bloco 1: Números e Operações</h3>
                     </div>
-                    <h4 class="font-bold text-gray-900 text-base sm:text-lg">Bloco 1: Números e Operações</h4>
+                    <a href="./bloco-1-numeros/index.html" class="text-xs font-bold text-brand-700 hover:text-brand-800 flex items-center gap-1">
+                        Ver detalhes <i data-lucide="arrow-right" class="w-3.5 h-3.5"></i>
+                    </a>
                 </div>
-                <a href="./bloco-1-numeros/index.html" class="text-xs text-brand-700 hover:text-brand-900 font-semibold flex items-center gap-1">
-                    Ver Bloco <i data-lucide="arrow-right" class="w-3 h-3"></i>
+                <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-2.5">
+                    
+                <a href="./bloco-1-numeros/sistema-de-numeracao-e-comparacao.html" class="group p-3 rounded-xl border border-gray-100 hover:border-brand-300 hover:bg-brand-50/50 transition flex items-center justify-between bg-white">
+                    <div class="flex items-center gap-2.5 min-w-0">
+                        <span class="text-xs font-bold text-gray-400 group-hover:text-brand-700 flex-shrink-0">01.</span>
+                        <span class="text-xs sm:text-sm font-semibold text-gray-800 group-hover:text-brand-900 truncate">Sistema de Numeração e Comparação</span>
+                    </div>
+                    <i data-lucide="chevron-right" class="w-4 h-4 text-gray-300 group-hover:text-brand-600 flex-shrink-0"></i>
                 </a>
-            </div>
-            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3">
-                
-            <a href="./bloco-1-numeros/sistema-de-numeracao-e-comparacao.html" class="p-3 rounded-xl border border-gray-200 hover:border-brand-400 hover:bg-brand-50/50 transition flex items-center justify-between group bg-white shadow-2xs">
-                <div class="flex items-center gap-3 pr-2">
-                    <i id="status-icon-b1-t1" data-lucide="circle" class="w-4 h-4 text-gray-300 flex-shrink-0"></i>
-                    <div>
-                        <h5 class="text-xs sm:text-sm font-semibold text-gray-800 group-hover:text-brand-900">Sistema de Numeração e Comparação</h5>
-                        <span class="text-[11px] text-gray-400">BNCC: EF06MA01, EF06MA02, EF07MA07 &bull; 5 questões</span>
+            
+                <a href="./bloco-1-numeros/operacoes-com-naturais-e-estimativas.html" class="group p-3 rounded-xl border border-gray-100 hover:border-brand-300 hover:bg-brand-50/50 transition flex items-center justify-between bg-white">
+                    <div class="flex items-center gap-2.5 min-w-0">
+                        <span class="text-xs font-bold text-gray-400 group-hover:text-brand-700 flex-shrink-0">02.</span>
+                        <span class="text-xs sm:text-sm font-semibold text-gray-800 group-hover:text-brand-900 truncate">Operações com Naturais e Estimativas</span>
                     </div>
-                </div>
-                <i data-lucide="chevron-right" class="w-4 h-4 text-gray-300 group-hover:text-brand-600 flex-shrink-0"></i>
-            </a>
-        
-            <a href="./bloco-1-numeros/operacoes-com-naturais-e-estimativas.html" class="p-3 rounded-xl border border-gray-200 hover:border-brand-400 hover:bg-brand-50/50 transition flex items-center justify-between group bg-white shadow-2xs">
-                <div class="flex items-center gap-3 pr-2">
-                    <i id="status-icon-b1-t2" data-lucide="circle" class="w-4 h-4 text-gray-300 flex-shrink-0"></i>
-                    <div>
-                        <h5 class="text-xs sm:text-sm font-semibold text-gray-800 group-hover:text-brand-900">Operações com Naturais e Estimativas</h5>
-                        <span class="text-[11px] text-gray-400">BNCC: EF06MA03 &bull; 5 questões</span>
-                    </div>
-                </div>
-                <i data-lucide="chevron-right" class="w-4 h-4 text-gray-300 group-hover:text-brand-600 flex-shrink-0"></i>
-            </a>
-        
-            <a href="./bloco-1-numeros/multiplos-divisores-e-criterios.html" class="p-3 rounded-xl border border-gray-200 hover:border-brand-400 hover:bg-brand-50/50 transition flex items-center justify-between group bg-white shadow-2xs">
-                <div class="flex items-center gap-3 pr-2">
-                    <i id="status-icon-b1-t3" data-lucide="circle" class="w-4 h-4 text-gray-300 flex-shrink-0"></i>
-                    <div>
-                        <h5 class="text-xs sm:text-sm font-semibold text-gray-800 group-hover:text-brand-900">Múltiplos, Divisores e Critérios</h5>
-                        <span class="text-[11px] text-gray-400">BNCC: EF06MA04, EF06MA05 &bull; 5 questões</span>
-                    </div>
-                </div>
-                <i data-lucide="chevron-right" class="w-4 h-4 text-gray-300 group-hover:text-brand-600 flex-shrink-0"></i>
-            </a>
-        
-            <a href="./bloco-1-numeros/fracoes-i-significados-e-equivalencia.html" class="p-3 rounded-xl border border-gray-200 hover:border-brand-400 hover:bg-brand-50/50 transition flex items-center justify-between group bg-white shadow-2xs">
-                <div class="flex items-center gap-3 pr-2">
-                    <i id="status-icon-b1-t4" data-lucide="circle" class="w-4 h-4 text-gray-300 flex-shrink-0"></i>
-                    <div>
-                        <h5 class="text-xs sm:text-sm font-semibold text-gray-800 group-hover:text-brand-900">Frações I: Significados e Equivalência</h5>
-                        <span class="text-[11px] text-gray-400">BNCC: EF06MA06, EF06MA07 &bull; 5 questões</span>
-                    </div>
-                </div>
-                <i data-lucide="chevron-right" class="w-4 h-4 text-gray-300 group-hover:text-brand-600 flex-shrink-0"></i>
-            </a>
-        
-            <a href="./bloco-1-numeros/fracoes-ii-operacoes-basicas.html" class="p-3 rounded-xl border border-gray-200 hover:border-brand-400 hover:bg-brand-50/50 transition flex items-center justify-between group bg-white shadow-2xs">
-                <div class="flex items-center gap-3 pr-2">
-                    <i id="status-icon-b1-t5" data-lucide="circle" class="w-4 h-4 text-gray-300 flex-shrink-0"></i>
-                    <div>
-                        <h5 class="text-xs sm:text-sm font-semibold text-gray-800 group-hover:text-brand-900">Frações II: Operações Básicas</h5>
-                        <span class="text-[11px] text-gray-400">BNCC: EF06MA08, EF06MA09 &bull; 5 questões</span>
-                    </div>
-                </div>
-                <i data-lucide="chevron-right" class="w-4 h-4 text-gray-300 group-hover:text-brand-600 flex-shrink-0"></i>
-            </a>
-        
-            <a href="./bloco-1-numeros/porcentagem-e-financas.html" class="p-3 rounded-xl border border-gray-200 hover:border-brand-400 hover:bg-brand-50/50 transition flex items-center justify-between group bg-white shadow-2xs">
-                <div class="flex items-center gap-3 pr-2">
-                    <i id="status-icon-b1-t6" data-lucide="circle" class="w-4 h-4 text-gray-300 flex-shrink-0"></i>
-                    <div>
-                        <h5 class="text-xs sm:text-sm font-semibold text-gray-800 group-hover:text-brand-900">Porcentagem e Finanças</h5>
-                        <span class="text-[11px] text-gray-400">BNCC: EF06MA12, EF08MA04 &bull; 5 questões</span>
-                    </div>
-                </div>
-                <i data-lucide="chevron-right" class="w-4 h-4 text-gray-300 group-hover:text-brand-600 flex-shrink-0"></i>
-            </a>
-        
-            <a href="./bloco-1-numeros/notacao-cientifica-e-potencias.html" class="p-3 rounded-xl border border-gray-200 hover:border-brand-400 hover:bg-brand-50/50 transition flex items-center justify-between group bg-white shadow-2xs">
-                <div class="flex items-center gap-3 pr-2">
-                    <i id="status-icon-b1-t7" data-lucide="circle" class="w-4 h-4 text-gray-300 flex-shrink-0"></i>
-                    <div>
-                        <h5 class="text-xs sm:text-sm font-semibold text-gray-800 group-hover:text-brand-900">Notação Científica e Potências</h5>
-                        <span class="text-[11px] text-gray-400">BNCC: EF08MA01, EF09MA03 &bull; 5 questões</span>
-                    </div>
-                </div>
-                <i data-lucide="chevron-right" class="w-4 h-4 text-gray-300 group-hover:text-brand-600 flex-shrink-0"></i>
-            </a>
-        
-            </div>
-        </div>
-    
-        <div class="bg-white border border-gray-200 rounded-2xl p-6 shadow-sm mb-6">
-            <div class="flex items-center justify-between mb-4 border-b border-gray-100 pb-3">
-                <div class="flex items-center gap-2.5">
-                    <div class="w-8 h-8 bg-brand-100 text-brand-800 rounded-lg flex items-center justify-center font-bold">
-                        <i data-lucide="variable" class="w-4 h-4 text-brand-700"></i>
-                    </div>
-                    <h4 class="font-bold text-gray-900 text-base sm:text-lg">Bloco 2: Álgebra</h4>
-                </div>
-                <a href="./bloco-2-algebra/index.html" class="text-xs text-brand-700 hover:text-brand-900 font-semibold flex items-center gap-1">
-                    Ver Bloco <i data-lucide="arrow-right" class="w-3 h-3"></i>
+                    <i data-lucide="chevron-right" class="w-4 h-4 text-gray-300 group-hover:text-brand-600 flex-shrink-0"></i>
                 </a>
-            </div>
-            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3">
-                
-            <a href="./bloco-2-algebra/linguagem-algebrica.html" class="p-3 rounded-xl border border-gray-200 hover:border-brand-400 hover:bg-brand-50/50 transition flex items-center justify-between group bg-white shadow-2xs">
-                <div class="flex items-center gap-3 pr-2">
-                    <i id="status-icon-b2-t1" data-lucide="circle" class="w-4 h-4 text-gray-300 flex-shrink-0"></i>
-                    <div>
-                        <h5 class="text-xs sm:text-sm font-semibold text-gray-800 group-hover:text-brand-900">Linguagem Algébrica</h5>
-                        <span class="text-[11px] text-gray-400">BNCC: EF07MA10 &bull; 5 questões</span>
+            
+                <a href="./bloco-1-numeros/multiplos-divisores-e-criterios.html" class="group p-3 rounded-xl border border-gray-100 hover:border-brand-300 hover:bg-brand-50/50 transition flex items-center justify-between bg-white">
+                    <div class="flex items-center gap-2.5 min-w-0">
+                        <span class="text-xs font-bold text-gray-400 group-hover:text-brand-700 flex-shrink-0">03.</span>
+                        <span class="text-xs sm:text-sm font-semibold text-gray-800 group-hover:text-brand-900 truncate">Múltiplos, Divisores e Critérios</span>
                     </div>
-                </div>
-                <i data-lucide="chevron-right" class="w-4 h-4 text-gray-300 group-hover:text-brand-600 flex-shrink-0"></i>
-            </a>
-        
-            <a href="./bloco-2-algebra/grandezas-e-proporcoes.html" class="p-3 rounded-xl border border-gray-200 hover:border-brand-400 hover:bg-brand-50/50 transition flex items-center justify-between group bg-white shadow-2xs">
-                <div class="flex items-center gap-3 pr-2">
-                    <i id="status-icon-b2-t2" data-lucide="circle" class="w-4 h-4 text-gray-300 flex-shrink-0"></i>
-                    <div>
-                        <h5 class="text-xs sm:text-sm font-semibold text-gray-800 group-hover:text-brand-900">Grandezas e Proporções</h5>
-                        <span class="text-[11px] text-gray-400">BNCC: EF07MA13 &bull; 5 questões</span>
-                    </div>
-                </div>
-                <i data-lucide="chevron-right" class="w-4 h-4 text-gray-300 group-hover:text-brand-600 flex-shrink-0"></i>
-            </a>
-        
-            <a href="./bloco-2-algebra/equacoes-e-sistemas-do-1o-grau.html" class="p-3 rounded-xl border border-gray-200 hover:border-brand-400 hover:bg-brand-50/50 transition flex items-center justify-between group bg-white shadow-2xs">
-                <div class="flex items-center gap-3 pr-2">
-                    <i id="status-icon-b2-t3" data-lucide="circle" class="w-4 h-4 text-gray-300 flex-shrink-0"></i>
-                    <div>
-                        <h5 class="text-xs sm:text-sm font-semibold text-gray-800 group-hover:text-brand-900">Equações e Sistemas do 1º Grau</h5>
-                        <span class="text-[11px] text-gray-400">BNCC: EF07MA14, EF08MA08 &bull; 5 questões</span>
-                    </div>
-                </div>
-                <i data-lucide="chevron-right" class="w-4 h-4 text-gray-300 group-hover:text-brand-600 flex-shrink-0"></i>
-            </a>
-        
-            <a href="./bloco-2-algebra/produtos-notaveis-e-fatoracao.html" class="p-3 rounded-xl border border-gray-200 hover:border-brand-400 hover:bg-brand-50/50 transition flex items-center justify-between group bg-white shadow-2xs">
-                <div class="flex items-center gap-3 pr-2">
-                    <i id="status-icon-b2-t4" data-lucide="circle" class="w-4 h-4 text-gray-300 flex-shrink-0"></i>
-                    <div>
-                        <h5 class="text-xs sm:text-sm font-semibold text-gray-800 group-hover:text-brand-900">Produtos Notáveis e Fatoração</h5>
-                        <span class="text-[11px] text-gray-400">BNCC: EF09MA09 &bull; 5 questões</span>
-                    </div>
-                </div>
-                <i data-lucide="chevron-right" class="w-4 h-4 text-gray-300 group-hover:text-brand-600 flex-shrink-0"></i>
-            </a>
-        
-            <a href="./bloco-2-algebra/equacoes-do-2o-grau-e-funcoes.html" class="p-3 rounded-xl border border-gray-200 hover:border-brand-400 hover:bg-brand-50/50 transition flex items-center justify-between group bg-white shadow-2xs">
-                <div class="flex items-center gap-3 pr-2">
-                    <i id="status-icon-b2-t5" data-lucide="circle" class="w-4 h-4 text-gray-300 flex-shrink-0"></i>
-                    <div>
-                        <h5 class="text-xs sm:text-sm font-semibold text-gray-800 group-hover:text-brand-900">Equações do 2º Grau e Funções</h5>
-                        <span class="text-[11px] text-gray-400">BNCC: EF09MA06 &bull; 5 questões</span>
-                    </div>
-                </div>
-                <i data-lucide="chevron-right" class="w-4 h-4 text-gray-300 group-hover:text-brand-600 flex-shrink-0"></i>
-            </a>
-        
-            </div>
-        </div>
-    
-        <div class="bg-white border border-gray-200 rounded-2xl p-6 shadow-sm mb-6">
-            <div class="flex items-center justify-between mb-4 border-b border-gray-100 pb-3">
-                <div class="flex items-center gap-2.5">
-                    <div class="w-8 h-8 bg-brand-100 text-brand-800 rounded-lg flex items-center justify-center font-bold">
-                        <i data-lucide="shapes" class="w-4 h-4 text-brand-700"></i>
-                    </div>
-                    <h4 class="font-bold text-gray-900 text-base sm:text-lg">Bloco 3: Geometria</h4>
-                </div>
-                <a href="./bloco-3-geometria/index.html" class="text-xs text-brand-700 hover:text-brand-900 font-semibold flex items-center gap-1">
-                    Ver Bloco <i data-lucide="arrow-right" class="w-3 h-3"></i>
+                    <i data-lucide="chevron-right" class="w-4 h-4 text-gray-300 group-hover:text-brand-600 flex-shrink-0"></i>
                 </a>
-            </div>
-            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3">
-                
-            <a href="./bloco-3-geometria/angulos-triangulos-e-poligonos.html" class="p-3 rounded-xl border border-gray-200 hover:border-brand-400 hover:bg-brand-50/50 transition flex items-center justify-between group bg-white shadow-2xs">
-                <div class="flex items-center gap-3 pr-2">
-                    <i id="status-icon-b3-t1" data-lucide="circle" class="w-4 h-4 text-gray-300 flex-shrink-0"></i>
-                    <div>
-                        <h5 class="text-xs sm:text-sm font-semibold text-gray-800 group-hover:text-brand-900">Ângulos, Triângulos e Polígonos</h5>
-                        <span class="text-[11px] text-gray-400">BNCC: EF07MA22 &bull; 5 questões</span>
+            
+                <a href="./bloco-1-numeros/fracoes-i-significados-e-equivalencia.html" class="group p-3 rounded-xl border border-gray-100 hover:border-brand-300 hover:bg-brand-50/50 transition flex items-center justify-between bg-white">
+                    <div class="flex items-center gap-2.5 min-w-0">
+                        <span class="text-xs font-bold text-gray-400 group-hover:text-brand-700 flex-shrink-0">04.</span>
+                        <span class="text-xs sm:text-sm font-semibold text-gray-800 group-hover:text-brand-900 truncate">Frações I: Significados e Equivalência</span>
                     </div>
-                </div>
-                <i data-lucide="chevron-right" class="w-4 h-4 text-gray-300 group-hover:text-brand-600 flex-shrink-0"></i>
-            </a>
-        
-            <a href="./bloco-3-geometria/teorema-de-pitagoras-e-semelhanca.html" class="p-3 rounded-xl border border-gray-200 hover:border-brand-400 hover:bg-brand-50/50 transition flex items-center justify-between group bg-white shadow-2xs">
-                <div class="flex items-center gap-3 pr-2">
-                    <i id="status-icon-b3-t2" data-lucide="circle" class="w-4 h-4 text-gray-300 flex-shrink-0"></i>
-                    <div>
-                        <h5 class="text-xs sm:text-sm font-semibold text-gray-800 group-hover:text-brand-900">Teorema de Pitágoras e Semelhança</h5>
-                        <span class="text-[11px] text-gray-400">BNCC: EF09MA13 &bull; 5 questões</span>
-                    </div>
-                </div>
-                <i data-lucide="chevron-right" class="w-4 h-4 text-gray-300 group-hover:text-brand-600 flex-shrink-0"></i>
-            </a>
-        
-            <a href="./bloco-3-geometria/circulo-e-circunferencia.html" class="p-3 rounded-xl border border-gray-200 hover:border-brand-400 hover:bg-brand-50/50 transition flex items-center justify-between group bg-white shadow-2xs">
-                <div class="flex items-center gap-3 pr-2">
-                    <i id="status-icon-b3-t3" data-lucide="circle" class="w-4 h-4 text-gray-300 flex-shrink-0"></i>
-                    <div>
-                        <h5 class="text-xs sm:text-sm font-semibold text-gray-800 group-hover:text-brand-900">Círculo e Circunferência</h5>
-                        <span class="text-[11px] text-gray-400">BNCC: EF08MA16 &bull; 5 questões</span>
-                    </div>
-                </div>
-                <i data-lucide="chevron-right" class="w-4 h-4 text-gray-300 group-hover:text-brand-600 flex-shrink-0"></i>
-            </a>
-        
-            <a href="./bloco-3-geometria/solidos-e-vistas.html" class="p-3 rounded-xl border border-gray-200 hover:border-brand-400 hover:bg-brand-50/50 transition flex items-center justify-between group bg-white shadow-2xs">
-                <div class="flex items-center gap-3 pr-2">
-                    <i id="status-icon-b3-t4" data-lucide="circle" class="w-4 h-4 text-gray-300 flex-shrink-0"></i>
-                    <div>
-                        <h5 class="text-xs sm:text-sm font-semibold text-gray-800 group-hover:text-brand-900">Sólidos e Vistas</h5>
-                        <span class="text-[11px] text-gray-400">BNCC: EF06MA16 &bull; 5 questões</span>
-                    </div>
-                </div>
-                <i data-lucide="chevron-right" class="w-4 h-4 text-gray-300 group-hover:text-brand-600 flex-shrink-0"></i>
-            </a>
-        
-            </div>
-        </div>
-    
-        <div class="bg-white border border-gray-200 rounded-2xl p-6 shadow-sm mb-6">
-            <div class="flex items-center justify-between mb-4 border-b border-gray-100 pb-3">
-                <div class="flex items-center gap-2.5">
-                    <div class="w-8 h-8 bg-brand-100 text-brand-800 rounded-lg flex items-center justify-center font-bold">
-                        <i data-lucide="bar-chart-3" class="w-4 h-4 text-brand-700"></i>
-                    </div>
-                    <h4 class="font-bold text-gray-900 text-base sm:text-lg">Bloco 4: Medidas e Estatística</h4>
-                </div>
-                <a href="./bloco-4-medidas-e-estatistica/index.html" class="text-xs text-brand-700 hover:text-brand-900 font-semibold flex items-center gap-1">
-                    Ver Bloco <i data-lucide="arrow-right" class="w-3 h-3"></i>
+                    <i data-lucide="chevron-right" class="w-4 h-4 text-gray-300 group-hover:text-brand-600 flex-shrink-0"></i>
                 </a>
-            </div>
-            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3">
-                
-            <a href="./bloco-4-medidas-e-estatistica/areas-de-figuras-planas.html" class="p-3 rounded-xl border border-gray-200 hover:border-brand-400 hover:bg-brand-50/50 transition flex items-center justify-between group bg-white shadow-2xs">
-                <div class="flex items-center gap-3 pr-2">
-                    <i id="status-icon-b4-t1" data-lucide="circle" class="w-4 h-4 text-gray-300 flex-shrink-0"></i>
-                    <div>
-                        <h5 class="text-xs sm:text-sm font-semibold text-gray-800 group-hover:text-brand-900">Áreas de Figuras Planas</h5>
-                        <span class="text-[11px] text-gray-400">BNCC: EF07MA25 &bull; 5 questões</span>
+            
+                <a href="./bloco-1-numeros/fracoes-ii-operacoes-basicas.html" class="group p-3 rounded-xl border border-gray-100 hover:border-brand-300 hover:bg-brand-50/50 transition flex items-center justify-between bg-white">
+                    <div class="flex items-center gap-2.5 min-w-0">
+                        <span class="text-xs font-bold text-gray-400 group-hover:text-brand-700 flex-shrink-0">05.</span>
+                        <span class="text-xs sm:text-sm font-semibold text-gray-800 group-hover:text-brand-900 truncate">Frações II: Operações Básicas</span>
                     </div>
-                </div>
-                <i data-lucide="chevron-right" class="w-4 h-4 text-gray-300 group-hover:text-brand-600 flex-shrink-0"></i>
-            </a>
-        
-            <a href="./bloco-4-medidas-e-estatistica/volume-e-capacidade.html" class="p-3 rounded-xl border border-gray-200 hover:border-brand-400 hover:bg-brand-50/50 transition flex items-center justify-between group bg-white shadow-2xs">
-                <div class="flex items-center gap-3 pr-2">
-                    <i id="status-icon-b4-t2" data-lucide="circle" class="w-4 h-4 text-gray-300 flex-shrink-0"></i>
-                    <div>
-                        <h5 class="text-xs sm:text-sm font-semibold text-gray-800 group-hover:text-brand-900">Volume e Capacidade</h5>
-                        <span class="text-[11px] text-gray-400">BNCC: EF08MA17 &bull; 5 questões</span>
-                    </div>
-                </div>
-                <i data-lucide="chevron-right" class="w-4 h-4 text-gray-300 group-hover:text-brand-600 flex-shrink-0"></i>
-            </a>
-        
-            <a href="./bloco-4-medidas-e-estatistica/probabilidade.html" class="p-3 rounded-xl border border-gray-200 hover:border-brand-400 hover:bg-brand-50/50 transition flex items-center justify-between group bg-white shadow-2xs">
-                <div class="flex items-center gap-3 pr-2">
-                    <i id="status-icon-b4-t3" data-lucide="circle" class="w-4 h-4 text-gray-300 flex-shrink-0"></i>
-                    <div>
-                        <h5 class="text-xs sm:text-sm font-semibold text-gray-800 group-hover:text-brand-900">Probabilidade</h5>
-                        <span class="text-[11px] text-gray-400">BNCC: EF07MA28 &bull; 5 questões</span>
-                    </div>
-                </div>
-                <i data-lucide="chevron-right" class="w-4 h-4 text-gray-300 group-hover:text-brand-600 flex-shrink-0"></i>
-            </a>
-        
-            <a href="./bloco-4-medidas-e-estatistica/estatistica-basica.html" class="p-3 rounded-xl border border-gray-200 hover:border-brand-400 hover:bg-brand-50/50 transition flex items-center justify-between group bg-white shadow-2xs">
-                <div class="flex items-center gap-3 pr-2">
-                    <i id="status-icon-b4-t4" data-lucide="circle" class="w-4 h-4 text-gray-300 flex-shrink-0"></i>
-                    <div>
-                        <h5 class="text-xs sm:text-sm font-semibold text-gray-800 group-hover:text-brand-900">Estatística Básica</h5>
-                        <span class="text-[11px] text-gray-400">BNCC: EF08MA22 &bull; 5 questões</span>
-                    </div>
-                </div>
-                <i data-lucide="chevron-right" class="w-4 h-4 text-gray-300 group-hover:text-brand-600 flex-shrink-0"></i>
-            </a>
-        
-            </div>
-        </div>
-    
-        <div class="bg-white border border-gray-200 rounded-2xl p-6 shadow-sm mb-6">
-            <div class="flex items-center justify-between mb-4 border-b border-gray-100 pb-3">
-                <div class="flex items-center gap-2.5">
-                    <div class="w-8 h-8 bg-brand-100 text-brand-800 rounded-lg flex items-center justify-center font-bold">
-                        <i data-lucide="file-text" class="w-4 h-4 text-brand-700"></i>
-                    </div>
-                    <h4 class="font-bold text-gray-900 text-base sm:text-lg">Bloco 5: Provas Anteriores IFSC</h4>
-                </div>
-                <a href="./bloco-5-provas-ifsc/index.html" class="text-xs text-brand-700 hover:text-brand-900 font-semibold flex items-center gap-1">
-                    Ver Bloco <i data-lucide="arrow-right" class="w-3 h-3"></i>
+                    <i data-lucide="chevron-right" class="w-4 h-4 text-gray-300 group-hover:text-brand-600 flex-shrink-0"></i>
                 </a>
-            </div>
-            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3">
-                
-            <a href="./bloco-5-provas-ifsc/prova-ifsc-20171.html" class="p-3 rounded-xl border border-gray-200 hover:border-brand-400 hover:bg-brand-50/50 transition flex items-center justify-between group bg-white shadow-2xs">
-                <div class="flex items-center gap-3 pr-2">
-                    <i id="status-icon-ifsc-2017-1-matematica" data-lucide="circle" class="w-4 h-4 text-gray-300 flex-shrink-0"></i>
-                    <div>
-                        <h5 class="text-xs sm:text-sm font-semibold text-gray-800 group-hover:text-brand-900">Prova IFSC 2017.1</h5>
-                        <span class="text-[11px] text-gray-400">BNCC: Revisão Geral &bull; 10 questões</span>
+            
+                <a href="./bloco-1-numeros/porcentagem-e-financas.html" class="group p-3 rounded-xl border border-gray-100 hover:border-brand-300 hover:bg-brand-50/50 transition flex items-center justify-between bg-white">
+                    <div class="flex items-center gap-2.5 min-w-0">
+                        <span class="text-xs font-bold text-gray-400 group-hover:text-brand-700 flex-shrink-0">06.</span>
+                        <span class="text-xs sm:text-sm font-semibold text-gray-800 group-hover:text-brand-900 truncate">Porcentagem e Finanças</span>
                     </div>
-                </div>
-                <i data-lucide="chevron-right" class="w-4 h-4 text-gray-300 group-hover:text-brand-600 flex-shrink-0"></i>
-            </a>
-        
-            <a href="./bloco-5-provas-ifsc/prova-ifsc-20172.html" class="p-3 rounded-xl border border-gray-200 hover:border-brand-400 hover:bg-brand-50/50 transition flex items-center justify-between group bg-white shadow-2xs">
-                <div class="flex items-center gap-3 pr-2">
-                    <i id="status-icon-ifsc-2017-2-matematica" data-lucide="circle" class="w-4 h-4 text-gray-300 flex-shrink-0"></i>
-                    <div>
-                        <h5 class="text-xs sm:text-sm font-semibold text-gray-800 group-hover:text-brand-900">Prova IFSC 2017.2</h5>
-                        <span class="text-[11px] text-gray-400">BNCC: Revisão Geral &bull; 10 questões</span>
-                    </div>
-                </div>
-                <i data-lucide="chevron-right" class="w-4 h-4 text-gray-300 group-hover:text-brand-600 flex-shrink-0"></i>
-            </a>
-        
-            <a href="./bloco-5-provas-ifsc/prova-ifsc-20181.html" class="p-3 rounded-xl border border-gray-200 hover:border-brand-400 hover:bg-brand-50/50 transition flex items-center justify-between group bg-white shadow-2xs">
-                <div class="flex items-center gap-3 pr-2">
-                    <i id="status-icon-ifsc-2018-1-matematica" data-lucide="circle" class="w-4 h-4 text-gray-300 flex-shrink-0"></i>
-                    <div>
-                        <h5 class="text-xs sm:text-sm font-semibold text-gray-800 group-hover:text-brand-900">Prova IFSC 2018.1</h5>
-                        <span class="text-[11px] text-gray-400">BNCC: Revisão Geral &bull; 10 questões</span>
-                    </div>
-                </div>
-                <i data-lucide="chevron-right" class="w-4 h-4 text-gray-300 group-hover:text-brand-600 flex-shrink-0"></i>
-            </a>
-        
-            <a href="./bloco-5-provas-ifsc/prova-ifsc-20182.html" class="p-3 rounded-xl border border-gray-200 hover:border-brand-400 hover:bg-brand-50/50 transition flex items-center justify-between group bg-white shadow-2xs">
-                <div class="flex items-center gap-3 pr-2">
-                    <i id="status-icon-ifsc-2018-2-matematica" data-lucide="circle" class="w-4 h-4 text-gray-300 flex-shrink-0"></i>
-                    <div>
-                        <h5 class="text-xs sm:text-sm font-semibold text-gray-800 group-hover:text-brand-900">Prova IFSC 2018.2</h5>
-                        <span class="text-[11px] text-gray-400">BNCC: Revisão Geral &bull; 10 questões</span>
-                    </div>
-                </div>
-                <i data-lucide="chevron-right" class="w-4 h-4 text-gray-300 group-hover:text-brand-600 flex-shrink-0"></i>
-            </a>
-        
-            <a href="./bloco-5-provas-ifsc/prova-ifsc-20191.html" class="p-3 rounded-xl border border-gray-200 hover:border-brand-400 hover:bg-brand-50/50 transition flex items-center justify-between group bg-white shadow-2xs">
-                <div class="flex items-center gap-3 pr-2">
-                    <i id="status-icon-ifsc-2019-1-matematica" data-lucide="circle" class="w-4 h-4 text-gray-300 flex-shrink-0"></i>
-                    <div>
-                        <h5 class="text-xs sm:text-sm font-semibold text-gray-800 group-hover:text-brand-900">Prova IFSC 2019.1</h5>
-                        <span class="text-[11px] text-gray-400">BNCC: Revisão Geral &bull; 10 questões</span>
-                    </div>
-                </div>
-                <i data-lucide="chevron-right" class="w-4 h-4 text-gray-300 group-hover:text-brand-600 flex-shrink-0"></i>
-            </a>
-        
-            <a href="./bloco-5-provas-ifsc/prova-ifsc-20192.html" class="p-3 rounded-xl border border-gray-200 hover:border-brand-400 hover:bg-brand-50/50 transition flex items-center justify-between group bg-white shadow-2xs">
-                <div class="flex items-center gap-3 pr-2">
-                    <i id="status-icon-ifsc-2019-2-matematica" data-lucide="circle" class="w-4 h-4 text-gray-300 flex-shrink-0"></i>
-                    <div>
-                        <h5 class="text-xs sm:text-sm font-semibold text-gray-800 group-hover:text-brand-900">Prova IFSC 2019.2</h5>
-                        <span class="text-[11px] text-gray-400">BNCC: Revisão Geral &bull; 10 questões</span>
-                    </div>
-                </div>
-                <i data-lucide="chevron-right" class="w-4 h-4 text-gray-300 group-hover:text-brand-600 flex-shrink-0"></i>
-            </a>
-        
-            <a href="./bloco-5-provas-ifsc/prova-ifsc-20201.html" class="p-3 rounded-xl border border-gray-200 hover:border-brand-400 hover:bg-brand-50/50 transition flex items-center justify-between group bg-white shadow-2xs">
-                <div class="flex items-center gap-3 pr-2">
-                    <i id="status-icon-ifsc-2020-1-matematica" data-lucide="circle" class="w-4 h-4 text-gray-300 flex-shrink-0"></i>
-                    <div>
-                        <h5 class="text-xs sm:text-sm font-semibold text-gray-800 group-hover:text-brand-900">Prova IFSC 2020.1</h5>
-                        <span class="text-[11px] text-gray-400">BNCC: Revisão Geral &bull; 10 questões</span>
-                    </div>
-                </div>
-                <i data-lucide="chevron-right" class="w-4 h-4 text-gray-300 group-hover:text-brand-600 flex-shrink-0"></i>
-            </a>
-        
-            <a href="./bloco-5-provas-ifsc/prova-ifsc-20221.html" class="p-3 rounded-xl border border-gray-200 hover:border-brand-400 hover:bg-brand-50/50 transition flex items-center justify-between group bg-white shadow-2xs">
-                <div class="flex items-center gap-3 pr-2">
-                    <i id="status-icon-ifsc-2022-1-matematica" data-lucide="circle" class="w-4 h-4 text-gray-300 flex-shrink-0"></i>
-                    <div>
-                        <h5 class="text-xs sm:text-sm font-semibold text-gray-800 group-hover:text-brand-900">Prova IFSC 2022.1</h5>
-                        <span class="text-[11px] text-gray-400">BNCC: Revisão Geral &bull; 10 questões</span>
-                    </div>
-                </div>
-                <i data-lucide="chevron-right" class="w-4 h-4 text-gray-300 group-hover:text-brand-600 flex-shrink-0"></i>
-            </a>
-        
-            <a href="./bloco-5-provas-ifsc/prova-ifsc-20222.html" class="p-3 rounded-xl border border-gray-200 hover:border-brand-400 hover:bg-brand-50/50 transition flex items-center justify-between group bg-white shadow-2xs">
-                <div class="flex items-center gap-3 pr-2">
-                    <i id="status-icon-ifsc-2022-2-matematica" data-lucide="circle" class="w-4 h-4 text-gray-300 flex-shrink-0"></i>
-                    <div>
-                        <h5 class="text-xs sm:text-sm font-semibold text-gray-800 group-hover:text-brand-900">Prova IFSC 2022.2</h5>
-                        <span class="text-[11px] text-gray-400">BNCC: Revisão Geral &bull; 10 questões</span>
-                    </div>
-                </div>
-                <i data-lucide="chevron-right" class="w-4 h-4 text-gray-300 group-hover:text-brand-600 flex-shrink-0"></i>
-            </a>
-        
-            <a href="./bloco-5-provas-ifsc/prova-ifsc-20232.html" class="p-3 rounded-xl border border-gray-200 hover:border-brand-400 hover:bg-brand-50/50 transition flex items-center justify-between group bg-white shadow-2xs">
-                <div class="flex items-center gap-3 pr-2">
-                    <i id="status-icon-ifsc-2023-2-matematica" data-lucide="circle" class="w-4 h-4 text-gray-300 flex-shrink-0"></i>
-                    <div>
-                        <h5 class="text-xs sm:text-sm font-semibold text-gray-800 group-hover:text-brand-900">Prova IFSC 2023.2</h5>
-                        <span class="text-[11px] text-gray-400">BNCC: Revisão Geral &bull; 10 questões</span>
-                    </div>
-                </div>
-                <i data-lucide="chevron-right" class="w-4 h-4 text-gray-300 group-hover:text-brand-600 flex-shrink-0"></i>
-            </a>
-        
-            <a href="./bloco-5-provas-ifsc/prova-ifsc-20241.html" class="p-3 rounded-xl border border-gray-200 hover:border-brand-400 hover:bg-brand-50/50 transition flex items-center justify-between group bg-white shadow-2xs">
-                <div class="flex items-center gap-3 pr-2">
-                    <i id="status-icon-ifsc-2024-1-matematica" data-lucide="circle" class="w-4 h-4 text-gray-300 flex-shrink-0"></i>
-                    <div>
-                        <h5 class="text-xs sm:text-sm font-semibold text-gray-800 group-hover:text-brand-900">Prova IFSC 2024.1</h5>
-                        <span class="text-[11px] text-gray-400">BNCC: Revisão Geral &bull; 8 questões</span>
-                    </div>
-                </div>
-                <i data-lucide="chevron-right" class="w-4 h-4 text-gray-300 group-hover:text-brand-600 flex-shrink-0"></i>
-            </a>
-        
-            <a href="./bloco-5-provas-ifsc/prova-ifsc-20242.html" class="p-3 rounded-xl border border-gray-200 hover:border-brand-400 hover:bg-brand-50/50 transition flex items-center justify-between group bg-white shadow-2xs">
-                <div class="flex items-center gap-3 pr-2">
-                    <i id="status-icon-ifsc-2024-2-matematica" data-lucide="circle" class="w-4 h-4 text-gray-300 flex-shrink-0"></i>
-                    <div>
-                        <h5 class="text-xs sm:text-sm font-semibold text-gray-800 group-hover:text-brand-900">Prova IFSC 2024.2</h5>
-                        <span class="text-[11px] text-gray-400">BNCC: Revisão Geral &bull; 7 questões</span>
-                    </div>
-                </div>
-                <i data-lucide="chevron-right" class="w-4 h-4 text-gray-300 group-hover:text-brand-600 flex-shrink-0"></i>
-            </a>
-        
-            <a href="./bloco-5-provas-ifsc/prova-ifsc-20251.html" class="p-3 rounded-xl border border-gray-200 hover:border-brand-400 hover:bg-brand-50/50 transition flex items-center justify-between group bg-white shadow-2xs">
-                <div class="flex items-center gap-3 pr-2">
-                    <i id="status-icon-ifsc-2025-1-matematica" data-lucide="circle" class="w-4 h-4 text-gray-300 flex-shrink-0"></i>
-                    <div>
-                        <h5 class="text-xs sm:text-sm font-semibold text-gray-800 group-hover:text-brand-900">Prova IFSC 2025.1</h5>
-                        <span class="text-[11px] text-gray-400">BNCC: Revisão Geral &bull; 7 questões</span>
-                    </div>
-                </div>
-                <i data-lucide="chevron-right" class="w-4 h-4 text-gray-300 group-hover:text-brand-600 flex-shrink-0"></i>
-            </a>
-        
-            <a href="./bloco-5-provas-ifsc/prova-ifsc-20252.html" class="p-3 rounded-xl border border-gray-200 hover:border-brand-400 hover:bg-brand-50/50 transition flex items-center justify-between group bg-white shadow-2xs">
-                <div class="flex items-center gap-3 pr-2">
-                    <i id="status-icon-ifsc-2025-2-matematica" data-lucide="circle" class="w-4 h-4 text-gray-300 flex-shrink-0"></i>
-                    <div>
-                        <h5 class="text-xs sm:text-sm font-semibold text-gray-800 group-hover:text-brand-900">Prova IFSC 2025.2</h5>
-                        <span class="text-[11px] text-gray-400">BNCC: Revisão Geral &bull; 7 questões</span>
-                    </div>
-                </div>
-                <i data-lucide="chevron-right" class="w-4 h-4 text-gray-300 group-hover:text-brand-600 flex-shrink-0"></i>
-            </a>
-        
-            <a href="./bloco-5-provas-ifsc/prova-ifsc-20261.html" class="p-3 rounded-xl border border-gray-200 hover:border-brand-400 hover:bg-brand-50/50 transition flex items-center justify-between group bg-white shadow-2xs">
-                <div class="flex items-center gap-3 pr-2">
-                    <i id="status-icon-ifsc-2026-1-matematica" data-lucide="circle" class="w-4 h-4 text-gray-300 flex-shrink-0"></i>
-                    <div>
-                        <h5 class="text-xs sm:text-sm font-semibold text-gray-800 group-hover:text-brand-900">Prova IFSC 2026.1</h5>
-                        <span class="text-[11px] text-gray-400">BNCC: Revisão Geral &bull; 7 questões</span>
-                    </div>
-                </div>
-                <i data-lucide="chevron-right" class="w-4 h-4 text-gray-300 group-hover:text-brand-600 flex-shrink-0"></i>
-            </a>
-        
-            <a href="./bloco-5-provas-ifsc/prova-ifsc-20262.html" class="p-3 rounded-xl border border-gray-200 hover:border-brand-400 hover:bg-brand-50/50 transition flex items-center justify-between group bg-white shadow-2xs">
-                <div class="flex items-center gap-3 pr-2">
-                    <i id="status-icon-ifsc-2026-2-matematica" data-lucide="circle" class="w-4 h-4 text-gray-300 flex-shrink-0"></i>
-                    <div>
-                        <h5 class="text-xs sm:text-sm font-semibold text-gray-800 group-hover:text-brand-900">Prova IFSC 2026.2</h5>
-                        <span class="text-[11px] text-gray-400">BNCC: Revisão Geral &bull; 7 questões</span>
-                    </div>
-                </div>
-                <i data-lucide="chevron-right" class="w-4 h-4 text-gray-300 group-hover:text-brand-600 flex-shrink-0"></i>
-            </a>
-        
-            </div>
-        </div>
-    
-        <div class="bg-white border border-gray-200 rounded-2xl p-6 shadow-sm mb-6">
-            <div class="flex items-center justify-between mb-4 border-b border-gray-100 pb-3">
-                <div class="flex items-center gap-2.5">
-                    <div class="w-8 h-8 bg-brand-100 text-brand-800 rounded-lg flex items-center justify-center font-bold">
-                        <i data-lucide="award" class="w-4 h-4 text-brand-700"></i>
-                    </div>
-                    <h4 class="font-bold text-gray-900 text-base sm:text-lg">Bloco 6: Provas Anteriores IFCE</h4>
-                </div>
-                <a href="./bloco-6-provas-ifce/index.html" class="text-xs text-brand-700 hover:text-brand-900 font-semibold flex items-center gap-1">
-                    Ver Bloco <i data-lucide="arrow-right" class="w-3 h-3"></i>
+                    <i data-lucide="chevron-right" class="w-4 h-4 text-gray-300 group-hover:text-brand-600 flex-shrink-0"></i>
                 </a>
+            
+                <a href="./bloco-1-numeros/notacao-cientifica-e-potencias.html" class="group p-3 rounded-xl border border-gray-100 hover:border-brand-300 hover:bg-brand-50/50 transition flex items-center justify-between bg-white">
+                    <div class="flex items-center gap-2.5 min-w-0">
+                        <span class="text-xs font-bold text-gray-400 group-hover:text-brand-700 flex-shrink-0">07.</span>
+                        <span class="text-xs sm:text-sm font-semibold text-gray-800 group-hover:text-brand-900 truncate">Notação Científica e Potências</span>
+                    </div>
+                    <i data-lucide="chevron-right" class="w-4 h-4 text-gray-300 group-hover:text-brand-600 flex-shrink-0"></i>
+                </a>
+            
+                </div>
             </div>
-            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3">
-                
-            <a href="./bloco-6-provas-ifce/prova-ifce-20252.html" class="p-3 rounded-xl border border-gray-200 hover:border-brand-400 hover:bg-brand-50/50 transition flex items-center justify-between group bg-white shadow-2xs">
-                <div class="flex items-center gap-3 pr-2">
-                    <i id="status-icon-ifce-2025-2-matematica" data-lucide="circle" class="w-4 h-4 text-gray-300 flex-shrink-0"></i>
-                    <div>
-                        <h5 class="text-xs sm:text-sm font-semibold text-gray-800 group-hover:text-brand-900">Prova IFCE 2025.2</h5>
-                        <span class="text-[11px] text-gray-400">BNCC: Revisão Geral &bull; 10 questões</span>
-                    </div>
-                </div>
-                <i data-lucide="chevron-right" class="w-4 h-4 text-gray-300 group-hover:text-brand-600 flex-shrink-0"></i>
-            </a>
         
-            <a href="./bloco-6-provas-ifce/prova-ifce-20251.html" class="p-3 rounded-xl border border-gray-200 hover:border-brand-400 hover:bg-brand-50/50 transition flex items-center justify-between group bg-white shadow-2xs">
-                <div class="flex items-center gap-3 pr-2">
-                    <i id="status-icon-ifce-2025-1-matematica" data-lucide="circle" class="w-4 h-4 text-gray-300 flex-shrink-0"></i>
-                    <div>
-                        <h5 class="text-xs sm:text-sm font-semibold text-gray-800 group-hover:text-brand-900">Prova IFCE 2025.1</h5>
-                        <span class="text-[11px] text-gray-400">BNCC: Revisão Geral &bull; 10 questões</span>
+            <div class="mb-8 bg-white border border-gray-200 rounded-2xl p-5 sm:p-6 shadow-sm">
+                <div class="flex flex-col sm:flex-row justify-between sm:items-center gap-2 mb-4 pb-3 border-b border-gray-100">
+                    <div class="flex items-center gap-3">
+                        <div class="w-8 h-8 rounded-lg bg-brand-100 text-brand-800 flex items-center justify-center font-bold text-sm">
+                            2
+                        </div>
+                        <h3 class="text-base sm:text-lg font-extrabold text-gray-900">Bloco 2: Álgebra</h3>
                     </div>
+                    <a href="./bloco-2-algebra/index.html" class="text-xs font-bold text-brand-700 hover:text-brand-800 flex items-center gap-1">
+                        Ver detalhes <i data-lucide="arrow-right" class="w-3.5 h-3.5"></i>
+                    </a>
                 </div>
-                <i data-lucide="chevron-right" class="w-4 h-4 text-gray-300 group-hover:text-brand-600 flex-shrink-0"></i>
-            </a>
-        
-            <a href="./bloco-6-provas-ifce/prova-ifce-20242.html" class="p-3 rounded-xl border border-gray-200 hover:border-brand-400 hover:bg-brand-50/50 transition flex items-center justify-between group bg-white shadow-2xs">
-                <div class="flex items-center gap-3 pr-2">
-                    <i id="status-icon-ifce-2024-2-matematica" data-lucide="circle" class="w-4 h-4 text-gray-300 flex-shrink-0"></i>
-                    <div>
-                        <h5 class="text-xs sm:text-sm font-semibold text-gray-800 group-hover:text-brand-900">Prova IFCE 2024.2</h5>
-                        <span class="text-[11px] text-gray-400">BNCC: Revisão Geral &bull; 10 questões</span>
+                <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-2.5">
+                    
+                <a href="./bloco-2-algebra/linguagem-algebrica.html" class="group p-3 rounded-xl border border-gray-100 hover:border-brand-300 hover:bg-brand-50/50 transition flex items-center justify-between bg-white">
+                    <div class="flex items-center gap-2.5 min-w-0">
+                        <span class="text-xs font-bold text-gray-400 group-hover:text-brand-700 flex-shrink-0">01.</span>
+                        <span class="text-xs sm:text-sm font-semibold text-gray-800 group-hover:text-brand-900 truncate">Linguagem Algébrica</span>
                     </div>
-                </div>
-                <i data-lucide="chevron-right" class="w-4 h-4 text-gray-300 group-hover:text-brand-600 flex-shrink-0"></i>
-            </a>
-        
-            <a href="./bloco-6-provas-ifce/prova-ifce-20241.html" class="p-3 rounded-xl border border-gray-200 hover:border-brand-400 hover:bg-brand-50/50 transition flex items-center justify-between group bg-white shadow-2xs">
-                <div class="flex items-center gap-3 pr-2">
-                    <i id="status-icon-ifce-2024-1-matematica" data-lucide="circle" class="w-4 h-4 text-gray-300 flex-shrink-0"></i>
-                    <div>
-                        <h5 class="text-xs sm:text-sm font-semibold text-gray-800 group-hover:text-brand-900">Prova IFCE 2024.1</h5>
-                        <span class="text-[11px] text-gray-400">BNCC: Revisão Geral &bull; 10 questões</span>
+                    <i data-lucide="chevron-right" class="w-4 h-4 text-gray-300 group-hover:text-brand-600 flex-shrink-0"></i>
+                </a>
+            
+                <a href="./bloco-2-algebra/grandezas-e-proporcoes.html" class="group p-3 rounded-xl border border-gray-100 hover:border-brand-300 hover:bg-brand-50/50 transition flex items-center justify-between bg-white">
+                    <div class="flex items-center gap-2.5 min-w-0">
+                        <span class="text-xs font-bold text-gray-400 group-hover:text-brand-700 flex-shrink-0">02.</span>
+                        <span class="text-xs sm:text-sm font-semibold text-gray-800 group-hover:text-brand-900 truncate">Grandezas e Proporções</span>
                     </div>
-                </div>
-                <i data-lucide="chevron-right" class="w-4 h-4 text-gray-300 group-hover:text-brand-600 flex-shrink-0"></i>
-            </a>
-        
-            <a href="./bloco-6-provas-ifce/prova-ifce-20231.html" class="p-3 rounded-xl border border-gray-200 hover:border-brand-400 hover:bg-brand-50/50 transition flex items-center justify-between group bg-white shadow-2xs">
-                <div class="flex items-center gap-3 pr-2">
-                    <i id="status-icon-ifce-2023-1-matematica" data-lucide="circle" class="w-4 h-4 text-gray-300 flex-shrink-0"></i>
-                    <div>
-                        <h5 class="text-xs sm:text-sm font-semibold text-gray-800 group-hover:text-brand-900">Prova IFCE 2023.1</h5>
-                        <span class="text-[11px] text-gray-400">BNCC: Revisão Geral &bull; 10 questões</span>
+                    <i data-lucide="chevron-right" class="w-4 h-4 text-gray-300 group-hover:text-brand-600 flex-shrink-0"></i>
+                </a>
+            
+                <a href="./bloco-2-algebra/equacoes-e-sistemas-do-1o-grau.html" class="group p-3 rounded-xl border border-gray-100 hover:border-brand-300 hover:bg-brand-50/50 transition flex items-center justify-between bg-white">
+                    <div class="flex items-center gap-2.5 min-w-0">
+                        <span class="text-xs font-bold text-gray-400 group-hover:text-brand-700 flex-shrink-0">03.</span>
+                        <span class="text-xs sm:text-sm font-semibold text-gray-800 group-hover:text-brand-900 truncate">Equações e Sistemas do 1º Grau</span>
                     </div>
+                    <i data-lucide="chevron-right" class="w-4 h-4 text-gray-300 group-hover:text-brand-600 flex-shrink-0"></i>
+                </a>
+            
+                <a href="./bloco-2-algebra/produtos-notaveis-e-fatoracao.html" class="group p-3 rounded-xl border border-gray-100 hover:border-brand-300 hover:bg-brand-50/50 transition flex items-center justify-between bg-white">
+                    <div class="flex items-center gap-2.5 min-w-0">
+                        <span class="text-xs font-bold text-gray-400 group-hover:text-brand-700 flex-shrink-0">04.</span>
+                        <span class="text-xs sm:text-sm font-semibold text-gray-800 group-hover:text-brand-900 truncate">Produtos Notáveis e Fatoração</span>
+                    </div>
+                    <i data-lucide="chevron-right" class="w-4 h-4 text-gray-300 group-hover:text-brand-600 flex-shrink-0"></i>
+                </a>
+            
+                <a href="./bloco-2-algebra/equacoes-do-2o-grau-e-funcoes.html" class="group p-3 rounded-xl border border-gray-100 hover:border-brand-300 hover:bg-brand-50/50 transition flex items-center justify-between bg-white">
+                    <div class="flex items-center gap-2.5 min-w-0">
+                        <span class="text-xs font-bold text-gray-400 group-hover:text-brand-700 flex-shrink-0">05.</span>
+                        <span class="text-xs sm:text-sm font-semibold text-gray-800 group-hover:text-brand-900 truncate">Equações do 2º Grau e Funções</span>
+                    </div>
+                    <i data-lucide="chevron-right" class="w-4 h-4 text-gray-300 group-hover:text-brand-600 flex-shrink-0"></i>
+                </a>
+            
                 </div>
-                <i data-lucide="chevron-right" class="w-4 h-4 text-gray-300 group-hover:text-brand-600 flex-shrink-0"></i>
-            </a>
-        
             </div>
-        </div>
-    
+        
+            <div class="mb-8 bg-white border border-gray-200 rounded-2xl p-5 sm:p-6 shadow-sm">
+                <div class="flex flex-col sm:flex-row justify-between sm:items-center gap-2 mb-4 pb-3 border-b border-gray-100">
+                    <div class="flex items-center gap-3">
+                        <div class="w-8 h-8 rounded-lg bg-brand-100 text-brand-800 flex items-center justify-center font-bold text-sm">
+                            3
+                        </div>
+                        <h3 class="text-base sm:text-lg font-extrabold text-gray-900">Bloco 3: Geometria</h3>
+                    </div>
+                    <a href="./bloco-3-geometria/index.html" class="text-xs font-bold text-brand-700 hover:text-brand-800 flex items-center gap-1">
+                        Ver detalhes <i data-lucide="arrow-right" class="w-3.5 h-3.5"></i>
+                    </a>
+                </div>
+                <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-2.5">
+                    
+                <a href="./bloco-3-geometria/angulos-triangulos-e-poligonos.html" class="group p-3 rounded-xl border border-gray-100 hover:border-brand-300 hover:bg-brand-50/50 transition flex items-center justify-between bg-white">
+                    <div class="flex items-center gap-2.5 min-w-0">
+                        <span class="text-xs font-bold text-gray-400 group-hover:text-brand-700 flex-shrink-0">01.</span>
+                        <span class="text-xs sm:text-sm font-semibold text-gray-800 group-hover:text-brand-900 truncate">Ângulos, Triângulos e Polígonos</span>
+                    </div>
+                    <i data-lucide="chevron-right" class="w-4 h-4 text-gray-300 group-hover:text-brand-600 flex-shrink-0"></i>
+                </a>
+            
+                <a href="./bloco-3-geometria/teorema-de-pitagoras-e-semelhanca.html" class="group p-3 rounded-xl border border-gray-100 hover:border-brand-300 hover:bg-brand-50/50 transition flex items-center justify-between bg-white">
+                    <div class="flex items-center gap-2.5 min-w-0">
+                        <span class="text-xs font-bold text-gray-400 group-hover:text-brand-700 flex-shrink-0">02.</span>
+                        <span class="text-xs sm:text-sm font-semibold text-gray-800 group-hover:text-brand-900 truncate">Teorema de Pitágoras e Semelhança</span>
+                    </div>
+                    <i data-lucide="chevron-right" class="w-4 h-4 text-gray-300 group-hover:text-brand-600 flex-shrink-0"></i>
+                </a>
+            
+                <a href="./bloco-3-geometria/circulo-e-circunferencia.html" class="group p-3 rounded-xl border border-gray-100 hover:border-brand-300 hover:bg-brand-50/50 transition flex items-center justify-between bg-white">
+                    <div class="flex items-center gap-2.5 min-w-0">
+                        <span class="text-xs font-bold text-gray-400 group-hover:text-brand-700 flex-shrink-0">03.</span>
+                        <span class="text-xs sm:text-sm font-semibold text-gray-800 group-hover:text-brand-900 truncate">Círculo e Circunferência</span>
+                    </div>
+                    <i data-lucide="chevron-right" class="w-4 h-4 text-gray-300 group-hover:text-brand-600 flex-shrink-0"></i>
+                </a>
+            
+                <a href="./bloco-3-geometria/solidos-e-vistas.html" class="group p-3 rounded-xl border border-gray-100 hover:border-brand-300 hover:bg-brand-50/50 transition flex items-center justify-between bg-white">
+                    <div class="flex items-center gap-2.5 min-w-0">
+                        <span class="text-xs font-bold text-gray-400 group-hover:text-brand-700 flex-shrink-0">04.</span>
+                        <span class="text-xs sm:text-sm font-semibold text-gray-800 group-hover:text-brand-900 truncate">Sólidos e Vistas</span>
+                    </div>
+                    <i data-lucide="chevron-right" class="w-4 h-4 text-gray-300 group-hover:text-brand-600 flex-shrink-0"></i>
+                </a>
+            
+                </div>
+            </div>
+        
+            <div class="mb-8 bg-white border border-gray-200 rounded-2xl p-5 sm:p-6 shadow-sm">
+                <div class="flex flex-col sm:flex-row justify-between sm:items-center gap-2 mb-4 pb-3 border-b border-gray-100">
+                    <div class="flex items-center gap-3">
+                        <div class="w-8 h-8 rounded-lg bg-brand-100 text-brand-800 flex items-center justify-center font-bold text-sm">
+                            4
+                        </div>
+                        <h3 class="text-base sm:text-lg font-extrabold text-gray-900">Bloco 4: Medidas e Estatística</h3>
+                    </div>
+                    <a href="./bloco-4-medidas-e-estatistica/index.html" class="text-xs font-bold text-brand-700 hover:text-brand-800 flex items-center gap-1">
+                        Ver detalhes <i data-lucide="arrow-right" class="w-3.5 h-3.5"></i>
+                    </a>
+                </div>
+                <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-2.5">
+                    
+                <a href="./bloco-4-medidas-e-estatistica/areas-de-figuras-planas.html" class="group p-3 rounded-xl border border-gray-100 hover:border-brand-300 hover:bg-brand-50/50 transition flex items-center justify-between bg-white">
+                    <div class="flex items-center gap-2.5 min-w-0">
+                        <span class="text-xs font-bold text-gray-400 group-hover:text-brand-700 flex-shrink-0">01.</span>
+                        <span class="text-xs sm:text-sm font-semibold text-gray-800 group-hover:text-brand-900 truncate">Áreas de Figuras Planas</span>
+                    </div>
+                    <i data-lucide="chevron-right" class="w-4 h-4 text-gray-300 group-hover:text-brand-600 flex-shrink-0"></i>
+                </a>
+            
+                <a href="./bloco-4-medidas-e-estatistica/volume-e-capacidade.html" class="group p-3 rounded-xl border border-gray-100 hover:border-brand-300 hover:bg-brand-50/50 transition flex items-center justify-between bg-white">
+                    <div class="flex items-center gap-2.5 min-w-0">
+                        <span class="text-xs font-bold text-gray-400 group-hover:text-brand-700 flex-shrink-0">02.</span>
+                        <span class="text-xs sm:text-sm font-semibold text-gray-800 group-hover:text-brand-900 truncate">Volume e Capacidade</span>
+                    </div>
+                    <i data-lucide="chevron-right" class="w-4 h-4 text-gray-300 group-hover:text-brand-600 flex-shrink-0"></i>
+                </a>
+            
+                <a href="./bloco-4-medidas-e-estatistica/probabilidade.html" class="group p-3 rounded-xl border border-gray-100 hover:border-brand-300 hover:bg-brand-50/50 transition flex items-center justify-between bg-white">
+                    <div class="flex items-center gap-2.5 min-w-0">
+                        <span class="text-xs font-bold text-gray-400 group-hover:text-brand-700 flex-shrink-0">03.</span>
+                        <span class="text-xs sm:text-sm font-semibold text-gray-800 group-hover:text-brand-900 truncate">Probabilidade</span>
+                    </div>
+                    <i data-lucide="chevron-right" class="w-4 h-4 text-gray-300 group-hover:text-brand-600 flex-shrink-0"></i>
+                </a>
+            
+                <a href="./bloco-4-medidas-e-estatistica/estatistica-basica.html" class="group p-3 rounded-xl border border-gray-100 hover:border-brand-300 hover:bg-brand-50/50 transition flex items-center justify-between bg-white">
+                    <div class="flex items-center gap-2.5 min-w-0">
+                        <span class="text-xs font-bold text-gray-400 group-hover:text-brand-700 flex-shrink-0">04.</span>
+                        <span class="text-xs sm:text-sm font-semibold text-gray-800 group-hover:text-brand-900 truncate">Estatística Básica</span>
+                    </div>
+                    <i data-lucide="chevron-right" class="w-4 h-4 text-gray-300 group-hover:text-brand-600 flex-shrink-0"></i>
+                </a>
+            
+                </div>
+            </div>
+        
+            <div class="mb-8 bg-white border border-gray-200 rounded-2xl p-5 sm:p-6 shadow-sm">
+                <div class="flex flex-col sm:flex-row justify-between sm:items-center gap-2 mb-4 pb-3 border-b border-gray-100">
+                    <div class="flex items-center gap-3">
+                        <div class="w-8 h-8 rounded-lg bg-brand-100 text-brand-800 flex items-center justify-center font-bold text-sm">
+                            5
+                        </div>
+                        <h3 class="text-base sm:text-lg font-extrabold text-gray-900">Bloco 5: Provas Anteriores IFSC</h3>
+                    </div>
+                    <a href="./bloco-5-provas-ifsc/index.html" class="text-xs font-bold text-brand-700 hover:text-brand-800 flex items-center gap-1">
+                        Ver detalhes <i data-lucide="arrow-right" class="w-3.5 h-3.5"></i>
+                    </a>
+                </div>
+                <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-2.5">
+                    
+                <a href="./bloco-5-provas-ifsc/prova-ifsc-20171.html" class="group p-3 rounded-xl border border-gray-100 hover:border-brand-300 hover:bg-brand-50/50 transition flex items-center justify-between bg-white">
+                    <div class="flex items-center gap-2.5 min-w-0">
+                        <span class="text-xs font-bold text-gray-400 group-hover:text-brand-700 flex-shrink-0">01.</span>
+                        <span class="text-xs sm:text-sm font-semibold text-gray-800 group-hover:text-brand-900 truncate">Prova IFSC 2017.1</span>
+                    </div>
+                    <i data-lucide="chevron-right" class="w-4 h-4 text-gray-300 group-hover:text-brand-600 flex-shrink-0"></i>
+                </a>
+            
+                <a href="./bloco-5-provas-ifsc/prova-ifsc-20172.html" class="group p-3 rounded-xl border border-gray-100 hover:border-brand-300 hover:bg-brand-50/50 transition flex items-center justify-between bg-white">
+                    <div class="flex items-center gap-2.5 min-w-0">
+                        <span class="text-xs font-bold text-gray-400 group-hover:text-brand-700 flex-shrink-0">02.</span>
+                        <span class="text-xs sm:text-sm font-semibold text-gray-800 group-hover:text-brand-900 truncate">Prova IFSC 2017.2</span>
+                    </div>
+                    <i data-lucide="chevron-right" class="w-4 h-4 text-gray-300 group-hover:text-brand-600 flex-shrink-0"></i>
+                </a>
+            
+                <a href="./bloco-5-provas-ifsc/prova-ifsc-20181.html" class="group p-3 rounded-xl border border-gray-100 hover:border-brand-300 hover:bg-brand-50/50 transition flex items-center justify-between bg-white">
+                    <div class="flex items-center gap-2.5 min-w-0">
+                        <span class="text-xs font-bold text-gray-400 group-hover:text-brand-700 flex-shrink-0">03.</span>
+                        <span class="text-xs sm:text-sm font-semibold text-gray-800 group-hover:text-brand-900 truncate">Prova IFSC 2018.1</span>
+                    </div>
+                    <i data-lucide="chevron-right" class="w-4 h-4 text-gray-300 group-hover:text-brand-600 flex-shrink-0"></i>
+                </a>
+            
+                <a href="./bloco-5-provas-ifsc/prova-ifsc-20182.html" class="group p-3 rounded-xl border border-gray-100 hover:border-brand-300 hover:bg-brand-50/50 transition flex items-center justify-between bg-white">
+                    <div class="flex items-center gap-2.5 min-w-0">
+                        <span class="text-xs font-bold text-gray-400 group-hover:text-brand-700 flex-shrink-0">04.</span>
+                        <span class="text-xs sm:text-sm font-semibold text-gray-800 group-hover:text-brand-900 truncate">Prova IFSC 2018.2</span>
+                    </div>
+                    <i data-lucide="chevron-right" class="w-4 h-4 text-gray-300 group-hover:text-brand-600 flex-shrink-0"></i>
+                </a>
+            
+                <a href="./bloco-5-provas-ifsc/prova-ifsc-20191.html" class="group p-3 rounded-xl border border-gray-100 hover:border-brand-300 hover:bg-brand-50/50 transition flex items-center justify-between bg-white">
+                    <div class="flex items-center gap-2.5 min-w-0">
+                        <span class="text-xs font-bold text-gray-400 group-hover:text-brand-700 flex-shrink-0">05.</span>
+                        <span class="text-xs sm:text-sm font-semibold text-gray-800 group-hover:text-brand-900 truncate">Prova IFSC 2019.1</span>
+                    </div>
+                    <i data-lucide="chevron-right" class="w-4 h-4 text-gray-300 group-hover:text-brand-600 flex-shrink-0"></i>
+                </a>
+            
+                <a href="./bloco-5-provas-ifsc/prova-ifsc-20192.html" class="group p-3 rounded-xl border border-gray-100 hover:border-brand-300 hover:bg-brand-50/50 transition flex items-center justify-between bg-white">
+                    <div class="flex items-center gap-2.5 min-w-0">
+                        <span class="text-xs font-bold text-gray-400 group-hover:text-brand-700 flex-shrink-0">06.</span>
+                        <span class="text-xs sm:text-sm font-semibold text-gray-800 group-hover:text-brand-900 truncate">Prova IFSC 2019.2</span>
+                    </div>
+                    <i data-lucide="chevron-right" class="w-4 h-4 text-gray-300 group-hover:text-brand-600 flex-shrink-0"></i>
+                </a>
+            
+                <a href="./bloco-5-provas-ifsc/prova-ifsc-20201.html" class="group p-3 rounded-xl border border-gray-100 hover:border-brand-300 hover:bg-brand-50/50 transition flex items-center justify-between bg-white">
+                    <div class="flex items-center gap-2.5 min-w-0">
+                        <span class="text-xs font-bold text-gray-400 group-hover:text-brand-700 flex-shrink-0">07.</span>
+                        <span class="text-xs sm:text-sm font-semibold text-gray-800 group-hover:text-brand-900 truncate">Prova IFSC 2020.1</span>
+                    </div>
+                    <i data-lucide="chevron-right" class="w-4 h-4 text-gray-300 group-hover:text-brand-600 flex-shrink-0"></i>
+                </a>
+            
+                <a href="./bloco-5-provas-ifsc/prova-ifsc-20221.html" class="group p-3 rounded-xl border border-gray-100 hover:border-brand-300 hover:bg-brand-50/50 transition flex items-center justify-between bg-white">
+                    <div class="flex items-center gap-2.5 min-w-0">
+                        <span class="text-xs font-bold text-gray-400 group-hover:text-brand-700 flex-shrink-0">08.</span>
+                        <span class="text-xs sm:text-sm font-semibold text-gray-800 group-hover:text-brand-900 truncate">Prova IFSC 2022.1</span>
+                    </div>
+                    <i data-lucide="chevron-right" class="w-4 h-4 text-gray-300 group-hover:text-brand-600 flex-shrink-0"></i>
+                </a>
+            
+                <a href="./bloco-5-provas-ifsc/prova-ifsc-20222.html" class="group p-3 rounded-xl border border-gray-100 hover:border-brand-300 hover:bg-brand-50/50 transition flex items-center justify-between bg-white">
+                    <div class="flex items-center gap-2.5 min-w-0">
+                        <span class="text-xs font-bold text-gray-400 group-hover:text-brand-700 flex-shrink-0">09.</span>
+                        <span class="text-xs sm:text-sm font-semibold text-gray-800 group-hover:text-brand-900 truncate">Prova IFSC 2022.2</span>
+                    </div>
+                    <i data-lucide="chevron-right" class="w-4 h-4 text-gray-300 group-hover:text-brand-600 flex-shrink-0"></i>
+                </a>
+            
+                <a href="./bloco-5-provas-ifsc/prova-ifsc-20232.html" class="group p-3 rounded-xl border border-gray-100 hover:border-brand-300 hover:bg-brand-50/50 transition flex items-center justify-between bg-white">
+                    <div class="flex items-center gap-2.5 min-w-0">
+                        <span class="text-xs font-bold text-gray-400 group-hover:text-brand-700 flex-shrink-0">10.</span>
+                        <span class="text-xs sm:text-sm font-semibold text-gray-800 group-hover:text-brand-900 truncate">Prova IFSC 2023.2</span>
+                    </div>
+                    <i data-lucide="chevron-right" class="w-4 h-4 text-gray-300 group-hover:text-brand-600 flex-shrink-0"></i>
+                </a>
+            
+                <a href="./bloco-5-provas-ifsc/prova-ifsc-20241.html" class="group p-3 rounded-xl border border-gray-100 hover:border-brand-300 hover:bg-brand-50/50 transition flex items-center justify-between bg-white">
+                    <div class="flex items-center gap-2.5 min-w-0">
+                        <span class="text-xs font-bold text-gray-400 group-hover:text-brand-700 flex-shrink-0">11.</span>
+                        <span class="text-xs sm:text-sm font-semibold text-gray-800 group-hover:text-brand-900 truncate">Prova IFSC 2024.1</span>
+                    </div>
+                    <i data-lucide="chevron-right" class="w-4 h-4 text-gray-300 group-hover:text-brand-600 flex-shrink-0"></i>
+                </a>
+            
+                <a href="./bloco-5-provas-ifsc/prova-ifsc-20242.html" class="group p-3 rounded-xl border border-gray-100 hover:border-brand-300 hover:bg-brand-50/50 transition flex items-center justify-between bg-white">
+                    <div class="flex items-center gap-2.5 min-w-0">
+                        <span class="text-xs font-bold text-gray-400 group-hover:text-brand-700 flex-shrink-0">12.</span>
+                        <span class="text-xs sm:text-sm font-semibold text-gray-800 group-hover:text-brand-900 truncate">Prova IFSC 2024.2</span>
+                    </div>
+                    <i data-lucide="chevron-right" class="w-4 h-4 text-gray-300 group-hover:text-brand-600 flex-shrink-0"></i>
+                </a>
+            
+                <a href="./bloco-5-provas-ifsc/prova-ifsc-20251.html" class="group p-3 rounded-xl border border-gray-100 hover:border-brand-300 hover:bg-brand-50/50 transition flex items-center justify-between bg-white">
+                    <div class="flex items-center gap-2.5 min-w-0">
+                        <span class="text-xs font-bold text-gray-400 group-hover:text-brand-700 flex-shrink-0">13.</span>
+                        <span class="text-xs sm:text-sm font-semibold text-gray-800 group-hover:text-brand-900 truncate">Prova IFSC 2025.1</span>
+                    </div>
+                    <i data-lucide="chevron-right" class="w-4 h-4 text-gray-300 group-hover:text-brand-600 flex-shrink-0"></i>
+                </a>
+            
+                <a href="./bloco-5-provas-ifsc/prova-ifsc-20252.html" class="group p-3 rounded-xl border border-gray-100 hover:border-brand-300 hover:bg-brand-50/50 transition flex items-center justify-between bg-white">
+                    <div class="flex items-center gap-2.5 min-w-0">
+                        <span class="text-xs font-bold text-gray-400 group-hover:text-brand-700 flex-shrink-0">14.</span>
+                        <span class="text-xs sm:text-sm font-semibold text-gray-800 group-hover:text-brand-900 truncate">Prova IFSC 2025.2</span>
+                    </div>
+                    <i data-lucide="chevron-right" class="w-4 h-4 text-gray-300 group-hover:text-brand-600 flex-shrink-0"></i>
+                </a>
+            
+                <a href="./bloco-5-provas-ifsc/prova-ifsc-20261.html" class="group p-3 rounded-xl border border-gray-100 hover:border-brand-300 hover:bg-brand-50/50 transition flex items-center justify-between bg-white">
+                    <div class="flex items-center gap-2.5 min-w-0">
+                        <span class="text-xs font-bold text-gray-400 group-hover:text-brand-700 flex-shrink-0">15.</span>
+                        <span class="text-xs sm:text-sm font-semibold text-gray-800 group-hover:text-brand-900 truncate">Prova IFSC 2026.1</span>
+                    </div>
+                    <i data-lucide="chevron-right" class="w-4 h-4 text-gray-300 group-hover:text-brand-600 flex-shrink-0"></i>
+                </a>
+            
+                <a href="./bloco-5-provas-ifsc/prova-ifsc-20262.html" class="group p-3 rounded-xl border border-gray-100 hover:border-brand-300 hover:bg-brand-50/50 transition flex items-center justify-between bg-white">
+                    <div class="flex items-center gap-2.5 min-w-0">
+                        <span class="text-xs font-bold text-gray-400 group-hover:text-brand-700 flex-shrink-0">16.</span>
+                        <span class="text-xs sm:text-sm font-semibold text-gray-800 group-hover:text-brand-900 truncate">Prova IFSC 2026.2</span>
+                    </div>
+                    <i data-lucide="chevron-right" class="w-4 h-4 text-gray-300 group-hover:text-brand-600 flex-shrink-0"></i>
+                </a>
+            
+                </div>
+            </div>
+        
+            <div class="mb-8 bg-white border border-gray-200 rounded-2xl p-5 sm:p-6 shadow-sm">
+                <div class="flex flex-col sm:flex-row justify-between sm:items-center gap-2 mb-4 pb-3 border-b border-gray-100">
+                    <div class="flex items-center gap-3">
+                        <div class="w-8 h-8 rounded-lg bg-brand-100 text-brand-800 flex items-center justify-center font-bold text-sm">
+                            6
+                        </div>
+                        <h3 class="text-base sm:text-lg font-extrabold text-gray-900">Bloco 6: Provas Anteriores IFCE</h3>
+                    </div>
+                    <a href="./bloco-6-provas-ifce/index.html" class="text-xs font-bold text-brand-700 hover:text-brand-800 flex items-center gap-1">
+                        Ver detalhes <i data-lucide="arrow-right" class="w-3.5 h-3.5"></i>
+                    </a>
+                </div>
+                <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-2.5">
+                    
+                <a href="./bloco-6-provas-ifce/prova-ifce-20252.html" class="group p-3 rounded-xl border border-gray-100 hover:border-brand-300 hover:bg-brand-50/50 transition flex items-center justify-between bg-white">
+                    <div class="flex items-center gap-2.5 min-w-0">
+                        <span class="text-xs font-bold text-gray-400 group-hover:text-brand-700 flex-shrink-0">01.</span>
+                        <span class="text-xs sm:text-sm font-semibold text-gray-800 group-hover:text-brand-900 truncate">Prova IFCE 2025.2</span>
+                    </div>
+                    <i data-lucide="chevron-right" class="w-4 h-4 text-gray-300 group-hover:text-brand-600 flex-shrink-0"></i>
+                </a>
+            
+                <a href="./bloco-6-provas-ifce/prova-ifce-20251.html" class="group p-3 rounded-xl border border-gray-100 hover:border-brand-300 hover:bg-brand-50/50 transition flex items-center justify-between bg-white">
+                    <div class="flex items-center gap-2.5 min-w-0">
+                        <span class="text-xs font-bold text-gray-400 group-hover:text-brand-700 flex-shrink-0">02.</span>
+                        <span class="text-xs sm:text-sm font-semibold text-gray-800 group-hover:text-brand-900 truncate">Prova IFCE 2025.1</span>
+                    </div>
+                    <i data-lucide="chevron-right" class="w-4 h-4 text-gray-300 group-hover:text-brand-600 flex-shrink-0"></i>
+                </a>
+            
+                <a href="./bloco-6-provas-ifce/prova-ifce-20242.html" class="group p-3 rounded-xl border border-gray-100 hover:border-brand-300 hover:bg-brand-50/50 transition flex items-center justify-between bg-white">
+                    <div class="flex items-center gap-2.5 min-w-0">
+                        <span class="text-xs font-bold text-gray-400 group-hover:text-brand-700 flex-shrink-0">03.</span>
+                        <span class="text-xs sm:text-sm font-semibold text-gray-800 group-hover:text-brand-900 truncate">Prova IFCE 2024.2</span>
+                    </div>
+                    <i data-lucide="chevron-right" class="w-4 h-4 text-gray-300 group-hover:text-brand-600 flex-shrink-0"></i>
+                </a>
+            
+                <a href="./bloco-6-provas-ifce/prova-ifce-20241.html" class="group p-3 rounded-xl border border-gray-100 hover:border-brand-300 hover:bg-brand-50/50 transition flex items-center justify-between bg-white">
+                    <div class="flex items-center gap-2.5 min-w-0">
+                        <span class="text-xs font-bold text-gray-400 group-hover:text-brand-700 flex-shrink-0">04.</span>
+                        <span class="text-xs sm:text-sm font-semibold text-gray-800 group-hover:text-brand-900 truncate">Prova IFCE 2024.1</span>
+                    </div>
+                    <i data-lucide="chevron-right" class="w-4 h-4 text-gray-300 group-hover:text-brand-600 flex-shrink-0"></i>
+                </a>
+            
+                <a href="./bloco-6-provas-ifce/prova-ifce-20231.html" class="group p-3 rounded-xl border border-gray-100 hover:border-brand-300 hover:bg-brand-50/50 transition flex items-center justify-between bg-white">
+                    <div class="flex items-center gap-2.5 min-w-0">
+                        <span class="text-xs font-bold text-gray-400 group-hover:text-brand-700 flex-shrink-0">05.</span>
+                        <span class="text-xs sm:text-sm font-semibold text-gray-800 group-hover:text-brand-900 truncate">Prova IFCE 2023.1</span>
+                    </div>
+                    <i data-lucide="chevron-right" class="w-4 h-4 text-gray-300 group-hover:text-brand-600 flex-shrink-0"></i>
+                </a>
+            
+                <a href="./bloco-6-provas-ifce/prova-ifce-20222.html" class="group p-3 rounded-xl border border-gray-100 hover:border-brand-300 hover:bg-brand-50/50 transition flex items-center justify-between bg-white">
+                    <div class="flex items-center gap-2.5 min-w-0">
+                        <span class="text-xs font-bold text-gray-400 group-hover:text-brand-700 flex-shrink-0">06.</span>
+                        <span class="text-xs sm:text-sm font-semibold text-gray-800 group-hover:text-brand-900 truncate">Prova IFCE 2022.2</span>
+                    </div>
+                    <i data-lucide="chevron-right" class="w-4 h-4 text-gray-300 group-hover:text-brand-600 flex-shrink-0"></i>
+                </a>
+            
+                <a href="./bloco-6-provas-ifce/prova-ifce-20191.html" class="group p-3 rounded-xl border border-gray-100 hover:border-brand-300 hover:bg-brand-50/50 transition flex items-center justify-between bg-white">
+                    <div class="flex items-center gap-2.5 min-w-0">
+                        <span class="text-xs font-bold text-gray-400 group-hover:text-brand-700 flex-shrink-0">07.</span>
+                        <span class="text-xs sm:text-sm font-semibold text-gray-800 group-hover:text-brand-900 truncate">Prova IFCE 2019.1</span>
+                    </div>
+                    <i data-lucide="chevron-right" class="w-4 h-4 text-gray-300 group-hover:text-brand-600 flex-shrink-0"></i>
+                </a>
+            
+                <a href="./bloco-6-provas-ifce/prova-ifce-20102.html" class="group p-3 rounded-xl border border-gray-100 hover:border-brand-300 hover:bg-brand-50/50 transition flex items-center justify-between bg-white">
+                    <div class="flex items-center gap-2.5 min-w-0">
+                        <span class="text-xs font-bold text-gray-400 group-hover:text-brand-700 flex-shrink-0">08.</span>
+                        <span class="text-xs sm:text-sm font-semibold text-gray-800 group-hover:text-brand-900 truncate">Prova IFCE 2010.2</span>
+                    </div>
+                    <i data-lucide="chevron-right" class="w-4 h-4 text-gray-300 group-hover:text-brand-600 flex-shrink-0"></i>
+                </a>
+            
+                <a href="./bloco-6-provas-ifce/prova-ifce-20101.html" class="group p-3 rounded-xl border border-gray-100 hover:border-brand-300 hover:bg-brand-50/50 transition flex items-center justify-between bg-white">
+                    <div class="flex items-center gap-2.5 min-w-0">
+                        <span class="text-xs font-bold text-gray-400 group-hover:text-brand-700 flex-shrink-0">09.</span>
+                        <span class="text-xs sm:text-sm font-semibold text-gray-800 group-hover:text-brand-900 truncate">Prova IFCE 2010.1</span>
+                    </div>
+                    <i data-lucide="chevron-right" class="w-4 h-4 text-gray-300 group-hover:text-brand-600 flex-shrink-0"></i>
+                </a>
+            
+                <a href="./bloco-6-provas-ifce/prova-ifce-20092.html" class="group p-3 rounded-xl border border-gray-100 hover:border-brand-300 hover:bg-brand-50/50 transition flex items-center justify-between bg-white">
+                    <div class="flex items-center gap-2.5 min-w-0">
+                        <span class="text-xs font-bold text-gray-400 group-hover:text-brand-700 flex-shrink-0">10.</span>
+                        <span class="text-xs sm:text-sm font-semibold text-gray-800 group-hover:text-brand-900 truncate">Prova IFCE 2009.2</span>
+                    </div>
+                    <i data-lucide="chevron-right" class="w-4 h-4 text-gray-300 group-hover:text-brand-600 flex-shrink-0"></i>
+                </a>
+            
+                </div>
+            </div>
+        
         </section>
 
     </main>
@@ -1124,7 +1025,7 @@
                     <i data-lucide="book-open-check" class="w-5 h-5"></i> PartiuIF - Matemática
                 </div>
                 <p class="text-brand-200 text-xs leading-relaxed">
-                    Plataforma completa de revisão estruturada por subtópicos, teoria detalhada, fórmulas KaTeX e simulados com 21 provas oficiais do IFSC e IFCE.
+                    Plataforma completa de revisão estruturada por subtópicos, teoria detalhada, fórmulas KaTeX e simulados com 26 provas oficiais do IFSC e IFCE.
                 </p>
                 <div class="mt-4 inline-flex items-center gap-2 bg-brand-900/80 px-3 py-1.5 rounded-lg border border-brand-800 text-xs text-brand-300">
                     <i data-lucide="hard-drive" class="w-3.5 h-3.5"></i> Progresso salvo no seu navegador
@@ -1135,12 +1036,7 @@
                     <i data-lucide="layers" class="w-4 h-4 text-brand-400"></i> Eixos Temáticos
                 </h4>
                 <ul class="space-y-1.5 text-xs text-brand-200">
-                    <li><a href="./bloco-1-numeros/index.html" class="hover:text-white transition flex items-center gap-1">• Bloco 1: Números e Operações</a></li>
-                    <li><a href="./bloco-2-algebra/index.html" class="hover:text-white transition flex items-center gap-1">• Bloco 2: Álgebra e Funções</a></li>
-                    <li><a href="./bloco-3-geometria/index.html" class="hover:text-white transition flex items-center gap-1">• Bloco 3: Geometria Plana e Espacial</a></li>
-                    <li><a href="./bloco-4-medidas-e-estatistica/index.html" class="hover:text-white transition flex items-center gap-1">• Bloco 4: Medidas, Prob. e Estatística</a></li>
-                    <li><a href="./bloco-5-provas-ifsc/index.html" class="hover:text-white transition flex items-center gap-1">• Bloco 5: Provas Oficiais IFSC (2017-2026)</a></li>
-                    <li><a href="./bloco-6-provas-ifce/index.html" class="hover:text-white transition flex items-center gap-1">• Bloco 6: Provas Oficiais IFCE (2023-2025)</a></li>
+                    <li><a href="./bloco-1-numeros/index.html" class="hover:text-white transition flex items-center gap-1">• Bloco 1: Números e Operações</a></li><li><a href="./bloco-2-algebra/index.html" class="hover:text-white transition flex items-center gap-1">• Bloco 2: Álgebra</a></li><li><a href="./bloco-3-geometria/index.html" class="hover:text-white transition flex items-center gap-1">• Bloco 3: Geometria</a></li><li><a href="./bloco-4-medidas-e-estatistica/index.html" class="hover:text-white transition flex items-center gap-1">• Bloco 4: Medidas e Estatística</a></li><li><a href="./bloco-5-provas-ifsc/index.html" class="hover:text-white transition flex items-center gap-1">• Bloco 5: Provas Anteriores IFSC</a></li><li><a href="./bloco-6-provas-ifce/index.html" class="hover:text-white transition flex items-center gap-1">• Bloco 6: Provas Anteriores IFCE</a></li>
                 </ul>
             </div>
             <div>
@@ -1162,70 +1058,10 @@
         </div>
     </footer>
 
-    <!-- Scripts da Aplicação -->
+    <!-- Scripts Globais da Aplicação -->
     <script src="./assets/js/data.js"></script>
     <script src="./assets/js/app.js"></script>
 
 
-    <!-- Script de Busca Rápida -->
-    <script>
-        document.addEventListener('DOMContentLoaded', () => {
-            updateGlobalProgress();
-
-            const searchInput = document.getElementById('topic-search-input');
-            const searchResults = document.getElementById('search-results-container');
-
-            if (searchInput && searchResults && window.mathData) {
-                const allTopicsList = [];
-                for (let bId in mathData) {
-                    const block = mathData[bId];
-                    block.topics.forEach(t => {
-                        allTopicsList.push({
-                            id: t.id,
-                            title: t.title,
-                            bncc: t.bncc || '',
-                            summary: t.summary || '',
-                            folder: t.folder,
-                            filename: t.filename,
-                            blockTitle: block.title
-                        });
-                    });
-                }
-
-                searchInput.addEventListener('input', (e) => {
-                    const query = e.target.value.toLowerCase().trim();
-                    if (!query) {
-                        searchResults.classList.add('hidden');
-                        searchResults.innerHTML = '';
-                        return;
-                    }
-
-                    const filtered = allTopicsList.filter(t => 
-                        t.title.toLowerCase().includes(query) || 
-                        t.bncc.toLowerCase().includes(query) || 
-                        t.summary.toLowerCase().includes(query) ||
-                        t.blockTitle.toLowerCase().includes(query)
-                    );
-
-                    if (filtered.length === 0) {
-                        searchResults.classList.remove('hidden');
-                        searchResults.innerHTML = '<div class="col-span-full p-4 text-center text-xs text-gray-500 bg-gray-50 rounded-xl">Nenhum subtópico encontrado com esse termo.</div>';
-                    } else {
-                        searchResults.classList.remove('hidden');
-                        searchResults.innerHTML = filtered.map(t => `
-                            <a href="./${t.folder}/${t.filename}" class="p-3 rounded-xl border border-brand-200 hover:border-brand-500 bg-brand-50/40 hover:bg-brand-50 transition flex items-center justify-between group">
-                                <div>
-                                    <span class="text-[10px] font-bold text-brand-700 uppercase block">${t.blockTitle}</span>
-                                    <strong class="text-xs sm:text-sm font-semibold text-gray-900 group-hover:text-brand-900">${t.title}</strong>
-                                </div>
-                                <i data-lucide="arrow-right" class="w-4 h-4 text-brand-600 flex-shrink-0"></i>
-                            </a>
-                        `).join('');
-                        if (window.lucide) lucide.createIcons();
-                    }
-                });
-            }
-        });
-    </script>
 </body>
 </html>

@@ -114,93 +114,95 @@
     </header>
 
 
-    <main class="flex-grow max-w-7xl w-full mx-auto px-4 sm:px-6 lg:px-8 py-8">
-        
+    <main class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 flex-grow">
         <!-- Breadcrumbs -->
-        <nav class="flex items-center gap-2 text-xs sm:text-sm text-gray-500 mb-6 flex-wrap">
-            <a href="../index.html" class="hover:text-brand-700 flex items-center gap-1"><i data-lucide="home" class="w-3.5 h-3.5"></i> Início</a>
-            <span class="text-gray-300">/</span>
-            <a href="./index.html" class="hover:text-brand-700">Bloco 5: Provas Anteriores IFSC</a>
-            <span class="text-gray-300">/</span>
-            <span class="text-gray-800 font-semibold">Prova IFSC 2025.2</span>
+        <nav class="flex text-xs font-medium text-gray-500 mb-6" aria-label="Breadcrumb">
+            <ol class="inline-flex items-center space-x-1 sm:space-x-2">
+                <li><a href="../index.html" class="hover:text-brand-700 flex items-center gap-1"><i data-lucide="home" class="w-3.5 h-3.5"></i> Início</a></li>
+                <li><span class="text-gray-400">/</span></li>
+                <li><a href="./index.html" class="hover:text-brand-700">Bloco 5: Provas Anteriores IFSC</a></li>
+                <li><span class="text-gray-400">/</span></li>
+                <li class="text-gray-800 font-semibold truncate max-w-xs sm:max-w-none">Prova IFSC 2025.2</li>
+            </ol>
         </nav>
 
-        <!-- Cabeçalho do Subtópico -->
-        <div class="bg-white rounded-2xl p-6 sm:p-8 shadow-sm mb-8 border border-gray-200 flex flex-col md:flex-row justify-between md:items-center gap-4">
-            <div>
-                <div class="flex items-center gap-2 mb-2">
-                    <span class="bg-brand-100 text-brand-800 text-xs font-bold px-3 py-1 rounded-full border border-brand-200">
-                        BNCC: Revisão Geral
-                    </span>
-                    <span class="text-xs text-gray-500 font-medium">Subtópico 014 de 016</span>
-                </div>
-                <h1 class="text-2xl sm:text-3xl font-extrabold text-gray-900">Prova IFSC 2025.2</h1>
-                <p class="text-gray-600 text-sm sm:text-base mt-2 max-w-3xl leading-relaxed">7 questões de Matemática aplicadas no Exame de Classificação 2025.2 do IFSC para Cursos Técnicos Integrados.</p>
-            </div>
+        <div class="grid grid-cols-1 lg:grid-cols-4 gap-8 items-start">
             
-            <div class="flex flex-col sm:flex-row md:flex-col lg:flex-row items-start sm:items-center gap-3">
+            <!-- Conteúdo Principal (3 Colunas) -->
+            <div class="lg:col-span-3 space-y-8">
                 
-                <a href="../provas/ifsc/2025-2 EC INT PROVA TITULAR - IFSC.pdf" download class="bg-brand-700 hover:bg-brand-800 text-white font-semibold px-4 py-2 rounded-xl text-sm transition flex items-center gap-2 shadow-sm">
-                    <i data-lucide="file-down" class="w-4 h-4"></i> Baixar Prova Oficial (PDF)
-                </a>
-            
-                <button id="btn-toggle-done-ifsc-2025-2-matematica" onclick="toggleTopicDone('ifsc-2025-2-matematica')" class="px-4 py-2 rounded-xl text-sm font-semibold border bg-white text-gray-700 border-gray-300 hover:bg-gray-50 transition flex items-center gap-2 shadow-sm">
-                    <i data-lucide="square" class="w-4 h-4 text-gray-400"></i> Marcar como Concluído
-                </button>
-            </div>
-        </div>
-
-        <!-- Layout de Conteúdo: 2 Colunas de Estudo + 1 Coluna Lateral -->
-        <div class="grid grid-cols-1 lg:grid-cols-3 gap-8">
-            
-            <!-- Coluna Principal de Estudos (2 Colunas) -->
-            <div class="lg:col-span-2 space-y-8">
-                
-                <!-- 1. Teoria e Dicas -->
-                <section class="bg-white border border-gray-200 rounded-2xl p-6 sm:p-8 shadow-sm">
-                    <h2 class="text-xl font-bold text-gray-900 mb-4 flex items-center gap-2.5 text-brand-800">
-                        <i data-lucide="book-open" class="w-5 h-5 text-brand-600"></i> Teoria e Conceitos Chave
-                    </h2>
-                    <div class="text-gray-700 leading-relaxed text-sm sm:text-base mb-6 space-y-3">
-                        <p>O Exame 2025.2 traz questões interdisciplinares e contextualizadas: projeção quadrática de emissões de CO2 com substituição de variáveis, geração de energia solar fotovoltaica em telhados trapezoidais, critérios de divisibilidade (por 2, 3, 4 e 5) aplicados aos dígitos do CPF, análise combinatória e permutação simples de letras para nomes de asteroides descobertos por alunas da UFSC, conversão de fração de dia em horas, minutos e segundos para tempo de tela, impacto de microplásticos/glitter no meio ambiente e economia em dólares/reais com o Índice Big Mac.</p>
-                    </div>
-                    
-                    <div class="bg-brand-50/70 border border-brand-200 rounded-xl p-5">
-                        <h3 class="text-xs font-bold text-brand-900 uppercase tracking-wider mb-3 flex items-center gap-1.5">
-                            <i data-lucide="lightbulb" class="w-4 h-4 text-brand-600"></i> Dicas Essenciais para o Exame IF
-                        </h3>
-                        <ul class="space-y-2">
+                <!-- Cabeçalho do Subtópico -->
+                <div class="bg-white border border-gray-200 rounded-2xl p-6 sm:p-8 shadow-sm">
+                    <div class="flex flex-wrap items-center justify-between gap-3 mb-4">
+                        <span class="text-xs font-bold uppercase tracking-wider text-brand-800 bg-brand-100 px-3 py-1 rounded-full border border-brand-200">
+                            BNCC: Revisão Geral
+                        </span>
+                        <div class="flex items-center gap-2">
                             
-            <li class="flex items-start gap-2 text-xs sm:text-sm text-gray-700">
-                <i data-lucide="check" class="w-4 h-4 text-brand-600 flex-shrink-0 mt-0.5"></i>
-                <span>Para converter frações de horas em minutos e segundos, multiplique sucessivamente a parte decimal por 60.</span>
-            </li>
-        
-            <li class="flex items-start gap-2 text-xs sm:text-sm text-gray-700">
-                <i data-lucide="check" class="w-4 h-4 text-brand-600 flex-shrink-0 mt-0.5"></i>
-                <span>O número de anagramas de $n$ letras distintas é dado pelo fatorial $n!$.</span>
-            </li>
-        
-            <li class="flex items-start gap-2 text-xs sm:text-sm text-gray-700">
-                <i data-lucide="check" class="w-4 h-4 text-brand-600 flex-shrink-0 mt-0.5"></i>
-                <span>A área do trapézio é $A = \frac{(B+b)h}{2}$.</span>
-            </li>
-        
+                    <a href="../provas/ifsc/2025-2 EC INT PROVA TITULAR - IFSC.pdf" download class="bg-brand-700 hover:bg-brand-800 text-white font-semibold px-4 py-2 rounded-xl text-sm transition flex items-center gap-2 shadow-sm">
+                        <i data-lucide="download" class="w-4 h-4"></i> Baixar Prova em PDF
+                    </a>
+                
+                            <button id="btn-toggle-done-ifsc-2025-2-matematica" onclick="toggleTopicDone('ifsc-2025-2-matematica')" class="px-4 py-2 rounded-xl text-sm font-semibold border border-gray-300 hover:bg-gray-50 transition flex items-center gap-2 shadow-sm text-gray-700">
+                                <i data-lucide="square" class="w-4 h-4 text-gray-400"></i> Marcar como Concluído
+                            </button>
+                        </div>
+                    </div>
+
+                    <h1 class="text-2xl sm:text-4xl font-extrabold text-gray-900 tracking-tight mb-3">
+                        Prova IFSC 2025.2
+                    </h1>
+                    <p class="text-gray-600 text-sm sm:text-base leading-relaxed mb-6">
+                        7 questões de Matemática aplicadas no Exame de Classificação 2025.2 do IFSC para Cursos Técnicos Integrados.
+                    </p>
+
+                    <!-- Seção Teórica Detalhada -->
+                    <div class="bg-gray-50 border border-gray-200 rounded-xl p-5 mb-6">
+                        <h2 class="text-sm font-bold text-gray-900 uppercase tracking-wider mb-2 flex items-center gap-2">
+                            <i data-lucide="book-open" class="w-4 h-4 text-brand-600"></i> Teoria e Fundamentos Essenciais
+                        </h2>
+                        <div class="text-xs sm:text-sm text-gray-700 leading-relaxed space-y-2">
+                            <p>O Exame 2025.2 traz questões interdisciplinares e contextualizadas: projeção quadrática de emissões de CO2 com substituição de variáveis, geração de energia solar fotovoltaica em telhados trapezoidais, critérios de divisibilidade (por 2, 3, 4 e 5) aplicados aos dígitos do CPF, análise combinatória e permutação simples de letras para nomes de asteroides descobertos por alunas da UFSC, conversão de fração de dia em horas, minutos e segundos para tempo de tela, impacto de microplásticos/glitter no meio ambiente e economia em dólares/reais com o Índice Big Mac.</p>
+                        </div>
+                    </div>
+
+                    <!-- Pontos-Chave -->
+                    <div class="mb-6">
+                        <h3 class="text-xs font-bold text-gray-500 uppercase tracking-wider mb-3">Conceitos Mais Cobrados</h3>
+                        <ul class="grid grid-cols-1 sm:grid-cols-2 gap-2">
+                            
+                <li class="flex items-start gap-2 text-xs sm:text-sm text-gray-700">
+                    <i data-lucide="check" class="w-4 h-4 text-brand-600 flex-shrink-0 mt-0.5"></i>
+                    <span>Para converter frações de horas em minutos e segundos, multiplique sucessivamente a parte decimal por 60.</span>
+                </li>
+            
+                <li class="flex items-start gap-2 text-xs sm:text-sm text-gray-700">
+                    <i data-lucide="check" class="w-4 h-4 text-brand-600 flex-shrink-0 mt-0.5"></i>
+                    <span>O número de anagramas de $n$ letras distintas é dado pelo fatorial $n!$.</span>
+                </li>
+            
+                <li class="flex items-start gap-2 text-xs sm:text-sm text-gray-700">
+                    <i data-lucide="check" class="w-4 h-4 text-brand-600 flex-shrink-0 mt-0.5"></i>
+                    <span>A área do trapézio é $A = \frac{(B+b)h}{2}$.</span>
+                </li>
+            
                         </ul>
                     </div>
-                </section>
 
-                <!-- 2. Fórmulas Fundamentais -->
-                <section class="bg-brand-900 text-white rounded-2xl p-6 sm:p-8 shadow-md border border-brand-800">
-                    <h2 class="text-brand-300 text-xs font-bold uppercase tracking-wider mb-3 flex items-center gap-2">
-                        <i data-lucide="sigma" class="w-4 h-4"></i> Fórmulas e Relações Fundamentais
-                    </h2>
-                    <div class="text-lg sm:text-2xl text-center py-4 px-2 bg-brand-950/60 rounded-xl overflow-x-auto text-brand-100 font-mono border border-brand-800">
-                        $$A_{\text{trapézio}} = \frac{(B+b)h}{2}, \quad P_n = n!, \quad E(x) = ax^2 + bx + c$$
+                    <!-- Fórmulas KaTeX -->
+                    <div class="bg-brand-950 text-white rounded-xl p-5 shadow-inner">
+                        <div class="flex items-center justify-between mb-2">
+                            <span class="text-xs font-bold text-brand-300 uppercase tracking-wider flex items-center gap-1.5">
+                                <i data-lucide="sigma" class="w-4 h-4"></i> Fórmulas-Chave para a Prova
+                            </span>
+                        </div>
+                        <div class="text-sm sm:text-base font-mono overflow-x-auto py-2 text-center text-brand-100">
+                            $$A_{\text{trapézio}} = \frac{(B+b)h}{2}, \quad P_n = n!, \quad E(x) = ax^2 + bx + c$$
+                        </div>
                     </div>
-                </section>
+                </div>
 
-                <!-- 3. Exemplo Resolvido Passo a Passo -->
+                <!-- Exemplo Resolvido Passo a Passo -->
                 <section class="bg-emerald-50/60 border border-brand-200 rounded-2xl p-6 sm:p-8 shadow-sm">
                     <h2 class="text-lg font-bold text-brand-900 mb-3 flex items-center gap-2">
                         <i data-lucide="file-check-2" class="w-5 h-5 text-brand-700"></i> Exemplo Resolvido Passo a Passo
@@ -209,13 +211,12 @@
                         <p class="text-sm sm:text-base font-semibold text-gray-800 mb-3">Anagramas com as letras L, I, V, H, R (5 letras distintas).</p>
                         <div class="text-xs sm:text-sm text-gray-700 leading-relaxed whitespace-pre-line border-t border-gray-100 pt-3">
                             <strong class="text-brand-800 block mb-1">Resolução Detalhada:</strong>
-                            Permutação simples de 5 elementos:
-$P_5 = 5! = 5 \times 4 \times 3 \times 2 \times 1 = 120$ nomes possíveis.
+                            Permutação simples de 5 elementos:<br>$P_5 = 5! = 5 \times 4 \times 3 \times 2 \times 1 = 120$ nomes possíveis.
                         </div>
                     </div>
                 </section>
 
-                <!-- 4. Exercícios de Fixação / Questões da Prova -->
+                <!-- Exercícios de Fixação / Questões da Prova -->
                 <section class="bg-white border border-gray-200 rounded-2xl p-6 sm:p-8 shadow-sm">
                     <div class="flex items-center justify-between mb-6 pb-4 border-b border-gray-100">
                         <div>
@@ -230,425 +231,419 @@ $P_5 = 5! = 5 \times 4 \times 3 \times 2 \times 1 = 120$ nomes possíveis.
                     </div>
 
                     
-                <div class="mb-8 border-b border-gray-100 pb-6 last:border-0 last:pb-0" id="q-container-ifsc-2025-2-matematica-q0">
-                    <div class="flex items-center justify-between mb-2">
-                        <span class="text-xs font-bold uppercase tracking-wider text-brand-700 bg-brand-50 px-2.5 py-0.5 rounded-full border border-brand-100">Questão 1</span>
-                    </div>
-                    <p class="font-medium text-gray-800 mb-4 text-sm sm:text-base leading-relaxed">A emissão global de $CO_2$ é estimada pelo modelo $E(x) = 0{}05x^2 + 1{}2x + 25$, onde $x$ representa o número de anos após 2000. Segundo esse modelo, a emissão no ano de 2030 (em bilhões de toneladas) será de:</p>
-                    <div class="space-y-2 mb-4" id="opts-ifsc-2025-2-matematica-q0">
-                        
-                    <button onclick="selectOption('ifsc-2025-2-matematica-q0', 0)" id="btn-ifsc-2025-2-matematica-q0-0" class="w-full text-left p-3.5 rounded-xl border border-gray-200 hover:border-brand-400 hover:bg-brand-50/40 transition text-sm text-gray-700 flex items-center justify-between group">
-                        <span class="flex items-center gap-2"><strong class="text-brand-700 font-bold">A)</strong> $88$</span>
-                        <i data-lucide="circle" class="w-4 h-4 text-gray-300 opt-icon group-hover:text-brand-400 flex-shrink-0"></i>
-                    </button>
-                
-                    <button onclick="selectOption('ifsc-2025-2-matematica-q0', 1)" id="btn-ifsc-2025-2-matematica-q0-1" class="w-full text-left p-3.5 rounded-xl border border-gray-200 hover:border-brand-400 hover:bg-brand-50/40 transition text-sm text-gray-700 flex items-center justify-between group">
-                        <span class="flex items-center gap-2"><strong class="text-brand-700 font-bold">B)</strong> $91$</span>
-                        <i data-lucide="circle" class="w-4 h-4 text-gray-300 opt-icon group-hover:text-brand-400 flex-shrink-0"></i>
-                    </button>
-                
-                    <button onclick="selectOption('ifsc-2025-2-matematica-q0', 2)" id="btn-ifsc-2025-2-matematica-q0-2" class="w-full text-left p-3.5 rounded-xl border border-gray-200 hover:border-brand-400 hover:bg-brand-50/40 transition text-sm text-gray-700 flex items-center justify-between group">
-                        <span class="flex items-center gap-2"><strong class="text-brand-700 font-bold">C)</strong> $106$</span>
-                        <i data-lucide="circle" class="w-4 h-4 text-gray-300 opt-icon group-hover:text-brand-400 flex-shrink-0"></i>
-                    </button>
-                
-                    <button onclick="selectOption('ifsc-2025-2-matematica-q0', 3)" id="btn-ifsc-2025-2-matematica-q0-3" class="w-full text-left p-3.5 rounded-xl border border-gray-200 hover:border-brand-400 hover:bg-brand-50/40 transition text-sm text-gray-700 flex items-center justify-between group">
-                        <span class="flex items-center gap-2"><strong class="text-brand-700 font-bold">D)</strong> $110$</span>
-                        <i data-lucide="circle" class="w-4 h-4 text-gray-300 opt-icon group-hover:text-brand-400 flex-shrink-0"></i>
-                    </button>
-                
-                    <button onclick="selectOption('ifsc-2025-2-matematica-q0', 4)" id="btn-ifsc-2025-2-matematica-q0-4" class="w-full text-left p-3.5 rounded-xl border border-gray-200 hover:border-brand-400 hover:bg-brand-50/40 transition text-sm text-gray-700 flex items-center justify-between group">
-                        <span class="flex items-center gap-2"><strong class="text-brand-700 font-bold">E)</strong> $132$</span>
-                        <i data-lucide="circle" class="w-4 h-4 text-gray-300 opt-icon group-hover:text-brand-400 flex-shrink-0"></i>
-                    </button>
-                
-                    </div>
-                    <div class="flex items-center gap-3">
-                        <button id="submit-btn-ifsc-2025-2-matematica-q0" onclick="submitAnswer('5', 'ifsc-2025-2-matematica', 0)" class="bg-brand-600 hover:bg-brand-700 text-white px-4 py-2 rounded-lg text-sm font-semibold transition flex items-center gap-1.5 shadow-sm">
-                            <i data-lucide="send" class="w-4 h-4"></i> Enviar Resposta
+                    <div class="mb-8 border-b border-gray-100 pb-6 last:border-0 last:pb-0" id="q-container-ifsc-2025-2-matematica-q0">
+                        <div class="flex items-center justify-between mb-2">
+                            <span class="text-xs font-bold uppercase tracking-wider text-brand-700 bg-brand-50 px-2.5 py-0.5 rounded-full border border-brand-100">Questão 1</span>
+                        </div>
+                        <p class="font-medium text-gray-800 mb-4 text-sm sm:text-base leading-relaxed">A emissão global de $CO_2$ é estimada pelo modelo $E(x) = 0{}05x^2 + 1{}2x + 25$, onde $x$ representa o número de anos após 2000. Segundo esse modelo, a emissão no ano de 2030 (em bilhões de toneladas) será de:</p>
+                        <div class="space-y-2 mb-4" id="opts-ifsc-2025-2-matematica-q0">
+                            
+                        <button onclick="selectOption('ifsc-2025-2-matematica-q0', 0)" id="btn-ifsc-2025-2-matematica-q0-0" class="w-full text-left p-3.5 rounded-xl border border-gray-200 hover:border-brand-400 hover:bg-brand-50/40 transition text-sm text-gray-700 flex items-center justify-between group">
+                            <span class="flex items-center gap-2"><strong class="text-brand-700 font-bold">A)</strong> $88$</span>
+                            <i data-lucide="circle" class="w-4 h-4 text-gray-300 opt-icon group-hover:text-brand-400 flex-shrink-0"></i>
                         </button>
-                    </div>
-                    <div id="feedback-ifsc-2025-2-matematica-q0" class="hidden p-4 rounded-xl text-sm mt-4"></div>
-                </div>
-            
-                <div class="mb-8 border-b border-gray-100 pb-6 last:border-0 last:pb-0" id="q-container-ifsc-2025-2-matematica-q1">
-                    <div class="flex items-center justify-between mb-2">
-                        <span class="text-xs font-bold uppercase tracking-wider text-brand-700 bg-brand-50 px-2.5 py-0.5 rounded-full border border-brand-100">Questão 2</span>
-                    </div>
-                    <p class="font-medium text-gray-800 mb-4 text-sm sm:text-base leading-relaxed">A face do telhado de uma escola tem o formato de um trapézio isósceles com base maior de $12\text{ m}$, base menor de $8\text{ m}$ e altura de $5\text{ m}$. Sabendo que $80\%$ dessa área será ocupada por painéis solares e que cada $\text{m}^2$ de painel gera $1{}2\text{ kWh}$ por dia, a produção total estimada por dia é de:</p>
-                    <div class="space-y-2 mb-4" id="opts-ifsc-2025-2-matematica-q1">
-                        
-                    <button onclick="selectOption('ifsc-2025-2-matematica-q1', 0)" id="btn-ifsc-2025-2-matematica-q1-0" class="w-full text-left p-3.5 rounded-xl border border-gray-200 hover:border-brand-400 hover:bg-brand-50/40 transition text-sm text-gray-700 flex items-center justify-between group">
-                        <span class="flex items-center gap-2"><strong class="text-brand-700 font-bold">A)</strong> $36\text{ kWh}$</span>
-                        <i data-lucide="circle" class="w-4 h-4 text-gray-300 opt-icon group-hover:text-brand-400 flex-shrink-0"></i>
-                    </button>
-                
-                    <button onclick="selectOption('ifsc-2025-2-matematica-q1', 1)" id="btn-ifsc-2025-2-matematica-q1-1" class="w-full text-left p-3.5 rounded-xl border border-gray-200 hover:border-brand-400 hover:bg-brand-50/40 transition text-sm text-gray-700 flex items-center justify-between group">
-                        <span class="flex items-center gap-2"><strong class="text-brand-700 font-bold">B)</strong> $42\text{ kWh}$</span>
-                        <i data-lucide="circle" class="w-4 h-4 text-gray-300 opt-icon group-hover:text-brand-400 flex-shrink-0"></i>
-                    </button>
-                
-                    <button onclick="selectOption('ifsc-2025-2-matematica-q1', 2)" id="btn-ifsc-2025-2-matematica-q1-2" class="w-full text-left p-3.5 rounded-xl border border-gray-200 hover:border-brand-400 hover:bg-brand-50/40 transition text-sm text-gray-700 flex items-center justify-between group">
-                        <span class="flex items-center gap-2"><strong class="text-brand-700 font-bold">C)</strong> $48\text{ kWh}$</span>
-                        <i data-lucide="circle" class="w-4 h-4 text-gray-300 opt-icon group-hover:text-brand-400 flex-shrink-0"></i>
-                    </button>
-                
-                    <button onclick="selectOption('ifsc-2025-2-matematica-q1', 3)" id="btn-ifsc-2025-2-matematica-q1-3" class="w-full text-left p-3.5 rounded-xl border border-gray-200 hover:border-brand-400 hover:bg-brand-50/40 transition text-sm text-gray-700 flex items-center justify-between group">
-                        <span class="flex items-center gap-2"><strong class="text-brand-700 font-bold">D)</strong> $54\text{ kWh}$</span>
-                        <i data-lucide="circle" class="w-4 h-4 text-gray-300 opt-icon group-hover:text-brand-400 flex-shrink-0"></i>
-                    </button>
-                
-                    <button onclick="selectOption('ifsc-2025-2-matematica-q1', 4)" id="btn-ifsc-2025-2-matematica-q1-4" class="w-full text-left p-3.5 rounded-xl border border-gray-200 hover:border-brand-400 hover:bg-brand-50/40 transition text-sm text-gray-700 flex items-center justify-between group">
-                        <span class="flex items-center gap-2"><strong class="text-brand-700 font-bold">E)</strong> $60\text{ kWh}$</span>
-                        <i data-lucide="circle" class="w-4 h-4 text-gray-300 opt-icon group-hover:text-brand-400 flex-shrink-0"></i>
-                    </button>
-                
-                    </div>
-                    <div class="flex items-center gap-3">
-                        <button id="submit-btn-ifsc-2025-2-matematica-q1" onclick="submitAnswer('5', 'ifsc-2025-2-matematica', 1)" class="bg-brand-600 hover:bg-brand-700 text-white px-4 py-2 rounded-lg text-sm font-semibold transition flex items-center gap-1.5 shadow-sm">
-                            <i data-lucide="send" class="w-4 h-4"></i> Enviar Resposta
+                    
+                        <button onclick="selectOption('ifsc-2025-2-matematica-q0', 1)" id="btn-ifsc-2025-2-matematica-q0-1" class="w-full text-left p-3.5 rounded-xl border border-gray-200 hover:border-brand-400 hover:bg-brand-50/40 transition text-sm text-gray-700 flex items-center justify-between group">
+                            <span class="flex items-center gap-2"><strong class="text-brand-700 font-bold">B)</strong> $91$</span>
+                            <i data-lucide="circle" class="w-4 h-4 text-gray-300 opt-icon group-hover:text-brand-400 flex-shrink-0"></i>
                         </button>
-                    </div>
-                    <div id="feedback-ifsc-2025-2-matematica-q1" class="hidden p-4 rounded-xl text-sm mt-4"></div>
-                </div>
-            
-                <div class="mb-8 border-b border-gray-100 pb-6 last:border-0 last:pb-0" id="q-container-ifsc-2025-2-matematica-q2">
-                    <div class="flex items-center justify-between mb-2">
-                        <span class="text-xs font-bold uppercase tracking-wider text-brand-700 bg-brand-50 px-2.5 py-0.5 rounded-full border border-brand-100">Questão 3</span>
-                    </div>
-                    <p class="font-medium text-gray-800 mb-4 text-sm sm:text-base leading-relaxed">Alice analisou o número formado pelos 11 dígitos do seu CPF ($65.434.212.988$) e fez as seguintes afirmações:<br>I. É um número divisível por 2.<br>II. É um número divisível por 3.<br>III. É um número divisível por 4.<br>IV. Não é um número divisível por 5.<br>Assinale a alternativa CORRETA:</p>
-                    <div class="space-y-2 mb-4" id="opts-ifsc-2025-2-matematica-q2">
-                        
-                    <button onclick="selectOption('ifsc-2025-2-matematica-q2', 0)" id="btn-ifsc-2025-2-matematica-q2-0" class="w-full text-left p-3.5 rounded-xl border border-gray-200 hover:border-brand-400 hover:bg-brand-50/40 transition text-sm text-gray-700 flex items-center justify-between group">
-                        <span class="flex items-center gap-2"><strong class="text-brand-700 font-bold">A)</strong> Todos os itens estão corretos.</span>
-                        <i data-lucide="circle" class="w-4 h-4 text-gray-300 opt-icon group-hover:text-brand-400 flex-shrink-0"></i>
-                    </button>
-                
-                    <button onclick="selectOption('ifsc-2025-2-matematica-q2', 1)" id="btn-ifsc-2025-2-matematica-q2-1" class="w-full text-left p-3.5 rounded-xl border border-gray-200 hover:border-brand-400 hover:bg-brand-50/40 transition text-sm text-gray-700 flex items-center justify-between group">
-                        <span class="flex items-center gap-2"><strong class="text-brand-700 font-bold">B)</strong> Apenas os itens I, III e IV estão corretos.</span>
-                        <i data-lucide="circle" class="w-4 h-4 text-gray-300 opt-icon group-hover:text-brand-400 flex-shrink-0"></i>
-                    </button>
-                
-                    <button onclick="selectOption('ifsc-2025-2-matematica-q2', 2)" id="btn-ifsc-2025-2-matematica-q2-2" class="w-full text-left p-3.5 rounded-xl border border-gray-200 hover:border-brand-400 hover:bg-brand-50/40 transition text-sm text-gray-700 flex items-center justify-between group">
-                        <span class="flex items-center gap-2"><strong class="text-brand-700 font-bold">C)</strong> Apenas os itens I, II e III estão corretos.</span>
-                        <i data-lucide="circle" class="w-4 h-4 text-gray-300 opt-icon group-hover:text-brand-400 flex-shrink-0"></i>
-                    </button>
-                
-                    <button onclick="selectOption('ifsc-2025-2-matematica-q2', 3)" id="btn-ifsc-2025-2-matematica-q2-3" class="w-full text-left p-3.5 rounded-xl border border-gray-200 hover:border-brand-400 hover:bg-brand-50/40 transition text-sm text-gray-700 flex items-center justify-between group">
-                        <span class="flex items-center gap-2"><strong class="text-brand-700 font-bold">D)</strong> Apenas os itens I e II estão corretos.</span>
-                        <i data-lucide="circle" class="w-4 h-4 text-gray-300 opt-icon group-hover:text-brand-400 flex-shrink-0"></i>
-                    </button>
-                
-                    <button onclick="selectOption('ifsc-2025-2-matematica-q2', 4)" id="btn-ifsc-2025-2-matematica-q2-4" class="w-full text-left p-3.5 rounded-xl border border-gray-200 hover:border-brand-400 hover:bg-brand-50/40 transition text-sm text-gray-700 flex items-center justify-between group">
-                        <span class="flex items-center gap-2"><strong class="text-brand-700 font-bold">E)</strong> Apenas os itens I e III estão corretos.</span>
-                        <i data-lucide="circle" class="w-4 h-4 text-gray-300 opt-icon group-hover:text-brand-400 flex-shrink-0"></i>
-                    </button>
-                
-                    </div>
-                    <div class="flex items-center gap-3">
-                        <button id="submit-btn-ifsc-2025-2-matematica-q2" onclick="submitAnswer('5', 'ifsc-2025-2-matematica', 2)" class="bg-brand-600 hover:bg-brand-700 text-white px-4 py-2 rounded-lg text-sm font-semibold transition flex items-center gap-1.5 shadow-sm">
-                            <i data-lucide="send" class="w-4 h-4"></i> Enviar Resposta
+                    
+                        <button onclick="selectOption('ifsc-2025-2-matematica-q0', 2)" id="btn-ifsc-2025-2-matematica-q0-2" class="w-full text-left p-3.5 rounded-xl border border-gray-200 hover:border-brand-400 hover:bg-brand-50/40 transition text-sm text-gray-700 flex items-center justify-between group">
+                            <span class="flex items-center gap-2"><strong class="text-brand-700 font-bold">C)</strong> $106$</span>
+                            <i data-lucide="circle" class="w-4 h-4 text-gray-300 opt-icon group-hover:text-brand-400 flex-shrink-0"></i>
                         </button>
-                    </div>
-                    <div id="feedback-ifsc-2025-2-matematica-q2" class="hidden p-4 rounded-xl text-sm mt-4"></div>
-                </div>
-            
-                <div class="mb-8 border-b border-gray-100 pb-6 last:border-0 last:pb-0" id="q-container-ifsc-2025-2-matematica-q3">
-                    <div class="flex items-center justify-between mb-2">
-                        <span class="text-xs font-bold uppercase tracking-wider text-brand-700 bg-brand-50 px-2.5 py-0.5 rounded-full border border-brand-100">Questão 4</span>
-                    </div>
-                    <p class="font-medium text-gray-800 mb-4 text-sm sm:text-base leading-relaxed">Cientistas decidiram que o nome de um asteroide descoberto será formado por cinco caracteres distintos, composto exclusivamente pelas letras: L, I, V, H e R. O número total de opções de nomes possíveis que as cientistas possuem é:</p>
-                    <div class="space-y-2 mb-4" id="opts-ifsc-2025-2-matematica-q3">
-                        
-                    <button onclick="selectOption('ifsc-2025-2-matematica-q3', 0)" id="btn-ifsc-2025-2-matematica-q3-0" class="w-full text-left p-3.5 rounded-xl border border-gray-200 hover:border-brand-400 hover:bg-brand-50/40 transition text-sm text-gray-700 flex items-center justify-between group">
-                        <span class="flex items-center gap-2"><strong class="text-brand-700 font-bold">A)</strong> $5$</span>
-                        <i data-lucide="circle" class="w-4 h-4 text-gray-300 opt-icon group-hover:text-brand-400 flex-shrink-0"></i>
-                    </button>
-                
-                    <button onclick="selectOption('ifsc-2025-2-matematica-q3', 1)" id="btn-ifsc-2025-2-matematica-q3-1" class="w-full text-left p-3.5 rounded-xl border border-gray-200 hover:border-brand-400 hover:bg-brand-50/40 transition text-sm text-gray-700 flex items-center justify-between group">
-                        <span class="flex items-center gap-2"><strong class="text-brand-700 font-bold">B)</strong> $20$</span>
-                        <i data-lucide="circle" class="w-4 h-4 text-gray-300 opt-icon group-hover:text-brand-400 flex-shrink-0"></i>
-                    </button>
-                
-                    <button onclick="selectOption('ifsc-2025-2-matematica-q3', 2)" id="btn-ifsc-2025-2-matematica-q3-2" class="w-full text-left p-3.5 rounded-xl border border-gray-200 hover:border-brand-400 hover:bg-brand-50/40 transition text-sm text-gray-700 flex items-center justify-between group">
-                        <span class="flex items-center gap-2"><strong class="text-brand-700 font-bold">C)</strong> $80$</span>
-                        <i data-lucide="circle" class="w-4 h-4 text-gray-300 opt-icon group-hover:text-brand-400 flex-shrink-0"></i>
-                    </button>
-                
-                    <button onclick="selectOption('ifsc-2025-2-matematica-q3', 3)" id="btn-ifsc-2025-2-matematica-q3-3" class="w-full text-left p-3.5 rounded-xl border border-gray-200 hover:border-brand-400 hover:bg-brand-50/40 transition text-sm text-gray-700 flex items-center justify-between group">
-                        <span class="flex items-center gap-2"><strong class="text-brand-700 font-bold">D)</strong> $120$</span>
-                        <i data-lucide="circle" class="w-4 h-4 text-gray-300 opt-icon group-hover:text-brand-400 flex-shrink-0"></i>
-                    </button>
-                
-                    <button onclick="selectOption('ifsc-2025-2-matematica-q3', 4)" id="btn-ifsc-2025-2-matematica-q3-4" class="w-full text-left p-3.5 rounded-xl border border-gray-200 hover:border-brand-400 hover:bg-brand-50/40 transition text-sm text-gray-700 flex items-center justify-between group">
-                        <span class="flex items-center gap-2"><strong class="text-brand-700 font-bold">E)</strong> $3.125$</span>
-                        <i data-lucide="circle" class="w-4 h-4 text-gray-300 opt-icon group-hover:text-brand-400 flex-shrink-0"></i>
-                    </button>
-                
-                    </div>
-                    <div class="flex items-center gap-3">
-                        <button id="submit-btn-ifsc-2025-2-matematica-q3" onclick="submitAnswer('5', 'ifsc-2025-2-matematica', 3)" class="bg-brand-600 hover:bg-brand-700 text-white px-4 py-2 rounded-lg text-sm font-semibold transition flex items-center gap-1.5 shadow-sm">
-                            <i data-lucide="send" class="w-4 h-4"></i> Enviar Resposta
+                    
+                        <button onclick="selectOption('ifsc-2025-2-matematica-q0', 3)" id="btn-ifsc-2025-2-matematica-q0-3" class="w-full text-left p-3.5 rounded-xl border border-gray-200 hover:border-brand-400 hover:bg-brand-50/40 transition text-sm text-gray-700 flex items-center justify-between group">
+                            <span class="flex items-center gap-2"><strong class="text-brand-700 font-bold">D)</strong> $110$</span>
+                            <i data-lucide="circle" class="w-4 h-4 text-gray-300 opt-icon group-hover:text-brand-400 flex-shrink-0"></i>
                         </button>
-                    </div>
-                    <div id="feedback-ifsc-2025-2-matematica-q3" class="hidden p-4 rounded-xl text-sm mt-4"></div>
-                </div>
-            
-                <div class="mb-8 border-b border-gray-100 pb-6 last:border-0 last:pb-0" id="q-container-ifsc-2025-2-matematica-q4">
-                    <div class="flex items-center justify-between mb-2">
-                        <span class="text-xs font-bold uppercase tracking-wider text-brand-700 bg-brand-50 px-2.5 py-0.5 rounded-full border border-brand-100">Questão 5</span>
-                    </div>
-                    <p class="font-medium text-gray-800 mb-4 text-sm sm:text-base leading-relaxed">Uma pesquisa revelou que os brasileiros passam em média $56\%$ do dia em frente às telas de smartphones e computadores. O tempo médio diário correspondente é:</p>
-                    <div class="space-y-2 mb-4" id="opts-ifsc-2025-2-matematica-q4">
-                        
-                    <button onclick="selectOption('ifsc-2025-2-matematica-q4', 0)" id="btn-ifsc-2025-2-matematica-q4-0" class="w-full text-left p-3.5 rounded-xl border border-gray-200 hover:border-brand-400 hover:bg-brand-50/40 transition text-sm text-gray-700 flex items-center justify-between group">
-                        <span class="flex items-center gap-2"><strong class="text-brand-700 font-bold">A)</strong> $08\text{ horas}$</span>
-                        <i data-lucide="circle" class="w-4 h-4 text-gray-300 opt-icon group-hover:text-brand-400 flex-shrink-0"></i>
-                    </button>
-                
-                    <button onclick="selectOption('ifsc-2025-2-matematica-q4', 1)" id="btn-ifsc-2025-2-matematica-q4-1" class="w-full text-left p-3.5 rounded-xl border border-gray-200 hover:border-brand-400 hover:bg-brand-50/40 transition text-sm text-gray-700 flex items-center justify-between group">
-                        <span class="flex items-center gap-2"><strong class="text-brand-700 font-bold">B)</strong> $13\text{ horas} 04\text{ minutos e } 04\text{ segundos}$</span>
-                        <i data-lucide="circle" class="w-4 h-4 text-gray-300 opt-icon group-hover:text-brand-400 flex-shrink-0"></i>
-                    </button>
-                
-                    <button onclick="selectOption('ifsc-2025-2-matematica-q4', 2)" id="btn-ifsc-2025-2-matematica-q4-2" class="w-full text-left p-3.5 rounded-xl border border-gray-200 hover:border-brand-400 hover:bg-brand-50/40 transition text-sm text-gray-700 flex items-center justify-between group">
-                        <span class="flex items-center gap-2"><strong class="text-brand-700 font-bold">C)</strong> $13\text{ horas} 26\text{ minutos e } 24\text{ segundos}$</span>
-                        <i data-lucide="circle" class="w-4 h-4 text-gray-300 opt-icon group-hover:text-brand-400 flex-shrink-0"></i>
-                    </button>
-                
-                    <button onclick="selectOption('ifsc-2025-2-matematica-q4', 3)" id="btn-ifsc-2025-2-matematica-q4-3" class="w-full text-left p-3.5 rounded-xl border border-gray-200 hover:border-brand-400 hover:bg-brand-50/40 transition text-sm text-gray-700 flex items-center justify-between group">
-                        <span class="flex items-center gap-2"><strong class="text-brand-700 font-bold">D)</strong> $13\text{ horas} 44\text{ minutos e } 12\text{ segundos}$</span>
-                        <i data-lucide="circle" class="w-4 h-4 text-gray-300 opt-icon group-hover:text-brand-400 flex-shrink-0"></i>
-                    </button>
-                
-                    <button onclick="selectOption('ifsc-2025-2-matematica-q4', 4)" id="btn-ifsc-2025-2-matematica-q4-4" class="w-full text-left p-3.5 rounded-xl border border-gray-200 hover:border-brand-400 hover:bg-brand-50/40 transition text-sm text-gray-700 flex items-center justify-between group">
-                        <span class="flex items-center gap-2"><strong class="text-brand-700 font-bold">E)</strong> $16\text{ horas}$</span>
-                        <i data-lucide="circle" class="w-4 h-4 text-gray-300 opt-icon group-hover:text-brand-400 flex-shrink-0"></i>
-                    </button>
-                
-                    </div>
-                    <div class="flex items-center gap-3">
-                        <button id="submit-btn-ifsc-2025-2-matematica-q4" onclick="submitAnswer('5', 'ifsc-2025-2-matematica', 4)" class="bg-brand-600 hover:bg-brand-700 text-white px-4 py-2 rounded-lg text-sm font-semibold transition flex items-center gap-1.5 shadow-sm">
-                            <i data-lucide="send" class="w-4 h-4"></i> Enviar Resposta
+                    
+                        <button onclick="selectOption('ifsc-2025-2-matematica-q0', 4)" id="btn-ifsc-2025-2-matematica-q0-4" class="w-full text-left p-3.5 rounded-xl border border-gray-200 hover:border-brand-400 hover:bg-brand-50/40 transition text-sm text-gray-700 flex items-center justify-between group">
+                            <span class="flex items-center gap-2"><strong class="text-brand-700 font-bold">E)</strong> $132$</span>
+                            <i data-lucide="circle" class="w-4 h-4 text-gray-300 opt-icon group-hover:text-brand-400 flex-shrink-0"></i>
                         </button>
+                    
+                        </div>
+                        <div class="flex items-center gap-3">
+                            <button id="submit-btn-ifsc-2025-2-matematica-q0" onclick="submitAnswer('5', 'ifsc-2025-2-matematica', 0)" class="bg-brand-600 hover:bg-brand-700 text-white px-4 py-2 rounded-lg text-sm font-semibold transition flex items-center gap-1.5 shadow-sm">
+                                <i data-lucide="send" class="w-4 h-4"></i> Enviar Resposta
+                            </button>
+                        </div>
+                        <div id="feedback-ifsc-2025-2-matematica-q0" class="hidden p-4 rounded-xl text-sm mt-4"></div>
                     </div>
-                    <div id="feedback-ifsc-2025-2-matematica-q4" class="hidden p-4 rounded-xl text-sm mt-4"></div>
-                </div>
-            
-                <div class="mb-8 border-b border-gray-100 pb-6 last:border-0 last:pb-0" id="q-container-ifsc-2025-2-matematica-q5">
-                    <div class="flex items-center justify-between mb-2">
-                        <span class="text-xs font-bold uppercase tracking-wider text-brand-700 bg-brand-50 px-2.5 py-0.5 rounded-full border border-brand-100">Questão 6</span>
-                    </div>
-                    <p class="font-medium text-gray-800 mb-4 text-sm sm:text-base leading-relaxed">No Carnaval de 2025, Florianópolis recebeu $1{}4\text{ milhão}$ de foliões, dos quais $40\%$ usaram glitter ($1{}5\text{ g}$ por pessoa). Sabendo que $1\text{ g}$ de glitter contém $20\text{ mil}$ partículas e que a ingestão de $100\text{ mil}$ partículas pode causar a morte de um animal marinho, quantos animais marinhos de pequeno porte poderiam morrer em decorrência do glitter desse Carnaval?</p>
-                    <div class="space-y-2 mb-4" id="opts-ifsc-2025-2-matematica-q5">
-                        
-                    <button onclick="selectOption('ifsc-2025-2-matematica-q5', 0)" id="btn-ifsc-2025-2-matematica-q5-0" class="w-full text-left p-3.5 rounded-xl border border-gray-200 hover:border-brand-400 hover:bg-brand-50/40 transition text-sm text-gray-700 flex items-center justify-between group">
-                        <span class="flex items-center gap-2"><strong class="text-brand-700 font-bold">A)</strong> $150\text{ mil animais}$</span>
-                        <i data-lucide="circle" class="w-4 h-4 text-gray-300 opt-icon group-hover:text-brand-400 flex-shrink-0"></i>
-                    </button>
                 
-                    <button onclick="selectOption('ifsc-2025-2-matematica-q5', 1)" id="btn-ifsc-2025-2-matematica-q5-1" class="w-full text-left p-3.5 rounded-xl border border-gray-200 hover:border-brand-400 hover:bg-brand-50/40 transition text-sm text-gray-700 flex items-center justify-between group">
-                        <span class="flex items-center gap-2"><strong class="text-brand-700 font-bold">B)</strong> $120\text{ mil animais}$</span>
-                        <i data-lucide="circle" class="w-4 h-4 text-gray-300 opt-icon group-hover:text-brand-400 flex-shrink-0"></i>
-                    </button>
-                
-                    <button onclick="selectOption('ifsc-2025-2-matematica-q5', 2)" id="btn-ifsc-2025-2-matematica-q5-2" class="w-full text-left p-3.5 rounded-xl border border-gray-200 hover:border-brand-400 hover:bg-brand-50/40 transition text-sm text-gray-700 flex items-center justify-between group">
-                        <span class="flex items-center gap-2"><strong class="text-brand-700 font-bold">C)</strong> $200\text{ mil animais}$</span>
-                        <i data-lucide="circle" class="w-4 h-4 text-gray-300 opt-icon group-hover:text-brand-400 flex-shrink-0"></i>
-                    </button>
-                
-                    <button onclick="selectOption('ifsc-2025-2-matematica-q5', 3)" id="btn-ifsc-2025-2-matematica-q5-3" class="w-full text-left p-3.5 rounded-xl border border-gray-200 hover:border-brand-400 hover:bg-brand-50/40 transition text-sm text-gray-700 flex items-center justify-between group">
-                        <span class="flex items-center gap-2"><strong class="text-brand-700 font-bold">D)</strong> $100\text{ mil animais}$</span>
-                        <i data-lucide="circle" class="w-4 h-4 text-gray-300 opt-icon group-hover:text-brand-400 flex-shrink-0"></i>
-                    </button>
-                
-                    <button onclick="selectOption('ifsc-2025-2-matematica-q5', 4)" id="btn-ifsc-2025-2-matematica-q5-4" class="w-full text-left p-3.5 rounded-xl border border-gray-200 hover:border-brand-400 hover:bg-brand-50/40 transition text-sm text-gray-700 flex items-center justify-between group">
-                        <span class="flex items-center gap-2"><strong class="text-brand-700 font-bold">E)</strong> $168\text{ mil animais}$</span>
-                        <i data-lucide="circle" class="w-4 h-4 text-gray-300 opt-icon group-hover:text-brand-400 flex-shrink-0"></i>
-                    </button>
-                
-                    </div>
-                    <div class="flex items-center gap-3">
-                        <button id="submit-btn-ifsc-2025-2-matematica-q5" onclick="submitAnswer('5', 'ifsc-2025-2-matematica', 5)" class="bg-brand-600 hover:bg-brand-700 text-white px-4 py-2 rounded-lg text-sm font-semibold transition flex items-center gap-1.5 shadow-sm">
-                            <i data-lucide="send" class="w-4 h-4"></i> Enviar Resposta
+                    <div class="mb-8 border-b border-gray-100 pb-6 last:border-0 last:pb-0" id="q-container-ifsc-2025-2-matematica-q1">
+                        <div class="flex items-center justify-between mb-2">
+                            <span class="text-xs font-bold uppercase tracking-wider text-brand-700 bg-brand-50 px-2.5 py-0.5 rounded-full border border-brand-100">Questão 2</span>
+                        </div>
+                        <p class="font-medium text-gray-800 mb-4 text-sm sm:text-base leading-relaxed">A face do telhado de uma escola tem o formato de um trapézio isósceles com base maior de $12\text{ m}$, base menor de $8\text{ m}$ e altura de $5\text{ m}$. Sabendo que $80\%$ dessa área será ocupada por painéis solares e que cada $\text{m}^2$ de painel gera $1{}2\text{ kWh}$ por dia, a produção total estimada por dia é de:</p>
+                        <div class="space-y-2 mb-4" id="opts-ifsc-2025-2-matematica-q1">
+                            
+                        <button onclick="selectOption('ifsc-2025-2-matematica-q1', 0)" id="btn-ifsc-2025-2-matematica-q1-0" class="w-full text-left p-3.5 rounded-xl border border-gray-200 hover:border-brand-400 hover:bg-brand-50/40 transition text-sm text-gray-700 flex items-center justify-between group">
+                            <span class="flex items-center gap-2"><strong class="text-brand-700 font-bold">A)</strong> $36\text{ kWh}$</span>
+                            <i data-lucide="circle" class="w-4 h-4 text-gray-300 opt-icon group-hover:text-brand-400 flex-shrink-0"></i>
                         </button>
-                    </div>
-                    <div id="feedback-ifsc-2025-2-matematica-q5" class="hidden p-4 rounded-xl text-sm mt-4"></div>
-                </div>
-            
-                <div class="mb-8 border-b border-gray-100 pb-6 last:border-0 last:pb-0" id="q-container-ifsc-2025-2-matematica-q6">
-                    <div class="flex items-center justify-between mb-2">
-                        <span class="text-xs font-bold uppercase tracking-wider text-brand-700 bg-brand-50 px-2.5 py-0.5 rounded-full border border-brand-100">Questão 7</span>
-                    </div>
-                    <p class="font-medium text-gray-800 mb-4 text-sm sm:text-base leading-relaxed">Um turista argentino comprou 3 Big Macs em Buenos Aires ($\text{US\$} 6{,}95$ cada). No Brasil, o mesmo sanduíche custa $\text{US\$} 4{,}02$. Com a cotação do dólar a $\text{R\$} 6{,}00$, qual o valor em reais ($\text{R\$}$) que ele economizaria se fizesse a compra no Brasil?</p>
-                    <div class="space-y-2 mb-4" id="opts-ifsc-2025-2-matematica-q6">
-                        
-                    <button onclick="selectOption('ifsc-2025-2-matematica-q6', 0)" id="btn-ifsc-2025-2-matematica-q6-0" class="w-full text-left p-3.5 rounded-xl border border-gray-200 hover:border-brand-400 hover:bg-brand-50/40 transition text-sm text-gray-700 flex items-center justify-between group">
-                        <span class="flex items-center gap-2"><strong class="text-brand-700 font-bold">A)</strong> $\text{R\$} 8{,}79$</span>
-                        <i data-lucide="circle" class="w-4 h-4 text-gray-300 opt-icon group-hover:text-brand-400 flex-shrink-0"></i>
-                    </button>
-                
-                    <button onclick="selectOption('ifsc-2025-2-matematica-q6', 1)" id="btn-ifsc-2025-2-matematica-q6-1" class="w-full text-left p-3.5 rounded-xl border border-gray-200 hover:border-brand-400 hover:bg-brand-50/40 transition text-sm text-gray-700 flex items-center justify-between group">
-                        <span class="flex items-center gap-2"><strong class="text-brand-700 font-bold">B)</strong> $\text{R\$} 17{,}58$</span>
-                        <i data-lucide="circle" class="w-4 h-4 text-gray-300 opt-icon group-hover:text-brand-400 flex-shrink-0"></i>
-                    </button>
-                
-                    <button onclick="selectOption('ifsc-2025-2-matematica-q6', 2)" id="btn-ifsc-2025-2-matematica-q6-2" class="w-full text-left p-3.5 rounded-xl border border-gray-200 hover:border-brand-400 hover:bg-brand-50/40 transition text-sm text-gray-700 flex items-center justify-between group">
-                        <span class="flex items-center gap-2"><strong class="text-brand-700 font-bold">C)</strong> $\text{R\$} 17{,}64$</span>
-                        <i data-lucide="circle" class="w-4 h-4 text-gray-300 opt-icon group-hover:text-brand-400 flex-shrink-0"></i>
-                    </button>
-                
-                    <button onclick="selectOption('ifsc-2025-2-matematica-q6', 3)" id="btn-ifsc-2025-2-matematica-q6-3" class="w-full text-left p-3.5 rounded-xl border border-gray-200 hover:border-brand-400 hover:bg-brand-50/40 transition text-sm text-gray-700 flex items-center justify-between group">
-                        <span class="flex items-center gap-2"><strong class="text-brand-700 font-bold">D)</strong> $\text{R\$} 52{,}74$</span>
-                        <i data-lucide="circle" class="w-4 h-4 text-gray-300 opt-icon group-hover:text-brand-400 flex-shrink-0"></i>
-                    </button>
-                
-                    <button onclick="selectOption('ifsc-2025-2-matematica-q6', 4)" id="btn-ifsc-2025-2-matematica-q6-4" class="w-full text-left p-3.5 rounded-xl border border-gray-200 hover:border-brand-400 hover:bg-brand-50/40 transition text-sm text-gray-700 flex items-center justify-between group">
-                        <span class="flex items-center gap-2"><strong class="text-brand-700 font-bold">E)</strong> $\text{R\$} 101{,}16$</span>
-                        <i data-lucide="circle" class="w-4 h-4 text-gray-300 opt-icon group-hover:text-brand-400 flex-shrink-0"></i>
-                    </button>
-                
-                    </div>
-                    <div class="flex items-center gap-3">
-                        <button id="submit-btn-ifsc-2025-2-matematica-q6" onclick="submitAnswer('5', 'ifsc-2025-2-matematica', 6)" class="bg-brand-600 hover:bg-brand-700 text-white px-4 py-2 rounded-lg text-sm font-semibold transition flex items-center gap-1.5 shadow-sm">
-                            <i data-lucide="send" class="w-4 h-4"></i> Enviar Resposta
+                    
+                        <button onclick="selectOption('ifsc-2025-2-matematica-q1', 1)" id="btn-ifsc-2025-2-matematica-q1-1" class="w-full text-left p-3.5 rounded-xl border border-gray-200 hover:border-brand-400 hover:bg-brand-50/40 transition text-sm text-gray-700 flex items-center justify-between group">
+                            <span class="flex items-center gap-2"><strong class="text-brand-700 font-bold">B)</strong> $42\text{ kWh}$</span>
+                            <i data-lucide="circle" class="w-4 h-4 text-gray-300 opt-icon group-hover:text-brand-400 flex-shrink-0"></i>
                         </button>
+                    
+                        <button onclick="selectOption('ifsc-2025-2-matematica-q1', 2)" id="btn-ifsc-2025-2-matematica-q1-2" class="w-full text-left p-3.5 rounded-xl border border-gray-200 hover:border-brand-400 hover:bg-brand-50/40 transition text-sm text-gray-700 flex items-center justify-between group">
+                            <span class="flex items-center gap-2"><strong class="text-brand-700 font-bold">C)</strong> $48\text{ kWh}$</span>
+                            <i data-lucide="circle" class="w-4 h-4 text-gray-300 opt-icon group-hover:text-brand-400 flex-shrink-0"></i>
+                        </button>
+                    
+                        <button onclick="selectOption('ifsc-2025-2-matematica-q1', 3)" id="btn-ifsc-2025-2-matematica-q1-3" class="w-full text-left p-3.5 rounded-xl border border-gray-200 hover:border-brand-400 hover:bg-brand-50/40 transition text-sm text-gray-700 flex items-center justify-between group">
+                            <span class="flex items-center gap-2"><strong class="text-brand-700 font-bold">D)</strong> $54\text{ kWh}$</span>
+                            <i data-lucide="circle" class="w-4 h-4 text-gray-300 opt-icon group-hover:text-brand-400 flex-shrink-0"></i>
+                        </button>
+                    
+                        <button onclick="selectOption('ifsc-2025-2-matematica-q1', 4)" id="btn-ifsc-2025-2-matematica-q1-4" class="w-full text-left p-3.5 rounded-xl border border-gray-200 hover:border-brand-400 hover:bg-brand-50/40 transition text-sm text-gray-700 flex items-center justify-between group">
+                            <span class="flex items-center gap-2"><strong class="text-brand-700 font-bold">E)</strong> $60\text{ kWh}$</span>
+                            <i data-lucide="circle" class="w-4 h-4 text-gray-300 opt-icon group-hover:text-brand-400 flex-shrink-0"></i>
+                        </button>
+                    
+                        </div>
+                        <div class="flex items-center gap-3">
+                            <button id="submit-btn-ifsc-2025-2-matematica-q1" onclick="submitAnswer('5', 'ifsc-2025-2-matematica', 1)" class="bg-brand-600 hover:bg-brand-700 text-white px-4 py-2 rounded-lg text-sm font-semibold transition flex items-center gap-1.5 shadow-sm">
+                                <i data-lucide="send" class="w-4 h-4"></i> Enviar Resposta
+                            </button>
+                        </div>
+                        <div id="feedback-ifsc-2025-2-matematica-q1" class="hidden p-4 rounded-xl text-sm mt-4"></div>
                     </div>
-                    <div id="feedback-ifsc-2025-2-matematica-q6" class="hidden p-4 rounded-xl text-sm mt-4"></div>
-                </div>
-            
+                
+                    <div class="mb-8 border-b border-gray-100 pb-6 last:border-0 last:pb-0" id="q-container-ifsc-2025-2-matematica-q2">
+                        <div class="flex items-center justify-between mb-2">
+                            <span class="text-xs font-bold uppercase tracking-wider text-brand-700 bg-brand-50 px-2.5 py-0.5 rounded-full border border-brand-100">Questão 3</span>
+                        </div>
+                        <p class="font-medium text-gray-800 mb-4 text-sm sm:text-base leading-relaxed">Alice analisou o número formado pelos 11 dígitos do seu CPF ($65.434.212.988$) e fez as seguintes afirmações:<br>I. É um número divisível por 2.<br>II. É um número divisível por 3.<br>III. É um número divisível por 4.<br>IV. Não é um número divisível por 5.<br>Assinale a alternativa CORRETA:</p>
+                        <div class="space-y-2 mb-4" id="opts-ifsc-2025-2-matematica-q2">
+                            
+                        <button onclick="selectOption('ifsc-2025-2-matematica-q2', 0)" id="btn-ifsc-2025-2-matematica-q2-0" class="w-full text-left p-3.5 rounded-xl border border-gray-200 hover:border-brand-400 hover:bg-brand-50/40 transition text-sm text-gray-700 flex items-center justify-between group">
+                            <span class="flex items-center gap-2"><strong class="text-brand-700 font-bold">A)</strong> Todos os itens estão corretos.</span>
+                            <i data-lucide="circle" class="w-4 h-4 text-gray-300 opt-icon group-hover:text-brand-400 flex-shrink-0"></i>
+                        </button>
+                    
+                        <button onclick="selectOption('ifsc-2025-2-matematica-q2', 1)" id="btn-ifsc-2025-2-matematica-q2-1" class="w-full text-left p-3.5 rounded-xl border border-gray-200 hover:border-brand-400 hover:bg-brand-50/40 transition text-sm text-gray-700 flex items-center justify-between group">
+                            <span class="flex items-center gap-2"><strong class="text-brand-700 font-bold">B)</strong> Apenas os itens I, III e IV estão corretos.</span>
+                            <i data-lucide="circle" class="w-4 h-4 text-gray-300 opt-icon group-hover:text-brand-400 flex-shrink-0"></i>
+                        </button>
+                    
+                        <button onclick="selectOption('ifsc-2025-2-matematica-q2', 2)" id="btn-ifsc-2025-2-matematica-q2-2" class="w-full text-left p-3.5 rounded-xl border border-gray-200 hover:border-brand-400 hover:bg-brand-50/40 transition text-sm text-gray-700 flex items-center justify-between group">
+                            <span class="flex items-center gap-2"><strong class="text-brand-700 font-bold">C)</strong> Apenas os itens I, II e III estão corretos.</span>
+                            <i data-lucide="circle" class="w-4 h-4 text-gray-300 opt-icon group-hover:text-brand-400 flex-shrink-0"></i>
+                        </button>
+                    
+                        <button onclick="selectOption('ifsc-2025-2-matematica-q2', 3)" id="btn-ifsc-2025-2-matematica-q2-3" class="w-full text-left p-3.5 rounded-xl border border-gray-200 hover:border-brand-400 hover:bg-brand-50/40 transition text-sm text-gray-700 flex items-center justify-between group">
+                            <span class="flex items-center gap-2"><strong class="text-brand-700 font-bold">D)</strong> Apenas os itens I e II estão corretos.</span>
+                            <i data-lucide="circle" class="w-4 h-4 text-gray-300 opt-icon group-hover:text-brand-400 flex-shrink-0"></i>
+                        </button>
+                    
+                        <button onclick="selectOption('ifsc-2025-2-matematica-q2', 4)" id="btn-ifsc-2025-2-matematica-q2-4" class="w-full text-left p-3.5 rounded-xl border border-gray-200 hover:border-brand-400 hover:bg-brand-50/40 transition text-sm text-gray-700 flex items-center justify-between group">
+                            <span class="flex items-center gap-2"><strong class="text-brand-700 font-bold">E)</strong> Apenas os itens I e III estão corretos.</span>
+                            <i data-lucide="circle" class="w-4 h-4 text-gray-300 opt-icon group-hover:text-brand-400 flex-shrink-0"></i>
+                        </button>
+                    
+                        </div>
+                        <div class="flex items-center gap-3">
+                            <button id="submit-btn-ifsc-2025-2-matematica-q2" onclick="submitAnswer('5', 'ifsc-2025-2-matematica', 2)" class="bg-brand-600 hover:bg-brand-700 text-white px-4 py-2 rounded-lg text-sm font-semibold transition flex items-center gap-1.5 shadow-sm">
+                                <i data-lucide="send" class="w-4 h-4"></i> Enviar Resposta
+                            </button>
+                        </div>
+                        <div id="feedback-ifsc-2025-2-matematica-q2" class="hidden p-4 rounded-xl text-sm mt-4"></div>
+                    </div>
+                
+                    <div class="mb-8 border-b border-gray-100 pb-6 last:border-0 last:pb-0" id="q-container-ifsc-2025-2-matematica-q3">
+                        <div class="flex items-center justify-between mb-2">
+                            <span class="text-xs font-bold uppercase tracking-wider text-brand-700 bg-brand-50 px-2.5 py-0.5 rounded-full border border-brand-100">Questão 4</span>
+                        </div>
+                        <p class="font-medium text-gray-800 mb-4 text-sm sm:text-base leading-relaxed">Cientistas decidiram que o nome de um asteroide descoberto será formado por cinco caracteres distintos, composto exclusivamente pelas letras: L, I, V, H e R. O número total de opções de nomes possíveis que as cientistas possuem é:</p>
+                        <div class="space-y-2 mb-4" id="opts-ifsc-2025-2-matematica-q3">
+                            
+                        <button onclick="selectOption('ifsc-2025-2-matematica-q3', 0)" id="btn-ifsc-2025-2-matematica-q3-0" class="w-full text-left p-3.5 rounded-xl border border-gray-200 hover:border-brand-400 hover:bg-brand-50/40 transition text-sm text-gray-700 flex items-center justify-between group">
+                            <span class="flex items-center gap-2"><strong class="text-brand-700 font-bold">A)</strong> $5$</span>
+                            <i data-lucide="circle" class="w-4 h-4 text-gray-300 opt-icon group-hover:text-brand-400 flex-shrink-0"></i>
+                        </button>
+                    
+                        <button onclick="selectOption('ifsc-2025-2-matematica-q3', 1)" id="btn-ifsc-2025-2-matematica-q3-1" class="w-full text-left p-3.5 rounded-xl border border-gray-200 hover:border-brand-400 hover:bg-brand-50/40 transition text-sm text-gray-700 flex items-center justify-between group">
+                            <span class="flex items-center gap-2"><strong class="text-brand-700 font-bold">B)</strong> $20$</span>
+                            <i data-lucide="circle" class="w-4 h-4 text-gray-300 opt-icon group-hover:text-brand-400 flex-shrink-0"></i>
+                        </button>
+                    
+                        <button onclick="selectOption('ifsc-2025-2-matematica-q3', 2)" id="btn-ifsc-2025-2-matematica-q3-2" class="w-full text-left p-3.5 rounded-xl border border-gray-200 hover:border-brand-400 hover:bg-brand-50/40 transition text-sm text-gray-700 flex items-center justify-between group">
+                            <span class="flex items-center gap-2"><strong class="text-brand-700 font-bold">C)</strong> $80$</span>
+                            <i data-lucide="circle" class="w-4 h-4 text-gray-300 opt-icon group-hover:text-brand-400 flex-shrink-0"></i>
+                        </button>
+                    
+                        <button onclick="selectOption('ifsc-2025-2-matematica-q3', 3)" id="btn-ifsc-2025-2-matematica-q3-3" class="w-full text-left p-3.5 rounded-xl border border-gray-200 hover:border-brand-400 hover:bg-brand-50/40 transition text-sm text-gray-700 flex items-center justify-between group">
+                            <span class="flex items-center gap-2"><strong class="text-brand-700 font-bold">D)</strong> $120$</span>
+                            <i data-lucide="circle" class="w-4 h-4 text-gray-300 opt-icon group-hover:text-brand-400 flex-shrink-0"></i>
+                        </button>
+                    
+                        <button onclick="selectOption('ifsc-2025-2-matematica-q3', 4)" id="btn-ifsc-2025-2-matematica-q3-4" class="w-full text-left p-3.5 rounded-xl border border-gray-200 hover:border-brand-400 hover:bg-brand-50/40 transition text-sm text-gray-700 flex items-center justify-between group">
+                            <span class="flex items-center gap-2"><strong class="text-brand-700 font-bold">E)</strong> $3.125$</span>
+                            <i data-lucide="circle" class="w-4 h-4 text-gray-300 opt-icon group-hover:text-brand-400 flex-shrink-0"></i>
+                        </button>
+                    
+                        </div>
+                        <div class="flex items-center gap-3">
+                            <button id="submit-btn-ifsc-2025-2-matematica-q3" onclick="submitAnswer('5', 'ifsc-2025-2-matematica', 3)" class="bg-brand-600 hover:bg-brand-700 text-white px-4 py-2 rounded-lg text-sm font-semibold transition flex items-center gap-1.5 shadow-sm">
+                                <i data-lucide="send" class="w-4 h-4"></i> Enviar Resposta
+                            </button>
+                        </div>
+                        <div id="feedback-ifsc-2025-2-matematica-q3" class="hidden p-4 rounded-xl text-sm mt-4"></div>
+                    </div>
+                
+                    <div class="mb-8 border-b border-gray-100 pb-6 last:border-0 last:pb-0" id="q-container-ifsc-2025-2-matematica-q4">
+                        <div class="flex items-center justify-between mb-2">
+                            <span class="text-xs font-bold uppercase tracking-wider text-brand-700 bg-brand-50 px-2.5 py-0.5 rounded-full border border-brand-100">Questão 5</span>
+                        </div>
+                        <p class="font-medium text-gray-800 mb-4 text-sm sm:text-base leading-relaxed">Uma pesquisa revelou que os brasileiros passam em média $56\%$ do dia em frente às telas de smartphones e computadores. O tempo médio diário correspondente é:</p>
+                        <div class="space-y-2 mb-4" id="opts-ifsc-2025-2-matematica-q4">
+                            
+                        <button onclick="selectOption('ifsc-2025-2-matematica-q4', 0)" id="btn-ifsc-2025-2-matematica-q4-0" class="w-full text-left p-3.5 rounded-xl border border-gray-200 hover:border-brand-400 hover:bg-brand-50/40 transition text-sm text-gray-700 flex items-center justify-between group">
+                            <span class="flex items-center gap-2"><strong class="text-brand-700 font-bold">A)</strong> $08\text{ horas}$</span>
+                            <i data-lucide="circle" class="w-4 h-4 text-gray-300 opt-icon group-hover:text-brand-400 flex-shrink-0"></i>
+                        </button>
+                    
+                        <button onclick="selectOption('ifsc-2025-2-matematica-q4', 1)" id="btn-ifsc-2025-2-matematica-q4-1" class="w-full text-left p-3.5 rounded-xl border border-gray-200 hover:border-brand-400 hover:bg-brand-50/40 transition text-sm text-gray-700 flex items-center justify-between group">
+                            <span class="flex items-center gap-2"><strong class="text-brand-700 font-bold">B)</strong> $13\text{ horas} 04\text{ minutos e } 04\text{ segundos}$</span>
+                            <i data-lucide="circle" class="w-4 h-4 text-gray-300 opt-icon group-hover:text-brand-400 flex-shrink-0"></i>
+                        </button>
+                    
+                        <button onclick="selectOption('ifsc-2025-2-matematica-q4', 2)" id="btn-ifsc-2025-2-matematica-q4-2" class="w-full text-left p-3.5 rounded-xl border border-gray-200 hover:border-brand-400 hover:bg-brand-50/40 transition text-sm text-gray-700 flex items-center justify-between group">
+                            <span class="flex items-center gap-2"><strong class="text-brand-700 font-bold">C)</strong> $13\text{ horas} 26\text{ minutos e } 24\text{ segundos}$</span>
+                            <i data-lucide="circle" class="w-4 h-4 text-gray-300 opt-icon group-hover:text-brand-400 flex-shrink-0"></i>
+                        </button>
+                    
+                        <button onclick="selectOption('ifsc-2025-2-matematica-q4', 3)" id="btn-ifsc-2025-2-matematica-q4-3" class="w-full text-left p-3.5 rounded-xl border border-gray-200 hover:border-brand-400 hover:bg-brand-50/40 transition text-sm text-gray-700 flex items-center justify-between group">
+                            <span class="flex items-center gap-2"><strong class="text-brand-700 font-bold">D)</strong> $13\text{ horas} 44\text{ minutos e } 12\text{ segundos}$</span>
+                            <i data-lucide="circle" class="w-4 h-4 text-gray-300 opt-icon group-hover:text-brand-400 flex-shrink-0"></i>
+                        </button>
+                    
+                        <button onclick="selectOption('ifsc-2025-2-matematica-q4', 4)" id="btn-ifsc-2025-2-matematica-q4-4" class="w-full text-left p-3.5 rounded-xl border border-gray-200 hover:border-brand-400 hover:bg-brand-50/40 transition text-sm text-gray-700 flex items-center justify-between group">
+                            <span class="flex items-center gap-2"><strong class="text-brand-700 font-bold">E)</strong> $16\text{ horas}$</span>
+                            <i data-lucide="circle" class="w-4 h-4 text-gray-300 opt-icon group-hover:text-brand-400 flex-shrink-0"></i>
+                        </button>
+                    
+                        </div>
+                        <div class="flex items-center gap-3">
+                            <button id="submit-btn-ifsc-2025-2-matematica-q4" onclick="submitAnswer('5', 'ifsc-2025-2-matematica', 4)" class="bg-brand-600 hover:bg-brand-700 text-white px-4 py-2 rounded-lg text-sm font-semibold transition flex items-center gap-1.5 shadow-sm">
+                                <i data-lucide="send" class="w-4 h-4"></i> Enviar Resposta
+                            </button>
+                        </div>
+                        <div id="feedback-ifsc-2025-2-matematica-q4" class="hidden p-4 rounded-xl text-sm mt-4"></div>
+                    </div>
+                
+                    <div class="mb-8 border-b border-gray-100 pb-6 last:border-0 last:pb-0" id="q-container-ifsc-2025-2-matematica-q5">
+                        <div class="flex items-center justify-between mb-2">
+                            <span class="text-xs font-bold uppercase tracking-wider text-brand-700 bg-brand-50 px-2.5 py-0.5 rounded-full border border-brand-100">Questão 6</span>
+                        </div>
+                        <p class="font-medium text-gray-800 mb-4 text-sm sm:text-base leading-relaxed">No Carnaval de 2025, Florianópolis recebeu $1{}4\text{ milhão}$ de foliões, dos quais $40\%$ usaram glitter ($1{}5\text{ g}$ por pessoa). Sabendo que $1\text{ g}$ de glitter contém $20\text{ mil}$ partículas e que a ingestão de $100\text{ mil}$ partículas pode causar a morte de um animal marinho, quantos animais marinhos de pequeno porte poderiam morrer em decorrência do glitter desse Carnaval?</p>
+                        <div class="space-y-2 mb-4" id="opts-ifsc-2025-2-matematica-q5">
+                            
+                        <button onclick="selectOption('ifsc-2025-2-matematica-q5', 0)" id="btn-ifsc-2025-2-matematica-q5-0" class="w-full text-left p-3.5 rounded-xl border border-gray-200 hover:border-brand-400 hover:bg-brand-50/40 transition text-sm text-gray-700 flex items-center justify-between group">
+                            <span class="flex items-center gap-2"><strong class="text-brand-700 font-bold">A)</strong> $150\text{ mil animais}$</span>
+                            <i data-lucide="circle" class="w-4 h-4 text-gray-300 opt-icon group-hover:text-brand-400 flex-shrink-0"></i>
+                        </button>
+                    
+                        <button onclick="selectOption('ifsc-2025-2-matematica-q5', 1)" id="btn-ifsc-2025-2-matematica-q5-1" class="w-full text-left p-3.5 rounded-xl border border-gray-200 hover:border-brand-400 hover:bg-brand-50/40 transition text-sm text-gray-700 flex items-center justify-between group">
+                            <span class="flex items-center gap-2"><strong class="text-brand-700 font-bold">B)</strong> $120\text{ mil animais}$</span>
+                            <i data-lucide="circle" class="w-4 h-4 text-gray-300 opt-icon group-hover:text-brand-400 flex-shrink-0"></i>
+                        </button>
+                    
+                        <button onclick="selectOption('ifsc-2025-2-matematica-q5', 2)" id="btn-ifsc-2025-2-matematica-q5-2" class="w-full text-left p-3.5 rounded-xl border border-gray-200 hover:border-brand-400 hover:bg-brand-50/40 transition text-sm text-gray-700 flex items-center justify-between group">
+                            <span class="flex items-center gap-2"><strong class="text-brand-700 font-bold">C)</strong> $200\text{ mil animais}$</span>
+                            <i data-lucide="circle" class="w-4 h-4 text-gray-300 opt-icon group-hover:text-brand-400 flex-shrink-0"></i>
+                        </button>
+                    
+                        <button onclick="selectOption('ifsc-2025-2-matematica-q5', 3)" id="btn-ifsc-2025-2-matematica-q5-3" class="w-full text-left p-3.5 rounded-xl border border-gray-200 hover:border-brand-400 hover:bg-brand-50/40 transition text-sm text-gray-700 flex items-center justify-between group">
+                            <span class="flex items-center gap-2"><strong class="text-brand-700 font-bold">D)</strong> $100\text{ mil animais}$</span>
+                            <i data-lucide="circle" class="w-4 h-4 text-gray-300 opt-icon group-hover:text-brand-400 flex-shrink-0"></i>
+                        </button>
+                    
+                        <button onclick="selectOption('ifsc-2025-2-matematica-q5', 4)" id="btn-ifsc-2025-2-matematica-q5-4" class="w-full text-left p-3.5 rounded-xl border border-gray-200 hover:border-brand-400 hover:bg-brand-50/40 transition text-sm text-gray-700 flex items-center justify-between group">
+                            <span class="flex items-center gap-2"><strong class="text-brand-700 font-bold">E)</strong> $168\text{ mil animais}$</span>
+                            <i data-lucide="circle" class="w-4 h-4 text-gray-300 opt-icon group-hover:text-brand-400 flex-shrink-0"></i>
+                        </button>
+                    
+                        </div>
+                        <div class="flex items-center gap-3">
+                            <button id="submit-btn-ifsc-2025-2-matematica-q5" onclick="submitAnswer('5', 'ifsc-2025-2-matematica', 5)" class="bg-brand-600 hover:bg-brand-700 text-white px-4 py-2 rounded-lg text-sm font-semibold transition flex items-center gap-1.5 shadow-sm">
+                                <i data-lucide="send" class="w-4 h-4"></i> Enviar Resposta
+                            </button>
+                        </div>
+                        <div id="feedback-ifsc-2025-2-matematica-q5" class="hidden p-4 rounded-xl text-sm mt-4"></div>
+                    </div>
+                
+                    <div class="mb-8 border-b border-gray-100 pb-6 last:border-0 last:pb-0" id="q-container-ifsc-2025-2-matematica-q6">
+                        <div class="flex items-center justify-between mb-2">
+                            <span class="text-xs font-bold uppercase tracking-wider text-brand-700 bg-brand-50 px-2.5 py-0.5 rounded-full border border-brand-100">Questão 7</span>
+                        </div>
+                        <p class="font-medium text-gray-800 mb-4 text-sm sm:text-base leading-relaxed">Um turista argentino comprou 3 Big Macs em Buenos Aires ($\text{US\$} 6{,}95$ cada). No Brasil, o mesmo sanduíche custa $\text{US\$} 4{,}02$. Com a cotação do dólar a $\text{R\$} 6{,}00$, qual o valor em reais ($\text{R\$}$) que ele economizaria se fizesse a compra no Brasil?</p>
+                        <div class="space-y-2 mb-4" id="opts-ifsc-2025-2-matematica-q6">
+                            
+                        <button onclick="selectOption('ifsc-2025-2-matematica-q6', 0)" id="btn-ifsc-2025-2-matematica-q6-0" class="w-full text-left p-3.5 rounded-xl border border-gray-200 hover:border-brand-400 hover:bg-brand-50/40 transition text-sm text-gray-700 flex items-center justify-between group">
+                            <span class="flex items-center gap-2"><strong class="text-brand-700 font-bold">A)</strong> $\text{R\$} 8{,}79$</span>
+                            <i data-lucide="circle" class="w-4 h-4 text-gray-300 opt-icon group-hover:text-brand-400 flex-shrink-0"></i>
+                        </button>
+                    
+                        <button onclick="selectOption('ifsc-2025-2-matematica-q6', 1)" id="btn-ifsc-2025-2-matematica-q6-1" class="w-full text-left p-3.5 rounded-xl border border-gray-200 hover:border-brand-400 hover:bg-brand-50/40 transition text-sm text-gray-700 flex items-center justify-between group">
+                            <span class="flex items-center gap-2"><strong class="text-brand-700 font-bold">B)</strong> $\text{R\$} 17{,}58$</span>
+                            <i data-lucide="circle" class="w-4 h-4 text-gray-300 opt-icon group-hover:text-brand-400 flex-shrink-0"></i>
+                        </button>
+                    
+                        <button onclick="selectOption('ifsc-2025-2-matematica-q6', 2)" id="btn-ifsc-2025-2-matematica-q6-2" class="w-full text-left p-3.5 rounded-xl border border-gray-200 hover:border-brand-400 hover:bg-brand-50/40 transition text-sm text-gray-700 flex items-center justify-between group">
+                            <span class="flex items-center gap-2"><strong class="text-brand-700 font-bold">C)</strong> $\text{R\$} 17{,}64$</span>
+                            <i data-lucide="circle" class="w-4 h-4 text-gray-300 opt-icon group-hover:text-brand-400 flex-shrink-0"></i>
+                        </button>
+                    
+                        <button onclick="selectOption('ifsc-2025-2-matematica-q6', 3)" id="btn-ifsc-2025-2-matematica-q6-3" class="w-full text-left p-3.5 rounded-xl border border-gray-200 hover:border-brand-400 hover:bg-brand-50/40 transition text-sm text-gray-700 flex items-center justify-between group">
+                            <span class="flex items-center gap-2"><strong class="text-brand-700 font-bold">D)</strong> $\text{R\$} 52{,}74$</span>
+                            <i data-lucide="circle" class="w-4 h-4 text-gray-300 opt-icon group-hover:text-brand-400 flex-shrink-0"></i>
+                        </button>
+                    
+                        <button onclick="selectOption('ifsc-2025-2-matematica-q6', 4)" id="btn-ifsc-2025-2-matematica-q6-4" class="w-full text-left p-3.5 rounded-xl border border-gray-200 hover:border-brand-400 hover:bg-brand-50/40 transition text-sm text-gray-700 flex items-center justify-between group">
+                            <span class="flex items-center gap-2"><strong class="text-brand-700 font-bold">E)</strong> $\text{R\$} 101{,}16$</span>
+                            <i data-lucide="circle" class="w-4 h-4 text-gray-300 opt-icon group-hover:text-brand-400 flex-shrink-0"></i>
+                        </button>
+                    
+                        </div>
+                        <div class="flex items-center gap-3">
+                            <button id="submit-btn-ifsc-2025-2-matematica-q6" onclick="submitAnswer('5', 'ifsc-2025-2-matematica', 6)" class="bg-brand-600 hover:bg-brand-700 text-white px-4 py-2 rounded-lg text-sm font-semibold transition flex items-center gap-1.5 shadow-sm">
+                                <i data-lucide="send" class="w-4 h-4"></i> Enviar Resposta
+                            </button>
+                        </div>
+                        <div id="feedback-ifsc-2025-2-matematica-q6" class="hidden p-4 rounded-xl text-sm mt-4"></div>
+                    </div>
+                
                 </section>
 
-                <!-- 5. Navegação Inferior de Tópicos -->
-                <nav class="flex items-center justify-between gap-4 pt-4 border-t border-gray-200 flex-wrap">
+                <!-- Navegação Inferior -->
+                <div class="flex flex-wrap items-center justify-between gap-4 pt-4 border-t border-gray-200">
                     
-                <a href="./prova-ifsc-20251.html" class="bg-white border border-gray-200 hover:bg-gray-50 text-gray-700 font-semibold px-4 py-2.5 rounded-xl text-sm transition flex items-center gap-2 shadow-sm">
-                    <i data-lucide="arrow-left" class="w-4 h-4"></i> Anterior: Prova IFSC 2025.1
-                </a>
-            
-            <a href="./index.html" class="bg-brand-50 border border-brand-200 text-brand-800 hover:bg-brand-100 font-semibold px-4 py-2.5 rounded-xl text-sm transition flex items-center gap-2 shadow-sm">
-                <i data-lucide="grid" class="w-4 h-4"></i> Todos os Tópicos
-            </a>
-        
-                <a href="./prova-ifsc-20261.html" class="bg-brand-600 hover:bg-brand-700 text-white font-semibold px-4 py-2.5 rounded-xl text-sm transition flex items-center gap-2 shadow-sm ml-auto">
-                    Próximo: Prova IFSC 2026.1 <i data-lucide="arrow-right" class="w-4 h-4"></i>
-                </a>
-            
-                </nav>
-            </div>
-
-            <!-- Coluna Lateral (Sidebar com Subtópicos do Bloco) -->
-            <div class="space-y-6">
+                    <a href="./prova-ifsc-20251.html" class="bg-white border border-gray-200 hover:bg-gray-50 text-gray-700 font-semibold px-4 py-2.5 rounded-xl text-sm transition flex items-center gap-2 shadow-sm">
+                        <i data-lucide="arrow-left" class="w-4 h-4"></i> Anterior: Prova IFSC 2025.1
+                    </a>
                 
-                <!-- Card de Progresso do Bloco -->
-                <div class="bg-white border border-gray-200 rounded-2xl p-5 shadow-sm">
-                    <h3 class="text-xs font-bold text-gray-500 uppercase tracking-wider mb-2">Progresso no Bloco</h3>
-                    <div class="flex justify-between text-xs text-gray-600 mb-1.5 font-medium">
-                        <span>Conclusão</span>
-                        <span id="block-progress-txt-5" class="font-bold text-brand-700">0%</span>
-                    </div>
-                    <div class="w-full bg-gray-100 rounded-full h-2.5 overflow-hidden">
-                        <div id="block-progress-bar-5" class="bg-brand-600 h-full w-0 transition-all duration-500"></div>
-                    </div>
+                <a href="./index.html" class="bg-brand-50 border border-brand-200 text-brand-800 hover:bg-brand-100 font-semibold px-4 py-2.5 rounded-xl text-sm transition flex items-center gap-2 shadow-sm">
+                    <i data-lucide="grid" class="w-4 h-4"></i> Todos os Tópicos
+                </a>
+            
+                    <a href="./prova-ifsc-20261.html" class="bg-brand-600 hover:bg-brand-700 text-white font-semibold px-4 py-2.5 rounded-xl text-sm transition flex items-center gap-2 shadow-sm ml-auto">
+                        Próximo: Prova IFSC 2026.1 <i data-lucide="arrow-right" class="w-4 h-4"></i>
+                    </a>
+                
                 </div>
 
-                <!-- Lista de Subtópicos do Bloco -->
-                <div class="bg-white border border-gray-200 rounded-2xl p-5 shadow-sm sticky top-20">
-                    <div class="flex items-center justify-between mb-4 border-b pb-3">
-                        <h3 class="text-sm font-bold text-gray-900 uppercase tracking-wider">Subtópicos do Bloco</h3>
-                        <a href="./index.html" class="text-xs text-brand-600 hover:text-brand-800 font-semibold">Ver Todos</a>
+            </div>
+
+            <!-- Sidebar Lateral (1 Coluna) -->
+            <div class="lg:col-span-1 space-y-6">
+                <div class="bg-white border border-gray-200 rounded-2xl p-5 shadow-sm sticky top-24">
+                    <div class="flex items-center justify-between mb-4 pb-3 border-b border-gray-100">
+                        <div>
+                            <span class="text-xs font-bold text-brand-700 uppercase tracking-wider block">Navegação do Bloco</span>
+                            <h3 class="text-sm font-extrabold text-gray-900 truncate">Bloco 5: Provas Anteriores IFSC</h3>
+                        </div>
+                        <span class="text-xs font-semibold px-2 py-0.5 rounded-full bg-gray-100 text-gray-600">
+                            14/16
+                        </span>
                     </div>
-                    <div class="space-y-1.5 custom-scrollbar max-h-[60vh] overflow-y-auto pr-1">
+
+                    <div class="space-y-1 custom-scrollbar max-h-[60vh] overflow-y-auto pr-1">
                         
-                <a href="./prova-ifsc-20171.html" class="w-full text-left py-2 px-2.5 rounded-lg text-xs transition flex items-center justify-between text-gray-600 hover:bg-gray-100 pl-2">
-                    <span class="truncate pr-2">1. Prova IFSC 2017.1</span>
-                    <i id="status-icon-ifsc-2017-1-matematica" data-lucide="circle" class="w-4 h-4 text-gray-300 flex-shrink-0"></i>
-                </a>
-            
-                <a href="./prova-ifsc-20172.html" class="w-full text-left py-2 px-2.5 rounded-lg text-xs transition flex items-center justify-between text-gray-600 hover:bg-gray-100 pl-2">
-                    <span class="truncate pr-2">2. Prova IFSC 2017.2</span>
-                    <i id="status-icon-ifsc-2017-2-matematica" data-lucide="circle" class="w-4 h-4 text-gray-300 flex-shrink-0"></i>
-                </a>
-            
-                <a href="./prova-ifsc-20181.html" class="w-full text-left py-2 px-2.5 rounded-lg text-xs transition flex items-center justify-between text-gray-600 hover:bg-gray-100 pl-2">
-                    <span class="truncate pr-2">3. Prova IFSC 2018.1</span>
-                    <i id="status-icon-ifsc-2018-1-matematica" data-lucide="circle" class="w-4 h-4 text-gray-300 flex-shrink-0"></i>
-                </a>
-            
-                <a href="./prova-ifsc-20182.html" class="w-full text-left py-2 px-2.5 rounded-lg text-xs transition flex items-center justify-between text-gray-600 hover:bg-gray-100 pl-2">
-                    <span class="truncate pr-2">4. Prova IFSC 2018.2</span>
-                    <i id="status-icon-ifsc-2018-2-matematica" data-lucide="circle" class="w-4 h-4 text-gray-300 flex-shrink-0"></i>
-                </a>
-            
-                <a href="./prova-ifsc-20191.html" class="w-full text-left py-2 px-2.5 rounded-lg text-xs transition flex items-center justify-between text-gray-600 hover:bg-gray-100 pl-2">
-                    <span class="truncate pr-2">5. Prova IFSC 2019.1</span>
-                    <i id="status-icon-ifsc-2019-1-matematica" data-lucide="circle" class="w-4 h-4 text-gray-300 flex-shrink-0"></i>
-                </a>
-            
-                <a href="./prova-ifsc-20192.html" class="w-full text-left py-2 px-2.5 rounded-lg text-xs transition flex items-center justify-between text-gray-600 hover:bg-gray-100 pl-2">
-                    <span class="truncate pr-2">6. Prova IFSC 2019.2</span>
-                    <i id="status-icon-ifsc-2019-2-matematica" data-lucide="circle" class="w-4 h-4 text-gray-300 flex-shrink-0"></i>
-                </a>
-            
-                <a href="./prova-ifsc-20201.html" class="w-full text-left py-2 px-2.5 rounded-lg text-xs transition flex items-center justify-between text-gray-600 hover:bg-gray-100 pl-2">
-                    <span class="truncate pr-2">7. Prova IFSC 2020.1</span>
-                    <i id="status-icon-ifsc-2020-1-matematica" data-lucide="circle" class="w-4 h-4 text-gray-300 flex-shrink-0"></i>
-                </a>
-            
-                <a href="./prova-ifsc-20221.html" class="w-full text-left py-2 px-2.5 rounded-lg text-xs transition flex items-center justify-between text-gray-600 hover:bg-gray-100 pl-2">
-                    <span class="truncate pr-2">8. Prova IFSC 2022.1</span>
-                    <i id="status-icon-ifsc-2022-1-matematica" data-lucide="circle" class="w-4 h-4 text-gray-300 flex-shrink-0"></i>
-                </a>
-            
-                <a href="./prova-ifsc-20222.html" class="w-full text-left py-2 px-2.5 rounded-lg text-xs transition flex items-center justify-between text-gray-600 hover:bg-gray-100 pl-2">
-                    <span class="truncate pr-2">9. Prova IFSC 2022.2</span>
-                    <i id="status-icon-ifsc-2022-2-matematica" data-lucide="circle" class="w-4 h-4 text-gray-300 flex-shrink-0"></i>
-                </a>
-            
-                <a href="./prova-ifsc-20232.html" class="w-full text-left py-2 px-2.5 rounded-lg text-xs transition flex items-center justify-between text-gray-600 hover:bg-gray-100 pl-2">
-                    <span class="truncate pr-2">10. Prova IFSC 2023.2</span>
-                    <i id="status-icon-ifsc-2023-2-matematica" data-lucide="circle" class="w-4 h-4 text-gray-300 flex-shrink-0"></i>
-                </a>
-            
-                <a href="./prova-ifsc-20241.html" class="w-full text-left py-2 px-2.5 rounded-lg text-xs transition flex items-center justify-between text-gray-600 hover:bg-gray-100 pl-2">
-                    <span class="truncate pr-2">11. Prova IFSC 2024.1</span>
-                    <i id="status-icon-ifsc-2024-1-matematica" data-lucide="circle" class="w-4 h-4 text-gray-300 flex-shrink-0"></i>
-                </a>
-            
-                <a href="./prova-ifsc-20242.html" class="w-full text-left py-2 px-2.5 rounded-lg text-xs transition flex items-center justify-between text-gray-600 hover:bg-gray-100 pl-2">
-                    <span class="truncate pr-2">12. Prova IFSC 2024.2</span>
-                    <i id="status-icon-ifsc-2024-2-matematica" data-lucide="circle" class="w-4 h-4 text-gray-300 flex-shrink-0"></i>
-                </a>
-            
-                <a href="./prova-ifsc-20251.html" class="w-full text-left py-2 px-2.5 rounded-lg text-xs transition flex items-center justify-between text-gray-600 hover:bg-gray-100 pl-2">
-                    <span class="truncate pr-2">13. Prova IFSC 2025.1</span>
-                    <i id="status-icon-ifsc-2025-1-matematica" data-lucide="circle" class="w-4 h-4 text-gray-300 flex-shrink-0"></i>
-                </a>
-            
-                <a href="./prova-ifsc-20252.html" class="w-full text-left py-2 px-2.5 rounded-lg text-xs transition flex items-center justify-between bg-brand-100 text-brand-900 font-bold border-l-4 border-brand-600 pl-3">
-                    <span class="truncate pr-2">14. Prova IFSC 2025.2</span>
-                    <i id="status-icon-ifsc-2025-2-matematica" data-lucide="circle" class="w-4 h-4 text-gray-300 flex-shrink-0"></i>
-                </a>
-            
-                <a href="./prova-ifsc-20261.html" class="w-full text-left py-2 px-2.5 rounded-lg text-xs transition flex items-center justify-between text-gray-600 hover:bg-gray-100 pl-2">
-                    <span class="truncate pr-2">15. Prova IFSC 2026.1</span>
-                    <i id="status-icon-ifsc-2026-1-matematica" data-lucide="circle" class="w-4 h-4 text-gray-300 flex-shrink-0"></i>
-                </a>
-            
-                <a href="./prova-ifsc-20262.html" class="w-full text-left py-2 px-2.5 rounded-lg text-xs transition flex items-center justify-between text-gray-600 hover:bg-gray-100 pl-2">
-                    <span class="truncate pr-2">16. Prova IFSC 2026.2</span>
-                    <i id="status-icon-ifsc-2026-2-matematica" data-lucide="circle" class="w-4 h-4 text-gray-300 flex-shrink-0"></i>
-                </a>
-            
+                    <a href="./prova-ifsc-20171.html" class="w-full text-left py-2 px-2.5 rounded-lg text-xs transition flex items-center justify-between text-gray-600 hover:bg-gray-100 pl-2">
+                        <span class="truncate pr-2">1. Prova IFSC 2017.1</span>
+                        <i id="status-icon-ifsc-2017-1-matematica" data-lucide="circle" class="w-4 h-4 text-gray-300 flex-shrink-0"></i>
+                    </a>
+                
+                    <a href="./prova-ifsc-20172.html" class="w-full text-left py-2 px-2.5 rounded-lg text-xs transition flex items-center justify-between text-gray-600 hover:bg-gray-100 pl-2">
+                        <span class="truncate pr-2">2. Prova IFSC 2017.2</span>
+                        <i id="status-icon-ifsc-2017-2-matematica" data-lucide="circle" class="w-4 h-4 text-gray-300 flex-shrink-0"></i>
+                    </a>
+                
+                    <a href="./prova-ifsc-20181.html" class="w-full text-left py-2 px-2.5 rounded-lg text-xs transition flex items-center justify-between text-gray-600 hover:bg-gray-100 pl-2">
+                        <span class="truncate pr-2">3. Prova IFSC 2018.1</span>
+                        <i id="status-icon-ifsc-2018-1-matematica" data-lucide="circle" class="w-4 h-4 text-gray-300 flex-shrink-0"></i>
+                    </a>
+                
+                    <a href="./prova-ifsc-20182.html" class="w-full text-left py-2 px-2.5 rounded-lg text-xs transition flex items-center justify-between text-gray-600 hover:bg-gray-100 pl-2">
+                        <span class="truncate pr-2">4. Prova IFSC 2018.2</span>
+                        <i id="status-icon-ifsc-2018-2-matematica" data-lucide="circle" class="w-4 h-4 text-gray-300 flex-shrink-0"></i>
+                    </a>
+                
+                    <a href="./prova-ifsc-20191.html" class="w-full text-left py-2 px-2.5 rounded-lg text-xs transition flex items-center justify-between text-gray-600 hover:bg-gray-100 pl-2">
+                        <span class="truncate pr-2">5. Prova IFSC 2019.1</span>
+                        <i id="status-icon-ifsc-2019-1-matematica" data-lucide="circle" class="w-4 h-4 text-gray-300 flex-shrink-0"></i>
+                    </a>
+                
+                    <a href="./prova-ifsc-20192.html" class="w-full text-left py-2 px-2.5 rounded-lg text-xs transition flex items-center justify-between text-gray-600 hover:bg-gray-100 pl-2">
+                        <span class="truncate pr-2">6. Prova IFSC 2019.2</span>
+                        <i id="status-icon-ifsc-2019-2-matematica" data-lucide="circle" class="w-4 h-4 text-gray-300 flex-shrink-0"></i>
+                    </a>
+                
+                    <a href="./prova-ifsc-20201.html" class="w-full text-left py-2 px-2.5 rounded-lg text-xs transition flex items-center justify-between text-gray-600 hover:bg-gray-100 pl-2">
+                        <span class="truncate pr-2">7. Prova IFSC 2020.1</span>
+                        <i id="status-icon-ifsc-2020-1-matematica" data-lucide="circle" class="w-4 h-4 text-gray-300 flex-shrink-0"></i>
+                    </a>
+                
+                    <a href="./prova-ifsc-20221.html" class="w-full text-left py-2 px-2.5 rounded-lg text-xs transition flex items-center justify-between text-gray-600 hover:bg-gray-100 pl-2">
+                        <span class="truncate pr-2">8. Prova IFSC 2022.1</span>
+                        <i id="status-icon-ifsc-2022-1-matematica" data-lucide="circle" class="w-4 h-4 text-gray-300 flex-shrink-0"></i>
+                    </a>
+                
+                    <a href="./prova-ifsc-20222.html" class="w-full text-left py-2 px-2.5 rounded-lg text-xs transition flex items-center justify-between text-gray-600 hover:bg-gray-100 pl-2">
+                        <span class="truncate pr-2">9. Prova IFSC 2022.2</span>
+                        <i id="status-icon-ifsc-2022-2-matematica" data-lucide="circle" class="w-4 h-4 text-gray-300 flex-shrink-0"></i>
+                    </a>
+                
+                    <a href="./prova-ifsc-20232.html" class="w-full text-left py-2 px-2.5 rounded-lg text-xs transition flex items-center justify-between text-gray-600 hover:bg-gray-100 pl-2">
+                        <span class="truncate pr-2">10. Prova IFSC 2023.2</span>
+                        <i id="status-icon-ifsc-2023-2-matematica" data-lucide="circle" class="w-4 h-4 text-gray-300 flex-shrink-0"></i>
+                    </a>
+                
+                    <a href="./prova-ifsc-20241.html" class="w-full text-left py-2 px-2.5 rounded-lg text-xs transition flex items-center justify-between text-gray-600 hover:bg-gray-100 pl-2">
+                        <span class="truncate pr-2">11. Prova IFSC 2024.1</span>
+                        <i id="status-icon-ifsc-2024-1-matematica" data-lucide="circle" class="w-4 h-4 text-gray-300 flex-shrink-0"></i>
+                    </a>
+                
+                    <a href="./prova-ifsc-20242.html" class="w-full text-left py-2 px-2.5 rounded-lg text-xs transition flex items-center justify-between text-gray-600 hover:bg-gray-100 pl-2">
+                        <span class="truncate pr-2">12. Prova IFSC 2024.2</span>
+                        <i id="status-icon-ifsc-2024-2-matematica" data-lucide="circle" class="w-4 h-4 text-gray-300 flex-shrink-0"></i>
+                    </a>
+                
+                    <a href="./prova-ifsc-20251.html" class="w-full text-left py-2 px-2.5 rounded-lg text-xs transition flex items-center justify-between text-gray-600 hover:bg-gray-100 pl-2">
+                        <span class="truncate pr-2">13. Prova IFSC 2025.1</span>
+                        <i id="status-icon-ifsc-2025-1-matematica" data-lucide="circle" class="w-4 h-4 text-gray-300 flex-shrink-0"></i>
+                    </a>
+                
+                    <a href="./prova-ifsc-20252.html" class="w-full text-left py-2 px-2.5 rounded-lg text-xs transition flex items-center justify-between bg-brand-100 text-brand-900 font-bold border-l-4 border-brand-600 pl-3">
+                        <span class="truncate pr-2">14. Prova IFSC 2025.2</span>
+                        <i id="status-icon-ifsc-2025-2-matematica" data-lucide="circle" class="w-4 h-4 text-gray-300 flex-shrink-0"></i>
+                    </a>
+                
+                    <a href="./prova-ifsc-20261.html" class="w-full text-left py-2 px-2.5 rounded-lg text-xs transition flex items-center justify-between text-gray-600 hover:bg-gray-100 pl-2">
+                        <span class="truncate pr-2">15. Prova IFSC 2026.1</span>
+                        <i id="status-icon-ifsc-2026-1-matematica" data-lucide="circle" class="w-4 h-4 text-gray-300 flex-shrink-0"></i>
+                    </a>
+                
+                    <a href="./prova-ifsc-20262.html" class="w-full text-left py-2 px-2.5 rounded-lg text-xs transition flex items-center justify-between text-gray-600 hover:bg-gray-100 pl-2">
+                        <span class="truncate pr-2">16. Prova IFSC 2026.2</span>
+                        <i id="status-icon-ifsc-2026-2-matematica" data-lucide="circle" class="w-4 h-4 text-gray-300 flex-shrink-0"></i>
+                    </a>
+                
                     </div>
-                    
-                    <div class="mt-6 pt-4 border-t border-gray-100">
-                        <a href="../simulado.html" class="w-full bg-brand-50 hover:bg-brand-100 text-brand-800 font-semibold py-2.5 px-4 rounded-xl text-xs transition flex items-center justify-center gap-1.5">
-                            <i data-lucide="play" class="w-3.5 h-3.5"></i> Iniciar Simulado Geral
+
+                    <div class="mt-5 pt-4 border-t border-gray-100">
+                        <a href="./index.html" class="w-full bg-brand-50 hover:bg-brand-100 text-brand-800 font-semibold py-2 px-3 rounded-xl text-xs transition flex items-center justify-center gap-1.5">
+                            <i data-lucide="layout-grid" class="w-3.5 h-3.5"></i> Visão Geral do Bloco
                         </a>
                     </div>
                 </div>
             </div>
+
         </div>
     </main>
 
@@ -659,7 +654,7 @@ $P_5 = 5! = 5 \times 4 \times 3 \times 2 \times 1 = 120$ nomes possíveis.
                     <i data-lucide="book-open-check" class="w-5 h-5"></i> PartiuIF - Matemática
                 </div>
                 <p class="text-brand-200 text-xs leading-relaxed">
-                    Plataforma completa de revisão estruturada por subtópicos, teoria detalhada, fórmulas KaTeX e simulados com 21 provas oficiais do IFSC e IFCE.
+                    Plataforma completa de revisão estruturada por subtópicos, teoria detalhada, fórmulas KaTeX e simulados com 26 provas oficiais do IFSC e IFCE.
                 </p>
                 <div class="mt-4 inline-flex items-center gap-2 bg-brand-900/80 px-3 py-1.5 rounded-lg border border-brand-800 text-xs text-brand-300">
                     <i data-lucide="hard-drive" class="w-3.5 h-3.5"></i> Progresso salvo no seu navegador
@@ -670,12 +665,7 @@ $P_5 = 5! = 5 \times 4 \times 3 \times 2 \times 1 = 120$ nomes possíveis.
                     <i data-lucide="layers" class="w-4 h-4 text-brand-400"></i> Eixos Temáticos
                 </h4>
                 <ul class="space-y-1.5 text-xs text-brand-200">
-                    <li><a href="../bloco-1-numeros/index.html" class="hover:text-white transition flex items-center gap-1">• Bloco 1: Números e Operações</a></li>
-                    <li><a href="../bloco-2-algebra/index.html" class="hover:text-white transition flex items-center gap-1">• Bloco 2: Álgebra e Funções</a></li>
-                    <li><a href="../bloco-3-geometria/index.html" class="hover:text-white transition flex items-center gap-1">• Bloco 3: Geometria Plana e Espacial</a></li>
-                    <li><a href="../bloco-4-medidas-e-estatistica/index.html" class="hover:text-white transition flex items-center gap-1">• Bloco 4: Medidas, Prob. e Estatística</a></li>
-                    <li><a href="../bloco-5-provas-ifsc/index.html" class="hover:text-white transition flex items-center gap-1">• Bloco 5: Provas Oficiais IFSC (2017-2026)</a></li>
-                    <li><a href="../bloco-6-provas-ifce/index.html" class="hover:text-white transition flex items-center gap-1">• Bloco 6: Provas Oficiais IFCE (2023-2025)</a></li>
+                    <li><a href="../bloco-1-numeros/index.html" class="hover:text-white transition flex items-center gap-1">• Bloco 1: Números e Operações</a></li><li><a href="../bloco-2-algebra/index.html" class="hover:text-white transition flex items-center gap-1">• Bloco 2: Álgebra</a></li><li><a href="../bloco-3-geometria/index.html" class="hover:text-white transition flex items-center gap-1">• Bloco 3: Geometria</a></li><li><a href="../bloco-4-medidas-e-estatistica/index.html" class="hover:text-white transition flex items-center gap-1">• Bloco 4: Medidas e Estatística</a></li><li><a href="../bloco-5-provas-ifsc/index.html" class="hover:text-white transition flex items-center gap-1">• Bloco 5: Provas Anteriores IFSC</a></li><li><a href="../bloco-6-provas-ifce/index.html" class="hover:text-white transition flex items-center gap-1">• Bloco 6: Provas Anteriores IFCE</a></li>
                 </ul>
             </div>
             <div>
@@ -697,7 +687,7 @@ $P_5 = 5! = 5 \times 4 \times 3 \times 2 \times 1 = 120$ nomes possíveis.
         </div>
     </footer>
 
-    <!-- Scripts da Aplicação -->
+    <!-- Scripts Globais da Aplicação -->
     <script src="../assets/js/data.js"></script>
     <script src="../assets/js/app.js"></script>
 
