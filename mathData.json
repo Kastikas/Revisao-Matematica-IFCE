@@ -3513,5 +3513,727 @@
         ]
       }
     ]
+  },
+  "6": {
+    "title": "Bloco 6: Provas Anteriores IFCE",
+    "description": "Resoluções completas, gabaritos comentados e simulados das 5 provas mais recentes do processo seletivo do IFCE (Cursos Técnicos Integrados).",
+    "icon": "award",
+    "topics": [
+      {
+        "id": "ifce-2025-2-matematica",
+        "title": "Prova IFCE 2025.2",
+        "bncc": "Revisão Geral",
+        "summary": "10 questões de Matemática aplicadas no Processo Seletivo 2025.2 do IFCE (Edital Nº 10/2025) para os Cursos Técnicos Integrados.",
+        "detailedTheory": "A prova do IFCE 2025.2 abrangeu igualdade de conjuntos e operações com incógnitas, propriedades da multiplicação e algarismo das unidades de números pares, aritmética de divisibilidade de quatro algarismos (divisibilidade por 23), problemas de encontros periódicos com MMC de escalas horárias, conversão de medidas de massa (toneladas e quilogramas) com frações sucessivas, razão e proporção na partilha de volumes em reservatórios, simplificação de expressões numéricas com divisões fracionárias, função afim aplicada ao custo diário de transporte com parcela fixa e variável, ângulos internos em triângulos retângulos isósceles e modelagem de função quadrática da área ampliada em hectares.",
+        "keyPoints": [
+          "Na igualdade de conjuntos, a ordem dos elementos não importa: se {3, 5, 8} = {x, y, 8}, o conjunto {x, y} é necessariamente {3, 5}, logo x + y = 8.",
+          "Qualquer produto de números inteiros que contenha o fator 10 (ou simultaneamente os fatores 2 e 5) tem como algarismo das unidades o zero.",
+          "Para encontrar o menor número de quatro algarismos divisível por d, divida 1000 por d e tome o menor múltiplo inteiro maior ou igual a 1000.",
+          "Em problemas de eventos periódicos simultâneos (como horários de remédios), calcula-se o MMC entre os períodos das ocorrências.",
+          "1 hectare (ha) equivale a 10.000 m², ou seja, a área de um quadrado de 100 m x 100 m."
+        ],
+        "formula": "V(d) = F + v \\cdot d, \\quad A(x) = (x+a)(x+b), \\quad \\text{MMC}(a, b)",
+        "solvedExample": {
+          "problem": "Um ciclista percorre uma pista circular de raio $R = 70\\text{ m}$. Quantas voltas completas ele precisa dar para percorrer pelo menos $4{,}4\\text{ km}$? (Adote $\\pi \\approx \\frac{22}{7}$).",
+          "solution": "1. Calculamos o comprimento de uma volta na pista circular:<br>$$C = 2\\pi R = 2 \\times \\frac{22}{7} \\times 70 = 2 \\times 22 \\times 10 = 440\\text{ m}$$<br>2. Convertendo a distância total para metros:<br>$$4{,}4\\text{ km} = 4{,}4 \\times 1000 = 4400\\text{ m}$$<br>3. Dividindo a distância total pelo comprimento de uma volta:<br>$$N = \\frac{4400}{440} = 10\\text{ voltas completas}.$$"
+        },
+        "questions": [
+          {
+            "q": "Sejam $x$ e $y$ números tais que os conjuntos $\\{3, 5, 8\\}$ e $\\{x, y, 8\\}$ são iguais. É correto afirmar que:",
+            "options": [
+              "$x = 8$ e $y = 5$",
+              "$x + y = 8$",
+              "$x = 3$ e $y = 8$",
+              "$x = y$"
+            ],
+            "correct": 1,
+            "explanation": "Dois conjuntos são iguais quando possuem exatamente os mesmos elementos. Como o elemento $8$ já pertence a ambos, os demais elementos devem coincidir, ou seja, $\\{x, y\\} = \\{3, 5\\}$.<br>Portanto, temos duas possibilidades: ($x = 3$ e $y = 5$) ou ($x = 5$ e $y = 3$). Em ambos os casos, a soma é constante:<br>$$x + y = 3 + 5 = 8$$<br>Logo, a afirmação verdadeira é $x + y = 8$."
+          },
+          {
+            "q": "O algarismo das unidades do número $n$, onde $n = 2 \\times 4 \\times 6 \\times \\dots \\times 2026$ (ou seja, o produto de todos os números pares iniciando em $2$ até o último fator $2026$), é:",
+            "options": [
+              "$8$",
+              "$2$",
+              "$4$",
+              "$0$"
+            ],
+            "correct": 3,
+            "explanation": "Na sequência de fatores pares $2, 4, 6, 8, 10, \\dots, 2026$, está presente o número $10$ (e também $20, 30, \\dots$).<br>Como o número $10$ termina em zero, qualquer multiplicação de um número inteiro por $10$ resulta em um número cujo algarismo das unidades é necessariamente $0$. Portanto, o algarismo das unidades de $n$ é $0$."
+          },
+          {
+            "q": "Se $\\overline{abcd}$ é o menor número de quatro algarismos divisível por $23$, então a soma $a + b + c + d$ vale:",
+            "options": [
+              "$1$",
+              "$3$",
+              "$2$",
+              "$4$"
+            ],
+            "correct": 1,
+            "explanation": "O menor número positivo de quatro algarismos é $1000$. Vamos dividir $1000$ por $23$:<br>$$1000 \\div 23 = 43{,}478\\dots$$<br>Multiplicando $23$ pelos inteiros adjacentes:<br>$$23 \\times 43 = 989 \\quad (3\\text{ algarismos})$$<br>$$23 \\times 44 = 1012 \\quad (4\\text{ algarismos})$$<br>Logo, o menor número de 4 algarismos divisível por $23$ é $1012$. Identificando os algarismos:<br>$a = 1$, $b = 0$, $c = 1$ e $d = 2$.<br>A soma é:<br>$$a + b + c + d = 1 + 0 + 1 + 2 = 3$$"
+          },
+          {
+            "q": "Um paciente precisa tomar dois medicamentos injetados de acordo com a seguinte escala de horários: remédio A de $6$ em $6$ horas, remédio B de $8$ em $8$ horas. Caso o paciente utilize os dois remédios juntos às $0\\text{ h}$ (meia-noite), a próxima aplicação dos dois juntos será às:",
+            "options": [
+              "$6\\text{ h}$",
+              "$0\\text{ h}$ (meia-noite do dia seguinte)",
+              "$12\\text{ h}$",
+              "$20\\text{ h}$"
+            ],
+            "correct": 1,
+            "explanation": "Para encontrar o instante em que os dois remédios serão tomados juntos novamente, calculamos o Mínimo Múltiplo Comum (MMC) entre os intervalos de tempo:<br>$$\\text{MMC}(6, 8) = 24\\text{ horas}$$<br>Como a primeira dose conjunta foi aplicada às $0\\text{ h}$, a próxima aplicação conjunta ocorrerá após $24\\text{ horas}$, ou seja, às $0\\text{ h}$ (meia-noite do dia seguinte)."
+          },
+          {
+            "q": "A carga de um navio que atracou no porto é de $5\\text{ toneladas}$. No mesmo dia foram descarregados $850\\text{ quilogramas}$. No segundo dia descarregaram metade do que restava. A quantidade de toneladas que ainda falta descarregar é:",
+            "options": [
+              "$2{,}075$",
+              "$2{,}75$",
+              "$2{,}05$",
+              "$2$"
+            ],
+            "correct": 0,
+            "explanation": "Convertendo $5\\text{ toneladas}$ para quilogramas:<br>$$5\\text{ t} = 5000\\text{ kg}$$<br>Após o primeiro descarregamento de $850\\text{ kg}$, restam:<br>$$5000 - 850 = 4150\\text{ kg}$$<br>No segundo dia foi descarregada metade do que restava, sobrando a outra metade:<br>$$\\frac{4150}{2} = 2075\\text{ kg}$$<br>Convertendo de volta para toneladas:<br>$$\\frac{2075}{1000} = 2{,}075\\text{ toneladas}$$"
+          },
+          {
+            "q": "Em dois reservatórios que abastecem uma cidade há um total de $35.000\\text{ litros}$ de água. Sabendo que suas capacidades estão na proporção $4:3$, o volume do reservatório maior, em litros, é:",
+            "options": [
+              "$20.000$",
+              "$24.000$",
+              "$21.000$",
+              "$15.000$"
+            ],
+            "correct": 0,
+            "explanation": "Se as capacidades estão na razão $4:3$, podemos representar os volumes como $4k$ e $3k$.<br>Somando os dois volumes:<br>$$4k + 3k = 35.000 \\implies 7k = 35.000 \\implies k = 5.000$$<br>O reservatório maior tem capacidade $4k$:<br>$$V_{\\text{maior}} = 4 \\times 5.000 = 20.000\\text{ litros}$$"
+          },
+          {
+            "q": "Simplificando a expressão numérica $48 \\div \\left[ \\frac{6}{5} \\div \\frac{3}{4} \\right]$, encontramos o resultado:",
+            "options": [
+              "$14$",
+              "$38$",
+              "$24$",
+              "$30$"
+            ],
+            "correct": 3,
+            "explanation": "Primeiro, efetuamos a divisão de frações dentro dos colchetes, multiplicando pela fração inversa:<br>$$\\frac{6}{5} \\div \\frac{3}{4} = \\frac{6}{5} \\times \\frac{4}{3} = \\frac{24}{15} = \\frac{8}{5}$$<br>Agora calculamos a divisão principal:<br>$$48 \\div \\frac{8}{5} = 48 \\times \\frac{5}{8} = 6 \\times 5 = 30$$"
+          },
+          {
+            "q": "Ana Paula contratou um serviço de entrega de suas mercadorias. A cada dia o valor final a ser pago é composto por uma parcela fixa de $\\text{R\\$} 50{,}00$, mais $\\text{R\\$} 1{,}80$ cobrado por quilômetro rodado. Sabendo que Ana Paula pagou $\\text{R\\$} 113{,}00$, a distância, em km, percorrida pelo entregador contratado foi:",
+            "options": [
+              "$25$",
+              "$40$",
+              "$30$",
+              "$35$"
+            ],
+            "correct": 3,
+            "explanation": "A lei da função do valor pago $V(d)$ em relação à distância percorrida $d$ é dada por:<br>$$V(d) = 50 + 1{,}80d$$<br>Substituindo o valor pago $\\text{R\\$} 113{,}00$:<br>$$113 = 50 + 1{,}80d$$<br>$$1{,}80d = 113 - 50 = 63$$<br>$$d = \\frac{63}{1{,}80} = \\frac{630}{18} = 35\\text{ km}$$"
+          },
+          {
+            "q": "Assinale a opção que contém a medida de um dos ângulos internos agudos de um triângulo retângulo isósceles:",
+            "options": [
+              "$30^\\circ$",
+              "$60^\\circ$",
+              "$45^\\circ$",
+              "$15^\\circ$"
+            ],
+            "correct": 2,
+            "explanation": "Um triângulo retângulo possui um ângulo reto de $90^\\circ$. Sendo ele isósceles, seus dois catetos são congruentes, o que implica que seus dois ângulos internos agudos também têm medidas iguais ($\\alpha$).<br>A soma dos ângulos internos de qualquer triângulo é $180^\\circ$:<br>$$90^\\circ + \\alpha + \\alpha = 180^\\circ \\implies 2\\alpha = 90^\\circ \\implies \\alpha = 45^\\circ$$"
+          },
+          {
+            "q": "Para ampliar uma área retangular cultivável de dimensões $700\\text{ m} \\times 800\\text{ m}$, o proprietário aumentará o comprimento e a largura na mesma proporção: para cada $x$ centenas de metros adicionados ao comprimento, adicionará $x$ centenas de metros à largura. A lei de formação da função que permite calcular a área $A(x)$ do terreno após a ampliação, em hectares ($\\text{ha}$), é:",
+            "options": [
+              "$A(x) = x^2 + 15x + 56$",
+              "$A(x) = x^2 + 15x + 15$",
+              "$A(x) = x^2 + 15x + 54$",
+              "$A(x) = x^2 + 15x + 48$"
+            ],
+            "correct": 0,
+            "explanation": "Sabemos que $1\\text{ hectare} = 10.000\\text{ m}^2 = 100\\text{ m} \\times 100\\text{ m}$.<br>Como $x$ representa cada $100\\text{ metros}$ ampliados:<br>• O comprimento passa de $700\\text{ m}$ ($7$ centenas) para $(7 + x) \\times 100\\text{ m}$.<br>• A largura passa de $800\\text{ m}$ ($8$ centenas) para $(8 + x) \\times 100\\text{ m}$.<br>A área em metros quadrados é:<br>$$\\text{Área}(\\text{m}^2) = [(x + 7) \\cdot 100] \\cdot [(x + 8) \\cdot 100] = (x + 7)(x + 8) \\cdot 10.000$$<br>Dividindo por $10.000$ para obter a área em hectares:<br>$$A(x) = (x + 7)(x + 8) = x^2 + 8x + 7x + 56 = x^2 + 15x + 56\\text{ ha}$$"
+          }
+        ],
+        "slug": "prova-ifce-20252",
+        "filename": "prova-ifce-20252.html",
+        "folder": "bloco-6-provas-ifce",
+        "blockId": "6",
+        "pdf": "edital-n-10-2025-di-proen-reitoria-ifce-caderno-de-provas-integrado.pdf"
+      },
+      {
+        "id": "ifce-2025-1-matematica",
+        "title": "Prova IFCE 2025.1",
+        "bncc": "Revisão Geral",
+        "summary": "10 questões de Matemática aplicadas no Processo Seletivo 2025.1 do IFCE (Edital Nº 9/2024) para os Cursos Técnicos Integrados.",
+        "detailedTheory": "O Exame 2025.1 do IFCE destacou-se por questões contextualizadas envolvendo relações de Girard (produto das raízes de funções quadráticas), proporção e taxa constante de venda por hora, cálculo de porcentagem sobre total de participantes, probabilidade clássica em espaço amostral equiprovável com urnas, princípio fundamental da contagem com opções gastronômicas, modelo financeiro de diferença de custos de frotas e arrecadação por viagem, conversão de unidades agrárias tradicionais (acres para alqueires), sequências cíclicas com aritmética modular (padrão de letras repetidas), razão de áreas entre quadrados e triângulos formados por pontos médios sucessivos, e cálculo de juros simples com prazos em anos convertidos para meses.",
+        "keyPoints": [
+          "Nas equações quadráticas da forma x² + bx + c = 0, o produto das raízes x₁ · x₂ é igual a c.",
+          "Em sequências cíclicas periódicas com período p, a posição n corresponde ao elemento de índice n mod p (ou o último elemento se o resto for 0).",
+          "Em dobraduras sucessivas que conectam pontos médios de lados de quadrados, cada novo quadrado inscrito possui metade da área do anterior.",
+          "Para calcular juros simples (J = C · i · t), a taxa i e o tempo t devem estar expressos na mesma unidade temporal (ambos em meses)."
+        ],
+        "formula": "x_1 \\cdot x_2 = c, \\quad J = C \\cdot i \\cdot t, \\quad P(E) = \\frac{n(E)}{n(\\Omega)}",
+        "solvedExample": {
+          "problem": "Determine o vértice e o conjunto imagem da função quadrática $f(x) = x^2 - 6x + 5$.",
+          "solution": "1. Calculamos o $x$ do vértice:<br>$$x_v = -\\frac{b}{2a} = -\\frac{-6}{2(1)} = 3$$<br>2. Calculamos o $y$ do vértice substituindo $x_v$ na função:<br>$$y_v = f(3) = 3^2 - 6(3) + 5 = 9 - 18 + 5 = -4$$<br>3. Como a parábola tem concavidade voltada para cima ($a = 1 > 0$), o vértice $V(3, -4)$ é ponto de mínimo e o conjunto imagem é:<br>$$\\text{Im}(f) = \\{y \\in \\mathbb{R} \\mid y \\ge -4\\}.$$"
+        },
+        "questions": [
+          {
+            "q": "Considere a função quadrática $f(x) = x^2 + bx + 6$, em que $b$ é um número real. Os valores possíveis para as duas raízes (ou dois zeros) dessa função são:",
+            "options": [
+              "$2$ e $4$",
+              "$3$ e $4$",
+              "$1$ e $5{,}5$",
+              "$1{,}5$ e $4$",
+              "$1{,}5$ e $6$"
+            ],
+            "correct": 3,
+            "explanation": "Pelas Relações de Girard, para uma equação quadrática da forma $x^2 + bx + c = 0$, o produto das raízes $x_1 \\cdot x_2$ é igual ao termo independente $c = 6$.<br>Testando as alternativas:<br>• A) $2 \\times 4 = 8 \\neq 6$<br>• B) $3 \\times 4 = 12 \\neq 6$<br>• C) $1 \\times 5{,}5 = 5{,}5 \\neq 6$<br>• D) $1{,}5 \\times 4 = 6$ (Correto!)<br>• E) $1{,}5 \\times 6 = 9 \\neq 6$<br>Portanto, as raízes possíveis são $1{,}5$ e $4$ (com $b = -(1{,}5 + 4) = -5{,}5$)."
+          },
+          {
+            "q": "Durante a festa natalina de um município do Ceará, foram vendidos $240\\text{ ingressos}$ em $4\\text{ horas}$. Supondo que os ingressos fossem vendidos com a mesma taxa constante, a quantidade de ingressos vendidos em $7\\text{ horas}$ seria:",
+            "options": [
+              "$380$",
+              "$420$",
+              "$400$",
+              "$440$",
+              "$460$"
+            ],
+            "correct": 1,
+            "explanation": "Calculamos a taxa de venda por hora:<br>$$\\text{Taxa} = \\frac{240\\text{ ingressos}}{4\\text{ horas}} = 60\\text{ ingressos por hora}$$<br>Em $7\\text{ horas}$, mantendo essa taxa:<br>$$7 \\times 60 = 420\\text{ ingressos}$$"
+          },
+          {
+            "q": "Durante um evento de culinária no Ceará, foi registrado que $55\\%$ dos visitantes eram turistas de outros estados. Se o total de visitantes foi de $1.600\\text{ pessoas}$, o número de turistas de outros estados que participaram do evento foi:",
+            "options": [
+              "$660$",
+              "$720$",
+              "$800$",
+              "$880$",
+              "$960$"
+            ],
+            "correct": 3,
+            "explanation": "Calculamos $55\\%$ de $1.600$ pessoas:<br>$$55\\% \\times 1600 = \\frac{55}{100} \\times 1600 = 55 \\times 16 = 880\\text{ turistas}$$"
+          },
+          {
+            "q": "Em um parque do Ceará, há uma urna contendo $12\\text{ bolas}$, das quais $4$ são vermelhas, $3$ são azuis e $5$ são pretas. O jogo consiste em retirar uma bola ao acaso da urna, e o participante ganha se retirar uma bola azul. A probabilidade de um jogador ganhar é igual a:",
+            "options": [
+              "$15\\%$",
+              "$20\\%$",
+              "$25\\%$",
+              "$30\\%$",
+              "$35\\%$"
+            ],
+            "correct": 2,
+            "explanation": "A probabilidade é a razão entre o número de casos favoráveis (bolas azuis) e o número total de casos no espaço amostral:<br>$$P = \\frac{3}{12} = \\frac{1}{4} = 0{,}25 = 25\\%$$"
+          },
+          {
+            "q": "Um restaurante do Ceará oferece $3$ tipos de comidas típicas (carne de sol, baião de dois e sarapatel) e $4$ tipos de bebidas (água, suco de graviola, suco de goiaba e suco de caju). Se um cliente decidir escolher exatamente uma comida e uma bebida, a quantidade de maneiras diferentes de refeição que ele pode fazer é:",
+            "options": [
+              "$1$",
+              "$7$",
+              "$12$",
+              "$18$",
+              "$24$"
+            ],
+            "correct": 2,
+            "explanation": "Pelo Princípio Fundamental da Contagem (PFC):<br>$$\\text{Total de maneiras} = (3\\text{ opções de prato}) \\times (4\\text{ opções de bebida}) = 12\\text{ refeições diferentes}$$"
+          },
+          {
+            "q": "Uma empresa de transporte público do Ceará está avaliando duas opções de compra:<br>• Ônibus X: capacidade para $42\\text{ passageiros}$, ao custo de $\\text{R\\$} 185.000{,}00$;<br>• Ônibus Y: capacidade para $50\\text{ passageiros}$, ao custo de $\\text{R\\$} 257.000{,}00$.<br>Considerando que a passagem custa $\\text{R\\$} 4{,}50$ por pessoa e que todas as viagens operam com lotação máxima, a quantidade de viagens a mais que o ônibus X deve realizar, em relação ao ônibus Y, para que a arrecadação se iguale à diferença entre os custos dos ônibus é:",
+            "options": [
+              "$200$",
+              "$250$",
+              "$1.600$",
+              "$2.000$",
+              "$2.500$"
+            ],
+            "correct": 3,
+            "explanation": "1. Calculamos a diferença de custo entre os dois ônibus:<br>$$\\Delta C = 257.000 - 185.000 = \\text{R\\$} 72.000{,}00$$<br>2. A cada viagem com lotação máxima, o ônibus Y transporta $50 - 42 = 8$ passageiros a mais que o ônibus X.<br>3. A diferença de arrecadação por viagem entre o ônibus Y e o ônibus X é:<br>$$8 \\times \\text{R\\$} 4{,}50 = \\text{R\\$} 36{,}00\\text{ por viagem}$$<br>4. Para que o acúmulo da diferença de arrecadação cubra a diferença de custo de $\\text{R\\$} 72.000{,}00$:<br>$$N = \\frac{72.000}{36} = 2.000\\text{ viagens}$$"
+          },
+          {
+            "q": "No Brasil, é comum medir áreas rurais em alqueires. Nos Estados Unidos, a medida padrão é o acre. Um produtor rural brasileiro está interessado em uma área de $12{,}5\\text{ acres}$. Sabendo que $1\\text{ acre}$ equivale a aproximadamente $0{,}149\\text{ alqueires}$, a área da propriedade, em alqueires, é igual a:",
+            "options": [
+              "$1{,}8625$",
+              "$1.862{,}5$",
+              "$83{,}897$",
+              "$83{,}987$",
+              "$18{,}750$"
+            ],
+            "correct": 0,
+            "explanation": "Efetuamos a multiplicação direta pela taxa de conversão:<br>$$\\text{Área} = 12{,}5 \\times 0{,}149 = 1{,}8625\\text{ alqueires}$$"
+          },
+          {
+            "q": "Analise o padrão repetitivo a seguir:<br>$$IFCEMATIFCEMATIFCEMAT \\dots$$<br>Se esse padrão continua indefinidamente, a letra que ocupa a duas milésima vigésima quinta posição ($2025^a$) é:",
+            "options": [
+              "$I$",
+              "$M$",
+              "$A$",
+              "$E$",
+              "$F$"
+            ],
+            "correct": 4,
+            "explanation": "O padrão 'IFCEMAT' possui $7$ letras ordenadas:<br>1: I, 2: F, 3: C, 4: E, 5: M, 6: A, 7: T.<br>Dividimos a posição $2025$ pelo período $7$:<br>$$2025 = 7 \\times 289 + 2$$<br>O quociente $289$ indica que a palavra completa se repetiu $289$ vezes, e o resto $2$ indica que a letra procurada é a $2^a$ letra do ciclo, que é a letra $F$."
+          },
+          {
+            "q": "Ao dobrar sucessivamente uma folha quadrada $ABCD$ de lado $30\\text{ cm}$, conectam-se os pontos médios $E, F, G, H$ dos lados formando um novo quadrado, e em seguida os pontos médios $I, J, K, L$ deste formando um terceiro quadrado. No interior desse quadrado, os pontos $N$ e $M$ são pontos médios dos lados opostos $JK$ e $IL$, e os pontos $O$ e $P$ são pontos médios dos segmentos $IN$ e $NL$. A razão entre a área do quadrado inicial $ABCD$ e a área do triângulo $OPM$ é:",
+            "options": [
+              "$8\\sqrt{3}$",
+              "$4\\sqrt{3}$",
+              "$\\sqrt{3}$",
+              "$16$",
+              "$32$"
+            ],
+            "correct": 4,
+            "explanation": "Seja $A$ a área do quadrado $ABCD$.<br>• O quadrado formado pelos pontos médios $EFGH$ tem área $\\frac{A}{2}$.<br>• O quadrado $IJKL$ formado pelos pontos médios de $EFGH$ tem área $\\frac{A/2}{2} = \\frac{A}{4}$.<br>• No quadrado $IJKL$, o triângulo $INL$ tem como base o lado do quadrado e altura a distância até o lado oposto, logo sua área é $\\frac{1}{2} \\text{Área}(IJKL) = \\frac{A}{8}$.<br>• Como $O$ e $P$ são pontos médios dos lados $IN$ e $NL$, o triângulo $OPM$ possui base $OP = \\frac{1}{2} IL$ e altura em relação a $M$ igual a $\\frac{1}{2}$ da altura total, o que confere ao triângulo $OPM$ uma área igual a $\\frac{1}{8} \\text{Área}(IJKL) = \\frac{A}{32}$.<br>Portanto, a razão entre as áreas é:<br>$$\\frac{\\text{Área}(ABCD)}{\\text{Área}(OPM)} = \\frac{A}{A/32} = 32$$"
+          },
+          {
+            "q": "Um técnico decide abrir sua empresa e toma um empréstimo de $\\text{R\\$} 43.750{,}00$. O empréstimo foi contratado a juros simples com taxa de $0{,}45\\%\\text{ ao mês}$ e deverá ser quitado ao final de $8\\text{ anos}$. O valor total pago exclusivamente em juros ao final do prazo será:",
+            "options": [
+              "$\\text{R\\$} 15.750{,}00$",
+              "$\\text{R\\$} 18.900{,}00$",
+              "$\\text{R\\$} 40.775{,}00$",
+              "$\\text{R\\$} 59.500{,}00$",
+              "$\\text{R\\$} 62.650{,}00$"
+            ],
+            "correct": 1,
+            "explanation": "Utilizamos a fórmula dos juros simples: $J = C \\cdot i \\cdot t$.<br>• Capital: $C = 43.750$<br>• Taxa: $i = 0{,}45\\%\\text{ a.m.} = 0{,}0045$<br>• Tempo: $8\\text{ anos} = 8 \\times 12 = 96\\text{ meses}$<br>Calculando os juros:<br>$$J = 43.750 \\times 0{,}0045 \\times 96 = 43.750 \\times 0{,}432 = \\text{R\\$} 18.900{,}00$$"
+          }
+        ],
+        "slug": "prova-ifce-20251",
+        "filename": "prova-ifce-20251.html",
+        "folder": "bloco-6-provas-ifce",
+        "blockId": "6",
+        "pdf": "ifce-caderno-de-provas-edital-n-.-9-2024-cursos-te-cnicos-integrados.pdf"
+      },
+      {
+        "id": "ifce-2024-2-matematica",
+        "title": "Prova IFCE 2024.2",
+        "bncc": "Revisão Geral",
+        "summary": "10 questões de Matemática aplicadas no Processo Seletivo 2024.2 do IFCE (Edital Nº 003/2024) para os Cursos Técnicos Integrados.",
+        "detailedTheory": "O exame 2024.2 abordou a determinação da quantidade de termos em média aritmética com adição de novo elemento, comparação direta entre montante de juros simples e montante de juros compostos, produto de razões envolvendo dízimas periódicas e números decimais finitos, probabilidade percentual em sorteios, simplificação e fatoração de produtos notáveis simétricos, propriedades dos ângulos internos de polígonos regulares e complementaridade, cálculo com grandes ordens de grandeza monetárias (bilhões vs. salários mínimos), regra de três composta com variação de operários e horas diárias de trabalho, critérios de divisibilidade combinados (divisibilidade por 12 e 16) e cálculo de restos por 13, e aplicação do Teorema de Pitágoras em triângulos retângulos da orla litorânea.",
+        "keyPoints": [
+          "Quando um novo elemento x é adicionado a um conjunto de média M, a nova média M' satisfaz (n·M + x)/(n + 1) = M'.",
+          "Em expressões da forma (A - B)² - (B - A)², note que (B - A) = -(A - B), logo [-(A - B)]² = (A - B)², resultando sempre em 0.",
+          "Para ser divisível por 16, o número formado pelos últimos 4 algarismos deve ser divisível por 16.",
+          "Em triângulos retângulos com catetos 600 m e 800 m, a hipotenusa é 1000 m (triângulo pitagórico 3-4-5 multiplicado por 200)."
+        ],
+        "formula": "M_{\\text{comp}} = C(1+i)^t, \\quad \\frac{x}{y} \\cdot \\frac{y}{z} = \\frac{x}{z}, \\quad a^2 + b^2 = c^2",
+        "solvedExample": {
+          "problem": "Um capital de $\\text{R\\$} 10.000{,}00$ é aplicado a juros compostos de $10\\%\\text{ ao ano}$ durante $2\\text{ anos}$. Qual é o montante acumulado ao final do período?",
+          "solution": "1. Aplicamos a fórmula do montante a juros compostos:<br>$$M = C(1 + i)^t$$<br>2. Substituindo os valores:<br>$$M = 10.000(1 + 0{,}10)^2 = 10.000(1{,}10)^2 = 10.000 \\times 1{,}21 = \\text{R\\$} 12.100{,}00$$"
+        },
+        "questions": [
+          {
+            "q": "Uma turma de certa escola em Fortaleza está realizando um estudo sobre a idade dos alunos matriculados no Ensino Médio. A média aritmética calculada inicialmente foi de $17\\text{ anos}$. Suponha que um novo aluno com $x\\text{ anos}$ se matriculou nessa turma. Se a média de idade passar para $18\\text{ anos}$, o número de alunos dessa turma antes da entrada do novo aluno, em função de $x$, é:",
+            "options": [
+              "$x$",
+              "$x - 18$",
+              "$17 - x$",
+              "$17 + x$",
+              "$18 - x$"
+            ],
+            "correct": 1,
+            "explanation": "Seja $n$ o número inicial de alunos da turma. A soma inicial das idades era $17n$.<br>Com a entrada do novo aluno com $x$ anos, a turma passa a ter $n + 1$ alunos e a nova soma de idades é $17n + x$.<br>Como a nova média é $18\\text{ anos}$:<br>$$\\frac{17n + x}{n + 1} = 18 \\implies 17n + x = 18(n + 1)$$<br>$$17n + x = 18n + 18 \\implies x - 18 = 18n - 17n \\implies n = x - 18$$"
+          },
+          {
+            "q": "Um empreendedor precisa de um empréstimo de $\\text{R\\$} 200.000{,}00$ pelo prazo de $10\\text{ meses}$. Inicialmente calculou o montante considerando taxa de juros simples de $2\\%\\text{ ao mês}$. Depois percebeu que o contrato estipulava juros compostos com a mesma taxa de $2\\%\\text{ ao mês}$. A diferença entre o valor correto com juros compostos e o valor inicialmente calculado com juros simples é de:",
+            "options": [
+              "$\\text{R\\$} 1.876{,}76$",
+              "$\\text{R\\$} 2.459{,}87$",
+              "$\\text{R\\$} 3.798{,}88$",
+              "$\\text{R\\$} 4.878{,}26$",
+              "$\\text{R\\$} 5.897{,}65$"
+            ],
+            "correct": 2,
+            "explanation": "1. Montante a juros simples:<br>$$M_{\\text{simples}} = C(1 + i \\cdot t) = 200.000(1 + 0{,}02 \\times 10) = 200.000(1{,}20) = \\text{R\\$} 240.000{,}00$$<br>2. Montante a juros compostos:<br>$$M_{\\text{compostos}} = C(1 + i)^t = 200.000(1{,}02)^{10}$$<br>Como $(1{,}02)^{10} \\approx 1{,}2189944$:<br>$$M_{\\text{compostos}} = 200.000 \\times 1{,}2189944 = \\text{R\\$} 243.798{,}88$$<br>3. Diferença:<br>$$243.798{,}88 - 240.000{,}00 = \\text{R\\$} 3.798{,}88$$"
+          },
+          {
+            "q": "Sabendo que $x = 1{,}05$, $y = 2{,}323232\\dots$ e $z = 2{,}666\\dots$, o produto entre as razões $\\frac{x}{y}$ e $\\frac{y}{z}$ é igual a:",
+            "options": [
+              "$0{,}35378$",
+              "$0{,}39375$",
+              "$0{,}77853$",
+              "$1{,}00475$",
+              "$1{,}04523$"
+            ],
+            "correct": 1,
+            "explanation": "Observe que no produto das razões a incógnita $y$ se cancela:<br>$$\\frac{x}{y} \\times \\frac{y}{z} = \\frac{x}{z}$$<br>Escrevemos $x$ e $z$ na forma de fração irredutível:<br>• $x = 1{,}05 = \\frac{105}{100} = \\frac{21}{20}$<br>• $z = 2{,}666\\dots = 2 + \\frac{6}{9} = 2 + \\frac{2}{3} = \\frac{8}{3}$<br>Calculando a divisão $\\frac{x}{z}$:<br>$$\\frac{21/20}{8/3} = \\frac{21}{20} \\times \\frac{3}{8} = \\frac{63}{160} = 0{,}39375$$"
+          },
+          {
+            "q": "Uma loja de eletrônicos está realizando um sorteio de fones de ouvido. Inscreveram-se $422\\text{ homens adultos}$, $126\\text{ mulheres adultas}$ e $22\\text{ crianças}$. A probabilidade de uma criança ganhar o prêmio é de aproximadamente:",
+            "options": [
+              "$2{,}98\\%$",
+              "$3{,}28\\%$",
+              "$3{,}86\\%$",
+              "$4{,}01\\%$",
+              "$4{,}11\\%$"
+            ],
+            "correct": 2,
+            "explanation": "Calculamos o total de pessoas cadastradas:<br>$$\\text{Total} = 422 + 126 + 22 = 570\\text{ participantes}$$<br>A probabilidade de uma criança ser sorteada é:<br>$$P = \\frac{22}{570} \\approx 0{,}038596 = 3{,}86\\%$$"
+          },
+          {
+            "q": "Desenvolvendo a expressão algébrica $(xy - xz)^2 - (xz - xy)^2$, é possível encontrar:",
+            "options": [
+              "$0$",
+              "$1$",
+              "$x^2 z^2 - y^2 z^2 - 2x^2 yz - 2xy^2 z$",
+              "$x^2 z^2 - y^2 z^2 - 2x^2 yz + 2xy^2 z$",
+              "$x^2 z^2 - y^2 z^2 + 2x^2 yz + 2xy^2 z$"
+            ],
+            "correct": 0,
+            "explanation": "Note que $(xz - xy) = -(xy - xz)$.<br>Ao elevar ao quadrado:<br>$$(xz - xy)^2 = [-(xy - xz)]^2 = (xy - xz)^2$$<br>Portanto, a expressão se reduz a:<br>$$(xy - xz)^2 - (xy - xz)^2 = 0$$"
+          },
+          {
+            "q": "Em um estudo sobre a soma dos ângulos internos de polígonos regulares, um estudante observou que o ângulo interno de um polígono regular era simultaneamente o dobro e complementar de um ângulo $\\alpha$. O polígono regular analisado pelo estudante foi um:",
+            "options": [
+              "Círculo",
+              "Triângulo",
+              "Hexágono",
+              "Quadrado",
+              "Pentágono"
+            ],
+            "correct": 1,
+            "explanation": "Seja $A_i$ a medida do ângulo interno do polígono.<br>1. Por serem complementares: $A_i + \\alpha = 90^\\circ$.<br>2. Sendo $A_i$ o dobro de $\\alpha$: $A_i = 2\\alpha$.<br>Substituindo:<br>$$2\\alpha + \\alpha = 90^\\circ \\implies 3\\alpha = 90^\\circ \\implies \\alpha = 30^\\circ$$<br>Logo, $A_i = 2 \\times 30^\\circ = 60^\\circ$.<br>O único polígono regular cujo ângulo interno mede $60^\\circ$ é o triângulo equilátero ($n = 3$, com soma dos ângulos internos $180^\\circ / 3 = 60^\\circ$)."
+          },
+          {
+            "q": "Considere um jogador de futebol com faturamento anual de $\\text{R\\$} 1{,}3\\text{ bilhão}$ e o salário-mínimo no Brasil de $\\text{R\\$} 1.412{,}00$ por mês. O tempo que um trabalhador que recebe um salário-mínimo levaria para acumular essa quantia acumulada pelo jogador em um ano, desconsiderando atualizações e rendimentos, é de aproximadamente:",
+            "options": [
+              "$77\\text{ anos}$",
+              "$83\\text{ anos}$",
+              "$77\\text{ mil anos}$",
+              "$83\\text{ mil anos}$",
+              "$77\\text{ milhões de anos}$"
+            ],
+            "correct": 2,
+            "explanation": "1. Rendimento anual do trabalhador ($12\\text{ meses}$):<br>$$12 \\times 1.412 = \\text{R\\$} 16.944{,}00\\text{ por ano}$$<br>2. Dividindo o faturamento do jogador pelo ganho anual do trabalhador:<br>$$\\frac{1{,}3 \\times 10^9}{16.944} = \\frac{1.300.000.000}{16.944} \\approx 76.723\\text{ anos} \\approx 77\\text{ mil anos}$$"
+          },
+          {
+            "q": "Um grupo de $16\\text{ trabalhadores}$ consegue pavimentar $200\\text{ metros}$ de estrada trabalhando $8\\text{ horas por dia}$ durante $1\\text{ dia}$. A meta é pavimentar $2\\text{ km}$ no total. Sabendo que apenas $10\\%$ da distância foi completada, que $4$ trabalhadores saíram de férias e que a jornada de trabalho foi reduzida para $6\\text{ horas diárias}$, o tempo necessário para concluir o restante da pavimentação será de:",
+            "options": [
+              "$12\\text{ dias}$",
+              "$14\\text{ dias}$",
+              "$16\\text{ dias}$",
+              "$18\\text{ dias}$",
+              "$20\\text{ dias}$"
+            ],
+            "correct": 2,
+            "explanation": "1. Distância total: $2\\text{ km} = 2000\\text{ m}$. Já executado: $10\\% = 200\\text{ m}$. Restante: $1800\\text{ m}$.<br>2. Trabalhadores restantes: $16 - 4 = 12\\text{ trabalhadores}$.<br>3. Montamos a regra de três composta:<br>• $16\\text{ operários}$ em $8\\text{ h/dia}$ fazem $200\\text{ m}$ em $1\\text{ dia}$<br>• $12\\text{ operários}$ em $6\\text{ h/dia}$ fazem $1800\\text{ m}$ em $D\\text{ dias}$<br>$$\\frac{1}{D} = \\frac{12}{16} \\times \\frac{6}{8} \\times \\frac{200}{1800}$$<br>$$\\frac{1}{D} = \\frac{3}{4} \\times \\frac{3}{4} \\times \\frac{1}{9} = \\frac{9}{16 \\times 9} = \\frac{1}{16} \\implies D = 16\\text{ dias}$$"
+          },
+          {
+            "q": "Um número natural $n$ é composto por quatro algarismos, tal que $n = 3A2B$, onde $B$ é o algarismo das unidades e $A$ o das centenas. Sabendo que esse número é múltiplo de $12$ e divisível por $16$, o resto de sua divisão por $13$ é igual a:",
+            "options": [
+              "$0$",
+              "$2$",
+              "$5$",
+              "$7$",
+              "$10$"
+            ],
+            "correct": 0,
+            "explanation": "Para $n = 3A2B$ ser divisível por $16$, o número $3A2B$ deve ser divisível por $16$.<br>Testando as possibilidades para $A$ e $B$ entre $0$ e $9$ com $n$ divisível por $12$ (divisível por $3$ e $4$) e por $16$ (ou seja, divisível por $\\text{MMC}(12, 16) = 48$):<br>• Se $A = 1$ e $B = 0$: $n = 3120$.<br>Verificamos: $3120 \\div 16 = 195$ (exato) e $3120 \\div 12 = 260$ (exato).<br>Dividindo $3120$ por $13$:<br>$$3120 \\div 13 = 240\\text{ com resto } 0$$<br>Portanto, o resto da divisão por $13$ é $0$."
+          },
+          {
+            "q": "Um nadador treina em uma distância fixa representada pelo segmento $AB$. O ponto $A$ fica na ponta de um espigão costeiro e o ponto $C$ na base desse espigão, com $AC = 600\\text{ metros}$. Do ponto $C$ até o ponto $B$ na praia mede-se $BC = 800\\text{ metros}$. Sabendo que os segmentos $AC$ e $BC$ formam entre si um ângulo reto ($90^\\circ$), a distância $AB$ percorrida pelo nadador é de:",
+            "options": [
+              "$900\\text{ m}$",
+              "$1.000\\text{ m}$",
+              "$1.200\\text{ m}$",
+              "$1.400\\text{ m}$",
+              "$1.600\\text{ m}$"
+            ],
+            "correct": 1,
+            "explanation": "Como o ângulo em $C$ é reto ($90^\\circ$), o triângulo $ABC$ é retângulo em $C$, sendo $AB$ a hipotenusa e $AC$ e $BC$ os catetos.<br>Aplicando o Teorema de Pitágoras:<br>$$AB^2 = AC^2 + BC^2$$<br>$$AB^2 = 600^2 + 800^2 = 360.000 + 640.000 = 1.000.000$$<br>$$AB = \\sqrt{1.000.000} = 1.000\\text{ m}$$"
+          }
+        ],
+        "slug": "prova-ifce-20242",
+        "filename": "prova-ifce-20242.html",
+        "folder": "bloco-6-provas-ifce",
+        "blockId": "6",
+        "pdf": "ifce-edital-3-2024-cursos-te-cnicos-integrado-caderno-de-provas.pdf"
+      },
+      {
+        "id": "ifce-2024-1-matematica",
+        "title": "Prova IFCE 2024.1",
+        "bncc": "Revisão Geral",
+        "summary": "10 questões de Matemática aplicadas no Processo Seletivo 2024.1 do IFCE (Edital Nº 015/2023) para os Cursos Técnicos Integrados.",
+        "detailedTheory": "A prova do IFCE 2024.1 conteve interpretação de dados demográficos com cálculo de média aritmética populacional por município, ternos pitagóricos fundamentais na verificação de esquadro na construção civil, probabilidade com simplificação de frações irredutíveis, geometria plana com cálculo de perímetro de polígono em forma de L a partir da equação da área, variação de percentual absoluto vs. cálculo proporcional de redução, fatoração de expressões algébricas quadráticas por fator comum em evidência, fração geratriz de dízimas periódicas simples e compostas com quociente de frações, critérios de divisibilidade por 6 (paridade e soma dos algarismos divisível por 3), problemas de sincronização mínima com MMC de talheres em pacotes, e conversão de unidades de velocidade e tempo (metros para quilômetros e minutos para horas).",
+        "keyPoints": [
+          "O terno pitagórico primitivo mais famoso é (3, 4, 5). Qualquer múltiplo k·(3, 4, 5) também forma um triângulo retângulo (ex: 30, 40, 50 cm).",
+          "Para calcular a fração geratriz de uma dízima periódica composta 1,0333..., subtrai-se a parte não periódica: (103 - 10)/90 = 93/90 = 31/30.",
+          "Um número é divisível por 6 se, e somente se, for simultaneamente divisível por 2 (terminar em algarismo par) e por 3 (a soma dos seus algarismos for múltipla de 3).",
+          "Para converter minutos em horas, divide-se por 60: 12 min = 12/60 h = 0,2 h."
+        ],
+        "formula": "a^2 + b^2 = c^2, \\quad (ab - abc)^2 = (ab)^2(1 - c)^2, \\quad \\text{MMC}(a, b)",
+        "solvedExample": {
+          "problem": "Encontre a fração geratriz irredutível da dízima periódica simples $x = 0{,}777\\dots$.",
+          "solution": "1. Multiplicamos a equação por 10:<br>$$10x = 7{,}777\\dots$$<br>2. Subtraímos a equação original ($x = 0{,}777\\dots$):<br>$$10x - x = 7{,}777\\dots - 0{,}777\\dots \\implies 9x = 7 \\implies x = \\frac{7}{9}$$"
+        },
+        "questions": [
+          {
+            "q": "A tabela a seguir apresenta os dados de microrregiões de água e esgoto do Ceará:<br>• Oeste: $47\\text{ municípios}$, população total de $1{,}6\\text{ milhão de pessoas}$<br>• Centro-Norte: $53\\text{ municípios}$, população total de $1{,}6\\text{ milhão de pessoas}$<br>• Centro-Sul: $84\\text{ municípios}$, população total de $5{,}9\\text{ milhões de pessoas}$<br>As médias aritméticas aproximadas da população total por município em cada microrregião são, respectivamente:",
+            "options": [
+              "$31042$, $35159$ e $72876$",
+              "$31342$, $30989$ e $70238$",
+              "$36724$, $31189$ e $72234$",
+              "$34042$, $30189$ e $70238$",
+              "$35724$, $31229$ e $70138$"
+            ],
+            "correct": 3,
+            "explanation": "Calculamos a média dividindo a população pelo número de municípios de cada região:<br>• Oeste: $\\frac{1.600.000}{47} \\approx 34.042{,}55 \\approx 34042$<br>• Centro-Norte: $\\frac{1.600.000}{53} \\approx 30.188{,}68 \\approx 30189$<br>• Centro-Sul: $\\frac{5.900.000}{84} \\approx 70.238{,}095 \\approx 70238$<br>Portanto, as médias são $34042$, $30189$ e $70238$."
+          },
+          {
+            "q": "Na construção civil é comum usar o Teorema de Pitágoras com medidas $1\\text{ m}$, $80\\text{ cm}$ e $60\\text{ cm}$ para verificar se um ângulo entre paredes é reto ($90^\\circ$). Outra sequência de possíveis medidas que podem ser usadas para verificar esse alinhamento em esquadro é:",
+            "options": [
+              "$30$, $40$ e $50\\text{ cm}$",
+              "$35$, $70$ e $105\\text{ cm}$",
+              "$10$, $20$ e $30\\text{ cm}$",
+              "$5$, $15$ e $25\\text{ cm}$",
+              "$1$, $2$ e $3\\text{ cm}$"
+            ],
+            "correct": 0,
+            "explanation": "Para formar um ângulo reto ($90^\\circ$), os lados devem satisfazer a relação pitagórica $a^2 + b^2 = c^2$.<br>Testando a alternativa A com $30$, $40$ e $50\\text{ cm}$:<br>$$30^2 + 40^2 = 900 + 1600 = 2500 = 50^2$$<br>Como a igualdade é verdadeira (trata-se do terno pitagórico fundamental $3-4-5$ multiplicado por $10$), essas medidas garantem um ângulo perfeitamente reto."
+          },
+          {
+            "q": "Uma pizzaria sorteará um brinde para seus clientes. Inscreveram-se $405\\text{ homens}$, $483\\text{ mulheres}$ e $296\\text{ crianças}$. A probabilidade de uma criança ganhar o prêmio é igual a:",
+            "options": [
+              "$1/4$",
+              "$3/7$",
+              "$37/148$",
+              "$41/133$",
+              "$2/5$"
+            ],
+            "correct": 0,
+            "explanation": "Calculamos o total de participantes inscritos:<br>$$\\text{Total} = 405 + 483 + 296 = 1184$$<br>A probabilidade de uma criança ser sorteada é:<br>$$P = \\frac{296}{1184}$$<br>Simplificando a fração por $296$ (já que $1184 = 4 \\times 296$):<br>$$P = \\frac{296 \\div 296}{1184 \\div 296} = \\frac{1}{4}$$"
+          },
+          {
+            "q": "Uma pessoa precisa cercar seu terreno poligonal em formato de 'L'. A figura do terreno é composta por um retângulo superior de base $x + 12$ e altura $x$, acoplado a uma extensão vertical de largura $x$ e altura $x + 5$, totalizando no lado direito uma extensão vertical de $2x + 5$. Sabendo que a área total do terreno é de $429\\text{ m}^2$, o perímetro desse terreno é igual a:",
+            "options": [
+              "$105\\text{ m}$",
+              "$110\\text{ m}$",
+              "$90\\text{ m}$",
+              "$95\\text{ m}$",
+              "$100\\text{ m}$"
+            ],
+            "correct": 4,
+            "explanation": "Decompondo a área do terreno em duas partes retangulares:<br>1. Parte superior: base $x + 12$ e altura $x$, área $= x(x + 12) = x^2 + 12x$.<br>2. Parte inferior: base $x$ e altura $(2x + 5) - x = x + 5$, área $= x(x + 5) = x^2 + 5x$.<br>Área total:<br>$$x^2 + 12x + x^2 + 5x = 2x^2 + 17x = 429$$<br>Resolvendo $2x^2 + 17x - 429 = 0$ por Bhaskara:<br>$$\\Delta = 17^2 - 4(2)(-429) = 289 + 3432 = 3721 = 61^2$$<br>$$x = \\frac{-17 + 61}{4} = \\frac{44}{4} = 11\\text{ m}$$<br>Somando todos os $6$ lados do polígono para obter o perímetro:<br>• Topo: $12 + 11 = 23\\text{ m}$<br>• Lado esquerdo superior: $x = 11\\text{ m}$<br>• Degrau horizontal interno: $12\\text{ m}$<br>• Degrau vertical interno: $11 + 5 = 16\\text{ m}$<br>• Base inferior: $x = 11\\text{ m}$<br>• Lado direito total: $2(11) + 5 = 27\\text{ m}$<br>Perímetro total: $23 + 11 + 12 + 16 + 11 + 27 = 100\\text{ m}$."
+          },
+          {
+            "q": "Segundo dados do governo do Ceará, a taxa de desemprego recuou $1{,}8\\text{ ponto percentual}$. Considerando que havia $310\\text{ mil desempregados}$ no segundo trimestre de 2022 e aplicando essa redução percentual de $1{,}8\\%$, o número no mesmo período de 2023 passou para:",
+            "options": [
+              "$305550$",
+              "$296452$",
+              "$304420$",
+              "$298340$",
+              "$299982$"
+            ],
+            "correct": 2,
+            "explanation": "Aplicando a redução de $1{,}8\\%$ sobre o total de $310.000$ desempregados:<br>$$\\text{Redução} = 310.000 \\times 0{,}018 = 5.580$$<br>Novo quantitativo:<br>$$310.000 - 5.580 = 304.420$$"
+          },
+          {
+            "q": "Desenvolvendo e fatorando a expressão algébrica $(ab - abc)^2$, é possível encontrar:",
+            "options": [
+              "$(ab)^2 \\cdot (1 - 2c + c^2)$",
+              "$ab^2 - 2abc + abc^2$",
+              "$ab^2 - 2a^2 b^2 c^2 + abc^2$",
+              "$-c^2$",
+              "$ab$"
+            ],
+            "correct": 0,
+            "explanation": "Colocamos o fator comum $ab$ em evidência dentro dos parênteses:<br>$$(ab - abc)^2 = [ab(1 - c)]^2$$<br>Distribuindo o expoente $2$:<br>$$= (ab)^2 \\cdot (1 - c)^2$$<br>Desenvolvendo o produto notável $(1 - c)^2 = 1 - 2c + c^2$:<br>$$= (ab)^2 \\cdot (1 - 2c + c^2)$$"
+          },
+          {
+            "q": "Sabendo que $a = 2{,}525252\\dots$ e $b = 1{,}0333\\dots$, a fração irredutível equivalente a $\\frac{a}{b}$ é igual a:",
+            "options": [
+              "$\\frac{3}{2}$",
+              "$\\frac{1931}{1287}$",
+              "$\\frac{5}{3}$",
+              "$\\frac{21}{7}$",
+              "$\\frac{2500}{1023}$"
+            ],
+            "correct": 4,
+            "explanation": "1. Fração geratriz de $a = 2{,}525252\\dots$ (dízima periódica simples):<br>$$a = 2 + \\frac{52}{99} = \\frac{198 + 52}{99} = \\frac{250}{99}$$<br>2. Fração geratriz de $b = 1{,}0333\\dots$ (dízima periódica composta):<br>$$b = \\frac{103 - 10}{90} = \\frac{93}{90} = \\frac{31}{30}$$<br>3. Calculando a razão $\\frac{a}{b}$:<br>$$\\frac{a}{b} = \\frac{250/99}{31/30} = \\frac{250}{99} \\times \\frac{30}{31} = \\frac{250 \\times 10}{33 \\times 31} = \\frac{2500}{1023}$$"
+          },
+          {
+            "q": "Um número natural é composto por quatro dígitos: o dígito da unidade de milhar é $5$, o da centena é $7$, o da dezena é $4$ e o da unidade é $U$, formando o número $574U$. Sabendo que esse número é múltiplo de $6$, a soma dos possíveis valores que podem ocupar o lugar de $U$ é:",
+            "options": [
+              "$20$",
+              "$15$",
+              "$8$",
+              "$10$",
+              "$2$"
+            ],
+            "correct": 3,
+            "explanation": "Para que $574U$ seja múltiplo de $6$, ele deve ser simultaneamente divisível por $2$ e por $3$.<br>1. Divisibilidade por $2$: $U$ deve ser par: $U \\in \\{0, 2, 4, 6, 8\\}$.<br>2. Divisibilidade por $3$: A soma dos algarismos deve ser múltipla de $3$:<br>$$5 + 7 + 4 + U = 16 + U$$<br>Testando os valores pares:<br>• $U = 0 \\implies 16$ (não)<br>• $U = 2 \\implies 18$ (divisível por $3$, válido!)<br>• $U = 4 \\implies 20$ (não)<br>• $U = 6 \\implies 22$ (não)<br>• $U = 8 \\implies 24$ (divisível por $3$, válido!)<br>Os valores possíveis são $U = 2$ e $U = 8$. A soma desses valores é:<br>$$2 + 8 = 10$$"
+          },
+          {
+            "q": "Uma rede de produtos para casa vende facas em pacotes com $12\\text{ unidades}$ e garfos em pacotes com $30\\text{ unidades}$. A menor quantidade total de embalagens que se deve comprar para montar conjuntos com o mesmo número de facas e garfos sem sobras é:",
+            "options": [
+              "$5\\text{ pacotes de facas e } 2\\text{ pacotes de garfos}$",
+              "$4\\text{ pacotes de facas e } 2\\text{ pacotes de garfos}$",
+              "$4\\text{ pacotes de facas e } 5\\text{ pacotes de garfos}$",
+              "$5\\text{ pacotes de facas e } 3\\text{ pacotes de garfos}$",
+              "$5\\text{ pacotes de facas e } 4\\text{ pacotes de garfos}$"
+            ],
+            "correct": 0,
+            "explanation": "Para ter a mesma quantidade de facas e garfos com a menor compra possível, determinamos o Mínimo Múltiplo Comum (MMC):<br>$$\\text{MMC}(12, 30) = 60\\text{ unidades de cada talher}$$<br>Calculando a quantidade de pacotes:<br>• Facas: $60 \\div 12 = 5\\text{ pacotes}$<br>• Garfos: $60 \\div 30 = 2\\text{ pacotes}$<br>Portanto, devem ser comprados $5\\text{ pacotes de facas e } 2\\text{ pacotes de garfos}$."
+          },
+          {
+            "q": "No Teste de Aptidão Física (TAF) da Polícia Militar, é necessário realizar uma corrida de $2400\\text{ metros}$ em no máximo $12\\text{ minutos}$. Essas medidas, convertidas para quilômetro e hora, correspondem, respectivamente, a:",
+            "options": [
+              "$0{,}24\\text{ km}$ e $0{,}25\\text{ h}$",
+              "$2{,}4\\text{ km}$ e $0{,}12\\text{ h}$",
+              "$0{,}24\\text{ km}$ e $0{,}12\\text{ h}$",
+              "$0{,}0024\\text{ km}$ e $2{,}0\\text{ h}$",
+              "$2{,}4\\text{ km}$ e $0{,}2\\text{ h}$"
+            ],
+            "correct": 4,
+            "explanation": "1. Convertendo metros para quilômetros:<br>$$2400\\text{ m} = \\frac{2400}{1000} = 2{,}4\\text{ km}$$<br>2. Convertendo minutos para horas:<br>$$12\\text{ min} = \\frac{12}{60}\\text{ h} = \\frac{1}{5}\\text{ h} = 0{,}2\\text{ h}$$<br>Logo, correspondem a $2{,}4\\text{ km}$ e $0{,}2\\text{ h}$."
+          }
+        ],
+        "slug": "prova-ifce-20241",
+        "filename": "prova-ifce-20241.html",
+        "folder": "bloco-6-provas-ifce",
+        "blockId": "6",
+        "pdf": "caderno-de-provas-edital-n-.-015-2023-cursos-te-cnicos-integrados.pdf"
+      },
+      {
+        "id": "ifce-2023-1-matematica",
+        "title": "Prova IFCE 2023.1",
+        "bncc": "Revisão Geral",
+        "summary": "10 questões de Matemática aplicadas no Processo Seletivo 2023.1 do IFCE para os Cursos Técnicos Integrados.",
+        "detailedTheory": "O Exame 2023.1 do IFCE cobrou teoria dos conjuntos (complementar de conjunto finito no universo dos inteiros limitados), propriedades operatórias da potenciação com expoentes fracionários e literais, divisão em partes diretamente proporcionais encadeadas, problemas de máximo divisor comum (MDC) para empacotamento uniforme de frutas, simplificação de frações algébricas polinomiais por agrupamento, inequações do 1º grau aplicadas à comparação de custos de contratação por hora, condição para que uma função quadrática seja estritamente negativa em todo o domínio real (discriminante delta negativo e concavidade para baixo), sistema de equações com ângulos e complemento, diferença de quadrados de binômios semi-soma e semi-diferença, e conversão de múltiplos e submúltiplos do metro (decâmetro, centímetro e metro) para cálculo de volume e capacidade em litros.",
+        "keyPoints": [
+          "Para que uma função quadrática f(x) = ax² + bx + c seja estritamente negativa para todo x real, devemos ter simultaneamente a < 0 e Δ < 0.",
+          "1 dam (decâmetro) equivale a 10 metros; 1 m³ equivale a 1.000 litros de capacidade.",
+          "A expressão ((a+b)/2)² - ((a-b)/2)² simplifica-se algebricamente para ab (identidade do produto de semi-soma e semi-diferença)."
+        ],
+        "formula": "27^{\\alpha - \\beta} = \\frac{p^3}{q^3}, \\quad V = c \\cdot l \\cdot h, \\quad \\Delta = b^2 - 4ac",
+        "solvedExample": {
+          "problem": "Calcule o valor da expressão com potências: $(2^3)^2 \\cdot 2^{-4} \\div 2^0$.",
+          "solution": "1. Aplicamos a potência de potência: $(2^3)^2 = 2^{3 \\times 2} = 2^6$.<br>2. Multiplicamos potências de mesma base somando os expoentes: $2^6 \\cdot 2^{-4} = 2^{6 + (-4)} = 2^2 = 4$.<br>3. Dividimos por $2^0 = 1$: $4 \\div 1 = 4$."
+        },
+        "questions": [
+          {
+            "q": "Seja o conjunto universo $U = \\{y \\in \\mathbb{Z} \\mid -6 < y < 6\\}$. Em relação a $U$, determine o complementar do subconjunto $B = \\{-5, -3, -2, 0, 1\\}$:",
+            "options": [
+              "$\\{-4, -1, 2, 3, 4, 5\\}$",
+              "$\\{-6, -4, -1, 2, 3, 4, 5\\}$",
+              "$\\{-4, -1, 2, 3, 4, 5, 6\\}$",
+              "$\\{-1, 2, 3, 4, 5\\}$",
+              "$\\{-4, -1, 3, 4, 5\\}$"
+            ],
+            "correct": 0,
+            "explanation": "Listando todos os números inteiros estritamente entre $-6$ e $6$ que compõem o conjunto universo $U$:<br>$$U = \\{-5, -4, -3, -2, -1, 0, 1, 2, 3, 4, 5\\}$$<br>O complementar de $B$ em relação a $U$ (denotado por $\\complement_U B$ ou $U \\setminus B$) consiste em retirar de $U$ os elementos de $B = \\{-5, -3, -2, 0, 1\\}$:<br>$$\\complement_U B = \\{-4, -1, 2, 3, 4, 5\\}$$"
+          },
+          {
+            "q": "Se $\\alpha$ e $\\beta$ são números reais tais que $3^\\alpha = p$ e $3^\\beta = q$, o valor da potência $27^{\\alpha - \\beta}$ é igual a:",
+            "options": [
+              "$\\frac{p - q}{2}$",
+              "$\\frac{p^3}{q^3}$",
+              "$-\\frac{p}{q}$",
+              "$3(p - q)$",
+              "$\\frac{p}{3q}$"
+            ],
+            "correct": 1,
+            "explanation": "Sabendo que $27 = 3^3$, reescrevemos a potência:<br>$$27^{\\alpha - \\beta} = (3^3)^{\\alpha - \\beta} = 3^{3(\\alpha - \\beta)} = (3^{\\alpha - \\beta})^3$$<br>Pela propriedade do quociente de potências de mesma base:<br>$$3^{\\alpha - \\beta} = \\frac{3^\\alpha}{3^\\beta} = \\frac{p}{q}$$<br>Elevando ao cubo:<br>$$\\left(\\frac{p}{q}\\right)^3 = \\frac{p^3}{q^3}$$"
+          },
+          {
+            "q": "Um feirante comprou para revender um pacote com $24\\text{ mangas}$, outro com $30\\text{ melancias}$ e outro com $60\\text{ abacates}$. Pretende revender essas frutas em sacolas, todas com o mesmo número de frutas e com o maior número possível, sem misturar espécies e sem que sobre nenhuma fruta. A quantidade total de sacolas utilizadas pelo feirante será de:",
+            "options": [
+              "$22$",
+              "$20$",
+              "$21$",
+              "$19$",
+              "$23$"
+            ],
+            "correct": 3,
+            "explanation": "1. A capacidade máxima de cada sacola é dada pelo Máximo Divisor Comum (MDC) das quantidades:<br>$$\\text{MDC}(24, 30, 60) = 6\\text{ frutas por sacola}$$<br>2. Calculamos o número de sacolas para cada fruta:<br>• Mangas: $24 \\div 6 = 4\\text{ sacolas}$<br>• Melancias: $30 \\div 6 = 5\\text{ sacolas}$<br>• Abacates: $60 \\div 6 = 10\\text{ sacolas}$<br>Total de sacolas: $4 + 5 + 10 = 19\\text{ sacolas}$."
+          },
+          {
+            "q": "Dividindo o número $684$ em três partes $A$, $B$ e $C$, de tal forma que a primeira esteja para a segunda como $3$ está para $5$, e a segunda esteja para a terceira como $4$ está para $8$, o maior valor entre as três partes é:",
+            "options": [
+              "$190$",
+              "$114$",
+              "$480$",
+              "$300$",
+              "$380$"
+            ],
+            "correct": 4,
+            "explanation": "Estabelecemos as proporções em função de $B$:<br>1. $\\frac{A}{B} = \\frac{3}{5} \\implies A = \\frac{3}{5} B$<br>2. $\\frac{B}{C} = \\frac{4}{8} = \\frac{1}{2} \\implies C = 2B$<br>Somando as três partes:<br>$$A + B + C = \\frac{3}{5} B + B + 2B = \\frac{3}{5} B + 3B = \\frac{18}{5} B = 684$$<br>$$B = 684 \\times \\frac{5}{18} = 38 \\times 5 = 190$$<br>Calculando as outras duas partes:<br>• $A = \\frac{3}{5} \\times 190 = 114$<br>• $C = 2 \\times 190 = 380$<br>Portanto, o maior valor das três partes é $380$."
+          },
+          {
+            "q": "Simplificando a expressão fracionária $y = \\frac{x^8 + 3x^6 + 2x^2 + 6}{x^2 + 3}$, onde $x$ é um número real diferente de zero, encontraremos:",
+            "options": [
+              "$x^6 + 4$",
+              "$x^6 + 6$",
+              "$x^6 + 2$",
+              "$x^6 + 3$",
+              "$x^6 + 5$"
+            ],
+            "correct": 2,
+            "explanation": "Fatoramos o numerador por agrupamento:<br>$$x^8 + 3x^6 + 2x^2 + 6 = x^6(x^2 + 3) + 2(x^2 + 3)$$<br>$$= (x^6 + 2)(x^2 + 3)$$<br>Substituindo na fração original:<br>$$y = \\frac{(x^6 + 2)(x^2 + 3)}{x^2 + 3} = x^6 + 2$$"
+          },
+          {
+            "q": "O valor fixo do show de um cantor sertanejo é de $\\text{R\\$} 1.000{,}00$ mais $\\text{R\\$} 2.500{,}00$ por hora excedente. Já o valor cobrado por um cantor brega é de $\\text{R\\$} 3.000{,}00$ mais $\\text{R\\$} 2.000{,}00$ por hora excedente. O tempo máximo de duração da festa para contratar o cantor sertanejo de modo que seu custo não fique mais caro que o do cantor brega é:",
+            "options": [
+              "$5\\text{ horas}$",
+              "$4\\text{ horas}$",
+              "$6\\text{ horas}$",
+              "$7\\text{ horas}$",
+              "$8\\text{ horas}$"
+            ],
+            "correct": 1,
+            "explanation": "Seja $h$ a quantidade de horas excedentes.<br>• Custo do sertanejo: $C_S(h) = 1000 + 2500h$<br>• Custo do brega: $C_B(h) = 3000 + 2000h$<br>Para que o sertanejo não fique mais caro que o brega ($C_S \\le C_B$):<br>$$1000 + 2500h \\le 3000 + 2000h$$<br>$$2500h - 2000h \\le 3000 - 1000$$<br>$$500h \\le 2000 \\implies h \\le 4\\text{ horas}$$"
+          },
+          {
+            "q": "Seja a função quadrática $f(x) = (k - 2)x^2 - 2x - 3$, definida de $\\mathbb{R} \\to \\mathbb{R}$. Determine os valores reais de $k$ para que tenhamos $f(x) < 0$ para todo $x \\in \\mathbb{R}$:",
+            "options": [
+              "$k < 5/3$",
+              "$k > 5/3$",
+              "$k < 2$",
+              "$k > 2$",
+              "$k > 3$"
+            ],
+            "correct": 0,
+            "explanation": "Para que uma função quadrática $ax^2 + bx + c$ seja estritamente negativa ($< 0$) para todo $x \\in \\mathbb{R}$, devemos atender a duas condições simultâneas:<br>1. Concavidade para baixo: $a < 0 \\implies k - 2 < 0 \\implies k < 2$.<br>2. Não possuir raízes reais: $\\Delta < 0$.<br>$$\\Delta = (-2)^2 - 4(k - 2)(-3) = 4 + 12(k - 2) = 4 + 12k - 24 = 12k - 20$$<br>$$\\Delta < 0 \\implies 12k - 20 < 0 \\implies 12k < 20 \\implies k < \\frac{20}{12} = \\frac{5}{3}$$<br>A interseção entre as duas condições ($k < 2$ e $k < 5/3$) é $k < 5/3$ (pois $5/3 \\approx 1{,}67 < 2$)."
+          },
+          {
+            "q": "A soma de dois ângulos é $126^\\circ$ e um deles vale o dobro do complemento do outro. O maior desses dois ângulos mede:",
+            "options": [
+              "$75^\\circ$",
+              "$73^\\circ$",
+              "$74^\\circ$",
+              "$72^\\circ$",
+              "$76^\\circ$"
+            ],
+            "correct": 3,
+            "explanation": "Sejam $x$ e $y$ os dois ângulos.<br>1. Soma dos ângulos: $x + y = 126^\\circ$.<br>2. Um é o dobro do complemento do outro: $x = 2(90^\\circ - y) = 180^\\circ - 2y \\implies x + 2y = 180^\\circ$.<br>Subtraindo a primeira equação da segunda:<br>$$(x + 2y) - (x + y) = 180^\\circ - 126^\\circ \\implies y = 54^\\circ$$<br>Substituindo $y$ para encontrar $x$:<br>$$x = 126^\\circ - 54^\\circ = 72^\\circ$$<br>O maior ângulo é portanto $72^\\circ$."
+          },
+          {
+            "q": "A área de um quadrado de lado $\\frac{a + b}{2}$ (com $a > b$), menos a área de um quadrado de lado $\\frac{a - b}{2}$, é igual à área de um retângulo de lados:",
+            "options": [
+              "$a/2$ e $b/2$",
+              "$a + b$ e $a - b$",
+              "$2a$ e $2b$",
+              "$\\sqrt{a}$ e $\\sqrt{b}$",
+              "$a$ e $b$"
+            ],
+            "correct": 4,
+            "explanation": "Calculamos a diferença entre as duas áreas quadradas:<br>$$\\text{Área} = \\left(\\frac{a + b}{2}\\right)^2 - \\left(\\frac{a - b}{2}\\right)^2$$<br>$$= \\frac{(a + b)^2 - (a - b)^2}{4}$$<br>Desenvolvendo os produtos notáveis no numerador:<br>$$(a^2 + 2ab + b^2) - (a^2 - 2ab + b^2) = 4ab$$<br>Dividindo pelo denominador $4$:<br>$$\\text{Área} = \\frac{4ab}{4} = ab$$<br>A expressão $ab$ representa exatamente a área de um retângulo cujos lados medem $a$ e $b$."
+          },
+          {
+            "q": "As dimensões de um reservatório em formato de paralelepípedo reto-retângulo são $6\\text{ dam}$ de comprimento, $34\\text{ cm}$ de largura e $35\\text{ m}$ de altura. Para encher $\\frac{3}{5}$ do reservatório com água, a quantidade de litros necessária é de:",
+            "options": [
+              "$422.200\\text{ l}$",
+              "$425.200\\text{ l}$",
+              "$424.200\\text{ l}$",
+              "$423.200\\text{ l}$",
+              "$428.400\\text{ l}$"
+            ],
+            "correct": 4,
+            "explanation": "Convertemos todas as dimensões para metros ($\\text{m}$):<br>• Comprimento: $6\\text{ dam} = 6 \\times 10\\text{ m} = 60\\text{ m}$<br>• Largura: $34\\text{ cm} = 0{,}34\\text{ m}$<br>• Altura: $35\\text{ m}$<br>Calculamos o volume total do reservatório:<br>$$V_{\\text{total}} = 60 \\times 0{,}34 \\times 35 = 20{,}4 \\times 35 = 714\\text{ m}^3$$<br>Para preencher $\\frac{3}{5}$ do reservatório:<br>$$V_{\\text{água}} = \\frac{3}{5} \\times 714 = 3 \\times 142{,}8 = 428{,}4\\text{ m}^3$$<br>Como $1\\text{ m}^3 = 1000\\text{ litros}$:<br>$$428{,}4 \\times 1000 = 428.400\\text{ litros}$$"
+          }
+        ],
+        "slug": "prova-ifce-20231",
+        "filename": "prova-ifce-20231.html",
+        "folder": "bloco-6-provas-ifce",
+        "blockId": "6",
+        "pdf": "Ensino Técnico Integrado 2022.pdf"
+      }
+    ]
   }
 }

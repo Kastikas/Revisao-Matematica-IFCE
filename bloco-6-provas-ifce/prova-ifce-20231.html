@@ -1,0 +1,779 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Prova IFCE 2023.1 - Bloco 6: Provas Anteriores IFCE | PartiuIF</title>
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        brand: {
+                            50: '#f0fdf4',
+                            100: '#dcfce7',
+                            200: '#bbf7d0',
+                            300: '#86efac',
+                            400: '#4ade80',
+                            500: '#22c55e',
+                            600: '#16a34a',
+                            700: '#15803d',
+                            800: '#166534',
+                            900: '#14532d',
+                            950: '#052e16',
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+    <!-- Lucide Icons -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <!-- KaTeX para Renderização de Equações -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.8/dist/katex.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/katex@0.16.8/dist/katex.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/katex@0.16.8/dist/contrib/auto-render.min.js"></script>
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="../assets/css/styles.css">
+</head>
+<body class="bg-gray-50 text-gray-800 font-sans antialiased min-h-screen flex flex-col">
+
+    <!-- Header / Navbar Principal -->
+    <header class="gradient-header text-white shadow-lg sticky top-0 z-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex items-center justify-between h-16">
+                <!-- Logo & Título -->
+                <a href="../index.html" class="flex items-center space-x-3 group">
+                    <div class="bg-white p-2 rounded-xl text-brand-700 font-bold shadow-md flex items-center justify-center group-hover:scale-105 transition">
+                        <i data-lucide="graduation-cap" class="w-6 h-6"></i>
+                    </div>
+                    <div>
+                        <span class="font-extrabold text-xl tracking-tight text-white flex items-center gap-1">
+                            Partiu<span class="text-brand-300">IF</span>
+                        </span>
+                        <p class="text-xs text-brand-100 hidden sm:flex items-center gap-1">
+                            <i data-lucide="save" class="w-3 h-3 text-brand-300"></i> Progresso local ativado
+                        </p>
+                    </div>
+                </a>
+
+                <!-- Navegação Desktop -->
+                <nav class="hidden md:flex space-x-1">
+                    <a href="../index.html" class="px-3 py-2 rounded-lg text-sm transition flex items-center gap-1.5 text-brand-100 hover:bg-brand-800/70 hover:text-white">
+            <i data-lucide="home" class="w-4 h-4"></i> Início
+        </a><a href="../bloco-1-numeros/index.html" class="px-3 py-2 rounded-lg text-sm transition flex items-center gap-1.5 text-brand-100 hover:bg-brand-800/70 hover:text-white">
+            <i data-lucide="binary" class="w-4 h-4"></i> Bloco 1
+        </a><a href="../bloco-2-algebra/index.html" class="px-3 py-2 rounded-lg text-sm transition flex items-center gap-1.5 text-brand-100 hover:bg-brand-800/70 hover:text-white">
+            <i data-lucide="variable" class="w-4 h-4"></i> Bloco 2
+        </a><a href="../bloco-3-geometria/index.html" class="px-3 py-2 rounded-lg text-sm transition flex items-center gap-1.5 text-brand-100 hover:bg-brand-800/70 hover:text-white">
+            <i data-lucide="shapes" class="w-4 h-4"></i> Bloco 3
+        </a><a href="../bloco-4-medidas-e-estatistica/index.html" class="px-3 py-2 rounded-lg text-sm transition flex items-center gap-1.5 text-brand-100 hover:bg-brand-800/70 hover:text-white">
+            <i data-lucide="bar-chart-3" class="w-4 h-4"></i> Bloco 4
+        </a><a href="../bloco-5-provas-ifsc/index.html" class="px-3 py-2 rounded-lg text-sm transition flex items-center gap-1.5 text-brand-100 hover:bg-brand-800/70 hover:text-white">
+            <i data-lucide="file-text" class="w-4 h-4"></i> Provas IFSC
+        </a><a href="../bloco-6-provas-ifce/index.html" class="px-3 py-2 rounded-lg text-sm transition flex items-center gap-1.5 bg-brand-800 text-white font-semibold shadow-inner">
+            <i data-lucide="award" class="w-4 h-4"></i> Provas IFCE
+        </a>
+                </nav>
+
+                <!-- Ações do Usuário -->
+                <div class="flex items-center gap-3">
+                    <a href="../simulado.html" class="bg-brand-500 hover:bg-brand-400 text-white font-semibold px-3.5 py-1.5 rounded-lg text-sm transition flex items-center gap-1.5 shadow hover:shadow-md">
+                        <i data-lucide="award" class="w-4 h-4"></i> Simulado IF
+                    </a>
+                    <button id="mobile-menu-btn" class="md:hidden p-2 rounded-lg text-brand-100 hover:text-white hover:bg-brand-800" aria-label="Abrir menu">
+                        <i data-lucide="menu" class="w-6 h-6"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Menu Mobile -->
+        <div id="mobile-menu" class="hidden md:hidden bg-brand-900 border-t border-brand-800 px-4 pt-2 pb-4 space-y-1">
+            <a href="../index.html" class="block px-3 py-2 rounded-md text-base font-medium text-white flex items-center gap-2 hover:bg-brand-800/60">
+            <i data-lucide="home" class="w-4 h-4"></i> Início
+        </a><a href="../bloco-1-numeros/index.html" class="block px-3 py-2 rounded-md text-base font-medium text-white flex items-center gap-2 hover:bg-brand-800/60">
+            <i data-lucide="binary" class="w-4 h-4"></i> Bloco 1
+        </a><a href="../bloco-2-algebra/index.html" class="block px-3 py-2 rounded-md text-base font-medium text-white flex items-center gap-2 hover:bg-brand-800/60">
+            <i data-lucide="variable" class="w-4 h-4"></i> Bloco 2
+        </a><a href="../bloco-3-geometria/index.html" class="block px-3 py-2 rounded-md text-base font-medium text-white flex items-center gap-2 hover:bg-brand-800/60">
+            <i data-lucide="shapes" class="w-4 h-4"></i> Bloco 3
+        </a><a href="../bloco-4-medidas-e-estatistica/index.html" class="block px-3 py-2 rounded-md text-base font-medium text-white flex items-center gap-2 hover:bg-brand-800/60">
+            <i data-lucide="bar-chart-3" class="w-4 h-4"></i> Bloco 4
+        </a><a href="../bloco-5-provas-ifsc/index.html" class="block px-3 py-2 rounded-md text-base font-medium text-white flex items-center gap-2 hover:bg-brand-800/60">
+            <i data-lucide="file-text" class="w-4 h-4"></i> Provas IFSC
+        </a><a href="../bloco-6-provas-ifce/index.html" class="block px-3 py-2 rounded-md text-base font-medium text-white flex items-center gap-2 bg-brand-800 font-bold">
+            <i data-lucide="award" class="w-4 h-4"></i> Provas IFCE
+        </a>
+            <a href="../simulado.html" class="block px-3 py-2 rounded-md text-base font-bold bg-brand-600 text-white flex items-center gap-2 mt-2">
+                <i data-lucide="award" class="w-4 h-4"></i> Simulado IF Geral
+            </a>
+        </div>
+    </header>
+
+
+    <main class="flex-grow max-w-7xl w-full mx-auto px-4 sm:px-6 lg:px-8 py-8">
+        
+        <!-- Breadcrumbs -->
+        <nav class="flex items-center gap-2 text-xs sm:text-sm text-gray-500 mb-6 flex-wrap">
+            <a href="../index.html" class="hover:text-brand-700 flex items-center gap-1"><i data-lucide="home" class="w-3.5 h-3.5"></i> Início</a>
+            <span class="text-gray-300">/</span>
+            <a href="./index.html" class="hover:text-brand-700">Bloco 6: Provas Anteriores IFCE</a>
+            <span class="text-gray-300">/</span>
+            <span class="text-gray-800 font-semibold">Prova IFCE 2023.1</span>
+        </nav>
+
+        <!-- Cabeçalho do Subtópico -->
+        <div class="bg-white rounded-2xl p-6 sm:p-8 shadow-sm mb-8 border border-gray-200 flex flex-col md:flex-row justify-between md:items-center gap-4">
+            <div>
+                <div class="flex items-center gap-2 mb-2">
+                    <span class="bg-brand-100 text-brand-800 text-xs font-bold px-3 py-1 rounded-full border border-brand-200">
+                        BNCC: Revisão Geral
+                    </span>
+                    <span class="text-xs text-gray-500 font-medium">Subtópico 05 de 05</span>
+                </div>
+                <h1 class="text-2xl sm:text-3xl font-extrabold text-gray-900">Prova IFCE 2023.1</h1>
+                <p class="text-gray-600 text-sm sm:text-base mt-2 max-w-3xl leading-relaxed">10 questões de Matemática aplicadas no Processo Seletivo 2023.1 do IFCE para os Cursos Técnicos Integrados.</p>
+            </div>
+            
+            <div class="flex flex-col sm:flex-row md:flex-col lg:flex-row items-start sm:items-center gap-3">
+                
+                <a href="../provas/ifce/Ensino Técnico Integrado 2022.pdf" download class="bg-brand-700 hover:bg-brand-800 text-white font-semibold px-4 py-2 rounded-xl text-sm transition flex items-center gap-2 shadow-sm">
+                    <i data-lucide="file-down" class="w-4 h-4"></i> Baixar Prova Oficial (PDF)
+                </a>
+            
+                <button id="btn-toggle-done-ifce-2023-1-matematica" onclick="toggleTopicDone('ifce-2023-1-matematica')" class="px-4 py-2 rounded-xl text-sm font-semibold border bg-white text-gray-700 border-gray-300 hover:bg-gray-50 transition flex items-center gap-2 shadow-sm">
+                    <i data-lucide="square" class="w-4 h-4 text-gray-400"></i> Marcar como Concluído
+                </button>
+            </div>
+        </div>
+
+        <!-- Layout de Conteúdo: 2 Colunas de Estudo + 1 Coluna Lateral -->
+        <div class="grid grid-cols-1 lg:grid-cols-3 gap-8">
+            
+            <!-- Coluna Principal de Estudos (2 Colunas) -->
+            <div class="lg:col-span-2 space-y-8">
+                
+                <!-- 1. Teoria e Dicas -->
+                <section class="bg-white border border-gray-200 rounded-2xl p-6 sm:p-8 shadow-sm">
+                    <h2 class="text-xl font-bold text-gray-900 mb-4 flex items-center gap-2.5 text-brand-800">
+                        <i data-lucide="book-open" class="w-5 h-5 text-brand-600"></i> Teoria e Conceitos Chave
+                    </h2>
+                    <div class="text-gray-700 leading-relaxed text-sm sm:text-base mb-6 space-y-3">
+                        <p>O Exame 2023.1 do IFCE cobrou teoria dos conjuntos (complementar de conjunto finito no universo dos inteiros limitados), propriedades operatórias da potenciação com expoentes fracionários e literais, divisão em partes diretamente proporcionais encadeadas, problemas de máximo divisor comum (MDC) para empacotamento uniforme de frutas, simplificação de frações algébricas polinomiais por agrupamento, inequações do 1º grau aplicadas à comparação de custos de contratação por hora, condição para que uma função quadrática seja estritamente negativa em todo o domínio real (discriminante delta negativo e concavidade para baixo), sistema de equações com ângulos e complemento, diferença de quadrados de binômios semi-soma e semi-diferença, e conversão de múltiplos e submúltiplos do metro (decâmetro, centímetro e metro) para cálculo de volume e capacidade em litros.</p>
+                    </div>
+                    
+                    <div class="bg-brand-50/70 border border-brand-200 rounded-xl p-5">
+                        <h3 class="text-xs font-bold text-brand-900 uppercase tracking-wider mb-3 flex items-center gap-1.5">
+                            <i data-lucide="lightbulb" class="w-4 h-4 text-brand-600"></i> Dicas Essenciais para o Exame IF
+                        </h3>
+                        <ul class="space-y-2">
+                            
+            <li class="flex items-start gap-2 text-xs sm:text-sm text-gray-700">
+                <i data-lucide="check" class="w-4 h-4 text-brand-600 flex-shrink-0 mt-0.5"></i>
+                <span>Para que uma função quadrática f(x) = ax² + bx + c seja estritamente negativa para todo x real, devemos ter simultaneamente a < 0 e Δ < 0.</span>
+            </li>
+        
+            <li class="flex items-start gap-2 text-xs sm:text-sm text-gray-700">
+                <i data-lucide="check" class="w-4 h-4 text-brand-600 flex-shrink-0 mt-0.5"></i>
+                <span>1 dam (decâmetro) equivale a 10 metros; 1 m³ equivale a 1.000 litros de capacidade.</span>
+            </li>
+        
+            <li class="flex items-start gap-2 text-xs sm:text-sm text-gray-700">
+                <i data-lucide="check" class="w-4 h-4 text-brand-600 flex-shrink-0 mt-0.5"></i>
+                <span>A expressão ((a+b)/2)² - ((a-b)/2)² simplifica-se algebricamente para ab (identidade do produto de semi-soma e semi-diferença).</span>
+            </li>
+        
+                        </ul>
+                    </div>
+                </section>
+
+                <!-- 2. Fórmulas Fundamentais -->
+                <section class="bg-brand-900 text-white rounded-2xl p-6 sm:p-8 shadow-md border border-brand-800">
+                    <h2 class="text-brand-300 text-xs font-bold uppercase tracking-wider mb-3 flex items-center gap-2">
+                        <i data-lucide="sigma" class="w-4 h-4"></i> Fórmulas e Relações Fundamentais
+                    </h2>
+                    <div class="text-lg sm:text-2xl text-center py-4 px-2 bg-brand-950/60 rounded-xl overflow-x-auto text-brand-100 font-mono border border-brand-800">
+                        $$27^{\alpha - \beta} = \frac{p^3}{q^3}, \quad V = c \cdot l \cdot h, \quad \Delta = b^2 - 4ac$$
+                    </div>
+                </section>
+
+                <!-- 3. Exemplo Resolvido Passo a Passo -->
+                <section class="bg-emerald-50/60 border border-brand-200 rounded-2xl p-6 sm:p-8 shadow-sm">
+                    <h2 class="text-lg font-bold text-brand-900 mb-3 flex items-center gap-2">
+                        <i data-lucide="file-check-2" class="w-5 h-5 text-brand-700"></i> Exemplo Resolvido Passo a Passo
+                    </h2>
+                    <div class="bg-white border border-brand-100 rounded-xl p-5 shadow-inner">
+                        <p class="text-sm sm:text-base font-semibold text-gray-800 mb-3">Calcule o valor da expressão com potências: $(2^3)^2 \cdot 2^{-4} \div 2^0$.</p>
+                        <div class="text-xs sm:text-sm text-gray-700 leading-relaxed whitespace-pre-line border-t border-gray-100 pt-3">
+                            <strong class="text-brand-800 block mb-1">Resolução Detalhada:</strong>
+                            1. Aplicamos a potência de potência: $(2^3)^2 = 2^{3 \times 2} = 2^6$.<br>2. Multiplicamos potências de mesma base somando os expoentes: $2^6 \cdot 2^{-4} = 2^{6 + (-4)} = 2^2 = 4$.<br>3. Dividimos por $2^0 = 1$: $4 \div 1 = 4$.
+                        </div>
+                    </div>
+                </section>
+
+                <!-- 4. Exercícios de Fixação / Questões da Prova -->
+                <section class="bg-white border border-gray-200 rounded-2xl p-6 sm:p-8 shadow-sm">
+                    <div class="flex items-center justify-between mb-6 pb-4 border-b border-gray-100">
+                        <div>
+                            <h2 class="text-xl font-bold text-brand-800 flex items-center gap-2">
+                                <i data-lucide="list-checks" class="w-6 h-6 text-brand-600"></i> Questões e Exercícios
+                            </h2>
+                            <p class="text-xs text-gray-500 mt-1">Resolva as questões para fixar o conteúdo. Suas respostas são salvas automaticamente.</p>
+                        </div>
+                        <span class="text-xs font-semibold px-2.5 py-1 rounded-full bg-brand-50 text-brand-700 border border-brand-200">
+                            10 Questões
+                        </span>
+                    </div>
+
+                    
+                <div class="mb-8 border-b border-gray-100 pb-6 last:border-0 last:pb-0" id="q-container-ifce-2023-1-matematica-q0">
+                    <div class="flex items-center justify-between mb-2">
+                        <span class="text-xs font-bold uppercase tracking-wider text-brand-700 bg-brand-50 px-2.5 py-0.5 rounded-full border border-brand-100">Questão 1</span>
+                    </div>
+                    <p class="font-medium text-gray-800 mb-4 text-sm sm:text-base leading-relaxed">Seja o conjunto universo $U = \{y \in \mathbb{Z} \mid -6 < y < 6\}$. Em relação a $U$, determine o complementar do subconjunto $B = \{-5, -3, -2, 0, 1\}$:</p>
+                    <div class="space-y-2 mb-4" id="opts-ifce-2023-1-matematica-q0">
+                        
+                    <button onclick="selectOption('ifce-2023-1-matematica-q0', 0)" id="btn-ifce-2023-1-matematica-q0-0" class="w-full text-left p-3.5 rounded-xl border border-gray-200 hover:border-brand-400 hover:bg-brand-50/40 transition text-sm text-gray-700 flex items-center justify-between group">
+                        <span class="flex items-center gap-2"><strong class="text-brand-700 font-bold">A)</strong> $\{-4, -1, 2, 3, 4, 5\}$</span>
+                        <i data-lucide="circle" class="w-4 h-4 text-gray-300 opt-icon group-hover:text-brand-400 flex-shrink-0"></i>
+                    </button>
+                
+                    <button onclick="selectOption('ifce-2023-1-matematica-q0', 1)" id="btn-ifce-2023-1-matematica-q0-1" class="w-full text-left p-3.5 rounded-xl border border-gray-200 hover:border-brand-400 hover:bg-brand-50/40 transition text-sm text-gray-700 flex items-center justify-between group">
+                        <span class="flex items-center gap-2"><strong class="text-brand-700 font-bold">B)</strong> $\{-6, -4, -1, 2, 3, 4, 5\}$</span>
+                        <i data-lucide="circle" class="w-4 h-4 text-gray-300 opt-icon group-hover:text-brand-400 flex-shrink-0"></i>
+                    </button>
+                
+                    <button onclick="selectOption('ifce-2023-1-matematica-q0', 2)" id="btn-ifce-2023-1-matematica-q0-2" class="w-full text-left p-3.5 rounded-xl border border-gray-200 hover:border-brand-400 hover:bg-brand-50/40 transition text-sm text-gray-700 flex items-center justify-between group">
+                        <span class="flex items-center gap-2"><strong class="text-brand-700 font-bold">C)</strong> $\{-4, -1, 2, 3, 4, 5, 6\}$</span>
+                        <i data-lucide="circle" class="w-4 h-4 text-gray-300 opt-icon group-hover:text-brand-400 flex-shrink-0"></i>
+                    </button>
+                
+                    <button onclick="selectOption('ifce-2023-1-matematica-q0', 3)" id="btn-ifce-2023-1-matematica-q0-3" class="w-full text-left p-3.5 rounded-xl border border-gray-200 hover:border-brand-400 hover:bg-brand-50/40 transition text-sm text-gray-700 flex items-center justify-between group">
+                        <span class="flex items-center gap-2"><strong class="text-brand-700 font-bold">D)</strong> $\{-1, 2, 3, 4, 5\}$</span>
+                        <i data-lucide="circle" class="w-4 h-4 text-gray-300 opt-icon group-hover:text-brand-400 flex-shrink-0"></i>
+                    </button>
+                
+                    <button onclick="selectOption('ifce-2023-1-matematica-q0', 4)" id="btn-ifce-2023-1-matematica-q0-4" class="w-full text-left p-3.5 rounded-xl border border-gray-200 hover:border-brand-400 hover:bg-brand-50/40 transition text-sm text-gray-700 flex items-center justify-between group">
+                        <span class="flex items-center gap-2"><strong class="text-brand-700 font-bold">E)</strong> $\{-4, -1, 3, 4, 5\}$</span>
+                        <i data-lucide="circle" class="w-4 h-4 text-gray-300 opt-icon group-hover:text-brand-400 flex-shrink-0"></i>
+                    </button>
+                
+                    </div>
+                    <div class="flex items-center gap-3">
+                        <button id="submit-btn-ifce-2023-1-matematica-q0" onclick="submitAnswer('6', 'ifce-2023-1-matematica', 0)" class="bg-brand-600 hover:bg-brand-700 text-white px-4 py-2 rounded-lg text-sm font-semibold transition flex items-center gap-1.5 shadow-sm">
+                            <i data-lucide="send" class="w-4 h-4"></i> Enviar Resposta
+                        </button>
+                    </div>
+                    <div id="feedback-ifce-2023-1-matematica-q0" class="hidden p-4 rounded-xl text-sm mt-4"></div>
+                </div>
+            
+                <div class="mb-8 border-b border-gray-100 pb-6 last:border-0 last:pb-0" id="q-container-ifce-2023-1-matematica-q1">
+                    <div class="flex items-center justify-between mb-2">
+                        <span class="text-xs font-bold uppercase tracking-wider text-brand-700 bg-brand-50 px-2.5 py-0.5 rounded-full border border-brand-100">Questão 2</span>
+                    </div>
+                    <p class="font-medium text-gray-800 mb-4 text-sm sm:text-base leading-relaxed">Se $\alpha$ e $\beta$ são números reais tais que $3^\alpha = p$ e $3^\beta = q$, o valor da potência $27^{\alpha - \beta}$ é igual a:</p>
+                    <div class="space-y-2 mb-4" id="opts-ifce-2023-1-matematica-q1">
+                        
+                    <button onclick="selectOption('ifce-2023-1-matematica-q1', 0)" id="btn-ifce-2023-1-matematica-q1-0" class="w-full text-left p-3.5 rounded-xl border border-gray-200 hover:border-brand-400 hover:bg-brand-50/40 transition text-sm text-gray-700 flex items-center justify-between group">
+                        <span class="flex items-center gap-2"><strong class="text-brand-700 font-bold">A)</strong> $\frac{p - q}{2}$</span>
+                        <i data-lucide="circle" class="w-4 h-4 text-gray-300 opt-icon group-hover:text-brand-400 flex-shrink-0"></i>
+                    </button>
+                
+                    <button onclick="selectOption('ifce-2023-1-matematica-q1', 1)" id="btn-ifce-2023-1-matematica-q1-1" class="w-full text-left p-3.5 rounded-xl border border-gray-200 hover:border-brand-400 hover:bg-brand-50/40 transition text-sm text-gray-700 flex items-center justify-between group">
+                        <span class="flex items-center gap-2"><strong class="text-brand-700 font-bold">B)</strong> $\frac{p^3}{q^3}$</span>
+                        <i data-lucide="circle" class="w-4 h-4 text-gray-300 opt-icon group-hover:text-brand-400 flex-shrink-0"></i>
+                    </button>
+                
+                    <button onclick="selectOption('ifce-2023-1-matematica-q1', 2)" id="btn-ifce-2023-1-matematica-q1-2" class="w-full text-left p-3.5 rounded-xl border border-gray-200 hover:border-brand-400 hover:bg-brand-50/40 transition text-sm text-gray-700 flex items-center justify-between group">
+                        <span class="flex items-center gap-2"><strong class="text-brand-700 font-bold">C)</strong> $-\frac{p}{q}$</span>
+                        <i data-lucide="circle" class="w-4 h-4 text-gray-300 opt-icon group-hover:text-brand-400 flex-shrink-0"></i>
+                    </button>
+                
+                    <button onclick="selectOption('ifce-2023-1-matematica-q1', 3)" id="btn-ifce-2023-1-matematica-q1-3" class="w-full text-left p-3.5 rounded-xl border border-gray-200 hover:border-brand-400 hover:bg-brand-50/40 transition text-sm text-gray-700 flex items-center justify-between group">
+                        <span class="flex items-center gap-2"><strong class="text-brand-700 font-bold">D)</strong> $3(p - q)$</span>
+                        <i data-lucide="circle" class="w-4 h-4 text-gray-300 opt-icon group-hover:text-brand-400 flex-shrink-0"></i>
+                    </button>
+                
+                    <button onclick="selectOption('ifce-2023-1-matematica-q1', 4)" id="btn-ifce-2023-1-matematica-q1-4" class="w-full text-left p-3.5 rounded-xl border border-gray-200 hover:border-brand-400 hover:bg-brand-50/40 transition text-sm text-gray-700 flex items-center justify-between group">
+                        <span class="flex items-center gap-2"><strong class="text-brand-700 font-bold">E)</strong> $\frac{p}{3q}$</span>
+                        <i data-lucide="circle" class="w-4 h-4 text-gray-300 opt-icon group-hover:text-brand-400 flex-shrink-0"></i>
+                    </button>
+                
+                    </div>
+                    <div class="flex items-center gap-3">
+                        <button id="submit-btn-ifce-2023-1-matematica-q1" onclick="submitAnswer('6', 'ifce-2023-1-matematica', 1)" class="bg-brand-600 hover:bg-brand-700 text-white px-4 py-2 rounded-lg text-sm font-semibold transition flex items-center gap-1.5 shadow-sm">
+                            <i data-lucide="send" class="w-4 h-4"></i> Enviar Resposta
+                        </button>
+                    </div>
+                    <div id="feedback-ifce-2023-1-matematica-q1" class="hidden p-4 rounded-xl text-sm mt-4"></div>
+                </div>
+            
+                <div class="mb-8 border-b border-gray-100 pb-6 last:border-0 last:pb-0" id="q-container-ifce-2023-1-matematica-q2">
+                    <div class="flex items-center justify-between mb-2">
+                        <span class="text-xs font-bold uppercase tracking-wider text-brand-700 bg-brand-50 px-2.5 py-0.5 rounded-full border border-brand-100">Questão 3</span>
+                    </div>
+                    <p class="font-medium text-gray-800 mb-4 text-sm sm:text-base leading-relaxed">Um feirante comprou para revender um pacote com $24\text{ mangas}$, outro com $30\text{ melancias}$ e outro com $60\text{ abacates}$. Pretende revender essas frutas em sacolas, todas com o mesmo número de frutas e com o maior número possível, sem misturar espécies e sem que sobre nenhuma fruta. A quantidade total de sacolas utilizadas pelo feirante será de:</p>
+                    <div class="space-y-2 mb-4" id="opts-ifce-2023-1-matematica-q2">
+                        
+                    <button onclick="selectOption('ifce-2023-1-matematica-q2', 0)" id="btn-ifce-2023-1-matematica-q2-0" class="w-full text-left p-3.5 rounded-xl border border-gray-200 hover:border-brand-400 hover:bg-brand-50/40 transition text-sm text-gray-700 flex items-center justify-between group">
+                        <span class="flex items-center gap-2"><strong class="text-brand-700 font-bold">A)</strong> $22$</span>
+                        <i data-lucide="circle" class="w-4 h-4 text-gray-300 opt-icon group-hover:text-brand-400 flex-shrink-0"></i>
+                    </button>
+                
+                    <button onclick="selectOption('ifce-2023-1-matematica-q2', 1)" id="btn-ifce-2023-1-matematica-q2-1" class="w-full text-left p-3.5 rounded-xl border border-gray-200 hover:border-brand-400 hover:bg-brand-50/40 transition text-sm text-gray-700 flex items-center justify-between group">
+                        <span class="flex items-center gap-2"><strong class="text-brand-700 font-bold">B)</strong> $20$</span>
+                        <i data-lucide="circle" class="w-4 h-4 text-gray-300 opt-icon group-hover:text-brand-400 flex-shrink-0"></i>
+                    </button>
+                
+                    <button onclick="selectOption('ifce-2023-1-matematica-q2', 2)" id="btn-ifce-2023-1-matematica-q2-2" class="w-full text-left p-3.5 rounded-xl border border-gray-200 hover:border-brand-400 hover:bg-brand-50/40 transition text-sm text-gray-700 flex items-center justify-between group">
+                        <span class="flex items-center gap-2"><strong class="text-brand-700 font-bold">C)</strong> $21$</span>
+                        <i data-lucide="circle" class="w-4 h-4 text-gray-300 opt-icon group-hover:text-brand-400 flex-shrink-0"></i>
+                    </button>
+                
+                    <button onclick="selectOption('ifce-2023-1-matematica-q2', 3)" id="btn-ifce-2023-1-matematica-q2-3" class="w-full text-left p-3.5 rounded-xl border border-gray-200 hover:border-brand-400 hover:bg-brand-50/40 transition text-sm text-gray-700 flex items-center justify-between group">
+                        <span class="flex items-center gap-2"><strong class="text-brand-700 font-bold">D)</strong> $19$</span>
+                        <i data-lucide="circle" class="w-4 h-4 text-gray-300 opt-icon group-hover:text-brand-400 flex-shrink-0"></i>
+                    </button>
+                
+                    <button onclick="selectOption('ifce-2023-1-matematica-q2', 4)" id="btn-ifce-2023-1-matematica-q2-4" class="w-full text-left p-3.5 rounded-xl border border-gray-200 hover:border-brand-400 hover:bg-brand-50/40 transition text-sm text-gray-700 flex items-center justify-between group">
+                        <span class="flex items-center gap-2"><strong class="text-brand-700 font-bold">E)</strong> $23$</span>
+                        <i data-lucide="circle" class="w-4 h-4 text-gray-300 opt-icon group-hover:text-brand-400 flex-shrink-0"></i>
+                    </button>
+                
+                    </div>
+                    <div class="flex items-center gap-3">
+                        <button id="submit-btn-ifce-2023-1-matematica-q2" onclick="submitAnswer('6', 'ifce-2023-1-matematica', 2)" class="bg-brand-600 hover:bg-brand-700 text-white px-4 py-2 rounded-lg text-sm font-semibold transition flex items-center gap-1.5 shadow-sm">
+                            <i data-lucide="send" class="w-4 h-4"></i> Enviar Resposta
+                        </button>
+                    </div>
+                    <div id="feedback-ifce-2023-1-matematica-q2" class="hidden p-4 rounded-xl text-sm mt-4"></div>
+                </div>
+            
+                <div class="mb-8 border-b border-gray-100 pb-6 last:border-0 last:pb-0" id="q-container-ifce-2023-1-matematica-q3">
+                    <div class="flex items-center justify-between mb-2">
+                        <span class="text-xs font-bold uppercase tracking-wider text-brand-700 bg-brand-50 px-2.5 py-0.5 rounded-full border border-brand-100">Questão 4</span>
+                    </div>
+                    <p class="font-medium text-gray-800 mb-4 text-sm sm:text-base leading-relaxed">Dividindo o número $684$ em três partes $A$, $B$ e $C$, de tal forma que a primeira esteja para a segunda como $3$ está para $5$, e a segunda esteja para a terceira como $4$ está para $8$, o maior valor entre as três partes é:</p>
+                    <div class="space-y-2 mb-4" id="opts-ifce-2023-1-matematica-q3">
+                        
+                    <button onclick="selectOption('ifce-2023-1-matematica-q3', 0)" id="btn-ifce-2023-1-matematica-q3-0" class="w-full text-left p-3.5 rounded-xl border border-gray-200 hover:border-brand-400 hover:bg-brand-50/40 transition text-sm text-gray-700 flex items-center justify-between group">
+                        <span class="flex items-center gap-2"><strong class="text-brand-700 font-bold">A)</strong> $190$</span>
+                        <i data-lucide="circle" class="w-4 h-4 text-gray-300 opt-icon group-hover:text-brand-400 flex-shrink-0"></i>
+                    </button>
+                
+                    <button onclick="selectOption('ifce-2023-1-matematica-q3', 1)" id="btn-ifce-2023-1-matematica-q3-1" class="w-full text-left p-3.5 rounded-xl border border-gray-200 hover:border-brand-400 hover:bg-brand-50/40 transition text-sm text-gray-700 flex items-center justify-between group">
+                        <span class="flex items-center gap-2"><strong class="text-brand-700 font-bold">B)</strong> $114$</span>
+                        <i data-lucide="circle" class="w-4 h-4 text-gray-300 opt-icon group-hover:text-brand-400 flex-shrink-0"></i>
+                    </button>
+                
+                    <button onclick="selectOption('ifce-2023-1-matematica-q3', 2)" id="btn-ifce-2023-1-matematica-q3-2" class="w-full text-left p-3.5 rounded-xl border border-gray-200 hover:border-brand-400 hover:bg-brand-50/40 transition text-sm text-gray-700 flex items-center justify-between group">
+                        <span class="flex items-center gap-2"><strong class="text-brand-700 font-bold">C)</strong> $480$</span>
+                        <i data-lucide="circle" class="w-4 h-4 text-gray-300 opt-icon group-hover:text-brand-400 flex-shrink-0"></i>
+                    </button>
+                
+                    <button onclick="selectOption('ifce-2023-1-matematica-q3', 3)" id="btn-ifce-2023-1-matematica-q3-3" class="w-full text-left p-3.5 rounded-xl border border-gray-200 hover:border-brand-400 hover:bg-brand-50/40 transition text-sm text-gray-700 flex items-center justify-between group">
+                        <span class="flex items-center gap-2"><strong class="text-brand-700 font-bold">D)</strong> $300$</span>
+                        <i data-lucide="circle" class="w-4 h-4 text-gray-300 opt-icon group-hover:text-brand-400 flex-shrink-0"></i>
+                    </button>
+                
+                    <button onclick="selectOption('ifce-2023-1-matematica-q3', 4)" id="btn-ifce-2023-1-matematica-q3-4" class="w-full text-left p-3.5 rounded-xl border border-gray-200 hover:border-brand-400 hover:bg-brand-50/40 transition text-sm text-gray-700 flex items-center justify-between group">
+                        <span class="flex items-center gap-2"><strong class="text-brand-700 font-bold">E)</strong> $380$</span>
+                        <i data-lucide="circle" class="w-4 h-4 text-gray-300 opt-icon group-hover:text-brand-400 flex-shrink-0"></i>
+                    </button>
+                
+                    </div>
+                    <div class="flex items-center gap-3">
+                        <button id="submit-btn-ifce-2023-1-matematica-q3" onclick="submitAnswer('6', 'ifce-2023-1-matematica', 3)" class="bg-brand-600 hover:bg-brand-700 text-white px-4 py-2 rounded-lg text-sm font-semibold transition flex items-center gap-1.5 shadow-sm">
+                            <i data-lucide="send" class="w-4 h-4"></i> Enviar Resposta
+                        </button>
+                    </div>
+                    <div id="feedback-ifce-2023-1-matematica-q3" class="hidden p-4 rounded-xl text-sm mt-4"></div>
+                </div>
+            
+                <div class="mb-8 border-b border-gray-100 pb-6 last:border-0 last:pb-0" id="q-container-ifce-2023-1-matematica-q4">
+                    <div class="flex items-center justify-between mb-2">
+                        <span class="text-xs font-bold uppercase tracking-wider text-brand-700 bg-brand-50 px-2.5 py-0.5 rounded-full border border-brand-100">Questão 5</span>
+                    </div>
+                    <p class="font-medium text-gray-800 mb-4 text-sm sm:text-base leading-relaxed">Simplificando a expressão fracionária $y = \frac{x^8 + 3x^6 + 2x^2 + 6}{x^2 + 3}$, onde $x$ é um número real diferente de zero, encontraremos:</p>
+                    <div class="space-y-2 mb-4" id="opts-ifce-2023-1-matematica-q4">
+                        
+                    <button onclick="selectOption('ifce-2023-1-matematica-q4', 0)" id="btn-ifce-2023-1-matematica-q4-0" class="w-full text-left p-3.5 rounded-xl border border-gray-200 hover:border-brand-400 hover:bg-brand-50/40 transition text-sm text-gray-700 flex items-center justify-between group">
+                        <span class="flex items-center gap-2"><strong class="text-brand-700 font-bold">A)</strong> $x^6 + 4$</span>
+                        <i data-lucide="circle" class="w-4 h-4 text-gray-300 opt-icon group-hover:text-brand-400 flex-shrink-0"></i>
+                    </button>
+                
+                    <button onclick="selectOption('ifce-2023-1-matematica-q4', 1)" id="btn-ifce-2023-1-matematica-q4-1" class="w-full text-left p-3.5 rounded-xl border border-gray-200 hover:border-brand-400 hover:bg-brand-50/40 transition text-sm text-gray-700 flex items-center justify-between group">
+                        <span class="flex items-center gap-2"><strong class="text-brand-700 font-bold">B)</strong> $x^6 + 6$</span>
+                        <i data-lucide="circle" class="w-4 h-4 text-gray-300 opt-icon group-hover:text-brand-400 flex-shrink-0"></i>
+                    </button>
+                
+                    <button onclick="selectOption('ifce-2023-1-matematica-q4', 2)" id="btn-ifce-2023-1-matematica-q4-2" class="w-full text-left p-3.5 rounded-xl border border-gray-200 hover:border-brand-400 hover:bg-brand-50/40 transition text-sm text-gray-700 flex items-center justify-between group">
+                        <span class="flex items-center gap-2"><strong class="text-brand-700 font-bold">C)</strong> $x^6 + 2$</span>
+                        <i data-lucide="circle" class="w-4 h-4 text-gray-300 opt-icon group-hover:text-brand-400 flex-shrink-0"></i>
+                    </button>
+                
+                    <button onclick="selectOption('ifce-2023-1-matematica-q4', 3)" id="btn-ifce-2023-1-matematica-q4-3" class="w-full text-left p-3.5 rounded-xl border border-gray-200 hover:border-brand-400 hover:bg-brand-50/40 transition text-sm text-gray-700 flex items-center justify-between group">
+                        <span class="flex items-center gap-2"><strong class="text-brand-700 font-bold">D)</strong> $x^6 + 3$</span>
+                        <i data-lucide="circle" class="w-4 h-4 text-gray-300 opt-icon group-hover:text-brand-400 flex-shrink-0"></i>
+                    </button>
+                
+                    <button onclick="selectOption('ifce-2023-1-matematica-q4', 4)" id="btn-ifce-2023-1-matematica-q4-4" class="w-full text-left p-3.5 rounded-xl border border-gray-200 hover:border-brand-400 hover:bg-brand-50/40 transition text-sm text-gray-700 flex items-center justify-between group">
+                        <span class="flex items-center gap-2"><strong class="text-brand-700 font-bold">E)</strong> $x^6 + 5$</span>
+                        <i data-lucide="circle" class="w-4 h-4 text-gray-300 opt-icon group-hover:text-brand-400 flex-shrink-0"></i>
+                    </button>
+                
+                    </div>
+                    <div class="flex items-center gap-3">
+                        <button id="submit-btn-ifce-2023-1-matematica-q4" onclick="submitAnswer('6', 'ifce-2023-1-matematica', 4)" class="bg-brand-600 hover:bg-brand-700 text-white px-4 py-2 rounded-lg text-sm font-semibold transition flex items-center gap-1.5 shadow-sm">
+                            <i data-lucide="send" class="w-4 h-4"></i> Enviar Resposta
+                        </button>
+                    </div>
+                    <div id="feedback-ifce-2023-1-matematica-q4" class="hidden p-4 rounded-xl text-sm mt-4"></div>
+                </div>
+            
+                <div class="mb-8 border-b border-gray-100 pb-6 last:border-0 last:pb-0" id="q-container-ifce-2023-1-matematica-q5">
+                    <div class="flex items-center justify-between mb-2">
+                        <span class="text-xs font-bold uppercase tracking-wider text-brand-700 bg-brand-50 px-2.5 py-0.5 rounded-full border border-brand-100">Questão 6</span>
+                    </div>
+                    <p class="font-medium text-gray-800 mb-4 text-sm sm:text-base leading-relaxed">O valor fixo do show de um cantor sertanejo é de $\text{R\$} 1.000{,}00$ mais $\text{R\$} 2.500{,}00$ por hora excedente. Já o valor cobrado por um cantor brega é de $\text{R\$} 3.000{,}00$ mais $\text{R\$} 2.000{,}00$ por hora excedente. O tempo máximo de duração da festa para contratar o cantor sertanejo de modo que seu custo não fique mais caro que o do cantor brega é:</p>
+                    <div class="space-y-2 mb-4" id="opts-ifce-2023-1-matematica-q5">
+                        
+                    <button onclick="selectOption('ifce-2023-1-matematica-q5', 0)" id="btn-ifce-2023-1-matematica-q5-0" class="w-full text-left p-3.5 rounded-xl border border-gray-200 hover:border-brand-400 hover:bg-brand-50/40 transition text-sm text-gray-700 flex items-center justify-between group">
+                        <span class="flex items-center gap-2"><strong class="text-brand-700 font-bold">A)</strong> $5\text{ horas}$</span>
+                        <i data-lucide="circle" class="w-4 h-4 text-gray-300 opt-icon group-hover:text-brand-400 flex-shrink-0"></i>
+                    </button>
+                
+                    <button onclick="selectOption('ifce-2023-1-matematica-q5', 1)" id="btn-ifce-2023-1-matematica-q5-1" class="w-full text-left p-3.5 rounded-xl border border-gray-200 hover:border-brand-400 hover:bg-brand-50/40 transition text-sm text-gray-700 flex items-center justify-between group">
+                        <span class="flex items-center gap-2"><strong class="text-brand-700 font-bold">B)</strong> $4\text{ horas}$</span>
+                        <i data-lucide="circle" class="w-4 h-4 text-gray-300 opt-icon group-hover:text-brand-400 flex-shrink-0"></i>
+                    </button>
+                
+                    <button onclick="selectOption('ifce-2023-1-matematica-q5', 2)" id="btn-ifce-2023-1-matematica-q5-2" class="w-full text-left p-3.5 rounded-xl border border-gray-200 hover:border-brand-400 hover:bg-brand-50/40 transition text-sm text-gray-700 flex items-center justify-between group">
+                        <span class="flex items-center gap-2"><strong class="text-brand-700 font-bold">C)</strong> $6\text{ horas}$</span>
+                        <i data-lucide="circle" class="w-4 h-4 text-gray-300 opt-icon group-hover:text-brand-400 flex-shrink-0"></i>
+                    </button>
+                
+                    <button onclick="selectOption('ifce-2023-1-matematica-q5', 3)" id="btn-ifce-2023-1-matematica-q5-3" class="w-full text-left p-3.5 rounded-xl border border-gray-200 hover:border-brand-400 hover:bg-brand-50/40 transition text-sm text-gray-700 flex items-center justify-between group">
+                        <span class="flex items-center gap-2"><strong class="text-brand-700 font-bold">D)</strong> $7\text{ horas}$</span>
+                        <i data-lucide="circle" class="w-4 h-4 text-gray-300 opt-icon group-hover:text-brand-400 flex-shrink-0"></i>
+                    </button>
+                
+                    <button onclick="selectOption('ifce-2023-1-matematica-q5', 4)" id="btn-ifce-2023-1-matematica-q5-4" class="w-full text-left p-3.5 rounded-xl border border-gray-200 hover:border-brand-400 hover:bg-brand-50/40 transition text-sm text-gray-700 flex items-center justify-between group">
+                        <span class="flex items-center gap-2"><strong class="text-brand-700 font-bold">E)</strong> $8\text{ horas}$</span>
+                        <i data-lucide="circle" class="w-4 h-4 text-gray-300 opt-icon group-hover:text-brand-400 flex-shrink-0"></i>
+                    </button>
+                
+                    </div>
+                    <div class="flex items-center gap-3">
+                        <button id="submit-btn-ifce-2023-1-matematica-q5" onclick="submitAnswer('6', 'ifce-2023-1-matematica', 5)" class="bg-brand-600 hover:bg-brand-700 text-white px-4 py-2 rounded-lg text-sm font-semibold transition flex items-center gap-1.5 shadow-sm">
+                            <i data-lucide="send" class="w-4 h-4"></i> Enviar Resposta
+                        </button>
+                    </div>
+                    <div id="feedback-ifce-2023-1-matematica-q5" class="hidden p-4 rounded-xl text-sm mt-4"></div>
+                </div>
+            
+                <div class="mb-8 border-b border-gray-100 pb-6 last:border-0 last:pb-0" id="q-container-ifce-2023-1-matematica-q6">
+                    <div class="flex items-center justify-between mb-2">
+                        <span class="text-xs font-bold uppercase tracking-wider text-brand-700 bg-brand-50 px-2.5 py-0.5 rounded-full border border-brand-100">Questão 7</span>
+                    </div>
+                    <p class="font-medium text-gray-800 mb-4 text-sm sm:text-base leading-relaxed">Seja a função quadrática $f(x) = (k - 2)x^2 - 2x - 3$, definida de $\mathbb{R} \to \mathbb{R}$. Determine os valores reais de $k$ para que tenhamos $f(x) < 0$ para todo $x \in \mathbb{R}$:</p>
+                    <div class="space-y-2 mb-4" id="opts-ifce-2023-1-matematica-q6">
+                        
+                    <button onclick="selectOption('ifce-2023-1-matematica-q6', 0)" id="btn-ifce-2023-1-matematica-q6-0" class="w-full text-left p-3.5 rounded-xl border border-gray-200 hover:border-brand-400 hover:bg-brand-50/40 transition text-sm text-gray-700 flex items-center justify-between group">
+                        <span class="flex items-center gap-2"><strong class="text-brand-700 font-bold">A)</strong> $k < 5/3$</span>
+                        <i data-lucide="circle" class="w-4 h-4 text-gray-300 opt-icon group-hover:text-brand-400 flex-shrink-0"></i>
+                    </button>
+                
+                    <button onclick="selectOption('ifce-2023-1-matematica-q6', 1)" id="btn-ifce-2023-1-matematica-q6-1" class="w-full text-left p-3.5 rounded-xl border border-gray-200 hover:border-brand-400 hover:bg-brand-50/40 transition text-sm text-gray-700 flex items-center justify-between group">
+                        <span class="flex items-center gap-2"><strong class="text-brand-700 font-bold">B)</strong> $k > 5/3$</span>
+                        <i data-lucide="circle" class="w-4 h-4 text-gray-300 opt-icon group-hover:text-brand-400 flex-shrink-0"></i>
+                    </button>
+                
+                    <button onclick="selectOption('ifce-2023-1-matematica-q6', 2)" id="btn-ifce-2023-1-matematica-q6-2" class="w-full text-left p-3.5 rounded-xl border border-gray-200 hover:border-brand-400 hover:bg-brand-50/40 transition text-sm text-gray-700 flex items-center justify-between group">
+                        <span class="flex items-center gap-2"><strong class="text-brand-700 font-bold">C)</strong> $k < 2$</span>
+                        <i data-lucide="circle" class="w-4 h-4 text-gray-300 opt-icon group-hover:text-brand-400 flex-shrink-0"></i>
+                    </button>
+                
+                    <button onclick="selectOption('ifce-2023-1-matematica-q6', 3)" id="btn-ifce-2023-1-matematica-q6-3" class="w-full text-left p-3.5 rounded-xl border border-gray-200 hover:border-brand-400 hover:bg-brand-50/40 transition text-sm text-gray-700 flex items-center justify-between group">
+                        <span class="flex items-center gap-2"><strong class="text-brand-700 font-bold">D)</strong> $k > 2$</span>
+                        <i data-lucide="circle" class="w-4 h-4 text-gray-300 opt-icon group-hover:text-brand-400 flex-shrink-0"></i>
+                    </button>
+                
+                    <button onclick="selectOption('ifce-2023-1-matematica-q6', 4)" id="btn-ifce-2023-1-matematica-q6-4" class="w-full text-left p-3.5 rounded-xl border border-gray-200 hover:border-brand-400 hover:bg-brand-50/40 transition text-sm text-gray-700 flex items-center justify-between group">
+                        <span class="flex items-center gap-2"><strong class="text-brand-700 font-bold">E)</strong> $k > 3$</span>
+                        <i data-lucide="circle" class="w-4 h-4 text-gray-300 opt-icon group-hover:text-brand-400 flex-shrink-0"></i>
+                    </button>
+                
+                    </div>
+                    <div class="flex items-center gap-3">
+                        <button id="submit-btn-ifce-2023-1-matematica-q6" onclick="submitAnswer('6', 'ifce-2023-1-matematica', 6)" class="bg-brand-600 hover:bg-brand-700 text-white px-4 py-2 rounded-lg text-sm font-semibold transition flex items-center gap-1.5 shadow-sm">
+                            <i data-lucide="send" class="w-4 h-4"></i> Enviar Resposta
+                        </button>
+                    </div>
+                    <div id="feedback-ifce-2023-1-matematica-q6" class="hidden p-4 rounded-xl text-sm mt-4"></div>
+                </div>
+            
+                <div class="mb-8 border-b border-gray-100 pb-6 last:border-0 last:pb-0" id="q-container-ifce-2023-1-matematica-q7">
+                    <div class="flex items-center justify-between mb-2">
+                        <span class="text-xs font-bold uppercase tracking-wider text-brand-700 bg-brand-50 px-2.5 py-0.5 rounded-full border border-brand-100">Questão 8</span>
+                    </div>
+                    <p class="font-medium text-gray-800 mb-4 text-sm sm:text-base leading-relaxed">A soma de dois ângulos é $126^\circ$ e um deles vale o dobro do complemento do outro. O maior desses dois ângulos mede:</p>
+                    <div class="space-y-2 mb-4" id="opts-ifce-2023-1-matematica-q7">
+                        
+                    <button onclick="selectOption('ifce-2023-1-matematica-q7', 0)" id="btn-ifce-2023-1-matematica-q7-0" class="w-full text-left p-3.5 rounded-xl border border-gray-200 hover:border-brand-400 hover:bg-brand-50/40 transition text-sm text-gray-700 flex items-center justify-between group">
+                        <span class="flex items-center gap-2"><strong class="text-brand-700 font-bold">A)</strong> $75^\circ$</span>
+                        <i data-lucide="circle" class="w-4 h-4 text-gray-300 opt-icon group-hover:text-brand-400 flex-shrink-0"></i>
+                    </button>
+                
+                    <button onclick="selectOption('ifce-2023-1-matematica-q7', 1)" id="btn-ifce-2023-1-matematica-q7-1" class="w-full text-left p-3.5 rounded-xl border border-gray-200 hover:border-brand-400 hover:bg-brand-50/40 transition text-sm text-gray-700 flex items-center justify-between group">
+                        <span class="flex items-center gap-2"><strong class="text-brand-700 font-bold">B)</strong> $73^\circ$</span>
+                        <i data-lucide="circle" class="w-4 h-4 text-gray-300 opt-icon group-hover:text-brand-400 flex-shrink-0"></i>
+                    </button>
+                
+                    <button onclick="selectOption('ifce-2023-1-matematica-q7', 2)" id="btn-ifce-2023-1-matematica-q7-2" class="w-full text-left p-3.5 rounded-xl border border-gray-200 hover:border-brand-400 hover:bg-brand-50/40 transition text-sm text-gray-700 flex items-center justify-between group">
+                        <span class="flex items-center gap-2"><strong class="text-brand-700 font-bold">C)</strong> $74^\circ$</span>
+                        <i data-lucide="circle" class="w-4 h-4 text-gray-300 opt-icon group-hover:text-brand-400 flex-shrink-0"></i>
+                    </button>
+                
+                    <button onclick="selectOption('ifce-2023-1-matematica-q7', 3)" id="btn-ifce-2023-1-matematica-q7-3" class="w-full text-left p-3.5 rounded-xl border border-gray-200 hover:border-brand-400 hover:bg-brand-50/40 transition text-sm text-gray-700 flex items-center justify-between group">
+                        <span class="flex items-center gap-2"><strong class="text-brand-700 font-bold">D)</strong> $72^\circ$</span>
+                        <i data-lucide="circle" class="w-4 h-4 text-gray-300 opt-icon group-hover:text-brand-400 flex-shrink-0"></i>
+                    </button>
+                
+                    <button onclick="selectOption('ifce-2023-1-matematica-q7', 4)" id="btn-ifce-2023-1-matematica-q7-4" class="w-full text-left p-3.5 rounded-xl border border-gray-200 hover:border-brand-400 hover:bg-brand-50/40 transition text-sm text-gray-700 flex items-center justify-between group">
+                        <span class="flex items-center gap-2"><strong class="text-brand-700 font-bold">E)</strong> $76^\circ$</span>
+                        <i data-lucide="circle" class="w-4 h-4 text-gray-300 opt-icon group-hover:text-brand-400 flex-shrink-0"></i>
+                    </button>
+                
+                    </div>
+                    <div class="flex items-center gap-3">
+                        <button id="submit-btn-ifce-2023-1-matematica-q7" onclick="submitAnswer('6', 'ifce-2023-1-matematica', 7)" class="bg-brand-600 hover:bg-brand-700 text-white px-4 py-2 rounded-lg text-sm font-semibold transition flex items-center gap-1.5 shadow-sm">
+                            <i data-lucide="send" class="w-4 h-4"></i> Enviar Resposta
+                        </button>
+                    </div>
+                    <div id="feedback-ifce-2023-1-matematica-q7" class="hidden p-4 rounded-xl text-sm mt-4"></div>
+                </div>
+            
+                <div class="mb-8 border-b border-gray-100 pb-6 last:border-0 last:pb-0" id="q-container-ifce-2023-1-matematica-q8">
+                    <div class="flex items-center justify-between mb-2">
+                        <span class="text-xs font-bold uppercase tracking-wider text-brand-700 bg-brand-50 px-2.5 py-0.5 rounded-full border border-brand-100">Questão 9</span>
+                    </div>
+                    <p class="font-medium text-gray-800 mb-4 text-sm sm:text-base leading-relaxed">A área de um quadrado de lado $\frac{a + b}{2}$ (com $a > b$), menos a área de um quadrado de lado $\frac{a - b}{2}$, é igual à área de um retângulo de lados:</p>
+                    <div class="space-y-2 mb-4" id="opts-ifce-2023-1-matematica-q8">
+                        
+                    <button onclick="selectOption('ifce-2023-1-matematica-q8', 0)" id="btn-ifce-2023-1-matematica-q8-0" class="w-full text-left p-3.5 rounded-xl border border-gray-200 hover:border-brand-400 hover:bg-brand-50/40 transition text-sm text-gray-700 flex items-center justify-between group">
+                        <span class="flex items-center gap-2"><strong class="text-brand-700 font-bold">A)</strong> $a/2$ e $b/2$</span>
+                        <i data-lucide="circle" class="w-4 h-4 text-gray-300 opt-icon group-hover:text-brand-400 flex-shrink-0"></i>
+                    </button>
+                
+                    <button onclick="selectOption('ifce-2023-1-matematica-q8', 1)" id="btn-ifce-2023-1-matematica-q8-1" class="w-full text-left p-3.5 rounded-xl border border-gray-200 hover:border-brand-400 hover:bg-brand-50/40 transition text-sm text-gray-700 flex items-center justify-between group">
+                        <span class="flex items-center gap-2"><strong class="text-brand-700 font-bold">B)</strong> $a + b$ e $a - b$</span>
+                        <i data-lucide="circle" class="w-4 h-4 text-gray-300 opt-icon group-hover:text-brand-400 flex-shrink-0"></i>
+                    </button>
+                
+                    <button onclick="selectOption('ifce-2023-1-matematica-q8', 2)" id="btn-ifce-2023-1-matematica-q8-2" class="w-full text-left p-3.5 rounded-xl border border-gray-200 hover:border-brand-400 hover:bg-brand-50/40 transition text-sm text-gray-700 flex items-center justify-between group">
+                        <span class="flex items-center gap-2"><strong class="text-brand-700 font-bold">C)</strong> $2a$ e $2b$</span>
+                        <i data-lucide="circle" class="w-4 h-4 text-gray-300 opt-icon group-hover:text-brand-400 flex-shrink-0"></i>
+                    </button>
+                
+                    <button onclick="selectOption('ifce-2023-1-matematica-q8', 3)" id="btn-ifce-2023-1-matematica-q8-3" class="w-full text-left p-3.5 rounded-xl border border-gray-200 hover:border-brand-400 hover:bg-brand-50/40 transition text-sm text-gray-700 flex items-center justify-between group">
+                        <span class="flex items-center gap-2"><strong class="text-brand-700 font-bold">D)</strong> $\sqrt{a}$ e $\sqrt{b}$</span>
+                        <i data-lucide="circle" class="w-4 h-4 text-gray-300 opt-icon group-hover:text-brand-400 flex-shrink-0"></i>
+                    </button>
+                
+                    <button onclick="selectOption('ifce-2023-1-matematica-q8', 4)" id="btn-ifce-2023-1-matematica-q8-4" class="w-full text-left p-3.5 rounded-xl border border-gray-200 hover:border-brand-400 hover:bg-brand-50/40 transition text-sm text-gray-700 flex items-center justify-between group">
+                        <span class="flex items-center gap-2"><strong class="text-brand-700 font-bold">E)</strong> $a$ e $b$</span>
+                        <i data-lucide="circle" class="w-4 h-4 text-gray-300 opt-icon group-hover:text-brand-400 flex-shrink-0"></i>
+                    </button>
+                
+                    </div>
+                    <div class="flex items-center gap-3">
+                        <button id="submit-btn-ifce-2023-1-matematica-q8" onclick="submitAnswer('6', 'ifce-2023-1-matematica', 8)" class="bg-brand-600 hover:bg-brand-700 text-white px-4 py-2 rounded-lg text-sm font-semibold transition flex items-center gap-1.5 shadow-sm">
+                            <i data-lucide="send" class="w-4 h-4"></i> Enviar Resposta
+                        </button>
+                    </div>
+                    <div id="feedback-ifce-2023-1-matematica-q8" class="hidden p-4 rounded-xl text-sm mt-4"></div>
+                </div>
+            
+                <div class="mb-8 border-b border-gray-100 pb-6 last:border-0 last:pb-0" id="q-container-ifce-2023-1-matematica-q9">
+                    <div class="flex items-center justify-between mb-2">
+                        <span class="text-xs font-bold uppercase tracking-wider text-brand-700 bg-brand-50 px-2.5 py-0.5 rounded-full border border-brand-100">Questão 10</span>
+                    </div>
+                    <p class="font-medium text-gray-800 mb-4 text-sm sm:text-base leading-relaxed">As dimensões de um reservatório em formato de paralelepípedo reto-retângulo são $6\text{ dam}$ de comprimento, $34\text{ cm}$ de largura e $35\text{ m}$ de altura. Para encher $\frac{3}{5}$ do reservatório com água, a quantidade de litros necessária é de:</p>
+                    <div class="space-y-2 mb-4" id="opts-ifce-2023-1-matematica-q9">
+                        
+                    <button onclick="selectOption('ifce-2023-1-matematica-q9', 0)" id="btn-ifce-2023-1-matematica-q9-0" class="w-full text-left p-3.5 rounded-xl border border-gray-200 hover:border-brand-400 hover:bg-brand-50/40 transition text-sm text-gray-700 flex items-center justify-between group">
+                        <span class="flex items-center gap-2"><strong class="text-brand-700 font-bold">A)</strong> $422.200\text{ l}$</span>
+                        <i data-lucide="circle" class="w-4 h-4 text-gray-300 opt-icon group-hover:text-brand-400 flex-shrink-0"></i>
+                    </button>
+                
+                    <button onclick="selectOption('ifce-2023-1-matematica-q9', 1)" id="btn-ifce-2023-1-matematica-q9-1" class="w-full text-left p-3.5 rounded-xl border border-gray-200 hover:border-brand-400 hover:bg-brand-50/40 transition text-sm text-gray-700 flex items-center justify-between group">
+                        <span class="flex items-center gap-2"><strong class="text-brand-700 font-bold">B)</strong> $425.200\text{ l}$</span>
+                        <i data-lucide="circle" class="w-4 h-4 text-gray-300 opt-icon group-hover:text-brand-400 flex-shrink-0"></i>
+                    </button>
+                
+                    <button onclick="selectOption('ifce-2023-1-matematica-q9', 2)" id="btn-ifce-2023-1-matematica-q9-2" class="w-full text-left p-3.5 rounded-xl border border-gray-200 hover:border-brand-400 hover:bg-brand-50/40 transition text-sm text-gray-700 flex items-center justify-between group">
+                        <span class="flex items-center gap-2"><strong class="text-brand-700 font-bold">C)</strong> $424.200\text{ l}$</span>
+                        <i data-lucide="circle" class="w-4 h-4 text-gray-300 opt-icon group-hover:text-brand-400 flex-shrink-0"></i>
+                    </button>
+                
+                    <button onclick="selectOption('ifce-2023-1-matematica-q9', 3)" id="btn-ifce-2023-1-matematica-q9-3" class="w-full text-left p-3.5 rounded-xl border border-gray-200 hover:border-brand-400 hover:bg-brand-50/40 transition text-sm text-gray-700 flex items-center justify-between group">
+                        <span class="flex items-center gap-2"><strong class="text-brand-700 font-bold">D)</strong> $423.200\text{ l}$</span>
+                        <i data-lucide="circle" class="w-4 h-4 text-gray-300 opt-icon group-hover:text-brand-400 flex-shrink-0"></i>
+                    </button>
+                
+                    <button onclick="selectOption('ifce-2023-1-matematica-q9', 4)" id="btn-ifce-2023-1-matematica-q9-4" class="w-full text-left p-3.5 rounded-xl border border-gray-200 hover:border-brand-400 hover:bg-brand-50/40 transition text-sm text-gray-700 flex items-center justify-between group">
+                        <span class="flex items-center gap-2"><strong class="text-brand-700 font-bold">E)</strong> $428.400\text{ l}$</span>
+                        <i data-lucide="circle" class="w-4 h-4 text-gray-300 opt-icon group-hover:text-brand-400 flex-shrink-0"></i>
+                    </button>
+                
+                    </div>
+                    <div class="flex items-center gap-3">
+                        <button id="submit-btn-ifce-2023-1-matematica-q9" onclick="submitAnswer('6', 'ifce-2023-1-matematica', 9)" class="bg-brand-600 hover:bg-brand-700 text-white px-4 py-2 rounded-lg text-sm font-semibold transition flex items-center gap-1.5 shadow-sm">
+                            <i data-lucide="send" class="w-4 h-4"></i> Enviar Resposta
+                        </button>
+                    </div>
+                    <div id="feedback-ifce-2023-1-matematica-q9" class="hidden p-4 rounded-xl text-sm mt-4"></div>
+                </div>
+            
+                </section>
+
+                <!-- 5. Navegação Inferior de Tópicos -->
+                <nav class="flex items-center justify-between gap-4 pt-4 border-t border-gray-200 flex-wrap">
+                    
+                <a href="./prova-ifce-20241.html" class="bg-white border border-gray-200 hover:bg-gray-50 text-gray-700 font-semibold px-4 py-2.5 rounded-xl text-sm transition flex items-center gap-2 shadow-sm">
+                    <i data-lucide="arrow-left" class="w-4 h-4"></i> Anterior: Prova IFCE 2024.1
+                </a>
+            
+            <a href="./index.html" class="bg-brand-50 border border-brand-200 text-brand-800 hover:bg-brand-100 font-semibold px-4 py-2.5 rounded-xl text-sm transition flex items-center gap-2 shadow-sm">
+                <i data-lucide="grid" class="w-4 h-4"></i> Todos os Tópicos
+            </a>
+        
+                <a href="../simulado.html" class="bg-brand-600 hover:bg-brand-700 text-white font-semibold px-4 py-2.5 rounded-xl text-sm transition flex items-center gap-2 shadow-sm ml-auto">
+                    Simulado Geral <i data-lucide="award" class="w-4 h-4"></i>
+                </a>
+            
+                </nav>
+            </div>
+
+            <!-- Coluna Lateral (Sidebar com Subtópicos do Bloco) -->
+            <div class="space-y-6">
+                
+                <!-- Card de Progresso do Bloco -->
+                <div class="bg-white border border-gray-200 rounded-2xl p-5 shadow-sm">
+                    <h3 class="text-xs font-bold text-gray-500 uppercase tracking-wider mb-2">Progresso no Bloco</h3>
+                    <div class="flex justify-between text-xs text-gray-600 mb-1.5 font-medium">
+                        <span>Conclusão</span>
+                        <span id="block-progress-txt-6" class="font-bold text-brand-700">0%</span>
+                    </div>
+                    <div class="w-full bg-gray-100 rounded-full h-2.5 overflow-hidden">
+                        <div id="block-progress-bar-6" class="bg-brand-600 h-full w-0 transition-all duration-500"></div>
+                    </div>
+                </div>
+
+                <!-- Lista de Subtópicos do Bloco -->
+                <div class="bg-white border border-gray-200 rounded-2xl p-5 shadow-sm sticky top-20">
+                    <div class="flex items-center justify-between mb-4 border-b pb-3">
+                        <h3 class="text-sm font-bold text-gray-900 uppercase tracking-wider">Subtópicos do Bloco</h3>
+                        <a href="./index.html" class="text-xs text-brand-600 hover:text-brand-800 font-semibold">Ver Todos</a>
+                    </div>
+                    <div class="space-y-1.5 custom-scrollbar max-h-[60vh] overflow-y-auto pr-1">
+                        
+                <a href="./prova-ifce-20252.html" class="w-full text-left py-2 px-2.5 rounded-lg text-xs transition flex items-center justify-between text-gray-600 hover:bg-gray-100 pl-2">
+                    <span class="truncate pr-2">1. Prova IFCE 2025.2</span>
+                    <i id="status-icon-ifce-2025-2-matematica" data-lucide="circle" class="w-4 h-4 text-gray-300 flex-shrink-0"></i>
+                </a>
+            
+                <a href="./prova-ifce-20251.html" class="w-full text-left py-2 px-2.5 rounded-lg text-xs transition flex items-center justify-between text-gray-600 hover:bg-gray-100 pl-2">
+                    <span class="truncate pr-2">2. Prova IFCE 2025.1</span>
+                    <i id="status-icon-ifce-2025-1-matematica" data-lucide="circle" class="w-4 h-4 text-gray-300 flex-shrink-0"></i>
+                </a>
+            
+                <a href="./prova-ifce-20242.html" class="w-full text-left py-2 px-2.5 rounded-lg text-xs transition flex items-center justify-between text-gray-600 hover:bg-gray-100 pl-2">
+                    <span class="truncate pr-2">3. Prova IFCE 2024.2</span>
+                    <i id="status-icon-ifce-2024-2-matematica" data-lucide="circle" class="w-4 h-4 text-gray-300 flex-shrink-0"></i>
+                </a>
+            
+                <a href="./prova-ifce-20241.html" class="w-full text-left py-2 px-2.5 rounded-lg text-xs transition flex items-center justify-between text-gray-600 hover:bg-gray-100 pl-2">
+                    <span class="truncate pr-2">4. Prova IFCE 2024.1</span>
+                    <i id="status-icon-ifce-2024-1-matematica" data-lucide="circle" class="w-4 h-4 text-gray-300 flex-shrink-0"></i>
+                </a>
+            
+                <a href="./prova-ifce-20231.html" class="w-full text-left py-2 px-2.5 rounded-lg text-xs transition flex items-center justify-between bg-brand-100 text-brand-900 font-bold border-l-4 border-brand-600 pl-3">
+                    <span class="truncate pr-2">5. Prova IFCE 2023.1</span>
+                    <i id="status-icon-ifce-2023-1-matematica" data-lucide="circle" class="w-4 h-4 text-gray-300 flex-shrink-0"></i>
+                </a>
+            
+                    </div>
+                    
+                    <div class="mt-6 pt-4 border-t border-gray-100">
+                        <a href="../simulado.html" class="w-full bg-brand-50 hover:bg-brand-100 text-brand-800 font-semibold py-2.5 px-4 rounded-xl text-xs transition flex items-center justify-center gap-1.5">
+                            <i data-lucide="play" class="w-3.5 h-3.5"></i> Iniciar Simulado Geral
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <footer class="bg-brand-950 text-white border-t border-brand-800 mt-16 py-10">
+        <div class="max-w-7xl mx-auto px-4 grid grid-cols-1 md:grid-cols-3 gap-8 text-sm">
+            <div>
+                <div class="flex items-center gap-2 text-lg font-bold text-brand-300 mb-2">
+                    <i data-lucide="book-open-check" class="w-5 h-5"></i> PartiuIF - Matemática
+                </div>
+                <p class="text-brand-200 text-xs leading-relaxed">
+                    Plataforma completa de revisão estruturada por subtópicos, teoria detalhada, fórmulas KaTeX e simulados com 21 provas oficiais do IFSC e IFCE.
+                </p>
+                <div class="mt-4 inline-flex items-center gap-2 bg-brand-900/80 px-3 py-1.5 rounded-lg border border-brand-800 text-xs text-brand-300">
+                    <i data-lucide="hard-drive" class="w-3.5 h-3.5"></i> Progresso salvo no seu navegador
+                </div>
+            </div>
+            <div>
+                <h4 class="font-semibold text-white mb-3 text-sm flex items-center gap-1.5">
+                    <i data-lucide="layers" class="w-4 h-4 text-brand-400"></i> Eixos Temáticos
+                </h4>
+                <ul class="space-y-1.5 text-xs text-brand-200">
+                    <li><a href="../bloco-1-numeros/index.html" class="hover:text-white transition flex items-center gap-1">• Bloco 1: Números e Operações</a></li>
+                    <li><a href="../bloco-2-algebra/index.html" class="hover:text-white transition flex items-center gap-1">• Bloco 2: Álgebra e Funções</a></li>
+                    <li><a href="../bloco-3-geometria/index.html" class="hover:text-white transition flex items-center gap-1">• Bloco 3: Geometria Plana e Espacial</a></li>
+                    <li><a href="../bloco-4-medidas-e-estatistica/index.html" class="hover:text-white transition flex items-center gap-1">• Bloco 4: Medidas, Prob. e Estatística</a></li>
+                    <li><a href="../bloco-5-provas-ifsc/index.html" class="hover:text-white transition flex items-center gap-1">• Bloco 5: Provas Oficiais IFSC (2017-2026)</a></li>
+                    <li><a href="../bloco-6-provas-ifce/index.html" class="hover:text-white transition flex items-center gap-1">• Bloco 6: Provas Oficiais IFCE (2023-2025)</a></li>
+                </ul>
+            </div>
+            <div>
+                <h4 class="font-semibold text-white mb-2 text-sm flex items-center gap-1.5">
+                    <i data-lucide="trending-up" class="w-4 h-4 text-brand-400"></i> Status Geral da Preparação
+                </h4>
+                <div class="w-full bg-brand-900 rounded-full h-3 overflow-hidden border border-brand-700 mb-1.5">
+                    <div id="footer-progress" class="bg-brand-400 h-full w-0 transition-all duration-500"></div>
+                </div>
+                <span id="footer-progress-text" class="text-xs text-brand-300 block mb-4">Carregando progresso...</span>
+                
+                <button onclick="resetProgress()" class="text-xs text-red-400 hover:text-red-300 underline flex items-center gap-1 transition">
+                    <i data-lucide="trash-2" class="w-3.5 h-3.5"></i> Zerar Todo o Meu Progresso
+                </button>
+            </div>
+        </div>
+        <div class="max-w-7xl mx-auto px-4 mt-8 pt-4 border-t border-brand-900 text-center text-xs text-brand-400">
+            PartiuIF &copy; 2026 - Plataforma Educacional de Revisão para os Institutos Federais.
+        </div>
+    </footer>
+
+    <!-- Scripts da Aplicação -->
+    <script src="../assets/js/data.js"></script>
+    <script src="../assets/js/app.js"></script>
+
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            initQuestionStates('ifce-2023-1-matematica', '6');
+            updateTopicDoneButtonUI('ifce-2023-1-matematica');
+        });
+    </script>
+</body>
+</html>

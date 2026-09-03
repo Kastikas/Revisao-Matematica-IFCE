@@ -10,7 +10,8 @@ block_folders = {
     "2": "bloco-2-algebra",
     "3": "bloco-3-geometria",
     "4": "bloco-4-medidas-e-estatistica",
-    "5": "bloco-5-provas-ifsc"
+    "5": "bloco-5-provas-ifsc",
+    "6": "bloco-6-provas-ifce"
 }
 
 def get_head(title, rel_root="."):
@@ -65,6 +66,7 @@ def get_navbar(active_key="", rel_root="."):
         ("3", f"{rel_root}/bloco-3-geometria/index.html", "Bloco 3", "shapes"),
         ("4", f"{rel_root}/bloco-4-medidas-e-estatistica/index.html", "Bloco 4", "bar-chart-3"),
         ("5", f"{rel_root}/bloco-5-provas-ifsc/index.html", "Provas IFSC", "file-text"),
+        ("6", f"{rel_root}/bloco-6-provas-ifce/index.html", "Provas IFCE", "award"),
     ]
 
     desktop_links = []
@@ -137,7 +139,7 @@ def get_footer(rel_root="."):
                     <i data-lucide="book-open-check" class="w-5 h-5"></i> PartiuIF - Matemática
                 </div>
                 <p class="text-brand-200 text-xs leading-relaxed">
-                    Plataforma completa de revisão estruturada por subtópicos, teoria detalhada, fórmulas KaTeX e simulados com 16 provas oficiais do IFSC.
+                    Plataforma completa de revisão estruturada por subtópicos, teoria detalhada, fórmulas KaTeX e simulados com 21 provas oficiais do IFSC e IFCE.
                 </p>
                 <div class="mt-4 inline-flex items-center gap-2 bg-brand-900/80 px-3 py-1.5 rounded-lg border border-brand-800 text-xs text-brand-300">
                     <i data-lucide="hard-drive" class="w-3.5 h-3.5"></i> Progresso salvo no seu navegador
@@ -153,6 +155,7 @@ def get_footer(rel_root="."):
                     <li><a href="{rel_root}/bloco-3-geometria/index.html" class="hover:text-white transition flex items-center gap-1">• Bloco 3: Geometria Plana e Espacial</a></li>
                     <li><a href="{rel_root}/bloco-4-medidas-e-estatistica/index.html" class="hover:text-white transition flex items-center gap-1">• Bloco 4: Medidas, Prob. e Estatística</a></li>
                     <li><a href="{rel_root}/bloco-5-provas-ifsc/index.html" class="hover:text-white transition flex items-center gap-1">• Bloco 5: Provas Oficiais IFSC (2017-2026)</a></li>
+                    <li><a href="{rel_root}/bloco-6-provas-ifce/index.html" class="hover:text-white transition flex items-center gap-1">• Bloco 6: Provas Oficiais IFCE (2023-2025)</a></li>
                 </ul>
             </div>
             <div>
@@ -180,12 +183,13 @@ def get_footer(rel_root="."):
 """
 
 # ==========================================
-# 1. BUILD ALL 36 SUBTOPIC PAGES
+# 1. BUILD ALL 41 SUBTOPIC PAGES
 # ==========================================
-print("\n--- Generating 36 Subtopic Pages ---")
+print("\n--- Generating 41 Subtopic Pages ---")
 
 for b_id, block in math_data.items():
     folder = block_folders[b_id]
+    os.makedirs(folder, exist_ok=True)
     topics = block["topics"]
     
     for idx, topic in enumerate(topics):
@@ -289,11 +293,12 @@ for b_id, block in math_data.items():
                 </a>
             """)
 
-        # PDF download button if block 5
+        # PDF download button if topic has pdf
         pdf_download_btn = ""
         if topic.get("pdf"):
+            sub_f = "ifce" if b_id == "6" else "ifsc"
             pdf_download_btn = f"""
-                <a href="../ifsc/{topic['pdf']}" download class="bg-brand-700 hover:bg-brand-800 text-white font-semibold px-4 py-2 rounded-xl text-sm transition flex items-center gap-2 shadow-sm">
+                <a href="../provas/{sub_f}/{topic['pdf']}" download class="bg-brand-700 hover:bg-brand-800 text-white font-semibold px-4 py-2 rounded-xl text-sm transition flex items-center gap-2 shadow-sm">
                     <i data-lucide="file-down" class="w-4 h-4"></i> Baixar Prova Oficial (PDF)
                 </a>
             """
@@ -454,16 +459,17 @@ for b_id, block in math_data.items():
         with open(target_path, "w", encoding="utf-8") as f:
             f.write(page_html)
 
-print("Generated all 36 subtopic pages successfully!")
+print("Generated all 41 subtopic pages successfully!")
 
 
 # ==========================================
-# 2. BUILD ALL 5 BLOCK OVERVIEW PAGES
+# 2. BUILD ALL 6 BLOCK OVERVIEW PAGES
 # ==========================================
-print("\n--- Generating 5 Block Overview Pages ---")
+print("\n--- Generating 6 Block Overview Pages ---")
 
 for b_id, block in math_data.items():
     folder = block_folders[b_id]
+    os.makedirs(folder, exist_ok=True)
     topics = block["topics"]
     target_path = os.path.join(folder, "index.html")
 
@@ -480,8 +486,9 @@ for b_id, block in math_data.items():
         
         pdf_btn = ""
         if topic.get("pdf"):
+            sub_f = "ifce" if b_id == "6" else "ifsc"
             pdf_btn = f"""
-                <a href="../ifsc/{topic['pdf']}" download class="bg-gray-100 hover:bg-gray-200 text-gray-700 font-semibold px-3 py-2 rounded-xl text-xs transition flex items-center gap-1.5" title="Baixar Prova Oficial">
+                <a href="../provas/{sub_f}/{topic['pdf']}" download class="bg-gray-100 hover:bg-gray-200 text-gray-700 font-semibold px-3 py-2 rounded-xl text-xs transition flex items-center gap-1.5" title="Baixar Prova Oficial">
                     <i data-lucide="download" class="w-3.5 h-3.5 text-brand-700"></i> PDF Oficial
                 </a>
             """
@@ -606,7 +613,7 @@ for b_id, block in math_data.items():
     with open(target_path, "w", encoding="utf-8") as f:
         f.write(block_page_html)
 
-print("Generated all 5 block overview pages successfully!")
+print("Generated all 6 block overview pages successfully!")
 
 # ==========================================
 # 3. BUILD HOMEPAGE (index.html)
@@ -669,7 +676,7 @@ for b_id, block in math_data.items():
         </div>
     """)
 
-# Full directory of all 36 topics for home
+# Full directory of all 41 topics for home
 all_topics_directory = []
 for b_id, block in math_data.items():
     folder = block_folders[b_id]
@@ -730,7 +737,7 @@ home_page_html = f"""{get_head("PartiuIF - Plataforma de Revisão de Matemática
                 </h1>
                 
                 <p class="text-brand-100 text-sm sm:text-base mb-8 leading-relaxed">
-                    Preparação modular completa para o Exame de Classificação dos Institutos Federais. Cada subtópico possui sua própria página com teoria detalhada, fórmulas KaTeX, exemplos resolvidos e 243 exercícios salvos no navegador.
+                    Preparação modular completa para o Exame de Classificação dos Institutos Federais. Cada subtópico possui sua própria página com teoria detalhada, fórmulas KaTeX, exemplos resolvidos e 293 exercícios salvos no navegador.
                 </p>
 
                 <div class="flex flex-wrap items-center gap-4">
@@ -738,7 +745,7 @@ home_page_html = f"""{get_head("PartiuIF - Plataforma de Revisão de Matemática
                         <i data-lucide="award" class="w-5 h-5 text-brand-700"></i> Iniciar Simulado Geral
                     </a>
                     <a href="#blocos" class="bg-brand-700/80 hover:bg-brand-700 text-white font-bold px-6 py-3.5 rounded-2xl text-sm transition flex items-center gap-2 border border-brand-500/30">
-                        <i data-lucide="layers" class="w-5 h-5"></i> Explorar os 5 Blocos
+                        <i data-lucide="layers" class="w-5 h-5"></i> Explorar os 6 Blocos
                     </a>
                 </div>
             </div>
@@ -752,7 +759,7 @@ home_page_html = f"""{get_head("PartiuIF - Plataforma de Revisão de Matemática
                 </div>
                 <div>
                     <span class="text-xs text-gray-500 font-medium block">Tópicos Concluídos</span>
-                    <strong id="global-completed-count" class="text-xl font-black text-gray-900">0/36</strong>
+                    <strong id="global-completed-count" class="text-xl font-black text-gray-900">0/41</strong>
                 </div>
             </div>
 
@@ -772,7 +779,7 @@ home_page_html = f"""{get_head("PartiuIF - Plataforma de Revisão de Matemática
                 </div>
                 <div>
                     <span class="text-xs text-gray-500 font-medium block">Questões Salvas</span>
-                    <strong id="global-answered-questions" class="text-xl font-black text-blue-900">0/243</strong>
+                    <strong id="global-answered-questions" class="text-xl font-black text-blue-900">0/293</strong>
                 </div>
             </div>
 
@@ -781,8 +788,8 @@ home_page_html = f"""{get_head("PartiuIF - Plataforma de Revisão de Matemática
                     <i data-lucide="file-text" class="w-6 h-6"></i>
                 </div>
                 <div>
-                    <span class="text-xs text-gray-500 font-medium block">Provas IFSC</span>
-                    <strong class="text-xl font-black text-purple-900">16 Edições</strong>
+                    <span class="text-xs text-gray-500 font-medium block">Provas Oficiais</span>
+                    <strong class="text-xl font-black text-purple-900">21 Edições</strong>
                 </div>
             </div>
         </div>
@@ -799,7 +806,7 @@ home_page_html = f"""{get_head("PartiuIF - Plataforma de Revisão de Matemática
             </div>
             
             <div class="relative">
-                <input type="text" id="topic-search-input" placeholder="Digite para filtrar os 36 subtópicos..." class="w-full bg-gray-50 border border-gray-300 rounded-xl px-4 py-3 pl-11 text-sm focus:outline-none focus:ring-2 focus:ring-brand-500 focus:bg-white transition">
+                <input type="text" id="topic-search-input" placeholder="Digite para filtrar os 41 subtópicos..." class="w-full bg-gray-50 border border-gray-300 rounded-xl px-4 py-3 pl-11 text-sm focus:outline-none focus:ring-2 focus:ring-brand-500 focus:bg-white transition">
                 <i data-lucide="search" class="w-5 h-5 text-gray-400 absolute left-3.5 top-3.5"></i>
             </div>
             
@@ -808,14 +815,14 @@ home_page_html = f"""{get_head("PartiuIF - Plataforma de Revisão de Matemática
             </div>
         </div>
 
-        <!-- Grade dos 5 Blocos de Conteúdo -->
+        <!-- Grade dos 6 Blocos de Conteúdo -->
         <section id="blocos" class="mb-14">
             <div class="flex flex-col sm:flex-row justify-between sm:items-center gap-4 mb-6">
                 <div>
                     <h2 class="text-2xl font-extrabold text-gray-900 flex items-center gap-2 border-l-4 border-brand-600 pl-3">
                         Blocos de Conteúdo
                     </h2>
-                    <p class="text-xs sm:text-sm text-gray-500 mt-1 pl-3">Os 5 eixos essenciais com teoria, resolução passo a passo e simulados.</p>
+                    <p class="text-xs sm:text-sm text-gray-500 mt-1 pl-3">Os 6 eixos essenciais com teoria, resolução passo a passo e simulados.</p>
                 </div>
             </div>
 
@@ -824,11 +831,11 @@ home_page_html = f"""{get_head("PartiuIF - Plataforma de Revisão de Matemática
             </div>
         </section>
 
-        <!-- Índice Completo de Todos os 36 Subtópicos -->
+        <!-- Índice Completo de Todos os 41 Subtópicos -->
         <section class="mb-12">
             <div class="mb-6">
                 <h2 class="text-2xl font-extrabold text-gray-900 flex items-center gap-2 border-l-4 border-brand-600 pl-3">
-                    Diretório Completo de Subtópicos (36 Páginas)
+                    Diretório Completo de Subtópicos (41 Páginas)
                 </h2>
                 <p class="text-xs sm:text-sm text-gray-500 mt-1 pl-3">Acesse cada página individual para estudar e resolver as questões com auto-salvamento.</p>
             </div>
@@ -940,7 +947,7 @@ simulado_html = f"""{get_head("Simulado Geral de Matemática | PartiuIF", rel_ro
                 </div>
                 <h1 class="text-3xl sm:text-4xl font-extrabold tracking-tight mb-3">Simulado IF de Matemática</h1>
                 <p class="text-brand-100 text-sm sm:text-base max-w-2xl leading-relaxed">
-                    Personalize seu simulado com questões retiradas do banco oficial dos 5 blocos e das 16 provas do IFSC. Ao final, veja seu desempenho e a resolução comentada de cada questão.
+                    Personalize seu simulado com questões retiradas do banco oficial dos 6 blocos e das 21 provas oficiais do IFSC e IFCE. Ao final, veja seu desempenho e a resolução comentada de cada questão.
                 </p>
             </div>
 
@@ -952,7 +959,7 @@ simulado_html = f"""{get_head("Simulado Geral de Matemática | PartiuIF", rel_ro
                 <!-- Seleção do Eixo / Fonte -->
                 <div>
                     <label class="block text-xs font-bold text-gray-700 uppercase tracking-wider mb-2">Selecione o Eixo de Conteúdo:</label>
-                    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3" id="sim-source-options">
+                    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-3" id="sim-source-options">
                         <label class="cursor-pointer p-3.5 rounded-xl border border-brand-500 bg-brand-50/60 flex items-center gap-3 text-sm font-semibold text-gray-900 transition hover:border-brand-500">
                             <input type="radio" name="sim-source" value="all" checked class="text-brand-600 focus:ring-brand-500">
                             <span>Todos os Blocos (Geral)</span>
@@ -975,7 +982,11 @@ simulado_html = f"""{get_head("Simulado Geral de Matemática | PartiuIF", rel_ro
                         </label>
                         <label class="cursor-pointer p-3.5 rounded-xl border border-gray-200 hover:border-brand-300 flex items-center gap-3 text-sm font-medium text-gray-800 transition">
                             <input type="radio" name="sim-source" value="5" class="text-brand-600 focus:ring-brand-500">
-                            <span>Bloco 5: Provas Oficiais IFSC</span>
+                            <span>Bloco 5: Provas IFSC</span>
+                        </label>
+                        <label class="cursor-pointer p-3.5 rounded-xl border border-gray-200 hover:border-brand-300 flex items-center gap-3 text-sm font-medium text-gray-800 transition">
+                            <input type="radio" name="sim-source" value="6" class="text-brand-600 focus:ring-brand-500">
+                            <span>Bloco 6: Provas IFCE</span>
                         </label>
                     </div>
                 </div>
