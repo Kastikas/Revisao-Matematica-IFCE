@@ -5565,6 +5565,546 @@
             "explanation": "1. Seja $C(x_0, y_0)$ o centro da circunferência. Como ela está no primeiro quadrante, $x_0 > 0$ e $y_0 > 0$.<br>2. Como a circunferência possui raio $R = 2$ e tangencia o eixo $x$ ($y = 0$), a distância vertical do centro ao eixo $x$ é o próprio raio: $y_0 = 2$. Logo, o centro tem coordenadas $(x_0, 2)$.<br>3. A circunferência também tangencia a reta $4x - 3y = 0$. A distância do centro à reta deve ser igual ao raio $R = 2$:<br>$$d = \\frac{|4x_0 - 3y_0|}{\\sqrt{4^2 + (-3)^2}} = \\frac{|4x_0 - 3(2)|}{\\sqrt{16 + 9}} = \\frac{|4x_0 - 6|}{5} = 2$$<br>4. Resolvendo a equação modular:<br>$$|4x_0 - 6| = 10$$<br>Temos duas situações:<br>• $4x_0 - 6 = 10 \\implies 4x_0 = 16 \\implies x_0 = 4$<br>• $4x_0 - 6 = -10 \\implies 4x_0 = -4 \\implies x_0 = -1$ (descartada, pois o centro está no 1º quadrante com $x_0 > 0$)<br>Portanto, a abscissa do centro é $x_0 = 4$."
           }
         ]
+      },
+      {
+        "id": "ifce-2006-2-matematica",
+        "title": "Prova IFCE 2006.2",
+        "bncc": "Revisão Geral",
+        "summary": "7 questões de Matemática aplicadas no Processo Seletivo / Vestibular 2006.2 do IFCE.",
+        "detailedTheory": "O Processo Seletivo / Vestibular 2006.2 do IFCE cobrou: desigualdades algébricas e valor mínimo da soma de inversos $p^x + p^{-x}$ pela desigualdade das médias (MA $\\ge$ MG); definição e equações logarítmicas na base variável $\\sqrt[n]{n}$; trigonometria analítica com simplificação de somas de tangente e cotangente via arco duplo; sistemas lineares homogêneos e condição de anulamento de determinante para existência de soluções próprias; geometria analítica com determinação do centro de circunferências e equações de retas perpendiculares; geometria espacial métrica na relação quadrática entre áreas totais de cubos proporcionais; e números complexos com determinação do lugar geométrico cartesiano da mediatriz no plano de Argand-Gauss.",
+        "keyPoints": [
+          "Para quaisquer números reais estritamente positivos, a soma de um termo com o seu inverso é sempre maior ou igual a 2 ($u + \\frac{1}{u} \\ge 2$).",
+          "A identidade $\\operatorname{tg}\\theta + \\operatorname{cotg}\\theta = \\frac{2}{\\operatorname{sen}(2\\theta)}$ simplifica expressões trigonométricas fundamentais com elegância.",
+          "A condição $|z| = |z - 1|$ representa o conjunto dos pontos equidistantes da origem e do ponto $(1, 0)$, caracterizando uma reta (a mediatriz $x = \\frac{1}{2}$)."
+        ],
+        "formula": "u + \\frac{1}{u} \\ge 2, \\quad \\operatorname{tg}\\theta + \\operatorname{cotg}\\theta = \\frac{2}{\\operatorname{sen}(2\\theta)}, \\quad m_1 \\cdot m_2 = -1, \\quad A(3a) = 9 A(a)",
+        "solvedExample": {
+          "problem": "Determine o valor mínimo da função $f(t) = 3^t + 3^{-t}$ para $t > 0$.",
+          "solution": "1. Fazendo $u = 3^t > 0$, a expressão é $u + \\frac{1}{u}$.<br>2. Pela desigualdade das médias: $\\frac{u + 1/u}{2} \\ge \\sqrt{u \\cdot 1/u} = 1 \\implies u + \\frac{1}{u} \\ge 2$.<br>3. A igualdade ocorre em $u = 1$, fornecendo o menor valor igual a $2$."
+        },
+        "slug": "prova-ifce-20062",
+        "filename": "prova-ifce-20062.html",
+        "folder": "bloco-6-provas-ifce",
+        "blockId": 6,
+        "pdf": "ifce_prova_2006_2.pdf",
+        "questions": [
+          {
+            "q": "O menor valor de $p^x + p^{-x}$ para $p$ e $x$ números reais estritamente positivos é:",
+            "options": [
+              "zero",
+              "$\\frac{1}{2}$",
+              "$1$",
+              "$2$",
+              "$\\frac{3}{2}$"
+            ],
+            "correct": 3,
+            "explanation": "Como $p > 0$ e $x > 0$, seja $u = p^x > 0$. A expressão pode ser reescrita como:<br>$$u + \\frac{1}{u}$$<br>Pela Desigualdade entre as Médias Aritmética e Geométrica (MA $\\ge$ MG):<br>$$\\frac{u + \\frac{1}{u}}{2} \\ge \\sqrt{u \\cdot \\frac{1}{u}} = 1 \\implies u + \\frac{1}{u} \\ge 2$$<br>O menor valor atingido ocorre quando $u = \\frac{1}{u} \\implies u = 1$, resultando em $1 + 1 = 2$."
+          },
+          {
+            "q": "O logaritmo de um número natural $n$, $n > 1$, coincide com o próprio número $n$ na base:",
+            "options": [
+              "$n^n$",
+              "$\\frac{1}{n}$",
+              "$n^2$",
+              "$n$",
+              "$\\sqrt[n]{n}$"
+            ],
+            "correct": 4,
+            "explanation": "Seja $b$ a base procurada. Da definição de logaritmo, queremos que:<br>$$\\log_b n = n$$<br>Pela definição da função logarítmica:<br>$$b^n = n \\implies b = n^{1/n} = \\sqrt[n]{n}$$"
+          },
+          {
+            "q": "O valor de $(\\operatorname{tg} 10^\\circ + \\operatorname{cotg} 10^\\circ) \\cdot \\operatorname{sen} 20^\\circ$ é:",
+            "options": [
+              "$\\frac{1}{2}$",
+              "$1$",
+              "$2$",
+              "$\\frac{5}{3}$",
+              "$3$"
+            ],
+            "correct": 2,
+            "explanation": "1. Expressando a tangente e a cotangente em função de seno e cosseno:<br>$$\\operatorname{tg} 10^\\circ + \\operatorname{cotg} 10^\\circ = \\frac{\\operatorname{sen} 10^\\circ}{\\cos 10^\\circ} + \\frac{\\cos 10^\\circ}{\\operatorname{sen} 10^\\circ} = \\frac{\\operatorname{sen}^2 10^\\circ + \\cos^2 10^\\circ}{\\operatorname{sen} 10^\\circ \\cos 10^\\circ}$$<br>2. Pela Relação Fundamental ($\\operatorname{sen}^2\\theta + \\cos^2\\theta = 1$) e pelo arco duplo ($2\\operatorname{sen}\\theta\\cos\\theta = \\operatorname{sen}(2\\theta)$):<br>$$\\operatorname{tg} 10^\\circ + \\operatorname{cotg} 10^\\circ = \\frac{1}{\\frac{1}{2}\\operatorname{sen} 20^\\circ} = \\frac{2}{\\operatorname{sen} 20^\\circ}$$<br>3. Multiplicando pelo fator $\\operatorname{sen} 20^\\circ$:<br>$$\\frac{2}{\\operatorname{sen} 20^\\circ} \\cdot \\operatorname{sen} 20^\\circ = 2$$"
+          },
+          {
+            "q": "O valor real de $m$, para que o sistema $\\begin{cases} mx + y = 0 \\\\ my + z = 0 \\\\ 8x + mz = 0 \\end{cases}$ admita solução diferente de $(0, 0, 0)$, é:",
+            "options": [
+              "$8$",
+              "$2$",
+              "$1$",
+              "$-2$",
+              "$-4$"
+            ],
+            "correct": 3,
+            "explanation": "Trata-se de um sistema linear homogêneo $3 \\times 3$. Ele admite soluções não nulas se, e somente se, o determinante de sua matriz de coeficientes for igual a zero:<br>$$\\det \\begin{pmatrix} m & 1 & 0 \\\\ 0 & m & 1 \\\\ 8 & 0 & m \\end{pmatrix} = 0$$<br>Calculando o determinante por Sarrus:<br>$$\\det = m \\cdot m \\cdot m + 1 \\cdot 1 \\cdot 8 + 0 - 0 = m^3 + 8$$<br>Igualando a zero:<br>$$m^3 + 8 = 0 \\implies m^3 = -8 \\implies m = -2$$"
+          },
+          {
+            "q": "A reta $s$ passa pelo ponto $(0, 3)$ e é perpendicular à reta $AB$, onde $A = (0, 0)$ e $B$ é o centro da circunferência $x^2 + y^2 - 2x - 4y = 20$. Então a equação da reta $s$ é:",
+            "options": [
+              "$x - 2y = -6$",
+              "$y - x = 3$",
+              "$x + 2y = 6$",
+              "$2x + y = 6$",
+              "$x + y = 3$"
+            ],
+            "correct": 2,
+            "explanation": "1. Encontrando o centro $B(x_0, y_0)$ da circunferência completando os quadrados:<br>$$(x^2 - 2x + 1) + (y^2 - 4y + 4) = 20 + 1 + 4 \\implies (x - 1)^2 + (y - 2)^2 = 25$$<br>Logo, o centro é $B(1, 2)$.<br>2. A reta que passa pela origem $A(0, 0)$ e pelo centro $B(1, 2)$ tem coeficiente angular:<br>$$m_{AB} = \\frac{2 - 0}{1 - 0} = 2$$<br>3. Sendo a reta $s$ perpendicular à reta $AB$, sua inclinação é o oposto do inverso:<br>$$m_s = -\\frac{1}{m_{AB}} = -\\frac{1}{2}$$<br>4. Como a reta $s$ passa por $(0, 3)$, sua equação fundamental é:<br>$$y - 3 = -\\frac{1}{2}(x - 0) \\implies 2y - 6 = -x \\implies x + 2y = 6$$"
+          },
+          {
+            "q": "Um cubo de aresta $a$ possui área total igual a $10\\text{ cm}^2$. A área total do cubo de aresta $3a$, em $\\text{cm}^2$, é:",
+            "options": [
+              "$20$",
+              "$30$",
+              "$60$",
+              "$90$",
+              "$120$"
+            ],
+            "correct": 3,
+            "explanation": "1. Um cubo de aresta $a$ possui $6$ faces quadradas congruentes de área $a^2$, totalizando:<br>$$A_1 = 6a^2 = 10\\text{ cm}^2$$<br>2. Para um cubo com aresta triplicada ($3a$), cada face terá área $(3a)^2 = 9a^2$.<br>A nova área total será:<br>$$A_2 = 6(3a)^2 = 6 \\times 9a^2 = 9 \\times (6a^2)$$<br>3. Substituindo $6a^2 = 10\\text{ cm}^2$:<br>$$A_2 = 9 \\times 10 = 90\\text{ cm}^2$$"
+          },
+          {
+            "q": "O conjunto dado por $I = \\left\\{ z \\in \\mathbb{C} \\;\\middle|\\; \\left| \\frac{z}{z - 1} \\right| = 1 \\right\\}$, onde $\\mathbb{C}$ denota o conjunto dos números complexos, representa no plano cartesiano:",
+            "options": [
+              "uma parábola",
+              "uma reta",
+              "um ponto",
+              "uma circunferência",
+              "uma elipse"
+            ],
+            "correct": 1,
+            "explanation": "1. Pela propriedade do módulo da divisão de números complexos:<br>$$\\left| \\frac{z}{z - 1} \\right| = 1 \\implies \\frac{|z|}{|z - 1|} = 1 \\implies |z| = |z - 1|$$<br>2. Geometricamente, a equação $|z - 0| = |z - 1|$ representa o lugar geométrico de todos os pontos do plano complexo que são equidistantes da origem $(0, 0)$ e do ponto real $(1, 0)$, ou seja, a reta mediatriz do segmento que liga $(0, 0)$ a $(1, 0)$.<br>3. Algebricamente, fazendo $z = x + yi$:<br>$$|x + yi|^2 = |(x - 1) + yi|^2 \\implies x^2 + y^2 = (x - 1)^2 + y^2$$<br>$$x^2 = x^2 - 2x + 1 \\implies 2x = 1 \\implies x = \\frac{1}{2}$$<br>Isso representa uma reta vertical no plano cartesiano."
+          }
+        ]
+      },
+      {
+        "id": "ifce-2006-1-matematica",
+        "title": "Prova IFCE 2006.1",
+        "bncc": "Revisão Geral",
+        "summary": "7 questões de Matemática aplicadas no Processo Seletivo / Vestibular 2006.1 do IFCE.",
+        "detailedTheory": "O Processo Seletivo / Vestibular 2006.1 do IFCE abordou: propriedades de proporções e razões entre quatro grandezas lineares; análise de funções quadráticas com concavidade e raízes duplas reais via discriminante nulo $\\Delta = 0$; propriedades operatórias de logaritmos com inversão de base e potências compostas; identidades trigonométricas no cálculo de $\\operatorname{sen}(2a)$ a partir do quadrado da soma de seno e cosseno; análise combinatória na contagem de subconjuntos de três letras distintas (combinações simples); álgebra matricial na inversa do produto de matrizes inversíveis $(AB)^{-1} = B^{-1}A^{-1}$; e geometria plana euclidiana métrica no cálculo do lado de um hexágono regular a partir da distância entre lados opostos paralelos.",
+        "keyPoints": [
+          "Se $\\frac{x}{y} = \\frac{z}{t}$ e $t + z = x + y \\ne 0$, a constante de proporcionalidade deve ser 1, implicando $t = y$ e $z = x$.",
+          "O quadrado da soma $(\\operatorname{sen} a + \\cos a)^2 = 1 + \\operatorname{sen}(2a)$ relaciona de forma direta a soma das razões trigonométricas com o seno do arco duplo.",
+          "A distância entre dois lados opostos paralelos de um hexágono regular de lado $L$ é o dobro do apótema: $2 \\left(\\frac{L\\sqrt{3}}{2}\\right) = L\\sqrt{3}$."
+        ],
+        "formula": "(p + m)^2 - 1 = \\operatorname{sen}(2a), \\quad (AB)^{-1} = B^{-1} A^{-1}, \\quad d = L\\sqrt{3}, \\quad C_{8,3} = 56",
+        "solvedExample": {
+          "problem": "Calcule a distância entre lados paralelos opostos de um hexágono regular de lado $4\\text{ cm}$.",
+          "solution": "1. O apótema do hexágono regular é $a = \\frac{L\\sqrt{3}}{2} = \\frac{4\\sqrt{3}}{2} = 2\\sqrt{3}\\text{ cm}$.<br>2. A distância entre dois lados opostos paralelos é o dobro do apótema:<br>$$d = 2a = 2(2\\sqrt{3}) = 4\\sqrt{3}\\text{ cm}$$"
+        },
+        "slug": "prova-ifce-20061",
+        "filename": "prova-ifce-20061.html",
+        "folder": "bloco-6-provas-ifce",
+        "blockId": 6,
+        "pdf": "ifce_prova_2006_1.pdf",
+        "questions": [
+          {
+            "q": "Considere a proporção $\\frac{x}{y} = \\frac{z}{t}$. Se $t + z = x + y \\ne 0$, então $t - z$ é igual a:",
+            "options": [
+              "$y - x$",
+              "$x + y$",
+              "$x - y$",
+              "$-x - y$",
+              "$xy$"
+            ],
+            "correct": 0,
+            "explanation": "1. Seja $k$ a constante de proporcionalidade tal que $x = ky$ e $z = kt$.<br>2. Substituindo na igualdade fornecida:<br>$$t + kt = ky + y \\implies t(1 + k) = y(1 + k)$$<br>3. Como $x + y = y(1 + k) \\ne 0$, temos necessariamente $1 + k \\ne 0$. Dividindo ambos os membros por $(1 + k)$:<br>$$t = y$$<br>4. Se $t = y$, pela proporção original $\\frac{x}{y} = \\frac{z}{t}$ concluímos que $z = x$.<br>Logo:<br>$$t - z = y - x$$"
+          },
+          {
+            "q": "A função $f$ de $\\mathbb{R}$ em $\\mathbb{R}$, dada por $f(x) = ax^2 - 4x + a$, admite um valor máximo e possui dois zeros reais e iguais. Nessas condições, $f(-2)$ é igual a:",
+            "options": [
+              "$4$",
+              "$2$",
+              "$0$",
+              "$-\\frac{1}{2}$",
+              "$-2$"
+            ],
+            "correct": 4,
+            "explanation": "1. A função admite valor máximo, portanto sua concavidade é voltada para baixo, o que exige $a < 0$.<br>2. A função possui dois zeros reais e iguais, logo seu discriminante deve ser nulo ($\\Delta = 0$):<br>$$\\Delta = (-4)^2 - 4(a)(a) = 16 - 4a^2 = 0 \\implies 4a^2 = 16 \\implies a^2 = 4$$<br>Como $a < 0$, temos $a = -2$.<br>3. A lei da função é $f(x) = -2x^2 - 4x - 2$. Calculando $f(-2)$:<br>$$f(-2) = -2(-2)^2 - 4(-2) - 2 = -2(4) + 8 - 2 = -8 + 8 - 2 = -2$$"
+          },
+          {
+            "q": "Sendo $\\log_7 4 = a$, então $2^{a^{-1}}$ é igual a:",
+            "options": [
+              "$1$",
+              "$\\sqrt{7}$",
+              "$\\sqrt{2}$",
+              "$2$",
+              "$7$"
+            ],
+            "correct": 1,
+            "explanation": "1. O inverso de $a$ é:<br>$$a^{-1} = \\frac{1}{\\log_7 4} = \\log_4 7$$<br>2. Mudando a base do logaritmo para a base $2$:<br>$$\\log_4 7 = \\frac{\\log_2 7}{\\log_2 4} = \\frac{\\log_2 7}{2} = \\log_2(7^{1/2}) = \\log_2 \\sqrt{7}$$<br>3. Calculando a potência exponencial:<br>$$2^{a^{-1}} = 2^{\\log_2 \\sqrt{7}} = \\sqrt{7}$$"
+          },
+          {
+            "q": "Sendo $\\operatorname{sen} a = p$ e $\\cos a = m$, então $\\operatorname{sen}(2a)$ é igual a:",
+            "options": [
+              "$p^2 + m^2$",
+              "$1 - (p + m)^2$",
+              "$(p + m)^2 - 1$",
+              "$(p + m)^2 + 1$",
+              "$p^2 + m^2 - 1$"
+            ],
+            "correct": 2,
+            "explanation": "1. Elevando ao quadrado a soma $(p + m)$:<br>$$(p + m)^2 = (\\operatorname{sen} a + \\cos a)^2 = \\operatorname{sen}^2 a + 2\\operatorname{sen} a\\cos a + \\cos^2 a$$<br>2. Pela Relação Fundamental ($\\operatorname{sen}^2 a + \\cos^2 a = 1$) e pela fórmula do arco duplo ($2\\operatorname{sen} a\\cos a = \\operatorname{sen}(2a)$):<br>$$(p + m)^2 = 1 + \\operatorname{sen}(2a)$$<br>3. Isolando $\\operatorname{sen}(2a)$:<br>$$\\operatorname{sen}(2a) = (p + m)^2 - 1$$"
+          },
+          {
+            "q": "Usando as letras da palavra INTEGRAL, podem ser formados ___ conjuntos de três letras distintas.",
+            "options": [
+              "$56$",
+              "$57$",
+              "$58$",
+              "$59$",
+              "$60$"
+            ],
+            "correct": 0,
+            "explanation": "1. A palavra INTEGRAL é composta por $8$ letras distintas: {I, N, T, E, G, R, A, L}.<br>2. Um conjunto de três elementos não depende da ordem dos seus elementos. Portanto, o número de conjuntos de três letras distintas que podem ser formados é a combinação simples de $8$ elementos tomados $3$ a $3$:<br>$$C_{8, 3} = \\frac{8 \\times 7 \\times 6}{3 \\times 2 \\times 1} = 56$$"
+          },
+          {
+            "q": "Se $A$ e $B$ são matrizes quadradas de ordem $n$, com $\\det(A) \\ne 0$ e $\\det(B) \\ne 0$, então $(AB)^{-1}$ é igual a:",
+            "options": [
+              "$A^{-1} B^{-1}$",
+              "$\\frac{1}{AB}$",
+              "$B^{-1} A^{-1}$",
+              "$AB$",
+              "$BA$"
+            ],
+            "correct": 2,
+            "explanation": "Pela propriedade clássica da inversa do produto de matrizes inversíveis:<br>$$(AB)(B^{-1} A^{-1}) = A (B B^{-1}) A^{-1} = A \\cdot I \\cdot A^{-1} = A A^{-1} = I$$<br>Portanto, a matriz inversa de $AB$ é:<br>$$(AB)^{-1} = B^{-1} A^{-1}$$"
+          },
+          {
+            "q": "A distância entre dois lados paralelos de um hexágono regular é igual a $2\\sqrt{3}\\text{ cm}$. A medida do lado desse hexágono, em centímetro, é:",
+            "options": [
+              "$\\sqrt{3}$",
+              "$3$",
+              "$4$",
+              "$2$",
+              "$2{,}5$"
+            ],
+            "correct": 3,
+            "explanation": "1. Em um hexágono regular de lado $L$, os lados opostos são paralelos.<br>A distância perpendicular entre dois lados opostos paralelos corresponde a duas vezes a altura de um dos seis triângulos equiláteros que formam o hexágono (ou seja, duas vezes o apótema $a$):<br>$$d = 2a = 2 \\cdot \\left(\\frac{L\\sqrt{3}}{2}\\right) = L\\sqrt{3}$$<br>2. Igualando ao valor dado no enunciado:<br>$$L\\sqrt{3} = 2\\sqrt{3} \\implies L = 2\\text{ cm}$$"
+          }
+        ]
+      },
+      {
+        "id": "ifce-2005-2-matematica",
+        "title": "Prova IFCE 2005.2",
+        "bncc": "Revisão Geral",
+        "summary": "7 questões de Matemática aplicadas no Processo Seletivo / Vestibular 2005.2 do IFCE.",
+        "detailedTheory": "O Processo Seletivo / Vestibular 2005.2 do IFCE cobrou: paridade de funções e a decomposição analítica em parte par $\\frac{f(x) + f(-x)}{2}$; propriedades de exponenciais na simplificação de potências sucessivas e expoentes fracionários negativos; simplificação algébrica de infinitos radicais aninhados alternados $\\sqrt{a\\sqrt{b\\sqrt{a\\dots}}}$; determinante da multiplicação por escalar da matriz inversa $\\det(2A^{-1}) = 2^n / \\det(A)$; propriedades fundamentais de números binomiais complementares $\\binom{n}{p} = \\binom{n}{n-p}$; geometria analítica com cálculo da menor distância de um ponto externo a uma circunferência; e relações de Girard aplicadas a polinômios cúbicos para encontrar a soma dos quadrados das raízes restantes.",
+        "keyPoints": [
+          "Para qualquer função real $f(x)$, a função $g(x) = \\frac{f(x) + f(-x)}{2}$ é sempre uma função par, pois $g(-x) = g(x)$.",
+          "Ao calcular radicais infinitos $\\sqrt{a\\sqrt{b\\dots}} = x$, elevamos sucessivamente ao quadrado para obter $x^4 = a^2 b x \\implies x = \\sqrt[3]{a^2 b}$.",
+          "Pelas relações de Girard, a soma dos quadrados das raízes é calculada através de $(r + s)^2 - 2rs$."
+        ],
+        "formula": "g(x) = \\frac{f(x) + f(-x)}{2}, \\quad x = \\sqrt[3]{a^2 b}, \\quad \\det(2A^{-1}) = \\frac{2^3}{\\det A}, \\quad \\binom{n}{p} = \\binom{n}{n-p}, \\quad r^2 + s^2 = (r+s)^2 - 2rs",
+        "solvedExample": {
+          "problem": "Calcule o valor de $\\sqrt{3\\sqrt{3\\sqrt{3\\dots}}}$.",
+          "solution": "1. Seja $x = \\sqrt{3\\sqrt{3\\sqrt{3\\dots}}}$.<br>2. Elevando ao quadrado: $x^2 = 3x$.<br>3. Como $x > 0$, dividimos por $x$: $x = 3$."
+        },
+        "slug": "prova-ifce-20052",
+        "filename": "prova-ifce-20052.html",
+        "folder": "bloco-6-provas-ifce",
+        "blockId": 6,
+        "pdf": "ifce_prova_2005_2.pdf",
+        "questions": [
+          {
+            "q": "Se $y = f(x)$ é uma função real, então:",
+            "options": [
+              "$f(x)$ é uma função par",
+              "$f(x)$ é uma função ímpar",
+              "$f(-x)$ é uma função par",
+              "$\\frac{f(x) + f(-x)}{2}$ é uma função par",
+              "$\\frac{f(x) + f(-x)}{2}$ é uma função ímpar"
+            ],
+            "correct": 3,
+            "explanation": "Seja $g(x) = \\frac{f(x) + f(-x)}{2}$.<br>Testando a paridade ao calcular $g(-x)$:<br>$$g(-x) = \\frac{f(-x) + f(-(-x))}{2} = \\frac{f(-x) + f(x)}{2} = g(x)$$<br>Como $g(-x) = g(x)$ para todo $x$ do domínio de $f$, a função $g(x)$ é necessariamente uma função par (esta é a chamada componente par de qualquer função real $f$)."
+          },
+          {
+            "q": "Seja $f$ uma função real de variável real definida por $f(x) = 5^{3x}$. Se $f(a) = 8$, então $f\\left(-\\frac{a}{3}\\right)$ é:",
+            "options": [
+              "$\\frac{1}{2}$",
+              "$\\frac{1}{4}$",
+              "$\\frac{1}{8}$",
+              "$4$",
+              "$2$"
+            ],
+            "correct": 0,
+            "explanation": "1. Da condição dada: $f(a) = 5^{3a} = 8$.<br>Escrevendo como potência: $(5^a)^3 = 8 \\implies 5^a = \\sqrt[3]{8} = 2$.<br><br>2. Agora calculamos $f\\left(-\\frac{a}{3}\\right)$:<br>$$f\\left(-\\frac{a}{3}\\right) = 5^{3\\left(-\\frac{a}{3}\\right)} = 5^{-a} = \\frac{1}{5^a}$$<br>3. Substituindo $5^a = 2$:<br>$$f\\left(-\\frac{a}{3}\\right) = \\frac{1}{2}$$"
+          },
+          {
+            "q": "A expressão $\\sqrt{a\\sqrt{b\\sqrt{a\\sqrt{b\\dots}}}}$ equivale a:",
+            "options": [
+              "$\\sqrt[3]{ab}$",
+              "$\\sqrt[3]{a^2 b^2}$",
+              "$\\sqrt[3]{a^2 b}$",
+              "$\\sqrt[3]{ab^2}$",
+              "$1$"
+            ],
+            "correct": 2,
+            "explanation": "1. Seja $x = \\sqrt{a\\sqrt{b\\sqrt{a\\sqrt{b\\dots}}}}$ o valor da expressão com $x > 0$.<br>2. Elevando ao quadrado ambos os membros:<br>$$x^2 = a\\sqrt{b\\sqrt{a\\sqrt{b\\dots}}}$$<br>3. Elevando ao quadrado novamente:<br>$$x^4 = a^2 \\cdot b \\sqrt{a\\sqrt{b\\dots}} = a^2 b \\cdot x$$<br>4. Dividindo por $x$ ($x \\ne 0$):<br>$$x^3 = a^2 b \\implies x = \\sqrt[3]{a^2 b}$$"
+          },
+          {
+            "q": "Considere $A$ uma matriz de ordem $3$ e $A^{-1}$, sua inversa. Se $\\det A = 8$, então $\\det(2A^{-1})$ vale:",
+            "options": [
+              "$8$",
+              "$4$",
+              "$-8$",
+              "$-4$",
+              "$1$"
+            ],
+            "correct": 4,
+            "explanation": "1. Como a ordem da matriz é $n = 3$, multiplicar a matriz pelo escalar $2$ eleva a constante à ordem $3$ ao calcular o determinante:<br>$$\\det(2A^{-1}) = 2^3 \\cdot \\det(A^{-1})$$<br>2. O determinante da inversa é o inverso do determinante:<br>$$\\det(A^{-1}) = \\frac{1}{\\det A} = \\frac{1}{8}$$<br>3. Logo:<br>$$\\det(2A^{-1}) = 8 \\cdot \\frac{1}{8} = 1$$"
+          },
+          {
+            "q": "O número binomial $\\begin{pmatrix} n \\\\ p \\end{pmatrix}$, com $n$ e $p$ naturais e $p \\le n$, é igual a:",
+            "options": [
+              "$\\begin{pmatrix} n \\\\ p - 1 \\end{pmatrix}$",
+              "$\\begin{pmatrix} n - 1 \\\\ p \\end{pmatrix}$",
+              "$\\begin{pmatrix} n - 1 \\\\ p - 1 \\end{pmatrix}$",
+              "$\\begin{pmatrix} n \\\\ n - p \\end{pmatrix}$",
+              "$\\begin{pmatrix} n + p \\\\ n \\end{pmatrix}$"
+            ],
+            "correct": 3,
+            "explanation": "Pela propriedade fundamental dos números binomiais complementares:<br>$$\\begin{pmatrix} n \\\\ p \\end{pmatrix} = \\frac{n!}{p!(n - p)!}$$<br>Por outro lado:<br>$$\\begin{pmatrix} n \\\\ n - p \\end{pmatrix} = \\frac{n!}{(n - p)!(n - (n - p))!} = \\frac{n!}{(n - p)!p!}$$<br>Portanto, $\\begin{pmatrix} n \\\\ p \\end{pmatrix} = \\begin{pmatrix} n \\\\ n - p \\end{pmatrix}$."
+          },
+          {
+            "q": "A menor distância do ponto $P(\\sqrt{2}, \\sqrt{2})$ à circunferência $x^2 + y^2 = 1$ é igual a:",
+            "options": [
+              "$1$",
+              "$2$",
+              "$3$",
+              "$4$",
+              "$5$"
+            ],
+            "correct": 0,
+            "explanation": "1. A circunferência $x^2 + y^2 = 1$ tem centro na origem $O(0, 0)$ e raio $R = 1$.<br>2. A distância entre o ponto $P(\\sqrt{2}, \\sqrt{2})$ e o centro $O(0, 0)$ é:<br>$$d(P, O) = \\sqrt{(\\sqrt{2} - 0)^2 + (\\sqrt{2} - 0)^2} = \\sqrt{2 + 2} = \\sqrt{4} = 2$$<br>3. A menor distância do ponto $P$ até a circunferência é dada pela distância ao centro subtraída do raio:<br>$$d = d(P, O) - R = 2 - 1 = 1$$"
+          },
+          {
+            "q": "As três raízes da equação $9x^3 - 31x - 10 = 0$ são $r$, $s$ e $2$. O valor de $r^2 + s^2$ é:",
+            "options": [
+              "$\\frac{5}{9}$",
+              "$\\frac{10}{9}$",
+              "$\\frac{20}{9}$",
+              "$\\frac{26}{9}$",
+              "$\\frac{31}{9}$"
+            ],
+            "correct": 3,
+            "explanation": "1. Escrevendo o polinômio completo: $9x^3 + 0x^2 - 31x - 10 = 0$.<br>Pelas Relações de Girard:<br>• Soma das raízes: $r + s + 2 = -\\frac{0}{9} = 0 \\implies r + s = -2$<br>• Produto das raízes: $r \\cdot s \\cdot 2 = -\\frac{-10}{9} = \\frac{10}{9} \\implies rs = \\frac{5}{9}$<br><br>2. Para calcular $r^2 + s^2$, utilizamos a identidade notável:<br>$$r^2 + s^2 = (r + s)^2 - 2rs$$<br>Substituindo os valores:<br>$$r^2 + s^2 = (-2)^2 - 2\\left(\\frac{5}{9}\\right) = 4 - \\frac{10}{9} = \\frac{36 - 10}{9} = \\frac{26}{9}$$"
+          }
+        ]
+      },
+      {
+        "id": "ifce-2005-1-matematica",
+        "title": "Prova IFCE 2005.1",
+        "bncc": "Revisão Geral",
+        "summary": "7 questões de Matemática aplicadas no Processo Seletivo / Vestibular 2005.1 do IFCE.",
+        "detailedTheory": "O Processo Seletivo / Vestibular 2005.1 do IFCE compreendeu: resolução de equações quadráticas incompletas e determinação de raízes desconhecidas; equações exponenciais sob radicais de índices variáveis e igualdade de potências; período fundamental de combinações lineares de funções trigonométricas $f(x) = \\operatorname{sen} x + \\sqrt{3}\\cos x$; diferenças finitas de quarta ordem em progressões aritméticas lineares; propriedades operatórias de matrizes transpostas e multiplicação de linhas/colunas por constantes reais em determinantes; contagem de confrontos esportivos por combinação simples; e probabilidade clássica de sequências independentes em distribuições binomiais simples.",
+        "keyPoints": [
+          "Ao resolver equações com radicais nos expoentes, reduz-se à mesma base e igualam-se os expoentes fracionários.",
+          "A combinação linear $A\\operatorname{sen}(x) + B\\cos(x)$ possui período fundamental inalterado $2\\pi$, pois equivale a uma senóide pura transladada.",
+          "Para uma progressão aritmética de primeiro grau, a combinação alternada $\\Delta^4 a_1 = a_1 - 4a_2 + 6a_3 - 4a_4 + a_5$ é identicamente nula."
+        ],
+        "formula": "a_1 - 4a_2 + 6a_3 - 4a_4 + a_5 = 0, \\quad \\det(M_2) = 2k, \\quad \\frac{n(n-1)}{2} = 45 \\implies n = 10, \\quad P = \\left(\\frac{1}{2}\\right)^4 = \\frac{1}{16}",
+        "solvedExample": {
+          "problem": "Determine o período da função $g(x) = 3\\operatorname{sen}(2x) + 4\\cos(2x)$.",
+          "solution": "1. Ambas as funções possuem argumento com coeficiente angular $c = 2$.<br>2. O período fundamental é dado por $P = \\frac{2\\pi}{|c|} = \\frac{2\\pi}{2} = \\pi$."
+        },
+        "slug": "prova-ifce-20051",
+        "filename": "prova-ifce-20051.html",
+        "folder": "bloco-6-provas-ifce",
+        "blockId": 6,
+        "pdf": "ifce_prova_2005_1.pdf",
+        "questions": [
+          {
+            "q": "A equação do segundo grau $ax^2 - 4x - 16 = 0$ admite $4$ como raiz. A outra raiz é:",
+            "options": [
+              "$-1$",
+              "$-2$",
+              "$1$",
+              "$2$",
+              "$3$"
+            ],
+            "correct": 1,
+            "explanation": "1. Como $4$ é raiz da equação, substituímos $x = 4$:<br>$$a(4)^2 - 4(4) - 16 = 0 \\implies 16a - 16 - 16 = 0 \\implies 16a = 32 \\implies a = 2$$<br>2. A equação é $2x^2 - 4x - 16 = 0$, que dividida por $2$ resulta em $x^2 - 2x - 8 = 0$.<br>3. Pelo produto das raízes de Girard:<br>$$x_1 \\cdot x_2 = \\frac{-8}{1} = -8$$<br>Como $x_1 = 4$:<br>$$4 \\cdot x_2 = -8 \\implies x_2 = -2$$"
+          },
+          {
+            "q": "A solução real da equação $\\sqrt{5^{x-2}} \\cdot \\sqrt[x]{25^{2x-5}} = \\sqrt[2x]{5^{3x-2}}$ é:",
+            "options": [
+              "$\\{-4, 2\\}$",
+              "$\\{-3, 6\\}$",
+              "$\\{-6, 3\\}$",
+              "$\\{3\\}$",
+              "$\\{-6\\}$"
+            ],
+            "correct": 2,
+            "explanation": "1. Convertendo todas as parcelas para potências de base $5$:<br>• $\\sqrt{5^{x-2}} = 5^{\\frac{x-2}{2}}$<br>• $\\sqrt[x]{25^{2x-5}} = \\sqrt[x]{(5^2)^{2x-5}} = 5^{\\frac{4x-10}{x}}$<br>• $\\sqrt[2x]{5^{3x-2}} = 5^{\\frac{3x-2}{2x}}$<br><br>2. Somando os expoentes do produto no primeiro membro e igualando ao segundo membro:<br>$$\\frac{x-2}{2} + \\frac{4x-10}{x} = \\frac{3x-2}{2x}$$<br>Multiplicando toda a equação pelo MMC que é $2x$ (com $x \\ne 0$):<br>$$x(x - 2) + 2(4x - 10) = 3x - 2$$<br>$$x^2 - 2x + 8x - 20 = 3x - 2$$<br>$$x^2 + 3x - 18 = 0$$<br>3. Fatorando a equação quadrática:<br>$$(x + 6)(x - 3) = 0 \\implies x = -6 \\quad \\text{ou} \\quad x = 3$$<br>Ambos os valores satisfazem a igualdade algébrica dos expoentes. Logo, o conjunto solução é $\\{-6, 3\\}$."
+          },
+          {
+            "q": "O período da função definida por $f(x) = \\operatorname{sen} x + \\sqrt{3}\\cos x$ é igual a:",
+            "options": [
+              "$\\frac{\\pi}{4}$",
+              "$\\frac{\\pi}{5}$",
+              "$\\frac{\\pi}{6}$",
+              "$\\pi$",
+              "$2\\pi$"
+            ],
+            "correct": 4,
+            "explanation": "1. Multiplicando e dividindo a expressão por $2$:<br>$$f(x) = 2 \\left( \\frac{1}{2}\\operatorname{sen} x + \\frac{\\sqrt{3}}{2}\\cos x \\right)$$<br>2. Como $\\cos\\frac{\\pi}{3} = \\frac{1}{2}$ e $\\operatorname{sen}\\frac{\\pi}{3} = \\frac{\\sqrt{3}}{2}$, temos pela fórmula da soma de arcos:<br>$$f(x) = 2 \\operatorname{sen}\\left(x + \\frac{\\pi}{3}\\right)$$<br>3. A função obtida é uma senóide simples com pulsação $c = 1$. O período é:<br>$$P = \\frac{2\\pi}{|c|} = \\frac{2\\pi}{1} = 2\\pi$$"
+          },
+          {
+            "q": "Na progressão aritmética $(a_1, a_2, a_3, \\dots, a_n)$, o valor de $a_1 - 4a_2 + 6a_3 - 4a_4 + a_5$ é:",
+            "options": [
+              "zero",
+              "$1$",
+              "$2$",
+              "$3$",
+              "$4$"
+            ],
+            "correct": 0,
+            "explanation": "Seja $r$ a razão da PA, de modo que $a_k = a_1 + (k - 1)r$. Substituindo cada termo:<br>$$a_1 - 4(a_1 + r) + 6(a_1 + 2r) - 4(a_1 + 3r) + (a_1 + 4r)$$<br>Agrupando os termos em $a_1$ e os termos em $r$:<br>• Coeficiente de $a_1$: $1 - 4 + 6 - 4 + 1 = 0$<br>• Coeficiente de $r$: $-4(1) + 6(2) - 4(3) + 1(4) = -4 + 12 - 12 + 4 = 0$<br>Portanto:<br>$$0 \\cdot a_1 + 0 \\cdot r = 0$$"
+          },
+          {
+            "q": "Se $\\det \\begin{pmatrix} a & b & c \\\\ d & e & f \\\\ g & h & i \\end{pmatrix} = k$, então $\\det \\begin{pmatrix} a & 2d & g \\\\ b & 2e & h \\\\ c & 2f & i \\end{pmatrix}$ é igual a:",
+            "options": [
+              "$-2k$",
+              "$k$",
+              "$2k$",
+              "$6k$",
+              "$8k$"
+            ],
+            "correct": 2,
+            "explanation": "1. Seja $M = \\begin{pmatrix} a & b & c \\\\ d & e & f \\\\ g & h & i \\end{pmatrix}$ com $\\det(M) = k$.<br>A transposta de $M$ tem o mesmo determinante:<br>$$\\det(M^T) = \\det \\begin{pmatrix} a & d & g \\\\ b & e & h \\\\ c & f & i \\end{pmatrix} = k$$<br>2. A matriz fornecida na questão tem a segunda coluna igual ao dobro da segunda coluna de $M^T$:<br>$$\\begin{pmatrix} a & 2d & g \\\\ b & 2e & h \\\\ c & 2f & i \\end{pmatrix}$$<br>Multiplicar os elementos de uma única coluna por uma constante $2$ multiplica o determinante pelo fator $2$.<br>Portanto, o determinante é igual a $2k$."
+          },
+          {
+            "q": "Na primeira fase de um campeonato de voleibol, cada equipe jogou uma vez contra a outra. Se ocorreram $45$ jogos nessa fase, é porque o número de equipes era:",
+            "options": [
+              "$8$",
+              "$10$",
+              "$12$",
+              "$14$",
+              "$16$"
+            ],
+            "correct": 1,
+            "explanation": "Sejam $n$ as equipes participantes. Cada partida envolve $2$ equipes distintas.<br>O total de jogos em turno único é a combinação de $n$ tomados $2$ a $2$:<br>$$C_{n, 2} = \\frac{n(n - 1)}{2} = 45$$<br>$$n(n - 1) = 90$$<br>Como $90 = 10 \\times 9$, concluímos que $n = 10$ equipes."
+          },
+          {
+            "q": "A probabilidade de um casal ter quatro filhos, todos do sexo feminino, é:",
+            "options": [
+              "$\\frac{1}{2}$",
+              "$\\frac{1}{4}$",
+              "$\\frac{1}{8}$",
+              "$\\frac{1}{16}$",
+              "$\\frac{1}{32}$"
+            ],
+            "correct": 3,
+            "explanation": "Considerando que o nascimento de cada filho é um evento independente e que a probabilidade de nascer uma menina é $P(\\text{menina}) = \\frac{1}{2}$:<br>A probabilidade de que os quatro filhos sejam do sexo feminino é dada pela regra do produto:<br>$$P = \\frac{1}{2} \\times \\frac{1}{2} \\times \\frac{1}{2} \\times \\frac{1}{2} = \\left(\\frac{1}{2}\\right)^4 = \\frac{1}{16}$$"
+          }
+        ]
+      },
+      {
+        "id": "ifce-2004-1-matematica",
+        "title": "Prova IFCE 2004.1",
+        "bncc": "Revisão Geral",
+        "summary": "7 questões de Matemática aplicadas no Processo Seletivo / Vestibular 2004.1 do IFCE.",
+        "detailedTheory": "O Processo Seletivo / Vestibular 2004.1 do IFCE abordou: teoria dos conjuntos e contagem de relações binárias em $A \\times A$ com menos de dois pares ordenados; inequações logarítmicas de base maior que um e estudo do domínio de existência; Teorema de Binet para matrizes quadradas inversíveis $\\det(A) \\cdot \\det(A^{-1}) = 1$; equações com fatoriais de números naturais $(n+2)! = 720$; geometria analítica na identificação da circunferência a partir da forma implícita $x = \\pm \\sqrt{R^2 - y^2}$; probabilidade de repetições sucessivas em lançamentos de dados via distribuição binomial; e soma de termos de progressões geométricas infinitas decrescentes convergentes.",
+        "keyPoints": [
+          "Para um conjunto $A$ com 3 elementos, $A \\times A$ tem 9 pares; relações com menos de dois pares são a relação vazia (1) e as unitárias (9), totalizando 10.",
+          "Para inequações logarítmicas $\\log_a(u) < 0$ com $a > 1$, a solução é a interseção da condição de existência $u > 0$ com $u < 1$.",
+          "A soma de uma PG infinita com razão $|q| < 1$ converge para $S = \\frac{a_1}{1 - q}$."
+        ],
+        "formula": "\\binom{9}{0} + \\binom{9}{1} = 10, \\quad \\det(A)\\det(A^{-1}) = 1, \\quad x^2 + y^2 = 16, \\quad P = \\binom{5}{4}\\left(\\frac{1}{2}\\right)^5 = \\frac{5}{32}, \\quad S = \\frac{a}{1 - 1/2} = 2a",
+        "solvedExample": {
+          "problem": "Calcule a soma da PG infinita: $6 + 3 + 1{,}5 + 0{,}75 + \\dots$",
+          "solution": "1. Primeiro termo $a_1 = 6$ e razão $q = \\frac{3}{6} = \\frac{1}{2}$.<br>2. Pela fórmula da soma infinita:<br>$$S = \\frac{a_1}{1 - q} = \\frac{6}{1 - 1/2} = \\frac{6}{1/2} = 12$$"
+        },
+        "slug": "prova-ifce-20041",
+        "filename": "prova-ifce-20041.html",
+        "folder": "bloco-6-provas-ifce",
+        "blockId": 6,
+        "pdf": "ifce_prova_2004_1.pdf",
+        "questions": [
+          {
+            "q": "As relações de $A$ em $A$, com $n(A) = 3$, com menos de dois elementos, são em número de:",
+            "options": [
+              "$10$",
+              "$11$",
+              "$12$",
+              "$13$",
+              "$14$"
+            ],
+            "correct": 0,
+            "explanation": "1. Sendo $n(A) = 3$, o produto cartesiano $A \\times A$ possui $3 \\times 3 = 9$ pares ordenados.<br>2. Uma relação de $A$ em $A$ é qualquer subconjunto de $A \\times A$.<br>3. As relações que possuem 'menos de dois elementos' podem ter $0$ elementos ou $1$ elemento:<br>• Com $0$ elementos: $\\binom{9}{0} = 1$ relação (a relação vazia $\\emptyset$).<br>• Com $1$ elemento: $\\binom{9}{1} = 9$ relações (cada relação unitária contendo um único par).<br>Total = $1 + 9 = 10$ relações."
+          },
+          {
+            "q": "No conjunto dos números reais, a desigualdade $\\log_2(x - 1) < 0$ é verdadeira para:",
+            "options": [
+              "$x > 1$",
+              "$x < 2$",
+              "$1 < x < 2$",
+              "$x > 0$",
+              "$x < 1$"
+            ],
+            "correct": 2,
+            "explanation": "1. Condição de existência do logaritmo:<br>$$x - 1 > 0 \\implies x > 1$$<br>2. Como a base do logaritmo é $2 > 1$, o sentido da desigualdade se mantém ao exponenciar:<br>$$\\log_2(x - 1) < 0 \\implies x - 1 < 2^0 \\implies x - 1 < 1 \\implies x < 2$$<br>3. Fazendo a interseção com a condição de existência:<br>$$1 < x < 2$$"
+          },
+          {
+            "q": "Dada a matriz quadrada $A$, de ordem $n$, com $\\det(A) \\ne 0$, o valor de $\\det(A) \\cdot \\det(A^{-1})$ é:",
+            "options": [
+              "$1$",
+              "$2$",
+              "$3$",
+              "$4$",
+              "$5$"
+            ],
+            "correct": 0,
+            "explanation": "Como $A$ é inversível, temos $A \\cdot A^{-1} = I_n$.<br>Pelo Teorema de Binet:<br>$$\\det(A \\cdot A^{-1}) = \\det(A) \\cdot \\det(A^{-1})$$<br>Como o determinante da matriz identidade é $1$ ($\\det(I_n) = 1$):<br>$$\\det(A) \\cdot \\det(A^{-1}) = 1$$"
+          },
+          {
+            "q": "Se $(n + 2)! = 720$, $n$ vale:",
+            "options": [
+              "$3$",
+              "$4$",
+              "$5$",
+              "$6$",
+              "$7$"
+            ],
+            "correct": 1,
+            "explanation": "1. Calculando os fatoriais sucessivos de números inteiros positivos:<br>• $1! = 1$<br>• $2! = 2$<br>• $3! = 6$<br>• $4! = 24$<br>• $5! = 120$<br>• $6! = 720$<br>2. Logo:<br>$$(n + 2)! = 6! \\implies n + 2 = 6 \\implies n = 4$$"
+          },
+          {
+            "q": "A equação $x = \\pm \\sqrt{16 - y^2}$, com $-4 \\le y \\le 4$, representa:",
+            "options": [
+              "uma elipse",
+              "uma parábola",
+              "uma circunferência",
+              "uma hipérbole",
+              "um par de retas"
+            ],
+            "correct": 2,
+            "explanation": "1. Elevando ambos os membros ao quadrado:<br>$$x^2 = 16 - y^2 \\implies x^2 + y^2 = 16$$<br>2. Com a presença dos dois sinais $\\pm$ para cada valor de $y \\in [-4, 4]$, a equação abrange todos os pontos reais $(x, y)$ situados a uma distância constante $R = \\sqrt{16} = 4$ da origem $(0, 0)$.<br>Portanto, a equação representa uma circunferência centrada na origem de raio $4$."
+          },
+          {
+            "q": "A probabilidade de observarmos exatamente 4 números pares em 5 jogadas sucessivas de um dado é:",
+            "options": [
+              "$\\frac{1}{25}$",
+              "$\\frac{4}{31}$",
+              "$\\frac{3}{29}$",
+              "$\\frac{2}{27}$",
+              "$\\frac{5}{32}$"
+            ],
+            "correct": 4,
+            "explanation": "1. Em cada jogada de um dado comum de 6 faces, a probabilidade de sair um número par {2, 4, 6} é $p = \\frac{3}{6} = \\frac{1}{2}$, e a de sair ímpar é $q = 1 - p = \\frac{1}{2}$.<br>2. Tratando como uma distribuição binomial de $n = 5$ tentativas com $k = 4$ sucessos:<br>$$P(X = 4) = \\binom{5}{4} p^4 q^{5 - 4} = 5 \\cdot \\left(\\frac{1}{2}\\right)^4 \\cdot \\left(\\frac{1}{2}\\right)^1 = 5 \\cdot \\frac{1}{32} = \\frac{5}{32}$$"
+          },
+          {
+            "q": "A soma $a + \\frac{a}{2} + \\frac{a}{4} + \\frac{a}{8} + \\dots$ converge para:",
+            "options": [
+              "$1$",
+              "$a$",
+              "$a + 1$",
+              "$2a$",
+              "$a - 1$"
+            ],
+            "correct": 3,
+            "explanation": "1. A sequência dada é uma progressão geométrica infinita onde o primeiro termo é $a_1 = a$ e a razão comum é $q = \\frac{1}{2}$.<br>2. Como $|q| = \\frac{1}{2} < 1$, a série converge e a soma é dada pela fórmula:<br>$$S = \\frac{a_1}{1 - q} = \\frac{a}{1 - \\frac{1}{2}} = \\frac{a}{\\frac{1}{2}} = 2a$$"
+          }
+        ]
       }
     ]
   }
