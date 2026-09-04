@@ -1,6 +1,6 @@
 /**
  * PartiuIF - Banco de Dados de Matemática Oficial
- * Contém os 6 blocos, 46 subtópicos e 334 exercícios com resoluções KaTeX.
+ * Contém os 6 blocos, 51 subtópicos e 369 exercícios com resoluções KaTeX.
  * Gerado automaticamente por build_full_site.py - Fonte da verdade: mathData_augmented.json
  */
 const mathData = {
@@ -5030,6 +5030,546 @@ const mathData = {
         "folder": "bloco-6-provas-ifce",
         "blockId": "6",
         "pdf": "ifce_prova_2009_2.pdf"
+      },
+      {
+        "id": "ifce-2009-1-matematica",
+        "title": "Prova IFCE 2009.1",
+        "bncc": "Revisão Geral",
+        "summary": "7 questões de Matemática aplicadas no Processo Seletivo / Vestibular 2009.1 do IFCE.",
+        "detailedTheory": "O Processo Seletivo / Vestibular 2009.1 do IFCE abordou: matemática financeira e progressão geométrica em taxas de crescimento percentual acumulado por biênios; modelagem por sistemas lineares de 1º grau aplicados a sistemas de pontuação em provas; transformações lineares no plano com análise periódica de potências de matrizes de rotação de $90^\\circ$; geometria plana articulada à escala cartográfica e Teorema de Pitágoras em trajetos ortogonais; propriedades aritméticas de múltiplos de 1001 ($7 \\times 11 \\times 13$) e invariância da soma de algarismos em palíndromos numéricos; geometria analítica na determinação do centro, raio e equação reduzida da circunferência a partir dos extremos de seu diâmetro; e funções logarítmicas na comparação de amplitudes sísmicas pela Escala Richter.",
+        "keyPoints": [
+          "Um aumento percentual de $10\\%$ por biênio acarreta um fator multiplicativo $(1{,}10)^n$, onde $n$ é o número de biênios transcorridos.",
+          "A matriz $\\begin{pmatrix} 0 & -1 \\\\ 1 & 0 \\end{pmatrix}$ representa uma rotação anti-horária de $90^\\circ$, de modo que $T^4 = I$ e $T^{2008} = (T^4)^{502} = I$.",
+          "O centro de uma circunferência é o ponto médio dos extremos de qualquer um de seus diâmetros, e o quadrado do raio é a distância do centro a qualquer extremidade."
+        ],
+        "formula": "P_n = P_0 (1 + i)^n, \\quad T^4 = I, \\quad (x - x_c)^2 + (y - y_c)^2 = R^2, \\quad M = \\log\\left(\\frac{A}{A_0}\\right)",
+        "solvedExample": {
+          "problem": "Se uma transformação linear $T: \\mathbb{R}^2 \\to \\mathbb{R}^2$ satisfaz $T(1,0) = (0,1)$ e $T(0,1) = (-1,0)$, determine $T^2(x,y)$.",
+          "solution": "1. A matriz de $T$ é $M = \\begin{pmatrix} 0 & -1 \\\\ 1 & 0 \\end{pmatrix}$.<br>2. Calculando $M^2$: $\\begin{pmatrix} 0 & -1 \\\\ 1 & 0 \\end{pmatrix} \\begin{pmatrix} 0 & -1 \\\\ 1 & 0 \\end{pmatrix} = \\begin{pmatrix} -1 & 0 \\\\ 0 & -1 \\end{pmatrix} = -I$.<br>3. Portanto, $T^2(x,y) = (-x, -y)$."
+        },
+        "slug": "prova-ifce-20091",
+        "filename": "prova-ifce-20091.html",
+        "folder": "bloco-6-provas-ifce",
+        "blockId": 6,
+        "pdf": "ifce_prova_2009_1.pdf",
+        "questions": [
+          {
+            "q": "A população eleitoral de certo município do interior do Ceará, para esse pleito de 2008, é de $48.158$ eleitores e, historicamente, aumenta de $10\\%$ a cada biênio. Sobre o número de eleitores no pleito de 2004 e para o pleito de 2010, é correto dizer-se que:",
+            "options": [
+              "em 2004, foi menor que $40.000$ e, em 2010, será maior que $54.000$.",
+              "ambos são compreendidos entre $40.000$ e $54.000$.",
+              "ambos são compreendidos entre $36.000$ e $50.000$.",
+              "ambos são compreendidos entre $39.000$ e $53.000$.",
+              "em 2004, foi de $43.780$ e, em 2010, será de $52.974$."
+            ],
+            "correct": 3,
+            "explanation": "1. De 2004 a 2008 passaram-se $4$ anos, ou seja, $2$ biênios ($n = 2$). O crescimento acumulado foi de $(1 + 0{,}10)^2 = 1{,}10^2 = 1{,}21$.<br>Portanto:<br>$$P_{2008} = P_{2004} \\times 1{,}21 \\implies P_{2004} = \\frac{48.158}{1{,}21} = 39.800\\text{ eleitores}$$<br>2. De 2008 a 2010 passa-se $1$ biênio ($n = 1$). O número de eleitores projetado é:<br>$$P_{2010} = P_{2008} \\times 1{,}10 = 48.158 \\times 1{,}10 = 52.973{,}8 \\approx 52.974\\text{ eleitores}$$<br>3. Comparando com os intervalos das opções:<br>• $P_{2004} = 39.800$, que está no intervalo $[39.000, 53.000]$.<br>• $P_{2010} = 52.974$, que também está no intervalo $[39.000, 53.000]$.<br>Logo, ambos estão compreendidos entre $39.000$ e $53.000$."
+          },
+          {
+            "q": "Uma avaliação é composta de $40$ questões. Um aluno ganha $1{,}5$ escore por cada questão que acerta e perde $0{,}5$ escore por cada questão que erra. Ao resolver todas as questões, obteve $40$ escores. O aluno errou _____ questões.",
+            "options": [
+              "$5$",
+              "$10$",
+              "$15$",
+              "$20$",
+              "$30$"
+            ],
+            "correct": 1,
+            "explanation": "Sejam $A$ o número de acertos e $E$ o número de erros.<br>Como o aluno resolveu todas as $40$ questões:<br>$$A + E = 40 \\implies A = 40 - E$$<br>A pontuação total obtida foi de $40$ pontos:<br>$$1{,}5 A - 0{,}5 E = 40$$<br>Substituindo $A = 40 - E$:<br>$$1{,}5(40 - E) - 0{,}5 E = 40$$<br>$$60 - 1{,}5 E - 0{,}5 E = 40 \\implies 60 - 2E = 40 \\implies 2E = 20 \\implies E = 10$$<br>Portanto, o aluno errou $10$ questões (e acertou $30$)."
+          },
+          {
+            "q": "A função $T: \\mathbb{R} \\times \\mathbb{R} \\to \\mathbb{R} \\times \\mathbb{R}$ é dada por $T(x,y) = (ax + by, cx + dy)$, onde $a, b, c, d$ são constantes reais. Usa-se a notação $T^n$ para indicar a composição $T \\circ T \\circ \\dots \\circ T$, com $T$ sendo repetida $n$ vezes. Sabendo-se que $T(1,0) = (0,1)$ e $T(0,1) = (-1,0)$, é correto dizer-se que $T^{2008}(1,1)$ é igual a:",
+            "options": [
+              "$(-1, 1)$",
+              "$(-1, -1)$",
+              "$(1, 1)$",
+              "$(1, -1)$",
+              "$(0, 1)$"
+            ],
+            "correct": 2,
+            "explanation": "1. Dos dados do enunciado:<br>• $T(1,0) = (a \\cdot 1 + b \\cdot 0, c \\cdot 1 + d \\cdot 0) = (a, c) = (0, 1) \\implies a = 0$ e $c = 1$.<br>• $T(0,1) = (a \\cdot 0 + b \\cdot 1, c \\cdot 0 + d \\cdot 1) = (b, d) = (-1, 0) \\implies b = -1$ e $d = 0$.<br><br>2. A matriz da transformação linear é $M = \\begin{pmatrix} 0 & -1 \\\\ 1 & 0 \\end{pmatrix}$. Calculando suas potências sucessivas:<br>• $M^2 = \\begin{pmatrix} 0 & -1 \\\\ 1 & 0 \\end{pmatrix} \\begin{pmatrix} 0 & -1 \\\\ 1 & 0 \\end{pmatrix} = \\begin{pmatrix} -1 & 0 \\\\ 0 & -1 \\end{pmatrix} = -I$<br>• $M^4 = (M^2)^2 = (-I)^2 = I$<br><br>3. Como o expoente $2008$ é múltiplo de $4$ ($2008 = 4 \\times 502$):<br>$$M^{2008} = (M^4)^{502} = I^{502} = I$$<br>Portanto, $T^{2008}(1,1) = I \\begin{pmatrix} 1 \\\\ 1 \\end{pmatrix} = (1, 1)$."
+          },
+          {
+            "q": "O mapa de certa região é construído utilizando a escala $1:200.000$. Neste mapa, os pontos $A$, $B$ e $C$ representam cidades vizinhas. Do mapa, podem ser retiradas as seguintes informações:<br>• A distância em linha reta, entre $A$ e $B$, é igual a $3\\text{ cm}$.<br>• A distância em linha reta, entre $A$ e $C$, é igual a $4\\text{ cm}$.<br>• A reta $r$, que passa por $A$ e $B$, e a reta $s$, que passa por $A$ e $C$, são perpendiculares.<br>Um andarilho, partindo da cidade representada por $A$, passa, respectivamente, pelas cidades representadas por $B$ e por $C$ e retorna para o ponto de partida, percorrendo cada trecho, entre as cidades, sempre em linha reta. O percurso total do andarilho foi, em km,",
+            "options": [
+              "$24$",
+              "$20$",
+              "$12$",
+              "$8$",
+              "$6$"
+            ],
+            "correct": 0,
+            "explanation": "1. Como as retas $AB$ e $AC$ são perpendiculares, o triângulo $BAC$ é retângulo em $A$, com catetos $AB = 3\\text{ cm}$ e $AC = 4\\text{ cm}$.<br>2. Pelo Teorema de Pitágoras, a hipotenusa $BC$ mede:<br>$$BC = \\sqrt{AB^2 + AC^2} = \\sqrt{3^2 + 4^2} = \\sqrt{9 + 16} = \\sqrt{25} = 5\\text{ cm}$$<br>3. O percurso total no mapa é o perímetro do triângulo:<br>$$P_{\\text{mapa}} = AB + BC + CA = 3\\text{ cm} + 5\\text{ cm} + 4\\text{ cm} = 12\\text{ cm}$$<br>4. Aplicando a escala $1:200.000$:<br>$$D_{\\text{real}} = 12\\text{ cm} \\times 200.000 = 2.400.000\\text{ cm}$$<br>Convertendo para metros e depois quilômetros:<br>$$2.400.000\\text{ cm} = 24.000\\text{ m} = 24\\text{ km}$$"
+          },
+          {
+            "q": "Um número natural $\\overline{ABC}$ é formado por $3$ algarismos $A$, $B$ e $C$, e sabe-se que a soma dos três algarismos é $A + B + C = 8$. Multiplica-se esse número por $7$, depois por $11$ e, finalmente, por $13$, obtendo-se um novo número. A soma dos algarismos desse novo número é igual a:",
+            "options": [
+              "$12$",
+              "$13$",
+              "$14$",
+              "$15$",
+              "$16$"
+            ],
+            "correct": 4,
+            "explanation": "1. Calculamos o produto dos três fatores multiplicativos:<br>$$7 \\times 11 \\times 13 = 77 \\times 13 = 1001$$<br>2. Multiplicar um número de três dígitos $N = \\overline{ABC} = 100A + 10B + C$ por $1001$ gera:<br>$$N \\times 1001 = 1000N + N = \\overline{ABC000} + \\overline{ABC} = \\overline{ABCABC}$$<br>3. O novo número de $6$ algarismos é formado pela repetição dos algarismos $A$, $B$ e $C$:<br>$$\\text{Soma dos algarismos} = A + B + C + A + B + C = 2(A + B + C)$$<br>Como $A + B + C = 8$, temos:<br>$$\\text{Soma} = 2 \\times 8 = 16$$"
+          },
+          {
+            "q": "Os pontos $(-1, 5)$ e $(7, -3)$ são os extremos do diâmetro de uma circunferência. A equação desta circunferência é:",
+            "options": [
+              "$(x + 3)^2 + (y - 1)^2 = 23$",
+              "$(x - 3)^2 + (y - 1)^2 = 32$",
+              "$(x + 3)^2 + (y + 1)^2 = 32$",
+              "$(x - 3)^2 + (y + 1)^2 = 32$",
+              "$(x - 3)^2 + (y - 1)^2 = 23$"
+            ],
+            "correct": 1,
+            "explanation": "1. O centro $C(x_c, y_c)$ da circunferência é o ponto médio do diâmetro de extremos $P_1(-1, 5)$ e $P_2(7, -3)$:<br>$$x_c = \\frac{-1 + 7}{2} = \\frac{6}{2} = 3, \\quad y_c = \\frac{5 + (-3)}{2} = \\frac{2}{2} = 1 \\implies C(3, 1)$$<br>2. O raio $R$ é a distância do centro $C(3, 1)$ a qualquer um dos extremos, por exemplo $P_1(-1, 5)$:<br>$$R^2 = (3 - (-1))^2 + (1 - 5)^2 = 4^2 + (-4)^2 = 16 + 16 = 32$$<br>3. A equação reduzida da circunferência é:<br>$$(x - x_c)^2 + (y - y_c)^2 = R^2 \\implies (x - 3)^2 + (y - 1)^2 = 32$$"
+          },
+          {
+            "q": "A escala Richter quantifica a magnitude de um terremoto. Ela foi desenvolvida, em 1935, pelos sismólogos norte-americanos Charles Francis Richter e Beno Gutenberg. A magnitude $M$ de um terremoto é calculada, usando-se a fórmula $M = \\log A - \\log A_0$, onde os logaritmos são na base $10$, $A$ representa a amplitude máxima medida pelo sismógrafo e $A_0$ representa uma amplitude de referência. No dia 12 de maio de 2008, um terremoto de $M_1 = 7{,}9$ graus, na escala Richter, atingiu a província de Sichuan, no interior da China, causando grande destruição. No dia 21 de maio de 2008, foi registrado, na cidade de Sobral, um tremor de $M_2 = 4{,}2$ graus na escala Richter. Baseando-se na fórmula dada acima e supondo-se que o valor de referência $A_0$, usado nas duas medições, foi o mesmo, a amplitude do tremor em Sichuan foi ________ vezes maior do que a amplitude do tremor em Sobral.",
+            "options": [
+              "menos de 10",
+              "de 10 a 100",
+              "de 100 a 1000",
+              "de 1000 a 10000",
+              "de 10000 a 100000"
+            ],
+            "correct": 3,
+            "explanation": "1. Da fórmula $M = \\log A - \\log A_0 = \\log\\left(\\frac{A}{A_0}\\right)$, temos:<br>$$\\frac{A}{A_0} = 10^M \\implies A = A_0 \\cdot 10^M$$<br>2. Para os dois terremotos:<br>• Sichuan: $A_1 = A_0 \\cdot 10^{7{,}9}$<br>• Sobral: $A_2 = A_0 \\cdot 10^{4{,}2}$<br><br>3. A razão entre as amplitudes é:<br>$$\\frac{A_1}{A_2} = \\frac{A_0 \\cdot 10^{7{,}9}}{A_0 \\cdot 10^{4{,}2}} = 10^{7{,}9 - 4{,}2} = 10^{3{,}7}$$<br>4. Estimando $10^{3{,}7}$:<br>Como $3 < 3{,}7 < 4$, temos:<br>$$10^3 < 10^{3{,}7} < 10^4 \\implies 1.000 < 10^{3{,}7} < 10.000$$<br>Logo, a amplitude foi de $1.000$ a $10.000$ vezes maior."
+          }
+        ]
+      },
+      {
+        "id": "ifce-2008-2-matematica",
+        "title": "Prova IFCE 2008.2",
+        "bncc": "Revisão Geral",
+        "summary": "7 questões de Matemática aplicadas no Processo Seletivo / Vestibular 2008.2 do IFCE.",
+        "detailedTheory": "O Processo Seletivo / Vestibular 2008.2 do IFCE cobrou: interpretação de texto histórico e cálculo proporcional de razões e frações da Constituição de 1824; paralelismo de retas e determinação de ângulos alternos internos; sistemas lineares com parâmetro real e otimização do valor de uma variável por análise do vértice da função quadrática; trigonometria com razão de cossenos, relações fundamentais e arcos notáveis; polinômios e contagem de raízes complexas não-reais via Teorema Fundamental da Álgebra e estudo de paridade/sinais; equações logarítmicas resolvidas por mudança de base; e geometria analítica com delimitação e cálculo da área entre uma parábola quadrática e uma reta horizontal.",
+        "keyPoints": [
+          "Em retas paralelas cortadas por transversais que formam um bico, o ângulo voltado para um lado é igual à soma dos ângulos correspondentes voltados para o outro lado (teorema dos bicos).",
+          "Para maximizar uma fração da forma $\\frac{1}{a^2 + a + 1}$, minimiza-se o denominador quadrático no ponto do vértice $a_v = -\\frac{b}{2a}$.",
+          "Um polinômio de coeficientes reais e grau ímpar com apenas termos ímpares estritamente crescentes/positivos para $x > 0$ possui apenas $x = 0$ como raiz real."
+        ],
+        "formula": "\\theta = \\alpha + \\beta, \\quad a_v = -\\frac{b}{2a}, \\quad \\log_4 x = \\frac{\\log_2 x}{2}, \\quad A = \\int_{-1}^1 (1 - x^2)\\,dx = \\frac{4}{3}",
+        "solvedExample": {
+          "problem": "Para qual valor real de $k$ a expressão $\\frac{1}{k^2 - 4k + 5}$ atinge seu valor máximo?",
+          "solution": "1. O valor máximo da fração ocorre quando o denominador $g(k) = k^2 - 4k + 5$ atinge o valor mínimo positivo.<br>2. O vértice da função quadrática ocorre em $k_v = -\\frac{-4}{2(1)} = 2$.<br>3. Logo, para $k = 2$, a expressão é máxima e vale $\\frac{1}{2^2 - 4(2) + 5} = 1$."
+        },
+        "slug": "prova-ifce-20082",
+        "filename": "prova-ifce-20082.html",
+        "folder": "bloco-6-provas-ifce",
+        "blockId": 6,
+        "pdf": "ifce_prova_2008_2.pdf",
+        "questions": [
+          {
+            "q": "Constituição de 1824: quem votava?<br><em>“De cada 30 homens, 14 eram escravos e não podiam votar. Dos 16 livres, 10 não tinham renda suficiente para votar. Dos restantes, 5 votantes escolhiam um único eleitor, que votava nos deputados e senadores”.</em><br><small>(Mário Schmidt. Nova História Crítica. 1 ed. São Paulo: Editora Nova Geração, 2008, p. 346).</small><br><br>A alternativa que expressa a fração “Número de homens livres que não votavam nos deputados e senadores sobre o número de homens que não podiam votar” é a:",
+            "options": [
+              "$\\frac{5}{14}$",
+              "$\\frac{15}{24}$",
+              "$\\frac{1}{10}$",
+              "$\\frac{1}{14}$",
+              "$\\frac{5}{24}$"
+            ],
+            "correct": 1,
+            "explanation": "Vamos analisar o grupo amostral de $30$ homens:<br>1. **Total de homens que não podiam votar** (denominador da fração):<br>• $14$ escravos (não podiam votar por condição jurídica);<br>• $10$ homens livres sem renda suficiente para votar.<br>Total que não podia votar = $14 + 10 = 24$ homens.<br><br>2. **Número de homens livres que não votavam nos deputados e senadores** (numerador da fração):<br>• Havia $16$ homens livres no total.<br>• Desses $16$, apenas $1$ era o eleitor que votava diretamente nos deputados e senadores (já que os $5$ votantes escolhiam apenas $1$ eleitor).<br>• Logo, os homens livres que NÃO votavam nos parlamentares eram $16 - 1 = 15$ homens.<br><br>3. A razão solicitada é:<br>$$\\frac{\\text{Homens livres que não votavam nos deputados e senadores}}{\\text{Homens que não podiam votar}} = \\frac{15}{24}$$"
+          },
+          {
+            "q": "Na figura abaixo, as retas $r$ e $s$ são paralelas ($r \\parallel s$). O ângulo superior formado pela reta horizontal $r$ e uma transversal descendente mede $\\alpha = 30^\\circ$, e o ângulo inferior formado pela horizontal $s$ e uma transversal ascendente mede $\\beta = 20^\\circ$. As duas transversais encontram-se formando o vértice do ângulo $\\theta$. A medida, em graus, do ângulo $\\theta$ é:",
+            "options": [
+              "$20^\\circ$",
+              "$30^\\circ$",
+              "$40^\\circ$",
+              "$45^\\circ$",
+              "$50^\\circ$"
+            ],
+            "correct": 4,
+            "explanation": "Pelo Teorema dos Bicos (ou traçando uma reta auxiliar $t$ paralela a $r$ e $s$ passando pelo vértice do ângulo $\\theta$):<br>• A reta transversal superior forma com a paralela auxiliar um ângulo alterno interno de medida igual a $\\alpha = 30^\\circ$.<br>• A reta transversal inferior forma com a paralela auxiliar um ângulo alterno interno de medida igual a $\\beta = 20^\\circ$.<br>O ângulo total $\\theta$ é a soma dessas duas aberturas:<br>$$\\theta = \\alpha + \\beta = 30^\\circ + 20^\\circ = 50^\\circ$$"
+          },
+          {
+            "q": "Admita-se que o sistema $\\begin{cases} x - ay = 1 - a \\\\ (1 + a)x + y = 1 \\end{cases}$ tenha solução única para cada número real $a$. O valor de $a$, para que $x$ seja o maior possível, é:",
+            "options": [
+              "$-1$",
+              "$-\\frac{1}{2}$",
+              "$\\frac{1}{2}$",
+              "$1$",
+              "$2$"
+            ],
+            "correct": 1,
+            "explanation": "1. Multiplicamos a segunda equação por $a$:<br>$$a(1 + a)x + ay = a$$<br>2. Somamos com a primeira equação ($x - ay = 1 - a$):<br>$$x + a(1 + a)x - ay + ay = 1 - a + a$$<br>$$[1 + a + a^2]x = 1 \\implies x = \\frac{1}{a^2 + a + 1}$$<br>Como o discriminante de $a^2 + a + 1$ é $\\Delta = 1^2 - 4(1)(1) = -3 < 0$, o denominador é estritamente positivo para todo $a \\in \\mathbb{R}$.<br><br>3. Para que a fração $x = \\frac{1}{a^2 + a + 1}$ atinja o seu valor máximo, o denominador quadrático $f(a) = a^2 + a + 1$ deve assumir o seu valor mínimo.<br>O valor mínimo de uma parábola com concavidade voltada para cima ($A = 1 > 0$) ocorre no vértice:<br>$$a_v = -\\frac{B}{2A} = -\\frac{1}{2(1)} = -\\frac{1}{2}$$"
+          },
+          {
+            "q": "Sabe-se que um dos ângulos internos de um triângulo mede $120^\\circ$. Se os outros dois ângulos, de medidas $x$ e $y$, são tais que $\\frac{\\cos x}{\\cos y} = \\frac{1 + \\sqrt{3}}{2}$, a diferença, em módulo, entre as medidas de $x$ e $y$ é:",
+            "options": [
+              "$5^\\circ$",
+              "$15^\\circ$",
+              "$20^\\circ$",
+              "$25^\\circ$",
+              "$30^\\circ$"
+            ],
+            "correct": 4,
+            "explanation": "1. Como a soma dos ângulos internos do triângulo é $180^\\circ$:<br>$$120^\\circ + x + y = 180^\\circ \\implies x + y = 60^\\circ \\implies y = 60^\\circ - x$$<br>2. Pela fórmula do cosseno da diferença:<br>$$\\cos y = \\cos(60^\\circ - x) = \\cos 60^\\circ \\cos x + \\operatorname{sen} 60^\\circ \\operatorname{sen} x = \\frac{1}{2}\\cos x + \\frac{\\sqrt{3}}{2}\\operatorname{sen} x$$<br>3. Substituindo na proporção:<br>$$\\frac{\\cos x}{\\frac{1}{2}\\cos x + \\frac{\\sqrt{3}}{2}\\operatorname{sen} x} = \\frac{1 + \\sqrt{3}}{2} \\implies \\frac{2\\cos x}{\\cos x + \\sqrt{3}\\operatorname{sen} x} = \\frac{1 + \\sqrt{3}}{2}$$<br>Multiplicando cruzado:<br>$$4\\cos x = (1 + \\sqrt{3})(\\cos x + \\sqrt{3}\\operatorname{sen} x)$$<br>$$4\\cos x = (1 + \\sqrt{3})\\cos x + (\\sqrt{3} + 3)\\operatorname{sen} x$$<br>$$(3 - \\sqrt{3})\\cos x = (3 + \\sqrt{3})\\operatorname{sen} x$$<br>$$\\operatorname{tg} x = \\frac{3 - \\sqrt{3}}{3 + \\sqrt{3}} = \\frac{(3 - \\sqrt{3})^2}{9 - 3} = \\frac{9 - 6\\sqrt{3} + 3}{6} = \\frac{12 - 6\\sqrt{3}}{6} = 2 - \\sqrt{3}$$<br>4. O arco cuja tangente vale $2 - \\sqrt{3}$ no primeiro quadrante é $x = 15^\\circ$ (pois $\\operatorname{tg}(45^\\circ - 30^\\circ) = \\frac{1 - 1/\\sqrt{3}}{1 + 1/\\sqrt{3}} = 2 - \\sqrt{3}$).<br>Assim: $y = 60^\\circ - 15^\\circ = 45^\\circ$.<br>A diferença em módulo é:<br>$$|x - y| = |15^\\circ - 45^\\circ| = 30^\\circ$$"
+          },
+          {
+            "q": "O número de raízes complexas, que não são reais, do polinômio $P(x) = x^{2n + 1} + \\dots + x^{2i + 1} + \\dots + x^5 + x^3 + x$, onde $n$ e $i$ pertencem aos naturais não-nulos, tal que $1 \\le i \\le n$, é:",
+            "options": [
+              "$2n + 1$",
+              "$2n$",
+              "$n + 1$",
+              "$n$",
+              "$1$"
+            ],
+            "correct": 1,
+            "explanation": "1. Colocando $x$ em evidência:<br>$$P(x) = x(x^{2n} + x^{2n-2} + \\dots + x^4 + x^2 + 1)$$<br>Logo, $x = 0$ é uma raiz real.<br><br>2. Para $x \\ne 0$ real:<br>• Se $x > 0$, todas as potências ímpares $x, x^3, x^5, \\dots, x^{2n+1}$ são estritamente positivas, logo $P(x) > 0$.<br>• Se $x < 0$, como todos os expoentes são ímpares, cada termo é estritamente negativo, logo $P(x) < 0$.<br>Portanto, não existem raízes reais além de $x = 0$.<br><br>3. O grau do polinômio é $2n + 1$. Pelo Teorema Fundamental da Álgebra, $P(x)$ tem exatamente $2n + 1$ raízes complexas.<br>Como apenas $1$ raiz é real ($x = 0$), o número de raízes complexas não-reais é:<br>$$(2n + 1) - 1 = 2n$$"
+          },
+          {
+            "q": "A solução da equação $\\log_2 x + \\log_4 x = 1$ tem o $x$ igual a:",
+            "options": [
+              "$\\sqrt[3]{2}$",
+              "$\\sqrt[3]{4}$",
+              "$\\sqrt[3]{8}$",
+              "$3\\sqrt{2}$",
+              "$2$"
+            ],
+            "correct": 1,
+            "explanation": "1. Condição de existência: $x > 0$.<br>2. Aplicando a mudança de base no segundo logaritmo:<br>$$\\log_4 x = \\frac{\\log_2 x}{\\log_2 4} = \\frac{\\log_2 x}{2} = \\frac{1}{2}\\log_2 x$$<br>3. Substituindo na equação:<br>$$\\log_2 x + \\frac{1}{2}\\log_2 x = 1 \\implies \\frac{3}{2}\\log_2 x = 1$$<br>$$\\log_2 x = \\frac{2}{3} \\implies x = 2^{2/3} = \\sqrt[3]{2^2} = \\sqrt[3]{4}$$"
+          },
+          {
+            "q": "Sendo $A$ o valor da área da região do plano cartesiano limitada pela parábola de equação $y = x^2$ e pela reta de equação $y = 1$, é correto afirmar que:",
+            "options": [
+              "$A < \\frac{1}{2}$",
+              "$A = \\frac{1}{2}$",
+              "$\\frac{1}{2} < A < 1$",
+              "$A = 1$",
+              "$1 < A < 2$"
+            ],
+            "correct": 4,
+            "explanation": "1. Encontrando os pontos de interseção entre a reta e a parábola:<br>$$x^2 = 1 \\implies x = -1 \\quad \\text{e} \\quad x = 1$$<br>2. A área $A$ da região é dada pela integral definida da curva superior menos a inferior:<br>$$A = \\int_{-1}^{1} (1 - x^2) \\, dx = \\left[ x - \\frac{x^3}{3} \\right]_{-1}^{1} = \\left(1 - \\frac{1}{3}\\right) - \\left(-1 + \\frac{1}{3}\\right) = \\frac{2}{3} - \\left(-\\frac{2}{3}\\right) = \\frac{4}{3} \\approx 1{,}333$$<br>3. Pelo método geométrico elementar:<br>• A região está inteiramente contida no retângulo de vértices $(-1,0), (1,0), (1,1), (-1,1)$, que tem base $2$ e altura $1$ (área $= 2$).<br>• Ela contém o triângulo de vértices $(-1,1), (1,1)$ e $(0,0)$, cuja área é $\\frac{2 \\times 1}{2} = 1$.<br>Portanto, a área $A$ situa-se estritamente entre a área do triângulo e a do retângulo circunscrito:<br>$$1 < A < 2$$"
+          }
+        ]
+      },
+      {
+        "id": "ifce-2008-1-matematica",
+        "title": "Prova IFCE 2008.1",
+        "bncc": "Revisão Geral",
+        "summary": "7 questões de Matemática aplicadas no Processo Seletivo / Vestibular 2008.1 do IFCE.",
+        "detailedTheory": "O Processo Seletivo / Vestibular 2008.1 do IFCE compreendeu: teoria dos números e fatoração prima na determinação do máximo divisor comum (MDC) de dois números não primos entre si cujo produto é conhecido; análise de funções trigonométricas e período fundamental $P = \\frac{2\\pi}{|B|}$; determinantes de matrizes quadradas sob multiplicação por escalar e Teorema de Binet $\\det(CD) = \\det(C)\\det(D)$; análise combinatória simples na contagem de confrontos em campeonatos de todos contra todos; otimização geométrica no plano cartesiano pelo Princípio de Fermat / menor caminho entre semiplanos opostos; geometria plana e relações métricas no retângulo utilizando produtos notáveis; e geometria espacial no cálculo da altura de reservatórios cilíndricos retos a partir de sua capacidade em litros.",
+        "keyPoints": [
+          "Se $\\operatorname{mdc}(a,b) = g$, então $g^2$ é divisor de $a \\cdot b$. O único quadrado perfeito maior que 1 divisor de 126 é 9, donde $g = 3$.",
+          "Para uma matriz $n \\times n$, multiplicar a matriz por um escalar $\\alpha$ multiplica seu determinante por $\\alpha^n$.",
+          "Para minimizar $AC + CB$ com $C$ sobre o eixo $x$, se $A$ e $B$ já estão em lados opostos de $x$, o ponto ótimo $C$ é simplesmente a interseção do segmento $AB$ com o eixo $x$."
+        ],
+        "formula": "g^2 \\mid (a \\cdot b), \\quad P = \\frac{2\\pi}{|B|}, \\quad \\det(\\alpha A) = \\alpha^n \\det(A), \\quad C_{n,2} = \\frac{n(n-1)}{2}, \\quad V = \\pi r^2 h",
+        "solvedExample": {
+          "problem": "Seja $M$ uma matriz de ordem 2 com $\\det(M) = 4$. Qual é o determinante da matriz $3M$?",
+          "solution": "1. Como a ordem da matriz é $n = 2$, a constante $3$ sai ao quadrado:<br>$$\\det(3M) = 3^2 \\cdot \\det(M) = 9 \\cdot 4 = 36$$"
+        },
+        "slug": "prova-ifce-20081",
+        "filename": "prova-ifce-20081.html",
+        "folder": "bloco-6-provas-ifce",
+        "blockId": 6,
+        "pdf": "ifce_prova_2008_1.pdf",
+        "questions": [
+          {
+            "q": "O produto de dois números inteiros positivos, que não são primos entre si, é igual a $126$. Então o máximo divisor comum desses dois números é:",
+            "options": [
+              "$1$",
+              "$3$",
+              "$5$",
+              "$11$",
+              "$15$"
+            ],
+            "correct": 1,
+            "explanation": "1. Sejam $a$ e $b$ os dois inteiros positivos, e seja $g = \\operatorname{mdc}(a, b)$.<br>Como eles não são primos entre si, temos $g > 1$.<br>2. Como $g$ é divisor de $a$ e de $b$, podemos escrever $a = g \\cdot x$ e $b = g \\cdot y$, onde $x$ e $y$ são primos entre si.<br>Assim:<br>$$a \\cdot b = (g \\cdot x)(g \\cdot y) = g^2 \\cdot x y = 126$$<br>Portanto, $g^2$ deve ser um divisor de $126$.<br>3. Fatorando $126$ em fatores primos:<br>$$126 = 2 \\times 3^2 \\times 7$$<br>O único quadrado perfeito maior que $1$ divisor de $126$ é $3^2 = 9$.<br>Logo, $g^2 = 9 \\implies g = 3$."
+          },
+          {
+            "q": "O período da função $f(x) = 5 + \\operatorname{sen}(3x - 2)$ é:",
+            "options": [
+              "$3\\pi$",
+              "$\\frac{2\\pi}{3}$",
+              "$3\\pi - 2$",
+              "$\\frac{\\pi}{3} - 2$",
+              "$\\frac{\\pi}{2}$"
+            ],
+            "correct": 1,
+            "explanation": "Para uma função trigonométrica da forma geral $f(x) = a + b\\operatorname{sen}(cx + d)$, o período depende exclusivamente do coeficiente $c$ que multiplica a variável $x$:<br>$$P = \\frac{2\\pi}{|c|}$$<br>Aqui temos $c = 3$, logo:<br>$$P = \\frac{2\\pi}{3}$$"
+          },
+          {
+            "q": "Sejam $A$ e $B$ matrizes $2 \\times 2$, tais que $\\det(A) = 3$ e $\\det(B) = 5$. Se $\\alpha$ e $\\beta$ são números inteiros positivos, considere as matrizes $C = \\alpha A$ e $D = \\beta B$. Se $\\det(C \\cdot D) = 15$, podemos afirmar corretamente que:",
+            "options": [
+              "$\\alpha - \\beta = 1$",
+              "$\\alpha\\beta = 15$",
+              "$\\alpha + \\beta = 3$",
+              "$\\alpha > \\beta$",
+              "$\\alpha = \\beta = 1$"
+            ],
+            "correct": 4,
+            "explanation": "1. Como as matrizes são de ordem $n = 2$, ao multiplicar por uma constante real ela é elevada à ordem $n$ ao calcular o determinante:<br>$$\\det(C) = \\det(\\alpha A) = \\alpha^2 \\det(A) = 3\\alpha^2$$<br>$$\\det(D) = \\det(\\beta B) = \\beta^2 \\det(B) = 5\\beta^2$$<br>2. Pelo Teorema de Binet:<br>$$\\det(C \\cdot D) = \\det(C) \\cdot \\det(D) = (3\\alpha^2)(5\\beta^2) = 15(\\alpha\\beta)^2$$<br>3. Dado que $\\det(C \\cdot D) = 15$:<br>$$15(\\alpha\\beta)^2 = 15 \\implies (\\alpha\\beta)^2 = 1 \\implies \\alpha\\beta = 1$$<br>Como $\\alpha$ e $\\beta$ são inteiros positivos, a única possibilidade é $\\alpha = 1$ e $\\beta = 1$."
+          },
+          {
+            "q": "O campeonato brasileiro tem, em sua primeira fase, $28$ times que jogam todos entre si. Nesta primeira etapa, o número de jogos é de:",
+            "options": [
+              "$378$",
+              "$380$",
+              "$388$",
+              "$396$",
+              "$399$"
+            ],
+            "correct": 0,
+            "explanation": "Cada partida é disputada entre $2$ times distintos. O número de confrontos possíveis entre os $28$ times em turno único é a combinação simples de $28$ tomados $2$ a $2$:<br>$$C_{28, 2} = \\frac{28 \\times 27}{2} = 14 \\times 27 = 378\\text{ jogos}$$"
+          },
+          {
+            "q": "Dado um sistema de coordenadas cartesianas no plano, considere os pontos $A = (2, 2)$, $B = (4, -1)$ e $C = (p, 0)$. Para que $AC + CB$ seja mínimo, o valor de $p$ é:",
+            "options": [
+              "$\\frac{7}{3}$",
+              "$\\frac{8}{3}$",
+              "$\\frac{10}{3}$",
+              "$\\frac{35}{10}$",
+              "$\\frac{11}{3}$"
+            ],
+            "correct": 2,
+            "explanation": "1. Os pontos $A(2, 2)$ e $B(4, -1)$ possuem ordenadas com sinais opostos ($y_A = 2 > 0$ e $y_B = -1 < 0$), situando-se em semiplanos opostos em relação ao eixo $x$ ($y = 0$).<br>2. A menor distância entre dois pontos em lados opostos de uma reta ocorre ao longo do segmento retilíneo que os une. Logo, a soma $AC + CB$ é mínima quando o ponto $C(p, 0)$ é a interseção do segmento $AB$ com o eixo $x$.<br>3. Calculando o coeficiente angular da reta que passa por $A$ e $B$:<br>$$m = \\frac{y_B - y_A}{x_B - x_A} = \\frac{-1 - 2}{4 - 2} = -\\frac{3}{2}$$<br>4. A equação da reta é:<br>$$y - 2 = -\\frac{3}{2}(x - 2) \\implies y = -\\frac{3}{2}x + 5$$<br>Fazendo $y = 0$ para encontrar a abscissa $p$ do ponto $C$:<br>$$0 = -\\frac{3}{2}p + 5 \\implies \\frac{3}{2}p = 5 \\implies p = \\frac{10}{3}$$"
+          },
+          {
+            "q": "Se um retângulo tem diagonal medindo $10\\text{ cm}$ e lados cujas medidas somam $14\\text{ cm}$, então a sua área é:",
+            "options": [
+              "$24\\text{ cm}^2$",
+              "$32\\text{ cm}^2$",
+              "$48\\text{ cm}^2$",
+              "$54\\text{ cm}^2$",
+              "$72\\text{ cm}^2$"
+            ],
+            "correct": 2,
+            "explanation": "Sejam $a$ e $b$ as dimensões do retângulo.<br>• Soma dos lados: $a + b = 14\\text{ cm}$<br>• Pelo Teorema de Pitágoras, a diagonal $d$ satisfaz: $a^2 + b^2 = d^2 = 10^2 = 100\\text{ cm}^2$<br><br>Elevando ao quadrado a soma $(a + b)$:<br>$$(a + b)^2 = a^2 + 2ab + b^2$$<br>Substituindo os valores conhecidos:<br>$$14^2 = 100 + 2ab \\implies 196 = 100 + 2ab \\implies 2ab = 96 \\implies ab = 48\\text{ cm}^2$$<br>Como a área do retângulo é dada pelo produto de seus lados ($A = ab$), a área é de $48\\text{ cm}^2$."
+          },
+          {
+            "q": "Um reservatório, com capacidade para $6280$ litros, tem a forma de um cilindro circular reto. Se o raio da base deste reservatório mede $1$ metro, sua altura mede: (considere $\\pi = 3{,}14$)",
+            "options": [
+              "$1\\text{ m}$",
+              "$1{,}4\\text{ m}$",
+              "$1{,}8\\text{ m}$",
+              "$2\\text{ m}$",
+              "$2{,}3\\text{ m}$"
+            ],
+            "correct": 3,
+            "explanation": "1. Como $1\\text{ m}^3 = 1.000\\text{ L}$, a capacidade do reservatório em metros cúbicos é:<br>$$V = \\frac{6280}{1000} = 6{,}28\\text{ m}^3$$<br>2. O volume do cilindro circular reto de raio $r = 1\\text{ m}$ e altura $h$ é dado por:<br>$$V = \\pi r^2 h = 3{,}14 \\times (1)^2 \\times h = 3{,}14 h$$<br>3. Igualando ao volume:<br>$$3{,}14 h = 6{,}28 \\implies h = \\frac{6{,}28}{3{,}14} = 2\\text{ metros}$$"
+          }
+        ]
+      },
+      {
+        "id": "ifce-2007-2-matematica",
+        "title": "Prova IFCE 2007.2",
+        "bncc": "Revisão Geral",
+        "summary": "7 questões de Matemática aplicadas no Processo Seletivo / Vestibular 2007.2 do IFCE.",
+        "detailedTheory": "O Processo Seletivo / Vestibular 2007.2 do IFCE abordou: equações logarítmicas e propriedades de potências inteiras aplicadas a limites de intervalos numéricos; trigonometria com progressões aritméticas de senos e transformações de soma em produto (prostaférese); geometria plana métrica com articulação de Teorema de Pitágoras e Lei dos Cossenos em quadriláteros convexos; probabilidade clássica na determinação de quantidades adicionais de bolas em urnas para obter uma probabilidade alvo; geometria analítica e retas perpendiculares no plano cartesiano ($m_1 \\cdot m_2 = -1$); números complexos e potenciação da forma algébrica simplificada via conjugado; e geometria espacial no comportamento da escala cúbica de volumes de sólidos proporcionais.",
+        "keyPoints": [
+          "Em progressões aritméticas de três termos trigonométricos, o termo médio é a média aritmética dos extremos, calculável com elegância via prostaférese: $\\operatorname{sen} A + \\operatorname{sen} B = 2\\operatorname{sen}\\frac{A+B}{2}\\cos\\frac{A-B}{2}$.",
+          "Dividir um quadrilátero não-notável por uma diagonal permite calcular o lado desconhecido encadeando Pitágoras em um triângulo e a Lei dos Cossenos no outro.",
+          "Ao multiplicar as dimensões lineares de um sólido por $k$, o volume é multiplicado pelo fator cúbico $k^3$."
+        ],
+        "formula": "\\log_3\\left(\\frac{x}{y}\\right) = 4, \\quad \\operatorname{sen} x = \\frac{\\operatorname{sen} A + \\operatorname{sen} B}{2}, \\quad c^2 = a^2 + b^2 - 2ab\\cos\\theta, \\quad V(2a) = 8V(a)",
+        "solvedExample": {
+          "problem": "Um cubo de aresta $3\\text{ cm}$ tem volume $27\\text{ cm}^3$. Se a aresta for duplicada, qual será o novo volume?",
+          "solution": "1. Aresta duplicada: $a' = 2 \\times 3 = 6\\text{ cm}$.<br>2. Volume: $V' = 6^3 = 216\\text{ cm}^3$.<br>3. Note que $V' = 8 \\times V = 8 \\times 27 = 216\\text{ cm}^3$."
+        },
+        "slug": "prova-ifce-20072",
+        "filename": "prova-ifce-20072.html",
+        "folder": "bloco-6-provas-ifce",
+        "blockId": 6,
+        "pdf": "ifce_prova_2007_2.pdf",
+        "questions": [
+          {
+            "q": "Se $x$ e $y$ são números inteiros, tais que $\\log_3 x - \\log_3 y = 4$ e $800 \\le x \\le 810$, então o valor de $y$ é:",
+            "options": [
+              "$2$",
+              "$4$",
+              "$6$",
+              "$8$",
+              "$10$"
+            ],
+            "correct": 4,
+            "explanation": "1. Pela propriedade do quociente de logaritmos:<br>$$\\log_3 x - \\log_3 y = \\log_3\\left(\\frac{x}{y}\\right) = 4$$<br>2. Aplicando a definição de logaritmo:<br>$$\\frac{x}{y} = 3^4 = 81 \\implies x = 81 y$$<br>3. Como $x$ e $y$ são inteiros, $x$ é um múltiplo inteiro de $81$.<br>Analisando os múltiplos de $81$ próximos a $800$:<br>• $81 \\times 9 = 729$<br>• $81 \\times 10 = 810$<br>Como $800 \\le x \\le 810$, a única solução inteira possível é $x = 810$.<br>4. Logo:<br>$$y = \\frac{810}{81} = 10$$"
+          },
+          {
+            "q": "Os números reais $\\operatorname{sen}\\frac{\\pi}{12}$, $\\operatorname{sen} x$ e $\\operatorname{sen}\\frac{5\\pi}{12}$ formam, nesta ordem, uma progressão aritmética, então o valor de $\\operatorname{sen} x$ é:",
+            "options": [
+              "$\\frac{1}{4}$",
+              "$\\frac{\\sqrt{3}}{6}$",
+              "$\\frac{\\sqrt{2}}{4}$",
+              "$\\frac{\\sqrt{6}}{4}$",
+              "$\\frac{\\sqrt{3}}{2}$"
+            ],
+            "correct": 3,
+            "explanation": "1. Em uma progressão aritmética de três termos, o termo central é a média aritmética dos extremos:<br>$$\\operatorname{sen} x = \\frac{\\operatorname{sen}\\frac{\\pi}{12} + \\operatorname{sen}\\frac{5\\pi}{12}}{2}$$<br>2. Pela fórmula de prostaférese (transformação de soma em produto):<br>$$\\operatorname{sen} A + \\operatorname{sen} B = 2 \\operatorname{sen}\\left(\\frac{A + B}{2}\\right) \\cos\\left(\\frac{A - B}{2}\\right)$$<br>Calculando a semisoma e a semidiferença dos arcos:<br>$$\\frac{A + B}{2} = \\frac{\\frac{\\pi}{12} + \\frac{5\\pi}{12}}{2} = \\frac{\\frac{6\\pi}{12}}{2} = \\frac{\\pi}{4}$$<br>$$\\frac{A - B}{2} = \\frac{\\frac{\\pi}{12} - \\frac{5\\pi}{12}}{2} = \\frac{-\\frac{4\\pi}{12}}{2} = -\\frac{\\pi}{6}$$<br>3. Como $\\cos\\left(-\\frac{\\pi}{6}\\right) = \\cos\\left(\\frac{\\pi}{6}\\right) = \\frac{\\sqrt{3}}{2}$ e $\\operatorname{sen}\\left(\\frac{\\pi}{4}\\right) = \\frac{\\sqrt{2}}{2}$:<br>$$\\operatorname{sen}\\frac{\\pi}{12} + \\operatorname{sen}\\frac{5\\pi}{12} = 2 \\cdot \\frac{\\sqrt{2}}{2} \\cdot \\frac{\\sqrt{3}}{2} = \\frac{\\sqrt{6}}{2}$$<br>4. Dividindo por 2:<br>$$\\operatorname{sen} x = \\frac{\\frac{\\sqrt{6}}{2}}{2} = \\frac{\\sqrt{6}}{4}$$"
+          },
+          {
+            "q": "No quadrilátero $ABCD$, temos $BC = CD = 3\\text{ cm}$, $AB = 2\\text{ cm}$, $A\\hat{D}C = 60^\\circ$ e $A\\hat{B}C = 90^\\circ$. A medida, em cm, do perímetro do quadrilátero é:",
+            "options": [
+              "$11$",
+              "$12$",
+              "$13$",
+              "$14$",
+              "$15$"
+            ],
+            "correct": 1,
+            "explanation": "1. Traçamos a diagonal $AC$. O triângulo $ABC$ é retângulo em $B$ com catetos $AB = 2\\text{ cm}$ e $BC = 3\\text{ cm}$.<br>Pelo Teorema de Pitágoras:<br>$$AC^2 = AB^2 + BC^2 = 2^2 + 3^2 = 4 + 9 = 13 \\implies AC = \\sqrt{13}\\text{ cm}$$<br>2. No triângulo $ACD$, temos os lados $CD = 3\\text{ cm}$, $AC = \\sqrt{13}\\text{ cm}$ e o ângulo oposto a $AC$ mede $A\\hat{D}C = 60^\\circ$.<br>Aplicando a Lei dos Cossenos em relação ao ângulo $D$:<br>$$AC^2 = AD^2 + CD^2 - 2(AD)(CD)\\cos(60^\\circ)$$<br>Substituindo $\\cos 60^\\circ = \\frac{1}{2}$:<br>$$13 = AD^2 + 3^2 - 2(AD)(3)\\left(\\frac{1}{2}\\right)$$<br>$$13 = AD^2 + 9 - 3AD \\implies AD^2 - 3AD - 4 = 0$$<br>Fatorando a equação do 2º grau:<br>$$(AD - 4)(AD + 1) = 0$$<br>Como comprimento deve ser positivo, $AD = 4\\text{ cm}$.<br><br>3. O perímetro do quadrilátero $ABCD$ é a soma de seus quatro lados:<br>$$P = AB + BC + CD + DA = 2 + 3 + 3 + 4 = 12\\text{ cm}$$"
+          },
+          {
+            "q": "Uma urna contém três bolas pretas e cinco bolas brancas. Devem ser colocadas nessa urna, de modo que, retirando-se uma bola ao acaso, a probabilidade de ela ser azul seja igual a $\\frac{2}{3}$:",
+            "options": [
+              "$14\\text{ bolas azuis}$",
+              "$15\\text{ bolas azuis}$",
+              "$16\\text{ bolas azuis}$",
+              "$17\\text{ bolas azuis}$",
+              "$18\\text{ bolas azuis}$"
+            ],
+            "correct": 2,
+            "explanation": "1. O total de bolas inicialmente presentes na urna é $3 + 5 = 8$ bolas (nenhuma delas é azul).<br>2. Seja $n$ o número de bolas azuis adicionadas à urna.<br>O novo total de bolas passa a ser $8 + n$.<br>3. A probabilidade de sortear uma bola azul deve ser igual a $\\frac{2}{3}$:<br>$$P(\\text{azul}) = \\frac{n}{8 + n} = \\frac{2}{3}$$<br>Multiplicando em cruz:<br>$$3n = 2(8 + n) \\implies 3n = 16 + 2n \\implies n = 16$$<br>Portanto, devem ser acrescentadas $16$ bolas azuis."
+          },
+          {
+            "q": "Se $y = (m^2 - 2)x + 2$ e $y = x + 1$ são retas perpendiculares, então:",
+            "options": [
+              "$m = \\pm 1$",
+              "$m = \\pm 2$",
+              "$m = \\pm 3$",
+              "$m = \\pm 4$",
+              "$m = \\pm 5$"
+            ],
+            "correct": 0,
+            "explanation": "1. Os coeficientes angulares das duas retas são:<br>• Reta 1: $m_1 = m^2 - 2$<br>• Reta 2: $m_2 = 1$<br>2. A condição de perpendicularidade entre duas retas no plano é que o produto de suas inclinações seja igual a $-1$ ($m_1 \\cdot m_2 = -1$):<br>$$(m^2 - 2) \\cdot 1 = -1$$<br>$$m^2 - 2 = -1 \\implies m^2 = 1 \\implies m = \\pm 1$$"
+          },
+          {
+            "q": "Sendo $i$ a unidade imaginária, tal que $i^2 = -1$, o valor de $\\left(\\frac{1+i}{1-i}\\right)^2$ é igual a:",
+            "options": [
+              "$5$",
+              "$4$",
+              "$3$",
+              "$1$",
+              "$-1$"
+            ],
+            "correct": 4,
+            "explanation": "1. Multiplicamos o numerador e o denominador da fração complexa pelo conjugado do denominador ($1 + i$):<br>$$\\frac{1 + i}{1 - i} = \\frac{(1 + i)(1 + i)}{(1 - i)(1 + i)} = \\frac{1 + 2i + i^2}{1 - i^2}$$<br>Como $i^2 = -1$:<br>$$\\frac{1 + 2i - 1}{1 - (-1)} = \\frac{2i}{2} = i$$<br>2. Elevando o resultado ao quadrado:<br>$$\\left(\\frac{1 + i}{1 - i}\\right)^2 = i^2 = -1$$"
+          },
+          {
+            "q": "O volume de um cubo de aresta $a$ é igual a $8\\text{ cm}^3$. O volume do cubo de aresta $2a$ é, em $\\text{cm}^3$, igual a:",
+            "options": [
+              "$16$",
+              "$32$",
+              "$64$",
+              "$128$",
+              "$256$"
+            ],
+            "correct": 2,
+            "explanation": "1. O volume de um cubo de aresta $a$ é dado por $V_1 = a^3 = 8\\text{ cm}^3$.<br>2. Ao dobrar a medida da aresta para $2a$, o novo volume $V_2$ será:<br>$$V_2 = (2a)^3 = 2^3 \\cdot a^3 = 8 a^3$$<br>3. Substituindo o valor $a^3 = 8\\text{ cm}^3$:<br>$$V_2 = 8 \\times 8 = 64\\text{ cm}^3$$"
+          }
+        ]
+      },
+      {
+        "id": "ifce-2007-1-matematica",
+        "title": "Prova IFCE 2007.1",
+        "bncc": "Revisão Geral",
+        "summary": "7 questões de Matemática aplicadas no Processo Seletivo / Vestibular 2007.1 do IFCE.",
+        "detailedTheory": "O Processo Seletivo / Vestibular 2007.1 do IFCE compreendeu: matemática comercial e financeira na determinação de preços de venda por lote para atingir margem de lucro total estipulada; cálculo de taxa de variação média em quociente de Newton para funções constantes; geometria euclidiana plana com triângulo retângulo inscrito em semicircunferência e cálculo de área; equações trigonométricas fundamentais com quadrado da soma de seno e cosseno e arco duplo $\\operatorname{sen}(2x) = 0$; análise combinatória na contagem de números palíndromos de cinco dígitos pelo princípio multiplicativo; álgebra linear no cálculo de determinantes de ordem $3 \\times 3$ com restrições lineares dadas por menores de ordem $2 \\times 2$; e geometria analítica no cálculo da distância de ponto a reta tangente para obtenção das coordenadas do centro de circunferências no primeiro quadrante.",
+        "keyPoints": [
+          "Todo triângulo inscrito em uma circunferência tendo um diâmetro como um dos lados é necessariamente retângulo.",
+          "Expandindo $(\\operatorname{sen} x + \\cos x)^2 = 1 + \\operatorname{sen}(2x)$, a condição equivale a $\\operatorname{sen}(2x) = 0$.",
+          "A distância de um ponto $(x_0, y_0)$ a uma reta $Ax + By + C = 0$ é $d = \\frac{|Ax_0 + By_0 + C|}{\\sqrt{A^2 + B^2}}$."
+        ],
+        "formula": "V_{\\text{restante}} = \\frac{\\text{Receita Alvo} - \\text{Receita Obtida}}{Q_{\\text{restante}}}, \\quad (\\operatorname{sen} x + \\cos x)^2 = 1 + \\operatorname{sen}(2x), \\quad d = \\frac{|Ax_0 + By_0 + C|}{\\sqrt{A^2 + B^2}}",
+        "solvedExample": {
+          "problem": "Quantos números palíndromos de 3 algarismos existem no sistema decimal?",
+          "solution": "1. Um palíndromo de 3 dígitos tem a forma $aba$.<br>2. O algarismo $a$ pode ser de 1 a 9 ($9$ opções, pois não pode iniciar com 0).<br>3. O algarismo $b$ pode ser de 0 a 9 ($10$ opções).<br>Total: $9 \\times 10 = 90$ palíndromos."
+        },
+        "slug": "prova-ifce-20071",
+        "filename": "prova-ifce-20071.html",
+        "folder": "bloco-6-provas-ifce",
+        "blockId": 6,
+        "pdf": "ifce_prova_2007_1.pdf",
+        "questions": [
+          {
+            "q": "Um fazendeiro comprou $1.000$ bois, pagando $\\text{R\\$} 250{,}00$ por cada um. Vendeu $400$ com lucro de $25\\%$. Ele deverá vender cada um dos $600$ restantes, de modo que, no final, seu lucro total seja de $40\\%$, por:",
+            "options": [
+              "$\\text{R\\$} 300{,}00$",
+              "$\\text{R\\$} 350{,}00$",
+              "$\\text{R\\$} 375{,}00$",
+              "$\\text{R\\$} 400{,}00$",
+              "$\\text{R\\$} 475{,}00$"
+            ],
+            "correct": 2,
+            "explanation": "1. Custo total da compra dos bois:<br>$$\\text{Custo Total} = 1.000 \\times \\text{R\\$} 250{,}00 = \\text{R\\$} 250.000{,}00$$<br>2. Receita total almejada com $40\\%$ de lucro global:<br>$$\\text{Receita Alvo} = 250.000 \\times (1 + 0{,}40) = 250.000 \\times 1{,}40 = \\text{R\\$} 350.000{,}00$$<br>3. Receita obtida com a venda dos primeiros $400$ bois com $25\\%$ de lucro:<br>• Preço unitário: $250{,}00 \\times 1{,}25 = \\text{R\\$} 312{,}50$<br>• Receita parcial: $400 \\times 312{,}50 = \\text{R\\$} 125.000{,}00$<br><br>4. Receita que precisa ser arrecadada com os $600$ bois restantes:<br>$$\\text{Receita Restante} = 350.000 - 125.000 = \\text{R\\$} 225.000{,}00$$<br>5. Preço de venda de cada um dos $600$ bois restantes:<br>$$P = \\frac{225.000}{600} = \\text{R\\$} 375{,}00$$"
+          },
+          {
+            "q": "Sendo $f(x) = 5$, então o valor de $\\frac{f(x+h) - f(x)}{h}$, com $h \\ne 0$, é:",
+            "options": [
+              "$4$",
+              "$0$",
+              "$5$",
+              "$1$",
+              "$-1$"
+            ],
+            "correct": 1,
+            "explanation": "A função $f(x) = 5$ é uma função constante para todo $x \\in \\mathbb{R}$.<br>Portanto, para qualquer acréscimo $h \\ne 0$:<br>$$f(x + h) = 5 \\quad \\text{e} \\quad f(x) = 5$$<br>Substituindo no quociente de Newton (taxa de variação média):<br>$$\\frac{f(x+h) - f(x)}{h} = \\frac{5 - 5}{h} = \\frac{0}{h} = 0$$"
+          },
+          {
+            "q": "O triângulo $ABC$ está inscrito numa circunferência de raio $3\\text{ cm}$. Sabe-se que $A$ e $B$ são extremidades de um diâmetro e que a corda $BC$ mede $3\\text{ cm}$. Então a área do triângulo $ABC$, em $\\text{cm}^2$, vale aproximadamente:",
+            "options": [
+              "$6$",
+              "$7$",
+              "$7{,}5$",
+              "$8$",
+              "$8{,}5$"
+            ],
+            "correct": 3,
+            "explanation": "1. Como $AB$ é diâmetro da circunferência, o ângulo inscrito $\\angle ACB$ oposto ao diâmetro é reto ($90^\\circ$). Portanto, o triângulo $ABC$ é retângulo em $C$.<br>2. A hipotenusa $AB$ mede o dobro do raio:<br>$$AB = 2 \\times R = 2 \\times 3\\text{ cm} = 6\\text{ cm}$$<br>3. Pelo Teorema de Pitágoras, encontramos o cateto $AC$:<br>$$AC^2 + BC^2 = AB^2 \\implies AC^2 + 3^2 = 6^2 \\implies AC^2 = 36 - 9 = 27$$<br>$$AC = \\sqrt{27} = 3\\sqrt{3}\\text{ cm}$$<br>4. A área do triângulo retângulo é dada pelo semiproduto dos catetos:<br>$$S = \\frac{AC \\times BC}{2} = \\frac{3\\sqrt{3} \\times 3}{2} = \\frac{9\\sqrt{3}}{2}\\text{ cm}^2$$<br>Aproximando com $\\sqrt{3} \\approx 1{,}732$:<br>$$S \\approx \\frac{9 \\times 1{,}732}{2} = 7{,}794\\text{ cm}^2$$<br>Dentre as alternativas fornecidas pela banca examinadora, o valor inteiro mais próximo por arredondamento é $8\\text{ cm}^2$ (Opção D)."
+          },
+          {
+            "q": "Sendo $S$ a soma de todos os valores de $x$, $0 \\le x \\le 2\\pi$, para os quais se verifica a igualdade $(\\operatorname{sen} x + \\cos x)^2 = 1$, então $S$ vale:",
+            "options": [
+              "$3\\pi$",
+              "$4\\pi$",
+              "$5\\pi$",
+              "$6\\pi$",
+              "$7\\pi$"
+            ],
+            "correct": 2,
+            "explanation": "1. Desenvolvendo o quadrado da soma:<br>$$(\\operatorname{sen} x + \\cos x)^2 = \\operatorname{sen}^2 x + 2\\operatorname{sen} x \\cos x + \\cos^2 x$$<br>Pela Relação Fundamental da Trigonometria ($\\operatorname{sen}^2 x + \\cos^2 x = 1$) e pelo arco duplo ($2\\operatorname{sen} x \\cos x = \\operatorname{sen}(2x)$):<br>$$1 + \\operatorname{sen}(2x) = 1 \\implies \\operatorname{sen}(2x) = 0$$<br>2. Como $0 \\le x \\le 2\\pi$, o arco duplo situa-se no intervalo $0 \\le 2x \\le 4\\pi$.<br>O seno se anula nos múltiplos inteiros de $\\pi$:<br>$$2x \\in \\{0, \\pi, 2\\pi, 3\\pi, 4\\pi\\} \\implies x \\in \\left\\{0, \\frac{\\pi}{2}, \\pi, \\frac{3\\pi}{2}, 2\\pi\\right\\}$$<br>3. Calculando a soma $S$ de todas as soluções no ciclo:<br>$$S = 0 + \\frac{\\pi}{2} + \\pi + \\frac{3\\pi}{2} + 2\\pi = \\left(\\frac{\\pi}{2} + \\frac{3\\pi}{2}\\right) + \\pi + 2\\pi = 2\\pi + \\pi + 2\\pi = 5\\pi$$"
+          },
+          {
+            "q": "Chamam-se palíndromos os números inteiros que não se alteram, quando é invertida a ordem de seus algarismos (por exemplo, 282, 4114, 76867). O número de palíndromos de cinco algarismos é:",
+            "options": [
+              "$90000$",
+              "$9000$",
+              "$1000$",
+              "$900$",
+              "$90$"
+            ],
+            "correct": 3,
+            "explanation": "Um número palíndromo de cinco algarismos apresenta a forma simétrica $abcba$, onde cada letra representa um dígito decimal.<br>• Para o primeiro dígito $a$ (dezenas de milhar): não pode ser zero, logo temos $a \\in \\{1, 2, 3, 4, 5, 6, 7, 8, 9\\}$ ($9$ possibilidades). O quinto dígito (unidades) fica automaticamente determinado, pois deve ser igual a $a$.<br>• Para o segundo dígito $b$ (milhares): pode ser qualquer algarismo de $0$ a $9$ ($10$ possibilidades). O quarto dígito (dezenas) fica determinado por $b$.<br>• Para o terceiro dígito $c$ (centenas): pode ser qualquer algarismo de $0$ a $9$ ($10$ possibilidades).<br><br>Pelo Princípio Fundamental da Contagem:<br>$$\\text{Total de palíndromos} = 9 \\times 10 \\times 10 = 900$$"
+          },
+          {
+            "q": "Se $\\begin{vmatrix} a & b \\\\ c & d \\end{vmatrix} = 0$, então o determinante da matriz $A = \\begin{pmatrix} a & b & 0 \\\\ 0 & d & 1 \\\\ c & 0 & 2 \\end{pmatrix}$ vale:",
+            "options": [
+              "$bc$",
+              "$2bc$",
+              "$0$",
+              "$b^2 c^2$",
+              "$3bc$"
+            ],
+            "correct": 4,
+            "explanation": "1. Da condição dada no enunciado:<br>$$\\begin{vmatrix} a & b \\\\ c & d \\end{vmatrix} = ad - bc = 0 \\implies ad = bc$$<br>2. Calculamos o determinante da matriz $A$ de ordem $3 \\times 3$ pela Regra de Sarrus ou expansão por cofatores na primeira linha:<br>$$\\det(A) = a \\begin{vmatrix} d & 1 \\\\ 0 & 2 \\end{vmatrix} - b \\begin{vmatrix} 0 & 1 \\\\ c & 2 \\end{vmatrix} + 0$$<br>$$\\det(A) = a(2d - 0) - b(0 - c) = 2ad + bc$$<br>3. Substituindo a relação $ad = bc$:<br>$$\\det(A) = 2(bc) + bc = 3bc$$"
+          },
+          {
+            "q": "Uma circunferência de raio $2$, localizada no primeiro quadrante, tangencia o eixo $x$ e a reta de equação $4x - 3y = 0$. A abscissa do centro dessa circunferência é:",
+            "options": [
+              "$1$",
+              "$2$",
+              "$3$",
+              "$4$",
+              "$5$"
+            ],
+            "correct": 3,
+            "explanation": "1. Seja $C(x_0, y_0)$ o centro da circunferência. Como ela está no primeiro quadrante, $x_0 > 0$ e $y_0 > 0$.<br>2. Como a circunferência possui raio $R = 2$ e tangencia o eixo $x$ ($y = 0$), a distância vertical do centro ao eixo $x$ é o próprio raio: $y_0 = 2$. Logo, o centro tem coordenadas $(x_0, 2)$.<br>3. A circunferência também tangencia a reta $4x - 3y = 0$. A distância do centro à reta deve ser igual ao raio $R = 2$:<br>$$d = \\frac{|4x_0 - 3y_0|}{\\sqrt{4^2 + (-3)^2}} = \\frac{|4x_0 - 3(2)|}{\\sqrt{16 + 9}} = \\frac{|4x_0 - 6|}{5} = 2$$<br>4. Resolvendo a equação modular:<br>$$|4x_0 - 6| = 10$$<br>Temos duas situações:<br>• $4x_0 - 6 = 10 \\implies 4x_0 = 16 \\implies x_0 = 4$<br>• $4x_0 - 6 = -10 \\implies 4x_0 = -4 \\implies x_0 = -1$ (descartada, pois o centro está no 1º quadrante com $x_0 > 0$)<br>Portanto, a abscissa do centro é $x_0 = 4$."
+          }
+        ]
       }
     ]
   }
