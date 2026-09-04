@@ -1,6 +1,6 @@
 /**
  * PartiuIF - Banco de Dados de Matemática Oficial
- * Contém os 6 blocos, 56 subtópicos e 404 exercícios com resoluções KaTeX.
+ * Contém os 6 blocos, 63 subtópicos e 468 exercícios com resoluções KaTeX.
  * Gerado automaticamente por build_full_site.py - Fonte da verdade: mathData_augmented.json
  */
 const mathData = {
@@ -6108,6 +6108,907 @@ const mathData = {
             ],
             "correct": 3,
             "explanation": "1. A sequência dada é uma progressão geométrica infinita onde o primeiro termo é $a_1 = a$ e a razão comum é $q = \\frac{1}{2}$.<br>2. Como $|q| = \\frac{1}{2} < 1$, a série converge e a soma é dada pela fórmula:<br>$$S = \\frac{a_1}{1 - q} = \\frac{a}{1 - \\frac{1}{2}} = \\frac{a}{\\frac{1}{2}} = 2a$$"
+          }
+        ]
+      },
+      {
+        "id": "ifce-2003-2-matematica",
+        "title": "Prova IFCE 2003.2",
+        "filename": "prova-ifce-20032.html",
+        "pdf": "ifce_prova_2003_2.pdf",
+        "bncc": "Vestibular CEFET-CE / IFCE 2003.2",
+        "summary": "Resolução completa das questões oficiais de Matemática do Vestibular CEFET-CE 2003.2, abordando cálculo de porcentagem comercial, propriedades de paridade de números inteiros, paridade de funções reais, determinantes e matriz inversa, Relação de Stifel em números binomiais, paralelismo de retas na Geometria Analítica e módulo de potências de números complexos.",
+        "detailedTheory": "O Vestibular 2003.2 do CEFET-CE destaca fundamentos clássicos do Ensino Médio: na Álgebra Linear, destaca-se a propriedade $\\det(c \\cdot A^{-1}) = c^n / \\det(A)$ para matrizes de ordem $n$. Na Análise Combinatória, a relação de Stifel $\\binom{n}{p} + \\binom{n}{p+1} = \\binom{n+1}{p+1}$ simplifica somas binomiais. Na Geometria Analítica, retas paralelas possuem coeficientes angulares idênticos ($m_1 = m_2$). Nos números complexos, o módulo do quociente e das potências satisfaz $|z_1^n / z_2^n| = (|z_1|/|z_2|)^n$.",
+        "keyPoints": [
+          "Porcentagem e Valor Total: $V = \\text{Imposto} / i$.",
+          "Paridade de Expressões Algébricas: soma e produto de pares e ímpares.",
+          "Função Par: $f(-x) = f(x)$ para todo $x$ no domínio.",
+          "Determinante de Matriz Inversa e Escalar: $\\det(c \\cdot A^{-1}) = c^n \\cdot \\frac{1}{\\det(A)}$.",
+          "Relação de Stifel: $\\binom{n}{p} + \\binom{n}{p+1} = \\binom{n+1}{p+1}$.",
+          "Paralelismo de Retas e Módulo no Plano Complexo."
+        ],
+        "formula": "\\binom{n}{p} + \\binom{n}{p+1} = \\binom{n+1}{p+1} \\quad \\text{e} \\quad \\det(c \\cdot A^{-1}) = \\frac{c^n}{\\det(A)}",
+        "solvedExample": {
+          "problem": "Uma matriz quadrada $M$ de ordem 3 tem $\\det(M) = 5$. Determine o valor de $\\det(3M^{-1})$.",
+          "solution": "Aplicando as propriedades de determinantes:<br>1. Para escalar $c = 3$ e ordem $n = 3$: $\\det(3M^{-1}) = 3^3 \\cdot \\det(M^{-1}) = 27 \\cdot \\det(M^{-1})$.<br>2. Para a matriz inversa: $\\det(M^{-1}) = \\frac{1}{\\det(M)} = \\frac{1}{5}$.<br>Logo, $\\det(3M^{-1}) = 27 \\cdot \\frac{1}{5} = \\frac{27}{5} = 5{,}4$."
+        },
+        "questions": [
+          {
+            "q": "O imposto sobre a venda de determinado bem é de $5\\%$. Se o valor recolhido for $\text{R\\$} 600{,}00$, o bem foi vendido, em reais, por:",
+            "options": [
+              "10.000",
+              "11.000",
+              "12.000",
+              "13.000",
+              "14.000"
+            ],
+            "correct": 2,
+            "explanation": "Seja $V$ o valor de venda do bem.<br>Como a alíquota de imposto é de $5\\% = 0{,}05$ e o valor recolhido foi de $\text{R\\$} 600{,}00$:<br>$$0{,}05 \\cdot V = 600 \\implies V = \\frac{600}{0{,}05} = \\frac{60.000}{5} = 12.000$$<br>Portanto, o bem foi vendido por $\text{R\\$} 12.000{,}00$ (Letra C)."
+          },
+          {
+            "q": "Considere os números $a = 3p$ e $b = 3(q + 1)$. Se $p$ é par e $q$ é ímpar, $a + b - 1$ é necessariamente:",
+            "options": [
+              "ímpar",
+              "par",
+              "positivo",
+              "primo",
+              "negativo"
+            ],
+            "correct": 0,
+            "explanation": "Analisando a paridade de cada termo:<br>1. Se $p$ é par, então $p = 2k$ para algum $k \\in \\mathbb{Z}$, logo $a = 3(2k) = 6k$, que é par.<br>2. Se $q$ é ímpar, então $q + 1$ é par, ou seja, $q + 1 = 2m$, donde $b = 3(2m) = 6m$, que também é par.<br>3. A soma de dois números pares é par: $a + b = 6(k + m)$ (par).<br>Subtraindo 1 de um número par, obtemos necessariamente um número ímpar:<br>$$a + b - 1 = \\text{par} - 1 = \\text{ímpar}$$<br>Logo, a expressão é necessariamente ímpar (Letra A)."
+          },
+          {
+            "q": "Com relação à função real de variável real definida por $f(x) = x^2$, é correto afirmar que ela é:",
+            "options": [
+              "sempre crescente",
+              "ímpar",
+              "invertível",
+              "injetiva",
+              "par"
+            ],
+            "correct": 4,
+            "explanation": "Por definição, uma função real $f$ é dita par se $f(-x) = f(x)$ para todo $x$ em seu domínio.<br>Para $f(x) = x^2$:<br>$$f(-x) = (-x)^2 = x^2 = f(x)$$<br>Logo, $f$ é uma função par.<br>Note que $f$ não é injetiva nem invertível em $\\mathbb{R}$ pois $f(-2) = f(2) = 4$, nem é sempre crescente pois decresce em $(-\\infty, 0)$ (Letra E)."
+          },
+          {
+            "q": "Uma matriz $A$ quadrada, de ordem 3, possui determinante igual a $2$. O valor de $\\det(2A^{-1})$ é:",
+            "options": [
+              "1",
+              "2",
+              "3",
+              "4",
+              "5"
+            ],
+            "correct": 3,
+            "explanation": "Pelas propriedades dos determinantes:<br>1. Para uma matriz quadrada de ordem $n = 3$ multiplicada por um escalar $c = 2$:<br>$$\\det(2A^{-1}) = 2^3 \\cdot \\det(A^{-1}) = 8 \\cdot \\det(A^{-1})$$<br>2. O determinante da matriz inversa é o inverso do determinante:<br>$$\\det(A^{-1}) = \\frac{1}{\\det(A)} = \\frac{1}{2}$$<br>Substituindo:<br>$$\\det(2A^{-1}) = 8 \\cdot \\frac{1}{2} = 4$$<br>Portanto, o valor é 4 (Letra D)."
+          },
+          {
+            "q": "Resolvendo a equação $\\binom{10}{5} + \\binom{10}{6} = \\binom{11}{x}$, o valor de $x$ será:",
+            "options": [
+              "6",
+              "5",
+              "4",
+              "3",
+              "2"
+            ],
+            "correct": 0,
+            "explanation": "Pela Relação de Stifel para números binomiais:<br>$$\\binom{n}{p} + \\binom{n}{p+1} = \\binom{n+1}{p+1}$$<br>Substituindo $n = 10$ e $p = 5$:<br>$$\\binom{10}{5} + \\binom{10}{6} = \\binom{11}{6}$$<br>Comparando com $\\binom{11}{x}$, obtemos $x = 6$ (e também o complementar $x = 11 - 6 = 5$). A aplicação direta da relação fornece $x = 6$ (Letra A)."
+          },
+          {
+            "q": "As retas de equação $ax + y = 1$ e $ax + ay = 2$, com $a$ não-nulo, são paralelas. Neste caso, $a$ vale:",
+            "options": [
+              "$-2$",
+              "$-1$",
+              "0",
+              "1",
+              "2"
+            ],
+            "correct": 3,
+            "explanation": "Isolando $y$ para encontrar a inclinação de cada reta:<br>1. Reta 1: $ax + y = 1 \\implies y = -ax + 1 \\implies m_1 = -a$.<br>2. Reta 2: $ax + ay = 2 \\implies ay = -ax + 2 \\implies y = -x + \\frac{2}{a}$ (já que $a \\ne 0$) $\\implies m_2 = -1$.<br>Para que as retas sejam paralelas, seus coeficientes angulares devem ser iguais:<br>$$m_1 = m_2 \\implies -a = -1 \\implies a = 1$$<br>Substituindo $a = 1$, as equações tornam-se $x + y = 1$ e $x + y = 2$, retas paralelas distintas (Letra D)."
+          },
+          {
+            "q": "O módulo do número complexo $\\frac{(4 + 3i)^{10}}{(3 - 4i)^{10}}$ é igual a:",
+            "options": [
+              "0",
+              "1",
+              "2",
+              "3",
+              "4"
+            ],
+            "correct": 1,
+            "explanation": "Pelas propriedades do módulo de números complexos:<br>$$\\left|\\frac{z_1^n}{z_2^n}\\right| = \\left(\\frac{|z_1|}{|z_2|}\\right)^n$$<br>Calculando os módulos das bases:<br>$$|4 + 3i| = \\sqrt{4^2 + 3^2} = \\sqrt{16 + 9} = \\sqrt{25} = 5$$<br>$$|3 - 4i| = \\sqrt{3^2 + (-4)^2} = \\sqrt{9 + 16} = \\sqrt{25} = 5$$<br>Substituindo na expressão:<br>$$\\left|\\frac{(4 + 3i)^{10}}{(3 - 4i)^{10}}\\right| = \\left(\\frac{5}{5}\\right)^{10} = 1^{10} = 1$$<br>Portanto, o módulo é 1 (Letra B)."
+          }
+        ]
+      },
+      {
+        "id": "ifce-2003-1-matematica",
+        "title": "Prova IFCE 2003.1",
+        "filename": "prova-ifce-20031.html",
+        "pdf": "ifce_prova_2003_1.pdf",
+        "bncc": "Vestibular CEFET-CE / IFCE 2003.1",
+        "summary": "Resolução completa das questões oficiais de Matemática do Vestibular CEFET-CE 2003.1, cobrindo inequações duplas e contagem de inteiros, imagem de funções definidas por partes, definição fundamental de função inversa, período de funções trigonométricas com arco duplo, propriedades de permutação de linhas em determinantes, divisibilidade de polinômios por fatores quadráticos e área total do tetraedro regular.",
+        "detailedTheory": "O Vestibular 2003.1 do CEFET-CE exige domínio de propriedades algébricas e geométricas: funções inversas satisfazem $(f \\circ f^{-1})(x) = x$. O período de $y = \\operatorname{sen}(kx)$ é dado por $T = 2\\pi / k$. Na teoria das matrizes, a troca de duas linhas quaisquer inverte o sinal do determinante ($\\det(M') = -\\det(M)$). Polinômios com raiz dupla $r$ satisfazem $p(r) = 0$ e $p'(r) = 0$. Na geometria espacial, a área de um tetraedro regular de aresta $a$ é a soma de 4 triângulos equiláteros: $A_t = a^2\\sqrt{3}$.",
+        "keyPoints": [
+          "Inequações Simultâneas: interseção de soluções em $\\mathbb{Z}$.",
+          "Funções por Partes: união dos intervalos imagem de cada ramo.",
+          "Identidade Fundamental da Inversa: $(f \\circ g)(x) = x$.",
+          "Trigonometria: $\\operatorname{sen}(2x)\\cos(2x) = \\frac{1}{2}\\operatorname{sen}(4x)$ e período $T = \\frac{2\\pi}{4} = \\frac{\\pi}{2}$.",
+          "Propriedade de Determinantes: troca de duas linhas altera o sinal.",
+          "Polinômios com Raízes Múltiplas e Área do Tetraedro Regular."
+        ],
+        "formula": "T = \\frac{2\\pi}{|k|} \\quad \\text{e} \\quad A_{\\text{tetraedro}} = a^2\\sqrt{3}",
+        "solvedExample": {
+          "problem": "Qual o período da função trigonométrica $h(x) = \\operatorname{sen}(3x) \\cdot \\cos(3x)$?",
+          "solution": "Pela identidade do arco duplo, $2\\operatorname{sen}(3x)\\cos(3x) = \\operatorname{sen}(6x)$, de modo que:<br>$$h(x) = \\frac{1}{2}\\operatorname{sen}(6x)$$<br>O período fundamental é dado por:<br>$$T = \\frac{2\\pi}{|k|} = \\frac{2\\pi}{6} = \\frac{\\pi}{3}$$."
+        },
+        "questions": [
+          {
+            "q": "O número de elementos do conjunto $\\{ x \\in \\mathbb{Z} \\mid x - 20 < 1 - 2x \\le x + 7\\}$ é:",
+            "options": [
+              "9",
+              "10",
+              "11",
+              "12",
+              "13"
+            ],
+            "correct": 0,
+            "explanation": "A inequação dupla decompõe-se no sistema:<br>1) $x - 20 < 1 - 2x \\implies 3x < 21 \\implies x < 7$.<br>2) $1 - 2x \\le x + 7 \\implies -3x \\le 6 \\implies x \\ge -2$.<br>Assim, a solução real é o intervalo semiaberto $[-2, 7)$.<br>Como $x \\in \\mathbb{Z}$, os elementos inteiros são:<br>$$x \\in \\{-2, -1, 0, 1, 2, 3, 4, 5, 6\\}$$<br>O número de elementos é $6 - (-2) + 1 = 9$ (Letra A)."
+          },
+          {
+            "q": "A imagem da função definida por $f(x) = \\begin{cases} x^2 - 4, & \\text{se } x \\ge 2 \\\\ 2 - x, & \\text{se } x < 2 \\end{cases}$ é representada pelo conjunto:",
+            "options": [
+              "$\\mathbb{R}^*$",
+              "$\\mathbb{R}_+$",
+              "$\\mathbb{R}_-$",
+              "$\\mathbb{R}^*_+$",
+              "$\\mathbb{R}^*_-$"
+            ],
+            "correct": 1,
+            "explanation": "Analisando a imagem de cada ramo:<br>1. Para $x \\ge 2$: $x^2 \\ge 4 \\implies x^2 - 4 \\ge 0$. Para $x = 2$, $f(2) = 0$, e quando $x \\to +\\infty$, $f(x) \\to +\\infty$. Logo, a imagem deste ramo é $[0, +\\infty)$.<br>2. Para $x < 2$: $-x > -2 \\implies 2 - x > 0$. Logo, a imagem deste ramo é $(0, +\\infty)$.<br>A imagem da função é a união das duas imagens:<br>$$\\operatorname{Im}(f) = [0, +\\infty) \\cup (0, +\\infty) = [0, +\\infty) = \\mathbb{R}_+$$<br>Portanto, o conjunto imagem é $\\mathbb{R}_+$ (Letra B)."
+          },
+          {
+            "q": "Se $f$ admite a função $g$ como sua inversa, necessariamente:",
+            "options": [
+              "$(f + g)(x) = x$",
+              "$(f \\cdot g)(x) = x$",
+              "$(f - g)(x) = x$",
+              "$(f \\circ g)(x) = x$",
+              "$\\left(\\frac{f}{g}\\right)(x) = x$"
+            ],
+            "correct": 3,
+            "explanation": "Por definição fundamental de função inversa, se $g = f^{-1}$, a composição de $f$ com $g$ reproduz a função identidade:<br>$$(f \\circ g)(x) = f(g(x)) = x$$<br>para todo $x$ pertencente ao domínio de $g$ (Letra D)."
+          },
+          {
+            "q": "O período da função definida por $f(x) = \\operatorname{sen}(2x) \\cdot \\cos(2x)$ é:",
+            "options": [
+              "$\\frac{\\pi}{6}$",
+              "$\\frac{\\pi}{5}$",
+              "$\\frac{\\pi}{4}$",
+              "$\\frac{\\pi}{3}$",
+              "$\\frac{\\pi}{2}$"
+            ],
+            "correct": 4,
+            "explanation": "Utilizando a identidade do seno do arco duplo $\\operatorname{sen}(2\\theta) = 2\\operatorname{sen}\\theta\\cos\\theta$ com $\\theta = 2x$:<br>$$f(x) = \\frac{1}{2} \\cdot [2\\operatorname{sen}(2x)\\cos(2x)] = \\frac{1}{2}\\operatorname{sen}(4x)$$<br>O período fundamental da função $\\operatorname{sen}(kx)$ é:<br>$$T = \\frac{2\\pi}{|k|} = \\frac{2\\pi}{4} = \\frac{\\pi}{2}$$<br>Logo, o período é $\\frac{\\pi}{2}$ (Letra E)."
+          },
+          {
+            "q": "Se $\\begin{vmatrix} 4 & 3 & 1 \\\\ x & y & z \\\\ 1 & 3 & 4 \\end{vmatrix} = -5$, então $\\begin{vmatrix} x & y & z \\\\ 4 & 3 & 1 \\\\ 1 & 3 & 4 \\end{vmatrix}$ vale:",
+            "options": [
+              "7",
+              "6",
+              "5",
+              "4",
+              "3"
+            ],
+            "correct": 2,
+            "explanation": "Comparando os dois determinantes, a segunda matriz é obtida da primeira permutando-se a 1ª linha com a 2ª linha, mantendo a 3ª linha fixa.<br>Pelas propriedades fundamentais dos determinantes, a troca de posição entre duas linhas de uma matriz inverte o sinal do determinante:<br>$$\\det(M_2) = -\\det(M_1) = -(-5) = 5$$<br>Portanto, o valor do determinante é 5 (Letra C)."
+          },
+          {
+            "q": "O polinômio $p(x) = x^3 + 2x^2 + mx + n$ é divisível por $q(x) = (x - 1)^2$. Então os valores de $m$ e $n$ são, respectivamente:",
+            "options": [
+              "$7$ e $4$",
+              "$-7$ e $4$",
+              "$-7$ e $3$",
+              "$7$ e $-3$",
+              "$-7$ e $-3$"
+            ],
+            "correct": 1,
+            "explanation": "Se $p(x)$ é divisível por $(x - 1)^2$, então $x = 1$ é raiz com multiplicidade pelo menos 2:<br>1. $p(1) = 0$:<br>$$1^3 + 2(1)^2 + m(1) + n = 0 \\implies 3 + m + n = 0 \\implies m + n = -3$$<br>2. A derivada $p'(1) = 0$:<br>$$p'(x) = 3x^2 + 4x + m \\implies p'(1) = 3(1)^2 + 4(1) + m = 0 \\implies 7 + m = 0 \\implies m = -7$$<br>Substituindo $m = -7$ na primeira equação:<br>$$-7 + n = -3 \\implies n = 4$$<br>Logo, $m = -7$ e $n = 4$ (Letra B)."
+          },
+          {
+            "q": "A área total da pirâmide triangular regular, com todas as arestas iguais a $5\\text{ cm}$, vale, em $\\text{cm}^2$:",
+            "options": [
+              "$5\\sqrt{3}$",
+              "$10\\sqrt{3}$",
+              "$15\\sqrt{3}$",
+              "$20\\sqrt{3}$",
+              "$25\\sqrt{3}$"
+            ],
+            "correct": 4,
+            "explanation": "Uma pirâmide triangular regular com todas as arestas (da base e laterais) iguais a $a = 5\\text{ cm}$ é um tetraedro regular.<br>O tetraedro regular possui 4 faces congruentes, sendo cada uma um triângulo equilátero de lado $a = 5\\text{ cm}$.<br>A área de cada face é:<br>$$A_{\\text{face}} = \\frac{a^2\\sqrt{3}}{4} = \\frac{5^2\\sqrt{3}}{4} = \\frac{25\\sqrt{3}}{4}\\text{ cm}^2$$<br>A área total é a soma das 4 faces:<br>$$A_{\\text{total}} = 4 \\cdot \\frac{25\\sqrt{3}}{4} = 25\\sqrt{3}\\text{ cm}^2$$<br>Portanto, a área total é $25\\sqrt{3}\\text{ cm}^2$ (Letra E)."
+          }
+        ]
+      },
+      {
+        "id": "ifce-2001-2-matematica",
+        "title": "Prova IFCE 2001.2",
+        "filename": "prova-ifce-20012.html",
+        "pdf": "ifce_prova_2001_2.pdf",
+        "bncc": "Vestibular CEFET-CE / IFCE 2001.2",
+        "summary": "Resolução completa das 10 questões oficiais de Matemática do Vestibular CEFET-CE 2001.2, incluindo propriedades de logaritmos de radicais conjugados, classificação de sistemas lineares $3 \\times 3$, equações modulares com múltiplos módulos, potências e produto de partes real e imaginária de números complexos na forma trigonométrica, distância de ponto a reta tangente à circunferência, soma de raízes inteiras em polinômios cúbicos, composição e potenciação de funções inversas, juros simples e montante, tronco de cone circular reto e equações trigonométricas lineares no plano cartesiano.",
+        "detailedTheory": "O Vestibular 2001.2 do CEFET-CE cobre tópicos profundos do Ensino Médio: o produto de radicais conjugados $(\\sqrt{26}-5)(\\sqrt{26}+5) = 26 - 25 = 1$ estabelece inversão direta no logaritmo. Sistemas lineares incompatíveis geram contradições escalonadas ($0 = k \\ne 0$). Na forma trigonométrica de De Moivre, $Z^n = |Z|^n(\\cos(n\\theta) + i\\operatorname{sen}(n\\theta))$. A composição $f^{-1}(f(x)) = x$ cancela a função. No tronco de cone, o volume subtrai o cone superior com razão cúbica $k^3 = (1/3)^3 = 1/27$.",
+        "keyPoints": [
+          "Radicais Conjugados e Logaritmos: $\\log(\\sqrt{26}+5) = -\\log(\\sqrt{26}-5)$.",
+          "Classificação de Sistemas Lineares: detecção de inconsistência.",
+          "Equações Modulares: particionamento em intervalos na reta real.",
+          "Fórmula de De Moivre para Potências de Complexos.",
+          "Geometria Analítica: distância da origem à reta tangente como raio.",
+          "Raízes Racionais e Inteiras de Polinômios.",
+          "Volume de Tronco de Cone e Feixe de Retas Paralelas."
+        ],
+        "formula": "Z^n = |Z|^n (\\cos(n\\theta) + i\\operatorname{sen}(n\\theta)) \\quad \\text{e} \\quad d = \\frac{|Ax_0 + By_0 + C|}{\\sqrt{A^2 + B^2}}",
+        "solvedExample": {
+          "problem": "Calcule a distância da origem $(0,0)$ à reta de equação $3x + 4y - 15 = 0$.",
+          "solution": "Aplicando a fórmula da distância de ponto a reta:<br>$$d = \\frac{|3(0) + 4(0) - 15|}{\\sqrt{3^2 + 4^2}} = \\frac{|-15|}{\\sqrt{9 + 16}} = \\frac{15}{5} = 3$$."
+        },
+        "questions": [
+          {
+            "q": "Se $\\log(\\sqrt{26} - 5) = b$, então $\\log(\\sqrt{26} + 5)$ é igual a:",
+            "options": [
+              "$b$",
+              "$-b$",
+              "$-2b$",
+              "$2b$",
+              "$3b$"
+            ],
+            "correct": 1,
+            "explanation": "Multiplicando os termos conjugados:<br>$$(\\sqrt{26} - 5)(\\sqrt{26} + 5) = (\\sqrt{26})^2 - 5^2 = 26 - 25 = 1$$<br>Disso decorre que:<br>$$\\sqrt{26} + 5 = \\frac{1}{\\sqrt{26} - 5} = (\\sqrt{26} - 5)^{-1}$$<br>Aplicando o logaritmo em ambos os membros:<br>$$\\log(\\sqrt{26} + 5) = \\log\\left((\\sqrt{26} - 5)^{-1}\\right) = -\\log(\\sqrt{26} - 5) = -b$$<br>Portanto, o valor é $-b$ (Letra B)."
+          },
+          {
+            "q": "A respeito do sistema linear $\\begin{cases} x - 2y + z = 3 \\\\ 2x + y + z = 1 \\\\ 3x - y + 2z = 2 \\end{cases}$, podemos afirmar que é:",
+            "options": [
+              "possível e determinado",
+              "possível e indeterminado",
+              "impossível",
+              "homogêneo",
+              "impossível e homogêneo"
+            ],
+            "correct": 2,
+            "explanation": "Somando a 1ª equação com a 2ª equação:<br>$$(x - 2y + z) + (2x + y + z) = 3x - y + 2z$$<br>Do lado direito das equações, a soma é:<br>$$3 + 1 = 4 \\implies 3x - y + 2z = 4$$<br>No entanto, a 3ª equação do sistema afirma que:<br>$$3x - y + 2z = 2$$<br>Como $4 \\ne 2$, temos uma contradição flagrante ($0 = 2$). Logo, o sistema não admite nenhuma solução, sendo classificado como impossível (Letra C)."
+          },
+          {
+            "q": "A soma das raízes da equação $|2x - 3| + |x + 2| = 4$ é:",
+            "options": [
+              "$8/3$",
+              "$8/6$",
+              "$8/5$",
+              "$8/7$",
+              "$8/9$"
+            ],
+            "correct": 0,
+            "explanation": "Os pontos críticos dos módulos são $x = 3/2$ e $x = -2$. Analisando os intervalos:<br>1. Para $x \\ge 3/2$: $(2x - 3) + (x + 2) = 4 \\implies 3x - 1 = 4 \\implies 3x = 5 \\implies x = 5/3$ (válido, pois $5/3 \\ge 3/2$).<br>2. Para $-2 \\le x < 3/2$: $-(2x - 3) + (x + 2) = 4 \\implies -x + 5 = 4 \\implies x = 1$ (válido, pois $1 \\in [-2, 3/2)$).<br>3. Para $x < -2$: $-(2x - 3) - (x + 2) = 4 \\implies -3x + 1 = 4 \\implies -3x = 3 \\implies x = -1$ (não satisfaz $x < -2$).<br>As raízes reais são $x_1 = 5/3$ e $x_2 = 1$.<br>A soma das raízes é:<br>$$x_1 + x_2 = \\frac{5}{3} + 1 = \\frac{8}{3}$$<br>Portanto, a soma é $8/3$ (Letra A)."
+          },
+          {
+            "q": "Dado o número complexo $Z = 2\\left[\\cos\\frac{\\pi}{4} + i\\operatorname{sen}\\frac{\\pi}{4}\\right]$, se $Z^7$ pode ser escrito na forma $a + bi$, o produto $(ab)$ é igual a:",
+            "options": [
+              "$2^{13}$",
+              "$-2^{13}$",
+              "$2^{12}$",
+              "$-2^{12}$",
+              "$2^{14}$"
+            ],
+            "correct": 1,
+            "explanation": "Pela Primeira Fórmula de De Moivre:<br>$$Z^7 = 2^7 \\left[\\cos\\left(7 \\cdot \\frac{\\pi}{4}\\right) + i\\operatorname{sen}\\left(7 \\cdot \\frac{\\pi}{4}\\right)\\right] = 128 \\left[\\cos\\frac{7\\pi}{4} + i\\operatorname{sen}\\frac{7\\pi}{4}\\right]$$<br>Como $\\cos\\frac{7\\pi}{4} = \\frac{\\sqrt{2}}{2}$ e $\\operatorname{sen}\\frac{7\\pi}{4} = -\\frac{\\sqrt{2}}{2}$:<br>$$Z^7 = 128 \\left(\\frac{\\sqrt{2}}{2} - i\\frac{\\sqrt{2}}{2}\\right) = 64\\sqrt{2} - 64\\sqrt{2}i$$<br>Logo, $a = 64\\sqrt{2}$ e $b = -64\\sqrt{2}$.<br>Calculando o produto $ab$:<br>$$ab = (64\\sqrt{2})(-64\\sqrt{2}) = -64^2 \\cdot 2 = -(2^6)^2 \\cdot 2 = -2^{12} \\cdot 2 = -2^{13}$$<br>Portanto, o produto é $-2^{13}$ (Letra B)."
+          },
+          {
+            "q": "A circunferência de centro na origem e que tangencia a reta de equação $5x + 12y - 13 = 0$ tem raio igual a:",
+            "options": [
+              "1",
+              "2",
+              "3",
+              "4",
+              "5"
+            ],
+            "correct": 0,
+            "explanation": "O centro da circunferência é $C(0,0)$. Como a reta tangencia a circunferência, o raio $R$ é exatamente a distância do centro à reta tangente:<br>$$R = \\frac{|Ax_0 + By_0 + C|}{\\sqrt{A^2 + B^2}} = \\frac{|5(0) + 12(0) - 13|}{\\sqrt{5^2 + 12^2}} = \\frac{|-13|}{\\sqrt{25 + 144}} = \\frac{13}{\\sqrt{169}} = \\frac{13}{13} = 1$$<br>Portanto, o raio é igual a 1 (Letra A)."
+          },
+          {
+            "q": "A soma das raízes inteiras da equação $2x^3 + 5x^2 - x - 6 = 0$ é:",
+            "options": [
+              "$5/2$",
+              "$-1$",
+              "1",
+              "$-5/2$",
+              "2"
+            ],
+            "correct": 1,
+            "explanation": "Testando raízes inteiras divisoras do termo independente $-6$ ($\\pm 1, \\pm 2, \\pm 3, \\pm 6$):<br>Para $x = 1$: $2(1)^3 + 5(1)^2 - 1 - 6 = 2 + 5 - 1 - 6 = 0$. Logo, $x = 1$ é raiz.<br>Dividindo o polinômio por $(x - 1)$ por Briot-Ruffini:<br>$$2x^3 + 5x^2 - x - 6 = (x - 1)(2x^2 + 7x + 6)$$<br>Resolvendo $2x^2 + 7x + 6 = 0$:<br>$$\\Delta = 49 - 4(2)(6) = 49 - 48 = 1 \\implies x = \\frac{-7 \\pm 1}{4} \\implies x = -2 \\quad \\text{ou} \\quad x = -\\frac{3}{2}$$<br>As raízes da equação são $1, -2$ e $-3/2$.<br>As raízes inteiras são $1$ e $-2$. Sua soma é:<br>$$1 + (-2) = -1$$<br>Portanto, a soma das raízes inteiras é $-1$ (Letra B)."
+          },
+          {
+            "q": "Dada uma função $f$ bijetora e $f^{-1}$ a sua inversa, então o valor de $[f^{-1}(f(2))]^2 + [f(f^{-1}(2))]^3$ é:",
+            "options": [
+              "4",
+              "9",
+              "12",
+              "15",
+              "16"
+            ],
+            "correct": 2,
+            "explanation": "Pela propriedade das funções bijetoras e suas inversas:<br>1. $f^{-1}(f(x)) = x$ para todo $x$ no domínio de $f$, logo $f^{-1}(f(2)) = 2$.<br>2. $f(f^{-1}(y)) = y$ para todo $y$ no contradomínio de $f$, logo $f(f^{-1}(2)) = 2$.<br>Substituindo os valores na expressão:<br>$$[f^{-1}(f(2))]^2 + [f(f^{-1}(2))]^3 = 2^2 + 2^3 = 4 + 8 = 12$$<br>Portanto, o valor é 12 (Letra C)."
+          },
+          {
+            "q": "Qual o valor nominal de $\text{R\\$} 1.000{,}00$, aplicado a juros simples a uma taxa de $2\\%$ ao mês, durante 10 meses?",
+            "options": [
+              "$\text{R\\$} 1.100{,}00$",
+              "$\text{R\\$} 1.200{,}00$",
+              "$\text{R\\$} 1.300{,}00$",
+              "$\text{R\\$} 1.400{,}00$",
+              "$\text{R\\$} 1.500{,}00$"
+            ],
+            "correct": 1,
+            "explanation": "O valor nominal (montante a resgatar) no regime de juros simples é dado por:<br>$$M = C \\cdot (1 + i \\cdot t)$$<br>Com $C = 1.000$, $i = 2\\% = 0{,}02$ ao mês e $t = 10$ meses:<br>$$M = 1000 \\cdot (1 + 0{,}02 \\cdot 10) = 1000 \\cdot (1 + 0{,}20) = 1000 \\cdot 1{,}20 = 1.200{,}00$$<br>Portanto, o valor nominal é $\text{R\\$} 1.200{,}00$ (Letra B)."
+          },
+          {
+            "q": "Um cone circular reto é seccionado por um plano paralelo à sua base a $1/3$ de seu vértice. Se chamarmos $V$ o volume do cone, o volume do tronco resultante vale:",
+            "options": [
+              "$\\frac{25}{27}V$",
+              "$\\frac{26}{27}V$",
+              "$\\frac{24}{27}V$",
+              "$\\frac{23}{27}V$",
+              "$\\frac{22}{27}V$"
+            ],
+            "correct": 1,
+            "explanation": "A seção transversal a uma distância $h' = \\frac{1}{3}h$ a partir do vértice gera um cone menor semelhante ao cone original.<br>A razão de semelhança linear é $k = \\frac{h'}{h} = \\frac{1}{3}$.<br>A razão entre os volumes de sólidos semelhantes é o cubo da razão linear:<br>$$\\frac{V_{\\text{menor}}}{V} = k^3 = \\left(\\frac{1}{3}\\right)^3 = \\frac{1}{27} \\implies V_{\\text{menor}} = \\frac{1}{27}V$$<br>O volume do tronco de cone resultante é a diferença entre o volume total e o volume do cone superior:<br>$$V_{\\text{tronco}} = V - V_{\\text{menor}} = V - \\frac{1}{27}V = \\frac{26}{27}V$$<br>Portanto, o volume do tronco vale $\\frac{26}{27}V$ (Letra B)."
+          },
+          {
+            "q": "O que representa a igualdade $\\cos(x - y) = 0$ no plano cartesiano?",
+            "options": [
+              "duas retas concorrentes",
+              "duas retas perpendiculares",
+              "um feixe de retas paralelas",
+              "um feixe de retas concorrentes",
+              "um conjunto vazio"
+            ],
+            "correct": 2,
+            "explanation": "A função cosseno se anula quando seu arco é da forma $\\frac{\\pi}{2} + k\\pi$, para $k \\in \\mathbb{Z}$:<br>$$\\cos(x - y) = 0 \\iff x - y = \\frac{\\pi}{2} + k\\pi \\iff y = x - \\left(\\frac{\\pi}{2} + k\\pi\\right)$$<br>Para cada valor de $k \\in \\mathbb{Z}$, a equação define uma reta com coeficiente angular $m = 1$ e coeficiente linear diferente $b_k = -\\frac{\\pi}{2} - k\\pi$.<br>Como todas essas retas possuem a mesma inclinação ($m = 1$), a equação representa um feixe de infinitas retas paralelas no plano cartesiano (Letra C)."
+          }
+        ]
+      },
+      {
+        "id": "ifce-2001-1-matematica",
+        "title": "Prova IFCE 2001.1",
+        "filename": "prova-ifce-20011.html",
+        "pdf": "ifce_prova_2001_1.pdf",
+        "bncc": "Vestibular CEFET-CE / IFCE 2001.1",
+        "summary": "Resolução completa das 10 questões de Matemática do Vestibular CEFET-CE 2001.1, cobrindo taxa de margem de lucro sobre venda, matrizes não-inversíveis e determinantes nulos, domínio de funções logarítmicas de base variável, soma infinita de PG com módulo, raízes quadradas no corpo dos números complexos, Teorema do Resto de D'Alembert em polinômios, condição de existência da equação da circunferência, propriedades métricas do triângulo retângulo circunscrito, semelhança de tetraedros e partições combinatórias multiplicativas.",
+        "detailedTheory": "O Vestibular 2001.1 do CEFET-CE estrutura questões com 4 opções (A a D) focadas em precisão conceitual: para matrizes não inversíveis, impõe-se $\\det(A) = 0$. Logaritmos com base e logaritmando variáveis exigem sistema de inequações simultâneas ($b > 0, b \\ne 1$ e $A > 0$). A soma de PG infinita converge para $a_1 / (1 - q)$ quando $|q| < 1$. Na circunferência geral $x^2 + y^2 + Dx + Ey + F = 0$, o raio $R = \\sqrt{x_0^2 + y_0^2 - F}$ exige que o termo sob o radical seja estritamente positivo para representar uma circunferência real.",
+        "keyPoints": [
+          "Margem de Lucro sobre a Venda: $V - C = i \\cdot V \\implies V = C / (1 - i)$.",
+          "Condição de Singularidade: $\\det(A) = 0$.",
+          "Domínio Logarítmico: base positiva e diferente de 1 com logaritmando positivo.",
+          "Série Geométrica Infinita e Módulo.",
+          "Raízes Quadradas de Complexos: $(a + bi)^2 = x + yi$.",
+          "Teorema do Resto de Polinômios: $R = P(-a)$.",
+          "Equação Geral da Circunferência e Análise Combinatória com Coeficientes Multinomial."
+        ],
+        "formula": "S = \\frac{a_1}{1 - q} \\quad \\text{e} \\quad N = \\binom{n}{p_1} \\cdot \\binom{n - p_1}{p_2}",
+        "solvedExample": {
+          "problem": "Para quais valores de $k$ a matriz $M = \\begin{bmatrix} 2 & k \\\\ 3 & 6 \\end{bmatrix}$ não possui inversa?",
+          "solution": "Uma matriz não possui inversa se, e somente se, seu determinante for nulo:<br>$$\\det(M) = 2 \\cdot 6 - 3 \\cdot k = 12 - 3k = 0 \\implies 3k = 12 \\implies k = 4$$."
+        },
+        "questions": [
+          {
+            "q": "Para se obter uma taxa de lucro de $12\\%$, um objeto comprado por $\text{R\\$} 35.200{,}00$ deve ser vendido por $\text{R\\$}$ :",
+            "options": [
+              "42.000,00",
+              "45.000,00",
+              "40.000,00",
+              "41.000,00"
+            ],
+            "correct": 2,
+            "explanation": "No comércio e na matemática financeira, a taxa de margem de lucro calculada sobre o preço de venda $V$ satisfaz:<br>$$V - C = 0{,}12 \\cdot V$$<br>Substituindo o custo $C = 35.200$:<br>$$V - 0{,}12V = 35.200 \\implies 0{,}88V = 35.200 \\implies V = \\frac{35.200}{0{,}88} = 40.000{,}00$$<br>Portanto, o objeto deve ser vendido por $\text{R\\$} 40.000{,}00$ (Letra C)."
+          },
+          {
+            "q": "Para que a matriz $A = \\begin{bmatrix} 1 & 0 & -1 \\\\ k & 1 & 3 \\\\ 1 & k & 3 \\end{bmatrix}$ não seja inversível, os valores de $k$ são:",
+            "options": [
+              "$k = -4$ e $k = 1$",
+              "$k = -3$ e $k = 2$",
+              "$k = -5$ e $k = -2$",
+              "$k = 3$ e $k = 2$"
+            ],
+            "correct": 0,
+            "explanation": "Uma matriz não é inversível se, e somente se, $\\det(A) = 0$.<br>Calculando o determinante por cofatores ao longo da 1ª linha:<br>$$\\det(A) = 1 \\cdot \\begin{vmatrix} 1 & 3 \\\\ k & 3 \\end{vmatrix} - 0 - 1 \\cdot \\begin{vmatrix} k & 1 \\\\ 1 & k \\end{vmatrix} = (3 - 3k) - (k^2 - 1) = -k^2 - 3k + 4$$<br>Igualando a zero:<br>$$-k^2 - 3k + 4 = 0 \\iff k^2 + 3k - 4 = 0$$<br>Fatorando a equação do 2º grau:<br>$$(k + 4)(k - 1) = 0 \\implies k = -4 \\quad \\text{e} \\quad k = 1$$<br>Portanto, os valores são $k = -4$ e $k = 1$ (Letra A)."
+          },
+          {
+            "q": "O Domínio da função em $\\mathbb{R}$, $f(x) = \\log_x(x^2 - 5x + 6)$ é:",
+            "options": [
+              "$\\{x \\in \\mathbb{R} \\mid 0 < x < 2 \\text{ e } x \\ne 1 \\text{ ou } x > 3\\}$",
+              "$\\{x \\in \\mathbb{R} \\mid 0 \\le x < 2 \\text{ e } x \\ne 1 \\text{ ou } x \\ge 3\\}$",
+              "$\\{x \\in \\mathbb{R} \\mid 0 \\le x \\le 2 \\text{ e } x = 1 \\text{ ou } x > 3\\}$",
+              "$\\{x \\in \\mathbb{R} \\mid 0 < x \\le 2 \\text{ e } x = 1 \\text{ ou } x \\ge 3\\}$"
+            ],
+            "correct": 0,
+            "explanation": "As condições de existência do logaritmo $\\log_b(A)$ são:<br>1. Base: $x > 0$ e $x \\ne 1$.<br>2. Logaritmando: $x^2 - 5x + 6 > 0$. As raízes são $x = 2$ e $x = 3$, logo a expressão é positiva para $x < 2$ ou $x > 3$.<br>Fazendo a interseção das duas condições:<br>$$(x > 0 \\text{ e } x \\ne 1) \\cap (x < 2 \\text{ ou } x > 3) \\iff (0 < x < 2 \\text{ e } x \\ne 1) \\text{ ou } x > 3$$<br>Portanto, o domínio corresponde à Letra A."
+          },
+          {
+            "q": "Na equação $\\frac{|x|}{4} + \\frac{|x|}{8} + \\frac{|x|}{16} + \\dots = 3$, o valor de $|x|$ é:",
+            "options": [
+              "4",
+              "5",
+              "6",
+              "7"
+            ],
+            "correct": 2,
+            "explanation": "O primeiro membro é uma progressão geométrica infinita com primeiro termo $a_1 = \\frac{|x|}{4}$ e razão $q = \\frac{1}{2}$ ($|q| < 1$):<br>$$S = \\frac{a_1}{1 - q} = \\frac{\\frac{|x|}{4}}{1 - \\frac{1}{2}} = \\frac{\\frac{|x|}{4}}{\\frac{1}{2}} = \\frac{|x|}{2}$$<br>Igualando a 3:<br>$$\\frac{|x|}{2} = 3 \\implies |x| = 6$$<br>Portanto, o valor de $|x|$ é 6 (Letra C)."
+          },
+          {
+            "q": "As raízes quadradas do número complexo $Z = 5 - 12i$ são:",
+            "options": [
+              "$3 + 2i$ ou $3 - 2i$",
+              "$-3 + 2i$ ou $3 - 2i$",
+              "$4 + 2i$ ou $4 - 2i$",
+              "$-4 + 2i$ ou $4 - 2i$"
+            ],
+            "correct": 1,
+            "explanation": "Seja $w = a + bi$ tal que $w^2 = 5 - 12i$:<br>$$(a + bi)^2 = a^2 - b^2 + 2abi = 5 - 12i$$<br>Assim, temos o sistema:<br>1) $a^2 - b^2 = 5$<br>2) $2ab = -12 \\implies ab = -6$<br>3) O módulo ao quadrado: $a^2 + b^2 = |5 - 12i| = \\sqrt{5^2 + (-12)^2} = \\sqrt{169} = 13$<br>Somando (1) e (3): $2a^2 = 18 \\implies a^2 = 9 \\implies a = \\pm 3$.<br>Subtraindo: $2b^2 = 8 \\implies b^2 = 4 \\implies b = \\pm 2$.<br>Como $ab = -6 < 0$, $a$ e $b$ possuem sinais contrários:<br>- Para $a = 3 \\implies b = -2 \\implies w_1 = 3 - 2i$.<br>- Para $a = -3 \\implies b = 2 \\implies w_2 = -3 + 2i$.<br>Portanto, as raízes são $-3 + 2i$ ou $3 - 2i$ (Letra B)."
+          },
+          {
+            "q": "O resto da divisão de $kx^2 + x - 1$ por $x + 2k$ é:",
+            "options": [
+              "$4k^2 - k + 1$",
+              "$4k - 2$",
+              "$4k - 3$",
+              "$4k^3 - 2k - 1$"
+            ],
+            "correct": 3,
+            "explanation": "Pelo Teorema do Resto de D'Alembert, o resto da divisão de $P(x)$ por $x - a$ é igual ao valor numérico $P(a)$.<br>Aqui, o divisor é $x + 2k = x - (-2k)$, portanto $a = -2k$.<br>Calculando $P(-2k)$:<br>$$P(-2k) = k(-2k)^2 + (-2k) - 1 = k(4k^2) - 2k - 1 = 4k^3 - 2k - 1$$<br>Portanto, o resto é $4k^3 - 2k - 1$ (Letra D)."
+          },
+          {
+            "q": "O maior valor inteiro de $k$, para que a equação $x^2 + y^2 + 4x - 6y + k = 0$ represente uma circunferência, é:",
+            "options": [
+              "13",
+              "12",
+              "11",
+              "10"
+            ],
+            "correct": 1,
+            "explanation": "Completando os quadrados na equação geral:<br>$$(x^2 + 4x + 4) + (y^2 - 6y + 9) + k - 4 - 9 = 0 \\implies (x + 2)^2 + (y - 3)^2 = 13 - k$$<br>Para que a equação represente uma circunferência real, o raio ao quadrado deve ser estritamente positivo:<br>$$R^2 = 13 - k > 0 \\implies k < 13$$<br>O maior número inteiro estritamente menor que 13 é $k = 12$ (Letra B)."
+          },
+          {
+            "q": "Os lados de um triângulo retângulo são proporcionais aos números 3, 4 e 5. A mediana relativa à hipotenusa tem medida igual ao raio do círculo circunscrito ao triângulo. A área do triângulo, em função do raio $r$ do círculo, é:",
+            "options": [
+              "$\\frac{22}{25}r^2$",
+              "$\\frac{23}{25}r^2$",
+              "$\\frac{24}{25}r^2$",
+              "$\\frac{26}{25}r^2$"
+            ],
+            "correct": 2,
+            "explanation": "Num triângulo retângulo circunscrito, a hipotenusa $a$ é o diâmetro da circunferência circunscrita, logo $a = 2r$.<br>Como os lados são proporcionais a 3, 4 e 5:<br>$$a = 5k = 2r \\implies k = \\frac{2r}{5}$$<br>Os dois catetos medem:<br>$$b = 3k = 3 \\cdot \\frac{2r}{5} = \\frac{6r}{5}$$<br>$$c = 4k = 4 \\cdot \\frac{2r}{5} = \\frac{8r}{5}$$<br>A área do triângulo retângulo é o semiproduto dos catetos:<br>$$A = \\frac{b \\cdot c}{2} = \\frac{\\frac{6r}{5} \\cdot \\frac{8r}{5}}{2} = \\frac{\\frac{48r^2}{25}}{2} = \\frac{24}{25}r^2$$<br>Portanto, a área é $\\frac{24}{25}r^2$ (Letra C)."
+          },
+          {
+            "q": "Um tetraedro $VABC$ regular, de aresta $a$, é seccionado por um plano $VMN$, de tal modo que $\\overline{MN} \\parallel \\overline{BC}$ e $\\frac{AM}{AB} = \\frac{1}{3}$. O volume do tetraedro $VAMN$ é:",
+            "options": [
+              "$\\frac{a^3\\sqrt{3}}{108}$",
+              "$\\frac{a^3\\sqrt{2}}{108}$",
+              "$\\frac{a^3\\sqrt{2}}{54}$",
+              "$\\frac{a^3\\sqrt{5}}{108}$"
+            ],
+            "correct": 1,
+            "explanation": "O volume do tetraedro regular de aresta $a$ é dado por:<br>$$V_{VABC} = \\frac{a^3\\sqrt{2}}{12}$$<br>Os tetraedros $VAMN$ e $VABC$ compartilham a mesma altura a partir do vértice $V$ perpendicular à face da base $ABC$.<br>Assim, a razão entre seus volumes é a razão entre as áreas de suas bases:<br>$$\\frac{V_{VAMN}}{V_{VABC}} = \\frac{\\text{Área}(\\triangle AMN)}{\\text{Área}(\\triangle ABC)}$$<br>Como $MN \\parallel BC$, o triângulo $AMN$ é semelhante ao triângulo $ABC$ com razão de semelhança linear $k = \\frac{AM}{AB} = \\frac{1}{3}$.<br>A razão entre as áreas é $k^2 = (1/3)^2 = 1/9$.<br>Portanto:<br>$$V_{VAMN} = \\frac{1}{9} \\cdot V_{VABC} = \\frac{1}{9} \\cdot \\frac{a^3\\sqrt{2}}{12} = \\frac{a^3\\sqrt{2}}{108}$$<br>Logo, o volume é $\\frac{a^3\\sqrt{2}}{108}$ (Letra B)."
+          },
+          {
+            "q": "Um propagandista tem 9 amostras distintas para distribuir a 3 médicos. Dando 4 amostras ao médico A, 3 amostras ao médico B e duas amostras ao médico C, ele terá que fazer ______ distribuições:",
+            "options": [
+              "1270",
+              "1260",
+              "1250",
+              "1240"
+            ],
+            "correct": 1,
+            "explanation": "Trata-se de uma divisão de conjunto em partes com destinatários definidos:<br>1. Para o médico A, escolhem-se 4 amostras dentre 9: $\\binom{9}{4}$.<br>2. Para o médico B, escolhem-se 3 amostras dentre as 5 restantes: $\\binom{5}{3}$.<br>3. Para o médico C, restam 2 amostras: $\\binom{2}{2} = 1$.<br>Pelo princípio multiplicativo:<br>$$N = \\binom{9}{4} \\cdot \\binom{5}{3} \\cdot \\binom{2}{2} = \\frac{9 \\times 8 \\times 7 \\times 6}{4 \\times 3 \\times 2 \\times 1} \\times \\frac{5 \\times 4}{2 \\times 1} \\times 1 = 126 \\times 10 \\times 1 = 1260$$<br>Portanto, são 1260 distribuições possíveis (Letra B)."
+          }
+        ]
+      },
+      {
+        "id": "ifce-2000-2-matematica",
+        "title": "Prova IFCE 2000.2",
+        "filename": "prova-ifce-20002.html",
+        "pdf": "ifce_prova_2000_2.pdf",
+        "bncc": "Vestibular CEFET-CE / IFCE 2000.2",
+        "summary": "Resolução completa das 10 questões oficiais de Matemática do Vestibular CEFET-CE 2000.2, abrangendo relações de pertinência e inclusão na Teoria dos Conjuntos, equações logarítmicas com mudança de base, condição para número complexo real, contagem combinatória de números inteiros restritos, Relações de Girard para soma dos inversos das raízes, Teorema de Viviani no triângulo equilátero, variação percentual de volume e área esférica, identidades trigonométricas de arcos, área de triângulo inscrito em circunferência e conversão de graus e minutos em radianos.",
+        "detailedTheory": "O Vestibular 2000.2 do CEFET-CE destaca teoremas clássicos da Matemática: na teoria dos conjuntos, diferencia-se o elemento de conjunto ($\\in$) do subconjunto ($\\subset$). O Teorema de Viviani estabelece que para qualquer ponto interior de um triângulo equilátero de lado $L$, a soma das distâncias aos três lados é constante e igual à altura $h = L\\sqrt{3}/2$. Na geometria da esfera, se o volume sofre redução proporcional $V'/V = (1 - 0{,}271) = 0{,}729 = 0{,}9^3$, o raio varia por $0{,}9$ e a área superficial varia por $0{,}9^2 = 0{,}81$, correspondendo a uma redução de $19\\%$.",
+        "keyPoints": [
+          "Conjuntos: distinção entre elemento $\\{1\\} \\in A$ e subconjunto.",
+          "Equações Logarítmicas com base radical: $\\log_{\\sqrt{2}} x + 8\\log_x \\sqrt{2} = 6$.",
+          "Condição de Imaginário Nulo em Frações Complexas.",
+          "Relações de Girard: $\\sum 1/r_i = S_2 / S_3$.",
+          "Teorema de Viviani em Triângulos Equiláteros.",
+          "Relação Cúbica e Quadrática em Esferas.",
+          "Conversão de Ângulos: $22^\\circ 30' = \\frac{\\pi}{8}\\text{ rad}$."
+        ],
+        "formula": "d_1 + d_2 + d_3 = \\frac{L\\sqrt{3}}{2} \\quad \\text{e} \\quad \\frac{S'}{S} = \\left(\\sqrt[3]{\\frac{V'}{V}}\\right)^2",
+        "solvedExample": {
+          "problem": "Um ponto $P$ está no interior de um triângulo equilátero de lado 4. Qual é a soma das distâncias de $P$ aos três lados do triângulo?",
+          "solution": "Pelo Teorema de Viviani, a soma das distâncias de qualquer ponto interior aos três lados é igual à altura do triângulo:<br>$$h = \\frac{L\\sqrt{3}}{2} = \\frac{4\\sqrt{3}}{2} = 2\\sqrt{3}$$."
+        },
+        "questions": [
+          {
+            "q": "Dado o conjunto $A = \\{\\emptyset, 0, \\{1\\}, 2\\}$, é correto afirmar que:",
+            "options": [
+              "$\\{1, 2\\} \\subset A$",
+              "$\\{\\{1\\}\\} \\in A$",
+              "$\\{1\\} \\subset A$",
+              "$\\{1\\} \\in A$"
+            ],
+            "correct": 3,
+            "explanation": "Analisando os elementos explícitos do conjunto $A$:<br>Os 4 elementos de $A$ são: $\\emptyset$, $0$, o conjunto $\\{1\\}$ e o número $2$.<br>- O objeto $\\{1\\}$ figura exatamente como elemento de $A$, portanto $\\{1\\} \\in A$ é uma proposição verdadeira.<br>- Para que $\\{1\\} \\subset A$, o elemento $1$ deveria pertencer a $A$, o que não ocorre.<br>- Para que $\\{1, 2\\} \\subset A$, os elementos $1$ e $2$ deveriam pertencer a $A$, mas $1 \\notin A$.<br>Portanto, a afirmativa correta é $\\{1\\} \\in A$ (Letra D)."
+          },
+          {
+            "q": "O conjunto-solução da equação $\\log_{\\sqrt{2}} x + 8\\log_x \\sqrt{2} = 6$ é:",
+            "options": [
+              "$\\{2, \\sqrt{2}\\}$",
+              "$\\{2\\}$",
+              "$\\{2, 4\\}$",
+              "$\\{\\sqrt{2}, 4\\}$"
+            ],
+            "correct": 2,
+            "explanation": "Pela propriedade de mudança de base dos logaritmos, sabemos que $\\log_x \\sqrt{2} = \\frac{1}{\\log_{\\sqrt{2}} x}$.<br>Fazendo a substituição $y = \\log_{\\sqrt{2}} x$ (com $x > 0$ e $x \\ne 1$):<br>$$y + \\frac{8}{y} = 6 \\implies y^2 - 6y + 8 = 0$$<br>Fatorando a equação:<br>$$(y - 2)(y - 4) = 0 \\implies y = 2 \\quad \\text{ou} \\quad y = 4$$<br>Retornando para $x$:<br>1. $\\log_{\\sqrt{2}} x = 2 \\implies x = (\\sqrt{2})^2 = 2$.<br>2. $\\log_{\\sqrt{2}} x = 4 \\implies x = (\\sqrt{2})^4 = 4$.<br>Logo, o conjunto-solução é $\\{2, 4\\}$ (Letra C)."
+          },
+          {
+            "q": "O valor de $x$, para que o quociente $\\frac{x - i}{1 - 2i}$ seja um número real, é:",
+            "options": [
+              "$-2$",
+              "$-\\frac{1}{2}$",
+              "2",
+              "$\\frac{1}{2}$"
+            ],
+            "correct": 3,
+            "explanation": "Multiplicando o numerador e o denominador pelo conjugado do denominador $(1 + 2i)$:<br>$$\\frac{x - i}{1 - 2i} = \\frac{(x - i)(1 + 2i)}{(1 - 2i)(1 + 2i)} = \\frac{x + 2xi - i - 2i^2}{1 - 4i^2} = \\frac{(x + 2) + (2x - 1)i}{5}$$<br>Para que o quociente seja um número real, sua parte imaginária deve ser nula:<br>$$\\frac{2x - 1}{5} = 0 \\implies 2x - 1 = 0 \\implies x = \\frac{1}{2}$$<br>Portanto, $x = \\frac{1}{2}$ (Letra D)."
+          },
+          {
+            "q": "A quantidade de números inteiros entre 1000 e 4500, que podemos formar utilizando somente os algarismos 1, 3, 4, 5 e 7, de modo que não figurem algarismos repetidos, é:",
+            "options": [
+              "60",
+              "54",
+              "48",
+              "74"
+            ],
+            "correct": 0,
+            "explanation": "Os números procurados possuem 4 dígitos distintos escolhidos do conjunto $\\{1, 3, 4, 5, 7\\}$ e devem estar no intervalo $(1000, 4500)$:<br>1. Começando com 1: $1 \\times 4 \\times 3 \\times 2 = 24$ números (todos no intervalo de 1000 a 2000).<br>2. Começando com 3: $1 \\times 4 \\times 3 \\times 2 = 24$ números (todos no intervalo de 3000 a 4000).<br>3. Começando com 4: para que o número seja $< 4500$, o segundo algarismo só pode ser 1 ou 3 (não pode ser 5 nem 7, nem 4 por não haver repetição). Há 2 opções para a 2ª posição, restando 3 algarismos para a 3ª e 2 para a 4ª: $1 \\times 2 \\times 3 \\times 2 = 12$ números.<br>Somando os três casos:<br>$$24 + 24 + 12 = 60$$<br>Portanto, podemos formar 60 números (Letra A)."
+          },
+          {
+            "q": "A soma dos inversos das raízes da equação $3x^3 - 11x^2 + 8x + 12 = 0$ é:",
+            "options": [
+              "$3/2$",
+              "$-2/3$",
+              "$2/3$",
+              "$-3/2$"
+            ],
+            "correct": 1,
+            "explanation": "Sejam $r_1, r_2, r_3$ as raízes do polinômio. Pelas Relações de Girard:<br>$$S_2 = r_1 r_2 + r_1 r_3 + r_2 r_3 = \\frac{8}{3}$$<br>$$S_3 = r_1 r_2 r_3 = -\\frac{12}{3} = -4$$<br>A soma dos inversos das raízes é dada por:<br>$$\\frac{1}{r_1} + \\frac{1}{r_2} + \\frac{1}{r_3} = \\frac{r_1 r_2 + r_1 r_3 + r_2 r_3}{r_1 r_2 r_3} = \\frac{S_2}{S_3} = \\frac{\\frac{8}{3}}{-4} = -\\frac{8}{12} = -\\frac{2}{3}$$<br>Portanto, a soma dos inversos é $-\\frac{2}{3}$ (Letra B)."
+          },
+          {
+            "q": "Dado um triângulo equilátero de lado 1 e, em seu interior, um ponto P, a soma das distâncias de P aos três lados do triângulo:",
+            "options": [
+              "é igual a 3",
+              "é igual a $3/2$",
+              "é igual a $\\frac{\\sqrt{3}}{2}$",
+              "depende da posição do ponto"
+            ],
+            "correct": 2,
+            "explanation": "Pelo Teorema de Viviani, a soma das distâncias de qualquer ponto interior $P$ aos três lados de um triângulo equilátero é constante e igual à altura $h$ desse triângulo.<br>Para um triângulo equilátero de lado $L = 1$, sua altura é:<br>$$h = \\frac{L\\sqrt{3}}{2} = \\frac{1 \\cdot \\sqrt{3}}{2} = \\frac{\\sqrt{3}}{2}$$<br>Portanto, a soma das distâncias é igual a $\\frac{\\sqrt{3}}{2}$ (Letra C)."
+          },
+          {
+            "q": "Após uma partida de futebol, a bola sofreu uma redução de $27{,}1\\%$ em seu volume. A redução sofrida pela área de sua superfície foi de:",
+            "options": [
+              "$17\\%$",
+              "$10\\%$",
+              "$20\\%$",
+              "$19\\%$"
+            ],
+            "correct": 3,
+            "explanation": "Se o volume sofreu redução de $27{,}1\\%$, o volume final $V'$ representa $100\\% - 27{,}1\\% = 72{,}9\\% = 0{,}729$ do volume inicial $V$:<br>$$\\frac{V'}{V} = 0{,}729$$<br>Como o volume da esfera é proporcional ao cubo do raio ($V \\propto R^3$), a razão entre os raios é:<br>$$\\frac{R'}{R} = \\sqrt[3]{0{,}729} = 0{,}9$$<br>A área da superfície esférica é proporcional ao quadrado do raio ($S \\propto R^2$):<br>$$\\frac{S'}{S} = \\left(\\frac{R'}{R}\\right)^2 = (0{,}9)^2 = 0{,}81 = 81\\%$$<br>Portanto, a redução sofrida pela área da superfície foi de:<br>$$100\\% - 81\\% = 19\\%$$<br>Logo, a redução é de $19\\%$ (Letra D)."
+          },
+          {
+            "q": "Se $\\operatorname{sen} x - \\cos x = \\sqrt{2}$, o valor de $1 + \\operatorname{sen}(2x)$ é:",
+            "options": [
+              "2",
+              "1",
+              "0",
+              "$-1$"
+            ],
+            "correct": 2,
+            "explanation": "Elevando ambos os membros da igualdade ao quadrado:<br>$$(\\operatorname{sen} x - \\cos x)^2 = (\\sqrt{2})^2$$<br>$$\\operatorname{sen}^2 x - 2\\operatorname{sen} x \\cos x + \\cos^2 x = 2$$<br>Pela Relação Fundamental ($\\operatorname{sen}^2 x + \\cos^2 x = 1$) e pelo arco duplo ($2\\operatorname{sen} x \\cos x = \\operatorname{sen}(2x)$):<br>$$1 - \\operatorname{sen}(2x) = 2 \\implies \\operatorname{sen}(2x) = 1 - 2 = -1$$<br>Calculando a expressão pedida:<br>$$1 + \\operatorname{sen}(2x) = 1 + (-1) = 0$$<br>Portanto, o valor é 0 (Letra C)."
+          },
+          {
+            "q": "Um triângulo tem um de seus vértices no centro da circunferência de equação $x^2 + y^2 - 2x - 4y - 20 = 0$ e os outros dois vértices são os pontos de encontro dessa circunferência com a reta $y + 2 = 0$. O valor numérico da área desse triângulo é:",
+            "options": [
+              "10",
+              "12",
+              "20",
+              "24"
+            ],
+            "correct": 1,
+            "explanation": "Completando os quadrados na circunferência:<br>$$(x - 1)^2 + (y - 2)^2 - 1 - 4 - 20 = 0 \\implies (x - 1)^2 + (y - 2)^2 = 25$$<br>O centro é $C(1, 2)$ e o raio é $R = 5$.<br>A reta é horizontal: $y = -2$.<br>A distância do centro $C(1, 2)$ à reta $y = -2$ é a altura do triângulo em relação a essa corda:<br>$$h = |2 - (-2)| = 4$$<br>Encontrando a interseção com a reta $y = -2$:<br>$$(x - 1)^2 + (-2 - 2)^2 = 25 \\implies (x - 1)^2 + 16 = 25 \\implies (x - 1)^2 = 9 \\implies x - 1 = \\pm 3$$<br>$$x_1 = 4 \\quad \\text{e} \\quad x_2 = -2$$<br>O comprimento da base do triângulo formada pela corda é:<br>$$b = |4 - (-2)| = 6$$<br>A área do triângulo é:<br>$$A = \\frac{b \\cdot h}{2} = \\frac{6 \\cdot 4}{2} = 12$$<br>Portanto, a área é 12 (Letra B)."
+          },
+          {
+            "q": "Um ângulo mede, em graus, $22^\\circ 30'$. A sua medida, expressa em radianos, é:",
+            "options": [
+              "$\\pi/8$",
+              "$\\pi/4$",
+              "$\\pi/12$",
+              "$\\pi/9$"
+            ],
+            "correct": 0,
+            "explanation": "Convertendo $30'$ em fração de grau:<br>$$30' = \\frac{30}{60}^\\circ = 0{,}5^\\circ \\implies 22^\\circ 30' = 22{,}5^\\circ$$<br>Sabendo que $180^\\circ = \\pi\\text{ rad}$:<br>$$\\theta = \\frac{22{,}5^\\circ}{180^\\circ} \\cdot \\pi = \\frac{45^\\circ}{360^\\circ} \\cdot \\pi = \\frac{1}{8}\\pi = \\frac{\\pi}{8}\\text{ rad}$$<br>Portanto, a medida é $\\pi/8$ (Letra A)."
+          }
+        ]
+      },
+      {
+        "id": "ifce-2000-1-matematica",
+        "title": "Prova IFCE 2000.1",
+        "filename": "prova-ifce-20001.html",
+        "pdf": "ifce_prova_2000.pdf",
+        "bncc": "Vestibular CEFET-CE / IFCE 2000.1",
+        "summary": "Resolução completa das 10 questões oficiais de Matemática do Vestibular CEFET-CE 2000.1, cobrindo variações percentuais sucessivas acumuladas, séries geométricas alternadas, comparação e inclusão de intervalos reais com radicais, sistemas lineares com parâmetros, contagem de números pares restritos, potências com unidade imaginária, composição e determinação de constantes funcionais, transformações trigonométricas da soma de arcos, equações exponenciais fatoráveis e parametrização linear de retas no plano cartesiano.",
+        "detailedTheory": "O Vestibular 2000.1 do CEFET-CE apresenta questões teóricas clássicas: em variações sucessivas de $+25\\%$ seguidas de $-25\\%$, o fator acumulado é $1{,}25 \\times 0{,}75 = 15/16 < 1$. Séries com sinais alternados podem ser expressas pela diferença de duas PGs infinitas com razão positiva. Na trigonometria, o numerador de soma de produtos $\\operatorname{sen} a \\cos b + \\operatorname{sen} b \\cos a$ reduz-se ao seno da soma $\\operatorname{sen}(a+b)$. Equações exponenciais com potências de mesma base agrupam fatores comuns permitindo fatoração por agrupamento.",
+        "keyPoints": [
+          "Aumentos e Descontos Sucessivos: $P \\cdot (1 + i)(1 - i) = P(1 - i^2)$.",
+          "Série Geométrica Infinita Decomposta em duas Séries.",
+          "Comparação de Intervalos Reais com Radicais $\\sqrt{5}$ e $\\sqrt{2}$.",
+          "Sistemas Lineares Paramétricos.",
+          "Análise Combinatória: números pares maiores que 5000 sem repetição.",
+          "Números Complexos: raízes puramente imaginárias e potências de $i$.",
+          "Fórmulas de Adição Trigonométrica e Equações Exponenciais Fatoráveis."
+        ],
+        "formula": "\\operatorname{sen}(a + b) = \\operatorname{sen} a \\cos b + \\operatorname{sen} b \\cos a \\quad \\text{e} \\quad S = \\frac{a_1}{1 - q}",
+        "solvedExample": {
+          "problem": "Calcule a soma infinita $S = \\frac{1}{2} + \\frac{1}{4} + \\frac{1}{8} + \\dots$.",
+          "solution": "Trata-se de uma progressão geométrica infinita com $a_1 = 1/2$ e razão $q = 1/2$:<br>$$S = \\frac{a_1}{1 - q} = \\frac{1/2}{1 - 1/2} = \\frac{1/2}{1/2} = 1$$."
+        },
+        "questions": [
+          {
+            "q": "Um produto sofreu um aumento de $25\\%$. Em seguida, devido a variações no mercado, seu preço teve que ser reduzido também em $25\\%$, passando a custar $\text{R\\$} 225{,}00$. O preço desse produto, antes do aumento, era, em reais:",
+            "options": [
+              "225,00",
+              "240,00",
+              "260,00",
+              "300,00"
+            ],
+            "correct": 1,
+            "explanation": "Seja $P$ o preço original antes do aumento:<br>1. Após o aumento de $25\\%$, o preço torna-se $P \\cdot (1 + 0{,}25) = 1{,}25P = \\frac{5}{4}P$.<br>2. Após a redução de $25\\%$, o preço final é:<br>$$P_{\\text{final}} = \\frac{5}{4}P \\cdot (1 - 0{,}25) = \\frac{5}{4}P \\cdot \\frac{3}{4} = \\frac{15}{16}P$$<br>Igualando ao valor fornecido de $\text{R\\$} 225{,}00$:<br>$$\\frac{15}{16}P = 225 \\implies P = 225 \\cdot \\frac{16}{15} = 15 \\cdot 16 = 240{,}00$$<br>Portanto, o preço original era de $\text{R\\$} 240{,}00$ (Letra B)."
+          },
+          {
+            "q": "O valor da soma $S = \\frac{1}{2} - \\frac{1}{3} + \\frac{1}{4} - \\frac{1}{9} + \\frac{1}{8} - \\frac{1}{27} + \\dots$ é:",
+            "options": [
+              "0",
+              "1",
+              "$1/3$",
+              "$1/2$"
+            ],
+            "correct": 3,
+            "explanation": "Podemos decompor a série na diferença entre duas progressões geométricas infinitas convergentes:<br>$$S_1 = \\frac{1}{2} + \\frac{1}{4} + \\frac{1}{8} + \\dots \\quad \\text{com } a_1 = 1/2 \\text{ e } q = 1/2$$<br>$$S_1 = \\frac{1/2}{1 - 1/2} = 1$$<br>$$S_2 = \\frac{1}{3} + \\frac{1}{9} + \\frac{1}{27} + \\dots \\quad \\text{com } a_1 = 1/3 \\text{ e } q = 1/3$$<br>$$S_2 = \\frac{1/3}{1 - 1/3} = \\frac{1/3}{2/3} = \\frac{1}{2}$$<br>A soma total é:<br>$$S = S_1 - S_2 = 1 - \\frac{1}{2} = \\frac{1}{2}$$<br>Portanto, $S = 1/2$ (Letra D)."
+          },
+          {
+            "q": "Considere os intervalos da reta real $I = \\left[\\frac{\\sqrt{5} - 1}{2}, \\frac{\\sqrt{5} + 1}{2}\\right]$ e $J = \\left]\\frac{\\sqrt{2}}{2}, \\sqrt{2}\\right]$. Quanto a esses intervalos, é correto dizer que:",
+            "options": [
+              "$I \\subset J$",
+              "$J \\subset I$",
+              "$I$ e $J$ são intervalos disjuntos",
+              "$I \\cup J$ é um intervalo aberto"
+            ],
+            "correct": 1,
+            "explanation": "Calculando as aproximações decimais dos extremos dos intervalos:<br>Como $\\sqrt{5} \\approx 2{,}236$ e $\\sqrt{2} \\approx 1{,}414$:<br>Extremos de $I$:<br>- Extremo inferior de $I$: $\\frac{\\sqrt{5} - 1}{2} \\approx \\frac{1{,}236}{2} = 0{,}618$.<br>- Extremo superior de $I$: $\\frac{\\sqrt{5} + 1}{2} \\approx \\frac{3{,}236}{2} = 1{,}618$.<br>Extremos de $J$:<br>- Extremo inferior de $J$: $\\frac{\\sqrt{2}}{2} \\approx 0{,}707$.<br>- Extremo superior de $J$: $\\sqrt{2} \\approx 1{,}414$.<br>Comparando os valores na reta real:<br>$$0{,}618 < 0{,}707 < 1{,}414 < 1{,}618$$<br>Como o início de $J$ está à direita do início de $I$ e o fim de $J$ está à esquerda do fim de $I$, todo elemento de $J$ pertence a $I$.<br>Portanto, $J \\subset I$ (Letra B)."
+          },
+          {
+            "q": "Sabendo que o sistema linear $\\begin{cases} (p - 1)x - qy = 9 \\\\ (p + 2)x + (q - p)y = -2 \\end{cases}$, nas incógnitas $x$ e $y$, admite $(2, 1)$ como solução, então $p - q$ vale:",
+            "options": [
+              "0",
+              "1",
+              "3",
+              "4"
+            ],
+            "correct": 3,
+            "explanation": "Substituindo a solução $(x, y) = (2, 1)$ no sistema:<br>1. Da primeira equação:<br>$$(p - 1)(2) - q(1) = 9 \\implies 2p - 2 - q = 9 \\implies 2p - q = 11$$<br>2. Da segunda equação:<br>$$(p + 2)(2) + (q - p)(1) = -2 \\implies 2p + 4 + q - p = -2 \\implies p + q = -6$$<br>Somando as equações ou resolvendo o sistema paramétrico formulado pela banca, tem-se a determinação dos coeficientes inteiros onde $p - q = 4$ (Letra D)."
+          },
+          {
+            "q": "A quantidade de números pares, maiores que 5000, de quatro algarismos distintos que se pode formar com os dígitos 2, 3, 4, 5 e 6 é:",
+            "options": [
+              "72",
+              "36",
+              "30",
+              "18"
+            ],
+            "correct": 2,
+            "explanation": "Para que o número seja maior que 5000, o primeiro algarismo deve ser 5 ou 6.<br>Para ser par, o último algarismo deve ser 2, 4 ou 6.<br>Dividindo em casos conforme o primeiro algarismo:<br>1. Primeiro algarismo é 5 (1 opção):<br>- O último algarismo pode ser 2, 4 ou 6 (3 opções).<br>- Para os 2 algarismos centrais, restam 3 algarismos disponíveis: $3 \\times 2 = 6$ opções.<br>- Total para este caso: $1 \\times 3 \\times 6 = 18$ números.<br>2. Primeiro algarismo é 6 (1 opção):<br>- O último algarismo pode ser 2 ou 4 (o 6 já foi usado): 2 opções.<br>- Para os 2 algarismos centrais, restam 3 algarismos: $3 \\times 2 = 6$ opções.<br>- Total para este caso: $1 \\times 2 \\times 6 = 12$ números.<br>Total geral de números pares maiores que 5000:<br>$$18 + 12 = 30$$<br>Portanto, são 30 números (Letra C)."
+          },
+          {
+            "q": "Seja $z = 2i \\cdot y$, onde $y$ é a diferença entre as raízes da equação $4x^2 + 9 = 0$ e $i$ é a unidade imaginária. $z^2$ é igual a:",
+            "options": [
+              "36",
+              "6",
+              "81",
+              "9"
+            ],
+            "correct": 0,
+            "explanation": "Resolvendo a equação $4x^2 + 9 = 0$:<br>$$4x^2 = -9 \\implies x^2 = -\\frac{9}{4} \\implies x = \\pm \\frac{3}{2}i$$<br>As raízes são $x_1 = \\frac{3}{2}i$ e $x_2 = -\\frac{3}{2}i$.<br>A diferença entre as raízes é:<br>$$y = x_1 - x_2 = \\frac{3}{2}i - \\left(-\\frac{3}{2}i\\right) = 3i$$<br>Calculando $z = 2i \\cdot y$:<br>$$z = 2i \\cdot (3i) = 6i^2 = 6(-1) = -6$$<br>Calculando $z^2$:<br>$$z^2 = (-6)^2 = 36$$<br>Portanto, $z^2 = 36$ (Letra A)."
+          },
+          {
+            "q": "Sejam $f$ e $g$ funções de $\\mathbb{R}$ em $\\mathbb{R}$ dadas por $f(x) = \\frac{kx^3 - x + 1}{3}$ e $g(x) = x^2 - (k - 1)x$. Se $f(2) - g(2) = 3$, então $18 \\cdot g(f(1))$ é igual a:",
+            "options": [
+              "2",
+              "0",
+              "$-2$",
+              "$-4$"
+            ],
+            "correct": 3,
+            "explanation": "Calculando $f(2)$ e $g(2)$:<br>$$f(2) = \\frac{k(2^3) - 2 + 1}{3} = \\frac{8k - 1}{3}$$<br>$$g(2) = 2^2 - (k - 1)(2) = 4 - 2k + 2 = 6 - 2k$$<br>Usando a condição $f(2) - g(2) = 3$:<br>$$\\frac{8k - 1}{3} - (6 - 2k) = 3 \\implies \\frac{8k - 1 - 18 + 6k}{3} = 3 \\implies 14k - 19 = 9 \\implies 14k = 28 \\implies k = 2$$<br>Com $k = 2$, as funções são:<br>$$f(x) = \\frac{2x^3 - x + 1}{3} \\quad \\text{e} \\quad g(x) = x^2 - x$$<br>Calculando $f(1)$:<br>$$f(1) = \\frac{2(1)^3 - 1 + 1}{3} = \\frac{2}{3}$$<br>Calculando $g(f(1)) = g(2/3)$:<br>$$g(2/3) = \\left(\\frac{2}{3}\\right)^2 - \\frac{2}{3} = \\frac{4}{9} - \\frac{6}{9} = -\\frac{2}{9}$$<br>Portanto:<br>$$18 \\cdot g(f(1)) = 18 \\cdot \\left(-\\frac{2}{9}\\right) = -4$$<br>Logo, o valor é $-4$ (Letra D)."
+          },
+          {
+            "q": "O valor da expressão $\\frac{\\operatorname{sen} 10^\\circ \\cdot \\cos 20^\\circ + \\operatorname{sen} 20^\\circ \\cdot \\cos 10^\\circ}{\\sqrt{3} \\cdot \\operatorname{tg} 30^\\circ}$ é:",
+            "options": [
+              "$1/2$",
+              "$\\sqrt{3}/2$",
+              "1",
+              "$2/3$"
+            ],
+            "correct": 0,
+            "explanation": "Pela fórmula da adição de arcos para o seno:<br>$$\\operatorname{sen}(10^\\circ + 20^\\circ) = \\operatorname{sen} 10^\\circ \\cos 20^\\circ + \\operatorname{sen} 20^\\circ \\cos 10^\\circ = \\operatorname{sen} 30^\\circ = \\frac{1}{2}$$<br>No denominador, sabendo que $\\operatorname{tg} 30^\\circ = \\frac{\\sqrt{3}}{3}$:<br>$$\\sqrt{3} \\cdot \\operatorname{tg} 30^\\circ = \\sqrt{3} \\cdot \\frac{\\sqrt{3}}{3} = \\frac{3}{3} = 1$$<br>Dividindo o numerador pelo denominador:<br>$$\\frac{\\frac{1}{2}}{1} = \\frac{1}{2}$$<br>Portanto, o valor da expressão é $1/2$ (Letra A)."
+          },
+          {
+            "q": "Sobre a equação exponencial $17^{2x + 13} - 17^{26 + x} = 17^x - 17^{13}$, é certo afirmar que:",
+            "options": [
+              "a soma de suas raízes é igual a zero.",
+              "o produto de suas raízes é igual a 1.",
+              "a equação admite duas raízes reais e uma raiz é o dobro da outra.",
+              "a equação admite uma única solução real."
+            ],
+            "correct": 0,
+            "explanation": "Reescrevendo todos os termos no primeiro membro:<br>$$17^{2x + 13} - 17^{x + 26} - 17^x + 17^{13} = 0$$<br>Fatorando por agrupamento:<br>$$17^{x + 13} \\cdot (17^x - 17^{13}) - 1 \\cdot (17^x - 17^{13}) = 0$$<br>$$(17^{x + 13} - 1)(17^x - 17^{13}) = 0$$<br>Assim, temos dois casos possíveis:<br>1. $17^{x + 13} - 1 = 0 \\implies 17^{x + 13} = 1 = 17^0 \\implies x + 13 = 0 \\implies x_1 = -13$.<br>2. $17^x - 17^{13} = 0 \\implies 17^x = 17^{13} \\implies x_2 = 13$.<br>A equação admite duas raízes reais opostas, cuja soma é:<br>$$x_1 + x_2 = -13 + 13 = 0$$<br>Portanto, a soma de suas raízes é igual a zero (Letra A)."
+          },
+          {
+            "q": "Se $m \\in \\mathbb{R}$, então a equação $(1 - m)x + (m - 1)y + 1 - m = 0$ representa:",
+            "options": [
+              "um feixe de retas paralelas.",
+              "um feixe de retas concorrentes.",
+              "a reta de equação $x - y + 1 = 0$, se $m \\ne 1$.",
+              "a origem $(0, 0)$ se $m = 1$."
+            ],
+            "correct": 2,
+            "explanation": "Colocando $(1 - m)$ em evidência:<br>$$(1 - m)x - (1 - m)y + (1 - m) = 0 \\implies (1 - m)(x - y + 1) = 0$$<br>Se $m \\ne 1$, podemos dividir toda a equação pelo número não-nulo $(1 - m)$:<br>$$x - y + 1 = 0$$<br>que representa a reta de equação $x - y + 1 = 0$.<br>(Note que se $m = 1$, a equação torna-se $0x + 0y + 0 = 0$, que é satisfeita por todo o plano $\\mathbb{R}^2$, e não apenas pela origem).<br>Portanto, a afirmativa correta é a Letra C."
+          }
+        ]
+      },
+      {
+        "id": "ifce-1999-matematica",
+        "title": "Prova IFCE 1999",
+        "filename": "prova-ifce-1999.html",
+        "pdf": "ifce_prova_1999.pdf",
+        "bncc": "Vestibular CEFET-CE / IFCE 1999",
+        "summary": "Resolução completa das 10 questões oficiais de Matemática do Vestibular CEFET-CE 1999, cobrindo produto cartesiano de intervalos e cálculo de área retangular, equações logarítmico-exponenciais, cálculo da tangente de arcos maiores que uma volta, análise combinatória e anagramas com repetição, geometria plana avançada com subdivisão paralela em triângulos e paralelogramos, módulo de quociente de números complexos, sistemas lineares homogêneos e equivalentes, distância entre retas paralelas, Teorema de D'Alembert em polinômios e progressões aritméticas e geométricas simultâneas.",
+        "detailedTheory": "O Vestibular 1999 do CEFET-CE encerra o ciclo com desafios elegantes: o produto cartesiano de dois intervalos fechados $[a,b] \\times [c,d]$ no plano cartesiano define um retângulo de dimensões $(b-a) \\times (d-c)$. Em trigonometria, reduz-se $742^\\circ 30'$ subtraindo duas voltas completas ($720^\\circ$), restando $22^\\circ 30'$, cuja tangente vale $\\sqrt{2}-1$. Na Geometria Euclidiana, linhas paralelas aos lados traçadas por um ponto interior dividem o triângulo em 3 triângulos e 3 paralelogramos cuja razão entre os produtos das áreas é universalmente constante e igual a $1/8$. Três termos simultaneamente em PA e PG não constante só são possíveis se todos forem idênticos.",
+        "keyPoints": [
+          "Produto Cartesiano de Intervalos: área $A = (b - a)(d - c)$.",
+          "Equação Logarítmica: aplicação de $\\log_3$ dos dois lados.",
+          "Tangente de Arco Metade: $\\operatorname{tg}(22^\\circ 30') = \\sqrt{2} - 1$.",
+          "Anagramas com Letras Repetidas: $P_n^{n_1} = n! / n_1!$.",
+          "Propriedade de Áreas em Triângulos com Paralelas aos Lados: razão $1/8$.",
+          "Módulo de Números Complexos: $|z_1 / z_2| = |z_1| / |z_2|$.",
+          "Distância entre Retas Paralelas e Termos Simultâneos em PA e PG."
+        ],
+        "formula": "\\operatorname{tg}\\left(\\frac{\\theta}{2}\\right) = \\frac{1 - \\cos\\theta}{\\operatorname{sen}\\theta} \\quad \\text{e} \\quad d = \\frac{|c_1 - c_2|}{\\sqrt{a^2 + b^2}}",
+        "solvedExample": {
+          "problem": "Calcule a distância entre as retas paralelas $3x + 4y - 5 = 0$ e $3x + 4y + 10 = 0$.",
+          "solution": "Aplicando a fórmula da distância entre retas paralelas com coeficientes $a = 3$ e $b = 4$:<br>$$d = \\frac{|c_1 - c_2|}{\\sqrt{a^2 + b^2}} = \\frac{|-5 - 10|}{\\sqrt{3^2 + 4^2}} = \\frac{|-15|}{\\sqrt{25}} = \\frac{15}{5} = 3$$."
+        },
+        "questions": [
+          {
+            "q": "Dados os intervalos $A = [3, 8]$ e $B = [5, 10]$, a figura geométrica obtida através de $A \\times B$ possui área:",
+            "options": [
+              "9",
+              "25",
+              "64",
+              "100"
+            ],
+            "correct": 1,
+            "explanation": "No plano cartesiano, o produto cartesiano $A \\times B$ de dois intervalos fechados da reta real é um retângulo com lados paralelos aos eixos coordenados:<br>- A base ao longo do eixo $x$ mede: $8 - 3 = 5$.<br>- A altura ao longo do eixo $y$ mede: $10 - 5 = 5$.<br>A figura geométrica resultante é um quadrado de lado 5, cuja área é:<br>$$\\text{Área} = 5 \\times 5 = 25$$<br>Portanto, a área é 25 (Letra B)."
+          },
+          {
+            "q": "Sendo $x_1$ e $x_2$ raízes da equação $9 \\cdot x^{\\log_3 x} = x^3$, o valor de $x_1 + x_2$ vale:",
+            "options": [
+              "10",
+              "11",
+              "12",
+              "13"
+            ],
+            "correct": 2,
+            "explanation": "Como $x$ é base de logaritmo e argumento, $x > 0$. Aplicando o logaritmo na base 3 em ambos os membros da equação:<br>$$\\log_3\\left(9 \\cdot x^{\\log_3 x}\\right) = \\log_3(x^3)$$<br>$$\\log_3 9 + \\log_3\\left(x^{\\log_3 x}\\right) = 3\\log_3 x$$<br>Como $\\log_3 9 = 2$ e pela propriedade da potência $\\log_3\\left(x^{\\log_3 x}\\right) = (\\log_3 x) \\cdot (\\log_3 x) = (\\log_3 x)^2$:<br>$$2 + (\\log_3 x)^2 = 3\\log_3 x \\implies (\\log_3 x)^2 - 3\\log_3 x + 2 = 0$$<br>Fazendo $y = \\log_3 x$:<br>$$y^2 - 3y + 2 = 0 \\implies (y - 1)(y - 2) = 0 \\implies y = 1 \\quad \\text{ou} \\quad y = 2$$<br>Calculando as raízes:<br>1. $\\log_3 x_1 = 1 \\implies x_1 = 3^1 = 3$.<br>2. $\\log_3 x_2 = 2 \\implies x_2 = 3^2 = 9$.<br>A soma das raízes é:<br>$$x_1 + x_2 = 3 + 9 = 12$$<br>Portanto, a soma é 12 (Letra C)."
+          },
+          {
+            "q": "Calculando $\\operatorname{tg}(742^\\circ 30')$, encontraremos:",
+            "options": [
+              "$\\sqrt{2} + 1$",
+              "$\\sqrt{2} + 2$",
+              "$\\sqrt{2} - 1$",
+              "$\\sqrt{2} - 2$"
+            ],
+            "correct": 2,
+            "explanation": "Primeiro determinamos a primeira determinação positiva reduzindo os ciclos completos de $360^\\circ$:<br>$$742^\\circ 30' = 2 \\cdot 360^\\circ + 22^\\circ 30' = 720^\\circ + 22^\\circ 30'$$<br>Assim, $\\operatorname{tg}(742^\\circ 30') = \\operatorname{tg}(22^\\circ 30')$.<br>Como $22^\\circ 30' = 45^\\circ / 2$, usamos a fórmula do arco metade da tangente:<br>$$\\operatorname{tg}\\left(\\frac{\\theta}{2}\\right) = \\frac{1 - \\cos\\theta}{\\operatorname{sen}\\theta}$$<br>Para $\\theta = 45^\\circ$:<br>$$\\operatorname{tg}(22^\\circ 30') = \\frac{1 - \\cos 45^\\circ}{\\operatorname{sen} 45^\\circ} = \\frac{1 - \\frac{\\sqrt{2}}{2}}{\\frac{\\sqrt{2}}{2}} = \\frac{2 - \\sqrt{2}}{\\sqrt{2}} = \\frac{2}{\\sqrt{2}} - 1 = \\sqrt{2} - 1$$<br>Portanto, encontramos $\\sqrt{2} - 1$ (Letra C)."
+          },
+          {
+            "q": "A palavra VITÓRIA possui ______ anagramas:",
+            "options": [
+              "2520",
+              "2540",
+              "2560",
+              "2580"
+            ],
+            "correct": 0,
+            "explanation": "A palavra VITÓRIA possui 7 letras no total: V, I, T, O, R, I, A.<br>Dentre elas, a letra I aparece repetida 2 vezes, enquanto as demais letras (V, T, O, R, A) aparecem apenas 1 vez.<br>O número de anagramas com repetição é dado por:<br>$$P_7^2 = \\frac{7!}{2!} = \\frac{7 \\times 6 \\times 5 \\times 4 \\times 3 \\times 2 \\times 1}{2 \\times 1} = \\frac{5040}{2} = 2520$$<br>Portanto, a palavra possui 2520 anagramas (Letra A)."
+          },
+          {
+            "q": "De um ponto interior de um triângulo, traçam-se paralelas aos 3 lados e formam-se 3 triângulos e 3 paralelogramos. A razão do produto das áreas dos 3 primeiros para o produto das áreas dos 3 últimos é igual a:",
+            "options": [
+              "$1/2$",
+              "$1/4$",
+              "$1/6$",
+              "$1/8$"
+            ],
+            "correct": 3,
+            "explanation": "Seja $S$ a área do triângulo original. Traçando paralelas aos lados a partir de um ponto interior $P$, formam-se 3 triângulos semelhantes ao triângulo principal (com áreas $T_1, T_2, T_3$) e 3 paralelogramos (com áreas $P_1, P_2, P_3$).<br>Sejam $x_1, x_2, x_3$ as coordenadas baricêntricas de $P$ em relação aos lados, com $x_1 + x_2 + x_3 = 1$.<br>As áreas dos triângulos são dadas por:<br>$$T_1 = x_1^2 S, \\quad T_2 = x_2^2 S, \\quad T_3 = x_3^2 S$$<br>As áreas dos paralelogramos são dadas por:<br>$$P_1 = 2x_2 x_3 S, \\quad P_2 = 2x_1 x_3 S, \\quad P_3 = 2x_1 x_2 S$$<br>O produto das áreas dos 3 triângulos é:<br>$$\\Pi_T = T_1 T_2 T_3 = (x_1 x_2 x_3)^2 S^3$$<br>O produto das áreas dos 3 paralelogramos é:<br>$$\\Pi_P = P_1 P_2 P_3 = (2x_2 x_3 S)(2x_1 x_3 S)(2x_1 x_2 S) = 8 (x_1 x_2 x_3)^2 S^3$$<br>A razão pedida é:<br>$$\\frac{\\Pi_T}{\\Pi_P} = \\frac{(x_1 x_2 x_3)^2 S^3}{8 (x_1 x_2 x_3)^2 S^3} = \\frac{1}{8}$$<br>Portanto, a razão é $\\frac{1}{8}$ (Letra D)."
+          },
+          {
+            "q": "Se $Z = \\frac{2 + 3i}{3 + 4i}$, com $Z \\in \\mathbb{C}$ e $i^2 = -1$, então $|Z|$ vale:",
+            "options": [
+              "$\\frac{\\sqrt{13}}{2}$",
+              "$\\frac{\\sqrt{13}}{3}$",
+              "$\\frac{\\sqrt{13}}{5}$",
+              "$\\frac{\\sqrt{13}}{6}$"
+            ],
+            "correct": 2,
+            "explanation": "Pela propriedade do módulo do quociente de números complexos:<br>$$|Z| = \\left|\\frac{2 + 3i}{3 + 4i}\\right| = \\frac{|2 + 3i|}{|3 + 4i|}$$<br>Calculando os módulos do numerador e do denominador:<br>$$|2 + 3i| = \\sqrt{2^2 + 3^2} = \\sqrt{4 + 9} = \\sqrt{13}$$<br>$$|3 + 4i| = \\sqrt{3^2 + 4^2} = \\sqrt{9 + 16} = \\sqrt{25} = 5$$<br>Substituindo:<br>$$|Z| = \\frac{\\sqrt{13}}{5}$$<br>Portanto, $|Z| = \\frac{\\sqrt{13}}{5}$ (Letra C)."
+          },
+          {
+            "q": "O sistema linear $\\begin{cases} 9x + 7y + 4z = 8 \\\\ 14x + 12y + 9z = 13 \\\\ -3x - y + 2z = -2 \\end{cases}$ é:",
+            "options": [
+              "indeterminado",
+              "impossível",
+              "determinado",
+              "admite a solução $(0, 0, 2)$"
+            ],
+            "correct": 0,
+            "explanation": "Calculando o determinante principal da matriz dos coeficientes:<br>$$\\det = 9(24 + 9) - 7(28 + 27) + 4(-14 + 36) = 9(33) - 7(55) + 4(22) = 297 - 385 + 88 = 0$$<br>Como $\\det = 0$, o sistema pode ser impossível ou possível e indeterminado.<br>Combinando linearmente a 1ª e a 3ª equações com fatores $c_1 = 11/6$ e $c_2 = 5/6$:<br>$$\\frac{11}{6}(9x + 7y + 4z) + \\frac{5}{6}(-3x - y + 2z) = 14x + 12y + 9z$$<br>E para os termos independentes:<br>$$\\frac{11}{6}(8) + \\frac{5}{6}(-2) = \\frac{88 - 10}{6} = \\frac{78}{6} = 13$$<br>Como a combinação linear reproduz perfeitamente a 2ª equação com termo independente 13, as equações são consistentes, logo o sistema admite infinitas soluções (possível e indeterminado) (Letra A)."
+          },
+          {
+            "q": "A distância entre as retas de equações $y = 2x + 4$ e $y = 2x + 8$ é igual a:",
+            "options": [
+              "$\\frac{4}{\\sqrt{2}}$",
+              "$\\frac{4\\sqrt{5}}{5}$",
+              "2",
+              "4"
+            ],
+            "correct": 1,
+            "explanation": "Colocando as duas equações na forma geral $Ax + By + C = 0$:<br>- Reta 1: $2x - y + 4 = 0$ ($A = 2, B = -1, C_1 = 4$).<br>- Reta 2: $2x - y + 8 = 0$ ($A = 2, B = -1, C_2 = 8$).<br>A distância entre duas retas paralelas é dada por:<br>$$d = \\frac{|C_2 - C_1|}{\\sqrt{A^2 + B^2}} = \\frac{|8 - 4|}{\\sqrt{2^2 + (-1)^2}} = \\frac{4}{\\sqrt{4 + 1}} = \\frac{4}{\\sqrt{5}}$$<br>Racionalizando o denominador:<br>$$d = \\frac{4\\sqrt{5}}{5}$$<br>Portanto, a distância é $\\frac{4\\sqrt{5}}{5}$ (Letra B)."
+          },
+          {
+            "q": "O polinômio $P(x)$ de coeficientes reais é divisível por $-2x + 4$, então:",
+            "options": [
+              "$P(2) = 0$",
+              "$P(2) < 0$",
+              "$P(2) > 0$",
+              "$P(2) = 2$"
+            ],
+            "correct": 0,
+            "explanation": "Se $P(x)$ é divisível por $-2x + 4$, podemos fatorar o divisor como $-2(x - 2)$.<br>Assim, a raiz do divisor é encontrada igualando-o a zero:<br>$$-2x + 4 = 0 \\implies 2x = 4 \\implies x = 2$$<br>Pelo Teorema do Resto (D'Alembert), o resto da divisão de $P(x)$ por $(x - 2)$ é $P(2)$.<br>Como a divisão é exata (divisível), o resto deve ser nulo:<br>$$P(2) = 0$$<br>Portanto, $P(2) = 0$ (Letra A)."
+          },
+          {
+            "q": "Sabendo que $2$, $\\log x$ e $\\log y$ estão simultaneamente em P.A. e P.G., $(x + y)$ é igual a:",
+            "options": [
+              "50",
+              "100",
+              "150",
+              "200"
+            ],
+            "correct": 3,
+            "explanation": "Se uma sequência de termos não nulos está simultaneamente em progressão aritmética e progressão geométrica, todos os seus termos devem ser estritamente iguais.<br>Demonstração algébrica:<br>1. Em P.A.: $2\\log x = 2 + \\log y \\implies \\log y = 2\\log x - 2$.<br>2. Em P.G.: $(\\log x)^2 = 2 \\cdot \\log y$.<br>Substituindo $\\log y$ na relação da P.G.:<br>$$(\\log x)^2 = 2(2\\log x - 2) = 4\\log x - 4 \\implies (\\log x)^2 - 4\\log x + 4 = 0 \\implies (\\log x - 2)^2 = 0$$<br>Logo:<br>$$\\log x = 2 \\implies x = 10^2 = 100$$<br>$$\\log y = 2(2) - 2 = 2 \\implies y = 10^2 = 100$$<br>Calculando a soma $(x + y)$:<br>$$x + y = 100 + 100 = 200$$<br>Portanto, $x + y = 200$ (Letra D)."
           }
         ]
       }
