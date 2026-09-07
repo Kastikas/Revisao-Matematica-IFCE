@@ -74,3 +74,45 @@ button .katex {
         color: black !important;
     }
 }
+
+/* ==========================================================================
+   Tema Escuro-Azul (Área de Provas & Full Dark Mode)
+   ========================================================================== */
+.gradient-header-dark { 
+    background: linear-gradient(135deg, #020617 0%, #0b132b 50%, #172554 100%); 
+}
+
+.gradient-hero-dark {
+    background: linear-gradient(135deg, #020617 0%, #0f172a 45%, #1e3a8a 100%);
+}
+
+.dark-scrollbar::-webkit-scrollbar { width: 6px; height: 6px; }
+.dark-scrollbar::-webkit-scrollbar-track { background: #0b1120; }
+.dark-scrollbar::-webkit-scrollbar-thumb { background: #2563eb; border-radius: 4px; }
+.dark-scrollbar::-webkit-scrollbar-thumb:hover { background: #3b82f6; }
+
+/* Feedback de Questões em Dark Mode */
+.dark .opt-selected, [data-theme="dark"] .opt-selected { 
+    border-color: #3b82f6 !important; 
+    background-color: rgba(30, 58, 138, 0.4) !important; 
+    box-shadow: 0 0 0 1px #3b82f6, 0 0 12px rgba(59, 130, 246, 0.25);
+}
+.dark .opt-selected .opt-icon, [data-theme="dark"] .opt-selected .opt-icon { 
+    color: #60a5fa !important; 
+    fill: #1e3a8a; 
+}
+
+.dark .opt-wrong, [data-theme="dark"] .opt-wrong { 
+    border-color: #ef4444 !important; 
+    background-color: rgba(127, 29, 29, 0.35) !important; 
+    box-shadow: 0 0 0 1px #ef4444;
+}
+.dark .opt-wrong .opt-icon, [data-theme="dark"] .opt-wrong .opt-icon { 
+    color: #f87171 !important; 
+    fill: #7f1d1d; 
+}
+
+.dark .katex, [data-theme="dark"] .katex {
+    color: #e2e8f0;
+}
+

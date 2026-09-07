@@ -1,0 +1,1708 @@
+<!DOCTYPE html>
+<html lang="pt-BR" class="dark">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Acervo de Provas Oficiais dos Institutos Federais | PartiuIF</title>
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    colors: {
+                        brand: {
+                            50: '#f0fdf4',
+                            100: '#dcfce7',
+                            200: '#bbf7d0',
+                            300: '#86efac',
+                            400: '#4ade80',
+                            500: '#22c55e',
+                            600: '#16a34a',
+                            700: '#15803d',
+                            800: '#166534',
+                            900: '#14532d',
+                            950: '#052e16',
+                        },
+                        navy: {
+                            800: '#0f172a',
+                            850: '#0b132b',
+                            900: '#0a0f1d',
+                            950: '#020617',
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+    <!-- Lucide Icons -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <!-- KaTeX para Renderização de Equações -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.8/dist/katex.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/katex@0.16.8/dist/katex.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/katex@0.16.8/dist/contrib/auto-render.min.js"></script>
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="./assets/css/styles.css">
+</head>
+<body class="bg-[#0a0f1d] text-slate-100 font-sans antialiased min-h-screen flex flex-col" data-theme="dark">
+
+    <!-- Header / Navbar da Área de Provas (Parte 2 - Escuro-Azul) -->
+    <header class="gradient-header-dark text-white shadow-xl sticky top-0 z-50 border-b border-slate-800">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex items-center justify-between h-16">
+                <!-- Logo Provas -->
+                <a href="./provas.html" class="flex items-center space-x-3 group">
+                    <div class="bg-blue-600 p-2 rounded-xl text-white font-bold shadow-md shadow-blue-500/20 flex items-center justify-center group-hover:scale-105 transition">
+                        <i data-lucide="file-check" class="w-6 h-6"></i>
+                    </div>
+                    <div>
+                        <span class="font-extrabold text-xl tracking-tight text-white flex items-center gap-1.5">
+                            Partiu<span class="text-sky-400">IF</span>
+                            <span class="text-[10px] font-bold uppercase tracking-wider bg-blue-500/30 text-sky-200 border border-blue-400/30 px-2 py-0.5 rounded-full">Provas</span>
+                        </span>
+                        <p class="text-xs text-slate-400 hidden sm:flex items-center gap-1">
+                            <i data-lucide="archive" class="w-3 h-3 text-sky-400"></i> Acervo Oficial com PDFs e Gabarito
+                        </p>
+                    </div>
+                </a>
+
+                <!-- Navegação Desktop -->
+                <nav class="hidden md:flex space-x-1 items-center">
+                    <a href="./provas.html" class="px-3 py-2 rounded-lg text-sm transition flex items-center gap-1.5 bg-blue-600 text-white font-semibold shadow-inner">
+                <i data-lucide="layout-grid" class="w-4 h-4"></i> Todas as Provas
+            </a><a href="./bloco-6-provas-ifce/index.html" class="px-3 py-2 rounded-lg text-sm transition flex items-center gap-1.5 text-slate-300 hover:bg-slate-800 hover:text-white">
+                <i data-lucide="award" class="w-4 h-4"></i> Provas IFCE (27)
+            </a><a href="./bloco-5-provas-ifsc/index.html" class="px-3 py-2 rounded-lg text-sm transition flex items-center gap-1.5 text-slate-300 hover:bg-slate-800 hover:text-white">
+                <i data-lucide="award" class="w-4 h-4"></i> Provas IFSC (16)
+            </a>
+                </nav>
+
+                <!-- Ações do Usuário -->
+                <div class="flex items-center gap-2 sm:gap-3">
+                    <a href="./index.html" class="bg-slate-800/90 hover:bg-slate-700 text-slate-200 border border-slate-700 px-3.5 py-1.5 rounded-lg text-xs sm:text-sm font-semibold transition flex items-center gap-1.5 shadow-sm" title="Retornar à Teoria e Eixos Temáticos">
+                        <i data-lucide="arrow-left" class="w-4 h-4 text-emerald-400"></i> <span class="hidden sm:inline">Voltar para </span>Teoria
+                    </a>
+                    <a href="./simulado.html" class="bg-blue-600 hover:bg-blue-500 text-white font-semibold px-3.5 py-1.5 rounded-lg text-xs sm:text-sm transition flex items-center gap-1.5 shadow">
+                        <i data-lucide="award" class="w-4 h-4"></i> Simulado
+                    </a>
+                    <button id="mobile-menu-btn" class="md:hidden p-2 rounded-lg text-slate-300 hover:text-white hover:bg-slate-800" aria-label="Abrir menu">
+                        <i data-lucide="menu" class="w-6 h-6"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Menu Mobile -->
+        <div id="mobile-menu" class="hidden md:hidden bg-slate-950 border-t border-slate-800 px-4 pt-2 pb-4 space-y-1">
+            <a href="./provas.html" class="block px-3 py-2 rounded-md text-base font-medium text-white flex items-center gap-2 bg-blue-600 font-bold">
+                <i data-lucide="layout-grid" class="w-4 h-4"></i> Todas as Provas
+            </a><a href="./bloco-6-provas-ifce/index.html" class="block px-3 py-2 rounded-md text-base font-medium text-white flex items-center gap-2 hover:bg-slate-800">
+                <i data-lucide="award" class="w-4 h-4"></i> Provas IFCE (27)
+            </a><a href="./bloco-5-provas-ifsc/index.html" class="block px-3 py-2 rounded-md text-base font-medium text-white flex items-center gap-2 hover:bg-slate-800">
+                <i data-lucide="award" class="w-4 h-4"></i> Provas IFSC (16)
+            </a>
+            <a href="./index.html" class="block px-3 py-2 rounded-md text-base font-semibold text-slate-200 hover:bg-slate-800 flex items-center gap-2 mt-2 border-t border-slate-800 pt-3">
+                <i data-lucide="arrow-left" class="w-4 h-4 text-emerald-400"></i> Voltar para Teoria (Parte 1)
+            </a>
+            <a href="./simulado.html" class="block px-3 py-2 rounded-md text-base font-bold bg-blue-600 text-white flex items-center gap-2 mt-2">
+                <i data-lucide="award" class="w-4 h-4"></i> Simulado IF
+            </a>
+        </div>
+    </header>
+
+
+    <main class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 flex-grow">
+        
+        <!-- Breadcrumbs -->
+        <nav class="flex text-xs font-medium text-slate-400 mb-6" aria-label="Breadcrumb">
+            <ol class="inline-flex items-center space-x-1 sm:space-x-2">
+                <li><a href="./index.html" class="hover:text-sky-400 flex items-center gap-1"><i data-lucide="home" class="w-3.5 h-3.5"></i> Início</a></li>
+                <li><span class="text-slate-600">/</span></li>
+                <li class="text-slate-200 font-semibold">Acervo de Provas Oficiais (Parte 2)</li>
+            </ol>
+        </nav>
+
+        <!-- Hero Principal do Acervo de Provas -->
+        <div class="gradient-hero-dark rounded-3xl p-6 sm:p-12 text-white mb-10 shadow-2xl relative overflow-hidden border border-slate-800">
+            <div class="relative z-10 max-w-3xl">
+                <span class="bg-blue-500/20 text-sky-300 border border-blue-400/30 text-xs font-extrabold px-3.5 py-1.5 rounded-full uppercase tracking-wider mb-4 inline-flex items-center gap-1.5">
+                    <i data-lucide="shield-check" class="w-3.5 h-3.5 text-sky-400"></i> Acervo Oficial dos Exames de Classificação
+                </span>
+                
+                <h1 class="text-3xl sm:text-5xl font-black tracking-tight mb-4 leading-tight">
+                    Banco de Provas dos <span class="text-transparent bg-clip-text bg-gradient-to-r from-sky-400 to-blue-300">Institutos Federais</span>
+                </h1>
+                
+                <p class="text-slate-300 text-sm sm:text-base mb-8 leading-relaxed">
+                    Ambiente dedicado para simulação com os exames reais do <strong>IFCE</strong> e <strong>IFSC</strong>. Resolva os cadernos online com resoluções KaTeX comentadas e baixe os PDFs originais para simular o tempo de prova oficial.
+                </p>
+
+                <div class="flex flex-wrap items-center gap-4">
+                    <a href="#catalogo-provas" class="bg-blue-600 hover:bg-blue-500 text-white font-extrabold px-6 py-3.5 rounded-2xl text-sm transition flex items-center gap-2 shadow-lg shadow-blue-600/30">
+                        <i data-lucide="layers" class="w-4 h-4"></i> Explorar as 43 Provas
+                    </a>
+                    <a href="./index.html" class="bg-slate-800/90 hover:bg-slate-700 text-slate-200 font-bold px-6 py-3.5 rounded-2xl text-sm transition flex items-center gap-2 border border-slate-700">
+                        <i data-lucide="arrow-left" class="w-4 h-4 text-emerald-400"></i> Voltar para Teoria (Parte 1)
+                    </a>
+                </div>
+            </div>
+        </div>
+
+        <!-- Dashboard do Acervo (4 Métricas) -->
+        <div class="grid grid-cols-2 lg:grid-cols-4 gap-4 mb-10">
+            <div class="bg-slate-900/90 border border-slate-800 rounded-2xl p-5 shadow-xl flex items-center gap-4">
+                <div class="w-12 h-12 rounded-xl bg-blue-950/80 border border-blue-800/40 flex items-center justify-center text-sky-400 flex-shrink-0">
+                    <i data-lucide="file-text" class="w-6 h-6"></i>
+                </div>
+                <div>
+                    <span class="text-xs text-slate-400 font-medium block">Total de Provas</span>
+                    <strong class="text-xl font-black text-white">43 Cadernos</strong>
+                </div>
+            </div>
+
+            <div class="bg-slate-900/90 border border-slate-800 rounded-2xl p-5 shadow-xl flex items-center gap-4">
+                <div class="w-12 h-12 rounded-xl bg-blue-950/80 border border-blue-800/40 flex items-center justify-center text-sky-400 flex-shrink-0">
+                    <i data-lucide="award" class="w-6 h-6"></i>
+                </div>
+                <div>
+                    <span class="text-xs text-slate-400 font-medium block">Edições IFCE</span>
+                    <strong class="text-xl font-black text-sky-400">27 Provas</strong>
+                </div>
+            </div>
+
+            <div class="bg-slate-900/90 border border-slate-800 rounded-2xl p-5 shadow-xl flex items-center gap-4">
+                <div class="w-12 h-12 rounded-xl bg-indigo-950/80 border border-indigo-800/40 flex items-center justify-center text-indigo-400 flex-shrink-0">
+                    <i data-lucide="award" class="w-6 h-6"></i>
+                </div>
+                <div>
+                    <span class="text-xs text-slate-400 font-medium block">Edições IFSC</span>
+                    <strong class="text-xl font-black text-indigo-400">16 Provas</strong>
+                </div>
+            </div>
+
+            <div class="bg-slate-900/90 border border-slate-800 rounded-2xl p-5 shadow-xl flex items-center gap-4">
+                <div class="w-12 h-12 rounded-xl bg-emerald-950/80 border border-emerald-800/40 flex items-center justify-center text-emerald-400 flex-shrink-0">
+                    <i data-lucide="download-cloud" class="w-6 h-6"></i>
+                </div>
+                <div>
+                    <span class="text-xs text-slate-400 font-medium block">Downloads em PDF</span>
+                    <strong class="text-xl font-black text-emerald-400">100% Liberados</strong>
+                </div>
+            </div>
+        </div>
+
+        <!-- Seção de Acesso Rápido aos Blocos de Cada IF -->
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-12">
+            <div class="bg-slate-900/90 border border-slate-800 hover:border-blue-500/50 rounded-3xl p-6 sm:p-7 shadow-xl flex items-center justify-between transition">
+                <div>
+                    <div class="flex items-center gap-2 mb-2">
+                        <span class="text-xs font-bold uppercase tracking-wider px-2.5 py-0.5 rounded-full bg-blue-500/20 text-sky-300 border border-blue-400/30">Ceará</span>
+                        <span class="text-xs text-slate-400 font-medium">Bloco 6</span>
+                    </div>
+                    <h3 class="text-xl font-extrabold text-white mb-1">Provas Anteriores IFCE</h3>
+                    <p class="text-slate-400 text-xs sm:text-sm">27 edições completas com resoluções comentadas e PDFs.</p>
+                </div>
+                <a href="./bloco-6-provas-ifce/index.html" class="bg-blue-600 hover:bg-blue-500 text-white font-bold p-3 rounded-2xl transition shadow-lg shadow-blue-600/20 flex-shrink-0">
+                    <i data-lucide="arrow-right" class="w-5 h-5"></i>
+                </a>
+            </div>
+
+            <div class="bg-slate-900/90 border border-slate-800 hover:border-indigo-500/50 rounded-3xl p-6 sm:p-7 shadow-xl flex items-center justify-between transition">
+                <div>
+                    <div class="flex items-center gap-2 mb-2">
+                        <span class="text-xs font-bold uppercase tracking-wider px-2.5 py-0.5 rounded-full bg-indigo-500/20 text-indigo-300 border border-indigo-400/30">Santa Catarina</span>
+                        <span class="text-xs text-slate-400 font-medium">Bloco 5</span>
+                    </div>
+                    <h3 class="text-xl font-extrabold text-white mb-1">Provas Anteriores IFSC</h3>
+                    <p class="text-slate-400 text-xs sm:text-sm">16 edições completas com resoluções comentadas e PDFs.</p>
+                </div>
+                <a href="./bloco-5-provas-ifsc/index.html" class="bg-indigo-600 hover:bg-indigo-500 text-white font-bold p-3 rounded-2xl transition shadow-lg shadow-indigo-600/20 flex-shrink-0">
+                    <i data-lucide="arrow-right" class="w-5 h-5"></i>
+                </a>
+            </div>
+        </div>
+
+        <!-- Barra de Ferramentas / Filtros Interativos do Catálogo -->
+        <section id="catalogo-provas" class="mb-12">
+            <div class="flex flex-col md:flex-row justify-between md:items-center gap-4 mb-6 pb-4 border-b border-slate-800">
+                <div>
+                    <h2 class="text-2xl font-black text-white flex items-center gap-2 border-l-4 border-blue-500 pl-3">
+                        Catálogo Completo de Provas (43)
+                    </h2>
+                    <p class="text-xs sm:text-sm text-slate-400 mt-1 pl-3">Filtre por instituição ou digite o ano para encontrar rapidamente o caderno desejado.</p>
+                </div>
+
+                <!-- Filtros por Instituição -->
+                <div class="flex items-center gap-2 bg-slate-900 p-1.5 rounded-2xl border border-slate-800">
+                    <button onclick="filterExams('all')" id="btn-filter-all" class="filter-btn px-4 py-1.5 rounded-xl text-xs font-bold transition bg-blue-600 text-white shadow">
+                        Todos (43)
+                    </button>
+                    <button onclick="filterExams('IFCE')" id="btn-filter-ifce" class="filter-btn px-4 py-1.5 rounded-xl text-xs font-semibold text-slate-400 hover:text-white transition">
+                        IFCE (27)
+                    </button>
+                    <button onclick="filterExams('IFSC')" id="btn-filter-ifsc" class="filter-btn px-4 py-1.5 rounded-xl text-xs font-semibold text-slate-400 hover:text-white transition">
+                        IFSC (16)
+                    </button>
+                </div>
+            </div>
+
+            <!-- Campo de Busca Instantânea -->
+            <div class="relative mb-8">
+                <input type="text" id="exam-search-input" placeholder="Buscar prova por ano ou termo (ex: 2024, 2022, Integrado, Tabuleiro)..." class="w-full bg-slate-900 border border-slate-800 rounded-2xl px-4 py-3.5 pl-11 text-sm text-slate-100 placeholder-slate-500 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent transition shadow-inner">
+                <i data-lucide="search" class="w-5 h-5 text-slate-500 absolute left-3.5 top-3.5"></i>
+            </div>
+
+            <!-- Grade de Provas -->
+            <div id="exams-grid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                
+                <div class="exam-card bg-slate-900/90 border border-slate-800 hover:border-blue-500/60 rounded-3xl p-6 shadow-xl hover-card flex flex-col justify-between transition-all" data-inst="IFSC" data-search="prova ifsc 2017.1 ifsc 10 questões de matemática aplicadas no exame de classificação 2017.1 do ifsc para cursos técnicos integrados. bloco 5: provas anteriores ifsc" data-topic-id="ifsc-2017-1-matematica">
+                    <div>
+                        <div class="flex items-center justify-between mb-3">
+                            <span class="text-xs font-extrabold uppercase tracking-wider px-3 py-1 rounded-full border bg-indigo-500/20 text-indigo-300 border-indigo-400/30">
+                                IFSC
+                            </span>
+                            <span id="status-badge-ifsc-2017-1-matematica" class="text-xs font-medium px-2.5 py-0.5 rounded-full bg-slate-800 text-slate-400 border border-slate-700">
+                                Pendente
+                            </span>
+                        </div>
+                        <h3 class="text-lg font-bold text-white mb-2 leading-snug">Prova IFSC 2017.1</h3>
+                        <p class="text-slate-400 text-xs sm:text-sm leading-relaxed mb-4 line-clamp-2">10 questões de Matemática aplicadas no Exame de Classificação 2017.1 do IFSC para Cursos Técnicos Integrados.</p>
+                    </div>
+
+                    <div class="pt-4 border-t border-slate-800 flex items-center justify-between gap-2">
+                        <span class="text-xs text-slate-400 flex items-center gap-1">
+                            <i data-lucide="help-circle" class="w-3.5 h-3.5 text-sky-400"></i> 10 Questões
+                        </span>
+                        <div class="flex items-center gap-2">
+                            
+                    <a href="./provas/ifsc/PROVA_INTEGRADO_VersaoFinal.pdf" download class="bg-slate-800 hover:bg-slate-700 text-slate-200 border border-slate-700 font-semibold px-3 py-2 rounded-xl text-xs transition flex items-center gap-1.5" title="Baixar Caderno Oficial em PDF">
+                        <i data-lucide="download" class="w-3.5 h-3.5 text-sky-400"></i> PDF
+                    </a>
+                
+                            <a href="./bloco-5-provas-ifsc/prova-ifsc-20171.html" class="bg-blue-600 hover:bg-blue-500 text-white font-bold px-4 py-2 rounded-xl text-xs transition flex items-center gap-1.5 shadow-md shadow-blue-600/25">
+                                Resolver <i data-lucide="arrow-right" class="w-3.5 h-3.5"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            
+                <div class="exam-card bg-slate-900/90 border border-slate-800 hover:border-blue-500/60 rounded-3xl p-6 shadow-xl hover-card flex flex-col justify-between transition-all" data-inst="IFSC" data-search="prova ifsc 2017.2 ifsc 10 questões de matemática aplicadas no exame de classificação 2017.2 do ifsc para cursos técnicos integrados. bloco 5: provas anteriores ifsc" data-topic-id="ifsc-2017-2-matematica">
+                    <div>
+                        <div class="flex items-center justify-between mb-3">
+                            <span class="text-xs font-extrabold uppercase tracking-wider px-3 py-1 rounded-full border bg-indigo-500/20 text-indigo-300 border-indigo-400/30">
+                                IFSC
+                            </span>
+                            <span id="status-badge-ifsc-2017-2-matematica" class="text-xs font-medium px-2.5 py-0.5 rounded-full bg-slate-800 text-slate-400 border border-slate-700">
+                                Pendente
+                            </span>
+                        </div>
+                        <h3 class="text-lg font-bold text-white mb-2 leading-snug">Prova IFSC 2017.2</h3>
+                        <p class="text-slate-400 text-xs sm:text-sm leading-relaxed mb-4 line-clamp-2">10 questões de Matemática aplicadas no Exame de Classificação 2017.2 do IFSC para Cursos Técnicos Integrados.</p>
+                    </div>
+
+                    <div class="pt-4 border-t border-slate-800 flex items-center justify-between gap-2">
+                        <span class="text-xs text-slate-400 flex items-center gap-1">
+                            <i data-lucide="help-circle" class="w-3.5 h-3.5 text-sky-400"></i> 10 Questões
+                        </span>
+                        <div class="flex items-center gap-2">
+                            
+                    <a href="./provas/ifsc/EC-PROVA-2017-2.pdf" download class="bg-slate-800 hover:bg-slate-700 text-slate-200 border border-slate-700 font-semibold px-3 py-2 rounded-xl text-xs transition flex items-center gap-1.5" title="Baixar Caderno Oficial em PDF">
+                        <i data-lucide="download" class="w-3.5 h-3.5 text-sky-400"></i> PDF
+                    </a>
+                
+                            <a href="./bloco-5-provas-ifsc/prova-ifsc-20172.html" class="bg-blue-600 hover:bg-blue-500 text-white font-bold px-4 py-2 rounded-xl text-xs transition flex items-center gap-1.5 shadow-md shadow-blue-600/25">
+                                Resolver <i data-lucide="arrow-right" class="w-3.5 h-3.5"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            
+                <div class="exam-card bg-slate-900/90 border border-slate-800 hover:border-blue-500/60 rounded-3xl p-6 shadow-xl hover-card flex flex-col justify-between transition-all" data-inst="IFSC" data-search="prova ifsc 2018.1 ifsc 10 questões de matemática aplicadas no exame de classificação 2018.1 do ifsc para cursos técnicos integrados. bloco 5: provas anteriores ifsc" data-topic-id="ifsc-2018-1-matematica">
+                    <div>
+                        <div class="flex items-center justify-between mb-3">
+                            <span class="text-xs font-extrabold uppercase tracking-wider px-3 py-1 rounded-full border bg-indigo-500/20 text-indigo-300 border-indigo-400/30">
+                                IFSC
+                            </span>
+                            <span id="status-badge-ifsc-2018-1-matematica" class="text-xs font-medium px-2.5 py-0.5 rounded-full bg-slate-800 text-slate-400 border border-slate-700">
+                                Pendente
+                            </span>
+                        </div>
+                        <h3 class="text-lg font-bold text-white mb-2 leading-snug">Prova IFSC 2018.1</h3>
+                        <p class="text-slate-400 text-xs sm:text-sm leading-relaxed mb-4 line-clamp-2">10 questões de Matemática aplicadas no Exame de Classificação 2018.1 do IFSC para Cursos Técnicos Integrados.</p>
+                    </div>
+
+                    <div class="pt-4 border-t border-slate-800 flex items-center justify-between gap-2">
+                        <span class="text-xs text-slate-400 flex items-center gap-1">
+                            <i data-lucide="help-circle" class="w-3.5 h-3.5 text-sky-400"></i> 10 Questões
+                        </span>
+                        <div class="flex items-center gap-2">
+                            
+                    <a href="./provas/ifsc/20181-Prova.pdf" download class="bg-slate-800 hover:bg-slate-700 text-slate-200 border border-slate-700 font-semibold px-3 py-2 rounded-xl text-xs transition flex items-center gap-1.5" title="Baixar Caderno Oficial em PDF">
+                        <i data-lucide="download" class="w-3.5 h-3.5 text-sky-400"></i> PDF
+                    </a>
+                
+                            <a href="./bloco-5-provas-ifsc/prova-ifsc-20181.html" class="bg-blue-600 hover:bg-blue-500 text-white font-bold px-4 py-2 rounded-xl text-xs transition flex items-center gap-1.5 shadow-md shadow-blue-600/25">
+                                Resolver <i data-lucide="arrow-right" class="w-3.5 h-3.5"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            
+                <div class="exam-card bg-slate-900/90 border border-slate-800 hover:border-blue-500/60 rounded-3xl p-6 shadow-xl hover-card flex flex-col justify-between transition-all" data-inst="IFSC" data-search="prova ifsc 2018.2 ifsc 10 questões de matemática aplicadas no exame de classificação 2018.2 do ifsc para cursos técnicos integrados. bloco 5: provas anteriores ifsc" data-topic-id="ifsc-2018-2-matematica">
+                    <div>
+                        <div class="flex items-center justify-between mb-3">
+                            <span class="text-xs font-extrabold uppercase tracking-wider px-3 py-1 rounded-full border bg-indigo-500/20 text-indigo-300 border-indigo-400/30">
+                                IFSC
+                            </span>
+                            <span id="status-badge-ifsc-2018-2-matematica" class="text-xs font-medium px-2.5 py-0.5 rounded-full bg-slate-800 text-slate-400 border border-slate-700">
+                                Pendente
+                            </span>
+                        </div>
+                        <h3 class="text-lg font-bold text-white mb-2 leading-snug">Prova IFSC 2018.2</h3>
+                        <p class="text-slate-400 text-xs sm:text-sm leading-relaxed mb-4 line-clamp-2">10 questões de Matemática aplicadas no Exame de Classificação 2018.2 do IFSC para Cursos Técnicos Integrados.</p>
+                    </div>
+
+                    <div class="pt-4 border-t border-slate-800 flex items-center justify-between gap-2">
+                        <span class="text-xs text-slate-400 flex items-center gap-1">
+                            <i data-lucide="help-circle" class="w-3.5 h-3.5 text-sky-400"></i> 10 Questões
+                        </span>
+                        <div class="flex items-center gap-2">
+                            
+                    <a href="./provas/ifsc/PROVA CORRETA - PUBLICAR.pdf" download class="bg-slate-800 hover:bg-slate-700 text-slate-200 border border-slate-700 font-semibold px-3 py-2 rounded-xl text-xs transition flex items-center gap-1.5" title="Baixar Caderno Oficial em PDF">
+                        <i data-lucide="download" class="w-3.5 h-3.5 text-sky-400"></i> PDF
+                    </a>
+                
+                            <a href="./bloco-5-provas-ifsc/prova-ifsc-20182.html" class="bg-blue-600 hover:bg-blue-500 text-white font-bold px-4 py-2 rounded-xl text-xs transition flex items-center gap-1.5 shadow-md shadow-blue-600/25">
+                                Resolver <i data-lucide="arrow-right" class="w-3.5 h-3.5"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            
+                <div class="exam-card bg-slate-900/90 border border-slate-800 hover:border-blue-500/60 rounded-3xl p-6 shadow-xl hover-card flex flex-col justify-between transition-all" data-inst="IFSC" data-search="prova ifsc 2019.1 ifsc 10 questões de matemática aplicadas no exame de classificação 2019.1 do ifsc para cursos técnicos integrados. bloco 5: provas anteriores ifsc" data-topic-id="ifsc-2019-1-matematica">
+                    <div>
+                        <div class="flex items-center justify-between mb-3">
+                            <span class="text-xs font-extrabold uppercase tracking-wider px-3 py-1 rounded-full border bg-indigo-500/20 text-indigo-300 border-indigo-400/30">
+                                IFSC
+                            </span>
+                            <span id="status-badge-ifsc-2019-1-matematica" class="text-xs font-medium px-2.5 py-0.5 rounded-full bg-slate-800 text-slate-400 border border-slate-700">
+                                Pendente
+                            </span>
+                        </div>
+                        <h3 class="text-lg font-bold text-white mb-2 leading-snug">Prova IFSC 2019.1</h3>
+                        <p class="text-slate-400 text-xs sm:text-sm leading-relaxed mb-4 line-clamp-2">10 questões de Matemática aplicadas no Exame de Classificação 2019.1 do IFSC para Cursos Técnicos Integrados.</p>
+                    </div>
+
+                    <div class="pt-4 border-t border-slate-800 flex items-center justify-between gap-2">
+                        <span class="text-xs text-slate-400 flex items-center gap-1">
+                            <i data-lucide="help-circle" class="w-3.5 h-3.5 text-sky-400"></i> 10 Questões
+                        </span>
+                        <div class="flex items-center gap-2">
+                            
+                    <a href="./provas/ifsc/2019 1 INT - PROVA.pdf" download class="bg-slate-800 hover:bg-slate-700 text-slate-200 border border-slate-700 font-semibold px-3 py-2 rounded-xl text-xs transition flex items-center gap-1.5" title="Baixar Caderno Oficial em PDF">
+                        <i data-lucide="download" class="w-3.5 h-3.5 text-sky-400"></i> PDF
+                    </a>
+                
+                            <a href="./bloco-5-provas-ifsc/prova-ifsc-20191.html" class="bg-blue-600 hover:bg-blue-500 text-white font-bold px-4 py-2 rounded-xl text-xs transition flex items-center gap-1.5 shadow-md shadow-blue-600/25">
+                                Resolver <i data-lucide="arrow-right" class="w-3.5 h-3.5"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            
+                <div class="exam-card bg-slate-900/90 border border-slate-800 hover:border-blue-500/60 rounded-3xl p-6 shadow-xl hover-card flex flex-col justify-between transition-all" data-inst="IFSC" data-search="prova ifsc 2019.2 ifsc 10 questões de matemática aplicadas no exame de classificação 2019.2 do ifsc para cursos técnicos integrados. bloco 5: provas anteriores ifsc" data-topic-id="ifsc-2019-2-matematica">
+                    <div>
+                        <div class="flex items-center justify-between mb-3">
+                            <span class="text-xs font-extrabold uppercase tracking-wider px-3 py-1 rounded-full border bg-indigo-500/20 text-indigo-300 border-indigo-400/30">
+                                IFSC
+                            </span>
+                            <span id="status-badge-ifsc-2019-2-matematica" class="text-xs font-medium px-2.5 py-0.5 rounded-full bg-slate-800 text-slate-400 border border-slate-700">
+                                Pendente
+                            </span>
+                        </div>
+                        <h3 class="text-lg font-bold text-white mb-2 leading-snug">Prova IFSC 2019.2</h3>
+                        <p class="text-slate-400 text-xs sm:text-sm leading-relaxed mb-4 line-clamp-2">10 questões de Matemática aplicadas no Exame de Classificação 2019.2 do IFSC para Cursos Técnicos Integrados.</p>
+                    </div>
+
+                    <div class="pt-4 border-t border-slate-800 flex items-center justify-between gap-2">
+                        <span class="text-xs text-slate-400 flex items-center gap-1">
+                            <i data-lucide="help-circle" class="w-3.5 h-3.5 text-sky-400"></i> 10 Questões
+                        </span>
+                        <div class="flex items-center gap-2">
+                            
+                    <a href="./provas/ifsc/PROVA 2019.2 - FINAL.pdf" download class="bg-slate-800 hover:bg-slate-700 text-slate-200 border border-slate-700 font-semibold px-3 py-2 rounded-xl text-xs transition flex items-center gap-1.5" title="Baixar Caderno Oficial em PDF">
+                        <i data-lucide="download" class="w-3.5 h-3.5 text-sky-400"></i> PDF
+                    </a>
+                
+                            <a href="./bloco-5-provas-ifsc/prova-ifsc-20192.html" class="bg-blue-600 hover:bg-blue-500 text-white font-bold px-4 py-2 rounded-xl text-xs transition flex items-center gap-1.5 shadow-md shadow-blue-600/25">
+                                Resolver <i data-lucide="arrow-right" class="w-3.5 h-3.5"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            
+                <div class="exam-card bg-slate-900/90 border border-slate-800 hover:border-blue-500/60 rounded-3xl p-6 shadow-xl hover-card flex flex-col justify-between transition-all" data-inst="IFSC" data-search="prova ifsc 2020.1 ifsc 10 questões de matemática aplicadas no exame de classificação 2020.1 do ifsc para cursos técnicos integrados. bloco 5: provas anteriores ifsc" data-topic-id="ifsc-2020-1-matematica">
+                    <div>
+                        <div class="flex items-center justify-between mb-3">
+                            <span class="text-xs font-extrabold uppercase tracking-wider px-3 py-1 rounded-full border bg-indigo-500/20 text-indigo-300 border-indigo-400/30">
+                                IFSC
+                            </span>
+                            <span id="status-badge-ifsc-2020-1-matematica" class="text-xs font-medium px-2.5 py-0.5 rounded-full bg-slate-800 text-slate-400 border border-slate-700">
+                                Pendente
+                            </span>
+                        </div>
+                        <h3 class="text-lg font-bold text-white mb-2 leading-snug">Prova IFSC 2020.1</h3>
+                        <p class="text-slate-400 text-xs sm:text-sm leading-relaxed mb-4 line-clamp-2">10 questões de Matemática aplicadas no Exame de Classificação 2020.1 do IFSC para Cursos Técnicos Integrados.</p>
+                    </div>
+
+                    <div class="pt-4 border-t border-slate-800 flex items-center justify-between gap-2">
+                        <span class="text-xs text-slate-400 flex items-center gap-1">
+                            <i data-lucide="help-circle" class="w-3.5 h-3.5 text-sky-400"></i> 10 Questões
+                        </span>
+                        <div class="flex items-center gap-2">
+                            
+                    <a href="./provas/ifsc/2020 1 INT PROVA_FINAL-1.pdf" download class="bg-slate-800 hover:bg-slate-700 text-slate-200 border border-slate-700 font-semibold px-3 py-2 rounded-xl text-xs transition flex items-center gap-1.5" title="Baixar Caderno Oficial em PDF">
+                        <i data-lucide="download" class="w-3.5 h-3.5 text-sky-400"></i> PDF
+                    </a>
+                
+                            <a href="./bloco-5-provas-ifsc/prova-ifsc-20201.html" class="bg-blue-600 hover:bg-blue-500 text-white font-bold px-4 py-2 rounded-xl text-xs transition flex items-center gap-1.5 shadow-md shadow-blue-600/25">
+                                Resolver <i data-lucide="arrow-right" class="w-3.5 h-3.5"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            
+                <div class="exam-card bg-slate-900/90 border border-slate-800 hover:border-blue-500/60 rounded-3xl p-6 shadow-xl hover-card flex flex-col justify-between transition-all" data-inst="IFSC" data-search="prova ifsc 2022.1 ifsc 10 questões de matemática aplicadas no exame de classificação 2022.1 do ifsc para cursos técnicos integrados. bloco 5: provas anteriores ifsc" data-topic-id="ifsc-2022-1-matematica">
+                    <div>
+                        <div class="flex items-center justify-between mb-3">
+                            <span class="text-xs font-extrabold uppercase tracking-wider px-3 py-1 rounded-full border bg-indigo-500/20 text-indigo-300 border-indigo-400/30">
+                                IFSC
+                            </span>
+                            <span id="status-badge-ifsc-2022-1-matematica" class="text-xs font-medium px-2.5 py-0.5 rounded-full bg-slate-800 text-slate-400 border border-slate-700">
+                                Pendente
+                            </span>
+                        </div>
+                        <h3 class="text-lg font-bold text-white mb-2 leading-snug">Prova IFSC 2022.1</h3>
+                        <p class="text-slate-400 text-xs sm:text-sm leading-relaxed mb-4 line-clamp-2">10 questões de Matemática aplicadas no Exame de Classificação 2022.1 do IFSC para Cursos Técnicos Integrados.</p>
+                    </div>
+
+                    <div class="pt-4 border-t border-slate-800 flex items-center justify-between gap-2">
+                        <span class="text-xs text-slate-400 flex items-center gap-1">
+                            <i data-lucide="help-circle" class="w-3.5 h-3.5 text-sky-400"></i> 10 Questões
+                        </span>
+                        <div class="flex items-center gap-2">
+                            
+                    <a href="./provas/ifsc/PRV 2022.pdf" download class="bg-slate-800 hover:bg-slate-700 text-slate-200 border border-slate-700 font-semibold px-3 py-2 rounded-xl text-xs transition flex items-center gap-1.5" title="Baixar Caderno Oficial em PDF">
+                        <i data-lucide="download" class="w-3.5 h-3.5 text-sky-400"></i> PDF
+                    </a>
+                
+                            <a href="./bloco-5-provas-ifsc/prova-ifsc-20221.html" class="bg-blue-600 hover:bg-blue-500 text-white font-bold px-4 py-2 rounded-xl text-xs transition flex items-center gap-1.5 shadow-md shadow-blue-600/25">
+                                Resolver <i data-lucide="arrow-right" class="w-3.5 h-3.5"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            
+                <div class="exam-card bg-slate-900/90 border border-slate-800 hover:border-blue-500/60 rounded-3xl p-6 shadow-xl hover-card flex flex-col justify-between transition-all" data-inst="IFSC" data-search="prova ifsc 2022.2 ifsc 10 questões de matemática aplicadas no exame de classificação 2022.2 do ifsc para cursos técnicos integrados. bloco 5: provas anteriores ifsc" data-topic-id="ifsc-2022-2-matematica">
+                    <div>
+                        <div class="flex items-center justify-between mb-3">
+                            <span class="text-xs font-extrabold uppercase tracking-wider px-3 py-1 rounded-full border bg-indigo-500/20 text-indigo-300 border-indigo-400/30">
+                                IFSC
+                            </span>
+                            <span id="status-badge-ifsc-2022-2-matematica" class="text-xs font-medium px-2.5 py-0.5 rounded-full bg-slate-800 text-slate-400 border border-slate-700">
+                                Pendente
+                            </span>
+                        </div>
+                        <h3 class="text-lg font-bold text-white mb-2 leading-snug">Prova IFSC 2022.2</h3>
+                        <p class="text-slate-400 text-xs sm:text-sm leading-relaxed mb-4 line-clamp-2">10 questões de Matemática aplicadas no Exame de Classificação 2022.2 do IFSC para Cursos Técnicos Integrados.</p>
+                    </div>
+
+                    <div class="pt-4 border-t border-slate-800 flex items-center justify-between gap-2">
+                        <span class="text-xs text-slate-400 flex items-center gap-1">
+                            <i data-lucide="help-circle" class="w-3.5 h-3.5 text-sky-400"></i> 10 Questões
+                        </span>
+                        <div class="flex items-center gap-2">
+                            
+                    <a href="./provas/ifsc/2022_2_EC_INT_PROVA_OFICIAL_impressão.pdf" download class="bg-slate-800 hover:bg-slate-700 text-slate-200 border border-slate-700 font-semibold px-3 py-2 rounded-xl text-xs transition flex items-center gap-1.5" title="Baixar Caderno Oficial em PDF">
+                        <i data-lucide="download" class="w-3.5 h-3.5 text-sky-400"></i> PDF
+                    </a>
+                
+                            <a href="./bloco-5-provas-ifsc/prova-ifsc-20222.html" class="bg-blue-600 hover:bg-blue-500 text-white font-bold px-4 py-2 rounded-xl text-xs transition flex items-center gap-1.5 shadow-md shadow-blue-600/25">
+                                Resolver <i data-lucide="arrow-right" class="w-3.5 h-3.5"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            
+                <div class="exam-card bg-slate-900/90 border border-slate-800 hover:border-blue-500/60 rounded-3xl p-6 shadow-xl hover-card flex flex-col justify-between transition-all" data-inst="IFSC" data-search="prova ifsc 2023.2 ifsc 10 questões de matemática aplicadas no exame de classificação 2023.2 do ifsc para cursos técnicos integrados. bloco 5: provas anteriores ifsc" data-topic-id="ifsc-2023-2-matematica">
+                    <div>
+                        <div class="flex items-center justify-between mb-3">
+                            <span class="text-xs font-extrabold uppercase tracking-wider px-3 py-1 rounded-full border bg-indigo-500/20 text-indigo-300 border-indigo-400/30">
+                                IFSC
+                            </span>
+                            <span id="status-badge-ifsc-2023-2-matematica" class="text-xs font-medium px-2.5 py-0.5 rounded-full bg-slate-800 text-slate-400 border border-slate-700">
+                                Pendente
+                            </span>
+                        </div>
+                        <h3 class="text-lg font-bold text-white mb-2 leading-snug">Prova IFSC 2023.2</h3>
+                        <p class="text-slate-400 text-xs sm:text-sm leading-relaxed mb-4 line-clamp-2">10 questões de Matemática aplicadas no Exame de Classificação 2023.2 do IFSC para Cursos Técnicos Integrados.</p>
+                    </div>
+
+                    <div class="pt-4 border-t border-slate-800 flex items-center justify-between gap-2">
+                        <span class="text-xs text-slate-400 flex items-center gap-1">
+                            <i data-lucide="help-circle" class="w-3.5 h-3.5 text-sky-400"></i> 10 Questões
+                        </span>
+                        <div class="flex items-center gap-2">
+                            
+                    <a href="./provas/ifsc/2023-2 EC INT PROVA TITULAR.pdf" download class="bg-slate-800 hover:bg-slate-700 text-slate-200 border border-slate-700 font-semibold px-3 py-2 rounded-xl text-xs transition flex items-center gap-1.5" title="Baixar Caderno Oficial em PDF">
+                        <i data-lucide="download" class="w-3.5 h-3.5 text-sky-400"></i> PDF
+                    </a>
+                
+                            <a href="./bloco-5-provas-ifsc/prova-ifsc-20232.html" class="bg-blue-600 hover:bg-blue-500 text-white font-bold px-4 py-2 rounded-xl text-xs transition flex items-center gap-1.5 shadow-md shadow-blue-600/25">
+                                Resolver <i data-lucide="arrow-right" class="w-3.5 h-3.5"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            
+                <div class="exam-card bg-slate-900/90 border border-slate-800 hover:border-blue-500/60 rounded-3xl p-6 shadow-xl hover-card flex flex-col justify-between transition-all" data-inst="IFSC" data-search="prova ifsc 2024.1 ifsc 8 questões de matemática aplicadas no exame de classificação 2024.1 do ifsc para cursos técnicos integrados. bloco 5: provas anteriores ifsc" data-topic-id="ifsc-2024-1-matematica">
+                    <div>
+                        <div class="flex items-center justify-between mb-3">
+                            <span class="text-xs font-extrabold uppercase tracking-wider px-3 py-1 rounded-full border bg-indigo-500/20 text-indigo-300 border-indigo-400/30">
+                                IFSC
+                            </span>
+                            <span id="status-badge-ifsc-2024-1-matematica" class="text-xs font-medium px-2.5 py-0.5 rounded-full bg-slate-800 text-slate-400 border border-slate-700">
+                                Pendente
+                            </span>
+                        </div>
+                        <h3 class="text-lg font-bold text-white mb-2 leading-snug">Prova IFSC 2024.1</h3>
+                        <p class="text-slate-400 text-xs sm:text-sm leading-relaxed mb-4 line-clamp-2">8 questões de Matemática aplicadas no Exame de Classificação 2024.1 do IFSC para Cursos Técnicos Integrados.</p>
+                    </div>
+
+                    <div class="pt-4 border-t border-slate-800 flex items-center justify-between gap-2">
+                        <span class="text-xs text-slate-400 flex items-center gap-1">
+                            <i data-lucide="help-circle" class="w-3.5 h-3.5 text-sky-400"></i> 8 Questões
+                        </span>
+                        <div class="flex items-center gap-2">
+                            
+                    <a href="./provas/ifsc/2024-1 EC INT PROVA TITULAR.pdf" download class="bg-slate-800 hover:bg-slate-700 text-slate-200 border border-slate-700 font-semibold px-3 py-2 rounded-xl text-xs transition flex items-center gap-1.5" title="Baixar Caderno Oficial em PDF">
+                        <i data-lucide="download" class="w-3.5 h-3.5 text-sky-400"></i> PDF
+                    </a>
+                
+                            <a href="./bloco-5-provas-ifsc/prova-ifsc-20241.html" class="bg-blue-600 hover:bg-blue-500 text-white font-bold px-4 py-2 rounded-xl text-xs transition flex items-center gap-1.5 shadow-md shadow-blue-600/25">
+                                Resolver <i data-lucide="arrow-right" class="w-3.5 h-3.5"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            
+                <div class="exam-card bg-slate-900/90 border border-slate-800 hover:border-blue-500/60 rounded-3xl p-6 shadow-xl hover-card flex flex-col justify-between transition-all" data-inst="IFSC" data-search="prova ifsc 2024.2 ifsc 7 questões de matemática aplicadas no exame de classificação 2024.2 do ifsc para cursos técnicos integrados. bloco 5: provas anteriores ifsc" data-topic-id="ifsc-2024-2-matematica">
+                    <div>
+                        <div class="flex items-center justify-between mb-3">
+                            <span class="text-xs font-extrabold uppercase tracking-wider px-3 py-1 rounded-full border bg-indigo-500/20 text-indigo-300 border-indigo-400/30">
+                                IFSC
+                            </span>
+                            <span id="status-badge-ifsc-2024-2-matematica" class="text-xs font-medium px-2.5 py-0.5 rounded-full bg-slate-800 text-slate-400 border border-slate-700">
+                                Pendente
+                            </span>
+                        </div>
+                        <h3 class="text-lg font-bold text-white mb-2 leading-snug">Prova IFSC 2024.2</h3>
+                        <p class="text-slate-400 text-xs sm:text-sm leading-relaxed mb-4 line-clamp-2">7 questões de Matemática aplicadas no Exame de Classificação 2024.2 do IFSC para Cursos Técnicos Integrados.</p>
+                    </div>
+
+                    <div class="pt-4 border-t border-slate-800 flex items-center justify-between gap-2">
+                        <span class="text-xs text-slate-400 flex items-center gap-1">
+                            <i data-lucide="help-circle" class="w-3.5 h-3.5 text-sky-400"></i> 7 Questões
+                        </span>
+                        <div class="flex items-center gap-2">
+                            
+                    <a href="./provas/ifsc/P-B 2024-2 EC INT PROVA TITULAR.pdf" download class="bg-slate-800 hover:bg-slate-700 text-slate-200 border border-slate-700 font-semibold px-3 py-2 rounded-xl text-xs transition flex items-center gap-1.5" title="Baixar Caderno Oficial em PDF">
+                        <i data-lucide="download" class="w-3.5 h-3.5 text-sky-400"></i> PDF
+                    </a>
+                
+                            <a href="./bloco-5-provas-ifsc/prova-ifsc-20242.html" class="bg-blue-600 hover:bg-blue-500 text-white font-bold px-4 py-2 rounded-xl text-xs transition flex items-center gap-1.5 shadow-md shadow-blue-600/25">
+                                Resolver <i data-lucide="arrow-right" class="w-3.5 h-3.5"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            
+                <div class="exam-card bg-slate-900/90 border border-slate-800 hover:border-blue-500/60 rounded-3xl p-6 shadow-xl hover-card flex flex-col justify-between transition-all" data-inst="IFSC" data-search="prova ifsc 2025.1 ifsc 7 questões de matemática aplicadas no exame de classificação 2025.1 do ifsc para cursos técnicos integrados. bloco 5: provas anteriores ifsc" data-topic-id="ifsc-2025-1-matematica">
+                    <div>
+                        <div class="flex items-center justify-between mb-3">
+                            <span class="text-xs font-extrabold uppercase tracking-wider px-3 py-1 rounded-full border bg-indigo-500/20 text-indigo-300 border-indigo-400/30">
+                                IFSC
+                            </span>
+                            <span id="status-badge-ifsc-2025-1-matematica" class="text-xs font-medium px-2.5 py-0.5 rounded-full bg-slate-800 text-slate-400 border border-slate-700">
+                                Pendente
+                            </span>
+                        </div>
+                        <h3 class="text-lg font-bold text-white mb-2 leading-snug">Prova IFSC 2025.1</h3>
+                        <p class="text-slate-400 text-xs sm:text-sm leading-relaxed mb-4 line-clamp-2">7 questões de Matemática aplicadas no Exame de Classificação 2025.1 do IFSC para Cursos Técnicos Integrados.</p>
+                    </div>
+
+                    <div class="pt-4 border-t border-slate-800 flex items-center justify-between gap-2">
+                        <span class="text-xs text-slate-400 flex items-center gap-1">
+                            <i data-lucide="help-circle" class="w-3.5 h-3.5 text-sky-400"></i> 7 Questões
+                        </span>
+                        <div class="flex items-center gap-2">
+                            
+                    <a href="./provas/ifsc/2025-1 EC INT PROVA TITULAR - IFSC.pdf" download class="bg-slate-800 hover:bg-slate-700 text-slate-200 border border-slate-700 font-semibold px-3 py-2 rounded-xl text-xs transition flex items-center gap-1.5" title="Baixar Caderno Oficial em PDF">
+                        <i data-lucide="download" class="w-3.5 h-3.5 text-sky-400"></i> PDF
+                    </a>
+                
+                            <a href="./bloco-5-provas-ifsc/prova-ifsc-20251.html" class="bg-blue-600 hover:bg-blue-500 text-white font-bold px-4 py-2 rounded-xl text-xs transition flex items-center gap-1.5 shadow-md shadow-blue-600/25">
+                                Resolver <i data-lucide="arrow-right" class="w-3.5 h-3.5"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            
+                <div class="exam-card bg-slate-900/90 border border-slate-800 hover:border-blue-500/60 rounded-3xl p-6 shadow-xl hover-card flex flex-col justify-between transition-all" data-inst="IFSC" data-search="prova ifsc 2025.2 ifsc 7 questões de matemática aplicadas no exame de classificação 2025.2 do ifsc para cursos técnicos integrados. bloco 5: provas anteriores ifsc" data-topic-id="ifsc-2025-2-matematica">
+                    <div>
+                        <div class="flex items-center justify-between mb-3">
+                            <span class="text-xs font-extrabold uppercase tracking-wider px-3 py-1 rounded-full border bg-indigo-500/20 text-indigo-300 border-indigo-400/30">
+                                IFSC
+                            </span>
+                            <span id="status-badge-ifsc-2025-2-matematica" class="text-xs font-medium px-2.5 py-0.5 rounded-full bg-slate-800 text-slate-400 border border-slate-700">
+                                Pendente
+                            </span>
+                        </div>
+                        <h3 class="text-lg font-bold text-white mb-2 leading-snug">Prova IFSC 2025.2</h3>
+                        <p class="text-slate-400 text-xs sm:text-sm leading-relaxed mb-4 line-clamp-2">7 questões de Matemática aplicadas no Exame de Classificação 2025.2 do IFSC para Cursos Técnicos Integrados.</p>
+                    </div>
+
+                    <div class="pt-4 border-t border-slate-800 flex items-center justify-between gap-2">
+                        <span class="text-xs text-slate-400 flex items-center gap-1">
+                            <i data-lucide="help-circle" class="w-3.5 h-3.5 text-sky-400"></i> 7 Questões
+                        </span>
+                        <div class="flex items-center gap-2">
+                            
+                    <a href="./provas/ifsc/2025-2 EC INT PROVA TITULAR - IFSC.pdf" download class="bg-slate-800 hover:bg-slate-700 text-slate-200 border border-slate-700 font-semibold px-3 py-2 rounded-xl text-xs transition flex items-center gap-1.5" title="Baixar Caderno Oficial em PDF">
+                        <i data-lucide="download" class="w-3.5 h-3.5 text-sky-400"></i> PDF
+                    </a>
+                
+                            <a href="./bloco-5-provas-ifsc/prova-ifsc-20252.html" class="bg-blue-600 hover:bg-blue-500 text-white font-bold px-4 py-2 rounded-xl text-xs transition flex items-center gap-1.5 shadow-md shadow-blue-600/25">
+                                Resolver <i data-lucide="arrow-right" class="w-3.5 h-3.5"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            
+                <div class="exam-card bg-slate-900/90 border border-slate-800 hover:border-blue-500/60 rounded-3xl p-6 shadow-xl hover-card flex flex-col justify-between transition-all" data-inst="IFSC" data-search="prova ifsc 2026.1 ifsc 7 questões de matemática aplicadas no exame de classificação 2026.1 do ifsc para cursos técnicos integrados. bloco 5: provas anteriores ifsc" data-topic-id="ifsc-2026-1-matematica">
+                    <div>
+                        <div class="flex items-center justify-between mb-3">
+                            <span class="text-xs font-extrabold uppercase tracking-wider px-3 py-1 rounded-full border bg-indigo-500/20 text-indigo-300 border-indigo-400/30">
+                                IFSC
+                            </span>
+                            <span id="status-badge-ifsc-2026-1-matematica" class="text-xs font-medium px-2.5 py-0.5 rounded-full bg-slate-800 text-slate-400 border border-slate-700">
+                                Pendente
+                            </span>
+                        </div>
+                        <h3 class="text-lg font-bold text-white mb-2 leading-snug">Prova IFSC 2026.1</h3>
+                        <p class="text-slate-400 text-xs sm:text-sm leading-relaxed mb-4 line-clamp-2">7 questões de Matemática aplicadas no Exame de Classificação 2026.1 do IFSC para Cursos Técnicos Integrados.</p>
+                    </div>
+
+                    <div class="pt-4 border-t border-slate-800 flex items-center justify-between gap-2">
+                        <span class="text-xs text-slate-400 flex items-center gap-1">
+                            <i data-lucide="help-circle" class="w-3.5 h-3.5 text-sky-400"></i> 7 Questões
+                        </span>
+                        <div class="flex items-center gap-2">
+                            
+                    <a href="./provas/ifsc/2026-1 EC INT PROVA - IFSC.pdf" download class="bg-slate-800 hover:bg-slate-700 text-slate-200 border border-slate-700 font-semibold px-3 py-2 rounded-xl text-xs transition flex items-center gap-1.5" title="Baixar Caderno Oficial em PDF">
+                        <i data-lucide="download" class="w-3.5 h-3.5 text-sky-400"></i> PDF
+                    </a>
+                
+                            <a href="./bloco-5-provas-ifsc/prova-ifsc-20261.html" class="bg-blue-600 hover:bg-blue-500 text-white font-bold px-4 py-2 rounded-xl text-xs transition flex items-center gap-1.5 shadow-md shadow-blue-600/25">
+                                Resolver <i data-lucide="arrow-right" class="w-3.5 h-3.5"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            
+                <div class="exam-card bg-slate-900/90 border border-slate-800 hover:border-blue-500/60 rounded-3xl p-6 shadow-xl hover-card flex flex-col justify-between transition-all" data-inst="IFSC" data-search="prova ifsc 2026.2 ifsc 7 questões de matemática aplicadas no exame de classificação 2026.2 do ifsc para cursos técnicos integrados. bloco 5: provas anteriores ifsc" data-topic-id="ifsc-2026-2-matematica">
+                    <div>
+                        <div class="flex items-center justify-between mb-3">
+                            <span class="text-xs font-extrabold uppercase tracking-wider px-3 py-1 rounded-full border bg-indigo-500/20 text-indigo-300 border-indigo-400/30">
+                                IFSC
+                            </span>
+                            <span id="status-badge-ifsc-2026-2-matematica" class="text-xs font-medium px-2.5 py-0.5 rounded-full bg-slate-800 text-slate-400 border border-slate-700">
+                                Pendente
+                            </span>
+                        </div>
+                        <h3 class="text-lg font-bold text-white mb-2 leading-snug">Prova IFSC 2026.2</h3>
+                        <p class="text-slate-400 text-xs sm:text-sm leading-relaxed mb-4 line-clamp-2">7 questões de Matemática aplicadas no Exame de Classificação 2026.2 do IFSC para Cursos Técnicos Integrados.</p>
+                    </div>
+
+                    <div class="pt-4 border-t border-slate-800 flex items-center justify-between gap-2">
+                        <span class="text-xs text-slate-400 flex items-center gap-1">
+                            <i data-lucide="help-circle" class="w-3.5 h-3.5 text-sky-400"></i> 7 Questões
+                        </span>
+                        <div class="flex items-center gap-2">
+                            
+                    <a href="./provas/ifsc/2026-2 EC INT PROVA TITULAR - IFSC.pdf" download class="bg-slate-800 hover:bg-slate-700 text-slate-200 border border-slate-700 font-semibold px-3 py-2 rounded-xl text-xs transition flex items-center gap-1.5" title="Baixar Caderno Oficial em PDF">
+                        <i data-lucide="download" class="w-3.5 h-3.5 text-sky-400"></i> PDF
+                    </a>
+                
+                            <a href="./bloco-5-provas-ifsc/prova-ifsc-20262.html" class="bg-blue-600 hover:bg-blue-500 text-white font-bold px-4 py-2 rounded-xl text-xs transition flex items-center gap-1.5 shadow-md shadow-blue-600/25">
+                                Resolver <i data-lucide="arrow-right" class="w-3.5 h-3.5"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            
+                <div class="exam-card bg-slate-900/90 border border-slate-800 hover:border-blue-500/60 rounded-3xl p-6 shadow-xl hover-card flex flex-col justify-between transition-all" data-inst="IFCE" data-search="prova ifce 2025.2 ifce 10 questões de matemática aplicadas no processo seletivo 2025.2 do ifce (edital nº 10/2025) para os cursos técnicos integrados. bloco 6: provas anteriores ifce" data-topic-id="ifce-2025-2-matematica">
+                    <div>
+                        <div class="flex items-center justify-between mb-3">
+                            <span class="text-xs font-extrabold uppercase tracking-wider px-3 py-1 rounded-full border bg-blue-500/20 text-sky-300 border-blue-400/30">
+                                IFCE
+                            </span>
+                            <span id="status-badge-ifce-2025-2-matematica" class="text-xs font-medium px-2.5 py-0.5 rounded-full bg-slate-800 text-slate-400 border border-slate-700">
+                                Pendente
+                            </span>
+                        </div>
+                        <h3 class="text-lg font-bold text-white mb-2 leading-snug">Prova IFCE 2025.2</h3>
+                        <p class="text-slate-400 text-xs sm:text-sm leading-relaxed mb-4 line-clamp-2">10 questões de Matemática aplicadas no Processo Seletivo 2025.2 do IFCE (Edital Nº 10/2025) para os Cursos Técnicos Integrados.</p>
+                    </div>
+
+                    <div class="pt-4 border-t border-slate-800 flex items-center justify-between gap-2">
+                        <span class="text-xs text-slate-400 flex items-center gap-1">
+                            <i data-lucide="help-circle" class="w-3.5 h-3.5 text-sky-400"></i> 10 Questões
+                        </span>
+                        <div class="flex items-center gap-2">
+                            
+                    <a href="./provas/ifce/edital-n-10-2025-di-proen-reitoria-ifce-caderno-de-provas-integrado.pdf" download class="bg-slate-800 hover:bg-slate-700 text-slate-200 border border-slate-700 font-semibold px-3 py-2 rounded-xl text-xs transition flex items-center gap-1.5" title="Baixar Caderno Oficial em PDF">
+                        <i data-lucide="download" class="w-3.5 h-3.5 text-sky-400"></i> PDF
+                    </a>
+                
+                            <a href="./bloco-6-provas-ifce/prova-ifce-20252.html" class="bg-blue-600 hover:bg-blue-500 text-white font-bold px-4 py-2 rounded-xl text-xs transition flex items-center gap-1.5 shadow-md shadow-blue-600/25">
+                                Resolver <i data-lucide="arrow-right" class="w-3.5 h-3.5"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            
+                <div class="exam-card bg-slate-900/90 border border-slate-800 hover:border-blue-500/60 rounded-3xl p-6 shadow-xl hover-card flex flex-col justify-between transition-all" data-inst="IFCE" data-search="prova ifce 2025.1 ifce 10 questões de matemática aplicadas no processo seletivo 2025.1 do ifce (edital nº 9/2024) para os cursos técnicos integrados. bloco 6: provas anteriores ifce" data-topic-id="ifce-2025-1-matematica">
+                    <div>
+                        <div class="flex items-center justify-between mb-3">
+                            <span class="text-xs font-extrabold uppercase tracking-wider px-3 py-1 rounded-full border bg-blue-500/20 text-sky-300 border-blue-400/30">
+                                IFCE
+                            </span>
+                            <span id="status-badge-ifce-2025-1-matematica" class="text-xs font-medium px-2.5 py-0.5 rounded-full bg-slate-800 text-slate-400 border border-slate-700">
+                                Pendente
+                            </span>
+                        </div>
+                        <h3 class="text-lg font-bold text-white mb-2 leading-snug">Prova IFCE 2025.1</h3>
+                        <p class="text-slate-400 text-xs sm:text-sm leading-relaxed mb-4 line-clamp-2">10 questões de Matemática aplicadas no Processo Seletivo 2025.1 do IFCE (Edital Nº 9/2024) para os Cursos Técnicos Integrados.</p>
+                    </div>
+
+                    <div class="pt-4 border-t border-slate-800 flex items-center justify-between gap-2">
+                        <span class="text-xs text-slate-400 flex items-center gap-1">
+                            <i data-lucide="help-circle" class="w-3.5 h-3.5 text-sky-400"></i> 10 Questões
+                        </span>
+                        <div class="flex items-center gap-2">
+                            
+                    <a href="./provas/ifce/ifce-caderno-de-provas-edital-n-.-9-2024-cursos-te-cnicos-integrados.pdf" download class="bg-slate-800 hover:bg-slate-700 text-slate-200 border border-slate-700 font-semibold px-3 py-2 rounded-xl text-xs transition flex items-center gap-1.5" title="Baixar Caderno Oficial em PDF">
+                        <i data-lucide="download" class="w-3.5 h-3.5 text-sky-400"></i> PDF
+                    </a>
+                
+                            <a href="./bloco-6-provas-ifce/prova-ifce-20251.html" class="bg-blue-600 hover:bg-blue-500 text-white font-bold px-4 py-2 rounded-xl text-xs transition flex items-center gap-1.5 shadow-md shadow-blue-600/25">
+                                Resolver <i data-lucide="arrow-right" class="w-3.5 h-3.5"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            
+                <div class="exam-card bg-slate-900/90 border border-slate-800 hover:border-blue-500/60 rounded-3xl p-6 shadow-xl hover-card flex flex-col justify-between transition-all" data-inst="IFCE" data-search="prova ifce 2024.2 ifce 10 questões de matemática aplicadas no processo seletivo 2024.2 do ifce (edital nº 003/2024) para os cursos técnicos integrados. bloco 6: provas anteriores ifce" data-topic-id="ifce-2024-2-matematica">
+                    <div>
+                        <div class="flex items-center justify-between mb-3">
+                            <span class="text-xs font-extrabold uppercase tracking-wider px-3 py-1 rounded-full border bg-blue-500/20 text-sky-300 border-blue-400/30">
+                                IFCE
+                            </span>
+                            <span id="status-badge-ifce-2024-2-matematica" class="text-xs font-medium px-2.5 py-0.5 rounded-full bg-slate-800 text-slate-400 border border-slate-700">
+                                Pendente
+                            </span>
+                        </div>
+                        <h3 class="text-lg font-bold text-white mb-2 leading-snug">Prova IFCE 2024.2</h3>
+                        <p class="text-slate-400 text-xs sm:text-sm leading-relaxed mb-4 line-clamp-2">10 questões de Matemática aplicadas no Processo Seletivo 2024.2 do IFCE (Edital Nº 003/2024) para os Cursos Técnicos Integrados.</p>
+                    </div>
+
+                    <div class="pt-4 border-t border-slate-800 flex items-center justify-between gap-2">
+                        <span class="text-xs text-slate-400 flex items-center gap-1">
+                            <i data-lucide="help-circle" class="w-3.5 h-3.5 text-sky-400"></i> 10 Questões
+                        </span>
+                        <div class="flex items-center gap-2">
+                            
+                    <a href="./provas/ifce/ifce-edital-3-2024-cursos-te-cnicos-integrado-caderno-de-provas.pdf" download class="bg-slate-800 hover:bg-slate-700 text-slate-200 border border-slate-700 font-semibold px-3 py-2 rounded-xl text-xs transition flex items-center gap-1.5" title="Baixar Caderno Oficial em PDF">
+                        <i data-lucide="download" class="w-3.5 h-3.5 text-sky-400"></i> PDF
+                    </a>
+                
+                            <a href="./bloco-6-provas-ifce/prova-ifce-20242.html" class="bg-blue-600 hover:bg-blue-500 text-white font-bold px-4 py-2 rounded-xl text-xs transition flex items-center gap-1.5 shadow-md shadow-blue-600/25">
+                                Resolver <i data-lucide="arrow-right" class="w-3.5 h-3.5"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            
+                <div class="exam-card bg-slate-900/90 border border-slate-800 hover:border-blue-500/60 rounded-3xl p-6 shadow-xl hover-card flex flex-col justify-between transition-all" data-inst="IFCE" data-search="prova ifce 2024.1 ifce 10 questões de matemática aplicadas no processo seletivo 2024.1 do ifce (edital nº 015/2023) para os cursos técnicos integrados. bloco 6: provas anteriores ifce" data-topic-id="ifce-2024-1-matematica">
+                    <div>
+                        <div class="flex items-center justify-between mb-3">
+                            <span class="text-xs font-extrabold uppercase tracking-wider px-3 py-1 rounded-full border bg-blue-500/20 text-sky-300 border-blue-400/30">
+                                IFCE
+                            </span>
+                            <span id="status-badge-ifce-2024-1-matematica" class="text-xs font-medium px-2.5 py-0.5 rounded-full bg-slate-800 text-slate-400 border border-slate-700">
+                                Pendente
+                            </span>
+                        </div>
+                        <h3 class="text-lg font-bold text-white mb-2 leading-snug">Prova IFCE 2024.1</h3>
+                        <p class="text-slate-400 text-xs sm:text-sm leading-relaxed mb-4 line-clamp-2">10 questões de Matemática aplicadas no Processo Seletivo 2024.1 do IFCE (Edital Nº 015/2023) para os Cursos Técnicos Integrados.</p>
+                    </div>
+
+                    <div class="pt-4 border-t border-slate-800 flex items-center justify-between gap-2">
+                        <span class="text-xs text-slate-400 flex items-center gap-1">
+                            <i data-lucide="help-circle" class="w-3.5 h-3.5 text-sky-400"></i> 10 Questões
+                        </span>
+                        <div class="flex items-center gap-2">
+                            
+                    <a href="./provas/ifce/caderno-de-provas-edital-n-.-015-2023-cursos-te-cnicos-integrados.pdf" download class="bg-slate-800 hover:bg-slate-700 text-slate-200 border border-slate-700 font-semibold px-3 py-2 rounded-xl text-xs transition flex items-center gap-1.5" title="Baixar Caderno Oficial em PDF">
+                        <i data-lucide="download" class="w-3.5 h-3.5 text-sky-400"></i> PDF
+                    </a>
+                
+                            <a href="./bloco-6-provas-ifce/prova-ifce-20241.html" class="bg-blue-600 hover:bg-blue-500 text-white font-bold px-4 py-2 rounded-xl text-xs transition flex items-center gap-1.5 shadow-md shadow-blue-600/25">
+                                Resolver <i data-lucide="arrow-right" class="w-3.5 h-3.5"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            
+                <div class="exam-card bg-slate-900/90 border border-slate-800 hover:border-blue-500/60 rounded-3xl p-6 shadow-xl hover-card flex flex-col justify-between transition-all" data-inst="IFCE" data-search="prova ifce 2023.1 ifce 10 questões de matemática aplicadas no processo seletivo 2023.1 do ifce para os cursos técnicos integrados. bloco 6: provas anteriores ifce" data-topic-id="ifce-2023-1-matematica">
+                    <div>
+                        <div class="flex items-center justify-between mb-3">
+                            <span class="text-xs font-extrabold uppercase tracking-wider px-3 py-1 rounded-full border bg-blue-500/20 text-sky-300 border-blue-400/30">
+                                IFCE
+                            </span>
+                            <span id="status-badge-ifce-2023-1-matematica" class="text-xs font-medium px-2.5 py-0.5 rounded-full bg-slate-800 text-slate-400 border border-slate-700">
+                                Pendente
+                            </span>
+                        </div>
+                        <h3 class="text-lg font-bold text-white mb-2 leading-snug">Prova IFCE 2023.1</h3>
+                        <p class="text-slate-400 text-xs sm:text-sm leading-relaxed mb-4 line-clamp-2">10 questões de Matemática aplicadas no Processo Seletivo 2023.1 do IFCE para os Cursos Técnicos Integrados.</p>
+                    </div>
+
+                    <div class="pt-4 border-t border-slate-800 flex items-center justify-between gap-2">
+                        <span class="text-xs text-slate-400 flex items-center gap-1">
+                            <i data-lucide="help-circle" class="w-3.5 h-3.5 text-sky-400"></i> 10 Questões
+                        </span>
+                        <div class="flex items-center gap-2">
+                            
+                    <a href="./provas/ifce/Ensino Técnico Integrado 2022.pdf" download class="bg-slate-800 hover:bg-slate-700 text-slate-200 border border-slate-700 font-semibold px-3 py-2 rounded-xl text-xs transition flex items-center gap-1.5" title="Baixar Caderno Oficial em PDF">
+                        <i data-lucide="download" class="w-3.5 h-3.5 text-sky-400"></i> PDF
+                    </a>
+                
+                            <a href="./bloco-6-provas-ifce/prova-ifce-20231.html" class="bg-blue-600 hover:bg-blue-500 text-white font-bold px-4 py-2 rounded-xl text-xs transition flex items-center gap-1.5 shadow-md shadow-blue-600/25">
+                                Resolver <i data-lucide="arrow-right" class="w-3.5 h-3.5"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            
+                <div class="exam-card bg-slate-900/90 border border-slate-800 hover:border-blue-500/60 rounded-3xl p-6 shadow-xl hover-card flex flex-col justify-between transition-all" data-inst="IFCE" data-search="prova ifce 2022.2 ifce 10 questões de matemática aplicadas no processo seletivo 2022.2 do ifce para os cursos técnicos integrados (campus fortaleza). bloco 6: provas anteriores ifce" data-topic-id="ifce-2022-2-matematica">
+                    <div>
+                        <div class="flex items-center justify-between mb-3">
+                            <span class="text-xs font-extrabold uppercase tracking-wider px-3 py-1 rounded-full border bg-blue-500/20 text-sky-300 border-blue-400/30">
+                                IFCE
+                            </span>
+                            <span id="status-badge-ifce-2022-2-matematica" class="text-xs font-medium px-2.5 py-0.5 rounded-full bg-slate-800 text-slate-400 border border-slate-700">
+                                Pendente
+                            </span>
+                        </div>
+                        <h3 class="text-lg font-bold text-white mb-2 leading-snug">Prova IFCE 2022.2</h3>
+                        <p class="text-slate-400 text-xs sm:text-sm leading-relaxed mb-4 line-clamp-2">10 questões de Matemática aplicadas no Processo Seletivo 2022.2 do IFCE para os Cursos Técnicos Integrados (Campus Fortaleza).</p>
+                    </div>
+
+                    <div class="pt-4 border-t border-slate-800 flex items-center justify-between gap-2">
+                        <span class="text-xs text-slate-400 flex items-center gap-1">
+                            <i data-lucide="help-circle" class="w-3.5 h-3.5 text-sky-400"></i> 10 Questões
+                        </span>
+                        <div class="flex items-center gap-2">
+                            
+                    <a href="./provas/ifce/Prova_Ensino Técnico Integrado 2022.pdf" download class="bg-slate-800 hover:bg-slate-700 text-slate-200 border border-slate-700 font-semibold px-3 py-2 rounded-xl text-xs transition flex items-center gap-1.5" title="Baixar Caderno Oficial em PDF">
+                        <i data-lucide="download" class="w-3.5 h-3.5 text-sky-400"></i> PDF
+                    </a>
+                
+                            <a href="./bloco-6-provas-ifce/prova-ifce-20222.html" class="bg-blue-600 hover:bg-blue-500 text-white font-bold px-4 py-2 rounded-xl text-xs transition flex items-center gap-1.5 shadow-md shadow-blue-600/25">
+                                Resolver <i data-lucide="arrow-right" class="w-3.5 h-3.5"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            
+                <div class="exam-card bg-slate-900/90 border border-slate-800 hover:border-blue-500/60 rounded-3xl p-6 shadow-xl hover-card flex flex-col justify-between transition-all" data-inst="IFCE" data-search="prova ifce 2019.1 ifce 10 questões de matemática aplicadas no processo seletivo 2019.1 do ifce para os cursos técnicos integrados (campi caucaia e fortaleza). bloco 6: provas anteriores ifce" data-topic-id="ifce-2019-1-matematica">
+                    <div>
+                        <div class="flex items-center justify-between mb-3">
+                            <span class="text-xs font-extrabold uppercase tracking-wider px-3 py-1 rounded-full border bg-blue-500/20 text-sky-300 border-blue-400/30">
+                                IFCE
+                            </span>
+                            <span id="status-badge-ifce-2019-1-matematica" class="text-xs font-medium px-2.5 py-0.5 rounded-full bg-slate-800 text-slate-400 border border-slate-700">
+                                Pendente
+                            </span>
+                        </div>
+                        <h3 class="text-lg font-bold text-white mb-2 leading-snug">Prova IFCE 2019.1</h3>
+                        <p class="text-slate-400 text-xs sm:text-sm leading-relaxed mb-4 line-clamp-2">10 questões de Matemática aplicadas no Processo Seletivo 2019.1 do IFCE para os Cursos Técnicos Integrados (Campi Caucaia e Fortaleza).</p>
+                    </div>
+
+                    <div class="pt-4 border-t border-slate-800 flex items-center justify-between gap-2">
+                        <span class="text-xs text-slate-400 flex items-center gap-1">
+                            <i data-lucide="help-circle" class="w-3.5 h-3.5 text-sky-400"></i> 10 Questões
+                        </span>
+                        <div class="flex items-center gap-2">
+                            
+                    <a href="./provas/ifce/ensino-tc3a9cnico-integrado-2019-1-prova.pdf" download class="bg-slate-800 hover:bg-slate-700 text-slate-200 border border-slate-700 font-semibold px-3 py-2 rounded-xl text-xs transition flex items-center gap-1.5" title="Baixar Caderno Oficial em PDF">
+                        <i data-lucide="download" class="w-3.5 h-3.5 text-sky-400"></i> PDF
+                    </a>
+                
+                            <a href="./bloco-6-provas-ifce/prova-ifce-20191.html" class="bg-blue-600 hover:bg-blue-500 text-white font-bold px-4 py-2 rounded-xl text-xs transition flex items-center gap-1.5 shadow-md shadow-blue-600/25">
+                                Resolver <i data-lucide="arrow-right" class="w-3.5 h-3.5"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            
+                <div class="exam-card bg-slate-900/90 border border-slate-800 hover:border-blue-500/60 rounded-3xl p-6 shadow-xl hover-card flex flex-col justify-between transition-all" data-inst="IFCE" data-search="prova ifce 2010.2 ifce 7 questões de matemática aplicadas no processo seletivo / vestibular 2010.2 do ifce (campus fortaleza). bloco 6: provas anteriores ifce" data-topic-id="ifce-2010-2-matematica">
+                    <div>
+                        <div class="flex items-center justify-between mb-3">
+                            <span class="text-xs font-extrabold uppercase tracking-wider px-3 py-1 rounded-full border bg-blue-500/20 text-sky-300 border-blue-400/30">
+                                IFCE
+                            </span>
+                            <span id="status-badge-ifce-2010-2-matematica" class="text-xs font-medium px-2.5 py-0.5 rounded-full bg-slate-800 text-slate-400 border border-slate-700">
+                                Pendente
+                            </span>
+                        </div>
+                        <h3 class="text-lg font-bold text-white mb-2 leading-snug">Prova IFCE 2010.2</h3>
+                        <p class="text-slate-400 text-xs sm:text-sm leading-relaxed mb-4 line-clamp-2">7 questões de Matemática aplicadas no Processo Seletivo / Vestibular 2010.2 do IFCE (Campus Fortaleza).</p>
+                    </div>
+
+                    <div class="pt-4 border-t border-slate-800 flex items-center justify-between gap-2">
+                        <span class="text-xs text-slate-400 flex items-center gap-1">
+                            <i data-lucide="help-circle" class="w-3.5 h-3.5 text-sky-400"></i> 7 Questões
+                        </span>
+                        <div class="flex items-center gap-2">
+                            
+                    <a href="./provas/ifce/ifce_prova_2010_2.pdf" download class="bg-slate-800 hover:bg-slate-700 text-slate-200 border border-slate-700 font-semibold px-3 py-2 rounded-xl text-xs transition flex items-center gap-1.5" title="Baixar Caderno Oficial em PDF">
+                        <i data-lucide="download" class="w-3.5 h-3.5 text-sky-400"></i> PDF
+                    </a>
+                
+                            <a href="./bloco-6-provas-ifce/prova-ifce-20102.html" class="bg-blue-600 hover:bg-blue-500 text-white font-bold px-4 py-2 rounded-xl text-xs transition flex items-center gap-1.5 shadow-md shadow-blue-600/25">
+                                Resolver <i data-lucide="arrow-right" class="w-3.5 h-3.5"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            
+                <div class="exam-card bg-slate-900/90 border border-slate-800 hover:border-blue-500/60 rounded-3xl p-6 shadow-xl hover-card flex flex-col justify-between transition-all" data-inst="IFCE" data-search="prova ifce 2010.1 ifce 7 questões de matemática aplicadas no processo seletivo / vestibular 2010.1 do ifce. bloco 6: provas anteriores ifce" data-topic-id="ifce-2010-1-matematica">
+                    <div>
+                        <div class="flex items-center justify-between mb-3">
+                            <span class="text-xs font-extrabold uppercase tracking-wider px-3 py-1 rounded-full border bg-blue-500/20 text-sky-300 border-blue-400/30">
+                                IFCE
+                            </span>
+                            <span id="status-badge-ifce-2010-1-matematica" class="text-xs font-medium px-2.5 py-0.5 rounded-full bg-slate-800 text-slate-400 border border-slate-700">
+                                Pendente
+                            </span>
+                        </div>
+                        <h3 class="text-lg font-bold text-white mb-2 leading-snug">Prova IFCE 2010.1</h3>
+                        <p class="text-slate-400 text-xs sm:text-sm leading-relaxed mb-4 line-clamp-2">7 questões de Matemática aplicadas no Processo Seletivo / Vestibular 2010.1 do IFCE.</p>
+                    </div>
+
+                    <div class="pt-4 border-t border-slate-800 flex items-center justify-between gap-2">
+                        <span class="text-xs text-slate-400 flex items-center gap-1">
+                            <i data-lucide="help-circle" class="w-3.5 h-3.5 text-sky-400"></i> 7 Questões
+                        </span>
+                        <div class="flex items-center gap-2">
+                            
+                    <a href="./provas/ifce/ifce_prova_2010_1.pdf" download class="bg-slate-800 hover:bg-slate-700 text-slate-200 border border-slate-700 font-semibold px-3 py-2 rounded-xl text-xs transition flex items-center gap-1.5" title="Baixar Caderno Oficial em PDF">
+                        <i data-lucide="download" class="w-3.5 h-3.5 text-sky-400"></i> PDF
+                    </a>
+                
+                            <a href="./bloco-6-provas-ifce/prova-ifce-20101.html" class="bg-blue-600 hover:bg-blue-500 text-white font-bold px-4 py-2 rounded-xl text-xs transition flex items-center gap-1.5 shadow-md shadow-blue-600/25">
+                                Resolver <i data-lucide="arrow-right" class="w-3.5 h-3.5"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            
+                <div class="exam-card bg-slate-900/90 border border-slate-800 hover:border-blue-500/60 rounded-3xl p-6 shadow-xl hover-card flex flex-col justify-between transition-all" data-inst="IFCE" data-search="prova ifce 2009.2 ifce 7 questões de matemática aplicadas no processo seletivo / vestibular 2009.2 do ifce. bloco 6: provas anteriores ifce" data-topic-id="ifce-2009-2-matematica">
+                    <div>
+                        <div class="flex items-center justify-between mb-3">
+                            <span class="text-xs font-extrabold uppercase tracking-wider px-3 py-1 rounded-full border bg-blue-500/20 text-sky-300 border-blue-400/30">
+                                IFCE
+                            </span>
+                            <span id="status-badge-ifce-2009-2-matematica" class="text-xs font-medium px-2.5 py-0.5 rounded-full bg-slate-800 text-slate-400 border border-slate-700">
+                                Pendente
+                            </span>
+                        </div>
+                        <h3 class="text-lg font-bold text-white mb-2 leading-snug">Prova IFCE 2009.2</h3>
+                        <p class="text-slate-400 text-xs sm:text-sm leading-relaxed mb-4 line-clamp-2">7 questões de Matemática aplicadas no Processo Seletivo / Vestibular 2009.2 do IFCE.</p>
+                    </div>
+
+                    <div class="pt-4 border-t border-slate-800 flex items-center justify-between gap-2">
+                        <span class="text-xs text-slate-400 flex items-center gap-1">
+                            <i data-lucide="help-circle" class="w-3.5 h-3.5 text-sky-400"></i> 7 Questões
+                        </span>
+                        <div class="flex items-center gap-2">
+                            
+                    <a href="./provas/ifce/ifce_prova_2009_2.pdf" download class="bg-slate-800 hover:bg-slate-700 text-slate-200 border border-slate-700 font-semibold px-3 py-2 rounded-xl text-xs transition flex items-center gap-1.5" title="Baixar Caderno Oficial em PDF">
+                        <i data-lucide="download" class="w-3.5 h-3.5 text-sky-400"></i> PDF
+                    </a>
+                
+                            <a href="./bloco-6-provas-ifce/prova-ifce-20092.html" class="bg-blue-600 hover:bg-blue-500 text-white font-bold px-4 py-2 rounded-xl text-xs transition flex items-center gap-1.5 shadow-md shadow-blue-600/25">
+                                Resolver <i data-lucide="arrow-right" class="w-3.5 h-3.5"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            
+                <div class="exam-card bg-slate-900/90 border border-slate-800 hover:border-blue-500/60 rounded-3xl p-6 shadow-xl hover-card flex flex-col justify-between transition-all" data-inst="IFCE" data-search="prova ifce 2009.1 ifce 7 questões de matemática aplicadas no processo seletivo / vestibular 2009.1 do ifce. bloco 6: provas anteriores ifce" data-topic-id="ifce-2009-1-matematica">
+                    <div>
+                        <div class="flex items-center justify-between mb-3">
+                            <span class="text-xs font-extrabold uppercase tracking-wider px-3 py-1 rounded-full border bg-blue-500/20 text-sky-300 border-blue-400/30">
+                                IFCE
+                            </span>
+                            <span id="status-badge-ifce-2009-1-matematica" class="text-xs font-medium px-2.5 py-0.5 rounded-full bg-slate-800 text-slate-400 border border-slate-700">
+                                Pendente
+                            </span>
+                        </div>
+                        <h3 class="text-lg font-bold text-white mb-2 leading-snug">Prova IFCE 2009.1</h3>
+                        <p class="text-slate-400 text-xs sm:text-sm leading-relaxed mb-4 line-clamp-2">7 questões de Matemática aplicadas no Processo Seletivo / Vestibular 2009.1 do IFCE.</p>
+                    </div>
+
+                    <div class="pt-4 border-t border-slate-800 flex items-center justify-between gap-2">
+                        <span class="text-xs text-slate-400 flex items-center gap-1">
+                            <i data-lucide="help-circle" class="w-3.5 h-3.5 text-sky-400"></i> 7 Questões
+                        </span>
+                        <div class="flex items-center gap-2">
+                            
+                    <a href="./provas/ifce/ifce_prova_2009_1.pdf" download class="bg-slate-800 hover:bg-slate-700 text-slate-200 border border-slate-700 font-semibold px-3 py-2 rounded-xl text-xs transition flex items-center gap-1.5" title="Baixar Caderno Oficial em PDF">
+                        <i data-lucide="download" class="w-3.5 h-3.5 text-sky-400"></i> PDF
+                    </a>
+                
+                            <a href="./bloco-6-provas-ifce/prova-ifce-20091.html" class="bg-blue-600 hover:bg-blue-500 text-white font-bold px-4 py-2 rounded-xl text-xs transition flex items-center gap-1.5 shadow-md shadow-blue-600/25">
+                                Resolver <i data-lucide="arrow-right" class="w-3.5 h-3.5"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            
+                <div class="exam-card bg-slate-900/90 border border-slate-800 hover:border-blue-500/60 rounded-3xl p-6 shadow-xl hover-card flex flex-col justify-between transition-all" data-inst="IFCE" data-search="prova ifce 2008.2 ifce 7 questões de matemática aplicadas no processo seletivo / vestibular 2008.2 do ifce. bloco 6: provas anteriores ifce" data-topic-id="ifce-2008-2-matematica">
+                    <div>
+                        <div class="flex items-center justify-between mb-3">
+                            <span class="text-xs font-extrabold uppercase tracking-wider px-3 py-1 rounded-full border bg-blue-500/20 text-sky-300 border-blue-400/30">
+                                IFCE
+                            </span>
+                            <span id="status-badge-ifce-2008-2-matematica" class="text-xs font-medium px-2.5 py-0.5 rounded-full bg-slate-800 text-slate-400 border border-slate-700">
+                                Pendente
+                            </span>
+                        </div>
+                        <h3 class="text-lg font-bold text-white mb-2 leading-snug">Prova IFCE 2008.2</h3>
+                        <p class="text-slate-400 text-xs sm:text-sm leading-relaxed mb-4 line-clamp-2">7 questões de Matemática aplicadas no Processo Seletivo / Vestibular 2008.2 do IFCE.</p>
+                    </div>
+
+                    <div class="pt-4 border-t border-slate-800 flex items-center justify-between gap-2">
+                        <span class="text-xs text-slate-400 flex items-center gap-1">
+                            <i data-lucide="help-circle" class="w-3.5 h-3.5 text-sky-400"></i> 7 Questões
+                        </span>
+                        <div class="flex items-center gap-2">
+                            
+                    <a href="./provas/ifce/ifce_prova_2008_2.pdf" download class="bg-slate-800 hover:bg-slate-700 text-slate-200 border border-slate-700 font-semibold px-3 py-2 rounded-xl text-xs transition flex items-center gap-1.5" title="Baixar Caderno Oficial em PDF">
+                        <i data-lucide="download" class="w-3.5 h-3.5 text-sky-400"></i> PDF
+                    </a>
+                
+                            <a href="./bloco-6-provas-ifce/prova-ifce-20082.html" class="bg-blue-600 hover:bg-blue-500 text-white font-bold px-4 py-2 rounded-xl text-xs transition flex items-center gap-1.5 shadow-md shadow-blue-600/25">
+                                Resolver <i data-lucide="arrow-right" class="w-3.5 h-3.5"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            
+                <div class="exam-card bg-slate-900/90 border border-slate-800 hover:border-blue-500/60 rounded-3xl p-6 shadow-xl hover-card flex flex-col justify-between transition-all" data-inst="IFCE" data-search="prova ifce 2008.1 ifce 7 questões de matemática aplicadas no processo seletivo / vestibular 2008.1 do ifce. bloco 6: provas anteriores ifce" data-topic-id="ifce-2008-1-matematica">
+                    <div>
+                        <div class="flex items-center justify-between mb-3">
+                            <span class="text-xs font-extrabold uppercase tracking-wider px-3 py-1 rounded-full border bg-blue-500/20 text-sky-300 border-blue-400/30">
+                                IFCE
+                            </span>
+                            <span id="status-badge-ifce-2008-1-matematica" class="text-xs font-medium px-2.5 py-0.5 rounded-full bg-slate-800 text-slate-400 border border-slate-700">
+                                Pendente
+                            </span>
+                        </div>
+                        <h3 class="text-lg font-bold text-white mb-2 leading-snug">Prova IFCE 2008.1</h3>
+                        <p class="text-slate-400 text-xs sm:text-sm leading-relaxed mb-4 line-clamp-2">7 questões de Matemática aplicadas no Processo Seletivo / Vestibular 2008.1 do IFCE.</p>
+                    </div>
+
+                    <div class="pt-4 border-t border-slate-800 flex items-center justify-between gap-2">
+                        <span class="text-xs text-slate-400 flex items-center gap-1">
+                            <i data-lucide="help-circle" class="w-3.5 h-3.5 text-sky-400"></i> 7 Questões
+                        </span>
+                        <div class="flex items-center gap-2">
+                            
+                    <a href="./provas/ifce/ifce_prova_2008_1.pdf" download class="bg-slate-800 hover:bg-slate-700 text-slate-200 border border-slate-700 font-semibold px-3 py-2 rounded-xl text-xs transition flex items-center gap-1.5" title="Baixar Caderno Oficial em PDF">
+                        <i data-lucide="download" class="w-3.5 h-3.5 text-sky-400"></i> PDF
+                    </a>
+                
+                            <a href="./bloco-6-provas-ifce/prova-ifce-20081.html" class="bg-blue-600 hover:bg-blue-500 text-white font-bold px-4 py-2 rounded-xl text-xs transition flex items-center gap-1.5 shadow-md shadow-blue-600/25">
+                                Resolver <i data-lucide="arrow-right" class="w-3.5 h-3.5"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            
+                <div class="exam-card bg-slate-900/90 border border-slate-800 hover:border-blue-500/60 rounded-3xl p-6 shadow-xl hover-card flex flex-col justify-between transition-all" data-inst="IFCE" data-search="prova ifce 2007.2 ifce 7 questões de matemática aplicadas no processo seletivo / vestibular 2007.2 do ifce. bloco 6: provas anteriores ifce" data-topic-id="ifce-2007-2-matematica">
+                    <div>
+                        <div class="flex items-center justify-between mb-3">
+                            <span class="text-xs font-extrabold uppercase tracking-wider px-3 py-1 rounded-full border bg-blue-500/20 text-sky-300 border-blue-400/30">
+                                IFCE
+                            </span>
+                            <span id="status-badge-ifce-2007-2-matematica" class="text-xs font-medium px-2.5 py-0.5 rounded-full bg-slate-800 text-slate-400 border border-slate-700">
+                                Pendente
+                            </span>
+                        </div>
+                        <h3 class="text-lg font-bold text-white mb-2 leading-snug">Prova IFCE 2007.2</h3>
+                        <p class="text-slate-400 text-xs sm:text-sm leading-relaxed mb-4 line-clamp-2">7 questões de Matemática aplicadas no Processo Seletivo / Vestibular 2007.2 do IFCE.</p>
+                    </div>
+
+                    <div class="pt-4 border-t border-slate-800 flex items-center justify-between gap-2">
+                        <span class="text-xs text-slate-400 flex items-center gap-1">
+                            <i data-lucide="help-circle" class="w-3.5 h-3.5 text-sky-400"></i> 7 Questões
+                        </span>
+                        <div class="flex items-center gap-2">
+                            
+                    <a href="./provas/ifce/ifce_prova_2007_2.pdf" download class="bg-slate-800 hover:bg-slate-700 text-slate-200 border border-slate-700 font-semibold px-3 py-2 rounded-xl text-xs transition flex items-center gap-1.5" title="Baixar Caderno Oficial em PDF">
+                        <i data-lucide="download" class="w-3.5 h-3.5 text-sky-400"></i> PDF
+                    </a>
+                
+                            <a href="./bloco-6-provas-ifce/prova-ifce-20072.html" class="bg-blue-600 hover:bg-blue-500 text-white font-bold px-4 py-2 rounded-xl text-xs transition flex items-center gap-1.5 shadow-md shadow-blue-600/25">
+                                Resolver <i data-lucide="arrow-right" class="w-3.5 h-3.5"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            
+                <div class="exam-card bg-slate-900/90 border border-slate-800 hover:border-blue-500/60 rounded-3xl p-6 shadow-xl hover-card flex flex-col justify-between transition-all" data-inst="IFCE" data-search="prova ifce 2007.1 ifce 7 questões de matemática aplicadas no processo seletivo / vestibular 2007.1 do ifce. bloco 6: provas anteriores ifce" data-topic-id="ifce-2007-1-matematica">
+                    <div>
+                        <div class="flex items-center justify-between mb-3">
+                            <span class="text-xs font-extrabold uppercase tracking-wider px-3 py-1 rounded-full border bg-blue-500/20 text-sky-300 border-blue-400/30">
+                                IFCE
+                            </span>
+                            <span id="status-badge-ifce-2007-1-matematica" class="text-xs font-medium px-2.5 py-0.5 rounded-full bg-slate-800 text-slate-400 border border-slate-700">
+                                Pendente
+                            </span>
+                        </div>
+                        <h3 class="text-lg font-bold text-white mb-2 leading-snug">Prova IFCE 2007.1</h3>
+                        <p class="text-slate-400 text-xs sm:text-sm leading-relaxed mb-4 line-clamp-2">7 questões de Matemática aplicadas no Processo Seletivo / Vestibular 2007.1 do IFCE.</p>
+                    </div>
+
+                    <div class="pt-4 border-t border-slate-800 flex items-center justify-between gap-2">
+                        <span class="text-xs text-slate-400 flex items-center gap-1">
+                            <i data-lucide="help-circle" class="w-3.5 h-3.5 text-sky-400"></i> 7 Questões
+                        </span>
+                        <div class="flex items-center gap-2">
+                            
+                    <a href="./provas/ifce/ifce_prova_2007_1.pdf" download class="bg-slate-800 hover:bg-slate-700 text-slate-200 border border-slate-700 font-semibold px-3 py-2 rounded-xl text-xs transition flex items-center gap-1.5" title="Baixar Caderno Oficial em PDF">
+                        <i data-lucide="download" class="w-3.5 h-3.5 text-sky-400"></i> PDF
+                    </a>
+                
+                            <a href="./bloco-6-provas-ifce/prova-ifce-20071.html" class="bg-blue-600 hover:bg-blue-500 text-white font-bold px-4 py-2 rounded-xl text-xs transition flex items-center gap-1.5 shadow-md shadow-blue-600/25">
+                                Resolver <i data-lucide="arrow-right" class="w-3.5 h-3.5"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            
+                <div class="exam-card bg-slate-900/90 border border-slate-800 hover:border-blue-500/60 rounded-3xl p-6 shadow-xl hover-card flex flex-col justify-between transition-all" data-inst="IFCE" data-search="prova ifce 2006.2 ifce 7 questões de matemática aplicadas no processo seletivo / vestibular 2006.2 do ifce. bloco 6: provas anteriores ifce" data-topic-id="ifce-2006-2-matematica">
+                    <div>
+                        <div class="flex items-center justify-between mb-3">
+                            <span class="text-xs font-extrabold uppercase tracking-wider px-3 py-1 rounded-full border bg-blue-500/20 text-sky-300 border-blue-400/30">
+                                IFCE
+                            </span>
+                            <span id="status-badge-ifce-2006-2-matematica" class="text-xs font-medium px-2.5 py-0.5 rounded-full bg-slate-800 text-slate-400 border border-slate-700">
+                                Pendente
+                            </span>
+                        </div>
+                        <h3 class="text-lg font-bold text-white mb-2 leading-snug">Prova IFCE 2006.2</h3>
+                        <p class="text-slate-400 text-xs sm:text-sm leading-relaxed mb-4 line-clamp-2">7 questões de Matemática aplicadas no Processo Seletivo / Vestibular 2006.2 do IFCE.</p>
+                    </div>
+
+                    <div class="pt-4 border-t border-slate-800 flex items-center justify-between gap-2">
+                        <span class="text-xs text-slate-400 flex items-center gap-1">
+                            <i data-lucide="help-circle" class="w-3.5 h-3.5 text-sky-400"></i> 7 Questões
+                        </span>
+                        <div class="flex items-center gap-2">
+                            
+                    <a href="./provas/ifce/ifce_prova_2006_2.pdf" download class="bg-slate-800 hover:bg-slate-700 text-slate-200 border border-slate-700 font-semibold px-3 py-2 rounded-xl text-xs transition flex items-center gap-1.5" title="Baixar Caderno Oficial em PDF">
+                        <i data-lucide="download" class="w-3.5 h-3.5 text-sky-400"></i> PDF
+                    </a>
+                
+                            <a href="./bloco-6-provas-ifce/prova-ifce-20062.html" class="bg-blue-600 hover:bg-blue-500 text-white font-bold px-4 py-2 rounded-xl text-xs transition flex items-center gap-1.5 shadow-md shadow-blue-600/25">
+                                Resolver <i data-lucide="arrow-right" class="w-3.5 h-3.5"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            
+                <div class="exam-card bg-slate-900/90 border border-slate-800 hover:border-blue-500/60 rounded-3xl p-6 shadow-xl hover-card flex flex-col justify-between transition-all" data-inst="IFCE" data-search="prova ifce 2006.1 ifce 7 questões de matemática aplicadas no processo seletivo / vestibular 2006.1 do ifce. bloco 6: provas anteriores ifce" data-topic-id="ifce-2006-1-matematica">
+                    <div>
+                        <div class="flex items-center justify-between mb-3">
+                            <span class="text-xs font-extrabold uppercase tracking-wider px-3 py-1 rounded-full border bg-blue-500/20 text-sky-300 border-blue-400/30">
+                                IFCE
+                            </span>
+                            <span id="status-badge-ifce-2006-1-matematica" class="text-xs font-medium px-2.5 py-0.5 rounded-full bg-slate-800 text-slate-400 border border-slate-700">
+                                Pendente
+                            </span>
+                        </div>
+                        <h3 class="text-lg font-bold text-white mb-2 leading-snug">Prova IFCE 2006.1</h3>
+                        <p class="text-slate-400 text-xs sm:text-sm leading-relaxed mb-4 line-clamp-2">7 questões de Matemática aplicadas no Processo Seletivo / Vestibular 2006.1 do IFCE.</p>
+                    </div>
+
+                    <div class="pt-4 border-t border-slate-800 flex items-center justify-between gap-2">
+                        <span class="text-xs text-slate-400 flex items-center gap-1">
+                            <i data-lucide="help-circle" class="w-3.5 h-3.5 text-sky-400"></i> 7 Questões
+                        </span>
+                        <div class="flex items-center gap-2">
+                            
+                    <a href="./provas/ifce/ifce_prova_2006_1.pdf" download class="bg-slate-800 hover:bg-slate-700 text-slate-200 border border-slate-700 font-semibold px-3 py-2 rounded-xl text-xs transition flex items-center gap-1.5" title="Baixar Caderno Oficial em PDF">
+                        <i data-lucide="download" class="w-3.5 h-3.5 text-sky-400"></i> PDF
+                    </a>
+                
+                            <a href="./bloco-6-provas-ifce/prova-ifce-20061.html" class="bg-blue-600 hover:bg-blue-500 text-white font-bold px-4 py-2 rounded-xl text-xs transition flex items-center gap-1.5 shadow-md shadow-blue-600/25">
+                                Resolver <i data-lucide="arrow-right" class="w-3.5 h-3.5"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            
+                <div class="exam-card bg-slate-900/90 border border-slate-800 hover:border-blue-500/60 rounded-3xl p-6 shadow-xl hover-card flex flex-col justify-between transition-all" data-inst="IFCE" data-search="prova ifce 2005.2 ifce 7 questões de matemática aplicadas no processo seletivo / vestibular 2005.2 do ifce. bloco 6: provas anteriores ifce" data-topic-id="ifce-2005-2-matematica">
+                    <div>
+                        <div class="flex items-center justify-between mb-3">
+                            <span class="text-xs font-extrabold uppercase tracking-wider px-3 py-1 rounded-full border bg-blue-500/20 text-sky-300 border-blue-400/30">
+                                IFCE
+                            </span>
+                            <span id="status-badge-ifce-2005-2-matematica" class="text-xs font-medium px-2.5 py-0.5 rounded-full bg-slate-800 text-slate-400 border border-slate-700">
+                                Pendente
+                            </span>
+                        </div>
+                        <h3 class="text-lg font-bold text-white mb-2 leading-snug">Prova IFCE 2005.2</h3>
+                        <p class="text-slate-400 text-xs sm:text-sm leading-relaxed mb-4 line-clamp-2">7 questões de Matemática aplicadas no Processo Seletivo / Vestibular 2005.2 do IFCE.</p>
+                    </div>
+
+                    <div class="pt-4 border-t border-slate-800 flex items-center justify-between gap-2">
+                        <span class="text-xs text-slate-400 flex items-center gap-1">
+                            <i data-lucide="help-circle" class="w-3.5 h-3.5 text-sky-400"></i> 7 Questões
+                        </span>
+                        <div class="flex items-center gap-2">
+                            
+                    <a href="./provas/ifce/ifce_prova_2005_2.pdf" download class="bg-slate-800 hover:bg-slate-700 text-slate-200 border border-slate-700 font-semibold px-3 py-2 rounded-xl text-xs transition flex items-center gap-1.5" title="Baixar Caderno Oficial em PDF">
+                        <i data-lucide="download" class="w-3.5 h-3.5 text-sky-400"></i> PDF
+                    </a>
+                
+                            <a href="./bloco-6-provas-ifce/prova-ifce-20052.html" class="bg-blue-600 hover:bg-blue-500 text-white font-bold px-4 py-2 rounded-xl text-xs transition flex items-center gap-1.5 shadow-md shadow-blue-600/25">
+                                Resolver <i data-lucide="arrow-right" class="w-3.5 h-3.5"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            
+                <div class="exam-card bg-slate-900/90 border border-slate-800 hover:border-blue-500/60 rounded-3xl p-6 shadow-xl hover-card flex flex-col justify-between transition-all" data-inst="IFCE" data-search="prova ifce 2005.1 ifce 7 questões de matemática aplicadas no processo seletivo / vestibular 2005.1 do ifce. bloco 6: provas anteriores ifce" data-topic-id="ifce-2005-1-matematica">
+                    <div>
+                        <div class="flex items-center justify-between mb-3">
+                            <span class="text-xs font-extrabold uppercase tracking-wider px-3 py-1 rounded-full border bg-blue-500/20 text-sky-300 border-blue-400/30">
+                                IFCE
+                            </span>
+                            <span id="status-badge-ifce-2005-1-matematica" class="text-xs font-medium px-2.5 py-0.5 rounded-full bg-slate-800 text-slate-400 border border-slate-700">
+                                Pendente
+                            </span>
+                        </div>
+                        <h3 class="text-lg font-bold text-white mb-2 leading-snug">Prova IFCE 2005.1</h3>
+                        <p class="text-slate-400 text-xs sm:text-sm leading-relaxed mb-4 line-clamp-2">7 questões de Matemática aplicadas no Processo Seletivo / Vestibular 2005.1 do IFCE.</p>
+                    </div>
+
+                    <div class="pt-4 border-t border-slate-800 flex items-center justify-between gap-2">
+                        <span class="text-xs text-slate-400 flex items-center gap-1">
+                            <i data-lucide="help-circle" class="w-3.5 h-3.5 text-sky-400"></i> 7 Questões
+                        </span>
+                        <div class="flex items-center gap-2">
+                            
+                    <a href="./provas/ifce/ifce_prova_2005_1.pdf" download class="bg-slate-800 hover:bg-slate-700 text-slate-200 border border-slate-700 font-semibold px-3 py-2 rounded-xl text-xs transition flex items-center gap-1.5" title="Baixar Caderno Oficial em PDF">
+                        <i data-lucide="download" class="w-3.5 h-3.5 text-sky-400"></i> PDF
+                    </a>
+                
+                            <a href="./bloco-6-provas-ifce/prova-ifce-20051.html" class="bg-blue-600 hover:bg-blue-500 text-white font-bold px-4 py-2 rounded-xl text-xs transition flex items-center gap-1.5 shadow-md shadow-blue-600/25">
+                                Resolver <i data-lucide="arrow-right" class="w-3.5 h-3.5"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            
+                <div class="exam-card bg-slate-900/90 border border-slate-800 hover:border-blue-500/60 rounded-3xl p-6 shadow-xl hover-card flex flex-col justify-between transition-all" data-inst="IFCE" data-search="prova ifce 2004.1 ifce 7 questões de matemática aplicadas no processo seletivo / vestibular 2004.1 do ifce. bloco 6: provas anteriores ifce" data-topic-id="ifce-2004-1-matematica">
+                    <div>
+                        <div class="flex items-center justify-between mb-3">
+                            <span class="text-xs font-extrabold uppercase tracking-wider px-3 py-1 rounded-full border bg-blue-500/20 text-sky-300 border-blue-400/30">
+                                IFCE
+                            </span>
+                            <span id="status-badge-ifce-2004-1-matematica" class="text-xs font-medium px-2.5 py-0.5 rounded-full bg-slate-800 text-slate-400 border border-slate-700">
+                                Pendente
+                            </span>
+                        </div>
+                        <h3 class="text-lg font-bold text-white mb-2 leading-snug">Prova IFCE 2004.1</h3>
+                        <p class="text-slate-400 text-xs sm:text-sm leading-relaxed mb-4 line-clamp-2">7 questões de Matemática aplicadas no Processo Seletivo / Vestibular 2004.1 do IFCE.</p>
+                    </div>
+
+                    <div class="pt-4 border-t border-slate-800 flex items-center justify-between gap-2">
+                        <span class="text-xs text-slate-400 flex items-center gap-1">
+                            <i data-lucide="help-circle" class="w-3.5 h-3.5 text-sky-400"></i> 7 Questões
+                        </span>
+                        <div class="flex items-center gap-2">
+                            
+                    <a href="./provas/ifce/ifce_prova_2004_1.pdf" download class="bg-slate-800 hover:bg-slate-700 text-slate-200 border border-slate-700 font-semibold px-3 py-2 rounded-xl text-xs transition flex items-center gap-1.5" title="Baixar Caderno Oficial em PDF">
+                        <i data-lucide="download" class="w-3.5 h-3.5 text-sky-400"></i> PDF
+                    </a>
+                
+                            <a href="./bloco-6-provas-ifce/prova-ifce-20041.html" class="bg-blue-600 hover:bg-blue-500 text-white font-bold px-4 py-2 rounded-xl text-xs transition flex items-center gap-1.5 shadow-md shadow-blue-600/25">
+                                Resolver <i data-lucide="arrow-right" class="w-3.5 h-3.5"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            
+                <div class="exam-card bg-slate-900/90 border border-slate-800 hover:border-blue-500/60 rounded-3xl p-6 shadow-xl hover-card flex flex-col justify-between transition-all" data-inst="IFCE" data-search="prova ifce 2003.2 ifce resolução completa das questões oficiais de matemática do vestibular cefet-ce 2003.2, abordando cálculo de porcentagem comercial, propriedades de paridade de números inteiros, paridade de funções reais, determinantes e matriz inversa, relação de stifel em números binomiais, paralelismo de retas na geometria analítica e módulo de potências de números complexos. bloco 6: provas anteriores ifce" data-topic-id="ifce-2003-2-matematica">
+                    <div>
+                        <div class="flex items-center justify-between mb-3">
+                            <span class="text-xs font-extrabold uppercase tracking-wider px-3 py-1 rounded-full border bg-blue-500/20 text-sky-300 border-blue-400/30">
+                                IFCE
+                            </span>
+                            <span id="status-badge-ifce-2003-2-matematica" class="text-xs font-medium px-2.5 py-0.5 rounded-full bg-slate-800 text-slate-400 border border-slate-700">
+                                Pendente
+                            </span>
+                        </div>
+                        <h3 class="text-lg font-bold text-white mb-2 leading-snug">Prova IFCE 2003.2</h3>
+                        <p class="text-slate-400 text-xs sm:text-sm leading-relaxed mb-4 line-clamp-2">Resolução completa das questões oficiais de Matemática do Vestibular CEFET-CE 2003.2, abordando cálculo de porcentagem comercial, propriedades de paridade de números inteiros, paridade de funções reais, determinantes e matriz inversa, Relação de Stifel em números binomiais, paralelismo de retas na Geometria Analítica e módulo de potências de números complexos.</p>
+                    </div>
+
+                    <div class="pt-4 border-t border-slate-800 flex items-center justify-between gap-2">
+                        <span class="text-xs text-slate-400 flex items-center gap-1">
+                            <i data-lucide="help-circle" class="w-3.5 h-3.5 text-sky-400"></i> 7 Questões
+                        </span>
+                        <div class="flex items-center gap-2">
+                            
+                    <a href="./provas/ifce/ifce_prova_2003_2.pdf" download class="bg-slate-800 hover:bg-slate-700 text-slate-200 border border-slate-700 font-semibold px-3 py-2 rounded-xl text-xs transition flex items-center gap-1.5" title="Baixar Caderno Oficial em PDF">
+                        <i data-lucide="download" class="w-3.5 h-3.5 text-sky-400"></i> PDF
+                    </a>
+                
+                            <a href="./bloco-6-provas-ifce/prova-ifce-20032.html" class="bg-blue-600 hover:bg-blue-500 text-white font-bold px-4 py-2 rounded-xl text-xs transition flex items-center gap-1.5 shadow-md shadow-blue-600/25">
+                                Resolver <i data-lucide="arrow-right" class="w-3.5 h-3.5"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            
+                <div class="exam-card bg-slate-900/90 border border-slate-800 hover:border-blue-500/60 rounded-3xl p-6 shadow-xl hover-card flex flex-col justify-between transition-all" data-inst="IFCE" data-search="prova ifce 2003.1 ifce resolução completa das questões oficiais de matemática do vestibular cefet-ce 2003.1, cobrindo inequações duplas e contagem de inteiros, imagem de funções definidas por partes, definição fundamental de função inversa, período de funções trigonométricas com arco duplo, propriedades de permutação de linhas em determinantes, divisibilidade de polinômios por fatores quadráticos e área total do tetraedro regular. bloco 6: provas anteriores ifce" data-topic-id="ifce-2003-1-matematica">
+                    <div>
+                        <div class="flex items-center justify-between mb-3">
+                            <span class="text-xs font-extrabold uppercase tracking-wider px-3 py-1 rounded-full border bg-blue-500/20 text-sky-300 border-blue-400/30">
+                                IFCE
+                            </span>
+                            <span id="status-badge-ifce-2003-1-matematica" class="text-xs font-medium px-2.5 py-0.5 rounded-full bg-slate-800 text-slate-400 border border-slate-700">
+                                Pendente
+                            </span>
+                        </div>
+                        <h3 class="text-lg font-bold text-white mb-2 leading-snug">Prova IFCE 2003.1</h3>
+                        <p class="text-slate-400 text-xs sm:text-sm leading-relaxed mb-4 line-clamp-2">Resolução completa das questões oficiais de Matemática do Vestibular CEFET-CE 2003.1, cobrindo inequações duplas e contagem de inteiros, imagem de funções definidas por partes, definição fundamental de função inversa, período de funções trigonométricas com arco duplo, propriedades de permutação de linhas em determinantes, divisibilidade de polinômios por fatores quadráticos e área total do tetraedro regular.</p>
+                    </div>
+
+                    <div class="pt-4 border-t border-slate-800 flex items-center justify-between gap-2">
+                        <span class="text-xs text-slate-400 flex items-center gap-1">
+                            <i data-lucide="help-circle" class="w-3.5 h-3.5 text-sky-400"></i> 7 Questões
+                        </span>
+                        <div class="flex items-center gap-2">
+                            
+                    <a href="./provas/ifce/ifce_prova_2003_1.pdf" download class="bg-slate-800 hover:bg-slate-700 text-slate-200 border border-slate-700 font-semibold px-3 py-2 rounded-xl text-xs transition flex items-center gap-1.5" title="Baixar Caderno Oficial em PDF">
+                        <i data-lucide="download" class="w-3.5 h-3.5 text-sky-400"></i> PDF
+                    </a>
+                
+                            <a href="./bloco-6-provas-ifce/prova-ifce-20031.html" class="bg-blue-600 hover:bg-blue-500 text-white font-bold px-4 py-2 rounded-xl text-xs transition flex items-center gap-1.5 shadow-md shadow-blue-600/25">
+                                Resolver <i data-lucide="arrow-right" class="w-3.5 h-3.5"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            
+                <div class="exam-card bg-slate-900/90 border border-slate-800 hover:border-blue-500/60 rounded-3xl p-6 shadow-xl hover-card flex flex-col justify-between transition-all" data-inst="IFCE" data-search="prova ifce 2001.2 ifce resolução completa das 10 questões oficiais de matemática do vestibular cefet-ce 2001.2, incluindo propriedades de logaritmos de radicais conjugados, classificação de sistemas lineares $3 \times 3$, equações modulares com múltiplos módulos, potências e produto de partes real e imaginária de números complexos na forma trigonométrica, distância de ponto a reta tangente à circunferência, soma de raízes inteiras em polinômios cúbicos, composição e potenciação de funções inversas, juros simples e montante, tronco de cone circular reto e equações trigonométricas lineares no plano cartesiano. bloco 6: provas anteriores ifce" data-topic-id="ifce-2001-2-matematica">
+                    <div>
+                        <div class="flex items-center justify-between mb-3">
+                            <span class="text-xs font-extrabold uppercase tracking-wider px-3 py-1 rounded-full border bg-blue-500/20 text-sky-300 border-blue-400/30">
+                                IFCE
+                            </span>
+                            <span id="status-badge-ifce-2001-2-matematica" class="text-xs font-medium px-2.5 py-0.5 rounded-full bg-slate-800 text-slate-400 border border-slate-700">
+                                Pendente
+                            </span>
+                        </div>
+                        <h3 class="text-lg font-bold text-white mb-2 leading-snug">Prova IFCE 2001.2</h3>
+                        <p class="text-slate-400 text-xs sm:text-sm leading-relaxed mb-4 line-clamp-2">Resolução completa das 10 questões oficiais de Matemática do Vestibular CEFET-CE 2001.2, incluindo propriedades de logaritmos de radicais conjugados, classificação de sistemas lineares $3 \times 3$, equações modulares com múltiplos módulos, potências e produto de partes real e imaginária de números complexos na forma trigonométrica, distância de ponto a reta tangente à circunferência, soma de raízes inteiras em polinômios cúbicos, composição e potenciação de funções inversas, juros simples e montante, tronco de cone circular reto e equações trigonométricas lineares no plano cartesiano.</p>
+                    </div>
+
+                    <div class="pt-4 border-t border-slate-800 flex items-center justify-between gap-2">
+                        <span class="text-xs text-slate-400 flex items-center gap-1">
+                            <i data-lucide="help-circle" class="w-3.5 h-3.5 text-sky-400"></i> 10 Questões
+                        </span>
+                        <div class="flex items-center gap-2">
+                            
+                    <a href="./provas/ifce/ifce_prova_2001_2.pdf" download class="bg-slate-800 hover:bg-slate-700 text-slate-200 border border-slate-700 font-semibold px-3 py-2 rounded-xl text-xs transition flex items-center gap-1.5" title="Baixar Caderno Oficial em PDF">
+                        <i data-lucide="download" class="w-3.5 h-3.5 text-sky-400"></i> PDF
+                    </a>
+                
+                            <a href="./bloco-6-provas-ifce/prova-ifce-20012.html" class="bg-blue-600 hover:bg-blue-500 text-white font-bold px-4 py-2 rounded-xl text-xs transition flex items-center gap-1.5 shadow-md shadow-blue-600/25">
+                                Resolver <i data-lucide="arrow-right" class="w-3.5 h-3.5"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            
+                <div class="exam-card bg-slate-900/90 border border-slate-800 hover:border-blue-500/60 rounded-3xl p-6 shadow-xl hover-card flex flex-col justify-between transition-all" data-inst="IFCE" data-search="prova ifce 2001.1 ifce resolução completa das 10 questões de matemática do vestibular cefet-ce 2001.1, cobrindo taxa de margem de lucro sobre venda, matrizes não-inversíveis e determinantes nulos, domínio de funções logarítmicas de base variável, soma infinita de pg com módulo, raízes quadradas no corpo dos números complexos, teorema do resto de d'alembert em polinômios, condição de existência da equação da circunferência, propriedades métricas do triângulo retângulo circunscrito, semelhança de tetraedros e partições combinatórias multiplicativas. bloco 6: provas anteriores ifce" data-topic-id="ifce-2001-1-matematica">
+                    <div>
+                        <div class="flex items-center justify-between mb-3">
+                            <span class="text-xs font-extrabold uppercase tracking-wider px-3 py-1 rounded-full border bg-blue-500/20 text-sky-300 border-blue-400/30">
+                                IFCE
+                            </span>
+                            <span id="status-badge-ifce-2001-1-matematica" class="text-xs font-medium px-2.5 py-0.5 rounded-full bg-slate-800 text-slate-400 border border-slate-700">
+                                Pendente
+                            </span>
+                        </div>
+                        <h3 class="text-lg font-bold text-white mb-2 leading-snug">Prova IFCE 2001.1</h3>
+                        <p class="text-slate-400 text-xs sm:text-sm leading-relaxed mb-4 line-clamp-2">Resolução completa das 10 questões de Matemática do Vestibular CEFET-CE 2001.1, cobrindo taxa de margem de lucro sobre venda, matrizes não-inversíveis e determinantes nulos, domínio de funções logarítmicas de base variável, soma infinita de PG com módulo, raízes quadradas no corpo dos números complexos, Teorema do Resto de D'Alembert em polinômios, condição de existência da equação da circunferência, propriedades métricas do triângulo retângulo circunscrito, semelhança de tetraedros e partições combinatórias multiplicativas.</p>
+                    </div>
+
+                    <div class="pt-4 border-t border-slate-800 flex items-center justify-between gap-2">
+                        <span class="text-xs text-slate-400 flex items-center gap-1">
+                            <i data-lucide="help-circle" class="w-3.5 h-3.5 text-sky-400"></i> 10 Questões
+                        </span>
+                        <div class="flex items-center gap-2">
+                            
+                    <a href="./provas/ifce/ifce_prova_2001_1.pdf" download class="bg-slate-800 hover:bg-slate-700 text-slate-200 border border-slate-700 font-semibold px-3 py-2 rounded-xl text-xs transition flex items-center gap-1.5" title="Baixar Caderno Oficial em PDF">
+                        <i data-lucide="download" class="w-3.5 h-3.5 text-sky-400"></i> PDF
+                    </a>
+                
+                            <a href="./bloco-6-provas-ifce/prova-ifce-20011.html" class="bg-blue-600 hover:bg-blue-500 text-white font-bold px-4 py-2 rounded-xl text-xs transition flex items-center gap-1.5 shadow-md shadow-blue-600/25">
+                                Resolver <i data-lucide="arrow-right" class="w-3.5 h-3.5"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            
+                <div class="exam-card bg-slate-900/90 border border-slate-800 hover:border-blue-500/60 rounded-3xl p-6 shadow-xl hover-card flex flex-col justify-between transition-all" data-inst="IFCE" data-search="prova ifce 2000.2 ifce resolução completa das 10 questões oficiais de matemática do vestibular cefet-ce 2000.2, abrangendo relações de pertinência e inclusão na teoria dos conjuntos, equações logarítmicas com mudança de base, condição para número complexo real, contagem combinatória de números inteiros restritos, relações de girard para soma dos inversos das raízes, teorema de viviani no triângulo equilátero, variação percentual de volume e área esférica, identidades trigonométricas de arcos, área de triângulo inscrito em circunferência e conversão de graus e minutos em radianos. bloco 6: provas anteriores ifce" data-topic-id="ifce-2000-2-matematica">
+                    <div>
+                        <div class="flex items-center justify-between mb-3">
+                            <span class="text-xs font-extrabold uppercase tracking-wider px-3 py-1 rounded-full border bg-blue-500/20 text-sky-300 border-blue-400/30">
+                                IFCE
+                            </span>
+                            <span id="status-badge-ifce-2000-2-matematica" class="text-xs font-medium px-2.5 py-0.5 rounded-full bg-slate-800 text-slate-400 border border-slate-700">
+                                Pendente
+                            </span>
+                        </div>
+                        <h3 class="text-lg font-bold text-white mb-2 leading-snug">Prova IFCE 2000.2</h3>
+                        <p class="text-slate-400 text-xs sm:text-sm leading-relaxed mb-4 line-clamp-2">Resolução completa das 10 questões oficiais de Matemática do Vestibular CEFET-CE 2000.2, abrangendo relações de pertinência e inclusão na Teoria dos Conjuntos, equações logarítmicas com mudança de base, condição para número complexo real, contagem combinatória de números inteiros restritos, Relações de Girard para soma dos inversos das raízes, Teorema de Viviani no triângulo equilátero, variação percentual de volume e área esférica, identidades trigonométricas de arcos, área de triângulo inscrito em circunferência e conversão de graus e minutos em radianos.</p>
+                    </div>
+
+                    <div class="pt-4 border-t border-slate-800 flex items-center justify-between gap-2">
+                        <span class="text-xs text-slate-400 flex items-center gap-1">
+                            <i data-lucide="help-circle" class="w-3.5 h-3.5 text-sky-400"></i> 10 Questões
+                        </span>
+                        <div class="flex items-center gap-2">
+                            
+                    <a href="./provas/ifce/ifce_prova_2000_2.pdf" download class="bg-slate-800 hover:bg-slate-700 text-slate-200 border border-slate-700 font-semibold px-3 py-2 rounded-xl text-xs transition flex items-center gap-1.5" title="Baixar Caderno Oficial em PDF">
+                        <i data-lucide="download" class="w-3.5 h-3.5 text-sky-400"></i> PDF
+                    </a>
+                
+                            <a href="./bloco-6-provas-ifce/prova-ifce-20002.html" class="bg-blue-600 hover:bg-blue-500 text-white font-bold px-4 py-2 rounded-xl text-xs transition flex items-center gap-1.5 shadow-md shadow-blue-600/25">
+                                Resolver <i data-lucide="arrow-right" class="w-3.5 h-3.5"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            
+                <div class="exam-card bg-slate-900/90 border border-slate-800 hover:border-blue-500/60 rounded-3xl p-6 shadow-xl hover-card flex flex-col justify-between transition-all" data-inst="IFCE" data-search="prova ifce 2000.1 ifce resolução completa das 10 questões oficiais de matemática do vestibular cefet-ce 2000.1, cobrindo variações percentuais sucessivas acumuladas, séries geométricas alternadas, comparação e inclusão de intervalos reais com radicais, sistemas lineares com parâmetros, contagem de números pares restritos, potências com unidade imaginária, composição e determinação de constantes funcionais, transformações trigonométricas da soma de arcos, equações exponenciais fatoráveis e parametrização linear de retas no plano cartesiano. bloco 6: provas anteriores ifce" data-topic-id="ifce-2000-1-matematica">
+                    <div>
+                        <div class="flex items-center justify-between mb-3">
+                            <span class="text-xs font-extrabold uppercase tracking-wider px-3 py-1 rounded-full border bg-blue-500/20 text-sky-300 border-blue-400/30">
+                                IFCE
+                            </span>
+                            <span id="status-badge-ifce-2000-1-matematica" class="text-xs font-medium px-2.5 py-0.5 rounded-full bg-slate-800 text-slate-400 border border-slate-700">
+                                Pendente
+                            </span>
+                        </div>
+                        <h3 class="text-lg font-bold text-white mb-2 leading-snug">Prova IFCE 2000.1</h3>
+                        <p class="text-slate-400 text-xs sm:text-sm leading-relaxed mb-4 line-clamp-2">Resolução completa das 10 questões oficiais de Matemática do Vestibular CEFET-CE 2000.1, cobrindo variações percentuais sucessivas acumuladas, séries geométricas alternadas, comparação e inclusão de intervalos reais com radicais, sistemas lineares com parâmetros, contagem de números pares restritos, potências com unidade imaginária, composição e determinação de constantes funcionais, transformações trigonométricas da soma de arcos, equações exponenciais fatoráveis e parametrização linear de retas no plano cartesiano.</p>
+                    </div>
+
+                    <div class="pt-4 border-t border-slate-800 flex items-center justify-between gap-2">
+                        <span class="text-xs text-slate-400 flex items-center gap-1">
+                            <i data-lucide="help-circle" class="w-3.5 h-3.5 text-sky-400"></i> 10 Questões
+                        </span>
+                        <div class="flex items-center gap-2">
+                            
+                    <a href="./provas/ifce/ifce_prova_2000.pdf" download class="bg-slate-800 hover:bg-slate-700 text-slate-200 border border-slate-700 font-semibold px-3 py-2 rounded-xl text-xs transition flex items-center gap-1.5" title="Baixar Caderno Oficial em PDF">
+                        <i data-lucide="download" class="w-3.5 h-3.5 text-sky-400"></i> PDF
+                    </a>
+                
+                            <a href="./bloco-6-provas-ifce/prova-ifce-20001.html" class="bg-blue-600 hover:bg-blue-500 text-white font-bold px-4 py-2 rounded-xl text-xs transition flex items-center gap-1.5 shadow-md shadow-blue-600/25">
+                                Resolver <i data-lucide="arrow-right" class="w-3.5 h-3.5"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            
+                <div class="exam-card bg-slate-900/90 border border-slate-800 hover:border-blue-500/60 rounded-3xl p-6 shadow-xl hover-card flex flex-col justify-between transition-all" data-inst="IFCE" data-search="prova ifce 1999 ifce resolução completa das 10 questões oficiais de matemática do vestibular cefet-ce 1999, cobrindo produto cartesiano de intervalos e cálculo de área retangular, equações logarítmico-exponenciais, cálculo da tangente de arcos maiores que uma volta, análise combinatória e anagramas com repetição, geometria plana avançada com subdivisão paralela em triângulos e paralelogramos, módulo de quociente de números complexos, sistemas lineares homogêneos e equivalentes, distância entre retas paralelas, teorema de d'alembert em polinômios e progressões aritméticas e geométricas simultâneas. bloco 6: provas anteriores ifce" data-topic-id="ifce-1999-matematica">
+                    <div>
+                        <div class="flex items-center justify-between mb-3">
+                            <span class="text-xs font-extrabold uppercase tracking-wider px-3 py-1 rounded-full border bg-blue-500/20 text-sky-300 border-blue-400/30">
+                                IFCE
+                            </span>
+                            <span id="status-badge-ifce-1999-matematica" class="text-xs font-medium px-2.5 py-0.5 rounded-full bg-slate-800 text-slate-400 border border-slate-700">
+                                Pendente
+                            </span>
+                        </div>
+                        <h3 class="text-lg font-bold text-white mb-2 leading-snug">Prova IFCE 1999</h3>
+                        <p class="text-slate-400 text-xs sm:text-sm leading-relaxed mb-4 line-clamp-2">Resolução completa das 10 questões oficiais de Matemática do Vestibular CEFET-CE 1999, cobrindo produto cartesiano de intervalos e cálculo de área retangular, equações logarítmico-exponenciais, cálculo da tangente de arcos maiores que uma volta, análise combinatória e anagramas com repetição, geometria plana avançada com subdivisão paralela em triângulos e paralelogramos, módulo de quociente de números complexos, sistemas lineares homogêneos e equivalentes, distância entre retas paralelas, Teorema de D'Alembert em polinômios e progressões aritméticas e geométricas simultâneas.</p>
+                    </div>
+
+                    <div class="pt-4 border-t border-slate-800 flex items-center justify-between gap-2">
+                        <span class="text-xs text-slate-400 flex items-center gap-1">
+                            <i data-lucide="help-circle" class="w-3.5 h-3.5 text-sky-400"></i> 10 Questões
+                        </span>
+                        <div class="flex items-center gap-2">
+                            
+                    <a href="./provas/ifce/ifce_prova_1999.pdf" download class="bg-slate-800 hover:bg-slate-700 text-slate-200 border border-slate-700 font-semibold px-3 py-2 rounded-xl text-xs transition flex items-center gap-1.5" title="Baixar Caderno Oficial em PDF">
+                        <i data-lucide="download" class="w-3.5 h-3.5 text-sky-400"></i> PDF
+                    </a>
+                
+                            <a href="./bloco-6-provas-ifce/prova-ifce-1999.html" class="bg-blue-600 hover:bg-blue-500 text-white font-bold px-4 py-2 rounded-xl text-xs transition flex items-center gap-1.5 shadow-md shadow-blue-600/25">
+                                Resolver <i data-lucide="arrow-right" class="w-3.5 h-3.5"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            
+            </div>
+
+            <div id="no-exams-found" class="hidden p-8 text-center bg-slate-900 border border-slate-800 rounded-2xl text-slate-400 text-sm">
+                Nenhuma prova encontrada com os filtros selecionados.
+            </div>
+        </section>
+
+    </main>
+
+    <footer class="bg-[#020617] text-slate-300 border-t border-slate-800 mt-16 py-10">
+        <div class="max-w-7xl mx-auto px-4 grid grid-cols-1 md:grid-cols-3 gap-8 text-sm">
+            <div>
+                <div class="flex items-center gap-2 text-lg font-bold text-sky-400 mb-2">
+                    <i data-lucide="file-check" class="w-5 h-5 text-blue-500"></i> PartiuIF - Banco de Provas
+                </div>
+                <p class="text-slate-400 text-xs leading-relaxed">
+                    Acervo completo com 43 cadernos oficiais do IFCE e IFSC. Provas interativas com resoluções KaTeX passo a passo e downloads dos cadernos originais em PDF.
+                </p>
+                <div class="mt-4 inline-flex items-center gap-2 bg-slate-900 px-3 py-1.5 rounded-lg border border-slate-800 text-xs text-sky-300">
+                    <i data-lucide="hard-drive" class="w-3.5 h-3.5"></i> Respostas salvas localmente
+                </div>
+            </div>
+            <div>
+                <h4 class="font-semibold text-white mb-3 text-sm flex items-center gap-1.5">
+                    <i data-lucide="layers" class="w-4 h-4 text-blue-400"></i> Navegação do Acervo
+                </h4>
+                <ul class="space-y-2 text-xs text-slate-300">
+                    <li><a href="./provas.html" class="hover:text-white transition flex items-center gap-1.5">• Ver Todas as Provas</a></li>
+                    <li><a href="./bloco-6-provas-ifce/index.html" class="hover:text-white transition flex items-center gap-1.5">• Provas IFCE (27 Cadernos)</a></li>
+                    <li><a href="./bloco-5-provas-ifsc/index.html" class="hover:text-white transition flex items-center gap-1.5">• Provas IFSC (16 Cadernos)</a></li>
+                    <li class="pt-2"><a href="./index.html" class="text-emerald-400 hover:text-emerald-300 font-semibold transition flex items-center gap-1.5">← Voltar para Teoria e Eixos Temáticos</a></li>
+                </ul>
+            </div>
+            <div>
+                <h4 class="font-semibold text-white mb-2 text-sm flex items-center gap-1.5">
+                    <i data-lucide="trending-up" class="w-4 h-4 text-blue-400"></i> Progresso no Acervo
+                </h4>
+                <div class="w-full bg-slate-800 rounded-full h-3 overflow-hidden border border-slate-700 mb-1.5">
+                    <div id="footer-progress" class="bg-blue-500 h-full w-0 transition-all duration-500"></div>
+                </div>
+                <span id="footer-progress-text" class="text-xs text-slate-400 block mb-4">Carregando progresso...</span>
+                
+                <button onclick="resetProgress()" class="text-xs text-red-400 hover:text-red-300 underline flex items-center gap-1 transition">
+                    <i data-lucide="trash-2" class="w-3.5 h-3.5"></i> Zerar Todo o Meu Progresso
+                </button>
+            </div>
+        </div>
+        <div class="max-w-7xl mx-auto px-4 mt-8 pt-4 border-t border-slate-900 text-center text-xs text-slate-500">
+            PartiuIF &copy; 2026 - Acervo Oficial de Provas para os Institutos Federais.
+        </div>
+    </footer>
+
+    <!-- Scripts Globais da Aplicação -->
+    <script src="./assets/js/data.js"></script>
+    <script src="./assets/js/app.js"></script>
+
+
+    <!-- Script Dedicado de Filtragem Interativa de Provas -->
+    <script>
+        let currentInstFilter = 'all';
+
+        function filterExams(inst) {
+            currentInstFilter = inst;
+            
+            // Atualiza botões
+            const buttons = document.querySelectorAll('.filter-btn');
+            buttons.forEach(b => {
+                b.className = "filter-btn px-4 py-1.5 rounded-xl text-xs font-semibold text-slate-400 hover:text-white transition";
+            });
+            const activeBtn = document.getElementById(`btn-filter-${inst.toLowerCase()}`);
+            if (activeBtn) {
+                activeBtn.className = "filter-btn px-4 py-1.5 rounded-xl text-xs font-bold transition bg-blue-600 text-white shadow";
+            }
+
+            applyFilters();
+        }
+
+        function applyFilters() {
+            const searchVal = (document.getElementById('exam-search-input').value || '').toLowerCase().trim();
+            const cards = document.querySelectorAll('.exam-card');
+            let visibleCount = 0;
+
+            cards.forEach(card => {
+                const cardInst = card.getAttribute('data-inst');
+                const cardSearch = card.getAttribute('data-search') || '';
+
+                const matchesInst = (currentInstFilter === 'all' || cardInst === currentInstFilter);
+                const matchesSearch = (!searchVal || cardSearch.includes(searchVal));
+
+                if (matchesInst && matchesSearch) {
+                    card.style.display = 'flex';
+                    visibleCount++;
+                } else {
+                    card.style.display = 'none';
+                }
+            });
+
+            const noFound = document.getElementById('no-exams-found');
+            if (noFound) {
+                if (visibleCount === 0) {
+                    noFound.classList.remove('hidden');
+                } else {
+                    noFound.classList.add('hidden');
+                }
+            }
+        }
+
+        document.addEventListener('DOMContentLoaded', () => {
+            const searchInput = document.getElementById('exam-search-input');
+            if (searchInput) {
+                searchInput.addEventListener('input', applyFilters);
+            }
+            updateGlobalProgress();
+        });
+    </script>
+</body>
+</html>

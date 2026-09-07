@@ -65,26 +65,30 @@ function selectOption(qId, optIdx) {
     if (savedAnswers.hasOwnProperty(qId)) return; // já respondida
     userSelections[qId] = optIdx;
     
+    const isDark = document.body.classList.contains("dark") || document.body.getAttribute("data-theme") === "dark";
     const parent = document.getElementById(`opts-${qId}`);
     if (!parent) return;
     
     const buttons = parent.querySelectorAll("button");
     buttons.forEach(btn => {
-        btn.classList.remove("opt-selected", "border-brand-500", "bg-brand-50");
+        btn.classList.remove("opt-selected", "border-brand-500", "bg-brand-50", "border-blue-500", "bg-blue-950/40");
         const icon = btn.querySelector(".opt-icon");
         if (icon) {
             icon.setAttribute("data-lucide", "circle");
-            icon.className = "w-4 h-4 text-gray-300 opt-icon group-hover:text-brand-400";
+            icon.className = isDark ? "w-4 h-4 text-slate-500 opt-icon group-hover:text-blue-400" : "w-4 h-4 text-gray-300 opt-icon group-hover:text-brand-400";
         }
     });
 
     const selectedBtn = document.getElementById(`btn-${qId}-${optIdx}`);
     if (selectedBtn) {
         selectedBtn.classList.add("opt-selected");
+        if (isDark) {
+            selectedBtn.classList.add("border-blue-500", "bg-blue-950/40");
+        }
         const icon = selectedBtn.querySelector(".opt-icon");
         if (icon) {
             icon.setAttribute("data-lucide", "check-circle");
-            icon.className = "w-4 h-4 text-brand-600 opt-icon";
+            icon.className = isDark ? "w-4 h-4 text-blue-400 opt-icon" : "w-4 h-4 text-brand-600 opt-icon";
         }
     }
     if (window.lucide) lucide.createIcons();
@@ -122,14 +126,25 @@ function submitAnswer(blockId, topicId, qIdx) {
 }
 
 function applyQuestionResultUI(qId, question, selectedOpt, isCorrect) {
+    const isDark = document.body.classList.contains("dark") || document.body.getAttribute("data-theme") === "dark";
     const feedbackDiv = document.getElementById(`feedback-${qId}`);
     if (feedbackDiv) {
         if (isCorrect) {
-            feedbackDiv.className = "p-4 rounded-xl text-sm mt-4 border bg-green-50 border-green-200 text-green-900";
-            feedbackDiv.innerHTML = `<div class="flex items-center gap-1.5 font-bold text-green-800 mb-1"><i data-lucide="check-circle" class="w-4 h-4 text-green-600"></i> Correto!</div><div class="text-green-800 leading-relaxed">${question.explanation}</div>`;
+            if (isDark) {
+                feedbackDiv.className = "p-4 rounded-xl text-sm mt-4 border bg-emerald-950/50 border-emerald-500/40 text-emerald-200";
+                feedbackDiv.innerHTML = `<div class="flex items-center gap-1.5 font-bold text-emerald-400 mb-1"><i data-lucide="check-circle" class="w-4 h-4 text-emerald-400"></i> Correto!</div><div class="text-emerald-100 leading-relaxed">${question.explanation}</div>`;
+            } else {
+                feedbackDiv.className = "p-4 rounded-xl text-sm mt-4 border bg-green-50 border-green-200 text-green-900";
+                feedbackDiv.innerHTML = `<div class="flex items-center gap-1.5 font-bold text-green-800 mb-1"><i data-lucide="check-circle" class="w-4 h-4 text-green-600"></i> Correto!</div><div class="text-green-800 leading-relaxed">${question.explanation}</div>`;
+            }
         } else {
-            feedbackDiv.className = "p-4 rounded-xl text-sm mt-4 border bg-red-50 border-red-200 text-red-900";
-            feedbackDiv.innerHTML = `<div class="flex items-center gap-1.5 font-bold text-red-800 mb-1"><i data-lucide="x-circle" class="w-4 h-4 text-red-600"></i> Incorreto.</div><div class="text-red-900 leading-relaxed">A resposta correta é a <strong>Letra ${String.fromCharCode(65 + question.correct)}</strong>.<br><div class="mt-1">${question.explanation}</div></div>`;
+            if (isDark) {
+                feedbackDiv.className = "p-4 rounded-xl text-sm mt-4 border bg-rose-950/50 border-rose-500/40 text-rose-200";
+                feedbackDiv.innerHTML = `<div class="flex items-center gap-1.5 font-bold text-rose-400 mb-1"><i data-lucide="x-circle" class="w-4 h-4 text-rose-400"></i> Incorreto.</div><div class="text-rose-100 leading-relaxed">A resposta correta é a <strong class="text-white">Letra ${String.fromCharCode(65 + question.correct)}</strong>.<br><div class="mt-1">${question.explanation}</div></div>`;
+            } else {
+                feedbackDiv.className = "p-4 rounded-xl text-sm mt-4 border bg-red-50 border-red-200 text-red-900";
+                feedbackDiv.innerHTML = `<div class="flex items-center gap-1.5 font-bold text-red-800 mb-1"><i data-lucide="x-circle" class="w-4 h-4 text-red-600"></i> Incorreto.</div><div class="text-red-900 leading-relaxed">A resposta correta é a <strong>Letra ${String.fromCharCode(65 + question.correct)}</strong>.<br><div class="mt-1">${question.explanation}</div></div>`;
+            }
         }
         feedbackDiv.classList.remove("hidden");
         renderLatex(feedbackDiv);
@@ -140,32 +155,42 @@ function applyQuestionResultUI(qId, question, selectedOpt, isCorrect) {
         const buttons = parent.querySelectorAll("button");
         buttons.forEach((btn, idx) => {
             btn.disabled = true;
-            btn.classList.remove("border-brand-500", "bg-brand-50", "hover:border-brand-300", "group");
+            btn.classList.remove("border-brand-500", "bg-brand-50", "border-blue-500", "bg-blue-950/40", "hover:border-brand-300", "group");
             btn.classList.add("cursor-not-allowed");
             
             const icon = btn.querySelector(".opt-icon");
             if (idx === selectedOpt) {
                 if (isCorrect) {
                     btn.classList.add("opt-selected");
+                    if (isDark) {
+                        btn.classList.add("border-emerald-500", "bg-emerald-950/40", "text-emerald-200");
+                    }
                     if (icon) {
                         icon.setAttribute("data-lucide", "check-circle");
-                        icon.className = "w-4 h-4 text-brand-600 opt-icon";
+                        icon.className = isDark ? "w-4 h-4 text-emerald-400 opt-icon" : "w-4 h-4 text-brand-600 opt-icon";
                     }
                 } else {
                     btn.classList.add("opt-wrong");
+                    if (isDark) {
+                        btn.classList.add("border-rose-500", "bg-rose-950/40", "text-rose-200");
+                    }
                     if (icon) {
                         icon.setAttribute("data-lucide", "x-circle");
-                        icon.className = "w-4 h-4 text-red-600 opt-icon";
+                        icon.className = isDark ? "w-4 h-4 text-rose-400 opt-icon" : "w-4 h-4 text-red-600 opt-icon";
                     }
                 }
             } else if (idx === question.correct) {
-                btn.classList.add("border-brand-400", "bg-emerald-50/70", "font-medium");
+                if (isDark) {
+                    btn.classList.add("border-emerald-500/60", "bg-emerald-950/30", "text-emerald-200", "font-medium");
+                } else {
+                    btn.classList.add("border-brand-400", "bg-emerald-50/70", "font-medium");
+                }
                 if (icon) {
                     icon.setAttribute("data-lucide", "check");
-                    icon.className = "w-4 h-4 text-brand-600 opt-icon";
+                    icon.className = isDark ? "w-4 h-4 text-emerald-400 opt-icon" : "w-4 h-4 text-brand-600 opt-icon";
                 }
             } else {
-                btn.classList.add("opacity-50");
+                btn.classList.add("opacity-40");
             }
         });
     }
@@ -199,10 +224,10 @@ function initQuestionStates(topicId, blockId) {
 function toggleTopicDone(topicId) {
     if (completedTopics.includes(topicId)) {
         completedTopics = completedTopics.filter(id => id !== topicId);
-        showToast("Tópico desmarcado como concluído.", "info");
+        showToast("Marcador de conclusão removido.", "info");
     } else {
         completedTopics.push(topicId);
-        showToast("Tópico marcado como concluído! Excelente progresso!", "success");
+        showToast("Prova/Tópico concluído com sucesso!", "success");
     }
     localStorage.setItem("partiuif_completed", JSON.stringify(completedTopics));
     
@@ -213,13 +238,24 @@ function toggleTopicDone(topicId) {
 function updateTopicDoneButtonUI(topicId) {
     const btn = document.getElementById(`btn-toggle-done-${topicId}`);
     const isDone = completedTopics.includes(topicId);
+    const isDark = document.body.classList.contains("dark") || document.body.getAttribute("data-theme") === "dark";
     if (btn) {
         if (isDone) {
-            btn.className = "px-4 py-2 rounded-xl text-sm font-semibold border bg-brand-100 text-brand-900 border-brand-300 hover:bg-brand-200 transition flex items-center gap-2 shadow-sm";
-            btn.innerHTML = `<i data-lucide="check-square" class="w-4 h-4 text-brand-700"></i> Concluído`;
+            if (isDark) {
+                btn.className = "px-4 py-2 rounded-xl text-sm font-semibold border bg-blue-900/40 text-blue-200 border-blue-600 hover:bg-blue-900/60 transition flex items-center gap-2 shadow-sm";
+                btn.innerHTML = `<i data-lucide="check-square" class="w-4 h-4 text-blue-400"></i> Prova Concluída`;
+            } else {
+                btn.className = "px-4 py-2 rounded-xl text-sm font-semibold border bg-brand-100 text-brand-900 border-brand-300 hover:bg-brand-200 transition flex items-center gap-2 shadow-sm";
+                btn.innerHTML = `<i data-lucide="check-square" class="w-4 h-4 text-brand-700"></i> Concluído`;
+            }
         } else {
-            btn.className = "px-4 py-2 rounded-xl text-sm font-semibold border bg-white text-gray-700 border-gray-300 hover:bg-gray-50 transition flex items-center gap-2 shadow-sm";
-            btn.innerHTML = `<i data-lucide="square" class="w-4 h-4 text-gray-400"></i> Marcar como Concluído`;
+            if (isDark) {
+                btn.className = "px-4 py-2 rounded-xl text-sm font-semibold border bg-slate-900 text-slate-300 border-slate-700 hover:bg-slate-800 transition flex items-center gap-2 shadow-sm";
+                btn.innerHTML = `<i data-lucide="square" class="w-4 h-4 text-slate-500"></i> Marcar como Concluída`;
+            } else {
+                btn.className = "px-4 py-2 rounded-xl text-sm font-semibold border bg-white text-gray-700 border-gray-300 hover:bg-gray-50 transition flex items-center gap-2 shadow-sm";
+                btn.innerHTML = `<i data-lucide="square" class="w-4 h-4 text-gray-400"></i> Marcar como Concluído`;
+            }
         }
         if (window.lucide) lucide.createIcons();
     }

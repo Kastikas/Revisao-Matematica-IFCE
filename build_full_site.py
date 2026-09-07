@@ -12,11 +12,23 @@ with open("mathData_augmented.json", "r", encoding="utf-8") as f:
 # Métricas Globais Calculadas Dinamicamente
 total_subtopics = sum(len(b["topics"]) for b in math_data.values())
 total_questions = sum(sum(len(t["questions"]) for t in b["topics"]) for b in math_data.values())
-total_official_exams = sum(
-    len(b["topics"])
-    for b in math_data.values()
-    if any(k in b.get("title", "").lower() for k in ["provas", "oficiais"])
-)
+# Métricas Globais Calculadas Dinamicamente
+total_subtopics = sum(len(b["topics"]) for b in math_data.values())
+total_questions = sum(sum(len(t["questions"]) for t in b["topics"]) for b in math_data.values())
+
+def is_exam_block(b_id, block):
+    """Verifica se o bloco pertence ao acervo de provas oficiais."""
+    title = block.get("title", "").lower()
+    return str(b_id) in ["5", "6"] or "provas" in title or "oficiais" in title
+
+theory_blocks_data = {k: v for k, v in math_data.items() if not is_exam_block(k, v)}
+exam_blocks_data = {k: v for k, v in math_data.items() if is_exam_block(k, v)}
+
+total_theory_subtopics = sum(len(b["topics"]) for b in theory_blocks_data.values())
+total_theory_questions = sum(sum(len(t["questions"]) for t in b["topics"]) for b in theory_blocks_data.values())
+
+total_official_exams = sum(len(b["topics"]) for b in exam_blocks_data.values())
+total_exam_questions = sum(sum(len(t["questions"]) for t in b["topics"]) for b in exam_blocks_data.values())
 
 def sync_data_files():
     """Garante que mathData.json e assets/js/data.js estejam 100% sincronizados."""
@@ -50,7 +62,7 @@ def get_block_folder(b_id, block):
         return topics[0]["folder"]
     return f"bloco-{b_id}"
 
-def get_pdf_relative_path(pdf_filename):
+def get_pdf_relative_path(pdf_filename, rel_root=".."):
     """Localiza o PDF oficial em qualquer subdiretório de provas/."""
     if not pdf_filename:
         return None
@@ -59,7 +71,7 @@ def get_pdf_relative_path(pdf_filename):
         for entry in os.listdir(provas_dir):
             full = os.path.join(provas_dir, entry, pdf_filename)
             if os.path.isfile(full):
-                return f"../provas/{entry}/{pdf_filename}"
+                return f"{rel_root}/provas/{entry}/{pdf_filename}"
     return None
 
 def get_navbar_label(b_id, block):
@@ -76,9 +88,16 @@ def get_navbar_label(b_id, block):
 # ==============================================================================
 # 3. TEMPLATES REUTILIZÁVEIS (Head, Navbar, Footer)
 # ==============================================================================
-def get_head(title, rel_root="."):
+def get_head(title, rel_root=".", theme="green"):
+    if theme == "dark-blue":
+        html_tag = '<html lang="pt-BR" class="dark">'
+        body_class = 'class="bg-[#0a0f1d] text-slate-100 font-sans antialiased min-h-screen flex flex-col" data-theme="dark"'
+    else:
+        html_tag = '<html lang="pt-BR">'
+        body_class = 'class="bg-gray-50 text-gray-800 font-sans antialiased min-h-screen flex flex-col"'
+
     return f"""<!DOCTYPE html>
-<html lang="pt-BR">
+{html_tag}
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -87,6 +106,7 @@ def get_head(title, rel_root="."):
     <script src="https://cdn.tailwindcss.com"></script>
     <script>
         tailwind.config = {{
+            darkMode: 'class',
             theme: {{
                 extend: {{
                     colors: {{
@@ -102,6 +122,12 @@ def get_head(title, rel_root="."):
                             800: '#166534',
                             900: '#14532d',
                             950: '#052e16',
+                        }},
+                        navy: {{
+                            800: '#0f172a',
+                            850: '#0b132b',
+                            900: '#0a0f1d',
+                            950: '#020617',
                         }}
                     }}
                 }}
@@ -117,12 +143,90 @@ def get_head(title, rel_root="."):
     <!-- Custom CSS -->
     <link rel="stylesheet" href="{rel_root}/assets/css/styles.css">
 </head>
-<body class="bg-gray-50 text-gray-800 font-sans antialiased min-h-screen flex flex-col">
+<body {body_class}>
 """
 
-def get_navbar(active_key="", rel_root="."):
+def get_navbar(active_key="", rel_root=".", is_exam=False):
+    if is_exam:
+        # Navbar da Parte 2 (Provas - Full Dark Mode Escuro-Azul)
+        nav_links = [
+            ("provas_hub", f"{rel_root}/provas.html", "Todas as Provas", "layout-grid"),
+            ("6", f"{rel_root}/bloco-6-provas-ifce/index.html", "Provas IFCE (27)", "award"),
+            ("5", f"{rel_root}/bloco-5-provas-ifsc/index.html", "Provas IFSC (16)", "award"),
+        ]
+        
+        desktop_items = []
+        for key, href, label, icon in nav_links:
+            is_active = (key == active_key)
+            cls = "bg-blue-600 text-white font-semibold shadow-inner" if is_active else "text-slate-300 hover:bg-slate-800 hover:text-white"
+            desktop_items.append(f"""<a href="{href}" class="px-3 py-2 rounded-lg text-sm transition flex items-center gap-1.5 {cls}">
+                <i data-lucide="{icon}" class="w-4 h-4"></i> {label}
+            </a>""")
+            
+        mobile_items = []
+        for key, href, label, icon in nav_links:
+            is_active = (key == active_key)
+            cls = "bg-blue-600 font-bold" if is_active else "hover:bg-slate-800"
+            mobile_items.append(f"""<a href="{href}" class="block px-3 py-2 rounded-md text-base font-medium text-white flex items-center gap-2 {cls}">
+                <i data-lucide="{icon}" class="w-4 h-4"></i> {label}
+            </a>""")
+
+        return f"""    <!-- Header / Navbar da Área de Provas (Parte 2 - Escuro-Azul) -->
+    <header class="gradient-header-dark text-white shadow-xl sticky top-0 z-50 border-b border-slate-800">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex items-center justify-between h-16">
+                <!-- Logo Provas -->
+                <a href="{rel_root}/provas.html" class="flex items-center space-x-3 group">
+                    <div class="bg-blue-600 p-2 rounded-xl text-white font-bold shadow-md shadow-blue-500/20 flex items-center justify-center group-hover:scale-105 transition">
+                        <i data-lucide="file-check" class="w-6 h-6"></i>
+                    </div>
+                    <div>
+                        <span class="font-extrabold text-xl tracking-tight text-white flex items-center gap-1.5">
+                            Partiu<span class="text-sky-400">IF</span>
+                            <span class="text-[10px] font-bold uppercase tracking-wider bg-blue-500/30 text-sky-200 border border-blue-400/30 px-2 py-0.5 rounded-full">Provas</span>
+                        </span>
+                        <p class="text-xs text-slate-400 hidden sm:flex items-center gap-1">
+                            <i data-lucide="archive" class="w-3 h-3 text-sky-400"></i> Acervo Oficial com PDFs e Gabarito
+                        </p>
+                    </div>
+                </a>
+
+                <!-- Navegação Desktop -->
+                <nav class="hidden md:flex space-x-1 items-center">
+                    {''.join(desktop_items)}
+                </nav>
+
+                <!-- Ações do Usuário -->
+                <div class="flex items-center gap-2 sm:gap-3">
+                    <a href="{rel_root}/index.html" class="bg-slate-800/90 hover:bg-slate-700 text-slate-200 border border-slate-700 px-3.5 py-1.5 rounded-lg text-xs sm:text-sm font-semibold transition flex items-center gap-1.5 shadow-sm" title="Retornar à Teoria e Eixos Temáticos">
+                        <i data-lucide="arrow-left" class="w-4 h-4 text-emerald-400"></i> <span class="hidden sm:inline">Voltar para </span>Teoria
+                    </a>
+                    <a href="{rel_root}/simulado.html" class="bg-blue-600 hover:bg-blue-500 text-white font-semibold px-3.5 py-1.5 rounded-lg text-xs sm:text-sm transition flex items-center gap-1.5 shadow">
+                        <i data-lucide="award" class="w-4 h-4"></i> Simulado
+                    </a>
+                    <button id="mobile-menu-btn" class="md:hidden p-2 rounded-lg text-slate-300 hover:text-white hover:bg-slate-800" aria-label="Abrir menu">
+                        <i data-lucide="menu" class="w-6 h-6"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Menu Mobile -->
+        <div id="mobile-menu" class="hidden md:hidden bg-slate-950 border-t border-slate-800 px-4 pt-2 pb-4 space-y-1">
+            {''.join(mobile_items)}
+            <a href="{rel_root}/index.html" class="block px-3 py-2 rounded-md text-base font-semibold text-slate-200 hover:bg-slate-800 flex items-center gap-2 mt-2 border-t border-slate-800 pt-3">
+                <i data-lucide="arrow-left" class="w-4 h-4 text-emerald-400"></i> Voltar para Teoria (Parte 1)
+            </a>
+            <a href="{rel_root}/simulado.html" class="block px-3 py-2 rounded-md text-base font-bold bg-blue-600 text-white flex items-center gap-2 mt-2">
+                <i data-lucide="award" class="w-4 h-4"></i> Simulado IF
+            </a>
+        </div>
+    </header>
+"""
+
+    # Navbar da Parte 1 (Teoria - Verde Institucional)
     blocks_nav = [("home", f"{rel_root}/index.html", "Início", "home")]
-    for b_id, block in math_data.items():
+    for b_id, block in theory_blocks_data.items():
         folder = get_block_folder(b_id, block)
         label = get_navbar_label(b_id, block)
         icon = block.get("icon", "book")
@@ -144,7 +248,7 @@ def get_navbar(active_key="", rel_root="."):
             <i data-lucide="{icon}" class="w-4 h-4"></i> {label}
         </a>""")
 
-    return f"""    <!-- Header / Navbar Principal -->
+    return f"""    <!-- Header / Navbar Principal (Parte 1 - Teoria) -->
     <header class="gradient-header text-white shadow-lg sticky top-0 z-50">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="flex items-center justify-between h-16">
@@ -168,10 +272,13 @@ def get_navbar(active_key="", rel_root="."):
                     {''.join(desktop_links)}
                 </nav>
 
-                <!-- Ações do Usuário -->
-                <div class="flex items-center gap-3">
-                    <a href="{rel_root}/simulado.html" class="bg-brand-500 hover:bg-brand-400 text-white font-semibold px-3.5 py-1.5 rounded-lg text-sm transition flex items-center gap-1.5 shadow hover:shadow-md">
-                        <i data-lucide="award" class="w-4 h-4"></i> Simulado IF
+                <!-- Ações do Usuário: Botão Destacado de Provas e Simulado -->
+                <div class="flex items-center gap-2.5">
+                    <a href="{rel_root}/provas.html" class="bg-gradient-to-r from-blue-700 to-indigo-800 hover:from-blue-600 hover:to-indigo-700 text-white font-bold px-3.5 py-1.5 rounded-lg text-sm transition flex items-center gap-1.5 shadow-md border border-blue-400/40" title="Acessar o Banco de Provas Oficiais (Parte 2)">
+                        <i data-lucide="file-check" class="w-4 h-4 text-sky-300"></i> Provas Oficiais <span class="bg-sky-400 text-slate-950 text-[10px] font-extrabold px-1.5 py-0.2 rounded-full ml-0.5">{total_official_exams}</span>
+                    </a>
+                    <a href="{rel_root}/simulado.html" class="bg-brand-500 hover:bg-brand-400 text-white font-semibold px-3 py-1.5 rounded-lg text-sm transition flex items-center gap-1.5 shadow hover:shadow-md">
+                        <i data-lucide="award" class="w-4 h-4"></i> Simulado
                     </a>
                     <button id="mobile-menu-btn" class="md:hidden p-2 rounded-lg text-brand-100 hover:text-white hover:bg-brand-800" aria-label="Abrir menu">
                         <i data-lucide="menu" class="w-6 h-6"></i>
@@ -183,16 +290,71 @@ def get_navbar(active_key="", rel_root="."):
         <!-- Menu Mobile -->
         <div id="mobile-menu" class="hidden md:hidden bg-brand-900 border-t border-brand-800 px-4 pt-2 pb-4 space-y-1">
             {''.join(mobile_links)}
-            <a href="{rel_root}/simulado.html" class="block px-3 py-2 rounded-md text-base font-bold bg-brand-600 text-white flex items-center gap-2 mt-2">
+            <a href="{rel_root}/provas.html" class="block px-3 py-2 rounded-md text-base font-bold bg-blue-700 text-white flex items-center justify-between gap-2 mt-2">
+                <span class="flex items-center gap-2"><i data-lucide="file-check" class="w-4 h-4 text-sky-300"></i> Provas Oficiais (Parte 2)</span>
+                <span class="bg-sky-400 text-slate-950 text-xs font-bold px-2 py-0.5 rounded-full">{total_official_exams} Provas</span>
+            </a>
+            <a href="{rel_root}/simulado.html" class="block px-3 py-2 rounded-md text-base font-bold bg-brand-600 text-white flex items-center gap-2 mt-1">
                 <i data-lucide="award" class="w-4 h-4"></i> Simulado IF Geral
             </a>
         </div>
     </header>
 """
 
-def get_footer(rel_root="."):
+def get_footer(rel_root=".", is_exam=False):
+    if is_exam:
+        # Footer da Área de Provas (Parte 2 - Escuro-Azul)
+        return f"""    <footer class="bg-[#020617] text-slate-300 border-t border-slate-800 mt-16 py-10">
+        <div class="max-w-7xl mx-auto px-4 grid grid-cols-1 md:grid-cols-3 gap-8 text-sm">
+            <div>
+                <div class="flex items-center gap-2 text-lg font-bold text-sky-400 mb-2">
+                    <i data-lucide="file-check" class="w-5 h-5 text-blue-500"></i> PartiuIF - Banco de Provas
+                </div>
+                <p class="text-slate-400 text-xs leading-relaxed">
+                    Acervo completo com {total_official_exams} cadernos oficiais do IFCE e IFSC. Provas interativas com resoluções KaTeX passo a passo e downloads dos cadernos originais em PDF.
+                </p>
+                <div class="mt-4 inline-flex items-center gap-2 bg-slate-900 px-3 py-1.5 rounded-lg border border-slate-800 text-xs text-sky-300">
+                    <i data-lucide="hard-drive" class="w-3.5 h-3.5"></i> Respostas salvas localmente
+                </div>
+            </div>
+            <div>
+                <h4 class="font-semibold text-white mb-3 text-sm flex items-center gap-1.5">
+                    <i data-lucide="layers" class="w-4 h-4 text-blue-400"></i> Navegação do Acervo
+                </h4>
+                <ul class="space-y-2 text-xs text-slate-300">
+                    <li><a href="{rel_root}/provas.html" class="hover:text-white transition flex items-center gap-1.5">• Ver Todas as Provas</a></li>
+                    <li><a href="{rel_root}/bloco-6-provas-ifce/index.html" class="hover:text-white transition flex items-center gap-1.5">• Provas IFCE (27 Cadernos)</a></li>
+                    <li><a href="{rel_root}/bloco-5-provas-ifsc/index.html" class="hover:text-white transition flex items-center gap-1.5">• Provas IFSC (16 Cadernos)</a></li>
+                    <li class="pt-2"><a href="{rel_root}/index.html" class="text-emerald-400 hover:text-emerald-300 font-semibold transition flex items-center gap-1.5">← Voltar para Teoria e Eixos Temáticos</a></li>
+                </ul>
+            </div>
+            <div>
+                <h4 class="font-semibold text-white mb-2 text-sm flex items-center gap-1.5">
+                    <i data-lucide="trending-up" class="w-4 h-4 text-blue-400"></i> Progresso no Acervo
+                </h4>
+                <div class="w-full bg-slate-800 rounded-full h-3 overflow-hidden border border-slate-700 mb-1.5">
+                    <div id="footer-progress" class="bg-blue-500 h-full w-0 transition-all duration-500"></div>
+                </div>
+                <span id="footer-progress-text" class="text-xs text-slate-400 block mb-4">Carregando progresso...</span>
+                
+                <button onclick="resetProgress()" class="text-xs text-red-400 hover:text-red-300 underline flex items-center gap-1 transition">
+                    <i data-lucide="trash-2" class="w-3.5 h-3.5"></i> Zerar Todo o Meu Progresso
+                </button>
+            </div>
+        </div>
+        <div class="max-w-7xl mx-auto px-4 mt-8 pt-4 border-t border-slate-900 text-center text-xs text-slate-500">
+            PartiuIF &copy; 2026 - Acervo Oficial de Provas para os Institutos Federais.
+        </div>
+    </footer>
+
+    <!-- Scripts Globais da Aplicação -->
+    <script src="{rel_root}/assets/js/data.js"></script>
+    <script src="{rel_root}/assets/js/app.js"></script>
+"""
+
+    # Footer da Parte 1 (Teoria - Verde Institucional)
     footer_block_links = []
-    for b_id, block in math_data.items():
+    for b_id, block in theory_blocks_data.items():
         folder = get_block_folder(b_id, block)
         footer_block_links.append(f'<li><a href="{rel_root}/{folder}/index.html" class="hover:text-white transition flex items-center gap-1">• {block["title"]}</a></li>')
 
@@ -215,6 +377,11 @@ def get_footer(rel_root="."):
                 </h4>
                 <ul class="space-y-1.5 text-xs text-brand-200">
                     {''.join(footer_block_links)}
+                    <li class="pt-2">
+                        <a href="{rel_root}/provas.html" class="inline-flex items-center gap-1.5 bg-blue-900/60 hover:bg-blue-800 text-sky-300 font-bold px-3 py-1.5 rounded-lg border border-blue-700/60 transition">
+                            <i data-lucide="file-check" class="w-3.5 h-3.5"></i> Acessar Banco de Provas (Parte 2) →
+                        </a>
+                    </li>
                 </ul>
             </div>
             <div>
@@ -242,15 +409,17 @@ def get_footer(rel_root="."):
 """
 
 # ==============================================================================
-# 4. GERAÇÃO DE PÁGINAS DE SUBTÓPICOS
+# 4. GERAÇÃO DE PÁGINAS DE SUBTÓPICOS / PROVAS INDIVIDUAIS
 # ==============================================================================
 def build_subtopic_pages():
-    print(f"\n--- Generating {total_subtopics} Subtopic Pages ---")
+    print(f"\n--- Generating {total_subtopics} Subtopic & Exam Pages ---")
     
     for b_id, block in math_data.items():
         folder = get_block_folder(b_id, block)
         os.makedirs(folder, exist_ok=True)
         topics = block["topics"]
+        is_exam = is_exam_block(b_id, block)
+        theme = "dark-blue" if is_exam else "green"
         
         for idx, topic in enumerate(topics):
             t_id = topic["id"]
@@ -261,109 +430,353 @@ def build_subtopic_pages():
             prev_topic = topics[idx - 1] if idx > 0 else None
             next_topic = topics[idx + 1] if idx < len(topics) - 1 else None
 
-            # Pontos-Chave
-            key_points_html = "".join([f"""
-                <li class="flex items-start gap-2 text-xs sm:text-sm text-gray-700">
-                    <i data-lucide="check" class="w-4 h-4 text-brand-600 flex-shrink-0 mt-0.5"></i>
-                    <span>{point}</span>
-                </li>
-            """ for point in topic.get("keyPoints", [])])
-
             # Exemplo Resolvido
             solved_ex = topic.get("solvedExample", {})
             problem_txt = solved_ex.get("problem", "")
             sol_txt = solved_ex.get("solution", "")
 
-            # Questões
-            questions_html = []
-            for q_idx, q in enumerate(topic.get("questions", [])):
-                q_id = f"{t_id}-q{q_idx}"
-                options_buttons = []
-                for opt_idx, opt in enumerate(q.get("options", [])):
-                    letter = chr(65 + opt_idx)
-                    options_buttons.append(f"""
-                        <button onclick="selectOption('{q_id}', {opt_idx})" id="btn-{q_id}-{opt_idx}" class="w-full text-left p-3.5 rounded-xl border border-gray-200 hover:border-brand-400 hover:bg-brand-50/40 transition text-sm text-gray-700 flex items-center justify-between group">
-                            <span class="flex items-center gap-2"><strong class="text-brand-700 font-bold">{letter})</strong> {opt}</span>
-                            <i data-lucide="circle" class="w-4 h-4 text-gray-300 opt-icon group-hover:text-brand-400 flex-shrink-0"></i>
-                        </button>
+            # Botão de Download do PDF Oficial
+            pdf_path = get_pdf_relative_path(topic.get("pdf"), rel_root="..")
+
+            if is_exam:
+                # ----------------------- MODO ESCURO-AZUL (PROVAS) -----------------------
+                key_points_html = "".join([f"""
+                    <li class="flex items-start gap-2 text-xs sm:text-sm text-slate-300">
+                        <i data-lucide="check" class="w-4 h-4 text-sky-400 flex-shrink-0 mt-0.5"></i>
+                        <span>{point}</span>
+                    </li>
+                """ for point in topic.get("keyPoints", [])])
+
+                pdf_download_btn = ""
+                if pdf_path:
+                    pdf_download_btn = f"""
+                        <a href="{pdf_path}" download class="bg-blue-600 hover:bg-blue-500 text-white font-bold px-4 py-2 rounded-xl text-sm transition flex items-center gap-2 shadow-lg shadow-blue-600/25">
+                            <i data-lucide="download" class="w-4 h-4"></i> Baixar Caderno em PDF
+                        </a>
+                    """
+
+                questions_html = []
+                for q_idx, q in enumerate(topic.get("questions", [])):
+                    q_id = f"{t_id}-q{q_idx}"
+                    options_buttons = []
+                    for opt_idx, opt in enumerate(q.get("options", [])):
+                        letter = chr(65 + opt_idx)
+                        options_buttons.append(f"""
+                            <button onclick="selectOption('{q_id}', {opt_idx})" id="btn-{q_id}-{opt_idx}" class="w-full text-left p-3.5 rounded-xl border border-slate-800 bg-slate-950/60 hover:border-blue-500 hover:bg-slate-800/60 transition text-sm text-slate-200 flex items-center justify-between group">
+                                <span class="flex items-center gap-2"><strong class="text-sky-400 font-bold">{letter})</strong> {opt}</span>
+                                <i data-lucide="circle" class="w-4 h-4 text-slate-600 opt-icon group-hover:text-blue-400 flex-shrink-0"></i>
+                            </button>
+                        """)
+
+                    questions_html.append(f"""
+                        <div class="mb-8 border-b border-slate-800/80 pb-6 last:border-0 last:pb-0" id="q-container-{q_id}">
+                            <div class="flex items-center justify-between mb-2">
+                                <span class="text-xs font-bold uppercase tracking-wider text-sky-300 bg-blue-950/60 px-2.5 py-0.5 rounded-full border border-blue-800/40">Questão {q_idx + 1}</span>
+                            </div>
+                            <p class="font-medium text-slate-100 mb-4 text-sm sm:text-base leading-relaxed">{q.get('q', '')}</p>
+                            <div class="space-y-2 mb-4" id="opts-{q_id}">
+                                {''.join(options_buttons)}
+                            </div>
+                            <div class="flex items-center gap-3">
+                                <button id="submit-btn-{q_id}" onclick="submitAnswer('{b_id}', '{t_id}', {q_idx})" class="bg-blue-600 hover:bg-blue-500 text-white px-5 py-2.5 rounded-xl text-sm font-bold transition flex items-center gap-1.5 shadow-lg shadow-blue-600/25">
+                                    <i data-lucide="send" class="w-4 h-4"></i> Enviar Resposta
+                                </button>
+                            </div>
+                            <div id="feedback-{q_id}" class="hidden p-4 rounded-xl text-sm mt-4"></div>
+                        </div>
                     """)
 
-                questions_html.append(f"""
-                    <div class="mb-8 border-b border-gray-100 pb-6 last:border-0 last:pb-0" id="q-container-{q_id}">
-                        <div class="flex items-center justify-between mb-2">
-                            <span class="text-xs font-bold uppercase tracking-wider text-brand-700 bg-brand-50 px-2.5 py-0.5 rounded-full border border-brand-100">Questão {q_idx + 1}</span>
-                        </div>
-                        <p class="font-medium text-gray-800 mb-4 text-sm sm:text-base leading-relaxed">{q.get('q', '')}</p>
-                        <div class="space-y-2 mb-4" id="opts-{q_id}">
-                            {''.join(options_buttons)}
-                        </div>
-                        <div class="flex items-center gap-3">
-                            <button id="submit-btn-{q_id}" onclick="submitAnswer('{b_id}', '{t_id}', {q_idx})" class="bg-brand-600 hover:bg-brand-700 text-white px-4 py-2 rounded-lg text-sm font-semibold transition flex items-center gap-1.5 shadow-sm">
-                                <i data-lucide="send" class="w-4 h-4"></i> Enviar Resposta
+                sidebar_items = []
+                for s_idx, s_topic in enumerate(topics):
+                    is_current = (s_topic["id"] == t_id)
+                    active_sidebar_class = "bg-blue-950/80 text-sky-200 font-bold border-l-4 border-blue-500 pl-3" if is_current else "text-slate-400 hover:bg-slate-800/60 hover:text-white pl-2"
+                    sidebar_items.append(f"""
+                        <a href="./{s_topic['filename']}" class="w-full text-left py-2 px-2.5 rounded-lg text-xs transition flex items-center justify-between {active_sidebar_class}">
+                            <span class="truncate pr-2">{s_idx + 1}. {s_topic['title']}</span>
+                            <i id="status-icon-{s_topic['id']}" data-lucide="circle" class="w-4 h-4 text-slate-600 flex-shrink-0"></i>
+                        </a>
+                    """)
+
+                nav_buttons = []
+                if prev_topic:
+                    nav_buttons.append(f"""
+                        <a href="./{prev_topic['filename']}" class="bg-slate-900 border border-slate-800 hover:bg-slate-800 text-slate-200 font-semibold px-4 py-2.5 rounded-xl text-sm transition flex items-center gap-2 shadow-sm">
+                            <i data-lucide="arrow-left" class="w-4 h-4 text-sky-400"></i> Anterior: {prev_topic['title']}
+                        </a>
+                    """)
+                else:
+                    nav_buttons.append(f"""
+                        <a href="../provas.html" class="bg-slate-900 border border-slate-800 hover:bg-slate-800 text-slate-200 font-semibold px-4 py-2.5 rounded-xl text-sm transition flex items-center gap-2 shadow-sm">
+                            <i data-lucide="arrow-left" class="w-4 h-4 text-sky-400"></i> Acervo de Provas
+                        </a>
+                    """)
+
+                nav_buttons.append(f"""
+                    <a href="./index.html" class="bg-blue-950/60 border border-blue-800/50 text-sky-200 hover:bg-blue-900/60 font-semibold px-4 py-2.5 rounded-xl text-sm transition flex items-center gap-2 shadow-sm">
+                        <i data-lucide="grid" class="w-4 h-4"></i> Todas do Bloco
+                    </a>
+                """)
+
+                if next_topic:
+                    nav_buttons.append(f"""
+                        <a href="./{next_topic['filename']}" class="bg-blue-600 hover:bg-blue-500 text-white font-bold px-4 py-2.5 rounded-xl text-sm transition flex items-center gap-2 shadow-lg shadow-blue-600/20 ml-auto">
+                            Próxima: {next_topic['title']} <i data-lucide="arrow-right" class="w-4 h-4"></i>
+                        </a>
+                    """)
+                else:
+                    nav_buttons.append(f"""
+                        <a href="../provas.html" class="bg-blue-600 hover:bg-blue-500 text-white font-bold px-4 py-2.5 rounded-xl text-sm transition flex items-center gap-2 shadow-lg shadow-blue-600/20 ml-auto">
+                            Todas as Provas <i data-lucide="award" class="w-4 h-4"></i>
+                        </a>
+                    """)
+
+                page_html = f"""{get_head(f"{title} - {block['title']} | PartiuIF", rel_root="..", theme="dark-blue")}
+{get_navbar(active_key=b_id, rel_root="..", is_exam=True)}
+
+    <main class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 flex-grow">
+        <!-- Breadcrumbs -->
+        <nav class="flex text-xs font-medium text-slate-400 mb-6" aria-label="Breadcrumb">
+            <ol class="inline-flex items-center space-x-1 sm:space-x-2">
+                <li><a href="../index.html" class="hover:text-sky-400 flex items-center gap-1"><i data-lucide="home" class="w-3.5 h-3.5"></i> Início</a></li>
+                <li><span class="text-slate-600">/</span></li>
+                <li><a href="../provas.html" class="hover:text-sky-400 flex items-center gap-1"><i data-lucide="archive" class="w-3.5 h-3.5"></i> Provas</a></li>
+                <li><span class="text-slate-600">/</span></li>
+                <li><a href="./index.html" class="hover:text-sky-400">{block['title']}</a></li>
+                <li><span class="text-slate-600">/</span></li>
+                <li class="text-slate-200 font-semibold truncate max-w-xs sm:max-w-none">{title}</li>
+            </ol>
+        </nav>
+
+        <div class="grid grid-cols-1 lg:grid-cols-4 gap-8 items-start">
+            <!-- Conteúdo Principal (3 Colunas) -->
+            <div class="lg:col-span-3 space-y-8">
+                
+                <!-- Cabeçalho do Exame -->
+                <div class="bg-slate-900/90 border border-slate-800 rounded-3xl p-6 sm:p-8 shadow-xl text-slate-100">
+                    <div class="flex flex-wrap items-center justify-between gap-3 mb-4">
+                        <span class="text-xs font-bold uppercase tracking-wider text-sky-300 bg-blue-950/80 px-3 py-1 rounded-full border border-blue-800/60">
+                            BNCC: {topic.get('bncc', 'Exame Oficial')}
+                        </span>
+                        <div class="flex items-center gap-2">
+                            {pdf_download_btn}
+                            <button id="btn-toggle-done-{t_id}" onclick="toggleTopicDone('{t_id}')" class="px-4 py-2 rounded-xl text-sm font-semibold border bg-slate-900 text-slate-300 border-slate-700 hover:bg-slate-800 transition flex items-center gap-2 shadow-sm">
+                                <i data-lucide="square" class="w-4 h-4 text-slate-500"></i> Marcar como Concluída
                             </button>
                         </div>
-                        <div id="feedback-{q_id}" class="hidden p-4 rounded-xl text-sm mt-4"></div>
                     </div>
-                """)
 
-            # Sidebar de Tópicos
-            sidebar_items = []
-            for s_idx, s_topic in enumerate(topics):
-                is_current = (s_topic["id"] == t_id)
-                active_sidebar_class = "bg-brand-100 text-brand-900 font-bold border-l-4 border-brand-600 pl-3" if is_current else "text-gray-600 hover:bg-gray-100 pl-2"
-                sidebar_items.append(f"""
-                    <a href="./{s_topic['filename']}" class="w-full text-left py-2 px-2.5 rounded-lg text-xs transition flex items-center justify-between {active_sidebar_class}">
-                        <span class="truncate pr-2">{s_idx + 1}. {s_topic['title']}</span>
-                        <i id="status-icon-{s_topic['id']}" data-lucide="circle" class="w-4 h-4 text-gray-300 flex-shrink-0"></i>
-                    </a>
-                """)
+                    <h1 class="text-2xl sm:text-4xl font-extrabold text-white tracking-tight mb-3">
+                        {title}
+                    </h1>
+                    <p class="text-slate-300 text-sm sm:text-base leading-relaxed mb-6">
+                        {topic.get('summary', '')}
+                    </p>
 
-            # Botões de Navegação Anterior / Próximo
-            nav_buttons = []
-            if prev_topic:
-                nav_buttons.append(f"""
-                    <a href="./{prev_topic['filename']}" class="bg-white border border-gray-200 hover:bg-gray-50 text-gray-700 font-semibold px-4 py-2.5 rounded-xl text-sm transition flex items-center gap-2 shadow-sm">
-                        <i data-lucide="arrow-left" class="w-4 h-4"></i> Anterior: {prev_topic['title']}
-                    </a>
-                """)
+                    <!-- Seção Teórica / Informações do Exame -->
+                    <div class="bg-slate-950/70 border border-slate-800/80 rounded-2xl p-5 mb-6">
+                        <h2 class="text-sm font-bold text-sky-400 uppercase tracking-wider mb-2 flex items-center gap-2">
+                            <i data-lucide="book-open" class="w-4 h-4 text-sky-400"></i> Informações do Exame e Conteúdos Cobrados
+                        </h2>
+                        <div class="text-xs sm:text-sm text-slate-300 leading-relaxed space-y-2">
+                            <p>{topic.get('detailedTheory', '')}</p>
+                        </div>
+                    </div>
+
+                    <!-- Pontos-Chave -->
+                    <div class="mb-6">
+                        <h3 class="text-xs font-bold text-slate-400 uppercase tracking-wider mb-3">Conceitos Mais Cobrados Nesta Edição</h3>
+                        <ul class="grid grid-cols-1 sm:grid-cols-2 gap-2">
+                            {key_points_html}
+                        </ul>
+                    </div>
+
+                    <!-- Fórmulas KaTeX -->
+                    <div class="bg-slate-950 border border-blue-900/50 text-white rounded-2xl p-5 shadow-inner">
+                        <div class="flex items-center justify-between mb-2">
+                            <span class="text-xs font-bold text-sky-300 uppercase tracking-wider flex items-center gap-1.5">
+                                <i data-lucide="sigma" class="w-4 h-4"></i> Fórmulas-Chave para a Prova
+                            </span>
+                        </div>
+                        <div class="text-sm sm:text-base font-mono overflow-x-auto py-2 text-center text-sky-200">
+                            $${topic.get('formula', '')}$$
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Exemplo Resolvido Passo a Passo -->
+                <section class="bg-slate-900/90 border border-slate-800 rounded-3xl p-6 sm:p-8 shadow-xl text-slate-100">
+                    <h2 class="text-lg font-bold text-sky-300 mb-3 flex items-center gap-2">
+                        <i data-lucide="file-check-2" class="w-5 h-5 text-sky-400"></i> Resolução Comentada de Destaque
+                    </h2>
+                    <div class="bg-slate-950/90 border border-slate-800 rounded-2xl p-5 shadow-inner">
+                        <p class="text-sm sm:text-base font-semibold text-slate-100 mb-3">{problem_txt}</p>
+                        <div class="text-xs sm:text-sm text-slate-300 leading-relaxed whitespace-pre-line border-t border-slate-800 pt-3">
+                            <strong class="text-sky-300 block mb-1">Resolução Detalhada:</strong>
+                            {sol_txt}
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Caderno de Questões da Prova -->
+                <section class="bg-slate-900/90 border border-slate-800 rounded-3xl p-6 sm:p-8 shadow-xl text-slate-100">
+                    <div class="flex items-center justify-between mb-6 pb-4 border-b border-slate-800">
+                        <div>
+                            <h2 class="text-xl font-bold text-white flex items-center gap-2">
+                                <i data-lucide="list-checks" class="w-6 h-6 text-sky-400"></i> Questões Oficiais da Prova
+                            </h2>
+                            <p class="text-xs text-slate-400 mt-1">Resolva as questões para simular o exame. Suas respostas são salvas automaticamente.</p>
+                        </div>
+                        <span class="text-xs font-semibold px-2.5 py-1 rounded-full bg-blue-950/60 text-sky-300 border border-blue-800/40">
+                            {len(topic.get('questions', []))} Questões
+                        </span>
+                    </div>
+
+                    {''.join(questions_html)}
+                </section>
+
+                <!-- Navegação Inferior -->
+                <div class="flex flex-wrap items-center justify-between gap-4 pt-4 border-t border-slate-800">
+                    {''.join(nav_buttons)}
+                </div>
+
+            </div>
+
+            <!-- Sidebar Lateral (1 Coluna) -->
+            <div class="lg:col-span-1 space-y-6">
+                <div class="bg-slate-900/95 border border-slate-800 rounded-3xl p-5 shadow-xl sticky top-24 text-slate-200">
+                    <div class="flex items-center justify-between mb-4 pb-3 border-b border-slate-800">
+                        <div>
+                            <span class="text-xs font-bold text-sky-400 uppercase tracking-wider block">Acervo da Instituição</span>
+                            <h3 class="text-sm font-extrabold text-white truncate">{block['title']}</h3>
+                        </div>
+                        <span class="text-xs font-semibold px-2 py-0.5 rounded-full bg-slate-800 text-slate-400 border border-slate-700">
+                            {idx + 1}/{len(topics)}
+                        </span>
+                    </div>
+
+                    <div class="space-y-1 dark-scrollbar max-h-[60vh] overflow-y-auto pr-1">
+                        {''.join(sidebar_items)}
+                    </div>
+
+                    <div class="mt-5 pt-4 border-t border-slate-800 flex flex-col gap-2">
+                        <a href="./index.html" class="w-full bg-slate-800 hover:bg-slate-700 text-slate-200 font-semibold py-2 px-3 rounded-xl text-xs transition flex items-center justify-center gap-1.5 border border-slate-700">
+                            <i data-lucide="layout-grid" class="w-3.5 h-3.5"></i> Visão Geral do Bloco
+                        </a>
+                        <a href="../provas.html" class="w-full bg-blue-950/60 hover:bg-blue-900/60 text-sky-300 font-semibold py-2 px-3 rounded-xl text-xs transition flex items-center justify-center gap-1.5 border border-blue-800/40">
+                            <i data-lucide="archive" class="w-3.5 h-3.5"></i> Todas as Provas
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </main>
+
+{get_footer(rel_root="..", is_exam=True)}
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {{
+            initQuestionStates('{t_id}', '{b_id}');
+            updateTopicDoneButtonUI('{t_id}');
+        }});
+    </script>
+</body>
+</html>
+"""
             else:
+                # ----------------------- MODO VERDE PADRÃO (TEORIA) -----------------------
+                key_points_html = "".join([f"""
+                    <li class="flex items-start gap-2 text-xs sm:text-sm text-gray-700">
+                        <i data-lucide="check" class="w-4 h-4 text-brand-600 flex-shrink-0 mt-0.5"></i>
+                        <span>{point}</span>
+                    </li>
+                """ for point in topic.get("keyPoints", [])])
+
+                pdf_download_btn = ""
+                if pdf_path:
+                    pdf_download_btn = f"""
+                        <a href="{pdf_path}" download class="bg-brand-700 hover:bg-brand-800 text-white font-semibold px-4 py-2 rounded-xl text-sm transition flex items-center gap-2 shadow-sm">
+                            <i data-lucide="download" class="w-4 h-4"></i> Baixar Prova em PDF
+                        </a>
+                    """
+
+                questions_html = []
+                for q_idx, q in enumerate(topic.get("questions", [])):
+                    q_id = f"{t_id}-q{q_idx}"
+                    options_buttons = []
+                    for opt_idx, opt in enumerate(q.get("options", [])):
+                        letter = chr(65 + opt_idx)
+                        options_buttons.append(f"""
+                            <button onclick="selectOption('{q_id}', {opt_idx})" id="btn-{q_id}-{opt_idx}" class="w-full text-left p-3.5 rounded-xl border border-gray-200 hover:border-brand-400 hover:bg-brand-50/40 transition text-sm text-gray-700 flex items-center justify-between group">
+                                <span class="flex items-center gap-2"><strong class="text-brand-700 font-bold">{letter})</strong> {opt}</span>
+                                <i data-lucide="circle" class="w-4 h-4 text-gray-300 opt-icon group-hover:text-brand-400 flex-shrink-0"></i>
+                            </button>
+                        """)
+
+                    questions_html.append(f"""
+                        <div class="mb-8 border-b border-gray-100 pb-6 last:border-0 last:pb-0" id="q-container-{q_id}">
+                            <div class="flex items-center justify-between mb-2">
+                                <span class="text-xs font-bold uppercase tracking-wider text-brand-700 bg-brand-50 px-2.5 py-0.5 rounded-full border border-brand-100">Questão {q_idx + 1}</span>
+                            </div>
+                            <p class="font-medium text-gray-800 mb-4 text-sm sm:text-base leading-relaxed">{q.get('q', '')}</p>
+                            <div class="space-y-2 mb-4" id="opts-{q_id}">
+                                {''.join(options_buttons)}
+                            </div>
+                            <div class="flex items-center gap-3">
+                                <button id="submit-btn-{q_id}" onclick="submitAnswer('{b_id}', '{t_id}', {q_idx})" class="bg-brand-600 hover:bg-brand-700 text-white px-4 py-2 rounded-lg text-sm font-semibold transition flex items-center gap-1.5 shadow-sm">
+                                    <i data-lucide="send" class="w-4 h-4"></i> Enviar Resposta
+                                </button>
+                            </div>
+                            <div id="feedback-{q_id}" class="hidden p-4 rounded-xl text-sm mt-4"></div>
+                        </div>
+                    """)
+
+                sidebar_items = []
+                for s_idx, s_topic in enumerate(topics):
+                    is_current = (s_topic["id"] == t_id)
+                    active_sidebar_class = "bg-brand-100 text-brand-900 font-bold border-l-4 border-brand-600 pl-3" if is_current else "text-gray-600 hover:bg-gray-100 pl-2"
+                    sidebar_items.append(f"""
+                        <a href="./{s_topic['filename']}" class="w-full text-left py-2 px-2.5 rounded-lg text-xs transition flex items-center justify-between {active_sidebar_class}">
+                            <span class="truncate pr-2">{s_idx + 1}. {s_topic['title']}</span>
+                            <i id="status-icon-{s_topic['id']}" data-lucide="circle" class="w-4 h-4 text-gray-300 flex-shrink-0"></i>
+                        </a>
+                    """)
+
+                nav_buttons = []
+                if prev_topic:
+                    nav_buttons.append(f"""
+                        <a href="./{prev_topic['filename']}" class="bg-white border border-gray-200 hover:bg-gray-50 text-gray-700 font-semibold px-4 py-2.5 rounded-xl text-sm transition flex items-center gap-2 shadow-sm">
+                            <i data-lucide="arrow-left" class="w-4 h-4"></i> Anterior: {prev_topic['title']}
+                        </a>
+                    """)
+                else:
+                    nav_buttons.append(f"""
+                        <a href="./index.html" class="bg-white border border-gray-200 hover:bg-gray-50 text-gray-700 font-semibold px-4 py-2.5 rounded-xl text-sm transition flex items-center gap-2 shadow-sm">
+                            <i data-lucide="arrow-left" class="w-4 h-4"></i> Visão Geral do Bloco
+                        </a>
+                    """)
+
                 nav_buttons.append(f"""
-                    <a href="./index.html" class="bg-white border border-gray-200 hover:bg-gray-50 text-gray-700 font-semibold px-4 py-2.5 rounded-xl text-sm transition flex items-center gap-2 shadow-sm">
-                        <i data-lucide="arrow-left" class="w-4 h-4"></i> Visão Geral do Bloco
+                    <a href="./index.html" class="bg-brand-50 border border-brand-200 text-brand-800 hover:bg-brand-100 font-semibold px-4 py-2.5 rounded-xl text-sm transition flex items-center gap-2 shadow-sm">
+                        <i data-lucide="grid" class="w-4 h-4"></i> Todos os Tópicos
                     </a>
                 """)
 
-            nav_buttons.append(f"""
-                <a href="./index.html" class="bg-brand-50 border border-brand-200 text-brand-800 hover:bg-brand-100 font-semibold px-4 py-2.5 rounded-xl text-sm transition flex items-center gap-2 shadow-sm">
-                    <i data-lucide="grid" class="w-4 h-4"></i> Todos os Tópicos
-                </a>
-            """)
+                if next_topic:
+                    nav_buttons.append(f"""
+                        <a href="./{next_topic['filename']}" class="bg-brand-600 hover:bg-brand-700 text-white font-semibold px-4 py-2.5 rounded-xl text-sm transition flex items-center gap-2 shadow-sm ml-auto">
+                            Próximo: {next_topic['title']} <i data-lucide="arrow-right" class="w-4 h-4"></i>
+                        </a>
+                    """)
+                else:
+                    nav_buttons.append(f"""
+                        <a href="../simulado.html" class="bg-brand-600 hover:bg-brand-700 text-white font-semibold px-4 py-2.5 rounded-xl text-sm transition flex items-center gap-2 shadow-sm ml-auto">
+                            Simulado Geral <i data-lucide="award" class="w-4 h-4"></i>
+                        </a>
+                    """)
 
-            if next_topic:
-                nav_buttons.append(f"""
-                    <a href="./{next_topic['filename']}" class="bg-brand-600 hover:bg-brand-700 text-white font-semibold px-4 py-2.5 rounded-xl text-sm transition flex items-center gap-2 shadow-sm ml-auto">
-                        Próximo: {next_topic['title']} <i data-lucide="arrow-right" class="w-4 h-4"></i>
-                    </a>
-                """)
-            else:
-                nav_buttons.append(f"""
-                    <a href="../simulado.html" class="bg-brand-600 hover:bg-brand-700 text-white font-semibold px-4 py-2.5 rounded-xl text-sm transition flex items-center gap-2 shadow-sm ml-auto">
-                        Simulado Geral <i data-lucide="award" class="w-4 h-4"></i>
-                    </a>
-                """)
-
-            # Botão de Download do PDF Oficial
-            pdf_path = get_pdf_relative_path(topic.get("pdf"))
-            pdf_download_btn = ""
-            if pdf_path:
-                pdf_download_btn = f"""
-                    <a href="{pdf_path}" download class="bg-brand-700 hover:bg-brand-800 text-white font-semibold px-4 py-2 rounded-xl text-sm transition flex items-center gap-2 shadow-sm">
-                        <i data-lucide="download" class="w-4 h-4"></i> Baixar Prova em PDF
-                    </a>
-                """
-
-            page_html = f"""{get_head(f"{title} - {block['title']} | PartiuIF", rel_root="..")}
-{get_navbar(active_key=b_id, rel_root="..")}
+                page_html = f"""{get_head(f"{title} - {block['title']} | PartiuIF", rel_root="..", theme="green")}
+{get_navbar(active_key=b_id, rel_root="..", is_exam=False)}
 
     <main class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 flex-grow">
         <!-- Breadcrumbs -->
@@ -448,7 +861,7 @@ def build_subtopic_pages():
                     </div>
                 </section>
 
-                <!-- Exercícios de Fixação / Questões da Prova -->
+                <!-- Exercícios de Fixação -->
                 <section class="bg-white border border-gray-200 rounded-2xl p-6 sm:p-8 shadow-sm">
                     <div class="flex items-center justify-between mb-6 pb-4 border-b border-gray-100">
                         <div>
@@ -500,7 +913,7 @@ def build_subtopic_pages():
         </div>
     </main>
 
-{get_footer(rel_root="..")}
+{get_footer(rel_root="..", is_exam=False)}
 
     <script>
         document.addEventListener('DOMContentLoaded', () => {{
@@ -514,7 +927,7 @@ def build_subtopic_pages():
             with open(target_path, "w", encoding="utf-8") as f:
                 f.write(page_html)
 
-    print(f"Generated all {total_subtopics} subtopic pages successfully!")
+    print(f"Generated all {total_subtopics} subtopic and exam pages successfully!")
 
 # ==============================================================================
 # 5. GERAÇÃO DE PÁGINAS DE VISÃO GERAL DOS BLOCOS
@@ -527,63 +940,164 @@ def build_block_overview_pages():
         os.makedirs(folder, exist_ok=True)
         topics = block["topics"]
         target_path = os.path.join(folder, "index.html")
-
         first_topic = topics[0]
-        
-        topic_cards = []
-        for idx, topic in enumerate(topics):
-            t_id = topic["id"]
-            title = topic["title"]
-            filename = topic["filename"]
-            q_count = len(topic.get("questions", []))
-            bncc = topic.get("bncc", "Revisão Geral")
-            summary = topic.get("summary", "")
-            
-            pdf_path = get_pdf_relative_path(topic.get("pdf"))
-            pdf_btn = ""
-            if pdf_path:
-                pdf_btn = f"""
-                    <a href="{pdf_path}" download class="bg-gray-100 hover:bg-gray-200 text-gray-700 font-semibold px-3 py-2 rounded-xl text-xs transition flex items-center gap-1.5" title="Baixar Prova Oficial">
-                        <i data-lucide="download" class="w-3.5 h-3.5 text-brand-700"></i> PDF Oficial
-                    </a>
-                """
+        is_exam = is_exam_block(b_id, block)
 
-            topic_cards.append(f"""
-                <div class="bg-white border border-gray-200 rounded-2xl p-6 shadow-sm hover-card flex flex-col justify-between" data-topic-id="{t_id}">
-                    <div>
-                        <div class="flex items-center justify-between mb-3">
-                            <span class="text-xs font-bold text-brand-700 bg-brand-50 px-2.5 py-1 rounded-lg border border-brand-100">
-                                Tópico {idx + 1:02d}
-                            </span>
-                            <span id="status-badge-{t_id}" class="text-xs font-medium px-2 py-0.5 rounded-full bg-gray-100 text-gray-600 border border-gray-200">
-                                Pendente
-                            </span>
-                        </div>
-                        <h3 class="text-lg font-bold text-gray-900 mb-1.5">{title}</h3>
-                        <div class="mb-3">
-                            <span class="text-xs font-semibold text-gray-500 bg-gray-50 px-2 py-0.5 rounded border border-gray-200">
-                                BNCC: {bncc}
-                            </span>
-                        </div>
-                        <p class="text-gray-600 text-xs sm:text-sm leading-relaxed mb-4 line-clamp-2">{summary}</p>
-                    </div>
+        if is_exam:
+            # ---------------- MODO ESCURO-AZUL PARA BLOCOS DE PROVAS ----------------
+            topic_cards = []
+            for idx, topic in enumerate(topics):
+                t_id = topic["id"]
+                title = topic["title"]
+                filename = topic["filename"]
+                q_count = len(topic.get("questions", []))
+                summary = topic.get("summary", "")
+                
+                pdf_path = get_pdf_relative_path(topic.get("pdf"), rel_root="..")
+                pdf_btn = ""
+                if pdf_path:
+                    pdf_btn = f"""
+                        <a href="{pdf_path}" download class="bg-slate-800 hover:bg-slate-700 text-slate-200 font-semibold px-3 py-2 rounded-xl text-xs transition flex items-center gap-1.5 border border-slate-700" title="Baixar Prova Oficial em PDF">
+                            <i data-lucide="download" class="w-3.5 h-3.5 text-sky-400"></i> PDF Oficial
+                        </a>
+                    """
 
-                    <div class="pt-4 border-t border-gray-100 flex items-center justify-between gap-2">
-                        <span class="text-xs text-gray-500 flex items-center gap-1">
-                            <i data-lucide="help-circle" class="w-3.5 h-3.5 text-brand-600"></i> {q_count} Questões
-                        </span>
-                        <div class="flex items-center gap-2">
-                            {pdf_btn}
-                            <a href="./{filename}" class="bg-brand-600 hover:bg-brand-700 text-white font-semibold px-4 py-2 rounded-xl text-xs transition flex items-center gap-1.5 shadow-sm">
-                                Estudar <i data-lucide="arrow-right" class="w-3.5 h-3.5"></i>
-                            </a>
+                topic_cards.append(f"""
+                    <div class="bg-slate-900/90 border border-slate-800 hover:border-blue-500/50 rounded-3xl p-6 shadow-xl hover-card flex flex-col justify-between text-slate-100 transition" data-topic-id="{t_id}">
+                        <div>
+                            <div class="flex items-center justify-between mb-3">
+                                <span class="text-xs font-bold text-sky-300 bg-blue-950/80 px-2.5 py-1 rounded-lg border border-blue-800/60">
+                                    Edição {idx + 1:02d}
+                                </span>
+                                <span id="status-badge-{t_id}" class="text-xs font-medium px-2 py-0.5 rounded-full bg-slate-800 text-slate-400 border border-slate-700">
+                                    Pendente
+                                </span>
+                            </div>
+                            <h3 class="text-lg font-bold text-white mb-2 leading-snug">{title}</h3>
+                            <p class="text-slate-400 text-xs sm:text-sm leading-relaxed mb-4 line-clamp-2">{summary}</p>
+                        </div>
+
+                        <div class="pt-4 border-t border-slate-800 flex items-center justify-between gap-2">
+                            <span class="text-xs text-slate-400 flex items-center gap-1">
+                                <i data-lucide="help-circle" class="w-3.5 h-3.5 text-sky-400"></i> {q_count} Questões
+                            </span>
+                            <div class="flex items-center gap-2">
+                                {pdf_btn}
+                                <a href="./{filename}" class="bg-blue-600 hover:bg-blue-500 text-white font-bold px-4 py-2 rounded-xl text-xs transition flex items-center gap-1.5 shadow-md shadow-blue-600/20">
+                                    Resolver Prova <i data-lucide="arrow-right" class="w-3.5 h-3.5"></i>
+                                </a>
+                            </div>
                         </div>
                     </div>
+                """)
+
+            block_page_html = f"""{get_head(f"{block['title']} | PartiuIF", rel_root="..", theme="dark-blue")}
+{get_navbar(active_key=b_id, rel_root="..", is_exam=True)}
+
+    <main class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 flex-grow">
+        <!-- Breadcrumbs -->
+        <nav class="flex text-xs font-medium text-slate-400 mb-6" aria-label="Breadcrumb">
+            <ol class="inline-flex items-center space-x-1 sm:space-x-2">
+                <li><a href="../index.html" class="hover:text-sky-400 flex items-center gap-1"><i data-lucide="home" class="w-3.5 h-3.5"></i> Início</a></li>
+                <li><span class="text-slate-600">/</span></li>
+                <li><a href="../provas.html" class="hover:text-sky-400 flex items-center gap-1"><i data-lucide="archive" class="w-3.5 h-3.5"></i> Acervo de Provas</a></li>
+                <li><span class="text-slate-600">/</span></li>
+                <li class="text-slate-200 font-semibold">{block['title']}</li>
+            </ol>
+        </nav>
+
+        <!-- Hero do Bloco de Provas -->
+        <div class="gradient-hero-dark rounded-3xl p-6 sm:p-10 text-white mb-10 shadow-2xl relative overflow-hidden border border-slate-800">
+            <div class="relative z-10 max-w-3xl">
+                <div class="inline-flex items-center gap-2 bg-blue-500/20 border border-blue-400/30 px-3 py-1 rounded-full text-xs font-bold text-sky-300 uppercase tracking-wider mb-4">
+                    <i data-lucide="award" class="w-3.5 h-3.5 text-sky-400"></i> Acervo de Provas Oficiais
                 </div>
-            """)
+                <h1 class="text-3xl sm:text-4xl font-black tracking-tight mb-3">{block['title']}</h1>
+                <p class="text-slate-300 text-sm sm:text-base leading-relaxed mb-6">{block.get('description', '')}</p>
+                <div class="flex flex-wrap items-center gap-4">
+                    <a href="./{first_topic['filename']}" class="bg-blue-600 hover:bg-blue-500 text-white font-extrabold px-6 py-3.5 rounded-xl text-sm transition flex items-center gap-2 shadow-lg shadow-blue-600/30">
+                        Começar pela Prova 01 <i data-lucide="arrow-right" class="w-4 h-4"></i>
+                    </a>
+                    <a href="../provas.html" class="bg-slate-800/90 hover:bg-slate-700 text-slate-200 font-bold px-5 py-3.5 rounded-xl text-sm transition flex items-center gap-2 border border-slate-700">
+                        <i data-lucide="archive" class="w-4 h-4 text-sky-400"></i> Ver Todas as Provas
+                    </a>
+                </div>
+            </div>
+        </div>
 
-        block_page_html = f"""{get_head(f"{block['title']} | PartiuIF", rel_root="..")}
-{get_navbar(active_key=b_id, rel_root="..")}
+        <!-- Barra de Progresso do Bloco -->
+        <div class="bg-slate-900 border border-slate-800 rounded-2xl p-5 shadow-xl mb-8">
+            <div class="flex justify-between items-center text-xs font-semibold text-slate-300 mb-2">
+                <span>Progresso do Bloco de Provas</span>
+                <span id="block-progress-txt-{b_id}" class="text-sky-400 font-bold">0% (0/{len(topics)})</span>
+            </div>
+            <div class="w-full bg-slate-800 rounded-full h-2.5 overflow-hidden">
+                <div id="block-progress-bar-{b_id}" class="bg-blue-600 h-full w-0 transition-all duration-500"></div>
+            </div>
+        </div>
+
+        <!-- Grade de Provas -->
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+            {''.join(topic_cards)}
+        </div>
+    </main>
+
+{get_footer(rel_root="..", is_exam=True)}
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {{
+            updateGlobalProgress();
+        }});
+    </script>
+</body>
+</html>
+"""
+        else:
+            # ---------------- MODO VERDE PADRÃO PARA BLOCOS TEÓRICOS ----------------
+            topic_cards = []
+            for idx, topic in enumerate(topics):
+                t_id = topic["id"]
+                title = topic["title"]
+                filename = topic["filename"]
+                q_count = len(topic.get("questions", []))
+                bncc = topic.get("bncc", "Revisão Geral")
+                summary = topic.get("summary", "")
+
+                topic_cards.append(f"""
+                    <div class="bg-white border border-gray-200 rounded-2xl p-6 shadow-sm hover-card flex flex-col justify-between" data-topic-id="{t_id}">
+                        <div>
+                            <div class="flex items-center justify-between mb-3">
+                                <span class="text-xs font-bold text-brand-700 bg-brand-50 px-2.5 py-1 rounded-lg border border-brand-100">
+                                    Tópico {idx + 1:02d}
+                                </span>
+                                <span id="status-badge-{t_id}" class="text-xs font-medium px-2 py-0.5 rounded-full bg-gray-100 text-gray-600 border border-gray-200">
+                                    Pendente
+                                </span>
+                            </div>
+                            <h3 class="text-lg font-bold text-gray-900 mb-1.5">{title}</h3>
+                            <div class="mb-3">
+                                <span class="text-xs font-semibold text-gray-500 bg-gray-50 px-2 py-0.5 rounded border border-gray-200">
+                                    BNCC: {bncc}
+                                </span>
+                            </div>
+                            <p class="text-gray-600 text-xs sm:text-sm leading-relaxed mb-4 line-clamp-2">{summary}</p>
+                        </div>
+
+                        <div class="pt-4 border-t border-gray-100 flex items-center justify-between gap-2">
+                            <span class="text-xs text-gray-500 flex items-center gap-1">
+                                <i data-lucide="help-circle" class="w-3.5 h-3.5 text-brand-600"></i> {q_count} Questões
+                            </span>
+                            <div class="flex items-center gap-2">
+                                <a href="./{filename}" class="bg-brand-600 hover:bg-brand-700 text-white font-semibold px-4 py-2 rounded-xl text-xs transition flex items-center gap-1.5 shadow-sm">
+                                    Estudar <i data-lucide="arrow-right" class="w-3.5 h-3.5"></i>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                """)
+
+            block_page_html = f"""{get_head(f"{block['title']} | PartiuIF", rel_root="..", theme="green")}
+{get_navbar(active_key=b_id, rel_root="..", is_exam=False)}
 
     <main class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 flex-grow">
         <!-- Breadcrumbs -->
@@ -595,7 +1109,7 @@ def build_block_overview_pages():
             </ol>
         </nav>
 
-        <!-- Hero do Bloco -->
+        <!-- Hero do Bloco Teórico -->
         <div class="bg-gradient-to-r from-brand-800 to-brand-950 rounded-3xl p-6 sm:p-10 text-white mb-10 shadow-xl relative overflow-hidden">
             <div class="relative z-10 max-w-3xl">
                 <div class="inline-flex items-center gap-2 bg-brand-700/60 border border-brand-500/40 px-3 py-1 rounded-full text-xs font-bold text-brand-200 uppercase tracking-wider mb-4">
@@ -618,7 +1132,7 @@ def build_block_overview_pages():
         <div class="bg-white border border-gray-200 rounded-2xl p-5 shadow-sm mb-8">
             <div class="flex justify-between items-center text-xs font-semibold text-gray-700 mb-2">
                 <span>Progresso do Bloco</span>
-                <span id="block-progress-txt-{b_id}" class="text-brand-700">0% (0/{len(topics)})</span>
+                <span id="block-progress-txt-{b_id}" class="text-brand-700 font-bold">0% (0/{len(topics)})</span>
             </div>
             <div class="w-full bg-gray-100 rounded-full h-2.5 overflow-hidden">
                 <div id="block-progress-bar-{b_id}" class="bg-brand-600 h-full w-0 transition-all duration-500"></div>
@@ -631,7 +1145,7 @@ def build_block_overview_pages():
         </div>
     </main>
 
-{get_footer(rel_root="..")}
+{get_footer(rel_root="..", is_exam=False)}
 
     <script>
         document.addEventListener('DOMContentLoaded', () => {{
@@ -647,7 +1161,7 @@ def build_block_overview_pages():
     print(f"Generated all {len(math_data)} block overview pages successfully!")
 
 # ==============================================================================
-# 6. GERAÇÃO DA HOMEPAGE (index.html)
+# 6. GERAÇÃO DA HOMEPAGE (index.html) - PARTE 1 (TEORIA & EIXOS TEMÁTICOS)
 # ==============================================================================
 def build_homepage():
     print("\n--- Generating Homepage (index.html) ---")
@@ -655,7 +1169,7 @@ def build_homepage():
     home_block_cards = []
     all_topics_directory = []
 
-    for b_id, block in math_data.items():
+    for b_id, block in theory_blocks_data.items():
         folder = get_block_folder(b_id, block)
         topics = block["topics"]
         
@@ -740,8 +1254,8 @@ def build_homepage():
             </div>
         """)
 
-    home_page_html = f"""{get_head("PartiuIF - Plataforma de Matemática para Institutos Federais", rel_root=".")}
-{get_navbar(active_key="home", rel_root=".")}
+    home_page_html = f"""{get_head("PartiuIF - Plataforma de Matemática para Institutos Federais", rel_root=".", theme="green")}
+{get_navbar(active_key="home", rel_root=".", is_exam=False)}
 
     <main class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 flex-grow">
         
@@ -749,7 +1263,7 @@ def build_homepage():
         <div class="gradient-hero rounded-3xl p-6 sm:p-12 text-white mb-10 shadow-2xl relative overflow-hidden">
             <div class="relative z-10 max-w-3xl">
                 <span class="bg-brand-500/30 text-brand-200 border border-brand-400/30 text-xs font-bold px-3 py-1 rounded-full uppercase tracking-wider mb-4 inline-flex items-center gap-1.5">
-                    <i data-lucide="sparkles" class="w-3.5 h-3.5 text-brand-300"></i> Plataforma Oficial Multi-Páginas
+                    <i data-lucide="sparkles" class="w-3.5 h-3.5 text-brand-300"></i> Parte 1: Teoria & Eixos Temáticos BNCC
                 </span>
                 
                 <h1 class="text-3xl sm:text-5xl font-extrabold tracking-tight mb-4 leading-tight">
@@ -757,21 +1271,21 @@ def build_homepage():
                 </h1>
                 
                 <p class="text-brand-100 text-sm sm:text-base mb-8 leading-relaxed">
-                    Preparação modular completa para o Exame de Classificação dos Institutos Federais. Cada subtópico possui sua própria página com teoria detalhada, fórmulas KaTeX, exemplos resolvidos e {total_questions} exercícios salvos no navegador.
+                    Preparação modular completa para o Exame de Classificação dos Institutos Federais. Cada subtópico possui sua própria página com teoria detalhada, fórmulas KaTeX, exemplos resolvidos e {total_theory_questions} exercícios com auto-salvamento.
                 </p>
 
                 <div class="flex flex-wrap items-center gap-4">
                     <a href="./simulado.html" class="bg-white hover:bg-brand-50 text-brand-900 font-extrabold px-6 py-3.5 rounded-2xl text-sm transition flex items-center gap-2.5 shadow-lg hover:scale-102">
                         <i data-lucide="award" class="w-5 h-5 text-brand-700"></i> Iniciar Simulado Geral
                     </a>
-                    <a href="#blocos" class="bg-brand-700/80 hover:bg-brand-700 text-white font-bold px-6 py-3.5 rounded-2xl text-sm transition flex items-center gap-2 border border-brand-500/30">
-                        <i data-lucide="layers" class="w-5 h-5"></i> Explorar os {len(math_data)} Blocos
+                    <a href="./provas.html" class="bg-gradient-to-r from-blue-600 to-indigo-700 hover:from-blue-500 hover:to-indigo-600 text-white font-extrabold px-6 py-3.5 rounded-2xl text-sm transition flex items-center gap-2 border border-blue-400/40 shadow-lg">
+                        <i data-lucide="file-check" class="w-5 h-5 text-sky-300"></i> Acessar Banco de Provas ({total_official_exams})
                     </a>
                 </div>
             </div>
         </div>
 
-        <!-- Dashboard de Status Rápido (4 Métricas) -->
+        <!-- Dashboard de Status Rápido (4 Métricas da Teoria) -->
         <div class="grid grid-cols-2 lg:grid-cols-4 gap-4 mb-10">
             <div class="bg-white border border-gray-200 rounded-2xl p-5 shadow-sm flex items-center gap-4">
                 <div class="w-12 h-12 rounded-xl bg-brand-100 flex items-center justify-center text-brand-700 flex-shrink-0">
@@ -819,14 +1333,14 @@ def build_homepage():
             <div class="flex flex-col sm:flex-row justify-between sm:items-center gap-4 mb-4">
                 <div>
                     <h3 class="text-lg font-bold text-gray-900 flex items-center gap-2">
-                        <i data-lucide="search" class="w-5 h-5 text-brand-600"></i> Localizador Rápido de Subtópicos
+                        <i data-lucide="search" class="w-5 h-5 text-brand-600"></i> Localizador Rápido de Tópicos
                     </h3>
-                    <p class="text-xs text-gray-500">Digite um tema (ex: Pitágoras, Frações, 2024.1, Áreas, Probabilidade) para acessar diretamente.</p>
+                    <p class="text-xs text-gray-500">Digite um tema (ex: Pitágoras, Frações, Áreas, Probabilidade) para acessar diretamente.</p>
                 </div>
             </div>
             
             <div class="relative">
-                <input type="text" id="topic-search-input" placeholder="Digite para filtrar os {total_subtopics} subtópicos..." class="w-full bg-gray-50 border border-gray-300 rounded-xl px-4 py-3 pl-11 text-sm focus:outline-none focus:ring-2 focus:ring-brand-500 focus:bg-white transition">
+                <input type="text" id="topic-search-input" placeholder="Digite para filtrar subtópicos de teoria..." class="w-full bg-gray-50 border border-gray-300 rounded-xl px-4 py-3 pl-11 text-sm focus:outline-none focus:ring-2 focus:ring-brand-500 focus:bg-white transition">
                 <i data-lucide="search" class="w-5 h-5 text-gray-400 absolute left-3.5 top-3.5"></i>
             </div>
             
@@ -835,27 +1349,27 @@ def build_homepage():
             </div>
         </div>
 
-        <!-- Grade dos Blocos de Conteúdo -->
+        <!-- Grade dos Blocos de Conteúdo Teórico -->
         <section id="blocos" class="mb-14">
             <div class="flex flex-col sm:flex-row justify-between sm:items-center gap-4 mb-6">
                 <div>
                     <h2 class="text-2xl font-extrabold text-gray-900 flex items-center gap-2 border-l-4 border-brand-600 pl-3">
-                        Blocos de Conteúdo
+                        Eixos Temáticos de Conteúdo (Parte 1)
                     </h2>
-                    <p class="text-xs sm:text-sm text-gray-500 mt-1 pl-3">Os {len(math_data)} eixos essenciais com teoria, resolução passo a passo e simulados.</p>
+                    <p class="text-xs sm:text-sm text-gray-500 mt-1 pl-3">Os {len(theory_blocks_data)} eixos fundamentais da BNCC com teoria, resoluções passo a passo e simulados.</p>
                 </div>
             </div>
 
-            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 xl:grid-cols-4 gap-6">
                 {''.join(home_block_cards)}
             </div>
         </section>
 
-        <!-- Diretório Completo de Todos os Subtópicos -->
-        <section class="mb-12">
+        <!-- Diretório Completo de Todos os Subtópicos Teóricos -->
+        <section class="mb-14">
             <div class="mb-6">
                 <h2 class="text-2xl font-extrabold text-gray-900 flex items-center gap-2 border-l-4 border-brand-600 pl-3">
-                    Diretório Completo de Subtópicos ({total_subtopics} Páginas)
+                    Diretório Completo de Subtópicos ({total_theory_subtopics} Páginas)
                 </h2>
                 <p class="text-xs sm:text-sm text-gray-500 mt-1 pl-3">Acesse cada página individual para estudar e resolver as questões com auto-salvamento.</p>
             </div>
@@ -863,9 +1377,52 @@ def build_homepage():
             {''.join(all_topics_directory)}
         </section>
 
+        <!-- SEÇÃO PARTE 2: ACERVO DE PROVAS OFICIAIS (FIM DA PARTE 1) -->
+        <section class="mt-16 mb-10 relative overflow-hidden rounded-3xl bg-gradient-to-br from-slate-950 via-slate-900 to-blue-950 border-2 border-blue-500/30 p-6 sm:p-12 text-white shadow-2xl">
+            <div class="absolute -right-16 -bottom-16 w-96 h-96 bg-blue-600/10 rounded-full blur-3xl pointer-events-none"></div>
+            <div class="relative z-10">
+                <div class="inline-flex items-center gap-2 bg-blue-500/20 text-sky-300 border border-blue-400/30 text-xs font-extrabold px-3.5 py-1.5 rounded-full uppercase tracking-wider mb-5">
+                    <i data-lucide="award" class="w-4 h-4 text-sky-400"></i> Parte 2 da Plataforma • Modo Escuro-Azul
+                </div>
+                <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
+                    <div class="lg:col-span-8 space-y-4">
+                        <h2 class="text-3xl sm:text-4xl font-black tracking-tight leading-tight">
+                            Banco de Provas Oficiais dos <span class="text-transparent bg-clip-text bg-gradient-to-r from-sky-400 to-blue-300">Institutos Federais</span>
+                        </h2>
+                        <p class="text-slate-300 text-sm sm:text-base leading-relaxed max-w-2xl">
+                            Pratique em um ambiente imersivo com mais de <strong>43 cadernos oficiais</strong> do <strong>IFCE</strong> e <strong>IFSC</strong>. Resolva as questões com gabarito inteligente e resoluções completas KaTeX, ou faça o <strong>download direto dos cadernos originais em PDF</strong> para simular as condições reais do exame.
+                        </p>
+                        <div class="grid grid-cols-3 gap-3 pt-2 max-w-md">
+                            <div class="bg-slate-900/90 border border-slate-800 p-3 rounded-2xl text-center">
+                                <span class="text-xl sm:text-2xl font-black text-sky-400 block">27</span>
+                                <span class="text-[11px] text-slate-400 uppercase font-bold">Provas IFCE</span>
+                            </div>
+                            <div class="bg-slate-900/90 border border-slate-800 p-3 rounded-2xl text-center">
+                                <span class="text-xl sm:text-2xl font-black text-indigo-400 block">16</span>
+                                <span class="text-[11px] text-slate-400 uppercase font-bold">Provas IFSC</span>
+                            </div>
+                            <div class="bg-slate-900/90 border border-slate-800 p-3 rounded-2xl text-center">
+                                <span class="text-xl sm:text-2xl font-black text-emerald-400 block">100%</span>
+                                <span class="text-[11px] text-slate-400 uppercase font-bold">Com PDFs</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="lg:col-span-4 flex flex-col gap-3 justify-center">
+                        <a href="./provas.html" class="bg-gradient-to-r from-blue-600 to-indigo-600 hover:from-blue-500 hover:to-indigo-500 text-white font-extrabold px-6 py-4 rounded-2xl text-center text-sm sm:text-base shadow-xl hover:shadow-blue-500/25 transition flex items-center justify-center gap-2 group">
+                            <span>Acessar Acervo de Provas (Parte 2)</span>
+                            <i data-lucide="arrow-right" class="w-5 h-5 group-hover:translate-x-1 transition-transform"></i>
+                        </a>
+                        <a href="./provas.html#catalogo-provas" class="bg-slate-800/80 hover:bg-slate-800 text-slate-200 border border-slate-700 font-semibold px-5 py-3 rounded-xl text-center text-xs sm:text-sm transition flex items-center justify-center gap-2">
+                            <i data-lucide="download" class="w-4 h-4 text-sky-400"></i> Baixar Cadernos Oficiais em PDF
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
     </main>
 
-{get_footer(rel_root=".")}
+{get_footer(rel_root=".", is_exam=False)}
 
 </body>
 </html>
@@ -876,7 +1433,293 @@ def build_homepage():
     print("Generated homepage index.html successfully!")
 
 # ==============================================================================
-# 7. GERAÇÃO DA PÁGINA DE SIMULADO (simulado.html)
+# 7. GERAÇÃO DO HUB DE PROVAS (provas.html) - PARTE 2 (FULL DARK MODE ESCURO-AZUL)
+# ==============================================================================
+def build_provas_hub():
+    print("\n--- Generating Provas Hub (provas.html) ---")
+    
+    all_exam_cards = []
+    
+    for b_id, block in exam_blocks_data.items():
+        folder = get_block_folder(b_id, block)
+        b_title = block.get("title", "")
+        inst = "IFCE" if "ifce" in b_title.lower() else "IFSC" if "ifsc" in b_title.lower() else "IF"
+        badge_style = "bg-blue-500/20 text-sky-300 border-blue-400/30" if inst == "IFCE" else "bg-indigo-500/20 text-indigo-300 border-indigo-400/30"
+        
+        for idx, topic in enumerate(block["topics"]):
+            t_id = topic["id"]
+            title = topic["title"]
+            filename = topic["filename"]
+            summary = topic.get("summary", "")
+            q_count = len(topic.get("questions", []))
+            pdf_filename = topic.get("pdf")
+            pdf_path = get_pdf_relative_path(pdf_filename, rel_root=".")
+            
+            pdf_btn = ""
+            if pdf_path:
+                pdf_btn = f"""
+                    <a href="{pdf_path}" download class="bg-slate-800 hover:bg-slate-700 text-slate-200 border border-slate-700 font-semibold px-3 py-2 rounded-xl text-xs transition flex items-center gap-1.5" title="Baixar Caderno Oficial em PDF">
+                        <i data-lucide="download" class="w-3.5 h-3.5 text-sky-400"></i> PDF
+                    </a>
+                """
+
+            search_str = f"{title} {inst} {summary} {b_title}".lower()
+
+            all_exam_cards.append(f"""
+                <div class="exam-card bg-slate-900/90 border border-slate-800 hover:border-blue-500/60 rounded-3xl p-6 shadow-xl hover-card flex flex-col justify-between transition-all" data-inst="{inst}" data-search="{search_str}" data-topic-id="{t_id}">
+                    <div>
+                        <div class="flex items-center justify-between mb-3">
+                            <span class="text-xs font-extrabold uppercase tracking-wider px-3 py-1 rounded-full border {badge_style}">
+                                {inst}
+                            </span>
+                            <span id="status-badge-{t_id}" class="text-xs font-medium px-2.5 py-0.5 rounded-full bg-slate-800 text-slate-400 border border-slate-700">
+                                Pendente
+                            </span>
+                        </div>
+                        <h3 class="text-lg font-bold text-white mb-2 leading-snug">{title}</h3>
+                        <p class="text-slate-400 text-xs sm:text-sm leading-relaxed mb-4 line-clamp-2">{summary}</p>
+                    </div>
+
+                    <div class="pt-4 border-t border-slate-800 flex items-center justify-between gap-2">
+                        <span class="text-xs text-slate-400 flex items-center gap-1">
+                            <i data-lucide="help-circle" class="w-3.5 h-3.5 text-sky-400"></i> {q_count} Questões
+                        </span>
+                        <div class="flex items-center gap-2">
+                            {pdf_btn}
+                            <a href="./{folder}/{filename}" class="bg-blue-600 hover:bg-blue-500 text-white font-bold px-4 py-2 rounded-xl text-xs transition flex items-center gap-1.5 shadow-md shadow-blue-600/25">
+                                Resolver <i data-lucide="arrow-right" class="w-3.5 h-3.5"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            """)
+
+    provas_hub_html = f"""{get_head("Acervo de Provas Oficiais dos Institutos Federais | PartiuIF", rel_root=".", theme="dark-blue")}
+{get_navbar(active_key="provas_hub", rel_root=".", is_exam=True)}
+
+    <main class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 flex-grow">
+        
+        <!-- Breadcrumbs -->
+        <nav class="flex text-xs font-medium text-slate-400 mb-6" aria-label="Breadcrumb">
+            <ol class="inline-flex items-center space-x-1 sm:space-x-2">
+                <li><a href="./index.html" class="hover:text-sky-400 flex items-center gap-1"><i data-lucide="home" class="w-3.5 h-3.5"></i> Início</a></li>
+                <li><span class="text-slate-600">/</span></li>
+                <li class="text-slate-200 font-semibold">Acervo de Provas Oficiais (Parte 2)</li>
+            </ol>
+        </nav>
+
+        <!-- Hero Principal do Acervo de Provas -->
+        <div class="gradient-hero-dark rounded-3xl p-6 sm:p-12 text-white mb-10 shadow-2xl relative overflow-hidden border border-slate-800">
+            <div class="relative z-10 max-w-3xl">
+                <span class="bg-blue-500/20 text-sky-300 border border-blue-400/30 text-xs font-extrabold px-3.5 py-1.5 rounded-full uppercase tracking-wider mb-4 inline-flex items-center gap-1.5">
+                    <i data-lucide="shield-check" class="w-3.5 h-3.5 text-sky-400"></i> Acervo Oficial dos Exames de Classificação
+                </span>
+                
+                <h1 class="text-3xl sm:text-5xl font-black tracking-tight mb-4 leading-tight">
+                    Banco de Provas dos <span class="text-transparent bg-clip-text bg-gradient-to-r from-sky-400 to-blue-300">Institutos Federais</span>
+                </h1>
+                
+                <p class="text-slate-300 text-sm sm:text-base mb-8 leading-relaxed">
+                    Ambiente dedicado para simulação com os exames reais do <strong>IFCE</strong> e <strong>IFSC</strong>. Resolva os cadernos online com resoluções KaTeX comentadas e baixe os PDFs originais para simular o tempo de prova oficial.
+                </p>
+
+                <div class="flex flex-wrap items-center gap-4">
+                    <a href="#catalogo-provas" class="bg-blue-600 hover:bg-blue-500 text-white font-extrabold px-6 py-3.5 rounded-2xl text-sm transition flex items-center gap-2 shadow-lg shadow-blue-600/30">
+                        <i data-lucide="layers" class="w-4 h-4"></i> Explorar as {total_official_exams} Provas
+                    </a>
+                    <a href="./index.html" class="bg-slate-800/90 hover:bg-slate-700 text-slate-200 font-bold px-6 py-3.5 rounded-2xl text-sm transition flex items-center gap-2 border border-slate-700">
+                        <i data-lucide="arrow-left" class="w-4 h-4 text-emerald-400"></i> Voltar para Teoria (Parte 1)
+                    </a>
+                </div>
+            </div>
+        </div>
+
+        <!-- Dashboard do Acervo (4 Métricas) -->
+        <div class="grid grid-cols-2 lg:grid-cols-4 gap-4 mb-10">
+            <div class="bg-slate-900/90 border border-slate-800 rounded-2xl p-5 shadow-xl flex items-center gap-4">
+                <div class="w-12 h-12 rounded-xl bg-blue-950/80 border border-blue-800/40 flex items-center justify-center text-sky-400 flex-shrink-0">
+                    <i data-lucide="file-text" class="w-6 h-6"></i>
+                </div>
+                <div>
+                    <span class="text-xs text-slate-400 font-medium block">Total de Provas</span>
+                    <strong class="text-xl font-black text-white">{total_official_exams} Cadernos</strong>
+                </div>
+            </div>
+
+            <div class="bg-slate-900/90 border border-slate-800 rounded-2xl p-5 shadow-xl flex items-center gap-4">
+                <div class="w-12 h-12 rounded-xl bg-blue-950/80 border border-blue-800/40 flex items-center justify-center text-sky-400 flex-shrink-0">
+                    <i data-lucide="award" class="w-6 h-6"></i>
+                </div>
+                <div>
+                    <span class="text-xs text-slate-400 font-medium block">Edições IFCE</span>
+                    <strong class="text-xl font-black text-sky-400">27 Provas</strong>
+                </div>
+            </div>
+
+            <div class="bg-slate-900/90 border border-slate-800 rounded-2xl p-5 shadow-xl flex items-center gap-4">
+                <div class="w-12 h-12 rounded-xl bg-indigo-950/80 border border-indigo-800/40 flex items-center justify-center text-indigo-400 flex-shrink-0">
+                    <i data-lucide="award" class="w-6 h-6"></i>
+                </div>
+                <div>
+                    <span class="text-xs text-slate-400 font-medium block">Edições IFSC</span>
+                    <strong class="text-xl font-black text-indigo-400">16 Provas</strong>
+                </div>
+            </div>
+
+            <div class="bg-slate-900/90 border border-slate-800 rounded-2xl p-5 shadow-xl flex items-center gap-4">
+                <div class="w-12 h-12 rounded-xl bg-emerald-950/80 border border-emerald-800/40 flex items-center justify-center text-emerald-400 flex-shrink-0">
+                    <i data-lucide="download-cloud" class="w-6 h-6"></i>
+                </div>
+                <div>
+                    <span class="text-xs text-slate-400 font-medium block">Downloads em PDF</span>
+                    <strong class="text-xl font-black text-emerald-400">100% Liberados</strong>
+                </div>
+            </div>
+        </div>
+
+        <!-- Seção de Acesso Rápido aos Blocos de Cada IF -->
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-12">
+            <div class="bg-slate-900/90 border border-slate-800 hover:border-blue-500/50 rounded-3xl p-6 sm:p-7 shadow-xl flex items-center justify-between transition">
+                <div>
+                    <div class="flex items-center gap-2 mb-2">
+                        <span class="text-xs font-bold uppercase tracking-wider px-2.5 py-0.5 rounded-full bg-blue-500/20 text-sky-300 border border-blue-400/30">Ceará</span>
+                        <span class="text-xs text-slate-400 font-medium">Bloco 6</span>
+                    </div>
+                    <h3 class="text-xl font-extrabold text-white mb-1">Provas Anteriores IFCE</h3>
+                    <p class="text-slate-400 text-xs sm:text-sm">27 edições completas com resoluções comentadas e PDFs.</p>
+                </div>
+                <a href="./bloco-6-provas-ifce/index.html" class="bg-blue-600 hover:bg-blue-500 text-white font-bold p-3 rounded-2xl transition shadow-lg shadow-blue-600/20 flex-shrink-0">
+                    <i data-lucide="arrow-right" class="w-5 h-5"></i>
+                </a>
+            </div>
+
+            <div class="bg-slate-900/90 border border-slate-800 hover:border-indigo-500/50 rounded-3xl p-6 sm:p-7 shadow-xl flex items-center justify-between transition">
+                <div>
+                    <div class="flex items-center gap-2 mb-2">
+                        <span class="text-xs font-bold uppercase tracking-wider px-2.5 py-0.5 rounded-full bg-indigo-500/20 text-indigo-300 border border-indigo-400/30">Santa Catarina</span>
+                        <span class="text-xs text-slate-400 font-medium">Bloco 5</span>
+                    </div>
+                    <h3 class="text-xl font-extrabold text-white mb-1">Provas Anteriores IFSC</h3>
+                    <p class="text-slate-400 text-xs sm:text-sm">16 edições completas com resoluções comentadas e PDFs.</p>
+                </div>
+                <a href="./bloco-5-provas-ifsc/index.html" class="bg-indigo-600 hover:bg-indigo-500 text-white font-bold p-3 rounded-2xl transition shadow-lg shadow-indigo-600/20 flex-shrink-0">
+                    <i data-lucide="arrow-right" class="w-5 h-5"></i>
+                </a>
+            </div>
+        </div>
+
+        <!-- Barra de Ferramentas / Filtros Interativos do Catálogo -->
+        <section id="catalogo-provas" class="mb-12">
+            <div class="flex flex-col md:flex-row justify-between md:items-center gap-4 mb-6 pb-4 border-b border-slate-800">
+                <div>
+                    <h2 class="text-2xl font-black text-white flex items-center gap-2 border-l-4 border-blue-500 pl-3">
+                        Catálogo Completo de Provas ({total_official_exams})
+                    </h2>
+                    <p class="text-xs sm:text-sm text-slate-400 mt-1 pl-3">Filtre por instituição ou digite o ano para encontrar rapidamente o caderno desejado.</p>
+                </div>
+
+                <!-- Filtros por Instituição -->
+                <div class="flex items-center gap-2 bg-slate-900 p-1.5 rounded-2xl border border-slate-800">
+                    <button onclick="filterExams('all')" id="btn-filter-all" class="filter-btn px-4 py-1.5 rounded-xl text-xs font-bold transition bg-blue-600 text-white shadow">
+                        Todos ({total_official_exams})
+                    </button>
+                    <button onclick="filterExams('IFCE')" id="btn-filter-ifce" class="filter-btn px-4 py-1.5 rounded-xl text-xs font-semibold text-slate-400 hover:text-white transition">
+                        IFCE (27)
+                    </button>
+                    <button onclick="filterExams('IFSC')" id="btn-filter-ifsc" class="filter-btn px-4 py-1.5 rounded-xl text-xs font-semibold text-slate-400 hover:text-white transition">
+                        IFSC (16)
+                    </button>
+                </div>
+            </div>
+
+            <!-- Campo de Busca Instantânea -->
+            <div class="relative mb-8">
+                <input type="text" id="exam-search-input" placeholder="Buscar prova por ano ou termo (ex: 2024, 2022, Integrado, Tabuleiro)..." class="w-full bg-slate-900 border border-slate-800 rounded-2xl px-4 py-3.5 pl-11 text-sm text-slate-100 placeholder-slate-500 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent transition shadow-inner">
+                <i data-lucide="search" class="w-5 h-5 text-slate-500 absolute left-3.5 top-3.5"></i>
+            </div>
+
+            <!-- Grade de Provas -->
+            <div id="exams-grid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                {''.join(all_exam_cards)}
+            </div>
+
+            <div id="no-exams-found" class="hidden p-8 text-center bg-slate-900 border border-slate-800 rounded-2xl text-slate-400 text-sm">
+                Nenhuma prova encontrada com os filtros selecionados.
+            </div>
+        </section>
+
+    </main>
+
+{get_footer(rel_root=".", is_exam=True)}
+
+    <!-- Script Dedicado de Filtragem Interativa de Provas -->
+    <script>
+        let currentInstFilter = 'all';
+
+        function filterExams(inst) {{
+            currentInstFilter = inst;
+            
+            // Atualiza botões
+            const buttons = document.querySelectorAll('.filter-btn');
+            buttons.forEach(b => {{
+                b.className = "filter-btn px-4 py-1.5 rounded-xl text-xs font-semibold text-slate-400 hover:text-white transition";
+            }});
+            const activeBtn = document.getElementById(`btn-filter-${{inst.toLowerCase()}}`);
+            if (activeBtn) {{
+                activeBtn.className = "filter-btn px-4 py-1.5 rounded-xl text-xs font-bold transition bg-blue-600 text-white shadow";
+            }}
+
+            applyFilters();
+        }}
+
+        function applyFilters() {{
+            const searchVal = (document.getElementById('exam-search-input').value || '').toLowerCase().trim();
+            const cards = document.querySelectorAll('.exam-card');
+            let visibleCount = 0;
+
+            cards.forEach(card => {{
+                const cardInst = card.getAttribute('data-inst');
+                const cardSearch = card.getAttribute('data-search') || '';
+
+                const matchesInst = (currentInstFilter === 'all' || cardInst === currentInstFilter);
+                const matchesSearch = (!searchVal || cardSearch.includes(searchVal));
+
+                if (matchesInst && matchesSearch) {{
+                    card.style.display = 'flex';
+                    visibleCount++;
+                }} else {{
+                    card.style.display = 'none';
+                }}
+            }});
+
+            const noFound = document.getElementById('no-exams-found');
+            if (noFound) {{
+                if (visibleCount === 0) {{
+                    noFound.classList.remove('hidden');
+                }} else {{
+                    noFound.classList.add('hidden');
+                }}
+            }}
+        }}
+
+        document.addEventListener('DOMContentLoaded', () => {{
+            const searchInput = document.getElementById('exam-search-input');
+            if (searchInput) {{
+                searchInput.addEventListener('input', applyFilters);
+            }}
+            updateGlobalProgress();
+        }});
+    </script>
+</body>
+</html>
+"""
+    with open("provas.html", "w", encoding="utf-8") as f:
+        f.write(provas_hub_html)
+
+    print("Generated provas.html successfully!")
+
+# ==============================================================================
+# 8. GERAÇÃO DA PÁGINA DE SIMULADO (simulado.html)
 # ==============================================================================
 def build_simulado_page():
     print("\n--- Generating Simulado Page (simulado.html) ---")
@@ -896,8 +1739,8 @@ def build_simulado_page():
             </label>
         """)
 
-    simulado_html = f"""{get_head("Simulado Geral de Matemática | PartiuIF", rel_root=".")}
-{get_navbar(active_key="simulado", rel_root=".")}
+    simulado_html = f"""{get_head("Simulado Geral de Matemática | PartiuIF", rel_root=".", theme="green")}
+{get_navbar(active_key="simulado", rel_root=".", is_exam=False)}
 
     <main class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 py-8 flex-grow">
         
@@ -1006,7 +1849,7 @@ def build_simulado_page():
 
     </main>
 
-{get_footer(rel_root=".")}
+{get_footer(rel_root=".", is_exam=False)}
 
     <!-- Motor Dedicado do Simulado -->
     <script src="./assets/js/simulado.js"></script>
@@ -1019,12 +1862,14 @@ def build_simulado_page():
     print("Generated simulado.html successfully!")
 
 # ==============================================================================
-# 8. EXECUÇÃO COMPLETA DO BUILD
+# 9. EXECUÇÃO COMPLETA DO BUILD
 # ==============================================================================
 if __name__ == "__main__":
     sync_data_files()
     build_subtopic_pages()
     build_block_overview_pages()
     build_homepage()
+    build_provas_hub()
     build_simulado_page()
-    print("\n✅ Site build completed successfully with zero hardcoded paths!")
+    print("\n✅ Site build completed successfully with two separated sections!")
+

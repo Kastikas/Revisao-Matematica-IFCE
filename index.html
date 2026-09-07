@@ -8,6 +8,7 @@
     <script src="https://cdn.tailwindcss.com"></script>
     <script>
         tailwind.config = {
+            darkMode: 'class',
             theme: {
                 extend: {
                     colors: {
@@ -23,6 +24,12 @@
                             800: '#166534',
                             900: '#14532d',
                             950: '#052e16',
+                        },
+                        navy: {
+                            800: '#0f172a',
+                            850: '#0b132b',
+                            900: '#0a0f1d',
+                            950: '#020617',
                         }
                     }
                 }
@@ -40,7 +47,7 @@
 </head>
 <body class="bg-gray-50 text-gray-800 font-sans antialiased min-h-screen flex flex-col">
 
-    <!-- Header / Navbar Principal -->
+    <!-- Header / Navbar Principal (Parte 1 - Teoria) -->
     <header class="gradient-header text-white shadow-lg sticky top-0 z-50">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="flex items-center justify-between h-16">
@@ -71,17 +78,16 @@
             <i data-lucide="shapes" class="w-4 h-4"></i> Bloco 3
         </a><a href="./bloco-4-medidas-e-estatistica/index.html" class="px-3 py-2 rounded-lg text-sm transition flex items-center gap-1.5 text-brand-100 hover:bg-brand-800/70 hover:text-white">
             <i data-lucide="bar-chart-3" class="w-4 h-4"></i> Bloco 4
-        </a><a href="./bloco-5-provas-ifsc/index.html" class="px-3 py-2 rounded-lg text-sm transition flex items-center gap-1.5 text-brand-100 hover:bg-brand-800/70 hover:text-white">
-            <i data-lucide="file-text" class="w-4 h-4"></i> Provas IFSC
-        </a><a href="./bloco-6-provas-ifce/index.html" class="px-3 py-2 rounded-lg text-sm transition flex items-center gap-1.5 text-brand-100 hover:bg-brand-800/70 hover:text-white">
-            <i data-lucide="award" class="w-4 h-4"></i> Provas IFCE
         </a>
                 </nav>
 
-                <!-- Ações do Usuário -->
-                <div class="flex items-center gap-3">
-                    <a href="./simulado.html" class="bg-brand-500 hover:bg-brand-400 text-white font-semibold px-3.5 py-1.5 rounded-lg text-sm transition flex items-center gap-1.5 shadow hover:shadow-md">
-                        <i data-lucide="award" class="w-4 h-4"></i> Simulado IF
+                <!-- Ações do Usuário: Botão Destacado de Provas e Simulado -->
+                <div class="flex items-center gap-2.5">
+                    <a href="./provas.html" class="bg-gradient-to-r from-blue-700 to-indigo-800 hover:from-blue-600 hover:to-indigo-700 text-white font-bold px-3.5 py-1.5 rounded-lg text-sm transition flex items-center gap-1.5 shadow-md border border-blue-400/40" title="Acessar o Banco de Provas Oficiais (Parte 2)">
+                        <i data-lucide="file-check" class="w-4 h-4 text-sky-300"></i> Provas Oficiais <span class="bg-sky-400 text-slate-950 text-[10px] font-extrabold px-1.5 py-0.2 rounded-full ml-0.5">43</span>
+                    </a>
+                    <a href="./simulado.html" class="bg-brand-500 hover:bg-brand-400 text-white font-semibold px-3 py-1.5 rounded-lg text-sm transition flex items-center gap-1.5 shadow hover:shadow-md">
+                        <i data-lucide="award" class="w-4 h-4"></i> Simulado
                     </a>
                     <button id="mobile-menu-btn" class="md:hidden p-2 rounded-lg text-brand-100 hover:text-white hover:bg-brand-800" aria-label="Abrir menu">
                         <i data-lucide="menu" class="w-6 h-6"></i>
@@ -102,12 +108,12 @@
             <i data-lucide="shapes" class="w-4 h-4"></i> Bloco 3
         </a><a href="./bloco-4-medidas-e-estatistica/index.html" class="block px-3 py-2 rounded-md text-base font-medium text-white flex items-center gap-2 hover:bg-brand-800/60">
             <i data-lucide="bar-chart-3" class="w-4 h-4"></i> Bloco 4
-        </a><a href="./bloco-5-provas-ifsc/index.html" class="block px-3 py-2 rounded-md text-base font-medium text-white flex items-center gap-2 hover:bg-brand-800/60">
-            <i data-lucide="file-text" class="w-4 h-4"></i> Provas IFSC
-        </a><a href="./bloco-6-provas-ifce/index.html" class="block px-3 py-2 rounded-md text-base font-medium text-white flex items-center gap-2 hover:bg-brand-800/60">
-            <i data-lucide="award" class="w-4 h-4"></i> Provas IFCE
         </a>
-            <a href="./simulado.html" class="block px-3 py-2 rounded-md text-base font-bold bg-brand-600 text-white flex items-center gap-2 mt-2">
+            <a href="./provas.html" class="block px-3 py-2 rounded-md text-base font-bold bg-blue-700 text-white flex items-center justify-between gap-2 mt-2">
+                <span class="flex items-center gap-2"><i data-lucide="file-check" class="w-4 h-4 text-sky-300"></i> Provas Oficiais (Parte 2)</span>
+                <span class="bg-sky-400 text-slate-950 text-xs font-bold px-2 py-0.5 rounded-full">43 Provas</span>
+            </a>
+            <a href="./simulado.html" class="block px-3 py-2 rounded-md text-base font-bold bg-brand-600 text-white flex items-center gap-2 mt-1">
                 <i data-lucide="award" class="w-4 h-4"></i> Simulado IF Geral
             </a>
         </div>
@@ -120,7 +126,7 @@
         <div class="gradient-hero rounded-3xl p-6 sm:p-12 text-white mb-10 shadow-2xl relative overflow-hidden">
             <div class="relative z-10 max-w-3xl">
                 <span class="bg-brand-500/30 text-brand-200 border border-brand-400/30 text-xs font-bold px-3 py-1 rounded-full uppercase tracking-wider mb-4 inline-flex items-center gap-1.5">
-                    <i data-lucide="sparkles" class="w-3.5 h-3.5 text-brand-300"></i> Plataforma Oficial Multi-Páginas
+                    <i data-lucide="sparkles" class="w-3.5 h-3.5 text-brand-300"></i> Parte 1: Teoria & Eixos Temáticos BNCC
                 </span>
                 
                 <h1 class="text-3xl sm:text-5xl font-extrabold tracking-tight mb-4 leading-tight">
@@ -128,21 +134,21 @@
                 </h1>
                 
                 <p class="text-brand-100 text-sm sm:text-base mb-8 leading-relaxed">
-                    Preparação modular completa para o Exame de Classificação dos Institutos Federais. Cada subtópico possui sua própria página com teoria detalhada, fórmulas KaTeX, exemplos resolvidos e 468 exercícios salvos no navegador.
+                    Preparação modular completa para o Exame de Classificação dos Institutos Federais. Cada subtópico possui sua própria página com teoria detalhada, fórmulas KaTeX, exemplos resolvidos e 100 exercícios com auto-salvamento.
                 </p>
 
                 <div class="flex flex-wrap items-center gap-4">
                     <a href="./simulado.html" class="bg-white hover:bg-brand-50 text-brand-900 font-extrabold px-6 py-3.5 rounded-2xl text-sm transition flex items-center gap-2.5 shadow-lg hover:scale-102">
                         <i data-lucide="award" class="w-5 h-5 text-brand-700"></i> Iniciar Simulado Geral
                     </a>
-                    <a href="#blocos" class="bg-brand-700/80 hover:bg-brand-700 text-white font-bold px-6 py-3.5 rounded-2xl text-sm transition flex items-center gap-2 border border-brand-500/30">
-                        <i data-lucide="layers" class="w-5 h-5"></i> Explorar os 6 Blocos
+                    <a href="./provas.html" class="bg-gradient-to-r from-blue-600 to-indigo-700 hover:from-blue-500 hover:to-indigo-600 text-white font-extrabold px-6 py-3.5 rounded-2xl text-sm transition flex items-center gap-2 border border-blue-400/40 shadow-lg">
+                        <i data-lucide="file-check" class="w-5 h-5 text-sky-300"></i> Acessar Banco de Provas (43)
                     </a>
                 </div>
             </div>
         </div>
 
-        <!-- Dashboard de Status Rápido (4 Métricas) -->
+        <!-- Dashboard de Status Rápido (4 Métricas da Teoria) -->
         <div class="grid grid-cols-2 lg:grid-cols-4 gap-4 mb-10">
             <div class="bg-white border border-gray-200 rounded-2xl p-5 shadow-sm flex items-center gap-4">
                 <div class="w-12 h-12 rounded-xl bg-brand-100 flex items-center justify-center text-brand-700 flex-shrink-0">
@@ -190,14 +196,14 @@
             <div class="flex flex-col sm:flex-row justify-between sm:items-center gap-4 mb-4">
                 <div>
                     <h3 class="text-lg font-bold text-gray-900 flex items-center gap-2">
-                        <i data-lucide="search" class="w-5 h-5 text-brand-600"></i> Localizador Rápido de Subtópicos
+                        <i data-lucide="search" class="w-5 h-5 text-brand-600"></i> Localizador Rápido de Tópicos
                     </h3>
-                    <p class="text-xs text-gray-500">Digite um tema (ex: Pitágoras, Frações, 2024.1, Áreas, Probabilidade) para acessar diretamente.</p>
+                    <p class="text-xs text-gray-500">Digite um tema (ex: Pitágoras, Frações, Áreas, Probabilidade) para acessar diretamente.</p>
                 </div>
             </div>
             
             <div class="relative">
-                <input type="text" id="topic-search-input" placeholder="Digite para filtrar os 63 subtópicos..." class="w-full bg-gray-50 border border-gray-300 rounded-xl px-4 py-3 pl-11 text-sm focus:outline-none focus:ring-2 focus:ring-brand-500 focus:bg-white transition">
+                <input type="text" id="topic-search-input" placeholder="Digite para filtrar subtópicos de teoria..." class="w-full bg-gray-50 border border-gray-300 rounded-xl px-4 py-3 pl-11 text-sm focus:outline-none focus:ring-2 focus:ring-brand-500 focus:bg-white transition">
                 <i data-lucide="search" class="w-5 h-5 text-gray-400 absolute left-3.5 top-3.5"></i>
             </div>
             
@@ -206,18 +212,18 @@
             </div>
         </div>
 
-        <!-- Grade dos Blocos de Conteúdo -->
+        <!-- Grade dos Blocos de Conteúdo Teórico -->
         <section id="blocos" class="mb-14">
             <div class="flex flex-col sm:flex-row justify-between sm:items-center gap-4 mb-6">
                 <div>
                     <h2 class="text-2xl font-extrabold text-gray-900 flex items-center gap-2 border-l-4 border-brand-600 pl-3">
-                        Blocos de Conteúdo
+                        Eixos Temáticos de Conteúdo (Parte 1)
                     </h2>
-                    <p class="text-xs sm:text-sm text-gray-500 mt-1 pl-3">Os 6 eixos essenciais com teoria, resolução passo a passo e simulados.</p>
+                    <p class="text-xs sm:text-sm text-gray-500 mt-1 pl-3">Os 4 eixos fundamentais da BNCC com teoria, resoluções passo a passo e simulados.</p>
                 </div>
             </div>
 
-            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 xl:grid-cols-4 gap-6">
                 
             <div class="bg-white border border-gray-200 rounded-3xl p-6 sm:p-7 shadow-sm hover-card flex flex-col justify-between">
                 <div>
@@ -427,118 +433,14 @@
                 </div>
             </div>
         
-            <div class="bg-white border border-gray-200 rounded-3xl p-6 sm:p-7 shadow-sm hover-card flex flex-col justify-between">
-                <div>
-                    <div class="flex items-center justify-between mb-4">
-                        <div class="w-12 h-12 bg-brand-100 text-brand-800 rounded-2xl flex items-center justify-center font-bold shadow-inner">
-                            <i data-lucide="file-text" class="w-6 h-6 text-brand-700"></i>
-                        </div>
-                        <span class="text-xs font-bold px-3 py-1 rounded-full bg-brand-50 text-brand-700 border border-brand-200">
-                            16 Subtópicos
-                        </span>
-                    </div>
-                    
-                    <h3 class="text-xl font-extrabold text-gray-900 mb-2">Bloco 5: Provas Anteriores IFSC</h3>
-                    <p class="text-gray-600 text-xs sm:text-sm leading-relaxed mb-5">Resolução e simulados completos de 16 provas oficiais do Exame de Classificação do IFSC (2017 a 2026).</p>
-
-                    <div class="mb-5 bg-gray-50 border border-gray-100 p-3 rounded-xl">
-                        <div class="flex justify-between text-xs text-gray-500 mb-1.5 font-medium">
-                            <span>Progresso do Bloco</span>
-                            <span id="block-progress-txt-5" class="font-bold text-brand-700">0%</span>
-                        </div>
-                        <div class="w-full bg-gray-200 rounded-full h-2 overflow-hidden">
-                            <div id="block-progress-bar-5" class="bg-brand-600 h-full w-0 transition-all duration-500"></div>
-                        </div>
-                    </div>
-
-                    <div class="space-y-1 mb-5">
-                        <span class="text-[11px] font-bold text-gray-400 uppercase tracking-wider block mb-1">Destaques:</span>
-                        
-                <a href="./bloco-5-provas-ifsc/prova-ifsc-20171.html" class="flex items-center justify-between py-1.5 px-2 rounded-lg text-xs text-gray-700 hover:bg-brand-50 hover:text-brand-900 transition">
-                    <span class="truncate pr-2">• Prova IFSC 2017.1</span>
-                    <i data-lucide="arrow-right" class="w-3 h-3 text-brand-600 flex-shrink-0"></i>
-                </a>
-            
-                <a href="./bloco-5-provas-ifsc/prova-ifsc-20172.html" class="flex items-center justify-between py-1.5 px-2 rounded-lg text-xs text-gray-700 hover:bg-brand-50 hover:text-brand-900 transition">
-                    <span class="truncate pr-2">• Prova IFSC 2017.2</span>
-                    <i data-lucide="arrow-right" class="w-3 h-3 text-brand-600 flex-shrink-0"></i>
-                </a>
-            
-                <a href="./bloco-5-provas-ifsc/prova-ifsc-20181.html" class="flex items-center justify-between py-1.5 px-2 rounded-lg text-xs text-gray-700 hover:bg-brand-50 hover:text-brand-900 transition">
-                    <span class="truncate pr-2">• Prova IFSC 2018.1</span>
-                    <i data-lucide="arrow-right" class="w-3 h-3 text-brand-600 flex-shrink-0"></i>
-                </a>
-            
-                    </div>
-                </div>
-
-                <div class="pt-4 border-t border-gray-100">
-                    <a href="./bloco-5-provas-ifsc/index.html" class="w-full bg-brand-50 hover:bg-brand-100 text-brand-900 font-bold py-2.5 px-4 rounded-xl text-xs sm:text-sm transition flex items-center justify-center gap-2">
-                        Acessar Bloco Completo <i data-lucide="arrow-right" class="w-4 h-4"></i>
-                    </a>
-                </div>
-            </div>
-        
-            <div class="bg-white border border-gray-200 rounded-3xl p-6 sm:p-7 shadow-sm hover-card flex flex-col justify-between">
-                <div>
-                    <div class="flex items-center justify-between mb-4">
-                        <div class="w-12 h-12 bg-brand-100 text-brand-800 rounded-2xl flex items-center justify-center font-bold shadow-inner">
-                            <i data-lucide="award" class="w-6 h-6 text-brand-700"></i>
-                        </div>
-                        <span class="text-xs font-bold px-3 py-1 rounded-full bg-brand-50 text-brand-700 border border-brand-200">
-                            27 Subtópicos
-                        </span>
-                    </div>
-                    
-                    <h3 class="text-xl font-extrabold text-gray-900 mb-2">Bloco 6: Provas Anteriores IFCE</h3>
-                    <p class="text-gray-600 text-xs sm:text-sm leading-relaxed mb-5">Resoluções completas, gabaritos comentados e simulados de 10 provas oficiais do IFCE (Cursos Técnicos Integrados e Vestibulares).</p>
-
-                    <div class="mb-5 bg-gray-50 border border-gray-100 p-3 rounded-xl">
-                        <div class="flex justify-between text-xs text-gray-500 mb-1.5 font-medium">
-                            <span>Progresso do Bloco</span>
-                            <span id="block-progress-txt-6" class="font-bold text-brand-700">0%</span>
-                        </div>
-                        <div class="w-full bg-gray-200 rounded-full h-2 overflow-hidden">
-                            <div id="block-progress-bar-6" class="bg-brand-600 h-full w-0 transition-all duration-500"></div>
-                        </div>
-                    </div>
-
-                    <div class="space-y-1 mb-5">
-                        <span class="text-[11px] font-bold text-gray-400 uppercase tracking-wider block mb-1">Destaques:</span>
-                        
-                <a href="./bloco-6-provas-ifce/prova-ifce-20252.html" class="flex items-center justify-between py-1.5 px-2 rounded-lg text-xs text-gray-700 hover:bg-brand-50 hover:text-brand-900 transition">
-                    <span class="truncate pr-2">• Prova IFCE 2025.2</span>
-                    <i data-lucide="arrow-right" class="w-3 h-3 text-brand-600 flex-shrink-0"></i>
-                </a>
-            
-                <a href="./bloco-6-provas-ifce/prova-ifce-20251.html" class="flex items-center justify-between py-1.5 px-2 rounded-lg text-xs text-gray-700 hover:bg-brand-50 hover:text-brand-900 transition">
-                    <span class="truncate pr-2">• Prova IFCE 2025.1</span>
-                    <i data-lucide="arrow-right" class="w-3 h-3 text-brand-600 flex-shrink-0"></i>
-                </a>
-            
-                <a href="./bloco-6-provas-ifce/prova-ifce-20242.html" class="flex items-center justify-between py-1.5 px-2 rounded-lg text-xs text-gray-700 hover:bg-brand-50 hover:text-brand-900 transition">
-                    <span class="truncate pr-2">• Prova IFCE 2024.2</span>
-                    <i data-lucide="arrow-right" class="w-3 h-3 text-brand-600 flex-shrink-0"></i>
-                </a>
-            
-                    </div>
-                </div>
-
-                <div class="pt-4 border-t border-gray-100">
-                    <a href="./bloco-6-provas-ifce/index.html" class="w-full bg-brand-50 hover:bg-brand-100 text-brand-900 font-bold py-2.5 px-4 rounded-xl text-xs sm:text-sm transition flex items-center justify-center gap-2">
-                        Acessar Bloco Completo <i data-lucide="arrow-right" class="w-4 h-4"></i>
-                    </a>
-                </div>
-            </div>
-        
             </div>
         </section>
 
-        <!-- Diretório Completo de Todos os Subtópicos -->
-        <section class="mb-12">
+        <!-- Diretório Completo de Todos os Subtópicos Teóricos -->
+        <section class="mb-14">
             <div class="mb-6">
                 <h2 class="text-2xl font-extrabold text-gray-900 flex items-center gap-2 border-l-4 border-brand-600 pl-3">
-                    Diretório Completo de Subtópicos (63 Páginas)
+                    Diretório Completo de Subtópicos (20 Páginas)
                 </h2>
                 <p class="text-xs sm:text-sm text-gray-500 mt-1 pl-3">Acesse cada página individual para estudar e resolver as questões com auto-salvamento.</p>
             </div>
@@ -772,384 +674,49 @@
                 </div>
             </div>
         
-            <div class="mb-8 bg-white border border-gray-200 rounded-2xl p-5 sm:p-6 shadow-sm">
-                <div class="flex flex-col sm:flex-row justify-between sm:items-center gap-2 mb-4 pb-3 border-b border-gray-100">
-                    <div class="flex items-center gap-3">
-                        <div class="w-8 h-8 rounded-lg bg-brand-100 text-brand-800 flex items-center justify-center font-bold text-sm">
-                            5
-                        </div>
-                        <h3 class="text-base sm:text-lg font-extrabold text-gray-900">Bloco 5: Provas Anteriores IFSC</h3>
-                    </div>
-                    <a href="./bloco-5-provas-ifsc/index.html" class="text-xs font-bold text-brand-700 hover:text-brand-800 flex items-center gap-1">
-                        Ver detalhes <i data-lucide="arrow-right" class="w-3.5 h-3.5"></i>
-                    </a>
+        </section>
+
+        <!-- SEÇÃO PARTE 2: ACERVO DE PROVAS OFICIAIS (FIM DA PARTE 1) -->
+        <section class="mt-16 mb-10 relative overflow-hidden rounded-3xl bg-gradient-to-br from-slate-950 via-slate-900 to-blue-950 border-2 border-blue-500/30 p-6 sm:p-12 text-white shadow-2xl">
+            <div class="absolute -right-16 -bottom-16 w-96 h-96 bg-blue-600/10 rounded-full blur-3xl pointer-events-none"></div>
+            <div class="relative z-10">
+                <div class="inline-flex items-center gap-2 bg-blue-500/20 text-sky-300 border border-blue-400/30 text-xs font-extrabold px-3.5 py-1.5 rounded-full uppercase tracking-wider mb-5">
+                    <i data-lucide="award" class="w-4 h-4 text-sky-400"></i> Parte 2 da Plataforma • Modo Escuro-Azul
                 </div>
-                <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-2.5">
-                    
-                <a href="./bloco-5-provas-ifsc/prova-ifsc-20171.html" class="group p-3 rounded-xl border border-gray-100 hover:border-brand-300 hover:bg-brand-50/50 transition flex items-center justify-between bg-white">
-                    <div class="flex items-center gap-2.5 min-w-0">
-                        <span class="text-xs font-bold text-gray-400 group-hover:text-brand-700 flex-shrink-0">01.</span>
-                        <span class="text-xs sm:text-sm font-semibold text-gray-800 group-hover:text-brand-900 truncate">Prova IFSC 2017.1</span>
+                <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
+                    <div class="lg:col-span-8 space-y-4">
+                        <h2 class="text-3xl sm:text-4xl font-black tracking-tight leading-tight">
+                            Banco de Provas Oficiais dos <span class="text-transparent bg-clip-text bg-gradient-to-r from-sky-400 to-blue-300">Institutos Federais</span>
+                        </h2>
+                        <p class="text-slate-300 text-sm sm:text-base leading-relaxed max-w-2xl">
+                            Pratique em um ambiente imersivo com mais de <strong>43 cadernos oficiais</strong> do <strong>IFCE</strong> e <strong>IFSC</strong>. Resolva as questões com gabarito inteligente e resoluções completas KaTeX, ou faça o <strong>download direto dos cadernos originais em PDF</strong> para simular as condições reais do exame.
+                        </p>
+                        <div class="grid grid-cols-3 gap-3 pt-2 max-w-md">
+                            <div class="bg-slate-900/90 border border-slate-800 p-3 rounded-2xl text-center">
+                                <span class="text-xl sm:text-2xl font-black text-sky-400 block">27</span>
+                                <span class="text-[11px] text-slate-400 uppercase font-bold">Provas IFCE</span>
+                            </div>
+                            <div class="bg-slate-900/90 border border-slate-800 p-3 rounded-2xl text-center">
+                                <span class="text-xl sm:text-2xl font-black text-indigo-400 block">16</span>
+                                <span class="text-[11px] text-slate-400 uppercase font-bold">Provas IFSC</span>
+                            </div>
+                            <div class="bg-slate-900/90 border border-slate-800 p-3 rounded-2xl text-center">
+                                <span class="text-xl sm:text-2xl font-black text-emerald-400 block">100%</span>
+                                <span class="text-[11px] text-slate-400 uppercase font-bold">Com PDFs</span>
+                            </div>
+                        </div>
                     </div>
-                    <i data-lucide="chevron-right" class="w-4 h-4 text-gray-300 group-hover:text-brand-600 flex-shrink-0"></i>
-                </a>
-            
-                <a href="./bloco-5-provas-ifsc/prova-ifsc-20172.html" class="group p-3 rounded-xl border border-gray-100 hover:border-brand-300 hover:bg-brand-50/50 transition flex items-center justify-between bg-white">
-                    <div class="flex items-center gap-2.5 min-w-0">
-                        <span class="text-xs font-bold text-gray-400 group-hover:text-brand-700 flex-shrink-0">02.</span>
-                        <span class="text-xs sm:text-sm font-semibold text-gray-800 group-hover:text-brand-900 truncate">Prova IFSC 2017.2</span>
+                    <div class="lg:col-span-4 flex flex-col gap-3 justify-center">
+                        <a href="./provas.html" class="bg-gradient-to-r from-blue-600 to-indigo-600 hover:from-blue-500 hover:to-indigo-500 text-white font-extrabold px-6 py-4 rounded-2xl text-center text-sm sm:text-base shadow-xl hover:shadow-blue-500/25 transition flex items-center justify-center gap-2 group">
+                            <span>Acessar Acervo de Provas (Parte 2)</span>
+                            <i data-lucide="arrow-right" class="w-5 h-5 group-hover:translate-x-1 transition-transform"></i>
+                        </a>
+                        <a href="./provas.html#catalogo-provas" class="bg-slate-800/80 hover:bg-slate-800 text-slate-200 border border-slate-700 font-semibold px-5 py-3 rounded-xl text-center text-xs sm:text-sm transition flex items-center justify-center gap-2">
+                            <i data-lucide="download" class="w-4 h-4 text-sky-400"></i> Baixar Cadernos Oficiais em PDF
+                        </a>
                     </div>
-                    <i data-lucide="chevron-right" class="w-4 h-4 text-gray-300 group-hover:text-brand-600 flex-shrink-0"></i>
-                </a>
-            
-                <a href="./bloco-5-provas-ifsc/prova-ifsc-20181.html" class="group p-3 rounded-xl border border-gray-100 hover:border-brand-300 hover:bg-brand-50/50 transition flex items-center justify-between bg-white">
-                    <div class="flex items-center gap-2.5 min-w-0">
-                        <span class="text-xs font-bold text-gray-400 group-hover:text-brand-700 flex-shrink-0">03.</span>
-                        <span class="text-xs sm:text-sm font-semibold text-gray-800 group-hover:text-brand-900 truncate">Prova IFSC 2018.1</span>
-                    </div>
-                    <i data-lucide="chevron-right" class="w-4 h-4 text-gray-300 group-hover:text-brand-600 flex-shrink-0"></i>
-                </a>
-            
-                <a href="./bloco-5-provas-ifsc/prova-ifsc-20182.html" class="group p-3 rounded-xl border border-gray-100 hover:border-brand-300 hover:bg-brand-50/50 transition flex items-center justify-between bg-white">
-                    <div class="flex items-center gap-2.5 min-w-0">
-                        <span class="text-xs font-bold text-gray-400 group-hover:text-brand-700 flex-shrink-0">04.</span>
-                        <span class="text-xs sm:text-sm font-semibold text-gray-800 group-hover:text-brand-900 truncate">Prova IFSC 2018.2</span>
-                    </div>
-                    <i data-lucide="chevron-right" class="w-4 h-4 text-gray-300 group-hover:text-brand-600 flex-shrink-0"></i>
-                </a>
-            
-                <a href="./bloco-5-provas-ifsc/prova-ifsc-20191.html" class="group p-3 rounded-xl border border-gray-100 hover:border-brand-300 hover:bg-brand-50/50 transition flex items-center justify-between bg-white">
-                    <div class="flex items-center gap-2.5 min-w-0">
-                        <span class="text-xs font-bold text-gray-400 group-hover:text-brand-700 flex-shrink-0">05.</span>
-                        <span class="text-xs sm:text-sm font-semibold text-gray-800 group-hover:text-brand-900 truncate">Prova IFSC 2019.1</span>
-                    </div>
-                    <i data-lucide="chevron-right" class="w-4 h-4 text-gray-300 group-hover:text-brand-600 flex-shrink-0"></i>
-                </a>
-            
-                <a href="./bloco-5-provas-ifsc/prova-ifsc-20192.html" class="group p-3 rounded-xl border border-gray-100 hover:border-brand-300 hover:bg-brand-50/50 transition flex items-center justify-between bg-white">
-                    <div class="flex items-center gap-2.5 min-w-0">
-                        <span class="text-xs font-bold text-gray-400 group-hover:text-brand-700 flex-shrink-0">06.</span>
-                        <span class="text-xs sm:text-sm font-semibold text-gray-800 group-hover:text-brand-900 truncate">Prova IFSC 2019.2</span>
-                    </div>
-                    <i data-lucide="chevron-right" class="w-4 h-4 text-gray-300 group-hover:text-brand-600 flex-shrink-0"></i>
-                </a>
-            
-                <a href="./bloco-5-provas-ifsc/prova-ifsc-20201.html" class="group p-3 rounded-xl border border-gray-100 hover:border-brand-300 hover:bg-brand-50/50 transition flex items-center justify-between bg-white">
-                    <div class="flex items-center gap-2.5 min-w-0">
-                        <span class="text-xs font-bold text-gray-400 group-hover:text-brand-700 flex-shrink-0">07.</span>
-                        <span class="text-xs sm:text-sm font-semibold text-gray-800 group-hover:text-brand-900 truncate">Prova IFSC 2020.1</span>
-                    </div>
-                    <i data-lucide="chevron-right" class="w-4 h-4 text-gray-300 group-hover:text-brand-600 flex-shrink-0"></i>
-                </a>
-            
-                <a href="./bloco-5-provas-ifsc/prova-ifsc-20221.html" class="group p-3 rounded-xl border border-gray-100 hover:border-brand-300 hover:bg-brand-50/50 transition flex items-center justify-between bg-white">
-                    <div class="flex items-center gap-2.5 min-w-0">
-                        <span class="text-xs font-bold text-gray-400 group-hover:text-brand-700 flex-shrink-0">08.</span>
-                        <span class="text-xs sm:text-sm font-semibold text-gray-800 group-hover:text-brand-900 truncate">Prova IFSC 2022.1</span>
-                    </div>
-                    <i data-lucide="chevron-right" class="w-4 h-4 text-gray-300 group-hover:text-brand-600 flex-shrink-0"></i>
-                </a>
-            
-                <a href="./bloco-5-provas-ifsc/prova-ifsc-20222.html" class="group p-3 rounded-xl border border-gray-100 hover:border-brand-300 hover:bg-brand-50/50 transition flex items-center justify-between bg-white">
-                    <div class="flex items-center gap-2.5 min-w-0">
-                        <span class="text-xs font-bold text-gray-400 group-hover:text-brand-700 flex-shrink-0">09.</span>
-                        <span class="text-xs sm:text-sm font-semibold text-gray-800 group-hover:text-brand-900 truncate">Prova IFSC 2022.2</span>
-                    </div>
-                    <i data-lucide="chevron-right" class="w-4 h-4 text-gray-300 group-hover:text-brand-600 flex-shrink-0"></i>
-                </a>
-            
-                <a href="./bloco-5-provas-ifsc/prova-ifsc-20232.html" class="group p-3 rounded-xl border border-gray-100 hover:border-brand-300 hover:bg-brand-50/50 transition flex items-center justify-between bg-white">
-                    <div class="flex items-center gap-2.5 min-w-0">
-                        <span class="text-xs font-bold text-gray-400 group-hover:text-brand-700 flex-shrink-0">10.</span>
-                        <span class="text-xs sm:text-sm font-semibold text-gray-800 group-hover:text-brand-900 truncate">Prova IFSC 2023.2</span>
-                    </div>
-                    <i data-lucide="chevron-right" class="w-4 h-4 text-gray-300 group-hover:text-brand-600 flex-shrink-0"></i>
-                </a>
-            
-                <a href="./bloco-5-provas-ifsc/prova-ifsc-20241.html" class="group p-3 rounded-xl border border-gray-100 hover:border-brand-300 hover:bg-brand-50/50 transition flex items-center justify-between bg-white">
-                    <div class="flex items-center gap-2.5 min-w-0">
-                        <span class="text-xs font-bold text-gray-400 group-hover:text-brand-700 flex-shrink-0">11.</span>
-                        <span class="text-xs sm:text-sm font-semibold text-gray-800 group-hover:text-brand-900 truncate">Prova IFSC 2024.1</span>
-                    </div>
-                    <i data-lucide="chevron-right" class="w-4 h-4 text-gray-300 group-hover:text-brand-600 flex-shrink-0"></i>
-                </a>
-            
-                <a href="./bloco-5-provas-ifsc/prova-ifsc-20242.html" class="group p-3 rounded-xl border border-gray-100 hover:border-brand-300 hover:bg-brand-50/50 transition flex items-center justify-between bg-white">
-                    <div class="flex items-center gap-2.5 min-w-0">
-                        <span class="text-xs font-bold text-gray-400 group-hover:text-brand-700 flex-shrink-0">12.</span>
-                        <span class="text-xs sm:text-sm font-semibold text-gray-800 group-hover:text-brand-900 truncate">Prova IFSC 2024.2</span>
-                    </div>
-                    <i data-lucide="chevron-right" class="w-4 h-4 text-gray-300 group-hover:text-brand-600 flex-shrink-0"></i>
-                </a>
-            
-                <a href="./bloco-5-provas-ifsc/prova-ifsc-20251.html" class="group p-3 rounded-xl border border-gray-100 hover:border-brand-300 hover:bg-brand-50/50 transition flex items-center justify-between bg-white">
-                    <div class="flex items-center gap-2.5 min-w-0">
-                        <span class="text-xs font-bold text-gray-400 group-hover:text-brand-700 flex-shrink-0">13.</span>
-                        <span class="text-xs sm:text-sm font-semibold text-gray-800 group-hover:text-brand-900 truncate">Prova IFSC 2025.1</span>
-                    </div>
-                    <i data-lucide="chevron-right" class="w-4 h-4 text-gray-300 group-hover:text-brand-600 flex-shrink-0"></i>
-                </a>
-            
-                <a href="./bloco-5-provas-ifsc/prova-ifsc-20252.html" class="group p-3 rounded-xl border border-gray-100 hover:border-brand-300 hover:bg-brand-50/50 transition flex items-center justify-between bg-white">
-                    <div class="flex items-center gap-2.5 min-w-0">
-                        <span class="text-xs font-bold text-gray-400 group-hover:text-brand-700 flex-shrink-0">14.</span>
-                        <span class="text-xs sm:text-sm font-semibold text-gray-800 group-hover:text-brand-900 truncate">Prova IFSC 2025.2</span>
-                    </div>
-                    <i data-lucide="chevron-right" class="w-4 h-4 text-gray-300 group-hover:text-brand-600 flex-shrink-0"></i>
-                </a>
-            
-                <a href="./bloco-5-provas-ifsc/prova-ifsc-20261.html" class="group p-3 rounded-xl border border-gray-100 hover:border-brand-300 hover:bg-brand-50/50 transition flex items-center justify-between bg-white">
-                    <div class="flex items-center gap-2.5 min-w-0">
-                        <span class="text-xs font-bold text-gray-400 group-hover:text-brand-700 flex-shrink-0">15.</span>
-                        <span class="text-xs sm:text-sm font-semibold text-gray-800 group-hover:text-brand-900 truncate">Prova IFSC 2026.1</span>
-                    </div>
-                    <i data-lucide="chevron-right" class="w-4 h-4 text-gray-300 group-hover:text-brand-600 flex-shrink-0"></i>
-                </a>
-            
-                <a href="./bloco-5-provas-ifsc/prova-ifsc-20262.html" class="group p-3 rounded-xl border border-gray-100 hover:border-brand-300 hover:bg-brand-50/50 transition flex items-center justify-between bg-white">
-                    <div class="flex items-center gap-2.5 min-w-0">
-                        <span class="text-xs font-bold text-gray-400 group-hover:text-brand-700 flex-shrink-0">16.</span>
-                        <span class="text-xs sm:text-sm font-semibold text-gray-800 group-hover:text-brand-900 truncate">Prova IFSC 2026.2</span>
-                    </div>
-                    <i data-lucide="chevron-right" class="w-4 h-4 text-gray-300 group-hover:text-brand-600 flex-shrink-0"></i>
-                </a>
-            
                 </div>
             </div>
-        
-            <div class="mb-8 bg-white border border-gray-200 rounded-2xl p-5 sm:p-6 shadow-sm">
-                <div class="flex flex-col sm:flex-row justify-between sm:items-center gap-2 mb-4 pb-3 border-b border-gray-100">
-                    <div class="flex items-center gap-3">
-                        <div class="w-8 h-8 rounded-lg bg-brand-100 text-brand-800 flex items-center justify-center font-bold text-sm">
-                            6
-                        </div>
-                        <h3 class="text-base sm:text-lg font-extrabold text-gray-900">Bloco 6: Provas Anteriores IFCE</h3>
-                    </div>
-                    <a href="./bloco-6-provas-ifce/index.html" class="text-xs font-bold text-brand-700 hover:text-brand-800 flex items-center gap-1">
-                        Ver detalhes <i data-lucide="arrow-right" class="w-3.5 h-3.5"></i>
-                    </a>
-                </div>
-                <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-2.5">
-                    
-                <a href="./bloco-6-provas-ifce/prova-ifce-20252.html" class="group p-3 rounded-xl border border-gray-100 hover:border-brand-300 hover:bg-brand-50/50 transition flex items-center justify-between bg-white">
-                    <div class="flex items-center gap-2.5 min-w-0">
-                        <span class="text-xs font-bold text-gray-400 group-hover:text-brand-700 flex-shrink-0">01.</span>
-                        <span class="text-xs sm:text-sm font-semibold text-gray-800 group-hover:text-brand-900 truncate">Prova IFCE 2025.2</span>
-                    </div>
-                    <i data-lucide="chevron-right" class="w-4 h-4 text-gray-300 group-hover:text-brand-600 flex-shrink-0"></i>
-                </a>
-            
-                <a href="./bloco-6-provas-ifce/prova-ifce-20251.html" class="group p-3 rounded-xl border border-gray-100 hover:border-brand-300 hover:bg-brand-50/50 transition flex items-center justify-between bg-white">
-                    <div class="flex items-center gap-2.5 min-w-0">
-                        <span class="text-xs font-bold text-gray-400 group-hover:text-brand-700 flex-shrink-0">02.</span>
-                        <span class="text-xs sm:text-sm font-semibold text-gray-800 group-hover:text-brand-900 truncate">Prova IFCE 2025.1</span>
-                    </div>
-                    <i data-lucide="chevron-right" class="w-4 h-4 text-gray-300 group-hover:text-brand-600 flex-shrink-0"></i>
-                </a>
-            
-                <a href="./bloco-6-provas-ifce/prova-ifce-20242.html" class="group p-3 rounded-xl border border-gray-100 hover:border-brand-300 hover:bg-brand-50/50 transition flex items-center justify-between bg-white">
-                    <div class="flex items-center gap-2.5 min-w-0">
-                        <span class="text-xs font-bold text-gray-400 group-hover:text-brand-700 flex-shrink-0">03.</span>
-                        <span class="text-xs sm:text-sm font-semibold text-gray-800 group-hover:text-brand-900 truncate">Prova IFCE 2024.2</span>
-                    </div>
-                    <i data-lucide="chevron-right" class="w-4 h-4 text-gray-300 group-hover:text-brand-600 flex-shrink-0"></i>
-                </a>
-            
-                <a href="./bloco-6-provas-ifce/prova-ifce-20241.html" class="group p-3 rounded-xl border border-gray-100 hover:border-brand-300 hover:bg-brand-50/50 transition flex items-center justify-between bg-white">
-                    <div class="flex items-center gap-2.5 min-w-0">
-                        <span class="text-xs font-bold text-gray-400 group-hover:text-brand-700 flex-shrink-0">04.</span>
-                        <span class="text-xs sm:text-sm font-semibold text-gray-800 group-hover:text-brand-900 truncate">Prova IFCE 2024.1</span>
-                    </div>
-                    <i data-lucide="chevron-right" class="w-4 h-4 text-gray-300 group-hover:text-brand-600 flex-shrink-0"></i>
-                </a>
-            
-                <a href="./bloco-6-provas-ifce/prova-ifce-20231.html" class="group p-3 rounded-xl border border-gray-100 hover:border-brand-300 hover:bg-brand-50/50 transition flex items-center justify-between bg-white">
-                    <div class="flex items-center gap-2.5 min-w-0">
-                        <span class="text-xs font-bold text-gray-400 group-hover:text-brand-700 flex-shrink-0">05.</span>
-                        <span class="text-xs sm:text-sm font-semibold text-gray-800 group-hover:text-brand-900 truncate">Prova IFCE 2023.1</span>
-                    </div>
-                    <i data-lucide="chevron-right" class="w-4 h-4 text-gray-300 group-hover:text-brand-600 flex-shrink-0"></i>
-                </a>
-            
-                <a href="./bloco-6-provas-ifce/prova-ifce-20222.html" class="group p-3 rounded-xl border border-gray-100 hover:border-brand-300 hover:bg-brand-50/50 transition flex items-center justify-between bg-white">
-                    <div class="flex items-center gap-2.5 min-w-0">
-                        <span class="text-xs font-bold text-gray-400 group-hover:text-brand-700 flex-shrink-0">06.</span>
-                        <span class="text-xs sm:text-sm font-semibold text-gray-800 group-hover:text-brand-900 truncate">Prova IFCE 2022.2</span>
-                    </div>
-                    <i data-lucide="chevron-right" class="w-4 h-4 text-gray-300 group-hover:text-brand-600 flex-shrink-0"></i>
-                </a>
-            
-                <a href="./bloco-6-provas-ifce/prova-ifce-20191.html" class="group p-3 rounded-xl border border-gray-100 hover:border-brand-300 hover:bg-brand-50/50 transition flex items-center justify-between bg-white">
-                    <div class="flex items-center gap-2.5 min-w-0">
-                        <span class="text-xs font-bold text-gray-400 group-hover:text-brand-700 flex-shrink-0">07.</span>
-                        <span class="text-xs sm:text-sm font-semibold text-gray-800 group-hover:text-brand-900 truncate">Prova IFCE 2019.1</span>
-                    </div>
-                    <i data-lucide="chevron-right" class="w-4 h-4 text-gray-300 group-hover:text-brand-600 flex-shrink-0"></i>
-                </a>
-            
-                <a href="./bloco-6-provas-ifce/prova-ifce-20102.html" class="group p-3 rounded-xl border border-gray-100 hover:border-brand-300 hover:bg-brand-50/50 transition flex items-center justify-between bg-white">
-                    <div class="flex items-center gap-2.5 min-w-0">
-                        <span class="text-xs font-bold text-gray-400 group-hover:text-brand-700 flex-shrink-0">08.</span>
-                        <span class="text-xs sm:text-sm font-semibold text-gray-800 group-hover:text-brand-900 truncate">Prova IFCE 2010.2</span>
-                    </div>
-                    <i data-lucide="chevron-right" class="w-4 h-4 text-gray-300 group-hover:text-brand-600 flex-shrink-0"></i>
-                </a>
-            
-                <a href="./bloco-6-provas-ifce/prova-ifce-20101.html" class="group p-3 rounded-xl border border-gray-100 hover:border-brand-300 hover:bg-brand-50/50 transition flex items-center justify-between bg-white">
-                    <div class="flex items-center gap-2.5 min-w-0">
-                        <span class="text-xs font-bold text-gray-400 group-hover:text-brand-700 flex-shrink-0">09.</span>
-                        <span class="text-xs sm:text-sm font-semibold text-gray-800 group-hover:text-brand-900 truncate">Prova IFCE 2010.1</span>
-                    </div>
-                    <i data-lucide="chevron-right" class="w-4 h-4 text-gray-300 group-hover:text-brand-600 flex-shrink-0"></i>
-                </a>
-            
-                <a href="./bloco-6-provas-ifce/prova-ifce-20092.html" class="group p-3 rounded-xl border border-gray-100 hover:border-brand-300 hover:bg-brand-50/50 transition flex items-center justify-between bg-white">
-                    <div class="flex items-center gap-2.5 min-w-0">
-                        <span class="text-xs font-bold text-gray-400 group-hover:text-brand-700 flex-shrink-0">10.</span>
-                        <span class="text-xs sm:text-sm font-semibold text-gray-800 group-hover:text-brand-900 truncate">Prova IFCE 2009.2</span>
-                    </div>
-                    <i data-lucide="chevron-right" class="w-4 h-4 text-gray-300 group-hover:text-brand-600 flex-shrink-0"></i>
-                </a>
-            
-                <a href="./bloco-6-provas-ifce/prova-ifce-20091.html" class="group p-3 rounded-xl border border-gray-100 hover:border-brand-300 hover:bg-brand-50/50 transition flex items-center justify-between bg-white">
-                    <div class="flex items-center gap-2.5 min-w-0">
-                        <span class="text-xs font-bold text-gray-400 group-hover:text-brand-700 flex-shrink-0">11.</span>
-                        <span class="text-xs sm:text-sm font-semibold text-gray-800 group-hover:text-brand-900 truncate">Prova IFCE 2009.1</span>
-                    </div>
-                    <i data-lucide="chevron-right" class="w-4 h-4 text-gray-300 group-hover:text-brand-600 flex-shrink-0"></i>
-                </a>
-            
-                <a href="./bloco-6-provas-ifce/prova-ifce-20082.html" class="group p-3 rounded-xl border border-gray-100 hover:border-brand-300 hover:bg-brand-50/50 transition flex items-center justify-between bg-white">
-                    <div class="flex items-center gap-2.5 min-w-0">
-                        <span class="text-xs font-bold text-gray-400 group-hover:text-brand-700 flex-shrink-0">12.</span>
-                        <span class="text-xs sm:text-sm font-semibold text-gray-800 group-hover:text-brand-900 truncate">Prova IFCE 2008.2</span>
-                    </div>
-                    <i data-lucide="chevron-right" class="w-4 h-4 text-gray-300 group-hover:text-brand-600 flex-shrink-0"></i>
-                </a>
-            
-                <a href="./bloco-6-provas-ifce/prova-ifce-20081.html" class="group p-3 rounded-xl border border-gray-100 hover:border-brand-300 hover:bg-brand-50/50 transition flex items-center justify-between bg-white">
-                    <div class="flex items-center gap-2.5 min-w-0">
-                        <span class="text-xs font-bold text-gray-400 group-hover:text-brand-700 flex-shrink-0">13.</span>
-                        <span class="text-xs sm:text-sm font-semibold text-gray-800 group-hover:text-brand-900 truncate">Prova IFCE 2008.1</span>
-                    </div>
-                    <i data-lucide="chevron-right" class="w-4 h-4 text-gray-300 group-hover:text-brand-600 flex-shrink-0"></i>
-                </a>
-            
-                <a href="./bloco-6-provas-ifce/prova-ifce-20072.html" class="group p-3 rounded-xl border border-gray-100 hover:border-brand-300 hover:bg-brand-50/50 transition flex items-center justify-between bg-white">
-                    <div class="flex items-center gap-2.5 min-w-0">
-                        <span class="text-xs font-bold text-gray-400 group-hover:text-brand-700 flex-shrink-0">14.</span>
-                        <span class="text-xs sm:text-sm font-semibold text-gray-800 group-hover:text-brand-900 truncate">Prova IFCE 2007.2</span>
-                    </div>
-                    <i data-lucide="chevron-right" class="w-4 h-4 text-gray-300 group-hover:text-brand-600 flex-shrink-0"></i>
-                </a>
-            
-                <a href="./bloco-6-provas-ifce/prova-ifce-20071.html" class="group p-3 rounded-xl border border-gray-100 hover:border-brand-300 hover:bg-brand-50/50 transition flex items-center justify-between bg-white">
-                    <div class="flex items-center gap-2.5 min-w-0">
-                        <span class="text-xs font-bold text-gray-400 group-hover:text-brand-700 flex-shrink-0">15.</span>
-                        <span class="text-xs sm:text-sm font-semibold text-gray-800 group-hover:text-brand-900 truncate">Prova IFCE 2007.1</span>
-                    </div>
-                    <i data-lucide="chevron-right" class="w-4 h-4 text-gray-300 group-hover:text-brand-600 flex-shrink-0"></i>
-                </a>
-            
-                <a href="./bloco-6-provas-ifce/prova-ifce-20062.html" class="group p-3 rounded-xl border border-gray-100 hover:border-brand-300 hover:bg-brand-50/50 transition flex items-center justify-between bg-white">
-                    <div class="flex items-center gap-2.5 min-w-0">
-                        <span class="text-xs font-bold text-gray-400 group-hover:text-brand-700 flex-shrink-0">16.</span>
-                        <span class="text-xs sm:text-sm font-semibold text-gray-800 group-hover:text-brand-900 truncate">Prova IFCE 2006.2</span>
-                    </div>
-                    <i data-lucide="chevron-right" class="w-4 h-4 text-gray-300 group-hover:text-brand-600 flex-shrink-0"></i>
-                </a>
-            
-                <a href="./bloco-6-provas-ifce/prova-ifce-20061.html" class="group p-3 rounded-xl border border-gray-100 hover:border-brand-300 hover:bg-brand-50/50 transition flex items-center justify-between bg-white">
-                    <div class="flex items-center gap-2.5 min-w-0">
-                        <span class="text-xs font-bold text-gray-400 group-hover:text-brand-700 flex-shrink-0">17.</span>
-                        <span class="text-xs sm:text-sm font-semibold text-gray-800 group-hover:text-brand-900 truncate">Prova IFCE 2006.1</span>
-                    </div>
-                    <i data-lucide="chevron-right" class="w-4 h-4 text-gray-300 group-hover:text-brand-600 flex-shrink-0"></i>
-                </a>
-            
-                <a href="./bloco-6-provas-ifce/prova-ifce-20052.html" class="group p-3 rounded-xl border border-gray-100 hover:border-brand-300 hover:bg-brand-50/50 transition flex items-center justify-between bg-white">
-                    <div class="flex items-center gap-2.5 min-w-0">
-                        <span class="text-xs font-bold text-gray-400 group-hover:text-brand-700 flex-shrink-0">18.</span>
-                        <span class="text-xs sm:text-sm font-semibold text-gray-800 group-hover:text-brand-900 truncate">Prova IFCE 2005.2</span>
-                    </div>
-                    <i data-lucide="chevron-right" class="w-4 h-4 text-gray-300 group-hover:text-brand-600 flex-shrink-0"></i>
-                </a>
-            
-                <a href="./bloco-6-provas-ifce/prova-ifce-20051.html" class="group p-3 rounded-xl border border-gray-100 hover:border-brand-300 hover:bg-brand-50/50 transition flex items-center justify-between bg-white">
-                    <div class="flex items-center gap-2.5 min-w-0">
-                        <span class="text-xs font-bold text-gray-400 group-hover:text-brand-700 flex-shrink-0">19.</span>
-                        <span class="text-xs sm:text-sm font-semibold text-gray-800 group-hover:text-brand-900 truncate">Prova IFCE 2005.1</span>
-                    </div>
-                    <i data-lucide="chevron-right" class="w-4 h-4 text-gray-300 group-hover:text-brand-600 flex-shrink-0"></i>
-                </a>
-            
-                <a href="./bloco-6-provas-ifce/prova-ifce-20041.html" class="group p-3 rounded-xl border border-gray-100 hover:border-brand-300 hover:bg-brand-50/50 transition flex items-center justify-between bg-white">
-                    <div class="flex items-center gap-2.5 min-w-0">
-                        <span class="text-xs font-bold text-gray-400 group-hover:text-brand-700 flex-shrink-0">20.</span>
-                        <span class="text-xs sm:text-sm font-semibold text-gray-800 group-hover:text-brand-900 truncate">Prova IFCE 2004.1</span>
-                    </div>
-                    <i data-lucide="chevron-right" class="w-4 h-4 text-gray-300 group-hover:text-brand-600 flex-shrink-0"></i>
-                </a>
-            
-                <a href="./bloco-6-provas-ifce/prova-ifce-20032.html" class="group p-3 rounded-xl border border-gray-100 hover:border-brand-300 hover:bg-brand-50/50 transition flex items-center justify-between bg-white">
-                    <div class="flex items-center gap-2.5 min-w-0">
-                        <span class="text-xs font-bold text-gray-400 group-hover:text-brand-700 flex-shrink-0">21.</span>
-                        <span class="text-xs sm:text-sm font-semibold text-gray-800 group-hover:text-brand-900 truncate">Prova IFCE 2003.2</span>
-                    </div>
-                    <i data-lucide="chevron-right" class="w-4 h-4 text-gray-300 group-hover:text-brand-600 flex-shrink-0"></i>
-                </a>
-            
-                <a href="./bloco-6-provas-ifce/prova-ifce-20031.html" class="group p-3 rounded-xl border border-gray-100 hover:border-brand-300 hover:bg-brand-50/50 transition flex items-center justify-between bg-white">
-                    <div class="flex items-center gap-2.5 min-w-0">
-                        <span class="text-xs font-bold text-gray-400 group-hover:text-brand-700 flex-shrink-0">22.</span>
-                        <span class="text-xs sm:text-sm font-semibold text-gray-800 group-hover:text-brand-900 truncate">Prova IFCE 2003.1</span>
-                    </div>
-                    <i data-lucide="chevron-right" class="w-4 h-4 text-gray-300 group-hover:text-brand-600 flex-shrink-0"></i>
-                </a>
-            
-                <a href="./bloco-6-provas-ifce/prova-ifce-20012.html" class="group p-3 rounded-xl border border-gray-100 hover:border-brand-300 hover:bg-brand-50/50 transition flex items-center justify-between bg-white">
-                    <div class="flex items-center gap-2.5 min-w-0">
-                        <span class="text-xs font-bold text-gray-400 group-hover:text-brand-700 flex-shrink-0">23.</span>
-                        <span class="text-xs sm:text-sm font-semibold text-gray-800 group-hover:text-brand-900 truncate">Prova IFCE 2001.2</span>
-                    </div>
-                    <i data-lucide="chevron-right" class="w-4 h-4 text-gray-300 group-hover:text-brand-600 flex-shrink-0"></i>
-                </a>
-            
-                <a href="./bloco-6-provas-ifce/prova-ifce-20011.html" class="group p-3 rounded-xl border border-gray-100 hover:border-brand-300 hover:bg-brand-50/50 transition flex items-center justify-between bg-white">
-                    <div class="flex items-center gap-2.5 min-w-0">
-                        <span class="text-xs font-bold text-gray-400 group-hover:text-brand-700 flex-shrink-0">24.</span>
-                        <span class="text-xs sm:text-sm font-semibold text-gray-800 group-hover:text-brand-900 truncate">Prova IFCE 2001.1</span>
-                    </div>
-                    <i data-lucide="chevron-right" class="w-4 h-4 text-gray-300 group-hover:text-brand-600 flex-shrink-0"></i>
-                </a>
-            
-                <a href="./bloco-6-provas-ifce/prova-ifce-20002.html" class="group p-3 rounded-xl border border-gray-100 hover:border-brand-300 hover:bg-brand-50/50 transition flex items-center justify-between bg-white">
-                    <div class="flex items-center gap-2.5 min-w-0">
-                        <span class="text-xs font-bold text-gray-400 group-hover:text-brand-700 flex-shrink-0">25.</span>
-                        <span class="text-xs sm:text-sm font-semibold text-gray-800 group-hover:text-brand-900 truncate">Prova IFCE 2000.2</span>
-                    </div>
-                    <i data-lucide="chevron-right" class="w-4 h-4 text-gray-300 group-hover:text-brand-600 flex-shrink-0"></i>
-                </a>
-            
-                <a href="./bloco-6-provas-ifce/prova-ifce-20001.html" class="group p-3 rounded-xl border border-gray-100 hover:border-brand-300 hover:bg-brand-50/50 transition flex items-center justify-between bg-white">
-                    <div class="flex items-center gap-2.5 min-w-0">
-                        <span class="text-xs font-bold text-gray-400 group-hover:text-brand-700 flex-shrink-0">26.</span>
-                        <span class="text-xs sm:text-sm font-semibold text-gray-800 group-hover:text-brand-900 truncate">Prova IFCE 2000.1</span>
-                    </div>
-                    <i data-lucide="chevron-right" class="w-4 h-4 text-gray-300 group-hover:text-brand-600 flex-shrink-0"></i>
-                </a>
-            
-                <a href="./bloco-6-provas-ifce/prova-ifce-1999.html" class="group p-3 rounded-xl border border-gray-100 hover:border-brand-300 hover:bg-brand-50/50 transition flex items-center justify-between bg-white">
-                    <div class="flex items-center gap-2.5 min-w-0">
-                        <span class="text-xs font-bold text-gray-400 group-hover:text-brand-700 flex-shrink-0">27.</span>
-                        <span class="text-xs sm:text-sm font-semibold text-gray-800 group-hover:text-brand-900 truncate">Prova IFCE 1999</span>
-                    </div>
-                    <i data-lucide="chevron-right" class="w-4 h-4 text-gray-300 group-hover:text-brand-600 flex-shrink-0"></i>
-                </a>
-            
-                </div>
-            </div>
-        
         </section>
 
     </main>
@@ -1172,7 +739,12 @@
                     <i data-lucide="layers" class="w-4 h-4 text-brand-400"></i> Eixos Temáticos
                 </h4>
                 <ul class="space-y-1.5 text-xs text-brand-200">
-                    <li><a href="./bloco-1-numeros/index.html" class="hover:text-white transition flex items-center gap-1">• Bloco 1: Números e Operações</a></li><li><a href="./bloco-2-algebra/index.html" class="hover:text-white transition flex items-center gap-1">• Bloco 2: Álgebra</a></li><li><a href="./bloco-3-geometria/index.html" class="hover:text-white transition flex items-center gap-1">• Bloco 3: Geometria</a></li><li><a href="./bloco-4-medidas-e-estatistica/index.html" class="hover:text-white transition flex items-center gap-1">• Bloco 4: Medidas e Estatística</a></li><li><a href="./bloco-5-provas-ifsc/index.html" class="hover:text-white transition flex items-center gap-1">• Bloco 5: Provas Anteriores IFSC</a></li><li><a href="./bloco-6-provas-ifce/index.html" class="hover:text-white transition flex items-center gap-1">• Bloco 6: Provas Anteriores IFCE</a></li>
+                    <li><a href="./bloco-1-numeros/index.html" class="hover:text-white transition flex items-center gap-1">• Bloco 1: Números e Operações</a></li><li><a href="./bloco-2-algebra/index.html" class="hover:text-white transition flex items-center gap-1">• Bloco 2: Álgebra</a></li><li><a href="./bloco-3-geometria/index.html" class="hover:text-white transition flex items-center gap-1">• Bloco 3: Geometria</a></li><li><a href="./bloco-4-medidas-e-estatistica/index.html" class="hover:text-white transition flex items-center gap-1">• Bloco 4: Medidas e Estatística</a></li>
+                    <li class="pt-2">
+                        <a href="./provas.html" class="inline-flex items-center gap-1.5 bg-blue-900/60 hover:bg-blue-800 text-sky-300 font-bold px-3 py-1.5 rounded-lg border border-blue-700/60 transition">
+                            <i data-lucide="file-check" class="w-3.5 h-3.5"></i> Acessar Banco de Provas (Parte 2) →
+                        </a>
+                    </li>
                 </ul>
             </div>
             <div>

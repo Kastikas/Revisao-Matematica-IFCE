@@ -8,6 +8,7 @@
     <script src="https://cdn.tailwindcss.com"></script>
     <script>
         tailwind.config = {
+            darkMode: 'class',
             theme: {
                 extend: {
                     colors: {
@@ -23,6 +24,12 @@
                             800: '#166534',
                             900: '#14532d',
                             950: '#052e16',
+                        },
+                        navy: {
+                            800: '#0f172a',
+                            850: '#0b132b',
+                            900: '#0a0f1d',
+                            950: '#020617',
                         }
                     }
                 }
@@ -40,7 +47,7 @@
 </head>
 <body class="bg-gray-50 text-gray-800 font-sans antialiased min-h-screen flex flex-col">
 
-    <!-- Header / Navbar Principal -->
+    <!-- Header / Navbar Principal (Parte 1 - Teoria) -->
     <header class="gradient-header text-white shadow-lg sticky top-0 z-50">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="flex items-center justify-between h-16">
@@ -71,17 +78,16 @@
             <i data-lucide="shapes" class="w-4 h-4"></i> Bloco 3
         </a><a href="../bloco-4-medidas-e-estatistica/index.html" class="px-3 py-2 rounded-lg text-sm transition flex items-center gap-1.5 text-brand-100 hover:bg-brand-800/70 hover:text-white">
             <i data-lucide="bar-chart-3" class="w-4 h-4"></i> Bloco 4
-        </a><a href="../bloco-5-provas-ifsc/index.html" class="px-3 py-2 rounded-lg text-sm transition flex items-center gap-1.5 text-brand-100 hover:bg-brand-800/70 hover:text-white">
-            <i data-lucide="file-text" class="w-4 h-4"></i> Provas IFSC
-        </a><a href="../bloco-6-provas-ifce/index.html" class="px-3 py-2 rounded-lg text-sm transition flex items-center gap-1.5 text-brand-100 hover:bg-brand-800/70 hover:text-white">
-            <i data-lucide="award" class="w-4 h-4"></i> Provas IFCE
         </a>
                 </nav>
 
-                <!-- Ações do Usuário -->
-                <div class="flex items-center gap-3">
-                    <a href="../simulado.html" class="bg-brand-500 hover:bg-brand-400 text-white font-semibold px-3.5 py-1.5 rounded-lg text-sm transition flex items-center gap-1.5 shadow hover:shadow-md">
-                        <i data-lucide="award" class="w-4 h-4"></i> Simulado IF
+                <!-- Ações do Usuário: Botão Destacado de Provas e Simulado -->
+                <div class="flex items-center gap-2.5">
+                    <a href="../provas.html" class="bg-gradient-to-r from-blue-700 to-indigo-800 hover:from-blue-600 hover:to-indigo-700 text-white font-bold px-3.5 py-1.5 rounded-lg text-sm transition flex items-center gap-1.5 shadow-md border border-blue-400/40" title="Acessar o Banco de Provas Oficiais (Parte 2)">
+                        <i data-lucide="file-check" class="w-4 h-4 text-sky-300"></i> Provas Oficiais <span class="bg-sky-400 text-slate-950 text-[10px] font-extrabold px-1.5 py-0.2 rounded-full ml-0.5">43</span>
+                    </a>
+                    <a href="../simulado.html" class="bg-brand-500 hover:bg-brand-400 text-white font-semibold px-3 py-1.5 rounded-lg text-sm transition flex items-center gap-1.5 shadow hover:shadow-md">
+                        <i data-lucide="award" class="w-4 h-4"></i> Simulado
                     </a>
                     <button id="mobile-menu-btn" class="md:hidden p-2 rounded-lg text-brand-100 hover:text-white hover:bg-brand-800" aria-label="Abrir menu">
                         <i data-lucide="menu" class="w-6 h-6"></i>
@@ -102,12 +108,12 @@
             <i data-lucide="shapes" class="w-4 h-4"></i> Bloco 3
         </a><a href="../bloco-4-medidas-e-estatistica/index.html" class="block px-3 py-2 rounded-md text-base font-medium text-white flex items-center gap-2 hover:bg-brand-800/60">
             <i data-lucide="bar-chart-3" class="w-4 h-4"></i> Bloco 4
-        </a><a href="../bloco-5-provas-ifsc/index.html" class="block px-3 py-2 rounded-md text-base font-medium text-white flex items-center gap-2 hover:bg-brand-800/60">
-            <i data-lucide="file-text" class="w-4 h-4"></i> Provas IFSC
-        </a><a href="../bloco-6-provas-ifce/index.html" class="block px-3 py-2 rounded-md text-base font-medium text-white flex items-center gap-2 hover:bg-brand-800/60">
-            <i data-lucide="award" class="w-4 h-4"></i> Provas IFCE
         </a>
-            <a href="../simulado.html" class="block px-3 py-2 rounded-md text-base font-bold bg-brand-600 text-white flex items-center gap-2 mt-2">
+            <a href="../provas.html" class="block px-3 py-2 rounded-md text-base font-bold bg-blue-700 text-white flex items-center justify-between gap-2 mt-2">
+                <span class="flex items-center gap-2"><i data-lucide="file-check" class="w-4 h-4 text-sky-300"></i> Provas Oficiais (Parte 2)</span>
+                <span class="bg-sky-400 text-slate-950 text-xs font-bold px-2 py-0.5 rounded-full">43 Provas</span>
+            </a>
+            <a href="../simulado.html" class="block px-3 py-2 rounded-md text-base font-bold bg-brand-600 text-white flex items-center gap-2 mt-1">
                 <i data-lucide="award" class="w-4 h-4"></i> Simulado IF Geral
             </a>
         </div>
@@ -167,16 +173,16 @@
                         <h3 class="text-xs font-bold text-gray-500 uppercase tracking-wider mb-3">Conceitos Mais Cobrados</h3>
                         <ul class="grid grid-cols-1 sm:grid-cols-2 gap-2">
                             
-                <li class="flex items-start gap-2 text-xs sm:text-sm text-gray-700">
-                    <i data-lucide="check" class="w-4 h-4 text-brand-600 flex-shrink-0 mt-0.5"></i>
-                    <span>Relação de Euler: $V + F = A + 2$.</span>
-                </li>
-            
-                <li class="flex items-start gap-2 text-xs sm:text-sm text-gray-700">
-                    <i data-lucide="check" class="w-4 h-4 text-brand-600 flex-shrink-0 mt-0.5"></i>
-                    <span>Prismas: 2 bases. Pirâmides: 1 base.</span>
-                </li>
-            
+                    <li class="flex items-start gap-2 text-xs sm:text-sm text-gray-700">
+                        <i data-lucide="check" class="w-4 h-4 text-brand-600 flex-shrink-0 mt-0.5"></i>
+                        <span>Relação de Euler: $V + F = A + 2$.</span>
+                    </li>
+                
+                    <li class="flex items-start gap-2 text-xs sm:text-sm text-gray-700">
+                        <i data-lucide="check" class="w-4 h-4 text-brand-600 flex-shrink-0 mt-0.5"></i>
+                        <span>Prismas: 2 bases. Pirâmides: 1 base.</span>
+                    </li>
+                
                         </ul>
                     </div>
 
@@ -207,7 +213,7 @@
                     </div>
                 </section>
 
-                <!-- Exercícios de Fixação / Questões da Prova -->
+                <!-- Exercícios de Fixação -->
                 <section class="bg-white border border-gray-200 rounded-2xl p-6 sm:p-8 shadow-sm">
                     <div class="flex items-center justify-between mb-6 pb-4 border-b border-gray-100">
                         <div>
@@ -222,203 +228,203 @@
                     </div>
 
                     
-                    <div class="mb-8 border-b border-gray-100 pb-6 last:border-0 last:pb-0" id="q-container-b3-t4-q0">
-                        <div class="flex items-center justify-between mb-2">
-                            <span class="text-xs font-bold uppercase tracking-wider text-brand-700 bg-brand-50 px-2.5 py-0.5 rounded-full border border-brand-100">Questão 1</span>
-                        </div>
-                        <p class="font-medium text-gray-800 mb-4 text-sm sm:text-base leading-relaxed">Um hexaedro regular (cubo) possui quantas faces?</p>
-                        <div class="space-y-2 mb-4" id="opts-b3-t4-q0">
-                            
-                        <button onclick="selectOption('b3-t4-q0', 0)" id="btn-b3-t4-q0-0" class="w-full text-left p-3.5 rounded-xl border border-gray-200 hover:border-brand-400 hover:bg-brand-50/40 transition text-sm text-gray-700 flex items-center justify-between group">
-                            <span class="flex items-center gap-2"><strong class="text-brand-700 font-bold">A)</strong> $4$</span>
-                            <i data-lucide="circle" class="w-4 h-4 text-gray-300 opt-icon group-hover:text-brand-400 flex-shrink-0"></i>
-                        </button>
-                    
-                        <button onclick="selectOption('b3-t4-q0', 1)" id="btn-b3-t4-q0-1" class="w-full text-left p-3.5 rounded-xl border border-gray-200 hover:border-brand-400 hover:bg-brand-50/40 transition text-sm text-gray-700 flex items-center justify-between group">
-                            <span class="flex items-center gap-2"><strong class="text-brand-700 font-bold">B)</strong> $6$</span>
-                            <i data-lucide="circle" class="w-4 h-4 text-gray-300 opt-icon group-hover:text-brand-400 flex-shrink-0"></i>
-                        </button>
-                    
-                        <button onclick="selectOption('b3-t4-q0', 2)" id="btn-b3-t4-q0-2" class="w-full text-left p-3.5 rounded-xl border border-gray-200 hover:border-brand-400 hover:bg-brand-50/40 transition text-sm text-gray-700 flex items-center justify-between group">
-                            <span class="flex items-center gap-2"><strong class="text-brand-700 font-bold">C)</strong> $8$</span>
-                            <i data-lucide="circle" class="w-4 h-4 text-gray-300 opt-icon group-hover:text-brand-400 flex-shrink-0"></i>
-                        </button>
-                    
-                        <button onclick="selectOption('b3-t4-q0', 3)" id="btn-b3-t4-q0-3" class="w-full text-left p-3.5 rounded-xl border border-gray-200 hover:border-brand-400 hover:bg-brand-50/40 transition text-sm text-gray-700 flex items-center justify-between group">
-                            <span class="flex items-center gap-2"><strong class="text-brand-700 font-bold">D)</strong> $12$</span>
-                            <i data-lucide="circle" class="w-4 h-4 text-gray-300 opt-icon group-hover:text-brand-400 flex-shrink-0"></i>
-                        </button>
-                    
-                        </div>
-                        <div class="flex items-center gap-3">
-                            <button id="submit-btn-b3-t4-q0" onclick="submitAnswer('3', 'b3-t4', 0)" class="bg-brand-600 hover:bg-brand-700 text-white px-4 py-2 rounded-lg text-sm font-semibold transition flex items-center gap-1.5 shadow-sm">
-                                <i data-lucide="send" class="w-4 h-4"></i> Enviar Resposta
+                        <div class="mb-8 border-b border-gray-100 pb-6 last:border-0 last:pb-0" id="q-container-b3-t4-q0">
+                            <div class="flex items-center justify-between mb-2">
+                                <span class="text-xs font-bold uppercase tracking-wider text-brand-700 bg-brand-50 px-2.5 py-0.5 rounded-full border border-brand-100">Questão 1</span>
+                            </div>
+                            <p class="font-medium text-gray-800 mb-4 text-sm sm:text-base leading-relaxed">Um hexaedro regular (cubo) possui quantas faces?</p>
+                            <div class="space-y-2 mb-4" id="opts-b3-t4-q0">
+                                
+                            <button onclick="selectOption('b3-t4-q0', 0)" id="btn-b3-t4-q0-0" class="w-full text-left p-3.5 rounded-xl border border-gray-200 hover:border-brand-400 hover:bg-brand-50/40 transition text-sm text-gray-700 flex items-center justify-between group">
+                                <span class="flex items-center gap-2"><strong class="text-brand-700 font-bold">A)</strong> $4$</span>
+                                <i data-lucide="circle" class="w-4 h-4 text-gray-300 opt-icon group-hover:text-brand-400 flex-shrink-0"></i>
                             </button>
-                        </div>
-                        <div id="feedback-b3-t4-q0" class="hidden p-4 rounded-xl text-sm mt-4"></div>
-                    </div>
-                
-                    <div class="mb-8 border-b border-gray-100 pb-6 last:border-0 last:pb-0" id="q-container-b3-t4-q1">
-                        <div class="flex items-center justify-between mb-2">
-                            <span class="text-xs font-bold uppercase tracking-wider text-brand-700 bg-brand-50 px-2.5 py-0.5 rounded-full border border-brand-100">Questão 2</span>
-                        </div>
-                        <p class="font-medium text-gray-800 mb-4 text-sm sm:text-base leading-relaxed">Poliedro com 8 vértices e 6 faces tem quantas arestas?</p>
-                        <div class="space-y-2 mb-4" id="opts-b3-t4-q1">
-                            
-                        <button onclick="selectOption('b3-t4-q1', 0)" id="btn-b3-t4-q1-0" class="w-full text-left p-3.5 rounded-xl border border-gray-200 hover:border-brand-400 hover:bg-brand-50/40 transition text-sm text-gray-700 flex items-center justify-between group">
-                            <span class="flex items-center gap-2"><strong class="text-brand-700 font-bold">A)</strong> $12$</span>
-                            <i data-lucide="circle" class="w-4 h-4 text-gray-300 opt-icon group-hover:text-brand-400 flex-shrink-0"></i>
-                        </button>
-                    
-                        <button onclick="selectOption('b3-t4-q1', 1)" id="btn-b3-t4-q1-1" class="w-full text-left p-3.5 rounded-xl border border-gray-200 hover:border-brand-400 hover:bg-brand-50/40 transition text-sm text-gray-700 flex items-center justify-between group">
-                            <span class="flex items-center gap-2"><strong class="text-brand-700 font-bold">B)</strong> $14$</span>
-                            <i data-lucide="circle" class="w-4 h-4 text-gray-300 opt-icon group-hover:text-brand-400 flex-shrink-0"></i>
-                        </button>
-                    
-                        <button onclick="selectOption('b3-t4-q1', 2)" id="btn-b3-t4-q1-2" class="w-full text-left p-3.5 rounded-xl border border-gray-200 hover:border-brand-400 hover:bg-brand-50/40 transition text-sm text-gray-700 flex items-center justify-between group">
-                            <span class="flex items-center gap-2"><strong class="text-brand-700 font-bold">C)</strong> $10$</span>
-                            <i data-lucide="circle" class="w-4 h-4 text-gray-300 opt-icon group-hover:text-brand-400 flex-shrink-0"></i>
-                        </button>
-                    
-                        <button onclick="selectOption('b3-t4-q1', 3)" id="btn-b3-t4-q1-3" class="w-full text-left p-3.5 rounded-xl border border-gray-200 hover:border-brand-400 hover:bg-brand-50/40 transition text-sm text-gray-700 flex items-center justify-between group">
-                            <span class="flex items-center gap-2"><strong class="text-brand-700 font-bold">D)</strong> $16$</span>
-                            <i data-lucide="circle" class="w-4 h-4 text-gray-300 opt-icon group-hover:text-brand-400 flex-shrink-0"></i>
-                        </button>
-                    
-                        </div>
-                        <div class="flex items-center gap-3">
-                            <button id="submit-btn-b3-t4-q1" onclick="submitAnswer('3', 'b3-t4', 1)" class="bg-brand-600 hover:bg-brand-700 text-white px-4 py-2 rounded-lg text-sm font-semibold transition flex items-center gap-1.5 shadow-sm">
-                                <i data-lucide="send" class="w-4 h-4"></i> Enviar Resposta
+                        
+                            <button onclick="selectOption('b3-t4-q0', 1)" id="btn-b3-t4-q0-1" class="w-full text-left p-3.5 rounded-xl border border-gray-200 hover:border-brand-400 hover:bg-brand-50/40 transition text-sm text-gray-700 flex items-center justify-between group">
+                                <span class="flex items-center gap-2"><strong class="text-brand-700 font-bold">B)</strong> $6$</span>
+                                <i data-lucide="circle" class="w-4 h-4 text-gray-300 opt-icon group-hover:text-brand-400 flex-shrink-0"></i>
                             </button>
-                        </div>
-                        <div id="feedback-b3-t4-q1" class="hidden p-4 rounded-xl text-sm mt-4"></div>
-                    </div>
-                
-                    <div class="mb-8 border-b border-gray-100 pb-6 last:border-0 last:pb-0" id="q-container-b3-t4-q2">
-                        <div class="flex items-center justify-between mb-2">
-                            <span class="text-xs font-bold uppercase tracking-wider text-brand-700 bg-brand-50 px-2.5 py-0.5 rounded-full border border-brand-100">Questão 3</span>
-                        </div>
-                        <p class="font-medium text-gray-800 mb-4 text-sm sm:text-base leading-relaxed">O cilindro é um sólido geométrico classificado como:</p>
-                        <div class="space-y-2 mb-4" id="opts-b3-t4-q2">
-                            
-                        <button onclick="selectOption('b3-t4-q2', 0)" id="btn-b3-t4-q2-0" class="w-full text-left p-3.5 rounded-xl border border-gray-200 hover:border-brand-400 hover:bg-brand-50/40 transition text-sm text-gray-700 flex items-center justify-between group">
-                            <span class="flex items-center gap-2"><strong class="text-brand-700 font-bold">A)</strong> Poliedro</span>
-                            <i data-lucide="circle" class="w-4 h-4 text-gray-300 opt-icon group-hover:text-brand-400 flex-shrink-0"></i>
-                        </button>
-                    
-                        <button onclick="selectOption('b3-t4-q2', 1)" id="btn-b3-t4-q2-1" class="w-full text-left p-3.5 rounded-xl border border-gray-200 hover:border-brand-400 hover:bg-brand-50/40 transition text-sm text-gray-700 flex items-center justify-between group">
-                            <span class="flex items-center gap-2"><strong class="text-brand-700 font-bold">B)</strong> Prisma</span>
-                            <i data-lucide="circle" class="w-4 h-4 text-gray-300 opt-icon group-hover:text-brand-400 flex-shrink-0"></i>
-                        </button>
-                    
-                        <button onclick="selectOption('b3-t4-q2', 2)" id="btn-b3-t4-q2-2" class="w-full text-left p-3.5 rounded-xl border border-gray-200 hover:border-brand-400 hover:bg-brand-50/40 transition text-sm text-gray-700 flex items-center justify-between group">
-                            <span class="flex items-center gap-2"><strong class="text-brand-700 font-bold">C)</strong> Corpo Redondo</span>
-                            <i data-lucide="circle" class="w-4 h-4 text-gray-300 opt-icon group-hover:text-brand-400 flex-shrink-0"></i>
-                        </button>
-                    
-                        <button onclick="selectOption('b3-t4-q2', 3)" id="btn-b3-t4-q2-3" class="w-full text-left p-3.5 rounded-xl border border-gray-200 hover:border-brand-400 hover:bg-brand-50/40 transition text-sm text-gray-700 flex items-center justify-between group">
-                            <span class="flex items-center gap-2"><strong class="text-brand-700 font-bold">D)</strong> Pirâmide</span>
-                            <i data-lucide="circle" class="w-4 h-4 text-gray-300 opt-icon group-hover:text-brand-400 flex-shrink-0"></i>
-                        </button>
-                    
-                        </div>
-                        <div class="flex items-center gap-3">
-                            <button id="submit-btn-b3-t4-q2" onclick="submitAnswer('3', 'b3-t4', 2)" class="bg-brand-600 hover:bg-brand-700 text-white px-4 py-2 rounded-lg text-sm font-semibold transition flex items-center gap-1.5 shadow-sm">
-                                <i data-lucide="send" class="w-4 h-4"></i> Enviar Resposta
+                        
+                            <button onclick="selectOption('b3-t4-q0', 2)" id="btn-b3-t4-q0-2" class="w-full text-left p-3.5 rounded-xl border border-gray-200 hover:border-brand-400 hover:bg-brand-50/40 transition text-sm text-gray-700 flex items-center justify-between group">
+                                <span class="flex items-center gap-2"><strong class="text-brand-700 font-bold">C)</strong> $8$</span>
+                                <i data-lucide="circle" class="w-4 h-4 text-gray-300 opt-icon group-hover:text-brand-400 flex-shrink-0"></i>
                             </button>
-                        </div>
-                        <div id="feedback-b3-t4-q2" class="hidden p-4 rounded-xl text-sm mt-4"></div>
-                    </div>
-                
-                    <div class="mb-8 border-b border-gray-100 pb-6 last:border-0 last:pb-0" id="q-container-b3-t4-q3">
-                        <div class="flex items-center justify-between mb-2">
-                            <span class="text-xs font-bold uppercase tracking-wider text-brand-700 bg-brand-50 px-2.5 py-0.5 rounded-full border border-brand-100">Questão 4</span>
-                        </div>
-                        <p class="font-medium text-gray-800 mb-4 text-sm sm:text-base leading-relaxed">A vista ortogonal superior de um cone de base apoiada é:</p>
-                        <div class="space-y-2 mb-4" id="opts-b3-t4-q3">
-                            
-                        <button onclick="selectOption('b3-t4-q3', 0)" id="btn-b3-t4-q3-0" class="w-full text-left p-3.5 rounded-xl border border-gray-200 hover:border-brand-400 hover:bg-brand-50/40 transition text-sm text-gray-700 flex items-center justify-between group">
-                            <span class="flex items-center gap-2"><strong class="text-brand-700 font-bold">A)</strong> Triângulo</span>
-                            <i data-lucide="circle" class="w-4 h-4 text-gray-300 opt-icon group-hover:text-brand-400 flex-shrink-0"></i>
-                        </button>
-                    
-                        <button onclick="selectOption('b3-t4-q3', 1)" id="btn-b3-t4-q3-1" class="w-full text-left p-3.5 rounded-xl border border-gray-200 hover:border-brand-400 hover:bg-brand-50/40 transition text-sm text-gray-700 flex items-center justify-between group">
-                            <span class="flex items-center gap-2"><strong class="text-brand-700 font-bold">B)</strong> Círculo com ponto</span>
-                            <i data-lucide="circle" class="w-4 h-4 text-gray-300 opt-icon group-hover:text-brand-400 flex-shrink-0"></i>
-                        </button>
-                    
-                        <button onclick="selectOption('b3-t4-q3', 2)" id="btn-b3-t4-q3-2" class="w-full text-left p-3.5 rounded-xl border border-gray-200 hover:border-brand-400 hover:bg-brand-50/40 transition text-sm text-gray-700 flex items-center justify-between group">
-                            <span class="flex items-center gap-2"><strong class="text-brand-700 font-bold">C)</strong> Quadrado</span>
-                            <i data-lucide="circle" class="w-4 h-4 text-gray-300 opt-icon group-hover:text-brand-400 flex-shrink-0"></i>
-                        </button>
-                    
-                        <button onclick="selectOption('b3-t4-q3', 3)" id="btn-b3-t4-q3-3" class="w-full text-left p-3.5 rounded-xl border border-gray-200 hover:border-brand-400 hover:bg-brand-50/40 transition text-sm text-gray-700 flex items-center justify-between group">
-                            <span class="flex items-center gap-2"><strong class="text-brand-700 font-bold">D)</strong> Ponto</span>
-                            <i data-lucide="circle" class="w-4 h-4 text-gray-300 opt-icon group-hover:text-brand-400 flex-shrink-0"></i>
-                        </button>
-                    
-                        </div>
-                        <div class="flex items-center gap-3">
-                            <button id="submit-btn-b3-t4-q3" onclick="submitAnswer('3', 'b3-t4', 3)" class="bg-brand-600 hover:bg-brand-700 text-white px-4 py-2 rounded-lg text-sm font-semibold transition flex items-center gap-1.5 shadow-sm">
-                                <i data-lucide="send" class="w-4 h-4"></i> Enviar Resposta
+                        
+                            <button onclick="selectOption('b3-t4-q0', 3)" id="btn-b3-t4-q0-3" class="w-full text-left p-3.5 rounded-xl border border-gray-200 hover:border-brand-400 hover:bg-brand-50/40 transition text-sm text-gray-700 flex items-center justify-between group">
+                                <span class="flex items-center gap-2"><strong class="text-brand-700 font-bold">D)</strong> $12$</span>
+                                <i data-lucide="circle" class="w-4 h-4 text-gray-300 opt-icon group-hover:text-brand-400 flex-shrink-0"></i>
                             </button>
+                        
+                            </div>
+                            <div class="flex items-center gap-3">
+                                <button id="submit-btn-b3-t4-q0" onclick="submitAnswer('3', 'b3-t4', 0)" class="bg-brand-600 hover:bg-brand-700 text-white px-4 py-2 rounded-lg text-sm font-semibold transition flex items-center gap-1.5 shadow-sm">
+                                    <i data-lucide="send" class="w-4 h-4"></i> Enviar Resposta
+                                </button>
+                            </div>
+                            <div id="feedback-b3-t4-q0" class="hidden p-4 rounded-xl text-sm mt-4"></div>
                         </div>
-                        <div id="feedback-b3-t4-q3" class="hidden p-4 rounded-xl text-sm mt-4"></div>
-                    </div>
-                
-                    <div class="mb-8 border-b border-gray-100 pb-6 last:border-0 last:pb-0" id="q-container-b3-t4-q4">
-                        <div class="flex items-center justify-between mb-2">
-                            <span class="text-xs font-bold uppercase tracking-wider text-brand-700 bg-brand-50 px-2.5 py-0.5 rounded-full border border-brand-100">Questão 5</span>
-                        </div>
-                        <p class="font-medium text-gray-800 mb-4 text-sm sm:text-base leading-relaxed">Todo prisma regular possui obrigatoriamente quantas bases paralelas?</p>
-                        <div class="space-y-2 mb-4" id="opts-b3-t4-q4">
-                            
-                        <button onclick="selectOption('b3-t4-q4', 0)" id="btn-b3-t4-q4-0" class="w-full text-left p-3.5 rounded-xl border border-gray-200 hover:border-brand-400 hover:bg-brand-50/40 transition text-sm text-gray-700 flex items-center justify-between group">
-                            <span class="flex items-center gap-2"><strong class="text-brand-700 font-bold">A)</strong> $1$</span>
-                            <i data-lucide="circle" class="w-4 h-4 text-gray-300 opt-icon group-hover:text-brand-400 flex-shrink-0"></i>
-                        </button>
                     
-                        <button onclick="selectOption('b3-t4-q4', 1)" id="btn-b3-t4-q4-1" class="w-full text-left p-3.5 rounded-xl border border-gray-200 hover:border-brand-400 hover:bg-brand-50/40 transition text-sm text-gray-700 flex items-center justify-between group">
-                            <span class="flex items-center gap-2"><strong class="text-brand-700 font-bold">B)</strong> $2$</span>
-                            <i data-lucide="circle" class="w-4 h-4 text-gray-300 opt-icon group-hover:text-brand-400 flex-shrink-0"></i>
-                        </button>
-                    
-                        <button onclick="selectOption('b3-t4-q4', 2)" id="btn-b3-t4-q4-2" class="w-full text-left p-3.5 rounded-xl border border-gray-200 hover:border-brand-400 hover:bg-brand-50/40 transition text-sm text-gray-700 flex items-center justify-between group">
-                            <span class="flex items-center gap-2"><strong class="text-brand-700 font-bold">C)</strong> $3$</span>
-                            <i data-lucide="circle" class="w-4 h-4 text-gray-300 opt-icon group-hover:text-brand-400 flex-shrink-0"></i>
-                        </button>
-                    
-                        <button onclick="selectOption('b3-t4-q4', 3)" id="btn-b3-t4-q4-3" class="w-full text-left p-3.5 rounded-xl border border-gray-200 hover:border-brand-400 hover:bg-brand-50/40 transition text-sm text-gray-700 flex items-center justify-between group">
-                            <span class="flex items-center gap-2"><strong class="text-brand-700 font-bold">D)</strong> Nenhuma</span>
-                            <i data-lucide="circle" class="w-4 h-4 text-gray-300 opt-icon group-hover:text-brand-400 flex-shrink-0"></i>
-                        </button>
-                    
-                        </div>
-                        <div class="flex items-center gap-3">
-                            <button id="submit-btn-b3-t4-q4" onclick="submitAnswer('3', 'b3-t4', 4)" class="bg-brand-600 hover:bg-brand-700 text-white px-4 py-2 rounded-lg text-sm font-semibold transition flex items-center gap-1.5 shadow-sm">
-                                <i data-lucide="send" class="w-4 h-4"></i> Enviar Resposta
+                        <div class="mb-8 border-b border-gray-100 pb-6 last:border-0 last:pb-0" id="q-container-b3-t4-q1">
+                            <div class="flex items-center justify-between mb-2">
+                                <span class="text-xs font-bold uppercase tracking-wider text-brand-700 bg-brand-50 px-2.5 py-0.5 rounded-full border border-brand-100">Questão 2</span>
+                            </div>
+                            <p class="font-medium text-gray-800 mb-4 text-sm sm:text-base leading-relaxed">Poliedro com 8 vértices e 6 faces tem quantas arestas?</p>
+                            <div class="space-y-2 mb-4" id="opts-b3-t4-q1">
+                                
+                            <button onclick="selectOption('b3-t4-q1', 0)" id="btn-b3-t4-q1-0" class="w-full text-left p-3.5 rounded-xl border border-gray-200 hover:border-brand-400 hover:bg-brand-50/40 transition text-sm text-gray-700 flex items-center justify-between group">
+                                <span class="flex items-center gap-2"><strong class="text-brand-700 font-bold">A)</strong> $12$</span>
+                                <i data-lucide="circle" class="w-4 h-4 text-gray-300 opt-icon group-hover:text-brand-400 flex-shrink-0"></i>
                             </button>
+                        
+                            <button onclick="selectOption('b3-t4-q1', 1)" id="btn-b3-t4-q1-1" class="w-full text-left p-3.5 rounded-xl border border-gray-200 hover:border-brand-400 hover:bg-brand-50/40 transition text-sm text-gray-700 flex items-center justify-between group">
+                                <span class="flex items-center gap-2"><strong class="text-brand-700 font-bold">B)</strong> $14$</span>
+                                <i data-lucide="circle" class="w-4 h-4 text-gray-300 opt-icon group-hover:text-brand-400 flex-shrink-0"></i>
+                            </button>
+                        
+                            <button onclick="selectOption('b3-t4-q1', 2)" id="btn-b3-t4-q1-2" class="w-full text-left p-3.5 rounded-xl border border-gray-200 hover:border-brand-400 hover:bg-brand-50/40 transition text-sm text-gray-700 flex items-center justify-between group">
+                                <span class="flex items-center gap-2"><strong class="text-brand-700 font-bold">C)</strong> $10$</span>
+                                <i data-lucide="circle" class="w-4 h-4 text-gray-300 opt-icon group-hover:text-brand-400 flex-shrink-0"></i>
+                            </button>
+                        
+                            <button onclick="selectOption('b3-t4-q1', 3)" id="btn-b3-t4-q1-3" class="w-full text-left p-3.5 rounded-xl border border-gray-200 hover:border-brand-400 hover:bg-brand-50/40 transition text-sm text-gray-700 flex items-center justify-between group">
+                                <span class="flex items-center gap-2"><strong class="text-brand-700 font-bold">D)</strong> $16$</span>
+                                <i data-lucide="circle" class="w-4 h-4 text-gray-300 opt-icon group-hover:text-brand-400 flex-shrink-0"></i>
+                            </button>
+                        
+                            </div>
+                            <div class="flex items-center gap-3">
+                                <button id="submit-btn-b3-t4-q1" onclick="submitAnswer('3', 'b3-t4', 1)" class="bg-brand-600 hover:bg-brand-700 text-white px-4 py-2 rounded-lg text-sm font-semibold transition flex items-center gap-1.5 shadow-sm">
+                                    <i data-lucide="send" class="w-4 h-4"></i> Enviar Resposta
+                                </button>
+                            </div>
+                            <div id="feedback-b3-t4-q1" class="hidden p-4 rounded-xl text-sm mt-4"></div>
                         </div>
-                        <div id="feedback-b3-t4-q4" class="hidden p-4 rounded-xl text-sm mt-4"></div>
-                    </div>
-                
+                    
+                        <div class="mb-8 border-b border-gray-100 pb-6 last:border-0 last:pb-0" id="q-container-b3-t4-q2">
+                            <div class="flex items-center justify-between mb-2">
+                                <span class="text-xs font-bold uppercase tracking-wider text-brand-700 bg-brand-50 px-2.5 py-0.5 rounded-full border border-brand-100">Questão 3</span>
+                            </div>
+                            <p class="font-medium text-gray-800 mb-4 text-sm sm:text-base leading-relaxed">O cilindro é um sólido geométrico classificado como:</p>
+                            <div class="space-y-2 mb-4" id="opts-b3-t4-q2">
+                                
+                            <button onclick="selectOption('b3-t4-q2', 0)" id="btn-b3-t4-q2-0" class="w-full text-left p-3.5 rounded-xl border border-gray-200 hover:border-brand-400 hover:bg-brand-50/40 transition text-sm text-gray-700 flex items-center justify-between group">
+                                <span class="flex items-center gap-2"><strong class="text-brand-700 font-bold">A)</strong> Poliedro</span>
+                                <i data-lucide="circle" class="w-4 h-4 text-gray-300 opt-icon group-hover:text-brand-400 flex-shrink-0"></i>
+                            </button>
+                        
+                            <button onclick="selectOption('b3-t4-q2', 1)" id="btn-b3-t4-q2-1" class="w-full text-left p-3.5 rounded-xl border border-gray-200 hover:border-brand-400 hover:bg-brand-50/40 transition text-sm text-gray-700 flex items-center justify-between group">
+                                <span class="flex items-center gap-2"><strong class="text-brand-700 font-bold">B)</strong> Prisma</span>
+                                <i data-lucide="circle" class="w-4 h-4 text-gray-300 opt-icon group-hover:text-brand-400 flex-shrink-0"></i>
+                            </button>
+                        
+                            <button onclick="selectOption('b3-t4-q2', 2)" id="btn-b3-t4-q2-2" class="w-full text-left p-3.5 rounded-xl border border-gray-200 hover:border-brand-400 hover:bg-brand-50/40 transition text-sm text-gray-700 flex items-center justify-between group">
+                                <span class="flex items-center gap-2"><strong class="text-brand-700 font-bold">C)</strong> Corpo Redondo</span>
+                                <i data-lucide="circle" class="w-4 h-4 text-gray-300 opt-icon group-hover:text-brand-400 flex-shrink-0"></i>
+                            </button>
+                        
+                            <button onclick="selectOption('b3-t4-q2', 3)" id="btn-b3-t4-q2-3" class="w-full text-left p-3.5 rounded-xl border border-gray-200 hover:border-brand-400 hover:bg-brand-50/40 transition text-sm text-gray-700 flex items-center justify-between group">
+                                <span class="flex items-center gap-2"><strong class="text-brand-700 font-bold">D)</strong> Pirâmide</span>
+                                <i data-lucide="circle" class="w-4 h-4 text-gray-300 opt-icon group-hover:text-brand-400 flex-shrink-0"></i>
+                            </button>
+                        
+                            </div>
+                            <div class="flex items-center gap-3">
+                                <button id="submit-btn-b3-t4-q2" onclick="submitAnswer('3', 'b3-t4', 2)" class="bg-brand-600 hover:bg-brand-700 text-white px-4 py-2 rounded-lg text-sm font-semibold transition flex items-center gap-1.5 shadow-sm">
+                                    <i data-lucide="send" class="w-4 h-4"></i> Enviar Resposta
+                                </button>
+                            </div>
+                            <div id="feedback-b3-t4-q2" class="hidden p-4 rounded-xl text-sm mt-4"></div>
+                        </div>
+                    
+                        <div class="mb-8 border-b border-gray-100 pb-6 last:border-0 last:pb-0" id="q-container-b3-t4-q3">
+                            <div class="flex items-center justify-between mb-2">
+                                <span class="text-xs font-bold uppercase tracking-wider text-brand-700 bg-brand-50 px-2.5 py-0.5 rounded-full border border-brand-100">Questão 4</span>
+                            </div>
+                            <p class="font-medium text-gray-800 mb-4 text-sm sm:text-base leading-relaxed">A vista ortogonal superior de um cone de base apoiada é:</p>
+                            <div class="space-y-2 mb-4" id="opts-b3-t4-q3">
+                                
+                            <button onclick="selectOption('b3-t4-q3', 0)" id="btn-b3-t4-q3-0" class="w-full text-left p-3.5 rounded-xl border border-gray-200 hover:border-brand-400 hover:bg-brand-50/40 transition text-sm text-gray-700 flex items-center justify-between group">
+                                <span class="flex items-center gap-2"><strong class="text-brand-700 font-bold">A)</strong> Triângulo</span>
+                                <i data-lucide="circle" class="w-4 h-4 text-gray-300 opt-icon group-hover:text-brand-400 flex-shrink-0"></i>
+                            </button>
+                        
+                            <button onclick="selectOption('b3-t4-q3', 1)" id="btn-b3-t4-q3-1" class="w-full text-left p-3.5 rounded-xl border border-gray-200 hover:border-brand-400 hover:bg-brand-50/40 transition text-sm text-gray-700 flex items-center justify-between group">
+                                <span class="flex items-center gap-2"><strong class="text-brand-700 font-bold">B)</strong> Círculo com ponto</span>
+                                <i data-lucide="circle" class="w-4 h-4 text-gray-300 opt-icon group-hover:text-brand-400 flex-shrink-0"></i>
+                            </button>
+                        
+                            <button onclick="selectOption('b3-t4-q3', 2)" id="btn-b3-t4-q3-2" class="w-full text-left p-3.5 rounded-xl border border-gray-200 hover:border-brand-400 hover:bg-brand-50/40 transition text-sm text-gray-700 flex items-center justify-between group">
+                                <span class="flex items-center gap-2"><strong class="text-brand-700 font-bold">C)</strong> Quadrado</span>
+                                <i data-lucide="circle" class="w-4 h-4 text-gray-300 opt-icon group-hover:text-brand-400 flex-shrink-0"></i>
+                            </button>
+                        
+                            <button onclick="selectOption('b3-t4-q3', 3)" id="btn-b3-t4-q3-3" class="w-full text-left p-3.5 rounded-xl border border-gray-200 hover:border-brand-400 hover:bg-brand-50/40 transition text-sm text-gray-700 flex items-center justify-between group">
+                                <span class="flex items-center gap-2"><strong class="text-brand-700 font-bold">D)</strong> Ponto</span>
+                                <i data-lucide="circle" class="w-4 h-4 text-gray-300 opt-icon group-hover:text-brand-400 flex-shrink-0"></i>
+                            </button>
+                        
+                            </div>
+                            <div class="flex items-center gap-3">
+                                <button id="submit-btn-b3-t4-q3" onclick="submitAnswer('3', 'b3-t4', 3)" class="bg-brand-600 hover:bg-brand-700 text-white px-4 py-2 rounded-lg text-sm font-semibold transition flex items-center gap-1.5 shadow-sm">
+                                    <i data-lucide="send" class="w-4 h-4"></i> Enviar Resposta
+                                </button>
+                            </div>
+                            <div id="feedback-b3-t4-q3" class="hidden p-4 rounded-xl text-sm mt-4"></div>
+                        </div>
+                    
+                        <div class="mb-8 border-b border-gray-100 pb-6 last:border-0 last:pb-0" id="q-container-b3-t4-q4">
+                            <div class="flex items-center justify-between mb-2">
+                                <span class="text-xs font-bold uppercase tracking-wider text-brand-700 bg-brand-50 px-2.5 py-0.5 rounded-full border border-brand-100">Questão 5</span>
+                            </div>
+                            <p class="font-medium text-gray-800 mb-4 text-sm sm:text-base leading-relaxed">Todo prisma regular possui obrigatoriamente quantas bases paralelas?</p>
+                            <div class="space-y-2 mb-4" id="opts-b3-t4-q4">
+                                
+                            <button onclick="selectOption('b3-t4-q4', 0)" id="btn-b3-t4-q4-0" class="w-full text-left p-3.5 rounded-xl border border-gray-200 hover:border-brand-400 hover:bg-brand-50/40 transition text-sm text-gray-700 flex items-center justify-between group">
+                                <span class="flex items-center gap-2"><strong class="text-brand-700 font-bold">A)</strong> $1$</span>
+                                <i data-lucide="circle" class="w-4 h-4 text-gray-300 opt-icon group-hover:text-brand-400 flex-shrink-0"></i>
+                            </button>
+                        
+                            <button onclick="selectOption('b3-t4-q4', 1)" id="btn-b3-t4-q4-1" class="w-full text-left p-3.5 rounded-xl border border-gray-200 hover:border-brand-400 hover:bg-brand-50/40 transition text-sm text-gray-700 flex items-center justify-between group">
+                                <span class="flex items-center gap-2"><strong class="text-brand-700 font-bold">B)</strong> $2$</span>
+                                <i data-lucide="circle" class="w-4 h-4 text-gray-300 opt-icon group-hover:text-brand-400 flex-shrink-0"></i>
+                            </button>
+                        
+                            <button onclick="selectOption('b3-t4-q4', 2)" id="btn-b3-t4-q4-2" class="w-full text-left p-3.5 rounded-xl border border-gray-200 hover:border-brand-400 hover:bg-brand-50/40 transition text-sm text-gray-700 flex items-center justify-between group">
+                                <span class="flex items-center gap-2"><strong class="text-brand-700 font-bold">C)</strong> $3$</span>
+                                <i data-lucide="circle" class="w-4 h-4 text-gray-300 opt-icon group-hover:text-brand-400 flex-shrink-0"></i>
+                            </button>
+                        
+                            <button onclick="selectOption('b3-t4-q4', 3)" id="btn-b3-t4-q4-3" class="w-full text-left p-3.5 rounded-xl border border-gray-200 hover:border-brand-400 hover:bg-brand-50/40 transition text-sm text-gray-700 flex items-center justify-between group">
+                                <span class="flex items-center gap-2"><strong class="text-brand-700 font-bold">D)</strong> Nenhuma</span>
+                                <i data-lucide="circle" class="w-4 h-4 text-gray-300 opt-icon group-hover:text-brand-400 flex-shrink-0"></i>
+                            </button>
+                        
+                            </div>
+                            <div class="flex items-center gap-3">
+                                <button id="submit-btn-b3-t4-q4" onclick="submitAnswer('3', 'b3-t4', 4)" class="bg-brand-600 hover:bg-brand-700 text-white px-4 py-2 rounded-lg text-sm font-semibold transition flex items-center gap-1.5 shadow-sm">
+                                    <i data-lucide="send" class="w-4 h-4"></i> Enviar Resposta
+                                </button>
+                            </div>
+                            <div id="feedback-b3-t4-q4" class="hidden p-4 rounded-xl text-sm mt-4"></div>
+                        </div>
+                    
                 </section>
 
                 <!-- Navegação Inferior -->
                 <div class="flex flex-wrap items-center justify-between gap-4 pt-4 border-t border-gray-200">
                     
-                    <a href="./circulo-e-circunferencia.html" class="bg-white border border-gray-200 hover:bg-gray-50 text-gray-700 font-semibold px-4 py-2.5 rounded-xl text-sm transition flex items-center gap-2 shadow-sm">
-                        <i data-lucide="arrow-left" class="w-4 h-4"></i> Anterior: Círculo e Circunferência
+                        <a href="./circulo-e-circunferencia.html" class="bg-white border border-gray-200 hover:bg-gray-50 text-gray-700 font-semibold px-4 py-2.5 rounded-xl text-sm transition flex items-center gap-2 shadow-sm">
+                            <i data-lucide="arrow-left" class="w-4 h-4"></i> Anterior: Círculo e Circunferência
+                        </a>
+                    
+                    <a href="./index.html" class="bg-brand-50 border border-brand-200 text-brand-800 hover:bg-brand-100 font-semibold px-4 py-2.5 rounded-xl text-sm transition flex items-center gap-2 shadow-sm">
+                        <i data-lucide="grid" class="w-4 h-4"></i> Todos os Tópicos
                     </a>
                 
-                <a href="./index.html" class="bg-brand-50 border border-brand-200 text-brand-800 hover:bg-brand-100 font-semibold px-4 py-2.5 rounded-xl text-sm transition flex items-center gap-2 shadow-sm">
-                    <i data-lucide="grid" class="w-4 h-4"></i> Todos os Tópicos
-                </a>
-            
-                    <a href="../simulado.html" class="bg-brand-600 hover:bg-brand-700 text-white font-semibold px-4 py-2.5 rounded-xl text-sm transition flex items-center gap-2 shadow-sm ml-auto">
-                        Simulado Geral <i data-lucide="award" class="w-4 h-4"></i>
-                    </a>
-                
+                        <a href="../simulado.html" class="bg-brand-600 hover:bg-brand-700 text-white font-semibold px-4 py-2.5 rounded-xl text-sm transition flex items-center gap-2 shadow-sm ml-auto">
+                            Simulado Geral <i data-lucide="award" class="w-4 h-4"></i>
+                        </a>
+                    
                 </div>
 
             </div>
@@ -438,26 +444,26 @@
 
                     <div class="space-y-1 custom-scrollbar max-h-[60vh] overflow-y-auto pr-1">
                         
-                    <a href="./angulos-triangulos-e-poligonos.html" class="w-full text-left py-2 px-2.5 rounded-lg text-xs transition flex items-center justify-between text-gray-600 hover:bg-gray-100 pl-2">
-                        <span class="truncate pr-2">1. Ângulos, Triângulos e Polígonos</span>
-                        <i id="status-icon-b3-t1" data-lucide="circle" class="w-4 h-4 text-gray-300 flex-shrink-0"></i>
-                    </a>
-                
-                    <a href="./teorema-de-pitagoras-e-semelhanca.html" class="w-full text-left py-2 px-2.5 rounded-lg text-xs transition flex items-center justify-between text-gray-600 hover:bg-gray-100 pl-2">
-                        <span class="truncate pr-2">2. Teorema de Pitágoras e Semelhança</span>
-                        <i id="status-icon-b3-t2" data-lucide="circle" class="w-4 h-4 text-gray-300 flex-shrink-0"></i>
-                    </a>
-                
-                    <a href="./circulo-e-circunferencia.html" class="w-full text-left py-2 px-2.5 rounded-lg text-xs transition flex items-center justify-between text-gray-600 hover:bg-gray-100 pl-2">
-                        <span class="truncate pr-2">3. Círculo e Circunferência</span>
-                        <i id="status-icon-b3-t3" data-lucide="circle" class="w-4 h-4 text-gray-300 flex-shrink-0"></i>
-                    </a>
-                
-                    <a href="./solidos-e-vistas.html" class="w-full text-left py-2 px-2.5 rounded-lg text-xs transition flex items-center justify-between bg-brand-100 text-brand-900 font-bold border-l-4 border-brand-600 pl-3">
-                        <span class="truncate pr-2">4. Sólidos e Vistas</span>
-                        <i id="status-icon-b3-t4" data-lucide="circle" class="w-4 h-4 text-gray-300 flex-shrink-0"></i>
-                    </a>
-                
+                        <a href="./angulos-triangulos-e-poligonos.html" class="w-full text-left py-2 px-2.5 rounded-lg text-xs transition flex items-center justify-between text-gray-600 hover:bg-gray-100 pl-2">
+                            <span class="truncate pr-2">1. Ângulos, Triângulos e Polígonos</span>
+                            <i id="status-icon-b3-t1" data-lucide="circle" class="w-4 h-4 text-gray-300 flex-shrink-0"></i>
+                        </a>
+                    
+                        <a href="./teorema-de-pitagoras-e-semelhanca.html" class="w-full text-left py-2 px-2.5 rounded-lg text-xs transition flex items-center justify-between text-gray-600 hover:bg-gray-100 pl-2">
+                            <span class="truncate pr-2">2. Teorema de Pitágoras e Semelhança</span>
+                            <i id="status-icon-b3-t2" data-lucide="circle" class="w-4 h-4 text-gray-300 flex-shrink-0"></i>
+                        </a>
+                    
+                        <a href="./circulo-e-circunferencia.html" class="w-full text-left py-2 px-2.5 rounded-lg text-xs transition flex items-center justify-between text-gray-600 hover:bg-gray-100 pl-2">
+                            <span class="truncate pr-2">3. Círculo e Circunferência</span>
+                            <i id="status-icon-b3-t3" data-lucide="circle" class="w-4 h-4 text-gray-300 flex-shrink-0"></i>
+                        </a>
+                    
+                        <a href="./solidos-e-vistas.html" class="w-full text-left py-2 px-2.5 rounded-lg text-xs transition flex items-center justify-between bg-brand-100 text-brand-900 font-bold border-l-4 border-brand-600 pl-3">
+                            <span class="truncate pr-2">4. Sólidos e Vistas</span>
+                            <i id="status-icon-b3-t4" data-lucide="circle" class="w-4 h-4 text-gray-300 flex-shrink-0"></i>
+                        </a>
+                    
                     </div>
 
                     <div class="mt-5 pt-4 border-t border-gray-100">
@@ -489,7 +495,12 @@
                     <i data-lucide="layers" class="w-4 h-4 text-brand-400"></i> Eixos Temáticos
                 </h4>
                 <ul class="space-y-1.5 text-xs text-brand-200">
-                    <li><a href="../bloco-1-numeros/index.html" class="hover:text-white transition flex items-center gap-1">• Bloco 1: Números e Operações</a></li><li><a href="../bloco-2-algebra/index.html" class="hover:text-white transition flex items-center gap-1">• Bloco 2: Álgebra</a></li><li><a href="../bloco-3-geometria/index.html" class="hover:text-white transition flex items-center gap-1">• Bloco 3: Geometria</a></li><li><a href="../bloco-4-medidas-e-estatistica/index.html" class="hover:text-white transition flex items-center gap-1">• Bloco 4: Medidas e Estatística</a></li><li><a href="../bloco-5-provas-ifsc/index.html" class="hover:text-white transition flex items-center gap-1">• Bloco 5: Provas Anteriores IFSC</a></li><li><a href="../bloco-6-provas-ifce/index.html" class="hover:text-white transition flex items-center gap-1">• Bloco 6: Provas Anteriores IFCE</a></li>
+                    <li><a href="../bloco-1-numeros/index.html" class="hover:text-white transition flex items-center gap-1">• Bloco 1: Números e Operações</a></li><li><a href="../bloco-2-algebra/index.html" class="hover:text-white transition flex items-center gap-1">• Bloco 2: Álgebra</a></li><li><a href="../bloco-3-geometria/index.html" class="hover:text-white transition flex items-center gap-1">• Bloco 3: Geometria</a></li><li><a href="../bloco-4-medidas-e-estatistica/index.html" class="hover:text-white transition flex items-center gap-1">• Bloco 4: Medidas e Estatística</a></li>
+                    <li class="pt-2">
+                        <a href="../provas.html" class="inline-flex items-center gap-1.5 bg-blue-900/60 hover:bg-blue-800 text-sky-300 font-bold px-3 py-1.5 rounded-lg border border-blue-700/60 transition">
+                            <i data-lucide="file-check" class="w-3.5 h-3.5"></i> Acessar Banco de Provas (Parte 2) →
+                        </a>
+                    </li>
                 </ul>
             </div>
             <div>

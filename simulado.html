@@ -8,6 +8,7 @@
     <script src="https://cdn.tailwindcss.com"></script>
     <script>
         tailwind.config = {
+            darkMode: 'class',
             theme: {
                 extend: {
                     colors: {
@@ -23,6 +24,12 @@
                             800: '#166534',
                             900: '#14532d',
                             950: '#052e16',
+                        },
+                        navy: {
+                            800: '#0f172a',
+                            850: '#0b132b',
+                            900: '#0a0f1d',
+                            950: '#020617',
                         }
                     }
                 }
@@ -40,7 +47,7 @@
 </head>
 <body class="bg-gray-50 text-gray-800 font-sans antialiased min-h-screen flex flex-col">
 
-    <!-- Header / Navbar Principal -->
+    <!-- Header / Navbar Principal (Parte 1 - Teoria) -->
     <header class="gradient-header text-white shadow-lg sticky top-0 z-50">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="flex items-center justify-between h-16">
@@ -71,17 +78,16 @@
             <i data-lucide="shapes" class="w-4 h-4"></i> Bloco 3
         </a><a href="./bloco-4-medidas-e-estatistica/index.html" class="px-3 py-2 rounded-lg text-sm transition flex items-center gap-1.5 text-brand-100 hover:bg-brand-800/70 hover:text-white">
             <i data-lucide="bar-chart-3" class="w-4 h-4"></i> Bloco 4
-        </a><a href="./bloco-5-provas-ifsc/index.html" class="px-3 py-2 rounded-lg text-sm transition flex items-center gap-1.5 text-brand-100 hover:bg-brand-800/70 hover:text-white">
-            <i data-lucide="file-text" class="w-4 h-4"></i> Provas IFSC
-        </a><a href="./bloco-6-provas-ifce/index.html" class="px-3 py-2 rounded-lg text-sm transition flex items-center gap-1.5 text-brand-100 hover:bg-brand-800/70 hover:text-white">
-            <i data-lucide="award" class="w-4 h-4"></i> Provas IFCE
         </a>
                 </nav>
 
-                <!-- Ações do Usuário -->
-                <div class="flex items-center gap-3">
-                    <a href="./simulado.html" class="bg-brand-500 hover:bg-brand-400 text-white font-semibold px-3.5 py-1.5 rounded-lg text-sm transition flex items-center gap-1.5 shadow hover:shadow-md">
-                        <i data-lucide="award" class="w-4 h-4"></i> Simulado IF
+                <!-- Ações do Usuário: Botão Destacado de Provas e Simulado -->
+                <div class="flex items-center gap-2.5">
+                    <a href="./provas.html" class="bg-gradient-to-r from-blue-700 to-indigo-800 hover:from-blue-600 hover:to-indigo-700 text-white font-bold px-3.5 py-1.5 rounded-lg text-sm transition flex items-center gap-1.5 shadow-md border border-blue-400/40" title="Acessar o Banco de Provas Oficiais (Parte 2)">
+                        <i data-lucide="file-check" class="w-4 h-4 text-sky-300"></i> Provas Oficiais <span class="bg-sky-400 text-slate-950 text-[10px] font-extrabold px-1.5 py-0.2 rounded-full ml-0.5">43</span>
+                    </a>
+                    <a href="./simulado.html" class="bg-brand-500 hover:bg-brand-400 text-white font-semibold px-3 py-1.5 rounded-lg text-sm transition flex items-center gap-1.5 shadow hover:shadow-md">
+                        <i data-lucide="award" class="w-4 h-4"></i> Simulado
                     </a>
                     <button id="mobile-menu-btn" class="md:hidden p-2 rounded-lg text-brand-100 hover:text-white hover:bg-brand-800" aria-label="Abrir menu">
                         <i data-lucide="menu" class="w-6 h-6"></i>
@@ -102,12 +108,12 @@
             <i data-lucide="shapes" class="w-4 h-4"></i> Bloco 3
         </a><a href="./bloco-4-medidas-e-estatistica/index.html" class="block px-3 py-2 rounded-md text-base font-medium text-white flex items-center gap-2 hover:bg-brand-800/60">
             <i data-lucide="bar-chart-3" class="w-4 h-4"></i> Bloco 4
-        </a><a href="./bloco-5-provas-ifsc/index.html" class="block px-3 py-2 rounded-md text-base font-medium text-white flex items-center gap-2 hover:bg-brand-800/60">
-            <i data-lucide="file-text" class="w-4 h-4"></i> Provas IFSC
-        </a><a href="./bloco-6-provas-ifce/index.html" class="block px-3 py-2 rounded-md text-base font-medium text-white flex items-center gap-2 hover:bg-brand-800/60">
-            <i data-lucide="award" class="w-4 h-4"></i> Provas IFCE
         </a>
-            <a href="./simulado.html" class="block px-3 py-2 rounded-md text-base font-bold bg-brand-600 text-white flex items-center gap-2 mt-2">
+            <a href="./provas.html" class="block px-3 py-2 rounded-md text-base font-bold bg-blue-700 text-white flex items-center justify-between gap-2 mt-2">
+                <span class="flex items-center gap-2"><i data-lucide="file-check" class="w-4 h-4 text-sky-300"></i> Provas Oficiais (Parte 2)</span>
+                <span class="bg-sky-400 text-slate-950 text-xs font-bold px-2 py-0.5 rounded-full">43 Provas</span>
+            </a>
+            <a href="./simulado.html" class="block px-3 py-2 rounded-md text-base font-bold bg-brand-600 text-white flex items-center gap-2 mt-1">
                 <i data-lucide="award" class="w-4 h-4"></i> Simulado IF Geral
             </a>
         </div>
@@ -274,7 +280,12 @@
                     <i data-lucide="layers" class="w-4 h-4 text-brand-400"></i> Eixos Temáticos
                 </h4>
                 <ul class="space-y-1.5 text-xs text-brand-200">
-                    <li><a href="./bloco-1-numeros/index.html" class="hover:text-white transition flex items-center gap-1">• Bloco 1: Números e Operações</a></li><li><a href="./bloco-2-algebra/index.html" class="hover:text-white transition flex items-center gap-1">• Bloco 2: Álgebra</a></li><li><a href="./bloco-3-geometria/index.html" class="hover:text-white transition flex items-center gap-1">• Bloco 3: Geometria</a></li><li><a href="./bloco-4-medidas-e-estatistica/index.html" class="hover:text-white transition flex items-center gap-1">• Bloco 4: Medidas e Estatística</a></li><li><a href="./bloco-5-provas-ifsc/index.html" class="hover:text-white transition flex items-center gap-1">• Bloco 5: Provas Anteriores IFSC</a></li><li><a href="./bloco-6-provas-ifce/index.html" class="hover:text-white transition flex items-center gap-1">• Bloco 6: Provas Anteriores IFCE</a></li>
+                    <li><a href="./bloco-1-numeros/index.html" class="hover:text-white transition flex items-center gap-1">• Bloco 1: Números e Operações</a></li><li><a href="./bloco-2-algebra/index.html" class="hover:text-white transition flex items-center gap-1">• Bloco 2: Álgebra</a></li><li><a href="./bloco-3-geometria/index.html" class="hover:text-white transition flex items-center gap-1">• Bloco 3: Geometria</a></li><li><a href="./bloco-4-medidas-e-estatistica/index.html" class="hover:text-white transition flex items-center gap-1">• Bloco 4: Medidas e Estatística</a></li>
+                    <li class="pt-2">
+                        <a href="./provas.html" class="inline-flex items-center gap-1.5 bg-blue-900/60 hover:bg-blue-800 text-sky-300 font-bold px-3 py-1.5 rounded-lg border border-blue-700/60 transition">
+                            <i data-lucide="file-check" class="w-3.5 h-3.5"></i> Acessar Banco de Provas (Parte 2) →
+                        </a>
+                    </li>
                 </ul>
             </div>
             <div>
