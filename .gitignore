@@ -5,3 +5,6 @@ __pycache__/
 .vscode/
 .idea/
 
+# Acervo de provas PDF (hospedadas e acessadas via Google Drive)
+provas/
+

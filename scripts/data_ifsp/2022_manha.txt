@@ -1,0 +1,283 @@
+QUESTÃO 13
+Leia a seguir o trecho de uma reportagem jornalística e,
+responda ao que se pede:
+Para José Vicente, reitor da Faculdade Zumbi dos Palma-
+res, [...] “Graças às cotas, ampliamos, em tempo recorde,
+de 2% para quase 15% a quantidade de negros nas uni-
+versidades. Pela primeira vez na história, estamos vendo
+esse grupo de brasileiros não só entrar, mas permanecer
+e sair da universidade aplicando esse conhecimento. Sob
+todos os aspectos, as cotas são e continuam sendo uma
+grande vitória”.
+   MOREIRA, M. Cotas fizeram negros saírem das páginas policiais e virarem colunistas, diz reitor da
+ Zumbi dos Palmares. Disponível em: https://www1.folha.uol.com.br/cotidiano/2021/10/cotas-
+ -fizeram-negros-sairem-das-paginas-/policiais-e-viraram-colunistas-diz-reitor-da-zumbi-dos-
+                                                    -palmares.shtml. Acesso em: 03 out. 2021.
+
+Assinale a alternativa que apresenta tempo e modo verbal
+predominantes no trecho, bem como número e pessoa
+                                                                                                          Disponível em: https://pt.dopl3r.com/memes/graciosos/ja-pensou-que-louco-nao-ekistir-o-
+em que esses verbos estão conjugados:                                                                           -termo-personalidade-forte-ea-pessoa-ter-que-admitir-que-e-chata-mesmo/74125.
+                                                                                                                                                                         Acesso em: 05. out. 2021.
+a) Presente do indicativo, 1ª pessoa do plural e 3ª pessoa
+                                                                                                       No meme, podemos encontrar
+   do plural.
+b) Presente do subjuntivo, 3ª pessoa do plural.                                                        a) Oração subordinada substantiva objetiva indireta em
+                                                                                                          “que é chata”.
+c) Pretérito perfeito do indicativo, 1ª pessoa do plural e
+                                                                                                       b) Oração subordinada substantiva objetiva direta em
+   3ª�pessoa do plural.
+                                                                                                          “que é chata”.
+d) Pretérito imperfeito do subjuntivo, 1ª pessoa do plural.
+                                                                                                       c) Oração subordinada substantiva subjetiva em “que louco”.
+                                                                                                       d) Oração subordinada substantiva predicativa em “que louco”.
+QUESTÃO 14
+Leia a seguinte estrofe extraída da música “Acrilic on can-                                            QUESTÃO 16
+vas”, da banda Legião Urbana:                                                                          É comum encontrarmos representações do mapa do
+[...] Por que eu finjo que acredito no que invento?                                                    estado de São Paulo construídas por figuras geométricas.
+                                                                                                       Utilizando um software de geometria dinâmica, um estu-
+Nada disso aconteceu assim - não foi desse jeito.
+                                                                                                       dante fez uma delas, usando uma malha quadriculada:
+Ninguém sofreu: é só você que provoca essa saudade vazia
+Tentando pintar essas flores com o nome
+De “amor-perfeito” e “não-te-esqueças-de-mim”.
+                            RUSSO, Renato; VILLA-LOBOS, Dado; BONFÁ, Marcelo; ROCHA, Renato.
+                              Acrilic on canvas. In: URBANA, Legião. Dois. Gravadora EMI, 1986.
+
+No último verso da estrofe, há duas palavras compostas
+por justaposição: “amor-perfeito” e “não-te-esqueças-de-
+-mim”. Assinale a alternativa que contém apenas palavras
+compostas por esse mesmo processo de formação:
+a) Cachorro-quente, guarda-roupa, pontapé, saca-rolha,
+                                                                                                                                                                                 Fonte: IFSP, 2021.
+   aguardente.
+                                                                                                       Supondo que o lado de cada quadradinho da malha mede
+b) Arco-íris, boquiaberto, cavalo-marinho, girassol, para-                                             1 centímetro, é correto afirmar que a distância entre os
+   quedas.                                                                                             pontos DE é um número:
+c) Beija-flor, bem-me-quer, audiovisual, passatempo, mal-
+                                                                                                       a) Natural.                                    c) Inteiro.
+   mequer.
+                                                                                                       b) Racional.                                   d) Irracional.
+d) Limpa-calhas, toque-toque, couve-flor, planalto, man-
+   dachuva.                                                                                            QUESTÃO 17
+                                                                                                       Uma pessoa costuma tomar café da manhã em uma pa-
+QUESTÃO 15                                                                                             daria próxima ao seu trabalho. Semana passada gastou
+Leia o meme e responda à questão:                                                                      R$�8,00 em 2 pães de queijo e 1�café com leite. Esta sema-
+
+
+
+Processo Seletivo IFSP 2022.1 – Cursos Técnicos Integrados ao Ensino Médio - Manhã                                                                                                              5
+na gastou R$ 13,00 em 3 pães de queijo e 2 cafés com leite.                     Assinale a alternativa que mostra o bloco tridimensional
+O valor de cada pão de queijo é de:                                             referente a essas vistas:
+a) R$ 4,20                      c) R$ 3,00
+b) R$ 4,14                      d) R$ 2,00
+
+QUESTÃO 18
+Deseja-se construir um jardim retangular em um quintal.
+Buscando economizar o material que será utilizado para
+cercar o jardim, o proprietário decide utilizar o muro da casa                  a)                              c)
+como um de seus lados, assim como também os 20�metros
+de cerca que o quintal já possui. Pretende, ainda, que seu
+jardim ocupe exatamente 50 metros quadrados de área do
+quintal, conforme ilustrado na figura a seguir.
+
+
+                                                                                b)                              d)
+
+                                                                                QUESTÃO 20
+                                                                                O Sistema Internacional estabelece que as medidas de
+                                                                                comprimento têm, como unidade padrão, o metro (m).
+                                                                                Medidas muito grandes ou muito pequenas são realizadas
+                                                           Fonte: IFSP, 2021.
+                                                                                considerando múltiplos e submúltiplos do metro, dentre
+Nessas condições, qual equação pode representar a área                          os quais destacam-se o quilômetro (km), o centímetro
+desse jardim?                                                                   (cm) e o milímetro (mm), por serem os mais conhecidos e
+                                                                                utilizados no dia a dia.
+a) (x – 5)2 = 0
+b) x2 – 50 = 0                                                                  Dentre as unidades de medida de comprimento que estão
+c) – 2x2 – 30 = 0                                                               presentes no parágrafo anterior, indique, na ordem corre-
+                                                                                ta, as que devem ser utilizadas para se registrar:
+d) 20x2 – 2x – 50 = 0
+                                                                                I - O diâmetro de um grafite de lapiseira;
+QUESTÃO 19
+                                                                                II - A largura de uma rua;
+Um bloco cúbico tem três vistas ortogonais indicadas e
+                                                                                III- A distância da Terra ao Sol.
+apresentadas ao lado, conforme as figuras a seguir:
+                                                                                a) metro, quilômetro, centímetro.
+                                                                                b) centímetro, metro, quilômetro.
+                                                                                c) milímetro, metro, quilômetro.
+                                                                                d) milímetro, centímetro, metro.
+
+                                                                                QUESTÃO 21
+                                                                                O aquarismo é uma prática que vem aumentando. O cui-
+                                                                                dado e tratamento adequados com peixes ornamentais
+                                                                                atrai cada vez mais adeptos e traz vários benefícios ao pra-
+                                                           Fonte: IFSP, 2021.   ticante. Uma pessoa comprou seu primeiro aquário com
+                                                                                a forma de um prisma retangular e dimensões de acordo
+Sabendo disso, são apresentadas abaixo as vistas
+                                                                                com a seguinte figura:
+ortogonais de um outro bloco tridimensional:
+
+
+
+
+                                      Fonte: IFSP, 2021.
+                                                                                                                         Fonte: IFSP, 2021.
+
+
+
+
+6                                                              Processo Seletivo IFSP 2022.1 – Cursos Técnicos Integrados ao Ensino Médio - Manhã
+Posteriormente, essa mesma pessoa comprou produtos
+para o tratamento da água e cuidados com os peixes e,
+ao ler as orientações técnicas de um dos produtos, ob-
+servou que deveria adicionar 1 gota da substância para
+cada 4 litros de água. Quantas gotas desse produto de-
+vem ser utilizadas em uma única aplicação, considerando
+que o aquário estará totalmente cheio apenas com água?
+(1.000�cm3 equivalem a 1 litro)
+a) 24
+b) 96                                                                                                                                         x
+c) 120
+d) 150
+
+QUESTÃO 22
+A crise hídrica é grave! Enfrentamos a pior seca dos últi-
+mos 90 anos e a falta de água prejudica o funcionamento
+das hidrelétricas. Pensando nisso, uma empresa realizou
+um estudo sobre o consumo de energia elétrica de um
+equipamento de uma fábrica em quatro momentos, ob-
+tendo o seguinte gráfico:
+
+
+
+                                                                                                                               Fonte: IFSP, 2021.
+
+                                                                             Sabe-se que o comprimento da sala mede x metros, que
+                                                                                             1
+                                                                             cada fileira tem do comprimento da sala e que a largura
+                                                                                             4
+                                                                             da sala é composta pelas 3 fileiras. Qual a largura total da
+                                                                             sala em metros?
+                                                                             a) √5                            c) 4√5
+                                                                             b) 3√5                           d) 7√5
+                                                        Fonte: IFSP, 2021.   QUESTÃO 24
+A equação polinomial de 1º grau que representa o consu-                      Uma ferramenta matemática desenvolvida pela Universi-
+mo de energia elétrica (C) do equipamento em função dos                      dade de Brasília tem auxiliado no monitoramento mais ágil
+dias (t) é dada por:                                                         da evolução da pandemia de Covid-19. A tecnologia “Calcu-
+                                                                             ladora R(t)” fornece a velocidade de propagação (R) do vírus
+a) C = – 400�t                                                               em uma determinada população. Se, por exemplo, R = 2 e
+b) C = 200�t – 400                                                           o número de contaminados for 30, então, serão gerados 60
+c) C = 400�t                                                                 novos casos no próximo ciclo. Assim, os 60 casos tornam-
+d) C = – 200�t + 400                                                         -se transmissores neste novo ciclo. Para que o estado de
+                                                                             pandemia esteja controlado, é sugerido que R(t) < 1 , o que
+QUESTÃO 23                                                                   expressa a dificuldade do vírus em se propagar.
+A pandemia de COVID-19 fez com que várias instituições                            ciclo         0        1        2        3            4
+se reorganizassem para receber as pessoas que as fre-
+                                                                              nº casos novos   256      320
+quentavam antes das medidas de isolamento social. A
+escola é uma dessas instituições que se reestrutura para                     Considere, conforme a tabela acima, que em um determi-
+garantir que o retorno de funcionários e estudantes acon-                    nado grupo haja 256 contaminados inicialmente e que o
+teça de forma segura.                                                        valor estimado de R até o 4º ciclo seja 1,25. Qual o número
+                                                                             de casos novos no 4º ciclo?
+Para organizar a sala de aula de 60m2, uma escola distri-
+buiu as carteiras em três fileiras, respeitando o distancia-                 a) 500                           c) 576
+mento, conforme mostra a figura a seguir:                                    b) 512                           d) 625
+
+
+
+
+Processo Seletivo IFSP 2022.1 – Cursos Técnicos Integrados ao Ensino Médio - Manhã                                                            7
+QUESTÃO 25                                                                                tidades de dedos esticados e, se essa soma for par, vence
+Um laboratório de pesquisa de combustíveis analisou o                                     quem tiver escolhido “par”; caso contrário – se a soma for
+consumo de um carro flex, automóvel que funciona com                                      ímpar –, vence quem tiver escolhido “ímpar”.
+gasolina ou etanol.                                                                       Duas amigas, A e B, precisam decidir quem vai realizar
+Ao abastecer o carro somente com gasolina, o automóvel                                    uma tarefa e resolvem jogar três partidas de “Par ou Ím-
+percorreu 396�km, consumindo 33�litros desse combustí-                                    par”, de modo que aquela que vencer mais partidas possa
+vel. Em seguida, o laboratório esvaziou totalmente o tan-                                 escolher se realizará ou não a tarefa. A amiga A escolhe
+que do carro e o preencheu com etanol. Dessa vez, o carro                                 “Par” para as três partidas e a amiga B fica com “Ímpar”.
+percorreu 352�km com 40�litros de etanol.                                                 Sobre essa situação, observe as afirmativas:
+Com esses dados, o laboratório comparou os custos de                                      I – A probabilidade de a amiga A vencer após as duas pri-
+cada combustível, considerando o valor de R$� 6,00 para                                   meiras partidas é de 25%.
+o litro de gasolina.
+                                                                                          II – Se a amiga B venceu a primeira partida, a probabilida-
+Dessa forma, para que o custo por quilômetro rodado por                                   de de vencer também a segunda é de 25%.
+esse automóvel usando etanol seja igual ao custo usando
+                                                                                          III – Quem vencer a primeira partida tem menos chances
+gasolina, qual o valor que o litro do etanol deve ter?
+                                                                                          de vencer a segunda.
+a) R$�4,35                               c) R$�4,50
+                                                                                          IV – Quem vencer a primeira partida tem 75% de chances
+b) R$�4,40                               d) R$�4,80                                       de vencer a disputa.
+QUESTÃO 26                                                                                Sabendo que no jogo “Par ou Ímpar” os eventos “par” e
+O médico inglês Alexander Fleming (1881-1955) estudava                                    “ímpar” são equiprováveis, quais afirmativas são corretas?
+maneiras de curar as feridas infectadas de soldados na Pri-                               a) I e III                      c) II e IV
+meira Guerra Mundial. Ele iniciou seus estudos a respeito
+                                                                                          b) I e IV                       d) II e III
+da bactéria Staphylococcus aureus, responsável pelas in-
+fecções nas feridas dos soldados. Um dia ele saiu de fé-                                  QUESTÃO 28
+rias e deixou as culturas das bactérias no laboratório sem                                Em uma rede social, um usuário compartilhou o seguinte
+o acondicionamento correto e sem nenhuma supervisão.                                      desafio com seus seguidores:
+Ao retornar semanas depois, o médico percebeu que a
+cultura estava repleta de bolor e, ao redor destes locais
+com bolor, não era detectada a presença de Staphylococ-
+cus aureus, o que sugeria que o fungo havia interrompi-
+do a atividade da bactéria. Análises demonstraram que o
+fungo em questão era o Penicillium notatum e que a subs-
+tância secretada por ele era capaz de matar as bactérias.
+Surgia nesse momento a penicilina, considerada como o
+primeiro antibiótico da humanidade e uma das descober-
+tas médicas mais fantásticas.
+                Fonte: Disponível: https://www.biologianet.com/curiosidades-biologia/
+                                    descoberta-penicilina.htm. Acesso em: 12 out. 2021.
+
+Considerando que essas bactérias apresentam um diâme-
+tro de 1,5 micrômetros (μm), aproximadamente, e que 1
+micrômetro equivale a 0,000001 metros, qual o diâmetro
+das bactérias em metros?
+a) 1,0 x 10–5                            c) 1,0 x 10–6
+b) 1,5 x 10–5                            d) 1,5 x 10–6
+
+QUESTÃO 27
+O “Par ou Ímpar” é um jogo para duas pessoas cujo ob-
+jetivo é, geralmente, dar ao vencedor alguma vantagem                                                                             Fonte: IFSP, 2021.
+em um evento posterior. Esse jogo consiste em ambos os
+                                                                                          Muita discussão ocorreu nos comentários da postagem.
+jogadores escolherem, aleatoriamente, “par” ou “ímpar” –
+                                                                                          Qual resposta abaixo receberia um like (curtida/gostei)
+de modo que a escolha de um seja diferente da escolha
+                                                                                          por estar correta?
+do outro. Feita a escolha, ambos estendem, simultanea-
+mente, uma das mãos, esticando quantos dedos deseja-                                      a) -10                          c) 13
+rem (podendo não esticar nenhum). Somam-se as quan-                                       b) 10                           d) 15
+
+
+8                                                                        Processo Seletivo IFSP 2022.1 – Cursos Técnicos Integrados ao Ensino Médio - Manhã
+QUESTÃO 29                                                              QUESTÃO 30
+Uma empresa de alta tecnologia decidiu iniciar a terrafor-              “O Ministério da Saúde informou, hoje (26/09), que rece-
+mação de Marte nos próximos anos. A terraformação é o                   beu mais 2 milhões de doses da vacina da Pfizer contra a
+processo de modificação das características de um corpo                 COVID-19. Segundo a pasta, das mais de 287 milhões de
+celeste sólido para que seja possível desenvolver e abrigar             doses distribuídas aos estados, 75,9 milhões são da Pfizer.”
+a vida como a conhecemos.                                                  Disponível em: https://agenciabrasil.ebc.com.br/saude/noticia/2021-09/ministerio-da-saude-
+                                                                                       -recebe-mais-2-milhoes-de-doses-da-pfizer. Acesso em: 13 out. 2021. (adaptado)
+Para isso, a empresa selecionou quatro pesquisadores
+para a missão. Eles ficarão alguns anos em Marte e terão                De acordo com as orientações do Ministério da Saúde,
+120 tarefas diárias no planeta, entre experimentos atmos-               uma das etapas do preparo da vacina da Pfizer é a sua di-
+féricos, topográficos e ecológicos. A quantidade de tarefas             luição no frasco original com 1,8mL de solução injetável
+que cada pesquisador fará por dia é inversamente propor-                de cloreto de sódio 9mg/mL (0,9%). Após essa diluição, o
+cional à idade de cada um.                                              frasco contém 2,25mL com a possibilidade de extração de
+Os quatro pesquisadores têm 20, 30, 40 e 60 anos. Qual a                6 doses de 0,3mL.
+soma das tarefas diárias que os dois pesquisadores mais                 Considerando as informações sobre o processo de dilui-
+velhos terão que realizar?                                              ção, pode-se afirmar que a quantidade mínima de solução
+a) 24                                                                   injetável de cloreto de sódio (0,9%) necessária para o pre-
+b) 32                                                                   paro das 75,9 milhões de doses distribuídas aos estados
+                                                                        da vacina da Pfizer foi de, aproximadamente:
+c) 40
+d) 48                                                                   a) 12 m3                b) 18 m3                 c) 204 m3               d) 683 m3
+
+
+
+
+Processo Seletivo IFSP 2022.1 – Cursos Técnicos Integrados ao Ensino Médio - Manhã                                                                                9
+

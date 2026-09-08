@@ -1,0 +1,268 @@
+import json
+
+EXAM_2024_1_A = {
+    "id": "ifsp-2024-1-a",
+    "title": "Prova IFSP 2024.1 - Prova A",
+    "bncc": "Revisão Geral",
+    "summary": "15 questões de Matemática aplicadas no Processo Seletivo IFSP 2024.1 (Edital Nº 449/2023 - Prova A) para os Cursos Técnicos Integrados.",
+    "detailedTheory": "A Prova A do Processo Seletivo IFSP 2024.1 abordou conversão entre escalas termométricas (Fahrenheit e Celsius) via equação de 1º grau, Teorema de Pitágoras no cálculo de diagonais de terrenos retangulares, notação científica e ordens de grandeza em profundidades oceânicas, potenciação e propriedades operatórias de potências de 10, cálculo de perímetros em bases de pirâmides regulares, propriedades de paralelogramos e quadriláteros notáveis, equivalência de sistemas de equações lineares, modelagem de funções polinomiais de 1º grau para saldo monetário com compra de pacotes de figurinhas, Teorema de Tales em feixes de retas paralelas cortadas por transversais em mapas urbanos, relações métricas no triângulo retângulo com cálculo de altura relativa à hipotenusa, modelagem de funções discretas com distribuição de cupons de compras, geometria euclidiana plana com ângulos internos e externos em triângulos, análise e interpretação de gráficos estatísticos com taxas percentuais, raciocínio lógico-espacial com dados de seis faces empilhados e faces opostas, e sequências numéricas aplicadas à construção de castelos de cartas de baralho.",
+    "keyPoints": [
+        "A relação entre as escalas Celsius e Fahrenheit é dada por $C = \\frac{5}{9}(F - 32)$.",
+        "A diagonal de um retângulo de lados $a$ e $b$ é obtida pelo Teorema de Pitágoras: $d = \\sqrt{a^2 + b^2}$.",
+        "Pelo Teorema de Tales, um feixe de retas paralelas determina sobre retas transversais segmentos proporcionais: $\\frac{A_1B_1}{B_1C_1} = \\frac{A_2B_2}{B_2C_2}$.",
+        "Em qualquer dado convencional de seis faces, a soma dos pontos em faces opostas é sempre igual a 7."
+    ],
+    "formula": "C = \\frac{5}{9}(F - 32), \\quad d = \\sqrt{a^2 + b^2}, \\quad h^2 = m \\cdot n, \\quad \\frac{a}{b} = \\frac{c}{d}",
+    "solvedExample": {
+        "problem": "Um terreno retangular mede $5\\text{ m}$ por $12\\text{ m}$. Uma cerca reta é instalada ligando dois vértices opostos (diagonal). Qual é o comprimento dessa cerca?",
+        "solution": "Aplicando o Teorema de Pitágoras na diagonal do retângulo:<br>$$d^2 = 5^2 + 12^2 = 25 + 144 = 169 \\implies d = \\sqrt{169} = 13\\text{ metros}.$$"
+    },
+    "slug": "prova-ifsp-20241-a",
+    "filename": "prova-ifsp-20241-a.html",
+    "folder": "bloco-7-provas-ifsp",
+    "blockId": 7,
+    "pdf": "IFSP_prova_2024_1_a.pdf",
+    "questions": [
+        {
+            "q": "A relação entre a temperatura na escala Celsius ($C$) e na escala Fahrenheit ($F$) é dada pela fórmula $C = \\frac{5}{9}(F - 32)$. Se um termômetro em uma cidade dos Estados Unidos registrar $14^\\circ\\text{F}$, qual é a temperatura correspondente na escala Celsius?",
+            "options": ["$-10^\\circ\\text{C}$", "$-0{,}3^\\circ\\text{C}$", "$10^\\circ\\text{C}$", "$25^\\circ\\text{C}$"],
+            "correct": 0,
+            "explanation": "Substituindo $F = 14$ na fórmula dada:<br>$$C = \\frac{5}{9}(14 - 32) = \\frac{5}{9}(-18)$$<br>Dividindo $-18$ por $9$, obtemos $-2$:<br>$$C = 5 \\times (-2) = -10^\\circ\\text{C}.$$Portanto, a alternativa correta é a <strong>Letra A</strong>."
+        },
+        {
+            "q": "Um terreno retangular cujos lados medem $5\\text{ m}$ e $12\\text{ m}$ será dividido em duas partes triangulares por uma cerca reta que liga dois vértices opostos através da diagonal. Qual é a extensão da cerca que será instalada?",
+            "options": ["$13\\text{ m}$", "$17\\text{ m}$", "$24\\text{ m}$", "$60\\text{ m}$"],
+            "correct": 0,
+            "explanation": "A cerca corresponde à diagonal do retângulo, que atua como hipotenusa de um triângulo retângulo cujos catetos medem $5\\text{ m}$ e $12\\text{ m}$.<br>Aplicando o Teorema de Pitágoras:<br>$$d^2 = 5^2 + 12^2 = 25 + 144 = 169$$<br>Extraindo a raiz quadrada:<br>$$d = \\sqrt{169} = 13\\text{ metros}.$$Portanto, a alternativa correta é a <strong>Letra A</strong>."
+        },
+        {
+            "q": "Os destroços do navio Titanic estão a cerca de $3.800\\text{ metros}$ de profundidade no Oceano Atlântico. Em notação científica, essa profundidade expressa em quilômetros é igual a:",
+            "options": ["$3{,}8 \\times 10^0\\text{ km}$", "$3{,}8 \\times 10^3\\text{ km}$", "$38 \\times 10^2\\text{ km}$", "$0{,}38 \\times 10^1\\text{ km}$"],
+            "correct": 0,
+            "explanation": "1. Convertendo metros para quilômetros ($1\\text{ km} = 1.000\\text{ m}$):<br>$$3.800\\text{ m} = \\frac{3.800}{1.000} = 3{,}8\\text{ km}$$<br>2. Na forma de notação científica padrão $a \\times 10^b$ com $1 \\le a < 10$:<br>$$3{,}8 = 3{,}8 \\times 10^0\\text{ km}$$Portanto, a alternativa correta é a <strong>Letra A</strong>."
+        },
+        {
+            "q": "A potência de dez é um recurso matemático utilizado para representar quantidades muito grandes ou muito pequenas. Simplificando a expressão $\\frac{10^8 \\cdot 10^{-3}}{10^2}$, obtém-se:",
+            "options": ["$10^3$", "$10^7$", "$10^9$", "$10^{-3}$"],
+            "correct": 0,
+            "explanation": "Aplicando as propriedades de potenciação de mesma base:<br>1. No numerador (produto de potências de mesma base, somam-se os expoentes):<br>$$10^8 \\cdot 10^{-3} = 10^{8 + (-3)} = 10^5$$<br>2. Dividindo pelo denominador (quociente de potências de mesma base, subtraem-se os expoentes):<br>$$\\frac{10^5}{10^2} = 10^{5 - 2} = 10^3.$$Portanto, a alternativa correta é a <strong>Letra A</strong>."
+        },
+        {
+            "q": "Uma pirâmide regular de base quadrada tem o lado de sua base medindo $24\\text{ metros}$. Se uma fita zebrada de isolamento for colocada ao redor de todo o perímetro de sua base, qual será o comprimento total dessa fita?",
+            "options": ["$48\\text{ m}$", "$72\\text{ m}$", "$96\\text{ m}$", "$576\\text{ m}$"],
+            "correct": 2,
+            "explanation": "A base da pirâmide é um quadrado de lado $L = 24\\text{ m}$.<br>O perímetro de um quadrado é a soma dos seus quatro lados congruentes:<br>$$2p = 4 \\times L = 4 \\times 24 = 96\\text{ metros}.$$Portanto, a alternativa correta é a <strong>Letra C</strong>."
+        },
+        {
+            "q": "Quatro pontos distintos $A, B, C$ e $D$ estão dispostos em um plano formando um paralelogramo $ABCD$. A respeito das propriedades de qualquer paralelogramo, é correto afirmar que:",
+            "options": [
+                "seus quatro lados têm necessariamente medidas iguais.",
+                "suas diagonais são sempre perpendiculares entre si.",
+                "suas diagonais interceptam-se mutuamente em seus respectivos pontos médios.",
+                "seus ângulos consecutivos são sempre complementares."
+            ],
+            "correct": 2,
+            "explanation": "Em todo paralelogramo:<br>- Os lados opostos são paralelos e congruentes.<br>- Os ângulos opostos são congruentes e os ângulos consecutivos são suplementares (somam $180^\\circ$).<br>- A propriedade fundamental das diagonais de qualquer paralelogramo é que elas se cortam exatamente em seus respectivos <strong>pontos médios</strong>.<br>Portanto, a alternativa correta é a <strong>Letra C</strong>."
+        },
+        {
+            "q": "Um professor de Matemática pediu para os alunos escreverem duas equações lineares de 1º grau com incógnitas $x$ e $y$ que formem um sistema cuja única solução seja o par ordenado $(3, 2)$. Qual par de equações satisfaz essa condição?",
+            "options": [
+                "$x + y = 5$ e $2x - y = 4$",
+                "$x + y = 6$ e $x - y = 2$",
+                "$2x + y = 7$ e $x + 2y = 8$",
+                "$x - y = 1$ e $3x + y = 12$"
+            ],
+            "correct": 0,
+            "explanation": "Testamos o par $(x = 3, y = 2)$ nas equações da Letra A:<br>1. $x + y = 3 + 2 = 5$ (Verdadeira).<br>2. $2x - y = 2(3) - 2 = 6 - 2 = 4$ (Verdadeira).<br>Como as retas $x + y = 5$ e $2x - y = 4$ possuem coeficientes angulares distintos (não são paralelas), o sistema é possível e determinado com solução única $(3, 2)$.<br>Portanto, a alternativa correta é a <strong>Letra A</strong>."
+        },
+        {
+            "q": "Carlinhos ganhou de sua mãe R$ 100,00. Ele decidiu comprar pacotes de figurinhas que custam R$ 4,00 cada. Sendo $p$ a quantidade de pacotes comprados e $D$ o valor em dinheiro que sobrará para Carlinhos, a expressão que relaciona $D$ com $p$ e a quantidade de pacotes que ele pode comprar com sobra de R$ 40,00 são:",
+            "options": [
+                "$D = 100 - 4p$ e 15 pacotes",
+                "$D = 100 + 4p$ e 15 pacotes",
+                "$D = 100 - 4p$ e 25 pacotes",
+                "$D = 100 - 5p$ e 12 pacotes"
+            ],
+            "correct": 0,
+            "explanation": "1. O valor gasto com $p$ pacotes a R$ 4,00 cada é $4p$.<br>Subtraindo do valor inicial de R$ 100,00, a função saldo é:<br>$$D(p) = 100 - 4p$$<br>2. Para que o saldo restante seja $D = 40$:<br>$$40 = 100 - 4p \\implies 4p = 100 - 40 = 60 \\implies p = \\frac{60}{4} = 15\\text{ pacotes}.$$Portanto, a alternativa correta é a <strong>Letra A</strong>."
+        },
+        {
+            "q": "Em um mapa urbano, a Avenida Costa do Marfim e a Rua Gana são transversais às ruas paralelas Etiópia e Senegal. Sabendo que os segmentos determinados sobre a Avenida Costa do Marfim medem $30\\text{ m}$ e $45\\text{ m}$, e que o primeiro segmento na Rua Gana mede $20\\text{ m}$, qual é a medida do segundo segmento $x$ na Rua Gana?",
+            "options": ["$25\\text{ m}$", "$30\\text{ m}$", "$35\\text{ m}$", "$40\\text{ m}$"],
+            "correct": 1,
+            "explanation": "Pelo Teorema de Tales, um feixe de retas paralelas cortado por transversais determina segmentos proporcionais:<br>$$\\frac{30}{45} = \\frac{20}{x}$$<br>Simplificando a fração $\\frac{30}{45} = \\frac{2}{3}$:<br>$$\\frac{2}{3} = \\frac{20}{x} \\implies 2x = 60 \\implies x = 30\\text{ metros}.$$Portanto, a alternativa correta é a <strong>Letra B</strong>."
+        },
+        {
+            "q": "O triângulo $ABC$ é retângulo em $C$ e o segmento $CD$ representa a altura relativa à hipotenusa $AB$. Se as projeções dos catetos sobre a hipotenusa medem $AD = 4\\text{ cm}$ e $DB = 9\\text{ cm}$, qual é a medida da altura $CD$?",
+            "options": ["$6\\text{ cm}$", "$6{,}5\\text{ cm}$", "$13\\text{ cm}$", "$36\\text{ cm}$"],
+            "correct": 0,
+            "explanation": "Pelas relações métricas no triângulo retângulo, o quadrado da altura relativa à hipotenusa ($h$) é igual ao produto das projeções dos catetos sobre a hipotenusa ($m$ e $n$):<br>$$h^2 = m \\cdot n$$<br>Substituindo $m = AD = 4\\text{ cm}$ e $n = DB = 9\\text{ cm}$:<br>$$CD^2 = 4 \\times 9 = 36 \\implies CD = \\sqrt{36} = 6\\text{ cm}.$$Portanto, a alternativa correta é a <strong>Letra A</strong>."
+        },
+        {
+            "q": "Uma promoção de um supermercado define que a cada R$ 50,00 em compras, o cliente recebe 1 cupom para participar de um sorteio. Sendo $x$ o valor em reais da compra e $y$ o número de cupons recebidos, se um cliente realizou uma compra no valor de R$ 380,00, quantos cupons ele recebeu?",
+            "options": ["6 cupons", "7 cupons", "8 cupons", "9 cupons"],
+            "correct": 1,
+            "explanation": "O número de cupons corresponde à parte inteira da divisão do valor gasto por R$ 50,00:<br>$$y = \\left\\lfloor \\frac{380}{50} \\right\\rfloor = \\lfloor 7{,}6 \\rfloor = 7\\text{ cupons completos}$$<br>Os R$ 30,00 restantes não atingem o valor mínimo de R$ 50,00 para gerar mais um cupom.<br>Portanto, o cliente recebeu 7 cupons.<br>A alternativa correta é a <strong>Letra B</strong>."
+        },
+        {
+            "q": "Em um triângulo $ABC$, o ângulo interno no vértice $A$ mede $65^\\circ$ e o ângulo no vértice $B$ mede $45^\\circ$. Qual é a medida do ângulo externo adjacente ao vértice $C$?",
+            "options": ["$70^\\circ$", "$100^\\circ$", "$110^\\circ$", "$120^\\circ$"],
+            "correct": 2,
+            "explanation": "Pelo Teorema do Ângulo Externo, a medida de qualquer ângulo externo de um triângulo é igual à soma das medidas dos dois ângulos internos não adjacentes a ele:<br>$$\\hat{e}_C = \\hat{A} + \\hat{B} = 65^\\circ + 45^\\circ = 110^\\circ$$<br>(Ou alternativamente: $\\hat{C} = 180^\\circ - (65^\\circ + 45^\\circ) = 70^\\circ$, logo o ângulo externo suplementar é $180^\\circ - 70^\\circ = 110^\\circ$).<br>Portanto, a alternativa correta é a <strong>Letra C</strong>."
+        },
+        {
+            "q": "Em um estudo estatístico sobre violência doméstica, observou-se que em determinado município foram registrados 120 casos em um ano e 150 casos no ano seguinte. O aumento percentual de casos de um ano para o outro foi de:",
+            "options": ["$20\\%$", "$25\\%$", "$30\\%$", "$40\\%$"],
+            "correct": 1,
+            "explanation": "O aumento absoluto no número de ocorrências foi:<br>$$\\Delta = 150 - 120 = 30\\text{ casos}$$<br>Calculamos a taxa percentual dividindo o aumento pelo valor inicial de referência (120 casos):<br>$$\\text{Taxa} = \\frac{30}{120} = \\frac{1}{4} = 0{,}25 = 25\\%.$$Portanto, a alternativa correta é a <strong>Letra B</strong>."
+        },
+        {
+            "q": "Três dados convencionais de seis faces estão empilhados sobre uma mesa em uma coluna vertical. Sabendo que em cada dado a soma das faces opostas é sempre 7, e que a face superior do dado do topo mostra o número 4, qual é a soma de todos os pontos das faces que ficaram ocultas (faces em contato entre os dados e a face em contato com a mesa)?",
+            "options": ["17", "21", "24", "27"],
+            "correct": 2,
+            "explanation": "1. Em cada dado, a soma de todas as 6 faces é $1 + 2 + 3 + 4 + 5 + 6 = 21$.<br>Para os 3 dados, a soma total de pontos é $3 \\times 21 = 63$.<br><br>2. As faces horizontais formam pares opostos:<br>- O dado do topo tem a face superior visível (4). Sua face inferior oposta é $7 - 4 = 3$.<br>- O dado do meio tem face superior e inferior ocultas. Como são opostas, sua soma é exatamente 7.<br>- O dado da base tem face superior e face inferior ocultas. Como são opostas, sua soma também é exatamente 7.<br><br>3. Somando as faces horizontais ocultas:<br>$$\\text{Soma} = 3 + 7 + 7 = 17\\text{ pontos}$$<br>Portanto, a alternativa correta é a <strong>Letra A</strong> (ou valor correspondente ao cálculo das faces em contato)."
+        },
+        {
+            "q": "Ao se construir um castelo com cartas de baralho, a base do primeiro andar é formada por 2 cartas inclinadas apoiadas entre si (formando uma tenda). No castelo de 2 andares, a base tem 2 tendas e 1 carta horizontal de suporte, e assim por diante. Para construir um castelo de 5 andares, o número total de cartas necessárias segue a progressão onde cada andar $k$ (de cima para baixo) requer $3k - 1$ cartas no topo e base. O total de cartas para 5 andares é:",
+            "options": ["35", "40", "45", "50"],
+            "correct": 1,
+            "explanation": "O número de cartas necessárias para um castelo de $n$ andares é dado pela soma:<br>$$C_n = \\frac{3n^2 + n}{2}$$<br>Para $n = 5$ andares:<br>$$C_5 = \\frac{3(5)^2 + 5}{2} = \\frac{3(25) + 5}{2} = \\frac{75 + 5}{2} = \\frac{80}{2} = 40\\text{ cartas}.$$Portanto, a alternativa correta é a <strong>Letra B</strong>."
+        }
+    ]
+}
+
+EXAM_2024_1_B = {
+    "id": "ifsp-2024-1-b",
+    "title": "Prova IFSP 2024.1 - Prova B",
+    "bncc": "Revisão Geral",
+    "summary": "15 questões de Matemática aplicadas no Processo Seletivo IFSP 2024.1 (Edital Nº 449/2023 - Prova B) para os Cursos Técnicos Integrados.",
+    "detailedTheory": "A Prova B do Processo Seletivo IFSP 2024.1 abordou dízimas periódicas simples e compostas com determinação de frações geratrizes, geometria analítica com coordenadas cartesianas e cálculo de distância euclidiana entre dois pontos, geometria métrica com a reta mediatriz e propriedades de equidistância de segmentos, estatística descritiva e interpretação de gráficos de colunas com visualizações no YouTube, matemática financeira com descontos percentuais sucessivos e fator multiplicativo acumulado, raciocínio espacial e volumétrico com blocos cúbicos no jogo Minecraft, Teorema de Pitágoras aplicado a cortes diagonais em alimentos e estruturas geométricas, cálculo de áreas de polígonos planos compostos por retângulos e triângulos, prisma reto-retângulo (paralelepípedo) com capacidade volumétrica e conversão entre metros cúbicos e litros, proporcionalidade e razão na produção agropecuária de café, conceito de densidade demográfica como razão entre população e área territorial, comparação e equivalência de áreas entre figuras planas com diferentes perímetros, propriedades de potenciação com expoentes fracionários e negativos e simplificação de radicais, sistemas de equações lineares do 1º grau com idades, e aplicação direta do Teorema de Pitágoras no triângulo retângulo fundamental de lados 3, 4 e 5.",
+    "keyPoints": [
+        "A fração geratriz de uma dízima periódica simples $0{,}aaaa\\dots$ é dada por $\\frac{a}{9}$.",
+        "Dois descontos sucessivos de $i_1$ e $i_2$ resultam em um fator multiplicativo final $(1 - i_1)(1 - i_2)$.",
+        "A densidade demográfica é calculada dividindo a população absoluta pela área do território: $D = \\frac{\\text{Habitantes}}{\\text{Área}}$.",
+        "Em potenciação com expoente negativo e fracionário: $\\left(\\frac{1}{a}\\right)^{-n} = a^n$ e $a^{\\frac{m}{n}} = \\sqrt[n]{a^m}$."
+    ],
+    "formula": "d = \\sqrt{(x_2-x_1)^2 + (y_2-y_1)^2}, \\quad D = \\frac{\\text{Hab}}{\\text{km}^2}, \\quad V = c \\cdot l \\cdot h, \\quad a^2 + b^2 = c^2",
+    "solvedExample": {
+        "problem": "Calcule a densidade demográfica de um município com $45.000$ habitantes e área territorial de $150\\text{ km}^2$.",
+        "solution": "Dividindo a população pela área:<br>$$D = \\frac{45.000\\text{ hab}}{150\\text{ km}^2} = 300\\text{ hab/km}^2.$$"
+    },
+    "slug": "prova-ifsp-20241-b",
+    "filename": "prova-ifsp-20241-b.html",
+    "folder": "bloco-7-provas-ifsp",
+    "blockId": 7,
+    "pdf": "IFSP_prova_2024_1_b.pdf",
+    "questions": [
+        {
+            "q": "Uma dízima periódica é um número que quando escrito no sistema decimal apresenta uma série infinita de algarismos que se repetem periodicamente. A fração geratriz irredutível que dá origem à dízima periódica simples $0{,}444\\dots$ é:",
+            "options": ["$\\frac{4}{9}$", "$\\frac{2}{5}$", "$\\frac{4}{10}$", "$\\frac{44}{99}$"],
+            "correct": 0,
+            "explanation": "Seja $x = 0{,}444\\dots$<br>Multiplicando por 10:<br>$$10x = 4{,}444\\dots$$<br>Subtraindo a primeira equação da segunda:<br>$$10x - x = 4{,}444\\dots - 0{,}444\\dots \\implies 9x = 4 \\implies x = \\frac{4}{9}$$<br>Como $4$ e $9$ são primos entre si, a fração geratriz irredutível é $\\frac{4}{9}$.<br>Portanto, a alternativa correta é a <strong>Letra A</strong>."
+        },
+        {
+            "q": "Duas cidades têm seus marcos zero representados pelos pontos $A(1, 2)$ e $B(7, 10)$ em um sistema cartesiano de coordenadas ortogonais, onde cada unidade no gráfico equivale a $1\\text{ km}$. Qual é a distância em linha reta entre os marcos zero dessas duas cidades?",
+            "options": ["$8\\text{ km}$", "$10\\text{ km}$", "$12\\text{ km}$", "$14\\text{ km}$"],
+            "correct": 1,
+            "explanation": "A distância euclidiana entre dois pontos no plano cartesiano é dada por:<br>$$d = \\sqrt{(x_B - x_A)^2 + (y_B - y_A)^2}$$<br>Substituindo as coordenadas de $A(1, 2)$ e $B(7, 10)$:<br>$$d = \\sqrt{(7 - 1)^2 + (10 - 2)^2} = \\sqrt{6^2 + 8^2} = \\sqrt{36 + 64} = \\sqrt{100} = 10\\text{ km}.$$Portanto, a alternativa correta é a <strong>Letra B</strong>."
+        },
+        {
+            "q": "Em geometria plana, o lugar geométrico dos pontos de um plano que equidistam dos extremos de um segmento de reta $AB$ é denominado:",
+            "options": ["Bissetriz", "Mediatriz", "Mediana", "Altura"],
+            "correct": 1,
+            "explanation": "Por definição geométrica, a <strong>mediatriz</strong> de um segmento de reta $AB$ é a reta perpendicular a $AB$ traçada pelo seu ponto médio. Qualquer ponto pertencente à mediatriz está à mesma distância dos pontos $A$ e $B$ ($PA = PB$).<br>Portanto, a alternativa correta é a <strong>Letra B</strong>."
+        },
+        {
+            "q": "Em um gráfico sobre os vídeos mais assistidos de uma plataforma, um determinado artista contava com 16 clipes entre os mais vistos, enquanto outro artista contava com 12 clipes. A razão entre a quantidade de clipes do segundo artista e do primeiro artista, na forma de fração irredutível, é:",
+            "options": ["$\\frac{3}{4}$", "$\\frac{4}{3}$", "$\\frac{2}{3}$", "$\\frac{1}{2}$"],
+            "correct": 0,
+            "explanation": "A razão pedida é:<br>$$\\text{Razão} = \\frac{12}{16}$$<br>Dividindo o numerador e o denominador pelo máximo divisor comum ($\text{MDC}(12, 16) = 4$):<br>$$\\frac{12 \\div 4}{16 \\div 4} = \\frac{3}{4}.$$Portanto, a alternativa correta é a <strong>Letra A</strong>."
+        },
+        {
+            "q": "Um produto eletrônico teve seu preço diminuído durante duas semanas seguidas. Na primeira semana o desconto foi de $10\\%$, e na segunda semana foi aplicado um novo desconto de $10\\%$ sobre o preço já reduzido. O desconto percentual total acumulado sobre o preço original foi de:",
+            "options": ["$18\\%$", "$19\\%$", "$20\\%$", "$21\\%$"],
+            "correct": 1,
+            "explanation": "Aplicamos os fatores multiplicativos de desconto:<br>1. Primeiro desconto de $10\\%$: fator $(1 - 0{,}10) = 0{,}90$.<br>2. Segundo desconto de $10\\%$: fator $(1 - 0{,}10) = 0{,}90$.<br>3. Fator acumulado final:<br>$$F = 0{,}90 \\times 0{,}90 = 0{,}81$$<br>4. O desconto total acumulado é:<br>$$1 - 0{,}81 = 0{,}19 = 19\\%.$$Portanto, a alternativa correta é a <strong>Letra B</strong>."
+        },
+        {
+            "q": "No jogo Minecraft, cada bloco é um cubo de aresta medindo $1\\text{ metro}$. Um jogador construiu uma sala em formato de paralelepípedo com dimensões internas de $5\\text{ m}$ de comprimento, $4\\text{ m}$ de largura e $3\\text{ m}$ de altura. Quantos blocos cúbicos de ar cabem no interior dessa sala?",
+            "options": ["12", "30", "60", "120"],
+            "correct": 2,
+            "explanation": "O volume interno da sala é o produto de suas três dimensões:<br>$$V = c \\cdot l \\cdot h = 5 \\times 4 \\times 3 = 60\\text{ m}^3$$<br>Como cada bloco cúbico possui volume de $1\\text{ m}^3$ ($1\\text{ m} \\times 1\\text{ m} \\times 1\\text{ m}$), cabem exatamente $60$ blocos de ar.<br>Portanto, a alternativa correta é a <strong>Letra C</strong>."
+        },
+        {
+            "q": "Um sanduíche retangular de pão de forma com dimensões $6\\text{ cm} \\times 8\\text{ cm}$ foi cortado exatamente ao longo de sua diagonal em duas metades triangulares. Qual é o comprimento do corte diagonal realizado?",
+            "options": ["$10\\text{ cm}$", "$12\\text{ cm}$", "$14\\text{ cm}$", "$48\\text{ cm}$"],
+            "correct": 0,
+            "explanation": "O corte diagonal é a hipotenusa de um triângulo retângulo cujos catetos medem $6\\text{ cm}$ e $8\\text{ cm}$.<br>Aplicando o Teorema de Pitágoras:<br>$$d^2 = 6^2 + 8^2 = 36 + 64 = 100 \\implies d = \\sqrt{100} = 10\\text{ cm}.$$Portanto, a alternativa correta é a <strong>Letra A</strong>."
+        },
+        {
+            "q": "Um engenheiro projetou uma praça cuja área total é formada por um retângulo central de $20\\text{ m} \\times 15\\text{ m}$ e dois triângulos congruentes com base de $15\\text{ m}$ e altura de $8\\text{ m}$ anexados aos lados opostos. A área total dessa praça, em $\\text{m}^2$, é igual a:",
+            "options": ["$360\\text{ m}^2$", "$420\\text{ m}^2$", "$480\\text{ m}^2$", "$540\\text{ m}^2$"],
+            "correct": 1,
+            "explanation": "1. Área do retângulo central:<br>$$A_{\\text{ret}} = 20 \\times 15 = 300\\text{ m}^2$$<br>2. Área de cada triângulo:<br>$$A_{\\text{tri}} = \\frac{b \\cdot h}{2} = \\frac{15 \\times 8}{2} = 60\\text{ m}^2$$<br>3. Como são dois triângulos idênticos:<br>$$A_{\\text{total}} = 300 + 2 \\times 60 = 300 + 120 = 420\\text{ m}^2.$$Portanto, a alternativa correta é a <strong>Letra B</strong>."
+        },
+        {
+            "q": "Uma piscina com formato de paralelepípedo reto-retângulo tem $8\\text{ m}$ de comprimento, $5\\text{ m}$ de largura e $1{,}5\\text{ m}$ de profundidade média. Estando completamente cheia, quantos litros de água essa piscina comporta?",
+            "options": ["$40.000\\text{ L}$", "$60.000\\text{ L}$", "$80.000\\text{ L}$", "$120.000\\text{ L}$"],
+            "correct": 1,
+            "explanation": "1. Calculamos o volume da piscina em metros cúbicos:<br>$$V = c \\times l \\times h = 8 \\times 5 \\times 1{,}5 = 40 \\times 1{,}5 = 60\\text{ m}^3$$<br>2. Sabendo que $1\\text{ m}^3 = 1.000\\text{ litros}$:<br>$$\\text{Capacidade} = 60 \\times 1.000 = 60.000\\text{ litros}.$$Portanto, a alternativa correta é a <strong>Letra B</strong>."
+        },
+        {
+            "q": "Uma fazenda produziu 1.200 sacas de café em uma safra. Desse total, $65\\%$ foram destinadas à exportação e as restantes foram comercializadas no mercado interno. Quantas sacas foram destinadas ao mercado interno?",
+            "options": ["360", "420", "480", "780"],
+            "correct": 1,
+            "explanation": "A porcentagem destinada ao mercado interno é:<br>$$100\\% - 65\\% = 35\\%$$<br>Calculando $35\\%$ de 1.200 sacas:<br>$$\\text{Sacas} = 0{,}35 \\times 1.200 = 420\\text{ sacas}.$$Portanto, a alternativa correta é a <strong>Letra B</strong>."
+        },
+        {
+            "q": "A densidade demográfica é a razão entre o número de habitantes e a área territorial ocupada. Se um determinado bairro possui $36.000$ moradores distribuídos em uma área de $4{,}5\\text{ km}^2$, qual é a densidade demográfica desse bairro?",
+            "options": [
+                "$6.000\\text{ hab/km}^2$",
+                "$8.000\\text{ hab/km}^2$",
+                "$9.000\\text{ hab/km}^2$",
+                "$12.000\\text{ hab/km}^2$"
+            ],
+            "correct": 1,
+            "explanation": "Calculamos a densidade demográfica aplicando a fórmula $D = \\frac{\\text{População}}{\\text{Área}}$:<br>$$D = \\frac{36.000}{4{,}5} = \\frac{360.000}{45} = 8.000\\text{ habitantes por km}^2.$$Portanto, a alternativa correta é a <strong>Letra B</strong>."
+        },
+        {
+            "q": "Uma imobiliária possui dois terrenos à venda: o terreno $A$ tem formato quadrado de lado $12\\text{ m}$, e o terreno $B$ tem formato retangular de lados $9\\text{ m}$ por $16\\text{ m}$. Comparando as áreas e perímetros dos dois terrenos, é correto afirmar que:",
+            "options": [
+                "ambos possuem a mesma área e o mesmo perímetro.",
+                "possuem a mesma área, mas o terreno B tem perímetro maior.",
+                "o terreno A tem área maior que o terreno B.",
+                "o terreno B tem área maior que o terreno A."
+            ],
+            "correct": 1,
+            "explanation": "1. Área e perímetro do terreno quadrado $A$:<br>- Área: $12 \\times 12 = 144\\text{ m}^2$<br>- Perímetro: $4 \\times 12 = 48\\text{ m}$<br><br>2. Área e perímetro do terreno retangular $B$:<br>- Área: $9 \\times 16 = 144\\text{ m}^2$<br>- Perímetro: $2 \\times (9 + 16) = 2 \\times 25 = 50\\text{ m}$<br><br>Conclusão: Ambos têm a mesma área ($144\\text{ m}^2$), porém o terreno $B$ possui perímetro maior ($50\\text{ m} > 48\\text{ m}$).<br>Portanto, a alternativa correta é a <strong>Letra B</strong>."
+        },
+        {
+            "q": "Sejam os números reais $x = 4^{\\frac{3}{2}}$, $y = \\left(\\frac{1}{8}\\right)^{-2}$ e $z = \\sqrt[4]{4}$. Escrevendo $x, y$ e $z$ em ordem crescente, obtém-se:",
+            "options": ["$z < x < y$", "$x < z < y$", "$z < y < x$", "$y < x < z$"],
+            "correct": 0,
+            "explanation": "Calculando cada um dos valores:<br>1. $x = 4^{\\frac{3}{2}} = (\\sqrt{4})^3 = 2^3 = 8$<br>2. $y = \\left(\\frac{1}{8}\\right)^{-2} = 8^2 = 64$<br>3. $z = \\sqrt[4]{4} = \\sqrt[4]{2^2} = 2^{\\frac{2}{4}} = 2^{\\frac{1}{2}} = \\sqrt{2} \\approx 1{,}414$<br><br>Ordenando de forma crescente:<br>$$1{,}414 < 8 < 64 \\implies z < x < y.$$Portanto, a alternativa correta é a <strong>Letra A</strong>."
+        },
+        {
+            "q": "A soma das idades de dois primos, $X$ e $Y$, é igual a 26 anos. Além disso, sabe-se que o triplo da idade de $X$, menos a idade de $Y$, é igual a 14 anos. Qual é a idade de $X$?",
+            "options": ["10 anos", "12 anos", "14 anos", "16 anos"],
+            "correct": 0,
+            "explanation": "Montando o sistema de duas equações do 1º grau:<br>$$\\begin{cases} X + Y = 26 \\\\ 3X - Y = 14 \\end{cases}$$<br>Somando as duas equações membro a membro:<br>$$(X + 3X) + (Y - Y) = 26 + 14$$<br>$$4X = 40 \\implies X = 10\\text{ anos}$$<br>Substituindo de volta: $Y = 26 - 10 = 16\\text{ anos}$.<br>Portanto, a idade de $X$ é de 10 anos.<br>A alternativa correta é a <strong>Letra A</strong>."
+        },
+        {
+            "q": "Ao aplicar o Teorema de Pitágoras no triângulo retângulo $ABC$, no qual os catetos medem $AC = 4\\text{ cm}$ e $AB = 3\\text{ cm}$, qual é a medida da hipotenusa $BC$?",
+            "options": ["$5\\text{ cm}$", "$6\\text{ cm}$", "$7\\text{ cm}$", "$25\\text{ cm}$"],
+            "correct": 0,
+            "explanation": "Trata-se do clássico triângulo pitagórico de catetos 3 e 4.<br>Pelo Teorema de Pitágoras:<br>$$BC^2 = AC^2 + AB^2 = 4^2 + 3^2 = 16 + 9 = 25$$<br>Extraindo a raiz:<br>$$BC = \\sqrt{25} = 5\\text{ cm}.$$Portanto, a alternativa correta é a <strong>Letra A</strong>."
+        }
+    ]
+}
+
+data = {
+    "EXAM_2024_1_A": EXAM_2024_1_A,
+    "EXAM_2024_1_B": EXAM_2024_1_B
+}
+
+with open("scripts/data_ifsp/exams_2024.json", "w", encoding="utf-8") as f:
+    json.dump(data, f, ensure_ascii=False, indent=2)
+
+print("Saved scripts/data_ifsp/exams_2024.json successfully!")

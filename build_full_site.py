@@ -9,9 +9,37 @@ from datetime import datetime
 with open("mathData_augmented.json", "r", encoding="utf-8") as f:
     math_data = json.load(f)
 
-# Métricas Globais Calculadas Dinamicamente
-total_subtopics = sum(len(b["topics"]) for b in math_data.values())
-total_questions = sum(sum(len(t["questions"]) for t in b["topics"]) for b in math_data.values())
+# Carregamento e mapeamento dos links do Google Drive para os PDFs oficiais
+DRIVE_LINKS_FILE = "drive_links.json"
+PENDING_LINKS_FILE = "provas_pendentes_drive.txt"
+GOOGLE_DRIVE_PDFS = {}
+if os.path.exists(DRIVE_LINKS_FILE):
+    with open(DRIVE_LINKS_FILE, "r", encoding="utf-8") as f:
+        GOOGLE_DRIVE_PDFS = json.load(f)
+
+# Auto-importa links preenchidos pelo usuário em provas_pendentes_drive.txt
+if os.path.exists(PENDING_LINKS_FILE):
+    with open(PENDING_LINKS_FILE, "r", encoding="utf-8") as f:
+        txt_content = f.read()
+    matches = re.findall(r'Arquivo:\s*([A-Za-z0-9_.-]+\.pdf)[\r\n]+Link:\s*(https?://\S+)', txt_content)
+    updated_from_txt = False
+    for pdf_f, drive_url in matches:
+        drive_url = drive_url.strip()
+        if drive_url and (pdf_f not in GOOGLE_DRIVE_PDFS or GOOGLE_DRIVE_PDFS[pdf_f] != drive_url):
+            GOOGLE_DRIVE_PDFS[pdf_f] = drive_url
+            updated_from_txt = True
+    if updated_from_txt:
+        with open(DRIVE_LINKS_FILE, "w", encoding="utf-8") as f:
+            json.dump(GOOGLE_DRIVE_PDFS, f, indent=2, ensure_ascii=False)
+        print(f"📥 Novos links do Google Drive importados automaticamente de {PENDING_LINKS_FILE}!")
+
+# Sincroniza em memória a propriedade driveUrl nos tópicos correspondentes
+for b_id, block in math_data.items():
+    for topic in block.get("topics", []):
+        pdf_name = topic.get("pdf")
+        if pdf_name and pdf_name in GOOGLE_DRIVE_PDFS:
+            topic["driveUrl"] = GOOGLE_DRIVE_PDFS[pdf_name]
+
 # Métricas Globais Calculadas Dinamicamente
 total_subtopics = sum(len(b["topics"]) for b in math_data.values())
 total_questions = sum(sum(len(t["questions"]) for t in b["topics"]) for b in math_data.values())
@@ -19,7 +47,7 @@ total_questions = sum(sum(len(t["questions"]) for t in b["topics"]) for b in mat
 def is_exam_block(b_id, block):
     """Verifica se o bloco pertence ao acervo de provas oficiais."""
     title = block.get("title", "").lower()
-    return str(b_id) in ["5", "6"] or "provas" in title or "oficiais" in title
+    return str(b_id) in ["5", "6", "7"] or "provas" in title or "oficiais" in title
 
 theory_blocks_data = {k: v for k, v in math_data.items() if not is_exam_block(k, v)}
 exam_blocks_data = {k: v for k, v in math_data.items() if is_exam_block(k, v)}
@@ -31,7 +59,10 @@ total_official_exams = sum(len(b["topics"]) for b in exam_blocks_data.values())
 total_exam_questions = sum(sum(len(t["questions"]) for t in b["topics"]) for b in exam_blocks_data.values())
 
 def sync_data_files():
-    """Garante que mathData.json e assets/js/data.js estejam 100% sincronizados."""
+    """Garante que mathData_augmented.json, mathData.json e assets/js/data.js estejam 100% sincronizados."""
+    with open("mathData_augmented.json", "w", encoding="utf-8") as f:
+        json.dump(math_data, f, ensure_ascii=False, indent=2)
+
     with open("mathData.json", "w", encoding="utf-8") as f:
         json.dump(math_data, f, ensure_ascii=False, indent=2)
 
@@ -74,6 +105,44 @@ def get_pdf_relative_path(pdf_filename, rel_root=".."):
                 return f"{rel_root}/provas/{entry}/{pdf_filename}"
     return None
 
+def resolve_pdf_link(topic_or_filename, rel_root=".."):
+    """
+    Localiza o PDF oficial priorizando o link do Google Drive se configurado.
+    Retorna um dicionário com os metadados do botão ou None se não houver PDF.
+    """
+    if not topic_or_filename:
+        return None
+    
+    if isinstance(topic_or_filename, dict):
+        pdf_filename = topic_or_filename.get("pdf")
+        drive_url = topic_or_filename.get("driveUrl") or GOOGLE_DRIVE_PDFS.get(pdf_filename)
+    else:
+        pdf_filename = topic_or_filename
+        drive_url = GOOGLE_DRIVE_PDFS.get(pdf_filename)
+        
+    if drive_url:
+        return {
+            "url": drive_url,
+            "is_drive": True,
+            "attrs": 'target="_blank" rel="noopener noreferrer"',
+            "icon": "external-link",
+            "title": "Abrir Caderno Oficial no Google Drive (Visualizar ou Baixar)",
+            "filename": pdf_filename
+        }
+    
+    local_path = get_pdf_relative_path(pdf_filename, rel_root=rel_root)
+    if local_path:
+        return {
+            "url": local_path,
+            "is_drive": False,
+            "attrs": 'download',
+            "icon": "download",
+            "title": "Baixar Caderno Oficial em PDF",
+            "filename": pdf_filename
+        }
+        
+    return None
+
 def get_navbar_label(b_id, block):
     """Gera um rótulo curto e elegante para o menu de navegação."""
     title = block.get("title", f"Bloco {b_id}")
@@ -81,6 +150,8 @@ def get_navbar_label(b_id, block):
         return "Provas IFSC"
     elif "ifce" in title.lower():
         return "Provas IFCE"
+    elif "ifsp" in title.lower():
+        return "Provas IFSP"
     elif "provas" in title.lower():
         return f"Provas {title.split()[-1]}"
     return f"Bloco {b_id}"
@@ -149,10 +220,14 @@ def get_head(title, rel_root=".", theme="green"):
 def get_navbar(active_key="", rel_root=".", is_exam=False):
     if is_exam:
         # Navbar da Parte 2 (Provas - Full Dark Mode Escuro-Azul)
+        ifce_n = len(math_data.get("6", {}).get("topics", []))
+        ifsc_n = len(math_data.get("5", {}).get("topics", []))
+        ifsp_n = len(math_data.get("7", {}).get("topics", []))
         nav_links = [
             ("provas_hub", f"{rel_root}/provas.html", "Todas as Provas", "layout-grid"),
-            ("6", f"{rel_root}/bloco-6-provas-ifce/index.html", "Provas IFCE (27)", "award"),
-            ("5", f"{rel_root}/bloco-5-provas-ifsc/index.html", "Provas IFSC (16)", "award"),
+            ("6", f"{rel_root}/bloco-6-provas-ifce/index.html", f"Provas IFCE ({ifce_n})", "award"),
+            ("5", f"{rel_root}/bloco-5-provas-ifsc/index.html", f"Provas IFSC ({ifsc_n})", "award"),
+            ("7", f"{rel_root}/bloco-7-provas-ifsp/index.html", f"Provas IFSP ({ifsp_n})", "award"),
         ]
         
         desktop_items = []
@@ -311,7 +386,7 @@ def get_footer(rel_root=".", is_exam=False):
                     <i data-lucide="file-check" class="w-5 h-5 text-blue-500"></i> PartiuIF - Banco de Provas
                 </div>
                 <p class="text-slate-400 text-xs leading-relaxed">
-                    Acervo completo com {total_official_exams} cadernos oficiais do IFCE e IFSC. Provas interativas com resoluções KaTeX passo a passo e downloads dos cadernos originais em PDF.
+                    Acervo completo com {total_official_exams} cadernos oficiais do IFCE, IFSC e IFSP. Provas interativas com resoluções KaTeX passo a passo e downloads dos cadernos originais em PDF.
                 </p>
                 <div class="mt-4 inline-flex items-center gap-2 bg-slate-900 px-3 py-1.5 rounded-lg border border-slate-800 text-xs text-sky-300">
                     <i data-lucide="hard-drive" class="w-3.5 h-3.5"></i> Respostas salvas localmente
@@ -323,8 +398,9 @@ def get_footer(rel_root=".", is_exam=False):
                 </h4>
                 <ul class="space-y-2 text-xs text-slate-300">
                     <li><a href="{rel_root}/provas.html" class="hover:text-white transition flex items-center gap-1.5">• Ver Todas as Provas</a></li>
-                    <li><a href="{rel_root}/bloco-6-provas-ifce/index.html" class="hover:text-white transition flex items-center gap-1.5">• Provas IFCE (27 Cadernos)</a></li>
-                    <li><a href="{rel_root}/bloco-5-provas-ifsc/index.html" class="hover:text-white transition flex items-center gap-1.5">• Provas IFSC (16 Cadernos)</a></li>
+                    <li><a href="{rel_root}/bloco-6-provas-ifce/index.html" class="hover:text-white transition flex items-center gap-1.5">• Provas IFCE ({len(math_data.get("6", {}).get("topics", []))} Cadernos)</a></li>
+                    <li><a href="{rel_root}/bloco-5-provas-ifsc/index.html" class="hover:text-white transition flex items-center gap-1.5">• Provas IFSC ({len(math_data.get("5", {}).get("topics", []))} Cadernos)</a></li>
+                    <li><a href="{rel_root}/bloco-7-provas-ifsp/index.html" class="hover:text-white transition flex items-center gap-1.5">• Provas IFSP ({len(math_data.get("7", {}).get("topics", []))} Cadernos)</a></li>
                     <li class="pt-2"><a href="{rel_root}/index.html" class="text-emerald-400 hover:text-emerald-300 font-semibold transition flex items-center gap-1.5">← Voltar para Teoria e Eixos Temáticos</a></li>
                 </ul>
             </div>
@@ -365,7 +441,7 @@ def get_footer(rel_root=".", is_exam=False):
                     <i data-lucide="book-open-check" class="w-5 h-5"></i> PartiuIF - Matemática
                 </div>
                 <p class="text-brand-200 text-xs leading-relaxed">
-                    Plataforma completa de revisão estruturada por subtópicos, teoria detalhada, fórmulas KaTeX e simulados com {total_official_exams} provas oficiais do IFSC e IFCE.
+                    Plataforma completa de revisão estruturada por subtópicos, teoria detalhada, fórmulas KaTeX e simulados com {total_official_exams} provas oficiais do IFCE, IFSC e IFSP.
                 </p>
                 <div class="mt-4 inline-flex items-center gap-2 bg-brand-900/80 px-3 py-1.5 rounded-lg border border-brand-800 text-xs text-brand-300">
                     <i data-lucide="hard-drive" class="w-3.5 h-3.5"></i> Progresso salvo no seu navegador
@@ -435,8 +511,8 @@ def build_subtopic_pages():
             problem_txt = solved_ex.get("problem", "")
             sol_txt = solved_ex.get("solution", "")
 
-            # Botão de Download do PDF Oficial
-            pdf_path = get_pdf_relative_path(topic.get("pdf"), rel_root="..")
+            # Botão de Download / Acesso do Caderno Oficial
+            pdf_info = resolve_pdf_link(topic, rel_root="..")
 
             if is_exam:
                 # ----------------------- MODO ESCURO-AZUL (PROVAS) -----------------------
@@ -448,10 +524,11 @@ def build_subtopic_pages():
                 """ for point in topic.get("keyPoints", [])])
 
                 pdf_download_btn = ""
-                if pdf_path:
+                if pdf_info:
+                    btn_label = "Caderno Oficial no Drive" if pdf_info["is_drive"] else "Baixar Caderno em PDF"
                     pdf_download_btn = f"""
-                        <a href="{pdf_path}" download class="bg-blue-600 hover:bg-blue-500 text-white font-bold px-4 py-2 rounded-xl text-sm transition flex items-center gap-2 shadow-lg shadow-blue-600/25">
-                            <i data-lucide="download" class="w-4 h-4"></i> Baixar Caderno em PDF
+                        <a href="{pdf_info['url']}" {pdf_info['attrs']} class="bg-blue-600 hover:bg-blue-500 text-white font-bold px-4 py-2 rounded-xl text-sm transition flex items-center gap-2 shadow-lg shadow-blue-600/25" title="{pdf_info['title']}">
+                            <i data-lucide="{pdf_info['icon']}" class="w-4 h-4"></i> {btn_label}
                         </a>
                     """
 
@@ -693,10 +770,11 @@ def build_subtopic_pages():
                 """ for point in topic.get("keyPoints", [])])
 
                 pdf_download_btn = ""
-                if pdf_path:
+                if pdf_info:
+                    btn_label = "Caderno Oficial no Drive" if pdf_info["is_drive"] else "Baixar Prova em PDF"
                     pdf_download_btn = f"""
-                        <a href="{pdf_path}" download class="bg-brand-700 hover:bg-brand-800 text-white font-semibold px-4 py-2 rounded-xl text-sm transition flex items-center gap-2 shadow-sm">
-                            <i data-lucide="download" class="w-4 h-4"></i> Baixar Prova em PDF
+                        <a href="{pdf_info['url']}" {pdf_info['attrs']} class="bg-brand-700 hover:bg-brand-800 text-white font-semibold px-4 py-2 rounded-xl text-sm transition flex items-center gap-2 shadow-sm" title="{pdf_info['title']}">
+                            <i data-lucide="{pdf_info['icon']}" class="w-4 h-4"></i> {btn_label}
                         </a>
                     """
 
@@ -953,12 +1031,13 @@ def build_block_overview_pages():
                 q_count = len(topic.get("questions", []))
                 summary = topic.get("summary", "")
                 
-                pdf_path = get_pdf_relative_path(topic.get("pdf"), rel_root="..")
+                pdf_info = resolve_pdf_link(topic, rel_root="..")
                 pdf_btn = ""
-                if pdf_path:
+                if pdf_info:
+                    btn_label = "PDF Drive" if pdf_info["is_drive"] else "PDF Oficial"
                     pdf_btn = f"""
-                        <a href="{pdf_path}" download class="bg-slate-800 hover:bg-slate-700 text-slate-200 font-semibold px-3 py-2 rounded-xl text-xs transition flex items-center gap-1.5 border border-slate-700" title="Baixar Prova Oficial em PDF">
-                            <i data-lucide="download" class="w-3.5 h-3.5 text-sky-400"></i> PDF Oficial
+                        <a href="{pdf_info['url']}" {pdf_info['attrs']} class="bg-slate-800 hover:bg-slate-700 text-slate-200 font-semibold px-3 py-2 rounded-xl text-xs transition flex items-center gap-1.5 border border-slate-700" title="{pdf_info['title']}">
+                            <i data-lucide="{pdf_info['icon']}" class="w-3.5 h-3.5 text-sky-400"></i> {btn_label}
                         </a>
                     """
 
@@ -1254,6 +1333,10 @@ def build_homepage():
             </div>
         """)
 
+    ifce_n = len(math_data.get("6", {}).get("topics", []))
+    ifsc_n = len(math_data.get("5", {}).get("topics", []))
+    ifsp_n = len(math_data.get("7", {}).get("topics", []))
+
     home_page_html = f"""{get_head("PartiuIF - Plataforma de Matemática para Institutos Federais", rel_root=".", theme="green")}
 {get_navbar(active_key="home", rel_root=".", is_exam=False)}
 
@@ -1390,16 +1473,20 @@ def build_homepage():
                             Banco de Provas Oficiais dos <span class="text-transparent bg-clip-text bg-gradient-to-r from-sky-400 to-blue-300">Institutos Federais</span>
                         </h2>
                         <p class="text-slate-300 text-sm sm:text-base leading-relaxed max-w-2xl">
-                            Pratique em um ambiente imersivo com mais de <strong>43 cadernos oficiais</strong> do <strong>IFCE</strong> e <strong>IFSC</strong>. Resolva as questões com gabarito inteligente e resoluções completas KaTeX, ou faça o <strong>download direto dos cadernos originais em PDF</strong> para simular as condições reais do exame.
+                            Pratique em um ambiente imersivo com mais de <strong>{total_official_exams} cadernos oficiais</strong> do <strong>IFCE</strong>, <strong>IFSC</strong> e <strong>IFSP</strong>. Resolva as questões com gabarito inteligente e resoluções completas KaTeX, ou faça o <strong>download direto dos cadernos originais em PDF</strong> para simular as condições reais do exame.
                         </p>
-                        <div class="grid grid-cols-3 gap-3 pt-2 max-w-md">
+                        <div class="grid grid-cols-2 sm:grid-cols-4 gap-3 pt-2 max-w-lg">
                             <div class="bg-slate-900/90 border border-slate-800 p-3 rounded-2xl text-center">
-                                <span class="text-xl sm:text-2xl font-black text-sky-400 block">27</span>
+                                <span class="text-xl sm:text-2xl font-black text-sky-400 block">{ifce_n}</span>
                                 <span class="text-[11px] text-slate-400 uppercase font-bold">Provas IFCE</span>
                             </div>
                             <div class="bg-slate-900/90 border border-slate-800 p-3 rounded-2xl text-center">
-                                <span class="text-xl sm:text-2xl font-black text-indigo-400 block">16</span>
+                                <span class="text-xl sm:text-2xl font-black text-indigo-400 block">{ifsc_n}</span>
                                 <span class="text-[11px] text-slate-400 uppercase font-bold">Provas IFSC</span>
+                            </div>
+                            <div class="bg-slate-900/90 border border-slate-800 p-3 rounded-2xl text-center">
+                                <span class="text-xl sm:text-2xl font-black text-amber-400 block">{ifsp_n}</span>
+                                <span class="text-[11px] text-slate-400 uppercase font-bold">Provas IFSP</span>
                             </div>
                             <div class="bg-slate-900/90 border border-slate-800 p-3 rounded-2xl text-center">
                                 <span class="text-xl sm:text-2xl font-black text-emerald-400 block">100%</span>
@@ -1443,8 +1530,8 @@ def build_provas_hub():
     for b_id, block in exam_blocks_data.items():
         folder = get_block_folder(b_id, block)
         b_title = block.get("title", "")
-        inst = "IFCE" if "ifce" in b_title.lower() else "IFSC" if "ifsc" in b_title.lower() else "IF"
-        badge_style = "bg-blue-500/20 text-sky-300 border-blue-400/30" if inst == "IFCE" else "bg-indigo-500/20 text-indigo-300 border-indigo-400/30"
+        inst = "IFCE" if "ifce" in b_title.lower() else "IFSC" if "ifsc" in b_title.lower() else "IFSP" if "ifsp" in b_title.lower() else "IF"
+        badge_style = "bg-blue-500/20 text-sky-300 border-blue-400/30" if inst == "IFCE" else "bg-indigo-500/20 text-indigo-300 border-indigo-400/30" if inst == "IFSC" else "bg-amber-500/20 text-amber-300 border-amber-400/30"
         
         for idx, topic in enumerate(block["topics"]):
             t_id = topic["id"]
@@ -1453,13 +1540,14 @@ def build_provas_hub():
             summary = topic.get("summary", "")
             q_count = len(topic.get("questions", []))
             pdf_filename = topic.get("pdf")
-            pdf_path = get_pdf_relative_path(pdf_filename, rel_root=".")
+            pdf_info = resolve_pdf_link(topic, rel_root=".")
             
             pdf_btn = ""
-            if pdf_path:
+            if pdf_info:
+                btn_label = "PDF (Drive)" if pdf_info["is_drive"] else "PDF"
                 pdf_btn = f"""
-                    <a href="{pdf_path}" download class="bg-slate-800 hover:bg-slate-700 text-slate-200 border border-slate-700 font-semibold px-3 py-2 rounded-xl text-xs transition flex items-center gap-1.5" title="Baixar Caderno Oficial em PDF">
-                        <i data-lucide="download" class="w-3.5 h-3.5 text-sky-400"></i> PDF
+                    <a href="{pdf_info['url']}" {pdf_info['attrs']} class="bg-slate-800 hover:bg-slate-700 text-slate-200 border border-slate-700 font-semibold px-3 py-2 rounded-xl text-xs transition flex items-center gap-1.5" title="{pdf_info['title']}">
+                        <i data-lucide="{pdf_info['icon']}" class="w-3.5 h-3.5 text-sky-400"></i> {btn_label}
                     </a>
                 """
 
@@ -1494,6 +1582,10 @@ def build_provas_hub():
                 </div>
             """)
 
+    ifce_n = len(math_data.get("6", {}).get("topics", []))
+    ifsc_n = len(math_data.get("5", {}).get("topics", []))
+    ifsp_n = len(math_data.get("7", {}).get("topics", []))
+
     provas_hub_html = f"""{get_head("Acervo de Provas Oficiais dos Institutos Federais | PartiuIF", rel_root=".", theme="dark-blue")}
 {get_navbar(active_key="provas_hub", rel_root=".", is_exam=True)}
 
@@ -1520,7 +1612,7 @@ def build_provas_hub():
                 </h1>
                 
                 <p class="text-slate-300 text-sm sm:text-base mb-8 leading-relaxed">
-                    Ambiente dedicado para simulação com os exames reais do <strong>IFCE</strong> e <strong>IFSC</strong>. Resolva os cadernos online com resoluções KaTeX comentadas e baixe os PDFs originais para simular o tempo de prova oficial.
+                    Ambiente dedicado para simulação com os exames reais do <strong>IFCE</strong>, <strong>IFSC</strong> e <strong>IFSP</strong>. Resolva os cadernos online com resoluções KaTeX comentadas e baixe os PDFs originais para simular o tempo de prova oficial.
                 </p>
 
                 <div class="flex flex-wrap items-center gap-4">
@@ -1534,8 +1626,8 @@ def build_provas_hub():
             </div>
         </div>
 
-        <!-- Dashboard do Acervo (4 Métricas) -->
-        <div class="grid grid-cols-2 lg:grid-cols-4 gap-4 mb-10">
+        <!-- Dashboard do Acervo (5 Métricas) -->
+        <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-4 mb-10">
             <div class="bg-slate-900/90 border border-slate-800 rounded-2xl p-5 shadow-xl flex items-center gap-4">
                 <div class="w-12 h-12 rounded-xl bg-blue-950/80 border border-blue-800/40 flex items-center justify-center text-sky-400 flex-shrink-0">
                     <i data-lucide="file-text" class="w-6 h-6"></i>
@@ -1552,7 +1644,7 @@ def build_provas_hub():
                 </div>
                 <div>
                     <span class="text-xs text-slate-400 font-medium block">Edições IFCE</span>
-                    <strong class="text-xl font-black text-sky-400">27 Provas</strong>
+                    <strong class="text-xl font-black text-sky-400">{ifce_n} Provas</strong>
                 </div>
             </div>
 
@@ -1562,11 +1654,21 @@ def build_provas_hub():
                 </div>
                 <div>
                     <span class="text-xs text-slate-400 font-medium block">Edições IFSC</span>
-                    <strong class="text-xl font-black text-indigo-400">16 Provas</strong>
+                    <strong class="text-xl font-black text-indigo-400">{ifsc_n} Provas</strong>
                 </div>
             </div>
 
             <div class="bg-slate-900/90 border border-slate-800 rounded-2xl p-5 shadow-xl flex items-center gap-4">
+                <div class="w-12 h-12 rounded-xl bg-amber-950/80 border border-amber-800/40 flex items-center justify-center text-amber-400 flex-shrink-0">
+                    <i data-lucide="award" class="w-6 h-6"></i>
+                </div>
+                <div>
+                    <span class="text-xs text-slate-400 font-medium block">Edições IFSP</span>
+                    <strong class="text-xl font-black text-amber-400">{ifsp_n} Provas</strong>
+                </div>
+            </div>
+
+            <div class="bg-slate-900/90 border border-slate-800 rounded-2xl p-5 shadow-xl flex items-center gap-4 col-span-2 md:col-span-1">
                 <div class="w-12 h-12 rounded-xl bg-emerald-950/80 border border-emerald-800/40 flex items-center justify-center text-emerald-400 flex-shrink-0">
                     <i data-lucide="download-cloud" class="w-6 h-6"></i>
                 </div>
@@ -1578,7 +1680,7 @@ def build_provas_hub():
         </div>
 
         <!-- Seção de Acesso Rápido aos Blocos de Cada IF -->
-        <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-12">
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mb-12">
             <div class="bg-slate-900/90 border border-slate-800 hover:border-blue-500/50 rounded-3xl p-6 sm:p-7 shadow-xl flex items-center justify-between transition">
                 <div>
                     <div class="flex items-center gap-2 mb-2">
@@ -1586,7 +1688,7 @@ def build_provas_hub():
                         <span class="text-xs text-slate-400 font-medium">Bloco 6</span>
                     </div>
                     <h3 class="text-xl font-extrabold text-white mb-1">Provas Anteriores IFCE</h3>
-                    <p class="text-slate-400 text-xs sm:text-sm">27 edições completas com resoluções comentadas e PDFs.</p>
+                    <p class="text-slate-400 text-xs sm:text-sm">{ifce_n} edições completas com resoluções comentadas e PDFs.</p>
                 </div>
                 <a href="./bloco-6-provas-ifce/index.html" class="bg-blue-600 hover:bg-blue-500 text-white font-bold p-3 rounded-2xl transition shadow-lg shadow-blue-600/20 flex-shrink-0">
                     <i data-lucide="arrow-right" class="w-5 h-5"></i>
@@ -1600,9 +1702,23 @@ def build_provas_hub():
                         <span class="text-xs text-slate-400 font-medium">Bloco 5</span>
                     </div>
                     <h3 class="text-xl font-extrabold text-white mb-1">Provas Anteriores IFSC</h3>
-                    <p class="text-slate-400 text-xs sm:text-sm">16 edições completas com resoluções comentadas e PDFs.</p>
+                    <p class="text-slate-400 text-xs sm:text-sm">{ifsc_n} edições completas com resoluções comentadas e PDFs.</p>
                 </div>
                 <a href="./bloco-5-provas-ifsc/index.html" class="bg-indigo-600 hover:bg-indigo-500 text-white font-bold p-3 rounded-2xl transition shadow-lg shadow-indigo-600/20 flex-shrink-0">
+                    <i data-lucide="arrow-right" class="w-5 h-5"></i>
+                </a>
+            </div>
+
+            <div class="bg-slate-900/90 border border-slate-800 hover:border-amber-500/50 rounded-3xl p-6 sm:p-7 shadow-xl flex items-center justify-between transition">
+                <div>
+                    <div class="flex items-center gap-2 mb-2">
+                        <span class="text-xs font-bold uppercase tracking-wider px-2.5 py-0.5 rounded-full bg-amber-500/20 text-amber-300 border border-amber-400/30">São Paulo</span>
+                        <span class="text-xs text-slate-400 font-medium">Bloco 7</span>
+                    </div>
+                    <h3 class="text-xl font-extrabold text-white mb-1">Provas Anteriores IFSP</h3>
+                    <p class="text-slate-400 text-xs sm:text-sm">{ifsp_n} edições completas com resoluções comentadas e PDFs.</p>
+                </div>
+                <a href="./bloco-7-provas-ifsp/index.html" class="bg-amber-600 hover:bg-amber-500 text-white font-bold p-3 rounded-2xl transition shadow-lg shadow-amber-600/20 flex-shrink-0">
                     <i data-lucide="arrow-right" class="w-5 h-5"></i>
                 </a>
             </div>
@@ -1619,15 +1735,18 @@ def build_provas_hub():
                 </div>
 
                 <!-- Filtros por Instituição -->
-                <div class="flex items-center gap-2 bg-slate-900 p-1.5 rounded-2xl border border-slate-800">
+                <div class="flex flex-wrap items-center gap-2 bg-slate-900 p-1.5 rounded-2xl border border-slate-800">
                     <button onclick="filterExams('all')" id="btn-filter-all" class="filter-btn px-4 py-1.5 rounded-xl text-xs font-bold transition bg-blue-600 text-white shadow">
                         Todos ({total_official_exams})
                     </button>
                     <button onclick="filterExams('IFCE')" id="btn-filter-ifce" class="filter-btn px-4 py-1.5 rounded-xl text-xs font-semibold text-slate-400 hover:text-white transition">
-                        IFCE (27)
+                        IFCE ({ifce_n})
                     </button>
                     <button onclick="filterExams('IFSC')" id="btn-filter-ifsc" class="filter-btn px-4 py-1.5 rounded-xl text-xs font-semibold text-slate-400 hover:text-white transition">
-                        IFSC (16)
+                        IFSC ({ifsc_n})
+                    </button>
+                    <button onclick="filterExams('IFSP')" id="btn-filter-ifsp" class="filter-btn px-4 py-1.5 rounded-xl text-xs font-semibold text-slate-400 hover:text-white transition">
+                        IFSP ({ifsp_n})
                     </button>
                 </div>
             </div>
@@ -1707,6 +1826,11 @@ def build_provas_hub():
             if (searchInput) {{
                 searchInput.addEventListener('input', applyFilters);
             }}
+            const urlParams = new URLSearchParams(window.location.search);
+            const instParam = urlParams.get('inst');
+            if (instParam) {{
+                filterExams(instParam.toUpperCase());
+            }}
             updateGlobalProgress();
         }});
     </script>
@@ -1757,7 +1881,7 @@ def build_simulado_page():
                 </div>
                 <h1 class="text-3xl sm:text-4xl font-extrabold tracking-tight mb-3">Simulado IF de Matemática</h1>
                 <p class="text-brand-100 text-sm sm:text-base max-w-2xl leading-relaxed">
-                    Personalize seu simulado com questões retiradas do banco oficial dos {len(math_data)} blocos e das {total_official_exams} provas oficiais do IFSC e IFCE. Ao final, veja seu desempenho e a resolução comentada de cada questão.
+                    Personalize seu simulado com questões retiradas do banco oficial dos {len(math_data)} blocos e das {total_official_exams} provas oficiais do IFCE, IFSC e IFSP. Ao final, veja seu desempenho e a resolução comentada de cada questão.
                 </p>
             </div>
 

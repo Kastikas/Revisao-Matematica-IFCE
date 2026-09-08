@@ -1,0 +1,289 @@
+                                                                 1487
+                                                         ( A ) 1 125
+C = 5 (F - 32) onde F é a temperatura em graus                   1487
+     9                                                   ( B ) 2 125
+Fahrenheit e C é a temperatura em graus Celsius.                 2974
+      Nos Estados Unidos, uma determinada em-            ( C ) 1 250
+                                                                 2724
+presa importa carne brasileira e exige a tempera-        ( D ) 2 250
+tura de 29,3ºF durante o seu processo de logística.
+A temperatura em graus Celsius (°C) exigida por
+essa empresa é:
+( A ) 12,72°C                                            19 A potência de Dez é um recurso matemático
+( B ) – 0,3°C                                            utilizado para representar de forma simplificada
+( C ) – 1,5°C                                            quantidades muito grandes ou muito pequenas por
+( D ) – 13,5°C                                           meio da multiplicação de um algarismo significa-
+                                                         tivo pela base dez elevada a um expoente positivo
+                                                         ou negativo. Essa maneira de expressar quantida-
+                                                         des é denominada notação científica. Com base
+                                                         nessa informação, identifique qual das potências
+17 Um terreno retangular cujos lados medem               representa de forma simplificada a expressão
+5m e 12m será separado em duas partes a partir de
+uma de suas diagonais para que nelas sejam feitos                            50000x35000
+cultivos diferentes. Pelo projeto inicial, a sepa-                              0,0007
+ração das duas regiões se dará pela instalação de
+uma cerca simples. A imagem abaixo ilustra como          ( A ) 2,5 x 1017
+se pretende separar o terreno.                           ( B ) 2,5 x 1012
+                                                         ( C ) 2,5 x 1011
+                                                         ( D ) 2,5 x 104
+
+
+
+
+                                                         20 As pirâmides são estruturas estudadas desde
+                                                         a Antiguidade. Hoje, a beleza de suas formas conti-
+                                   Fonte: IFSP, 2023.    nua extasiando a todos, como é o caso da pirâmide
+                                                         de vidro do Museu do Louvre, em Paris. Elas são
+Qual é a extensão da cerca que será instalada para       poliedros cuja base é um polígono qualquer e suas
+separar o terreno nas duas regiões desejadas?            faces laterais são triângulos que concorrem para um
+( A ) 12 metros                                          vértice comum. Analise e calcule o volume da se-
+( B ) 13 metros                                          guinte pirâmide, sabendo que sua base é um quadra-
+( C ) 17 metros                                          do de aresta a = 6 cm e que a altura h mede 15 cm.
+( D ) √34 metros
+
+
+
+
+18 Os destroços do navio Titanic estão acerca de
+ 2974
+2 250 metros de profundidade no fundo do Oceano
+Atlântico. Titan, um submarino que fazia uma ex-
+cursão aos destroços do Titanic recentemente im-                                         Fonte: IFSP, 2023.
+plodiu, devido à alta pressão no fundo do oceano.
+Supondo que o submarino Titan tenha começado a           ( A ) 540 cm³
+ter sérios problemas quando estava na metade da          ( B ) 450 cm³
+profundidade, responda: qual a distância da super-       ( C ) 180 cm³
+fície em que Titan começou a ter esses problemas?        ( D ) 90 cm³
+
+Instituto Federal de Educação, Ciência e Tecnologia de São Paulo - PROVA A                                9
+21 Quatro pontos distintos, A, B, C e D, estão dis-      III. Se ABCD for um paralelogramo e as suas dia-
+postos em um plano de modo que o polígono ABCD                gonais tiverem comprimentos iguais, então
+seja um quadrilátero convexo. Analise as seguintes            ABCD é, necessariamente, um retângulo.
+afirmações e identifique quais estão corretas:
+I. Se ABCD for um losango, então suas diago-             As afirmações corretas são:
+    nais são perpendiculares.                            ( A ) I, II e III.
+II. Se as diagonais de ABCD se intersectarem             ( B ) II e III apenas.
+    em seus respectivos pontos médios, então             ( C ) I e III apenas.
+    ABCD é, necessariamente, um paralelogramo.           ( D ) I e II apenas.
+
+
+
+
+22 Um professor de Matemática passou o seguinte exercício para seus alunos: “Escreva duas equações
+distintas de 1º grau com duas incógnitas que apresentem como solução o ponto (2,3). Depois, esboce a
+representação gráfica de tais equações no plano cartesiano”. Considere as duas incógnitas como “números
+reais”. Um estudante perguntou à inteligência artificial (IA) ChatGPT como resolver o primeiro comando
+do exercício. O ChatGPT retornou a resposta apresentada na imagem a seguir:
+
+
+
+
+                                                                                   Fonte: https://chat.openai.com/
+
+10                                     Processo seletivo para ingresso nos cursos técnicos - Edital nº 449/2023
+A partir das respostas do ChatGPT o estudante optou por usar o GeoGebra, um software de geometria, para
+esboçar as representações gráficas solicitadas pelo segundo comando do exercício e, com as representações
+em mãos, fez uma análise adequada da resposta inicialmente dada pelo ChatGPT.
+
+Dentre as alternativas a seguir, qual apresenta as representações gráficas das duas equações fornecidas pelo
+ChatGPT e ao mesmo tempo fornece a análise correta do estudante?
+
+
+(A)                                                      (B)
+
+
+
+
+A partir das representações gráficas das equações,       A partir das representações gráficas das equações,
+é possível concluir que o ChatGPT está correto,          é possível concluir que o ChatGPT está correto,
+pois as duas equações distintas de 1º grau apresen-      pois as duas equações distintas de 1º grau apresen-
+tam o ponto (2,3) como solução.                          tam o ponto (2,3) como solução.
+
+
+
+(C)                                                      (D)
+
+
+
+
+A partir das representações gráficas das equações,       A partir das representações gráficas das equações,
+é possível concluir que o ChatGPT está errado,           é possível concluir que o ChatGPT está errado,
+pois uma das duas equações distintas de 1º grau          pois uma das duas equações distintas de 1º grau
+não apresenta o ponto (2,3) como solução.                não apresenta o ponto (2,3) como solução.
+
+Instituto Federal de Educação, Ciência e Tecnologia de São Paulo - PROVA A                               11
+23 Carlinhos ganhou de sua mãe R$100,00. Ao                 25 O triângulo ABC da figura abaixo é retângu-
+invés de guardar o dinheiro, ele decidiu comprar            lo em C e o segmento CD representa a sua altura.
+um saquinho de figurinhas da Copa do Mundo por              Qual é a medida, em unidades de comprimento
+dia até acabar o dinheiro. Cada saquinho custa              (u.c.) do lado AC ?
+R$4,00. A tabela a seguir mostra a quantidade de
+pacotes comprada(p) e a quantia de dinheiro(D)
+que Carlinhos possui após a compra do pacote de
+figurinhas.
+            Pacotes(p)      Dinheiro(D)
+                0              100
+                1               96
+                2               92
+                3               88
+                4               84                                                               Fonte: IFSP, 2023.
+               ...              ...
+                                                            ( A ) 8,0 u.c.
+Assinale a alternativa que apresenta a expressão            ( B ) 14,4 u.c.
+correta da relação existente entre D e a quantida-          ( C ) 20,0 u.c
+des de pacotes de figurinhas e quantos pacotes ele          ( D ) 9,0 u.c
+precisou comprar para ter D=R$40,00.
+( A ) D=100-p, 60 pacotes
+( B ) D=100-2p, 30 pacotes
+( C ) D=100-3p, 20 pacotes                                  26 Uma promoção de um mercado define que a
+( D ) D=100-4p, 15 pacotes                                  cada 50 reais em compras, o cliente recebe 1 cupom
+                                                            para participar de um sorteio de um vale-compras
+                                                            de 500 reais. Os cupons são recebidos na hora do
+                                                            pagamento da compra no caixa e os valores que não
+                                                            foram convertidos em cupons não são cumulativos.
+24 No mapa abaixo a Avenida Costa do Marfim                 Sendo x o valor da compra do cliente e y o número
+e a Rua Gana são transversais às ruas Etiópia e             de cupons que o cliente recebe, qual a função que
+Senegal, que são paralelas.                                 mostra a relação entre as variáveis x e y e que cal-
+                                                            cula a quantia de cupons a ser recebido pelo cliente
+                                                            a cada compra?
+                                                            ( A ) y(x) = 50x
+                                                            ( B ) y(x) = 50 + x
+                                                            ( C ) y(x) = 50 - x
+                                                            ( D ) y(x) = x
+                                                                          50
+
+
+                                                            27 A violência nas escolas é uma questão atual
+                                                            e um problema complexo que demanda de educa-
+                                                            dores, estudantes, responsáveis, governo e socie-
+                                   Fonte: IFSP, 2023.       dade medidas para que se busque e se promova a
+                                                            Cultura de Paz, que tem no diálogo e na mediação
+Conhecendo alguns ângulos envolvendo o encon-               seus focos para a resolução de conflitos. A pesqui-
+tro dessas vias, tem-se que o valor de x é igual a:         sa “Juventudes na escola, sentidos e buscas: Por
+( A ) 35°                                                   que frequentam?” escutou as juventudes brasilei-
+( B ) 70°                                                   ras para entender seus olhares sobre o contexto
+( C ) 85°                                                   escolar e uma das perguntas feitas aos 8.283 par-
+( D ) 170°                                                  ticipantes e que ajuda a compreender fatores que
+
+12                                        Processo seletivo para ingresso nos cursos técnicos - Edital nº 449/2023
+incitam violências foi: Qual das pessoas você não queria ter como colega de classe? A tabela abaixo indica
+as respostas à pergunta:
+
+   Tabela: Indicação das pessoas que não se queria ter como colega de classe, segundo modalidade de
+                                          ensino dos alunos
+
+                   ASPECTO                                 EJA              EM              PJU              Total
+                  Bagunceiros                            55,1%            35,7%            58,7%            44,4%
+         “Puxa-saco” dos professores                     23,6%            29,5%            23,5%            27,8%
+                    Travestis                             4,3%             8,3%             3,7%            7,1%
+       Egressos de Unidades Prisionais                    4,0%             6,2%             1,9%            5,5%
+                 Homossexuais                             3,4%             6,1%             2,7%            5,3%
+                  Transexuais                             2,6%             5,2%             1,8%            4,4%
+                     “Nerds”                              3,3%             3,6%             2,2%            3,5%
+                 Transgêneros                             1,2%             3,0%             0,7%            2,5%
+      Pessoas de outros estados ou região                 1,2%             0,7%             1,8%            0,9%
+                     Pobres                               0,4%             0,8%             1,6%            0,7%
+           Pessoas com deficiência                        0,6%             0,6%             0,7%            0,6%
+                     Negros                               0,2%             0,3%             0,8%            0,3%
+                      Total                              100,0%          100,0%           100,0%           100,0%
+
+                        ABRAMOVAY, Miriam. Coord. Juventudes na escola, sentidos e buscas: Por que frequentam? /
+            Miriam Abramovay, Mary Garcia Castro, Júlio Jacobo Waiselfisz. Brasília-DF: Flacso - Brasil, OEI, MEC, 2015.
+                         Siglas: EJA: Educação de Jovens e Adultos. EM: Ensino Médio Regular. PJU: Projovem Urbano.
+
+      Um professor do IFSP que atua na modalidade do Ensino Médio Regular (EM), preocupado com os
+dados presentes na tabela referentes à população LGBTQIA+, desenvolverá um projeto para dialogar sobre
+o respeito às diversidades e sobre o cultivo da Cultura de Paz. Ele observou a tabela e, para iniciar o debate
+sobre os preconceitos e violências, buscou saber a quantidade de participantes da pesquisa, na modalidade
+de ensino em que atua, que responderam que não queriam ter como colega de classe uma pessoa travesti,
+homossexual, transexual ou transgênero.
+Sabe-se que o professor utilizou uma calculadora para saber tal quantidade, que cada participante respon-
+deu à pergunta indicando apenas um aspecto e que aproximadamente 69,4% dos participantes são do EM.
+O visor da calculadora, que mostra o possível cálculo feito pelo professor e a quantidade aproximada en-
+contrada, estão representados em qual das alternativas abaixo?
+
+(A)            (8283x69,4)x(8,3+6,1+5,2+3) =                   e 1299 participantes aproximadamente
+
+
+(B)                8283x(8,3+6,1+5,2+3) =                      e 1872 participantes aproximadamente
+
+
+(C)           8283(0,083+0,061+0,052+0,03) =                   e 1872 participantes aproximadamente
+
+
+(D)       (8283x0,694)x(0,083+0,061+0,052+0,03) =              e 1299 participantes aproximadamente
+
+
+Instituto Federal de Educação, Ciência e Tecnologia de São Paulo - PROVA A                                           13
+28 A lei 13.104/2015 alterou o Código Penal Brasileiro, incluindo como qualificador do crime de homi-
+cídio o feminicídio. Feminicídio é o homicídio cometido contra mulheres que é motivado por violência do-
+méstica ou discriminação de gênero. Em março/2023 foram divulgados números do Monitor da Violência,
+do portal G1, em parceria com o Núcleo de Estudos da Violência da USP (NEV-USP) e o Fórum Brasileiro
+de Segurança Pública (FBV). O estudo mostra uma preocupação, já que os casos de assassinatos de mulhe-
+res pelo fato de serem mulheres crescem em um cenário no qual os homicídios, como um todo, têm caído.
+      O gráfico abaixo compara entre os anos de 2017 e 2022 o número total de mulheres assassinadas
+(homicídio doloso) e o número de assassinatos causados por feminicídios:
+
+
+
+
+                           *3 estados não contabilizavam dados de feminicídio em 2017.
+     Monitor da Violência/G1. Disponível em: https://g1.globo.com/monitor-da-violencia/noticia/2023/03/08/brasil-bate-recorde-
+                   de-feminicidios-em-2022-com-uma-mulher-morta-a-cada-6-horas.ghtml. Acesso em: 24 jul. 2023 (adaptado).
+
+Pode-se concluir que nos últimos quatro anos a maior proporção de feminicídios em relação ao número
+total de mulheres assassinadas foi de aproximadamente 35,9%, no ano de:
+( A ) 2022
+( B ) 2021
+( C ) 2020
+( D ) 2019
+
+
+
+
+29 Uma estudante colocou três dados de seis                        Se o estudante desafiado sabe que a soma dos pon-
+faces, exatamente iguais, sobre uma mesa. Após                     tos de duas faces opostas de um dado sempre re-
+essa organização, ela chamou um amigo para um                      sulta em sete, e ele continuar olhando apenas as
+desafio: identificar o resultado correto de algumas                faces que estão indicadas na figura acima, sem se
+operações matemáticas. A imagem abaixo mostra                      movimentar, ele acertará se responder que
+a perspectiva de visão do amigo desafiado:                         ( A ) a soma dos pontos das faces que estão sobre
+                                                                         a mesa é um número par.
+                                                                   ( B ) a soma dos pontos das faces, em um dos da-
+                                                                         dos, que eu não vejo, é o dobro da soma dos
+                                                                         pontos das faces que eu consigo ver.
+                                                                   ( C ) a soma dos pontos das faces que eu vejo é
+                                                                         maior que a soma dos pontos das faces que
+                                                                         eu não vejo.
+                Disponível em: https://tinyurl.com/mr3k2r5n.       ( D ) a soma dos pontos das faces que eu não con-
+                                    Acesso em: 31 jul. 2023.             sigo ver nos três dados é um número par.
+
+14                                             Processo seletivo para ingresso nos cursos técnicos - Edital nº 449/2023
+30 Ao se construir um castelo com cartas de
+baralho é necessário uma superfície plana e que
+não seja lisa, um baralho feito em material que seja
+áspero, um ambiente sem vento e uma estrutura
+de torre em que, quando vista de frente, as car-
+tas criem triângulos congruentes. Na figura 1 está
+representada uma torre de quatro andares em que
+BÂC ≅ EĜF e AB̂ C ≅ FÊG.
+
+                     Figura 1
+
+
+
+
+                                   Fonte: IFSP, 2023.
+
+A partir dessas informações, e sabendo que o ta-
+manho de uma carta é medido em milímetros, qual
+a altura aproximada da torre de cartas a partir da
+superfície plana?
+( A ) 221,7 milímetros
+( B ) 256,0 milímetros
+( C ) 128,0 milímetros
+( D ) 491,5 milímetros
+
+
+
+
+Instituto Federal de Educação, Ciência e Tecnologia de São Paulo - PROVA A   15
+

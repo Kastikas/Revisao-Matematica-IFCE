@@ -1,0 +1,366 @@
+§ 1º É assegurada a participação da pessoa com                 podem vir acompanhados de parágrafos (§) e in-
+deficiência na elaboração das políticas de saúde a             cisos (indicados por algarismos romanos). Sobre a
+ela destinadas.                                                estrutura do Artigo 18, a função dos incisos estaria
+§ 2º É assegurado atendimento segundo normas                   corretamente descrita na alternativa:
+éticas e técnicas, que regulamentarão a atuação                ( A ) Os incisos indicam a unidade básica da lei,
+dos profissionais de saúde e contemplarão aspec-                     ou seja, para indicar o asseguramento inte-
+tos relacionados aos direitos e às especificidades                   gral ao atendimento à saúde pela pessoa com
+da pessoa com deficiência, incluindo temas como                      deficiência.
+sua dignidade e autonomia.                                     ( B ) Os incisos apresentam-se como desdobra-
+§ 3º Aos profissionais que prestam assistência à                     mentos da unidade básica da lei, com a função
+pessoa com deficiência, especialmente em servi-                      de indicar condições ou exceções do artigo.
+ços de habilitação e de reabilitação, deve ser ga-                   Nesse artigo, eles apresentam as indicações
+rantida capacitação inicial e continuada.                            de como a pessoa com deficiência deve ser
+§ 4º As ações e os serviços de saúde pública desti-                  tratada no atendimento integral à saúde.
+nados à pessoa com deficiência devem assegurar:                ( C ) Os incisos presentes no parágrafo 4º do ar-
+I - diagnóstico e intervenção precoces, realizados                   tigo 18 da lei 13.146/2015, enumeram as
+por equipe multidisciplinar;                                         ações e serviços à saúde pública, os quais
+II - serviços de habilitação e de reabilitação sempre                devem ser oferecidos às pessoas com defi-
+que necessários, para qualquer tipo de deficiência,                  ciência pelo poder público, desde formas
+inclusive para a manutenção da melhor condição                       de prevenção às deficiências a garantias de
+de saúde e qualidade de vida;                                        acesso a tratamento e insumos de que as pes-
+III - atendimento domiciliar multidisciplinar, trata-                soas com deficiência necessitem.
+mento ambulatorial e internação;                               ( D ) Os incisos indicam as restrições impostas à
+IV - campanhas de vacinação;                                         unidade da lei, ou seja, mostram o que o po-
+V - atendimento psicológico, inclusive para seus                     der público não deve garantir à pessoa com
+familiares e atendentes pessoais;                                    deficiência, elencando desde a participação
+VI - respeito à especificidade, à identidade de gêne-                em formulação de política pública a trata-
+ro e à orientação sexual da pessoa com deficiência;                  mentos e insumos de que necessitem as pes-
+VII - atenção sexual e reprodutiva, incluindo o di-                  soas com deficiência.
+reito à fertilização assistida;
+VIII - informação adequada e acessível à pessoa
+com deficiência e a seus familiares sobre sua con-
+dição de saúde;                                                16 Em uma aula de matemática, a professora
+IX - serviços projetados para prevenir a ocorrên-              passou para sua turma uma lista de exercícios, na
+cia e o desenvolvimento de deficiências e agravos              qual era necessário calcular o valor decimal de
+adicionais;                                                    √7 e era permitido aos alunos o uso da calculado-
+X - promoção de estratégias de capacitação per-                ra. Um aluno falou que não iria conseguir realizar
+manente das equipes que atuam no SUS, em todos                 a atividade, pois a tecla de calcular raiz quadrada
+os níveis de atenção, no atendimento à pessoa com              de sua calculadora estava quebrada. A professora
+deficiência, bem como orientação a seus atenden-               sugeriu, então, que ele transformasse a raiz em
+tes pessoais;                                                  potência com expoente fracionário. Qual a repre-
+XI - oferta de órteses, próteses, meios auxiliares             sentação de √7 que o aluno precisa utilizar?
+de locomoção, medicamentos, insumos e fórmulas                          1
+nutricionais, conforme as normas vigentes do Mi-               (A) 2 7
+nistério da Saúde.
+§ 5º As diretrizes deste artigo aplicam-se também                    7
+às instituições privadas que participem de forma               (B) 2 1
+complementar do SUS ou que recebam recursos
+públicos para sua manutenção.                                           2
+    Fonte: https://www.planalto.gov.br/ccivil_03/_ato2015-     (C) 7 1
+      2018/2015/lei/l13146.htm , Acesso em: 12/07/2023.
+                                                                        1
+As leis em geral são constituídas de artigos que               (D) 7 2
+
+Instituto Federal de Educação, Ciência e Tecnologia de São Paulo – PROVA A                                       9
+17 O jogo de xadrez possui peças brancas e                   da para a plantação será de 81m², pode-se concluir
+pretas. Entre elas, existem as torres que se movi-           que a área total do canteiro, em m², será de:
+mentam em linhas retas, tanto na vertical quanto             ( A ) 1 .806,25
+na horizontal, quantas casas o jogador quiser. Na            ( B ) 121,00
+imagem a seguir é possível ver um tabuleiro espe-            ( C ) 117,00
+cial de xadrez, 4 por 4, contendo 16 casas e uma             ( D ) 102,01
+configuração na qual as referidas peças não estão
+alinhadas na vertical e nem na horizontal.
+                                                             19 Um professor desenvolveu um dispositivo ele-
+                                                             trônico, parecido com o ilustrado na figura a seguir,
+                                                             para utilizar em uma atividade com seus alunos.
+
+
+
+
+                                                                                                     Fonte: IFSP, 2023.
+
+                                                             O dispositivo é composto por um botão (B) e um
+                                                             retângulo dividido em 6 partes de tamanhos iguais,
+                                     Fonte: IFSP, 2023.
+                                                             numeradas de 1 a 6. Cada vez que o botão é pres-
+                                                             sionado, uma única parte do retângulo fica ilumina-
+                                                             da. Cada uma das partes com um número par tem
+A quantidade de maneiras que podemos colocar
+                                                             probabilidade P de ficar iluminada e cada uma das
+uma torre branca e outra torre preta nesse tabuleiro
+                                                             partes com um número ímpar tem probabilidade 3P
+de modo que não estejam alinhadas na vertical ou
+                                                             de ficar iluminada. Dessa maneira, quando o profes-
+na horizontal, impossibilitando um ataque mútuo, é:
+                                                             sor pressionar o botão, a probabilidade de que uma
+( A ) 63
+                                                             parte com um número primo fique iluminada é:
+( B ) 112
+                                                             (A) 7
+( C ) 144
+( D ) 160                                                          12
+
+                                                             (B) 5
+18 A figura a seguir representa um canteiro                      6
+destinado a uma horta comunitária que está sendo
+planejada por um campus do IFSP. As plantações               (C) 3
+ficarão na área I, as áreas II e III serão para circu-           4
+lação e organização da colheita. Na área IV será
+criada uma cabana para guardar materiais que se-             (D) 1
+rão utilizados na horta.                                         2
+
+
+
+                                                             20 Em um noticiário humorístico brasileiro que
+                                                             veicula notícias fictícias engraçadas, nas redes so-
+                                                             ciais, um estudante encontrou a seguinte frase:
+
+                                                             Brasileiros esperam que o preço do litro de com-
+                                                             bustível tenha aumento para que na Black Friday
+                                                             o desconto seja de 50%.
+
+                                    Fonte: IFSP, 2023.       Se considerarmos que o preço inicial do litro da gaso-
+                                                             lina é de R$ 5,60, e que o desconto de 50% na Black
+Sabendo que x > 0 e que a medida de área destina-            Friday realmente aconteça, é correto afirmar que:
+
+10                         Cursos técnicos concomitantes/subsequentes e integrados ao Ensino Médio – Edital nº 088/2024
+( A ) após um aumento de 40% e um desconto de                  (C)
+      50% na Black Friday, o preço final do com-
+      bustível será 10% menor que o preço inicial.
+( B ) após um aumento de 60% e um desconto de
+      50% na Black Friday, o preço final do com-
+      bustível será 10% maior que o preço inicial.
+( C ) após um aumento de 70% e um desconto de
+      50% na Black Friday, o preço final do com-
+      bustível será R$ 5,88.
+( D ) após um aumento de 100% e um desconto
+      de 50% na Black Friday, o preço final do
+      combustível será exatamente igual ao preço
+      inicial.
+
+
+
+21 Seja 2x - 2y = 4 uma equação linear de grau
+1. A representação gráfica dessa equação no plano
+cartesiano é:
+(A)                                                            (D)
+
+
+
+
+(B)
+
+                                                               22 Uma pessoa deseja comprar um ingresso
+                                                               para o show que irá ocorrer na sua cidade. O show
+                                                               terá as seguintes categorias de ingressos: pista,
+                                                               pista premium, área vip e camarote. As formas
+                                                               de pagamentos são: Pix, cartão de débito e cartão
+                                                               de crédito. Considerando que todas as opções são
+                                                               igualmente prováveis, qual a probabilidade da pes-
+                                                               soa comprar o ingresso de pista e pagamento por
+                                                               Pix?
+                                                               ( A ) 1/12
+                                                               ( B ) 1/7
+                                                               ( C ) 1/4
+                                                               ( D ) 1/3
+
+
+Instituto Federal de Educação, Ciência e Tecnologia de São Paulo – PROVA A                                    11
+23 Uma nutricionista analisou que para 325 alunos eram consumidos 195kg de alimentos em um res-
+taurante estudantil do IFSP. Certo dia, ela percebeu que para 210 alunos foram consumidos apenas 126kg
+de alimentos. Com base nessas informações, ela elaborou o seguinte gráfico que relaciona a quantidade de
+alimentos (em kg) e a quantidade de alunos:
+
+
+
+
+                                                                                                          Fonte: IFSP, 2023.
+
+Com base no gráfico, é possível determinar que a quantidade de alimento consumido por aluno, em gramas, é de:
+( A ) 60
+( B ) 600
+( C ) 1.667
+( D ) 26.460
+
+
+
+24 Uma balança digital, comum em estabelecimentos comerciais, é um instrumento que além de calcu-
+lar o peso de um produto, possibilita que o usuário calcule o valor a ser pago para sua aquisição. De modo
+geral, além de um teclado numérico (por meio do qual o usuário pode digitar o preço do produto que está
+sobre ela) e outros botões com funções que envolvem, entre outras coisas, memorizar resultados. A balança
+possui três painéis digitais que exibem ao consumidor: (1) o peso do produto, (2) o preço do produto digita-
+do pelo usuário responsável pela pesagem e (3) o preço a ser pago para a aquisição do produto. As imagens
+a seguir ajudam a ilustrar essas informações:
+
+
+                                       Peso (em                     Preço do Produto                  Preço a ser pago
+                                                            x                                =
+                                      Quilogramas)                     (em Reais)                        (em Reais)
+Imagem 1: Representação                       Imagem 2: Exemplo de um painel de uma balança digital.de uma balança digital.
+Disponível em:                                                                                         Fonte: IFSP, 2023.
+https://tinyurl.com/2s37f75v.
+Acesso em: 18 nov. 2023.
+
+
+
+12                              Cursos técnicos concomitantes/subsequentes e integrados ao Ensino Médio – Edital nº 088/2024
+Ao treinar um funcionário responsável pela balança digital de uma rede de supermercados presente nos
+estados das regiões Sudeste e Sul, um gerente construiu um quadro com os preços de determinados produ-
+tos, a partir das informações disponíveis no portal do Programa Brasileiro de Modernização do Mercado
+Hortigranjeiro (Prohort):
+
+                                                Estados consultados e datas da cotação dos preços
+                                            28/07/2023                       13/07/2023    04/07/2023      26/07/2023
+         Produtos               ES         MG         PR         RJ             RS              SC             SP
+       Abacate (kg)          R$ 1,70    R$ 3,25 R$ 3,50       R$ 4,00         R$ 3,30        R$ 3,00         R$ 2,50
+      Berinjela (kg)         R$ 3,00    R$ 3,00 R$ 4,20       R$ 3,00         R$ 5,00        R$ 3,50         R$ 3,60
+     Limão Taiti (kg)        R$ 3,50    R$ 3,50 R$ 3,00       R$ 3,25         R$ 2,80        R$ 2,25         R$ 2,20
+
+                                 Fonte: Disponível em: http://www.ceasa.gov.br/precos.php. Os valores foram arredondados.
+                                                                                                 Acesso em: 25 jan. 2023.
+
+O gerente pediu ao funcionário para calcular o valor de uma compra de 1kg de Abacate, 2 kg de Berinjela
+e 3 kg de Limão Taiti, utilizando uma balança digital para a obter o valor total a pagar em cada estado.
+Considerando os valores apresentados acima e que foi possível realizar a pesagem exata de cada uma dessas
+quantidades, é correto afirmar que:
+( A ) como os preços individuais dos três produtos são diferentes em cada um dos estados, os valores totais
+      encontrados em todas as pesagens, em cada estado, serão diferentes.
+( B ) o maior valor para a aquisição dos três produtos, a partir das pesagens indicadas, está em um estado
+      em que pelo menos um produto é mais caro, quando comparado a outros estados.
+( C ) o menor valor para a aquisição dos três produtos, a partir das pesagens indicadas, é obtido em dois
+      estados distintos.
+( D ) se em dois estados os valores totais das compras forem iguais, então os valores individuais de cada
+      produto também serão iguais.
+
+
+
+25 Ao explicar o Teorema de Pitágoras para a turma do 9º ano de uma escola paulista, um professor de
+matemática escreveu na lousa:
+
+Chamamos de terno pitagórico um conjunto de três números que satisfazem o Teorema de Pitágoras, que
+é uma relação matemática entre os lados de um triângulo retângulo. O teorema diz que, em um triângulo
+retângulo, o quadrado do valor do comprimento da hipotenusa é igual à soma dos quadrados dos valores
+dos comprimentos dos outros dois lados, chamados catetos.
+
+O Teorema de Pitágoras é representado pela seguinte equação: h2 = a2 + b2
+
+Na sequência, o professor colocou três conjuntos de números (que seriam medidas de lados de triângulos
+retângulos) para que os estudantes, usando o Teorema de Pitágoras, conseguissem encontrar alguns valores
+desconhecidos (X, Y e Z). Os conjuntos foram:
+
+						1º Conjunto: h = √3, a = X e b = 1
+						2º Conjunto: h = 5, a = 1 e b = Y
+						3º Conjunto: h = Z, a = 2 e b = √3
+
+O primeiro estudante que realizou essa tarefa identificou que X, Y e Z eram números irracionais. Ao colocar
+esses números em ordem crescente, a sequência correta é:
+( A ) X, Z, Y                                             ( C ) Y, X, Z
+( B ) X, Y, Z                                             ( D ) Y, Z, X
+
+Instituto Federal de Educação, Ciência e Tecnologia de São Paulo – PROVA A                                             13
+26 Observe atentamente os triângulos ABC e                  28 O Brasil sobe a rampa do Planalto.
+DEF representados na figura a seguir:                           Fonte: https://www.cartacapital.com.br/politica/o-brasil-
+                                                                    sobe-a-rampa-do-planalto. Acesso em: 26 set. 2023.
+
+                                                            Este foi o título de muitos jornais brasileiros no
+                                                            dia primeiro de janeiro de 2023, devido à posse do
+                                                            novo presidente da República. A imagem a seguir
+                                                            mostra a rampa citada no título da matéria e desta-
+                                                            ca um triângulo ABC.
+
+
+
+                                   Fonte: IFSP, 2023.
+
+Estes triângulos foram construídos de maneira que
+DE = 2.AB, DF = 2.AC e FE = 2.BC. Consideran-
+do essa informação, podemos afirmar que ABC e
+DEF são triângulos semelhantes porque:
+                                                               4m
+( A ) as medidas dos lados do triângulo ABC são
+      proporcionais às medidas dos lados do triân-                              12√7 m
+      gulo DEF.
+( B ) nenhum dos dois triângulos possui um de                  Fonte: https://pt.wikipedia.org/wiki/Pal%C3%A1cio_do_
+                                                                                       Planalto. Acesso em: 26 set. 2023.
+      seus ângulos internos igual a um ângulo reto.
+( C ) a medida da área do triângulo DEF é quatro
+      vezes maior que a medida da área do triân-            Supondo que o triângulo ABC é retângulo em A
+      gulo ABC.                                             e tem as medidas indicadas na figura (AC = 4 m
+( D ) a medida do perímetro do triângulo DEF é o            e AB = 12√7 m), quantos metros percorrerá uma
+      dobro da medida do perímetro do triângulo             pessoa que caminha em linha reta ao longo da ram-
+      ABC.                                                  pa do planalto, do ponto B ao ponto C, indicados
+                                                            na figura? Use: (12√7 m)2 = 1008
+                                                            ( A ) 1024 m
+27 A circunferência representada abaixo tem                 ( B ) 1008 m
+                                                            ( C ) 32 m
+centro C e diâmetro AB.
+                                                            ( D ) 16 m
+Sobre o raio CD construiu-se um triângulo equi-
+látero unindo-se os pontos B e C ao ponto D, que
+está sobre a circunferência. Qual é a medida (em            29 Durante o período de sua vida acadêmica, foi
+                ͡
+graus) do arco AD?                                          estudado que uma grandeza é tudo aquilo que pode
+                                                            ser medido e calculado. Volume, massa, compri-
+                                                            mento, velocidade e o tempo são alguns exemplos
+                                                            de grandezas. Há situações em que duas ou mais
+                                                            grandezas podem estar relacionadas, sendo essa
+                                                            relação de proporcionalidade direta, inversa ou
+                                                            sem relação proporcional.
+                                                            Refletindo sobre a variação de proporcionalidade,
+                                                            resolva: um carro com velocidade de 60 km/h pode
+                                                            fazer certo percurso em 4 horas. Se a velocidade
+                                                            do carro aumentasse para 80 km/h, em quantas ho-
+                                   Fonte: IFSP, 2023.       ras ele faria o mesmo percurso?
+( A ) 60º                                                   ( A ) 5,3
+( B ) 90º                                                   ( B ) 3,0
+( C ) 120º                                                  ( C ) 2,0
+( D ) 180º                                                  ( D ) 1,3
+
+14                        Cursos técnicos concomitantes/subsequentes e integrados ao Ensino Médio – Edital nº 088/2024
+30 Para responder uma questão encaminhada                      ças quando comparado ao sistema decimal, que
+por seu professor de matemática, um estudante                  é utilizado em muitas outras áreas.
+recorreu a um chatbot online de inteligência artifi-
+cial. Ele digitou “Quais são as unidades de arma-              Na tentativa de estabelecer relações entre as quan-
+zenamento de informações?” e obteve a seguinte                 tidades de bytes das unidades de medida presen-
+resposta:                                                      tes na resposta apresentada pelo chatbot online de
+                                                               inteligência artificial, o estudante escreveu qua-
+As unidades de armazenamento de informações                    tro afirmações e entregou para seu professor de
+são dispositivos ou meios utilizados para armaze-              matemática. Das quatro, a única afirmação correta
+nar dados, seja em formato digital ou analógico.               identificada pelo professor foi:
+Elas são usadas para guardar arquivos, programas,              ( A ) Dois Terabytes têm 280 bytes.
+documentos, mídias e qualquer tipo de informação               ( B ) Um Gigabyte tem a metade da quantidade
+que precise ser preservada. As principais unidades                    de bytes de um Exabyte.
+de armazenamento de informações incluem:                       ( C ) Um Megabyte tem o dobro da quantidade
+Bit: A menor unidade de informação em um com-                         de bytes de um Kilobyte.
+putador, representada como 0 ou 1.                             ( D ) Um Petabyte tem mais bytes que a soma de
+Byte: É composto por 8 bits e pode representar um                     um Gigabyte com um Terabyte.
+caractere, como uma letra, número ou símbolo.
+Kilobyte (KB): Equivale a 1024 bytes, ou seja, 210
+bytes.
+Megabyte (MB): Equivale a 1024 kilobytes ou 220
+bytes. É comumente usado para descrever o tama-
+nho de arquivos e documentos.
+Gigabyte (GB): Equivale a 1024 megabytes ou 230
+bytes. É frequentemente utilizado para medir a ca-
+pacidade de armazenamento de dispositivos como
+pen drives, discos rígidos e cartões de memória.
+Terabyte (TB): Equivale a 1024 gigabytes ou 240
+bytes. É comum encontrar discos rígidos com ca-
+pacidades na faixa dos terabytes.
+Petabyte (PB): Equivale a 1024 terabytes ou 250
+bytes. É uma unidade de armazenamento de dados
+muito grande, geralmente associada a centros de
+dados e armazenamento em nuvem.
+Exabyte (EB): Equivale a 1024 petabytes ou 260
+bytes. É uma quantidade massiva de dados e geral-
+mente é associada a grandes operações de armaze-
+namento de dados.
+Zettabyte (ZB): Equivale a 1024 exabytes ou 270
+bytes. A quantidade de dados que atingem essa es-
+cala é difícil de imaginar.
+Yottabyte (YB): Equivale a 1024 zettabytes ou
+280 bytes. Atualmente, ainda não há dispositivos
+de armazenamento comercial que alcancem essa
+magnitude.
+Essas unidades de armazenamento são usadas
+para medir a quantidade de dados que podem ser
+armazenados em diferentes dispositivos e siste-
+mas de computadores. É importante notar que o
+padrão binário é utilizado na computação, onde
+cada nível sucessivo é multiplicado por 1024, de-
+vido à natureza da base binária dos sistemas de
+computador. Isso pode levar a algumas diferen-
+
+Instituto Federal de Educação, Ciência e Tecnologia de São Paulo – PROVA A                                      15
+

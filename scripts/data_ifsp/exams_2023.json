@@ -1,0 +1,382 @@
+{
+  "EXAM_2023_1_A": {
+    "id": "ifsp-2023-1-a",
+    "title": "Prova IFSP 2023.1 - Prova A",
+    "bncc": "Revisão Geral",
+    "summary": "15 questões de Matemática aplicadas no Processo Seletivo IFSP 2023.1 (Edital Nº 609/2022 - Prova A) para os Cursos Técnicos Integrados.",
+    "detailedTheory": "A Prova A do Processo Seletivo IFSP 2023.1 abordou geometria plana com semelhança e proporcionalidade de triângulos em modelos de asa delta, proporção direta em receitas culinárias, grandezas inversamente proporcionais no trânsito (velocidade média e tempo de percurso), análise gráfica de funções afins com determinação de raiz e taxa de variação, leitura e interpretação de tabelas populacionais e socioeconômicas, medidas e intervalos decimais em réguas e trenas, trigonometria e cálculo de alturas em brinquedos de parques de diversões, proporcionalidade em consumo e autonomia de carros elétricos, análise de dados de saúde pública e médias móveis, conversão de unidades agrárias (hectares para metros quadrados) no reflorestamento, sistemas lineares do 1º grau aplicados à venda de doces artesanais (trufas e pães de mel), cálculo de inclinação percentual em rampas de acessibilidade (norma NBR 9050), decomposição de figuras planas para cálculo de áreas irregulares, e metodologia estatística diferenciando pesquisas censitárias de pesquisas amostrais.",
+    "keyPoints": [
+      "A inclinação de uma rampa em porcentagem é dada por $i = \\frac{h}{c} \\times 100\\%$, onde $h$ é a altura e $c$ é o comprimento da projeção horizontal.",
+      "1 hectare ($1\\text{ ha}$) equivale a $10.000\\text{ m}^2$, o que corresponde à área de um quadrado de $100\\text{ m} \\times 100\\text{ m}$.",
+      "Uma pesquisa censitária consulta a totalidade dos elementos da população, enquanto a pesquisa amostral investiga um subconjunto representativo.",
+      "Em um sistema de equações lineares de 1º grau, o método da adição ou substituição permite determinar com exatidão o custo unitário de cada mercadoria."
+    ],
+    "formula": "i = \\frac{h}{c} \\times 100\\%, \\quad 1\\text{ ha} = 10.000\\text{ m}^2, \\quad v = \\frac{\\Delta s}{\\Delta t}, \\quad A_{\\text{trap}} = \\frac{(B+b)h}{2}",
+    "solvedExample": {
+      "problem": "Uma rampa de pedestres vence um desnível de $1{,}2\\text{ m}$ ao longo de uma distância horizontal de $15\\text{ m}$. Qual é a inclinação percentual dessa rampa?",
+      "solution": "Aplicando a relação de inclinação percentual:<br>$$i = \\frac{h}{c} \\times 100\\% = \\frac{1{,}2}{15} \\times 100\\% = 0{,}08 \\times 100\\% = 8\\%.$$"
+    },
+    "slug": "prova-ifsp-20231-a",
+    "filename": "prova-ifsp-20231-a.html",
+    "folder": "bloco-7-provas-ifsp",
+    "blockId": 7,
+    "pdf": "IFSP_prova_2023_1_a.pdf",
+    "questions": [
+      {
+        "q": "Um estudante interessado em aeromodelismo deseja construir um modelo de asa delta em escala reduzida. A asa delta real tem formato triangular isósceles com base de $10\\text{ m}$ e lados congruentes de $6\\text{ m}$. Se o modelo for construído com base medindo $25\\text{ cm}$, qual deverá ser a medida de cada um dos lados congruentes no modelo para manter a semelhança?",
+        "options": [
+          "$12\\text{ cm}$",
+          "$15\\text{ cm}$",
+          "$18\\text{ cm}$",
+          "$20\\text{ cm}$"
+        ],
+        "correct": 1,
+        "explanation": "1. Convertemos as medidas reais para centímetros: base $B = 10\\text{ m} = 1.000\\text{ cm}$; lados $L = 6\\text{ m} = 600\\text{ cm}$.<br>2. A razão de semelhança entre o modelo e o protótipo real é:<br>$$k = \\frac{b_{\\text{modelo}}}{B_{\\text{real}}} = \\frac{25\\text{ cm}}{1.000\\text{ cm}} = \\frac{1}{40}$$<br>3. Aplicando a mesma razão para os lados congruentes:<br>$$l_{\\text{modelo}} = k \\times L_{\\text{real}} = \\frac{1}{40} \\times 600\\text{ cm} = \\frac{60}{4} = 15\\text{ cm}.$$Portanto, a alternativa correta é a <strong>Letra B</strong>."
+      },
+      {
+        "q": "Para preparar uma receita de gelatina que rende 4 porções são necessários $250\\text{ mL}$ de água fervente e $250\\text{ mL}$ de água fria. Se uma pessoa deseja preparar gelatina suficiente para servir exatamente 14 pessoas, mantendo a mesma proporção, qual o volume total de água (fervente + fria) que deverá utilizar?",
+        "options": [
+          "$1.500\\text{ mL}$",
+          "$1.750\\text{ mL}$",
+          "$2.000\\text{ mL}$",
+          "$2.250\\text{ mL}$"
+        ],
+        "correct": 1,
+        "explanation": "Para 4 porções, o volume total de água é $250 + 250 = 500\\text{ mL}$.<br>Calculamos o volume de água por porção:<br>$$\\frac{500\\text{ mL}}{4\\text{ porções}} = 125\\text{ mL por porção}$$<br>Para 14 porções:<br>$$\\text{Total} = 14 \\times 125\\text{ mL} = 1.750\\text{ mL} = 1{,}75\\text{ L}.$$Portanto, a alternativa correta é a <strong>Letra B</strong>."
+      },
+      {
+        "q": "Um motorista fez uma viagem entre duas cidades em 39 minutos dirigindo a uma velocidade média de $80\\text{ km/h}$. No retorno, enfrentou chuva e reduziu a velocidade média para $60\\text{ km/h}$. Quanto tempo durou a viagem de volta?",
+        "options": [
+          "48 minutos",
+          "52 minutos",
+          "56 minutos",
+          "60 minutos"
+        ],
+        "correct": 1,
+        "explanation": "Como a distância percorrida $d$ é constante, velocidade e tempo são grandezas inversamente proporcionais:<br>$$v_1 \\cdot t_1 = v_2 \\cdot t_2$$<br>Substituindo os valores:<br>$$80 \\times 39 = 60 \\times t_2$$<br>$$3.120 = 60 t_2 \\implies t_2 = \\frac{3.120}{60} = 52\\text{ minutos}.$$Portanto, a alternativa correta é a <strong>Letra B</strong>."
+      },
+      {
+        "q": "O gráfico de uma função afim $f(x) = ax + b$ intercepta o eixo das ordenadas no ponto $(0, 4)$ e o eixo das abscissas no ponto $(2, 0)$. O valor do coeficiente angular $a$ e da raiz da função são, respectivamente:",
+        "options": [
+          "$a = -2$ e raiz $x = 2$",
+          "$a = 2$ e raiz $x = -2$",
+          "$a = -4$ e raiz $x = 2$",
+          "$a = 4$ e raiz $x = 4$"
+        ],
+        "correct": 0,
+        "explanation": "1. O coeficiente linear $b$ é a ordenada do ponto em que a reta corta o eixo $y$: $b = 4$.<br>2. Como o ponto $(2, 0)$ pertence à reta:<br>$$f(2) = 0 \\implies a(2) + 4 = 0 \\implies 2a = -4 \\implies a = -2$$<br>3. A raiz da função é o valor de $x$ para o qual $f(x) = 0$, que é exatamente $x = 2$.<br>Logo, $a = -2$ e a raiz é $x = 2$.<br>Portanto, a alternativa correta é a <strong>Letra A</strong>."
+      },
+      {
+        "q": "Em uma pesquisa multidisciplinar, uma tabela registrou que em um grupo de 800 entrevistados, $45\\%$ declararam consumir notícias prioritariamente por redes sociais, $35\\%$ por televisão aberta e os demais por jornais digitais e impressos. Quantos entrevistados consomem notícias prioritariamente por jornais?",
+        "options": [
+          "120",
+          "160",
+          "200",
+          "240"
+        ],
+        "correct": 1,
+        "explanation": "A porcentagem de entrevistados que consomem notícias por jornais é:<br>$$100\\% - (45\\% + 35\\%) = 100\\% - 80\\% = 20\\%$$<br>Calculando $20\\%$ de 800 pessoas:<br>$$\\text{Total} = 0{,}20 \\times 800 = 160\\text{ pessoas}.$$Portanto, a alternativa correta é a <strong>Letra B</strong>."
+      },
+      {
+        "q": "Uma trena de precisão possui divisões em milímetros. Ao medir o comprimento de uma peça metálica, constatou-se que seu tamanho está estritamente entre $14{,}6\\text{ cm}$ e $14{,}7\\text{ cm}$. Qual dos seguintes valores é uma medida possível para essa peça?",
+        "options": [
+          "$14{,}065\\text{ cm}$",
+          "$14{,}68\\text{ cm}$",
+          "$14{,}72\\text{ cm}$",
+          "$14{,}80\\text{ cm}$"
+        ],
+        "correct": 1,
+        "explanation": "Buscamos o número que satisfaz a desigualdade $14{,}60 < x < 14{,}70$:<br>- $14{,}065 < 14{,}60$ (fora)<br>- $14{,}68$ está entre $14{,}60$ e $14{,}70$ (pertence ao intervalo)<br>- $14{,}72 > 14{,}70$ (fora)<br>- $14{,}80 > 14{,}70$ (fora)<br>Portanto, a alternativa correta é a <strong>Letra B</strong>."
+      },
+      {
+        "q": "Um brinquedo giratório de um parque de diversões tem uma torre central de sustentação de onde partem cabos de aço de $10\\text{ m}$ de comprimento que seguram as cadeiras. Quando o brinquedo está em repouso na posição vertical, a distância horizontal da cadeira até o pé da torre é de $6\\text{ m}$. A que altura do solo está fixada a extremidade superior do cabo na torre?",
+        "options": [
+          "$6\\text{ m}$",
+          "$7\\text{ m}$",
+          "$8\\text{ m}$",
+          "$9\\text{ m}$"
+        ],
+        "correct": 2,
+        "explanation": "Forma-se um triângulo retângulo onde:<br>- Hipotenusa = comprimento do cabo $= 10\\text{ m}$<br>- Cateto horizontal = distância da cadeira à base $= 6\\text{ m}$<br>- Cateto vertical = altura de fixação $h$<br><br>Aplicando o Teorema de Pitágoras:<br>$$10^2 = 6^2 + h^2 \\implies 100 = 36 + h^2 \\implies h^2 = 64 \\implies h = 8\\text{ metros}.$$Portanto, a alternativa correta é a <strong>Letra C</strong>."
+      },
+      {
+        "q": "Um carro elétrico com bateria de $60\\text{ kWh}$ tem uma autonomia de $420\\text{ km}$ quando totalmente carregado. Mantendo essa mesma eficiência energética, quanta energia da bateria será consumida para percorrer uma distância de $140\\text{ km}$?",
+        "options": [
+          "$15\\text{ kWh}$",
+          "$20\\text{ kWh}$",
+          "$25\\text{ kWh}$",
+          "$30\\text{ kWh}$"
+        ],
+        "correct": 1,
+        "explanation": "O consumo de energia é diretamente proporcional à distância percorrida:<br>$$\\frac{60\\text{ kWh}}{420\\text{ km}} = \\frac{E}{140\\text{ km}}$$<br>Como $140\\text{ km}$ é exatamente um terço de $420\\text{ km}$ ($420 \\div 140 = 3$):<br>$$E = \\frac{60}{3} = 20\\text{ kWh}.$$Portanto, a alternativa correta é a <strong>Letra B</strong>."
+      },
+      {
+        "q": "Em um boletim epidemiológico, o número de casos diários confirmados de uma doença durante sete dias consecutivos foi: $120, 140, 110, 150, 130, 160, 170$. A média diária móvel de casos registrados nessa semana foi de:",
+        "options": [
+          "135",
+          "140",
+          "145",
+          "150"
+        ],
+        "correct": 1,
+        "explanation": "Calculamos a média aritmética dos 7 dias somando os valores e dividindo por 7:<br>$$\\text{Soma} = 120 + 140 + 110 + 150 + 130 + 160 + 170 = 980$$<br>$$\\text{Média} = \\frac{980}{7} = 140\\text{ casos por dia}.$$Portanto, a alternativa correta é a <strong>Letra B</strong>."
+      },
+      {
+        "q": "Um projeto de reflorestamento no interior de São Paulo recuperou uma área nativa de $35\\text{ hectares}$. Sabendo que $1\\text{ hectare (ha)} = 10.000\\text{ m}^2$, qual é a área recuperada expressa em metros quadrados?",
+        "options": [
+          "$3.500\\text{ m}^2$",
+          "$35.000\\text{ m}^2$",
+          "$350.000\\text{ m}^2$",
+          "$3.500.000\\text{ m}^2$"
+        ],
+        "correct": 2,
+        "explanation": "Multiplicamos o número de hectares pelo fator de conversão:<br>$$35\\text{ ha} = 35 \\times 10.000\\text{ m}^2 = 350.000\\text{ m}^2.$$Portanto, a alternativa correta é a <strong>Letra C</strong>."
+      },
+      {
+        "q": "Em um laboratório de física, a razão entre a frequência de duas ondas sonoras é dada pela fração $\\frac{440}{660}$. A forma simplificada irredutível dessa razão é:",
+        "options": [
+          "$\\frac{4}{6}$",
+          "$\\frac{2}{3}$",
+          "$\\frac{11}{15}$",
+          "$\\frac{22}{33}$"
+        ],
+        "correct": 1,
+        "explanation": "Dividindo o numerador e o denominador por 220 ($\text{MDC}(440, 660) = 220$):<br>$$\\frac{440 \\div 220}{660 \\div 220} = \\frac{2}{3}.$$Portanto, a alternativa correta é a <strong>Letra B</strong>."
+      },
+      {
+        "q": "Para complementar a renda familiar, uma doceira vende trufas a R$ 3,00 cada e pães de mel a R$ 5,00 cada. Em um dia de evento, ela vendeu um total de 60 doces e arrecadou R$ 240,00. Quantas trufas foram vendidas nesse dia?",
+        "options": [
+          "20",
+          "25",
+          "30",
+          "35"
+        ],
+        "correct": 2,
+        "explanation": "Sejam $t$ o número de trufas e $p$ o número de pães de mel vendidas:<br>$$\\begin{cases} t + p = 60 \\\\ 3t + 5p = 240 \\end{cases}$$<br>Multiplicando a primeira equação por $-3$:<br>$$-3t - 3p = -180$$<br>Somando com a segunda equação:<br>$$2p = 60 \\implies p = 30\\text{ pães de mel}$$<br>Substituindo de volta: $t = 60 - 30 = 30\\text{ trufas}$.<br>Portanto, foram vendidas 30 trufas.<br>A alternativa correta é a <strong>Letra C</strong>."
+      },
+      {
+        "q": "A norma de acessibilidade NBR 9050 estabelece que a inclinação percentual $i$ de uma rampa é calculada pela fórmula $i = \\frac{h}{c} \\times 100\\%$, onde $h$ é o desnível vertical e $c$ é o comprimento da projeção horizontal. Se uma rampa vence uma altura $h = 0{,}80\\text{ m}$ com uma inclinação de $8\\%$, qual é o comprimento horizontal $c$ dessa rampa?",
+        "options": [
+          "$6{,}4\\text{ m}$",
+          "$8{,}0\\text{ m}$",
+          "$10\\text{ m}$",
+          "$12\\text{ m}$"
+        ],
+        "correct": 2,
+        "explanation": "Substituindo os dados na fórmula:<br>$$8 = \\frac{0{,}80}{c} \\times 100 \\implies 8 = \\frac{80}{c} \\implies 8c = 80 \\implies c = 10\\text{ metros}.$$Portanto, a alternativa correta é a <strong>Letra C</strong>."
+      },
+      {
+        "q": "A planta de uma sala com formato de 'L' pode ser decomposta em dois retângulos adjacentes: um retângulo maior de dimensões $6\\text{ m} \\times 4\\text{ m}$ e um retângulo menor de dimensões $3\\text{ m} \\times 2\\text{ m}$. A área total do piso dessa sala é de:",
+        "options": [
+          "$26\\text{ m}^2$",
+          "$28\\text{ m}^2$",
+          "$30\\text{ m}^2$",
+          "$36\\text{ m}^2$"
+        ],
+        "correct": 2,
+        "explanation": "Calculamos a área de cada parte decomposta:<br>1. Área do retângulo maior: $A_1 = 6 \\times 4 = 24\\text{ m}^2$<br>2. Área do retângulo menor: $A_2 = 3 \\times 2 = 6\\text{ m}^2$<br>Somando as áreas:<br>$$A_{\\text{total}} = 24 + 6 = 30\\text{ m}^2.$$Portanto, a alternativa correta é a <strong>Letra C</strong>."
+      },
+      {
+        "q": "Em estatística, uma pesquisa é classificada como censitária quando:",
+        "options": [
+          "analisa apenas uma amostra probabilística selecionada por sorteio da população.",
+          "avalia todos os indivíduos pertencentes ao universo da população estudada.",
+          "utiliza dados exclusivamente obtidos por questionários online na internet.",
+          "apresenta margem de erro estimada em 5% com intervalo de confiança de 95%."
+        ],
+        "correct": 1,
+        "explanation": "Por definição estatística, uma pesquisa <strong>censitária</strong> (ou Censo) investiga 100% dos indivíduos ou elementos que compõem o universo da população-alvo, sem recorrer a amostragens.<br>Portanto, a alternativa correta é a <strong>Letra B</strong>."
+      }
+    ]
+  },
+  "EXAM_2023_1_B": {
+    "id": "ifsp-2023-1-b",
+    "title": "Prova IFSP 2023.1 - Prova B",
+    "bncc": "Revisão Geral",
+    "summary": "15 questões de Matemática aplicadas no Processo Seletivo IFSP 2023.1 (Edital Nº 609/2022 - Prova B) para os Cursos Técnicos Integrados.",
+    "detailedTheory": "A Prova B do Processo Seletivo IFSP 2023.1 abordou interpretação estatística de índices de proficiência educacional, função afim na composição do salário docente (parcela fixa mais valor da hora-aula), porcentagem aplicada a promoções e descontos sucessivos no comércio de smartphones, dados demográficos do IBGE e pirâmides etárias, geometria espacial com volume e capacidade de reservatórios paralelepipédicos, geometria dinâmica com propriedades de polígonos regulares no GeoGebra, cálculo de nível de água em aquários retangulares, razão e proporção na análise de rótulos nutricionais de alimentos dietéticos, gráficos setoriais e diagramas circulares em pesquisas jornalísticas, perímetros e áreas em quadras poliesportivas e de Beach Tennis, porcentagem populacional sobre o acesso à internet e inclusão digital, notação científica e ordens de grandeza em medições astronômicas e microbiológicas, Teorema de Pitágoras no clássico problema da árvore quebrada por tempestade, e cálculo de áreas e perímetro em trapézios isósceles.",
+    "keyPoints": [
+      "A função afim $S(h) = b + a \\cdot h$ modela remunerações com salário-base fixo $b$ e adicional variável por hora-aula $a$.",
+      "No problema da árvore quebrada, a altura total da árvore é a soma da parte que ficou em pé com a parte tombada (hipotenusa do triângulo retângulo formado com o chão).",
+      "Em um trapézio isósceles, os lados oblíquos são congruentes e a projeção de cada lado oblíquo sobre a base maior é $\\frac{B - b}{2}$.",
+      "Para calcular a capacidade em litros de um reservatório em metros cúbicos, multiplica-se por $1.000$ ($1\\text{ m}^3 = 1.000\\text{ L}$)."
+    ],
+    "formula": "S(h) = b + a \\cdot h, \\quad V = c \\cdot l \\cdot h, \\quad h^2 + x^2 = c^2, \\quad A = \\frac{(B+b)h}{2}",
+    "solvedExample": {
+      "problem": "Um reservatório retangular tem $4\\text{ m}$ de comprimento, $3\\text{ m}$ de largura e $2\\text{ m}$ de altura. Qual é a sua capacidade máxima em litros de água?",
+      "solution": "Calculamos o volume:<br>$$V = 4 \\times 3 \\times 2 = 24\\text{ m}^3$$<br>Convertendo para litros ($1\\text{ m}^3 = 1.000\\text{ L}$):<br>$$24 \\times 1.000 = 24.000\\text{ litros}.$$"
+    },
+    "slug": "prova-ifsp-20231-b",
+    "filename": "prova-ifsp-20231-b.html",
+    "folder": "bloco-7-provas-ifsp",
+    "blockId": 7,
+    "pdf": "IFSP_prova_2023_1_b.pdf",
+    "questions": [
+      {
+        "q": "Em um teste internacional de resolução de problemas, estudantes brasileiros ficaram em 38º lugar entre 44 países participantes. Se a nota média dos brasileiros foi de 420 pontos e a nota do 1º colocado foi de 560 pontos, qual foi a diferença percentual da nota do 1º colocado em relação à nota brasileira?",
+        "options": [
+          "$25\\%$",
+          "$33{,}3\\%$",
+          "$35\\%$",
+          "$40\\%$"
+        ],
+        "correct": 1,
+        "explanation": "A diferença absoluta de pontuação é:<br>$$\\Delta = 560 - 420 = 140\\text{ pontos}$$<br>A diferença percentual em relação à pontuação brasileira (420 pontos) é:<br>$$\\text{Taxa} = \\frac{140}{420} = \\frac{1}{3} \\approx 0{,}3333 = 33{,}3\\%.$$Portanto, a alternativa correta é a <strong>Letra B</strong>."
+      },
+      {
+        "q": "Um professor foi contratado por uma escola de reforço com um salário mensal composto por uma parte fixa de R$ 1.200,00 mais R$ 40,00 por hora-aula ministrada. Se em determinado mês o professor trabalhou 35 horas-aulas, qual foi o seu salário bruto?",
+        "options": [
+          "R$ 2.400,00",
+          "R$ 2.600,00",
+          "R$ 2.800,00",
+          "R$ 3.000,00"
+        ],
+        "correct": 1,
+        "explanation": "A função salário em termos do número $h$ de horas-aulas é:<br>$$S(h) = 1.200 + 40h$$<br>Para $h = 35$ horas:<br>$$S(35) = 1.200 + 40 \\times 35 = 1.200 + 1.400 = \\text{R\\$ } 2.600{,}00.$$Portanto, a alternativa correta é a <strong>Letra B</strong>."
+      },
+      {
+        "q": "Uma loja de celulares anunciou uma promoção oferecendo $15\\%$ de desconto no pagamento à vista em um smartphone que custa R$ 2.400,00 a prazo. Qual é o valor do aparelho com o desconto aplicado?",
+        "options": [
+          "R$ 1.980,00",
+          "R$ 2.040,00",
+          "R$ 2.100,00",
+          "R$ 2.160,00"
+        ],
+        "correct": 1,
+        "explanation": "O valor do desconto de $15\\%$ é:<br>$$D = 0{,}15 \\times 2.400 = 360\\text{ reais}$$<br>O preço final à vista é:<br>$$2.400 - 360 = \\text{R\\$ } 2.040{,}00.$$Portanto, a alternativa correta é a <strong>Letra B</strong>."
+      },
+      {
+        "q": "Em uma cidade de 50.000 habitantes, dados do IBGE mostram que $22\\%$ da população tem até 14 anos de idade, $66\\%$ tem entre 15 e 64 anos, e os demais são idosos com 65 anos ou mais. Quantos idosos com 65 anos ou mais vivem nessa cidade?",
+        "options": [
+          "4.000",
+          "5.000",
+          "6.000",
+          "7.000"
+        ],
+        "correct": 2,
+        "explanation": "O percentual de idosos com 65 anos ou mais é:<br>$$100\\% - (22\\% + 66\\%) = 100\\% - 88\\% = 12\\%$$<br>Calculando $12\\%$ de 50.000 habitantes:<br>$$\\text{Total} = 0{,}12 \\times 50.000 = 6.000\\text{ idosos}.$$Portanto, a alternativa correta é a <strong>Letra C</strong>."
+      },
+      {
+        "q": "Um reservatório de água em formato de paralelepípedo reto-retângulo tem medidas internas de $3\\text{ m}$ de comprimento, $2\\text{ m}$ de largura e $1{,}8\\text{ m}$ de altura. Qual é a capacidade máxima de armazenamento de água desse reservatório em litros?",
+        "options": [
+          "$8.400\\text{ L}$",
+          "$10.800\\text{ L}$",
+          "$12.000\\text{ L}$",
+          "$14.400\\text{ L}$"
+        ],
+        "correct": 1,
+        "explanation": "1. Calculamos o volume interno em metros cúbicos:<br>$$V = c \\times l \\times h = 3 \\times 2 \\times 1{,}8 = 6 \\times 1{,}8 = 10{,}8\\text{ m}^3$$<br>2. Sabendo que $1\\text{ m}^3 = 1.000\\text{ litros}$:<br>$$\\text{Capacidade} = 10{,}8 \\times 1.000 = 10.800\\text{ litros}.$$Portanto, a alternativa correta é a <strong>Letra B</strong>."
+      },
+      {
+        "q": "Em uma aula no software GeoGebra, um professor construiu um polígono regular de 8 lados (octógono regular). Qual é a medida de cada um dos ângulos internos desse octógono regular?",
+        "options": [
+          "$120^\\circ$",
+          "$135^\\circ$",
+          "$140^\\circ$",
+          "$144^\\circ$"
+        ],
+        "correct": 1,
+        "explanation": "A soma dos ângulos internos de um polígono de $n$ lados é $S_i = (n - 2) \\times 180^\\circ$.<br>Para um octógono ($n = 8$):<br>$$S_i = (8 - 2) \\times 180^\\circ = 6 \\times 180^\\circ = 1.080^\\circ$$<br>Como o polígono é regular, cada ângulo interno mede:<br>$$a_i = \\frac{S_i}{n} = \\frac{1.080^\\circ}{8} = 135^\\circ.$$Portanto, a alternativa correta é a <strong>Letra B</strong>."
+      },
+      {
+        "q": "Um aquário retangular tem base de $60\\text{ cm} \\times 40\\text{ cm}$ e altura de $50\\text{ cm}$. Inicialmente, a água atinge $35\\text{ cm}$ de altura. Ao colocar pedras decorativas no fundo, o nível da água subiu $3\\text{ cm}$. Qual é o volume total ocupado pelas pedras em centímetros cúbicos?",
+        "options": [
+          "$4.800\\text{ cm}^3$",
+          "$7.200\\text{ cm}^3$",
+          "$8.400\\text{ cm}^3$",
+          "$12.000\\text{ cm}^3$"
+        ],
+        "correct": 1,
+        "explanation": "Pelo princípio de Arquimedes, o volume das pedras submersas é exatamente igual ao volume do líquido deslocado:<br>$$V = A_{\\text{base}} \\times \\Delta h$$<br>Substituindo os valores:<br>$$V = (60\\text{ cm} \\times 40\\text{ cm}) \\times 3\\text{ cm} = 2.400 \\times 3 = 7.200\\text{ cm}^3.$$Portanto, a alternativa correta é a <strong>Letra B</strong>."
+      },
+      {
+        "q": "Uma barra de cereal dietética de $25\\text{ g}$ contém $4\\text{ g}$ de fibras alimentares. Em uma embalagem econômica com 6 dessas barras, qual é a quantidade total de fibras em gramas e qual o percentual de fibras por barra?",
+        "options": [
+          "$20\\text{ g}$ e $15\\%$",
+          "$24\\text{ g}$ e $16\\%$",
+          "$24\\text{ g}$ e $20\\%$",
+          "$30\\text{ g}$ e $16\\%$"
+        ],
+        "correct": 1,
+        "explanation": "1. Em 6 barras, a massa total de fibras é:<br>$$6 \\times 4\\text{ g} = 24\\text{ g}$$<br>2. O percentual de fibras em cada barra de 25 g é:<br>$$\\text{Percentual} = \\frac{4}{25} = \\frac{16}{100} = 16\\%.$$Portanto, a alternativa correta é a <strong>Letra B</strong>."
+      },
+      {
+        "q": "Em um gráfico de setores que representa as preferências esportivas de uma escola, o setor correspondente ao voleibol possui um ângulo central de $72^\\circ$. A porcentagem de estudantes que preferem voleibol nessa escola é de:",
+        "options": [
+          "$15\\%$",
+          "$20\\%$",
+          "$25\\%$",
+          "$30\\%$"
+        ],
+        "correct": 1,
+        "explanation": "O círculo completo tem $360^\\circ$, correspondendo a $100\\%$.<br>Calculamos a porcentagem proporcional:<br>$$\\text{Porcentagem} = \\frac{72^\\circ}{360^\\circ} \\times 100\\% = \\frac{1}{5} \\times 100\\% = 20\\%.$$Portanto, a alternativa correta é a <strong>Letra B</strong>."
+      },
+      {
+        "q": "Uma quadra oficial de Beach Tennis para jogos de duplas tem formato retangular com $16\\text{ metros}$ de comprimento por $8\\text{ metros}$ de largura. O perímetro e a área dessa quadra são, respectivamente:",
+        "options": [
+          "$48\\text{ m}$ e $128\\text{ m}^2$",
+          "$48\\text{ m}$ e $64\\text{ m}^2$",
+          "$24\\text{ m}$ e $128\\text{ m}^2$",
+          "$32\\text{ m}$ e $128\\text{ m}^2$"
+        ],
+        "correct": 0,
+        "explanation": "1. O perímetro é a soma de todos os lados:<br>$$2p = 2 \\times (16 + 8) = 2 \\times 24 = 48\\text{ metros}$$<br>2. A área é o produto das dimensões:<br>$$A = 16 \\times 8 = 128\\text{ m}^2.$$Portanto, a alternativa correta é a <strong>Letra A</strong>."
+      },
+      {
+        "q": "Segundo dados de uma pesquisa nacional, o uso da internet no Brasil atingiu $81\\%$ da população com 10 anos ou mais. Em uma cidade com $60.000$ habitantes nessa faixa etária, quantas pessoas têm acesso à internet?",
+        "options": [
+          "$45.600$",
+          "$48.600$",
+          "$50.400$",
+          "$52.200$"
+        ],
+        "correct": 1,
+        "explanation": "Calculando $81\\%$ de 60.000 pessoas:<br>$$\\text{Total} = 0{,}81 \\times 60.000 = 48.600\\text{ pessoas}.$$Portanto, a alternativa correta é a <strong>Letra B</strong>."
+      },
+      {
+        "q": "O diâmetro aproximado de um glóbulo vermelho do sangue humano é de $0{,}0000075\\text{ metros}$. Em notação científica padrão, esse valor é escrito como:",
+        "options": [
+          "$75 \\times 10^{-7}\\text{ m}$",
+          "$7{,}5 \\times 10^{-6}\\text{ m}$",
+          "$7{,}5 \\times 10^{-5}\\text{ m}$",
+          "$0{,}75 \\times 10^{-5}\\text{ m}$"
+        ],
+        "correct": 1,
+        "explanation": "Deslocamos a vírgula para a direita até obter um número entre 1 e 10:<br>A vírgula avança 6 casas decimais:<br>$$0{,}0000075 = 7{,}5 \\times 10^{-6}\\text{ metros}.$$Portanto, a alternativa correta é a <strong>Letra B</strong>."
+      },
+      {
+        "q": "Após fortes ventos em uma tempestade, uma árvore quebrou-se a uma altura de $3\\text{ metros}$ do solo. A parte superior tombou formando com o solo um triângulo retângulo, de modo que a ponta da árvore tocou o chão a uma distância de $4\\text{ metros}$ da sua base. Qual era a altura total original dessa árvore antes de quebrar?",
+        "options": [
+          "$5\\text{ metros}$",
+          "$6\\text{ metros}$",
+          "$7\\text{ metros}$",
+          "$8\\text{ metros}$"
+        ],
+        "correct": 3,
+        "explanation": "1. A parte quebrada que tombou atua como hipotenusa $c$ de um triângulo retângulo cujos catetos são a altura do tronco em pé ($a = 3\\text{ m}$) e a distância até a base no chão ($b = 4\\text{ m}$).<br>2. Aplicando o Teorema de Pitágoras:<br>$$c^2 = 3^2 + 4^2 = 9 + 16 = 25 \\implies c = 5\\text{ metros}$$<br>3. A altura total original da árvore é a soma do tronco em pé com a ponta que tombou:<br>$$H_{\\text{total}} = 3\\text{ m} + 5\\text{ m} = 8\\text{ metros}.$$Portanto, a alternativa correta é a <strong>Letra D</strong>."
+      },
+      {
+        "q": "Considere um trapézio isósceles $ABCD$ de base maior $AB = 12\\text{ cm}$, base menor $CD = 8\\text{ cm}$ e perímetro de $26\\text{ cm}$. Qual é a medida de cada um dos lados oblíquos desse trapézio?",
+        "options": [
+          "$2\\text{ cm}$",
+          "$3\\text{ cm}$",
+          "$4\\text{ cm}$",
+          "$6\\text{ cm}$"
+        ],
+        "correct": 1,
+        "explanation": "Em um trapézio isósceles, os dois lados oblíquos possuem a mesma medida $L$.<br>O perímetro é a soma de todos os lados:<br>$$2p = B + b + 2L = 12 + 8 + 2L = 26$$<br>$$20 + 2L = 26 \\implies 2L = 6 \\implies L = 3\\text{ cm}.$$Portanto, a alternativa correta é a <strong>Letra B</strong>."
+      },
+      {
+        "q": "O tráfego de dados na internet dobra aproximadamente a cada 2 anos em escala global. Se em determinado ano o tráfego foi de $T_0$, a expressão que representa o tráfego após $t$ anos é dada pela função exponencial $T(t) = T_0 \\cdot 2^{\\frac{t}{2}}$. Após 6 anos, o tráfego de dados terá sido multiplicado por um fator de:",
+        "options": [
+          "4",
+          "6",
+          "8",
+          "16"
+        ],
+        "correct": 2,
+        "explanation": "Substituindo $t = 6$ anos na função:<br>$$\\frac{t}{2} = \\frac{6}{2} = 3$$<br>$$T(6) = T_0 \\cdot 2^3 = T_0 \\cdot 8$$<br>Logo, o volume de tráfego terá sido multiplicado por um fator de 8.<br>Portanto, a alternativa correta é a <strong>Letra C</strong>."
+      }
+    ]
+  }
+}

@@ -1,0 +1,272 @@
+O meme apresenta uma inadequação de concor-                Geometria, à reta suporte do segmento CD, que
+dância verbal. Assinale a alternativa que contém           representa a Estrada 2, em relação ao segmento de
+opções de ajustes ou “correções” para o problema           reta AB que representa a Estrada 1.
+expresso pelo interlocutor do meme.
+
+( A ) A expressão “a gente” não deve ser usa-
+      da, porque está no singular e o correto seria
+      “nós”, para concordar com o verbo “ir”.
+( B ) A palavra “gente”, embora represente um
+      grupo de pessoas, está no singular, logo o
+      verbo deve concordar com ela, estando tam-
+      bém no singular, em vez de “vamos”. As-
+      sim, deve-se usar o verbo conjugado na ter-
+      ceira pessoa do singular, “vai”.
+( C ) A palavra “gente” deveria estar no plural                                             Fonte: IFSP, 2023.
+      (“gentes”) para concordar com o verbo “va-
+      mos”, que também está no plural.                     ( A ) A reta suporte de CD é a secante do segmen-
+( D ) A palavra “gente” está no plural, mas sua                  to de reta AB.
+      grafia deveria ser “agente”, concordando             ( B ) A reta suporte de CD é a mediatriz do seg-
+      com o verbo “ir” que também está no plural.                mento de reta AB.
+                                                           ( C ) A reta suporte de CD é a bissetriz do seg-
+                                                                 mento de reta AB .
+                                                           ( D ) A reta suporte de CD é a paralela do seg-
+                                                                 mento de reta AB.
+16 Dízima periódica é um número que quando
+escrito no sistema decimal apresenta uma série in-
+finita de algarismos decimais que, a partir de certo
+algarismo, se repetem em grupos de um ou mais
+algarismos, ordenados sempre na mesma disposi-             18 O volume de um paralelepípedo pode ser
+ção, chamados de período.                                  obtido pelo produto de sua largura, altura e com-
+        Fonte: <pt.wikipedia.org/wiki/Dízima_periódica>.   primento. Considere o paralelepípedo, mostrado
+                                Acesso em: 04 ago. 2023.   na figura, em que representamos a largura por x,
+                                                           a altura por x + 1 e seu comprimento por x - 3.
+As dízimas periódicas sempre podem ser repre-              Sendo x > 3, qual das alternativas a seguir apre-
+sentadas na forma de fração, com números inteiros          senta uma expressão que calcula o volume deste
+na posição do numerador e do denominador. Com              paralelepípedo?
+base nestas informações, qual o resultado do pro-
+duto de 0,333... por 6 ?:
+                     5
+(A) 2        (B) 1        ( C ) 18     (D) 5
+       5             3           5           18
+
+
+
+
+17 Duas cidades têm seus marcos zero repre-
+sentados pelos pontos A e B de acordo com a ima-
+gem abaixo que estão conectados entre si pela Es-
+trada 1. Em uma ação conjunta de reflorestamento                                            Fonte: IFSP, 2023.
+elas decidiram plantar mudas de árvores ao longo
+da Estrada 2 que está a uma mesma distância dos            ( A ) V = x2 + x
+pontos A e B e que conecta duas regiões rurais in-         ( B ) V = x2 - 3x
+dicadas pelos pontos C e D. Sabendo destas infor-          ( C ) V = x3 - 2x2 - 3x
+mações, indique corretamente o nome dado, em               ( D ) V = x2 - 2x - 3
+
+Instituto Federal de Educação, Ciência e Tecnologia de São Paulo - PROVA B                                  9
+19 Ao buscar informações a respeito dos clipes mais vistos da história do Youtube no Brasil, um estudan-
+te encontrou uma notícia de 2022.
+
+
+                      Quais são os clipes mais vistos da história do YouTube no Brasil?
+
+     A artista que mais aparece é Marília Mendonça, com 16 clipes, seguida por Anitta (8), Henrique e
+     Juliano (7) e Gusttavo Lima (6). Os cinco estilos mais presentes são o sertanejo, com 45 clipes, se-
+     guido pelo funk (16), forró e pop (8 cada um), rap (7) e gospel (6). [...] Um dos destaques é o canal
+     de funk Kondzilla, que tem três dos cinco vídeos mais tocados, inclusive o campeão, "Bum bum Tam
+     Tam", do MC Fioti. O levantamento considera todos os clipes brasileiros de música lançados desde
+     o início do YouTube, em 2005. As visualizações são somadas de todos os países, não só da audiência
+     no Brasil, até o dia 10 de junho de 2022. Não foram considerados vídeos de música infantil, como
+     Galinha Pintadinha. Os dados são do próprio YouTube, coletados pelo site Kworb.
+
+                             Veja os clipes brasileiros mais vistos no YouTube:
+     1º Lugar: MC Fioti - Bum Bum Tam Tam (KondZilla) - 1.712.733.533
+     2º Lugar: MC Kevinho - Olha a Explosão (KondZilla) - 1.181.620.288
+     3º Lugar: Michel Teló - Ai Se Eu Te Pego - Video Oficial (Assim você me mata) - 1.069.753.979
+     4º Lugar: Zé Neto e Cristiano – Largado às Traças - Zé Neto e Cristiano Acústico - 883.285.203
+     5º Lugar: Amor de Verdade - MC Kekel e MC Rita (KondZilla) - 727.652.668
+     6º Lugar: Zé Neto e Cristiano – Notificação Preferida - 727.050.893
+     7º Lugar: Simone & Simaria - Loka ft. Anitta - 718.309.705
+     8º Lugar: Preto no Branco - Ninguém Explica Deus (Ao Vivo) ft. Gabriela Rocha - 665.087.438
+     9º Lugar: Anitta & J Balvin - Downtown - 632.360.723
+     10º Lugar: MC Kevinho - O Grave Bater [Sintonia Soundtrack] (KondZilla) - 622.440.014
+     [...]
+
+      Disponível em: <https://g1.globo.com/pop-arte/musica/noticia/2022/06/28/quais-sao-os-clipes-mais-vistos-da-historia-do-
+                                                                          youtube-no-brasil.ghtml>. Acesso em 15 jul. 2023.
+
+Ao olhar apenas para os dez primeiros clipes indicados na notícia, o estudante observou corretamente que
+( A ) as visualizações dos dois clipes de MC Kevinho, que estão entre os 10 primeiros, ultrapassam a visu-
+      alização do 1º colocado na lista.
+( B ) dos dez clipes listados, sete têm menos de 1 milhão de visualizações.
+( C ) os clipes do canal KondZilla, que estão entre os 10 primeiros, não ultrapassam 4,2 bilhões de visualizações.
+( D ) os dois clipes da dupla Zé Neto e Cristiano, que estão entre os 10 primeiros, não ultrapassam
+      1.510.336.096 visualizações.
+
+
+
+
+20 Um certo produto eletrônico teve seu preço                     21 Minecraft é um jogo eletrônico em que seus
+diminuído durante duas semanas seguidas. Na pri-                  jogadores exploram um mundo feito em blocos.
+meira semana, o preço caiu 10%, e na segunda se-                  Nesse mundo é possível construir inúmeras coi-
+mana sofreu nova queda e teve seu preço reduzido                  sas a partir dos diferentes blocos disponíveis. No
+em mais 5%. Se no começo da primeira semana                       modo criativo, os jogadores têm acesso a todos os
+este produto custava R$ 800,00, qual seu preço fi-                recursos e itens proporcionados pelo jogo. Um jo-
+nal após a aplicação dos dois descontos?                          gador pretende construir um prédio retangular com
+( A ) R$ 680,00                                                   blocos de minério de diamante no modo criativo.
+( B ) R$ 684,00                                                   O prédio tem comprimento de 5 blocos, largura de
+( C ) R$ 720,00                                                   4 blocos e altura de 8 blocos de minério de dia-
+( D ) R$ 760,00                                                   mante como mostra a figura 1:
+
+10                                            Processo seletivo para ingresso nos cursos técnicos - Edital nº 449/2023
+                                                             ( C ) Ponto C
+             Figura 1: prédio retangular                     ( D ) Ponto D
+
+
+
+
+                                                             23 Determinado engenheiro elaborou projetos de
+                                                             energia solar para uma residência e para um comér-
+                                                             cio. Foram previstos painéis solares de diferentes
+                                                             potências: menor potência para a residência e maior
+                                                             potência para a instalação comercial. Para isso foi
+                                                             realizado um pedido de 30 painéis solares que cus-
+                                                             tam no total R$ 15.900,00. O painel residencial custa
+                                       Fonte: IFSP, 2023.    R$ 400,00 enquanto o comercial R$ 700,00. Diante
+                                                             disso, a quantidade de painéis solares residenciais e
+Sabe-se que o prédio construído pelo jogador é oco           a de comerciais pedidos totaliza, respectivamente:
+por dentro e há somente blocos cobrindo o piso, o            ( A ) 15 e 15
+teto e as quatro paredes. Se cada bloco tem 1cm³             ( B ) 17 e 13
+de volume, qual o volume da parte oca do prédio?             ( C ) 24 e 6
+( A ) 160cm³                                                 ( D ) 27 e 3
+( B ) 124cm³
+( C ) 42cm³
+( D ) 36cm³
+
+                                                             24 Uma piscina com formato de um bloco re-
+                                                             tangular tem capacidade de 23.500 litros, quando
+                                                             completamente cheia. Comprou-se um produto
+22 Um estudante foi comer no intervalo das au-               para a clarificação da água, cuja embalagem indica
+las e viu que seu lanche era como o da foto abaixo.          que devem ser utilizados 3ml do produto a cada 0,5
+                                                             metro cúbico de água. Considerando que a água
+                                                             da piscina precisa ser clarificada e que foi seguida
+                                                             a indicação da embalagem do produto, calcule a
+                                                             quantidade de produto a ser utilizada considerando
+                                                             que a piscina esteja completamente cheia.
+                                                             ( A ) 705 litros
+                                                             ( B ) 70,5 ml
+                                                             ( C ) 0,141 ml
+                                                             ( D ) 0,141 litros
+UOL, 2017. Sanduíche na diagonal ou reto? Disponível em:
+  https://www.uol.com.br/tilt/noticias/redacao/2017/03/13/
+   ate-corte-preferido-de-sanduiche-pode-ajudar-google-a-
+         personalizar-android.htm. Acesso em: 31 jul. 2023
+                                                             25 Em uma matéria sobre a produção de café no
+Considerando que o pão de forma, como o da foto,             Brasil e no mundo, é citado que o mundo produziu,
+tem a forma de um quadrado de lado 12cm, qual                em 2022, 171,7 milhões de sacas de café.
+dos pontos marcados na reta real abaixo está mais            Sabendo que uma saca é igual a 60Kg de café, qual
+próximo da medida da diagonal desse pão?                     alternativa apresenta a produção aproximada de
+                                                             café, no ano de 2022, em kg?
+
+                                                             ( A ) 10,3 x 109 kg
+                                                             ( B ) 17,1 x 107 kg
+( A ) Ponto A                                                ( C ) 10,3 x 103 kg
+( B ) Ponto B                                                ( D ) 17,1 x 105 kg
+
+Instituto Federal de Educação, Ciência e Tecnologia de São Paulo - PROVA B                                     11
+26 A densidade demográfica é um conceito utilizado para medir o número de habitantes de uma determi-
+nada localidade em relação ao tamanho do território ocupado por esses habitantes. Na prática, para encon-
+trar o valor da densidade demográfica, é necessário realizar o seguinte cálculo:
+                                                                 número de habitantes
+                       Densidade Demográfica =
+                                                        área ocupada por essa população (km2)
+
+
+O quadro a seguir reúne as densidades demográficas dos estados da Região Sudeste e também a do Brasil,
+nos dois últimos Censos realizados pelo Instituto Brasileiro de Geografia e Estatística (IBGE).
+
+                                          Densidade Demográfica
+                                                                                     Área
+                                        Censo 2010          Censo 2022
+                     Espirito Santo         76,25                  83,20         46.074 km²
+                     Minas Gerais           33,41                  35,02         586.514 km²
+                    Rio de Janeiro         365,23                  366,96        43.750 km²
+                      São Paulo            166,25                  178,96        248.219 km²
+                         Brasil             22,43                  23,86        8.510.418 km²
+                                                                            Adaptado de IBGE, 2023. Censo demográfico.
+
+A partir do conceito de densidade demográfica e os dados apresentados no quadro, é correto afirmar que:
+( A ) o Brasil, com 8.510.418 km², tem alta densidade demográfica.
+( B ) o estado de Minas Gerais tem menos habitantes que o estado do Espirito Santo.
+( C ) o estado de São Paulo teve o maior aumento populacional.
+( D ) o estado do Rio de Janeiro é o mais populoso da Região Sudeste.
+
+
+
+
+27 Uma família passeando pela rua viu uma                     28 Sejam x, y e z os números reais definidos
+placa de venda de dois terrenos, um no formato de             abaixo:
+um triângulo retângulo e outro ao lado em forma
+                                                                                     y = ( 1 )-2
+                                                                            3                                4
+de quadrado, conforme mostra a figura abaixo. En-                    x=42                                z = √4
+tretanto, por causa da chuva, as informações dos                                           8
+terrenos que constam na placa ficaram ilegíveis.
+                                                              Escreva x, y e z numa forma mais simplificada e
+A única leitura possível foi a medida de dois lados
+                                                              analise as igualdades a seguir, avaliando se são
+do triângulo retângulo, a=6 metros e b=8 metros.
+                                                              verdadeiras ou não:
+De acordo com as informações apresentadas, qual
+a área total do terreno (triangulo mais quadrado)?            I)   x = √y
+                                                                    x 3
+                                                              II) 2 = √y
+                                                                   z
+                                                              III) y = 2x·z2
+
+
+                                                              As igualdades verdadeiras são aquelas apresenta-
+                                    Fonte: IFSP, 2023         das em:
+( A ) 10                                                      ( A ) I e II, apenas.
+( B ) 24                                                      ( B ) I e III, apenas.
+( C ) 100                                                     ( C ) II e III, apenas.
+( D ) 124                                                     ( D ) I, II e III.
+
+12                                      Processo seletivo para ingresso nos cursos técnicos - Edital nº 449/2023
+29 A soma das idades dos primos X e Y é igual
+a 26 anos. Além disso, é sabido que o triplo da ida-
+de de X, menos metade da idade de Y é igual a 15
+anos. Sendo X e Y as idades dos primos em anos,
+assinale a alternativa que apresenta o sistema de
+equações que satisfaz as condições apresentadas.
+(A)
+
+
+(B)
+
+
+(C)
+
+
+(D)
+
+
+
+
+30 Ao aplicar o teorema de Pitágoras no triân-
+gulo retângulo ABC da figura a seguir, em que AC
+= 4 e AB = 12√7, um estudante obteve o seguinte
+resultado:
+
+
+
+
+                                   Fonte: IFSP, 2023.
+
+      BC2=42 + (12√7)2 = 16 + 1008 = 1024
+
+Utilizando seus conhecimentos de fatoração, po-
+tenciação e radiciação, e considerando que o es-
+tudante determinou a medida de BC corretamente,
+deixando o resultado em forma de potência, qual
+valor foi obtido para a medida da hipotenusa BC?
+( A ) 210
+( B ) 28
+( C ) 25
+( D ) 220
+
+
+
+
+Instituto Federal de Educação, Ciência e Tecnologia de São Paulo - PROVA B   13
+

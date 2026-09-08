@@ -1,0 +1,320 @@
+Analisando as informações do documentário (tex-        ( B ) A educação, a infraestrutura e a saúde são
+to I) e comparando-as com as do infográfico (texto           igualmente importantes para o desenvolvi-
+II), é possível afirmar que                                  mento social.
+( A ) o documentário dispensa a leitura do info-       ( C ) A infraestrutura e a saúde são mais relevan-
+       gráfico que o acompanha, já que ambos con-            tes para o progresso da sociedade do que a
+       têm as mesmas informações.                            educação.
+( B ) o infográfico simplesmente sintetiza ao lei-     ( D ) A infraestrutura e a saúde são aspectos se-
+       tor todas as informações relativas ao cenário         cundários e não impactam diretamente no
+       estrutural das escolas brasileiras, presentes         bem-estar da população.
+       no documentário.
+( C ) o infográfico não só resume, mas também
+       acrescenta dados ao documentário, cons-
+       tituindo um todo relevante para o efeito de     15 Agente da Passiva é o termo que indica quem
+       sentido pretendido.                             ou o que executa a ação de um verbo na voz pas-
+( D ) o documentário não põe em destaque as-           siva. Para identificar uma oração na voz passiva, é
+       pectos relevantes da situação estrutural das    necessário que se observe como o sujeito, o verbo
+       escolas brasileiras, deixando esse papel ao     e o objeto estão posicionados na oração, para as-
+       infográfico.                                    sim estabelecer um efeito distinto da voz ativa.
+
+                                                       Qual das orações a seguir, se encontra devidamen-
+                                                       te na voz passiva?
+13 Considerando que o Novo Acordo Ortográ-             ( A ) Raquel trouxe o bolo para o lanche de Pedro.
+fico determinou o emprego do hífen em palavras         ( B ) Para o lanche de Pedro, Raquel trouxe o bolo.
+compostas, qual sequência de palavras hifenizadas      ( C ) Raquel, para o lanche de Pedro, trouxe bolo.
+está totalmente correta?                               ( D ) O bolo foi trazido por Raquel para o lanche
+( A ) Contra-regra / antissemita / microondas.               de Pedro.
+( B ) Autoaprendizagem / pré-história / micro-ondas.
+( C ) Auto-aprendizagem / mini-saia / portarretrato.
+( D ) Semi-histórico / semi-novo / semi-final.         16 O dominó é um jogo tradicionalmente for-
+                                                       mado por 28 peças com formatos retangulares.
+                                                       Cada peça é constituída por duas seções de forma-
+                                                       tos quadrangulares, nos quais os pontos são mar-
+14 Analise as pistas linguísticas destacadas e         cados por pequenos círculos. Cada formato qua-
+escolha a alternativa que melhor representa a hie-     drangular comporta de 0 a 6 círculos.
+rarquização das proposições e a síntese do conteú-
+do dos textos:                                         Ao pegar quatro peças do jogo, um estudante per-
+                                                       cebeu uma regularidade entre os pontos das quatro
+       “Em primeiro lugar, devemos considerar a        peças de dominó. A imagem seguinte apresenta as
+importância da educação para o desenvolvimento         quatro peças, na ordem em que o estudante identi-
+social. Por outro lado, é necessário também inves-     ficou a regularidade:
+tir em infraestrutura e saúde pública. Dito de outro
+modo, tanto a educação quanto a infraestrutura e
+a saúde são pilares fundamentais para o progresso
+de uma sociedade. Isto é, esses aspectos estão in-
+terligados e influenciam diretamente no bem-estar
+da população. Por exemplo, um sistema educa-
+cional de qualidade contribui para a formação de
+cidadãos mais capacitados, que consequentemente        Se o estudante quiser manter a regularidade, para a
+terão mais oportunidades de emprego e uma me-          quinta peça, ele deverá escolher:
+lhor qualidade de vida.”                               ( A ) qualquer peça em que a soma dos pontos
+( A ) A educação é o fator mais importante para              seja 9.
+       o desenvolvimento social. pois é citada pri-    ( B ) qualquer peça em que a soma dos pontos
+       meiro no texto.                                       seja um número par.
+
+8      Cursos técnicos concomitantes/subsequentes e integrados ao Ensino Médio – Edital nº 088/2024
+( C ) uma peça em que a soma dos pontos seja 11.
+( D ) uma peça em que a soma dos pontos seja 12.
+                                                         19 Desprezando a espessura de seus lados, sabe-
+                                                         mos que um recipiente em formato cúbico de aresta
+                                                         igual a 10cm tem capacidade de armazenar 1 litro
+                                                         água. Nestas condições, quantos litros de água cabem
+                                                         em um recipiente cúbico cuja aresta é igual a 40cm?
+17 Um adolescente deseja criar uma conta em              ( A ) 120 litros
+uma nova rede social. Para isso, após escolher seu       ( B ) 4 litros
+nome de usuário, ele deve criar uma senha usan-          ( C ) 64 litros
+do exatamente quatro letras minúsculas, escolhi-         ( D ) 640 litros
+das entre as 26 do alfabeto utilizado na escrita da
+língua portuguesa. Ele decide, então, que as duas
+primeiras letras da sua senha serão consoantes di-
+ferentes entre si e que as duas últimas serão vo-
+gais, também diferentes entre si. Nestas condições,
+                                                         20 Leia o texto a seguir sobre as distâncias entre
+                                                         a Terra e Marte.
+quantas senhas diferentes ele pode criar?
+( A ) 8.400
+                                                         “ (...) Marte é o segundo planeta mais próximo do
+( B ) 11.025
+                                                         nosso, depois de Vênus. Marte está localizado a
+( C ) 358.800
+                                                         220 milhões de quilômetros do Sol  (a Terra está a
+( D ) 456.976
+                                                         150 milhões de quilômetros). O cálculo, portanto,
+                                                         parece simples: a distância entre a Terra e Marte é
+                                                         de 70 milhões de quilômetros. Mas, na realidade,
+                                                         os dois planetas estão em movimento ao redor do
+18 Em um terreno com a forma de um trapézio              Sol, e em órbitas que não são circulares, mas elíp-
+retângulo, um empreiteiro deseja construir um gal-       ticas. Teoricamente, a aproximação máxima que
+pão cuja planta baixa tem o formato de um retân-         pode existir entre o Planeta Vermelho e a Terra é
+gulo. A figura a seguir ilustra o projeto e apresenta    de 54,6 milhões de quilômetros (...)”
+algumas medidas.
+                                                          Fonte: https://socientifica.com.br/viagem-a-marte-quanto-
+                                                           tempo-leva-para-chegar-la. (modificado). Acesso em: 21
+                      12m                                                                                 jul. 2023.
+
+
+         5m       Área externa                           Imagine que fosse possível viajar da Terra até
+                                                         Marte aproveitando que os planetas estejam na si-
+                                                         tuação de aproximação máxima. Calcule, em no-
+                                                         tação científica, o total de quilômetros percorridos
+                                                         em uma viagem de ida e volta, de acordo com o
+        15m           Galpão                             fragmento de texto acima.
+                                                         ( A ) 7,000 x 107
+                                                         ( B ) 5,460 x 107
+                       10m                               ( C ) 1,400 x 108
+                                                         ( D ) 1,092 x 108
+                          18m
+
+                                    Fonte: IFSP, 2023.   21 Ao saltar de um avião, um Paraquedista
+                                                         aterrissou exatamente na metade do percurso entre
+O empreiteiro decidiu que um terço da área exter-        uma árvore representada pelo ponto A (2, 3) e um
+na (região cinza) ao galpão será pavimentado e o         rochedo representado pelo ponto B (4, -5). Utili-
+restante será coberto com grama. Deste modo, a           zando os conhecimentos de geometria analítica,
+área que o gramado ocupará na área externa, em           calcule o ponto médio M (Xm, Ym) onde o Para-
+m², é igual a:                                           quedista aterrissou.
+( A ) 300                                                ( A ) M (3, -1)
+( B ) 150                                                ( B ) M (3, 4)
+( C ) 100                                                ( C ) M (5, -1)
+( D ) 50                                                 ( D ) M (3, -4)
+
+Instituto Federal de Educação, Ciência e Tecnologia de São Paulo – PROVA B                                        9
+22 As Tranças Nagô (Figura 1) são um tipo de trança africana feita rente ao couro cabeludo. Nagô era o
+nome dado a todos os negros da Costa dos Escravos que falavam a língua Iorubá. Atualmente, as Tranças
+Nagô continuam sendo símbolo de resistência, e a quantidade de tranças, finas ou mais grossas, que é pos-
+sível ser feita depende do volume de cabelo que a pessoa tenha.
+
+
+
+
+                                      Figura 1: Diferentes tipos de Tranças Nagô
+               Fonte: https://www.vozdascomunidades.com.br/geral/trancas-africanas-eis-historia. Acesso em: 24 abr. 2024.
+
+
+
+Uma cabelereira tem seu método próprio para definir a quantidade máxima de tranças finas que é possível
+ser feita em relação ao volume do cabelo sem que se precise utilizar cabelos sintéticos para dar mais volu-
+me. O seu método é representado pela figura 2:
+
+
+
+
+                          Figura 2: método para definição de quantidade máxima de tranças.
+                                                                                                      Fonte: IFSP, 2023.
+
+Suponha que uma pessoa tenha volume de cabelo 8 na escala elaborada pela cabelereira e que seu método
+se comporta como uma sequência. Diante disto, qual o número máximo de tranças finas que é possível ser
+feito no cabelo dessa pessoa?
+( A ) 33.
+( B ) 38.
+( C ) 36.
+( D ) 43.
+
+
+23 Um grupo de amigos deseja jogar futebol de areia durante quatro horas no final de semana. A admi-
+nistração da quadra cobra o valor de R$ 40,00 a hora, porém, está com uma promoção que, se contratada
+pelo aplicativo, o cliente terá na segunda hora um desconto de 5% sobre o valor da primeira hora e, para
+três horas ou mais, um desconto de 10% sobre o valor da primeira hora para cada hora. Qual será o valor
+pago pelo grupo de amigos, se utilizarem o aplicativo?
+
+( A ) R$ 148,00                                               ( C ) R$ 154,00
+( B ) R$ 150,00                                               ( D ) R$ 160,00
+
+10     Cursos técnicos concomitantes/subsequentes e integrados ao Ensino Médio – Edital nº 088/2024
+24 Em 2023 o Instituto Brasileiro de Geografia                      que teve a maior queda percentual na taxa de
+e Estatística (IBGE) divulgou os dados do Censo                     crescimento populacional foi o que perdeu a
+Demográfico realizado em 2022. Curioso em saber                     maior quantidade de habitantes.
+os resultados de sua região, um estudante do Oeste            ( C ) Na região de Presidente Prudente, o resulta-
+Paulista, encontrou a seguinte notícia:                             do “a cidade encolheu” pode ser considera-
+                                                                    do como a moda dos dados.
+  Censo 2022: 26 cidades do Oeste Paulista                    ( D ) Os cinco municípios da notícia perderam,
+ perderam população; Irapuru foi a que mais                         em média, 1.708 habitantes cada.
+                 encolheu
+
+   Das 56 cidades que compõem a região de Pre-                25 A semelhança de triângulos nos permite cal-
+sidente Prudente (SP), 26 delas encolheram nos                cular distâncias inacessíveis. Também é utilizada
+últimos 12 anos. É o que aponta o Censo 2022,                 quando é preciso medir uma distância muito longa
+realizado pelo Instituto Brasileiro de Geografia e            ou algum obstáculo. Dentre suas aplicabilidades
+Estatística (IBGE) e divulgado nesta quarta-feira             estão: medir a distância entre as margens de um
+(28). Os municípios perderam, ao todo, 17.331 ha-             rio, a altura de um prédio, a profundidade de um
+bitantes. A última pesquisa demográfica foi reali-            poço etc.
+zada em 2010 e, nesse período, o município de Ira-
+puru (SP) foi o que mais perdeu habitantes, saindo            A respeito de semelhança de triângulo, assinale
+de 7.789 pessoas morando na cidade para 5.938                 cada questão como verdadeira (V) ou falsa (F) e
+habitantes em 2022. A cidade perdeu 1.851 mora-               depois escolha a alternativa que correspondente a
+dores em 12 anos, o que representa uma queda de               sequência, de cima para baixo, de V e F obtida.
+23,76%.                                                       [ ] Toda reta paralela a um dos lados do triângulo,
+   Logo em seguida, o município de Euclides                         que intercepta os outros dois lados, determi-
+da Cunha Paulista (SP) registrou diminuição de                      na um segundo triângulo, que não é seme-
+17,33% no número de habitantes, indo de 9.585                       lhante ao primeiro.
+para 7.924 pessoas. A cidade perdeu 1.661 mora-               [ ] Dizemos que dois triângulos são semelhantes
+dores.                                                              se dois lados são proporcionais e os ângu-
+   Em terceiro lugar, o município de Flora Rica                     los entre esses lados são congruentes, isto é,
+(SP) apresentou 15,13% de queda na taxa de cres-                    iguais.
+cimento populacional, saindo de 1.752 para 1.487              [ ] Dois triângulos que possuem apenas dois ân-
+moradores. A cidade perdeu 265 pessoas em 12                        gulos correspondentes congruentes não po-
+anos.                                                               dem ser considerados semelhantes.
+   Na sequência, a pesquisa registrou que Santo               [ ] O quociente comum entre as medidas dos la-
+Anastácio (SP) teve queda de 12,27% no número                       dos correspondentes é chamado de razão de
+de habitantes, indo de 20.475 para 17.963 habi-                     semelhança entre dois triângulos.
+tantes. O município contabilizou 2.512 pessoas                ( A ) V - V - F - F.
+a menos.                                                      ( B ) V - F - V - F.
+   Em quinto lugar, a cidade de Rosana (SP) apre-             ( C ) F - V - F - V.
+sentou 11,43% de queda na taxa de crescimento                 ( D ) F - F - V - V.
+populacional, saindo de 19.691 pessoas em 2010
+para 17.440 em 2022. O município perdeu 2.251
+moradores.
+        Disponível em: https://g1.globo.com/sp/presidente-    26 Um computador demora 6 minutos e 20 se-
+prudente-regiao/noticia/2023/06/28/censo-2022-26-cidades-     gundos para fazer o “download” de um arquivo
+ do-oeste-paulista-perdem-populacao-irapuru-e-a-que-mais-
+                   encolheu.ghtml. Acesso em: 15 jul. 2023.
+                                                              de 1 GB. Se ele mantiver a mesma velocidade de
+                                                              download, quanto tempo esse computador levará
+Considerando os dados da notícia, o estudante ob-             para baixar um arquivo de 2,2 GB?
+servou corretamente que:                                      ( A ) 13 minutos e 56 segundos.
+( A ) Ao todo, os cinco municípios perderam                   ( B ) 13 minutos e 20 segundos.
+      17.331 habitantes.                                      ( C ) 12 minutos e 40 segundos.
+( B ) Entre os cinco municípios da notícia, aquele            ( D ) 14 minutos e 04 segundos.
+
+
+Instituto Federal de Educação, Ciência e Tecnologia de São Paulo – PROVA B                                     11
+27 Um professor realizou uma pesquisa em                     ( B ) 9, 18, 27
+                                                                   2 2 2
+uma turma composta por 40 alunos, perguntando
+a quantidade de livros que cada um leu no ano an-            ( C ) 27, 57, 99
+                                                                    2  2 2
+terior. O quadro a seguir mostra o resultado desta
+pesquisa:                                                    ( D ) 9, 57, 153
+                                                                   2 2     2
+  Quantidade de livros
+                                   Número de alunos
+  lidos no ano anterior
+             0                               2               29 A figura a seguir ilustra a construção de um
+             1                               4               triângulo equilátero ABC de lado qualquer usando
+             2                               7               apenas uma régua e compasso:
+             3                               7
+             4                              10
+             5                               7
+             6                               3
+
+Sendo Y e Z, respectivamente, a mediana e a moda
+da quantidade de livros lidos no ano anterior pelos
+alunos desta turma, tem-se que Y+Z é igual a:
+( A ) 7,0
+( B ) 7,5
+( C ) 10
+( D ) 10,5
+                                                                                                Fonte: IFSP, 2023.
+
+                                                             Este triângulo equilátero pode ser construído em
+28 Observe o fluxograma abaixo. Siga os pas-                 seis passos executados em uma sequência lógica.
+sos indicados e encontre uma expressão para Tn.              Qual é a sequência correta de passos que permite a
+                                                             realização da construção ilustrada na figura acima?
+                          Início                             ( A ) Construir a reta suporte r com o uso da ré-
+                                                                   gua. Sobre a reta r, determinar um segmento
+                 Considere uma variável n                          de reta cujo comprimento AB seja a medida
+                                                                   do lado do triângulo desejado. Traçar, com o
+            Eleve a variável n ao quadrado                         compasso, uma circunferência de raio qual-
+             Encontre o triplo do resultado
+                                                                   quer e centro A. Traçar, com o compasso,
+               obtido no passo anterior                            outra circunferência de raio qualquer com
+                                                                   centro em B. Encontrar o ponto de interse-
+          Acrescente 3/2 ao resultado obtido                       ção C entre estas circunferências. Com a ré-
+                  no passo anterior                                gua, traçar os segmentos AC e BC.
+            Chame a expressão obtida de Tn
+                                                             ( B ) Construir a reta suporte r com o uso da ré-
+                                                                   gua. Sobre a reta r, determinar um segmento
+                                                                   de reta cujo comprimentoAB seja a medida do
+                           Fim                                     lado do triângulo desejado. Traçar, com o com-
+                                                                   passo, uma circunferência de centro A e raio
+                                        Fonte: IFSP, 2023.         maior que a medida do segmentoAB. Traçar,
+                                                                   com o compasso, uma circunferência com
+Se n assumir os valores 1, 2, 3, 4, ... na expressão               centro em B e raio maior que a medida do
+encontrada para Tn, obtém-se uma sequência de                      segmentoAB.Encontrar o ponto de interseção
+números (T1, T2, T3, T4, ...). Qual das alternativas               C entre estas circunferências. Com a régua,
+a seguir apresenta 3 termos consecutivos dessa se-                 traçar os segmentos AC e BC.
+quência?                                                     ( C ) Construir a reta suporte r com o uso da régua.
+( A ) 3, 9, 27                                                     Sobre a reta r, determinar um segmento de reta
+      2 2 2                                                        cujo comprimento AB seja a medida do lado do
+
+12     Cursos técnicos concomitantes/subsequentes e integrados ao Ensino Médio – Edital nº 088/2024
+      triângulo desejado. Traçar, com o compasso,
+      uma circunferência de centro A e raio menor
+      que a medida do segmento AB. Traçar, com
+      o compasso, uma circunferência com centro
+      em B e raio menor que a medida do segmen-
+      to AB.Encontrar o ponto de interseção C entre
+      estas circunferências. Com a régua, traçar os
+      segmentos AC e BC.
+( D ) Construir a reta suporte r com o uso da ré-
+      gua. Sobre a reta r, determinar um segmento
+      de reta cujo comprimento AB seja a medida
+      do lado do triângulo desejado. Traçar, com o
+      compasso, uma circunferência de centro A e
+      raio AB. Traçar outra circunferência, usando
+      o compasso, com centro em B e raio AB. En-
+      contrar o ponto de interseção C entre estas
+      circunferências. Com a régua, traçar os seg-
+      mentos AC e BC.
+
+
+30 Ao comprar um terreno de formato retangu-
+lar, com dimensões de 30m por 20m, a nova pro-
+prietária pretende fazer um jardim semicircular, no
+canto superior esquerdo como mostrado na ilustra-
+ção. Ela deseja que esse jardim tenha 5% da área
+total do terreno. Calcule a medida do raio a ser uti-
+lizado para o desenho do jardim. Utilize π = 3.
+
+
+
+
+( A ) 5√2 m
+( B ) 2√5 m
+( C ) √60 m
+( D ) √180 m
+
+
+
+
+Instituto Federal de Educação, Ciência e Tecnologia de São Paulo – PROVA B   13
+
