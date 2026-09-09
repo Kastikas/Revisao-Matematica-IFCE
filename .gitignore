@@ -8,3 +8,6 @@ __pycache__/
 # Acervo de provas PDF (hospedadas e acessadas via Google Drive)
 provas/
 
+# Arquivos temporários de revisão de descritores
+mudancas_descritores_bncc.txt
+revisao_descritores_provas.txt

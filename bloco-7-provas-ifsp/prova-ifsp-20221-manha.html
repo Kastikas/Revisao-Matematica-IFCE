@@ -71,6 +71,8 @@
                 <nav class="hidden md:flex space-x-1 items-center">
                     <a href="../provas.html" class="px-3 py-2 rounded-lg text-sm transition flex items-center gap-1.5 text-slate-300 hover:bg-slate-800 hover:text-white">
                 <i data-lucide="layout-grid" class="w-4 h-4"></i> Todas as Provas
+            </a><a href="../pesquisa.html" class="px-3 py-2 rounded-lg text-sm transition flex items-center gap-1.5 text-slate-300 hover:bg-slate-800 hover:text-white">
+                <i data-lucide="search" class="w-4 h-4"></i> Pesquisa BNCC
             </a><a href="../bloco-6-provas-ifce/index.html" class="px-3 py-2 rounded-lg text-sm transition flex items-center gap-1.5 text-slate-300 hover:bg-slate-800 hover:text-white">
                 <i data-lucide="award" class="w-4 h-4"></i> Provas IFCE (27)
             </a><a href="../bloco-5-provas-ifsc/index.html" class="px-3 py-2 rounded-lg text-sm transition flex items-center gap-1.5 text-slate-300 hover:bg-slate-800 hover:text-white">
@@ -99,6 +101,8 @@
         <div id="mobile-menu" class="hidden md:hidden bg-slate-950 border-t border-slate-800 px-4 pt-2 pb-4 space-y-1">
             <a href="../provas.html" class="block px-3 py-2 rounded-md text-base font-medium text-white flex items-center gap-2 hover:bg-slate-800">
                 <i data-lucide="layout-grid" class="w-4 h-4"></i> Todas as Provas
+            </a><a href="../pesquisa.html" class="block px-3 py-2 rounded-md text-base font-medium text-white flex items-center gap-2 hover:bg-slate-800">
+                <i data-lucide="search" class="w-4 h-4"></i> Pesquisa BNCC
             </a><a href="../bloco-6-provas-ifce/index.html" class="block px-3 py-2 rounded-md text-base font-medium text-white flex items-center gap-2 hover:bg-slate-800">
                 <i data-lucide="award" class="w-4 h-4"></i> Provas IFCE (27)
             </a><a href="../bloco-5-provas-ifsc/index.html" class="block px-3 py-2 rounded-md text-base font-medium text-white flex items-center gap-2 hover:bg-slate-800">
@@ -216,7 +220,7 @@
                         <i data-lucide="file-check-2" class="w-5 h-5 text-sky-400"></i> Resolução Comentada de Destaque
                     </h2>
                     <div class="bg-slate-950/90 border border-slate-800 rounded-2xl p-5 shadow-inner">
-                        <p class="text-sm sm:text-base font-semibold text-slate-100 mb-3">Um carro percorre $12\text{ km/L}$ com gasolina (a R$ 6,00/L) e $8{,}8\text{ km/L}$ com etanol. Qual deve ser o preço do litro de etanol para que o custo por quilômetro seja o mesmo?</p>
+                        <p class="text-sm sm:text-base font-semibold text-slate-100 mb-3">Um carro percorre $12\text{ km/L}$ com gasolina (a R$ 6{,}00/L) e $8{,}8\text{ km/L}$ com etanol. Qual deve ser o preço do litro de etanol para que o custo por quilômetro seja o mesmo?</p>
                         <div class="text-xs sm:text-sm text-slate-300 leading-relaxed whitespace-pre-line border-t border-slate-800 pt-3">
                             <strong class="text-sky-300 block mb-1">Resolução Detalhada:</strong>
                             Igualando o custo por km:<br>$$\frac{P_e}{8{,}8} = \frac{6{,}00}{12} = 0{,}50\text{ R\$/km} \implies P_e = 0{,}50 \times 8{,}8 = \text{R\$ } 4{,}40.$$
@@ -240,8 +244,15 @@
 
                     
                         <div class="mb-8 border-b border-slate-800/80 pb-6 last:border-0 last:pb-0" id="q-container-ifsp-2022-1-manha-q0">
-                            <div class="flex items-center justify-between mb-2">
-                                <span class="text-xs font-bold uppercase tracking-wider text-sky-300 bg-blue-950/60 px-2.5 py-0.5 rounded-full border border-blue-800/40">Questão 1</span>
+                            <div class="flex items-center justify-between mb-3 flex-wrap gap-2">
+                                <div class="flex items-center gap-2">
+                                    <span class="text-xs font-bold uppercase tracking-wider text-sky-300 bg-blue-950/60 px-2.5 py-0.5 rounded-full border border-blue-800/40">Questão 1</span>
+                                    
+                            <a href="../pesquisa.html?bncc=EF07MA24" class="text-[11px] font-mono font-bold text-emerald-300 bg-emerald-950/80 hover:bg-emerald-900/90 px-2.5 py-0.5 rounded-full border border-emerald-800/60 flex items-center gap-1 transition shadow-sm" title="Construir triângulos, usando régua e compasso, reconhecer a condição de existência do triângulo quanto à medida dos lados e verificar que a soma das medidas dos ângulos internos de um triângulo é 180°.">
+                                <i data-lucide="bookmark" class="w-3 h-3 text-emerald-400"></i> BNCC: EF07MA24
+                            </a>
+                        
+                                </div>
                             </div>
                             <p class="font-medium text-slate-100 mb-4 text-sm sm:text-base leading-relaxed">Um mapa estilizado do estado de São Paulo foi construído com polígonos geométricos. Entre as figuras identificadas, havia triângulos, quadriláteros e pentágonos. Sabendo que a soma dos ângulos internos de um polígono convexo é dada por $S_i = (n - 2) \cdot 180^\circ$, qual é a soma dos ângulos internos de um pentágono?</p>
                             <div class="space-y-2 mb-4" id="opts-ifsp-2022-1-manha-q0">
@@ -276,10 +287,17 @@
                         </div>
                     
                         <div class="mb-8 border-b border-slate-800/80 pb-6 last:border-0 last:pb-0" id="q-container-ifsp-2022-1-manha-q1">
-                            <div class="flex items-center justify-between mb-2">
-                                <span class="text-xs font-bold uppercase tracking-wider text-sky-300 bg-blue-950/60 px-2.5 py-0.5 rounded-full border border-blue-800/40">Questão 2</span>
+                            <div class="flex items-center justify-between mb-3 flex-wrap gap-2">
+                                <div class="flex items-center gap-2">
+                                    <span class="text-xs font-bold uppercase tracking-wider text-sky-300 bg-blue-950/60 px-2.5 py-0.5 rounded-full border border-blue-800/40">Questão 2</span>
+                                    
+                            <a href="../pesquisa.html?bncc=EF06MA10" class="text-[11px] font-mono font-bold text-emerald-300 bg-emerald-950/80 hover:bg-emerald-900/90 px-2.5 py-0.5 rounded-full border border-emerald-800/60 flex items-center gap-1 transition shadow-sm" title="Resolver e elaborar problemas que envolvam adição ou subtração com números racionais positivos na representação fracionária.">
+                                <i data-lucide="bookmark" class="w-3 h-3 text-emerald-400"></i> BNCC: EF06MA10
+                            </a>
+                        
+                                </div>
                             </div>
-                            <p class="font-medium text-slate-100 mb-4 text-sm sm:text-base leading-relaxed">Uma pessoa costuma tomar café da manhã em uma padaria. Na semana passada, ela gastou R$ 13,00 na compra de 3 pães de queijo e 2 cafés com leite. Sabendo que cada café com leite custa R$ 3,50, qual é o valor individual de cada pão de queijo?</p>
+                            <p class="font-medium text-slate-100 mb-4 text-sm sm:text-base leading-relaxed">Uma pessoa costuma tomar café da manhã em uma padaria. Na semana passada, ela gastou R$ 13{,}00 na compra de 3 pães de queijo e 2 cafés com leite. Sabendo que cada café com leite custa R$ 3,50, qual é o valor individual de cada pão de queijo?</p>
                             <div class="space-y-2 mb-4" id="opts-ifsp-2022-1-manha-q1">
                                 
                             <button onclick="selectOption('ifsp-2022-1-manha-q1', 0)" id="btn-ifsp-2022-1-manha-q1-0" class="w-full text-left p-3.5 rounded-xl border border-slate-800 bg-slate-950/60 hover:border-blue-500 hover:bg-slate-800/60 transition text-sm text-slate-200 flex items-center justify-between group">
@@ -312,8 +330,15 @@
                         </div>
                     
                         <div class="mb-8 border-b border-slate-800/80 pb-6 last:border-0 last:pb-0" id="q-container-ifsp-2022-1-manha-q2">
-                            <div class="flex items-center justify-between mb-2">
-                                <span class="text-xs font-bold uppercase tracking-wider text-sky-300 bg-blue-950/60 px-2.5 py-0.5 rounded-full border border-blue-800/40">Questão 3</span>
+                            <div class="flex items-center justify-between mb-3 flex-wrap gap-2">
+                                <div class="flex items-center gap-2">
+                                    <span class="text-xs font-bold uppercase tracking-wider text-sky-300 bg-blue-950/60 px-2.5 py-0.5 rounded-full border border-blue-800/40">Questão 3</span>
+                                    
+                            <a href="../pesquisa.html?bncc=EF08MA09" class="text-[11px] font-mono font-bold text-emerald-300 bg-emerald-950/80 hover:bg-emerald-900/90 px-2.5 py-0.5 rounded-full border border-emerald-800/60 flex items-center gap-1 transition shadow-sm" title="Resolver e elaborar, com e sem uso de tecnologias, problemas que possam ser representados por equações polinomiais de 2º grau do tipo ax2 = b.">
+                                <i data-lucide="bookmark" class="w-3 h-3 text-emerald-400"></i> BNCC: EF08MA09
+                            </a>
+                        
+                                </div>
                             </div>
                             <p class="font-medium text-slate-100 mb-4 text-sm sm:text-base leading-relaxed">Deseja-se construir um jardim retangular encostado em um muro reto existente no quintal, de modo que o muro sirva como um dos lados maiores do retângulo. O proprietário dispõe de exatamente $20\text{ metros}$ de cerca para cercar os outros três lados do jardim. Se a área desejada para o jardim é de $50\text{ m}^2$, qual é o comprimento do lado perpendicular ao muro?</p>
                             <div class="space-y-2 mb-4" id="opts-ifsp-2022-1-manha-q2">
@@ -348,8 +373,15 @@
                         </div>
                     
                         <div class="mb-8 border-b border-slate-800/80 pb-6 last:border-0 last:pb-0" id="q-container-ifsp-2022-1-manha-q3">
-                            <div class="flex items-center justify-between mb-2">
-                                <span class="text-xs font-bold uppercase tracking-wider text-sky-300 bg-blue-950/60 px-2.5 py-0.5 rounded-full border border-blue-800/40">Questão 4</span>
+                            <div class="flex items-center justify-between mb-3 flex-wrap gap-2">
+                                <div class="flex items-center gap-2">
+                                    <span class="text-xs font-bold uppercase tracking-wider text-sky-300 bg-blue-950/60 px-2.5 py-0.5 rounded-full border border-blue-800/40">Questão 4</span>
+                                    
+                            <a href="../pesquisa.html?bncc=EF08MA21" class="text-[11px] font-mono font-bold text-emerald-300 bg-emerald-950/80 hover:bg-emerald-900/90 px-2.5 py-0.5 rounded-full border border-emerald-800/60 flex items-center gap-1 transition shadow-sm" title="Resolver e elaborar problemas que envolvam o cálculo do volume de recipiente cujo formato é o de um bloco retangular.">
+                                <i data-lucide="bookmark" class="w-3 h-3 text-emerald-400"></i> BNCC: EF08MA21
+                            </a>
+                        
+                                </div>
                             </div>
                             <p class="font-medium text-slate-100 mb-4 text-sm sm:text-base leading-relaxed">Um bloco maciço de madeira tem formato cúbico. Ao projetar suas três vistas ortogonais (frontal, lateral e superior), observa-se que as três vistas são exatamente:</p>
                             <div class="space-y-2 mb-4" id="opts-ifsp-2022-1-manha-q3">
@@ -384,8 +416,15 @@
                         </div>
                     
                         <div class="mb-8 border-b border-slate-800/80 pb-6 last:border-0 last:pb-0" id="q-container-ifsp-2022-1-manha-q4">
-                            <div class="flex items-center justify-between mb-2">
-                                <span class="text-xs font-bold uppercase tracking-wider text-sky-300 bg-blue-950/60 px-2.5 py-0.5 rounded-full border border-blue-800/40">Questão 5</span>
+                            <div class="flex items-center justify-between mb-3 flex-wrap gap-2">
+                                <div class="flex items-center gap-2">
+                                    <span class="text-xs font-bold uppercase tracking-wider text-sky-300 bg-blue-950/60 px-2.5 py-0.5 rounded-full border border-blue-800/40">Questão 5</span>
+                                    
+                            <a href="../pesquisa.html?bncc=EF06MA24" class="text-[11px] font-mono font-bold text-emerald-300 bg-emerald-950/80 hover:bg-emerald-900/90 px-2.5 py-0.5 rounded-full border border-emerald-800/60 flex items-center gap-1 transition shadow-sm" title="Resolver e elaborar problemas que envolvam as grandezas comprimento, massa, tempo, temperatura, área (triângulos e retângulos), capacidade e volume (sólidos formados por blocos retangulares), sem uso de fórmulas, inseridos, sempre que possível, em contextos oriundos de situações reais e/ou relacionadas às outras áreas do conhecimento.">
+                                <i data-lucide="bookmark" class="w-3 h-3 text-emerald-400"></i> BNCC: EF06MA24
+                            </a>
+                        
+                                </div>
                             </div>
                             <p class="font-medium text-slate-100 mb-4 text-sm sm:text-base leading-relaxed">No Sistema Internacional de Unidades (SI), a unidade padrão de comprimento é o metro ($m$). Ao converter a medida de $3{,}45\text{ km}$ para centímetros, obtém-se:</p>
                             <div class="space-y-2 mb-4" id="opts-ifsp-2022-1-manha-q4">
@@ -420,8 +459,15 @@
                         </div>
                     
                         <div class="mb-8 border-b border-slate-800/80 pb-6 last:border-0 last:pb-0" id="q-container-ifsp-2022-1-manha-q5">
-                            <div class="flex items-center justify-between mb-2">
-                                <span class="text-xs font-bold uppercase tracking-wider text-sky-300 bg-blue-950/60 px-2.5 py-0.5 rounded-full border border-blue-800/40">Questão 6</span>
+                            <div class="flex items-center justify-between mb-3 flex-wrap gap-2">
+                                <div class="flex items-center gap-2">
+                                    <span class="text-xs font-bold uppercase tracking-wider text-sky-300 bg-blue-950/60 px-2.5 py-0.5 rounded-full border border-blue-800/40">Questão 6</span>
+                                    
+                            <a href="../pesquisa.html?bncc=EF08MA21" class="text-[11px] font-mono font-bold text-emerald-300 bg-emerald-950/80 hover:bg-emerald-900/90 px-2.5 py-0.5 rounded-full border border-emerald-800/60 flex items-center gap-1 transition shadow-sm" title="Resolver e elaborar problemas que envolvam o cálculo do volume de recipiente cujo formato é o de um bloco retangular.">
+                                <i data-lucide="bookmark" class="w-3 h-3 text-emerald-400"></i> BNCC: EF08MA21
+                            </a>
+                        
+                                </div>
                             </div>
                             <p class="font-medium text-slate-100 mb-4 text-sm sm:text-base leading-relaxed">Um aquário com formato de paralelepípedo tem dimensões internas de $80\text{ cm}$ de comprimento, $50\text{ cm}$ de largura e $60\text{ cm}$ de altura. Sabendo que $1.000\text{ cm}^3 = 1\text{ litro}$ e que as instruções de um produto recomendam aplicar 1 gota para cada 4 litros de água, quantas gotas desse produto devem ser utilizadas quando o aquário estiver totalmente cheio?</p>
                             <div class="space-y-2 mb-4" id="opts-ifsp-2022-1-manha-q5">
@@ -456,8 +502,15 @@
                         </div>
                     
                         <div class="mb-8 border-b border-slate-800/80 pb-6 last:border-0 last:pb-0" id="q-container-ifsp-2022-1-manha-q6">
-                            <div class="flex items-center justify-between mb-2">
-                                <span class="text-xs font-bold uppercase tracking-wider text-sky-300 bg-blue-950/60 px-2.5 py-0.5 rounded-full border border-blue-800/40">Questão 7</span>
+                            <div class="flex items-center justify-between mb-3 flex-wrap gap-2">
+                                <div class="flex items-center gap-2">
+                                    <span class="text-xs font-bold uppercase tracking-wider text-sky-300 bg-blue-950/60 px-2.5 py-0.5 rounded-full border border-blue-800/40">Questão 7</span>
+                                    
+                            <a href="../pesquisa.html?bncc=EF08MA04" class="text-[11px] font-mono font-bold text-emerald-300 bg-emerald-950/80 hover:bg-emerald-900/90 px-2.5 py-0.5 rounded-full border border-emerald-800/60 flex items-center gap-1 transition shadow-sm" title="Resolver e elaborar problemas, envolvendo cálculo de porcentagens, incluindo o uso de tecnologias digitais.">
+                                <i data-lucide="bookmark" class="w-3 h-3 text-emerald-400"></i> BNCC: EF08MA04
+                            </a>
+                        
+                                </div>
                             </div>
                             <p class="font-medium text-slate-100 mb-4 text-sm sm:text-base leading-relaxed">Durante um período de estiagem, um reservatório com capacidade máxima de $120.000\text{ m}^3$ estava operando com apenas $25\%$ de sua capacidade. Para atingir o nível de alerta de $60\%$, quantos metros cúbicos de água precisam ser adicionados ao reservatório?</p>
                             <div class="space-y-2 mb-4" id="opts-ifsp-2022-1-manha-q6">
@@ -492,8 +545,15 @@
                         </div>
                     
                         <div class="mb-8 border-b border-slate-800/80 pb-6 last:border-0 last:pb-0" id="q-container-ifsp-2022-1-manha-q7">
-                            <div class="flex items-center justify-between mb-2">
-                                <span class="text-xs font-bold uppercase tracking-wider text-sky-300 bg-blue-950/60 px-2.5 py-0.5 rounded-full border border-blue-800/40">Questão 8</span>
+                            <div class="flex items-center justify-between mb-3 flex-wrap gap-2">
+                                <div class="flex items-center gap-2">
+                                    <span class="text-xs font-bold uppercase tracking-wider text-sky-300 bg-blue-950/60 px-2.5 py-0.5 rounded-full border border-blue-800/40">Questão 8</span>
+                                    
+                            <a href="../pesquisa.html?bncc=EF08MA04" class="text-[11px] font-mono font-bold text-emerald-300 bg-emerald-950/80 hover:bg-emerald-900/90 px-2.5 py-0.5 rounded-full border border-emerald-800/60 flex items-center gap-1 transition shadow-sm" title="Resolver e elaborar problemas, envolvendo cálculo de porcentagens, incluindo o uso de tecnologias digitais.">
+                                <i data-lucide="bookmark" class="w-3 h-3 text-emerald-400"></i> BNCC: EF08MA04
+                            </a>
+                        
+                                </div>
                             </div>
                             <p class="font-medium text-slate-100 mb-4 text-sm sm:text-base leading-relaxed">Um auditório tem capacidade normal para 400 pessoas. Para cumprir os protocolos de distanciamento, foi estabelecido que a ocupação máxima permitida seria de $40\%$ da capacidade total, mantendo um espaçamento de $1{,}5\text{ m}$ entre os assentos ocupados. Quantas pessoas puderam comparecer simultaneamente ao auditório?</p>
                             <div class="space-y-2 mb-4" id="opts-ifsp-2022-1-manha-q7">
@@ -528,8 +588,15 @@
                         </div>
                     
                         <div class="mb-8 border-b border-slate-800/80 pb-6 last:border-0 last:pb-0" id="q-container-ifsp-2022-1-manha-q8">
-                            <div class="flex items-center justify-between mb-2">
-                                <span class="text-xs font-bold uppercase tracking-wider text-sky-300 bg-blue-950/60 px-2.5 py-0.5 rounded-full border border-blue-800/40">Questão 9</span>
+                            <div class="flex items-center justify-between mb-3 flex-wrap gap-2">
+                                <div class="flex items-center gap-2">
+                                    <span class="text-xs font-bold uppercase tracking-wider text-sky-300 bg-blue-950/60 px-2.5 py-0.5 rounded-full border border-blue-800/40">Questão 9</span>
+                                    
+                            <a href="../pesquisa.html?bncc=EF07MA18" class="text-[11px] font-mono font-bold text-emerald-300 bg-emerald-950/80 hover:bg-emerald-900/90 px-2.5 py-0.5 rounded-full border border-emerald-800/60 flex items-center gap-1 transition shadow-sm" title="Resolver e elaborar problemas que possam ser representados por equações polinomiais de 1º grau, redutíveis à forma ax + b = c, fazendo uso das propriedades da igualdade.">
+                                <i data-lucide="bookmark" class="w-3 h-3 text-emerald-400"></i> BNCC: EF07MA18
+                            </a>
+                        
+                                </div>
                             </div>
                             <p class="font-medium text-slate-100 mb-4 text-sm sm:text-base leading-relaxed">A taxa de transmissão $R_t$ de uma epidemia indica a quantas pessoas em média cada indivíduo infectado transmite a doença. Se em determinada semana $R_t = 1{,}2$ e havia $5.000$ pessoas ativamente infectadas, quantas pessoas deverão ser infectadas no ciclo subsequente?</p>
                             <div class="space-y-2 mb-4" id="opts-ifsp-2022-1-manha-q8">
@@ -564,8 +631,15 @@
                         </div>
                     
                         <div class="mb-8 border-b border-slate-800/80 pb-6 last:border-0 last:pb-0" id="q-container-ifsp-2022-1-manha-q9">
-                            <div class="flex items-center justify-between mb-2">
-                                <span class="text-xs font-bold uppercase tracking-wider text-sky-300 bg-blue-950/60 px-2.5 py-0.5 rounded-full border border-blue-800/40">Questão 10</span>
+                            <div class="flex items-center justify-between mb-3 flex-wrap gap-2">
+                                <div class="flex items-center gap-2">
+                                    <span class="text-xs font-bold uppercase tracking-wider text-sky-300 bg-blue-950/60 px-2.5 py-0.5 rounded-full border border-blue-800/40">Questão 10</span>
+                                    
+                            <a href="../pesquisa.html?bncc=EF08MA22" class="text-[11px] font-mono font-bold text-emerald-300 bg-emerald-950/80 hover:bg-emerald-900/90 px-2.5 py-0.5 rounded-full border border-emerald-800/60 flex items-center gap-1 transition shadow-sm" title="Calcular a probabilidade de eventos, com base na construção do espaço amostral, utilizando o princípio multiplicativo, e reconhecer que a soma das probabilidades de todos os elementos do espaço amostral é igual a 1.">
+                                <i data-lucide="bookmark" class="w-3 h-3 text-emerald-400"></i> BNCC: EF08MA22
+                            </a>
+                        
+                                </div>
                             </div>
                             <p class="font-medium text-slate-100 mb-4 text-sm sm:text-base leading-relaxed">Um laboratório analisou o consumo de um carro flex. Abastecido com gasolina, o veículo percorreu $396\text{ km}$ consumindo $33\text{ litros}$ (rendimento de $12\text{ km/L}$). Com etanol, percorreu $352\text{ km}$ com $40\text{ litros}$ (rendimento de $8{,}8\text{ km/L}$). Considerando o preço de R$ 6,00 para o litro de gasolina, qual deve ser o preço do litro de etanol para que o custo por quilômetro rodado seja exatamente o mesmo?</p>
                             <div class="space-y-2 mb-4" id="opts-ifsp-2022-1-manha-q9">
@@ -600,8 +674,15 @@
                         </div>
                     
                         <div class="mb-8 border-b border-slate-800/80 pb-6 last:border-0 last:pb-0" id="q-container-ifsp-2022-1-manha-q10">
-                            <div class="flex items-center justify-between mb-2">
-                                <span class="text-xs font-bold uppercase tracking-wider text-sky-300 bg-blue-950/60 px-2.5 py-0.5 rounded-full border border-blue-800/40">Questão 11</span>
+                            <div class="flex items-center justify-between mb-3 flex-wrap gap-2">
+                                <div class="flex items-center gap-2">
+                                    <span class="text-xs font-bold uppercase tracking-wider text-sky-300 bg-blue-950/60 px-2.5 py-0.5 rounded-full border border-blue-800/40">Questão 11</span>
+                                    
+                            <a href="../pesquisa.html?bncc=EF08MA01" class="text-[11px] font-mono font-bold text-emerald-300 bg-emerald-950/80 hover:bg-emerald-900/90 px-2.5 py-0.5 rounded-full border border-emerald-800/60 flex items-center gap-1 transition shadow-sm" title="Efetuar cálculos com potências de expoentes inteiros e aplicar esse conhecimento na representação de números em notação científica.">
+                                <i data-lucide="bookmark" class="w-3 h-3 text-emerald-400"></i> BNCC: EF08MA01
+                            </a>
+                        
+                                </div>
                             </div>
                             <p class="font-medium text-slate-100 mb-4 text-sm sm:text-base leading-relaxed">Alexander Fleming descobriu a penicilina observando culturas da bactéria Staphylococcus aureus, cujo diâmetro médio é de cerca de $1 \times 10^{-6}\text{ metros}$. Se uma colônia alinhada em linha reta tem comprimento total de $2\text{ milímetros}$ ($2 \times 10^{-3}\text{ m}$), quantas bactérias compõem aproximadamente essa linha?</p>
                             <div class="space-y-2 mb-4" id="opts-ifsp-2022-1-manha-q10">
@@ -636,8 +717,15 @@
                         </div>
                     
                         <div class="mb-8 border-b border-slate-800/80 pb-6 last:border-0 last:pb-0" id="q-container-ifsp-2022-1-manha-q11">
-                            <div class="flex items-center justify-between mb-2">
-                                <span class="text-xs font-bold uppercase tracking-wider text-sky-300 bg-blue-950/60 px-2.5 py-0.5 rounded-full border border-blue-800/40">Questão 12</span>
+                            <div class="flex items-center justify-between mb-3 flex-wrap gap-2">
+                                <div class="flex items-center gap-2">
+                                    <span class="text-xs font-bold uppercase tracking-wider text-sky-300 bg-blue-950/60 px-2.5 py-0.5 rounded-full border border-blue-800/40">Questão 12</span>
+                                    
+                            <a href="../pesquisa.html?bncc=EF08MA04" class="text-[11px] font-mono font-bold text-emerald-300 bg-emerald-950/80 hover:bg-emerald-900/90 px-2.5 py-0.5 rounded-full border border-emerald-800/60 flex items-center gap-1 transition shadow-sm" title="Resolver e elaborar problemas, envolvendo cálculo de porcentagens, incluindo o uso de tecnologias digitais.">
+                                <i data-lucide="bookmark" class="w-3 h-3 text-emerald-400"></i> BNCC: EF08MA04
+                            </a>
+                        
+                                </div>
                             </div>
                             <p class="font-medium text-slate-100 mb-4 text-sm sm:text-base leading-relaxed">No jogo de 'Par ou Ímpar' disputado por duas pessoas, cada jogador escolhe simultaneamente um número inteiro de dedos de 0 a 5. Sabendo que todas as 36 combinações de dedos são equiprováveis, qual é a probabilidade de a soma resultar em um número par?</p>
                             <div class="space-y-2 mb-4" id="opts-ifsp-2022-1-manha-q11">
@@ -672,8 +760,15 @@
                         </div>
                     
                         <div class="mb-8 border-b border-slate-800/80 pb-6 last:border-0 last:pb-0" id="q-container-ifsp-2022-1-manha-q12">
-                            <div class="flex items-center justify-between mb-2">
-                                <span class="text-xs font-bold uppercase tracking-wider text-sky-300 bg-blue-950/60 px-2.5 py-0.5 rounded-full border border-blue-800/40">Questão 13</span>
+                            <div class="flex items-center justify-between mb-3 flex-wrap gap-2">
+                                <div class="flex items-center gap-2">
+                                    <span class="text-xs font-bold uppercase tracking-wider text-sky-300 bg-blue-950/60 px-2.5 py-0.5 rounded-full border border-blue-800/40">Questão 13</span>
+                                    
+                            <a href="../pesquisa.html?bncc=EF07MA18" class="text-[11px] font-mono font-bold text-emerald-300 bg-emerald-950/80 hover:bg-emerald-900/90 px-2.5 py-0.5 rounded-full border border-emerald-800/60 flex items-center gap-1 transition shadow-sm" title="Resolver e elaborar problemas que possam ser representados por equações polinomiais de 1º grau, redutíveis à forma ax + b = c, fazendo uso das propriedades da igualdade.">
+                                <i data-lucide="bookmark" class="w-3 h-3 text-emerald-400"></i> BNCC: EF07MA18
+                            </a>
+                        
+                                </div>
                             </div>
                             <p class="font-medium text-slate-100 mb-4 text-sm sm:text-base leading-relaxed">Seja a equação exponencial $2^{x+2} + 2^x = 20$. O valor real de $x$ que satisfaz essa equação é:</p>
                             <div class="space-y-2 mb-4" id="opts-ifsp-2022-1-manha-q12">
@@ -708,8 +803,15 @@
                         </div>
                     
                         <div class="mb-8 border-b border-slate-800/80 pb-6 last:border-0 last:pb-0" id="q-container-ifsp-2022-1-manha-q13">
-                            <div class="flex items-center justify-between mb-2">
-                                <span class="text-xs font-bold uppercase tracking-wider text-sky-300 bg-blue-950/60 px-2.5 py-0.5 rounded-full border border-blue-800/40">Questão 14</span>
+                            <div class="flex items-center justify-between mb-3 flex-wrap gap-2">
+                                <div class="flex items-center gap-2">
+                                    <span class="text-xs font-bold uppercase tracking-wider text-sky-300 bg-blue-950/60 px-2.5 py-0.5 rounded-full border border-blue-800/40">Questão 14</span>
+                                    
+                            <a href="../pesquisa.html?bncc=EF08MA13" class="text-[11px] font-mono font-bold text-emerald-300 bg-emerald-950/80 hover:bg-emerald-900/90 px-2.5 py-0.5 rounded-full border border-emerald-800/60 flex items-center gap-1 transition shadow-sm" title="Resolver e elaborar problemas que envolvam grandezas diretamente ou inversamente proporcionais, por meio de estratégias variadas.">
+                                <i data-lucide="bookmark" class="w-3 h-3 text-emerald-400"></i> BNCC: EF08MA13
+                            </a>
+                        
+                                </div>
                             </div>
                             <p class="font-medium text-slate-100 mb-4 text-sm sm:text-base leading-relaxed">Quatro pesquisadores com idades de 20, 30, 40 e 60 anos devem realizar um total de 120 tarefas diárias. A quantidade de tarefas que cada pesquisador fará é inversamente proporcional à sua respectiva idade. Qual é a soma das tarefas diárias que os dois pesquisadores mais velhos (40 e 60 anos) terão que realizar?</p>
                             <div class="space-y-2 mb-4" id="opts-ifsp-2022-1-manha-q13">
@@ -744,8 +846,15 @@
                         </div>
                     
                         <div class="mb-8 border-b border-slate-800/80 pb-6 last:border-0 last:pb-0" id="q-container-ifsp-2022-1-manha-q14">
-                            <div class="flex items-center justify-between mb-2">
-                                <span class="text-xs font-bold uppercase tracking-wider text-sky-300 bg-blue-950/60 px-2.5 py-0.5 rounded-full border border-blue-800/40">Questão 15</span>
+                            <div class="flex items-center justify-between mb-3 flex-wrap gap-2">
+                                <div class="flex items-center gap-2">
+                                    <span class="text-xs font-bold uppercase tracking-wider text-sky-300 bg-blue-950/60 px-2.5 py-0.5 rounded-full border border-blue-800/40">Questão 15</span>
+                                    
+                            <a href="../pesquisa.html?bncc=EF08MA04" class="text-[11px] font-mono font-bold text-emerald-300 bg-emerald-950/80 hover:bg-emerald-900/90 px-2.5 py-0.5 rounded-full border border-emerald-800/60 flex items-center gap-1 transition shadow-sm" title="Resolver e elaborar problemas, envolvendo cálculo de porcentagens, incluindo o uso de tecnologias digitais.">
+                                <i data-lucide="bookmark" class="w-3 h-3 text-emerald-400"></i> BNCC: EF08MA04
+                            </a>
+                        
+                                </div>
                             </div>
                             <p class="font-medium text-slate-100 mb-4 text-sm sm:text-base leading-relaxed">O Ministério da Saúde recebeu um lote de 2 milhões de doses de vacinas para distribuição entre estados proporcionalmente à população de grupos prioritários. Se o estado de São Paulo tem direito a $22\%$ desse lote, quantas doses foram destinadas a São Paulo?</p>
                             <div class="space-y-2 mb-4" id="opts-ifsp-2022-1-manha-q14">

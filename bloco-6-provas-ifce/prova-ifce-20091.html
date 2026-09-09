@@ -71,6 +71,8 @@
                 <nav class="hidden md:flex space-x-1 items-center">
                     <a href="../provas.html" class="px-3 py-2 rounded-lg text-sm transition flex items-center gap-1.5 text-slate-300 hover:bg-slate-800 hover:text-white">
                 <i data-lucide="layout-grid" class="w-4 h-4"></i> Todas as Provas
+            </a><a href="../pesquisa.html" class="px-3 py-2 rounded-lg text-sm transition flex items-center gap-1.5 text-slate-300 hover:bg-slate-800 hover:text-white">
+                <i data-lucide="search" class="w-4 h-4"></i> Pesquisa BNCC
             </a><a href="../bloco-6-provas-ifce/index.html" class="px-3 py-2 rounded-lg text-sm transition flex items-center gap-1.5 bg-blue-600 text-white font-semibold shadow-inner">
                 <i data-lucide="award" class="w-4 h-4"></i> Provas IFCE (27)
             </a><a href="../bloco-5-provas-ifsc/index.html" class="px-3 py-2 rounded-lg text-sm transition flex items-center gap-1.5 text-slate-300 hover:bg-slate-800 hover:text-white">
@@ -99,6 +101,8 @@
         <div id="mobile-menu" class="hidden md:hidden bg-slate-950 border-t border-slate-800 px-4 pt-2 pb-4 space-y-1">
             <a href="../provas.html" class="block px-3 py-2 rounded-md text-base font-medium text-white flex items-center gap-2 hover:bg-slate-800">
                 <i data-lucide="layout-grid" class="w-4 h-4"></i> Todas as Provas
+            </a><a href="../pesquisa.html" class="block px-3 py-2 rounded-md text-base font-medium text-white flex items-center gap-2 hover:bg-slate-800">
+                <i data-lucide="search" class="w-4 h-4"></i> Pesquisa BNCC
             </a><a href="../bloco-6-provas-ifce/index.html" class="block px-3 py-2 rounded-md text-base font-medium text-white flex items-center gap-2 bg-blue-600 font-bold">
                 <i data-lucide="award" class="w-4 h-4"></i> Provas IFCE (27)
             </a><a href="../bloco-5-provas-ifsc/index.html" class="block px-3 py-2 rounded-md text-base font-medium text-white flex items-center gap-2 hover:bg-slate-800">
@@ -211,7 +215,7 @@
                         <i data-lucide="file-check-2" class="w-5 h-5 text-sky-400"></i> Resolução Comentada de Destaque
                     </h2>
                     <div class="bg-slate-950/90 border border-slate-800 rounded-2xl p-5 shadow-inner">
-                        <p class="text-sm sm:text-base font-semibold text-slate-100 mb-3">Se uma transformação linear $T: \mathbb{R}^2 \to \mathbb{R}^2$ satisfaz $T(1,0) = (0,1)$ e $T(0,1) = (-1,0)$, determine $T^2(x,y)$.</p>
+                        <p class="text-sm sm:text-base font-semibold text-slate-100 mb-3">Se uma transformação linear $T: \mathbb{R}^2 \to \mathbb{R}^2$ satisfaz $T(1,0) = (0,1)$ e $T(0,1) = (-1{,}0)$, determine $T^2(x,y)$.</p>
                         <div class="text-xs sm:text-sm text-slate-300 leading-relaxed whitespace-pre-line border-t border-slate-800 pt-3">
                             <strong class="text-sky-300 block mb-1">Resolução Detalhada:</strong>
                             1. A matriz de $T$ é $M = \begin{pmatrix} 0 & -1 \\ 1 & 0 \end{pmatrix}$.<br>2. Calculando $M^2$: $\begin{pmatrix} 0 & -1 \\ 1 & 0 \end{pmatrix} \begin{pmatrix} 0 & -1 \\ 1 & 0 \end{pmatrix} = \begin{pmatrix} -1 & 0 \\ 0 & -1 \end{pmatrix} = -I$.<br>3. Portanto, $T^2(x,y) = (-x, -y)$.
@@ -235,8 +239,15 @@
 
                     
                         <div class="mb-8 border-b border-slate-800/80 pb-6 last:border-0 last:pb-0" id="q-container-ifce-2009-1-matematica-q0">
-                            <div class="flex items-center justify-between mb-2">
-                                <span class="text-xs font-bold uppercase tracking-wider text-sky-300 bg-blue-950/60 px-2.5 py-0.5 rounded-full border border-blue-800/40">Questão 1</span>
+                            <div class="flex items-center justify-between mb-3 flex-wrap gap-2">
+                                <div class="flex items-center gap-2">
+                                    <span class="text-xs font-bold uppercase tracking-wider text-sky-300 bg-blue-950/60 px-2.5 py-0.5 rounded-full border border-blue-800/40">Questão 1</span>
+                                    
+                            <a href="../pesquisa.html?bncc=EF08MA04" class="text-[11px] font-mono font-bold text-emerald-300 bg-emerald-950/80 hover:bg-emerald-900/90 px-2.5 py-0.5 rounded-full border border-emerald-800/60 flex items-center gap-1 transition shadow-sm" title="Resolver e elaborar problemas, envolvendo cálculo de porcentagens, incluindo o uso de tecnologias digitais.">
+                                <i data-lucide="bookmark" class="w-3 h-3 text-emerald-400"></i> BNCC: EF08MA04
+                            </a>
+                        
+                                </div>
                             </div>
                             <p class="font-medium text-slate-100 mb-4 text-sm sm:text-base leading-relaxed">A população eleitoral de certo município do interior do Ceará, para esse pleito de 2008, é de $48.158$ eleitores e, historicamente, aumenta de $10\%$ a cada biênio. Sobre o número de eleitores no pleito de 2004 e para o pleito de 2010, é correto dizer-se que:</p>
                             <div class="space-y-2 mb-4" id="opts-ifce-2009-1-matematica-q0">
@@ -276,8 +287,15 @@
                         </div>
                     
                         <div class="mb-8 border-b border-slate-800/80 pb-6 last:border-0 last:pb-0" id="q-container-ifce-2009-1-matematica-q1">
-                            <div class="flex items-center justify-between mb-2">
-                                <span class="text-xs font-bold uppercase tracking-wider text-sky-300 bg-blue-950/60 px-2.5 py-0.5 rounded-full border border-blue-800/40">Questão 2</span>
+                            <div class="flex items-center justify-between mb-3 flex-wrap gap-2">
+                                <div class="flex items-center gap-2">
+                                    <span class="text-xs font-bold uppercase tracking-wider text-sky-300 bg-blue-950/60 px-2.5 py-0.5 rounded-full border border-blue-800/40">Questão 2</span>
+                                    
+                            <a href="../pesquisa.html?bncc=EF07MA18" class="text-[11px] font-mono font-bold text-emerald-300 bg-emerald-950/80 hover:bg-emerald-900/90 px-2.5 py-0.5 rounded-full border border-emerald-800/60 flex items-center gap-1 transition shadow-sm" title="Resolver e elaborar problemas que possam ser representados por equações polinomiais de 1º grau, redutíveis à forma ax + b = c, fazendo uso das propriedades da igualdade.">
+                                <i data-lucide="bookmark" class="w-3 h-3 text-emerald-400"></i> BNCC: EF07MA18
+                            </a>
+                        
+                                </div>
                             </div>
                             <p class="font-medium text-slate-100 mb-4 text-sm sm:text-base leading-relaxed">Uma avaliação é composta de $40$ questões. Um aluno ganha $1{,}5$ escore por cada questão que acerta e perde $0{,}5$ escore por cada questão que erra. Ao resolver todas as questões, obteve $40$ escores. O aluno errou _____ questões.</p>
                             <div class="space-y-2 mb-4" id="opts-ifce-2009-1-matematica-q1">
@@ -317,10 +335,17 @@
                         </div>
                     
                         <div class="mb-8 border-b border-slate-800/80 pb-6 last:border-0 last:pb-0" id="q-container-ifce-2009-1-matematica-q2">
-                            <div class="flex items-center justify-between mb-2">
-                                <span class="text-xs font-bold uppercase tracking-wider text-sky-300 bg-blue-950/60 px-2.5 py-0.5 rounded-full border border-blue-800/40">Questão 3</span>
+                            <div class="flex items-center justify-between mb-3 flex-wrap gap-2">
+                                <div class="flex items-center gap-2">
+                                    <span class="text-xs font-bold uppercase tracking-wider text-sky-300 bg-blue-950/60 px-2.5 py-0.5 rounded-full border border-blue-800/40">Questão 3</span>
+                                    
+                            <a href="../pesquisa.html?bncc=EF08MA22" class="text-[11px] font-mono font-bold text-emerald-300 bg-emerald-950/80 hover:bg-emerald-900/90 px-2.5 py-0.5 rounded-full border border-emerald-800/60 flex items-center gap-1 transition shadow-sm" title="Calcular a probabilidade de eventos, com base na construção do espaço amostral, utilizando o princípio multiplicativo, e reconhecer que a soma das probabilidades de todos os elementos do espaço amostral é igual a 1.">
+                                <i data-lucide="bookmark" class="w-3 h-3 text-emerald-400"></i> BNCC: EF08MA22
+                            </a>
+                        
+                                </div>
                             </div>
-                            <p class="font-medium text-slate-100 mb-4 text-sm sm:text-base leading-relaxed">A função $T: \mathbb{R} \times \mathbb{R} \to \mathbb{R} \times \mathbb{R}$ é dada por $T(x,y) = (ax + by, cx + dy)$, onde $a, b, c, d$ são constantes reais. Usa-se a notação $T^n$ para indicar a composição $T \circ T \circ \dots \circ T$, com $T$ sendo repetida $n$ vezes. Sabendo-se que $T(1,0) = (0,1)$ e $T(0,1) = (-1,0)$, é correto dizer-se que $T^{2008}(1,1)$ é igual a:</p>
+                            <p class="font-medium text-slate-100 mb-4 text-sm sm:text-base leading-relaxed">A função $T: \mathbb{R} \times \mathbb{R} \to \mathbb{R} \times \mathbb{R}$ é dada por $T(x,y) = (ax + by, cx + dy)$, onde $a, b, c, d$ são constantes reais. Usa-se a notação $T^n$ para indicar a composição $T \circ T \circ \dots \circ T$, com $T$ sendo repetida $n$ vezes. Sabendo-se que $T(1,0) = (0,1)$ e $T(0,1) = (-1{,}0)$, é correto dizer-se que $T^{2008}(1,1)$ é igual a:</p>
                             <div class="space-y-2 mb-4" id="opts-ifce-2009-1-matematica-q2">
                                 
                             <button onclick="selectOption('ifce-2009-1-matematica-q2', 0)" id="btn-ifce-2009-1-matematica-q2-0" class="w-full text-left p-3.5 rounded-xl border border-slate-800 bg-slate-950/60 hover:border-blue-500 hover:bg-slate-800/60 transition text-sm text-slate-200 flex items-center justify-between group">
@@ -358,8 +383,15 @@
                         </div>
                     
                         <div class="mb-8 border-b border-slate-800/80 pb-6 last:border-0 last:pb-0" id="q-container-ifce-2009-1-matematica-q3">
-                            <div class="flex items-center justify-between mb-2">
-                                <span class="text-xs font-bold uppercase tracking-wider text-sky-300 bg-blue-950/60 px-2.5 py-0.5 rounded-full border border-blue-800/40">Questão 4</span>
+                            <div class="flex items-center justify-between mb-3 flex-wrap gap-2">
+                                <div class="flex items-center gap-2">
+                                    <span class="text-xs font-bold uppercase tracking-wider text-sky-300 bg-blue-950/60 px-2.5 py-0.5 rounded-full border border-blue-800/40">Questão 4</span>
+                                    
+                            <a href="../pesquisa.html?bncc=EF09MA14" class="text-[11px] font-mono font-bold text-emerald-300 bg-emerald-950/80 hover:bg-emerald-900/90 px-2.5 py-0.5 rounded-full border border-emerald-800/60 flex items-center gap-1 transition shadow-sm" title="Resolver e elaborar problemas de aplicação do teorema de Pitágoras ou das relações de proporcionalidade envolvendo retas paralelas cortadas por secantes.">
+                                <i data-lucide="bookmark" class="w-3 h-3 text-emerald-400"></i> BNCC: EF09MA14
+                            </a>
+                        
+                                </div>
                             </div>
                             <p class="font-medium text-slate-100 mb-4 text-sm sm:text-base leading-relaxed">O mapa de certa região é construído utilizando a escala $1:200.000$. Neste mapa, os pontos $A$, $B$ e $C$ representam cidades vizinhas. Do mapa, podem ser retiradas as seguintes informações:<br>• A distância em linha reta, entre $A$ e $B$, é igual a $3\text{ cm}$.<br>• A distância em linha reta, entre $A$ e $C$, é igual a $4\text{ cm}$.<br>• A reta $r$, que passa por $A$ e $B$, e a reta $s$, que passa por $A$ e $C$, são perpendiculares.<br>Um andarilho, partindo da cidade representada por $A$, passa, respectivamente, pelas cidades representadas por $B$ e por $C$ e retorna para o ponto de partida, percorrendo cada trecho, entre as cidades, sempre em linha reta. O percurso total do andarilho foi, em km,</p>
                             <div class="space-y-2 mb-4" id="opts-ifce-2009-1-matematica-q3">
@@ -399,8 +431,15 @@
                         </div>
                     
                         <div class="mb-8 border-b border-slate-800/80 pb-6 last:border-0 last:pb-0" id="q-container-ifce-2009-1-matematica-q4">
-                            <div class="flex items-center justify-between mb-2">
-                                <span class="text-xs font-bold uppercase tracking-wider text-sky-300 bg-blue-950/60 px-2.5 py-0.5 rounded-full border border-blue-800/40">Questão 5</span>
+                            <div class="flex items-center justify-between mb-3 flex-wrap gap-2">
+                                <div class="flex items-center gap-2">
+                                    <span class="text-xs font-bold uppercase tracking-wider text-sky-300 bg-blue-950/60 px-2.5 py-0.5 rounded-full border border-blue-800/40">Questão 5</span>
+                                    
+                            <a href="../pesquisa.html?bncc=EF07MA18" class="text-[11px] font-mono font-bold text-emerald-300 bg-emerald-950/80 hover:bg-emerald-900/90 px-2.5 py-0.5 rounded-full border border-emerald-800/60 flex items-center gap-1 transition shadow-sm" title="Resolver e elaborar problemas que possam ser representados por equações polinomiais de 1º grau, redutíveis à forma ax + b = c, fazendo uso das propriedades da igualdade.">
+                                <i data-lucide="bookmark" class="w-3 h-3 text-emerald-400"></i> BNCC: EF07MA18
+                            </a>
+                        
+                                </div>
                             </div>
                             <p class="font-medium text-slate-100 mb-4 text-sm sm:text-base leading-relaxed">Um número natural $\overline{ABC}$ é formado por $3$ algarismos $A$, $B$ e $C$, e sabe-se que a soma dos três algarismos é $A + B + C = 8$. Multiplica-se esse número por $7$, depois por $11$ e, finalmente, por $13$, obtendo-se um novo número. A soma dos algarismos desse novo número é igual a:</p>
                             <div class="space-y-2 mb-4" id="opts-ifce-2009-1-matematica-q4">
@@ -440,8 +479,15 @@
                         </div>
                     
                         <div class="mb-8 border-b border-slate-800/80 pb-6 last:border-0 last:pb-0" id="q-container-ifce-2009-1-matematica-q5">
-                            <div class="flex items-center justify-between mb-2">
-                                <span class="text-xs font-bold uppercase tracking-wider text-sky-300 bg-blue-950/60 px-2.5 py-0.5 rounded-full border border-blue-800/40">Questão 6</span>
+                            <div class="flex items-center justify-between mb-3 flex-wrap gap-2">
+                                <div class="flex items-center gap-2">
+                                    <span class="text-xs font-bold uppercase tracking-wider text-sky-300 bg-blue-950/60 px-2.5 py-0.5 rounded-full border border-blue-800/40">Questão 6</span>
+                                    
+                            <a href="../pesquisa.html?bncc=EF07MA18" class="text-[11px] font-mono font-bold text-emerald-300 bg-emerald-950/80 hover:bg-emerald-900/90 px-2.5 py-0.5 rounded-full border border-emerald-800/60 flex items-center gap-1 transition shadow-sm" title="Resolver e elaborar problemas que possam ser representados por equações polinomiais de 1º grau, redutíveis à forma ax + b = c, fazendo uso das propriedades da igualdade.">
+                                <i data-lucide="bookmark" class="w-3 h-3 text-emerald-400"></i> BNCC: EF07MA18
+                            </a>
+                        
+                                </div>
                             </div>
                             <p class="font-medium text-slate-100 mb-4 text-sm sm:text-base leading-relaxed">Os pontos $(-1, 5)$ e $(7, -3)$ são os extremos do diâmetro de uma circunferência. A equação desta circunferência é:</p>
                             <div class="space-y-2 mb-4" id="opts-ifce-2009-1-matematica-q5">
@@ -481,8 +527,15 @@
                         </div>
                     
                         <div class="mb-8 border-b border-slate-800/80 pb-6 last:border-0 last:pb-0" id="q-container-ifce-2009-1-matematica-q6">
-                            <div class="flex items-center justify-between mb-2">
-                                <span class="text-xs font-bold uppercase tracking-wider text-sky-300 bg-blue-950/60 px-2.5 py-0.5 rounded-full border border-blue-800/40">Questão 7</span>
+                            <div class="flex items-center justify-between mb-3 flex-wrap gap-2">
+                                <div class="flex items-center gap-2">
+                                    <span class="text-xs font-bold uppercase tracking-wider text-sky-300 bg-blue-950/60 px-2.5 py-0.5 rounded-full border border-blue-800/40">Questão 7</span>
+                                    
+                            <a href="../pesquisa.html?bncc=EF08MA01" class="text-[11px] font-mono font-bold text-emerald-300 bg-emerald-950/80 hover:bg-emerald-900/90 px-2.5 py-0.5 rounded-full border border-emerald-800/60 flex items-center gap-1 transition shadow-sm" title="Efetuar cálculos com potências de expoentes inteiros e aplicar esse conhecimento na representação de números em notação científica.">
+                                <i data-lucide="bookmark" class="w-3 h-3 text-emerald-400"></i> BNCC: EF08MA01
+                            </a>
+                        
+                                </div>
                             </div>
                             <p class="font-medium text-slate-100 mb-4 text-sm sm:text-base leading-relaxed">A escala Richter quantifica a magnitude de um terremoto. Ela foi desenvolvida, em 1935, pelos sismólogos norte-americanos Charles Francis Richter e Beno Gutenberg. A magnitude $M$ de um terremoto é calculada, usando-se a fórmula $M = \log A - \log A_0$, onde os logaritmos são na base $10$, $A$ representa a amplitude máxima medida pelo sismógrafo e $A_0$ representa uma amplitude de referência. No dia 12 de maio de 2008, um terremoto de $M_1 = 7{,}9$ graus, na escala Richter, atingiu a província de Sichuan, no interior da China, causando grande destruição. No dia 21 de maio de 2008, foi registrado, na cidade de Sobral, um tremor de $M_2 = 4{,}2$ graus na escala Richter. Baseando-se na fórmula dada acima e supondo-se que o valor de referência $A_0$, usado nas duas medições, foi o mesmo, a amplitude do tremor em Sichuan foi ________ vezes maior do que a amplitude do tremor em Sobral.</p>
                             <div class="space-y-2 mb-4" id="opts-ifce-2009-1-matematica-q6">

@@ -81,8 +81,11 @@
         </a>
                 </nav>
 
-                <!-- Ações do Usuário: Botão Destacado de Provas e Simulado -->
-                <div class="flex items-center gap-2.5">
+                <!-- Ações do Usuário: Botão Destacado de Provas, Pesquisa e Simulado -->
+                <div class="flex items-center gap-2 sm:gap-2.5">
+                    <a href="../pesquisa.html" class="bg-emerald-600 hover:bg-emerald-500 text-white font-bold px-3 py-1.5 rounded-lg text-xs sm:text-sm transition flex items-center gap-1.5 shadow" title="Pesquisar questões por descritor BNCC">
+                        <i data-lucide="search" class="w-4 h-4 text-emerald-200"></i> <span class="hidden xl:inline">Pesquisa</span> BNCC
+                    </a>
                     <a href="../provas.html" class="bg-gradient-to-r from-blue-700 to-indigo-800 hover:from-blue-600 hover:to-indigo-700 text-white font-bold px-3.5 py-1.5 rounded-lg text-sm transition flex items-center gap-1.5 shadow-md border border-blue-400/40" title="Acessar o Banco de Provas Oficiais (Parte 2)">
                         <i data-lucide="file-check" class="w-4 h-4 text-sky-300"></i> Provas Oficiais <span class="bg-sky-400 text-slate-950 text-[10px] font-extrabold px-1.5 py-0.2 rounded-full ml-0.5">51</span>
                     </a>
@@ -141,7 +144,7 @@
                 <div class="bg-white border border-gray-200 rounded-2xl p-6 sm:p-8 shadow-sm">
                     <div class="flex flex-wrap items-center justify-between gap-3 mb-4">
                         <span class="text-xs font-bold uppercase tracking-wider text-brand-800 bg-brand-100 px-3 py-1 rounded-full border border-brand-200">
-                            BNCC: EF08MA01, EF09MA03
+                            BNCC: EF08MA01, EF09MA03, EF09MA04
                         </span>
                         <div class="flex items-center gap-2">
                             
@@ -205,7 +208,7 @@
                         <i data-lucide="file-check-2" class="w-5 h-5 text-brand-700"></i> Exemplo Resolvido Passo a Passo
                     </h2>
                     <div class="bg-white border border-brand-100 rounded-xl p-5 shadow-inner">
-                        <p class="text-sm sm:text-base font-semibold text-gray-800 mb-3">Multiplique: $(4{}2 \times 10^{-6}) \times (2 \times 10^8)$.</p>
+                        <p class="text-sm sm:text-base font-semibold text-gray-800 mb-3">Multiplique: $(4{,}2 \times 10^{-6}) \times (2 \times 10^8)$.</p>
                         <div class="text-xs sm:text-sm text-gray-700 leading-relaxed whitespace-pre-line border-t border-gray-100 pt-3">
                             <strong class="text-brand-800 block mb-1">Resolução Detalhada:</strong>
                             Multiplica-se as mantissas: $4{,}2 \times 2 = 8{,}4$.<br>Multiplica-se as potências somando os expoentes: $-6 + 8 = 2$.<br>Resultado: $8{,}4 \times 10^2 = 840$.
@@ -241,17 +244,17 @@
                             </button>
                         
                             <button onclick="selectOption('b1-t7-q0', 1)" id="btn-b1-t7-q0-1" class="w-full text-left p-3.5 rounded-xl border border-gray-200 hover:border-brand-400 hover:bg-brand-50/40 transition text-sm text-gray-700 flex items-center justify-between group">
-                                <span class="flex items-center gap-2"><strong class="text-brand-700 font-bold">B)</strong> $4{}5 \times 10^6$</span>
+                                <span class="flex items-center gap-2"><strong class="text-brand-700 font-bold">B)</strong> $4{,}5 \times 10^6$</span>
                                 <i data-lucide="circle" class="w-4 h-4 text-gray-300 opt-icon group-hover:text-brand-400 flex-shrink-0"></i>
                             </button>
                         
                             <button onclick="selectOption('b1-t7-q0', 2)" id="btn-b1-t7-q0-2" class="w-full text-left p-3.5 rounded-xl border border-gray-200 hover:border-brand-400 hover:bg-brand-50/40 transition text-sm text-gray-700 flex items-center justify-between group">
-                                <span class="flex items-center gap-2"><strong class="text-brand-700 font-bold">C)</strong> $4{}5 \times 10^5$</span>
+                                <span class="flex items-center gap-2"><strong class="text-brand-700 font-bold">C)</strong> $4{,}5 \times 10^5$</span>
                                 <i data-lucide="circle" class="w-4 h-4 text-gray-300 opt-icon group-hover:text-brand-400 flex-shrink-0"></i>
                             </button>
                         
                             <button onclick="selectOption('b1-t7-q0', 3)" id="btn-b1-t7-q0-3" class="w-full text-left p-3.5 rounded-xl border border-gray-200 hover:border-brand-400 hover:bg-brand-50/40 transition text-sm text-gray-700 flex items-center justify-between group">
-                                <span class="flex items-center gap-2"><strong class="text-brand-700 font-bold">D)</strong> $0{}45 \times 10^7$</span>
+                                <span class="flex items-center gap-2"><strong class="text-brand-700 font-bold">D)</strong> $0{,}45 \times 10^7$</span>
                                 <i data-lucide="circle" class="w-4 h-4 text-gray-300 opt-icon group-hover:text-brand-400 flex-shrink-0"></i>
                             </button>
                         
@@ -268,16 +271,16 @@
                             <div class="flex items-center justify-between mb-2">
                                 <span class="text-xs font-bold uppercase tracking-wider text-brand-700 bg-brand-50 px-2.5 py-0.5 rounded-full border border-brand-100">Questão 2</span>
                             </div>
-                            <p class="font-medium text-gray-800 mb-4 text-sm sm:text-base leading-relaxed">$0{}00023$ em notação científica é:</p>
+                            <p class="font-medium text-gray-800 mb-4 text-sm sm:text-base leading-relaxed">$0{,}00023$ em notação científica é:</p>
                             <div class="space-y-2 mb-4" id="opts-b1-t7-q1">
                                 
                             <button onclick="selectOption('b1-t7-q1', 0)" id="btn-b1-t7-q1-0" class="w-full text-left p-3.5 rounded-xl border border-gray-200 hover:border-brand-400 hover:bg-brand-50/40 transition text-sm text-gray-700 flex items-center justify-between group">
-                                <span class="flex items-center gap-2"><strong class="text-brand-700 font-bold">A)</strong> $2{}3 \times 10^{-4}$</span>
+                                <span class="flex items-center gap-2"><strong class="text-brand-700 font-bold">A)</strong> $2{,}3 \times 10^{-4}$</span>
                                 <i data-lucide="circle" class="w-4 h-4 text-gray-300 opt-icon group-hover:text-brand-400 flex-shrink-0"></i>
                             </button>
                         
                             <button onclick="selectOption('b1-t7-q1', 1)" id="btn-b1-t7-q1-1" class="w-full text-left p-3.5 rounded-xl border border-gray-200 hover:border-brand-400 hover:bg-brand-50/40 transition text-sm text-gray-700 flex items-center justify-between group">
-                                <span class="flex items-center gap-2"><strong class="text-brand-700 font-bold">B)</strong> $2{}3 \times 10^{-3}$</span>
+                                <span class="flex items-center gap-2"><strong class="text-brand-700 font-bold">B)</strong> $2{,}3 \times 10^{-3}$</span>
                                 <i data-lucide="circle" class="w-4 h-4 text-gray-300 opt-icon group-hover:text-brand-400 flex-shrink-0"></i>
                             </button>
                         
@@ -287,7 +290,7 @@
                             </button>
                         
                             <button onclick="selectOption('b1-t7-q1', 3)" id="btn-b1-t7-q1-3" class="w-full text-left p-3.5 rounded-xl border border-gray-200 hover:border-brand-400 hover:bg-brand-50/40 transition text-sm text-gray-700 flex items-center justify-between group">
-                                <span class="flex items-center gap-2"><strong class="text-brand-700 font-bold">D)</strong> $2{}3 \times 10^4$</span>
+                                <span class="flex items-center gap-2"><strong class="text-brand-700 font-bold">D)</strong> $2{,}3 \times 10^4$</span>
                                 <i data-lucide="circle" class="w-4 h-4 text-gray-300 opt-icon group-hover:text-brand-400 flex-shrink-0"></i>
                             </button>
                         

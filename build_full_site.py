@@ -71,7 +71,7 @@ def sync_data_files():
  * Contém os {len(math_data)} blocos, {total_subtopics} subtópicos e {total_questions} exercícios com resoluções KaTeX.
  * Gerado automaticamente por build_full_site.py - Fonte da verdade: mathData_augmented.json
  */
-const mathData = {json.dumps(math_data, ensure_ascii=False, indent=2)};
+var mathData = window.mathData || {json.dumps(math_data, ensure_ascii=False, indent=2)};
 
 if (typeof module !== "undefined" && module.exports) {{
   module.exports = mathData;
@@ -225,6 +225,7 @@ def get_navbar(active_key="", rel_root=".", is_exam=False):
         ifsp_n = len(math_data.get("7", {}).get("topics", []))
         nav_links = [
             ("provas_hub", f"{rel_root}/provas.html", "Todas as Provas", "layout-grid"),
+            ("pesquisa", f"{rel_root}/pesquisa.html", "Pesquisa BNCC", "search"),
             ("6", f"{rel_root}/bloco-6-provas-ifce/index.html", f"Provas IFCE ({ifce_n})", "award"),
             ("5", f"{rel_root}/bloco-5-provas-ifsc/index.html", f"Provas IFSC ({ifsc_n})", "award"),
             ("7", f"{rel_root}/bloco-7-provas-ifsp/index.html", f"Provas IFSP ({ifsp_n})", "award"),
@@ -347,8 +348,11 @@ def get_navbar(active_key="", rel_root=".", is_exam=False):
                     {''.join(desktop_links)}
                 </nav>
 
-                <!-- Ações do Usuário: Botão Destacado de Provas e Simulado -->
-                <div class="flex items-center gap-2.5">
+                <!-- Ações do Usuário: Botão Destacado de Provas, Pesquisa e Simulado -->
+                <div class="flex items-center gap-2 sm:gap-2.5">
+                    <a href="{rel_root}/pesquisa.html" class="bg-emerald-600 hover:bg-emerald-500 text-white font-bold px-3 py-1.5 rounded-lg text-xs sm:text-sm transition flex items-center gap-1.5 shadow" title="Pesquisar questões por descritor BNCC">
+                        <i data-lucide="search" class="w-4 h-4 text-emerald-200"></i> <span class="hidden xl:inline">Pesquisa</span> BNCC
+                    </a>
                     <a href="{rel_root}/provas.html" class="bg-gradient-to-r from-blue-700 to-indigo-800 hover:from-blue-600 hover:to-indigo-700 text-white font-bold px-3.5 py-1.5 rounded-lg text-sm transition flex items-center gap-1.5 shadow-md border border-blue-400/40" title="Acessar o Banco de Provas Oficiais (Parte 2)">
                         <i data-lucide="file-check" class="w-4 h-4 text-sky-300"></i> Provas Oficiais <span class="bg-sky-400 text-slate-950 text-[10px] font-extrabold px-1.5 py-0.2 rounded-full ml-0.5">{total_official_exams}</span>
                     </a>
@@ -545,10 +549,23 @@ def build_subtopic_pages():
                             </button>
                         """)
 
+                    bncc_badge = ""
+                    if is_exam and q.get("bncc"):
+                        bncc_code = q["bncc"]
+                        bncc_desc = q.get("bnccDesc", "")
+                        bncc_badge = f"""
+                            <a href="../pesquisa.html?bncc={bncc_code}" class="text-[11px] font-mono font-bold text-emerald-300 bg-emerald-950/80 hover:bg-emerald-900/90 px-2.5 py-0.5 rounded-full border border-emerald-800/60 flex items-center gap-1 transition shadow-sm" title="{bncc_desc}">
+                                <i data-lucide="bookmark" class="w-3 h-3 text-emerald-400"></i> BNCC: {bncc_code}
+                            </a>
+                        """
+
                     questions_html.append(f"""
                         <div class="mb-8 border-b border-slate-800/80 pb-6 last:border-0 last:pb-0" id="q-container-{q_id}">
-                            <div class="flex items-center justify-between mb-2">
-                                <span class="text-xs font-bold uppercase tracking-wider text-sky-300 bg-blue-950/60 px-2.5 py-0.5 rounded-full border border-blue-800/40">Questão {q_idx + 1}</span>
+                            <div class="flex items-center justify-between mb-3 flex-wrap gap-2">
+                                <div class="flex items-center gap-2">
+                                    <span class="text-xs font-bold uppercase tracking-wider text-sky-300 bg-blue-950/60 px-2.5 py-0.5 rounded-full border border-blue-800/40">Questão {q_idx + 1}</span>
+                                    {bncc_badge}
+                                </div>
                             </div>
                             <p class="font-medium text-slate-100 mb-4 text-sm sm:text-base leading-relaxed">{q.get('q', '')}</p>
                             <div class="space-y-2 mb-4" id="opts-{q_id}">
@@ -1724,6 +1741,76 @@ def build_provas_hub():
             </div>
         </div>
 
+        <!-- Seção Destacada: Pesquisa de Questões por Descritores da BNCC -->
+        <section class="mb-12 bg-gradient-to-r from-blue-950/90 via-slate-900 to-indigo-950/90 border border-blue-800/50 rounded-3xl p-6 sm:p-8 shadow-2xl relative overflow-hidden">
+            <div class="relative z-10">
+                <div class="flex flex-col lg:flex-row lg:items-center justify-between gap-4 mb-5">
+                    <div>
+                        <span class="bg-emerald-500/20 text-emerald-300 border border-emerald-400/30 text-xs font-extrabold px-3 py-1 rounded-full uppercase tracking-wider mb-2.5 inline-flex items-center gap-1.5">
+                            <i data-lucide="sparkles" class="w-3.5 h-3.5 text-emerald-400"></i> Banco Curricular Integrado
+                        </span>
+                        <h2 class="text-2xl sm:text-3xl font-black text-white">
+                            Pesquisar Questões por Descritor BNCC
+                        </h2>
+                        <p class="text-slate-300 text-xs sm:text-sm mt-1 max-w-2xl">
+                            Consulte nosso banco com todas as <strong>{total_exam_questions} questões oficiais</strong> catalogadas pelas habilidades da Base Nacional Comum Curricular (6º ao 9º ano).
+                        </p>
+                    </div>
+                    <a href="./pesquisa.html" class="bg-emerald-600 hover:bg-emerald-500 text-white font-extrabold px-5 py-3 rounded-xl text-xs sm:text-sm transition flex items-center gap-2 shadow-lg shadow-emerald-600/25 flex-shrink-0 self-start lg:self-center">
+                        <i data-lucide="search" class="w-4 h-4"></i> Abrir Motor de Busca
+                    </a>
+                </div>
+
+                <!-- Formulário de Pesquisa Direta -->
+                <form action="./pesquisa.html" method="GET" class="flex flex-col sm:flex-row items-center gap-3 mb-5">
+                    <div class="relative flex-grow w-full">
+                        <input type="text" name="q" placeholder="Digite uma habilidade ou tema (ex: EF09MA06, Teorema de Pitágoras, Porcentagem, Volume)..." class="w-full bg-slate-950/90 border border-slate-700 rounded-2xl px-4 py-3.5 pl-11 text-sm text-slate-100 placeholder-slate-400 focus:outline-none focus:ring-2 focus:ring-emerald-500 transition shadow-inner">
+                        <i data-lucide="search" class="w-5 h-5 text-slate-400 absolute left-3.5 top-3.5"></i>
+                    </div>
+                    <button type="submit" class="w-full sm:w-auto bg-blue-600 hover:bg-blue-500 text-white font-bold px-6 py-3.5 rounded-2xl text-sm transition flex items-center justify-center gap-2 shadow-md shadow-blue-600/25 flex-shrink-0">
+                        Buscar Questões <i data-lucide="arrow-right" class="w-4 h-4"></i>
+                    </button>
+                </form>
+
+                <!-- Tags / Atalhos de Descritores Populares -->
+                <div>
+                    <span class="text-xs font-bold text-slate-400 block mb-2">Atalhos rápidos por habilidades frequentes:</span>
+                    <div class="flex flex-wrap gap-2">
+                        <a href="./pesquisa.html?bncc=EF09MA09" class="px-2.5 py-1 rounded-lg text-xs bg-slate-900 hover:bg-slate-800 text-sky-300 border border-slate-700 transition flex items-center gap-1">
+                            <i data-lucide="bookmark" class="w-3 h-3 text-emerald-400"></i> EF09MA09 (Eq. 2º Grau)
+                        </a>
+                        <a href="./pesquisa.html?bncc=EF08MA04" class="px-2.5 py-1 rounded-lg text-xs bg-slate-900 hover:bg-slate-800 text-sky-300 border border-slate-700 transition flex items-center gap-1">
+                            <i data-lucide="bookmark" class="w-3 h-3 text-emerald-400"></i> EF08MA04 (Porcentagem)
+                        </a>
+                        <a href="./pesquisa.html?bncc=EF09MA14" class="px-2.5 py-1 rounded-lg text-xs bg-slate-900 hover:bg-slate-800 text-sky-300 border border-slate-700 transition flex items-center gap-1">
+                            <i data-lucide="bookmark" class="w-3 h-3 text-emerald-400"></i> EF09MA14 (Pitágoras/Tales)
+                        </a>
+                        <a href="./pesquisa.html?bncc=EF08MA19" class="px-2.5 py-1 rounded-lg text-xs bg-slate-900 hover:bg-slate-800 text-sky-300 border border-slate-700 transition flex items-center gap-1">
+                            <i data-lucide="bookmark" class="w-3 h-3 text-emerald-400"></i> EF08MA19 (Áreas Planas)
+                        </a>
+                        <a href="./pesquisa.html?bncc=EF09MA19" class="px-2.5 py-1 rounded-lg text-xs bg-slate-900 hover:bg-slate-800 text-sky-300 border border-slate-700 transition flex items-center gap-1">
+                            <i data-lucide="bookmark" class="w-3 h-3 text-emerald-400"></i> EF09MA19 (Volume Cilindros)
+                        </a>
+                        <a href="./pesquisa.html?bncc=EF08MA08" class="px-2.5 py-1 rounded-lg text-xs bg-slate-900 hover:bg-slate-800 text-sky-300 border border-slate-700 transition flex items-center gap-1">
+                            <i data-lucide="bookmark" class="w-3 h-3 text-emerald-400"></i> EF08MA08 (Sistemas 1º Grau)
+                        </a>
+                        <a href="./pesquisa.html?bncc=EF07MA18" class="px-2.5 py-1 rounded-lg text-xs bg-slate-900 hover:bg-slate-800 text-sky-300 border border-slate-700 transition flex items-center gap-1">
+                            <i data-lucide="bookmark" class="w-3 h-3 text-emerald-400"></i> EF07MA18 (Equações 1º Grau)
+                        </a>
+                        <a href="./pesquisa.html?bncc=EF07MA01" class="px-2.5 py-1 rounded-lg text-xs bg-slate-900 hover:bg-slate-800 text-sky-300 border border-slate-700 transition flex items-center gap-1">
+                            <i data-lucide="bookmark" class="w-3 h-3 text-emerald-400"></i> EF07MA01 (MMC / MDC)
+                        </a>
+                        <a href="./pesquisa.html?bncc=EF09MA05" class="px-2.5 py-1 rounded-lg text-xs bg-slate-900 hover:bg-slate-800 text-sky-300 border border-slate-700 transition flex items-center gap-1">
+                            <i data-lucide="bookmark" class="w-3 h-3 text-emerald-400"></i> EF09MA05 (Juros Compostos)
+                        </a>
+                        <a href="./pesquisa.html?bncc=EF08MA22" class="px-2.5 py-1 rounded-lg text-xs bg-slate-900 hover:bg-slate-800 text-sky-300 border border-slate-700 transition flex items-center gap-1">
+                            <i data-lucide="bookmark" class="w-3 h-3 text-emerald-400"></i> EF08MA22 (Probabilidade)
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
         <!-- Barra de Ferramentas / Filtros Interativos do Catálogo -->
         <section id="catalogo-provas" class="mb-12">
             <div class="flex flex-col md:flex-row justify-between md:items-center gap-4 mb-6 pb-4 border-b border-slate-800">
@@ -1985,6 +2072,155 @@ def build_simulado_page():
 
     print("Generated simulado.html successfully!")
 
+def build_pesquisa_page():
+    print("\n--- Generating Pesquisa BNCC Page (pesquisa.html) ---")
+    
+    pesquisa_html = f"""{get_head("Banco de Questões por Descritor BNCC | PartiuIF", rel_root=".", theme="dark-blue")}
+{get_navbar(active_key="pesquisa", rel_root=".", is_exam=True)}
+
+    <main class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 flex-grow">
+        
+        <!-- Breadcrumbs -->
+        <nav class="flex text-xs font-medium text-slate-400 mb-6" aria-label="Breadcrumb">
+            <ol class="inline-flex items-center space-x-1 sm:space-x-2">
+                <li><a href="./index.html" class="hover:text-sky-400 flex items-center gap-1"><i data-lucide="home" class="w-3.5 h-3.5"></i> Início</a></li>
+                <li><span class="text-slate-600">/</span></li>
+                <li><a href="./provas.html" class="hover:text-sky-400">Provas Oficiais</a></li>
+                <li><span class="text-slate-600">/</span></li>
+                <li class="text-slate-200 font-semibold">Pesquisa por Descritor BNCC</li>
+            </ol>
+        </nav>
+
+        <!-- Hero Header -->
+        <div class="gradient-hero-dark rounded-3xl p-6 sm:p-10 text-white mb-8 shadow-2xl relative overflow-hidden border border-slate-800">
+            <div class="relative z-10 max-w-3xl">
+                <span class="bg-emerald-500/20 text-emerald-300 border border-emerald-400/30 text-xs font-extrabold px-3.5 py-1.5 rounded-full uppercase tracking-wider mb-4 inline-flex items-center gap-1.5">
+                    <i data-lucide="bookmark-check" class="w-3.5 h-3.5 text-emerald-400"></i> Banco Curricular de Matemática
+                </span>
+                
+                <h1 class="text-3xl sm:text-4xl font-black tracking-tight mb-3 leading-tight">
+                    Pesquisa de Questões por <span class="text-transparent bg-clip-text bg-gradient-to-r from-emerald-400 via-sky-300 to-blue-400">Descritores BNCC</span>
+                </h1>
+                
+                <p class="text-slate-300 text-xs sm:text-sm leading-relaxed">
+                    Explore nosso acervo completo com <strong>{total_exam_questions} questões reais</strong> aplicadas nos exames de seleção do <strong>IFCE</strong>, <strong>IFSC</strong> e <strong>IFSP</strong>, todas catalogadas e associadas às habilidades oficiais da BNCC (6º ao 9º ano).
+                </p>
+            </div>
+        </div>
+
+        <!-- Painel de Busca e Filtros Avançados -->
+        <div class="bg-slate-900/90 border border-slate-800 rounded-3xl p-6 shadow-xl mb-8 space-y-4">
+            
+            <!-- Campo de Busca com Confirmação (Enter ou Botão) -->
+            <form id="search-form" onsubmit="event.preventDefault(); applyFilters();" class="flex flex-col sm:flex-row items-center gap-3">
+                <div class="relative flex-1 w-full">
+                    <input type="text" id="search-text" placeholder="Digite termos ou código BNCC e pressione Enter ou clique em Buscar (ex: EF09MA09, Pitágoras, Volume)..." class="w-full bg-slate-950 border border-slate-700 rounded-2xl px-4 py-3.5 pl-11 pr-10 text-sm text-slate-100 placeholder-slate-400 focus:outline-none focus:ring-2 focus:ring-emerald-500 transition shadow-inner">
+                    <i data-lucide="search" class="w-5 h-5 text-slate-400 absolute left-3.5 top-3.5"></i>
+                    <button type="button" id="clear-search-btn" onclick="clearSearchText()" class="hidden absolute right-3.5 top-3.5 text-slate-400 hover:text-white transition p-0.5 rounded-lg" title="Limpar busca">
+                        <i data-lucide="x" class="w-4 h-4"></i>
+                    </button>
+                </div>
+                <button type="submit" id="btn-submit-search" class="w-full sm:w-auto bg-emerald-600 hover:bg-emerald-500 active:scale-95 text-white font-bold px-6 py-3.5 rounded-2xl text-sm transition flex items-center justify-center gap-2 shadow-lg shadow-emerald-600/25 flex-shrink-0 cursor-pointer">
+                    <i data-lucide="search" class="w-4 h-4"></i> Buscar Questões
+                </button>
+            </form>
+
+            <!-- Controles de Filtros em Grade -->
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-3 pt-2">
+                <!-- Dropdown de Habilidade BNCC -->
+                <div>
+                    <label for="filter-bncc" class="block text-[11px] font-bold text-slate-400 uppercase tracking-wider mb-1.5 flex items-center gap-1">
+                        <i data-lucide="bookmark" class="w-3.5 h-3.5 text-emerald-400"></i> Habilidade BNCC
+                    </label>
+                    <select id="filter-bncc" onchange="applyFilters()" class="w-full bg-slate-950 border border-slate-700 rounded-xl px-3 py-2.5 text-xs text-slate-200 focus:outline-none focus:ring-2 focus:ring-emerald-500 transition">
+                        <option value="">Todas as Habilidades</option>
+                    </select>
+                </div>
+
+                <!-- Dropdown de Unidade Temática -->
+                <div>
+                    <label for="filter-unidade" class="block text-[11px] font-bold text-slate-400 uppercase tracking-wider mb-1.5 flex items-center gap-1">
+                        <i data-lucide="layers" class="w-3.5 h-3.5 text-sky-400"></i> Unidade Temática
+                    </label>
+                    <select id="filter-unidade" onchange="applyFilters()" class="w-full bg-slate-950 border border-slate-700 rounded-xl px-3 py-2.5 text-xs text-slate-200 focus:outline-none focus:ring-2 focus:ring-sky-500 transition">
+                        <option value="">Todas as Unidades</option>
+                        <option value="Álgebra">Álgebra</option>
+                        <option value="Geometria">Geometria</option>
+                        <option value="Números">Números</option>
+                        <option value="Grandezas e Medidas">Grandezas e Medidas</option>
+                        <option value="Probabilidade e Estatística">Probabilidade e Estatística</option>
+                    </select>
+                </div>
+
+                <!-- Dropdown de Ano Escolar -->
+                <div>
+                    <label for="filter-ano" class="block text-[11px] font-bold text-slate-400 uppercase tracking-wider mb-1.5 flex items-center gap-1">
+                        <i data-lucide="calendar" class="w-3.5 h-3.5 text-indigo-400"></i> Ano Escolar
+                    </label>
+                    <select id="filter-ano" onchange="applyFilters()" class="w-full bg-slate-950 border border-slate-700 rounded-xl px-3 py-2.5 text-xs text-slate-200 focus:outline-none focus:ring-2 focus:ring-indigo-500 transition">
+                        <option value="">Todos os Anos</option>
+                        <option value="6º ano">6º ano</option>
+                        <option value="7º ano">7º ano</option>
+                        <option value="8º ano">8º ano</option>
+                        <option value="9º ano">9º ano</option>
+                    </select>
+                </div>
+
+                <!-- Dropdown de Instituto -->
+                <div>
+                    <label for="filter-inst" class="block text-[11px] font-bold text-slate-400 uppercase tracking-wider mb-1.5 flex items-center gap-1">
+                        <i data-lucide="building-2" class="w-3.5 h-3.5 text-amber-400"></i> Instituto Federal
+                    </label>
+                    <select id="filter-inst" onchange="applyFilters()" class="w-full bg-slate-950 border border-slate-700 rounded-xl px-3 py-2.5 text-xs text-slate-200 focus:outline-none focus:ring-2 focus:ring-amber-500 transition">
+                        <option value="">Todas as Instituições</option>
+                        <option value="IFCE">IFCE (Ceará)</option>
+                        <option value="IFSC">IFSC (Santa Catarina)</option>
+                        <option value="IFSP">IFSP (São Paulo)</option>
+                    </select>
+                </div>
+            </div>
+
+            <div class="flex items-center justify-between pt-2 border-t border-slate-800">
+                <span id="results-count" class="text-xs text-slate-400 font-medium">Carregando questões...</span>
+                <button onclick="resetFilters()" class="text-xs text-slate-400 hover:text-white transition flex items-center gap-1 hover:underline">
+                    <i data-lucide="rotate-ccw" class="w-3.5 h-3.5"></i> Limpar Filtros
+                </button>
+            </div>
+        </div>
+
+        <!-- Lista Dinâmica de Questões -->
+        <div id="questions-container" class="space-y-6">
+            <!-- Preenchido dinamicamente por pesquisa.js -->
+        </div>
+
+        <!-- Estado Vazio (Sem Resultados) -->
+        <div id="empty-state" class="hidden text-center py-16 bg-slate-900/60 border border-slate-800 rounded-3xl p-8">
+            <div class="w-14 h-14 bg-slate-800 text-slate-400 rounded-2xl flex items-center justify-center mx-auto mb-4">
+                <i data-lucide="search-x" class="w-7 h-7"></i>
+            </div>
+            <h3 class="text-lg font-bold text-white mb-2">Nenhuma questão encontrada</h3>
+            <p class="text-xs sm:text-sm text-slate-400 max-w-md mx-auto mb-5">
+                Não encontramos questões correspondentes aos critérios de busca selecionados. Tente ajustar os termos ou redefinir os filtros.
+            </p>
+            <button onclick="resetFilters()" class="bg-blue-600 hover:bg-blue-500 text-white font-bold px-5 py-2.5 rounded-xl text-xs sm:text-sm transition inline-flex items-center gap-2 shadow-md">
+                <i data-lucide="rotate-ccw" class="w-4 h-4"></i> Redefinir Todos os Filtros
+            </button>
+        </div>
+
+    </main>
+
+{get_footer(rel_root=".", is_exam=True)}
+
+    <!-- Script Dedicado de Pesquisa BNCC -->
+    <script src="./assets/js/pesquisa.js"></script>
+</body>
+</html>
+"""
+    with open("pesquisa.html", "w", encoding="utf-8") as f:
+        f.write(pesquisa_html)
+
+    print("Generated pesquisa.html successfully!")
+
 # ==============================================================================
 # 9. EXECUÇÃO COMPLETA DO BUILD
 # ==============================================================================
@@ -1995,5 +2231,6 @@ if __name__ == "__main__":
     build_homepage()
     build_provas_hub()
     build_simulado_page()
+    build_pesquisa_page()
     print("\n✅ Site build completed successfully with two separated sections!")
 

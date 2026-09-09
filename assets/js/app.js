@@ -4,9 +4,9 @@
  */
 
 // Estado Global
-let completedTopics = JSON.parse(localStorage.getItem('partiuif_completed') || '[]');
-let savedAnswers = JSON.parse(localStorage.getItem('partiuif_answers') || '{}');
-let userSelections = {};
+var completedTopics = window.completedTopics || JSON.parse(localStorage.getItem('partiuif_completed') || '[]');
+var savedAnswers = window.savedAnswers || JSON.parse(localStorage.getItem('partiuif_answers') || '{}');
+var userSelections = window.userSelections || {};
 
 // Função Universal KaTeX
 function renderLatex(element) {
@@ -85,10 +85,10 @@ function selectOption(qId, optIdx) {
         if (isDark) {
             selectedBtn.classList.add("border-blue-500", "bg-blue-950/40");
         }
-        const icon = selectedBtn.querySelector(".opt-icon");
-        if (icon) {
-            icon.setAttribute("data-lucide", "check-circle");
-            icon.className = isDark ? "w-4 h-4 text-blue-400 opt-icon" : "w-4 h-4 text-brand-600 opt-icon";
+        const selectedIcon = selectedBtn.querySelector(".opt-icon");
+        if (selectedIcon) {
+            selectedIcon.setAttribute("data-lucide", "check-circle");
+            selectedIcon.className = isDark ? "w-4 h-4 text-blue-400 opt-icon" : "w-4 h-4 text-brand-600 opt-icon";
         }
     }
     if (window.lucide) lucide.createIcons();
@@ -337,10 +337,10 @@ function updateGlobalProgress() {
     const globalExamsEl = document.getElementById("global-official-exams");
     if (globalExamsEl) {
         let totalOfficial = 0;
-        for (let bId in mathData) {
-            const titleLower = (mathData[bId].title || "").toLowerCase();
+        for (let examBlockId in mathData) {
+            const titleLower = (mathData[examBlockId].title || "").toLowerCase();
             if (titleLower.includes("provas") || titleLower.includes("oficiais")) {
-                totalOfficial += mathData[bId].topics.length;
+                totalOfficial += mathData[examBlockId].topics.length;
             }
         }
         globalExamsEl.innerText = `${totalOfficial} Edições`;
