@@ -131,3 +131,29 @@ button .katex {
     cursor: zoom-in;
 }
 
+/* ==========================================================================
+   Responsividade e Enquadramento de Opções de Questões
+   ========================================================================== */
+div[id^="opts-"] button,
+#simulado-options button,
+.simulado-options button,
+button[id^="btn-"] {
+    overflow-wrap: break-word;
+    word-break: break-word;
+    white-space: normal;
+}
+
+div[id^="opts-"] button span,
+#simulado-options button span,
+.simulado-options button span,
+button[id^="btn-"] span {
+    min-width: 0;
+}
+
+button .katex {
+    max-width: 100%;
+    overflow-x: auto;
+    overflow-y: hidden;
+    vertical-align: middle;
+}
+

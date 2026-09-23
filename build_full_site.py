@@ -613,9 +613,12 @@ def build_subtopic_pages():
                     for opt_idx, opt in enumerate(q.get("options", [])):
                         letter = chr(65 + opt_idx)
                         options_buttons.append(f"""
-                            <button onclick="selectOption('{q_id}', {opt_idx})" id="btn-{q_id}-{opt_idx}" class="w-full text-left p-3.5 rounded-xl border border-slate-800 bg-slate-950/60 hover:border-blue-500 hover:bg-slate-800/60 transition text-sm text-slate-200 flex items-center justify-between group">
-                                <span class="flex items-center gap-2"><strong class="text-sky-400 font-bold">{letter})</strong> {opt}</span>
-                                <i data-lucide="circle" class="w-4 h-4 text-slate-600 opt-icon group-hover:text-blue-400 flex-shrink-0"></i>
+                            <button onclick="selectOption('{q_id}', {opt_idx})" id="btn-{q_id}-{opt_idx}" class="w-full text-left p-3.5 rounded-xl border border-slate-800 bg-slate-950/60 hover:border-blue-500 hover:bg-slate-800/60 transition text-sm text-slate-200 flex items-start justify-between gap-3 group">
+                                <span class="flex items-start gap-2.5 flex-1 min-w-0">
+                                    <strong class="text-sky-400 font-bold flex-shrink-0 mt-0.5">{letter})</strong>
+                                    <span class="flex-1 min-w-0 break-words leading-relaxed">{opt}</span>
+                                </span>
+                                <i data-lucide="circle" class="w-4 h-4 text-slate-600 opt-icon group-hover:text-blue-400 flex-shrink-0 mt-0.5"></i>
                             </button>
                         """)
 
@@ -874,9 +877,12 @@ def build_subtopic_pages():
                     for opt_idx, opt in enumerate(q.get("options", [])):
                         letter = chr(65 + opt_idx)
                         options_buttons.append(f"""
-                            <button onclick="selectOption('{q_id}', {opt_idx})" id="btn-{q_id}-{opt_idx}" class="w-full text-left p-3.5 rounded-xl border border-gray-200 hover:border-brand-400 hover:bg-brand-50/40 transition text-sm text-gray-700 flex items-center justify-between group">
-                                <span class="flex items-center gap-2"><strong class="text-brand-700 font-bold">{letter})</strong> {opt}</span>
-                                <i data-lucide="circle" class="w-4 h-4 text-gray-300 opt-icon group-hover:text-brand-400 flex-shrink-0"></i>
+                            <button onclick="selectOption('{q_id}', {opt_idx})" id="btn-{q_id}-{opt_idx}" class="w-full text-left p-3.5 rounded-xl border border-gray-200 hover:border-brand-400 hover:bg-brand-50/40 transition text-sm text-gray-700 flex items-start justify-between gap-3 group">
+                                <span class="flex items-start gap-2.5 flex-1 min-w-0">
+                                    <strong class="text-brand-700 font-bold flex-shrink-0 mt-0.5">{letter})</strong>
+                                    <span class="flex-1 min-w-0 break-words leading-relaxed">{opt}</span>
+                                </span>
+                                <i data-lucide="circle" class="w-4 h-4 text-gray-300 opt-icon group-hover:text-brand-400 flex-shrink-0 mt-0.5"></i>
                             </button>
                         """)
 

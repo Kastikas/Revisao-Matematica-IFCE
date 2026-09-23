@@ -440,9 +440,12 @@ function renderCurrentSimQuestion() {
         var iconClass = isSelected ? "w-5 h-5 text-brand-600 flex-shrink-0" : "w-5 h-5 text-gray-300 flex-shrink-0";
 
         return (
-            '<button type="button" onclick="selectSimAnswer(' + currentSimIndex + ', ' + optIdx + ')" class="w-full text-left p-4 rounded-2xl border-2 ' + activeClass + ' transition text-sm text-gray-800 flex items-center justify-between gap-3 group cursor-pointer">' +
-                '<span class="flex items-center gap-2.5"><strong class="text-brand-700 font-extrabold text-sm">' + letter + ')</strong> <span>' + opt + '</span></span>' +
-                '<i data-lucide="' + iconName + '" class="' + iconClass + '"></i>' +
+            '<button type="button" onclick="selectSimAnswer(' + currentSimIndex + ', ' + optIdx + ')" class="w-full text-left p-4 rounded-2xl border-2 ' + activeClass + ' transition text-sm text-gray-800 flex items-start justify-between gap-3 group cursor-pointer">' +
+                '<span class="flex items-start gap-2.5 flex-1 min-w-0">' +
+                    '<strong class="text-brand-700 font-extrabold text-sm flex-shrink-0 mt-0.5">' + letter + ')</strong> ' +
+                    '<span class="flex-1 min-w-0 break-words leading-relaxed">' + opt + '</span>' +
+                '</span>' +
+                '<i data-lucide="' + iconName + '" class="' + iconClass + ' mt-0.5"></i>' +
             '</button>'
         );
     }).join('');

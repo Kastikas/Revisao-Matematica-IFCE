@@ -341,9 +341,12 @@ function renderResults() {
             const iconName = isSelected ? 'check-circle' : 'circle';
             const iconClass = isSelected ? 'w-4 h-4 text-blue-400 opt-icon flex-shrink-0' : 'w-4 h-4 text-slate-600 opt-icon group-hover:text-blue-400 flex-shrink-0';
             return `
-                <button onclick="selectPesquisaOption('${qId}', ${optIdx})" id="btn-${qId}-${optIdx}" class="w-full text-left p-3.5 rounded-xl border border-slate-800 bg-slate-950/60 hover:border-blue-500 hover:bg-slate-800/60 transition text-sm text-slate-200 flex items-center justify-between group ${selectedClass}">
-                    <span class="flex items-center gap-2"><strong class="text-sky-400 font-bold">${letter})</strong> <span>${opt}</span></span>
-                    <i data-lucide="${iconName}" class="${iconClass}"></i>
+                <button onclick="selectPesquisaOption('${qId}', ${optIdx})" id="btn-${qId}-${optIdx}" class="w-full text-left p-3.5 rounded-xl border border-slate-800 bg-slate-950/60 hover:border-blue-500 hover:bg-slate-800/60 transition text-sm text-slate-200 flex items-start justify-between gap-3 group ${selectedClass}">
+                    <span class="flex items-start gap-2.5 flex-1 min-w-0">
+                        <strong class="text-sky-400 font-bold flex-shrink-0 mt-0.5">${letter})</strong>
+                        <span class="flex-1 min-w-0 break-words leading-relaxed">${opt}</span>
+                    </span>
+                    <i data-lucide="${iconName}" class="${iconClass} mt-0.5"></i>
                 </button>
             `;
         }).join('');

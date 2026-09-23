@@ -96,57 +96,71 @@ class TextSanitizer:
         delimitador inline do KaTeX ($).
         Exemplos:
           - R$ 100,00 -> $\text{R\$} 100{,}00$
+          - R\$ 1.200{,}00 -> $\text{R\$} 1.200{,}00$
           - US$ 5,00 -> $\text{US\$} 5{,}00$
-          - \R$ -> \text{R\$}
+          - \text{R$ } -> \text{R\$} 
         """
         if not text or not isinstance(text, str):
             return text
 
-        # Corrige macros quebradas como \R$
-        text = text.replace(r"\R$", r"\text{R\$}")
+        # 1. Normalizações globais de macros quebradas
+        text = text.replace(r"\text{R$ }", r"\text{R\$} ")
+        text = text.replace(r"\text{R\$ }", r"\text{R\$} ")
         text = text.replace(r"\text{R$}", r"\text{R\$}")
-        text = text.replace(r"\text{R\$\;}", r"\text{R\$}")
-        text = re.sub(r"\\R\$(?![a-zA-Z])\s*", r"\\text{R\\$} ", text)
+        text = text.replace(r"\text{US$ }", r"\text{US\$} ")
+        text = text.replace(r"\text{US\$ }", r"\text{US\$} ")
+        text = text.replace(r"\text{US$}", r"\text{US\$}")
+        text = text.replace(r"\R$", r"\text{R\$}")
 
-        def format_comma(val):
-            return re.sub(r"(\d+),(\d+)", r"\1{,}\2", val)
+        # 2. Remove delimitadores $ espúrios isolados antes de palavras comuns como Portanto, Assim
+        text = re.sub(r"(?<![\\\$])\$(?!\$)\s*(Portanto|Assim|Logo)", r"\1", text)
 
-        def sanitize_inline_and_text(s):
-            if not s:
-                return s
-            # Menções contextuais a moedas sem valor numérico: (R$), (US$), sobre R$, em R$, etc.
-            s = re.sub(r"\((R|US)\$\)", r"(\1\\$)", s)
-            s = re.sub(r"\b(em|de|sobre|para|valores em)\s+(R|US)\$", r"\1 \2\\$", s)
+        def format_number_katex(num_str):
+            if "{,}" in num_str:
+                return num_str
+            return re.sub(r"(\d+),(\d+)", r"\1{,}\2", num_str)
 
-            # Converte valores com R$ em texto para $\text{R\$} X{,}XX$
-            # Garantindo que não seja precedido por $, \ ou parte de outra palavra (ex: $R$ ou 4R$ que são variáveis)
-            s = re.sub(r"(?<![\$\\])\bR\$\s*([0-9]+(?:\.[0-9]{3})*(?:,[0-9]+)?)", lambda m: "$\\text{R\\$} " + format_comma(m.group(1).strip()) + "$", s)
-            s = re.sub(r"(?<![\$\\])\bUS\$\s*([0-9]+(?:\.[0-9]{3})*(?:,[0-9]+)?)", lambda m: "$\\text{US\\$} " + format_comma(m.group(1).strip()) + "$", s)
+        # 3. Tokeniza preservando blocos KaTeX existentes ($$...$$ e $...$)
+        pattern = r"(\$\$[\s\S]*?\$\$|(?<![\\\$])\$[^\$]+?(?<![\\\$])\$)"
+        tokens = []
+        last_end = 0
+        for m in re.finditer(pattern, text):
+            start, end = m.span()
+            if start > last_end:
+                tokens.append({"type": "text", "content": text[last_end:start]})
+            tokens.append({"type": "math", "content": text[start:end]})
+            last_end = end
+        if last_end < len(text):
+            tokens.append({"type": "text", "content": text[last_end:]})
 
-            # Vírgulas decimais dentro de blocos inline $...$
-            def fix_inline(m):
-                inner = m.group(1)
-                return "$" + format_comma(inner) + "$"
-            s = re.sub(r"(?<!\\)\$([^\$]+?)(?<!\\)\$", fix_inline, s)
-            return s
+        new_tokens = []
+        for token in tokens:
+            if token["type"] == "math":
+                c = token["content"]
+                c = c.replace(r"\text{R$ }", r"\text{R\$} ")
+                c = c.replace(r"\text{R\$ }", r"\text{R\$} ")
+                c = c.replace(r"\text{US$ }", r"\text{US\$} ")
+                c = c.replace(r"\text{US\$ }", r"\text{US\$} ")
+                new_tokens.append(c)
+            else:
+                t = token["content"]
+                # Menções contextuais sem valor numérico: (R$), (R\$), etc.
+                t = re.sub(r"\((?:R|US)[\\]?\$?\)", lambda m: r"($\text{R\$}$)" if "R" in m.group(0) else r"($\text{US\$}$)", t)
+                t = re.sub(r"\b(o Real|a moeda|reais)\s*\((?:R|US)[\\]?\$?\)", lambda m: f"{m.group(1)} ($\\text{{R\\$}}$)", t)
+                t = re.sub(r"\b(o Dólar|dólares)\s*\((?:R|US)[\\]?\$?\)", lambda m: f"{m.group(1)} ($\\text{{US\\$}}$)", t)
 
-        # Tokenização por blocos display math ($$...$$)
-        display_parts = []
-        last_d = 0
-        for dm in re.finditer(r"\$\$([\s\S]*?)\$\$", text):
-            non_disp = text[last_d:dm.start()]
-            display_parts.append(sanitize_inline_and_text(non_disp))
+                # Transforma valores monetários em texto para $\text{R\$} X{,}XX$
+                def repl_currency(m):
+                    prefix = m.group(1)
+                    val = m.group(2)
+                    val_formatted = format_number_katex(val)
+                    return f"$\\text{{{prefix}\\$}} {val_formatted}$"
 
-            inner_math = dm.group(1)
-            inner_math = re.sub(r"(?<!\\text\{)R\$\s*", r"\\text{R\\$} ", inner_math)
-            inner_math = re.sub(r"(?<!\\text\{)US\$\s*", r"\\text{US\\$} ", inner_math)
-            inner_math = re.sub(r"(\d+),(\d+)", lambda d: format_comma(d.group(0)), inner_math)
-            display_parts.append(f"$${inner_math}$$")
-            last_d = dm.end()
+                curr_regex = r"\b(R|US)[\\]?\$?\s*([0-9]+(?:\.[0-9]{3})*(?:\{,\}[0-9]+|,[0-9]+)?)(?!\w)"
+                t = re.sub(curr_regex, repl_currency, t)
+                new_tokens.append(t)
 
-        non_disp = text[last_d:]
-        display_parts.append(sanitize_inline_and_text(non_disp))
-        return "".join(display_parts)
+        return "".join(new_tokens)
 
     @staticmethod
     def fix_html_in_math(text: str) -> str:
@@ -249,33 +263,113 @@ class KaTeXValidator:
         return blocks
 
     @staticmethod
-    def validate_with_katex_engine(math_items: list) -> list:
+    def validate_with_katex_engine(text_items: list) -> list:
         """
-        Executa validação no motor KaTeX real via Node.js usando scripts/katex.min.js.
-        math_items: lista de dicts com {"math": ..., "isDisplay": bool, "location": ...}
+        Executa validação no motor KaTeX real via Node.js usando scripts/katex.min.js
+        com o algoritmo de split e delimitação idêntico ao auto-render do navegador.
+        text_items: lista de dicts com {"text": ..., "location": ...}
         """
         katex_js_path = os.path.join(os.path.dirname(__file__), "katex.min.js")
-        if not os.path.exists(katex_js_path) or not shutil.which("node") or not math_items:
+        if not os.path.exists(katex_js_path) or not shutil.which("node") or not text_items:
             return []
 
         node_script = """
-const katex = require(process.argv[1]);
+const katex = require(process.argv[2] || process.argv[1]);
 const readline = require("readline");
 
-const rl = readline.createInterface({
-  input: process.stdin,
-  output: process.stdout,
-  terminal: false
-});
+var delimiters = [
+  { left: "$$", right: "$$", display: true },
+  { left: "$", right: "$", display: false }
+];
+
+var findEndOfMath = function findEndOfMath(delimiter, text, startIndex) {
+  var index = startIndex;
+  var braceLevel = 0;
+  var delimLength = delimiter.length;
+
+  while (index < text.length) {
+    var character = text[index];
+    if (braceLevel <= 0 && text.slice(index, index + delimLength) === delimiter) {
+      return index;
+    } else if (character === "\\\\") {
+      index++;
+    } else if (character === "{") {
+      braceLevel++;
+    } else if (character === "}") {
+      braceLevel--;
+    }
+    index++;
+  }
+  return -1;
+};
+
+var escapeRegex = function escapeRegex(string) {
+  return string.replace(/[-/\\\\^$*+?.()|[\\]{}]/g, "\\\\$&");
+};
+
+var splitAtDelimiters = function splitAtDelimiters(text, delimiters) {
+  var index;
+  var data = [];
+  var regexLeft = new RegExp("(" + delimiters.map(function (x) {
+    return escapeRegex(x.left);
+  }).join("|") + ")");
+
+  while (true) {
+    index = text.search(regexLeft);
+    if (index === -1) break;
+    if (index > 0) {
+      data.push({ type: "text", data: text.slice(0, index) });
+      text = text.slice(index);
+    }
+    var i = delimiters.findIndex(function (delim) {
+      return text.startsWith(delim.left);
+    });
+    index = findEndOfMath(delimiters[i].right, text, delimiters[i].left.length);
+    if (index === -1) {
+      data.push({ type: "unpaired", data: text });
+      break;
+    }
+    var rawData = text.slice(0, index + delimiters[i].right.length);
+    var math = text.slice(delimiters[i].left.length, index);
+    data.push({ type: "math", data: math, rawData: rawData, display: delimiters[i].display });
+    text = text.slice(index + delimiters[i].right.length);
+  }
+  if (text !== "") {
+    data.push({ type: "text", data: text });
+  }
+  return data;
+};
+
+const rl = readline.createInterface({ input: process.stdin, output: process.stdout, terminal: false });
 
 rl.on("line", (line) => {
   if (!line.trim()) return;
-  const item = JSON.parse(line);
   try {
-    katex.renderToString(item.math, { displayMode: item.isDisplay, throwOnError: true });
-  } catch (err) {
-    console.log(JSON.stringify({ location: item.location, math: item.math, error: err.message }));
-  }
+    const item = JSON.parse(line);
+    const parts = splitAtDelimiters(item.text, delimiters);
+    
+    for (const part of parts) {
+      if (part.type === "unpaired") {
+        console.log(JSON.stringify({
+          location: item.location,
+          type: "UNPAIRED_DELIMITER",
+          message: "Delimitador KaTeX não fechado ou colisão de cifrão no texto.",
+          snippet: part.data.slice(0, 80)
+        }));
+      } else if (part.type === "math") {
+        try {
+          katex.renderToString(part.data, { displayMode: part.display, throwOnError: true });
+        } catch (err) {
+          console.log(JSON.stringify({
+            location: item.location,
+            type: "KATEX_ENGINE_ERROR",
+            message: err.message,
+            snippet: part.data.slice(0, 80)
+          }));
+        }
+      }
+    }
+  } catch (e) {}
 });
 """
         proc = subprocess.Popen(
@@ -285,7 +379,7 @@ rl.on("line", (line) => {
             stderr=subprocess.PIPE,
             text=True
         )
-        for item in math_items:
+        for item in text_items:
             proc.stdin.write(json.dumps(item) + "\n")
         stdout, _ = proc.communicate()
 
@@ -296,9 +390,9 @@ rl.on("line", (line) => {
                     data = json.loads(line)
                     issues.append({
                         "location": data["location"],
-                        "type": "KATEX_ENGINE_ERROR",
-                        "message": data["error"],
-                        "snippet": data["math"]
+                        "type": data["type"],
+                        "message": data["message"],
+                        "snippet": data.get("snippet", "")
                     })
                 except Exception:
                     pass
@@ -311,15 +405,15 @@ rl.on("line", (line) => {
         if not text or not isinstance(text, str):
             return issues
 
-        # 1. Checa delimitadores $ não escapados
-        clean = re.sub(r"\$\$[\s\S]*?\$\$", "", text)
-        clean = re.sub(r"\\\$", "", clean)
-        if clean.count("$") % 2 != 0:
+        # 1. Checa valores monetários não formatados em modo texto puro
+        clean_no_math = re.sub(r"\$\$[\s\S]*?\$\$", " ", text)
+        clean_no_math = re.sub(r"(?<![\\\$])\$[^\$]+?(?<![\\\$])\$", " ", clean_no_math)
+        if re.search(r"\b(R|US)[\\]?\$?\s*[0-9]", clean_no_math):
             issues.append({
                 "location": location,
-                "type": "UNPAIRED_DELIMITER",
-                "message": "Número ímpar de delimitadores de fórmula inline ($). Pode indicar falta de escape em moeda ou fórmula truncada.",
-                "snippet": clean[:100]
+                "type": "NAKED_CURRENCY",
+                "message": "Valor monetário em texto puro sem formatação KaTeX (deve ser $\\text{R\\$} ...$).",
+                "snippet": clean_no_math[:100]
             })
 
         # 2. Extrai expressões $$...$$ e $...$
@@ -1034,17 +1128,20 @@ class MathDataManager:
         """Realiza validação completa de schema, KaTeX léxico e KaTeX motor Node.js."""
         dataset = target_data if target_data is not None else self.data
         all_issues = []
-        math_items = []
+        text_items = []
 
         def inspect_q(q, loc):
             all_issues.extend(SchemaValidator.validate_question(q, loc))
             all_issues.extend(KaTeXValidator.validate_text(q.get("q", ""), f"{loc} (q)"))
             all_issues.extend(KaTeXValidator.validate_text(q.get("explanation", ""), f"{loc} (exp)"))
-            math_items.extend(KaTeXValidator.extract_math_blocks(q.get("q", ""), f"{loc} (q)"))
-            math_items.extend(KaTeXValidator.extract_math_blocks(q.get("explanation", ""), f"{loc} (exp)"))
+            if q.get("q"):
+                text_items.append({"text": q["q"], "location": f"{loc} (q)"})
+            if q.get("explanation"):
+                text_items.append({"text": q["explanation"], "location": f"{loc} (exp)"})
             for o_idx, opt in enumerate(q.get("options", [])):
                 all_issues.extend(KaTeXValidator.validate_text(opt, f"{loc} (opt {o_idx})"))
-                math_items.extend(KaTeXValidator.extract_math_blocks(opt, f"{loc} (opt {o_idx})"))
+                if opt:
+                    text_items.append({"text": opt, "location": f"{loc} (opt {o_idx})"})
 
         if isinstance(dataset, dict):
             for block_id, block in dataset.items():
@@ -1063,8 +1160,8 @@ class MathDataManager:
                     inspect_q(q, loc)
 
         # Validação KaTeX com motor Node.js
-        if use_katex_engine and math_items:
-            engine_issues = KaTeXValidator.validate_with_katex_engine(math_items)
+        if use_katex_engine and text_items:
+            engine_issues = KaTeXValidator.validate_with_katex_engine(text_items)
             all_issues.extend(engine_issues)
 
         return all_issues
@@ -1104,6 +1201,71 @@ class MathDataManager:
                     sanitize_question(q)
 
         return count
+
+    def enrich_theoretical_bncc(self, catalog_path: str = None) -> int:
+        """
+        Atribui descritores oficiais da BNCC (bncc, bnccDesc, unidadeTematica, anoEscolar)
+        às 99 questões conceituais dos Blocos 1 a 4 com base em scripts/bncc_catalog.json.
+        Retorna o total de questões atualizadas.
+        """
+        if catalog_path is None:
+            catalog_path = os.path.join(os.path.dirname(__file__), "bncc_catalog.json")
+
+        if not os.path.exists(catalog_path):
+            raise FileNotFoundError(f"Catálogo BNCC {catalog_path} não encontrado.")
+
+        with open(catalog_path, "r", encoding="utf-8") as f:
+            cat = json.load(f)
+
+        mapping = {
+            # Bloco 1 - Números
+            "b1-t1": ["EF06MA02", "EF07MA03", "EF06MA01", "EF06MA02", "EF06MA02"],
+            "b1-t2": ["EF06MA03", "EF06MA03", "EF06MA03", "EF06MA03", "EF06MA03"],
+            "b1-t3": ["EF06MA05", "EF06MA06", "EF06MA06", "EF06MA05", "EF06MA06"],
+            "b1-t4": ["EF06MA07", "EF06MA07", "EF06MA08", "EF06MA09", "EF06MA09"],
+            "b1-t5": ["EF06MA10", "EF06MA10", "EF06MA10", "EF06MA10", "EF06MA10"],
+            "b1-t6": ["EF06MA13", "EF08MA04", "EF09MA05", "EF07MA02", "EF06MA13"],
+            "b1-t7": ["EF08MA01", "EF08MA01", "EF08MA01", "EF08MA01", "EF08MA01"],
+
+            # Bloco 2 - Álgebra
+            "b2-t1": ["EF07MA13", "EF07MA13", "EF08MA06", "EF07MA13", "EF07MA13"],
+            "b2-t2": ["EF08MA13", "EF07MA17", "EF07MA17", "EF07MA17", "EF07MA17"],
+            "b2-t3": ["EF07MA18", "EF08MA08", "EF07MA18", "EF08MA08", "EF07MA18"],
+            "b2-t4": ["EF09MA09", "EF09MA09", "EF09MA09", "EF09MA09", "EF09MA09"],
+            "b2-t5": ["EF09MA09", "EF09MA09", "EF09MA06", "EF08MA09", "EF09MA06"],
+
+            # Bloco 3 - Geometria
+            "b3-t1": ["EF07MA27", "EF07MA24", "EF07MA24", "EF07MA23", "EF07MA27"],
+            "b3-t2": ["EF09MA14", "EF09MA14", "EF09MA12", "EF09MA14", "EF09MA13"],
+            "b3-t3": ["EF07MA33", "EF08MA19", "EF07MA33", "EF07MA33", "EF09MA11"],
+            "b3-t4": ["EF06MA17", "EF06MA17", "EF06MA17", "EF09MA17", "EF06MA17"],
+
+            # Bloco 4 - Grandezas, Medidas, Estatística e Probabilidade
+            "b4-t1": ["EF07MA31", "EF08MA19", "EF08MA19", "EF07MA31", "EF06MA24"],
+            "b4-t2": ["EF07MA30", "EF08MA20", "EF07MA30", "EF09MA19", "EF06MA24"],
+            "b4-t3": ["EF06MA30", "EF06MA30", "EF07MA34", "EF06MA30", "EF07MA34"],
+            "b4-t4": ["EF07MA35", "EF08MA25", "EF08MA25", "EF07MA35", "EF08MA25"],
+        }
+
+        updated_count = 0
+        for block_num in ["1", "2", "3", "4"]:
+            block = self.data.get(block_num, {})
+            for topic in block.get("topics", []):
+                t_id = topic.get("id")
+                if t_id in mapping:
+                    codes = mapping[t_id]
+                    for idx, q in enumerate(topic.get("questions", [])):
+                        if idx < len(codes):
+                            code = codes[idx]
+                            if not q.get("bncc") or not q.get("bnccDesc") or not q.get("unidadeTematica") or not q.get("anoEscolar"):
+                                info = cat.get(code, {})
+                                q["bncc"] = code
+                                q["bnccDesc"] = info.get("desc", f"Habilidade {code}")
+                                q["unidadeTematica"] = info.get("unidade", "Matemática")
+                                q["anoEscolar"] = info.get("ano", "Ensino Fundamental")
+                                updated_count += 1
+
+        return updated_count
 
     def import_topics(self, input_path: str, block_id: str, sanitize: bool = True, dry_run: bool = False) -> tuple:
         """
@@ -1592,16 +1754,32 @@ class GoogleDriveManager:
             data = manager.data
             updated_questions = 0
 
+            # Mapeia também por nome base do arquivo (ex.: ifsc-2020-1-q05.png)
+            filename_to_url = {os.path.basename(p): u for p, u in path_to_url_map.items()}
+
             for block_id, block in data.items():
                 if isinstance(block, dict):
                     for topic in block.get("topics", []):
-                        for q in topic.get("questions", []):
+                        t_id = topic.get("id", "")
+                        # Normaliza id do tópico (ex: ifsc-2020-1-matematica -> ifsc-2020-1)
+                        clean_tid = re.sub(r"-(matematica|manha|tarde|[ab])$", "", t_id)
+                        for q_idx, q in enumerate(topic.get("questions", [])):
                             img = q.get("image")
                             if img and isinstance(img, dict) and "src" in img:
                                 src = img["src"]
                                 if src in path_to_url_map:
                                     img["src"] = path_to_url_map[src]
                                     updated_questions += 1
+                                    continue
+
+                                # Match por padrão canônico <topic>-q<idx>
+                                expected_stem = f"{clean_tid}-q{q_idx+1:02d}"
+                                for fname, new_url in filename_to_url.items():
+                                    if os.path.splitext(fname)[0] == expected_stem:
+                                        if img["src"] != new_url:
+                                            img["src"] = new_url
+                                            updated_questions += 1
+                                        break
 
             if updated_questions > 0:
                 manager.save(create_backup=True)
@@ -1637,6 +1815,11 @@ def main():
     san_parser = subparsers.add_parser("sanitize", help="Higieniza vírgulas decimais e escape de moedas no mathData.json")
     san_parser.add_argument("--apply", action="store_true", help="Grava as alterações sanitizadas em disco (com backup)")
     san_parser.add_argument("--build", action="store_true", help="Recompila o site após sanitizar")
+
+    # Subcomando: enrich-bncc
+    enrich_parser = subparsers.add_parser("enrich-bncc", help="Atribui descritores oficiais da BNCC às 99 questões conceituais dos Blocos 1 a 4")
+    enrich_parser.add_argument("--apply", action="store_true", help="Grava as alterações em mathData.json (com backup)")
+    enrich_parser.add_argument("--build", action="store_true", help="Recompila o site após o enriquecimento")
 
     # Subcomando: template
     tpl_parser = subparsers.add_parser("template", help="Gera um modelo de prova JSON para preenchimento")
@@ -1758,6 +1941,22 @@ def main():
                     subprocess.run([sys.executable, "build_full_site.py"], cwd=ROOT_DIR)
             else:
                 print("Nenhuma alteração pendente para salvar.")
+        else:
+            print("💡 Use a flag --apply para gravar as alterações em disco.")
+
+    elif args.command == "enrich-bncc":
+        print("📚 Enriquecendo questões conceituais dos Blocos 1 a 4 com descritores oficiais da BNCC...")
+        count = manager.enrich_theoretical_bncc()
+        print(f"📝 Total de questões enriquecidas: {count}")
+        if args.apply:
+            if count > 0:
+                manager.save(create_backup=True)
+                print("💾 mathData.json atualizado com sucesso (backup criado).")
+                if args.build:
+                    print("\n🚀 Recompilando o site estático...")
+                    subprocess.run([sys.executable, "build_full_site.py"], cwd=ROOT_DIR)
+            else:
+                print("Todas as questões dos Blocos 1 a 4 já possuem campos da BNCC preenchidos.")
         else:
             print("💡 Use a flag --apply para gravar as alterações em disco.")
 
