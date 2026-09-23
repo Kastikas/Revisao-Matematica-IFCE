@@ -7,13 +7,16 @@ var allExamQuestions = window.allExamQuestions || [];
 var filteredQuestions = window.filteredQuestions || [];
 var pesquisaSelections = window.pesquisaSelections || {};
 
+const ITEMS_PER_PAGE = 50;
+var currentPage = 1;
+
 // Inicialização
 document.addEventListener('DOMContentLoaded', () => {
     initQuestionPool();
     initFilters();
     parseUrlParams();
     setupSearchEvents();
-    applyFilters();
+    applyFilters(false);
 });
 
 function initQuestionPool() {
@@ -23,7 +26,7 @@ function initQuestionPool() {
     }
 
     allExamQuestions = [];
-    const examBlocks = ['5', '6', '7'];
+    const examBlocks = ['5', '6', '7', '8'];
 
     examBlocks.forEach(bId => {
         const block = mathData[bId];
@@ -33,6 +36,7 @@ function initQuestionPool() {
         let inst = 'IFCE';
         if (bTitle.toLowerCase().includes('ifsc')) inst = 'IFSC';
         else if (bTitle.toLowerCase().includes('ifsp')) inst = 'IFSP';
+        else if (bTitle.toLowerCase().includes('ifmg')) inst = 'IFMG';
 
         block.topics.forEach(topic => {
             const folder = topic.folder || block.folder || `bloco-${bId}`;
@@ -91,6 +95,7 @@ function parseUrlParams() {
     const unidadeParam = params.get('unidade');
     const anoParam = params.get('ano');
     const instParam = params.get('instituto');
+    const pageParam = parseInt(params.get('page'), 10);
 
     if (bnccParam) {
         const select = document.getElementById('filter-bncc');
@@ -112,6 +117,9 @@ function parseUrlParams() {
         const select = document.getElementById('filter-inst');
         if (select) select.value = instParam;
     }
+    if (pageParam && pageParam > 0) {
+        currentPage = pageParam;
+    }
     toggleClearButton();
 }
 
@@ -126,7 +134,6 @@ function setupSearchEvents() {
 
     const searchInput = document.getElementById('search-text');
     if (searchInput) {
-        // Apenas controla o botão de limpar, sem disparar busca ao digitar
         searchInput.addEventListener('input', toggleClearButton);
         searchInput.addEventListener('keydown', (e) => {
             if (e.key === 'Enter') {
@@ -158,12 +165,22 @@ function toggleClearButton() {
     }
 }
 
-function applyFilters() {
-    const searchVal = (document.getElementById('search-text')?.value || '').toLowerCase().trim();
-    const bnccVal = document.getElementById('filter-bncc')?.value || '';
-    const unidadeVal = document.getElementById('filter-unidade')?.value || '';
-    const anoVal = document.getElementById('filter-ano')?.value || '';
-    const instVal = document.getElementById('filter-inst')?.value || '';
+function applyFilters(resetPage = true) {
+    if (resetPage) {
+        currentPage = 1;
+    }
+
+    const searchInput = document.getElementById('search-text');
+    const bnccSelect = document.getElementById('filter-bncc');
+    const unidadeSelect = document.getElementById('filter-unidade');
+    const anoSelect = document.getElementById('filter-ano');
+    const instSelect = document.getElementById('filter-inst');
+
+    const searchVal = (searchInput ? searchInput.value : '').toLowerCase().trim();
+    const bnccVal = bnccSelect ? bnccSelect.value : '';
+    const unidadeVal = unidadeSelect ? unidadeSelect.value : '';
+    const anoVal = anoSelect ? anoSelect.value : '';
+    const instVal = instSelect ? instSelect.value : '';
 
     filteredQuestions = allExamQuestions.filter(q => {
         if (bnccVal && q.bncc !== bnccVal) return false;
@@ -189,17 +206,24 @@ function applyFilters() {
 
 function updateUrlParams() {
     const params = new URLSearchParams();
-    const searchVal = document.getElementById('search-text')?.value.trim();
-    const bnccVal = document.getElementById('filter-bncc')?.value;
-    const unidadeVal = document.getElementById('filter-unidade')?.value;
-    const anoVal = document.getElementById('filter-ano')?.value;
-    const instVal = document.getElementById('filter-inst')?.value;
+    const searchInput = document.getElementById('search-text');
+    const bnccSelect = document.getElementById('filter-bncc');
+    const unidadeSelect = document.getElementById('filter-unidade');
+    const anoSelect = document.getElementById('filter-ano');
+    const instSelect = document.getElementById('filter-inst');
+
+    const searchVal = searchInput ? searchInput.value.trim() : '';
+    const bnccVal = bnccSelect ? bnccSelect.value : '';
+    const unidadeVal = unidadeSelect ? unidadeSelect.value : '';
+    const anoVal = anoSelect ? anoSelect.value : '';
+    const instVal = instSelect ? instSelect.value : '';
 
     if (bnccVal) params.set('bncc', bnccVal);
     if (searchVal) params.set('q', searchVal);
     if (unidadeVal) params.set('unidade', unidadeVal);
     if (anoVal) params.set('ano', anoVal);
     if (instVal) params.set('instituto', instVal);
+    if (currentPage > 1) params.set('page', currentPage);
 
     const newUrl = window.location.pathname + (params.toString() ? '?' + params.toString() : '');
     window.history.replaceState({}, '', newUrl);
@@ -212,52 +236,114 @@ function resetFilters() {
     if (document.getElementById('filter-ano')) document.getElementById('filter-ano').value = '';
     if (document.getElementById('filter-inst')) document.getElementById('filter-inst').value = '';
     toggleClearButton();
-    applyFilters();
+    currentPage = 1;
+    applyFilters(true);
 }
 
 function filterByBnccBadge(code) {
     const select = document.getElementById('filter-bncc');
     if (select) {
         select.value = code;
-        applyFilters();
+        currentPage = 1;
+        applyFilters(true);
         window.scrollTo({ top: 0, behavior: 'smooth' });
     }
+}
+
+function normalizeDriveImageUrl(url) {
+    if (!url) return '';
+    const match = url.match(/(?:drive\.google\.com\/(?:file\/d\/|open\?id=|uc\?export=view&id=)|lh3\.googleusercontent\.com\/d\/)([a-zA-Z0-9_-]+)/);
+    if (match) {
+        return `https://lh3.googleusercontent.com/d/${match[1]}`;
+    }
+    return url;
+}
+
+function renderQuestionImageDarkHtml(q) {
+    const imgData = q.image || q.imagem;
+    if (!imgData) return '';
+    
+    const rawSrc = typeof imgData === 'string' ? imgData.trim() : (imgData.src || '').trim();
+    if (!rawSrc) return '';
+    
+    const alt = typeof imgData === 'object' && imgData.alt ? imgData.alt.trim() : 'Figura da questão';
+    const caption = typeof imgData === 'object' && imgData.caption ? imgData.caption.trim() : '';
+    
+    let src = rawSrc;
+    if (rawSrc.includes('drive.google.com') || rawSrc.includes('lh3.googleusercontent.com')) {
+        src = normalizeDriveImageUrl(rawSrc);
+    } else if (!rawSrc.startsWith('http://') && !rawSrc.startsWith('https://') && !rawSrc.startsWith('data:')) {
+        src = `./${rawSrc.replace(/^(\.\/|\/)/, '')}`;
+    }
+    
+    const escapedAlt = alt.replace(/'/g, "\\'");
+    return `
+        <div class="my-4 p-2 sm:p-3 rounded-2xl border border-slate-800 bg-slate-950/70 shadow-sm max-w-xl mx-auto flex flex-col items-center">
+            <img src="${src}" alt="${alt}" class="max-h-72 sm:max-h-96 w-auto max-w-full rounded-xl object-contain cursor-zoom-in hover:opacity-95 hover:scale-[1.01] transition duration-200" onclick="openImageModal('${src}', '${escapedAlt}')" title="Clique para ampliar a imagem" loading="lazy">
+            ${caption ? `<p class="text-xs text-slate-400 mt-2 text-center italic">${caption}</p>` : ''}
+        </div>
+    `;
 }
 
 function renderResults() {
     const container = document.getElementById('questions-container');
     const counter = document.getElementById('results-count');
     const emptyState = document.getElementById('empty-state');
+    const paginationContainer = document.getElementById('pagination-container');
 
     if (!container) return;
 
+    const total = filteredQuestions.length;
+    const totalPages = Math.ceil(total / ITEMS_PER_PAGE) || 1;
+
+    if (currentPage > totalPages) currentPage = totalPages;
+    if (currentPage < 1) currentPage = 1;
+
+    const startIdx = (currentPage - 1) * ITEMS_PER_PAGE;
+    const endIdx = Math.min(startIdx + ITEMS_PER_PAGE, total);
+
     if (counter) {
-        const total = filteredQuestions.length;
-        counter.innerHTML = `<span class="text-sky-400 font-bold">${total}</span> ${total === 1 ? 'questão encontrada' : 'questões encontradas'}`;
+        if (total === 0) {
+            counter.innerHTML = 'Nenhuma questão encontrada';
+        } else if (total <= ITEMS_PER_PAGE) {
+            counter.innerHTML = `<span class="text-sky-400 font-bold">${total}</span> ${total === 1 ? 'questão encontrada' : 'questões encontradas'}`;
+        } else {
+            counter.innerHTML = `<span class="text-sky-400 font-bold">${total}</span> questões encontradas <span class="text-slate-500">•</span> Exibindo <span class="text-emerald-400 font-bold">${startIdx + 1}–${endIdx}</span> (página <span class="text-sky-300 font-bold">${currentPage}</span> de ${totalPages})`;
+        }
     }
 
-    if (filteredQuestions.length === 0) {
+    if (total === 0) {
         container.innerHTML = '';
         if (emptyState) emptyState.classList.remove('hidden');
+        if (paginationContainer) paginationContainer.classList.add('hidden');
         return;
     }
 
     if (emptyState) emptyState.classList.add('hidden');
 
-    container.innerHTML = filteredQuestions.map((q, idx) => {
+    const pageQuestions = filteredQuestions.slice(startIdx, endIdx);
+
+    container.innerHTML = pageQuestions.map((q, idx) => {
         const qId = q.uniqueId;
         const instBadge = q.inst === 'IFCE' 
             ? 'bg-blue-500/20 text-sky-300 border-blue-400/30' 
             : q.inst === 'IFSC' 
                 ? 'bg-indigo-500/20 text-indigo-300 border-indigo-400/30' 
-                : 'bg-amber-500/20 text-amber-300 border-amber-400/30';
+                : q.inst === 'IFMG'
+                    ? 'bg-emerald-500/20 text-emerald-300 border-emerald-400/30'
+                    : 'bg-amber-500/20 text-amber-300 border-amber-400/30';
 
+        const selectedOpt = pesquisaSelections[qId];
         const optionsHtml = (q.options || []).map((opt, optIdx) => {
             const letter = String.fromCharCode(65 + optIdx);
+            const isSelected = (selectedOpt === optIdx);
+            const selectedClass = isSelected ? 'opt-selected border-blue-500 bg-blue-950/40' : '';
+            const iconName = isSelected ? 'check-circle' : 'circle';
+            const iconClass = isSelected ? 'w-4 h-4 text-blue-400 opt-icon flex-shrink-0' : 'w-4 h-4 text-slate-600 opt-icon group-hover:text-blue-400 flex-shrink-0';
             return `
-                <button onclick="selectPesquisaOption('${qId}', ${optIdx})" id="btn-${qId}-${optIdx}" class="w-full text-left p-3.5 rounded-xl border border-slate-800 bg-slate-950/60 hover:border-blue-500 hover:bg-slate-800/60 transition text-sm text-slate-200 flex items-center justify-between group">
+                <button onclick="selectPesquisaOption('${qId}', ${optIdx})" id="btn-${qId}-${optIdx}" class="w-full text-left p-3.5 rounded-xl border border-slate-800 bg-slate-950/60 hover:border-blue-500 hover:bg-slate-800/60 transition text-sm text-slate-200 flex items-center justify-between group ${selectedClass}">
                     <span class="flex items-center gap-2"><strong class="text-sky-400 font-bold">${letter})</strong> <span>${opt}</span></span>
-                    <i data-lucide="circle" class="w-4 h-4 text-slate-600 opt-icon group-hover:text-blue-400 flex-shrink-0"></i>
+                    <i data-lucide="${iconName}" class="${iconClass}"></i>
                 </button>
             `;
         }).join('');
@@ -271,7 +357,7 @@ function renderResults() {
         };
 
         let theoryLink = '';
-        if (q.topicoId) {
+        if (q.topicoId && q.topicoId.startsWith('b')) {
             const bNum = q.topicoId.charAt(1);
             const folder = theoryFolderMap[bNum] || 'bloco-1-numeros';
             theoryLink = `
@@ -322,6 +408,8 @@ function renderResults() {
                     ${q.q}
                 </p>
 
+                ${renderQuestionImageDarkHtml(q)}
+
                 <!-- Alternativas -->
                 <div class="space-y-2" id="opts-${qId}">
                     ${optionsHtml}
@@ -343,8 +431,116 @@ function renderResults() {
         `;
     }).join('');
 
+    renderPagination(totalPages, total, startIdx, endIdx);
+
     if (window.lucide) lucide.createIcons();
     if (window.renderLatex) renderLatex(container);
+}
+
+function renderPagination(totalPages, total, startIdx, endIdx) {
+    const paginationContainer = document.getElementById('pagination-container');
+    const paginationInfo = document.getElementById('pagination-info');
+    const paginationControls = document.getElementById('pagination-controls');
+
+    if (!paginationContainer || !paginationControls) return;
+
+    if (totalPages <= 1) {
+        paginationContainer.classList.add('hidden');
+        return;
+    }
+
+    paginationContainer.classList.remove('hidden');
+
+    if (paginationInfo) {
+        paginationInfo.innerHTML = `Mostrando <strong class="text-slate-200">${startIdx + 1}</strong> a <strong class="text-slate-200">${endIdx}</strong> de <strong class="text-slate-200">${total}</strong> questões`;
+    }
+
+    const pagesToShow = [];
+    const maxVisibleButtons = 7;
+
+    if (totalPages <= maxVisibleButtons) {
+        for (let i = 1; i <= totalPages; i++) pagesToShow.push(i);
+    } else {
+        pagesToShow.push(1);
+        if (currentPage > 3) {
+            pagesToShow.push('...');
+        }
+
+        const startRange = Math.max(2, currentPage - 1);
+        const endRange = Math.min(totalPages - 1, currentPage + 1);
+
+        for (let i = startRange; i <= endRange; i++) {
+            pagesToShow.push(i);
+        }
+
+        if (currentPage < totalPages - 2) {
+            pagesToShow.push('...');
+        }
+        pagesToShow.push(totalPages);
+    }
+
+    let controlsHtml = '';
+
+    // Botão Anterior
+    const prevDisabled = currentPage === 1;
+    controlsHtml += `
+        <button 
+            onclick="changePage(${currentPage - 1})" 
+            ${prevDisabled ? 'disabled' : ''} 
+            class="px-3 py-1.5 rounded-xl text-xs sm:text-sm font-semibold bg-slate-900 border border-slate-800 text-slate-300 hover:bg-slate-800 hover:text-white transition disabled:opacity-30 disabled:cursor-not-allowed disabled:hover:bg-slate-900 disabled:hover:text-slate-300 flex items-center gap-1 shadow-sm cursor-pointer"
+            aria-label="Página anterior">
+            <i data-lucide="chevron-left" class="w-4 h-4"></i>
+            <span class="hidden sm:inline">Anterior</span>
+        </button>
+    `;
+
+    // Botões de Páginas
+    pagesToShow.forEach(p => {
+        if (p === '...') {
+            controlsHtml += `<span class="px-2 py-1 text-slate-500 font-bold select-none text-xs sm:text-sm">…</span>`;
+        } else {
+            const isActive = p === currentPage;
+            if (isActive) {
+                controlsHtml += `
+                    <button class="px-3.5 py-1.5 rounded-xl text-xs sm:text-sm font-bold bg-blue-600 border border-blue-500 text-white shadow-md shadow-blue-600/30 cursor-default" aria-current="page">
+                        ${p}
+                    </button>
+                `;
+            } else {
+                controlsHtml += `
+                    <button onclick="changePage(${p})" class="px-3.5 py-1.5 rounded-xl text-xs sm:text-sm font-medium bg-slate-900 border border-slate-800 text-slate-300 hover:bg-slate-800 hover:text-white transition shadow-sm cursor-pointer">
+                        ${p}
+                    </button>
+                `;
+            }
+        }
+    });
+
+    // Botão Próxima
+    const nextDisabled = currentPage === totalPages;
+    controlsHtml += `
+        <button 
+            onclick="changePage(${currentPage + 1})" 
+            ${nextDisabled ? 'disabled' : ''} 
+            class="px-3 py-1.5 rounded-xl text-xs sm:text-sm font-semibold bg-slate-900 border border-slate-800 text-slate-300 hover:bg-slate-800 hover:text-white transition disabled:opacity-30 disabled:cursor-not-allowed disabled:hover:bg-slate-900 disabled:hover:text-slate-300 flex items-center gap-1 shadow-sm cursor-pointer"
+            aria-label="Próxima página">
+            <span class="hidden sm:inline">Próxima</span>
+            <i data-lucide="chevron-right" class="w-4 h-4"></i>
+        </button>
+    `;
+
+    paginationControls.innerHTML = controlsHtml;
+}
+
+function changePage(newPage) {
+    currentPage = newPage;
+    renderResults();
+    updateUrlParams();
+
+    const target = document.getElementById('search-form') || document.getElementById('questions-container');
+    if (target) {
+        target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    }
 }
 
 function selectPesquisaOption(qId, optIdx) {

@@ -8,6 +8,22 @@ __pycache__/
 # Acervo de provas PDF (hospedadas e acessadas via Google Drive)
 provas/
 
+# Acervo de imagens de questões (hospedadas no Google Drive)
+assets/img/
+
 # Arquivos temporários de revisão de descritores
 mudancas_descritores_bncc.txt
 revisao_descritores_provas.txt
+
+# Planos e regras de uso local desta máquina
+planos/
+GEMINI.md
+
+# Google Cloud & Credenciais Sensíveis
+.env
+.env.*
+*credential*.json
+*service_account*.json
+*secret*.json
+client_secret*.json
+token*.json

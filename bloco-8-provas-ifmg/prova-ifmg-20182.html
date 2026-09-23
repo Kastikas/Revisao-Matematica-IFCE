@@ -1,0 +1,1135 @@
+<!DOCTYPE html>
+<html lang="pt-BR" class="dark">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Prova IFMG 2018.2 - Bloco 8: Provas Anteriores IFMG | PartiuIF</title>
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    colors: {
+                        brand: {
+                            50: '#f0fdf4',
+                            100: '#dcfce7',
+                            200: '#bbf7d0',
+                            300: '#86efac',
+                            400: '#4ade80',
+                            500: '#22c55e',
+                            600: '#16a34a',
+                            700: '#15803d',
+                            800: '#166534',
+                            900: '#14532d',
+                            950: '#052e16',
+                        },
+                        navy: {
+                            800: '#0f172a',
+                            850: '#0b132b',
+                            900: '#0a0f1d',
+                            950: '#020617',
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+    <!-- Lucide Icons -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <!-- KaTeX para Renderização de Equações -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.8/dist/katex.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/katex@0.16.8/dist/katex.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/katex@0.16.8/dist/contrib/auto-render.min.js"></script>
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="../assets/css/styles.css">
+</head>
+<body class="bg-[#0a0f1d] text-slate-100 font-sans antialiased min-h-screen flex flex-col" data-theme="dark">
+
+    <!-- Header / Navbar da Área de Provas (Parte 2 - Escuro-Azul) -->
+    <header class="gradient-header-dark text-white shadow-xl sticky top-0 z-50 border-b border-slate-800">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex items-center justify-between h-16">
+                <!-- Logo Provas -->
+                <a href="../provas.html" class="flex items-center space-x-3 group">
+                    <div class="bg-blue-600 p-2 rounded-xl text-white font-bold shadow-md shadow-blue-500/20 flex items-center justify-center group-hover:scale-105 transition">
+                        <i data-lucide="file-check" class="w-6 h-6"></i>
+                    </div>
+                    <div>
+                        <span class="font-extrabold text-xl tracking-tight text-white flex items-center gap-1.5">
+                            Partiu<span class="text-sky-400">IF</span>
+                            <span class="text-[10px] font-bold uppercase tracking-wider bg-blue-500/30 text-sky-200 border border-blue-400/30 px-2 py-0.5 rounded-full">Provas</span>
+                        </span>
+                        <p class="text-xs text-slate-400 hidden sm:flex items-center gap-1">
+                            <i data-lucide="archive" class="w-3 h-3 text-sky-400"></i> Acervo Oficial com PDFs e Gabarito
+                        </p>
+                    </div>
+                </a>
+
+                <!-- Navegação Desktop -->
+                <nav class="hidden md:flex space-x-1 items-center">
+                    <a href="../provas.html" class="px-3 py-2 rounded-lg text-sm transition flex items-center gap-1.5 text-slate-300 hover:bg-slate-800 hover:text-white">
+                <i data-lucide="layout-grid" class="w-4 h-4"></i> Todas as Provas
+            </a><a href="../pesquisa.html" class="px-3 py-2 rounded-lg text-sm transition flex items-center gap-1.5 text-slate-300 hover:bg-slate-800 hover:text-white">
+                <i data-lucide="search" class="w-4 h-4"></i> Pesquisa BNCC
+            </a><a href="../bloco-6-provas-ifce/index.html" class="px-3 py-2 rounded-lg text-sm transition flex items-center gap-1.5 text-slate-300 hover:bg-slate-800 hover:text-white">
+                <i data-lucide="award" class="w-4 h-4"></i> Provas IFCE (27)
+            </a><a href="../bloco-5-provas-ifsc/index.html" class="px-3 py-2 rounded-lg text-sm transition flex items-center gap-1.5 text-slate-300 hover:bg-slate-800 hover:text-white">
+                <i data-lucide="award" class="w-4 h-4"></i> Provas IFSC (16)
+            </a><a href="../bloco-7-provas-ifsp/index.html" class="px-3 py-2 rounded-lg text-sm transition flex items-center gap-1.5 text-slate-300 hover:bg-slate-800 hover:text-white">
+                <i data-lucide="award" class="w-4 h-4"></i> Provas IFSP (8)
+            </a><a href="../bloco-8-provas-ifmg/index.html" class="px-3 py-2 rounded-lg text-sm transition flex items-center gap-1.5 bg-blue-600 text-white font-semibold shadow-inner">
+                <i data-lucide="award" class="w-4 h-4"></i> Provas IFMG (11)
+            </a>
+                </nav>
+
+                <!-- Ações do Usuário -->
+                <div class="flex items-center gap-2 sm:gap-3">
+                    <a href="../index.html" class="bg-slate-800/90 hover:bg-slate-700 text-slate-200 border border-slate-700 px-3.5 py-1.5 rounded-lg text-xs sm:text-sm font-semibold transition flex items-center gap-1.5 shadow-sm" title="Retornar à Teoria e Eixos Temáticos">
+                        <i data-lucide="arrow-left" class="w-4 h-4 text-emerald-400"></i> <span class="hidden sm:inline">Voltar para </span>Teoria
+                    </a>
+                    <a href="../simulado.html" class="bg-blue-600 hover:bg-blue-500 text-white font-semibold px-3.5 py-1.5 rounded-lg text-xs sm:text-sm transition flex items-center gap-1.5 shadow">
+                        <i data-lucide="award" class="w-4 h-4"></i> Simulado
+                    </a>
+                    <button id="mobile-menu-btn" class="md:hidden p-2 rounded-lg text-slate-300 hover:text-white hover:bg-slate-800" aria-label="Abrir menu">
+                        <i data-lucide="menu" class="w-6 h-6"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Menu Mobile -->
+        <div id="mobile-menu" class="hidden md:hidden bg-slate-950 border-t border-slate-800 px-4 pt-2 pb-4 space-y-1">
+            <a href="../provas.html" class="block px-3 py-2 rounded-md text-base font-medium text-white flex items-center gap-2 hover:bg-slate-800">
+                <i data-lucide="layout-grid" class="w-4 h-4"></i> Todas as Provas
+            </a><a href="../pesquisa.html" class="block px-3 py-2 rounded-md text-base font-medium text-white flex items-center gap-2 hover:bg-slate-800">
+                <i data-lucide="search" class="w-4 h-4"></i> Pesquisa BNCC
+            </a><a href="../bloco-6-provas-ifce/index.html" class="block px-3 py-2 rounded-md text-base font-medium text-white flex items-center gap-2 hover:bg-slate-800">
+                <i data-lucide="award" class="w-4 h-4"></i> Provas IFCE (27)
+            </a><a href="../bloco-5-provas-ifsc/index.html" class="block px-3 py-2 rounded-md text-base font-medium text-white flex items-center gap-2 hover:bg-slate-800">
+                <i data-lucide="award" class="w-4 h-4"></i> Provas IFSC (16)
+            </a><a href="../bloco-7-provas-ifsp/index.html" class="block px-3 py-2 rounded-md text-base font-medium text-white flex items-center gap-2 hover:bg-slate-800">
+                <i data-lucide="award" class="w-4 h-4"></i> Provas IFSP (8)
+            </a><a href="../bloco-8-provas-ifmg/index.html" class="block px-3 py-2 rounded-md text-base font-medium text-white flex items-center gap-2 bg-blue-600 font-bold">
+                <i data-lucide="award" class="w-4 h-4"></i> Provas IFMG (11)
+            </a>
+            <a href="../index.html" class="block px-3 py-2 rounded-md text-base font-semibold text-slate-200 hover:bg-slate-800 flex items-center gap-2 mt-2 border-t border-slate-800 pt-3">
+                <i data-lucide="arrow-left" class="w-4 h-4 text-emerald-400"></i> Voltar para Teoria (Parte 1)
+            </a>
+            <a href="../simulado.html" class="block px-3 py-2 rounded-md text-base font-bold bg-blue-600 text-white flex items-center gap-2 mt-2">
+                <i data-lucide="award" class="w-4 h-4"></i> Simulado IF
+            </a>
+        </div>
+    </header>
+
+
+    <main class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 flex-grow">
+        <!-- Breadcrumbs -->
+        <nav class="flex text-xs font-medium text-slate-400 mb-6" aria-label="Breadcrumb">
+            <ol class="inline-flex items-center space-x-1 sm:space-x-2">
+                <li><a href="../index.html" class="hover:text-sky-400 flex items-center gap-1"><i data-lucide="home" class="w-3.5 h-3.5"></i> Início</a></li>
+                <li><span class="text-slate-600">/</span></li>
+                <li><a href="../provas.html" class="hover:text-sky-400 flex items-center gap-1"><i data-lucide="archive" class="w-3.5 h-3.5"></i> Provas</a></li>
+                <li><span class="text-slate-600">/</span></li>
+                <li><a href="./index.html" class="hover:text-sky-400">Bloco 8: Provas Anteriores IFMG</a></li>
+                <li><span class="text-slate-600">/</span></li>
+                <li class="text-slate-200 font-semibold truncate max-w-xs sm:max-w-none">Prova IFMG 2018.2</li>
+            </ol>
+        </nav>
+
+        <div class="grid grid-cols-1 lg:grid-cols-4 gap-8 items-start">
+            <!-- Conteúdo Principal (3 Colunas) -->
+            <div class="lg:col-span-3 space-y-8">
+                
+                <!-- Cabeçalho do Exame -->
+                <div class="bg-slate-900/90 border border-slate-800 rounded-3xl p-6 sm:p-8 shadow-xl text-slate-100">
+                    <div class="flex flex-wrap items-center justify-between gap-3 mb-4">
+                        <span class="text-xs font-bold uppercase tracking-wider text-sky-300 bg-blue-950/80 px-3 py-1 rounded-full border border-blue-800/60">
+                            BNCC: Exame Oficial
+                        </span>
+                        <div class="flex items-center gap-2">
+                            
+                        <a href="../provas/ifmg/IFMG_prova_2018_2.pdf" download class="bg-blue-600 hover:bg-blue-500 text-white font-bold px-4 py-2 rounded-xl text-sm transition flex items-center gap-2 shadow-lg shadow-blue-600/25" title="Baixar Caderno Oficial em PDF">
+                            <i data-lucide="download" class="w-4 h-4"></i> Baixar Caderno em PDF
+                        </a>
+                    
+                            <button id="btn-toggle-done-ifmg-2018-2" onclick="toggleTopicDone('ifmg-2018-2')" class="px-4 py-2 rounded-xl text-sm font-semibold border bg-slate-900 text-slate-300 border-slate-700 hover:bg-slate-800 transition flex items-center gap-2 shadow-sm">
+                                <i data-lucide="square" class="w-4 h-4 text-slate-500"></i> Marcar como Concluída
+                            </button>
+                        </div>
+                    </div>
+
+                    <h1 class="text-2xl sm:text-4xl font-extrabold text-white tracking-tight mb-3">
+                        Prova IFMG 2018.2
+                    </h1>
+                    <p class="text-slate-300 text-sm sm:text-base leading-relaxed mb-6">
+                        15 questões de Matemática aplicadas no Processo Seletivo IFMG 2018.2 para Cursos Técnicos.
+                    </p>
+
+                    <!-- Seção Teórica / Informações do Exame -->
+                    <div class="bg-slate-950/70 border border-slate-800/80 rounded-2xl p-5 mb-6">
+                        <h2 class="text-sm font-bold text-sky-400 uppercase tracking-wider mb-2 flex items-center gap-2">
+                            <i data-lucide="book-open" class="w-4 h-4 text-sky-400"></i> Informações do Exame e Conteúdos Cobrados
+                        </h2>
+                        <div class="text-xs sm:text-sm text-slate-300 leading-relaxed space-y-2">
+                            <p>A edição 2018.2 do IFMG abordou aplicações de MMC em jornadas e plantões de trabalho, modelagem algébrica com o Teorema de Pitágoras em triângulos retângulos, valor numérico de expressões algébricas, sistemas de equações do 1º grau modelando coleções, conversão de unidades de medida de massa (quilogramas e gramas), proporcionalidade e porcentagem aplicadas a dados do Censo IBGE, propriedades geométricas e classificação de quadriláteros notáveis (trapézios), ângulos formados por retas paralelas cortadas por transversais, probabilidade clássica com números primos no lançamento de dados, cálculo de áreas hachuradas entre círculos e quadrados concêntricos, equações do 2º grau no cálculo de área de trapézio isósceles, Teorema de Tales na divisão proporcional de lotes, geometria analítica com raízes de parábolas e coeficiente linear de retas, potenciação com expoentes fracionários e decimais, e planificação de prismas pentagonais retos.</p>
+                        </div>
+                    </div>
+
+                    <!-- Pontos-Chave -->
+                    <div class="mb-6">
+                        <h3 class="text-xs font-bold text-slate-400 uppercase tracking-wider mb-3">Conceitos Mais Cobrados Nesta Edição</h3>
+                        <ul class="grid grid-cols-1 sm:grid-cols-2 gap-2">
+                            
+                    <li class="flex items-start gap-2 text-xs sm:text-sm text-slate-300">
+                        <i data-lucide="check" class="w-4 h-4 text-sky-400 flex-shrink-0 mt-0.5"></i>
+                        <span>No triângulo retângulo, a soma dos quadrados dos catetos é igual ao quadrado da hipotenusa: $a^2 + b^2 = c^2$.</span>
+                    </li>
+                
+                    <li class="flex items-start gap-2 text-xs sm:text-sm text-slate-300">
+                        <i data-lucide="check" class="w-4 h-4 text-sky-400 flex-shrink-0 mt-0.5"></i>
+                        <span>Dois ângulos colaterais internos formados por retas paralelas cortadas por uma transversal são suplementares (somam $180^\circ$).</span>
+                    </li>
+                
+                    <li class="flex items-start gap-2 text-xs sm:text-sm text-slate-300">
+                        <i data-lucide="check" class="w-4 h-4 text-sky-400 flex-shrink-0 mt-0.5"></i>
+                        <span>A probabilidade de eventos simultâneos independentes é o produto das probabilidades de cada evento: $P(A \cap B) = P(A) \cdot P(B)$.</span>
+                    </li>
+                
+                    <li class="flex items-start gap-2 text-xs sm:text-sm text-slate-300">
+                        <i data-lucide="check" class="w-4 h-4 text-sky-400 flex-shrink-0 mt-0.5"></i>
+                        <span>Pelo Teorema de Tales, feixes de retas paralelas determinam sobre retas transversais segmentos proporcionais: $\frac{x}{X_{\text{total}}} = \frac{y}{Y_{\text{total}}}$.</span>
+                    </li>
+                
+                    <li class="flex items-start gap-2 text-xs sm:text-sm text-slate-300">
+                        <i data-lucide="check" class="w-4 h-4 text-sky-400 flex-shrink-0 mt-0.5"></i>
+                        <span>A equação reduzida da reta é $y = mx + b$, em que $m$ representa o coeficiente angular (inclinação) e $b$ é o coeficiente linear (intercepto no eixo $y$).</span>
+                    </li>
+                
+                        </ul>
+                    </div>
+
+                    <!-- Fórmulas KaTeX -->
+                    <div class="bg-slate-950 border border-blue-900/50 text-white rounded-2xl p-5 shadow-inner">
+                        <div class="flex items-center justify-between mb-2">
+                            <span class="text-xs font-bold text-sky-300 uppercase tracking-wider flex items-center gap-1.5">
+                                <i data-lucide="sigma" class="w-4 h-4"></i> Fórmulas-Chave para a Prova
+                            </span>
+                        </div>
+                        <div class="text-sm sm:text-base font-mono overflow-x-auto py-2 text-center text-sky-200">
+                            $$a^2 + b^2 = c^2, \quad \frac{x_1}{y_1} = \frac{x_2}{y_2}, \quad P(A \cap B) = P(A) \cdot P(B), \quad y = mx + b, \quad A = \frac{(B+b)h}{2}$$
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Exemplo Resolvido Passo a Passo -->
+                <section class="bg-slate-900/90 border border-slate-800 rounded-3xl p-6 sm:p-8 shadow-xl text-slate-100">
+                    <h2 class="text-lg font-bold text-sky-300 mb-3 flex items-center gap-2">
+                        <i data-lucide="file-check-2" class="w-5 h-5 text-sky-400"></i> Resolução Comentada de Destaque
+                    </h2>
+                    <div class="bg-slate-950/90 border border-slate-800 rounded-2xl p-5 shadow-inner">
+                        <p class="text-sm sm:text-base font-semibold text-slate-100 mb-3">Um terreno em formato de trapézio isósceles de área $12\text{ m}^2$ tem base maior $B = 10\text{ m}$. A base menor e a altura medem $X$. Qual o valor de $X$?</p>
+                        <div class="text-xs sm:text-sm text-slate-300 leading-relaxed whitespace-pre-line border-t border-slate-800 pt-3">
+                            <strong class="text-sky-300 block mb-1">Resolução Detalhada:</strong>
+                            1. Aplicamos a fórmula da área do trapézio:<br>$$A = \frac{(B + b) \cdot h}{2} \implies 12 = \frac{(10 + X) \cdot X}{2}$$<br>2. Multiplicando por 2 e desenvolvendo a equação:<br>$$X^2 + 10X = 24 \implies X^2 + 10X - 24 = 0$$<br>3. Fatorando o trinômio:<br>$$(X + 12)(X - 2) = 0$$<br>Como $X$ representa comprimento ($X > 0$), temos $X = 2\text{ m}$.
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Caderno de Questões da Prova -->
+                <section class="bg-slate-900/90 border border-slate-800 rounded-3xl p-6 sm:p-8 shadow-xl text-slate-100">
+                    <div class="flex items-center justify-between mb-6 pb-4 border-b border-slate-800">
+                        <div>
+                            <h2 class="text-xl font-bold text-white flex items-center gap-2">
+                                <i data-lucide="list-checks" class="w-6 h-6 text-sky-400"></i> Questões Oficiais da Prova
+                            </h2>
+                            <p class="text-xs text-slate-400 mt-1">Resolva as questões para simular o exame. Suas respostas são salvas automaticamente.</p>
+                        </div>
+                        <span class="text-xs font-semibold px-2.5 py-1 rounded-full bg-blue-950/60 text-sky-300 border border-blue-800/40">
+                            15 Questões
+                        </span>
+                    </div>
+
+                    
+                        <div class="mb-8 border-b border-slate-800/80 pb-6 last:border-0 last:pb-0" id="q-container-ifmg-2018-2-q0">
+                            <div class="flex items-center justify-between mb-3 flex-wrap gap-2">
+                                <div class="flex items-center gap-2">
+                                    <span class="text-xs font-bold uppercase tracking-wider text-sky-300 bg-blue-950/60 px-2.5 py-0.5 rounded-full border border-blue-800/40">Questão 1</span>
+                                    
+                            <a href="../pesquisa.html?bncc=EF07MA01" class="text-[11px] font-mono font-bold text-emerald-300 bg-emerald-950/80 hover:bg-emerald-900/90 px-2.5 py-0.5 rounded-full border border-emerald-800/60 flex items-center gap-1 transition shadow-sm" title="Resolver e elaborar problemas com números naturais envolvendo Mínimo Múltiplo Comum (MMC).">
+                                <i data-lucide="bookmark" class="w-3 h-3 text-emerald-400"></i> BNCC: EF07MA01
+                            </a>
+                        
+                                </div>
+                            </div>
+                            <p class="font-medium text-slate-100 mb-4 text-sm sm:text-base leading-relaxed">Dois médicos de especialidades distintas trabalham em uma clínica pelo mesmo plano de saúde. Segundo as regras do plano, os dois devem iniciar o plantão no mesmo horário e este não pode durar mais que 12 horas. Em determinado dia, os dois atenderam pacientes ininterruptamente até irem embora juntos, sendo que cada atendimento do primeiro durou 45 minutos e do segundo, 50 minutos.
+
+Qual o número total de pacientes atendidos naquele dia pelos dois médicos segundo as regras do plano?</p>
+                            
+                            <div class="space-y-2 mb-4" id="opts-ifmg-2018-2-q0">
+                                
+                            <button onclick="selectOption('ifmg-2018-2-q0', 0)" id="btn-ifmg-2018-2-q0-0" class="w-full text-left p-3.5 rounded-xl border border-slate-800 bg-slate-950/60 hover:border-blue-500 hover:bg-slate-800/60 transition text-sm text-slate-200 flex items-center justify-between group">
+                                <span class="flex items-center gap-2"><strong class="text-sky-400 font-bold">A)</strong> 450</span>
+                                <i data-lucide="circle" class="w-4 h-4 text-slate-600 opt-icon group-hover:text-blue-400 flex-shrink-0"></i>
+                            </button>
+                        
+                            <button onclick="selectOption('ifmg-2018-2-q0', 1)" id="btn-ifmg-2018-2-q0-1" class="w-full text-left p-3.5 rounded-xl border border-slate-800 bg-slate-950/60 hover:border-blue-500 hover:bg-slate-800/60 transition text-sm text-slate-200 flex items-center justify-between group">
+                                <span class="flex items-center gap-2"><strong class="text-sky-400 font-bold">B)</strong> 19</span>
+                                <i data-lucide="circle" class="w-4 h-4 text-slate-600 opt-icon group-hover:text-blue-400 flex-shrink-0"></i>
+                            </button>
+                        
+                            <button onclick="selectOption('ifmg-2018-2-q0', 2)" id="btn-ifmg-2018-2-q0-2" class="w-full text-left p-3.5 rounded-xl border border-slate-800 bg-slate-950/60 hover:border-blue-500 hover:bg-slate-800/60 transition text-sm text-slate-200 flex items-center justify-between group">
+                                <span class="flex items-center gap-2"><strong class="text-sky-400 font-bold">C)</strong> 225</span>
+                                <i data-lucide="circle" class="w-4 h-4 text-slate-600 opt-icon group-hover:text-blue-400 flex-shrink-0"></i>
+                            </button>
+                        
+                            <button onclick="selectOption('ifmg-2018-2-q0', 3)" id="btn-ifmg-2018-2-q0-3" class="w-full text-left p-3.5 rounded-xl border border-slate-800 bg-slate-950/60 hover:border-blue-500 hover:bg-slate-800/60 transition text-sm text-slate-200 flex items-center justify-between group">
+                                <span class="flex items-center gap-2"><strong class="text-sky-400 font-bold">D)</strong> 5</span>
+                                <i data-lucide="circle" class="w-4 h-4 text-slate-600 opt-icon group-hover:text-blue-400 flex-shrink-0"></i>
+                            </button>
+                        
+                            </div>
+                            <div class="flex items-center gap-3">
+                                <button id="submit-btn-ifmg-2018-2-q0" onclick="submitAnswer('8', 'ifmg-2018-2', 0)" class="bg-blue-600 hover:bg-blue-500 text-white px-5 py-2.5 rounded-xl text-sm font-bold transition flex items-center gap-1.5 shadow-lg shadow-blue-600/25">
+                                    <i data-lucide="send" class="w-4 h-4"></i> Enviar Resposta
+                                </button>
+                            </div>
+                            <div id="feedback-ifmg-2018-2-q0" class="hidden p-4 rounded-xl text-sm mt-4"></div>
+                        </div>
+                    
+                        <div class="mb-8 border-b border-slate-800/80 pb-6 last:border-0 last:pb-0" id="q-container-ifmg-2018-2-q1">
+                            <div class="flex items-center justify-between mb-3 flex-wrap gap-2">
+                                <div class="flex items-center gap-2">
+                                    <span class="text-xs font-bold uppercase tracking-wider text-sky-300 bg-blue-950/60 px-2.5 py-0.5 rounded-full border border-blue-800/40">Questão 2</span>
+                                    
+                            <a href="../pesquisa.html?bncc=EF09MA14" class="text-[11px] font-mono font-bold text-emerald-300 bg-emerald-950/80 hover:bg-emerald-900/90 px-2.5 py-0.5 rounded-full border border-emerald-800/60 flex items-center gap-1 transition shadow-sm" title="Descrever, por escrito e por meio de um fluxograma, algoritmos para a resolução do Teorema de Pitágoras.">
+                                <i data-lucide="bookmark" class="w-3 h-3 text-emerald-400"></i> BNCC: EF09MA14
+                            </a>
+                        
+                                </div>
+                            </div>
+                            <p class="font-medium text-slate-100 mb-4 text-sm sm:text-base leading-relaxed">Num trabalho escolar, Antônio dispunha de dois pedaços de palito de sorvete para montar um triângulo retângulo. Um dos pedaços media $16\text{ centímetros}$ e o outro, $8\text{ centímetros}$. O pedaço de $8\text{ centímetros}$ foi utilizado como um cateto horizontal, o outro pedaço foi partido a uma distância $x$ de uma de suas extremidades. A figura seguinte ilustra o que Antônio fez.
+
+O valor de $x$, em centímetros, é</p>
+                            
+        <div class="my-4 p-2 sm:p-3 rounded-2xl border bg-slate-950/70 border-slate-800 shadow-sm max-w-xl mx-auto flex flex-col items-center">
+            <img src="https://lh3.googleusercontent.com/d/1utEvLwN9MJ7IACPD4JLo5TEBlmQoZDmt" alt="Triângulo retângulo formado por palitos de sorvete com cateto horizontal de 8 cm, cateto vertical de medida x e hipotenusa inclinada completando a figura com ângulo reto indicado." onerror="if(this.src!='../assets/img/questoes/ifmg/ifmg-2018-2-q17.png'){this.src='../assets/img/questoes/ifmg/ifmg-2018-2-q17.png';}" class="max-h-80 sm:max-h-96 w-auto max-w-full rounded-xl object-contain cursor-zoom-in hover:opacity-95 hover:scale-[1.01] transition duration-200" onclick="openImageModal('https://lh3.googleusercontent.com/d/1utEvLwN9MJ7IACPD4JLo5TEBlmQoZDmt', 'Triângulo retângulo formado por palitos de sorvete com cateto horizontal de 8 cm, cateto vertical de medida x e hipotenusa inclinada completando a figura com ângulo reto indicado.')" title="Clique para ampliar a imagem" loading="lazy">
+            <p class="text-xs text-slate-400 mt-2 text-center italic">Figura: Montagem com palitos de sorvete (Processo Seletivo IFMG 2018.2)</p>
+        </div>
+    
+                            <div class="space-y-2 mb-4" id="opts-ifmg-2018-2-q1">
+                                
+                            <button onclick="selectOption('ifmg-2018-2-q1', 0)" id="btn-ifmg-2018-2-q1-0" class="w-full text-left p-3.5 rounded-xl border border-slate-800 bg-slate-950/60 hover:border-blue-500 hover:bg-slate-800/60 transition text-sm text-slate-200 flex items-center justify-between group">
+                                <span class="flex items-center gap-2"><strong class="text-sky-400 font-bold">A)</strong> 2</span>
+                                <i data-lucide="circle" class="w-4 h-4 text-slate-600 opt-icon group-hover:text-blue-400 flex-shrink-0"></i>
+                            </button>
+                        
+                            <button onclick="selectOption('ifmg-2018-2-q1', 1)" id="btn-ifmg-2018-2-q1-1" class="w-full text-left p-3.5 rounded-xl border border-slate-800 bg-slate-950/60 hover:border-blue-500 hover:bg-slate-800/60 transition text-sm text-slate-200 flex items-center justify-between group">
+                                <span class="flex items-center gap-2"><strong class="text-sky-400 font-bold">B)</strong> 6</span>
+                                <i data-lucide="circle" class="w-4 h-4 text-slate-600 opt-icon group-hover:text-blue-400 flex-shrink-0"></i>
+                            </button>
+                        
+                            <button onclick="selectOption('ifmg-2018-2-q1', 2)" id="btn-ifmg-2018-2-q1-2" class="w-full text-left p-3.5 rounded-xl border border-slate-800 bg-slate-950/60 hover:border-blue-500 hover:bg-slate-800/60 transition text-sm text-slate-200 flex items-center justify-between group">
+                                <span class="flex items-center gap-2"><strong class="text-sky-400 font-bold">C)</strong> 8</span>
+                                <i data-lucide="circle" class="w-4 h-4 text-slate-600 opt-icon group-hover:text-blue-400 flex-shrink-0"></i>
+                            </button>
+                        
+                            <button onclick="selectOption('ifmg-2018-2-q1', 3)" id="btn-ifmg-2018-2-q1-3" class="w-full text-left p-3.5 rounded-xl border border-slate-800 bg-slate-950/60 hover:border-blue-500 hover:bg-slate-800/60 transition text-sm text-slate-200 flex items-center justify-between group">
+                                <span class="flex items-center gap-2"><strong class="text-sky-400 font-bold">D)</strong> 10</span>
+                                <i data-lucide="circle" class="w-4 h-4 text-slate-600 opt-icon group-hover:text-blue-400 flex-shrink-0"></i>
+                            </button>
+                        
+                            </div>
+                            <div class="flex items-center gap-3">
+                                <button id="submit-btn-ifmg-2018-2-q1" onclick="submitAnswer('8', 'ifmg-2018-2', 1)" class="bg-blue-600 hover:bg-blue-500 text-white px-5 py-2.5 rounded-xl text-sm font-bold transition flex items-center gap-1.5 shadow-lg shadow-blue-600/25">
+                                    <i data-lucide="send" class="w-4 h-4"></i> Enviar Resposta
+                                </button>
+                            </div>
+                            <div id="feedback-ifmg-2018-2-q1" class="hidden p-4 rounded-xl text-sm mt-4"></div>
+                        </div>
+                    
+                        <div class="mb-8 border-b border-slate-800/80 pb-6 last:border-0 last:pb-0" id="q-container-ifmg-2018-2-q2">
+                            <div class="flex items-center justify-between mb-3 flex-wrap gap-2">
+                                <div class="flex items-center gap-2">
+                                    <span class="text-xs font-bold uppercase tracking-wider text-sky-300 bg-blue-950/60 px-2.5 py-0.5 rounded-full border border-blue-800/40">Questão 3</span>
+                                    
+                            <a href="../pesquisa.html?bncc=EF07MA14" class="text-[11px] font-mono font-bold text-emerald-300 bg-emerald-950/80 hover:bg-emerald-900/90 px-2.5 py-0.5 rounded-full border border-emerald-800/60 flex items-center gap-1 transition shadow-sm" title="Classificar sequências em recursivas e não recursivas e calcular o valor numérico de expressões algébricas.">
+                                <i data-lucide="bookmark" class="w-3 h-3 text-emerald-400"></i> BNCC: EF07MA14
+                            </a>
+                        
+                                </div>
+                            </div>
+                            <p class="font-medium text-slate-100 mb-4 text-sm sm:text-base leading-relaxed">Pedro estava calculando valores para a expressão algébrica $x^2 + y^2 + 8x - 5y + 8$. Ao substituir $x = 3$ e $y = 2$ na expressão, o valor que ele vai encontrar é</p>
+                            
+                            <div class="space-y-2 mb-4" id="opts-ifmg-2018-2-q2">
+                                
+                            <button onclick="selectOption('ifmg-2018-2-q2', 0)" id="btn-ifmg-2018-2-q2-0" class="w-full text-left p-3.5 rounded-xl border border-slate-800 bg-slate-950/60 hover:border-blue-500 hover:bg-slate-800/60 transition text-sm text-slate-200 flex items-center justify-between group">
+                                <span class="flex items-center gap-2"><strong class="text-sky-400 font-bold">A)</strong> 22</span>
+                                <i data-lucide="circle" class="w-4 h-4 text-slate-600 opt-icon group-hover:text-blue-400 flex-shrink-0"></i>
+                            </button>
+                        
+                            <button onclick="selectOption('ifmg-2018-2-q2', 1)" id="btn-ifmg-2018-2-q2-1" class="w-full text-left p-3.5 rounded-xl border border-slate-800 bg-slate-950/60 hover:border-blue-500 hover:bg-slate-800/60 transition text-sm text-slate-200 flex items-center justify-between group">
+                                <span class="flex items-center gap-2"><strong class="text-sky-400 font-bold">B)</strong> 32</span>
+                                <i data-lucide="circle" class="w-4 h-4 text-slate-600 opt-icon group-hover:text-blue-400 flex-shrink-0"></i>
+                            </button>
+                        
+                            <button onclick="selectOption('ifmg-2018-2-q2', 2)" id="btn-ifmg-2018-2-q2-2" class="w-full text-left p-3.5 rounded-xl border border-slate-800 bg-slate-950/60 hover:border-blue-500 hover:bg-slate-800/60 transition text-sm text-slate-200 flex items-center justify-between group">
+                                <span class="flex items-center gap-2"><strong class="text-sky-400 font-bold">C)</strong> 35</span>
+                                <i data-lucide="circle" class="w-4 h-4 text-slate-600 opt-icon group-hover:text-blue-400 flex-shrink-0"></i>
+                            </button>
+                        
+                            <button onclick="selectOption('ifmg-2018-2-q2', 3)" id="btn-ifmg-2018-2-q2-3" class="w-full text-left p-3.5 rounded-xl border border-slate-800 bg-slate-950/60 hover:border-blue-500 hover:bg-slate-800/60 transition text-sm text-slate-200 flex items-center justify-between group">
+                                <span class="flex items-center gap-2"><strong class="text-sky-400 font-bold">D)</strong> 51</span>
+                                <i data-lucide="circle" class="w-4 h-4 text-slate-600 opt-icon group-hover:text-blue-400 flex-shrink-0"></i>
+                            </button>
+                        
+                            </div>
+                            <div class="flex items-center gap-3">
+                                <button id="submit-btn-ifmg-2018-2-q2" onclick="submitAnswer('8', 'ifmg-2018-2', 2)" class="bg-blue-600 hover:bg-blue-500 text-white px-5 py-2.5 rounded-xl text-sm font-bold transition flex items-center gap-1.5 shadow-lg shadow-blue-600/25">
+                                    <i data-lucide="send" class="w-4 h-4"></i> Enviar Resposta
+                                </button>
+                            </div>
+                            <div id="feedback-ifmg-2018-2-q2" class="hidden p-4 rounded-xl text-sm mt-4"></div>
+                        </div>
+                    
+                        <div class="mb-8 border-b border-slate-800/80 pb-6 last:border-0 last:pb-0" id="q-container-ifmg-2018-2-q3">
+                            <div class="flex items-center justify-between mb-3 flex-wrap gap-2">
+                                <div class="flex items-center gap-2">
+                                    <span class="text-xs font-bold uppercase tracking-wider text-sky-300 bg-blue-950/60 px-2.5 py-0.5 rounded-full border border-blue-800/40">Questão 4</span>
+                                    
+                            <a href="../pesquisa.html?bncc=EF08MA08" class="text-[11px] font-mono font-bold text-emerald-300 bg-emerald-950/80 hover:bg-emerald-900/90 px-2.5 py-0.5 rounded-full border border-emerald-800/60 flex items-center gap-1 transition shadow-sm" title="Resolver e elaborar problemas que possam ser representados por sistemas de equações de 1º grau com duas incógnitas.">
+                                <i data-lucide="bookmark" class="w-3 h-3 text-emerald-400"></i> BNCC: EF08MA08
+                            </a>
+                        
+                                </div>
+                            </div>
+                            <p class="font-medium text-slate-100 mb-4 text-sm sm:text-base leading-relaxed">Joana possui uma coleção de livros de romance e drama. Ela costuma estipular metas para o crescimento dessa coleção de acordo com os livros que mais lhe agradam. Atualmente, Joana possui $18$ livros. Sua próxima meta é acumular $51$ livros, de modo a quadruplicar o número de romances e ao mesmo tempo que doará $3$ livros de drama que pouco lhe agradaram.
+
+Desta forma, quantos livros de drama restarão nesta coleção?</p>
+                            
+                            <div class="space-y-2 mb-4" id="opts-ifmg-2018-2-q3">
+                                
+                            <button onclick="selectOption('ifmg-2018-2-q3', 0)" id="btn-ifmg-2018-2-q3-0" class="w-full text-left p-3.5 rounded-xl border border-slate-800 bg-slate-950/60 hover:border-blue-500 hover:bg-slate-800/60 transition text-sm text-slate-200 flex items-center justify-between group">
+                                <span class="flex items-center gap-2"><strong class="text-sky-400 font-bold">A)</strong> 3</span>
+                                <i data-lucide="circle" class="w-4 h-4 text-slate-600 opt-icon group-hover:text-blue-400 flex-shrink-0"></i>
+                            </button>
+                        
+                            <button onclick="selectOption('ifmg-2018-2-q3', 1)" id="btn-ifmg-2018-2-q3-1" class="w-full text-left p-3.5 rounded-xl border border-slate-800 bg-slate-950/60 hover:border-blue-500 hover:bg-slate-800/60 transition text-sm text-slate-200 flex items-center justify-between group">
+                                <span class="flex items-center gap-2"><strong class="text-sky-400 font-bold">B)</strong> 4</span>
+                                <i data-lucide="circle" class="w-4 h-4 text-slate-600 opt-icon group-hover:text-blue-400 flex-shrink-0"></i>
+                            </button>
+                        
+                            <button onclick="selectOption('ifmg-2018-2-q3', 2)" id="btn-ifmg-2018-2-q3-2" class="w-full text-left p-3.5 rounded-xl border border-slate-800 bg-slate-950/60 hover:border-blue-500 hover:bg-slate-800/60 transition text-sm text-slate-200 flex items-center justify-between group">
+                                <span class="flex items-center gap-2"><strong class="text-sky-400 font-bold">C)</strong> 7</span>
+                                <i data-lucide="circle" class="w-4 h-4 text-slate-600 opt-icon group-hover:text-blue-400 flex-shrink-0"></i>
+                            </button>
+                        
+                            <button onclick="selectOption('ifmg-2018-2-q3', 3)" id="btn-ifmg-2018-2-q3-3" class="w-full text-left p-3.5 rounded-xl border border-slate-800 bg-slate-950/60 hover:border-blue-500 hover:bg-slate-800/60 transition text-sm text-slate-200 flex items-center justify-between group">
+                                <span class="flex items-center gap-2"><strong class="text-sky-400 font-bold">D)</strong> 9</span>
+                                <i data-lucide="circle" class="w-4 h-4 text-slate-600 opt-icon group-hover:text-blue-400 flex-shrink-0"></i>
+                            </button>
+                        
+                            </div>
+                            <div class="flex items-center gap-3">
+                                <button id="submit-btn-ifmg-2018-2-q3" onclick="submitAnswer('8', 'ifmg-2018-2', 3)" class="bg-blue-600 hover:bg-blue-500 text-white px-5 py-2.5 rounded-xl text-sm font-bold transition flex items-center gap-1.5 shadow-lg shadow-blue-600/25">
+                                    <i data-lucide="send" class="w-4 h-4"></i> Enviar Resposta
+                                </button>
+                            </div>
+                            <div id="feedback-ifmg-2018-2-q3" class="hidden p-4 rounded-xl text-sm mt-4"></div>
+                        </div>
+                    
+                        <div class="mb-8 border-b border-slate-800/80 pb-6 last:border-0 last:pb-0" id="q-container-ifmg-2018-2-q4">
+                            <div class="flex items-center justify-between mb-3 flex-wrap gap-2">
+                                <div class="flex items-center gap-2">
+                                    <span class="text-xs font-bold uppercase tracking-wider text-sky-300 bg-blue-950/60 px-2.5 py-0.5 rounded-full border border-blue-800/40">Questão 5</span>
+                                    
+                            <a href="../pesquisa.html?bncc=EF06MA24" class="text-[11px] font-mono font-bold text-emerald-300 bg-emerald-950/80 hover:bg-emerald-900/90 px-2.5 py-0.5 rounded-full border border-emerald-800/60 flex items-center gap-1 transition shadow-sm" title="Resolver e elaborar problemas que envolvam as grandezas massa e suas unidades de medida usuais.">
+                                <i data-lucide="bookmark" class="w-3 h-3 text-emerald-400"></i> BNCC: EF06MA24
+                            </a>
+                        
+                                </div>
+                            </div>
+                            <p class="font-medium text-slate-100 mb-4 text-sm sm:text-base leading-relaxed">Em suas compras, o senhor Leopoldo colocou em uma mesma sacola $0{,}9\text{ kg}$ de carne vermelha, $500\text{ g}$ de castanhas e $70\text{ g}$ de pimenta do reino. Assinale a opção de resposta que representa o peso total dos produtos comprados pelo senhor Leopoldo.</p>
+                            
+                            <div class="space-y-2 mb-4" id="opts-ifmg-2018-2-q4">
+                                
+                            <button onclick="selectOption('ifmg-2018-2-q4', 0)" id="btn-ifmg-2018-2-q4-0" class="w-full text-left p-3.5 rounded-xl border border-slate-800 bg-slate-950/60 hover:border-blue-500 hover:bg-slate-800/60 transition text-sm text-slate-200 flex items-center justify-between group">
+                                <span class="flex items-center gap-2"><strong class="text-sky-400 font-bold">A)</strong> 1,27 kg</span>
+                                <i data-lucide="circle" class="w-4 h-4 text-slate-600 opt-icon group-hover:text-blue-400 flex-shrink-0"></i>
+                            </button>
+                        
+                            <button onclick="selectOption('ifmg-2018-2-q4', 1)" id="btn-ifmg-2018-2-q4-1" class="w-full text-left p-3.5 rounded-xl border border-slate-800 bg-slate-950/60 hover:border-blue-500 hover:bg-slate-800/60 transition text-sm text-slate-200 flex items-center justify-between group">
+                                <span class="flex items-center gap-2"><strong class="text-sky-400 font-bold">B)</strong> 1,37 kg</span>
+                                <i data-lucide="circle" class="w-4 h-4 text-slate-600 opt-icon group-hover:text-blue-400 flex-shrink-0"></i>
+                            </button>
+                        
+                            <button onclick="selectOption('ifmg-2018-2-q4', 2)" id="btn-ifmg-2018-2-q4-2" class="w-full text-left p-3.5 rounded-xl border border-slate-800 bg-slate-950/60 hover:border-blue-500 hover:bg-slate-800/60 transition text-sm text-slate-200 flex items-center justify-between group">
+                                <span class="flex items-center gap-2"><strong class="text-sky-400 font-bold">C)</strong> 1,47 kg</span>
+                                <i data-lucide="circle" class="w-4 h-4 text-slate-600 opt-icon group-hover:text-blue-400 flex-shrink-0"></i>
+                            </button>
+                        
+                            <button onclick="selectOption('ifmg-2018-2-q4', 3)" id="btn-ifmg-2018-2-q4-3" class="w-full text-left p-3.5 rounded-xl border border-slate-800 bg-slate-950/60 hover:border-blue-500 hover:bg-slate-800/60 transition text-sm text-slate-200 flex items-center justify-between group">
+                                <span class="flex items-center gap-2"><strong class="text-sky-400 font-bold">D)</strong> 1,57 kg</span>
+                                <i data-lucide="circle" class="w-4 h-4 text-slate-600 opt-icon group-hover:text-blue-400 flex-shrink-0"></i>
+                            </button>
+                        
+                            </div>
+                            <div class="flex items-center gap-3">
+                                <button id="submit-btn-ifmg-2018-2-q4" onclick="submitAnswer('8', 'ifmg-2018-2', 4)" class="bg-blue-600 hover:bg-blue-500 text-white px-5 py-2.5 rounded-xl text-sm font-bold transition flex items-center gap-1.5 shadow-lg shadow-blue-600/25">
+                                    <i data-lucide="send" class="w-4 h-4"></i> Enviar Resposta
+                                </button>
+                            </div>
+                            <div id="feedback-ifmg-2018-2-q4" class="hidden p-4 rounded-xl text-sm mt-4"></div>
+                        </div>
+                    
+                        <div class="mb-8 border-b border-slate-800/80 pb-6 last:border-0 last:pb-0" id="q-container-ifmg-2018-2-q5">
+                            <div class="flex items-center justify-between mb-3 flex-wrap gap-2">
+                                <div class="flex items-center gap-2">
+                                    <span class="text-xs font-bold uppercase tracking-wider text-sky-300 bg-blue-950/60 px-2.5 py-0.5 rounded-full border border-blue-800/40">Questão 6</span>
+                                    
+                            <a href="../pesquisa.html?bncc=EF07MA02" class="text-[11px] font-mono font-bold text-emerald-300 bg-emerald-950/80 hover:bg-emerald-900/90 px-2.5 py-0.5 rounded-full border border-emerald-800/60 flex items-center gap-1 transition shadow-sm" title="Resolver problemas que envolvam porcentagens em contextos sociais e demográficos.">
+                                <i data-lucide="bookmark" class="w-3 h-3 text-emerald-400"></i> BNCC: EF07MA02
+                            </a>
+                        
+                                </div>
+                            </div>
+                            <p class="font-medium text-slate-100 mb-4 text-sm sm:text-base leading-relaxed">O Censo 2010, realizado pelo Instituto Brasileiro de Geografia e Estatística (IBGE), detectou que a população brasileira era de, aproximadamente, $190{,}7$ milhões de pessoas. Dentre essas, a cada $80$ pessoas com perfeita visão existiam $20$ outras com alguma deficiência visual.
+
+Aproximadamente, quantos milhões de pessoas no Brasil possuíam alguma deficiência visual em 2010?</p>
+                            
+                            <div class="space-y-2 mb-4" id="opts-ifmg-2018-2-q5">
+                                
+                            <button onclick="selectOption('ifmg-2018-2-q5', 0)" id="btn-ifmg-2018-2-q5-0" class="w-full text-left p-3.5 rounded-xl border border-slate-800 bg-slate-950/60 hover:border-blue-500 hover:bg-slate-800/60 transition text-sm text-slate-200 flex items-center justify-between group">
+                                <span class="flex items-center gap-2"><strong class="text-sky-400 font-bold">A)</strong> 8,4</span>
+                                <i data-lucide="circle" class="w-4 h-4 text-slate-600 opt-icon group-hover:text-blue-400 flex-shrink-0"></i>
+                            </button>
+                        
+                            <button onclick="selectOption('ifmg-2018-2-q5', 1)" id="btn-ifmg-2018-2-q5-1" class="w-full text-left p-3.5 rounded-xl border border-slate-800 bg-slate-950/60 hover:border-blue-500 hover:bg-slate-800/60 transition text-sm text-slate-200 flex items-center justify-between group">
+                                <span class="flex items-center gap-2"><strong class="text-sky-400 font-bold">B)</strong> 10,5</span>
+                                <i data-lucide="circle" class="w-4 h-4 text-slate-600 opt-icon group-hover:text-blue-400 flex-shrink-0"></i>
+                            </button>
+                        
+                            <button onclick="selectOption('ifmg-2018-2-q5', 2)" id="btn-ifmg-2018-2-q5-2" class="w-full text-left p-3.5 rounded-xl border border-slate-800 bg-slate-950/60 hover:border-blue-500 hover:bg-slate-800/60 transition text-sm text-slate-200 flex items-center justify-between group">
+                                <span class="flex items-center gap-2"><strong class="text-sky-400 font-bold">C)</strong> 38,1</span>
+                                <i data-lucide="circle" class="w-4 h-4 text-slate-600 opt-icon group-hover:text-blue-400 flex-shrink-0"></i>
+                            </button>
+                        
+                            <button onclick="selectOption('ifmg-2018-2-q5', 3)" id="btn-ifmg-2018-2-q5-3" class="w-full text-left p-3.5 rounded-xl border border-slate-800 bg-slate-950/60 hover:border-blue-500 hover:bg-slate-800/60 transition text-sm text-slate-200 flex items-center justify-between group">
+                                <span class="flex items-center gap-2"><strong class="text-sky-400 font-bold">D)</strong> 47,7</span>
+                                <i data-lucide="circle" class="w-4 h-4 text-slate-600 opt-icon group-hover:text-blue-400 flex-shrink-0"></i>
+                            </button>
+                        
+                            </div>
+                            <div class="flex items-center gap-3">
+                                <button id="submit-btn-ifmg-2018-2-q5" onclick="submitAnswer('8', 'ifmg-2018-2', 5)" class="bg-blue-600 hover:bg-blue-500 text-white px-5 py-2.5 rounded-xl text-sm font-bold transition flex items-center gap-1.5 shadow-lg shadow-blue-600/25">
+                                    <i data-lucide="send" class="w-4 h-4"></i> Enviar Resposta
+                                </button>
+                            </div>
+                            <div id="feedback-ifmg-2018-2-q5" class="hidden p-4 rounded-xl text-sm mt-4"></div>
+                        </div>
+                    
+                        <div class="mb-8 border-b border-slate-800/80 pb-6 last:border-0 last:pb-0" id="q-container-ifmg-2018-2-q6">
+                            <div class="flex items-center justify-between mb-3 flex-wrap gap-2">
+                                <div class="flex items-center gap-2">
+                                    <span class="text-xs font-bold uppercase tracking-wider text-sky-300 bg-blue-950/60 px-2.5 py-0.5 rounded-full border border-blue-800/40">Questão 7</span>
+                                    
+                            <a href="../pesquisa.html?bncc=EF06MA19" class="text-[11px] font-mono font-bold text-emerald-300 bg-emerald-950/80 hover:bg-emerald-900/90 px-2.5 py-0.5 rounded-full border border-emerald-800/60 flex items-center gap-1 transition shadow-sm" title="Identificar características dos quadriláteros, classificá-los em relação a lados e a ângulos e reconhecer a inclusão e propriedades de trapézios e paralelogramos.">
+                                <i data-lucide="bookmark" class="w-3 h-3 text-emerald-400"></i> BNCC: EF06MA19
+                            </a>
+                        
+                                </div>
+                            </div>
+                            <p class="font-medium text-slate-100 mb-4 text-sm sm:text-base leading-relaxed">Carlos e Pedro fizeram um jogo para estudar as propriedades de alguns quadriláteros. Um fala as propriedades de um quadrilátero e o outro responde com o nome correto do quadrilátero. Pedro falou as seguintes propriedades: a figura é um quadrilátero convexo, possui dois lados paralelos e dois lados não paralelos e apresenta dois pares de ângulos adjacentes suplementares. Carlos respondeu rápido e corretamente.
+
+Qual a resposta de Carlos?</p>
+                            
+                            <div class="space-y-2 mb-4" id="opts-ifmg-2018-2-q6">
+                                
+                            <button onclick="selectOption('ifmg-2018-2-q6', 0)" id="btn-ifmg-2018-2-q6-0" class="w-full text-left p-3.5 rounded-xl border border-slate-800 bg-slate-950/60 hover:border-blue-500 hover:bg-slate-800/60 transition text-sm text-slate-200 flex items-center justify-between group">
+                                <span class="flex items-center gap-2"><strong class="text-sky-400 font-bold">A)</strong> Paralelogramo</span>
+                                <i data-lucide="circle" class="w-4 h-4 text-slate-600 opt-icon group-hover:text-blue-400 flex-shrink-0"></i>
+                            </button>
+                        
+                            <button onclick="selectOption('ifmg-2018-2-q6', 1)" id="btn-ifmg-2018-2-q6-1" class="w-full text-left p-3.5 rounded-xl border border-slate-800 bg-slate-950/60 hover:border-blue-500 hover:bg-slate-800/60 transition text-sm text-slate-200 flex items-center justify-between group">
+                                <span class="flex items-center gap-2"><strong class="text-sky-400 font-bold">B)</strong> Quadrado</span>
+                                <i data-lucide="circle" class="w-4 h-4 text-slate-600 opt-icon group-hover:text-blue-400 flex-shrink-0"></i>
+                            </button>
+                        
+                            <button onclick="selectOption('ifmg-2018-2-q6', 2)" id="btn-ifmg-2018-2-q6-2" class="w-full text-left p-3.5 rounded-xl border border-slate-800 bg-slate-950/60 hover:border-blue-500 hover:bg-slate-800/60 transition text-sm text-slate-200 flex items-center justify-between group">
+                                <span class="flex items-center gap-2"><strong class="text-sky-400 font-bold">C)</strong> Retângulo</span>
+                                <i data-lucide="circle" class="w-4 h-4 text-slate-600 opt-icon group-hover:text-blue-400 flex-shrink-0"></i>
+                            </button>
+                        
+                            <button onclick="selectOption('ifmg-2018-2-q6', 3)" id="btn-ifmg-2018-2-q6-3" class="w-full text-left p-3.5 rounded-xl border border-slate-800 bg-slate-950/60 hover:border-blue-500 hover:bg-slate-800/60 transition text-sm text-slate-200 flex items-center justify-between group">
+                                <span class="flex items-center gap-2"><strong class="text-sky-400 font-bold">D)</strong> Trapézio</span>
+                                <i data-lucide="circle" class="w-4 h-4 text-slate-600 opt-icon group-hover:text-blue-400 flex-shrink-0"></i>
+                            </button>
+                        
+                            </div>
+                            <div class="flex items-center gap-3">
+                                <button id="submit-btn-ifmg-2018-2-q6" onclick="submitAnswer('8', 'ifmg-2018-2', 6)" class="bg-blue-600 hover:bg-blue-500 text-white px-5 py-2.5 rounded-xl text-sm font-bold transition flex items-center gap-1.5 shadow-lg shadow-blue-600/25">
+                                    <i data-lucide="send" class="w-4 h-4"></i> Enviar Resposta
+                                </button>
+                            </div>
+                            <div id="feedback-ifmg-2018-2-q6" class="hidden p-4 rounded-xl text-sm mt-4"></div>
+                        </div>
+                    
+                        <div class="mb-8 border-b border-slate-800/80 pb-6 last:border-0 last:pb-0" id="q-container-ifmg-2018-2-q7">
+                            <div class="flex items-center justify-between mb-3 flex-wrap gap-2">
+                                <div class="flex items-center gap-2">
+                                    <span class="text-xs font-bold uppercase tracking-wider text-sky-300 bg-blue-950/60 px-2.5 py-0.5 rounded-full border border-blue-800/40">Questão 8</span>
+                                    
+                            <a href="../pesquisa.html?bncc=EF07MA23" class="text-[11px] font-mono font-bold text-emerald-300 bg-emerald-950/80 hover:bg-emerald-900/90 px-2.5 py-0.5 rounded-full border border-emerald-800/60 flex items-center gap-1 transition shadow-sm" title="Verificar relações entre os ângulos formados por retas paralelas cortadas por uma transversal, com ou sem o uso de softwares de geometria dinâmica.">
+                                <i data-lucide="bookmark" class="w-3 h-3 text-emerald-400"></i> BNCC: EF07MA23
+                            </a>
+                        
+                                </div>
+                            </div>
+                            <p class="font-medium text-slate-100 mb-4 text-sm sm:text-base leading-relaxed">No bairro de Paula, as ruas Rocha e Sousa são paralelas. Atravessando essas duas ruas transversalmente, estão as ruas Toledo e Vieira. No cruzamento entre as ruas Toledo e Vieira, forma-se um ângulo $m$, conforme figura a seguir.
+
+O valor do ângulo $m$, em graus, é</p>
+                            
+        <div class="my-4 p-2 sm:p-3 rounded-2xl border bg-slate-950/70 border-slate-800 shadow-sm max-w-xl mx-auto flex flex-col items-center">
+            <img src="https://lh3.googleusercontent.com/d/1dmKJIMIn458OJlW5K8-HTu7NAtPqeoQt" alt="Duas retas verticais paralelas nomeadas Rua Rocha e Rua Sousa cortadas por duas retas transversais nomeadas Rua Vieira e Rua Toledo, destacando um ângulo de 50 graus, um de 120 graus e o ângulo m entre as transversais." onerror="if(this.src!='../assets/img/questoes/ifmg/ifmg-2018-2-q23.png'){this.src='../assets/img/questoes/ifmg/ifmg-2018-2-q23.png';}" class="max-h-80 sm:max-h-96 w-auto max-w-full rounded-xl object-contain cursor-zoom-in hover:opacity-95 hover:scale-[1.01] transition duration-200" onclick="openImageModal('https://lh3.googleusercontent.com/d/1dmKJIMIn458OJlW5K8-HTu7NAtPqeoQt', 'Duas retas verticais paralelas nomeadas Rua Rocha e Rua Sousa cortadas por duas retas transversais nomeadas Rua Vieira e Rua Toledo, destacando um ângulo de 50 graus, um de 120 graus e o ângulo m entre as transversais.')" title="Clique para ampliar a imagem" loading="lazy">
+            <p class="text-xs text-slate-400 mt-2 text-center italic">Figura: Cruzamento das ruas paralelas e transversais (Processo Seletivo IFMG 2018.2)</p>
+        </div>
+    
+                            <div class="space-y-2 mb-4" id="opts-ifmg-2018-2-q7">
+                                
+                            <button onclick="selectOption('ifmg-2018-2-q7', 0)" id="btn-ifmg-2018-2-q7-0" class="w-full text-left p-3.5 rounded-xl border border-slate-800 bg-slate-950/60 hover:border-blue-500 hover:bg-slate-800/60 transition text-sm text-slate-200 flex items-center justify-between group">
+                                <span class="flex items-center gap-2"><strong class="text-sky-400 font-bold">A)</strong> 100</span>
+                                <i data-lucide="circle" class="w-4 h-4 text-slate-600 opt-icon group-hover:text-blue-400 flex-shrink-0"></i>
+                            </button>
+                        
+                            <button onclick="selectOption('ifmg-2018-2-q7', 1)" id="btn-ifmg-2018-2-q7-1" class="w-full text-left p-3.5 rounded-xl border border-slate-800 bg-slate-950/60 hover:border-blue-500 hover:bg-slate-800/60 transition text-sm text-slate-200 flex items-center justify-between group">
+                                <span class="flex items-center gap-2"><strong class="text-sky-400 font-bold">B)</strong> 110</span>
+                                <i data-lucide="circle" class="w-4 h-4 text-slate-600 opt-icon group-hover:text-blue-400 flex-shrink-0"></i>
+                            </button>
+                        
+                            <button onclick="selectOption('ifmg-2018-2-q7', 2)" id="btn-ifmg-2018-2-q7-2" class="w-full text-left p-3.5 rounded-xl border border-slate-800 bg-slate-950/60 hover:border-blue-500 hover:bg-slate-800/60 transition text-sm text-slate-200 flex items-center justify-between group">
+                                <span class="flex items-center gap-2"><strong class="text-sky-400 font-bold">C)</strong> 120</span>
+                                <i data-lucide="circle" class="w-4 h-4 text-slate-600 opt-icon group-hover:text-blue-400 flex-shrink-0"></i>
+                            </button>
+                        
+                            <button onclick="selectOption('ifmg-2018-2-q7', 3)" id="btn-ifmg-2018-2-q7-3" class="w-full text-left p-3.5 rounded-xl border border-slate-800 bg-slate-950/60 hover:border-blue-500 hover:bg-slate-800/60 transition text-sm text-slate-200 flex items-center justify-between group">
+                                <span class="flex items-center gap-2"><strong class="text-sky-400 font-bold">D)</strong> 130</span>
+                                <i data-lucide="circle" class="w-4 h-4 text-slate-600 opt-icon group-hover:text-blue-400 flex-shrink-0"></i>
+                            </button>
+                        
+                            </div>
+                            <div class="flex items-center gap-3">
+                                <button id="submit-btn-ifmg-2018-2-q7" onclick="submitAnswer('8', 'ifmg-2018-2', 7)" class="bg-blue-600 hover:bg-blue-500 text-white px-5 py-2.5 rounded-xl text-sm font-bold transition flex items-center gap-1.5 shadow-lg shadow-blue-600/25">
+                                    <i data-lucide="send" class="w-4 h-4"></i> Enviar Resposta
+                                </button>
+                            </div>
+                            <div id="feedback-ifmg-2018-2-q7" class="hidden p-4 rounded-xl text-sm mt-4"></div>
+                        </div>
+                    
+                        <div class="mb-8 border-b border-slate-800/80 pb-6 last:border-0 last:pb-0" id="q-container-ifmg-2018-2-q8">
+                            <div class="flex items-center justify-between mb-3 flex-wrap gap-2">
+                                <div class="flex items-center gap-2">
+                                    <span class="text-xs font-bold uppercase tracking-wider text-sky-300 bg-blue-950/60 px-2.5 py-0.5 rounded-full border border-blue-800/40">Questão 9</span>
+                                    
+                            <a href="../pesquisa.html?bncc=EF08MA22" class="text-[11px] font-mono font-bold text-emerald-300 bg-emerald-950/80 hover:bg-emerald-900/90 px-2.5 py-0.5 rounded-full border border-emerald-800/60 flex items-center gap-1 transition shadow-sm" title="Calcular a probabilidade de eventos equiprováveis e de eventos independentes simultâneos.">
+                                <i data-lucide="bookmark" class="w-3 h-3 text-emerald-400"></i> BNCC: EF08MA22
+                            </a>
+                        
+                                </div>
+                            </div>
+                            <p class="font-medium text-slate-100 mb-4 text-sm sm:text-base leading-relaxed">Dois dados não viciados, distintos, cujas faces estão numeradas de 1 a 6, foram lançados simultaneamente. A probabilidade de obtermos um par de números primos é dado por</p>
+                            
+                            <div class="space-y-2 mb-4" id="opts-ifmg-2018-2-q8">
+                                
+                            <button onclick="selectOption('ifmg-2018-2-q8', 0)" id="btn-ifmg-2018-2-q8-0" class="w-full text-left p-3.5 rounded-xl border border-slate-800 bg-slate-950/60 hover:border-blue-500 hover:bg-slate-800/60 transition text-sm text-slate-200 flex items-center justify-between group">
+                                <span class="flex items-center gap-2"><strong class="text-sky-400 font-bold">A)</strong> 1/9</span>
+                                <i data-lucide="circle" class="w-4 h-4 text-slate-600 opt-icon group-hover:text-blue-400 flex-shrink-0"></i>
+                            </button>
+                        
+                            <button onclick="selectOption('ifmg-2018-2-q8', 1)" id="btn-ifmg-2018-2-q8-1" class="w-full text-left p-3.5 rounded-xl border border-slate-800 bg-slate-950/60 hover:border-blue-500 hover:bg-slate-800/60 transition text-sm text-slate-200 flex items-center justify-between group">
+                                <span class="flex items-center gap-2"><strong class="text-sky-400 font-bold">B)</strong> 1/4</span>
+                                <i data-lucide="circle" class="w-4 h-4 text-slate-600 opt-icon group-hover:text-blue-400 flex-shrink-0"></i>
+                            </button>
+                        
+                            <button onclick="selectOption('ifmg-2018-2-q8', 2)" id="btn-ifmg-2018-2-q8-2" class="w-full text-left p-3.5 rounded-xl border border-slate-800 bg-slate-950/60 hover:border-blue-500 hover:bg-slate-800/60 transition text-sm text-slate-200 flex items-center justify-between group">
+                                <span class="flex items-center gap-2"><strong class="text-sky-400 font-bold">C)</strong> 1/3</span>
+                                <i data-lucide="circle" class="w-4 h-4 text-slate-600 opt-icon group-hover:text-blue-400 flex-shrink-0"></i>
+                            </button>
+                        
+                            <button onclick="selectOption('ifmg-2018-2-q8', 3)" id="btn-ifmg-2018-2-q8-3" class="w-full text-left p-3.5 rounded-xl border border-slate-800 bg-slate-950/60 hover:border-blue-500 hover:bg-slate-800/60 transition text-sm text-slate-200 flex items-center justify-between group">
+                                <span class="flex items-center gap-2"><strong class="text-sky-400 font-bold">D)</strong> 5/9</span>
+                                <i data-lucide="circle" class="w-4 h-4 text-slate-600 opt-icon group-hover:text-blue-400 flex-shrink-0"></i>
+                            </button>
+                        
+                            </div>
+                            <div class="flex items-center gap-3">
+                                <button id="submit-btn-ifmg-2018-2-q8" onclick="submitAnswer('8', 'ifmg-2018-2', 8)" class="bg-blue-600 hover:bg-blue-500 text-white px-5 py-2.5 rounded-xl text-sm font-bold transition flex items-center gap-1.5 shadow-lg shadow-blue-600/25">
+                                    <i data-lucide="send" class="w-4 h-4"></i> Enviar Resposta
+                                </button>
+                            </div>
+                            <div id="feedback-ifmg-2018-2-q8" class="hidden p-4 rounded-xl text-sm mt-4"></div>
+                        </div>
+                    
+                        <div class="mb-8 border-b border-slate-800/80 pb-6 last:border-0 last:pb-0" id="q-container-ifmg-2018-2-q9">
+                            <div class="flex items-center justify-between mb-3 flex-wrap gap-2">
+                                <div class="flex items-center gap-2">
+                                    <span class="text-xs font-bold uppercase tracking-wider text-sky-300 bg-blue-950/60 px-2.5 py-0.5 rounded-full border border-blue-800/40">Questão 10</span>
+                                    
+                            <a href="../pesquisa.html?bncc=EF09MA19" class="text-[11px] font-mono font-bold text-emerald-300 bg-emerald-950/80 hover:bg-emerald-900/90 px-2.5 py-0.5 rounded-full border border-emerald-800/60 flex items-center gap-1 transition shadow-sm" title="Resolver e elaborar problemas que envolvam cálculo de áreas de figuras planas compostas e regiões circulares.">
+                                <i data-lucide="bookmark" class="w-3 h-3 text-emerald-400"></i> BNCC: EF09MA19
+                            </a>
+                        
+                                </div>
+                            </div>
+                            <p class="font-medium text-slate-100 mb-4 text-sm sm:text-base leading-relaxed">Na figura a seguir, o raio da circunferência menor vale $2\text{ cm}$, o quadrado está inscrito na circunferência maior e circunscrito na circunferência menor.
+
+O valor da área colorida, em $\text{cm}^2$, é</p>
+                            
+        <div class="my-4 p-2 sm:p-3 rounded-2xl border bg-slate-950/70 border-slate-800 shadow-sm max-w-xl mx-auto flex flex-col items-center">
+            <img src="https://lh3.googleusercontent.com/d/1b2d37kLtiEoscjf4lpiD7X1l29a5Dxry" alt="Quadrado inscrito em uma circunferência maior e circunscrito a uma circunferência menor de raio r = 2 cm, com um dos quatro segmentos circulares externos ao quadrado destacado em preto." onerror="if(this.src!='../assets/img/questoes/ifmg/ifmg-2018-2-q25.png'){this.src='../assets/img/questoes/ifmg/ifmg-2018-2-q25.png';}" class="max-h-80 sm:max-h-96 w-auto max-w-full rounded-xl object-contain cursor-zoom-in hover:opacity-95 hover:scale-[1.01] transition duration-200" onclick="openImageModal('https://lh3.googleusercontent.com/d/1b2d37kLtiEoscjf4lpiD7X1l29a5Dxry', 'Quadrado inscrito em uma circunferência maior e circunscrito a uma circunferência menor de raio r = 2 cm, com um dos quatro segmentos circulares externos ao quadrado destacado em preto.')" title="Clique para ampliar a imagem" loading="lazy">
+            <p class="text-xs text-slate-400 mt-2 text-center italic">Figura: Circunferências concêntricas e quadrado (Processo Seletivo IFMG 2018.2)</p>
+        </div>
+    
+                            <div class="space-y-2 mb-4" id="opts-ifmg-2018-2-q9">
+                                
+                            <button onclick="selectOption('ifmg-2018-2-q9', 0)" id="btn-ifmg-2018-2-q9-0" class="w-full text-left p-3.5 rounded-xl border border-slate-800 bg-slate-950/60 hover:border-blue-500 hover:bg-slate-800/60 transition text-sm text-slate-200 flex items-center justify-between group">
+                                <span class="flex items-center gap-2"><strong class="text-sky-400 font-bold">A)</strong> $2\pi - 1$</span>
+                                <i data-lucide="circle" class="w-4 h-4 text-slate-600 opt-icon group-hover:text-blue-400 flex-shrink-0"></i>
+                            </button>
+                        
+                            <button onclick="selectOption('ifmg-2018-2-q9', 1)" id="btn-ifmg-2018-2-q9-1" class="w-full text-left p-3.5 rounded-xl border border-slate-800 bg-slate-950/60 hover:border-blue-500 hover:bg-slate-800/60 transition text-sm text-slate-200 flex items-center justify-between group">
+                                <span class="flex items-center gap-2"><strong class="text-sky-400 font-bold">B)</strong> $2\pi - 2$</span>
+                                <i data-lucide="circle" class="w-4 h-4 text-slate-600 opt-icon group-hover:text-blue-400 flex-shrink-0"></i>
+                            </button>
+                        
+                            <button onclick="selectOption('ifmg-2018-2-q9', 2)" id="btn-ifmg-2018-2-q9-2" class="w-full text-left p-3.5 rounded-xl border border-slate-800 bg-slate-950/60 hover:border-blue-500 hover:bg-slate-800/60 transition text-sm text-slate-200 flex items-center justify-between group">
+                                <span class="flex items-center gap-2"><strong class="text-sky-400 font-bold">C)</strong> $2\pi - 3$</span>
+                                <i data-lucide="circle" class="w-4 h-4 text-slate-600 opt-icon group-hover:text-blue-400 flex-shrink-0"></i>
+                            </button>
+                        
+                            <button onclick="selectOption('ifmg-2018-2-q9', 3)" id="btn-ifmg-2018-2-q9-3" class="w-full text-left p-3.5 rounded-xl border border-slate-800 bg-slate-950/60 hover:border-blue-500 hover:bg-slate-800/60 transition text-sm text-slate-200 flex items-center justify-between group">
+                                <span class="flex items-center gap-2"><strong class="text-sky-400 font-bold">D)</strong> $2\pi - 4$</span>
+                                <i data-lucide="circle" class="w-4 h-4 text-slate-600 opt-icon group-hover:text-blue-400 flex-shrink-0"></i>
+                            </button>
+                        
+                            </div>
+                            <div class="flex items-center gap-3">
+                                <button id="submit-btn-ifmg-2018-2-q9" onclick="submitAnswer('8', 'ifmg-2018-2', 9)" class="bg-blue-600 hover:bg-blue-500 text-white px-5 py-2.5 rounded-xl text-sm font-bold transition flex items-center gap-1.5 shadow-lg shadow-blue-600/25">
+                                    <i data-lucide="send" class="w-4 h-4"></i> Enviar Resposta
+                                </button>
+                            </div>
+                            <div id="feedback-ifmg-2018-2-q9" class="hidden p-4 rounded-xl text-sm mt-4"></div>
+                        </div>
+                    
+                        <div class="mb-8 border-b border-slate-800/80 pb-6 last:border-0 last:pb-0" id="q-container-ifmg-2018-2-q10">
+                            <div class="flex items-center justify-between mb-3 flex-wrap gap-2">
+                                <div class="flex items-center gap-2">
+                                    <span class="text-xs font-bold uppercase tracking-wider text-sky-300 bg-blue-950/60 px-2.5 py-0.5 rounded-full border border-blue-800/40">Questão 11</span>
+                                    
+                            <a href="../pesquisa.html?bncc=EF09MA09" class="text-[11px] font-mono font-bold text-emerald-300 bg-emerald-950/80 hover:bg-emerald-900/90 px-2.5 py-0.5 rounded-full border border-emerald-800/60 flex items-center gap-1 transition shadow-sm" title="Resolver problemas que podem ser representados por equações polinomiais de 2º grau associadas a áreas de polígonos.">
+                                <i data-lucide="bookmark" class="w-3 h-3 text-emerald-400"></i> BNCC: EF09MA09
+                            </a>
+                        
+                                </div>
+                            </div>
+                            <p class="font-medium text-slate-100 mb-4 text-sm sm:text-base leading-relaxed">Um terreno em formato de trapézio isósceles e área de $12\text{ m}^2$ possui dimensões, em metros, descritas conforme a figura a seguir, em que $X$ representa o comprimento da base menor e da altura relativa à base maior:
+
+Qual o comprimento $X$ indicado na figura?</p>
+                            
+        <div class="my-4 p-2 sm:p-3 rounded-2xl border bg-slate-950/70 border-slate-800 shadow-sm max-w-xl mx-auto flex flex-col items-center">
+            <img src="https://lh3.googleusercontent.com/d/1TvdrYQArvToyiJPG7Vyx3Yriz4Rogw-q" alt="Trapézio isósceles com base maior igual a 10, base menor indicada pela incógnita X e altura tracejada perpendicular à base maior indicada pela incógnita X." onerror="if(this.src!='../assets/img/questoes/ifmg/ifmg-2018-2-q26.png'){this.src='../assets/img/questoes/ifmg/ifmg-2018-2-q26.png';}" class="max-h-80 sm:max-h-96 w-auto max-w-full rounded-xl object-contain cursor-zoom-in hover:opacity-95 hover:scale-[1.01] transition duration-200" onclick="openImageModal('https://lh3.googleusercontent.com/d/1TvdrYQArvToyiJPG7Vyx3Yriz4Rogw-q', 'Trapézio isósceles com base maior igual a 10, base menor indicada pela incógnita X e altura tracejada perpendicular à base maior indicada pela incógnita X.')" title="Clique para ampliar a imagem" loading="lazy">
+            <p class="text-xs text-slate-400 mt-2 text-center italic">Figura: Terreno em formato de trapézio isósceles (Processo Seletivo IFMG 2018.2)</p>
+        </div>
+    
+                            <div class="space-y-2 mb-4" id="opts-ifmg-2018-2-q10">
+                                
+                            <button onclick="selectOption('ifmg-2018-2-q10', 0)" id="btn-ifmg-2018-2-q10-0" class="w-full text-left p-3.5 rounded-xl border border-slate-800 bg-slate-950/60 hover:border-blue-500 hover:bg-slate-800/60 transition text-sm text-slate-200 flex items-center justify-between group">
+                                <span class="flex items-center gap-2"><strong class="text-sky-400 font-bold">A)</strong> 2</span>
+                                <i data-lucide="circle" class="w-4 h-4 text-slate-600 opt-icon group-hover:text-blue-400 flex-shrink-0"></i>
+                            </button>
+                        
+                            <button onclick="selectOption('ifmg-2018-2-q10', 1)" id="btn-ifmg-2018-2-q10-1" class="w-full text-left p-3.5 rounded-xl border border-slate-800 bg-slate-950/60 hover:border-blue-500 hover:bg-slate-800/60 transition text-sm text-slate-200 flex items-center justify-between group">
+                                <span class="flex items-center gap-2"><strong class="text-sky-400 font-bold">B)</strong> 4</span>
+                                <i data-lucide="circle" class="w-4 h-4 text-slate-600 opt-icon group-hover:text-blue-400 flex-shrink-0"></i>
+                            </button>
+                        
+                            <button onclick="selectOption('ifmg-2018-2-q10', 2)" id="btn-ifmg-2018-2-q10-2" class="w-full text-left p-3.5 rounded-xl border border-slate-800 bg-slate-950/60 hover:border-blue-500 hover:bg-slate-800/60 transition text-sm text-slate-200 flex items-center justify-between group">
+                                <span class="flex items-center gap-2"><strong class="text-sky-400 font-bold">C)</strong> 6</span>
+                                <i data-lucide="circle" class="w-4 h-4 text-slate-600 opt-icon group-hover:text-blue-400 flex-shrink-0"></i>
+                            </button>
+                        
+                            <button onclick="selectOption('ifmg-2018-2-q10', 3)" id="btn-ifmg-2018-2-q10-3" class="w-full text-left p-3.5 rounded-xl border border-slate-800 bg-slate-950/60 hover:border-blue-500 hover:bg-slate-800/60 transition text-sm text-slate-200 flex items-center justify-between group">
+                                <span class="flex items-center gap-2"><strong class="text-sky-400 font-bold">D)</strong> 12</span>
+                                <i data-lucide="circle" class="w-4 h-4 text-slate-600 opt-icon group-hover:text-blue-400 flex-shrink-0"></i>
+                            </button>
+                        
+                            </div>
+                            <div class="flex items-center gap-3">
+                                <button id="submit-btn-ifmg-2018-2-q10" onclick="submitAnswer('8', 'ifmg-2018-2', 10)" class="bg-blue-600 hover:bg-blue-500 text-white px-5 py-2.5 rounded-xl text-sm font-bold transition flex items-center gap-1.5 shadow-lg shadow-blue-600/25">
+                                    <i data-lucide="send" class="w-4 h-4"></i> Enviar Resposta
+                                </button>
+                            </div>
+                            <div id="feedback-ifmg-2018-2-q10" class="hidden p-4 rounded-xl text-sm mt-4"></div>
+                        </div>
+                    
+                        <div class="mb-8 border-b border-slate-800/80 pb-6 last:border-0 last:pb-0" id="q-container-ifmg-2018-2-q11">
+                            <div class="flex items-center justify-between mb-3 flex-wrap gap-2">
+                                <div class="flex items-center gap-2">
+                                    <span class="text-xs font-bold uppercase tracking-wider text-sky-300 bg-blue-950/60 px-2.5 py-0.5 rounded-full border border-blue-800/40">Questão 12</span>
+                                    
+                            <a href="../pesquisa.html?bncc=EF09MA12" class="text-[11px] font-mono font-bold text-emerald-300 bg-emerald-950/80 hover:bg-emerald-900/90 px-2.5 py-0.5 rounded-full border border-emerald-800/60 flex items-center gap-1 transition shadow-sm" title="Reconhecer as condições necessárias para aplicar o Teorema de Tales na divisão proporcional de segmentos.">
+                                <i data-lucide="bookmark" class="w-3 h-3 text-emerald-400"></i> BNCC: EF09MA12
+                            </a>
+                        
+                                </div>
+                            </div>
+                            <p class="font-medium text-slate-100 mb-4 text-sm sm:text-base leading-relaxed">Na figura seguinte, temos um mapa de dois terrenos com frente para as ruas A e B. As laterais dos terrenos são paralelas entre si. Os dois terrenos juntos têm $70\text{ metros}$ de frente para a Rua A e $105\text{ metros}$ de frente para a Rua B, conforme a figura a seguir. O terreno I tem $40\text{ metros}$ de frente para a Rua A.
+
+O terreno I tem quantos metros de frente para a Rua B?</p>
+                            
+        <div class="my-4 p-2 sm:p-3 rounded-2xl border bg-slate-950/70 border-slate-800 shadow-sm max-w-xl mx-auto flex flex-col items-center">
+            <img src="https://lh3.googleusercontent.com/d/1oD2gKWc_Hg0sdF3fVuFIj64vB9HCbdo2" alt="Mapa esquemático de dois lotes (Terreno I e Terreno II) entre as ruas A e B, com divisas laterais paralelas. A frente total para a Rua A mede 70 m (sendo 40 m do Terreno I) e a frente total para a Rua B mede 105 m." onerror="if(this.src!='../assets/img/questoes/ifmg/ifmg-2018-2-q27.png'){this.src='../assets/img/questoes/ifmg/ifmg-2018-2-q27.png';}" class="max-h-80 sm:max-h-96 w-auto max-w-full rounded-xl object-contain cursor-zoom-in hover:opacity-95 hover:scale-[1.01] transition duration-200" onclick="openImageModal('https://lh3.googleusercontent.com/d/1oD2gKWc_Hg0sdF3fVuFIj64vB9HCbdo2', 'Mapa esquemático de dois lotes (Terreno I e Terreno II) entre as ruas A e B, com divisas laterais paralelas. A frente total para a Rua A mede 70 m (sendo 40 m do Terreno I) e a frente total para a Rua B mede 105 m.')" title="Clique para ampliar a imagem" loading="lazy">
+            <p class="text-xs text-slate-400 mt-2 text-center italic">Figura: Lotes com divisas paralelas entre ruas transversais (Processo Seletivo IFMG 2018.2)</p>
+        </div>
+    
+                            <div class="space-y-2 mb-4" id="opts-ifmg-2018-2-q11">
+                                
+                            <button onclick="selectOption('ifmg-2018-2-q11', 0)" id="btn-ifmg-2018-2-q11-0" class="w-full text-left p-3.5 rounded-xl border border-slate-800 bg-slate-950/60 hover:border-blue-500 hover:bg-slate-800/60 transition text-sm text-slate-200 flex items-center justify-between group">
+                                <span class="flex items-center gap-2"><strong class="text-sky-400 font-bold">A)</strong> 26,7</span>
+                                <i data-lucide="circle" class="w-4 h-4 text-slate-600 opt-icon group-hover:text-blue-400 flex-shrink-0"></i>
+                            </button>
+                        
+                            <button onclick="selectOption('ifmg-2018-2-q11', 1)" id="btn-ifmg-2018-2-q11-1" class="w-full text-left p-3.5 rounded-xl border border-slate-800 bg-slate-950/60 hover:border-blue-500 hover:bg-slate-800/60 transition text-sm text-slate-200 flex items-center justify-between group">
+                                <span class="flex items-center gap-2"><strong class="text-sky-400 font-bold">B)</strong> 60,0</span>
+                                <i data-lucide="circle" class="w-4 h-4 text-slate-600 opt-icon group-hover:text-blue-400 flex-shrink-0"></i>
+                            </button>
+                        
+                            <button onclick="selectOption('ifmg-2018-2-q11', 2)" id="btn-ifmg-2018-2-q11-2" class="w-full text-left p-3.5 rounded-xl border border-slate-800 bg-slate-950/60 hover:border-blue-500 hover:bg-slate-800/60 transition text-sm text-slate-200 flex items-center justify-between group">
+                                <span class="flex items-center gap-2"><strong class="text-sky-400 font-bold">C)</strong> 78,8</span>
+                                <i data-lucide="circle" class="w-4 h-4 text-slate-600 opt-icon group-hover:text-blue-400 flex-shrink-0"></i>
+                            </button>
+                        
+                            <button onclick="selectOption('ifmg-2018-2-q11', 3)" id="btn-ifmg-2018-2-q11-3" class="w-full text-left p-3.5 rounded-xl border border-slate-800 bg-slate-950/60 hover:border-blue-500 hover:bg-slate-800/60 transition text-sm text-slate-200 flex items-center justify-between group">
+                                <span class="flex items-center gap-2"><strong class="text-sky-400 font-bold">D)</strong> 93,3</span>
+                                <i data-lucide="circle" class="w-4 h-4 text-slate-600 opt-icon group-hover:text-blue-400 flex-shrink-0"></i>
+                            </button>
+                        
+                            </div>
+                            <div class="flex items-center gap-3">
+                                <button id="submit-btn-ifmg-2018-2-q11" onclick="submitAnswer('8', 'ifmg-2018-2', 11)" class="bg-blue-600 hover:bg-blue-500 text-white px-5 py-2.5 rounded-xl text-sm font-bold transition flex items-center gap-1.5 shadow-lg shadow-blue-600/25">
+                                    <i data-lucide="send" class="w-4 h-4"></i> Enviar Resposta
+                                </button>
+                            </div>
+                            <div id="feedback-ifmg-2018-2-q11" class="hidden p-4 rounded-xl text-sm mt-4"></div>
+                        </div>
+                    
+                        <div class="mb-8 border-b border-slate-800/80 pb-6 last:border-0 last:pb-0" id="q-container-ifmg-2018-2-q12">
+                            <div class="flex items-center justify-between mb-3 flex-wrap gap-2">
+                                <div class="flex items-center gap-2">
+                                    <span class="text-xs font-bold uppercase tracking-wider text-sky-300 bg-blue-950/60 px-2.5 py-0.5 rounded-full border border-blue-800/40">Questão 13</span>
+                                    
+                            <a href="../pesquisa.html?bncc=EF09MA06" class="text-[11px] font-mono font-bold text-emerald-300 bg-emerald-950/80 hover:bg-emerald-900/90 px-2.5 py-0.5 rounded-full border border-emerald-800/60 flex items-center gap-1 transition shadow-sm" title="Compreender as funções afim e quadrática, identificando coeficientes angulares e lineares e pontos notáveis.">
+                                <i data-lucide="bookmark" class="w-3 h-3 text-emerald-400"></i> BNCC: EF09MA06
+                            </a>
+                        
+                                </div>
+                            </div>
+                            <p class="font-medium text-slate-100 mb-4 text-sm sm:text-base leading-relaxed">O gráfico da função quadrática de equação $f(x) = x^2 - 3x + 2$ é interceptado por uma reta de inclinação $3$ em uma de suas raízes, conforme a seguinte figura:
+
+O valor do coeficiente linear da equação que define a reta apresentada na figura é:</p>
+                            
+        <div class="my-4 p-2 sm:p-3 rounded-2xl border bg-slate-950/70 border-slate-800 shadow-sm max-w-xl mx-auto flex flex-col items-center">
+            <img src="https://lh3.googleusercontent.com/d/1hPD6Ja0wSjaby6iBKdiZSAbvDTPBPX5e" alt="Gráfico cartesiano mostrando uma parábola com concavidade voltada para cima interceptando o eixo x em dois pontos, e uma reta crescente cortando a primeira raiz da parábola no eixo x." onerror="if(this.src!='../assets/img/questoes/ifmg/ifmg-2018-2-q28.png'){this.src='../assets/img/questoes/ifmg/ifmg-2018-2-q28.png';}" class="max-h-80 sm:max-h-96 w-auto max-w-full rounded-xl object-contain cursor-zoom-in hover:opacity-95 hover:scale-[1.01] transition duration-200" onclick="openImageModal('https://lh3.googleusercontent.com/d/1hPD6Ja0wSjaby6iBKdiZSAbvDTPBPX5e', 'Gráfico cartesiano mostrando uma parábola com concavidade voltada para cima interceptando o eixo x em dois pontos, e uma reta crescente cortando a primeira raiz da parábola no eixo x.')" title="Clique para ampliar a imagem" loading="lazy">
+            <p class="text-xs text-slate-400 mt-2 text-center italic">Figura: Interseção entre reta e função quadrática (Processo Seletivo IFMG 2018.2)</p>
+        </div>
+    
+                            <div class="space-y-2 mb-4" id="opts-ifmg-2018-2-q12">
+                                
+                            <button onclick="selectOption('ifmg-2018-2-q12', 0)" id="btn-ifmg-2018-2-q12-0" class="w-full text-left p-3.5 rounded-xl border border-slate-800 bg-slate-950/60 hover:border-blue-500 hover:bg-slate-800/60 transition text-sm text-slate-200 flex items-center justify-between group">
+                                <span class="flex items-center gap-2"><strong class="text-sky-400 font-bold">A)</strong> -6</span>
+                                <i data-lucide="circle" class="w-4 h-4 text-slate-600 opt-icon group-hover:text-blue-400 flex-shrink-0"></i>
+                            </button>
+                        
+                            <button onclick="selectOption('ifmg-2018-2-q12', 1)" id="btn-ifmg-2018-2-q12-1" class="w-full text-left p-3.5 rounded-xl border border-slate-800 bg-slate-950/60 hover:border-blue-500 hover:bg-slate-800/60 transition text-sm text-slate-200 flex items-center justify-between group">
+                                <span class="flex items-center gap-2"><strong class="text-sky-400 font-bold">B)</strong> -3</span>
+                                <i data-lucide="circle" class="w-4 h-4 text-slate-600 opt-icon group-hover:text-blue-400 flex-shrink-0"></i>
+                            </button>
+                        
+                            <button onclick="selectOption('ifmg-2018-2-q12', 2)" id="btn-ifmg-2018-2-q12-2" class="w-full text-left p-3.5 rounded-xl border border-slate-800 bg-slate-950/60 hover:border-blue-500 hover:bg-slate-800/60 transition text-sm text-slate-200 flex items-center justify-between group">
+                                <span class="flex items-center gap-2"><strong class="text-sky-400 font-bold">C)</strong> 1</span>
+                                <i data-lucide="circle" class="w-4 h-4 text-slate-600 opt-icon group-hover:text-blue-400 flex-shrink-0"></i>
+                            </button>
+                        
+                            <button onclick="selectOption('ifmg-2018-2-q12', 3)" id="btn-ifmg-2018-2-q12-3" class="w-full text-left p-3.5 rounded-xl border border-slate-800 bg-slate-950/60 hover:border-blue-500 hover:bg-slate-800/60 transition text-sm text-slate-200 flex items-center justify-between group">
+                                <span class="flex items-center gap-2"><strong class="text-sky-400 font-bold">D)</strong> 2</span>
+                                <i data-lucide="circle" class="w-4 h-4 text-slate-600 opt-icon group-hover:text-blue-400 flex-shrink-0"></i>
+                            </button>
+                        
+                            </div>
+                            <div class="flex items-center gap-3">
+                                <button id="submit-btn-ifmg-2018-2-q12" onclick="submitAnswer('8', 'ifmg-2018-2', 12)" class="bg-blue-600 hover:bg-blue-500 text-white px-5 py-2.5 rounded-xl text-sm font-bold transition flex items-center gap-1.5 shadow-lg shadow-blue-600/25">
+                                    <i data-lucide="send" class="w-4 h-4"></i> Enviar Resposta
+                                </button>
+                            </div>
+                            <div id="feedback-ifmg-2018-2-q12" class="hidden p-4 rounded-xl text-sm mt-4"></div>
+                        </div>
+                    
+                        <div class="mb-8 border-b border-slate-800/80 pb-6 last:border-0 last:pb-0" id="q-container-ifmg-2018-2-q13">
+                            <div class="flex items-center justify-between mb-3 flex-wrap gap-2">
+                                <div class="flex items-center gap-2">
+                                    <span class="text-xs font-bold uppercase tracking-wider text-sky-300 bg-blue-950/60 px-2.5 py-0.5 rounded-full border border-blue-800/40">Questão 14</span>
+                                    
+                            <a href="../pesquisa.html?bncc=EF09MA03" class="text-[11px] font-mono font-bold text-emerald-300 bg-emerald-950/80 hover:bg-emerald-900/90 px-2.5 py-0.5 rounded-full border border-emerald-800/60 flex items-center gap-1 transition shadow-sm" title="Efetuar cálculos com números reais, inclusive potências com expoentes fracionários e números decimais.">
+                                <i data-lucide="bookmark" class="w-3 h-3 text-emerald-400"></i> BNCC: EF09MA03
+                            </a>
+                        
+                                </div>
+                            </div>
+                            <p class="font-medium text-slate-100 mb-4 text-sm sm:text-base leading-relaxed">Dados os números reais $x = 0{,}5$, $y = \frac{16}{36}$ e $z = 0{,}0625$, o valor numérico da expressão $y^x + z^x$ é igual a</p>
+                            
+                            <div class="space-y-2 mb-4" id="opts-ifmg-2018-2-q13">
+                                
+                            <button onclick="selectOption('ifmg-2018-2-q13', 0)" id="btn-ifmg-2018-2-q13-0" class="w-full text-left p-3.5 rounded-xl border border-slate-800 bg-slate-950/60 hover:border-blue-500 hover:bg-slate-800/60 transition text-sm text-slate-200 flex items-center justify-between group">
+                                <span class="flex items-center gap-2"><strong class="text-sky-400 font-bold">A)</strong> 5/12</span>
+                                <i data-lucide="circle" class="w-4 h-4 text-slate-600 opt-icon group-hover:text-blue-400 flex-shrink-0"></i>
+                            </button>
+                        
+                            <button onclick="selectOption('ifmg-2018-2-q13', 1)" id="btn-ifmg-2018-2-q13-1" class="w-full text-left p-3.5 rounded-xl border border-slate-800 bg-slate-950/60 hover:border-blue-500 hover:bg-slate-800/60 transition text-sm text-slate-200 flex items-center justify-between group">
+                                <span class="flex items-center gap-2"><strong class="text-sky-400 font-bold">B)</strong> 7/12</span>
+                                <i data-lucide="circle" class="w-4 h-4 text-slate-600 opt-icon group-hover:text-blue-400 flex-shrink-0"></i>
+                            </button>
+                        
+                            <button onclick="selectOption('ifmg-2018-2-q13', 2)" id="btn-ifmg-2018-2-q13-2" class="w-full text-left p-3.5 rounded-xl border border-slate-800 bg-slate-950/60 hover:border-blue-500 hover:bg-slate-800/60 transition text-sm text-slate-200 flex items-center justify-between group">
+                                <span class="flex items-center gap-2"><strong class="text-sky-400 font-bold">C)</strong> 11/12</span>
+                                <i data-lucide="circle" class="w-4 h-4 text-slate-600 opt-icon group-hover:text-blue-400 flex-shrink-0"></i>
+                            </button>
+                        
+                            <button onclick="selectOption('ifmg-2018-2-q13', 3)" id="btn-ifmg-2018-2-q13-3" class="w-full text-left p-3.5 rounded-xl border border-slate-800 bg-slate-950/60 hover:border-blue-500 hover:bg-slate-800/60 transition text-sm text-slate-200 flex items-center justify-between group">
+                                <span class="flex items-center gap-2"><strong class="text-sky-400 font-bold">D)</strong> 19/12</span>
+                                <i data-lucide="circle" class="w-4 h-4 text-slate-600 opt-icon group-hover:text-blue-400 flex-shrink-0"></i>
+                            </button>
+                        
+                            </div>
+                            <div class="flex items-center gap-3">
+                                <button id="submit-btn-ifmg-2018-2-q13" onclick="submitAnswer('8', 'ifmg-2018-2', 13)" class="bg-blue-600 hover:bg-blue-500 text-white px-5 py-2.5 rounded-xl text-sm font-bold transition flex items-center gap-1.5 shadow-lg shadow-blue-600/25">
+                                    <i data-lucide="send" class="w-4 h-4"></i> Enviar Resposta
+                                </button>
+                            </div>
+                            <div id="feedback-ifmg-2018-2-q13" class="hidden p-4 rounded-xl text-sm mt-4"></div>
+                        </div>
+                    
+                        <div class="mb-8 border-b border-slate-800/80 pb-6 last:border-0 last:pb-0" id="q-container-ifmg-2018-2-q14">
+                            <div class="flex items-center justify-between mb-3 flex-wrap gap-2">
+                                <div class="flex items-center gap-2">
+                                    <span class="text-xs font-bold uppercase tracking-wider text-sky-300 bg-blue-950/60 px-2.5 py-0.5 rounded-full border border-blue-800/40">Questão 15</span>
+                                    
+                            <a href="../pesquisa.html?bncc=EF06MA17" class="text-[11px] font-mono font-bold text-emerald-300 bg-emerald-950/80 hover:bg-emerald-900/90 px-2.5 py-0.5 rounded-full border border-emerald-800/60 flex items-center gap-1 transition shadow-sm" title="Quantificar e estabelecer relações entre faces, vértices e arestas de prismas através de sua planificação.">
+                                <i data-lucide="bookmark" class="w-3 h-3 text-emerald-400"></i> BNCC: EF06MA17
+                            </a>
+                        
+                                </div>
+                            </div>
+                            <p class="font-medium text-slate-100 mb-4 text-sm sm:text-base leading-relaxed">Jorge ganhou um presente que foi embalado numa caixa em forma de um prisma reto de base pentagonal regular. Depois de receber o presente, Jorge passou a observar a caixa e imaginar como seria sua planificação. Algumas ideias de planificações estão representadas nas figuras a seguir.
+
+A planificação correta dessa caixa é</p>
+                            
+        <div class="my-4 p-2 sm:p-3 rounded-2xl border bg-slate-950/70 border-slate-800 shadow-sm max-w-xl mx-auto flex flex-col items-center">
+            <img src="https://lh3.googleusercontent.com/d/1JQygMCuUHN53z9ZRkv2fzZsFsmPuLIf9" alt="Desenho de uma caixa montada em prisma pentagonal reto e quatro opções de planificação identificadas pelas letras A, B, C e D." onerror="if(this.src!='../assets/img/questoes/ifmg/ifmg-2018-2-q30.png'){this.src='../assets/img/questoes/ifmg/ifmg-2018-2-q30.png';}" class="max-h-80 sm:max-h-96 w-auto max-w-full rounded-xl object-contain cursor-zoom-in hover:opacity-95 hover:scale-[1.01] transition duration-200" onclick="openImageModal('https://lh3.googleusercontent.com/d/1JQygMCuUHN53z9ZRkv2fzZsFsmPuLIf9', 'Desenho de uma caixa montada em prisma pentagonal reto e quatro opções de planificação identificadas pelas letras A, B, C e D.')" title="Clique para ampliar a imagem" loading="lazy">
+            <p class="text-xs text-slate-400 mt-2 text-center italic">Figura: Caixa montada e planificações A, B, C e D (Processo Seletivo IFMG 2018.2)</p>
+        </div>
+    
+                            <div class="space-y-2 mb-4" id="opts-ifmg-2018-2-q14">
+                                
+                            <button onclick="selectOption('ifmg-2018-2-q14', 0)" id="btn-ifmg-2018-2-q14-0" class="w-full text-left p-3.5 rounded-xl border border-slate-800 bg-slate-950/60 hover:border-blue-500 hover:bg-slate-800/60 transition text-sm text-slate-200 flex items-center justify-between group">
+                                <span class="flex items-center gap-2"><strong class="text-sky-400 font-bold">A)</strong> A</span>
+                                <i data-lucide="circle" class="w-4 h-4 text-slate-600 opt-icon group-hover:text-blue-400 flex-shrink-0"></i>
+                            </button>
+                        
+                            <button onclick="selectOption('ifmg-2018-2-q14', 1)" id="btn-ifmg-2018-2-q14-1" class="w-full text-left p-3.5 rounded-xl border border-slate-800 bg-slate-950/60 hover:border-blue-500 hover:bg-slate-800/60 transition text-sm text-slate-200 flex items-center justify-between group">
+                                <span class="flex items-center gap-2"><strong class="text-sky-400 font-bold">B)</strong> B</span>
+                                <i data-lucide="circle" class="w-4 h-4 text-slate-600 opt-icon group-hover:text-blue-400 flex-shrink-0"></i>
+                            </button>
+                        
+                            <button onclick="selectOption('ifmg-2018-2-q14', 2)" id="btn-ifmg-2018-2-q14-2" class="w-full text-left p-3.5 rounded-xl border border-slate-800 bg-slate-950/60 hover:border-blue-500 hover:bg-slate-800/60 transition text-sm text-slate-200 flex items-center justify-between group">
+                                <span class="flex items-center gap-2"><strong class="text-sky-400 font-bold">C)</strong> C</span>
+                                <i data-lucide="circle" class="w-4 h-4 text-slate-600 opt-icon group-hover:text-blue-400 flex-shrink-0"></i>
+                            </button>
+                        
+                            <button onclick="selectOption('ifmg-2018-2-q14', 3)" id="btn-ifmg-2018-2-q14-3" class="w-full text-left p-3.5 rounded-xl border border-slate-800 bg-slate-950/60 hover:border-blue-500 hover:bg-slate-800/60 transition text-sm text-slate-200 flex items-center justify-between group">
+                                <span class="flex items-center gap-2"><strong class="text-sky-400 font-bold">D)</strong> D</span>
+                                <i data-lucide="circle" class="w-4 h-4 text-slate-600 opt-icon group-hover:text-blue-400 flex-shrink-0"></i>
+                            </button>
+                        
+                            </div>
+                            <div class="flex items-center gap-3">
+                                <button id="submit-btn-ifmg-2018-2-q14" onclick="submitAnswer('8', 'ifmg-2018-2', 14)" class="bg-blue-600 hover:bg-blue-500 text-white px-5 py-2.5 rounded-xl text-sm font-bold transition flex items-center gap-1.5 shadow-lg shadow-blue-600/25">
+                                    <i data-lucide="send" class="w-4 h-4"></i> Enviar Resposta
+                                </button>
+                            </div>
+                            <div id="feedback-ifmg-2018-2-q14" class="hidden p-4 rounded-xl text-sm mt-4"></div>
+                        </div>
+                    
+                </section>
+
+                <!-- Navegação Inferior -->
+                <div class="flex flex-wrap items-center justify-between gap-4 pt-4 border-t border-slate-800">
+                    
+                        <a href="./prova-ifmg-20191.html" class="bg-slate-900 border border-slate-800 hover:bg-slate-800 text-slate-200 font-semibold px-4 py-2.5 rounded-xl text-sm transition flex items-center gap-2 shadow-sm">
+                            <i data-lucide="arrow-left" class="w-4 h-4 text-sky-400"></i> Anterior: Prova IFMG 2019.1
+                        </a>
+                    
+                    <a href="./index.html" class="bg-blue-950/60 border border-blue-800/50 text-sky-200 hover:bg-blue-900/60 font-semibold px-4 py-2.5 rounded-xl text-sm transition flex items-center gap-2 shadow-sm">
+                        <i data-lucide="grid" class="w-4 h-4"></i> Todas do Bloco
+                    </a>
+                
+                        <a href="./prova-ifmg-20171.html" class="bg-blue-600 hover:bg-blue-500 text-white font-bold px-4 py-2.5 rounded-xl text-sm transition flex items-center gap-2 shadow-lg shadow-blue-600/20 ml-auto">
+                            Próxima: Prova IFMG 2017.1 <i data-lucide="arrow-right" class="w-4 h-4"></i>
+                        </a>
+                    
+                </div>
+
+            </div>
+
+            <!-- Sidebar Lateral (1 Coluna) -->
+            <div class="lg:col-span-1 space-y-6">
+                <div class="bg-slate-900/95 border border-slate-800 rounded-3xl p-5 shadow-xl sticky top-24 text-slate-200">
+                    <div class="flex items-center justify-between mb-4 pb-3 border-b border-slate-800">
+                        <div>
+                            <span class="text-xs font-bold text-sky-400 uppercase tracking-wider block">Acervo da Instituição</span>
+                            <h3 class="text-sm font-extrabold text-white truncate">Bloco 8: Provas Anteriores IFMG</h3>
+                        </div>
+                        <span class="text-xs font-semibold px-2 py-0.5 rounded-full bg-slate-800 text-slate-400 border border-slate-700">
+                            10/11
+                        </span>
+                    </div>
+
+                    <div class="space-y-1 dark-scrollbar max-h-[60vh] overflow-y-auto pr-1">
+                        
+                        <a href="./prova-ifmg-20261.html" class="w-full text-left py-2 px-2.5 rounded-lg text-xs transition flex items-center justify-between text-slate-400 hover:bg-slate-800/60 hover:text-white pl-2">
+                            <span class="truncate pr-2">1. Prova IFMG 2026.1</span>
+                            <i id="status-icon-ifmg-2026-1" data-lucide="circle" class="w-4 h-4 text-slate-600 flex-shrink-0"></i>
+                        </a>
+                    
+                        <a href="./prova-ifmg-20251.html" class="w-full text-left py-2 px-2.5 rounded-lg text-xs transition flex items-center justify-between text-slate-400 hover:bg-slate-800/60 hover:text-white pl-2">
+                            <span class="truncate pr-2">2. Prova IFMG 2025.1</span>
+                            <i id="status-icon-ifmg-2025-1" data-lucide="circle" class="w-4 h-4 text-slate-600 flex-shrink-0"></i>
+                        </a>
+                    
+                        <a href="./prova-ifmg-20241.html" class="w-full text-left py-2 px-2.5 rounded-lg text-xs transition flex items-center justify-between text-slate-400 hover:bg-slate-800/60 hover:text-white pl-2">
+                            <span class="truncate pr-2">3. Prova IFMG 2024.1</span>
+                            <i id="status-icon-ifmg-2024-1" data-lucide="circle" class="w-4 h-4 text-slate-600 flex-shrink-0"></i>
+                        </a>
+                    
+                        <a href="./prova-ifmg-20232.html" class="w-full text-left py-2 px-2.5 rounded-lg text-xs transition flex items-center justify-between text-slate-400 hover:bg-slate-800/60 hover:text-white pl-2">
+                            <span class="truncate pr-2">4. Prova IFMG 2023.2</span>
+                            <i id="status-icon-ifmg-2023-2" data-lucide="circle" class="w-4 h-4 text-slate-600 flex-shrink-0"></i>
+                        </a>
+                    
+                        <a href="./prova-ifmg-20231.html" class="w-full text-left py-2 px-2.5 rounded-lg text-xs transition flex items-center justify-between text-slate-400 hover:bg-slate-800/60 hover:text-white pl-2">
+                            <span class="truncate pr-2">5. Prova IFMG 2023.1</span>
+                            <i id="status-icon-ifmg-2023-1" data-lucide="circle" class="w-4 h-4 text-slate-600 flex-shrink-0"></i>
+                        </a>
+                    
+                        <a href="./prova-ifmg-20222.html" class="w-full text-left py-2 px-2.5 rounded-lg text-xs transition flex items-center justify-between text-slate-400 hover:bg-slate-800/60 hover:text-white pl-2">
+                            <span class="truncate pr-2">6. Prova IFMG 2022.2</span>
+                            <i id="status-icon-ifmg-2022-2" data-lucide="circle" class="w-4 h-4 text-slate-600 flex-shrink-0"></i>
+                        </a>
+                    
+                        <a href="./prova-ifmg-20201.html" class="w-full text-left py-2 px-2.5 rounded-lg text-xs transition flex items-center justify-between text-slate-400 hover:bg-slate-800/60 hover:text-white pl-2">
+                            <span class="truncate pr-2">7. Prova IFMG 2020.1</span>
+                            <i id="status-icon-ifmg-2020-1" data-lucide="circle" class="w-4 h-4 text-slate-600 flex-shrink-0"></i>
+                        </a>
+                    
+                        <a href="./prova-ifmg-20192.html" class="w-full text-left py-2 px-2.5 rounded-lg text-xs transition flex items-center justify-between text-slate-400 hover:bg-slate-800/60 hover:text-white pl-2">
+                            <span class="truncate pr-2">8. Prova IFMG 2019.2</span>
+                            <i id="status-icon-ifmg-2019-2" data-lucide="circle" class="w-4 h-4 text-slate-600 flex-shrink-0"></i>
+                        </a>
+                    
+                        <a href="./prova-ifmg-20191.html" class="w-full text-left py-2 px-2.5 rounded-lg text-xs transition flex items-center justify-between text-slate-400 hover:bg-slate-800/60 hover:text-white pl-2">
+                            <span class="truncate pr-2">9. Prova IFMG 2019.1</span>
+                            <i id="status-icon-ifmg-2019-1" data-lucide="circle" class="w-4 h-4 text-slate-600 flex-shrink-0"></i>
+                        </a>
+                    
+                        <a href="./prova-ifmg-20182.html" class="w-full text-left py-2 px-2.5 rounded-lg text-xs transition flex items-center justify-between bg-blue-950/80 text-sky-200 font-bold border-l-4 border-blue-500 pl-3">
+                            <span class="truncate pr-2">10. Prova IFMG 2018.2</span>
+                            <i id="status-icon-ifmg-2018-2" data-lucide="circle" class="w-4 h-4 text-slate-600 flex-shrink-0"></i>
+                        </a>
+                    
+                        <a href="./prova-ifmg-20171.html" class="w-full text-left py-2 px-2.5 rounded-lg text-xs transition flex items-center justify-between text-slate-400 hover:bg-slate-800/60 hover:text-white pl-2">
+                            <span class="truncate pr-2">11. Prova IFMG 2017.1</span>
+                            <i id="status-icon-ifmg-2017-1" data-lucide="circle" class="w-4 h-4 text-slate-600 flex-shrink-0"></i>
+                        </a>
+                    
+                    </div>
+
+                    <div class="mt-5 pt-4 border-t border-slate-800 flex flex-col gap-2">
+                        <a href="./index.html" class="w-full bg-slate-800 hover:bg-slate-700 text-slate-200 font-semibold py-2 px-3 rounded-xl text-xs transition flex items-center justify-center gap-1.5 border border-slate-700">
+                            <i data-lucide="layout-grid" class="w-3.5 h-3.5"></i> Visão Geral do Bloco
+                        </a>
+                        <a href="../provas.html" class="w-full bg-blue-950/60 hover:bg-blue-900/60 text-sky-300 font-semibold py-2 px-3 rounded-xl text-xs transition flex items-center justify-center gap-1.5 border border-blue-800/40">
+                            <i data-lucide="archive" class="w-3.5 h-3.5"></i> Todas as Provas
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </main>
+
+    <footer class="bg-[#020617] text-slate-300 border-t border-slate-800 mt-16 py-10">
+        <div class="max-w-7xl mx-auto px-4 grid grid-cols-1 md:grid-cols-3 gap-8 text-sm">
+            <div>
+                <div class="flex items-center gap-2 text-lg font-bold text-sky-400 mb-2">
+                    <i data-lucide="file-check" class="w-5 h-5 text-blue-500"></i> PartiuIF - Banco de Provas
+                </div>
+                <p class="text-slate-400 text-xs leading-relaxed">
+                    Acervo completo com 62 cadernos oficiais do IFCE, IFSC e IFSP. Provas interativas com resoluções KaTeX passo a passo e downloads dos cadernos originais em PDF.
+                </p>
+                <div class="mt-4 inline-flex items-center gap-2 bg-slate-900 px-3 py-1.5 rounded-lg border border-slate-800 text-xs text-sky-300">
+                    <i data-lucide="hard-drive" class="w-3.5 h-3.5"></i> Respostas salvas localmente
+                </div>
+            </div>
+            <div>
+                <h4 class="font-semibold text-white mb-3 text-sm flex items-center gap-1.5">
+                    <i data-lucide="layers" class="w-4 h-4 text-blue-400"></i> Navegação do Acervo
+                </h4>
+                <ul class="space-y-2 text-xs text-slate-300">
+                    <li><a href="../provas.html" class="hover:text-white transition flex items-center gap-1.5">• Ver Todas as Provas</a></li>
+                    <li><a href="../bloco-6-provas-ifce/index.html" class="hover:text-white transition flex items-center gap-1.5">• Provas IFCE (27 Cadernos)</a></li>
+                    <li><a href="../bloco-5-provas-ifsc/index.html" class="hover:text-white transition flex items-center gap-1.5">• Provas IFSC (16 Cadernos)</a></li>
+                    <li><a href="../bloco-7-provas-ifsp/index.html" class="hover:text-white transition flex items-center gap-1.5">• Provas IFSP (8 Cadernos)</a></li>
+                    <li class="pt-2"><a href="../index.html" class="text-emerald-400 hover:text-emerald-300 font-semibold transition flex items-center gap-1.5">← Voltar para Teoria e Eixos Temáticos</a></li>
+                </ul>
+            </div>
+            <div>
+                <h4 class="font-semibold text-white mb-2 text-sm flex items-center gap-1.5">
+                    <i data-lucide="trending-up" class="w-4 h-4 text-blue-400"></i> Progresso no Acervo
+                </h4>
+                <div class="w-full bg-slate-800 rounded-full h-3 overflow-hidden border border-slate-700 mb-1.5">
+                    <div id="footer-progress" class="bg-blue-500 h-full w-0 transition-all duration-500"></div>
+                </div>
+                <span id="footer-progress-text" class="text-xs text-slate-400 block mb-4">Carregando progresso...</span>
+                
+                <button onclick="resetProgress()" class="text-xs text-red-400 hover:text-red-300 underline flex items-center gap-1 transition">
+                    <i data-lucide="trash-2" class="w-3.5 h-3.5"></i> Zerar Todo o Meu Progresso
+                </button>
+            </div>
+        </div>
+        <div class="max-w-7xl mx-auto px-4 mt-8 pt-4 border-t border-slate-900 text-center text-xs text-slate-500">
+            PartiuIF &copy; 2026 - Acervo Oficial de Provas para os Institutos Federais.
+        </div>
+    </footer>
+
+    <!-- Scripts Globais da Aplicação -->
+    <script src="../assets/js/data.js"></script>
+    <script src="../assets/js/app.js"></script>
+
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            initQuestionStates('ifmg-2018-2', '8');
+            updateTopicDoneButtonUI('ifmg-2018-2');
+        });
+    </script>
+</body>
+</html>

@@ -6,7 +6,7 @@ from datetime import datetime
 # ==============================================================================
 # 1. CARREGAMENTO E SINCRONIZAÇÃO DE DADOS (Single Source of Truth)
 # ==============================================================================
-with open("mathData_augmented.json", "r", encoding="utf-8") as f:
+with open("mathData.json", "r", encoding="utf-8") as f:
     math_data = json.load(f)
 
 # Carregamento e mapeamento dos links do Google Drive para os PDFs oficiais
@@ -16,6 +16,19 @@ GOOGLE_DRIVE_PDFS = {}
 if os.path.exists(DRIVE_LINKS_FILE):
     with open(DRIVE_LINKS_FILE, "r", encoding="utf-8") as f:
         GOOGLE_DRIVE_PDFS = json.load(f)
+
+# Mapeamento do cache de imagens do Google Drive para suporte e fallback local
+DRIVE_IMG_CACHE_FILE = os.path.join("assets", "img", "drive_sync_cache.json")
+DRIVE_IMG_ID_TO_LOCAL = {}
+if os.path.exists(DRIVE_IMG_CACHE_FILE):
+    try:
+        with open(DRIVE_IMG_CACHE_FILE, "r", encoding="utf-8") as f:
+            _cache_data = json.load(f)
+            for _local_path, _info in _cache_data.items():
+                if isinstance(_info, dict) and "id" in _info:
+                    DRIVE_IMG_ID_TO_LOCAL[_info["id"]] = _local_path
+    except Exception as _e:
+        print(f"Aviso ao carregar drive_sync_cache.json: {_e}")
 
 # Auto-importa links preenchidos pelo usuário em provas_pendentes_drive.txt
 if os.path.exists(PENDING_LINKS_FILE):
@@ -47,7 +60,7 @@ total_questions = sum(sum(len(t["questions"]) for t in b["topics"]) for b in mat
 def is_exam_block(b_id, block):
     """Verifica se o bloco pertence ao acervo de provas oficiais."""
     title = block.get("title", "").lower()
-    return str(b_id) in ["5", "6", "7"] or "provas" in title or "oficiais" in title
+    return str(b_id) in ["5", "6", "7", "8"] or "provas" in title or "oficiais" in title
 
 theory_blocks_data = {k: v for k, v in math_data.items() if not is_exam_block(k, v)}
 exam_blocks_data = {k: v for k, v in math_data.items() if is_exam_block(k, v)}
@@ -59,17 +72,14 @@ total_official_exams = sum(len(b["topics"]) for b in exam_blocks_data.values())
 total_exam_questions = sum(sum(len(t["questions"]) for t in b["topics"]) for b in exam_blocks_data.values())
 
 def sync_data_files():
-    """Garante que mathData_augmented.json, mathData.json e assets/js/data.js estejam 100% sincronizados."""
-    with open("mathData_augmented.json", "w", encoding="utf-8") as f:
-        json.dump(math_data, f, ensure_ascii=False, indent=2)
-
+    """Garante que mathData.json e assets/js/data.js estejam 100% sincronizados."""
     with open("mathData.json", "w", encoding="utf-8") as f:
         json.dump(math_data, f, ensure_ascii=False, indent=2)
 
     js_data_content = f"""/**
  * PartiuIF - Banco de Dados de Matemática Oficial
  * Contém os {len(math_data)} blocos, {total_subtopics} subtópicos e {total_questions} exercícios com resoluções KaTeX.
- * Gerado automaticamente por build_full_site.py - Fonte da verdade: mathData_augmented.json
+ * Gerado automaticamente por build_full_site.py - Fonte da verdade: mathData.json
  */
 var mathData = window.mathData || {json.dumps(math_data, ensure_ascii=False, indent=2)};
 
@@ -143,6 +153,62 @@ def resolve_pdf_link(topic_or_filename, rel_root=".."):
         
     return None
 
+def normalize_drive_image_url(url):
+    """Converte links de visualização do Google Drive em links diretos de CDN pública (lh3.googleusercontent.com)."""
+    if not url:
+        return ""
+    match = re.search(r'(?:drive\.google\.com/(?:file/d/|open\?id=|uc\?export=view&id=)|lh3\.googleusercontent\.com/d/)([a-zA-Z0-9_-]+)', url)
+    if match:
+        file_id = match.group(1)
+        return f"https://lh3.googleusercontent.com/d/{file_id}"
+    return url
+
+def render_question_image(q, rel_root="..", is_dark=False):
+    """Renderiza o container da imagem da questão com acessibilidade e compatibilidade Google Drive/local."""
+    img_data = q.get("image") or q.get("imagem")
+    if not img_data:
+        return ""
+    
+    if isinstance(img_data, dict):
+        raw_src = str(img_data.get("src", "")).strip()
+        alt = str(img_data.get("alt", "Figura da questão")).strip()
+        caption = str(img_data.get("caption", "")).strip()
+    else:
+        raw_src = str(img_data).strip()
+        alt = "Figura da questão"
+        caption = ""
+        
+    if not raw_src:
+        return ""
+
+    file_id = None
+    onerror_attr = ""
+    if "drive.google.com" in raw_src or "lh3.googleusercontent.com" in raw_src:
+        src = normalize_drive_image_url(raw_src)
+        match_id = re.search(r'lh3\.googleusercontent\.com/d/([a-zA-Z0-9_-]+)', src)
+        if match_id:
+            file_id = match_id.group(1)
+            if file_id in DRIVE_IMG_ID_TO_LOCAL:
+                local_fallback = f"{rel_root}/{DRIVE_IMG_ID_TO_LOCAL[file_id]}"
+                onerror_attr = f' onerror="if(this.src!=\'{local_fallback}\'){{this.src=\'{local_fallback}\';}}"'
+    elif raw_src.startswith(("http://", "https://", "data:")):
+        src = raw_src
+    else:
+        clean = raw_src.lstrip("./").lstrip("/")
+        src = f"{rel_root}/{clean}"
+        
+    card_bg = "bg-slate-950/70 border-slate-800" if is_dark else "bg-white border-gray-200"
+    caption_color = "text-slate-400" if is_dark else "text-gray-500"
+    caption_html = f'<p class="text-xs {caption_color} mt-2 text-center italic">{caption}</p>' if caption else ""
+    escaped_alt = alt.replace("'", "\\'")
+    
+    return f"""
+        <div class="my-4 p-2 sm:p-3 rounded-2xl border {card_bg} shadow-sm max-w-xl mx-auto flex flex-col items-center">
+            <img src="{src}" alt="{alt}"{onerror_attr} class="max-h-80 sm:max-h-96 w-auto max-w-full rounded-xl object-contain cursor-zoom-in hover:opacity-95 hover:scale-[1.01] transition duration-200" onclick="openImageModal('{src}', '{escaped_alt}')" title="Clique para ampliar a imagem" loading="lazy">
+            {caption_html}
+        </div>
+    """
+
 def get_navbar_label(b_id, block):
     """Gera um rótulo curto e elegante para o menu de navegação."""
     title = block.get("title", f"Bloco {b_id}")
@@ -152,6 +218,8 @@ def get_navbar_label(b_id, block):
         return "Provas IFCE"
     elif "ifsp" in title.lower():
         return "Provas IFSP"
+    elif "ifmg" in title.lower():
+        return "Provas IFMG"
     elif "provas" in title.lower():
         return f"Provas {title.split()[-1]}"
     return f"Bloco {b_id}"
@@ -223,12 +291,14 @@ def get_navbar(active_key="", rel_root=".", is_exam=False):
         ifce_n = len(math_data.get("6", {}).get("topics", []))
         ifsc_n = len(math_data.get("5", {}).get("topics", []))
         ifsp_n = len(math_data.get("7", {}).get("topics", []))
+        ifmg_n = len(math_data.get("8", {}).get("topics", []))
         nav_links = [
             ("provas_hub", f"{rel_root}/provas.html", "Todas as Provas", "layout-grid"),
             ("pesquisa", f"{rel_root}/pesquisa.html", "Pesquisa BNCC", "search"),
             ("6", f"{rel_root}/bloco-6-provas-ifce/index.html", f"Provas IFCE ({ifce_n})", "award"),
             ("5", f"{rel_root}/bloco-5-provas-ifsc/index.html", f"Provas IFSC ({ifsc_n})", "award"),
             ("7", f"{rel_root}/bloco-7-provas-ifsp/index.html", f"Provas IFSP ({ifsp_n})", "award"),
+            ("8", f"{rel_root}/bloco-8-provas-ifmg/index.html", f"Provas IFMG ({ifmg_n})", "award"),
         ]
         
         desktop_items = []
@@ -559,6 +629,7 @@ def build_subtopic_pages():
                             </a>
                         """
 
+                    img_html = render_question_image(q, rel_root="..", is_dark=True)
                     questions_html.append(f"""
                         <div class="mb-8 border-b border-slate-800/80 pb-6 last:border-0 last:pb-0" id="q-container-{q_id}">
                             <div class="flex items-center justify-between mb-3 flex-wrap gap-2">
@@ -568,6 +639,7 @@ def build_subtopic_pages():
                                 </div>
                             </div>
                             <p class="font-medium text-slate-100 mb-4 text-sm sm:text-base leading-relaxed">{q.get('q', '')}</p>
+                            {img_html}
                             <div class="space-y-2 mb-4" id="opts-{q_id}">
                                 {''.join(options_buttons)}
                             </div>
@@ -808,12 +880,14 @@ def build_subtopic_pages():
                             </button>
                         """)
 
+                    img_html = render_question_image(q, rel_root="..", is_dark=False)
                     questions_html.append(f"""
                         <div class="mb-8 border-b border-gray-100 pb-6 last:border-0 last:pb-0" id="q-container-{q_id}">
                             <div class="flex items-center justify-between mb-2">
                                 <span class="text-xs font-bold uppercase tracking-wider text-brand-700 bg-brand-50 px-2.5 py-0.5 rounded-full border border-brand-100">Questão {q_idx + 1}</span>
                             </div>
                             <p class="font-medium text-gray-800 mb-4 text-sm sm:text-base leading-relaxed">{q.get('q', '')}</p>
+                            {img_html}
                             <div class="space-y-2 mb-4" id="opts-{q_id}">
                                 {''.join(options_buttons)}
                             </div>
@@ -1353,6 +1427,7 @@ def build_homepage():
     ifce_n = len(math_data.get("6", {}).get("topics", []))
     ifsc_n = len(math_data.get("5", {}).get("topics", []))
     ifsp_n = len(math_data.get("7", {}).get("topics", []))
+    ifmg_n = len(math_data.get("8", {}).get("topics", []))
 
     home_page_html = f"""{get_head("PartiuIF - Plataforma de Matemática para Institutos Federais", rel_root=".", theme="green")}
 {get_navbar(active_key="home", rel_root=".", is_exam=False)}
@@ -1490,9 +1565,9 @@ def build_homepage():
                             Banco de Provas Oficiais dos <span class="text-transparent bg-clip-text bg-gradient-to-r from-sky-400 to-blue-300">Institutos Federais</span>
                         </h2>
                         <p class="text-slate-300 text-sm sm:text-base leading-relaxed max-w-2xl">
-                            Pratique em um ambiente imersivo com mais de <strong>{total_official_exams} cadernos oficiais</strong> do <strong>IFCE</strong>, <strong>IFSC</strong> e <strong>IFSP</strong>. Resolva as questões com gabarito inteligente e resoluções completas KaTeX, ou faça o <strong>download direto dos cadernos originais em PDF</strong> para simular as condições reais do exame.
+                            Pratique em um ambiente imersivo com mais de <strong>{total_official_exams} cadernos oficiais</strong> do <strong>IFCE</strong>, <strong>IFSC</strong>, <strong>IFSP</strong> e <strong>IFMG</strong>. Resolva as questões com gabarito inteligente e resoluções completas KaTeX, ou faça o <strong>download direto dos cadernos originais em PDF</strong> para simular as condições reais do exame.
                         </p>
-                        <div class="grid grid-cols-2 sm:grid-cols-4 gap-3 pt-2 max-w-lg">
+                        <div class="grid grid-cols-2 sm:grid-cols-5 gap-3 pt-2 max-w-2xl">
                             <div class="bg-slate-900/90 border border-slate-800 p-3 rounded-2xl text-center">
                                 <span class="text-xl sm:text-2xl font-black text-sky-400 block">{ifce_n}</span>
                                 <span class="text-[11px] text-slate-400 uppercase font-bold">Provas IFCE</span>
@@ -1506,6 +1581,10 @@ def build_homepage():
                                 <span class="text-[11px] text-slate-400 uppercase font-bold">Provas IFSP</span>
                             </div>
                             <div class="bg-slate-900/90 border border-slate-800 p-3 rounded-2xl text-center">
+                                <span class="text-xl sm:text-2xl font-black text-purple-400 block">{ifmg_n}</span>
+                                <span class="text-[11px] text-slate-400 uppercase font-bold">Provas IFMG</span>
+                            </div>
+                            <div class="bg-slate-900/90 border border-slate-800 p-3 rounded-2xl text-center col-span-2 sm:col-span-1">
                                 <span class="text-xl sm:text-2xl font-black text-emerald-400 block">100%</span>
                                 <span class="text-[11px] text-slate-400 uppercase font-bold">Com PDFs</span>
                             </div>
@@ -1547,8 +1626,8 @@ def build_provas_hub():
     for b_id, block in exam_blocks_data.items():
         folder = get_block_folder(b_id, block)
         b_title = block.get("title", "")
-        inst = "IFCE" if "ifce" in b_title.lower() else "IFSC" if "ifsc" in b_title.lower() else "IFSP" if "ifsp" in b_title.lower() else "IF"
-        badge_style = "bg-blue-500/20 text-sky-300 border-blue-400/30" if inst == "IFCE" else "bg-indigo-500/20 text-indigo-300 border-indigo-400/30" if inst == "IFSC" else "bg-amber-500/20 text-amber-300 border-amber-400/30"
+        inst = "IFCE" if "ifce" in b_title.lower() else "IFSC" if "ifsc" in b_title.lower() else "IFSP" if "ifsp" in b_title.lower() else "IFMG" if "ifmg" in b_title.lower() else "IF"
+        badge_style = "bg-blue-500/20 text-sky-300 border-blue-400/30" if inst == "IFCE" else "bg-indigo-500/20 text-indigo-300 border-indigo-400/30" if inst == "IFSC" else "bg-amber-500/20 text-amber-300 border-amber-400/30" if inst == "IFSP" else "bg-purple-500/20 text-purple-300 border-purple-400/30"
         
         for idx, topic in enumerate(block["topics"]):
             t_id = topic["id"]
@@ -1602,6 +1681,7 @@ def build_provas_hub():
     ifce_n = len(math_data.get("6", {}).get("topics", []))
     ifsc_n = len(math_data.get("5", {}).get("topics", []))
     ifsp_n = len(math_data.get("7", {}).get("topics", []))
+    ifmg_n = len(math_data.get("8", {}).get("topics", []))
 
     provas_hub_html = f"""{get_head("Acervo de Provas Oficiais dos Institutos Federais | PartiuIF", rel_root=".", theme="dark-blue")}
 {get_navbar(active_key="provas_hub", rel_root=".", is_exam=True)}
@@ -1629,7 +1709,7 @@ def build_provas_hub():
                 </h1>
                 
                 <p class="text-slate-300 text-sm sm:text-base mb-8 leading-relaxed">
-                    Ambiente dedicado para simulação com os exames reais do <strong>IFCE</strong>, <strong>IFSC</strong> e <strong>IFSP</strong>. Resolva os cadernos online com resoluções KaTeX comentadas e baixe os PDFs originais para simular o tempo de prova oficial.
+                    Ambiente dedicado para simulação com os exames reais do <strong>IFCE</strong>, <strong>IFSC</strong>, <strong>IFSP</strong> e <strong>IFMG</strong>. Resolva os cadernos online com resoluções KaTeX comentadas e baixe os PDFs originais para simular o tempo de prova oficial.
                 </p>
 
                 <div class="flex flex-wrap items-center gap-4">
@@ -1643,8 +1723,8 @@ def build_provas_hub():
             </div>
         </div>
 
-        <!-- Dashboard do Acervo (5 Métricas) -->
-        <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-4 mb-10">
+        <!-- Dashboard do Acervo (6 Métricas) -->
+        <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-3.5 mb-10">
             <div class="bg-slate-900/90 border border-slate-800 rounded-2xl p-5 shadow-xl flex items-center gap-4">
                 <div class="w-12 h-12 rounded-xl bg-blue-950/80 border border-blue-800/40 flex items-center justify-center text-sky-400 flex-shrink-0">
                     <i data-lucide="file-text" class="w-6 h-6"></i>
@@ -1685,7 +1765,17 @@ def build_provas_hub():
                 </div>
             </div>
 
-            <div class="bg-slate-900/90 border border-slate-800 rounded-2xl p-5 shadow-xl flex items-center gap-4 col-span-2 md:col-span-1">
+            <div class="bg-slate-900/90 border border-slate-800 rounded-2xl p-5 shadow-xl flex items-center gap-4">
+                <div class="w-12 h-12 rounded-xl bg-purple-950/80 border border-purple-800/40 flex items-center justify-center text-purple-400 flex-shrink-0">
+                    <i data-lucide="award" class="w-6 h-6"></i>
+                </div>
+                <div>
+                    <span class="text-xs text-slate-400 font-medium block">Edições IFMG</span>
+                    <strong class="text-xl font-black text-purple-400">{ifmg_n} Provas</strong>
+                </div>
+            </div>
+
+            <div class="bg-slate-900/90 border border-slate-800 rounded-2xl p-5 shadow-xl flex items-center gap-4 col-span-2 sm:col-span-1">
                 <div class="w-12 h-12 rounded-xl bg-emerald-950/80 border border-emerald-800/40 flex items-center justify-center text-emerald-400 flex-shrink-0">
                     <i data-lucide="download-cloud" class="w-6 h-6"></i>
                 </div>
@@ -1697,45 +1787,59 @@ def build_provas_hub():
         </div>
 
         <!-- Seção de Acesso Rápido aos Blocos de Cada IF -->
-        <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mb-12">
-            <div class="bg-slate-900/90 border border-slate-800 hover:border-blue-500/50 rounded-3xl p-6 sm:p-7 shadow-xl flex items-center justify-between transition">
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 mb-12">
+            <div class="bg-slate-900/90 border border-slate-800 hover:border-blue-500/50 rounded-3xl p-6 shadow-xl flex items-center justify-between transition">
                 <div>
                     <div class="flex items-center gap-2 mb-2">
                         <span class="text-xs font-bold uppercase tracking-wider px-2.5 py-0.5 rounded-full bg-blue-500/20 text-sky-300 border border-blue-400/30">Ceará</span>
                         <span class="text-xs text-slate-400 font-medium">Bloco 6</span>
                     </div>
-                    <h3 class="text-xl font-extrabold text-white mb-1">Provas Anteriores IFCE</h3>
-                    <p class="text-slate-400 text-xs sm:text-sm">{ifce_n} edições completas com resoluções comentadas e PDFs.</p>
+                    <h3 class="text-lg font-extrabold text-white mb-1">Provas IFCE</h3>
+                    <p class="text-slate-400 text-xs leading-relaxed">{ifce_n} edições com resoluções e PDFs.</p>
                 </div>
-                <a href="./bloco-6-provas-ifce/index.html" class="bg-blue-600 hover:bg-blue-500 text-white font-bold p-3 rounded-2xl transition shadow-lg shadow-blue-600/20 flex-shrink-0">
+                <a href="./bloco-6-provas-ifce/index.html" class="bg-blue-600 hover:bg-blue-500 text-white font-bold p-3 rounded-2xl transition shadow-lg shadow-blue-600/20 flex-shrink-0 ml-3">
                     <i data-lucide="arrow-right" class="w-5 h-5"></i>
                 </a>
             </div>
 
-            <div class="bg-slate-900/90 border border-slate-800 hover:border-indigo-500/50 rounded-3xl p-6 sm:p-7 shadow-xl flex items-center justify-between transition">
+            <div class="bg-slate-900/90 border border-slate-800 hover:border-indigo-500/50 rounded-3xl p-6 shadow-xl flex items-center justify-between transition">
                 <div>
                     <div class="flex items-center gap-2 mb-2">
                         <span class="text-xs font-bold uppercase tracking-wider px-2.5 py-0.5 rounded-full bg-indigo-500/20 text-indigo-300 border border-indigo-400/30">Santa Catarina</span>
                         <span class="text-xs text-slate-400 font-medium">Bloco 5</span>
                     </div>
-                    <h3 class="text-xl font-extrabold text-white mb-1">Provas Anteriores IFSC</h3>
-                    <p class="text-slate-400 text-xs sm:text-sm">{ifsc_n} edições completas com resoluções comentadas e PDFs.</p>
+                    <h3 class="text-lg font-extrabold text-white mb-1">Provas IFSC</h3>
+                    <p class="text-slate-400 text-xs leading-relaxed">{ifsc_n} edições com resoluções e PDFs.</p>
                 </div>
-                <a href="./bloco-5-provas-ifsc/index.html" class="bg-indigo-600 hover:bg-indigo-500 text-white font-bold p-3 rounded-2xl transition shadow-lg shadow-indigo-600/20 flex-shrink-0">
+                <a href="./bloco-5-provas-ifsc/index.html" class="bg-indigo-600 hover:bg-indigo-500 text-white font-bold p-3 rounded-2xl transition shadow-lg shadow-indigo-600/20 flex-shrink-0 ml-3">
                     <i data-lucide="arrow-right" class="w-5 h-5"></i>
                 </a>
             </div>
 
-            <div class="bg-slate-900/90 border border-slate-800 hover:border-amber-500/50 rounded-3xl p-6 sm:p-7 shadow-xl flex items-center justify-between transition">
+            <div class="bg-slate-900/90 border border-slate-800 hover:border-amber-500/50 rounded-3xl p-6 shadow-xl flex items-center justify-between transition">
                 <div>
                     <div class="flex items-center gap-2 mb-2">
                         <span class="text-xs font-bold uppercase tracking-wider px-2.5 py-0.5 rounded-full bg-amber-500/20 text-amber-300 border border-amber-400/30">São Paulo</span>
                         <span class="text-xs text-slate-400 font-medium">Bloco 7</span>
                     </div>
-                    <h3 class="text-xl font-extrabold text-white mb-1">Provas Anteriores IFSP</h3>
-                    <p class="text-slate-400 text-xs sm:text-sm">{ifsp_n} edições completas com resoluções comentadas e PDFs.</p>
+                    <h3 class="text-lg font-extrabold text-white mb-1">Provas IFSP</h3>
+                    <p class="text-slate-400 text-xs leading-relaxed">{ifsp_n} edições com resoluções e PDFs.</p>
                 </div>
-                <a href="./bloco-7-provas-ifsp/index.html" class="bg-amber-600 hover:bg-amber-500 text-white font-bold p-3 rounded-2xl transition shadow-lg shadow-amber-600/20 flex-shrink-0">
+                <a href="./bloco-7-provas-ifsp/index.html" class="bg-amber-600 hover:bg-amber-500 text-white font-bold p-3 rounded-2xl transition shadow-lg shadow-amber-600/20 flex-shrink-0 ml-3">
+                    <i data-lucide="arrow-right" class="w-5 h-5"></i>
+                </a>
+            </div>
+
+            <div class="bg-slate-900/90 border border-slate-800 hover:border-purple-500/50 rounded-3xl p-6 shadow-xl flex items-center justify-between transition">
+                <div>
+                    <div class="flex items-center gap-2 mb-2">
+                        <span class="text-xs font-bold uppercase tracking-wider px-2.5 py-0.5 rounded-full bg-purple-500/20 text-purple-300 border border-purple-400/30">Minas Gerais</span>
+                        <span class="text-xs text-slate-400 font-medium">Bloco 8</span>
+                    </div>
+                    <h3 class="text-lg font-extrabold text-white mb-1">Provas IFMG</h3>
+                    <p class="text-slate-400 text-xs leading-relaxed">{ifmg_n} edições com resoluções e PDFs.</p>
+                </div>
+                <a href="./bloco-8-provas-ifmg/index.html" class="bg-purple-600 hover:bg-purple-500 text-white font-bold p-3 rounded-2xl transition shadow-lg shadow-purple-600/20 flex-shrink-0 ml-3">
                     <i data-lucide="arrow-right" class="w-5 h-5"></i>
                 </a>
             </div>
@@ -1834,6 +1938,9 @@ def build_provas_hub():
                     </button>
                     <button onclick="filterExams('IFSP')" id="btn-filter-ifsp" class="filter-btn px-4 py-1.5 rounded-xl text-xs font-semibold text-slate-400 hover:text-white transition">
                         IFSP ({ifsp_n})
+                    </button>
+                    <button onclick="filterExams('IFMG')" id="btn-filter-ifmg" class="filter-btn px-4 py-1.5 rounded-xl text-xs font-semibold text-slate-400 hover:text-white transition">
+                        IFMG ({ifmg_n})
                     </button>
                 </div>
             </div>
@@ -1935,22 +2042,7 @@ def build_provas_hub():
 def build_simulado_page():
     print("\n--- Generating Simulado Page (simulado.html) ---")
 
-    sim_source_radios = ["""
-        <label class="cursor-pointer p-3.5 rounded-xl border border-brand-500 bg-brand-50/60 flex items-center gap-3 text-sm font-semibold text-gray-900 transition hover:border-brand-500">
-            <input type="radio" name="sim-source" value="all" checked class="text-brand-600 focus:ring-brand-500">
-            <span>Todos os Blocos (Geral)</span>
-        </label>
-    """]
-
-    for b_id, block in math_data.items():
-        sim_source_radios.append(f"""
-            <label class="cursor-pointer p-3.5 rounded-xl border border-gray-200 hover:border-brand-300 flex items-center gap-3 text-sm font-medium text-gray-800 transition">
-                <input type="radio" name="sim-source" value="{b_id}" class="text-brand-600 focus:ring-brand-500">
-                <span>{block['title']}</span>
-            </label>
-        """)
-
-    simulado_html = f"""{get_head("Simulado Geral de Matemática | PartiuIF", rel_root=".", theme="green")}
+    simulado_html = f"""{get_head("Simulado Oficial de Matemática BNCC | PartiuIF", rel_root=".", theme="green")}
 {get_navbar(active_key="simulado", rel_root=".", is_exam=False)}
 
     <main class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 py-8 flex-grow">
@@ -1963,12 +2055,12 @@ def build_simulado_page():
                         <i data-lucide="award" class="w-6 h-6"></i>
                     </div>
                     <span class="bg-brand-500/30 text-brand-200 border border-brand-400/30 text-xs font-bold px-3 py-1 rounded-full uppercase tracking-wider">
-                        Treino Oficial
+                        Treino Oficial Curricular
                     </span>
                 </div>
-                <h1 class="text-3xl sm:text-4xl font-extrabold tracking-tight mb-3">Simulado IF de Matemática</h1>
-                <p class="text-brand-100 text-sm sm:text-base max-w-2xl leading-relaxed">
-                    Personalize seu simulado com questões retiradas do banco oficial dos {len(math_data)} blocos e das {total_official_exams} provas oficiais do IFCE, IFSC e IFSP. Ao final, veja seu desempenho e a resolução comentada de cada questão.
+                <h1 class="text-3xl sm:text-4xl font-extrabold tracking-tight mb-3">Simulado Oficial de Matemática</h1>
+                <p class="text-brand-100 text-sm sm:text-base max-w-3xl leading-relaxed">
+                    Personalize seu simulado com <strong>{total_exam_questions} questões reais</strong> aplicadas pelos Institutos Federais (<strong>IFCE, IFSC, IFSP e IFMG</strong>), todas associadas aos descritores oficiais da <strong>BNCC</strong>. Ao final, receba um diagnóstico detalhado do seu desempenho por Unidade Temática e recomendações de reforço.
                 </p>
             </div>
 
@@ -1977,35 +2069,157 @@ def build_simulado_page():
                     Configurações do Simulado
                 </h2>
 
-                <!-- Seleção do Eixo / Fonte -->
+                <!-- 1. Seleção do Modo Curricular / Fonte -->
                 <div>
-                    <label class="block text-xs font-bold text-gray-700 uppercase tracking-wider mb-2">Selecione o Eixo de Conteúdo:</label>
-                    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-3" id="sim-source-options">
-                        {''.join(sim_source_radios)}
+                    <label class="block text-xs font-bold text-gray-700 uppercase tracking-wider mb-2">1. Selecione o Eixo de Conteúdo / Modo BNCC:</label>
+                    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3" id="sim-source-options">
+                        <label class="cursor-pointer p-4 rounded-2xl border-2 border-brand-500 bg-brand-50/50 flex flex-col justify-between transition hover:border-brand-600 group relative">
+                            <div class="flex items-start gap-3">
+                                <input type="radio" name="sim-source" value="bncc_all" checked class="mt-1 text-brand-600 focus:ring-brand-500">
+                                <div>
+                                    <span class="block text-sm font-bold text-gray-900 group-hover:text-brand-900">Simulado Geral BNCC</span>
+                                    <span class="block text-xs text-gray-600 mt-0.5">Todas as Unidades Temáticas ({total_exam_questions} questões)</span>
+                                </div>
+                            </div>
+                            <span class="mt-2 text-[10px] font-extrabold uppercase px-2 py-0.5 rounded-full bg-brand-200/80 text-brand-800 self-start">Recomendado</span>
+                        </label>
+
+                        <label class="cursor-pointer p-4 rounded-2xl border border-gray-200 hover:border-brand-300 flex items-start gap-3 transition">
+                            <input type="radio" name="sim-source" value="ut_algebra" class="mt-1 text-brand-600 focus:ring-brand-500">
+                            <div>
+                                <span class="block text-sm font-bold text-gray-900">Álgebra</span>
+                                <span class="block text-xs text-gray-500 mt-0.5">Equações, funções, padrões e fórmulas</span>
+                            </div>
+                        </label>
+
+                        <label class="cursor-pointer p-4 rounded-2xl border border-gray-200 hover:border-brand-300 flex items-start gap-3 transition">
+                            <input type="radio" name="sim-source" value="ut_numeros" class="mt-1 text-brand-600 focus:ring-brand-500">
+                            <div>
+                                <span class="block text-sm font-bold text-gray-900">Números</span>
+                                <span class="block text-xs text-gray-500 mt-0.5">Frações, porcentagem, potências e operações</span>
+                            </div>
+                        </label>
+
+                        <label class="cursor-pointer p-4 rounded-2xl border border-gray-200 hover:border-brand-300 flex items-start gap-3 transition">
+                            <input type="radio" name="sim-source" value="ut_geometria" class="mt-1 text-brand-600 focus:ring-brand-500">
+                            <div>
+                                <span class="block text-sm font-bold text-gray-900">Geometria</span>
+                                <span class="block text-xs text-gray-500 mt-0.5">Triângulos, Teorema de Pitágoras e sólidos</span>
+                            </div>
+                        </label>
+
+                        <label class="cursor-pointer p-4 rounded-2xl border border-gray-200 hover:border-brand-300 flex items-start gap-3 transition">
+                            <input type="radio" name="sim-source" value="ut_medidas" class="mt-1 text-brand-600 focus:ring-brand-500">
+                            <div>
+                                <span class="block text-sm font-bold text-gray-900">Grandezas e Medidas</span>
+                                <span class="block text-xs text-gray-500 mt-0.5">Áreas, perímetros, volumes e escalas</span>
+                            </div>
+                        </label>
+
+                        <label class="cursor-pointer p-4 rounded-2xl border border-gray-200 hover:border-brand-300 flex items-start gap-3 transition">
+                            <input type="radio" name="sim-source" value="ut_estatistica" class="mt-1 text-brand-600 focus:ring-brand-500">
+                            <div>
+                                <span class="block text-sm font-bold text-gray-900">Probabilidade e Estatística</span>
+                                <span class="block text-xs text-gray-500 mt-0.5">Gráficos, médias e probabilidade</span>
+                            </div>
+                        </label>
+
+                        <label class="cursor-pointer p-4 rounded-2xl border-2 border-indigo-400 bg-indigo-50/50 flex flex-col justify-between transition hover:border-indigo-600 group relative">
+                            <div class="flex items-start gap-3">
+                                <input type="radio" name="sim-source" value="geometria_plana" class="mt-1 text-indigo-600 focus:ring-indigo-500">
+                                <div>
+                                    <span class="block text-sm font-bold text-gray-900 group-hover:text-indigo-900">Atividade: Geometria Plana</span>
+                                    <span class="block text-xs text-gray-600 mt-0.5">Ângulos, triângulos, polígonos, circunferência, Pitágoras e áreas</span>
+                                </div>
+                            </div>
+                            <span class="mt-2 text-[10px] font-extrabold uppercase px-2 py-0.5 rounded-full bg-indigo-200/90 text-indigo-800 self-start">Atividade Especial</span>
+                        </label>
+
+                        <label class="cursor-pointer p-4 rounded-2xl border border-gray-200 hover:border-brand-300 flex items-start gap-3 transition sm:col-span-2 lg:col-span-2 bg-gray-50/60">
+                            <input type="radio" name="sim-source" value="teoria_all" class="mt-1 text-brand-600 focus:ring-brand-500">
+                            <div>
+                                <span class="block text-sm font-bold text-gray-900">Fixação Teórica (Blocos Conceituais 1 a 4)</span>
+                                <span class="block text-xs text-gray-500 mt-0.5">Exercícios de base teórica dos 4 blocos fundamentais ({total_theory_questions} questões)</span>
+                            </div>
+                        </label>
                     </div>
                 </div>
 
-                <!-- Quantidade de Questões -->
+                <!-- 1.1 Identificação do Estudante (Visível SOMENTE no Simulado de Geometria Plana) -->
+                <div id="sim-student-container" class="hidden bg-indigo-50/70 border-2 border-indigo-300 rounded-2xl p-5 sm:p-6 space-y-3 transition-all">
+                    <div class="flex items-center gap-2.5">
+                        <div class="w-8 h-8 rounded-xl bg-indigo-600 text-white flex items-center justify-center">
+                            <i data-lucide="user-check" class="w-4 h-4"></i>
+                        </div>
+                        <div>
+                            <h3 class="text-sm font-extrabold text-indigo-950">Identificação do Estudante para a Atividade</h3>
+                            <p class="text-xs text-indigo-700">Obrigatório para registrar seu comprovante e diagnóstico da atividade.</p>
+                        </div>
+                    </div>
+                    <div>
+                        <label for="sim-student-name" class="block text-xs font-bold text-gray-700 uppercase tracking-wider mb-1">
+                            Nome Completo do Aluno(a): <span class="text-red-500">*</span>
+                        </label>
+                        <input type="text" id="sim-student-name" placeholder="Digite seu nome completo..." class="w-full px-4 py-2.5 rounded-xl border border-indigo-300 bg-white text-gray-900 text-sm font-medium focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500 transition shadow-sm">
+                        <p id="sim-student-error" class="hidden text-xs font-bold text-red-600 mt-1.5 flex items-center gap-1">
+                            <i data-lucide="alert-circle" class="w-3.5 h-3.5"></i> Por favor, informe seu nome completo para iniciar a atividade.
+                        </p>
+                    </div>
+                </div>
+
+                <!-- 2. Filtro de Instituição Federal -->
+                <div id="sim-inst-container">
+                    <label class="block text-xs font-bold text-gray-700 uppercase tracking-wider mb-2">2. Filtrar por Instituto Federal:</label>
+                    <div class="grid grid-cols-2 sm:grid-cols-5 gap-2.5">
+                        <label class="cursor-pointer p-3 rounded-xl border border-brand-500 bg-brand-50/60 text-center font-bold text-xs sm:text-sm text-gray-900 transition flex items-center justify-center gap-2">
+                            <input type="radio" name="sim-inst" value="all" checked class="text-brand-600 focus:ring-brand-500">
+                            <span>Todos os IFs</span>
+                        </label>
+                        <label class="cursor-pointer p-3 rounded-xl border border-gray-200 hover:border-brand-300 text-center font-medium text-xs sm:text-sm text-gray-800 transition flex items-center justify-center gap-2">
+                            <input type="radio" name="sim-inst" value="IFCE" class="text-brand-600 focus:ring-brand-500">
+                            <span>IFCE</span>
+                        </label>
+                        <label class="cursor-pointer p-3 rounded-xl border border-gray-200 hover:border-brand-300 text-center font-medium text-xs sm:text-sm text-gray-800 transition flex items-center justify-center gap-2">
+                            <input type="radio" name="sim-inst" value="IFSC" class="text-brand-600 focus:ring-brand-500">
+                            <span>IFSC</span>
+                        </label>
+                        <label class="cursor-pointer p-3 rounded-xl border border-gray-200 hover:border-brand-300 text-center font-medium text-xs sm:text-sm text-gray-800 transition flex items-center justify-center gap-2">
+                            <input type="radio" name="sim-inst" value="IFSP" class="text-brand-600 focus:ring-brand-500">
+                            <span>IFSP</span>
+                        </label>
+                        <label class="cursor-pointer p-3 rounded-xl border border-gray-200 hover:border-brand-300 text-center font-medium text-xs sm:text-sm text-gray-800 transition flex items-center justify-center gap-2">
+                            <input type="radio" name="sim-inst" value="IFMG" class="text-brand-600 focus:ring-brand-500">
+                            <span>IFMG</span>
+                        </label>
+                    </div>
+                </div>
+
+                <!-- 3. Quantidade de Questões -->
                 <div>
-                    <label class="block text-xs font-bold text-gray-700 uppercase tracking-wider mb-2">Quantidade de Questões:</label>
-                    <div class="grid grid-cols-3 gap-3">
+                    <label class="block text-xs font-bold text-gray-700 uppercase tracking-wider mb-2">3. Quantidade de Questões:</label>
+                    <div class="grid grid-cols-2 sm:grid-cols-4 gap-3">
                         <label class="cursor-pointer p-3 rounded-xl border border-brand-500 bg-brand-50/60 text-center font-bold text-sm text-gray-900 transition flex items-center justify-center gap-2">
                             <input type="radio" name="sim-count" value="10" checked class="text-brand-600 focus:ring-brand-500">
-                            <span>10 Questões (Express)</span>
+                            <span>10 Questões</span>
+                        </label>
+                        <label class="cursor-pointer p-3 rounded-xl border border-gray-200 hover:border-brand-300 text-center font-medium text-sm text-gray-800 transition flex items-center justify-center gap-2">
+                            <input type="radio" name="sim-count" value="15" class="text-brand-600 focus:ring-brand-500">
+                            <span>15 Questões</span>
                         </label>
                         <label class="cursor-pointer p-3 rounded-xl border border-gray-200 hover:border-brand-300 text-center font-medium text-sm text-gray-800 transition flex items-center justify-center gap-2">
                             <input type="radio" name="sim-count" value="20" class="text-brand-600 focus:ring-brand-500">
-                            <span>20 Questões (Padrão)</span>
+                            <span>20 Questões</span>
                         </label>
                         <label class="cursor-pointer p-3 rounded-xl border border-gray-200 hover:border-brand-300 text-center font-medium text-sm text-gray-800 transition flex items-center justify-center gap-2">
                             <input type="radio" name="sim-count" value="30" class="text-brand-600 focus:ring-brand-500">
-                            <span>30 Questões (Intensivo)</span>
+                            <span>30 Questões</span>
                         </label>
                     </div>
                 </div>
 
-                <div class="pt-4 border-t border-gray-100 flex justify-end">
-                    <button onclick="startSimulado()" class="bg-brand-600 hover:bg-brand-700 text-white font-extrabold px-8 py-3.5 rounded-xl text-sm transition flex items-center gap-2 shadow-lg">
+                <div class="pt-4 border-t border-gray-100 flex items-center justify-between">
+                    <span id="sim-pool-estimate" class="text-xs text-gray-500 font-medium"></span>
+                    <button onclick="startSimulado()" class="bg-brand-600 hover:bg-brand-700 text-white font-extrabold px-8 py-3.5 rounded-xl text-sm transition flex items-center gap-2 shadow-lg cursor-pointer">
                         <i data-lucide="play" class="w-4 h-4"></i> Iniciar Simulado Agora
                     </button>
                 </div>
@@ -2015,11 +2229,15 @@ def build_simulado_page():
         <!-- CONTAINER 2: Execução do Simulado (Oculto Inicialmente) -->
         <div id="simulado-running" class="hidden space-y-6">
             <div class="bg-white border border-gray-200 rounded-2xl p-5 shadow-sm flex flex-col sm:flex-row justify-between sm:items-center gap-4">
-                <div>
+                <div class="flex flex-wrap items-center gap-2">
                     <span id="sim-progress-indicator" class="text-xs font-bold text-brand-700 bg-brand-50 px-2.5 py-1 rounded-lg border border-brand-100">
                         Questão 1 de 10
                     </span>
-                    <span id="sim-topic-title" class="text-xs text-gray-500 ml-2 font-medium"></span>
+                    <span id="sim-student-badge" class="hidden text-xs font-bold text-indigo-800 bg-indigo-50 px-2.5 py-1 rounded-lg border border-indigo-200 flex items-center gap-1.5">
+                        <i data-lucide="user" class="w-3.5 h-3.5 text-indigo-600"></i>
+                        <span id="sim-student-badge-name"></span>
+                    </span>
+                    <span id="sim-topic-title" class="text-xs text-gray-500 ml-1 font-medium"></span>
                 </div>
 
                 <div class="flex items-center gap-2">
@@ -2103,7 +2321,7 @@ def build_pesquisa_page():
                 </h1>
                 
                 <p class="text-slate-300 text-xs sm:text-sm leading-relaxed">
-                    Explore nosso acervo completo com <strong>{total_exam_questions} questões reais</strong> aplicadas nos exames de seleção do <strong>IFCE</strong>, <strong>IFSC</strong> e <strong>IFSP</strong>, todas catalogadas e associadas às habilidades oficiais da BNCC (6º ao 9º ano).
+                    Explore nosso acervo completo com <strong>{total_exam_questions} questões reais</strong> aplicadas nos exames de seleção do <strong>IFCE</strong>, <strong>IFSC</strong>, <strong>IFSP</strong> e <strong>IFMG</strong>, todas catalogadas e associadas às habilidades oficiais da BNCC (6º ao 9º ano).
                 </p>
             </div>
         </div>
@@ -2176,6 +2394,7 @@ def build_pesquisa_page():
                         <option value="IFCE">IFCE (Ceará)</option>
                         <option value="IFSC">IFSC (Santa Catarina)</option>
                         <option value="IFSP">IFSP (São Paulo)</option>
+                        <option value="IFMG">IFMG (Minas Gerais)</option>
                     </select>
                 </div>
             </div>
@@ -2191,6 +2410,12 @@ def build_pesquisa_page():
         <!-- Lista Dinâmica de Questões -->
         <div id="questions-container" class="space-y-6">
             <!-- Preenchido dinamicamente por pesquisa.js -->
+        </div>
+
+        <!-- Barra de Paginação / Navegação de Resultados -->
+        <div id="pagination-container" class="hidden mt-10 pt-6 border-t border-slate-800 flex flex-col sm:flex-row items-center justify-between gap-4">
+            <div id="pagination-info" class="text-xs text-slate-400 font-medium order-2 sm:order-1"></div>
+            <div id="pagination-controls" class="flex flex-wrap items-center justify-center gap-1.5 order-1 sm:order-2"></div>
         </div>
 
         <!-- Estado Vazio (Sem Resultados) -->

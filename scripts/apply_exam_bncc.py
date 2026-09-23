@@ -4,7 +4,7 @@ import json, re
 with open('scripts/bncc_catalog.json', 'r', encoding='utf-8') as f:
     catalog = json.load(f)
 
-with open('mathData_augmented.json', 'r', encoding='utf-8') as f:
+with open('mathData.json', 'r', encoding='utf-8') as f:
     math_data = json.load(f)
 
 def determine_bncc(q):
@@ -211,7 +211,7 @@ for b_id in ['1', '2', '3', '4']:
                 if k in q:
                     del q[k]
 
-with open('mathData_augmented.json', 'w', encoding='utf-8') as f:
+with open('mathData.json', 'w', encoding='utf-8') as f:
     json.dump(math_data, f, indent=2, ensure_ascii=False)
 
-print(f'Successfully updated mathData_augmented.json with {tagged_count} tagged exam questions!')
+print(f'Successfully updated mathData.json with {tagged_count} tagged exam questions!')

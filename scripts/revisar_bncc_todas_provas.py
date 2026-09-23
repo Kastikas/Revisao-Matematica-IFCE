@@ -7,8 +7,8 @@ import subprocess
 with open("scripts/bncc_catalog.json", "r", encoding="utf-8") as f:
     catalog = json.load(f)
 
-# 2. Carrega mathData_augmented.json atual (que tem a classificação anterior)
-with open("mathData_augmented.json", "r", encoding="utf-8") as f:
+# 2. Carrega mathData.json atual (que tem a classificação anterior)
+with open("mathData.json", "r", encoding="utf-8") as f:
     data = json.load(f)
 
 # 3. Carrega revisao_descritores_validados.json se existir
@@ -369,10 +369,10 @@ print(f"Total de questões: {total_questoes}")
 print(f"Total alteradas/alinhadas à BNCC Oficial: {total_alteradas}")
 print(f"Total mantidas idênticas: {total_mantidas}")
 
-# 4. Salva mathData_augmented.json
-with open("mathData_augmented.json", "w", encoding="utf-8") as f:
+# 4. Salva mathData.json
+with open("mathData.json", "w", encoding="utf-8") as f:
     json.dump(data, f, ensure_ascii=False, indent=2)
-print("mathData_augmented.json salvo com sucesso!")
+print("mathData.json salvo com sucesso!")
 
 # 5. Salva revisao_descritores_validados.json
 validados_final = {

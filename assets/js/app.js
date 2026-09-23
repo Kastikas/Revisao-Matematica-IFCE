@@ -420,6 +420,84 @@ function initTopicSearch() {
     });
 }
 
+// Modal de Zoom de Imagens (Universal Lightbox)
+function initImageModal() {
+    if (document.getElementById('partiuif-image-modal')) return;
+
+    const modal = document.createElement('div');
+    modal.id = 'partiuif-image-modal';
+    modal.className = 'fixed inset-0 z-50 hidden flex-col items-center justify-center p-4 bg-black/85 backdrop-blur-md opacity-0 transition-opacity duration-300';
+    modal.setAttribute('role', 'dialog');
+    modal.setAttribute('aria-modal', 'true');
+    modal.setAttribute('aria-label', 'Visualização ampliada da imagem');
+
+    modal.innerHTML = `
+        <button id="partiuif-modal-close" class="absolute top-4 right-4 text-white/80 hover:text-white bg-white/10 hover:bg-white/20 p-2.5 rounded-full transition-all focus:outline-none focus:ring-2 focus:ring-white/50" aria-label="Fechar ampliação da imagem">
+            <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
+            </svg>
+        </button>
+        <div class="relative max-w-4xl max-h-[85vh] flex flex-col items-center justify-center">
+            <img id="partiuif-modal-img" src="" alt="" class="max-h-[75vh] max-w-[90vw] object-contain rounded-xl shadow-2xl border border-white/10 select-none">
+            <p id="partiuif-modal-caption" class="text-xs sm:text-sm text-slate-200 text-center mt-3 max-w-2xl px-4 py-1.5 bg-black/60 rounded-full border border-white/10 backdrop-blur-sm empty:hidden"></p>
+        </div>
+    `;
+
+    document.body.appendChild(modal);
+
+    modal.addEventListener('click', (e) => {
+        if (e.target === modal || e.target.closest('#partiuif-modal-close')) {
+            closeImageModal();
+        }
+    });
+
+    document.addEventListener('keydown', (e) => {
+        if (e.key === 'Escape' && !modal.classList.contains('hidden')) {
+            closeImageModal();
+        }
+    });
+}
+
+function openImageModal(src, alt) {
+    initImageModal();
+    const modal = document.getElementById('partiuif-image-modal');
+    const img = document.getElementById('partiuif-modal-img');
+    const caption = document.getElementById('partiuif-modal-caption');
+
+    if (!modal || !img) return;
+
+    img.src = src;
+    img.alt = alt || 'Visualização ampliada da figura';
+    if (caption) {
+        caption.textContent = alt || '';
+    }
+
+    modal.classList.remove('hidden');
+    modal.classList.add('flex');
+    document.body.style.overflow = 'hidden';
+
+    requestAnimationFrame(() => {
+        modal.classList.remove('opacity-0');
+        modal.classList.add('opacity-100');
+    });
+}
+
+function closeImageModal() {
+    const modal = document.getElementById('partiuif-image-modal');
+    if (!modal || modal.classList.contains('hidden')) return;
+
+    modal.classList.remove('opacity-100');
+    modal.classList.add('opacity-0');
+
+    setTimeout(() => {
+        modal.classList.remove('flex');
+        modal.classList.add('hidden');
+        document.body.style.overflow = '';
+        const img = document.getElementById('partiuif-modal-img');
+        if (img) img.src = '';
+    }, 300);
+}
+
 // Configurações e Menu Mobile
 function initMobileMenu() {
     const btn = document.getElementById("mobile-menu-btn");
@@ -435,6 +513,7 @@ function initMobileMenu() {
 document.addEventListener("DOMContentLoaded", () => {
     initMobileMenu();
     initTopicSearch();
+    initImageModal();
     if (window.lucide) lucide.createIcons();
     renderLatex();
     updateGlobalProgress();

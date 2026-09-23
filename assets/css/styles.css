@@ -116,3 +116,18 @@ button .katex {
     color: #e2e8f0;
 }
 
+/* ==========================================================================
+   Modal de Zoom de Imagens (Universal Lightbox)
+   ========================================================================== */
+#partiuif-image-modal {
+    will-change: opacity;
+}
+
+#partiuif-modal-img {
+    transition: transform 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.cursor-zoom-in {
+    cursor: zoom-in;
+}
+

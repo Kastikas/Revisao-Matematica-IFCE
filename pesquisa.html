@@ -79,6 +79,8 @@
                 <i data-lucide="award" class="w-4 h-4"></i> Provas IFSC (16)
             </a><a href="./bloco-7-provas-ifsp/index.html" class="px-3 py-2 rounded-lg text-sm transition flex items-center gap-1.5 text-slate-300 hover:bg-slate-800 hover:text-white">
                 <i data-lucide="award" class="w-4 h-4"></i> Provas IFSP (8)
+            </a><a href="./bloco-8-provas-ifmg/index.html" class="px-3 py-2 rounded-lg text-sm transition flex items-center gap-1.5 text-slate-300 hover:bg-slate-800 hover:text-white">
+                <i data-lucide="award" class="w-4 h-4"></i> Provas IFMG (11)
             </a>
                 </nav>
 
@@ -109,6 +111,8 @@
                 <i data-lucide="award" class="w-4 h-4"></i> Provas IFSC (16)
             </a><a href="./bloco-7-provas-ifsp/index.html" class="block px-3 py-2 rounded-md text-base font-medium text-white flex items-center gap-2 hover:bg-slate-800">
                 <i data-lucide="award" class="w-4 h-4"></i> Provas IFSP (8)
+            </a><a href="./bloco-8-provas-ifmg/index.html" class="block px-3 py-2 rounded-md text-base font-medium text-white flex items-center gap-2 hover:bg-slate-800">
+                <i data-lucide="award" class="w-4 h-4"></i> Provas IFMG (11)
             </a>
             <a href="./index.html" class="block px-3 py-2 rounded-md text-base font-semibold text-slate-200 hover:bg-slate-800 flex items-center gap-2 mt-2 border-t border-slate-800 pt-3">
                 <i data-lucide="arrow-left" class="w-4 h-4 text-emerald-400"></i> Voltar para Teoria (Parte 1)
@@ -145,7 +149,7 @@
                 </h1>
                 
                 <p class="text-slate-300 text-xs sm:text-sm leading-relaxed">
-                    Explore nosso acervo completo com <strong>488 questões reais</strong> aplicadas nos exames de seleção do <strong>IFCE</strong>, <strong>IFSC</strong> e <strong>IFSP</strong>, todas catalogadas e associadas às habilidades oficiais da BNCC (6º ao 9º ano).
+                    Explore nosso acervo completo com <strong>639 questões reais</strong> aplicadas nos exames de seleção do <strong>IFCE</strong>, <strong>IFSC</strong>, <strong>IFSP</strong> e <strong>IFMG</strong>, todas catalogadas e associadas às habilidades oficiais da BNCC (6º ao 9º ano).
                 </p>
             </div>
         </div>
@@ -218,6 +222,7 @@
                         <option value="IFCE">IFCE (Ceará)</option>
                         <option value="IFSC">IFSC (Santa Catarina)</option>
                         <option value="IFSP">IFSP (São Paulo)</option>
+                        <option value="IFMG">IFMG (Minas Gerais)</option>
                     </select>
                 </div>
             </div>
@@ -233,6 +238,12 @@
         <!-- Lista Dinâmica de Questões -->
         <div id="questions-container" class="space-y-6">
             <!-- Preenchido dinamicamente por pesquisa.js -->
+        </div>
+
+        <!-- Barra de Paginação / Navegação de Resultados -->
+        <div id="pagination-container" class="hidden mt-10 pt-6 border-t border-slate-800 flex flex-col sm:flex-row items-center justify-between gap-4">
+            <div id="pagination-info" class="text-xs text-slate-400 font-medium order-2 sm:order-1"></div>
+            <div id="pagination-controls" class="flex flex-wrap items-center justify-center gap-1.5 order-1 sm:order-2"></div>
         </div>
 
         <!-- Estado Vazio (Sem Resultados) -->
@@ -258,7 +269,7 @@
                     <i data-lucide="file-check" class="w-5 h-5 text-blue-500"></i> PartiuIF - Banco de Provas
                 </div>
                 <p class="text-slate-400 text-xs leading-relaxed">
-                    Acervo completo com 51 cadernos oficiais do IFCE, IFSC e IFSP. Provas interativas com resoluções KaTeX passo a passo e downloads dos cadernos originais em PDF.
+                    Acervo completo com 62 cadernos oficiais do IFCE, IFSC e IFSP. Provas interativas com resoluções KaTeX passo a passo e downloads dos cadernos originais em PDF.
                 </p>
                 <div class="mt-4 inline-flex items-center gap-2 bg-slate-900 px-3 py-1.5 rounded-lg border border-slate-800 text-xs text-sky-300">
                     <i data-lucide="hard-drive" class="w-3.5 h-3.5"></i> Respostas salvas localmente
