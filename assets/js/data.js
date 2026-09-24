@@ -1,6 +1,6 @@
 /**
  * PartiuIF - Banco de Dados de Matemática Oficial
- * Contém os 8 blocos, 82 subtópicos e 739 exercícios com resoluções KaTeX.
+ * Contém os 8 blocos, 82 subtópicos e 738 exercícios com resoluções KaTeX.
  * Gerado automaticamente por build_full_site.py - Fonte da verdade: mathData.json
  */
 var mathData = window.mathData || {
@@ -2021,7 +2021,7 @@ var mathData = window.mathData || {
         },
         "questions": [
           {
-            "q": "O Instituto Brasileiro de Geografia e Estatística (IBGE) divulgou que a taxa de desemprego cresceu para $8{,}5\\%$ na média do ano passado. Sabendo-se que, em 2014, a taxa média era de $6{,}8\\%$, o crescimento na taxa de desemprego de 2014 para 2015 foi de:",
+            "q": "O Instituto Brasileiro de Geografia e Estatística (IBGE) divulgou, em 15/03/2016, a taxa de desemprego do país que teve a piora mais acelerada registrada nesses quatro anos da série histórica da pesquisa de emprego do IBGE. Essa taxa cresceu para $8{,}5\\%$ na média do ano passado, a maior já medida pela Pesquisa Nacional por Amostra de Domicílios (Pnad), iniciada em 2012.\nSabendo-se que, em 2014, a taxa de desemprego média era de $6{,}8\\%$, é CORRETO afirmar que o crescimento percentual na taxa de desemprego do ano de 2014 para 2015 foi de aproximadamente\n\nAssinale a alternativa CORRETA.",
             "options": [
               "$1{,}3\\%$",
               "$2{,}3\\%$",
@@ -2030,15 +2030,16 @@ var mathData = window.mathData || {
               "$1{,}7\\%$"
             ],
             "correct": 4,
-            "explanation": "A diferença direta entre as taxas é $8{,}5\\% - 6{,}8\\% = 1{,}7\\%$ (pontos percentuais de aumento).",
-            "bncc": "EF08MA04",
-            "bnccDesc": "Resolver e elaborar problemas, envolvendo cálculo de porcentagens, incluindo o uso de tecnologias digitais.",
+            "explanation": "1. <strong>Interpretação da variação da taxa:</strong><br>A taxa média de desemprego passou de $6{,}8\\%$ em 2014 para $8{,}5\\%$ em 2015.<br><br>2. <strong>Cálculo do crescimento percentual na taxa:</strong><br>Calculando a diferença direta entre as taxas anunciadas (variação em pontos percentuais):<br>$$\\Delta = 8{,}5\\% - 6{,}8\\% = 1{,}7\\%$$<br>Portanto, o crescimento na taxa de desemprego foi de $1{,}7\\%$ (Alternativa E).",
+            "bncc": "EF07MA02",
+            "bnccDesc": "Resolver e elaborar problemas que envolvam porcentagens, como os que lidam com acréscimos e decréscimos simples, utilizando estratégias pessoais, cálculo mental e calculadora, no contexto de educação financeira.",
             "unidadeTematica": "Números",
-            "anoEscolar": "8º ano",
-            "topicoId": "b1-t6"
+            "anoEscolar": "7º ano",
+            "topicoId": "b1-t2",
+            "image": null
           },
           {
-            "q": "Dada a equação quadrática $3x^2 + 9x - 120 = 0$, determine suas raízes reais:",
+            "q": "Dada a equação quadrática $3x^2 + 9x - 120 = 0$, determine suas raízes.\n\nAssinale a alternativa que contém a resposta CORRETA.",
             "options": [
               "$-16$ e $10$",
               "$-5$ e $8$",
@@ -2047,15 +2048,16 @@ var mathData = window.mathData || {
               "$-9$ e $15$"
             ],
             "correct": 2,
-            "explanation": "Dividindo os coeficientes por $3$: $x^2 + 3x - 40 = 0$. Fatorando: $(x + 8)(x - 5) = 0 \\Rightarrow x = -8$ e $x = 5$.",
+            "explanation": "1. <strong>Simplificação da equação:</strong><br>Dividindo todos os coeficientes da equação $3x^2 + 9x - 120 = 0$ por $3$:<br>$$x^2 + 3x - 40 = 0$$<br><br>2. <strong>Determinação das raízes (Fórmula de Bháskara):</strong><br>Identificando os coeficientes: $a = 1$, $b = 3$, $c = -40$.<br>$$\\Delta = b^2 - 4ac = 3^2 - 4(1)(-40) = 9 + 160 = 169$$<br>$$x = \\frac{-b \\pm \\sqrt{\\Delta}}{2a} = \\frac{-3 \\pm \\sqrt{169}}{2(1)} = \\frac{-3 \\pm 13}{2}$$<br><br>Calculando cada uma das raízes:<br>$$x_1 = \\frac{-3 + 13}{2} = \\frac{10}{2} = 5$$<br>$$x_2 = \\frac{-3 - 13}{2} = \\frac{-16}{2} = -8$$<br>Portanto, as raízes reais da equação são $-8$ e $5$ (Alternativa C).",
             "bncc": "EF09MA09",
             "bnccDesc": "Compreender os processos de fatoração de expressões algébricas, com base em suas relações com os produtos notáveis, para resolver e elaborar problemas que possam ser representados por equações polinomiais do 2º grau.",
             "unidadeTematica": "Álgebra",
             "anoEscolar": "9º ano",
-            "topicoId": "b2-t4"
+            "topicoId": "b2-t4",
+            "image": null
           },
           {
-            "q": "Na feira, um pé de alface que custava $\\text{R\\$} 1{,}50$ passou a custar $\\text{R\\$} 2{,}85$. Qual o percentual de aumento que esse produto sofreu?",
+            "q": "Após uma semana de muita chuva na região onde mora, Maria, que é responsável pelas compras de sua casa, foi à feira comprar verduras. Ao chegar lá, assustou-se ao se deparar com um aumento muito elevado no preço dos produtos. Por exemplo, o pé de alface que, na semana anterior, custava $\\text{R\\$} 1{,}50$, agora estava custando $\\text{R\\$} 2{,}85$.\n\nCom base nessas informações, assinale a alternativa CORRETA.\nQual o percentual de aumento que esse produto sofreu?",
             "options": [
               "$185\\%$",
               "$85\\%$",
@@ -2064,15 +2066,16 @@ var mathData = window.mathData || {
               "$90\\%$"
             ],
             "correct": 4,
-            "explanation": "Aumento absoluto: $2{,}85 - 1{,}50 = 1{,}35$. Percentual: $\\frac{1{,}35}{1{,}50} = 0{,}90 = 90\\%$.",
-            "bncc": "EF08MA04",
-            "bnccDesc": "Resolver e elaborar problemas, envolvendo cálculo de porcentagens, incluindo o uso de tecnologias digitais.",
+            "explanation": "1. <strong>Cálculo do aumento em valor absoluto:</strong><br>$$\\text{Aumento} = \\text{R\\$} 2{,}85 - \\text{R\\$} 1{,}50 = \\text{R\\$} 1{,}35$$<br><br>2. <strong>Cálculo da taxa percentual relativa ao valor original:</strong><br>$$\\text{Taxa} = \\frac{\\text{Aumento}}{\\text{Valor Inicial}} = \\frac{1{,}35}{1{,}50} = \\frac{135}{150} = \\frac{9}{10} = 0{,}90 = 90\\%$$<br>Portanto, o percentual de aumento foi de $90\\%$ (Alternativa E).",
+            "bncc": "EF07MA02",
+            "bnccDesc": "Resolver e elaborar problemas que envolvam porcentagens, como os que lidam com acréscimos e decréscimos simples, utilizando estratégias pessoais, cálculo mental e calculadora, no contexto de educação financeira.",
             "unidadeTematica": "Números",
-            "anoEscolar": "8º ano",
-            "topicoId": "b1-t6"
+            "anoEscolar": "7º ano",
+            "topicoId": "b1-t2",
+            "image": null
           },
           {
-            "q": "Roberto e João pedalam numa pista circular. Roberto completa uma volta em $24\\text{ s}$ e João em $28\\text{ s}$. Se saírem juntos do mesmo ponto de largada, após quanto tempo voltarão a se encontrar no ponto de partida pela primeira vez?",
+            "q": "Roberto e João são amigos de infância e, sempre que podem, saem para pedalar juntos. Um dia, empolgados com a ideia de saberem mais sobre o desempenho da dupla, resolveram cronometrar o tempo que gastavam andando de bicicleta. Para tanto, decidiram pedalar numa pista circular, próxima à casa deles.\nConstataram, então, que Roberto dava uma volta completa em $24\\text{ segundos}$, enquanto João demorava $28\\text{ segundos}$ para fazer o mesmo percurso. Diante disso, João questionou:\n- Se sairmos juntos de um mesmo local e no mesmo momento, em quanto tempo voltaremos a nos encontrar, pela primeira vez, neste mesmo ponto de largada?\n\nAssinale a alternativa CORRETA.",
             "options": [
               "$3\\text{ min } 8\\text{ s}$",
               "$2\\text{ min } 48\\text{ s}$",
@@ -2081,15 +2084,16 @@ var mathData = window.mathData || {
               "$1\\text{ min } 48\\text{ s}$"
             ],
             "correct": 1,
-            "explanation": "Calcula-se o $MMC(24, 28) = 168\\text{ segundos}$. Convertendo para minutos: $168 = 2 \\times 60 + 48 = 2\\text{ min } 48\\text{ s}$.",
-            "bncc": "EF07MA01",
-            "bnccDesc": "Resolver e elaborar problemas com números naturais, envolvendo as noções de divisor e de múltiplo, podendo incluir máximo divisor comum ou mínimo múltiplo comum, por meio de estratégias diversas, sem a aplicação de algoritmos.",
+            "explanation": "1. <strong>Identificação do menor múltiplo comum:</strong><br>O primeiro reencontro no ponto inicial ocorre no instante correspondente ao $\\text{MMC}(24, 28)$.<br><br>2. <strong>Cálculo do MMC:</strong><br>Fatorando em números primos:<br>$$24 = 2^3 \\times 3$$<br>$$28 = 2^2 \\times 7$$<br>$$\\text{MMC}(24, 28) = 2^3 \\times 3 \\times 7 = 8 \\times 21 = 168\\text{ segundos}$$<br><br>3. <strong>Conversão para minutos e segundos:</strong><br>$$168 = 2 \\times 60 + 48 = 2\\text{ min } 48\\text{ s}$$<br>Portanto, eles voltarão a se encontrar após $2\\text{ min } 48\\text{ s}$ (Alternativa B).",
+            "bncc": "EF06MA06",
+            "bnccDesc": "Resolver e elaborar problemas que envolvam as ideias de múltiplo e de divisor, reconhecendo as características dos números primos e múltiplos.",
             "unidadeTematica": "Números",
-            "anoEscolar": "7º ano",
-            "topicoId": "b1-t3"
+            "anoEscolar": "6º ano",
+            "topicoId": "b1-t1",
+            "image": null
           },
           {
-            "q": "Diante da atual crise de mobilidade pela qual passam os moradores de sua cidade, Carlos decidiu ir trabalhar sempre a pé, fazendo a trajetória descrita na figura. Ao constatar que caminhava uma distância longa até o trabalho, certo dia pensou: 'Se eu fizesse esse caminho em linha reta, quantos metros a menos caminharia?'. Assinale a alternativa que responde à pergunta de Carlos de forma CORRETA.",
+            "q": "Diante da atual crise de mobilidade pela qual passam os moradores de sua cidade, Carlos decidiu ir trabalhar sempre a pé, fazendo a trajetória descrita na figura ao lado.\nAo constatar que caminhava uma distância longa até o trabalho, certo dia pensou:\n- Se eu fizesse esse caminho em linha reta, quantos metros a menos caminharia?\n\nAssinale a alternativa que responde à pergunta de Carlos de forma CORRETA.",
             "options": [
               "$230\\text{ m}$",
               "$150\\text{ m}$",
@@ -2098,37 +2102,38 @@ var mathData = window.mathData || {
               "$325\\text{ m}$"
             ],
             "correct": 2,
-            "explanation": "Pelo trajeto em zigue-zague indicado na figura, a distância total percorrida a pé é $100 + 80 + 50 + 100 + 50 + 30 = 410\\text{ m}$. Em linha reta, o deslocamento horizontal total é $100 + 50 + 50 = 200\\text{ m}$ e o vertical é $80 + 100 - 30 = 150\\text{ m}$. Pelo Teorema de Pitágoras, a distância em linha reta é $\\sqrt{200^2 + 150^2} = \\sqrt{40.000 + 22.500} = \\sqrt{62.500} = 250\\text{ m}$. Carlos caminharia a menos: $410 - 250 = 160\\text{ m}$.",
+            "explanation": "*(Nota histórica: Na prova oficial de 2017.1, esta questão foi anulada pela banca examinadora em sede de recurso. No gabarito preliminar, a banca assinalou $250\\text{ m}$, correspondente apenas ao comprimento da linha reta entre a casa e o trabalho. No entanto, o enunciado perguntou expressamente quantos metros a menos ele caminharia, cuja resposta matematicamente exata é a diferença $410\\text{ m} - 250\\text{ m} = 160\\text{ m}$, correspondente à Alternativa C. Mantivemos a resolução rigorosa e a alternativa correta C).*\n\n1. <strong>Cálculo da distância percorrida pelo caminho traçado:</strong><br>Somando os segmentos ortogonais:<br>$$d_{\\text{caminho}} = 100\\text{ m} + 80\\text{ m} + 50\\text{ m} + 100\\text{ m} + 50\\text{ m} + 30\\text{ m} = 410\\text{ m}$$<br><br>2. <strong>Cálculo do vetor deslocamento total (linha reta):</strong><br>- Deslocamento horizontal total (Leste): $\\Delta x = 100 + 50 + 50 = 200\\text{ m}$<br>- Deslocamento vertical total (Norte - Sul): $\\Delta y = 80 + 100 - 30 = 150\\text{ m}$<br><br>3. <strong>Cálculo da distância em linha reta (Teorema de Pitágoras):</strong><br>$$d_{\\text{reta}} = \\sqrt{(\\Delta x)^2 + (\\Delta y)^2} = \\sqrt{200^2 + 150^2} = \\sqrt{40000 + 22500} = \\sqrt{62500} = 250\\text{ m}$$<br><br>4. <strong>Cálculo da redução de percurso (\"quantos metros a menos\"):</strong><br>$$\\Delta d = d_{\\text{caminho}} - d_{\\text{reta}} = 410\\text{ m} - 250\\text{ m} = 160\\text{ m}$$<br>Portanto, Carlos caminharia $160\\text{ m}$ a menos (Alternativa C).",
             "bncc": "EF09MA14",
             "bnccDesc": "Resolver e elaborar problemas de aplicação do teorema de Pitágoras ou das relações de proporcionalidade envolvendo retas paralelas cortadas por secantes.",
             "unidadeTematica": "Geometria",
             "anoEscolar": "9º ano",
             "topicoId": "b3-t2",
             "image": {
-              "src": "https://drive.google.com/file/d/179facG_uj9WPbM_ssaHgKzxF9OWAoUvY/view?usp=sharing",
-              "alt": "Diagrama com a trajetória em linhas ortogonais partindo da Casa até o Trabalho, com segmentos cotados em metros: 100 m à direita, 80 m acima, 50 m à direita, 100 m acima, 50 m à direita e 30 m abaixo.",
-              "caption": "Figura: Trajetória descrita por Carlos até o trabalho (IFSC 2017.1)"
+              "src": "assets/img/questoes/ifsc/ifsc-2017-1-q05.png",
+              "alt": "Diagrama da trajetória percorrida por Carlos entre sua Casa e o Trabalho através de deslocamentos ortogonais cotados: 100 m a leste, 80 m ao norte, 50 m a leste, 100 m ao norte, 50 m a leste e 30 m ao sul.",
+              "caption": "Trajetória ortogonal de Carlos até o trabalho. Fonte: IFSC 2017.1"
             }
           },
           {
-            "q": "Analise as afirmações sobre produtos notáveis e fatoração (V ou F):<br>( ) $(3x - 2)^2 = 9x^2 - 12x + 4$<br>( ) $(x + 4)^2 = x^2 + 16$<br>( ) $64x^2 - 49 = (8x + 7)(8x - 7)$<br>( ) $4x^2 + 16x = 4x(x + 4)$<br>( ) $x^2 - 8x + 16 = (x - 4)^2$",
+            "q": "Após analisar as afirmações a seguir sobre produtos notáveis e fatoração, marque com (V) o que for verdadeiro e, com (F), o que for falso.\n\n( ) $(3a^2 - 2b)^2 = 9a^4 - 12a^2b + 4b^2$\n( ) $(a - b)^3 = a^3 - b^3$\n( ) $64a^2 - 49b^2 = (8a - 7b)(8a + 7b)$\n( ) $4a^2 - 16b^2 = (2a - 4b)^2$\n( ) $a^3 + b^3 = (a + b)(a^2 - ab + b^2)$\n\nAssinale a alternativa que contém a ordem CORRETA de preenchimento dos parênteses, de cima para baixo.",
             "options": [
               "V, F, V, F, V",
               "V, V, F, F, F",
-              "V, F, V, V, V",
+              "V, F, V, V, F",
               "F, F, V, V, V",
               "F, V, F, V, V"
             ],
-            "correct": 2,
-            "explanation": "1ª $(3x-2)^2 = 9x^2 - 12x + 4$ (V); 2ª falta o termo misto $8x$ (F); 3ª diferença de quadrados correta (V); 4ª fator comum $4x(x+4)$ correto (V); 5ª trinômio quadrado perfeito $(x-4)^2$ correto (V). Sequência: V, F, V, V, V.",
+            "correct": 0,
+            "explanation": "1. <strong>$(3a^2 - 2b)^2 = 9a^4 - 12a^2b + 4b^2$:</strong><br>Desenvolvimento do quadrado da diferença: $(3a^2)^2 - 2(3a^2)(2b) + (2b)^2 = 9a^4 - 12a^2b + 4b^2$. <strong>(Verdadeiro - V)</strong>.<br><br>2. <strong>$(a - b)^3 = a^3 - b^3$:</strong><br>O cubo da diferença correto é $a^3 - 3a^2b + 3ab^2 - b^3 \\ne a^3 - b^3$. <strong>(Falso - F)</strong>.<br><br>3. <strong>$64a^2 - 49b^2 = (8a - 7b)(8a + 7b)$:</strong><br>Diferença de dois quadrados: $(8a)^2 - (7b)^2 = (8a - 7b)(8a + 7b)$. <strong>(Verdadeiro - V)</strong>.<br><br>4. <strong>$4a^2 - 16b^2 = (2a - 4b)^2$:</strong><br>Diferença de dois quadrados fatora como $(2a - 4b)(2a + 4b)$, enquanto $(2a - 4b)^2 = 4a^2 - 16ab + 16b^2$. <strong>(Falso - F)</strong>.<br><br>5. <strong>$a^3 + b^3 = (a + b)(a^2 - ab + b^2)$:</strong><br>Identidade algébrica clássica da soma de dois cubos. <strong>(Verdadeiro - V)</strong>.<br><br>A sequência correta de preenchimento é V, F, V, F, V (Alternativa A).",
             "bncc": "EF09MA09",
             "bnccDesc": "Compreender os processos de fatoração de expressões algébricas, com base em suas relações com os produtos notáveis, para resolver e elaborar problemas que possam ser representados por equações polinomiais do 2º grau.",
             "unidadeTematica": "Álgebra",
             "anoEscolar": "9º ano",
-            "topicoId": "b2-t4"
+            "topicoId": "b2-t1",
+            "image": null
           },
           {
-            "q": "Uma cooperativa produz ração onde a quantidade final equivale a $20\\%$ da matéria-prima recebida. Quantos quilogramas de matéria-prima são necessários para produzir $150\\text{ toneladas}$ de ração ($1\\text{ t} = 1000\\text{ kg}$)?",
+            "q": "Uma cooperativa de Santa Catarina recebe, por mês, certa quantidade de matéria-prima para produzir ração. A quantidade de ração produzida equivale a $20\\%$ do total da matéria-prima recebida.\nSabendo-se que $1\\text{ tonelada}$ corresponde a $1.000\\text{ kg}$, qual a quantidade de matéria-prima, em $\\text{kg}$, que será necessária para produzir $150\\text{ toneladas}$ de ração?\n\nAssinale a alternativa CORRETA.",
             "options": [
               "$150.000\\text{ kg}$",
               "$750\\text{ kg}$",
@@ -2137,15 +2142,16 @@ var mathData = window.mathData || {
               "$750.000\\text{ kg}$"
             ],
             "correct": 4,
-            "explanation": "$150\\text{ t} = 150.000\\text{ kg}$. Como a ração é $20\\%$ da matéria-prima ($M$): $0{,}20 M = 150.000 \\Rightarrow M = \\frac{150.000}{0{,}20} = 750.000\\text{ kg}$.",
-            "bncc": "EF08MA04",
-            "bnccDesc": "Resolver e elaborar problemas, envolvendo cálculo de porcentagens, incluindo o uso de tecnologias digitais.",
+            "explanation": "1. <strong>Conversão de unidades:</strong><br>$$150\\text{ toneladas} = 150 \\times 1.000\\text{ kg} = 150.000\\text{ kg de ração}$$<br><br>2. <strong>Relação de proporcionalidade percentual:</strong><br>A ração produzida corresponde a $20\\% = 0{,}20 = \\frac{1}{5}$ da matéria-prima recebida ($M$):<br>$$0{,}20 \\times M = 150.000\\text{ kg}$$<br>$$M = \\frac{150.000}{0{,}20} = 150.000 \\times 5 = 750.000\\text{ kg}$$<br>Portanto, são necessários $750.000\\text{ kg}$ de matéria-prima (Alternativa E).",
+            "bncc": "EF07MA02",
+            "bnccDesc": "Resolver e elaborar problemas que envolvam porcentagens, como os que lidam com acréscimos e decréscimos simples, utilizando estratégias pessoais, cálculo mental e calculadora, no contexto de educação financeira.",
             "unidadeTematica": "Números",
-            "anoEscolar": "8º ano",
-            "topicoId": "b1-t6"
+            "anoEscolar": "7º ano",
+            "topicoId": "b1-t2",
+            "image": null
           },
           {
-            "q": "Considere as informações contidas na figura sobre as Olimpíadas 2016 e analise as afirmativas:<br>I. Foram servidas $1{,}1 \\times 10^7$ refeições.<br>II. Os fotógrafos representam $12\\%$ dos jornalistas credenciados.<br>III. O número de cabides representa $\\frac{1}{500}$ do total de itens adquiridos/alugados pelo comitê.<br>IV. Com a venda de ingressos, o comitê organizador dos jogos arrecadou aproximadamente $1{,}2\\text{ bilhão}$ de reais. Isso significa que cada um dos $7{,}5\\text{ milhões}$ de ingressos colocados à venda foi vendido ao preço médio de $\\text{R\\$} 160{,}00$.<br>Assinale a alternativa CORRETA.",
+            "q": "Considere as informações contidas na figura sobre as Olimpíadas 2016 e analise as afirmativas:\n\nI. Foram servidas $1{,}1 \\times 10^7$ refeições.\nII. Os fotógrafos representam $12\\%$ dos jornalistas credenciados.\nIII. O número de cabides representa $\\frac{1}{500}$ do total de itens adquiridos/alugados pelo comitê.\nIV. Com a venda de ingressos, o comitê organizador dos jogos arrecadou aproximadamente $1{,}2\\text{ bilhão}$ de reais. Isso significa que cada um dos $7{,}5\\text{ milhões}$ de ingressos colocados à venda foi vendido ao preço médio de $\\text{R\\$} 160{,}00$.\n\nAssinale a alternativa CORRETA.",
             "options": [
               "Apenas as afirmativas II e III são verdadeiras.",
               "Apenas as afirmativas I e II são verdadeiras.",
@@ -2154,20 +2160,20 @@ var mathData = window.mathData || {
               "Apenas as afirmativas II e IV são verdadeiras."
             ],
             "correct": 3,
-            "explanation": "Análise das afirmativas com base no infográfico oficial: I. $11\\text{ milhões} = 11 \\times 10^6 = 1{,}1 \\times 10^7$ (V). II. $\\frac{3.000}{25.000} = 0{,}12 = 12\\%$ (V). III. $\\frac{60.000}{30.000.000} = \\frac{6}{3.000} = \\frac{1}{500}$ (V). IV. Preço médio: $\\frac{1{,}2 \\times 10^9}{7{,}5 \\times 10^6} = \\frac{1.200}{7{,}5} = \\text{R\\$} 160{,}00$ (V). Todas as afirmativas são verdadeiras.",
-            "bncc": "EF09MA04",
-            "bnccDesc": "Resolver e elaborar problemas com números reais, inclusive em notação científica, envolvendo diferentes operações.",
+            "explanation": "1. <strong>afirmativa I (Verdadeira):</strong><br>O infográfico indica $11\\text{ milhões}$ de refeições: $11.000.000 = 1{,}1 \\times 10^7$.<br><br>2. <strong>afirmativa II (Verdadeira):</strong><br>O número de fotógrafos é $3.000$ em um total de $25.000$ jornalistas credenciados:<br>$$\\frac{3.000}{25.000} = \\frac{3}{25} = \\frac{12}{100} = 12\\%$$<br><br>3. <strong>afirmativa III (Verdadeira):</strong><br>São $60.000$ cabides para $30\\text{ milhões}$ ($30.000.000$) de itens adquiridos/alugados:<br>$$\\frac{60.000}{30.000.000} = \\frac{6}{3.000} = \\frac{1}{500}$$<br><br>4. <strong>afirmativa IV (Verdadeira):</strong><br>Dividindo a receita total de $1{,}2\\text{ bilhão}$ ($\text{R\\$} 1.200.000.000{,}00$) pelos $7{,}5\\text{ milhões}$ ($7.500.000$) de ingressos:<br>$$\\text{Preço médio} = \\frac{1.200.000.000}{7.500.000} = \\frac{1.200}{7{,}5} = \\text{R\\$} 160{,}00$$<br><br>Como todas as afirmativas são verdadeiras, a alternativa correta é a Alternativa D.",
+            "bncc": "EF08MA01",
+            "bnccDesc": "Efetuar cálculos com potências de expoentes inteiros e aplicar esse conhecimento na representação de números em notação científica.",
             "unidadeTematica": "Números",
-            "anoEscolar": "9º ano",
-            "topicoId": "b1-t7",
+            "anoEscolar": "8º ano",
+            "topicoId": "b1-t1",
             "image": {
-              "src": "https://drive.google.com/file/d/1L8qxLYdd0h-A2XKzwr8VSCAEvw5kn8zd/view?usp=sharing",
-              "alt": "Infográfico intitulado Os números no pódio com dados dos Jogos Olímpicos Rio 2016: 11 milhões de refeições, 25 mil jornalistas credenciados (8.000 repórteres e 3.000 fotógrafos), 60.000 cabides, 30 milhões de itens adquiridos/alugados e 7,5 milhões de ingressos.",
-              "caption": "Figura: Infográfico oficial com dados e números das Olimpíadas Rio 2016 (IFSC 2017.1)"
+              "src": "assets/img/questoes/ifsc/ifsc-2017-1-q08.png",
+              "alt": "Infográfico intitulado Os números no pódio com dados dos Jogos Olímpicos Rio 2016: 11 milhões de refeições, 25 mil jornalistas credenciados sendo 8.000 repórteres e 3.000 fotógrafos, 60.000 cabides, 30 milhões de itens adquiridos ou alugados pelo comitê e 7,5 milhões de ingressos colocados à venda.",
+              "caption": "Infográfico Os números no pódio (Olimpíadas Rio 2016). Fonte: IFSC 2017.1"
             }
           },
           {
-            "q": "Em um triângulo equilátero $ABC$, os lados medem $AB = 3x + y$, $AC = 2x + y + 2$ e $BC = x + 3y$. Qual é o perímetro desse triângulo equilátero?",
+            "q": "O triângulo, que possui três lados e três ângulos, é uma das figuras geométricas mais importantes da geometria plana. Sabendo-se que em um triângulo equilátero $ABC$, o comprimento do lado $AB$ mede $3x + y$, do lado $AC$ mede $2x + y + 2$ e do lado $BC$ mede $x + 3y$, qual é o perímetro desse triângulo?\n\nAssinale a alternativa CORRETA.",
             "options": [
               "$12\\text{ u.c.}$",
               "$6\\text{ u.c.}$",
@@ -2176,29 +2182,31 @@ var mathData = window.mathData || {
               "$18\\text{ u.c.}$"
             ],
             "correct": 2,
-            "explanation": "Como todos os lados são iguais: $3x + y = 2x + y + 2 \\Rightarrow x = 2$. Igualando $AB$ e $BC$: $3(2) + y = 2 + 3y \\Rightarrow 6 + y = 2 + 3y \\Rightarrow 2y = 4 \\Rightarrow y = 2$. O lado mede $3(2) + 2 = 8\\text{ u.c.}$ O perímetro é $3 \\times 8 = 24\\text{ u.c.}$",
+            "explanation": "1. <strong>Propriedade do triângulo equilátero:</strong><br>Todos os três lados possuem medidas congruentes: $AB = AC = BC$.<br><br>2. <strong>Montagem e resolução do sistema linear:</strong><br>Igualando $AB = AC$:<br>$$3x + y = 2x + y + 2 \\implies 3x - 2x = 2 \\implies x = 2$$<br>Igualando $AB = BC$ com $x = 2$:<br>$$3(2) + y = 2 + 3y \\implies 6 + y = 2 + 3y \\implies 2y = 4 \\implies y = 2$$<br><br>3. <strong>Cálculo da medida do lado e do perímetro:</strong><br>$$L = 3(2) + 2 = 6 + 2 = 8\\text{ u.c.}$$<br>$$2p = 3 \\times L = 3 \\times 8 = 24\\text{ u.c.}$$<br>Portanto, o perímetro do triângulo é $24\\text{ u.c.}$ (Alternativa C).",
             "bncc": "EF08MA08",
-            "bnccDesc": "Resolver e elaborar problemas relacionados ao seu contexto próximo, que possam ser representados por sistemas de equações de 1º grau com duas incógnitas e interpretá-los, utilizando, inclusive, o plano cartesiano como recurso.",
+            "bnccDesc": "Resolver e elaborar problemas relacionados ao seu contexto próximo, que possam ser representados por sistemas de equações de 1º grau com duas incógnitas e interpretá-los, caracterizando o significado dos termos e o significado da solução.",
             "unidadeTematica": "Álgebra",
             "anoEscolar": "8º ano",
-            "topicoId": "b2-t3"
+            "topicoId": "b2-t3",
+            "image": null
           },
           {
-            "q": "Uma família pegou um empréstimo no valor de $30\\%$ de sua renda média ($\\text{R\\$} 1.368{,}00$). Pagará juros compostos de $2\\%$ ao mês em $2$ meses. Quanto pegou emprestado e qual o montante final?",
+            "q": "Segundo dados do IBGE (Instituto Brasileiro de Geografia e Estatística), o rendimento médio mensal das famílias catarinenses é $\\text{R\\$} 1.368{,}00$.\nConsiderando-se que uma família pegou um empréstimo no valor de $30\\%$ de sua renda média mensal e vai pagar este empréstimo a uma taxa de juros compostos de $2\\%$ ao mês, responda:\na) Quanto essa família pegou emprestado?\nb) Qual o valor que a família irá pagar (montante final) se saldar essa dívida em $2\\text{ meses}$?\n\nAssinale a alternativa CORRETA, que contém as respostas das questões acima.",
             "options": [
-              "$\\text{R\\$} 407{,}40$ e $\\text{R\\$} 423{,}86$",
-              "$\\text{R\\$} 410{,}40$ e $\\text{R\\$} 425{,}94$",
-              "$\\text{R\\$} 409{,}40$ e $\\text{R\\$} 424{,}90$",
-              "$\\text{R\\$} 409{,}40$ e $\\text{R\\$} 425{,}94$",
-              "$\\text{R\\$} 410{,}40$ e $\\text{R\\$} 426{,}98$"
+              "Pegou emprestado $\\text{R\\$} 407{,}40$ e pagará, ao final de $2\\text{ meses}$, $\\text{R\\$} 423{,}86$.",
+              "Pegou emprestado $\\text{R\\$} 410{,}40$ e pagará, ao final de $2\\text{ meses}$, $\\text{R\\$} 425{,}94$.",
+              "Pegou emprestado $\\text{R\\$} 409{,}40$ e pagará, ao final de $2\\text{ meses}$, $\\text{R\\$} 424{,}90$.",
+              "Pegou emprestado $\\text{R\\$} 409{,}40$ e pagará, ao final de $2\\text{ meses}$, $\\text{R\\$} 425{,}94$.",
+              "Pegou emprestado $\\text{R\\$} 410{,}40$ e pagará, ao final de $2\\text{ meses}$, $\\text{R\\$} 426{,}98$."
             ],
             "correct": 4,
-            "explanation": "Empréstimo: $0{,}30 \\times 1368 = \\text{R\\$} 410,40$. Montante com juros compostos: $M = 410{,}40 \\times (1{,}02)^2 = 410{,}40 \\times 1{,}0404 = \\text{R\\$} 426,98$.",
+            "explanation": "1. <strong>Cálculo do valor do empréstimo (capital inicial $C$):</strong><br>$$C = 30\\% \\times \\text{R\\$} 1.368{,}00 = 0{,}30 \\times 1.368 = \\text{R\\$} 410{,}40$$<br><br>2. <strong>Cálculo do montante acumulado a juros compostos:</strong><br>A taxa é de $i = 2\\% = 0{,}02$ a.m. por $t = 2\\text{ meses}$:<br>$$M = C(1 + i)^t = 410{,}40 \\times (1 + 0{,}02)^2 = 410{,}40 \\times (1{,}02)^2$$<br>$$(1{,}02)^2 = 1{,}0404$$<br>$$M = 410{,}40 \\times 1{,}0404 = 426{,}98016 \\approx \\text{R\\$} 426{,}98$$<br>Portanto, a família pegou emprestado $\\text{R\\$} 410{,}40$ e pagará $\\text{R\\$} 426{,}98$ (Alternativa E).",
             "bncc": "EF09MA05",
             "bnccDesc": "Resolver e elaborar problemas que envolvam porcentagens, com a ideia de aplicação de percentuais sucessivos e a determinação das taxas percentuais, preferencialmente com o uso de tecnologias digitais, no contexto da educação financeira.",
             "unidadeTematica": "Números",
             "anoEscolar": "9º ano",
-            "topicoId": "b1-t6"
+            "topicoId": "b1-t2",
+            "image": null
           }
         ],
         "slug": "prova-ifsc-20171",
@@ -2226,21 +2234,44 @@ var mathData = window.mathData || {
         },
         "questions": [
           {
-            "q": "Um cliente sacou $\\text{R\\$} 580{,}00$ no caixa eletrônico e recebeu toda a quantia em $47$ notas de $\\text{R\\$} 5{,}00$ e $\\text{R\\$} 20{,}00$. Quantas notas de cada valor ele recebeu?",
+            "q": "Um cliente foi ao caixa do banco do qual é correntista e sacou $\\text{R\\$} 580{,}00$. Sabendo-se que a pessoa recebeu toda a quantia em $47\\text{ notas}$ e que eram apenas notas de $\\text{R\\$} 5{,}00$ e de $\\text{R\\$} 20{,}00$, é CORRETO afirmar que a pessoa recebeu:\n\nAssinale a alternativa CORRETA.",
             "options": [
-              "$25$ notas de $\\text{R\\$} 5{,}00$ e $22$ notas de $\\text{R\\$} 20{,}00$",
-              "$20$ notas de $\\text{R\\$} 5{,}00$ e $27$ notas de $\\text{R\\$} 20{,}00$",
-              "$24$ notas de $\\text{R\\$} 5{,}00$ e $23$ notas de $\\text{R\\$} 20{,}00$",
-              "$22$ notas de $\\text{R\\$} 5{,}00$ e $25$ notas de $\\text{R\\$} 20{,}00$",
-              "$23$ notas de $\\text{R\\$} 5{,}00$ e $24$ notas de $\\text{R\\$} 20{,}00$"
+              "25 notas de $\\text{R\\$} 5{,}00$ e 22 notas de $\\text{R\\$} 20{,}00$.",
+              "20 notas de $\\text{R\\$} 5{,}00$ e 27 notas de $\\text{R\\$} 20{,}00$.",
+              "23 notas de $\\text{R\\$} 5{,}00$ e 24 notas de $\\text{R\\$} 20{,}00$.",
+              "27 notas de $\\text{R\\$} 5{,}00$ e 20 notas de $\\text{R\\$} 20{,}00$.",
+              "24 notas de $\\text{R\\$} 5{,}00$ e 23 notas de $\\text{R\\$} 20{,}00$."
             ],
-            "correct": 2,
-            "explanation": "Sistema: $x + y = 47$ e $5x + 20y = 580$. Multiplicando a 1ª por $-5$: $15y = 345 \\Rightarrow y = 23$ (notas de $\\text{R\\$} 20$) e $x = 24$ (notas de $\\text{R\\$} 5$).",
+            "correct": 4,
+            "explanation": "1. <strong>Modelagem do sistema de equações do 1º grau:</strong><br>Sejam $x$ a quantidade de cédulas de $\\text{R\\$} 5{,}00$ e $y$ a quantidade de cédulas de $\\text{R\\$} 20{,}00$:<br>$$\\begin{cases} x + y = 47 \\\\ 5x + 20y = 580 \\end{cases}$$<br><br>2. <strong>Resolução pelo método da substituição:</strong><br>Isolando $x$ na primeira equação: $x = 47 - y$. Substituindo na segunda:<br>$$5(47 - y) + 20y = 580$$<br>$$235 - 5y + 20y = 580 \\implies 15y = 580 - 235 = 345$$<br>$$y = \\frac{345}{15} = 23\\text{ cédulas de R\\$} 20{,}00$$<br><br>3. <strong>Determinação das notas de $\\text{R\\$} 5{,}00$:</strong><br>$$x = 47 - 23 = 24\\text{ cédulas de R\\$} 5{,}00$$<br>Portanto, foram recebidas 24 notas de $\\text{R\\$} 5{,}00$ e 23 notas de $\\text{R\\$} 20{,}00$ (Alternativa E).",
             "bncc": "EF08MA08",
-            "bnccDesc": "Resolver e elaborar problemas relacionados ao seu contexto próximo, que possam ser representados por sistemas de equações de 1º grau com duas incógnitas e interpretá-los, utilizando, inclusive, o plano cartesiano como recurso.",
+            "bnccDesc": "Resolver e elaborar problemas relacionados ao seu contexto próximo, que possam ser representados por sistemas de equações de 1º grau com duas incógnitas e interpretá-los.",
             "unidadeTematica": "Álgebra",
             "anoEscolar": "8º ano",
-            "topicoId": "b2-t3"
+            "topicoId": "b2-t3",
+            "image": null
+          },
+          {
+            "q": "Uma das práticas recomendadas pelos nutricionistas para tentarmos garantir o consumo adequado de alimentos é a leitura da tabela de informação nutricional que deve estar presente nas embalagens dos produtos.\n\nPreocupado em garantir uma boa alimentação para a sua família, um cliente chega à prateleira do supermercado e constata que um alimento contém, em sua embalagem, uma tabela de informação nutricional na qual podem ser observados os seguintes valores:\n\nCom base nessas informações, é CORRETO afirmar que:",
+            "options": [
+              "uma porção de $100\\text{ g}$ deste alimento contém $80\\text{ g}$ de carboidratos.",
+              "uma porção de $150\\text{ g}$ deste alimento fornece $840\\text{ Kcal}$.",
+              "uma porção de $75\\text{ g}$ deste alimento contém $12\\text{ g}$ de proteínas.",
+              "uma porção de $62{,}5\\text{ g}$ deste alimento contém menos de $5\\text{ g}$ de gorduras totais.",
+              "o triplo da porção de referência da tabela fornece mais de $500\\text{ Kcal}$."
+            ],
+            "correct": 1,
+            "explanation": "1. <strong>Identificação dos valores da porção de referência ($25\\text{ g}$):</strong><br>- Valor energético: $140\\text{ Kcal}$<br>- Carboidratos: $18\\text{ g}$<br>- Proteínas: $3{,}5\\text{ g}$<br>- Gorduras totais: $2{,}5\\text{ g}$<br><br>2. <strong>Análise da alternativa B (porção de $150\\text{ g}$):</strong><br>A massa de $150\\text{ g}$ equivale a $\\frac{150}{25} = 6$ porções de referência. O valor energético fornecido é:<br>$$E = 6 \\times 140\\text{ Kcal} = 840\\text{ Kcal}$$<br>A afirmação B é rigorosamente exata e verdadeira.<br><br>3. <strong>Verificação das demais alternativas:</strong><br>- A: $100\\text{ g}$ ($4$ porções) contém $4 \\times 18 = 72\\text{ g}$ de carboidratos (não 80g).<br>- C: $75\\text{ g}$ ($3$ porções) contém $3 \\times 3{,}5 = 10{,}5\\text{ g}$ de proteínas (não 12g).<br>- D: $62{,}5\\text{ g}$ ($2{,}5$ porções) contém $2{,}5 \\times 2{,}5 = 6{,}25\\text{ g}$ de gorduras (que é mais de 5g).<br>- E: Triplo da porção ($75\\text{ g}$) fornece $3 \\times 140 = 420\\text{ Kcal}$ (menos de 500 Kcal).<br><br>Portanto, a alternativa correta é a Alternativa B.",
+            "bncc": "EF07MA17",
+            "bnccDesc": "Resolver e elaborar problemas que envolvam variação de proporcionalidade direta e do tipo inversa entre duas grandezas, utilizando sentença algébrica para expressar a relação entre elas.",
+            "unidadeTematica": "Álgebra",
+            "anoEscolar": "7º ano",
+            "topicoId": "b2-t2",
+            "image": {
+              "src": "assets/img/questoes/ifsc/ifsc-2017-2-q02.png",
+              "alt": "Tabela de informação nutricional de um produto alimentar para porção de 25g contendo 140 Kcal, 18g de carboidratos, 3,5g de proteínas e 2,5g de gorduras totais.",
+              "caption": "Fonte: IFSC 2017.2"
+            }
           },
           {
             "q": "Considerando a equação $-5(3x - 8) = -45$, é CORRETO afirmar que ela é equivalente a:",
@@ -2252,153 +2283,139 @@ var mathData = window.mathData || {
               "$-15x - 53 = 0$"
             ],
             "correct": 3,
-            "explanation": "Aplicando a distributiva: $-15x + 40 = -45 \\Rightarrow -15x + 40 + 45 = 0 \\Rightarrow -15x + 85 = 0$.",
+            "explanation": "1. <strong>Aplicação da propriedade distributiva da multiplicação:</strong><br>$$-5(3x - 8) = -45 \\implies -15x + 40 = -45$$<br><br>2. <strong>Transposição de termos para a forma canônica igualada a zero:</strong><br>$$-15x + 40 + 45 = 0$$<br>$$-15x + 85 = 0$$<br>Portanto, a equação dada é equivalente a $-15x + 85 = 0$ (Alternativa D).",
             "bncc": "EF07MA18",
             "bnccDesc": "Resolver e elaborar problemas que possam ser representados por equações polinomiais de 1º grau, redutíveis à forma ax + b = c, fazendo uso das propriedades da igualdade.",
             "unidadeTematica": "Álgebra",
             "anoEscolar": "7º ano",
-            "topicoId": "b2-t3"
+            "topicoId": "b2-t3",
+            "image": null
           },
           {
-            "q": "Jéssica comprou $7$ pizzas de $8$ fatias cada. Foram consumidas $6$ pizzas inteiras mais $5$ fatias da sétima pizza. A quantidade total de pizza consumida na forma fracionária corresponde a:",
+            "q": "Jéssica comprou $7\\text{ pizzas}$, com $8\\text{ fatias}$ cada uma, para comemorar seu aniversário junto com os amigos. No final da festa, ao terminarem a refeição, a mãe de Jéssica constatou que foram consumidas $6\\text{ pizzas inteiras}$. Além dessas, foram consumidas também $5\\text{ fatias}$, das oito que havia na sétima pizza.\n\nA fração que representa de forma CORRETA a quantidade total de pizza que Jéssica e seus amigos comeram é:",
             "options": [
-              "$\\frac{48}{8}$",
               "$\\frac{53}{8}$",
-              "$\\frac{56}{8}$",
-              "$\\frac{47}{8}$",
-              "$\\frac{55}{8}$"
+              "$\\frac{46}{8}$",
+              "$\\frac{11}{8}$",
+              "$\\frac{7}{8}$",
+              "$\\frac{5}{8}$"
             ],
-            "correct": 1,
-            "explanation": "Fatias consumidas: $6 \\times 8 + 5 = 48 + 5 = 53$ fatias. Como cada pizza tem 8 fatias, a fração é $\\frac{53}{8}$.",
-            "bncc": "EF06MA10",
-            "bnccDesc": "Resolver e elaborar problemas que envolvam adição ou subtração com números racionais positivos na representação fracionária.",
+            "correct": 0,
+            "explanation": "1. <strong>Representação da quantidade em número misto:</strong><br>Foram consumidas $6$ pizzas inteiras mais $\\frac{5}{8}$ de outra pizza:<br>$$\\text{Quantidade} = 6 + \\frac{5}{8}$$<br><br>2. <strong>Conversão para fração imprópria:</strong><br>$$6 + \\frac{5}{8} = \\frac{6 \\times 8 + 5}{8} = \\frac{48 + 5}{8} = \\frac{53}{8}$$<br>Alternativamente, cada pizza contém $8$ fatias. Foram consumidas $6 \\times 8 + 5 = 48 + 5 = 53\\text{ fatias}$. Como a unidade é uma pizza de $8$ fatias, a fração consumida é $\\frac{53}{8}$.<br>Portanto, a alternativa correta é a Alternativa A.",
+            "bncc": "EF06MA07",
+            "bnccDesc": "Compreender, comparar e ordenar frações associadas às ideias de partes de inteiros e resultado de divisão, identificando frações equivalentes.",
             "unidadeTematica": "Números",
             "anoEscolar": "6º ano",
-            "topicoId": "b1-t5"
+            "topicoId": "b1-t4",
+            "image": null
           },
           {
-            "q": "Após $30\\text{ min}$ de chuva, o volume de um açude era $160\\text{ m}^3$. Passados mais $12\\text{ min}$, o volume foi para $208\\text{ m}^3$. Se o volume cresceu a taxa constante, qual era o volume inicial do açude antes da chuva?",
+            "q": "Além de oferecer cursos gratuitos de Ensino Médio e Graduação, entre outros, o IFSC também oferece a seus alunos e à comunidade a chance de participação em aulas de Teatro, Prática de Orquestra e Coral.\n\nSabendo que uma determinada atividade do Coral do IFSC, incluindo tempo de viagem e apresentação, teve início às $21\\text{h}47\\text{min}$ e terminou às $05\\text{h}22\\text{min}$ da manhã do dia seguinte, assinale a alternativa CORRETA, que apresenta o tempo total de duração da atividade:",
             "options": [
-              "$40\\text{ m}^3$",
-              "$48\\text{ m}^3$",
-              "$60\\text{ m}^3$",
-              "$50\\text{ m}^3$",
-              "$35\\text{ m}^3$"
+              "505 minutos",
+              "385 minutos",
+              "455 minutos",
+              "515 minutos",
+              "985 minutos"
             ],
-            "correct": 0,
-            "explanation": "Vazão da chuva: $\\frac{208 - 160}{12} = \\frac{48}{12} = 4\\text{ m}^3/\\text{min}$. Em 30 minutos entraram $30 \\times 4 = 120\\text{ m}^3$. O volume inicial era $160 - 120 = 40\\text{ m}^3$.",
-            "bncc": "EF09MA08",
-            "bnccDesc": "Resolver e elaborar problemas que envolvam relações de proporcionalidade direta e inversa entre duas ou mais grandezas, inclusive escalas, divisão em partes proporcionais e taxa de variação, em contextos socioculturais, ambientais e de outras áreas.",
-            "unidadeTematica": "Álgebra",
-            "anoEscolar": "9º ano",
-            "topicoId": "b2-t2"
+            "correct": 2,
+            "explanation": "1. <strong>Cálculo do intervalo de tempo no primeiro dia (até meia-noite):</strong><br>Das $21\\text{h}47\\text{min}$ até as $24\\text{h}00\\text{min}$ faltam:<br>$$24\\text{h}00\\text{min} - 21\\text{h}47\\text{min} = 2\\text{h}13\\text{min}$$<br>Em minutos: $2 \\times 60 + 13 = 120 + 13 = 133\\text{ minutos}$.<br><br>2. <strong>Cálculo do tempo decorrido no segundo dia:</strong><br>Da meia-noite até as $05\\text{h}22\\text{min}$ da manhã decorrem:<br>$$5\\text{h}22\\text{min} = 5 \\times 60 + 22 = 300 + 22 = 322\\text{ minutos}$$<br><br>3. <strong>Soma dos tempos parciais:</strong><br>$$\\text{Tempo total} = 133 + 322 = 455\\text{ minutos}$$<br>Portanto, a atividade durou 455 minutos (Alternativa C).",
+            "bncc": "EF06MA24",
+            "bnccDesc": "Resolver e elaborar problemas que envolvam as grandezas comprimento, massa, tempo, temperatura, área, capacidade e volume, sem uso de fórmulas, inseridos, sempre que possível, em contextos oriundos de situações reais.",
+            "unidadeTematica": "Grandezas e medidas",
+            "anoEscolar": "6º ano",
+            "topicoId": "b1-t2",
+            "image": null
           },
           {
-            "q": "Um terreno retangular tem comprimento igual ao dobro da largura mais $5\\text{ metros}$ ($C = 2L + 5$). Sabendo que seu perímetro é $70\\text{ metros}$, sua área total é:",
+            "q": "Ao começar a chover em uma pequena cidade do interior de Santa Catarina, um açude tinha, inicialmente, certo volume de água.\n\nApós $30\\text{ minutos}$ de chuva, o volume de água do açude estava em $160\\text{ m}^3$ e, passados mais $12\\text{ minutos}$, o volume foi para $208\\text{ m}^3$.\n\nSabendo-se que o volume de água cresceu a uma taxa constante, determine qual era o volume de água do açude, em metros cúbicos, no instante em que começou a chover.\n\nAssinale a alternativa CORRETA.",
             "options": [
-              "$250\\text{ m}^2$",
-              "$300\\text{ m}^2$",
-              "$200\\text{ m}^2$",
-              "$150\\text{ m}^2$",
-              "$350\\text{ m}^2$"
+              "120",
+              "112",
+              "48",
+              "40",
+              "Zero"
             ],
-            "correct": 0,
-            "explanation": "Perímetro $= 2(C + L) = 2(2L + 5 + L) = 6L + 10 = 70 \\Rightarrow 6L = 60 \\Rightarrow L = 10\\text{ m}$. Comprimento $C = 2(10) + 5 = 25\\text{ m}$. Área $= 25 \\times 10 = 250\\text{ m}^2$.",
-            "bncc": "EF08MA19",
-            "bnccDesc": "Resolver e elaborar problemas que envolvam medidas de área de figuras geométricas, utilizando expressões de cálculo de área (quadriláteros, triângulos e círculos), em situações como determinar medida de terrenos.",
-            "unidadeTematica": "Grandezas e Medidas",
-            "anoEscolar": "8º ano",
-            "topicoId": "b4-t1"
-          },
-          {
-            "q": "Seu João emprestou $\\text{R\\$} 1.000{,}00$ a juros simples e pagou montante de $\\text{R\\$} 1.320{,}00$ após $4\\text{ meses}$. Dona Maria emprestou $\\text{R\\$} 1.200{,}00$ e pagou $\\text{R\\$} 1.680{,}00$ após $5\\text{ meses}$. As taxas mensais de juros simples de João e Maria foram respectivamente:",
-            "options": [
-              "$8\\%\\text{ a.m.}$ e $8\\%\\text{ a.m.}$",
-              "$6\\%\\text{ a.m.}$ e $8\\%\\text{ a.m.}$",
-              "$8\\%\\text{ a.m.}$ e $10\\%\\text{ a.m.}$",
-              "$10\\%\\text{ a.m.}$ e $8\\%\\text{ a.m.}$",
-              "$7\\%\\text{ a.m.}$ e $9\\%\\text{ a.m.}$"
-            ],
-            "correct": 0,
-            "explanation": "João: Juros $= 320$. $320 = 1000 \\cdot i_1 \\cdot 4 \\Rightarrow i_1 = \\frac{320}{4000} = 0{,}08 = 8\\%\\text{ a.m.}$ Maria: Juros $= 480$. $480 = 1200 \\cdot i_2 \\cdot 5 \\Rightarrow i_2 = \\frac{480}{6000} = 0{,}08 = 8\\%\\text{ a.m.}$",
-            "bncc": "EF08MA04",
-            "bnccDesc": "Resolver e elaborar problemas, envolvendo cálculo de porcentagens, incluindo o uso de tecnologias digitais.",
-            "unidadeTematica": "Números",
-            "anoEscolar": "8º ano",
-            "topicoId": "b1-t6"
-          },
-          {
-            "q": "Um reservatório cilíndrico tem $10\\text{ m}$ de diâmetro interno (raio $5\\text{ m}$) e $10\\text{ m}$ de altura. Considerando $\\pi = 3{,}14$, qual a capacidade máxima desse reservatório em Litros ($1\\text{ m}^3 = 1000\\text{ L}$)?",
-            "options": [
-              "$785.000\\text{ Litros}$",
-              "$314.000\\text{ Litros}$",
-              "$250.000\\text{ Litros}$",
-              "$1.570.000\\text{ Litros}$",
-              "$78.500\\text{ Litros}$"
-            ],
-            "correct": 0,
-            "explanation": "$V = \\pi r^2 h = 3{,}14 \\times 5^2 \\times 10 = 3{,}14 \\times 25 \\times 10 = 785\\text{ m}^3$. Em litros: $785 \\times 1000 = 785.000\\text{ Litros}$.",
-            "bncc": "EF09MA19",
-            "bnccDesc": "Resolver e elaborar problemas que envolvam medidas de volumes de prismas e de cilindros retos, inclusive com uso de expressões de cálculo, em situações cotidianas.",
-            "unidadeTematica": "Grandezas e Medidas",
-            "anoEscolar": "9º ano",
-            "topicoId": "b4-t2"
-          },
-          {
-            "q": "Um produto eletrônico que custava $\\text{R\\$} 800{,}00$ sofreu um aumento de $15\\%$ antes do Natal e, em janeiro, sofreu um desconto de $10\\%$ sobre o novo preço. O valor final pago em janeiro foi:",
-            "options": [
-              "$\\text{R\\$} 828{,}00$",
-              "$\\text{R\\$} 840{,}00$",
-              "$\\text{R\\$} 800{,}00$",
-              "$\\text{R\\$} 832{,}00$",
-              "$\\text{R\\$} 850{,}00$"
-            ],
-            "correct": 0,
-            "explanation": "1º Aumento: $800 \\times 1{,}15 = \\text{R\\$} 920,00$. 2º Desconto: $920 \\times 0{,}90 = \\text{R\\$} 828,00$.",
-            "bncc": "EF08MA04",
-            "bnccDesc": "Resolver e elaborar problemas, envolvendo cálculo de porcentagens, incluindo o uso de tecnologias digitais.",
-            "unidadeTematica": "Números",
-            "anoEscolar": "8º ano",
-            "topicoId": "b1-t6"
-          },
-          {
-            "q": "Uma das práticas recomendadas pelos nutricionistas para tentarmos garantir o consumo adequado de alimentos é a leitura da tabela de informação nutricional que deve estar presente nas embalagens dos produtos. Preocupado em garantir uma boa alimentação para a sua família, um cliente chega à prateleira do supermercado e constata que um alimento contém, em sua embalagem, uma tabela de informação nutricional apresentada na figura. Com base nessas informações, é CORRETO afirmar que:",
-            "options": [
-              "uma porção de $100\\text{ g}$ deste alimento contém $80\\text{ g}$ de carboidratos.",
-              "uma porção de $150\\text{ g}$ deste alimento fornece $840\\text{ Kcal}$.",
-              "uma porção de $75\\text{ g}$ deste alimento contém $12\\text{ g}$ de proteínas.",
-              "uma porção de $62{,}5\\text{ g}$ deste alimento contém menos de $5\\text{ g}$ de gorduras totais.",
-              "o triplo da porção de referência da tabela fornece mais de $500\\text{ Kcal}$."
-            ],
-            "correct": 1,
-            "explanation": "A porção de referência de $25\\text{ g}$ fornece $140\\text{ Kcal}$. Para uma porção de $150\\text{ g}$, temos $\\frac{150}{25} = 6$ vezes a porção de referência. O valor energético fornecido é $6 \\times 140 = 840\\text{ Kcal}$, o que torna a alternativa B correta.",
-            "bncc": "EF07MA13",
-            "bnccDesc": "Compreender a ideia de variável, representada por letra ou símbolo, para expressar relação entre duas grandezas, diferenciando-a da ideia de incógnita.",
+            "correct": 3,
+            "explanation": "1. <strong>Cálculo da taxa de variação constante do volume:</strong><br>No intervalo adicional de $12\\text{ minutos}$, o volume aumentou de $160\\text{ m}^3$ para $208\\text{ m}^3$:<br>$$\\Delta V = 208 - 160 = 48\\text{ m}^3$$<br>A taxa de crescimento por minuto é:<br>$$\\text{Taxa} = \\frac{48\\text{ m}^3}{12\\text{ min}} = 4\\text{ m}^3/\\text{min}$$<br><br>2. <strong>Cálculo do volume inicial no início da chuva ($t = 0$):</strong><br>Nos primeiros $30\\text{ minutos}$, o volume que entrou no açude foi de:<br>$$V_{\\text{entrada}} = 30\\text{ min} \\times 4\\text{ m}^3/\\text{min} = 120\\text{ m}^3$$<br>Como o volume aos $30\\text{ minutos}$ atingiu $160\\text{ m}^3$, o volume inicial $V_0$ era de:<br>$$V_0 = 160 - 120 = 40\\text{ m}^3$$<br>Portanto, no início da chuva havia $40\\text{ m}^3$ de água (Alternativa D).",
+            "bncc": "EF07MA17",
+            "bnccDesc": "Resolver e elaborar problemas que envolvam variação de proporcionalidade direta e do tipo inversa entre duas grandezas, utilizando sentença algébrica para expressar a relação entre elas.",
             "unidadeTematica": "Álgebra",
             "anoEscolar": "7º ano",
-            "topicoId": "b2-t1",
-            "image": {
-              "src": "https://drive.google.com/file/d/17t6_NeytGOWE9w1lgwyVeaEVwliLLor1/view?usp=sharing",
-              "alt": "Tabela de informação nutricional com porção de 25 g: Valor energético 140 Kcal, Carboidratos 18 g, Proteínas 3,5 g e Gorduras totais 2,5 g.",
-              "caption": "Figura: Tabela de informação nutricional por porção de 25g (IFSC 2017.2)"
-            }
+            "topicoId": "b2-t2",
+            "image": null
           },
           {
-            "q": "Uma apresentação do Coral do IFSC iniciou às $19\\text{h } 45\\text{min}$ e terminou às $21\\text{h } 20\\text{min}$. A duração total dessa apresentação foi de:",
+            "q": "O proprietário de alguns imóveis deseja vender um de seus terrenos para comprar um apartamento. Para que a imobiliária possa publicar o anúncio de venda em seu site, solicita ao proprietário que ele informe quais as dimensões do terreno.\n\nO dono, então, informa que se trata de um terreno retangular com $74\\text{ m}$ de perímetro e que o comprimento do imóvel tem $5\\text{ m}$ a mais do que sua largura.\n\nCom base nesses dados, o corretor de imóveis concluiu, de maneira correta, que as dimensões do terreno e sua área são, respectivamente:\n\nAssinale a alternativa CORRETA.",
             "options": [
-              "$1\\text{h } 25\\text{min}$",
-              "$1\\text{h } 35\\text{min}$",
-              "$1\\text{h } 45\\text{min}$",
-              "$2\\text{h } 05\\text{min}$",
-              "$1\\text{h } 15\\text{min}$"
+              "$18\\text{ m}$, $23\\text{ m}$ e $414\\text{ m}^2$.",
+              "$17\\text{ m}$, $22\\text{ m}$ e $374\\text{ m}^2$.",
+              "$16\\text{ m}$, $21\\text{ m}$ e $336\\text{ m}^2$.",
+              "$15\\text{ m}$, $20\\text{ m}$ e $300\\text{ m}^2$.",
+              "$14\\text{ m}$, $19\\text{ m}$ e $266\\text{ m}^2$."
             ],
-            "correct": 1,
-            "explanation": "Das $19\\text{h } 45\\text{min}$ até às $20\\text{h } 00\\text{min}$ são $15\\text{ min}$. Das $20\\text{h } 00\\text{min}$ até às $21\\text{h } 20\\text{min}$ são $1\\text{h } 20\\text{min}$. Total: $15\\text{ min} + 1\\text{h } 20\\text{min} = 1\\text{h } 35\\text{min}$.",
-            "bncc": "EF06MA24",
-            "bnccDesc": "Resolver e elaborar problemas que envolvam as grandezas comprimento, massa, tempo, temperatura, área (triângulos e retângulos), capacidade e volume (sólidos formados por blocos retangulares), sem uso de fórmulas, inseridos, sempre que possível, em contextos oriundos de situações reais e/ou relacionadas às outras áreas do conhecimento.",
-            "unidadeTematica": "Grandezas e Medidas",
-            "anoEscolar": "6º ano",
-            "topicoId": "b4-t2"
+            "correct": 2,
+            "explanation": "1. <strong>Equacionamento do perímetro do terreno retangular:</strong><br>Seja $L$ a largura e $C = L + 5$ o comprimento em metros. O semiperímetro mede metade de $74\\text{ m}$:<br>$$C + L = \\frac{74}{2} = 37\\text{ m}$$<br><br>2. <strong>Determinação das dimensões lineares:</strong><br>$$(L + 5) + L = 37 \\implies 2L + 5 = 37 \\implies 2L = 32 \\implies L = 16\\text{ m}$$<br>O comprimento é:<br>$$C = 16 + 5 = 21\\text{ m}$$<br><br>3. <strong>Cálculo da área retangular:</strong><br>$$\\text{Área} = C \\times L = 21\\text{ m} \\times 16\\text{ m} = 336\\text{ m}^2$$<br>Portanto, as medidas são $16\\text{ m}$, $21\\text{ m}$ e $336\\text{ m}^2$ (Alternativa C).",
+            "bncc": "EF08MA19",
+            "bnccDesc": "Resolver e elaborar problemas que envolvam medidas de área de figuras geométricas, utilizando expressões de cálculo de área (quadriláteros, triângulos e círculos), em situações como determinar medida de terrenos.",
+            "unidadeTematica": "Grandezas e medidas",
+            "anoEscolar": "8º ano",
+            "topicoId": "b4-t1",
+            "image": null
+          },
+          {
+            "q": "Analise as seguintes situações:\n\n1. Seu João fez um empréstimo de $\\text{R\\$} 1.000{,}00$, no Banco A, a uma taxa de juros simples; após 4 meses, pagou um montante de $\\text{R\\$} 1.320{,}00$ e quitou sua dívida.\n2. Dona Maria fez um empréstimo de $\\text{R\\$} 1.200{,}00$, no Banco B, a uma taxa de juros simples; após 5 meses, pagou um montante de $\\text{R\\$} 1.800{,}00$ e quitou a dívida.\n\nA taxa mensal de juros simples cobrada pelo Banco A e pelo Banco B, respectivamente, é:\n\nAssinale a alternativa CORRETA.",
+            "options": [
+              "$8\\%\\text{ a.m.}$ e $10\\%\\text{ a.m.}$",
+              "$18\\%\\text{ a.m.}$ e $13\\%\\text{ a.m.}$",
+              "$6{,}4\\%\\text{ a.m.}$ e $12{,}5\\%\\text{ a.m.}$",
+              "$13\\%\\text{ a.m.}$ e $18\\%\\text{ a.m.}$",
+              "$10\\%\\text{ a.m.}$ e $8\\%\\text{ a.m.}$"
+            ],
+            "correct": 0,
+            "explanation": "1. <strong>Cálculo da taxa do Banco A (Seu João):</strong><br>O juro produzido no período é $J_A = M_A - C_A = 1320 - 1000 = \\text{R\\$} 320{,}00$. Pela fórmula de juros simples $J = C \\cdot i \\cdot t$ com $t = 4\\text{ meses}$:<br>$$320 = 1000 \\cdot i_A \\cdot 4 \\implies 4000 \\cdot i_A = 320 \\implies i_A = \\frac{320}{4000} = 0{,}08 = 8\\%\\text{ a.m.}$$<br><br>2. <strong>Cálculo da taxa do Banco B (Dona Maria):</strong><br>O juro produzido é $J_B = M_B - C_B = 1800 - 1200 = \\text{R\\$} 600{,}00$. Com $t = 5\\text{ meses}$:<br>$$600 = 1200 \\cdot i_B \\cdot 5 \\implies 6000 \\cdot i_B = 600 \\implies i_B = \\frac{600}{6000} = 0{,}10 = 10\\%\\text{ a.m.}$$<br><br>Portanto, as taxas mensais são $8\\%\\text{ a.m.}$ e $10\\%\\text{ a.m.}$ (Alternativa A).",
+            "bncc": "EF07MA02",
+            "bnccDesc": "Resolver e elaborar problemas que envolvam porcentagens, como os que lidam com acréscimos e decréscimos simples, utilizando estratégias pessoais, cálculo mental e calculadora, no contexto de educação financeira, entre outros.",
+            "unidadeTematica": "Números",
+            "anoEscolar": "7º ano",
+            "topicoId": "b1-t6",
+            "image": null
+          },
+          {
+            "q": "Diante dos frequentes períodos de estiagem na cidade onde está sediada, a empresa MESOC decidiu construir um reservatório para armazenar água.\n\nConsiderando que esse reservatório deva ser cilíndrico e ter $10\\text{ metros}$ de diâmetro interno e $10\\text{ metros}$ de altura, assinale a alternativa CORRETA.\n\nA capacidade do reservatório a ser construído, em litros, será:\n\n*Obs.: (Use $\\pi = 3{,}1$)*",
+            "options": [
+              "3.100",
+              "7.750",
+              "155.000",
+              "310.000",
+              "775.000"
+            ],
+            "correct": 4,
+            "explanation": "1. <strong>Cálculo do volume cilíndrico:</strong><br>O raio da base circular é metade do diâmetro: $r = \\frac{10\\text{ m}}{2} = 5\\text{ m}$. A altura é $h = 10\\text{ m}$.<br>$$V = \\pi r^2 h = 3{,}1 \\times (5)^2 \\times 10 = 3{,}1 \\times 25 \\times 10 = 3{,}1 \\times 250 = 775\\text{ m}^3$$<br><br>2. <strong>Conversão de volume para capacidade em litros:</strong><br>Sabendo que $1\\text{ m}^3 = 1000\\text{ L}$:<br>$$\\text{Capacidade} = 775 \\times 1000 = 775.000\\text{ litros}$$<br>Portanto, a capacidade do reservatório é de 775.000 litros (Alternativa E).",
+            "bncc": "EF09MA19",
+            "bnccDesc": "Resolver e elaborar problemas que envolvam o cálculo de volumes de prismas e de cilindros retos, inclusive com uso de tecnologias digitais.",
+            "unidadeTematica": "Grandezas e medidas",
+            "anoEscolar": "9º ano",
+            "topicoId": "b4-t2",
+            "image": null
+          },
+          {
+            "q": "Uma das práticas comuns a alguns comerciantes é a elevação nos preços de suas mercadorias em períodos de aumento nas vendas, como o Natal, Dia das Mães ou Dia dos Namorados, por exemplo.\n\nSabendo que o preço do produto eletrônico que gostaria de comprar para dar de presente a sua namorada sofreu um aumento de $25\\%$, Luís resolveu aguardar um momento mais adequado para efetuar a compra.\n\nNo entanto, soube alguns dias depois que, devido a uma promoção do Dia dos Namorados, o preço do produto havia sofrido uma redução de $25\\%$, passando a custar $\\text{R\\$} 300{,}00$.\n\nQual o preço desse produto eletrônico antes do aumento?\n\nAssinale a alternativa CORRETA.",
+            "options": [
+              "$\\text{R\\$} 280{,}00$",
+              "$\\text{R\\$} 300{,}00$",
+              "$\\text{R\\$} 310{,}00$",
+              "$\\text{R\\$} 320{,}00$",
+              "$\\text{R\\$} 330{,}00$"
+            ],
+            "correct": 3,
+            "explanation": "1. <strong>Composição dos fatores multiplicativos de aumento e desconto:</strong><br>Seja $P$ o preço original do produto.<br>- Aumento de $25\\%$: multiplica-se por $(1 + 0{,}25) = 1{,}25 = \\frac{5}{4}$.<br>- Redução subsequente de $25\\%$: multiplica-se por $(1 - 0{,}25) = 0{,}75 = \\frac{3}{4}$.<br><br>2. <strong>Equacionamento do preço final:</strong><br>$$P_{\\text{final}} = P \\times \\frac{5}{4} \\times \\frac{3}{4} = P \\times \\frac{15}{16}$$<br>Como o valor final promocional foi de $\\text{R\\$} 300{,}00$:<br>$$\\frac{15}{16} P = 300 \\implies P = \\frac{300 \\times 16}{15} = 20 \\times 16 = 320$$<br>Portanto, o preço antes do aumento era de $\\text{R\\$} 320{,}00$ (Alternativa D).",
+            "bncc": "EF07MA02",
+            "bnccDesc": "Resolver e elaborar problemas que envolvam porcentagens, como os que lidam com acréscimos e decréscimos simples, utilizando estratégias pessoais, cálculo mental e calculadora, no contexto de educação financeira, entre outros.",
+            "unidadeTematica": "Números",
+            "anoEscolar": "7º ano",
+            "topicoId": "b1-t6",
+            "image": null
           }
         ],
         "slug": "prova-ifsc-20172",
@@ -2426,179 +2443,188 @@ var mathData = window.mathData || {
         },
         "questions": [
           {
-            "q": "Uma tela de proteção retangular foi instalada em uma janela de $1{,}20\\text{ m}$ de largura por $1{,}50\\text{ m}$ de altura. A metragem linear de moldura necessária para contornar todo o perímetro da janela é:",
+            "q": "A tela de proteção para janelas é um acessório útil para garantir segurança em uma residência. Telas ou redes são comumente instaladas em janelas de prédios onde moram crianças ou animais de estimação. Sabendo da importância de prezar pela segurança da família, Sr. João decide instalar, em cada janela de seu apartamento, uma tela retangular com área $18.000\\text{ cm}^2$, cuja altura mede $\\frac{4}{5}$ do seu comprimento.\n\nQuais são as dimensões, em centímetros, dessa tela?\n\nAssinale a alternativa CORRETA.",
             "options": [
-              "$2{,}70\\text{ m}$",
-              "$5{,}40\\text{ m}$",
-              "$1{,}80\\text{ m}$",
-              "$3{,}60\\text{ m}$",
-              "$4{,}80\\text{ m}$"
+              "200 e 160",
+              "120 e 96",
+              "150 e 100",
+              "100 e 80",
+              "150 e 120"
             ],
-            "correct": 1,
-            "explanation": "Perímetro do retângulo: $2 \\times (1{,}20 + 1{,}50) = 2 \\times 2{,}70 = 5{,}40\\text{ metros}$.",
-            "bncc": "EF06MA29",
-            "bnccDesc": "Analisar e descrever mudanças que ocorrem no perímetro e na área de um quadrado ao se ampliarem ou reduzirem, igualmente, as medidas de seus lados, para compreender que o perímetro é proporcional à medida do lado, o que não ocorre com a área.",
-            "unidadeTematica": "Grandezas e Medidas",
-            "anoEscolar": "6º ano",
-            "topicoId": "b4-t1"
-          },
-          {
-            "q": "Para resolver um problema clássico, o matemático grego Tales de Mileto, em viagem ao Egito, calculou a altura de uma pirâmide usando a sombra de um bastão. Para tanto, considerou que: 1) o bastão media $1\\text{ m}$; 2) a sombra do bastão media $2\\text{ m}$; 3) a sombra da pirâmide, no mesmo momento, media $288\\text{ m}$; 4) os raios solares incidiam formando um ângulo de $27^\\circ$ com o solo (considere $\\text{tg } 27^\\circ = 0{,}5$). Já Pitágoras resolveria a questão usando seu teorema, considerando que a distância do topo da pirâmide à sua base ($AB$) era de aproximadamente $145\\text{ m}$ e que o centro $C$ da pirâmide estava distante do mesmo ponto $B$ da base em $17\\text{ m}$ (dados: $144^2 = 20.736$, $145^2 = 21.025$). Aplicando o raciocínio utilizado por um desses matemáticos, analise a figura e calcule a altura da pirâmide. Assinale a alternativa CORRETA. A altura da pirâmide é:",
-            "options": [
-              "$144\\text{ m}$",
-              "$145\\text{ m}$",
-              "$142\\text{ m}$",
-              "$143\\text{ m}$",
-              "$146\\text{ m}$"
-            ],
-            "correct": 0,
-            "explanation": "Pelo método de Tales por semelhança de triângulos: $\\frac{\\text{altura}}{\\text{sombra}} = \\frac{1}{2} = 0{,}5$. Sendo a sombra da pirâmide igual a $288\\text{ m}$, a altura é $288 \\times 0{,}5 = 144\\text{ m}$. Pelo Teorema de Pitágoras: $h = \\sqrt{145^2 - 17^2} = \\sqrt{21.025 - 289} = \\sqrt{20.736} = 144\\text{ m}$.",
-            "bncc": "EF08MA22",
-            "bnccDesc": "Calcular a probabilidade de eventos, com base na construção do espaço amostral, utilizando o princípio multiplicativo, e reconhecer que a soma das probabilidades de todos os elementos do espaço amostral é igual a 1.",
-            "unidadeTematica": "Probabilidade e Estatística",
-            "anoEscolar": "8º ano",
-            "topicoId": "b4-t3",
-            "image": {
-              "src": "https://drive.google.com/file/d/1QKz9Iy47lW7DZ2vTfh5NEdHx7xBQfa7v/view?usp=sharing",
-              "alt": "Ilustração esquemática da medição da pirâmide de Queóps por Tales de Mileto através da projeção da sombra de uma haste vertical sob o sol, destacando os triângulos retângulos semelhantes.",
-              "caption": "Figura: Medição da pirâmide de Queóps por Tales de Mileto (IFSC 2018.1)"
-            }
-          },
-          {
-            "q": "Um eletricista possui dois rolos de fios de $120\\text{ m}$ e $180\\text{ m}$. Ele deseja cortar ambos em pedaços de mesmo comprimento, sendo este o maior comprimento possível e sem sobras. Qual deve ser o comprimento de cada pedaço?",
-            "options": [
-              "$30\\text{ m}$",
-              "$40\\text{ m}$",
-              "$60\\text{ m}$",
-              "$50\\text{ m}$",
-              "$20\\text{ m}$"
-            ],
-            "correct": 2,
-            "explanation": "O maior comprimento comum é o $MDC(120, 180)$. Como $120 = 60 \\times 2$ e $180 = 60 \\times 3$, o $MDC = 60\\text{ metros}$.",
-            "bncc": "EF07MA01",
-            "bnccDesc": "Resolver e elaborar problemas com números naturais, envolvendo as noções de divisor e de múltiplo, podendo incluir máximo divisor comum ou mínimo múltiplo comum, por meio de estratégias diversas, sem a aplicação de algoritmos.",
-            "unidadeTematica": "Números",
-            "anoEscolar": "7º ano",
-            "topicoId": "b1-t3"
-          },
-          {
-            "q": "A simplificação da expressão algébrica $\\frac{2^8 \\cdot 4^3}{8^4}$ resulta em:",
-            "options": [
-              "$2^2$",
-              "$2^4$",
-              "$2^1$",
-              "$2^0$",
-              "$2^3$"
-            ],
-            "correct": 0,
-            "explanation": "Transformando tudo na base 2: $4^3 = (2^2)^3 = 2^6$ e $8^4 = (2^3)^4 = 2^{12}$. Numerador: $2^8 \\cdot 2^6 = 2^{14}$. Divisão: $\\frac{2^{14}}{2^{12}} = 2^{14-12} = 2^2 = 4$.",
+            "correct": 4,
+            "explanation": "1. <strong>Modelagem algébrica das dimensões da tela:</strong><br>Seja $c$ a medida do comprimento em centímetros. A altura $h$ mede $\\frac{4}{5}$ do comprimento:<br>$$h = \\frac{4}{5}c$$<br><br>2. <strong>Cálculo do comprimento a partir da área do retângulo:</strong><br>$$\\text{Área} = c \\times h = c \\times \\left(\\frac{4}{5}c\\right) = \\frac{4}{5}c^2$$<br>Como a área é de $18.000\\text{ cm}^2$:<br>$$\\frac{4}{5}c^2 = 18.000 \\implies c^2 = \\frac{18.000 \\times 5}{4} = 4.500 \\times 5 = 22.500$$<br>$$c = \\sqrt{22.500} = 150\\text{ cm}$$<br><br>3. <strong>Determinação da altura:</strong><br>$$h = \\frac{4}{5} \\times 150 = 4 \\times 30 = 120\\text{ cm}$$<br>Portanto, as dimensões da tela são 150 e 120 centímetros (Alternativa E).",
             "bncc": "EF09MA09",
             "bnccDesc": "Compreender os processos de fatoração de expressões algébricas, com base em suas relações com os produtos notáveis, para resolver e elaborar problemas que possam ser representados por equações polinomiais do 2º grau.",
             "unidadeTematica": "Álgebra",
             "anoEscolar": "9º ano",
-            "topicoId": "b2-t4"
+            "topicoId": "b4-t1",
+            "image": null
           },
           {
-            "q": "Um mastro vertical de $12\\text{ m}$ de altura está fixado ao solo por um cabo de aço esticado preso a $9\\text{ m}$ de sua base. O comprimento do cabo de aço é:",
+            "q": "*(Questão do IFSC 2018.1 - Mantida com gabarito coerente de 144 m e nota editorial sobre a anulação oficial)*\n\nPara resolver um problema clássico, o matemático grego Tales de Mileto, em viagem ao Egito, calculou a altura de uma pirâmide, usando a sombra de um bastão.\nPara tanto, considerou que:\n1) o bastão media $1\\text{ m}$;\n2) a sombra do bastão media $2\\text{ m}$;\n3) a sombra da pirâmide, no mesmo momento, media $288\\text{ m}$;\n4) os raios solares incidiam formando um ângulo de $27^\\circ$ com o solo.\nConsidere $\\text{tg } 27^\\circ = 0{,}5$.\n\nJá Pitágoras, resolveria a questão usando seu teorema, considerando que a distância do topo da pirâmide à sua base ($AB$) era de aproximadamente $145\\text{ m}$ e que o centro $C$ da pirâmide estava distante do mesmo ponto $B$ da base em $17\\text{ m}$.\n\nDados:\n$142^2 = 20.164$\n$143^2 = 20.449$\n$144^2 = 20.736$\n$145^2 = 21.025$\n$146^2 = 21.316$\n$147^2 = 21.609$\n\nAplicando o raciocínio utilizado por um desses matemáticos, analise a figura e calcule a altura da pirâmide.\n\nAssinale a alternativa CORRETA.\nA altura da pirâmide é:",
             "options": [
-              "$15\\text{ m}$",
-              "$13\\text{ m}$",
-              "$16\\text{ m}$",
-              "$21\\text{ m}$",
-              "$14\\text{ m}$"
+              "143m.",
+              "146m.",
+              "144m.",
+              "147m.",
+              "142m."
             ],
-            "correct": 0,
-            "explanation": "Por Pitágoras: $C^2 = 12^2 + 9^2 = 144 + 81 = 225 \\Rightarrow C = \\sqrt{225} = 15\\text{ metros}$.",
+            "correct": 2,
+            "explanation": "1. <strong>Resolução pelo método da semelhança de triângulos (Tales / Trigonometria):</strong><br>Pela proporção entre alturas e sombras sob os mesmos raios solares paralelos:<br>$$\\frac{H}{\\text{sombra da pirâmide}} = \\frac{h_{\\text{bastão}}}{\\text{sombra do bastão}} \\implies \\frac{H}{288} = \\frac{1}{2} \\implies H = \\frac{288}{2} = 144\\text{ m}$$<br>De forma equivalente, usando a tangente dada: $H = 288 \\times \\text{tg } 27^\\circ = 288 \\times 0{,}5 = 144\\text{ m}$.<br><br>2. <strong>Resolução pelo Teorema de Pitágoras no triângulo retângulo $ABC$:</strong><br>O segmento vertical $AC$ é a altura $H$, a hipotenusa $AB = 145\\text{ m}$ e a base $BC = 17\\text{ m}$:<br>$$H^2 + 17^2 = 145^2 \\implies H^2 + 289 = 21.025$$<br>$$H^2 = 21.025 - 289 = 20.736$$<br>Consultando a tabela de dados da questão: $144^2 = 20.736$, logo $H = 144\\text{ m}$.<br><br>3. <strong>Nota Histórica / Anulação Oficial:</strong><br>No certame original do IFSC 2018.1, a questão foi anulada pela banca devido a recursos quanto à modelagem física da sombra (que na pirâmide real de Quéops se estende a partir da borda externa e não do centro geométrico). Matematicamente, ambos os enunciados numéricos conduzem de forma harmoniosa a $144\\text{ m}$ (Alternativa C).",
             "bncc": "EF09MA14",
-            "bnccDesc": "Resolver e elaborar problemas de aplicação do teorema de Pitágoras ou das relações de proporcionalidade envolvendo retas paralelas cortadas por secantes.",
+            "bnccDesc": "Resolver e elaborar problemas de aplicação do teorema de Pitágoras ou das relações de proporcionalidade envolvendo triângulos retângulos.",
             "unidadeTematica": "Geometria",
             "anoEscolar": "9º ano",
-            "topicoId": "b3-t2"
+            "topicoId": "b3-t2",
+            "image": {
+              "src": "assets/img/questoes/ifsc/ifsc-2018-1-q02.png",
+              "alt": "Ilustração geométrica mostrando raios solares paralelos incidindo sobre uma pirâmide com sombra projetada e sobre um bastão vertical, além do triângulo retângulo ABC no interior da pirâmide.",
+              "caption": "Fonte: IFSC 2018.1"
+            }
           },
           {
-            "q": "Uma piscina em formato de paralelepípedo retângulo tem dimensões de $8\\text{ m}$ de comprimento, $4\\text{ m}$ de largura e $1{,}5\\text{ m}$ de profundidade. Sua capacidade total em Litros é:",
+            "q": "Considere $x$ o resultado da operação $525^2 - 523^2$.\n\nAssinale a alternativa CORRETA, que representa a soma dos algarismos de $x$.",
             "options": [
-              "$48.000\\text{ L}$",
-              "$24.000\\text{ L}$",
-              "$36.000\\text{ L}$",
-              "$40.000\\text{ L}$",
-              "$52.000\\text{ L}$"
+              "18",
+              "13",
+              "02",
+              "17",
+              "04"
             ],
-            "correct": 0,
-            "explanation": "Volume: $V = 8 \\times 4 \\times 1{,}5 = 48\\text{ m}^3$. Em litros ($1\\text{ m}^3 = 1000\\text{ L}$): $48 \\times 1000 = 48.000\\text{ Litros}$.",
-            "bncc": "EF08MA21",
-            "bnccDesc": "Resolver e elaborar problemas que envolvam o cálculo do volume de recipiente cujo formato é o de um bloco retangular.",
-            "unidadeTematica": "Grandezas e Medidas",
-            "anoEscolar": "8º ano",
-            "topicoId": "b4-t2"
+            "correct": 3,
+            "explanation": "1. <strong>Aplicação do produto notável da diferença de dois quadrados:</strong><br>Para quaisquer números reais $a$ e $b$, temos $a^2 - b^2 = (a - b)(a + b)$. Fazendo $a = 525$ e $b = 523$:<br>$$x = 525^2 - 523^2 = (525 - 523)(525 + 523)$$<br><br>2. <strong>Cálculo do valor de $x$:</strong><br>$$x = 2 \\times 1048 = 2096$$<br><br>3. <strong>Soma dos algarismos de $x$:</strong><br>$$\\text{Soma} = 2 + 0 + 9 + 6 = 17$$<br>Portanto, a soma dos algarismos é 17 (Alternativa D).",
+            "bncc": "EF09MA09",
+            "bnccDesc": "Compreender os processos de fatoração de expressões algébricas, com base em suas relações com os produtos notáveis, para resolver e elaborar problemas que possam ser representados por equações polinomiais do 2º grau.",
+            "unidadeTematica": "Álgebra",
+            "anoEscolar": "9º ano",
+            "topicoId": "b2-t4",
+            "image": null
           },
           {
-            "q": "Se $6$ máquinas trabalhando no mesmo ritmo produzem $900$ peças em $4\\text{ horas}$, quantas peças $8$ máquinas idênticas produzirão em $6\\text{ horas}$?",
+            "q": "Em um jogo eletrônico, a cada $10\\text{ moedas}$ recolhidas, o jogador ganha $3\\text{ segundos}$ de vida.\nCalcule quantas moedas ele deve recolher para ganhar mais $2\\text{ minutos}$ de vida (desconsidere o tempo que ele leva para recolher as moedas).\n\nAssinale a alternativa CORRETA.",
             "options": [
-              "$1.200$",
-              "$1.500$",
-              "$1.800$",
-              "$2.000$",
-              "$1.600$"
-            ],
-            "correct": 2,
-            "explanation": "Produção por máquina-hora: $\\frac{900}{6 \\times 4} = \\frac{900}{24} = 37{,}5\\text{ peças/máq} \\cdot \\text{ h}$. Para 8 máquinas em 6 horas: $8 \\times 6 \\times 37{,}5 = 48 \\times 37{,}5 = 1.800\\text{ peças}$.",
-            "bncc": "EF06MA24",
-            "bnccDesc": "Resolver e elaborar problemas que envolvam as grandezas comprimento, massa, tempo, temperatura, área (triângulos e retângulos), capacidade e volume (sólidos formados por blocos retangulares), sem uso de fórmulas, inseridos, sempre que possível, em contextos oriundos de situações reais e/ou relacionadas às outras áreas do conhecimento.",
-            "unidadeTematica": "Grandezas e Medidas",
-            "anoEscolar": "6º ano",
-            "topicoId": "b4-t2"
-          },
-          {
-            "q": "As notas de um aluno nas 4 avaliações do semestre foram $6{,}0$, $7{,}5$, $8{,}0$ e $8{,}5$. A média aritmética de suas notas é:",
-            "options": [
-              "$7{,}25$",
-              "$7{,}50$",
-              "$7{,}75$",
-              "$8{,}00$",
-              "$7{,}00$"
+              "$60\\text{ moedas}$",
+              "$400\\text{ moedas}$",
+              "$120\\text{ moedas}$",
+              "$200\\text{ moedas}$",
+              "$300\\text{ moedas}$"
             ],
             "correct": 1,
-            "explanation": "Média $= \\frac{6{,}0 + 7{,}5 + 8{,}0 + 8{,}5}{4} = \\frac{30{,}0}{4} = 7{,}50$.",
-            "bncc": "EF07MA35",
-            "bnccDesc": "Compreender, em contextos significativos, o significado de média estatística como indicador da tendência de uma pesquisa, calcular seu valor e relacioná-lo, intuitivamente, com a amplitude do conjunto de dados.",
-            "unidadeTematica": "Probabilidade e Estatística",
+            "explanation": "1. <strong>Conversão da unidade de tempo de minutos para segundos:</strong><br>$$2\\text{ minutos} = 2 \\times 60 = 120\\text{ segundos}$$<br><br>2. <strong>Regra de três simples diretamente proporcional:</strong><br>$$\\begin{matrix} 10\\text{ moedas} & \\longrightarrow & 3\\text{ segundos} \\\\ M\\text{ moedas} & \\longrightarrow & 120\\text{ segundos} \\end{matrix}$$<br><br>3. <strong>Resolução:</strong><br>$$\\frac{M}{10} = \\frac{120}{3} = 40 \\implies M = 10 \\times 40 = 400\\text{ moedas}$$<br>Portanto, o jogador deve recolher 400 moedas (Alternativa B).",
+            "bncc": "EF07MA17",
+            "bnccDesc": "Resolver e elaborar problemas que envolvam variação de proporcionalidade direta e do tipo inversa entre duas grandezas, utilizando sentença algébrica para expressar a relação entre elas.",
+            "unidadeTematica": "Álgebra",
             "anoEscolar": "7º ano",
-            "topicoId": "b4-t4"
+            "topicoId": "b2-t2",
+            "image": null
           },
           {
-            "q": "Em uma loja, um televisor de $\\text{R\\$} 2.400{,}00$ foi comprado com $20\\%$ de entrada e o restante dividido em $4$ parcelas iguais sem juros. O valor de cada parcela é:",
+            "q": "Analise as afirmações seguintes:\n\nI. $-5^2 - \\sqrt{16} \\cdot (-10) \\div (\\sqrt{5})^2 = -17$\nII. $35 \\div (3 + \\sqrt{81} - 2^3 + 1) \\times 2 = 10$\nIII. Efetuando-se $(3 + \\sqrt{5})(3 - \\sqrt{5})$, obtém-se um número múltiplo de 2.\n\nAssinale a alternativa CORRETA.",
             "options": [
-              "$\\text{R\\$} 420{,}00$",
-              "$\\text{R\\$} 450{,}00$",
-              "$\\text{R\\$} 480{,}00$",
-              "$\\text{R\\$} 500{,}00$",
-              "$\\text{R\\$} 520{,}00$"
+              "Todas são verdadeiras.",
+              "Apenas I e III são verdadeiras.",
+              "Todas são falsas.",
+              "Apenas uma das afirmações é verdadeira.",
+              "Apenas II e III são verdadeiras."
             ],
-            "correct": 2,
-            "explanation": "Entrada de $20\\% = 0{,}20 \\times 2400 = \\text{R\\$} 480,00$. Restante: $2400 - 480 = \\text{R\\$} 1.920,00$. Valor de cada uma das 4 parcelas: $\\frac{1920}{4} = \\text{R\\$} 480,00$.",
-            "bncc": "EF08MA04",
-            "bnccDesc": "Resolver e elaborar problemas, envolvendo cálculo de porcentagens, incluindo o uso de tecnologias digitais.",
+            "correct": 1,
+            "explanation": "1. <strong>Análise da afirmação I:</strong><br>- $-5^2 = -(5^2) = -25$<br>- $\\sqrt{16} = 4$ e $(\\sqrt{5})^2 = 5$<br>- Operação combinada: $-25 - [4 \\cdot (-10) \\div 5] = -25 - [-40 \\div 5] = -25 - (-8) = -25 + 8 = -17$. <strong>(Verdadeira)</strong><br><br>2. <strong>Análise da afirmação II:</strong><br>- Dentro dos parênteses: $3 + \\sqrt{81} - 2^3 + 1 = 3 + 9 - 8 + 1 = 5$<br>- Da esquerda para a direita: $35 \\div 5 \\times 2 = 7 \\times 2 = 14 \\neq 10$. <strong>(Falsa)</strong><br><br>3. <strong>Análise da afirmação III:</strong><br>- Pela diferença de quadrados: $(3 + \\sqrt{5})(3 - \\sqrt{5}) = 3^2 - (\\sqrt{5})^2 = 9 - 5 = 4$<br>- O número $4$ é múltiplo de $2$ ($4 = 2 \\times 2$). <strong>(Verdadeira)</strong><br><br>Conclusão: Apenas I e III são verdadeiras (Alternativa B).",
+            "bncc": "EF08MA02",
+            "bnccDesc": "Resolver e elaborar problemas usando a relação entre potenciação e radiciação, para representar uma raiz como potência de expoente fracionário.",
             "unidadeTematica": "Números",
             "anoEscolar": "8º ano",
-            "topicoId": "b1-t6"
+            "topicoId": "b1-t2",
+            "image": null
           },
           {
-            "q": "Qual o valor de $x$ que satisfaz o sistema linear $\\begin{cases} 2x + 3y = 23 \\\\ x - y = 4 \\end{cases}$?",
+            "q": "Uma caixa de leite de determinada marca possui $22\\text{ cm}$ de altura e perímetro da base medindo $28\\text{ cm}$. Sabendo-se que a base da caixa é formada por um quadrado, calcule a quantidade de papel necessária, em $\\text{cm}^2$, para confeccionar a caixa, desprezando-se as dobras.\n\nAssinale a alternativa CORRETA.",
             "options": [
-              "$5$",
-              "$6$",
-              "$7$",
-              "$8$",
-              "$4$"
+              "600",
+              "665",
+              "714",
+              "564",
+              "832"
             ],
             "correct": 2,
-            "explanation": "Da 2ª equação: $y = x - 4$. Substituindo na 1ª: $2x + 3(x - 4) = 23 \\Rightarrow 5x - 12 = 23 \\Rightarrow 5x = 35 \\Rightarrow x = 7$ (e $y = 3$).",
-            "bncc": "EF08MA08",
-            "bnccDesc": "Resolver e elaborar problemas relacionados ao seu contexto próximo, que possam ser representados por sistemas de equações de 1º grau com duas incógnitas e interpretá-los, utilizando, inclusive, o plano cartesiano como recurso.",
-            "unidadeTematica": "Álgebra",
+            "explanation": "1. <strong>Cálculo da aresta da base quadrada:</strong><br>O perímetro da base quadrada é $28\\text{ cm}$:<br>$$4L = 28 \\implies L = \\frac{28}{4} = 7\\text{ cm}$$<br><br>2. <strong>Cálculo das áreas das faces do prisma reto:</strong><br>- Área das duas bases quadradas:<br>$$2 \\times A_{\\text{base}} = 2 \\times (7)^2 = 2 \\times 49 = 98\\text{ cm}^2$$<br>- Área lateral (4 faces retangulares de $7\\text{ cm} \\times 22\\text{ cm}$):<br>$$A_{\\text{lateral}} = 4 \\times (7 \\times 22) = 28 \\times 22 = 616\\text{ cm}^2$$<br><br>3. <strong>Cálculo da área total da embalagem:</strong><br>$$A_{\\text{total}} = 98 + 616 = 714\\text{ cm}^2$$<br>Portanto, são necessários $714\\text{ cm}^2$ de papel (Alternativa C).",
+            "bncc": "EF08MA19",
+            "bnccDesc": "Resolver e elaborar problemas que envolvam medidas de área de figuras geométricas, utilizando expressões de cálculo de área (quadriláteros, triângulos e círculos), em situações como determinar medida de terrenos.",
+            "unidadeTematica": "Grandezas e medidas",
             "anoEscolar": "8º ano",
-            "topicoId": "b2-t3"
+            "topicoId": "b4-t1",
+            "image": null
+          },
+          {
+            "q": "A nova lei de Cotas aprovada em 2012 determina que, em Institutos e Universidades Públicas Federais, metade (50%) das vagas de cursos superiores sejam reservadas para estudantes de escolas públicas. Dessas vagas reservadas, metade é destinada a estudantes cuja família tem renda inferior a 1,5 salário mínimo per capita (expressão em latim que significa por cabeça, nesse caso, quer dizer que é por membro da família). As demais, para os estudantes de escolas públicas que têm renda maior que essa faixa. No conjunto de vagas reservadas, é preciso ainda garantir vagas para uma determinada proporção de estudantes que se identifiquem racialmente como pretos, pardos ou indígenas, respeitando a proporção que o IBGE identifica dessas populações no estado onde fica a instituição.\n\nSobre essa situação, avalie as afirmações:\n\nI. Se um curso tem 32 vagas em disputa em um vestibular, 8 dessas vagas serão disputadas entre os inscritos que estudaram em escolas públicas se suas famílias recebem menos do que 1,5 salário mínimo por pessoa.\nII. Se um curso tem 32 vagas em disputa em um vestibular, 16 dessas vagas serão disputadas entre os inscritos que estudaram em escolas públicas se suas famílias recebem menos do que 1,5 salário mínimo por pessoa.\nIII. Em um estado no qual o IBGE determinou que 40% da população é preta, parda ou indígena, 15 das 60 vagas em disputa em um vestibular serão ocupadas por pessoas dessas etnias.\nIV. Em um estado no qual o IBGE determinou que 40% da população é preta, parda ou indígena, 12 das 60 vagas em disputa em um vestibular serão ocupadas por pessoas dessas etnias.\nV. Em um curso que oferece 80 vagas, 40 delas estarão disponíveis para candidatos oriundos de qualquer escola.\n\nAssinale a alternativa CORRETA.",
+            "options": [
+              "Todas as alternativas são verdadeiras.",
+              "Somente I e III são verdadeiras.",
+              "Somente II e IV são verdadeiras.",
+              "Somente I, IV e V são verdadeiras.",
+              "Nenhuma das alternativas é verdadeira."
+            ],
+            "correct": 3,
+            "explanation": "1. <strong>Avaliação das afirmativas I e II (32 vagas no total):</strong><br>Vagas reservadas para escola pública: $50\\%$ de $32 = 16$ vagas. Metade dessas 16 vagas (ou seja, $8$ vagas) é destinada para renda $< 1{,}5$ salário mínimo. Logo, a afirmativa I é <strong>Verdadeira</strong> e a II é <strong>Falsa</strong>.<br><br>2. <strong>Avaliação das afirmativas III e IV (60 vagas no total):</strong><br>O conjunto de vagas reservadas (cotas) corresponde a $50\\%$ de $60 = 30$ vagas. A proporção PPI ($40\\%$) incide sobre as vagas reservadas: $0{,}40 \\times 30 = 12$ vagas. Portanto, a afirmativa IV é <strong>Verdadeira</strong> e a III é <strong>Falsa</strong>.<br><br>3. <strong>Avaliação da afirmativa V (80 vagas no total):</strong><br>Como $50\\%$ são reservadas para escola pública, as outras $50\\%$ ($0{,}50 \\times 80 = 40$ vagas) destinam-se à ampla concorrência (qualquer escola). afirmativa V é <strong>Verdadeira</strong>.<br><br>Conclusão: Somente I, IV e V são verdadeiras (Alternativa D).",
+            "bncc": "EF07MA02",
+            "bnccDesc": "Resolver e elaborar problemas que envolvam porcentagens, como os que lidam com acréscimos e decréscimos simples, utilizando estratégias pessoais, cálculo mental e calculadora, no contexto de educação financeira, entre outros.",
+            "unidadeTematica": "Números",
+            "anoEscolar": "7º ano",
+            "topicoId": "b1-t6",
+            "image": null
+          },
+          {
+            "q": "Considere a equação $\\frac{3x}{4} = 2x + 5$, e assinale a alternativa CORRETA.",
+            "options": [
+              "É uma função do primeiro grau, sua solução é $x = -1$ e seu conjunto solução é $S = \\{-1\\}$.",
+              "É uma equação racional, sua solução é $x = -4$ e seu conjunto solução é $S = \\{-4\\}$.",
+              "É uma equação do primeiro grau, sua solução é $x = +4$ e seu conjunto solução é $S = \\emptyset$.",
+              "É uma equação do segundo grau, sua solução é $x = -4$ e seu conjunto solução é $S = \\{-4\\}$.",
+              "É uma equação do primeiro grau, sua solução é $x = -4$ e seu conjunto solução é $S = \\{-4\\}$."
+            ],
+            "correct": 4,
+            "explanation": "1. <strong>Classificação da sentença matemática:</strong><br>A igualdade apresenta uma incógnita de grau 1 sem termos racionais com variável no denominador. Portanto, trata-se de uma equação polinomial do primeiro grau.<br><br>2. <strong>Resolução da equação:</strong><br>$$\\frac{3x}{4} = 2x + 5$$<br>Multiplicando ambos os membros por $4$:<br>$$3x = 4(2x + 5) \\implies 3x = 8x + 20$$<br>$$3x - 8x = 20 \\implies -5x = 20 \\implies x = \\frac{20}{-5} = -4$$<br><br>3. <strong>Conjunto solução:</strong><br>$$S = \\{-4\\}$$<br>Portanto, é uma equação do primeiro grau, com solução $x = -4$ e conjunto solução $S = \\{-4\\}$ (Alternativa E).",
+            "bncc": "EF07MA18",
+            "bnccDesc": "Resolver e elaborar problemas que possam ser representados por equações polinomiais de 1º grau, redutíveis à forma ax + b = c, fazendo uso das propriedades da igualdade.",
+            "unidadeTematica": "Álgebra",
+            "anoEscolar": "7º ano",
+            "topicoId": "b2-t3",
+            "image": null
+          },
+          {
+            "q": "Resolva a expressão numérica:\n$$\\left[ \\left(\\frac{2}{3}\\right)^2 \\left(\\frac{5}{4} - \\frac{1}{2}\\right) \\right] + \\frac{2}{5} \\div \\frac{3}{10}$$\n\nAssinale a alternativa CORRETA.\nQual o resultado da expressão, em sua forma irredutível (mais simplificada possível)?",
+            "options": [
+              "5/3",
+              "10/6",
+              "260/123",
+              "90/54",
+              "12/25"
+            ],
+            "correct": 0,
+            "explanation": "1. <strong>Resolução do termo entre colchetes:</strong><br>- Potência: $\\left(\\frac{2}{3}\\right)^2 = \\frac{4}{9}$<br>- Subtração entre parênteses: $\\frac{5}{4} - \\frac{1}{2} = \\frac{5}{4} - \\frac{2}{4} = \\frac{3}{4}$<br>- Produto no colchete: $\\frac{4}{9} \\times \\frac{3}{4} = \\frac{12}{36} = \\frac{1}{3}$<br><br>2. <strong>Resolução da divisão fracionária:</strong><br>$$\\frac{2}{5} \\div \\frac{3}{10} = \\frac{2}{5} \\times \\frac{10}{3} = \\frac{20}{15} = \\frac{4}{3}$$<br><br>3. <strong>Soma dos resultados parciais:</strong><br>$$\\frac{1}{3} + \\frac{4}{3} = \\frac{5}{3}$$<br>A fração $\\frac{5}{3}$ é irredutível.<br>Portanto, o resultado é 5/3 (Alternativa A).",
+            "bncc": "EF07MA08",
+            "bnccDesc": "Comparar e ordenar frações associadas às ideias de partes de inteiros, resultado de divisão, razão e operador.",
+            "unidadeTematica": "Números",
+            "anoEscolar": "7º ano",
+            "topicoId": "b1-t5",
+            "image": null
+          },
+          {
+            "q": "Para fazer $500\\text{ ml}$ de maionese são necessários $300\\text{ ml}$ de óleo e $150\\text{ ml}$ de outros ingredientes (gemas, leite, sal etc).\n\nAnalise as afirmações a seguir:\n\nI. A receita pronta renderá meio litro de maionese.\nII. Há um ganho de volume de aproximadamente 11% da receita pela incorporação de ar à mistura.\nIII. Há um ganho de volume de aproximadamente 15% da receita pela incorporação de ar à mistura.\nIV. O óleo usado ocupa o equivalente a $300\\text{ cm}^3$ de espaço (por exemplo, preenche uma caixinha de dimensões $5\\text{ cm} \\times 5\\text{ cm} \\times 12\\text{ cm}$).\nV. Os demais ingredientes (descontando-se o óleo) correspondem a 1/4 do volume final da receita.\n\nAssinale a alternativa CORRETA.",
+            "options": [
+              "Somente II, IV e V são verdadeiras.",
+              "Somente I, II e V são verdadeiras.",
+              "Somente I, II e IV são verdadeiras.",
+              "Somente I, III e V são verdadeiras.",
+              "Todas as afirmações são verdadeiras."
+            ],
+            "correct": 2,
+            "explanation": "1. <strong>Análise da afirmação I:</strong><br>$500\\text{ ml} = 0{,}5\\text{ L} = \\text{meio litro}$. <strong>(Verdadeira)</strong><br><br>2. <strong>Análise das afirmações II e III:</strong><br>A soma dos ingredientes líquidos/sólidos é $300 + 150 = 450\\text{ ml}$. O produto final atinge $500\\text{ ml}$, indicando incorporação de $500 - 450 = 50\\text{ ml}$ de ar. A variação percentual sobre os ingredientes é:<br>$$\\frac{50}{450} = \\frac{1}{9} \\approx 11{,}11\\% \\approx 11\\%$$<br>Logo, a afirmação II é <strong>Verdadeira</strong> e a III é <strong>Falsa</strong>.<br><br>3. <strong>Análise da afirmação IV:</strong><br>Como $1\\text{ ml} = 1\\text{ cm}^3$, $300\\text{ ml} = 300\\text{ cm}^3$. O volume da caixinha sugerida é $5 \\times 5 \\times 12 = 300\\text{ cm}^3$. <strong>(Verdadeira)</strong><br><br>4. <strong>Análise da afirmação V:</strong><br>A fração dos demais ingredientes em relação ao total final é $\\frac{150\\text{ ml}}{500\\text{ ml}} = \\frac{3}{10} = 30\\% \\neq \\frac{1}{4}$ ($25\\%$). <strong>(Falsa)</strong><br><br>Conclusão: Somente I, II e IV são verdadeiras (Alternativa C).",
+            "bncc": "EF08MA20",
+            "bnccDesc": "Reconhecer a relação entre um litro e um decímetro cúbico e a relação entre litro e metro cúbico, para resolver problemas de cálculo de capacidade de recipientes.",
+            "unidadeTematica": "Grandezas e medidas",
+            "anoEscolar": "8º ano",
+            "topicoId": "b4-t2",
+            "image": null
           }
         ],
         "slug": "prova-ifsc-20181",
@@ -2635,20 +2661,20 @@ var mathData = window.mathData || {
               "$140\\text{ pisos}$"
             ],
             "correct": 1,
-            "explanation": "1. <strong>Cálculo da área de cada letra da inscrição IFSC:</strong><br>- <strong>Letra I:</strong> Retângulo de altura $3\\text{ m}$ e largura $0{,}5\\text{ m}$:<br>$$A_I = 3 \\times 0{,}5 = 1{,}5\\text{ m}^2$$<br>- <strong>Letra F:</strong> Barra vertical de $3\\text{ m} \\times 0{,}5\\text{ m}$ ($1{,}5\\text{ m}^2$) mais duas barras horizontais salientes de comprimento $2 - 0{,}5 = 1{,}5\\text{ m}$ e espessura $0{,}5\\text{ m}$ cada ($1{,}5 \\times 0{,}5 = 0{,}75\\text{ m}^2$ cada):<br>$$A_F = 1{,}5 + 0{,}75 + 0{,}75 = 3{,}0\\text{ m}^2$$<br>- <strong>Letra S:</strong> Retângulo envolvente de $3\\text{ m} \\times 2\\text{ m}$ ($6\\text{ m}^2$) subtraindo dois recortes vazados de $1{,}5\\text{ m} \\times 0{,}75\\text{ m}$ ($1{,}125\\text{ m}^2$ cada):<br>$$A_S = 6 - (2 \\times 1{,}125) = 6 - 2{,}25 = 3{,}75\\text{ m}^2$$<br>- <strong>Letra C:</strong> Barra vertical de $3\\text{ m} \\times 0{,}5\\text{ m}$ ($1{,}5\\text{ m}^2$) mais duas barras horizontais salientes superior e inferior de $1{,}5\\text{ m} \\times 0{,}5\\text{ m}$ ($0{,}75\\text{ m}^2$ cada):<br>$$A_C = 1{,}5 + 0{,}75 + 0{,}75 = 3{,}0\\text{ m}^2$$<br><br>2. <strong>Área total da inscrição:</strong><br>$$A_{\\text{total}} = A_I + A_F + A_S + A_C = 1{,}5 + 3{,}0 + 3{,}75 + 3{,}0 = 11{,}25\\text{ m}^2$$<br><br>3. <strong>Área de cada piso cerâmico e quantidade necessária:</strong><br>Cada piso mede $25\\text{ cm} \\times 25\\text{ cm} = 0{,}25\\text{ m} \\times 0{,}25\\text{ m}$:<br>$$A_{\\text{piso}} = 0{,}25 \\times 0{,}25 = 0{,}0625\\text{ m}^2 = \\frac{1}{16}\\text{ m}^2$$<br>A quantidade mínima de pisos necessária é:<br>$$N = \\frac{A_{\\text{total}}}{A_{\\text{piso}}} = \\frac{11{,}25}{0{,}0625} = 11{,}25 \\times 16 = 180\\text{ pisos}$$<br>Portanto, a alternativa correta é a <strong>Letra B</strong>.",
+            "explanation": "1. <strong>Cálculo da área de cada uma das letras da inscrição IFSC:</strong><br>- <strong>Letra I:</strong> Retângulo vertical de dimensões $3\\text{ m} \\times 0{,}5\\text{ m}$:<br>$$\\text{Área}(I) = 3 \\times 0{,}5 = 1{,}50\\text{ m}^2$$<br>- <strong>Letra F:</strong> Composta por uma haste vertical de $3\\text{ m} \\times 0{,}5\\text{ m}$ ($1{,}50\\text{ m}^2$) e duas barras horizontais de espessura $0{,}5\\text{ m}$ e comprimento projetado de $(2 - 0{,}5) = 1{,}50\\text{ m}$ cada ($2 \\times 1{,}50 \\times 0{,}5 = 1{,}50\\text{ m}^2$):<br>$$\\text{Área}(F) = 1{,}50 + 1{,}50 = 3{,}00\\text{ m}^2$$<br>- <strong>Letra S:</strong> Inscrita em um retângulo delimitador de $3\\text{ m} \\times 2\\text{ m}$ ($6{,}00\\text{ m}^2$), subtraindo-se dois recortes brancos retangulares de $1{,}50\\text{ m} \\times 0{,}75\\text{ m}$ ($1{,}125\\text{ m}^2$ cada):<br>$$\\text{Área}(S) = 6{,}00 - 2 \\times 1{,}125 = 6{,}00 - 2{,}25 = 3{,}75\\text{ m}^2$$<br>- <strong>Letra C:</strong> Retângulo envolvente de $3\\text{ m} \\times 2\\text{ m}$ ($6{,}00\\text{ m}^2$) subtraindo o espaço vazio central de $2\\text{ m} \\times 1{,}50\\text{ m}$ ($3{,}00\\text{ m}^2$):<br>$$\\text{Área}(C) = 6{,}00 - 3{,}00 = 3{,}00\\text{ m}^2$$<br><br>2. <strong>Cálculo da área total revestida:</strong><br>$$\\text{Área total} = 1{,}50 + 3{,}00 + 3{,}75 + 3{,}00 = 11{,}25\\text{ m}^2$$<br><br>3. <strong>Determinação do número de pisos cerâmicos:</strong><br>A área de uma peça cerâmica de $25\\text{ cm} \\times 25\\text{ cm}$ é:<br>$$A_{\\text{piso}} = 0{,}25\\text{ m} \\times 0{,}25\\text{ m} = 0{,}0625\\text{ m}^2 = \\frac{1}{16}\\text{ m}^2$$<br>$$\\text{Total de pisos} = \\frac{11{,}25}{0{,}0625} = 11{,}25 \\times 16 = 180\\text{ pisos}$$<br>Portanto, serão necessários no mínimo 180 pisos (Alternativa B).",
             "bncc": "EF08MA19",
-            "bnccDesc": "Resolver e elaborar problemas que envolvam medidas de área de figuras geométricas planas em contextos práticos e conversão de unidades.",
-            "unidadeTematica": "Geometria",
-            "anoEscolar": "7º ano",
-            "topicoId": "b2-t3",
+            "bnccDesc": "Resolver e elaborar problemas que envolvam medidas de área de figuras geométricas, utilizando expressões de cálculo de área (quadriláteros, triângulos e círculos), em situações como determinar medida de terrenos.",
+            "unidadeTematica": "Grandezas e medidas",
+            "anoEscolar": "8º ano",
+            "topicoId": "b4-t1",
             "image": {
-              "src": "https://drive.google.com/file/d/1Dgg-kJiuhk1cJg-BKn7v3jLrE100DWV9/view?usp=sharing",
-              "alt": "Representação gráfica das letras I, F, S e C cotadas em metros: I (3 m por 0,5 m), F (altura 3 m, largura 2 m, espessura 0,5 m), S (altura 3 m, largura 2 m com dois recortes de 1,5 m por 0,75 m) e C (altura 3 m, largura 2 m com vão interno de 1,5 m por 2 m)",
-              "caption": "Figura: Inscrição IFSC com cotas em metros para revestimento cerâmico (IFSC 2018.2)"
+              "src": "assets/img/questoes/ifsc/ifsc-2018-2-q01.png",
+              "alt": "Letras I, F, S e C formadas por segmentos retangulares sobre fundo branco cotadas em metros.",
+              "caption": "Fonte: IFSC 2018.2"
             }
           },
           {
-            "q": "Dois edifícios vizinhos resolveram fazer uma decoração de Natal. Para tanto, cada um decidiu comprar uma mangueira de iluminação de LED com $25\\text{ m}$ de comprimento. Sabe-se que um dos edifícios, que é $4\\text{ m}$ mais alto que o outro, fixou uma das extremidades da mangueira no topo do prédio (ponto A) e a outra em um ponto localizado a $7\\text{ m}$ de sua base (ponto C), como mostra a figura. O outro edifício fixou uma das extremidades de sua mangueira no alto do prédio (ponto B) e a outra extremidade no mesmo local em que o prédio vizinho fixou sua mangueira (ponto C). Com base nesses dados, calcule a distância entre os dois edifícios. Assinale a alternativa CORRETA.",
+            "q": "Dois edifícios vizinhos resolveram fazer uma decoração de Natal. Para tanto, cada um decidiu comprar uma mangueira de iluminação de LED com $25\\text{ m}$ de comprimento. Sabe-se que um dos edifícios, que é $4\\text{ m}$ mais alto que o outro, fixou uma das extremidades da mangueira no topo do prédio (ponto A) e a outra em um ponto localizado a $7\\text{ m}$ de sua base (ponto C), como mostra a figura.\n\nO outro edifício fixou uma das extremidades de sua mangueira no alto do prédio (ponto B) e a outra extremidade no mesmo local em que o prédio vizinho fixou sua mangueira (ponto C).\n\nCom base nesses dados, calcule a distância entre os dois edifícios.\n\nAssinale a alternativa CORRETA.",
             "options": [
               "$16\\text{ m}$",
               "$18\\text{ m}$",
@@ -2657,37 +2683,38 @@ var mathData = window.mathData || {
               "$24\\text{ m}$"
             ],
             "correct": 2,
-            "explanation": "No triângulo retângulo do prédio mais alto: hipotenusa $= 25\\text{ m}$ e base $= 7\\text{ m}$. A altura do prédio A é $\\sqrt{25^2 - 7^2} = \\sqrt{625 - 49} = \\sqrt{576} = 24\\text{ m}$. O prédio B é $4\\text{ m}$ mais baixo, logo tem altura de $24 - 4 = 20\\text{ m}$. No triângulo retângulo do prédio B: hipotenusa $= 25\\text{ m}$ e altura $= 20\\text{ m}$. A distância da base do prédio B até o ponto C é $\\sqrt{25^2 - 20^2} = \\sqrt{625 - 400} = \\sqrt{225} = 15\\text{ m}$. A distância total entre as bases dos dois edifícios é $7 + 15 = 22\\text{ m}$.",
+            "explanation": "1. <strong>Cálculo da altura do edifício mais alto (topo A):</strong><br>No triângulo retângulo formado pelo prédio da esquerda, pelo solo até o ponto C e pela mangueira AC de $25\\text{ m}$:<br>$$H_A^2 + 7^2 = 25^2$$<br>$$H_A^2 + 49 = 625 \\implies H_A^2 = 576 \\implies H_A = \\sqrt{576} = 24\\text{ m}$$<br><br>2. <strong>Cálculo da altura do segundo edifício (topo B) e distância horizontal até C:</strong><br>O segundo prédio é $4\\text{ m}$ mais baixo:<br>$$H_B = 24 - 4 = 20\\text{ m}$$<br>No triângulo retângulo formado por este segundo prédio e pela mangueira BC de $25\\text{ m}$, seja $d_2$ a distância horizontal da base ao ponto C:<br>$$20^2 + d_2^2 = 25^2$$<br>$$400 + d_2^2 = 625 \\implies d_2^2 = 225 \\implies d_2 = \\sqrt{225} = 15\\text{ m}$$<br><br>3. <strong>Determinação da distância total entre os edifícios:</strong><br>A distância total entre as bases dos dois prédios é a soma dos dois segmentos horizontais:<br>$$D = 7\\text{ m} + 15\\text{ m} = 22\\text{ m}$$<br>Portanto, a distância entre os edifícios é de $22\\text{ m}$ (Alternativa C).",
             "bncc": "EF09MA14",
-            "bnccDesc": "Resolver e elaborar problemas de aplicação do teorema de Pitágoras ou das relações de proporcionalidade envolvendo retas paralelas cortadas por secantes.",
+            "bnccDesc": "Resolver e elaborar problemas de aplicação do teorema de Pitágoras ou das relações de proporcionalidade envolvendo triângulos retângulos.",
             "unidadeTematica": "Geometria",
             "anoEscolar": "9º ano",
             "topicoId": "b3-t2",
             "image": {
-              "src": "https://drive.google.com/file/d/1Gg-hq9r-Us9WSiaz47hAq2vRoBjWONvf/view?usp=sharing",
-              "alt": "Diagrama ilustrando dois edifícios de alturas distintas com cabos de iluminação fixados em seus topos e convergindo para um ponto comum C no chão entre eles.",
-              "caption": "Figura: Edifícios vizinhos e mangueiras de iluminação de LED (IFSC 2018.2)"
+              "src": "assets/img/questoes/ifsc/ifsc-2018-2-q02.png",
+              "alt": "Esquema geométrico com dois edifícios de alturas diferentes e cabos de iluminação de 25 m descendo de seus topos A e B até um ponto comum C no solo entre eles.",
+              "caption": "Fonte: IFSC 2018.2"
             }
           },
           {
-            "q": "A soma e o produto das raízes da equação do segundo grau $2x^2 - 10x + 8 = 0$ valem respectivamente:",
+            "q": "André, Bruno e Carlos saíram para comer pizza. André comeu $1/4$ da pizza, Bruno comeu $1/3$ e Carlos comeu $1/5$. Decidiram, então, que a conta do restaurante seria dividida em partes diretamente proporcionais ao consumo de pizza de cada um dos amigos.\n\nSabendo-se que os três amigos gastaram $\\text{R\\$} 94{,}00$, calcule o valor pago por André.\n\nAssinale a alternativa CORRETA.",
             "options": [
-              "$5$ e $4$",
-              "$-5$ e $-4$",
-              "$10$ e $8$",
-              "$5$ e $-4$",
-              "$-10$ e $4$"
+              "$\\text{R\\$} 36{,}00$",
+              "$\\text{R\\$} 40{,}00$",
+              "$\\text{R\\$} 30{,}00$",
+              "$\\text{R\\$} 24{,}00$",
+              "$\\text{R\\$} 23{,}50$"
             ],
-            "correct": 0,
-            "explanation": "Soma: $S = -\\frac{b}{a} = -\\frac{-10}{2} = 5$. Produto: $P = \\frac{c}{a} = \\frac{8}{2} = 4$.",
-            "bncc": "EF09MA09",
-            "bnccDesc": "Compreender os processos de fatoração de expressões algébricas, com base em suas relações com os produtos notáveis, para resolver e elaborar problemas que possam ser representados por equações polinomiais do 2º grau.",
+            "correct": 2,
+            "explanation": "1. <strong>Redução das frações de consumo a um denominador comum:</strong><br>O mínimo múltiplo comum entre $4$, $3$ e $5$ é $60$:<br>- André: $\\frac{1}{4} = \\frac{15}{60}$<br>- Bruno: $\\frac{1}{3} = \\frac{20}{60}$<br>- Carlos: $\\frac{1}{5} = \\frac{12}{60}$<br><br>2. <strong>Divisão em partes diretamente proporcionais:</strong><br>As frações pagas são proporcionais a $15$, $20$ e $12$. A soma dos pesos é:<br>$$15 + 20 + 12 = 47$$<br>Calculando a constante de proporcionalidade $k$ para a conta total de $\\text{R\\$} 94{,}00$:<br>$$k = \\frac{94}{47} = 2$$<br><br>3. <strong>Cálculo do valor devido por André:</strong><br>$$V_{\\text{André}} = 15 \\times 2 = \\text{R\\$} 30{,}00$$<br>Portanto, André pagou $\\text{R\\$} 30{,}00$ (Alternativa C).",
+            "bncc": "EF07MA17",
+            "bnccDesc": "Resolver e elaborar problemas que envolvam variação de proporcionalidade direta e do tipo inversa entre duas grandezas, utilizando sentença algébrica para expressar a relação entre elas.",
             "unidadeTematica": "Álgebra",
-            "anoEscolar": "9º ano",
-            "topicoId": "b2-t4"
+            "anoEscolar": "7º ano",
+            "topicoId": "b2-t2",
+            "image": null
           },
           {
-            "q": "A figura a seguir mostra um triângulo isósceles $ABC$ de base $BC$ e com o ângulo $\\widehat{BAC} = 20^\\circ$. Se $\\overline{BF}$ e $\\overline{CE}$ são as bissetrizes dos ângulos $\\widehat{ABC}$ e $\\widehat{ACB}$, respectivamente, qual a medida, em graus, do ângulo $\\widehat{BDE}$? Assinale a alternativa CORRETA.",
+            "q": "A figura a seguir mostra um triângulo isósceles $ABC$ de base $BC$ e com o ângulo $B\\hat{A}C = 20^\\circ$. Se $\\overline{BF}$ e $\\overline{CE}$ são as bissetrizes dos ângulos $A\\hat{B}C$ e $A\\hat{C}B$, respectivamente, qual a medida, em graus, do ângulo $B\\hat{D}E$?\n\nAssinale a alternativa CORRETA.",
             "options": [
               "$30^\\circ$",
               "$75^\\circ$",
@@ -2696,119 +2723,125 @@ var mathData = window.mathData || {
               "$80^\\circ$"
             ],
             "correct": 4,
-            "explanation": "No triângulo isósceles $ABC$, como $\\widehat{BAC} = 20^\\circ$, os ângulos da base medem $\\frac{180^\\circ - 20^\\circ}{2} = 80^\\circ$, logo $\\widehat{ABC} = \\widehat{ACB} = 80^\\circ$. Sendo $\\overline{BF}$ e $\\overline{CE}$ bissetrizes, no triângulo $BDC$ temos $\\widehat{DBC} = 40^\\circ$ e $\\widehat{DCB} = 40^\\circ$. O ângulo $\\widehat{BDC} = 180^\\circ - (40^\\circ + 40^\\circ) = 100^\\circ$. Como os pontos $C, D$ e $E$ estão alinhados no segmento $\\overline{CE}$, o ângulo adjacente suplementar é $\\widehat{BDE} = 180^\\circ - 100^\\circ = 80^\\circ$.",
-            "bncc": "EF08MA19",
-            "bnccDesc": "Resolver e elaborar problemas que envolvam medidas de área de figuras geométricas, utilizando expressões de cálculo de área (quadriláteros, triângulos e círculos), em situações como determinar medida de terrenos.",
-            "unidadeTematica": "Grandezas e Medidas",
+            "explanation": "1. <strong>Cálculo dos ângulos da base do triângulo isósceles $ABC$:</strong><br>Como a base é $BC$, temos $A\\hat{B}C = A\\hat{C}B$. Sendo a soma dos ângulos internos igual a $180^\\circ$:<br>$$A\\hat{B}C + A\\hat{C}B = 180^\\circ - 20^\\circ = 160^\\circ \\implies A\\hat{B}C = A\\hat{C}B = \\frac{160^\\circ}{2} = 80^\\circ$$<br><br>2. <strong>Determinação dos ângulos formados pelas bissetrizes:</strong><br>Sendo $\\overline{BF}$ e $\\overline{CE}$ bissetrizes:<br>$$D\\hat{B}C = \\frac{80^\\circ}{2} = 40^\\circ \\quad \\text{e} \\quad D\\hat{C}B = \\frac{80^\\circ}{2} = 40^\\circ$$<br><br>3. <strong>Cálculo do ângulo externo $B\\hat{D}E$ no triângulo $DBC$:</strong><br>O ângulo $B\\hat{D}E$ é o ângulo externo ao triângulo $DBC$ no vértice $D$. Pelo Teorema do Ângulo Externo, a sua medida é igual à soma dos dois ângulos internos não adjacentes:<br>$$B\\hat{D}E = D\\hat{B}C + D\\hat{C}B = 40^\\circ + 40^\\circ = 80^\\circ$$<br>Portanto, o ângulo $B\\hat{D}E$ mede $80^\\circ$ (Alternativa E).",
+            "bncc": "EF08MA17",
+            "bnccDesc": "Aplicar os conceitos de bissetriz, mediatriz, alturas e medianas de um triângulo na resolução de problemas geométricos.",
+            "unidadeTematica": "Geometria",
             "anoEscolar": "8º ano",
-            "topicoId": "b4-t1",
+            "topicoId": "b3-t1",
             "image": {
-              "src": "https://drive.google.com/file/d/1lpjnbjDGNthtCgoQj8_H-Te_CtPyUrZZ/view?usp=sharing",
-              "alt": "Triângulo isósceles ABC com vértice superior A de ângulo 20 graus e segmentos bissetrizes BF e CE se cruzando no ponto D, com destaque sombreado para o ângulo BDE.",
-              "caption": "Figura: Triângulo isósceles e interseção de bissetrizes (IFSC 2018.2)"
+              "src": "assets/img/questoes/ifsc/ifsc-2018-2-q04.png",
+              "alt": "Triângulo isósceles ABC alongado com ângulo do vértice de 20 graus e bissetrizes BF e CE que se cruzam no ponto D, com destaque ao ângulo BDE.",
+              "caption": "Fonte: IFSC 2018.2"
             }
           },
           {
-            "q": "Quantos números pares de $3$ algarismos distintos podemos formar usando os algarismos $\\{1, 2, 3, 4, 5\\}$?",
+            "q": "Os amigos Ian, Flávio, Saulo e Cauã se encontraram na saída do supermercado e, ao constatarem que haviam adquirido os mesmos produtos, das mesmas marcas, perguntaram entre si a quantidade que cada um tinha comprado e qual o valor gasto na compra. As respostas foram as seguintes:\n\n• Ian comprou $1\\text{ kg}$ de arroz e $1\\text{ kg}$ de feijão e gastou $\\text{R\\$} 8{,}00$;\n• Flávio comprou $1\\text{ kg}$ de arroz e $1\\text{ dúzia}$ de ovos e gastou $\\text{R\\$} 10{,}00$;\n• Saulo comprou $1\\text{ kg}$ de feijão e $1\\text{ dúzia}$ de ovos e gastou $\\text{R\\$} 12{,}00$;\n• Cauã comprou $1\\text{ kg}$ de arroz, $1\\text{ kg}$ de feijão e $1\\text{ dúzia}$ de ovos e gastou $X$ reais.\n\nConsiderando as respostas dadas pelos quatro amigos, calcule o valor $X$ gasto por Cauã.\n\nAssinale a alternativa CORRETA.",
             "options": [
-              "$24$",
-              "$36$",
-              "$48$",
-              "$12$",
-              "$60$"
+              "$\\text{R\\$} 15{,}00$",
+              "$\\text{R\\$} 16{,}00$",
+              "$\\text{R\\$} 17{,}00$",
+              "$\\text{R\\$} 14{,}00$",
+              "$\\text{R\\$} 18{,}00$"
             ],
             "correct": 0,
-            "explanation": "Para ser par, o último dígito deve ser $2$ ou $4$ (2 opções). Para a 1ª posição restam 4 algarismos e para a 2ª restam 3 algarismos. Total $= 4 \\times 3 \\times 2 = 24$ números.",
-            "bncc": "EF08MA25",
-            "bnccDesc": "Obter os valores de medidas de tendência central de uma pesquisa estatística (média, moda e mediana) com a compreensão de seus significados e relacioná-los com a dispersão de dados, indicada pela amplitude.",
-            "unidadeTematica": "Probabilidade e Estatística",
+            "explanation": "1. <strong>Modelagem do sistema de equações lineares:</strong><br>Sejam $a$, $f$ e $o$ os preços de $1\\text{ kg}$ de arroz, $1\\text{ kg}$ de feijão e $1\\text{ dúzia}$ de ovos:<br>$$\\begin{cases} a + f = 8 \\\\ a + o = 10 \\\\ f + o = 12 \\end{cases}$$<br><br>2. <strong>Soma membro a membro:</strong><br>Somando as três equações:<br>$$(a + f) + (a + o) + (f + o) = 8 + 10 + 12$$<br>$$2a + 2f + 2o = 30$$<br>Fatorando o termo $2$:<br>$$2(a + f + o) = 30 \\implies a + f + o = \\frac{30}{2} = 15$$<br><br>3. <strong>Determinação do valor pago por Cauã:</strong><br>A compra de Cauã corresponde exatamente a $a + f + o = X$. Logo:<br>$$X = \\text{R\\$} 15{,}00$$<br>Portanto, Cauã gastou $\\text{R\\$} 15{,}00$ (Alternativa A).",
+            "bncc": "EF08MA08",
+            "bnccDesc": "Resolver e elaborar problemas relacionados ao seu contexto próximo, que possam ser representados por sistemas de equações de 1º grau com duas incógnitas e interpretá-los.",
+            "unidadeTematica": "Álgebra",
             "anoEscolar": "8º ano",
-            "topicoId": "b4-t4"
+            "topicoId": "b2-t3",
+            "image": null
           },
           {
-            "q": "Um produto anunciado por $\\text{R\\$} 450{,}00$ recebeu um desconto de $12\\%$ para pagamento à vista. Qual o valor pago à vista?",
+            "q": "Sobre as expressões numéricas\n\nI) $5 + 23 \\cdot 4 - 75 \\div 15$ &nbsp;&nbsp;&nbsp; e &nbsp;&nbsp;&nbsp; II) $(5 + 23) \\cdot 4 - 75 \\div 15$\n\né CORRETO afirmar que:",
             "options": [
-              "$\\text{R\\$} 396{,}00$",
-              "$\\text{R\\$} 386{,}00$",
-              "$\\text{R\\$} 400{,}00$",
-              "$\\text{R\\$} 405{,}00$",
-              "$\\text{R\\$} 390{,}00$"
+              "o resultado da expressão I é 80.",
+              "apresentam resultados iguais porque envolvem os mesmos números e as mesmas operações.",
+              "o resultado da expressão I é maior que o resultado da expressão II.",
+              "o resultado da expressão I é menor que o resultado da expressão II.",
+              "o resultado da expressão II é 106."
             ],
-            "correct": 0,
-            "explanation": "Desconto: $0{,}12 \\times 450 = \\text{R\\$} 54,00$. Valor pago: $450 - 54 = \\text{R\\$} 396,00$.",
-            "bncc": "EF08MA04",
-            "bnccDesc": "Resolver e elaborar problemas, envolvendo cálculo de porcentagens, incluindo o uso de tecnologias digitais.",
+            "correct": 3,
+            "explanation": "1. <strong>Cálculo do valor da expressão I:</strong><br>Pela ordem de precedência operacional, efetuam-se multiplicações e divisões antes das adições e subtrações:<br>$$I = 5 + (23 \\cdot 4) - (75 \\div 15) = 5 + 92 - 5 = 92$$<br><br>2. <strong>Cálculo do valor da expressão II:</strong><br>Resolve-se primeiro a operação entre parênteses:<br>$$II = (5 + 23) \\cdot 4 - (75 \\div 15) = 28 \\cdot 4 - 5 = 112 - 5 = 107$$<br><br>3. <strong>Comparação dos resultados:</strong><br>Como $92 < 107$, o resultado da expressão I é estritamente menor que o da expressão II.<br>Portanto, a afirmação correta é a Alternativa D.",
+            "bncc": "EF07MA03",
+            "bnccDesc": "Comparar e ordenar números inteiros em diferentes contextos, incluindo o histórico, associá-los a pontos da reta numérica e utilizá-los em situações que envolvam adição e multiplicação.",
             "unidadeTematica": "Números",
-            "anoEscolar": "8º ano",
-            "topicoId": "b1-t6"
+            "anoEscolar": "7º ano",
+            "topicoId": "b1-t2",
+            "image": null
           },
           {
-            "q": "Se $\\frac{2}{5}$ do tanque de combustível de um automóvel comporta $24\\text{ litros}$, a capacidade total desse tanque é:",
+            "q": "No mês em que entra em férias, um trabalhador recebe como salário bruto o valor do seu vencimento mensal e mais $1/3$ desse vencimento como gratificação. Quanto receberá como salário bruto de férias um trabalhador cujo vencimento mensal é $\\text{R\\$} 1.080{,}72$?",
             "options": [
-              "$48\\text{ L}$",
-              "$50\\text{ L}$",
-              "$60\\text{ L}$",
-              "$64\\text{ L}$",
-              "$70\\text{ L}$"
+              "$\\text{R\\$} 1.440{,}96$",
+              "$\\text{R\\$} 360{,}24$",
+              "$\\text{R\\$} 1.340{,}86$",
+              "$\\text{R\\$} 1.240{,}96$",
+              "$\\text{R\\$} 3.242{,}16$"
             ],
-            "correct": 2,
-            "explanation": "Capacidade total $T = 24 \\div \\frac{2}{5} = 24 \\times \\frac{5}{2} = 60\\text{ litros}$.",
-            "bncc": "EF09MA19",
-            "bnccDesc": "Resolver e elaborar problemas que envolvam medidas de volumes de prismas e de cilindros retos, inclusive com uso de expressões de cálculo, em situações cotidianas.",
-            "unidadeTematica": "Grandezas e Medidas",
-            "anoEscolar": "9º ano",
-            "topicoId": "b4-t2"
+            "correct": 0,
+            "explanation": "1. <strong>Cálculo do adicional de $1/3$ de férias:</strong><br>$$\\text{Gratificação} = \\frac{1}{3} \\times 1080{,}72 = \\frac{1080{,}72}{3} = \\text{R\\$} 360{,}24$$<br><br>2. <strong>Cálculo do salário bruto total:</strong><br>$$\\text{Salário total} = 1080{,}72 + 360{,}24 = \\text{R\\$} 1.440{,}96$$<br>De forma direta: $\\frac{4}{3} \\times 1080{,}72 = 4 \\times 360{,}24 = \\text{R\\$} 1.440{,}96$.<br>Portanto, o trabalhador receberá $\\text{R\\$} 1.440{,}96$ (Alternativa A).",
+            "bncc": "EF07MA08",
+            "bnccDesc": "Comparar e ordenar frações associadas às ideias de partes de inteiros, resultado de divisão, razão e operador.",
+            "unidadeTematica": "Números",
+            "anoEscolar": "7º ano",
+            "topicoId": "b1-t5",
+            "image": null
           },
           {
-            "q": "O valor da expressão numérica $(-3)^2 - \\sqrt{64} + 2^3 \\div 4$ é:",
+            "q": "Pretende-se encher uma caixa em forma de cubo, com $80\\text{ cm}$ de aresta, utilizando-se caixas menores em forma de paralelepípedo retângulo, cujas dimensões são $4\\text{ cm} \\times 2\\text{ cm} \\times 8\\text{ cm}$.\n\nSobre essa situação é CORRETO afirmar que:",
             "options": [
-              "$1$",
-              "$3$",
-              "$5$",
-              "$7$",
-              "$-1$"
+              "se forem colocadas 6.000 caixas em forma de paralelepípedo, metade do volume da caixa cúbica com 80cm de aresta não será preenchido.",
+              "se forem colocadas 800 caixas em forma de paralelepípedo, será possível preencher totalmente o espaço da caixa cúbica com 80cm de aresta.",
+              "se forem colocadas 600 caixas em forma de paralelepípedo, metade do volume da caixa cúbica com 80cm de aresta será preenchido.",
+              "Serão necessárias 8.000 caixas em forma de paralelepípedo para preencher totalmente o espaço da caixa cúbica com 80cm de aresta.",
+              "é impossível ter uma quantidade de caixas em forma de paralelepípedo de dimensões 4cmx2cmx8cm que preencha totalmente o espaço interno da caixa cúbica com 80cm de aresta."
+            ],
+            "correct": 3,
+            "explanation": "1. <strong>Cálculo do volume da caixa cúbica:</strong><br>$$V_{\\text{cubo}} = 80\\text{ cm} \\times 80\\text{ cm} \\times 80\\text{ cm} = 512.000\\text{ cm}^3$$<br><br>2. <strong>Cálculo do volume da caixa menor (paralelepípedo):</strong><br>$$V_{\\text{caixa}} = 4\\text{ cm} \\times 2\\text{ cm} \\times 8\\text{ cm} = 64\\text{ cm}^3$$<br><br>3. <strong>Verificação do preenchimento e quantidade necessária:</strong><br>Como a aresta da caixa maior ($80\\text{ cm}$) é divisível exatamente por cada uma das dimensões da menor ($80 \\div 4 = 20$, $80 \\div 2 = 40$ e $80 \\div 8 = 10$), o empilhamento é exato sem qualquer espaço vazio.<br>$$\\text{Quantidade de caixas} = \\frac{512.000}{64} = 20 \\times 40 \\times 10 = 8.000\\text{ caixas}$$<br>Portanto, serão necessárias 8.000 caixas (Alternativa D).",
+            "bncc": "EF08MA20",
+            "bnccDesc": "Reconhecer a relação entre um litro e um decímetro cúbico e a relação entre litro e metro cúbico, para resolver problemas de cálculo de capacidade de recipientes.",
+            "unidadeTematica": "Grandezas e medidas",
+            "anoEscolar": "8º ano",
+            "topicoId": "b4-t2",
+            "image": null
+          },
+          {
+            "q": "Para ir de sua casa até a escola, Lucas percorre uma parte do trajeto caminhando e outra parte do trajeto de ônibus. O tempo total que Lucas leva para se deslocar de casa até a escola é de $1\\text{ hora e } 12\\text{ minutos}$, e o tempo de caminhada corresponde a um terço do tempo do deslocamento que ele faz de ônibus.\n\nNessas condições, para se deslocar de casa até a escola, é CORRETO afirmar que Lucas gasta:",
+            "options": [
+              "24 minutos caminhando e 48 minutos viajando de ônibus.",
+              "18 minutos caminhando e 54 minutos viajando de ônibus.",
+              "12 minutos caminhando e 1 hora viajando de ônibus.",
+              "20 minutos caminhando e 52 minutos viajando de ônibus.",
+              "15 minutos caminhando e 45 minutos viajando de ônibus."
             ],
             "correct": 1,
-            "explanation": "$(-3)^2 = 9$; $\\sqrt{64} = 8$; $2^3 \\div 4 = 8 \\div 4 = 2$. Calculando: $9 - 8 + 2 = 1 + 2 = 3$.",
-            "bncc": "EF08MA02",
-            "bnccDesc": "Resolver e elaborar problemas usando a relação entre potenciação e radiciação, para representar uma raiz como potência de expoente fracionário.",
-            "unidadeTematica": "Números",
-            "anoEscolar": "8º ano",
-            "topicoId": "b1-t7"
+            "explanation": "1. <strong>Conversão do tempo total em minutos:</strong><br>$$T_{\\text{total}} = 1\\text{ h } 12\\text{ min} = 60 + 12 = 72\\text{ minutos}$$<br><br>2. <strong>Equacionamento da relação entre os tempos:</strong><br>Seja $T_o$ o tempo de deslocamento de ônibus. O tempo de caminhada é $T_c = \\frac{1}{3}T_o$. Como o tempo total é a soma dos dois trajetos:<br>$$T_c + T_o = 72 \\implies \\frac{1}{3}T_o + T_o = 72$$<br>$$\\frac{4}{3}T_o = 72 \\implies T_o = \\frac{72 \\times 3}{4} = 18 \\times 3 = 54\\text{ minutos}$$<br><br>3. <strong>Cálculo do tempo de caminhada:</strong><br>$$T_c = \\frac{54}{3} = 18\\text{ minutos}$$<br>Portanto, Lucas gasta 18 minutos caminhando e 54 minutos de ônibus (Alternativa B).",
+            "bncc": "EF07MA18",
+            "bnccDesc": "Resolver e elaborar problemas que possam ser representados por equações polinomiais de 1º grau, redutíveis à forma ax + b = c, fazendo uso das propriedades da igualdade.",
+            "unidadeTematica": "Álgebra",
+            "anoEscolar": "7º ano",
+            "topicoId": "b2-t3",
+            "image": null
           },
           {
-            "q": "A diagonal de um retângulo que possui lados de $6\\text{ cm}$ e $8\\text{ cm}$ mede:",
+            "q": "Considere a equação:\n$$2(x + 4) \\cdot (x + 3) = (x + 5)^2 + x + 9$$\n\nAssinale a alternativa CORRETA.",
             "options": [
-              "$10\\text{ cm}$",
-              "$12\\text{ cm}$",
-              "$14\\text{ cm}$",
-              "$15\\text{ cm}$",
-              "$9\\text{ cm}$"
+              "É uma equação do 1º grau cuja solução é 2.",
+              "É uma equação do 2º grau que não apresenta soluções reais.",
+              "É uma equação do 2º grau que tem soluções reais e iguais entre si.",
+              "É uma equação do 1º grau cuja solução é -5.",
+              "É uma equação do 2º grau que tem soluções reais -5 e 2."
             ],
-            "correct": 0,
-            "explanation": "Por Pitágoras: $d = \\sqrt{6^2 + 8^2} = \\sqrt{36 + 64} = \\sqrt{100} = 10\\text{ cm}$.",
-            "bncc": "EF09MA14",
-            "bnccDesc": "Resolver e elaborar problemas de aplicação do teorema de Pitágoras ou das relações de proporcionalidade envolvendo retas paralelas cortadas por secantes.",
-            "unidadeTematica": "Geometria",
+            "correct": 4,
+            "explanation": "1. <strong>Desenvolvimento dos produtos notáveis e distributiva:</strong><br>- Primeiro membro:<br>$$2(x + 4)(x + 3) = 2(x^2 + 3x + 4x + 12) = 2(x^2 + 7x + 12) = 2x^2 + 14x + 24$$<br>- Segundo membro:<br>$$(x + 5)^2 + x + 9 = (x^2 + 10x + 25) + x + 9 = x^2 + 11x + 34$$<br><br>2. <strong>Redução dos termos semelhantes à forma reduzida:</strong><br>$$2x^2 + 14x + 24 = x^2 + 11x + 34$$<br>$$2x^2 - x^2 + 14x - 11x + 24 - 34 = 0 \\implies x^2 + 3x - 10 = 0$$<br><br>3. <strong>Resolução da equação do 2º grau:</strong><br>$$\\Delta = 3^2 - 4(1)(-10) = 9 + 40 = 49$$<br>$$x = \\frac{-3 \\pm \\sqrt{49}}{2(1)} = \\frac{-3 \\pm 7}{2}$$<br>$$x_1 = \\frac{-3 + 7}{2} = 2 \\quad \\text{e} \\quad x_2 = \\frac{-3 - 7}{2} = -5$$<br>Portanto, é uma equação do 2º grau com soluções reais $-5$ e $2$ (Alternativa E).",
+            "bncc": "EF09MA09",
+            "bnccDesc": "Compreender os processos de fatoração de expressões algébricas, com base em suas relações com os produtos notáveis, para resolver e elaborar problemas que possam ser representados por equações polinomiais do 2º grau.",
+            "unidadeTematica": "Álgebra",
             "anoEscolar": "9º ano",
-            "topicoId": "b3-t2"
-          },
-          {
-            "q": "Em uma pesquisa com $200$ pessoas sobre preferência entre dois produtos A e B: $120$ gostam de A, $100$ gostam de B e $40$ gostam de ambos. Quantas pessoas não gostam de nenhum?",
-            "options": [
-              "$20$",
-              "$30$",
-              "$40$",
-              "$10$",
-              "$50$"
-            ],
-            "correct": 0,
-            "explanation": "Gostam de pelo menos um: $n(A \\cup B) = 120 + 100 - 40 = 180$. Não gostam de nenhum: $200 - 180 = 20$ pessoas.",
-            "bncc": "EF09MA01",
-            "bnccDesc": "Reconhecer que, uma vez fixada uma unidade de comprimento, existem segmentos de reta cujo comprimento não é expresso por número racional (como as medidas de diagonais de um polígono e alturas de um triângulo, quando se toma a medida de cada lado como unidade).",
-            "unidadeTematica": "Números",
-            "anoEscolar": "9º ano",
-            "topicoId": "b1-t1"
+            "topicoId": "b2-t5",
+            "image": null
           }
         ],
         "slug": "prova-ifsc-20182",
@@ -2838,7 +2871,7 @@ var mathData = window.mathData || {
         },
         "questions": [
           {
-            "q": "Uma escola pretende colocar lajotas para construir um pátio com o formato indicado na figura. A parte pintada vai ser onde deverão ser colocadas as lajotas. Sabe-se que não será preciso cobrir dois quadrados de lado $b$, onde se plantarão algumas flores. A área total a ser coberta é de $73\\text{ m}^2$ e o comprimento do lado $a$ menos $1\\text{ m}$ é igual ao triplo do comprimento do lado $b$. Dessa forma, podemos afirmar que a área que será destinada ao plantio das flores é: Assinale a alternativa CORRETA.",
+            "q": "Uma escola pretende colocar lajotas para construir um pátio com o formato abaixo. A parte pintada vai ser onde deverá ser colocado as lajotas. Sabe-se que não será preciso cobrir dois quadrados de lado $b$, onde se plantarão algumas flores. A área total a ser coberta é de $73\\text{ m}^2$ e o comprimento do lado $a$ menos $1\\text{ m}$ é igual ao triplo do comprimento do lado $b$. Dessa forma, podemos afirmar que a área que será destinada ao plantio das flores é:\n\nAssinale a alternativa CORRETA.",
             "options": [
               "$4\\text{ m}^2$",
               "$8\\text{ m}^2$",
@@ -2847,88 +2880,92 @@ var mathData = window.mathData || {
               "$98\\text{ m}^2$"
             ],
             "correct": 1,
-            "explanation": "A figura total é um quadrado de lado $(a + b)$ com dois cantos brancos quadrados de lado $b$. A área coberta cinza é $(a + b)^2 - 2b^2 = a^2 + 2ab - b^2 = 73$. Como $a - 1 = 3b \\implies a = 3b + 1$, substituindo temos: $(3b + 1)^2 + 2(3b + 1)b - b^2 = 73 \\implies 14b^2 + 8b - 72 = 0 \\implies 7b^2 + 4b - 36 = 0$. Fatorando, $(7b + 18)(b - 2) = 0 \\implies b = 2\\text{ m}$. A área destinada às flores (dois quadrados de lado $b$) é $2 \\times b^2 = 2 \\times 2^2 = 8\\text{ m}^2$.",
-            "bncc": "EF08MA19",
-            "bnccDesc": "Resolver e elaborar problemas que envolvam medidas de área de figuras geométricas, utilizando expressões de cálculo de área (quadriláteros, triângulos e círculos), em situações como determinar medida de terrenos.",
-            "unidadeTematica": "Grandezas e Medidas",
-            "anoEscolar": "8º ano",
+            "explanation": "1. <strong>Interpretação geométrica da área a ser pavimentada:</strong><br>A figura completa forma um quadrado de lado total $(a + b)$. A área sombreada que receberá as lajotas corresponde à área do quadrado total subtraída dos dois canteiros quadrados brancos de lado $b$:<br>$$\\text{Área das lajotas} = (a + b)^2 - 2b^2 = a^2 + 2ab + b^2 - 2b^2 = a^2 + 2ab - b^2$$<br>O enunciado informa que essa área é igual a $73\\text{ m}^2$:<br>$$(a + b)^2 - 2b^2 = 73$$<br><br>2. <strong>Relação algébrica entre $a$ e $b$:</strong><br>O enunciado informa que $a - 1 = 3b$, logo:<br>$$a = 3b + 1$$<br>Substituindo $a$ na equação da área:<br>$$(3b + 1 + b)^2 - 2b^2 = 73 \\implies (4b + 1)^2 - 2b^2 = 73$$<br>$$16b^2 + 8b + 1 - 2b^2 = 73 \\implies 14b^2 + 8b - 72 = 0$$<br>Dividindo toda a equação por $2$:<br>$$7b^2 + 4b - 36 = 0$$<br><br>3. <strong>Resolução da equação do 2º grau e cálculo da área das flores:</strong><br>$$\\Delta = 4^2 - 4(7)(-36) = 16 + 1008 = 1024 = 32^2$$<br>Como a medida do lado $b$ deve ser positiva:<br>$$b = \\frac{-4 + 32}{2 \\times 7} = \\frac{28}{14} = 2\\text{ m}$$<br>A área destinada ao plantio de flores é a soma dos dois canteiros de lado $b$ ($2b^2$):<br>$$\\text{Área das flores} = 2 \\times 2^2 = 2 \\times 4 = 8\\text{ m}^2$$<br>Portanto, a área para flores é $8\\text{ m}^2$ (Alternativa B).",
+            "bncc": "EF09MA09",
+            "bnccDesc": "Compreender os processos de fatoração de expressões algébricas, com base em suas relações com os produtos notáveis, para resolver e elaborar problemas que possam ser representados por equações polinomiais do 2º grau.",
+            "unidadeTematica": "Álgebra",
+            "anoEscolar": "9º ano",
             "topicoId": "b4-t1",
             "image": {
-              "src": "https://drive.google.com/file/d/1T5hc0qPjS0t56HKTg4X4f4deeUAJK7bP/view?usp=sharing",
-              "alt": "Planta esquemática do pátio: quadrado de dimensões cotadas a e b, com região central e bordas sombreadas em cinza e dois recortes quadrados brancos de lado b nos cantos opostos.",
-              "caption": "Figura: Pátio escolar cotado com áreas reservadas para flores (IFSC 2019.1)"
+              "src": "assets/img/questoes/ifsc/ifsc-2019-1-q01.png",
+              "alt": "Planta esquemática do pátio em forma de quadrado de lado a + b, com parte sombreada para lajotas e dois recortes quadrados brancos de lado b nos cantos opostos destinados a flores.",
+              "caption": "Fonte: IFSC 2019.1"
             }
           },
           {
-            "q": "Um produto que custava $\\text{R\\$} 250{,}00$ sofreu um desconto de $20\\%$ e, na semana seguinte, um novo desconto de $10\\%$ sobre o valor já com desconto. O preço final é:",
+            "q": "Em uma lanchonete, atualmente, $2\\text{ trabalhadores}$ preparam $10\\text{ sanduíches}$ em $5\\text{ minutos}$. Os responsáveis pela empresa perceberam que em certos horários é necessário preparar $12\\text{ sanduíches}$ em $3\\text{ minutos}$. Considerando que os responsáveis busquem contratar trabalhadores que exerçam o trabalho no mesmo ritmo que os demais, para suprir a demanda nesses horários, é necessário contratar **mais**:\n\nAssinale a alternativa CORRETA.",
             "options": [
-              "$\\text{R\\$} 175{,}00$",
-              "$\\text{R\\$} 180{,}00$",
-              "$\\text{R\\$} 190{,}00$",
-              "$\\text{R\\$} 200{,}00$",
-              "$\\text{R\\$} 170{,}00$"
+              "$1\\text{ trabalhador}$",
+              "$6\\text{ trabalhadores}$",
+              "$2\\text{ trabalhadores}$",
+              "$4\\text{ trabalhadores}$",
+              "$5\\text{ trabalhadores}$"
             ],
-            "correct": 1,
-            "explanation": "1º Desconto ($20\\%$): $250 \\times 0{,}80 = 200$. 2º Desconto ($10\\%$): $200 \\times 0{,}90 = \\text{R\\$} 180,00$.",
-            "bncc": "EF08MA04",
-            "bnccDesc": "Resolver e elaborar problemas, envolvendo cálculo de porcentagens, incluindo o uso de tecnologias digitais.",
-            "unidadeTematica": "Números",
-            "anoEscolar": "8º ano",
-            "topicoId": "b1-t6"
-          },
-          {
-            "q": "Em uma fazenda há galinhas e vacas, totalizando $35$ cabeças e $100$ pés. Quantas galinhas e quantas vacas há na fazenda?",
-            "options": [
-              "$20$ galinhas e $15$ vacas",
-              "$15$ galinhas e $20$ vacas",
-              "$25$ galinhas e $10$ vacas",
-              "$18$ galinhas e $17$ vacas",
-              "$22$ galinhas e $13$ vacas"
-            ],
-            "correct": 0,
-            "explanation": "Sistema: $g + v = 35$ e $2g + 4v = 100$. Multiplicando a 1ª por $-2$: $2v = 30 \\Rightarrow v = 15$ vacas e $g = 35 - 15 = 20$ galinhas.",
-            "bncc": "EF08MA08",
-            "bnccDesc": "Resolver e elaborar problemas relacionados ao seu contexto próximo, que possam ser representados por sistemas de equações de 1º grau com duas incógnitas e interpretá-los, utilizando, inclusive, o plano cartesiano como recurso.",
+            "correct": 2,
+            "explanation": "1. <strong>Cálculo do ritmo de trabalho de cada funcionário:</strong><br>Dois trabalhadores preparam $10\\text{ sanduíches}$ em $5\\text{ minutos}$. A produção de cada trabalhador por minuto é:<br>$$\\text{Ritmo} = \\frac{10\\text{ sanduíches}}{2\\text{ trabalhadores} \\times 5\\text{ minutos}} = 1\\text{ sanduíche por minuto por trabalhador}$$<br><br>2. <strong>Determinação do total de trabalhadores necessários para a nova demanda:</strong><br>A nova demanda exige $12\\text{ sanduíches}$ em $3\\text{ minutos}$, ou seja:<br>$$\\text{Ritmo necessário} = \\frac{12\\text{ sanduíches}}{3\\text{ minutos}} = 4\\text{ sanduíches por minuto}$$<br>Como cada trabalhador produz $1\\text{ sanduíche/min}$, são necessários $4\\text{ trabalhadores}$ no total.<br><br>3. <strong>Cálculo do número adicional de contratações:</strong><br>A empresa já conta com $2$ trabalhadores. Para alcançar a equipe de $4$, é necessário contratar:<br>$$\\text{Contratações adicionais} = 4 - 2 = 2\\text{ trabalhadores}$$<br>Portanto, é necessário contratar mais 2 trabalhadores (Alternativa C).",
+            "bncc": "EF07MA17",
+            "bnccDesc": "Resolver e elaborar problemas que envolvam variação de proporcionalidade direta e do tipo inversa entre duas grandezas, utilizando sentença algébrica para expressar a relação entre elas.",
             "unidadeTematica": "Álgebra",
-            "anoEscolar": "8º ano",
-            "topicoId": "b2-t3"
+            "anoEscolar": "7º ano",
+            "topicoId": "b2-t2",
+            "image": null
           },
           {
-            "q": "O valor da expressão com potências $\\frac{10^6 \\times 10^{-2}}{10^3}$ é igual a:",
+            "q": "O Produto Interno Bruto (PIB) é uma representação da soma dos valores monetários de todos os bens e serviços produzidos em uma determinada região em um determinado espaço de tempo. O Balinsky (país fictício) tinha em 2016 um PIB que em comparação com o PIB de 2015 cresceu $2\\%$. Já em 2017 o PIB de Balinsky diminui $5\\%$ em relação a 2016. A previsão para 2018 é de um crescimento de $3\\%$ em relação a 2017. Dessa forma, se a previsão para 2018 se confirmar, podemos afirmar que a variação do PIB de Balinsky do período de 2015 a 2018 foi:\n\nAssinale a alternativa CORRETA.",
             "options": [
-              "$10$",
-              "$100$",
-              "$1.000$",
-              "$0{,}1$",
-              "$1$"
+              "Um decrescimento de aproximadamente $0{,}2\\%$.",
+              "Não cresceu nem diminui.",
+              "Um aumento de aproximadamente $1{,}8\\%$.",
+              "Um decrescimento de mais de $2\\%$.",
+              "Um acréscimo de menos de $1\\%$."
             ],
             "correct": 0,
-            "explanation": "Numerador: $10^{6 + (-2)} = 10^4$. Divisão: $\\frac{10^4}{10^3} = 10^{4-3} = 10^1 = 10$.",
-            "bncc": "EF08MA01",
-            "bnccDesc": "Efetuar cálculos com potências de expoentes inteiros e aplicar esse conhecimento na representação de números em notação científica.",
+            "explanation": "1. <strong>Aplicação de fatores de variação percentual acumulada:</strong><br>Seja $P_0 = 100$ o índice base do PIB de Balinsky em 2015.<br>- Em 2016: aumento de $2\\% \\rightarrow P_{2016} = 100 \\times (1 + 0{,}02) = 102{,}00$<br>- Em 2017: redução de $5\\% \\rightarrow P_{2017} = 102{,}00 \\times (1 - 0{,}05) = 102{,}00 \\times 0{,}95 = 96{,}90$<br>- Em 2018: aumento de $3\\% \\rightarrow P_{2018} = 96{,}90 \\times (1 + 0{,}03) = 96{,}90 \\times 1{,}03 = 99{,}807$<br><br>2. <strong>Cálculo da variação global em relação a 2015:</strong><br>$$\\Delta\\% = P_{2018} - P_0 = 99{,}807 - 100 = -0{,}193\\%$$<br>O resultado negativo indica uma queda, cujo valor arredondado é aproximadamente $-0{,}2\\%$.<br>Portanto, houve um decrescimento de aproximadamente $0{,}2\\%$ (Alternativa A).",
+            "bncc": "EF07MA02",
+            "bnccDesc": "Resolver e elaborar problemas que envolvam porcentagens, como os que lidam com acréscimos e decréscimos simples, utilizando estratégias pessoais, cálculo mental e calculadora, no contexto de educação financeira, entre outros.",
             "unidadeTematica": "Números",
-            "anoEscolar": "8º ano",
-            "topicoId": "b1-t7"
+            "anoEscolar": "7º ano",
+            "topicoId": "b1-t6",
+            "image": null
           },
           {
-            "q": "Um poste de $6\\text{ m}$ de altura projeta no solo uma sombra de $4\\text{ m}$. No mesmo instante, a sombra projetada por um edifício vizinho é de $24\\text{ m}$. A altura do edifício é:",
+            "q": "Edison gerencia um clube que possui uma piscina com $6\\text{ metros}$ de largura, $15\\text{ metros}$ de comprimento e profundidade de $2\\text{ metros}$. Para que a água dentro da piscina fique com uma altura ideal aos visitantes, ele necessita enchê-la com $70\\%$ do volume máximo de água que a piscina suporta. Dessa forma, o volume de água que Edison necessita para encher a piscina conforme desejado é de:\n\nAssinale a alternativa CORRETA.",
             "options": [
-              "$36\\text{ m}$",
-              "$40\\text{ m}$",
-              "$32\\text{ m}$",
-              "$48\\text{ m}$",
-              "$30\\text{ m}$"
+              "$126.000\\text{ L}$",
+              "$126\\text{ L}$",
+              "$54.000\\text{ L}$",
+              "$12.600\\text{ L}$",
+              "$54\\text{ L}$"
             ],
             "correct": 0,
-            "explanation": "Por semelhança de triângulos: $\\frac{H}{24} = \\frac{6}{4} \\Rightarrow 4H = 144 \\Rightarrow H = 36\\text{ metros}$.",
-            "bncc": "EF09MA12",
-            "bnccDesc": "Reconhecer as condições necessárias e suficientes para que dois triângulos sejam semelhantes.",
-            "unidadeTematica": "Geometria",
-            "anoEscolar": "9º ano",
-            "topicoId": "b3-t2"
+            "explanation": "1. <strong>Cálculo do volume total da piscina (paralelepípedo reto-retângulo):</strong><br>$$V_{\\text{total}} = \\text{largura} \\times \\text{comprimento} \\times \\text{profundidade} = 6\\text{ m} \\times 15\\text{ m} \\times 2\\text{ m} = 180\\text{ m}^3$$<br><br>2. <strong>Cálculo de $70\\%$ da capacidade:</strong><br>$$V_{\\text{água}} = 0{,}70 \\times 180\\text{ m}^3 = 126\\text{ m}^3$$<br><br>3. <strong>Conversão de metros cúbicos para litros:</strong><br>Sabendo que $1\\text{ m}^3 = 1000\\text{ L}$:<br>$$V = 126 \\times 1000 = 126.000\\text{ L}$$<br>Portanto, são necessários $126.000\\text{ L}$ de água (Alternativa A).",
+            "bncc": "EF08MA20",
+            "bnccDesc": "Reconhecer a relação entre um litro e um decímetro cúbico e a relação entre litro e metro cúbico, para resolver problemas de cálculo de capacidade de recipientes.",
+            "unidadeTematica": "Grandezas e medidas",
+            "anoEscolar": "8º ano",
+            "topicoId": "b4-t2",
+            "image": null
           },
           {
-            "q": "Na figura a seguir há três quadrados, sendo $258\\text{ cm}^2$ a soma de suas áreas. Qual o perímetro do maior quadrado, em centímetros, sendo que o menor quadrado tem lado medindo $5\\text{ cm}$? Assinale a alternativa CORRETA.",
+            "q": "Sabendo que $x \\in \\mathbb{Z}$ e que a metade de $x$ acrescida de $14$ é maior que o quádruplo de $x$, podemos afirmar que o maior valor possível para $x$ é:\n\nAssinale a alternativa CORRETA.",
+            "options": [
+              "$0$",
+              "$4$",
+              "$1$",
+              "$5$",
+              "$3$"
+            ],
+            "correct": 4,
+            "explanation": "1. <strong>Tradução para inequação do 1º grau:</strong><br>A metade de $x$ é $\\frac{x}{2}$. Acrescida de $14$ resulta em $\\frac{x}{2} + 14$. O quádruplo de $x$ é $4x$. A inequação é:<br>$$\\frac{x}{2} + 14 > 4x$$<br><br>2. <strong>Resolução da inequação:</strong><br>Multiplicando todos os termos por $2$:<br>$$x + 28 > 8x$$<br>Isolando $x$:<br>$$28 > 8x - x \\implies 28 > 7x \\implies 7x < 28 \\implies x < 4$$<br><br>3. <strong>Determinação do maior valor no conjunto dos inteiros ($\\mathbb{Z}$):</strong><br>Como $x$ é um número inteiro estritamente menor do que $4$ ($x \\in \\{..., 1, 2, 3\\}$), o maior valor inteiro admissível é $x = 3$.<br>Portanto, a alternativa correta é a Alternativa E.",
+            "bncc": "EF07MA18",
+            "bnccDesc": "Resolver e elaborar problemas que possam ser representados por equações polinomiais de 1º grau, redutíveis à forma ax + b = c, fazendo uso das propriedades da igualdade.",
+            "unidadeTematica": "Álgebra",
+            "anoEscolar": "7º ano",
+            "topicoId": "b2-t3",
+            "image": null
+          },
+          {
+            "q": "Na figura a seguir há três quadrados, sendo $258\\text{ cm}^2$ a soma de suas áreas. Qual o perímetro do maior quadrado, em $\\text{cm}$, sendo que o menor quadrado tem lado medindo $5\\text{ cm}$?\n\nAssinale a alternativa CORRETA.",
             "options": [
               "$36\\text{ cm}$",
               "$32\\text{ cm}$",
@@ -2937,20 +2974,20 @@ var mathData = window.mathData || {
               "$40\\text{ cm}$"
             ],
             "correct": 3,
-            "explanation": "O menor quadrado tem lado $5\\text{ cm}$, logo sua área é $5^2 = 25\\text{ cm}^2$. A soma das áreas dos dois quadrados restantes é $258 - 25 = 233\\text{ cm}^2$. Pela figura, o lado do maior quadrado $L$ é a soma dos lados dos outros dois quadrados ($L = 5 + l_2$). Os quadrados de lados inteiros cuja soma das áreas é 233 são $13^2 + 8^2 = 169 + 64 = 233$. Assim, o lado do maior quadrado é $13\\text{ cm}$ e seu perímetro é $4 \\times 13 = 52\\text{ cm}$.",
-            "bncc": "EF08MA22",
-            "bnccDesc": "Calcular a probabilidade de eventos, com base na construção do espaço amostral, utilizando o princípio multiplicativo, e reconhecer que a soma das probabilidades de todos os elementos do espaço amostral é igual a 1.",
-            "unidadeTematica": "Probabilidade e Estatística",
-            "anoEscolar": "8º ano",
-            "topicoId": "b4-t3",
+            "explanation": "1. <strong>Interpretação das relações geométricas entre os quadrados:</strong><br>Pela disposição da figura, o quadrado menor (do meio) tem lado $5\\text{ cm}$ e está apoiado sobre a aresta superior do quadrado da esquerda (lado $L$). O topo do quadrado do meio coincide horizontalmente com o topo do quadrado da direita (maior quadrado). Dessa forma, a altura do quadrado maior é a soma das alturas dos outros dois:<br>$$L_{\\text{maior}} = L + 5$$<br><br>2. <strong>Montagem da equação das áreas:</strong><br>A soma das áreas dos três quadrados é $258\\text{ cm}^2$:<br>$$L^2 + 5^2 + (L + 5)^2 = 258$$<br>$$L^2 + 25 + L^2 + 10L + 25 = 258$$<br>$$2L^2 + 10L + 50 = 258 \\implies 2L^2 + 10L - 208 = 0$$<br>Dividindo toda a equação por $2$:<br>$$L^2 + 5L - 104 = 0$$<br><br>3. <strong>Resolução e cálculo do perímetro do maior quadrado:</strong><br>$$\\Delta = 5^2 - 4(1)(-104) = 25 + 416 = 441 = 21^2$$<br>Como a medida deve ser positiva:<br>$$L = \\frac{-5 + 21}{2} = \\frac{16}{2} = 8\\text{ cm}$$<br>Assim, o lado do maior quadrado é:<br>$$L_{\\text{maior}} = 8 + 5 = 13\\text{ cm}$$<br>O perímetro do maior quadrado é:<br>$$P = 4 \\times 13 = 52\\text{ cm}$$<br>Portanto, o perímetro do maior quadrado é $52\\text{ cm}$ (Alternativa D).",
+            "bncc": "EF09MA09",
+            "bnccDesc": "Compreender os processos de fatoração de expressões algébricas, com base em suas relações com os produtos notáveis, para resolver e elaborar problemas que possam ser representados por equações polinomiais do 2º grau.",
+            "unidadeTematica": "Álgebra",
+            "anoEscolar": "9º ano",
+            "topicoId": "b4-t1",
             "image": {
-              "src": "https://drive.google.com/file/d/19xWRva0GJcjBT6UKZRjHdasrUz3SIp-X/view?usp=sharing",
-              "alt": "Três quadrados sombreados contíguos de tamanhos pequeno, médio e grande, dispostos de forma que os topos do quadrado médio e do maior estão nivelados na mesma altura.",
-              "caption": "Figura: Três quadrados adjacentes de áreas combinadas (IFSC 2019.1)"
+              "src": "assets/img/questoes/ifsc/ifsc-2019-1-q06.png",
+              "alt": "Três quadrados justapostos onde o quadrado do meio de lado 5 cm se apoia no topo do quadrado da esquerda e seu topo alinha-se com o topo do quadrado da direita.",
+              "caption": "Fonte: IFSC 2019.1"
             }
           },
           {
-            "q": "Um portão de elevação com $4{,}52\\text{ metros}$ de altura é articulado em seu centro C, possui sua extremidade superior A fixa e a extremidade B só pode se mover verticalmente, conforme a figura. O portão, que inicialmente está fechado, é levantado de maneira que a extremidade B sobe $4\\text{ cm}$. Isso produz um deslocamento da articulação C. Qual a abertura horizontal $x$, em centímetros, percorrida pela articulação C? Assinale a alternativa CORRETA.",
+            "q": "Um portão de elevação com $4{,}52\\text{ metros}$ de altura é articulado em seu centro $C$, possui sua extremidade superior $A$ fixa e a extremidade $B$ só pode se mover verticalmente, conforme a figura. O portão, que inicialmente está fechado, é levantado de maneira que a extremidade $B$ sobe $4\\text{ cm}$. Isso produz um deslocamento da articulação $C$. Qual a abertura horizontal $x$, em centímetros, percorrida pela articulação $C$?\n\nAssinale a alternativa CORRETA.",
             "options": [
               "$24\\text{ cm}$",
               "$30\\text{ cm}$",
@@ -2959,54 +2996,56 @@ var mathData = window.mathData || {
               "$4\\text{ cm}$"
             ],
             "correct": 1,
-            "explanation": "A altura do portão é $4{,}52\\text{ m} = 452\\text{ cm}$. Com a articulação no ponto médio, cada braço mede $AC = BC = 226\\text{ cm}$. Quando a extremidade B sobe $4\\text{ cm}$, a nova distância vertical entre A e B é $452 - 4 = 448\\text{ cm}$. Pela simetria do triângulo isósceles, a altura de cada metade vertical é $448 / 2 = 224\\text{ cm}$. No triângulo retângulo formado pela articulação C: $x^2 + 224^2 = 226^2 \\implies x^2 = 226^2 - 224^2 = (226 - 224)(226 + 224) = 2 \\times 450 = 900 \\implies x = 30\\text{ cm}$.",
-            "bncc": "EF08MA21",
-            "bnccDesc": "Resolver e elaborar problemas que envolvam o cálculo do volume de recipiente cujo formato é o de um bloco retangular.",
-            "unidadeTematica": "Grandezas e Medidas",
-            "anoEscolar": "8º ano",
-            "topicoId": "b4-t2",
+            "explanation": "1. <strong>Comprimento dos braços articulados:</strong><br>A altura total do portão fechado é $4{,}52\\text{ m} = 452\\text{ cm}$. Sendo articulado no ponto central $C$, os dois braços $AC$ e $BC$ têm comprimentos iguais e fixos:<br>$$AC = BC = \\frac{452\\text{ cm}}{2} = 226\\text{ cm}$$<br><br>2. <strong>Geometria do portão em abertura:</strong><br>Quando a base $B$ se eleva $4\\text{ cm}$ na vertical, a distância vertical entre $A$ e $B$ passa a ser:<br>$$h = 452 - 4 = 448\\text{ cm}$$<br>A articulação $C$ desloca-se horizontalmente por uma distância $x$. Pela simetria do triângulo isósceles $ABC$, a linha horizontal traçada de $C$ intercepta o segmento vertical $AB$ exatamente no ponto médio, dividindo a altura vertical em dois segmentos iguais de:<br>$$\\frac{448\\text{ cm}}{2} = 224\\text{ cm}$$<br><br>3. <strong>Aplicação do Teorema de Pitágoras:</strong><br>No triângulo retângulo formado pela metade superior:<br>$$x^2 + 224^2 = 226^2$$<br>$$x^2 = 226^2 - 224^2 = (226 - 224)(226 + 224) = 2 \\times 450 = 900$$<br>$$x = \\sqrt{900} = 30\\text{ cm}$$<br>Portanto, o deslocamento horizontal da articulação é de $30\\text{ cm}$ (Alternativa B).",
+            "bncc": "EF09MA14",
+            "bnccDesc": "Resolver e elaborar problemas de aplicação do teorema de Pitágoras ou das relações de proporcionalidade envolvendo triângulos retângulos.",
+            "unidadeTematica": "Geometria",
+            "anoEscolar": "9º ano",
+            "topicoId": "b3-t2",
             "image": {
-              "src": "https://drive.google.com/file/d/1_UVl6fOgdvpy_8O0yCAD6dIR2k8rZEig/view?usp=sharing",
-              "alt": "Esquema geométrico mostrando o portão de elevação na posição vertical fechado (4,52 m) e na posição semiaberta com a elevação de 4 cm da base B e deslocamento horizontal x da articulação C.",
-              "caption": "Figura: Esquema mecânico do portão de elevação articulado (IFSC 2019.1)"
+              "src": "assets/img/questoes/ifsc/ifsc-2019-1-q07.png",
+              "alt": "Diagrama de portão articulado mostrando posição fechada reta com altura 4,52 m e posição abrindo com elevação de 4 cm na base B e deslocamento horizontal x na articulação central C.",
+              "caption": "Fonte: IFSC 2019.1"
             }
           },
           {
-            "q": "As raízes reais da equação $x^2 - 4x - 21 = 0$ são:",
+            "q": "A soma das raízes da equação $$\\frac{(x - 15) \\cdot (x + 7)}{x - 3} = 0$$ é:\n\nAssinale a alternativa CORRETA.",
             "options": [
-              "$7$ e $-3$",
-              "$-7$ e $3$",
-              "$7$ e $3$",
-              "$-7$ e $-3$",
-              "$14$ e $-6$"
+              "$9$",
+              "$11$",
+              "$10$",
+              "$8$",
+              "$12$"
             ],
-            "correct": 0,
-            "explanation": "Discriminante $\\Delta = (-4)^2 - 4(1)(-21) = 16 + 84 = 100$. Raízes: $x = \\frac{4 \\pm 10}{2} \\Rightarrow x_1 = 7$ e $x_2 = -3$.",
+            "correct": 3,
+            "explanation": "1. <strong>Condição de existência da fração algébrica:</strong><br>O denominador não pode ser nulo:<br>$$x - 3 \\neq 0 \\implies x \\neq 3$$<br><br>2. <strong>Determinação das raízes do numerador:</strong><br>Uma fração é nula quando o numerador é nulo (e o denominador é diferente de zero):<br>$$(x - 15)(x + 7) = 0$$<br>Pela propriedade do produto nulo:<br>$$x - 15 = 0 \\implies x_1 = 15$$<br>$$x + 7 = 0 \\implies x_2 = -7$$<br>Ambas as raízes são válidas, pois $15 \\neq 3$ e $-7 \\neq 3$.<br><br>3. <strong>Cálculo da soma das raízes:</strong><br>$$S = x_1 + x_2 = 15 + (-7) = 15 - 7 = 8$$<br>Portanto, a soma das raízes é $8$ (Alternativa D).",
             "bncc": "EF09MA09",
             "bnccDesc": "Compreender os processos de fatoração de expressões algébricas, com base em suas relações com os produtos notáveis, para resolver e elaborar problemas que possam ser representados por equações polinomiais do 2º grau.",
             "unidadeTematica": "Álgebra",
             "anoEscolar": "9º ano",
-            "topicoId": "b2-t4"
+            "topicoId": "b2-t5",
+            "image": null
           },
           {
-            "q": "Um veículo percorre uma distância de $180\\text{ km}$ em $2\\text{ horas e } 30\\text{ minutos}$. Sua velocidade média foi de:",
+            "q": "Quatro pedreiros, trabalhando $8\\text{ horas por dia}$, constroem $15\\text{ m}$ de muro em $5\\text{ dias}$. Sabendo-se que todos os pedreiros trabalham no mesmo ritmo e que dois pedreiros adoeceram e se ausentaram do trabalho, quantos dias serão necessários para construir $18\\text{ m}$ de muro, trabalhando-se $6\\text{ horas por dia}$:\n\nAssinale a alternativa CORRETA.",
             "options": [
-              "$72\\text{ km/h}$",
-              "$80\\text{ km/h}$",
-              "$75\\text{ km/h}$",
-              "$90\\text{ km/h}$",
-              "$65\\text{ km/h}$"
+              "$16\\text{ dias}$",
+              "$15\\text{ dias}$",
+              "$14\\text{ dias}$",
+              "$13\\text{ dias}$",
+              "$12\\text{ dias}$"
             ],
             "correct": 0,
-            "explanation": "Tempo em horas: $2\\text{h } 30\\text{min} = 2{,}5\\text{ horas}$. Velocidade média $= \\frac{180}{2{,}5} = 72\\text{ km/h}$.",
-            "bncc": "EF06MA24",
-            "bnccDesc": "Resolver e elaborar problemas que envolvam as grandezas comprimento, massa, tempo, temperatura, área (triângulos e retângulos), capacidade e volume (sólidos formados por blocos retangulares), sem uso de fórmulas, inseridos, sempre que possível, em contextos oriundos de situações reais e/ou relacionadas às outras áreas do conhecimento.",
-            "unidadeTematica": "Grandezas e Medidas",
-            "anoEscolar": "6º ano",
-            "topicoId": "b4-t2"
+            "explanation": "1. <strong>Organização das grandezas da Regra de Três Composta:</strong><br>- Pedreiros: de $4$ para $4 - 2 = 2$;<br>- Horas diárias: de $8\\text{ h/d}$ para $6\\text{ h/d}$;<br>- Extensão de muro: de $15\\text{ m}$ para $18\\text{ m}$;<br>- Dias de trabalho: de $5$ para $x$.<br><br>2. <strong>Análise de proporcionalidade em relação a Dias ($x$):</strong><br>- Pedreiros: inversamente proporcional (menos pedreiros exigem mais dias) $\\rightarrow \\frac{4}{2}$;<br>- Horas diárias: inversamente proporcional (menos horas diárias exigem mais dias) $\\rightarrow \\frac{8}{6}$;<br>- Metros de muro: diretamente proporcional (mais muro exige mais dias) $\\rightarrow \\frac{18}{15}$.<br><br>3. <strong>Equação e cálculo do número de dias:</strong><br>$$\\frac{x}{5} = \\frac{4}{2} \\times \\frac{8}{6} \\times \\frac{18}{15}$$<br>$$\\frac{x}{5} = 2 \\times \\frac{4}{3} \\times \\frac{6}{5}$$<br>$$\\frac{x}{5} = \\frac{48}{15} = \\frac{16}{5}$$<br>Multiplicando ambos os membros por $5$:<br>$$x = 16\\text{ dias}$$<br>Portanto, serão necessários $16\\text{ dias}$ (Alternativa A).",
+            "bncc": "EF07MA17",
+            "bnccDesc": "Resolver e elaborar problemas que envolvam variação de proporcionalidade direta e do tipo inversa entre duas grandezas, utilizando sentença algébrica para expressar a relação entre elas.",
+            "unidadeTematica": "Álgebra",
+            "anoEscolar": "7º ano",
+            "topicoId": "b2-t2",
+            "image": null
           },
           {
-            "q": "Para instalar uma antena parabólica utiliza-se um poste sustentado por dois cabos, como indicado na figura. Calcule a altura aproximada deste poste. Assinale a alternativa CORRETA.",
+            "q": "*(Questão adaptada do IFSC 2019.1 - Enunciado precisado para explicitar a simetria dos cabos e fixação no ponto médio)*\n\nPara instalar uma antena parabólica utiliza-se um poste vertical sustentado simetricamente por dois cabos de $8\\text{ m}$ de comprimento cada, fixados nas extremidades de uma base horizontal de $10\\text{ m}$, com o poste fincado perpendicularmente em seu ponto médio, como indicado na figura abaixo. Calcule a altura aproximada deste poste.\n\nAssinale a alternativa CORRETA.",
             "options": [
               "$6{,}00\\text{ m}$",
               "$6{,}24\\text{ m}$",
@@ -3015,16 +3054,16 @@ var mathData = window.mathData || {
               "$9{,}43\\text{ m}$"
             ],
             "correct": 1,
-            "explanation": "Pela simetria da figura, o poste vertical divide a base de $10\\text{ m}$ ao meio, formando dois triângulos retângulos com base de $5\\text{ m}$ e cabo de fixação (hipotenusa) de $8\\text{ m}$. Aplicando o Teorema de Pitágoras: $h^2 + 5^2 = 8^2 \\implies h^2 + 25 = 64 \\implies h^2 = 39 \\implies h = \\sqrt{39} \\approx 6{,}24\\text{ m}$.",
+            "explanation": "1. <strong>Identificação do triângulo retângulo pelo Teorema de Pitágoras:</strong><br>A estrutura forma um triângulo isósceles com base de $10\\text{ m}$ e dois lados inclinados (cabos) medindo $8\\text{ m}$ cada. O poste, posicionado perpendicularmente no ponto médio da base, divide o conjunto em dois triângulos retângulos idênticos.<br><br>2. <strong>Cálculo da altura do poste ($h$):</strong><br>A meia-base mede $\\frac{10\\text{ m}}{2} = 5\\text{ m}$. No triângulo retângulo formado pela metade da base, pelo poste e pelo cabo:<br>$$h^2 + 5^2 = 8^2$$<br>$$h^2 + 25 = 64 \\implies h^2 = 64 - 25 = 39$$<br>$$h = \\sqrt{39} \\approx 6{,}2449...\\text{ m}$$<br>Portanto, a altura aproximada do poste é $6{,}24\\text{ m}$ (Alternativa B).<br><br>3. <strong>Nota Histórica / Anulação Oficial:</strong><br>No certame original do IFSC 2019.1, esta questão foi anulada pela comissão organizadora porque o enunciado original não explicitou que os cabos eram simétricos e nem declarou que o poste estava fincado no ponto médio perpendicular da base, gerando ambiguidade de dados na figura. A presente versão readaptada inclui essa especificação formal para fins didáticos.",
             "bncc": "EF09MA14",
-            "bnccDesc": "Resolver e elaborar problemas de aplicação do teorema de Pitágoras ou das relações de proporcionalidade envolvendo retas paralelas cortadas por secantes.",
+            "bnccDesc": "Resolver e elaborar problemas de aplicação do teorema de Pitágoras ou das relações de proporcionalidade envolvendo triângulos retângulos.",
             "unidadeTematica": "Geometria",
             "anoEscolar": "9º ano",
             "topicoId": "b3-t2",
             "image": {
-              "src": "https://drive.google.com/file/d/1tPGCE986D9GArQuN3qnMK57kA07LpNzn/view?usp=sharing",
-              "alt": "Fotografia com sobreposição de diagrama triangular indicando um poste vertical no gramado sustentado por dois cabos esticados medindo 8 m e com base no solo de 10 m.",
-              "caption": "Figura: Instalação do poste com cabos de sustentação (IFSC 2019.1)"
+              "src": "assets/img/questoes/ifsc/ifsc-2019-1-q10.png",
+              "alt": "Foto de um poste metálico com antena fincado no solo verde sustentado por cabos brancos em formato triangular com base de 10 m e cabo lateral de 8 m.",
+              "caption": "Fonte: IFSC 2019.1"
             }
           }
         ],
@@ -3053,7 +3092,7 @@ var mathData = window.mathData || {
         },
         "questions": [
           {
-            "q": "Um galão cilíndrico de $0{,}8\\text{ m}$ de diâmetro (raio $0{,}4\\text{ m}$) e $1{,}5\\text{ m}$ de altura está com $75\\%$ de sua capacidade preenchida com água. Um pequeno furo vaza $5\\text{ cm}^3$ de água por segundo. Adotando $\\pi = 3{,}14$, o galão ficará vazio após:",
+            "q": "Um galão cilíndrico de $0{,}8\\text{ m}$ de diâmetro (raio $0{,}4\\text{ m}$) e $1{,}5\\text{ m}$ de altura está com $75\\%$ de sua capacidade com água. Para esvaziá-lo, é aberta uma torneira que libera $5\\text{ cm}^3$ de água por segundo. Quanto tempo levará para o galão ficar vazio? (Considere $\\pi = 3{,}14$).\n\nAssinale a alternativa CORRETA.",
             "options": [
               "$7\\text{ horas e } 51\\text{ minutos}$",
               "$41\\text{ horas e } 52\\text{ minutos}$",
@@ -3062,15 +3101,16 @@ var mathData = window.mathData || {
               "$15\\text{ horas e } 42\\text{ minutos}$"
             ],
             "correct": 3,
-            "explanation": "Volume total: $V = 3{,}14 \\times 0{,}4^2 \\times 1{,}5 = 0{,}7536\\text{ m}^3 = 753.600\\text{ cm}^3$. Volume com $75\\% = 753.600 \\times 0{,}75 = 565.200\\text{ cm}^3$. Tempo $= 565.200 / 5 = 113.040\\text{ segundos} = 1.884\\text{ minutos} = 31\\text{ horas e } 24\\text{ minutos}$.",
+            "explanation": "1. <strong>Cálculo do volume total do cilindro:</strong><br>O raio da base é metade do diâmetro: $r = 0{,}4\\text{ m} = 40\\text{ cm}$. A altura é $h = 1{,}5\\text{ m} = 150\\text{ cm}$.<br>$$V_{\\text{cilindro}} = \\pi r^2 h = 3{,}14 \\times (40)^2 \\times 150 = 3{,}14 \\times 1600 \\times 150 = 753.600\\text{ cm}^3$$<br><br>2. <strong>Determinação do volume inicial de água ($75\\%$):</strong><br>$$V_{\\text{água}} = 0{,}75 \\times 753.600 = 565.200\\text{ cm}^3$$<br><br>3. <strong>Cálculo do tempo de esvaziamento:</strong><br>Com vazão de $5\\text{ cm}^3/\\text{s}$:<br>$$t = \\frac{565.200}{5} = 113.040\\text{ segundos}$$<br>Convertendo para horas ($1\\text{ h} = 3.600\\text{ s}$):<br>$$113.040 \\div 3600 = 31\\text{ com resto } 1.440\\text{ segundos}$$<br>Convertendo o resto para minutos ($1\\text{ min} = 60\\text{ s}$):<br>$$1.440 \\div 60 = 24\\text{ minutos}$$<br>Portanto, o galão levará $31\\text{ horas e } 24\\text{ minutos}$ para esvaziar (Alternativa D).",
             "bncc": "EF09MA19",
-            "bnccDesc": "Resolver e elaborar problemas que envolvam medidas de volumes de prismas e de cilindros retos, inclusive com uso de expressões de cálculo, em situações cotidianas.",
-            "unidadeTematica": "Grandezas e Medidas",
+            "bnccDesc": "Resolver e elaborar problemas que envolvam o cálculo de volumes de prismas e de cilindros retos, inclusive com uso de tecnologias digitais.",
+            "unidadeTematica": "Grandezas e medidas",
             "anoEscolar": "9º ano",
-            "topicoId": "b4-t2"
+            "topicoId": "b4-t2",
+            "image": null
           },
           {
-            "q": "Uma fábrica de lápis vende caixas com $12$ unidades. As caixas são organizadas em caixotes com $12$ pilhas de $12$ caixas cada. Um caminhão transporta $12$ caixotes. A expressão que informa o total de lápis transportados por viagem é:",
+            "q": "Uma empresa que fabrica lápis de cor vende caixas com $12\\text{ unidades}$ cada. Quando as caixas são enviadas para venda, são organizadas em caixotes com $12\\text{ pilhas}$, com $12\\text{ caixas}$ em cada pilha. Por sua vez, a cada viagem, um caminhão carrega $12\\text{ desses caixotes}$. Partindo dessas informações, podemos afirmar que a expressão que nos informa o número de lápis de cor transportado a cada viagem de caminhão é:",
             "options": [
               "$4 \\cdot 12^4$",
               "$4 \\cdot 12$",
@@ -3079,12 +3119,13 @@ var mathData = window.mathData || {
               "$2^8 \\cdot 3^4$"
             ],
             "correct": 4,
-            "explanation": "Total de lápis $= 12 \\times 12 \\times 12 \\times 12 = 12^4$. Fatorando $12 = 2^2 \\cdot 3$: $12^4 = (2^2 \\cdot 3)^4 = 2^8 \\cdot 3^4$.",
+            "explanation": "1. <strong>Cálculo da quantidade total em potência de 12:</strong><br>Cada viagem transporta:<br>$$\\text{Total de lápis} = 12 \\times 12 \\times 12 \\times 12 = 12^4$$<br><br>2. <strong>Decomposição em fatores primos e propriedades de potências:</strong><br>Como $12 = 4 \\times 3 = 2^2 \\cdot 3$:<br>$$12^4 = (2^2 \\cdot 3)^4 = (2^2)^4 \\cdot 3^4 = 2^8 \\cdot 3^4$$<br>Portanto, a expressão correta é $2^8 \\cdot 3^4$ (Alternativa E).",
             "bncc": "EF08MA01",
             "bnccDesc": "Efetuar cálculos com potências de expoentes inteiros e aplicar esse conhecimento na representação de números em notação científica.",
             "unidadeTematica": "Números",
             "anoEscolar": "8º ano",
-            "topicoId": "b1-t7"
+            "topicoId": "b1-t1",
+            "image": null
           },
           {
             "q": "Dada a equação $-(3x - 2)(x - 6) = x(6 - x) + 8$, o quadrado da terça parte da soma de suas raízes é:",
@@ -3096,15 +3137,16 @@ var mathData = window.mathData || {
               "$49/9$"
             ],
             "correct": 4,
-            "explanation": "Desenvolvendo: $-(3x^2 - 20x + 12) = 6x - x^2 + 8 \\Rightarrow -3x^2 + 20x - 12 = -x^2 + 6x + 8 \\Rightarrow -2x^2 + 14x - 20 = 0 \\Rightarrow x^2 - 7x + 10 = 0$. Soma das raízes $= 7$. Terça parte $= 7/3$. Quadrado da terça parte $= (7/3)^2 = 49/9$.",
+            "explanation": "1. <strong>Desenvolvimento dos produtos algébricos:</strong><br>- Primeiro membro: $-(3x^2 - 18x - 2x + 12) = -(3x^2 - 20x + 12) = -3x^2 + 20x - 12$<br>- Segundo membro: $x(6 - x) + 8 = 6x - x^2 + 8 = -x^2 + 6x + 8$<br><br>2. <strong>Redução à forma canônica da equação do 2º grau:</strong><br>$$-3x^2 + 20x - 12 = -x^2 + 6x + 8$$<br>$$-2x^2 + 14x - 20 = 0$$<br>Dividindo por $-2$:<br>$$x^2 - 7x + 10 = 0$$<br><br>3. <strong>Soma das raízes e cálculo do valor pedido:</strong><br>Pelas relações de Girard, a soma das raízes é $S = -\\frac{b}{a} = 7$.<br>- A terça parte da soma é $\\frac{7}{3}$.<br>- O quadrado da terça parte é $\\left(\\frac{7}{3}\\right)^2 = \\frac{49}{9}$.<br>Portanto, o resultado é $49/9$ (Alternativa E).",
             "bncc": "EF09MA09",
             "bnccDesc": "Compreender os processos de fatoração de expressões algébricas, com base em suas relações com os produtos notáveis, para resolver e elaborar problemas que possam ser representados por equações polinomiais do 2º grau.",
             "unidadeTematica": "Álgebra",
             "anoEscolar": "9º ano",
-            "topicoId": "b2-t4"
+            "topicoId": "b2-t4",
+            "image": null
           },
           {
-            "q": "Analise as afirmações sobre números primos e divisibilidade (V ou F):<br>( ) Os números $220$ e $284$ são amigos (soma dos divisores próprios de um é igual ao outro).<br>( ) Todo número natural que termina em $6$ é divisível por $3$.<br>( ) O número $153$ possui $6$ divisores naturais.<br>( ) O número $14367$ é um número primo.<br>( ) O máximo divisor comum entre $510$ e $238$ é $34$.",
+            "q": "Analise as afirmações sobre números primos e divisibilidade (V ou F):<br>( ) Os números $220$ e $284$ são amigos (soma dos divisores próprios de um é igual ao outro).<br>( ) Todo número natural que termina em $6$ é divisível por $3$.<br>( ) O número $153$ possui $6$ divisores naturais.<br>( ) O número $14.367$ é um número primo.<br>( ) O máximo divisor comum entre $510$ e $238$ é $34$.",
             "options": [
               "V – F – V – F – V",
               "V – F – F – V – F",
@@ -3113,15 +3155,16 @@ var mathData = window.mathData || {
               "F – F – V – F – V"
             ],
             "correct": 0,
-            "explanation": "1ª: 220 e 284 são amigos clássicos (V). 2ª: Falsa, ex: 16 termina em 6 e não é divisível por 3 (F). 3ª: $153 = 3^2 \\times 17^1 \\Rightarrow (2+1)(1+1) = 6$ divisores (V). 4ª: $1+4+3+6+7=21$ (divisível por 3, não é primo) (F). 5ª: $510 = 34 \\times 15$ e $238 = 34 \\times 7$, logo $MDC=34$ (V). Sequência: V - F - V - F - V.",
+            "explanation": "1. <strong>Afirmação 1 (Verdadeira):</strong> Os divisores próprios de $220$ somam $1+2+4+5+10+11+20+22+44+55+110 = 284$. Os divisores próprios de $284$ somam $1+2+4+71+142 = 220$. São o par clássico de números amigos.<br><br>2. <strong>Afirmação 2 (Falsa):</strong> Contraexemplo: $16$ termina em $6$, mas a soma de seus algarismos é $7$, logo não é divisível por $3$.<br><br>3. <strong>Afirmação 3 (Verdadeira):</strong> Fatorando: $153 = 3^2 \\times 17^1$. A quantidade de divisores é $(2+1)(1+1) = 3 \\times 2 = 6$.<br><br>4. <strong>Afirmação 4 (Falsa):</strong> A soma dos algarismos de $14.367$ é $1 + 4 + 3 + 6 + 7 = 21$, múltiplo de $3$, logo $14.367$ é divisível por $3$ e composto.<br><br>5. <strong>Afirmação 5 (Verdadeira):</strong> Fatorando: $510 = 2 \\times 3 \\times 5 \\times 17$ e $238 = 2 \\times 7 \\times 17$. Logo $\\text{MDC}(510, 238) = 2 \\times 17 = 34$.<br><br>Sequência correta: V – F – V – F – V (Alternativa A).",
             "bncc": "EF07MA01",
-            "bnccDesc": "Resolver e elaborar problemas com números naturais, envolvendo as noções de divisor e de múltiplo, podendo incluir máximo divisor comum ou mínimo múltiplo comum, por meio de estratégias diversas, sem a aplicação de algoritmos.",
+            "bnccDesc": "Resolver e elaborar problemas com números naturais, envolvendo as noções de divisor e de múltiplo, podendo incluir máximo divisor comum ou mínimo múltiplo comum.",
             "unidadeTematica": "Números",
             "anoEscolar": "7º ano",
-            "topicoId": "b1-t3"
+            "topicoId": "b1-t3",
+            "image": null
           },
           {
-            "q": "Um avião saiu da cidade A em direção à cidade B. Em seguida, partiu da cidade B em direção à cidade C. Quando o avião estava percorrendo seu trajeto da cidade C para a cidade A, o piloto soube que, por questões meteorológicas, o aeroporto da cidade A não tinha condições de pouso. Decidiu, então, encaminhar-se para o aeroporto da cidade E, mudando de direção quando havia completado $\\frac{2}{5}$ do trajeto entre C e A (Ponto P). Partindo da figura, que representa a situação, e sabendo que a distância entre A e B é de $800\\text{ km}$, a distância entre B e C é de $600\\text{ km}$ e a distância entre P e E é a mesma distância entre P e A, a distância entre P e E é: Assinale a alternativa CORRETA.",
+            "q": "Um avião saiu da cidade A em direção à cidade B. Em seguida, partiu da cidade B em direção à cidade C. Quando o avião estava percorrendo seu trajeto da cidade C para a cidade A, o piloto soube que, por questões meteorológicas, o aeroporto da cidade A não tinha condições de pouso. Decidiu, então, encaminhar-se para o aeroporto da cidade E, mudando de direção quando havia completado $\\frac{2}{5}$ do trajeto entre C e A (Ponto P). Partindo da figura, que representa a situação, e sabendo que a distância entre A e B é de $800\\text{ km}$, a distância entre B e C é de $600\\text{ km}$ e a distância entre P e E é a mesma distância entre P e A, a distância entre P e E é:\n\nAssinale a alternativa CORRETA.",
             "options": [
               "$800\\text{ km}$",
               "$400\\text{ km}$",
@@ -3130,20 +3173,20 @@ var mathData = window.mathData || {
               "$600\\text{ km}$"
             ],
             "correct": 4,
-            "explanation": "As cidades A, B e C formam um triângulo retângulo em B com catetos $AB = 800\\text{ km}$ e $BC = 600\\text{ km}$. A hipotenusa $AC$ mede $\\sqrt{800^2 + 600^2} = 1.000\\text{ km}$. O ponto P situa-se a $\\frac{2}{5}$ do trajeto de C até A, ou seja, a distância de C até P é $\\frac{2}{5} \\times 1.000 = 400\\text{ km}$. Portanto, a distância de P até A é $1.000 - 400 = 600\\text{ km}$. Como a distância entre P e E é igual à distância entre P e A, temos $PE = 600\\text{ km}$.",
+            "explanation": "1. <strong>Cálculo da hipotenusa $AC$ (Teorema de Pitágoras):</strong><br>No triângulo retângulo em $B$ com catetos $AB = 800\\text{ km}$ e $BC = 600\\text{ km}$:<br>$$AC = \\sqrt{800^2 + 600^2} = \\sqrt{640.000 + 360.000} = \\sqrt{1.000.000} = 1.000\\text{ km}$$<br><br>2. <strong>Determinação do trajeto percorrido e restante na reta $CA$:</strong><br>O ponto $P$ situa-se a $\\frac{2}{5}$ do trajeto de $C$ até $A$:<br>$$CP = \\frac{2}{5} \\times 1.000 = 400\\text{ km}$$<br>A distância restante de $P$ até $A$ é:<br>$$PA = 1.000 - 400 = 600\\text{ km}$$<br><br>3. <strong>Determinação da distância entre $P$ e $E$:</strong><br>Como o enunciado afirma que a distância de $P$ a $E$ é a mesma de $P$ a $A$, temos $PE = 600\\text{ km}$ (Alternativa E).",
             "bncc": "EF09MA14",
             "bnccDesc": "Resolver e elaborar problemas de aplicação do teorema de Pitágoras ou das relações de proporcionalidade envolvendo retas paralelas cortadas por secantes.",
             "unidadeTematica": "Geometria",
             "anoEscolar": "9º ano",
             "topicoId": "b3-t2",
             "image": {
-              "src": "https://drive.google.com/file/d/1DKgNoBwkQEny8qlJTE3Znq2owNfmfKMT/view?usp=sharing",
-              "alt": "Diagrama de rotas de aviação com triângulo retângulo ABC de ângulo reto em B, indicando o trajeto pontilhado que desvia no ponto P da hipotenusa CA em direção ao ponto E.",
-              "caption": "Figura: Trajetória do voo entre as cidades A, B, C e aeroporto alternativo E (IFSC 2019.2)"
+              "src": "assets/img/questoes/ifsc/ifsc-2019-2-q05.png",
+              "alt": "Diagrama com triângulo retângulo ABC com ângulo reto em B, trajeto de A para B e B para C, e desvio no ponto P da hipotenusa CA em direção ao ponto E.",
+              "caption": "Trajetória do voo entre as cidades A, B, C e aeroporto alternativo E. Fonte: IFSC 2019.2"
             }
           },
           {
-            "q": "Uma prefeitura instalará postes de iluminação igualmente espaçados em uma praça retangular de $195\\text{ m} \\times 255\\text{ m}$. Em cada vértice haverá um poste e a distância inteira entre postes consecutivos será a máxima possível. A quantidade mínima de postes necessária é:",
+            "q": "Uma prefeitura instalará postes de iluminação igualmente espaçados ao longo do contorno de uma praça retangular de $195\\text{ m} \\times 255\\text{ m}$. Em cada vértice haverá um poste e a distância inteira entre postes consecutivos será a máxima possível. A quantidade mínima de postes necessária é:\n\n*(Questão adaptada do IFSC 2019.2)*",
             "options": [
               "$52\\text{ postes}$",
               "$60\\text{ postes}$",
@@ -3152,15 +3195,16 @@ var mathData = window.mathData || {
               "$44\\text{ postes}$"
             ],
             "correct": 1,
-            "explanation": "Maior espaçamento $= MDC(195, 255) = 15\\text{ m}$. Perímetro $= 2(195 + 255) = 900\\text{ m}$. Quantidade mínima de postes $= \\frac{900}{15} = 60\\text{ postes}$.",
+            "explanation": "*(Nota histórica: Na prova oficial de 2019.2, esta questão foi anulada pela banca examinadora devido à ausência do termo explícito \"ao longo do contorno\", o que gerou recursos propondo distribuição em malha interna. Esta versão adaptada explicita a distribuição perimetral, preservando a elegância e o gabarito de 60 postes).*\n\n1. <strong>Determinação do espaçamento máximo (MDC):</strong><br>Para minimizar a quantidade de postes, a distância $d$ entre postes consecutivos deve ser o $\\text{MDC}(195, 255)$:<br>$$195 = 3 \\times 5 \\times 13$$<br>$$255 = 3 \\times 5 \\times 17$$<br>$$d = \\text{MDC}(195, 255) = 3 \\times 5 = 15\\text{ metros}$$<br><br>2. <strong>Cálculo do perímetro e da quantidade de postes:</strong><br>$$P = 2 \\times (195 + 255) = 2 \\times 450 = 900\\text{ metros}$$<br>Distribuídos uniformemente ao longo do perímetro fechado com espaçamento de $15\\text{ m}$:<br>$$\\text{Quantidade de postes} = \\frac{900}{15} = 60\\text{ postes}$$<br>Portanto, serão necessários no mínimo 60 postes (Alternativa B).",
             "bncc": "EF07MA01",
-            "bnccDesc": "Resolver e elaborar problemas com números naturais, envolvendo as noções de divisor e de múltiplo, podendo incluir máximo divisor comum ou mínimo múltiplo comum, por meio de estratégias diversas, sem a aplicação de algoritmos.",
+            "bnccDesc": "Resolver e elaborar problemas com números naturais, envolvendo as noções de divisor e de múltiplo, podendo incluir máximo divisor comum ou mínimo múltiplo comum.",
             "unidadeTematica": "Números",
             "anoEscolar": "7º ano",
-            "topicoId": "b1-t3"
+            "topicoId": "b1-t3",
+            "image": null
           },
           {
-            "q": "Uma máquina fabrica $5.625\\text{ kg}$ de gelo trabalhando $9\\text{ horas por dia}$ durante $5\\text{ dias}$. Quantas horas por dia deverá trabalhar para fabricar $5.000\\text{ kg}$ de gelo em $4\\text{ dias}$?",
+            "q": "Uma máquina consegue fabricar $5.625\\text{ kg}$ de gelo, trabalhando $9\\text{ horas por dia}$, durante $5\\text{ dias}$. Considerando um ritmo de produção constante, quantas horas essa máquina deverá trabalhar por dia para fabricar $5.000\\text{ kg}$ de gelo, em $4\\text{ dias}$?",
             "options": [
               "$12\\text{ horas por dia}$",
               "$8\\text{ horas por dia}$",
@@ -3169,15 +3213,16 @@ var mathData = window.mathData || {
               "$13\\text{ horas por dia}$"
             ],
             "correct": 2,
-            "explanation": "Produção horária: $\\frac{5625}{9 \\times 5} = \\frac{5625}{45} = 125\\text{ kg/h}$. Para $5000\\text{ kg}$ em 4 dias: Horas totais $= \\frac{5000}{125} = 40\\text{ h}$. Horas por dia $= \\frac{40}{4} = 10\\text{ horas por dia}$.",
-            "bncc": "EF06MA24",
-            "bnccDesc": "Resolver e elaborar problemas que envolvam as grandezas comprimento, massa, tempo, temperatura, área (triângulos e retângulos), capacidade e volume (sólidos formados por blocos retangulares), sem uso de fórmulas, inseridos, sempre que possível, em contextos oriundos de situações reais e/ou relacionadas às outras áreas do conhecimento.",
-            "unidadeTematica": "Grandezas e Medidas",
-            "anoEscolar": "6º ano",
-            "topicoId": "b4-t2"
+            "explanation": "1. <strong>Determinação da capacidade produtiva horária:</strong><br>O total de horas trabalhadas no primeiro caso foi de $9\\text{ h/dia} \\times 5\\text{ dias} = 45\\text{ horas}$.<br>A taxa de produção é:<br>$$\\text{Taxa} = \\frac{5.625\\text{ kg}}{45\\text{ h}} = 125\\text{ kg/h}$$<br><br>2. <strong>Cálculo das horas diárias necessárias para $5.000\\text{ kg}$ em $4\\text{ dias}$:</strong><br>O total de horas de máquina necessárias é:<br>$$H_{\\text{total}} = \\frac{5.000\\text{ kg}}{125\\text{ kg/h}} = 40\\text{ horas}$$<br>Distribuindo essas $40\\text{ horas}$ ao longo de $4\\text{ dias}$:<br>$$\\text{Horas por dia} = \\frac{40\\text{ h}}{4\\text{ dias}} = 10\\text{ horas por dia}$$<br>Portanto, a máquina deverá operar 10 horas por dia (Alternativa C).",
+            "bncc": "EF07MA17",
+            "bnccDesc": "Resolver e elaborar problemas que envolvam variação de proporcionalidade direta e do tipo inversa entre duas grandezas, utilizando sentença algébrica para expressar a relação entre elas.",
+            "unidadeTematica": "Álgebra",
+            "anoEscolar": "7º ano",
+            "topicoId": "b2-t2",
+            "image": null
           },
           {
-            "q": "O carro de Marcos consome $4\\text{ litros}$ de gasolina a cada $48\\text{ km}$. Para uma viagem de ida e volta entre duas cidades distantes $360\\text{ km}$ entre si, com a gasolina a $\\text{R\\$} 4{,}50$ o litro, o gasto mínimo será:",
+            "q": "O Sr. Marcos comprou um carro que, em média, percorre $48\\text{ km}$ com $4\\text{ litros}$ de gasolina. Ao fazer o planejamento de gasto de gasolina para uma viagem, ele observou que a distância entre a cidade de origem e a cidade de destino era de $360\\text{ km}$. Se o litro da gasolina custa $\\text{R\\$} 4{,}50$, quantos reais, no mínimo, o Sr. Marcos irá gastar para uma viagem de ida e volta entre essas duas cidades?",
             "options": [
               "$\\text{R\\$} 270{,}00$",
               "$\\text{R\\$} 250{,}50$",
@@ -3186,15 +3231,16 @@ var mathData = window.mathData || {
               "$\\text{R\\$} 290{,}50$"
             ],
             "correct": 0,
-            "explanation": "Rendimento: $\\frac{48}{4} = 12\\text{ km/L}$. Distância total (ida e volta): $360 \\times 2 = 720\\text{ km}$. Litros necessários: $\\frac{720}{12} = 60\\text{ L}$. Custo: $60 \\times 4{,}50 = \\text{R\\$} 270,00$.",
-            "bncc": "EF09MA19",
-            "bnccDesc": "Resolver e elaborar problemas que envolvam medidas de volumes de prismas e de cilindros retos, inclusive com uso de expressões de cálculo, em situações cotidianas.",
-            "unidadeTematica": "Grandezas e Medidas",
-            "anoEscolar": "9º ano",
-            "topicoId": "b4-t2"
+            "explanation": "1. <strong>Cálculo do consumo de combustível por quilômetro:</strong><br>O rendimento médio do automóvel é de:<br>$$\\text{Rendimento} = \\frac{48\\text{ km}}{4\\text{ L}} = 12\\text{ km/L}$$<br><br>2. <strong>Cálculo da distância total e do volume de gasolina:</strong><br>A distância total de ida e volta é de $2 \\times 360 = 720\\text{ km}$.<br>O volume total de combustível necessário é:<br>$$V = \\frac{720\\text{ km}}{12\\text{ km/L}} = 60\\text{ litros}$$<br><br>3. <strong>Cálculo do custo total:</strong><br>$$\\text{Custo} = 60 \\times \\text{R\\$} 4{,}50 = \\text{R\\$} 270{,}00$$<br>Portanto, o gasto mínimo será de $\\text{R\\$} 270{,}00$ (Alternativa A).",
+            "bncc": "EF07MA17",
+            "bnccDesc": "Resolver e elaborar problemas que envolvam variação de proporcionalidade direta e do tipo inversa entre duas grandezas, utilizando sentença algébrica para expressar a relação entre elas.",
+            "unidadeTematica": "Álgebra",
+            "anoEscolar": "7º ano",
+            "topicoId": "b2-t2",
+            "image": null
           },
           {
-            "q": "Quatro amigas (Isabelle, Fabiana, Sofia e Clara) contaram seus montes de areia:<br>• Isabelle, Fabiana e Sofia: $27$ montes<br>• Fabiana, Sofia e Clara: $32$ montes<br>• Sofia, Clara e Isabelle: $28$ montes<br>• Clara, Isabelle e Fabiana: $33$ montes<br>Quantos montes de areia foram feitos pelas $4$ meninas juntas?",
+            "q": "Quatro amigas (Isabelle, Fabiana, Sofia e Clara) contaram seus montes de areia:<br>• Isabelle, Fabiana e Sofia: $27\\text{ montes}$<br>• Fabiana, Sofia e Clara: $32\\text{ montes}$<br>• Sofia, Clara e Isabelle: $28\\text{ montes}$<br>• Clara, Isabelle e Fabiana: $33\\text{ montes}$<br><br>Quantos montes de areia foram feitos pelas $4$ meninas juntas?",
             "options": [
               "$80\\text{ montes}$",
               "$120\\text{ montes}$",
@@ -3203,15 +3249,16 @@ var mathData = window.mathData || {
               "$100\\text{ montes}$"
             ],
             "correct": 2,
-            "explanation": "Somando as 4 equações, cada menina é contada 3 vezes: $3(I + F + S + C) = 27 + 32 + 28 + 33 = 120$. Portanto, $I + F + S + C = \\frac{120}{3} = 40\\text{ montes}$.",
-            "bncc": "EF07MA18",
-            "bnccDesc": "Resolver e elaborar problemas que possam ser representados por equações polinomiais de 1º grau, redutíveis à forma ax + b = c, fazendo uso das propriedades da igualdade.",
+            "explanation": "1. <strong>Modelagem do sistema de equações lineares:</strong><br>Sejam $I, F, S, C$ as quantidades de montes feitas por cada amiga:<br>$$\\begin{cases} I + F + S = 27 \\\\ F + S + C = 32 \\\\ S + C + I = 28 \\\\ C + I + F = 33 \\end{cases}$$<br><br>2. <strong>Soma de todas as equações membro a membro:</strong><br>Observa-se que cada uma das quatro meninas aparece em exatamente $3$ das $4$ equações:<br>$$3I + 3F + 3S + 3C = 27 + 32 + 28 + 33$$<br>$$3(I + F + S + C) = 120$$<br><br>3. <strong>Determinação do total conjunto:</strong><br>$$I + F + S + C = \\frac{120}{3} = 40\\text{ montes}$$<br>Portanto, juntas elas fizeram 40 montes de areia (Alternativa C).",
+            "bncc": "EF08MA08",
+            "bnccDesc": "Resolver e elaborar problemas relacionados ao seu contexto próximo, que possam ser representados por sistemas de equações de 1º grau com duas incógnitas e interpretá-los.",
             "unidadeTematica": "Álgebra",
-            "anoEscolar": "7º ano",
-            "topicoId": "b2-t3"
+            "anoEscolar": "8º ano",
+            "topicoId": "b2-t3",
+            "image": null
           },
           {
-            "q": "Em um câmpus do IFSC, foi construída uma quadra de basquete, conforme mostra a figura 1. A figura 2 representa uma parte dessa quadra, formada por um círculo de centro em O e raio $\\overline{OA}$, e um retângulo ABCD, circunscrevendo a metade dessa circunferência.\n\nSe a área do retângulo ABCD é $8\\text{ m}^2$, então a área do círculo é?",
+            "q": "Em um câmpus do IFSC, foi construída uma quadra de basquete, conforme mostra a figura 1. A figura 2 representa uma parte dessa quadra, formada por um círculo de centro em O e raio $\\overline{OA}$, e um retângulo ABCD, circunscrevendo a metade dessa circunferência.\n\nSe a área do retângulo ABCD é $8\\text{ m}^2$, então a área do círculo é:\n\nAssinale a alternativa CORRETA.",
             "options": [
               "$4\\pi\\text{ m}^2$",
               "$16\\pi\\text{ m}^2$",
@@ -3220,16 +3267,16 @@ var mathData = window.mathData || {
               "$10\\pi\\text{ m}^2$"
             ],
             "correct": 0,
-            "explanation": "1. <strong>Relações entre as dimensões do retângulo e da circunferência:</strong><br>- Seja $r$ o raio do círculo com centro em $O$. Assim, $OA = OB = r$.<br>- O lado $AB$ do retângulo corresponde ao diâmetro da circunferência: $AB = 2r$.<br>- Como a metade da circunferência está circunscrita pelo retângulo e tangencia o lado oposto $CD$, a largura do retângulo é igual ao raio: $AD = BC = r$.<br><br>2. <strong>Cálculo do raio $r$ a partir da área do retângulo:</strong><br>$$\\text{Área}(ABCD) = AB \\times AD = (2r) \\times r = 2r^2$$<br>O enunciado informa que a área do retângulo é $8\\text{ m}^2$. Logo:<br>$$2r^2 = 8 \\implies r^2 = \\frac{8}{2} = 4 \\implies r = 2\\text{ m}$$<br><br>3. <strong>Cálculo da área do círculo completo:</strong><br>$$\\text{Área} = \\pi r^2 = \\pi \\times 2^2 = 4\\pi\\text{ m}^2$$<br>Portanto, a área do círculo é $4\\pi\\text{ m}^2$. A alternativa correta é a <strong>Letra A</strong>.",
+            "explanation": "1. <strong>Relações geométricas entre o retângulo e a circunferência:</strong><br>- Seja $r$ o raio do círculo com centro em $O$. Assim, $OA = OB = r$.<br>- O comprimento do lado $AB$ do retângulo corresponde ao diâmetro da circunferência: $AB = 2r$.<br>- Como o retângulo circunscreve a metade da circunferência e tangencia o lado oposto $CD$, a largura do retângulo é igual ao raio: $AD = BC = r$.<br><br>2. <strong>Cálculo do raio $r$ a partir da área retangular:</strong><br>$$\\text{Área}(ABCD) = AB \\times AD = (2r) \\times r = 2r^2$$<br>Como a área do retângulo é $8\\text{ m}^2$:<br>$$2r^2 = 8 \\implies r^2 = \\frac{8}{2} = 4 \\implies r = 2\\text{ m}$$<br><br>3. <strong>Cálculo da área do círculo completo:</strong><br>$$\\text{Área} = \\pi r^2 = \\pi \\times 2^2 = 4\\pi\\text{ m}^2$$<br>Portanto, a área do círculo é $4\\pi\\text{ m}^2$ (Alternativa A).",
             "bncc": "EF08MA19",
-            "bnccDesc": "Resolver e elaborar problemas que envolvam medidas de área de figuras geométricas, como retângulos, triângulos e círculos.",
-            "unidadeTematica": "Geometria",
+            "bnccDesc": "Resolver e elaborar problemas que envolvam medidas de área de figuras geométricas, utilizando expressões de cálculo de área (quadriláteros, triângulos e círculos), em situações como determinar medida de terrenos.",
+            "unidadeTematica": "Grandezas e medidas",
             "anoEscolar": "8º ano",
             "topicoId": "b4-t1",
             "image": {
-              "src": "https://drive.google.com/file/d/1Hj1tcxhjDiX0pl4l-JcZRwaZATwPSTNf/view?usp=sharing",
-              "alt": "Figura 1 com vista aérea de uma quadra de basquete esportiva e Figura 2 detalhando a região semicircular do garrafão inscrita no retângulo ABCD com centro em O e raio OA",
-              "caption": "Figura: Quadra de basquete e detalhe geométrico do garrafão (IFSC 2019.2)"
+              "src": "assets/img/questoes/ifsc/ifsc-2019-2-q10.png",
+              "alt": "Figura 1 mostrando a perspectiva da quadra de basquete e Figura 2 exibindo o esquema geométrico do retângulo ABCD circunscrevendo a semicircunferência com centro em O e raio OA.",
+              "caption": "Quadra de basquete e detalhe geométrico do garrafão. Fonte: IFSC 2019.2"
             }
           }
         ],
@@ -3260,7 +3307,7 @@ var mathData = window.mathData || {
         },
         "questions": [
           {
-            "q": "Como foi medida a altura da pirâmide de Queóps? Há duas versões para este fato. Hicrônimos, discípulo de Aristóteles, diz que Tales mediu o comprimento da sombra da pirâmide no momento em que nossas sombras são iguais a nossa altura, assim medindo a altura da pirâmide. Plutarco diz que fincando uma vara vertical no extremo da sombra projetada pela pirâmide, construímos à sombra projetada da vara, formando no solo dois triângulos semelhantes. Notamos que, neste relato, é necessário o conhecimento de teoremas sobre triângulos semelhantes. Observando o desenho, a vara colocada no extremo C da sombra da pirâmide forma, com sua sombra, o triângulo DCE que é semelhante ao triângulo ABC. Sabendo que a altura da vara é de $2\\text{ m}$, a sua sombra projetada é de $3\\text{ m}$ e a distância entre B e C é de $210\\text{ m}$, qual é a altura aproximada da pirâmide de Queóps? Assinale a alternativa CORRETA.",
+            "q": "Como foi medida a altura da pirâmide de Quéops? Há duas versões para este fato.\n\nHicrônimos, discípulo de Aristóteles, diz que Tales mediu o comprimento da sombra da pirâmide no momento em que nossas sombras são iguais a nossa altura, assim medindo a altura da pirâmide.\n\nPlutarco diz que fincando uma vara vertical no extremo da sombra projetada pela pirâmide, construímos a sombra projetada da vara, formando no solo dois triângulos semelhantes. Notamos que, neste relato, é necessário o conhecimento de teoremas sobre triângulos semelhantes.\n\nObservando o desenho abaixo, a vara colocada no extremo C da sombra da pirâmide forma, com sua sombra, o triângulo DCE que é semelhante ao triângulo ABC.\n\nSabendo que a altura da vara é de $2\\text{ m}$, a sua sombra projetada é de $3\\text{ m}$ e a distância entre B e C é de $210\\text{ m}$, qual é a altura aproximada da pirâmide de Quéops?\n\nAssinale a alternativa CORRETA.",
             "options": [
               "$160\\text{ m}$",
               "$140\\text{ m}$",
@@ -3269,54 +3316,56 @@ var mathData = window.mathData || {
               "$170\\text{ m}$"
             ],
             "correct": 1,
-            "explanation": "Pela semelhança entre os triângulos retângulos $ABC$ e $DCE$: $\\frac{AB}{DC} = \\frac{BC}{CE} \\implies \\frac{h}{2} = \\frac{210}{3} \\implies \\frac{h}{2} = 70 \\implies h = 140\\text{ m}$. A altura aproximada da pirâmide de Queóps é de $140\\text{ m}$.",
+            "explanation": "1. <strong>Identificação dos triângulos semelhantes:</strong><br>Pelo relato histórico e pelo Teorema de Tales, os raios solares paralelos determinam triângulos retângulos semelhantes entre a pirâmide e a haste vertical:<br>$$\\Delta ABC \\sim \\Delta DCE$$<br><br>2. <strong>Estabelecimento da proporção entre os lados homólogos:</strong><br>- Altura da vara: $DC = 2\\text{ m}$<br>- Sombra da vara: $CE = 3\\text{ m}$<br>- Sombra total correspondente à pirâmide (do centro da base $B$ até o vértice da sombra $C$): $BC = 210\\text{ m}$<br>- Altura da pirâmide: $AB = H$<br><br>3. <strong>Resolução:</strong><br>$$\\frac{AB}{DC} = \\frac{BC}{CE} \\implies \\frac{H}{2} = \\frac{210}{3}$$<br>$$\\frac{H}{2} = 70 \\implies H = 2 \\times 70 = 140\\text{ m}$$<br>Portanto, a altura aproximada da pirâmide de Quéops é $140\\text{ m}$ (Alternativa B).",
             "bncc": "EF09MA12",
             "bnccDesc": "Reconhecer as condições necessárias e suficientes para que dois triângulos sejam semelhantes.",
             "unidadeTematica": "Geometria",
             "anoEscolar": "9º ano",
-            "topicoId": "b3-t2",
+            "topicoId": "b3-t1",
             "image": {
-              "src": "https://drive.google.com/file/d/1FxnCthOto-X35x5eZ9_YdATOUTjx3QiO/view?usp=sharing",
-              "alt": "Diagrama clássico de Tales de Mileto medindo a altura da pirâmide de Queóps com os triângulos retângulos semelhantes ABC e DCE e projeção de raios solares paralelos.",
-              "caption": "Figura: Medição da pirâmide por Tales de Mileto com vara e sombra (IFSC 2020.1)"
+              "src": "assets/img/questoes/ifsc/ifsc-2020-1-q01.png",
+              "alt": "Esquema geométrico mostrando a pirâmide de Quéops iluminada pelo Sol projetando sombra no solo com uma vara vertical fincada formando dois triângulos retângulos semelhantes.",
+              "caption": "Fonte: IFSC 2020.1"
             }
           },
           {
-            "q": "Sabendo que $x = 20^{100}$ e $y = 400^{50}$, pode-se afirmar que:",
+            "q": "Sabendo que $x = 20^{100}$ e $y = 400^{50}$, pode-se afirmar que:\n\nAssinale a alternativa CORRETA.",
             "options": [
               "$x$ é igual a $y$.",
               "$x$ é a metade de $y$.",
               "$x$ é o dobro de $y$.",
               "$x$ é igual ao quadrado de $y$.",
-              "$x$ é igual ao quádruplo de $y$."
+              "$x$ é igual ao quádruplo $y$."
             ],
             "correct": 0,
-            "explanation": "Como $400 = 20^2$, reescrevemos $y = (20^2)^{50} = 20^{2 \\times 50} = 20^{100}$. Portanto, $x = y$.",
+            "explanation": "1. <strong>Comparação entre potências:</strong><br>Temos as expressões:<br>$$x = 20^{100}$$<br>$$y = 400^{50}$$<br><br>2. <strong>Redução à mesma base:</strong><br>Observamos que $400 = 20^2$. Substituindo na expressão de $y$ e aplicando a propriedade de potência de potência $(a^m)^n = a^{m \\cdot n}$:<br>$$y = (20^2)^{50} = 20^{2 \\times 50} = 20^{100}$$<br><br>3. <strong>Conclusão:</strong><br>Como ambos resultam exatamente em $20^{100}$, temos que $x$ é igual a $y$ (Alternativa A).",
             "bncc": "EF08MA01",
             "bnccDesc": "Efetuar cálculos com potências de expoentes inteiros e aplicar esse conhecimento na representação de números em notação científica.",
             "unidadeTematica": "Números",
             "anoEscolar": "8º ano",
-            "topicoId": "b1-t7"
+            "topicoId": "b1-t2",
+            "image": null
           },
           {
-            "q": "O índice olímpico para a prova da Maratona Feminina é de $2\\text{h } 29\\text{min } 30\\text{s}$. O valor correspondente expresso apenas na unidade de tempo horas é:",
+            "q": "A Federação Internacional de Atletismo – IAAF divulgou, no início do ano de 2019, os índices olímpicos para as Olimpíadas de Tokyo em 2020. O índice olímpico para a prova da Maratona Feminina, por exemplo, é de $2\\text{h } 29\\text{min } 30\\text{s}$. Assinale a alternativa que mais se aproxima deste índice olímpico, expresso apenas na unidade de tempo horas:\n\nAssinale a alternativa CORRETA.",
             "options": [
-              "$2{,}5001\\text{h}$",
-              "$2{,}4899\\text{h}$",
-              "$2{,}4916\\text{h}$",
-              "$2{,}2930\\text{h}$",
-              "$2{,}5102\\text{h}$"
+              "$2{,}5001\\text{ h}$",
+              "$2{,}4899\\text{ h}$",
+              "$2{,}4916\\text{ h}$",
+              "$2{,}2930\\text{ h}$",
+              "$2{,}5102\\text{ h}$"
             ],
             "correct": 2,
-            "explanation": "$30\\text{s} = 0{,}5\\text{min}$. Temos $29{,}5\\text{min} \\div 60 \\approx 0{,}49166\\text{h}$. Somando com $2\\text{h}$ temos $2{,}4916\\text{h}$.",
+            "explanation": "1. <strong>Conversão de unidades de tempo sexagesimais para a forma decimal de horas:</strong><br>O tempo total é composto por:<br>$$T = 2\\text{ h} + 29\\text{ min} + 30\\text{ s}$$<br><br>2. <strong>Conversão dos segundos para minutos:</strong><br>$$30\\text{ s} = \\frac{30}{60}\\text{ min} = 0{,}5\\text{ min}$$<br>Somando aos $29\\text{ min}$, temos $29{,}5\\text{ minutos}$.<br><br>3. <strong>Conversão dos minutos para horas:</strong><br>$$\\frac{29{,}5}{60}\\text{ h} = \\frac{295}{600}\\text{ h} = \\frac{59}{120}\\text{ h} \\approx 0{,}491666...\\text{ h}$$<br><br>4. <strong>Tempo total em horas:</strong><br>$$T = 2 + 0{,}491666... \\approx 2{,}4916\\text{ h}$$<br>Portanto, o valor mais aproximado é $2{,}4916\\text{ h}$ (Alternativa C).",
             "bncc": "EF06MA24",
-            "bnccDesc": "Resolver e elaborar problemas que envolvam as grandezas comprimento, massa, tempo, temperatura, área (triângulos e retângulos), capacidade e volume (sólidos formados por blocos retangulares), sem uso de fórmulas, inseridos, sempre que possível, em contextos oriundos de situações reais e/ou relacionadas às outras áreas do conhecimento.",
+            "bnccDesc": "Resolver e elaborar problemas que envolvam as grandezas comprimento, massa, tempo, temperatura, área (triângulos e retângulos), capacidade e volume (de sólidos formados por blocos retangulares), sem uso de fórmulas, inseridos, sempre que possível, em contextos oriundos de situações reais e/ou de outras áreas do conhecimento.",
             "unidadeTematica": "Grandezas e Medidas",
             "anoEscolar": "6º ano",
-            "topicoId": "b4-t2"
+            "topicoId": "b4-t1",
+            "image": null
           },
           {
-            "q": "Pesquisa com $75$ estudantes: $5$ leram A, B e C; $7$ leram A e B; $8$ leram A e C; $6$ leram B e C; $10$ apenas A; $12$ apenas B; e $15$ apenas C. Quantos estudantes não leram nenhum dos três livros?",
+            "q": "Em 2018 foi realizada uma pesquisa com $75$ estudantes do Ensino Fundamental de uma determinada escola, referente à leitura dos livros A, B e C. O resultado da pesquisa revelou que:\n\n- $5$ estudantes leram os três livros;\n- $7$ estudantes leram os livros A e B;\n- $8$ estudantes leram os livros A e C;\n- $6$ estudantes leram os livros B e C;\n- $10$ estudantes leram apenas o livro A;\n- $12$ estudantes leram apenas o livro B, e;\n- $15$ estudantes leram apenas o livro C.\n\nDe acordo com a pesquisa, pode-se afirmar que a quantidade de estudantes que não leram nenhum dos três livros é:\n\nAssinale a alternativa CORRETA.",
             "options": [
               "$20$",
               "$12$",
@@ -3325,15 +3374,16 @@ var mathData = window.mathData || {
               "$27$"
             ],
             "correct": 4,
-            "explanation": "Interseções exclusivas: A e B apenas $= 7-5=2$; A e C apenas $= 8-5=3$; B e C apenas $= 6-5=1$. Total que leu pelo menos um: $10 + 12 + 15 + 2 + 3 + 1 + 5 = 48$. Não leram nenhum: $75 - 48 = 27$.",
-            "bncc": "EF09MA01",
-            "bnccDesc": "Reconhecer que, uma vez fixada uma unidade de comprimento, existem segmentos de reta cujo comprimento não é expresso por número racional (como as medidas de diagonais de um polígono e alturas de um triângulo, quando se toma a medida de cada lado como unidade).",
+            "explanation": "1. <strong>Organização das regiões do Diagrama de Venn de três conjuntos:</strong><br>- Interseção central dos três livros: $n(A \\cap B \\cap C) = 5$.<br>- Interseções duplas exclusivas (subtraindo os 5 alunos comuns às três leituras):<br>- Leram apenas A e B: $7 - 5 = 2$.<br>- Leram apenas A e C: $8 - 5 = 3$.<br>- Leram apenas B e C: $6 - 5 = 1$.<br>- Leitores exclusivos de apenas um livro (valores já fornecidos como \"apenas\"):<br>- Apenas A: $10$<br>- Apenas B: $12$<br>- Apenas C: $15$<br><br>2. <strong>Cálculo do número total de estudantes que leram pelo menos um livro:</strong><br>$$\\text{Total leitores} = 10 + 12 + 15 + 2 + 3 + 1 + 5 = 48\\text{ estudantes}$$<br><br>3. <strong>Estudantes que não leram nenhum dos três livros:</strong><br>Sendo $75$ o total de entrevistados:<br>$$\\text{Nenhum} = 75 - 48 = 27\\text{ estudantes}$$<br>Portanto, $27$ estudantes não leram nenhum dos três livros (Alternativa E).",
+            "bncc": "EF06MA03",
+            "bnccDesc": "Resolver e elaborar problemas que envolvam cálculos (adição, subtração, multiplicação, divisão e potenciação) com números naturais, por meio de estratégias variadas, com compreensão dos processos neles envolvidos.",
             "unidadeTematica": "Números",
-            "anoEscolar": "9º ano",
-            "topicoId": "b1-t1"
+            "anoEscolar": "6º ano",
+            "topicoId": "b1-t1",
+            "image": null
           },
           {
-            "q": "Uma loja vende cinco produtos, cujos respectivos preços estão relacionados na tabela. Cada vendedor que trabalha nessa loja recebe um salário-base mensal de $\\text{R\\$} 1.080{,}00$, acrescido de um valor adicional que corresponde a $10\\%$ do preço de cada produto vendido por ele durante o mês. Nessas condições, é correto afirmar que: Assinale a alternativa CORRETA.",
+            "q": "Uma loja vende cinco produtos, cujos respectivos preços estão relacionados na tabela abaixo:\n\nCada vendedor que trabalha nessa loja recebe um salário-base mensal de $\\text{R\\$} 1.080{,}00$, acrescido de um valor adicional que corresponde a $10\\%$ do preço de cada produto vendido por ele durante o mês. Nessas condições, é correto afirmar que:\n\nAssinale a alternativa CORRETA.",
             "options": [
               "Se o vendedor vender uma unidade de cada produto, o valor adicional ao salário será superior a $\\text{R\\$} 200{,}00$.",
               "Se o vendedor vender uma unidade de cada produto, o valor adicional ao salário corresponderá a mais de $20\\%$ do salário-base.",
@@ -3342,42 +3392,42 @@ var mathData = window.mathData || {
               "Se o vendedor vender cinco unidades de cada produto, o valor adicional ao salário será igual ao seu salário-base."
             ],
             "correct": 3,
-            "explanation": "A soma dos preços de uma unidade de cada produto é $350 + 437{,}50 + 292{,}70 + 195 + 280 = \\text{R\\$} 1.555{,}20$. A comissão de $10\\%$ sobre uma unidade de cada produto é $\\text{R\\$} 155{,}52$. Para cinco unidades de cada produto, o adicional é $5 \\times 155{,}52 = \\text{R\\$} 777{,}60$. Comparando com o salário-base de $\\text{R\\$} 1.080{,}00$: $\\frac{777{,}60}{1.080{,}00} = 0{,}72 = 72\\%$, que é superior a $70\\%$ do salário-base.",
-            "bncc": "EF08MA04",
-            "bnccDesc": "Resolver e elaborar problemas, envolvendo cálculo de porcentagens, incluindo o uso de tecnologias digitais.",
+            "explanation": "1. <strong>Cálculo da soma dos preços dos produtos:</strong><br>$$\\text{Total de 1 conjunto} = 350{,}00 + 437{,}50 + 292{,}70 + 195{,}00 + 280{,}00 = \\text{R\\$} 1.555{,}20$$<br><br>2. <strong>Análise da comissão para 1 unidade de cada produto:</strong><br>Comissão adicional de $10\\%$:<br>$$C_1 = 0{,}10 \\times 1.555{,}20 = \\text{R\\$} 155{,}52$$<br>- O item A é falso ($155{,}52 < 200$).<br>- O item B é falso, pois $20\\%$ do salário-base de $\\text{R\\$} 1.080{,}00$ é $0{,}20 \\times 1.080 = \\text{R\\$} 216{,}00$ (e $155{,}52 < 216$).<br><br>3. <strong>Análise da venda de 5 unidades de cada produto:</strong><br>- Comissão total para 5 unidades de cada:<br>$$C_5 = 5 \\times 155{,}52 = \\text{R\\$} 777{,}60$$<br>- Salário total no mês: $1.080{,}00 + 777{,}60 = \\text{R\\$} 1.857{,}60$ (item C é falso, pois é inferior a $\\text{R\\$} 2.000{,}00$).<br>- Razão percentual em relação ao salário-base:<br>$$\\frac{777{,}60}{1.080{,}00} = 0{,}72 = 72\\%$$<br>Como $72\\% > 70\\%$, o valor adicional corresponde a mais de $70\\%$ do salário-base.<br><br>Portanto, a afirmação correta é a da <strong>Alternativa D</strong>.",
+            "bncc": "EF07MA02",
+            "bnccDesc": "Resolver e elaborar problemas que envolvam porcentagens, como os que lidam com acréscimos e decréscimos simples, utilizando estratégias pessoais, cálculo mental e calculadora, no contexto de educação financeira, entre outros.",
             "unidadeTematica": "Números",
-            "anoEscolar": "8º ano",
-            "topicoId": "b1-t6",
+            "anoEscolar": "7º ano",
+            "topicoId": "b1-t2",
             "image": {
-              "src": "https://drive.google.com/file/d/1HbWX79Q5zN6GWdm-D3G0UoO-IbBRshOH/view?usp=sharing",
-              "alt": "Tabela de preços com duas colunas listando Produto (A, B, C, D, E) e Preço em R$ (350,00; 437,50; 292,70; 195,00; 280,00).",
-              "caption": "Tabela: Relação de produtos e preços unitários em reais (IFSC 2020.1)"
+              "src": "assets/img/questoes/ifsc/ifsc-2020-1-q05.png",
+              "alt": "Tabela com preços de cinco produtos: A por 350 reais, B por 437 e 50, C por 292 e 70, D por 195 e E por 280 reais.",
+              "caption": "Fonte: IFSC 2020.1"
             }
           },
           {
-            "q": "O desenho abaixo representa uma peça plana com suas respectivas coordenadas (pontos A, B, ..., M, N). As medidas estão em centímetros e a origem do sistema de coordenadas parte do ponto A. Adote $\\pi = 3{,}14$.\n\nA partir do desenho são feitas as seguintes afirmações:\n\nI. As coordenadas do ponto H são $(120, 60)$.\nII. O segmento IJ tem comprimento de $20\\sqrt{2}\\text{ cm}$.\nIII. O arco BC mede $0{,}1\\pi\\text{ m}$.\nIV. O perímetro da peça é maior que $0{,}29\\text{ m}$.\n\nConsiderando cada afirmação acima, qual a quantidade de afirmações CORRETAS:",
+            "q": "O desenho abaixo representa uma peça plana com suas respectivas coordenadas (pontos A, B, ..., M, N). As medidas estão em centímetros e a origem do sistema de coordenadas parte do ponto A. Adote $\\pi = 3{,}14$.\n\nA partir do desenho são feitas as seguintes afirmações:\n\nI. As coordenadas do ponto H são $(120, 60)$.\nII. O segmento IJ tem comprimento de $20\\sqrt{2}\\text{ cm}$.\nIII. O arco BC mede $0{,}1\\pi\\text{ m}$.\nIV. O perímetro da peça é maior que $0{,}29\\text{ m}$.\n\nConsiderando cada afirmação acima, qual a quantidade de afirmações CORRETAS:\n\n(A) 0 - nenhuma correta\n(B) 1 – uma correta\n(C) 2 – duas corretas\n(D) 3 – três corretas\n(E) 4 – todas corretas",
             "options": [
-              "$0$ – nenhuma correta",
-              "$1$ – uma correta",
-              "$2$ – duas corretas",
-              "$3$ – três corretas",
-              "$4$ – todas corretas"
+              "0 - nenhuma correta",
+              "1 – uma correta",
+              "2 – duas corretas",
+              "3 – três corretas",
+              "4 – todas corretas"
             ],
             "correct": 4,
-            "explanation": "1. <strong>Análise da afirmação I (Coordenadas do ponto H):</strong><br>A cota horizontal total da peça indica que a face direita onde se encontra $H$ está a $120\\text{ cm}$ da origem $A$, logo $x_H = 120$.<br>Na direção vertical, a altura de $A$ até $I$ é $20\\text{ cm}$, e de $I$ até $H$ são mais $40\\text{ cm}$. Portanto, $y_H = 20 + 40 = 60\\text{ cm}$.<br>Assim, as coordenadas são $H = (120, 60)$. Afirmação I é <strong>verdadeira</strong>.<br><br>2. <strong>Análise da afirmação II (Comprimento do segmento IJ):</strong><br>- Coordenada de $J$: pela cota horizontal, $x_J = 25 + 35 + 40 = 100$, e $y_J = 0$.<br>- Coordenada de $I$: $x_I = 120$ e $y_I = 20$.<br>- Variações: $\\Delta x = 120 - 100 = 20\\text{ cm}$ e $\\Delta y = 20 - 0 = 20\\text{ cm}$.<br>Aplicando o Teorema de Pitágoras:<br>$$IJ = \\sqrt{20^2 + 20^2} = \\sqrt{400 + 400} = \\sqrt{800} = 20\\sqrt{2}\\text{ cm}$$<br>Afirmação II é <strong>verdadeira</strong>.<br><br>3. <strong>Análise da afirmação III (Comprimento do arco BC):</strong><br>O arco circular $BC$ liga os pontos $B(0, 20)$ e $C(20, 40)$, correspondendo a um quarto de circunferência ($90^\\circ$) de raio $R = 20\\text{ cm}$.<br>$$C_{BC} = \\frac{2\\pi R}{4} = \\frac{\\pi \\times 20}{2} = 10\\pi\\text{ cm}$$<br>Convertendo de centímetros para metros (dividindo por $100$):<br>$$10\\pi\\text{ cm} = \\frac{10\\pi}{100}\\text{ m} = 0{,}1\\pi\\text{ m}$$<br>Afirmação III é <strong>verdadeira</strong>.<br><br>4. <strong>Análise da afirmação IV (Perímetro da peça):</strong><br>A afirmação estabelece que o perímetro é maior que $0{,}29\\text{ m} = 29\\text{ cm}$.<br>Basta observar apenas alguns dos lados da peça:<br>$$EF + HI = 40\\text{ cm} + 40\\text{ cm} = 80\\text{ cm} = 0{,}8\\text{ m} > 0{,}29\\text{ m}$$<br>O perímetro total de todos os contornos da peça excede $300\\text{ cm} = 3\\text{ m}$, sendo portanto claramente maior que $0{,}29\\text{ m}$. Afirmação IV é <strong>verdadeira</strong>.<br><br>Como todas as 4 afirmações estão corretas, a alternativa correta é a <strong>Letra E</strong> ($4$ – todas corretas).",
+            "explanation": "1. <strong>Análise da Afirmação I (Coordenadas de H):</strong><br>A cota horizontal inferior mostra que a borda extrema direita (onde estão H e I) situa-se em $x = 120\\text{ cm}$.<br>A cota vertical mostra que I está em $y = 20$ e o segmento vertical IH mede $40\\text{ cm}$, logo $y_H = 20 + 40 = 60\\text{ cm}$. Assim, $H = (120, 60)$. (<strong>Verdadeira</strong>)<br><br>2. <strong>Análise da Afirmação II (Comprimento de IJ):</strong><br>O ponto J está localizado em $x_J = 25 + 35 + 40 = 100\\text{ cm}$ e $y_J = 0$. O ponto I está em $(120, 20)$.<br>As variações são $\\Delta x = 120 - 100 = 20\\text{ cm}$ e $\\Delta y = 20 - 0 = 20\\text{ cm}$.<br>Pelo Teorema de Pitágoras: $IJ = \\sqrt{20^2 + 20^2} = \\sqrt{800} = 20\\sqrt{2}\\text{ cm}$. (<strong>Verdadeira</strong>)<br><br>3. <strong>Análise da Afirmação III (Medida do arco BC):</strong><br>O arco BC é um quarto de circunferência (quadrante) de raio $R = 20\\text{ cm}$ (diferença entre as cotas dos eixos).<br>Comprimento do arco: $L = \\frac{2\\pi R}{4} = \\frac{2\\pi \\times 20}{4} = 10\\pi\\text{ cm}$.<br>Convertendo para metros: $10\\pi\\text{ cm} = 0{,}1\\pi\\text{ m}$. (<strong>Verdadeira</strong>)<br><br>4. <strong>Análise da Afirmação IV (Perímetro da peça):</strong><br>Apenas a base inferior (segmentos retilíneos horizontais) mede mais de $120\\text{ cm} = 1{,}2\\text{ m}$, que é manifestamente superior a $0{,}29\\text{ m} = 29\\text{ cm}$. (<strong>Verdadeira</strong>)<br><br>Portanto, todas as 4 afirmações estão corretas (Alternativa E).",
             "bncc": "EF09MA14",
-            "bnccDesc": "Resolver problemas envolvendo perímetro, plano cartesiano e relações métricas e trigonométricas no plano.",
+            "bnccDesc": "Resolver e elaborar problemas de aplicação do teorema de Pitágoras ou das relações de proporcionalidade envolvendo triângulos retângulos.",
             "unidadeTematica": "Geometria",
             "anoEscolar": "9º ano",
-            "topicoId": "b3-t2",
+            "topicoId": "b3-t1",
             "image": {
-              "src": "https://drive.google.com/file/d/13tmwngwLM80kj0m1Pk1fl6LdY_4iCAvW/view?usp=sharing",
-              "alt": "Desenho técnico cotado de peça plana com vértices de A a N e origem no ponto A, indicando arco de circunferência BC, chanfros e segmentos horizontais e verticais com cotas em centímetros",
-              "caption": "Figura: Peça plana cotada no plano cartesiano com origem em A (IFSC 2020.1)"
+              "src": "assets/img/questoes/ifsc/ifsc-2020-1-q06.png",
+              "alt": "Peça plana com vértices de A a N cotada em centímetros com linhas de chamada e arco de concordância BC.",
+              "caption": "Fonte: IFSC 2020.1"
             }
           },
           {
-            "q": "A figura representa um mapa das ruas que passam pelas casas de quatro amigos: Ivan (I), Fábio (F), Saulo (S) e Carlos (C). As distâncias entre as casas de Fábio e Saulo e de Fábio e Carlos são, respectivamente, $3\\text{ km}$ e $9\\text{ km}$. A estrada (e), que liga as casas de Saulo a Carlos, forma um arco de circunferência com centro na casa de Ivan. A partir dessas informações, assinale a alternativa que indica corretamente qual a distância entre as casas de Ivan e Fábio. Assinale a alternativa CORRETA.",
+            "q": "A figura a seguir representa um mapa das ruas que passam pelas casas de quatro amigos: Ivan (I), Fábio (F), Saulo (S) e Carlos (C). As distâncias entre as casas de Fábio e Saulo e de Fábio e Carlos são, respectivamente, $3\\text{ km}$ e $9\\text{ km}$.\n\nA estrada (e), que liga as casas de Saulo a Carlos, forma um arco de circunferência com centro na casa de Ivan.\n\nA partir dessas informações, assinale a alternativa que indica corretamente qual a distância entre as casas de Ivan e Fábio.\n\nAssinale a alternativa CORRETA.",
             "options": [
               "$10\\text{ km}$",
               "$12\\text{ km}$",
@@ -3385,69 +3435,72 @@ var mathData = window.mathData || {
               "$15\\text{ km}$",
               "$16\\text{ km}$"
             ],
-            "correct": 3,
-            "explanation": "Como a estrada que liga Saulo a Carlos é um arco de circunferência com centro em Ivan, as distâncias $IS$ e $IC$ são raios da mesma circunferência, logo $IS = IC = R$. Seja $d$ a distância de Ivan a Fábio ($IF = d$). No triângulo retângulo $IFS$, temos $IS^2 = IF^2 + FS^2 \\implies R^2 = d^2 + 3^2 = d^2 + 9$. No triângulo retângulo $IFC$, temos $IC^2 = IF^2 + FC^2 \\implies R^2 = d^2 + 9^2$? Pelo Teorema da Potência de Ponto ou semelhança no mapa circular indicado na figura, a distância entre as casas de Ivan e Fábio resulta em $15\\text{ km}$.",
-            "bncc": "EF07MA18",
-            "bnccDesc": "Resolver e elaborar problemas que possam ser representados por equações polinomiais de 1º grau, redutíveis à forma ax + b = c, fazendo uso das propriedades da igualdade.",
-            "unidadeTematica": "Álgebra",
-            "anoEscolar": "7º ano",
-            "topicoId": "b2-t3",
+            "correct": 1,
+            "explanation": "1. <strong>Interpretação geométrica:</strong><br>- O ponto I é o centro da circunferência que passa por S e C. Logo, as distâncias de I a S e de I a C são raios da mesma circunferência: $IS = IC = R$.<br>- Os pontos I, F e S pertencem à mesma reta vertical, e a reta FC é perpendicular a ela em F ($IF \\perp FC$).<br><br>2. <strong>Modelagem dos segmentos:</strong><br>- Seja $x$ a distância entre Ivan e Fábio ($IF = x$).<br>- Dado $FS = 3\\text{ km}$, o raio é $R = IS = IF + FS = x + 3$.<br>- No triângulo retângulo $\\Delta IFC$, os catetos são $IF = x$ e $FC = 9\\text{ km}$, e a hipotenusa é $IC = R = x + 3$.<br><br>3. <strong>Aplicação do Teorema de Pitágoras:</strong><br>$$(x + 3)^2 = x^2 + 9^2$$<br>$$x^2 + 6x + 9 = x^2 + 81$$<br>$$6x = 81 - 9 = 72 \\implies x = \\frac{72}{6} = 12\\text{ km}$$<br>Portanto, a distância entre as casas de Ivan e Fábio é $12\\text{ km}$ (Alternativa B).",
+            "bncc": "EF09MA14",
+            "bnccDesc": "Resolver e elaborar problemas de aplicação do teorema de Pitágoras ou das relações de proporcionalidade envolvendo triângulos retângulos.",
+            "unidadeTematica": "Geometria",
+            "anoEscolar": "9º ano",
+            "topicoId": "b3-t1",
             "image": {
-              "src": "https://drive.google.com/file/d/1_WVH37n21-_Pbbq3D_iN-B_JupmgTDPu/view?usp=sharing",
-              "alt": "Mapa esquemático com a localização das casas dos amigos Ivan (I), Fábio (F), Saulo (S) e Carlos (C), destacando a estrada em arco de circunferência com centro em I.",
-              "caption": "Figura: Mapa de ruas e conexões entre as casas dos amigos (IFSC 2020.1)"
+              "src": "assets/img/questoes/ifsc/ifsc-2020-1-q07.png",
+              "alt": "Diagrama de triângulo retângulo com vértices I, F e C, com catetos IF e FC, e arco de circunferência com centro em I ligando S a C.",
+              "caption": "Fonte: IFSC 2020.1"
             }
           },
           {
-            "q": "Se uma pessoa possui IMC igual a $40\\text{ kg/m}^2$ e peso de $120\\text{ kg}$, o valor mais aproximado de sua altura ($h$) é:",
+            "q": "Uma das maneiras de saber se o seu peso está adequado à sua altura é calculando o Índice de Massa Corporal (IMC). O resultado dessa fórmula matemática poderá indicar, por exemplo, se você está com peso adequado, se apresenta magreza, sobrepeso ou obesidade. Considere apenas como um ponto de partida, pois o IMC não avalia o seu estado nutricional como todo e precisa ser interpretado por um profissional de saúde, que analisará uma série de outras medidas e características suas, como idade, sexo, percentual de gordura, entre outros aspectos, antes de um diagnóstico.\n\nA fórmula do IMC é a mesma para todas as pessoas e pode ser escrita como:\n$$h^2 \\cdot \\text{IMC} - P = 0$$\nsendo $h$ a altura da pessoa em metros ($\\text{m}$) e $P$ o seu peso em quilogramas ($\\text{kg}$).\n\nSe uma pessoa possui IMC igual a $40\\text{ kg/m}^2$ e está com peso igual a $120\\text{ kg}$, assinale a alternativa que apresenta o valor mais aproximado de sua altura:\n\nAssinale a alternativa CORRETA.",
             "options": [
-              "$1{,}4\\text{ m}$",
-              "$1{,}5\\text{ m}$",
-              "$1{,}6\\text{ m}$",
-              "$1{,}7\\text{ m}$",
-              "$1{,}8\\text{ m}$"
+              "$1{,}4\\text{ metros}$",
+              "$1{,}5\\text{ metros}$",
+              "$1{,}6\\text{ metros}$",
+              "$1{,}7\\text{ metros}$",
+              "$1{,}8\\text{ metros}$"
             ],
             "correct": 3,
-            "explanation": "$\\text{IMC} = \\frac{P}{h^2} \\Rightarrow 40 = \\frac{120}{h^2} \\Rightarrow h^2 = 3 \\Rightarrow h = \\sqrt{3} \\approx 1{,}732\\text{ metros}$.",
-            "bncc": "EF08MA02",
-            "bnccDesc": "Resolver e elaborar problemas usando a relação entre potenciação e radiciação, para representar uma raiz como potência de expoente fracionário.",
+            "explanation": "1. <strong>Substituição dos valores na equação do IMC:</strong><br>$$h^2 \\cdot \\text{IMC} - P = 0$$<br>$$h^2 \\cdot 40 - 120 = 0$$<br>$$40h^2 = 120 \\implies h^2 = \\frac{120}{40} = 3$$<br><br>2. <strong>Cálculo e aproximação da altura:</strong><br>$$h = \\sqrt{3}\\text{ m} \\approx 1{,}732\\text{ m}$$<br>Comparando com as opções fornecidas ($1{,}4; 1{,}5; 1{,}6; 1{,}7; 1{,}8$), o valor mais próximo é $1{,}7\\text{ metros}$ (Alternativa D).",
+            "bncc": "EF09MA03",
+            "bnccDesc": "Efetuar cálculos com números reais, inclusive potências com expoentes fracionários.",
             "unidadeTematica": "Números",
-            "anoEscolar": "8º ano",
-            "topicoId": "b1-t7"
+            "anoEscolar": "9º ano",
+            "topicoId": "b1-t2",
+            "image": null
           },
           {
-            "q": "Um triângulo retângulo possui catetos $(x-2)\\text{ m}$ e $(x+5)\\text{ m}$ e hipotenusa $(x+7)\\text{ m}$. João caminha pelos catetos e Maria pela hipotenusa. O trajeto de Maria em relação ao de João é:",
+            "q": "Um triângulo ABC, retângulo em B possui catetos medindo $(x - 2)\\text{ metros}$ e $(x + 5)\\text{ metros}$, com hipotenusa igual a $(x + 7)\\text{ metros}$.\n\nJoão percorrerá o caminho de A a C sobre os catetos e Maria também irá de A a C, mas pela hipotenusa.\n\nAssim, é correto afirmar que Maria fará um trajeto, em relação a João:\n\nAssinale a alternativa CORRETA.",
             "options": [
-              "$6\\text{ metros menor}$",
-              "$4\\text{ metros menor}$",
+              "6 (seis) metros menor",
+              "4 (quatro) metros menor",
               "de mesma distância",
-              "$4\\text{ metros maior}$",
-              "$6\\text{ metros maior}$"
+              "4 (quatro) metros maior",
+              "6 (seis) metros maior"
             ],
             "correct": 0,
-            "explanation": "Por Pitágoras: $(x-2)^2 + (x+5)^2 = (x+7)^2 \\Rightarrow x^2 - 8x - 20 = 0 \\Rightarrow x = 10$. Catetos: $8$ e $15$ (João anda $23\\text{m}$). Hipotenusa: $17$ (Maria anda $17\\text{m}$). Diferença: $6\\text{ metros a menos}$ para Maria.",
+            "explanation": "1. <strong>Aplicação do Teorema de Pitágoras no triângulo retângulo ABC:</strong><br>$$(x - 2)^2 + (x + 5)^2 = (x + 7)^2$$<br><br>2. <strong>Desenvolvimento dos produtos notáveis:</strong><br>$$(x^2 - 4x + 4) + (x^2 + 10x + 25) = x^2 + 14x + 49$$<br>$$2x^2 + 6x + 29 = x^2 + 14x + 49$$<br>$$x^2 - 8x - 20 = 0$$<br><br>3. <strong>Fatoração e determinação de $x$:</strong><br>$$(x - 10)(x + 2) = 0$$<br>Como o lado $(x - 2)$ deve ser estritamente positivo, descartamos a raiz negativa $x = -2$ e obtemos:<br>$$x = 10$$<br><br>4. <strong>Medidas dos lados e comparação dos trajetos:</strong><br>- Cateto 1: $10 - 2 = 8\\text{ m}$<br>- Cateto 2: $10 + 5 = 15\\text{ m}$<br>- Hipotenusa: $10 + 7 = 17\\text{ m}$<br><br>- Trajeto percorrido por João (pelos dois catetos):<br>$$D_{\\text{João}} = 8 + 15 = 23\\text{ m}$$<br>- Trajeto percorrido por Maria (pela hipotenusa):<br>$$D_{\\text{Maria}} = 17\\text{ m}$$<br>- Diferença de distância:<br>$$23 - 17 = 6\\text{ m}$$<br>Portanto, Maria fará um trajeto $6\\text{ metros menor}$ do que João (Alternativa A).",
             "bncc": "EF09MA14",
-            "bnccDesc": "Resolver e elaborar problemas de aplicação do teorema de Pitágoras ou das relações de proporcionalidade envolvendo retas paralelas cortadas por secantes.",
+            "bnccDesc": "Resolver e elaborar problemas de aplicação do teorema de Pitágoras ou das relações de proporcionalidade envolvendo triângulos retângulos.",
             "unidadeTematica": "Geometria",
             "anoEscolar": "9º ano",
-            "topicoId": "b3-t2"
+            "topicoId": "b3-t1",
+            "image": null
           },
           {
-            "q": "$3$ colaboradores atendem $80$ alunos em $4\\text{ horas}$. Quantas horas $4$ colaboradores levariam para atender $160$ alunos no mesmo ritmo?",
+            "q": "Na secretaria acadêmica de um campus do IFSC, no dia da matrícula dos alunos, 3 (três) colaboradores atenderam 80 (oitenta) alunos em 4 (quatro) horas.\n\nSe houvessem 4 (quatro) colaboradores atendendo os alunos no mesmo ritmo, quantas horas eles levariam para atender 160 (cento e sessenta) alunos?\n\nAssinale a alternativa CORRETA.",
             "options": [
-              "$3\\text{ horas}$",
-              "$5\\text{ horas}$",
-              "$6\\text{ horas}$",
-              "$8\\text{ horas}$",
-              "$9\\text{ horas}$"
+              "3 (três) horas",
+              "5 (cinco) horas",
+              "6 (seis) horas",
+              "8 (oito) horas",
+              "9 (nove) horas"
             ],
             "correct": 2,
-            "explanation": "Regra de três composta: $\\frac{4}{x} = \\frac{4}{3} \\times \\frac{80}{160} = \\frac{4}{3} \\times \\frac{1}{2} = \\frac{4}{6} \\Rightarrow x = 6\\text{ horas}$.",
-            "bncc": "EF06MA24",
-            "bnccDesc": "Resolver e elaborar problemas que envolvam as grandezas comprimento, massa, tempo, temperatura, área (triângulos e retângulos), capacidade e volume (sólidos formados por blocos retangulares), sem uso de fórmulas, inseridos, sempre que possível, em contextos oriundos de situações reais e/ou relacionadas às outras áreas do conhecimento.",
-            "unidadeTematica": "Grandezas e Medidas",
-            "anoEscolar": "6º ano",
-            "topicoId": "b4-t2"
+            "explanation": "1. <strong>Organização das grandezas na regra de três composta:</strong><br>- Colaboradores ($C$): $3 \\to 4$<br>- Alunos atendidos ($A$): $80 \\to 160$<br>- Tempo em horas ($T$): $4 \\to T$<br><br>2. <strong>Análise de proporcionalidade em relação à grandeza tempo ($T$):</strong><br>- Colaboradores e tempo: grandezas <em>inversamente proporcionais</em> (mais colaboradores exigem menos tempo para uma mesma tarefa). Inverte-se a razão: $\\frac{4}{3}$.<br>- Alunos e tempo: grandezas <em>diretamente proporcionais</em> (mais alunos exigem mais tempo de atendimento). Mantém-se a razão: $\\frac{80}{160} = \\frac{1}{2}$.<br><br>3. <strong>Equacionamento:</strong><br>$$\\frac{4}{T} = \\frac{4}{3} \\times \\frac{80}{160}$$<br>$$\\frac{4}{T} = \\frac{4}{3} \\times \\frac{1}{2} = \\frac{4}{6} = \\frac{2}{3}$$<br>$$2 \\cdot T = 4 \\times 3 = 12 \\implies T = 6\\text{ horas}$$<br>Portanto, eles levariam $6\\text{ horas}$ (Alternativa C).",
+            "bncc": "EF07MA17",
+            "bnccDesc": "Resolver e elaborar problemas que envolvam variação de proporcionalidade direta e do tipo inversa entre duas grandezas, utilizando sentença algébrica para expressar a relação entre elas.",
+            "unidadeTematica": "Álgebra",
+            "anoEscolar": "7º ano",
+            "topicoId": "b1-t2",
+            "image": null
           }
         ],
         "slug": "prova-ifsc-20201",
@@ -3475,38 +3528,40 @@ var mathData = window.mathData || {
         },
         "questions": [
           {
-            "q": "Sofia simplificou a fração $\\frac{(2 + 4 + 6 + \\dots + 2022) - (1 + 3 + 5 + \\dots + 2021)}{2022 \\cdot 45 - 35 \\cdot 2022}$. A fração irredutível obtida é:",
+            "q": "Sofia está tentando transformar a fração\n$$\\frac{(2 + 4 + 6 + \\dots + 2020 + 2022) - (1 + 3 + 5 + \\dots + 2019 + 2021)}{2022 \\cdot 45 - 35 \\cdot 2022}$$\nem uma fração irredutível. Podemos afirmar que a resposta correta que Sofia irá encontrar é:\n\nAssinale a alternativa CORRETA.",
             "options": [
-              "$\\frac{1}{20}$",
-              "$\\frac{1}{10}$",
-              "$\\frac{1011}{2022}$",
               "$\\frac{1}{2}$",
-              "$\\frac{2}{5}$"
+              "$\\frac{1}{10}$",
+              "$\\frac{1}{20}$",
+              "$\\frac{1}{30}$",
+              "$\\frac{1}{50}$"
             ],
-            "correct": 0,
-            "explanation": "O numerador é a soma de $1011$ diferenças $(2-1)+(4-3)+\\dots+(2022-2021) = 1011 \\times 1 = 1011$. O denominador é $2022(45 - 35) = 2022 \\times 10 = 20220$. Fração: $\\frac{1011}{20220} = \\frac{1}{20}$.",
-            "bncc": "EF06MA10",
-            "bnccDesc": "Resolver e elaborar problemas que envolvam adição ou subtração com números racionais positivos na representação fracionária.",
-            "unidadeTematica": "Números",
-            "anoEscolar": "6º ano",
-            "topicoId": "b1-t5"
-          },
-          {
-            "q": "Em 2021, o salário de Antônio aumentou $26\\%$, enquanto os preços subiram $20\\%$. Quanto aumentou o poder de compra real de Antônio?",
-            "options": [
-              "$6\\%$",
-              "$5\\%$",
-              "$4{,}8\\%$",
-              "$5{,}2\\%$",
-              "$6{,}2\\%$"
-            ],
-            "correct": 1,
-            "explanation": "Fator real $= \\frac{1{,}26}{1{,}20} = 1{,}05$, o que corresponde a um aumento real de $5\\%$.",
+            "correct": 2,
+            "explanation": "1. <strong>Simplificação do numerador:</strong><br>Podemos agrupar os termos do numerador subtraindo cada número ímpar do respectivo número par consecutivo:<br>$$(2 - 1) + (4 - 3) + (6 - 5) + \\dots + (2022 - 2021)$$<br>Cada diferença é igual a $1$:<br>$$1 + 1 + 1 + \\dots + 1$$<br>A quantidade de parcelas pares de $2$ a $2022$ é $\\frac{2022}{2} = 1011$. Logo, o numerador vale:<br>$$\\text{Numerador} = 1011 \\times 1 = 1011$$<br><br>2. <strong>Fatoração do denominador:</strong><br>Colocando o fator comum $2022$ em evidência:<br>$$\\text{Denominador} = 2022 \\cdot (45 - 35) = 2022 \\cdot 10$$<br><br>3. <strong>Cálculo da fração irredutível:</strong><br>$$\\frac{1011}{2022 \\cdot 10} = \\frac{1011}{2 \\cdot 1011 \\cdot 10} = \\frac{1}{20}$$<br>Portanto, a fração irredutível é $\\frac{1}{20}$ (Alternativa C).",
             "bncc": "EF08MA04",
-            "bnccDesc": "Resolver e elaborar problemas, envolvendo cálculo de porcentagens, incluindo o uso de tecnologias digitais.",
+            "bnccDesc": "Resolver e elaborar problemas, envolvendo cálculo de potências de expoentes inteiros e de raízes quadradas de números racionais, e operações fundamentais.",
             "unidadeTematica": "Números",
             "anoEscolar": "8º ano",
-            "topicoId": "b1-t6"
+            "topicoId": "b1-t2",
+            "image": null
+          },
+          {
+            "q": "Em 2021, o salário de Antônio aumentou $26\\%$, e os preços aumentaram $20\\%$. Quanto aumentou, neste ano, o poder aquisitivo dele?\n\nAssinale a alternativa CORRETA.",
+            "options": [
+              "$5\\%$",
+              "$6\\%$",
+              "$7\\%$",
+              "$8\\%$",
+              "$9\\%$"
+            ],
+            "correct": 0,
+            "explanation": "1. <strong>Definição do poder aquisitivo:</strong><br>O poder aquisitivo ($PA$) é definido como a quantidade de bens que o salário pode comprar, ou seja, a razão entre o salário ($S$) e o nível geral de preços ($P$):<br>$$PA = \\frac{S}{P}$$<br><br>2. <strong>Aplicação dos reajustes percentuais:</strong><br>- O salário subiu $26\\%$, passando para $S' = 1{,}26 \\cdot S$.<br>- Os preços subiram $20\\%$, passando para $P' = 1{,}20 \\cdot P$.<br><br>3. <strong>Cálculo do novo poder aquisitivo:</strong><br>$$PA' = \\frac{S'}{P'} = \\frac{1{,}26 \\cdot S}{1{,}20 \\cdot P} = \\frac{1{,}26}{1{,}20} \\cdot PA = 1{,}05 \\cdot PA$$<br><br>4. <strong>Variação percentual:</strong><br>O fator multiplicativo $1{,}05$ corresponde a um acréscimo de:<br>$$(1{,}05 - 1) \\times 100\\% = 5\\%$$<br>Portanto, o poder aquisitivo aumentou $5\\%$ (Alternativa A).",
+            "bncc": "EF07MA02",
+            "bnccDesc": "Resolver e elaborar problemas que envolvam porcentagens, como os que lidam com acréscimos e decréscimos simples, utilizando estratégias pessoais, cálculo mental e calculadora, no contexto de educação financeira, entre outros.",
+            "unidadeTematica": "Números",
+            "anoEscolar": "7º ano",
+            "topicoId": "b1-t2",
+            "image": null
           },
           {
             "q": "José Carlos desenhou um quadrado ABCD, cujo lado mede $48\\text{ cm}$, e uma circunferência tangente ao lado CD, contendo os vértices A e B. Qual é a medida do raio desta circunferência?\n\nAssinale a alternativa CORRETA.",
@@ -3518,20 +3573,20 @@ var mathData = window.mathData || {
               "$36\\text{ cm}$"
             ],
             "correct": 1,
-            "explanation": "1. <strong>Posicionamento geométrico e simetria:</strong><br>Como a circunferência passa pelos vértices $A$ e $B$ e tangencia o lado oposto $CD$ do quadrado, por simetria o ponto de tangência $M$ é o ponto médio de $CD$, e o centro $O$ da circunferência pertence à mediatriz do segmento $AB$ (e do segmento $CD$).<br><br>2. <strong>Construção do triângulo retângulo:</strong><br>- Seja $N$ o ponto médio do lado $AB$. Como o lado do quadrado mede $48\\text{ cm}$, a metade mede $NB = 24\\text{ cm}$.<br>- A distância do lado $AB$ ao lado $CD$ é a altura total do quadrado: $NM = 48\\text{ cm}$.<br>- Como a circunferência tangencia $CD$ em $M$, o raio é $OM = R$.<br>- Portanto, a distância do centro $O$ ao ponto médio $N$ de $AB$ é:<br>$$ON = NM - OM = 48 - R$$<br>- A distância do centro $O$ ao vértice $B$ (que pertence à circunferência) é o raio $OB = R$.<br><br>3. <strong>Aplicação do Teorema de Pitágoras no triângulo $\\triangle ONB$:</strong><br>$$OB^2 = ON^2 + NB^2$$<br>$$R^2 = (48 - R)^2 + 24^2$$<br>$$R^2 = (2.304 - 96R + R^2) + 576$$<br>Simplificando $R^2$ em ambos os lados:<br>$$0 = 2.880 - 96R$$<br>$$96R = 2.880 \\implies R = \\frac{2.880}{96} = 30\\text{ cm}$$<br>Portanto, o raio da circunferência mede $30\\text{ cm}$. A alternativa correta é a <strong>Letra B</strong>.",
+            "explanation": "1. <strong>Representação geométrica e simetria:</strong><br>Seja $R$ o raio da circunferência de centro $O$.<br>- O lado inferior do quadrado é $CD$ e o superior é $AB$, ambos medindo $48\\text{ cm}$.<br>- Pela simetria do quadrado em relação à mediatriz vertical dos lados $AB$ e $CD$, o centro $O$ localiza-se sobre esse eixo de simetria.<br><br>2. <strong>Distâncias relativas ao centro $O$:</strong><br>- Como a circunferência é tangente ao lado inferior $CD$, a distância do centro $O$ à reta $CD$ é exatamente igual ao raio $R$.<br>- A altura total do quadrado é $48\\text{ cm}$, logo a distância do centro $O$ até o lado superior $AB$ é $(48 - R)$.<br>- A mediatriz intercepta o lado $AB$ em seu ponto médio $M$, de modo que a distância horizontal de $M$ ao vértice $A$ é $\\frac{48}{2} = 24\\text{ cm}$.<br><br>3. <strong>Aplicação do Teorema de Pitágoras no triângulo retângulo formado por $O$, $M$ e $A$:</strong><br>Como o vértice $A$ pertence à circunferência, a hipotenusa é $OA = R$. Logo:<br>$$R^2 = 24^2 + (48 - R)^2$$<br>$$R^2 = 576 + 2304 - 96R + R^2$$<br>$$96R = 2880 \\implies R = \\frac{2880}{96} = 30\\text{ cm}$$<br>Portanto, o raio da circunferência mede $30\\text{ cm}$ (Alternativa B).",
             "bncc": "EF09MA14",
-            "bnccDesc": "Resolver e elaborar problemas de aplicação do teorema de Pitágoras ou das relações de proporcionalidade envolvendo circunferências e triângulos retângulos.",
+            "bnccDesc": "Resolver e elaborar problemas de aplicação do teorema de Pitágoras ou das relações de proporcionalidade envolvendo triângulos retângulos.",
             "unidadeTematica": "Geometria",
             "anoEscolar": "9º ano",
             "topicoId": "b3-t1",
             "image": {
-              "src": "https://drive.google.com/file/d/1ROoQJBYqzGrnLnF-yiWmGGBYYQkopj_z/view?usp=sharing",
-              "alt": "Diagrama geométrico esquemático de um quadrado ABCD de lado 48 cm e uma circunferência de centro O que tangencia o lado CD e passa pelos vértices A e B.",
-              "caption": "Figura: Circunferência de centro O tangente ao lado CD e contendo os vértices A e B (IFSC 2022.1)"
+              "src": "assets/img/questoes/ifsc/ifsc-2022-1-q03.png",
+              "alt": "Quadrado ABCD de lado 48 cm com uma circunferência contendo os vértices superiores A e B e tangente ao lado inferior CD.",
+              "caption": "Fonte: IFSC 2022.1"
             }
           },
           {
-            "q": "Arthur ganhou um gato geométrico de presente, representado pela figura abaixo:\n\nObservando cuidadosamente a figura acima, verificamos que ele conseguiu determinar os 4 triângulos retângulos, cujas medidas dos lados estão em centímetros, conforme a figura a seguir (a figura não está em escala).\n\nSendo assim, podemos afirmar que o valor de $\\sqrt{x + y + z + w}$ é igual a:\n\nAssinale a alternativa CORRETA.",
+            "q": "Arthur ganhou um gato geométrico de presente, representado pela figura abaixo.\n\nObservando cuidadosamente a figura, verificamos que ele conseguiu determinar os 4 triângulos retângulos, cujas medidas dos lados estão em centímetros, conforme a figura (fora de escala).\n\nSendo assim, podemos afirmar que o valor de $\\sqrt{x + y + z + w}$ é igual a:\n\nAssinale a alternativa CORRETA.",
             "options": [
               "$10\\text{ cm}$",
               "$9\\text{ cm}$",
@@ -3540,71 +3595,74 @@ var mathData = window.mathData || {
               "$6\\text{ cm}$"
             ],
             "correct": 4,
-            "explanation": "1. <strong>Primeiro triângulo retângulo (inferior esquerdo):</strong><br>Os catetos medem $24$ e $(x + 1)$ e a hipotenusa mede $25$. Pelo Teorema de Pitágoras:<br>$$(x + 1)^2 + 24^2 = 25^2$$<br>$$(x + 1)^2 + 576 = 625 \\implies (x + 1)^2 = 49 \\implies x + 1 = 7 \\implies x = 6$$<br><br>2. <strong>Segundo triângulo retângulo (inferior direito):</strong><br>Os catetos medem $(x + 1) = 7$ e $y$, e a hipotenusa mede $\\sqrt{74}$. Aplicando Pitágoras:<br>$$7^2 + y^2 = (\\sqrt{74})^2$$<br>$$49 + y^2 = 74 \\implies y^2 = 25 \\implies y = 5$$<br><br>3. <strong>Terceiro triângulo retângulo (superior direito):</strong><br>Os catetos medem $y = 5$ e $12$, e a hipotenusa mede $(z - 3)$. Aplicando Pitágoras:<br>$$(z - 3)^2 = 5^2 + 12^2 = 25 + 144 = 169 \\implies z - 3 = 13 \\implies z = 16$$<br><br>4. <strong>Quarto triângulo retângulo (superior esquerdo):</strong><br>Os catetos medem $w$ e $(z - 3) = 13$, e a hipotenusa mede $5\\sqrt{10}$. Aplicando Pitágoras:<br>$$w^2 + 13^2 = (5\\sqrt{10})^2$$<br>$$w^2 + 169 = 25 \\times 10 = 250 \\implies w^2 = 250 - 169 = 81 \\implies w = 9$$<br><br>5. <strong>Cálculo da expressão solicitada:</strong><br>Substituindo os valores encontrados ($x = 6$, $y = 5$, $z = 16$, $w = 9$):<br>$$\\sqrt{x + y + z + w} = \\sqrt{6 + 5 + 16 + 9} = \\sqrt{36} = 6\\text{ cm}$$<br>Portanto, a alternativa correta é a <strong>Letra E</strong>.",
+            "explanation": "1. <strong>Resolução encadeada pelos triângulos retângulos:</strong><br>- <strong>1º Triângulo (inferior esquerdo):</strong><br>Catetos: $24$ e $(x + 1)$; Hipotenusa: $25$.<br>$$(x + 1)^2 + 24^2 = 25^2 \\implies (x + 1)^2 = 625 - 576 = 49 \\implies x + 1 = 7 \\implies x = 6$$<br><br>- <strong>2º Triângulo (inferior direito):</strong><br>Catetos: $(x + 1) = 7$ e $y$; Hipotenusa: $\\sqrt{74}$.<br>$$7^2 + y^2 = (\\sqrt{74})^2 \\implies 49 + y^2 = 74 \\implies y^2 = 25 \\implies y = 5$$<br><br>- <strong>3º Triângulo (superior direito):</strong><br>Catetos: $y = 5$ e $12$; Hipotenusa: $(z - 3)$.<br>$$(z - 3)^2 = 5^2 + 12^2 = 25 + 144 = 169 \\implies z - 3 = 13 \\implies z = 16$$<br><br>- <strong>4º Triângulo (superior esquerdo):</strong><br>Catetos: $w$ e $(z - 3) = 13$; Hipotenusa: $5\\sqrt{10}$.<br>$$w^2 + 13^2 = (5\\sqrt{10})^2 \\implies w^2 + 169 = 25 \\times 10 = 250 \\implies w^2 = 81 \\implies w = 9$$<br><br>2. <strong>Cálculo do valor da expressão:</strong><br>$$x + y + z + w = 6 + 5 + 16 + 9 = 36$$<br>$$\\sqrt{x + y + z + w} = \\sqrt{36} = 6\\text{ cm}$$<br>Portanto, o valor é $6\\text{ cm}$ (Alternativa E).",
             "bncc": "EF09MA14",
-            "bnccDesc": "Resolver e elaborar problemas de aplicação do teorema de Pitágoras em cadeias de triângulos retângulos.",
+            "bnccDesc": "Resolver e elaborar problemas de aplicação do teorema de Pitágoras ou das relações de proporcionalidade envolvendo triângulos retângulos.",
             "unidadeTematica": "Geometria",
             "anoEscolar": "9º ano",
             "topicoId": "b3-t1",
             "image": {
-              "src": "https://drive.google.com/file/d/1oaNW-hxPzOSIVHw7n_KRcXd5yAqLORK8/view?usp=sharing",
-              "alt": "Ilustração de um gato estilizado em arte poligonal e, abaixo, esquema geométrico com quatro triângulos retângulos contíguos com hipotenusas e catetos indicados pelas variáveis x, y, z e w",
-              "caption": "Figura: Gato geométrico e cadeia de 4 triângulos retângulos (IFSC 2022.1)"
+              "src": "assets/img/questoes/ifsc/ifsc-2022-1-q04.png",
+              "alt": "Gato geométrico estilizado por polígonos e cadeia de 4 triângulos retângulos adjacentes com catetos e hipotenusas expressos em função de x, y, z e w.",
+              "caption": "Fonte: IFSC 2022.1"
             }
           },
           {
-            "q": "Observe a expressão polinomial $P(a) = (2 - a) - (4a - 3) - 5a(1 - a)$. Ao simplificar $P(a) = 0$, as raízes são:",
+            "q": "Observe as seguintes afirmações:\n\nI. As raízes do polinômio $(2 - a)^3 - (4a^3 - 3) - 5a(1 - a^2)$ são $1$ e $\\frac{11}{6}$.\nII. $(a + b)^3 = a^3 + b^3$\nIII. O polinômio $\\frac{1}{6}xy + \\frac{3}{2}xy^3 - xy^2$ pode ser escrito como $\\frac{1}{6}xy(1 - 6y)^2$\nIV. O polinômio $x^4 - 625$ pode ser escrito como $(x - 5)(x + 5)(x^2 + 25)$\nV. Ao fatorar o polinômio $xy + 2y - x - 2$, obtemos $(x + 2)(y - 1)$\n\nAssinale a alternativa CORRETA.",
             "options": [
-              "$1$ e $-1$",
-              "$1$ e $1$",
-              "$1$ e $-2$",
-              "$0$ e $2$",
-              "$-1$ e $2$"
+              "Apenas as alternativas I, IV e V estão corretas",
+              "Apenas as alternativas I, II e V estão corretas",
+              "Apenas as alternativas I, III, IV e V estão corretas",
+              "Apenas as alternativas IV e V estão corretas",
+              "Todas estão corretas"
             ],
             "correct": 0,
-            "explanation": "Desenvolvendo: $2 - a - 4a + 3 - 5a + 5a^2 = 5a^2 - 10a + 5 = 5(a^2 - 2a + 1) = 5(a - 1)^2$. As raízes são reais e iguais a $1$.",
+            "explanation": "1. <strong>Análise de cada afirmação:</strong><br>- <strong>Afirmação I (Verdadeira):</strong><br>Desenvolvendo as parcelas:<br>$(2 - a)^3 = 8 - 12a + 6a^2 - a^3$<br>$-(4a^3 - 3) = -4a^3 + 3$<br>$-5a(1 - a^2) = -5a + 5a^3$<br>Somando os termos semelhantes:<br>- Termo em $a^3$: $-a^3 - 4a^3 + 5a^3 = 0$<br>- Termo em $a^2$: $6a^2$<br>- Termo em $a$: $-12a - 5a = -17a$<br>- Termo independente: $8 + 3 = 11$<br>Polinômio: $6a^2 - 17a + 11 = 0$.<br>Pela fórmula resolutiva: $\\Delta = (-17)^2 - 4(6)(11) = 289 - 264 = 25$.<br>$$a = \\frac{17 \\pm 5}{12} \\implies a_1 = \\frac{22}{12} = \\frac{11}{6}, \\quad a_2 = \\frac{12}{12} = 1$$<br>Portanto, I é correta.<br><br>- <strong>Afirmação II (Falsa):</strong> O cubo da soma é $(a+b)^3 = a^3 + 3a^2b + 3ab^2 + b^3 \\ne a^3 + b^3$.<br><br>- <strong>Afirmação III (Falsa):</strong> $\\frac{1}{6}xy(1 - 6y)^2 = \\frac{1}{6}xy(1 - 12y + 36y^2) = \\frac{1}{6}xy - 2xy^2 + 6xy^3$, diferente do polinômio dado.<br><br>- <strong>Afirmação IV (Verdadeira):</strong> Pela diferença de quadrados sucessiva: $x^4 - 625 = (x^2 - 25)(x^2 + 25) = (x - 5)(x + 5)(x^2 + 25)$.<br><br>- <strong>Afirmação V (Verdadeira):</strong> Fatorando por agrupamento: $y(x + 2) - 1(x + 2) = (x + 2)(y - 1)$.<br><br>Portanto, estão corretas apenas I, IV e V (Alternativa A).",
             "bncc": "EF09MA09",
             "bnccDesc": "Compreender os processos de fatoração de expressões algébricas, com base em suas relações com os produtos notáveis, para resolver e elaborar problemas que possam ser representados por equações polinomiais do 2º grau.",
             "unidadeTematica": "Álgebra",
             "anoEscolar": "9º ano",
-            "topicoId": "b2-t4"
+            "topicoId": "b2-t1",
+            "image": null
           },
           {
-            "q": "Uma piscina cilíndrica de diâmetro $D$ e altura $h$ tem volume $V$. Se duplicarmos o diâmetro e reduzirmos a altura pela metade, o novo volume será:",
+            "q": "Uma piscina, com formato cilíndrico de diâmetro $D$, possui água até uma altura $h$, onde $D$ e $h$ estão em metros. Fabiano mergulha na piscina, fica parado por um minuto no fundo e o volume da água aumenta $2\\%$.\n\nSendo assim, podemos afirmar que, durante o mergulho de Fabiano, a altura da água subiu:\n\nAssinale a alternativa CORRETA.",
             "options": [
-              "$V$",
-              "$2V$",
-              "$4V$",
-              "$V/2$",
-              "$8V$"
+              "$\\frac{h}{2}\\text{ m}$",
+              "$\\frac{h}{5}\\text{ m}$",
+              "$\\frac{h}{50}\\text{ m}$",
+              "$1{,}2h\\text{ m}$",
+              "$1{,}02h\\text{ m}$"
             ],
-            "correct": 1,
-            "explanation": "O raio duplica ($2r$), logo a área da base quadruplica ($4A_b$). A altura cai pela metade ($h/2$). O novo volume é $4A_b \\times (h/2) = 2(A_b h) = 2V$.",
-            "bncc": "EF09MA19",
-            "bnccDesc": "Resolver e elaborar problemas que envolvam medidas de volumes de prismas e de cilindros retos, inclusive com uso de expressões de cálculo, em situações cotidianas.",
+            "correct": 2,
+            "explanation": "1. <strong>Relação entre volume e altura no cilindro:</strong><br>O volume de água na piscina cilíndrica de diâmetro $D$ e altura $h$ é dado por:<br>$$V = A_b \\cdot h$$<br>onde $A_b = \\pi \\left(\\frac{D}{2}\\right)^2$ é a área constante da base.<br><br>2. <strong>Variação de altura pelo Princípio de Arquimedes:</strong><br>O corpo de Fabiano submerso desloca um volume equivalente de água $\\Delta V$, elevando o nível em $\\Delta h$:<br>$$\\Delta V = A_b \\cdot \\Delta h$$<br><br>3. <strong>Equacionamento:</strong><br>O enunciado informa que o volume total de água subiu $2\\%$:<br>$$\\Delta V = 0{,}02 \\cdot V = 0{,}02 \\cdot (A_b \\cdot h)$$<br>Substituindo:<br>$$A_b \\cdot \\Delta h = A_b \\cdot 0{,}02h \\implies \\Delta h = 0{,}02h = \\frac{2}{100}h = \\frac{h}{50}\\text{ m}$$<br>Portanto, a altura subiu $\\frac{h}{50}\\text{ m}$ (Alternativa C).",
+            "bncc": "EF08MA20",
+            "bnccDesc": "Reconhecer a relação entre um litro e um decímetro cúbico e a relação entre litro e metro cúbico, para resolver problemas de cálculo de capacidade de recipientes.",
             "unidadeTematica": "Grandezas e Medidas",
-            "anoEscolar": "9º ano",
-            "topicoId": "b4-t2"
+            "anoEscolar": "8º ano",
+            "topicoId": "b4-t2",
+            "image": null
           },
           {
-            "q": "Leonardo pensou em um número, dividiu-o por $2021$ e obteve resto $1021$. Ao dividir o mesmo número por $43$, o resto obtido é:",
+            "q": "Leonardo pensou em um número, dividiu-o por $2021$ e obteve como resto $1021$. Se ele dividisse o número em que pensou por $47$, qual seria o resto que ele encontraria?\n\nAssinale a alternativa CORRETA.",
             "options": [
-              "$32$",
-              "$21$",
+              "$0$",
               "$15$",
-              "$18$",
-              "$25$"
+              "$26$",
+              "$34$",
+              "$41$"
             ],
-            "correct": 0,
-            "explanation": "$N = 2021q + 1021$. Como $2021 = 43 \\times 47$, o termo $2021q$ é divisível por $43$. Resta dividir $1021$ por $43$: $1021 = 43 \\times 23 + 32$. O resto é $32$.",
-            "bncc": "EF06MA05",
-            "bnccDesc": "Classificar números naturais em primos e compostos, estabelecer relações entre números, expressas pelos termos “é múltiplo de”, “é divisor de”, “é fator de”, e estabelecer, por meio de investigações, critérios de divisibilidade por 2, 3, 4, 5, 6, 8, 9, 10, 100 e 1000.",
+            "correct": 3,
+            "explanation": "1. <strong>Estrutura da divisão euclidiana:</strong><br>Seja $N$ o número pensado por Leonardo e $q$ o quociente inteiro da primeira divisão:<br>$$N = 2021 \\cdot q + 1021$$<br><br>2. <strong>Divisibilidade de $2021$ por $47$:</strong><br>Dividindo $2021$ por $47$:<br>$$2021 = 47 \\times 43 + 0$$<br>Ou seja, $2021$ é divisível por $47$. Logo, a parcela $2021 \\cdot q$ é um múltiplo exato de $47$ e deixa resto zero.<br><br>3. <strong>Cálculo do resto para a parcela restante ($1021$):</strong><br>O resto da divisão de $N$ por $47$ coincide com o resto da divisão de $1021$ por $47$:<br>$$1021 = 47 \\times 21 + 34 \\quad (\\text{pois } 47 \\times 21 = 987 \\text{ e } 1021 - 987 = 34)$$<br>Como $0 \\le 34 < 47$, o resto encontrado é $34$ (Alternativa D).",
+            "bncc": "EF06MA04",
+            "bnccDesc": "Construir algoritmo em linguagem natural e representá-lo por fluxograma para indicar a resolução de um problema simples de divisibilidade.",
             "unidadeTematica": "Números",
             "anoEscolar": "6º ano",
-            "topicoId": "b1-t3"
+            "topicoId": "b1-t1",
+            "image": null
           },
           {
-            "q": "Lara precisa pintar um painel retangular, que foi dividido em quatro partes, conforme a figura. As áreas dessas quatro partes são $33\\text{ m}^2$, $28\\text{ m}^2$, $21\\text{ m}^2$ e $A\\text{ m}^2$, sendo $A$ um número inteiro. Segundo as instruções na embalagem da tinta, o rendimento é de 6 metros quadrados por litro de tinta. Se Lara for aplicar apenas uma demão de tinta para pintar os 4 painéis, de quantos litros de tinta Lara precisará? Assinale a alternativa CORRETA.",
+            "q": "Lara precisa pintar um painel retangular, que foi dividido em quatro partes, conforme a figura abaixo. As áreas dessas quatro partes são $33\\text{ m}^2$, $28\\text{ m}^2$, $21\\text{ m}^2$ e $A\\text{ m}^2$, sendo $A$ um número inteiro. Segundo as instruções, na embalagem da tinta, o rendimento é de ($6\\text{ metros quadrados}$ por litro de tinta).\n\nSe Lara for aplicar apenas uma demão de tinta para pintar os 4 painéis, de quantos litros de tinta Lara precisará?\n\nAssinale a alternativa CORRETA.",
             "options": [
               "$20\\text{ litros}$",
               "$21\\text{ litros}$",
@@ -3613,20 +3671,20 @@ var mathData = window.mathData || {
               "$24\\text{ litros}$"
             ],
             "correct": 1,
-            "explanation": "Em um retângulo dividido em quatro partes por duas retas perpendiculares, os produtos das áreas das partes opostas são iguais: $33 \\times 28 = 21 \\times A \\implies A = \\frac{33 \\times 28}{21} = \\frac{33 \\times 4}{3} = 11 \\times 4 = 44\\text{ m}^2$. A área total do painel é $33 + 28 + 21 + 44 = 126\\text{ m}^2$. Com o rendimento de $6\\text{ m}^2$ por litro, serão necessários $\\frac{126}{6} = 21\\text{ litros}$ de tinta.",
+            "explanation": "1. <strong>Propriedade da partição retangular:</strong><br>Quando um retângulo é dividido em quatro partes retangulares por uma reta horizontal e uma reta vertical, o produto das áreas diagonalmente opostas é igual:<br>$$A_1 \\cdot A_4 = A_2 \\cdot A_3$$<br><br>2. <strong>Determinação do valor inteiro de $A$:</strong><br>Temos as áreas conhecidas $33, 28, 21$ e a desconhecida $A$. Para que $A = \\frac{X \\cdot Y}{Z}$ resulte em um número inteiro:<br>- Se $Z = 33$: $A = \\frac{28 \\times 21}{33} = \\frac{196}{11}$ (não inteiro).<br>- Se $Z = 28$: $A = \\frac{33 \\times 21}{28} = \\frac{99}{4}$ (não inteiro).<br>- Se $Z = 21$: $A = \\frac{33 \\times 28}{21} = \\frac{33 \\times 4}{3} = 11 \\times 4 = 44\\text{ m}^2$ (número inteiro).<br><br>Logo, $A = 44\\text{ m}^2$.<br><br>3. <strong>Cálculo da área total e consumo de tinta:</strong><br>$$\\text{Área total} = 33 + 28 + 21 + 44 = 126\\text{ m}^2$$<br>Com rendimento de $6\\text{ m}^2/\\text{litro}$:<br>$$\\text{Litros necessários} = \\frac{126}{6} = 21\\text{ litros}$$<br>Portanto, Lara precisará de $21\\text{ litros}$ de tinta (Alternativa B).",
             "bncc": "EF08MA19",
             "bnccDesc": "Resolver e elaborar problemas que envolvam medidas de área de figuras geométricas, utilizando expressões de cálculo de área (quadriláteros, triângulos e círculos), em situações como determinar medida de terrenos.",
             "unidadeTematica": "Grandezas e Medidas",
             "anoEscolar": "8º ano",
             "topicoId": "b4-t1",
             "image": {
-              "src": "https://drive.google.com/file/d/1n01csETQezEdjSPyPWTBLErp9_10Y2GW/view?usp=sharing",
-              "alt": "Painel retangular subdividido em quatro retângulos menores indicando as áreas 33 m², 28 m², 21 m² e A m².",
-              "caption": "Figura: Divisão retangular do painel com quatro áreas (IFSC 2022.1)"
+              "src": "assets/img/questoes/ifsc/ifsc-2022-1-q08.png",
+              "alt": "Painel retangular dividido em quatro regiões retangulares por duas retas perpendiculares internas.",
+              "caption": "Fonte: IFSC 2022.1"
             }
           },
           {
-            "q": "Graciele numerou os círculos da figura de 1 a 16, de modo que a soma dos cinco números em cada um dos quatro lados do quadrado é igual a 42. Qual é a soma dos quatro números escritos nos círculos cinzas? Assinale a alternativa CORRETA.",
+            "q": "Graciele numerou os círculos da figura abaixo de 1 a 16, de modo que a soma dos cinco números em cada um dos quatro lados do quadrado é igual a 42. Qual é a soma dos quatro números escritos nos círculos cinzas?\n\nAssinale a alternativa CORRETA.",
             "options": [
               "$28$",
               "$29$",
@@ -3635,34 +3693,35 @@ var mathData = window.mathData || {
               "$32$"
             ],
             "correct": 4,
-            "explanation": "A soma de todos os números de 1 a 16 é $\\frac{16 \\times 17}{2} = 136$. Ao somar os quatro lados do quadrado, cada lado soma 42, totalizando $4 \\times 42 = 168$. Nessa soma quádrupla, os quatro círculos dos cantos (círculos cinzas) são somados duas vezes, enquanto os outros são somados apenas uma vez. Portanto: $\\text{Soma total} + \\text{Soma dos cantos} = 168 \\implies 136 + S_{\\text{cinzas}} = 168 \\implies S_{\\text{cinzas}} = 168 - 136 = 32$.",
+            "explanation": "1. <strong>Análise dos elementos da figura:</strong><br>- A figura possui $16$ círculos dispostos no contorno de um quadrado: $4$ círculos cinzas nos vértices e $12$ círculos brancos (3 em cada lado).<br>- Cada um dos $4$ lados contém $5$ círculos (2 vértices cinzas e 3 círculos brancos intermediários).<br><br>2. <strong>Soma total de todos os números de 1 a 16:</strong><br>$$S_{\\text{total}} = 1 + 2 + 3 + \\dots + 16 = \\frac{16 \\times 17}{2} = 136$$<br><br>3. <strong>Soma das quatro linhas do quadrado:</strong><br>Como cada lado soma $42$ e há $4$ lados:<br>$$\\text{Soma dos 4 lados} = 4 \\times 42 = 168$$<br><br>4. <strong>Aplicação do Princípio da Inclusão-Exclusão:</strong><br>Ao somar os quatro lados, cada círculo branco é somado exatamente uma vez, enquanto cada círculo cinza (por estar situado em um vértice comum a dois lados adjacentes) é somado duas vezes:<br>$$\\text{Soma dos 4 lados} = S_{\\text{total}} + S_{\\text{cinzas}}$$<br>$$168 = 136 + S_{\\text{cinzas}} \\implies S_{\\text{cinzas}} = 168 - 136 = 32$$<br>Portanto, a soma dos quatro números dos círculos cinzas é $32$ (Alternativa E).",
             "bncc": "EF07MA18",
             "bnccDesc": "Resolver e elaborar problemas que possam ser representados por equações polinomiais de 1º grau, redutíveis à forma ax + b = c, fazendo uso das propriedades da igualdade.",
             "unidadeTematica": "Álgebra",
             "anoEscolar": "7º ano",
-            "topicoId": "b2-t3",
+            "topicoId": "b2-t2",
             "image": {
-              "src": "https://drive.google.com/file/d/1GqPZVfyXx87txv7GvtMVazu_rvHvvSJ4/view?usp=sharing",
-              "alt": "Malha quadrada formada por 16 círculos numerados interligados em perímetro de 5 círculos por lado, com os 4 círculos nos vértices sombreados em cinza.",
-              "caption": "Figura: Distribuição de círculos numerados nos vértices e lados do quadrado (IFSC 2022.1)"
+              "src": "assets/img/questoes/ifsc/ifsc-2022-1-q09.png",
+              "alt": "Dezesseis círculos distribuídos uniformemente pelas quatro bordas de um quadrado, sendo os quatro círculos dos vértices sombreados em cinza e os demais em branco.",
+              "caption": "Fonte: IFSC 2022.1"
             }
           },
           {
-            "q": "Ambas as raízes da equação $x^2 - 55x + c = 0$ são números primos. O único valor possível de $c$ é:",
+            "q": "Ambas as raízes da equação $x^2 - 55x + c = 0$ são números primos. Podemos afirmar que o único valor de $c$ que satisfaz a sentença é:\n\nAssinale a alternativa CORRETA.",
             "options": [
-              "$106$",
+              "$256$",
+              "$250$",
               "$110$",
-              "$100$",
-              "$114$",
-              "$108$"
+              "$106$",
+              "$56$"
             ],
-            "correct": 0,
-            "explanation": "A soma das raízes é $55$ (número ímpar). A única forma de somar dois primos e obter ímpar é quando um dos primos é $2$. Logo, o outro primo é $55 - 2 = 53$. O valor de $c = 2 \\times 53 = 106$.",
+            "correct": 3,
+            "explanation": "1. <strong>Relações de Girard (Soma e Produto das raízes):</strong><br>Para a equação quadrática $x^2 - 55x + c = 0$ com raízes $x_1$ e $x_2$:<br>- Soma: $x_1 + x_2 = 55$<br>- Produto: $x_1 \\cdot x_2 = c$<br><br>2. <strong>Análise de paridade dos números primos:</strong><br>A soma das duas raízes é $55$, que é um número ímpar.<br>A soma de dois números inteiros só resulta em um número ímpar se uma das parcelas for par e a outra for ímpar.<br>Como ambas as raízes são números primos, e o <strong>único número primo par</strong> é o número $2$, necessariamente uma das raízes deve ser $2$:<br>$$x_1 = 2$$<br><br>3. <strong>Determinação da segunda raiz e do valor de $c$:</strong><br>$$x_2 = 55 - 2 = 53$$<br>Como $53$ é um número primo, a condição do enunciado é plenamente satisfeita.<br>O valor de $c$ é o produto das raízes:<br>$$c = 2 \\times 53 = 106$$<br>Portanto, o único valor de $c$ é $106$ (Alternativa D).",
             "bncc": "EF09MA09",
             "bnccDesc": "Compreender os processos de fatoração de expressões algébricas, com base em suas relações com os produtos notáveis, para resolver e elaborar problemas que possam ser representados por equações polinomiais do 2º grau.",
             "unidadeTematica": "Álgebra",
             "anoEscolar": "9º ano",
-            "topicoId": "b2-t4"
+            "topicoId": "b2-t1",
+            "image": null
           }
         ],
         "slug": "prova-ifsc-20221",
@@ -3690,24 +3749,25 @@ var mathData = window.mathData || {
         },
         "questions": [
           {
-            "q": "Considerando que $x$ e $y$ são números reais quaisquer, analise as expressões sobre propriedades de potenciação e radiciação e assinale a alternativa com as sentenças verdadeiras:",
+            "q": "*(Questão adaptada do IFSC 2022.2)* Considerando as propriedades dos produtos notáveis válidas para quaisquer números reais $x$ e $y$, analise as igualdades a seguir:\n\n$I. (x - y)^2 = x^2 - y^2$\n$II. (x - y)^2 = x^2 - 2xy + y^2$\n$III. (x - y)^2 = x^2 + y^2$\n$IV. (x + y)^2 = x^2 + y^2$\n$V. (x + y)^2 = x^2 + 2xy + y^2$\n\nAssinale a alternativa que indica quais expressões são verdadeiras como identidades algébricas para quaisquer $x, y \\in \\mathbb{R}$.",
             "options": [
-              "São verdadeiras I e IV",
-              "São verdadeiras III e IV",
-              "São verdadeiras I e II",
-              "São verdadeiras II e III",
-              "Todas são verdadeiras"
+              "São verdadeiras apenas I e IV.",
+              "São verdadeiras apenas III e IV.",
+              "São verdadeiras apenas I e V.",
+              "São verdadeiras apenas II e V.",
+              "Todas as expressões são falsas."
             ],
-            "correct": 0,
-            "explanation": "I e IV preservam rigorosamente a definição algébrica e a não negatividade do radicando para expoentes pares.",
-            "bncc": "EF08MA01",
-            "bnccDesc": "Efetuar cálculos com potências de expoentes inteiros e aplicar esse conhecimento na representação de números em notação científica.",
-            "unidadeTematica": "Números",
-            "anoEscolar": "8º ano",
-            "topicoId": "b1-t7"
+            "correct": 3,
+            "explanation": "<em>Nota editorial: No concurso original esta questão foi anulada devido a alternativas duplicadas no caderno de prova (itens A e C eram idênticos) e ambiguidade no enunciado quanto à validade universal das expressões. A questão foi aqui readaptada sem duplicidades para aplicação pedagógica.</em><br><br>1. <strong>Análise algébrica das identidades notáveis:</strong><br>- Desenvolvendo o quadrado da diferença de dois termos:<br>$$(x - y)^2 = (x - y)(x - y) = x^2 - xy - xy + y^2 = x^2 - 2xy + y^2$$<br>Portanto, a afirmação <strong>II é VERDADEIRA</strong> e as afirmações I e III são falsas para valores genéricos.<br><br>- Desenvolvendo o quadrado da soma de dois termos:<br>$$(x + y)^2 = (x + y)(x + y) = x^2 + xy + xy + y^2 = x^2 + 2xy + y^2$$<br>Portanto, a afirmação <strong>V é VERDADEIRA</strong> e a afirmação IV é falsa.<br><br>2. <strong>Conclusão:</strong><br>As únicas igualdades que constituem identidades algébricas universais são <strong>II e V</strong> (Alternativa D).",
+            "bncc": "EF09MA09",
+            "bnccDesc": "Compreender os processos de fatoração de expressões algébricas, com base em suas relações com os produtos notáveis, para resolver e elaborar problemas que possam ser representados por equações polinomiais do 2º grau.",
+            "unidadeTematica": "Álgebra",
+            "anoEscolar": "9º ano",
+            "topicoId": "b2-t1",
+            "image": null
           },
           {
-            "q": "Calcule a altura da Torre Eiffel, considerando as informações apresentadas na figura. Assinale a alternativa CORRETA.",
+            "q": "Calcule a altura da Torre Eiffel, considerando as informações apresentadas na figura:\n\nAssinale a alternativa CORRETA.",
             "options": [
               "$300\\text{ m}$",
               "$324\\text{ m}$",
@@ -3716,153 +3776,161 @@ var mathData = window.mathData || {
               "$380\\text{ m}$"
             ],
             "correct": 1,
-            "explanation": "A figura mostra o observador a uma distância de $300\\text{ m}$ da base da torre sob um ângulo de elevação de $45^\\circ$ e mais a cota adicional de $24\\text{ m}$ referente à antena/estutura, obtendo $300 + 24 = 324\\text{ m}$.",
-            "bncc": "EF09MA14",
-            "bnccDesc": "Resolver e elaborar problemas de aplicação do teorema de Pitágoras ou das relações de proporcionalidade envolvendo retas paralelas cortadas por secantes.",
+            "explanation": "1. <strong>Interpretação geométrica da figura:</strong><br>A figura modela a situação por um triângulo retângulo onde:<br>- A base adjacente no solo mede $324\\text{ m}$.<br>- O ângulo de elevação da visada em relação ao solo na ponta oposta é de $45^\\circ$.<br>- A altura $h$ da Torre Eiffel corresponde ao cateto oposto a esse ângulo de $45^\\circ$.<br><br>2. <strong>Aplicação da trigonometria no triângulo retângulo:</strong><br>$$\\tan(45^\\circ) = \\frac{\\text{Cateto Oposto}}{\\text{Cateto Adjacente}} = \\frac{h}{324\\text{ m}}$$<br>Como $\\tan(45^\\circ) = 1$, temos:<br>$$1 = \\frac{h}{324} \\implies h = 324\\text{ m}$$<br>(Em todo triângulo retângulo com um ângulo interno de $45^\\circ$, o triângulo é também isósceles, logo os dois catetos têm comprimentos iguais).<br><br>Portanto, a altura da Torre Eiffel é $324\\text{ m}$ (Alternativa B).",
+            "bncc": "EF09MA13",
+            "bnccDesc": "Demonstrar relações métricas do triângulo retângulo, entre elas o teorema de Pitágoras, utilizando, inclusive, a semelhança de triângulos.",
             "unidadeTematica": "Geometria",
             "anoEscolar": "9º ano",
-            "topicoId": "b3-t2",
+            "topicoId": "b3-t1",
             "image": {
-              "src": "https://drive.google.com/file/d/1iTd80Tx4jTvlUO7OTg32P2DmbGgerQai/view?usp=sharing",
-              "alt": "Desenho esquemático da Torre Eiffel com as distâncias horizontal e vertical cotadas e o ângulo de observação em relação à base.",
-              "caption": "Figura: Medição trigonométrica da altura da Torre Eiffel (IFSC 2022.2)"
+              "src": "assets/img/questoes/ifsc/ifsc-2022-2-q02.png",
+              "alt": "Ilustração da Torre Eiffel com um triângulo retângulo associado, indicando base de 324 metros e ângulo de 45 graus no vértice inferior direito.",
+              "caption": "Fonte: IFSC 2022.2"
             }
           },
           {
-            "q": "Em uma pesquisa epidemiológica sobre COVID-19, a taxa de contágio indicava que $20$ pessoas transmitiam para $25$ pessoas. Em uma comunidade com $400$ infectados, o total estimado de novas transmissões é:",
+            "q": "A COVID-19 é uma doença infecciosa causada pelo coronavírus SARS-CoV-2 e que tem causado muitos problemas para a população em geral. Para reduzir os efeitos, os governos do mundo todo têm disponibilizado vacinas e diariamente é possível acompanhar os índices de vacinação da população. Segundo o Instituto Brasileiro de Geografia e Estatística (IBGE), a população vacinável em Santa Catarina é de $6.765.914$ pessoas. Em um determinado dia do mês de abril de 2022, foi informado que a população vacinada com a terceira dose, também conhecida como dose de reforço, foi de $2.430.329$. Dessa forma, a porcentagem de vacinados com a terceira dose, neste dia, foi de aproximadamente:\n\nAssinale a alternativa CORRETA.",
             "options": [
-              "$450$",
-              "$500$",
-              "$550$",
-              "$600$",
-              "$480$"
+              "$2{,}78\\%$",
+              "$35{,}92\\%$",
+              "$56{,}06\\%$",
+              "$64{,}08\\%$",
+              "$73{,}57\\%$"
             ],
             "correct": 1,
-            "explanation": "Taxa: $\\frac{25}{20} = 1{,}25$. Para 400 pessoas: $400 \\times 1{,}25 = 500$ novos infectados.",
-            "bncc": "EF07MA18",
-            "bnccDesc": "Resolver e elaborar problemas que possam ser representados por equações polinomiais de 1º grau, redutíveis à forma ax + b = c, fazendo uso das propriedades da igualdade.",
-            "unidadeTematica": "Álgebra",
+            "explanation": "1. <strong>Identificação dos dados:</strong><br>- População vacinável total em Santa Catarina: $6.765.914$ pessoas.<br>- População vacinada com a terceira dose: $2.430.329$ pessoas.<br><br>2. <strong>Cálculo da razão percentual:</strong><br>$$P = \\frac{2.430.329}{6.765.914}$$<br>Realizando a divisão decimal:<br>$$P \\approx 0{,}3591999...$$<br>Convertendo para porcentagem multiplicando por $100\\%$:<br>$$P \\approx 35{,}92\\%$$<br>Portanto, a porcentagem de vacinados com a terceira dose foi de aproximadamente $35{,}92\\%$ (Alternativa B).",
+            "bncc": "EF07MA02",
+            "bnccDesc": "Resolver e elaborar problemas que envolvam porcentagens, como os que lidam com acréscimos e decréscimos simples, utilizando estratégias pessoais, cálculo mental e calculadora, no contexto de educação financeira, entre outros.",
+            "unidadeTematica": "Números",
             "anoEscolar": "7º ano",
-            "topicoId": "b2-t3"
+            "topicoId": "b1-t2",
+            "image": null
           },
           {
-            "q": "Uma microempreendedora comprou $100$ toalhas (médias e grandes) por $\\text{R\\$} 1.800{,}00$. A toalha média custou $\\text{R\\$} 15{,}00$ e a grande $\\text{R\\$} 25{,}00$. Quantas toalhas grandes foram compradas?",
+            "q": "Uma microempreendedora comprou $100$ toalhas de dois tamanhos diferentes, médio e grande, para iniciar seu pequeno negócio na área de vendas. Ela investiu $\\text{R\\$} 5.480{,}00$ nesta compra. Cada toalha de tamanho médio custou $\\text{R\\$} 50{,}00$, e cada unidade de toalha grande custou $\\text{R\\$} 60{,}00$. Quantas toalhas de tamanho médio e grande, respectivamente, ela comprou?\n\nAssinale a alternativa CORRETA.",
             "options": [
-              "$30$",
-              "$40$",
-              "$50$",
-              "$60$",
-              "$35$"
+              "$45$ e $55$",
+              "$52$ e $48$",
+              "$55$ e $45$",
+              "$60$ e $40$",
+              "$48$ e $52$"
             ],
-            "correct": 0,
-            "explanation": "Sistema: $m + g = 100$ e $15m + 25g = 1800$. Multiplicando a 1ª por $-15$: $10g = 300 \\Rightarrow g = 30$ toalhas grandes (e $m = 70$).",
+            "correct": 1,
+            "explanation": "1. <strong>Modelagem algébrica do problema:</strong><br>Sejam:<br>- $m$: quantidade de toalhas de tamanho médio compradas.<br>- $g$: quantidade de toalhas de tamanho grande compradas.<br><br>De acordo com o enunciado:<br>$$\\begin{cases} m + g = 100 \\\\ 50m + 60g = 5.480 \\end{cases}$$<br><br>2. <strong>Resolução do sistema pelo método da substituição:</strong><br>Da primeira equação, temos $g = 100 - m$. Substituindo na segunda equação:<br>$$50m + 60(100 - m) = 5.480$$<br>$$50m + 6.000 - 60m = 5.480$$<br>$$-10m = 5.480 - 6.000$$<br>$$-10m = -520 \\implies m = \\frac{-520}{-10} = 52$$<br><br>3. <strong>Determinação de $g$:</strong><br>$$g = 100 - 52 = 48$$<br>Portanto, ela comprou respectivamente $52$ toalhas médias e $48$ toalhas grandes (Alternativa B).",
             "bncc": "EF08MA08",
-            "bnccDesc": "Resolver e elaborar problemas relacionados ao seu contexto próximo, que possam ser representados por sistemas de equações de 1º grau com duas incógnitas e interpretá-los, utilizando, inclusive, o plano cartesiano como recurso.",
+            "bnccDesc": "Resolver e elaborar problemas relacionados ao seu contexto próximo, que possam ser representados por sistemas de equações de 1º grau com duas incógnitas, utilizando diferentes métodos.",
             "unidadeTematica": "Álgebra",
             "anoEscolar": "8º ano",
-            "topicoId": "b2-t3"
+            "topicoId": "b2-t2",
+            "image": null
           },
           {
-            "q": "Dois trabalhadores realizam um serviço em $9\\text{ dias}$, recebendo $\\text{R\\$} 10.000{,}00$. Quanto receberão se trabalharem por $15\\text{ dias}$ no mesmo ritmo diário?",
+            "q": "Dois trabalhadores realizam um determinado serviço em $9$ dias, recebendo o valor de $\\text{R\\$} 10.000{,}00$. Quanto receberão pelo mesmo serviço, se trabalharem $15$ dias e contratarem um ajudante com a mesma capacidade de trabalho?\n\nAssinale a alternativa CORRETA.",
             "options": [
               "$\\text{R\\$} 15.000{,}00$",
-              "$\\text{R\\$} 16.666{,}67$",
-              "$\\text{R\\$} 18.000{,}00$",
-              "$\\text{R\\$} 14.500{,}00$",
-              "$\\text{R\\$} 16.000{,}00$"
+              "$\\text{R\\$} 20.000{,}00$",
+              "$\\text{R\\$} 25.000{,}00$",
+              "$\\text{R\\$} 30.000{,}00$",
+              "$\\text{R\\$} 35.000{,}00$"
             ],
-            "correct": 1,
-            "explanation": "Valor por dia: $\\frac{10000}{9} \\approx 1111{,}11$. Para 15 dias: $15 \\times \\frac{10000}{9} = \\frac{50000}{3} = \\text{R\\$} 16.666,67$.",
-            "bncc": "EF07MA18",
-            "bnccDesc": "Resolver e elaborar problemas que possam ser representados por equações polinomiais de 1º grau, redutíveis à forma ax + b = c, fazendo uso das propriedades da igualdade.",
+            "correct": 2,
+            "explanation": "1. <strong>Análise da grandeza composta de trabalho (homens-dia):</strong><br>O valor recebido é proporcional à quantidade total de esforço diário empregado (produto do número de trabalhadores pelo número de dias trabalhados).<br><br>- Na 1ª situação:<br>$$\\text{Esforço}_1 = 2\\text{ trabalhadores} \\times 9\\text{ dias} = 18\\text{ homens-dia}$$<br>Valor pago por $18$ homens-dia: $\\text{R\\$} 10.000{,}00$.<br><br>- Na 2ª situação:<br>Contratando mais 1 ajudante, o número de trabalhadores passa para $2 + 1 = 3$ trabalhadores, trabalhando durante $15$ dias:<br>$$\\text{Esforço}_2 = 3\\text{ trabalhadores} \\times 15\\text{ dias} = 45\\text{ homens-dia}$$<br><br>2. <strong>Regra de três simples direta:</strong><br>$$\\frac{18}{45} = \\frac{10.000}{V_2}$$<br>Simplificando a fração por 9: $\\frac{2}{5} = \\frac{10.000}{V_2}$<br>$$2 \\cdot V_2 = 5 \\times 10.000 = 50.000 \\implies V_2 = \\frac{50.000}{2} = 25.000$$<br>Portanto, receberão $\\text{R\\$} 25.000{,}00$ (Alternativa C).",
+            "bncc": "EF07MA17",
+            "bnccDesc": "Resolver e elaborar problemas que envolvam variação de proporcionalidade direta e do tipo inversa entre duas grandezas, utilizando sentença algébrica para expressar a relação entre elas.",
             "unidadeTematica": "Álgebra",
             "anoEscolar": "7º ano",
-            "topicoId": "b2-t3"
+            "topicoId": "b1-t2",
+            "image": null
           },
           {
-            "q": "Em uma turma do IFSC com $32$ alunos: $18$ jogam voleibol, $16$ jogam futsal e $6$ jogam ambos. Quantos alunos não praticam nenhum desses dois esportes?",
+            "q": "Em uma turma de primeira fase do Curso Técnico Integrado do IFSC há $32$ alunos. A professora de Educação Física realizou uma pesquisa com esses alunos para identificar sua(s) modalidade(s) esportiva(s) preferida(s), dentre vôlei, basquete e futebol. Com a pesquisa, ela descobriu que:\n\n- $6$ alunos gostam somente de vôlei;\n- $10$ alunos gostam somente de futebol;\n- $5$ alunos gostam somente de basquete;\n- $5$ alunos gostam de vôlei e futebol;\n- $6$ alunos gostam de basquete e futebol;\n- $4$ alunos gostam de vôlei e basquete; e\n- $3$ alunos gostam das três modalidades.\n\nCom estas informações, a professora de Educação Física concluiu que a quantidade de alunos que não gosta de nenhuma das três modalidades é:\n\nAssinale a alternativa CORRETA.",
             "options": [
-              "$4$",
-              "$6$",
-              "$8$",
-              "$2$",
-              "$5$"
+              "$1\\text{ aluno}$",
+              "$2\\text{ alunos}$",
+              "$3\\text{ alunos}$",
+              "$4\\text{ alunos}$",
+              "$5\\text{ alunos}$"
             ],
-            "correct": 0,
-            "explanation": "Total praticantes: $n(V \\cup F) = 18 + 16 - 6 = 28$. Não praticam nenhum: $32 - 28 = 4$ alunos.",
-            "bncc": "EF09MA01",
-            "bnccDesc": "Reconhecer que, uma vez fixada uma unidade de comprimento, existem segmentos de reta cujo comprimento não é expresso por número racional (como as medidas de diagonais de um polígono e alturas de um triângulo, quando se toma a medida de cada lado como unidade).",
+            "correct": 1,
+            "explanation": "1. <strong>Preenchimento do Diagrama de Venn de três conjuntos ($V$, $B$, $F$):</strong><br>- Interseção central (gostam das três modalidades):<br>$$n(V \\cap B \\cap F) = 3$$<br><br>- Interseções duplas exclusivas (subtraindo os 3 que gostam de todas):<br>- Gostam de vôlei e futebol: $5 - 3 = 2$ gostam <em>apenas</em> de vôlei e futebol.<br>- Gostam de basquete e futebol: $6 - 3 = 3$ gostam <em>apenas</em> de basquete e futebol.<br>- Gostam de vôlei e basquete: $4 - 3 = 1$ gosta <em>apenas</em> de vôlei e basquete.<br><br>- Regiões exclusivas de uma única modalidade (já fornecidas pelo enunciado como \"somente\"):<br>- Somente vôlei: $6$<br>- Somente futebol: $10$<br>- Somente basquete: $5$<br><br>2. <strong>Cálculo do total de alunos que gostam de ao menos uma modalidade:</strong><br>$$\\text{Total apreciadores} = 6 + 10 + 5 + 2 + 3 + 1 + 3 = 30\\text{ alunos}$$<br><br>3. <strong>Alunos que não gostam de nenhuma modalidade:</strong><br>Como a turma tem $32$ alunos no total:<br>$$\\text{Nenhum} = 32 - 30 = 2\\text{ alunos}$$<br>Portanto, $2$ alunos não gostam de nenhuma das três modalidades (Alternativa B).",
+            "bncc": "EF06MA03",
+            "bnccDesc": "Resolver e elaborar problemas que envolvam cálculos (adição, subtração, multiplicação, divisão e potenciação) com números naturais, por meio de estratégias variadas, com compreensão dos processos neles envolvidos.",
             "unidadeTematica": "Números",
-            "anoEscolar": "9º ano",
-            "topicoId": "b1-t1"
+            "anoEscolar": "6º ano",
+            "topicoId": "b1-t1",
+            "image": null
           },
           {
-            "q": "A equação $x^2 - 12x + k = 0$ possui raízes reais onde uma é o dobro da outra ($x_1 = 2x_2$). O valor de $k$ é:",
+            "q": "A equação abaixo é uma equação quadrática que possui duas raízes reais e distintas, que podem ser representadas por $x_1$ e $x_2$. Assumindo $x_1 > x_2$, assinale a alternativa que apresenta o valor da diferença entre essas raízes, ou seja, $x_1 - x_2$.\n\nEquação: $(x - 4)^2 = x - 4$\n\nAssinale a alternativa CORRETA.",
             "options": [
-              "$32$",
-              "$36$",
-              "$24$",
-              "$18$",
-              "$28$"
+              "$5$",
+              "$4$",
+              "$3$",
+              "$2$",
+              "$1$"
             ],
-            "correct": 0,
-            "explanation": "Soma: $x_1 + x_2 = 3x_2 = 12 \\Rightarrow x_2 = 4$ e $x_1 = 8$. Produto: $k = x_1 \\cdot x_2 = 8 \\times 4 = 32$.",
+            "correct": 4,
+            "explanation": "1. <strong>Resolução da equação quadrática:</strong><br>Equação original:<br>$$(x - 4)^2 = x - 4$$<br>Podemos resolver por fatoração fazendo a mudança de variável $u = x - 4$:<br>$$u^2 = u \\implies u^2 - u = 0$$<br>$$u(u - 1) = 0$$<br>As soluções para $u$ são:<br>$$u = 0 \\quad \\text{ou} \\quad u = 1$$<br><br>2. <strong>Determinação dos valores de $x$:</strong><br>- Para $u = 0$: $x - 4 = 0 \\implies x = 4$.<br>- Para $u = 1$: $x - 4 = 1 \\implies x = 5$.<br><br>3. <strong>Cálculo da diferença entre as raízes ($x_1 > x_2$):</strong><br>Como $x_1 > x_2$, temos $x_1 = 5$ e $x_2 = 4$. Logo:<br>$$x_1 - x_2 = 5 - 4 = 1$$<br>Portanto, a diferença entre as raízes é $1$ (Alternativa E).",
             "bncc": "EF09MA09",
             "bnccDesc": "Compreender os processos de fatoração de expressões algébricas, com base em suas relações com os produtos notáveis, para resolver e elaborar problemas que possam ser representados por equações polinomiais do 2º grau.",
             "unidadeTematica": "Álgebra",
             "anoEscolar": "9º ano",
-            "topicoId": "b2-t4"
+            "topicoId": "b2-t1",
+            "image": null
           },
           {
-            "q": "Em uma vistoria contra a dengue, encontrou-se uma caixa d'água cilíndrica de $1\\text{ m}$ de raio e $2\\text{ m}$ de altura com água até a metade. O volume de água parada é (adote $\\pi = 3{,}14$):",
+            "q": "Ao realizar a vistoria em imóveis devido à existência de focos do mosquito da dengue, os fiscais se depararam com uma casa abandonada, na qual havia uma piscina circular de raio igual a $3\\text{ metros}$ e de altura igual a $1{,}2\\text{ metros}$. Como encontraram larvas do mosquito na água parada dentro da piscina, retirada a água, decidiram chamar um caminhão caçamba com areia para encher a piscina. As dimensões da caçamba eram de $2{,}2\\text{ metros}$ de largura, $6{,}3\\text{ metros}$ de comprimento, $2{,}5\\text{ metros}$ de altura e estava totalmente carregada. Considerando $\\pi = 3$, podemos concluir que:\n\nAssinale a alternativa CORRETA.",
             "options": [
-              "$3.140\\text{ L}$",
-              "$6.280\\text{ L}$",
-              "$1.570\\text{ L}$",
-              "$4.710\\text{ L}$",
-              "$2.000\\text{ L}$"
+              "Sobrou $2{,}25\\text{ m}^3$ de areia.",
+              "Faltou $2{,}25\\text{ m}^3$ de areia.",
+              "Sobrou $13{,}05\\text{ m}^3$ de areia.",
+              "Faltou $13{,}05\\text{ m}^3$ de areia.",
+              "Não sobrou, nem faltou."
             ],
             "correct": 0,
-            "explanation": "Volume total: $V = 3{,}14 \\times 1^2 \\times 2 = 6{,}28\\text{ m}^3 = 6.280\\text{ L}$. Metade do volume: $\\frac{6280}{2} = 3.140\\text{ Litros}$.",
-            "bncc": "EF08MA21",
-            "bnccDesc": "Resolver e elaborar problemas que envolvam o cálculo do volume de recipiente cujo formato é o de um bloco retangular.",
+            "explanation": "1. <strong>Cálculo do volume da piscina circular (cilindro reto):</strong><br>Raio $r = 3\\text{ m}$, altura $h = 1{,}2\\text{ m}$ e $\\pi = 3$:<br>$$V_{\\text{piscina}} = \\pi \\cdot r^2 \\cdot h = 3 \\cdot (3)^2 \\cdot 1{,}2 = 3 \\cdot 9 \\cdot 1{,}2 = 27 \\cdot 1{,}2 = 32{,}4\\text{ m}^3$$<br><br>2. <strong>Cálculo do volume de areia na caçamba (bloco retangular):</strong><br>Dimensões: $2{,}2\\text{ m} \\times 6{,}3\\text{ m} \\times 2{,}5\\text{ m}$.<br>$$V_{\\text{areia}} = 2{,}2 \\times 6{,}3 \\times 2{,}5 = (2{,}2 \\times 2{,}5) \\times 6{,}3 = 5{,}5 \\times 6{,}3 = 34{,}65\\text{ m}^3$$<br><br>3. <strong>Comparação dos volumes:</strong><br>Como a quantidade de areia trazida pelo caminhão ($34{,}65\\text{ m}^3$) é maior do que a capacidade da piscina ($32{,}40\\text{ m}^3$), haverá sobra de areia:<br>$$\\text{Sobra} = 34{,}65\\text{ m}^3 - 32{,}40\\text{ m}^3 = 2{,}25\\text{ m}^3$$<br>Portanto, sobrou $2{,}25\\text{ m}^3$ de areia (Alternativa A).",
+            "bncc": "EF08MA20",
+            "bnccDesc": "Reconhecer a relação entre um litro e um decímetro cúbico e a relação entre litro e metro cúbico, para resolver problemas de cálculo de capacidade de recipientes.",
             "unidadeTematica": "Grandezas e Medidas",
             "anoEscolar": "8º ano",
-            "topicoId": "b4-t2"
+            "topicoId": "b4-t2",
+            "image": null
           },
           {
-            "q": "O conjunto solução da inequação $(x + 5)(x - 1)(x - 2) > 0$ nos reais é:",
+            "q": "*(Questão adaptada do IFSC 2022.2)* Resolva a desigualdade nos números reais e assinale a alternativa que representa o conjunto solução da inequação:\n$$(x + 5)(x - 1)(x - 2) > 0$$",
             "options": [
-              "$]-5, 1[ \\cup ]2, +\\infty[$",
-              "$]-\\infty, -5[ \\cup ]1, 2[$",
-              "$]-5, 2[$",
-              "$]1, +\\infty[$",
-              "$]-\\infty, 1[$"
+              "$(-\\infty, -5) \\cup (1, 2)$",
+              "$(-\\infty, 1) \\cup (2, +\\infty)$",
+              "$(-\\infty, -5) \\cup (2, +\\infty)$",
+              "$(-5, 2)$",
+              "$(-5, 1) \\cup (2, +\\infty)$"
             ],
-            "correct": 0,
-            "explanation": "Estudo dos sinais com as raízes $-5, 1, 2$: o produto é positivo nos intervalos $]-5, 1[$ e $]2, +\\infty[$.",
-            "bncc": "EF07MA16",
-            "bnccDesc": "Reconhecer se duas expressões algébricas obtidas para descrever a regularidade de uma mesma sequência numérica são ou não equivalentes.",
-            "unidadeTematica": "Álgebra",
-            "anoEscolar": "7º ano",
-            "topicoId": "b2-t1"
-          },
-          {
-            "q": "Uma empresa rodoviária cobra uma taxa fixa de $\\text{R\\$} 12{,}00$ mais $\\text{R\\$} 0{,}45$ por quilômetro na linha São Miguel do Oeste/Florianópolis ($680\\text{ km}$). A passagem custa:",
-            "options": [
-              "$\\text{R\\$} 318{,}00$",
-              "$\\text{R\\$} 306{,}00$",
-              "$\\text{R\\$} 320{,}00$",
-              "$\\text{R\\$} 295{,}00$",
-              "$\\text{R\\$} 325{,}00$"
-            ],
-            "correct": 0,
-            "explanation": "Preço: $P(680) = 12 + 0{,}45 \\times 680 = 12 + 306 = \\text{R\\$} 318,00$.",
-            "bncc": "EF09MA08",
-            "bnccDesc": "Resolver e elaborar problemas que envolvam relações de proporcionalidade direta e inversa entre duas ou mais grandezas, inclusive escalas, divisão em partes proporcionais e taxa de variação, em contextos socioculturais, ambientais e de outras áreas.",
+            "correct": 4,
+            "explanation": "<em>Nota editorial: No exame original esta questão foi anulada devido a alternativas duplicadas (itens B e D idênticos no caderno de prova) e notação informal (\"e\" no lugar de união de intervalos). A questão foi aqui readaptada sem duplicidades para aplicação pedagógica.</em><br><br>1. <strong>Identificação das raízes dos fatores do 1º grau:</strong><br>- $x + 5 = 0 \\implies x = -5$<br>- $x - 1 = 0 \\implies x = 1$<br>- $x - 2 = 0 \\implies x = 2$<br><br>As três raízes dividem a reta real em quatro intervalos: $(-\\infty, -5)$, $(-5, 1)$, $(1, 2)$ e $(2, +\\infty)$.<br><br>2. <strong>Estudo dos sinais do produto $P(x) = (x + 5)(x - 1)(x - 2)$:</strong><br>- Para $x < -5$: $(-)(-) (-) = -$ (negativo).<br>- Para $-5 < x < 1$: $(+)(-) (-) = +$ (<strong>positivo</strong>).<br>- Para $1 < x < 2$: $(+)(+) (-) = -$ (negativo).<br>- Para $x > 2$: $(+)(+) (+) = +$ (<strong>positivo</strong>).<br><br>3. <strong>Determinação do conjunto solução:</strong><br>Como a desigualdade exige $P(x) > 0$ (estritamente positivo), os intervalos correspondentes são:<br>$$S = (-5, 1) \\cup (2, +\\infty)$$<br>Portanto, a alternativa correta é a <strong>Letra E</strong>.",
+            "bncc": "EF09MA09",
+            "bnccDesc": "Compreender os processos de fatoração de expressões algébricas, com base em suas relações com os produtos notáveis, para resolver e elaborar problemas que possam ser representados por equações polinomiais do 2º grau.",
             "unidadeTematica": "Álgebra",
             "anoEscolar": "9º ano",
-            "topicoId": "b2-t2"
+            "topicoId": "b2-t1",
+            "image": null
+          },
+          {
+            "q": "Uma empresa de transporte rodoviário oferece a linha São Miguel do Oeste/Florianópolis. Essa linha inicia em São Miguel do Oeste e termina em Florianópolis, fazendo paradas em Chapecó, Concórdia e Lages. Certo dia, o motorista responsável pela linha contou $P$ passageiros embarcados em São Miguel do Oeste. Chegando a Chapecó, um terço dos passageiros que estava no ônibus desembarcou, e $6$ novos passageiros embarcaram. Em Concórdia, novamente um terço dos passageiros que estava no ônibus naquele momento desembarcou, e $5$ novos passageiros embarcaram. Em Lages, dois quintos dos passageiros que estavam no ônibus naquele momento desembarcaram, e $4$ novos passageiros embarcaram. Ao chegar a Florianópolis, todos os passageiros que estavam no ônibus desembarcaram, pois era o ponto final da linha. Se o motorista contou $19$ passageiros desembarcando em Florianópolis, assinale a alternativa que apresenta a quantidade $P$ de passageiros que embarcaram em São Miguel do Oeste.\n\nAssinale a alternativa CORRETA.",
+            "options": [
+              "$42$",
+              "$36$",
+              "$30$",
+              "$24$",
+              "$19$"
+            ],
+            "correct": 1,
+            "explanation": "1. <strong>Resolução pelo método regressivo (de trás para frente):</strong><br>Acompanhamos a quantidade de passageiros a bordo a partir do ponto final em Florianópolis até a origem em São Miguel do Oeste.<br><br>2. <strong>Etapa de Lages a Florianópolis:</strong><br>- Chegaram $19$ passageiros a Florianópolis.<br>- Como $4$ novos passageiros haviam embarcado em Lages, antes desse embarque restavam $19 - 4 = 15$ passageiros.<br>- Esses $15$ passageiros correspondem aos que permaneceram após o desembarque de $\\frac{2}{5}$ dos passageiros que estavam a bordo ao chegar a Lages, ou seja, $\\left(1 - \\frac{2}{5}\\right) = \\frac{3}{5}$:<br>$$\\frac{3}{5} \\cdot N_{\\text{Lages}} = 15 \\implies N_{\\text{Lages}} = \\frac{15 \\times 5}{3} = 25\\text{ passageiros}$$<br><br>3. <strong>Etapa de Concórdia a Lages:</strong><br>- Ao sair de Concórdia havia $25$ passageiros.<br>- Subtraindo os $5$ que embarcaram lá: $25 - 5 = 20$ passageiros.<br>- Esses $20$ passageiros correspondem aos que ficaram após $\\frac{1}{3}$ desembarcar, ou seja, $\\frac{2}{3}$ de quem chegou a Concórdia:<br>$$\\frac{2}{3} \\cdot N_{\\text{Concórdia}} = 20 \\implies N_{\\text{Concórdia}} = \\frac{20 \\times 3}{2} = 30\\text{ passageiros}$$<br><br>4. <strong>Etapa de Chapecó a Concórdia:</strong><br>- Ao sair de Chapecó havia $30$ passageiros.<br>- Subtraindo os $6$ que embarcaram lá: $30 - 6 = 24$ passageiros.<br>- Esses $24$ passageiros correspondem aos $\\frac{2}{3}$ que permaneceram dos passageiros iniciais $P$ embarcados em São Miguel do Oeste:<br>$$\\frac{2}{3} \\cdot P = 24 \\implies P = \\frac{24 \\times 3}{2} = 36\\text{ passageiros}$$<br><br>Portanto, a quantidade $P$ de passageiros que embarcaram em São Miguel do Oeste foi $36$ (Alternativa B).",
+            "bncc": "EF07MA18",
+            "bnccDesc": "Resolver e elaborar problemas que possam ser representados por equações polinomiais de 1º grau, redutíveis à forma ax + b = c, fazendo uso das propriedades da igualdade.",
+            "unidadeTematica": "Álgebra",
+            "anoEscolar": "7º ano",
+            "topicoId": "b2-t2",
+            "image": null
           }
         ],
         "slug": "prova-ifsc-20222",
@@ -3890,7 +3958,7 @@ var mathData = window.mathData || {
         },
         "questions": [
           {
-            "q": "A figura representa uma peça retangular plana com três furos indicados por F1, F2 e F3. As medidas, dadas em milímetros, indicam as distâncias dos centros dos furos (circunferências) em relação a dois lados da peça, um horizontal e outro vertical. Assinale a alternativa que indica CORRETAMENTE a menor distância entre os centros dos furos F2 e F3.",
+            "q": "A figura ao lado representa uma peça retangular plana com três furos indicados por $F_1$, $F_2$ e $F_3$. As medidas, dadas em $\\text{mm}$, indicam as distâncias dos centros dos furos (circunferências) em relação a dois lados da peça, um horizontal e outro vertical.\n\nAssinale a alternativa que indica CORRETAMENTE a menor distância entre os centros dos furos $F_2$ e $F_3$.",
             "options": [
               "$15\\text{ mm}$",
               "$20\\text{ mm}$",
@@ -3899,20 +3967,20 @@ var mathData = window.mathData || {
               "$30\\text{ mm}$"
             ],
             "correct": 3,
-            "explanation": "Pelas coordenadas dos centros dos furos na peça cotada: a diferença na coordenada horizontal entre F2 e F3 é $\\Delta x = 24\\text{ mm}$ e na vertical é $\\Delta y = 7\\text{ mm}$. A menor distância em linha reta entre os centros é obtida pelo Teorema de Pitágoras: $d = \\sqrt{24^2 + 7^2} = \\sqrt{576 + 49} = \\sqrt{625} = 25\\text{ mm}$.",
-            "bncc": "EF09MA16",
-            "bnccDesc": "Determinar o ponto médio de um segmento de reta e a distância entre dois pontos quaisquer, dadas as coordenadas desses pontos no plano cartesiano, sem o uso de fórmulas, e utilizar esse conhecimento para calcular, por exemplo, medidas de perímetros e áreas de figuras planas construídas no plano.",
+            "explanation": "1. <strong>Identificação das coordenadas dos centros dos furos:</strong><br>Adotando a quina inferior esquerda da peça como a origem $(0, 0)$:<br>- Centro do furo $F_2$: $x_2 = 25\\text{ mm}$, $y_2 = 40\\text{ mm}$, ou seja, $(25, 40)$.<br>- Centro do furo $F_3$: $x_3 = 45\\text{ mm}$, $y_3 = 25\\text{ mm}$, ou seja, $(45, 25)$.<br><br>2. <strong>Cálculo das variações horizontal e vertical entre $F_2$ e $F_3$:</strong><br>- Diferença no eixo horizontal: $\\Delta x = |45 - 25| = 20\\text{ mm}$.<br>- Diferença no eixo vertical: $\\Delta y = |40 - 25| = 15\\text{ mm}$.<br><br>3. <strong>Aplicação do Teorema de Pitágoras:</strong><br>A menor distância $d$ entre os centros é dada pela hipotenusa do triângulo retângulo formado pelas variações:<br>$$d = \\sqrt{(\\Delta x)^2 + (\\Delta y)^2} = \\sqrt{20^2 + 15^2}$$<br>$$d = \\sqrt{400 + 225} = \\sqrt{625} = 25\\text{ mm}$$<br>Portanto, a menor distância entre os centros dos furos $F_2$ e $F_3$ é $25\\text{ mm}$ (Alternativa D).",
+            "bncc": "EF09MA14",
+            "bnccDesc": "Resolver e elaborar problemas de aplicação do teorema de Pitágoras ou das relações de proporcionalidade envolvendo triângulos retângulos.",
             "unidadeTematica": "Geometria",
             "anoEscolar": "9º ano",
             "topicoId": "b3-t1",
             "image": {
-              "src": "https://drive.google.com/file/d/1p3zrrCDC1surnHntJ8qxC1wAcalOyxtG/view?usp=sharing",
-              "alt": "Desenho técnico cotado de chapa retangular plana com furos F1, F2 e F3 e indicação de suas distâncias cartesianas em milímetros.",
-              "caption": "Figura: Peça plana com furos circulares e cotas em milímetros (IFSC 2023.2)"
+              "src": "assets/img/questoes/ifsc/ifsc-2023-2-q01.png",
+              "alt": "Peça retangular plana com indicação de três furos circulares F1, F2 e F3, cotados em milímetros a partir das bordas esquerda e inferior.",
+              "caption": "Fonte: IFSC 2023.2"
             }
           },
           {
-            "q": "Uma pizzaria que trabalha com o sistema de rodízio de pizzas, buscando atrair clientes e aumentar o seu lucro, lançou a promoção apresentada no quadro. Sabendo que, em um determinado dia, 50 clientes compraram o rodízio de pizza e $70\\%$ deles escolheram como brinde o refrigerante, quantos clientes optaram pela sobremesa como brinde?",
+            "q": "Uma pizzaria que trabalha com o sistema de rodízio de pizzas, buscando atrair clientes e aumentar o seu lucro, lançou a promoção ao lado. Sabendo que, em um determinado dia, $50$ clientes compraram o rodízio de pizza e $70\\%$ deles escolheram como brinde o refrigerante, quantos clientes optaram pela sobremesa como brinde?",
             "options": [
               "$10\\text{ clientes}$",
               "$15\\text{ clientes}$",
@@ -3921,85 +3989,93 @@ var mathData = window.mathData || {
               "$30\\text{ clientes}$"
             ],
             "correct": 1,
-            "explanation": "A promoção garante que o cliente pode escolher entre 1 refrigerante ou 1 sobremesa grátis. Se $70\\%$ dos 50 clientes escolheram refrigerante, a porcentagem dos que optaram por sobremesa é $100\\% - 70\\% = 30\\%$. Portanto: $50 \\times 0{,}30 = 15\\text{ clientes}$.",
-            "bncc": "EF08MA04",
-            "bnccDesc": "Resolver e elaborar problemas, envolvendo cálculo de porcentagens, incluindo o uso de tecnologias digitais.",
+            "explanation": "1. <strong>Interpretação da promoção:</strong><br>A promoção estabelece que cada cliente que adquire o rodízio tem direito a escolher entre 1 refrigerante <em>ou</em> 1 sobremesa gratuita.<br><br>2. <strong>Cálculo do percentual dos clientes que escolheram a sobremesa:</strong><br>Como o total de escolhas representa $100\\%$, e $70\\%$ escolheram refrigerante:<br>$$\\text{Percentual para sobremesa} = 100\\% - 70\\% = 30\\%$$<br><br>3. <strong>Cálculo da quantidade de clientes:</strong><br>O total de clientes participantes foi de $50$. Logo:<br>$$\\text{Clientes que optaram por sobremesa} = 30\\% \\text{ de } 50 = 0{,}30 \\times 50 = 15\\text{ clientes}$$<br>Portanto, $15$ clientes optaram pela sobremesa como brinde (Alternativa B).",
+            "bncc": "EF07MA02",
+            "bnccDesc": "Resolver e elaborar problemas que envolvam porcentagens, como os que lidam com acréscimos e decréscimos simples, utilizando estratégias pessoais, cálculo mental e calculadora, no contexto de educação financeira, entre outros.",
             "unidadeTematica": "Números",
-            "anoEscolar": "8º ano",
-            "topicoId": "b1-t6",
+            "anoEscolar": "7º ano",
+            "topicoId": "b1-t2",
             "image": {
-              "src": "https://drive.google.com/file/d/1CFh8bRnVjLSY413Sk5WEcUmU5Lk2a-lg/view?usp=sharing",
-              "alt": "Quadro promocional com a mensagem: COMPRE 1 RODÍZIO DE PIZZA E ESCOLHA ENTRE 1 REFRIGERANTE OU 1 SOBREMESA DE GRAÇA!",
-              "caption": "Figura: Banner promocional de rodízio com brindes (IFSC 2023.2)"
+              "src": "assets/img/questoes/ifsc/ifsc-2023-2-q02.png",
+              "alt": "Banner promocional com a frase: COMPRE 1 RODÍZIO DE PIZZA E ESCOLHA ENTRE 1 REFRIGERANTE OU 1 SOBREMESA DE GRAÇA!",
+              "caption": "Fonte: IFSC 2023.2"
             }
           },
           {
-            "q": "Carlos, Fabiano e Bruna compraram uma barraca. Fabiano pagou $60\\%$, Carlos pagou $\\text{R\\$} 150{,}00$ e Bruna pagou os $\\text{R\\$} 90{,}00$ restantes. Qual o preço total da barraca?",
+            "q": "Carlos, Fabiano e Bruna juntaram dinheiro para comprar uma barraca de acampamento. Fabiano contribuiu com $60\\%$ do valor total da barraca. Carlos contribuiu com $40\\%$ do que faltava pagar. Bruna, por fim, contribuiu com $\\text{R\\$} 30{,}00$. Sendo assim, o valor total da barraca foi:",
             "options": [
-              "$\\text{R\\$} 600{,}00$",
-              "$\\text{R\\$} 500{,}00$",
-              "$\\text{R\\$} 450{,}00$",
-              "$\\text{R\\$} 750{,}00$",
-              "$\\text{R\\$} 800{,}00$"
+              "$\\text{R\\$} 150{,}00$",
+              "$\\text{R\\$} 125{,}00$",
+              "$\\text{R\\$} 130{,}00$",
+              "$\\text{R\\$} 115{,}00$",
+              "$\\text{R\\$} 140{,}00$"
             ],
-            "correct": 0,
-            "explanation": "Carlos e Bruna pagaram juntos $150 + 90 = \\text{R\\$} 240,00$, que corresponde a $40\\%$ do total ($100\\% - 60\\%$). Total: $\\frac{240}{0{,}40} = \\text{R\\$} 600,00$.",
-            "bncc": "EF08MA04",
-            "bnccDesc": "Resolver e elaborar problemas, envolvendo cálculo de porcentagens, incluindo o uso de tecnologias digitais.",
+            "correct": 1,
+            "explanation": "1. <strong>Definição das variáveis:</strong><br>Seja $V$ o valor total da barraca de acampamento em reais.<br><br>2. <strong>Contribuição de cada pessoa:</strong><br>- Fabiano contribuiu com $60\\%$ do total: $0{,}60 V$.<br>- O saldo restante que faltava pagar após a parte de Fabiano era de $100\\% - 60\\% = 40\\%$ do total, ou seja, $0{,}40 V$.<br>- Carlos contribuiu com $40\\%$ do que faltava: $0{,}40 \\times (0{,}40 V) = 0{,}16 V$ ($16\\%$ do total da barraca).<br>- Somando as partes de Fabiano e Carlos: $60\\% + 16\\% = 76\\%$ do valor total.<br>- A fração restante paga por Bruna corresponde a: $100\\% - 76\\% = 24\\%$ de $V$, ou seja, $0{,}24 V$.<br><br>3. <strong>Equacionamento e resolução:</strong><br>O enunciado informa que Bruna contribuiu com $\\text{R\\$} 30{,}00$:<br>$$0{,}24 V = 30$$<br>$$V = \\frac{30}{0{,}24} = \\frac{3.000}{24} = 125$$<br>Portanto, o valor total da barraca foi de $\\text{R\\$} 125{,}00$ (Alternativa B).",
+            "bncc": "EF07MA02",
+            "bnccDesc": "Resolver e elaborar problemas que envolvam porcentagens, como os que lidam com acréscimos e decréscimos simples, utilizando estratégias pessoais, cálculo mental e calculadora, no contexto de educação financeira, entre outros.",
             "unidadeTematica": "Números",
-            "anoEscolar": "8º ano",
-            "topicoId": "b1-t6"
+            "anoEscolar": "7º ano",
+            "topicoId": "b1-t2",
+            "image": null
           },
           {
-            "q": "Sobre números primos, analise as afirmativas:<br>I. Todo número primo é ímpar.<br>II. Existem infinitos números primos.<br>III. O número 1 é primo.<br>É correto o que se afirma em:",
+            "q": "Leia o Texto IX, a seguir.\n\nCom base no Texto IX, a autora do questionamento, Flavia, demostrou conhecimento a respeito dos números primos. Considerando esse tema e o contexto da postagem, assinale a alternativa CORRETA.",
             "options": [
-              "Apenas II",
-              "Apenas I e II",
-              "Apenas II e III",
-              "Apenas I",
-              "Todas"
+              "Todos os números primos são ímpares.",
+              "Entre $1$ e $12$ existem $6$ números primos.",
+              "Todo número com a forma $2^n + 1$, com $n \\in \\mathbb{N}$, é um número primo.",
+              "Se a embalagem vier com $12$ unidades, essa quantidade só poderá ser dividida igualmente por um número par de consumidores.",
+              "Se a embalagem vier com $15$ unidades, essa quantidade só poderá ser dividida igualmente por um número ímpar de consumidores."
             ],
-            "correct": 0,
-            "explanation": "I é falsa (o número 2 é primo e par). III é falsa (o número 1 não é primo). Apenas a afirmativa II é verdadeira.",
+            "correct": 4,
+            "explanation": "1. <strong>Análise de cada alternativa à luz da teoria dos números:</strong><br>- <strong>Alternativa A (Incorreta):</strong> O número $2$ é um número primo e é par. Portanto, nem todos os números primos são ímpares.<br>- <strong>Alternativa B (Incorreta):</strong> Os números primos entre $1$ e $12$ são $2, 3, 5, 7$ e $11$, totalizando $5$ primos (e não $6$).<br>- <strong>Alternativa C (Incorreta):</strong> Para $n = 3$, temos $2^3 + 1 = 8 + 1 = 9$, que é um número composto ($9 = 3 \\times 3$). Portanto, nem todo número da forma $2^n + 1$ é primo.<br>- <strong>Alternativa D (Incorreta):</strong> Uma embalagem com $12$ unidades pode ser dividida igualmente entre $3$ consumidores ($12 \\div 3 = 4$ para cada), e $3$ é um número ímpar.<br>- <strong>Alternativa E (Correta):</strong> Os divisores naturais positivos de $15$ são $D(15) = \\{1, 3, 5, 15\\}$. Todos esses divisores são números ímpares. Portanto, uma quantidade de $15$ unidades só pode ser dividida igualmente (sem sobras) entre um número ímpar de consumidores ($1, 3, 5$ ou $15$ pessoas).<br><br>Portanto, a alternativa correta é a <strong>Letra E</strong>.",
             "bncc": "EF06MA05",
-            "bnccDesc": "Classificar números naturais em primos e compostos, estabelecer relações entre números, expressas pelos termos “é múltiplo de”, “é divisor de”, “é fator de”, e estabelecer, por meio de investigações, critérios de divisibilidade por 2, 3, 4, 5, 6, 8, 9, 10, 100 e 1000.",
+            "bnccDesc": "Classificar números naturais em primos e compostos, estabelecer relações entre números, expressas pelos termos \"é múltiplo de\", \"é divisor de\", \"é fator de\", e estabelecer critérios de divisibilidade por 2, 3, 4, 5, 6, 8, 9, 10, 100 e 1000.",
             "unidadeTematica": "Números",
             "anoEscolar": "6º ano",
-            "topicoId": "b1-t3"
+            "topicoId": "b1-t1",
+            "image": {
+              "src": "assets/img/questoes/ifsc/ifsc-2023-2-q04.png",
+              "alt": "Publicação em rede social de Flavia Lambiasi questionando a Sadia por que vem treze unidades em um pacote de nuggets, pontuando que 13 é um número primo e que por isso só pode ser dividido igualmente se a pessoa estiver sozinha ou num bando de treze.",
+              "caption": "Fonte: IFSC 2023.2 / Exame"
+            }
           },
           {
-            "q": "Uma estufa agrícola retangular tem $30\\text{ m}$ de comprimento por $12\\text{ m}$ de largura. Se dividirmos essa área em $10$ canteiros iguais, a área de cada canteiro será:",
+            "q": "Para pesquisar a produção de hortaliças no Curso Técnico em Agroecologia do IFSC, foi construída uma estufa com $30\\text{ metros}$ de comprimento por $8\\text{ metros}$ de largura. Considerando que em $15\\%$ da área da referida estufa foram plantadas alfaces e que cada unidade de alface ocupa o espaço de um quadrado de $25\\text{ centímetros}$ de lado, podemos dizer que o número de unidades de alfaces nesta estufa é de:",
             "options": [
-              "$36\\text{ m}^2$",
-              "$30\\text{ m}^2$",
-              "$42\\text{ m}^2$",
-              "$40\\text{ m}^2$",
-              "$32\\text{ m}^2$"
+              "$144$",
+              "$240$",
+              "$576$",
+              "$960$",
+              "$3600$"
             ],
-            "correct": 0,
-            "explanation": "Área total da estufa $= 30 \\times 12 = 360\\text{ m}^2$. Cada canteiro: $\\frac{360}{10} = 36\\text{ m}^2$.",
+            "correct": 2,
+            "explanation": "1. <strong>Cálculo da área total da estufa:</strong><br>A estufa é retangular com dimensões $30\\text{ m} \\times 8\\text{ m}$:<br>$$A_{\\text{total}} = 30\\text{ m} \\times 8\\text{ m} = 240\\text{ m}^2$$<br><br>2. <strong>Cálculo da área destinada às alfaces ($15\\%$):</strong><br>$$A_{\\text{alface}} = 0{,}15 \\times 240\\text{ m}^2 = 36\\text{ m}^2$$<br><br>3. <strong>Cálculo da área ocupada por cada unidade de alface:</strong><br>Cada unidade ocupa um quadrado de lado $25\\text{ cm} = 0{,}25\\text{ m} = \\frac{1}{4}\\text{ m}$:<br>$$A_{\\text{unidade}} = (0{,}25\\text{ m})^2 = 0{,}0625\\text{ m}^2 = \\frac{1}{16}\\text{ m}^2$$<br><br>4. <strong>Determinação da quantidade total de alfaces:</strong><br>$$N = \\frac{A_{\\text{alface}}}{A_{\\text{unidade}}} = \\frac{36}{\\frac{1}{16}} = 36 \\times 16 = 576\\text{ unidades}$$<br>(Ou em centímetros quadrados: $36\\text{ m}^2 = 360.000\\text{ cm}^2$; como cada pé ocupa $25 \\times 25 = 625\\text{ cm}^2$, temos $\\frac{360.000}{625} = 576$).<br><br>Portanto, o número de unidades de alfaces na estufa é $576$ (Alternativa C).",
             "bncc": "EF08MA19",
             "bnccDesc": "Resolver e elaborar problemas que envolvam medidas de área de figuras geométricas, utilizando expressões de cálculo de área (quadriláteros, triângulos e círculos), em situações como determinar medida de terrenos.",
             "unidadeTematica": "Grandezas e Medidas",
             "anoEscolar": "8º ano",
-            "topicoId": "b4-t1"
+            "topicoId": "b4-t1",
+            "image": null
           },
           {
-            "q": "A roda gigante Big Wheel possui diâmetro de $65\\text{ metros}$ (adote $\\pi = 3{,}14$). Em um passeio que realiza $4$ voltas completas, a distância total percorrida por uma cabine é:",
+            "q": "A roda gigante <em>Big Wheel</em>, de Balneário Camboriú, é mais uma atração da cidade litorânea que leva o apelido de “Dubai brasileira”. Inaugurada em dezembro de 2020, conta com 36 cabines com capacidade máxima para seis pessoas e o passeio na roda gigante dura entre 15 e 21 minutos, dependendo do clima. Oferece aos visitantes uma vista panorâmica da orla, da mata atlântica e dos arranha-céus, que são marca registrada do destino catarinense. A roda gigante está posicionada em um terreno que está a $17\\text{ m}$ de altura em relação ao nível do mar e possui uma circunferência de $204\\text{ m}$. Partindo das informações do texto e adotando $\\pi = 3$, podemos afirmar que a maior altura que se pode estar nessa roda gigante, em relação ao nível do mar, é de:",
             "options": [
-              "$816{,}4\\text{ m}$",
-              "$408{,}2\\text{ m}$",
-              "$204{,}1\\text{ m}$",
-              "$650\\text{ m}$",
-              "$500\\text{ m}$"
+              "$34\\text{ m}$",
+              "$51\\text{ m}$",
+              "$68\\text{ m}$",
+              "$76\\text{ m}$",
+              "$85\\text{ m}$"
             ],
-            "correct": 0,
-            "explanation": "Comprimento de uma volta: $C = \\pi \\cdot D = 3{,}14 \\times 65 = 204{,}1\\text{ m}$. Em 4 voltas: $4 \\times 204{,}1 = 816{,}4\\text{ metros}$.",
+            "correct": 4,
+            "explanation": "1. <strong>Determinação do diâmetro da roda gigante:</strong><br>O comprimento da circunferência da roda gigante é $C = 204\\text{ m}$. Sabendo que $C = \\pi \\cdot D$ e adotando $\\pi = 3$ conforme instruído no enunciado:<br>$$204 = 3 \\cdot D \\implies D = \\frac{204}{3} = 68\\text{ m}$$<br><br>2. <strong>Cálculo da altura máxima em relação ao nível do mar:</strong><br>A base de apoio da roda gigante está instalada no terreno que se encontra a $17\\text{ m}$ acima do nível do mar. O ponto mais alto alcançado por um passageiro situa-se no topo da roda gigante, cuja elevação vertical equivale à altura da base mais o diâmetro da roda:<br>$$h_{\\text{máx}} = h_{\\text{terreno}} + D = 17\\text{ m} + 68\\text{ m} = 85\\text{ m}$$<br>Portanto, a maior altura em relação ao nível do mar é de $85\\text{ m}$ (Alternativa E).",
             "bncc": "EF07MA33",
-            "bnccDesc": "Estabelecer o número como a razão entre a medida de uma circunferência e seu diâmetro, para compreender e resolver problemas, inclusive os de natureza histórica.",
+            "bnccDesc": "Estabelecer o número pi como a razão entre a medida de uma circunferência e seu diâmetro, para compreender e resolver problemas, inclusive os de natureza histórica.",
             "unidadeTematica": "Grandezas e Medidas",
             "anoEscolar": "7º ano",
-            "topicoId": "b3-t3"
+            "topicoId": "b4-t1",
+            "image": null
           },
           {
             "q": "Observe os dados da tabela sobre o desmatamento da Amazônia Legal, por estado em 2022 e a imagem de satélite de 2022, que mostra o desmatamento da Terra Indígena Apyterewa, território do povo Parakanã, que se localiza no Pará.\n\nConsidere que uma parte da área desmatada em Apyterewa, mostrada na imagem de satélite, tenha a forma aproximada de um trapézio retângulo e dimensões indicadas na figura ao lado.\n\nSobre os dados apresentados anteriormente, observe as seguintes afirmações:\n\nI. Se a área aproximada de um campo de futebol é $10.000\\text{ m}^2$, a área desmatada do Pará equivale a $41.410$ campos de futebol.\nII. O percentual de desmatamento do Amazonas, em relação à medida de área total desmatada na Amazônia Legal, é de aproximadamente $22{,}5\\%$.\nIII. A área desmatada do Maranhão é de $2{,}82 \\cdot 10^8\\text{ m}^2$.\nIV. A parte da área desmatada da Terra Indígena Apyterewa, mostrada na Figura é dada pelo polinômio $x^2 + 0{,}7x$.\n\nAssinale a afirmativa CORRETA:",
@@ -4011,34 +4087,35 @@ var mathData = window.mathData || {
               "Todos estão corretos."
             ],
             "correct": 2,
-            "explanation": "1. <strong>Análise do item I (Área do Pará em campos de futebol):</strong><br>Pela tabela, a área desmatada do Pará é de $4.141\\text{ km}^2$.<br>Como $1\\text{ km} = 1.000\\text{ m}$, temos $1\\text{ km}^2 = (10^3\\text{ m})^2 = 1.000.000\\text{ m}^2 = 10^6\\text{ m}^2$.<br>Assim, a área do Pará em metros quadrados é:<br>$$4.141\\text{ km}^2 = 4.141 \\times 10^6\\text{ m}^2 = 4.141.000.000\\text{ m}^2$$<br>Dividindo pela área de um campo de futebol ($10.000\\text{ m}^2$):<br>$$\\frac{4.141.000.000\\text{ m}^2}{10.000\\text{ m}^2} = 414.100\\text{ campos de futebol}$$<br>Como a afirmação indica $41.410$ campos, o item I é <strong>incorreto</strong>.<br><br>2. <strong>Análise do item II (Percentual do Amazonas):</strong><br>A área desmatada do Amazonas é de $2.607\\text{ km}^2$ e o total da Amazônia Legal é de $11.568\\text{ km}^2$.<br>Calculando a porcentagem:<br>$$P = \\frac{2.607}{11.568} \\approx 0{,}225363... \\approx 22{,}5\\%$$<br>Portanto, o item II é <strong>correto</strong>.<br><br>3. <strong>Análise do item III (Área do Maranhão em notação científica):</strong><br>A área desmatada do Maranhão é de $282\\text{ km}^2$. Convertendo para $\\text{m}^2$:<br>$$282\\text{ km}^2 = 282 \\times 10^6\\text{ m}^2 = 2{,}82 \\cdot 10^2 \\cdot 10^6\\text{ m}^2 = 2{,}82 \\cdot 10^8\\text{ m}^2$$<br>Portanto, o item III é <strong>correto</strong>.<br><br>4. <strong>Análise do item IV (Área do trapézio retângulo):</strong><br>Na figura, o trapézio possui base maior $B = x + 0{,}8$, base menor $b = x + 0{,}6$ e altura perpendicular $h = x$.<br>Aplicando a fórmula da área do trapézio:<br>$$A = \\frac{(B + b) \\cdot h}{2} = \\frac{((x + 0{,}8) + (x + 0{,}6)) \\cdot x}{2}$$<br>$$A = \\frac{(2x + 1{,}4) \\cdot x}{2} = (x + 0{,}7) \\cdot x = x^2 + 0{,}7x$$<br>Portanto, o item IV é <strong>correto</strong>.<br><br>Estão corretos os itens II, III e IV. Portanto, a alternativa correta é a <strong>Letra C</strong>.",
-            "bncc": "EF09MA09",
-            "bnccDesc": "Compreender os processos de potenciação e radiciação, o cálculo com polinômios e a aplicação de notação científica em contextos reais.",
+            "explanation": "1. <strong>Análise do item I (Área do Pará em campos de futebol):</strong><br>Pela tabela, a área desmatada no Pará foi de $4.141\\text{ km}^2$.<br>Como $1\\text{ km}^2 = 1.000.000\\text{ m}^2 = 10^6\\text{ m}^2$, temos:<br>$$4.141\\text{ km}^2 = 4.141.000.000\\text{ m}^2$$<br>Dividindo pela área de um campo de futebol ($10.000\\text{ m}^2$):<br>$$\\frac{4.141.000.000}{10.000} = 414.100\\text{ campos}$$<br>O item afirma $41.410$ campos (um zero a menos). Portanto, o <strong>item I é FALSO</strong>.<br><br>2. <strong>Análise do item II (Percentual do Amazonas):</strong><br>Área do Amazonas $= 2.607\\text{ km}^2$. Total da Amazônia Legal $= 11.568\\text{ km}^2$.<br>$$\\frac{2.607}{11.568} \\approx 0{,}22536 \\approx 22{,}5\\%$$<br>Portanto, o <strong>item II é VERDADEIRO</strong>.<br><br>3. <strong>Análise do item III (Notação científica da área do Maranhão):</strong><br>Área do Maranhão $= 282\\text{ km}^2 = 282 \\times 10^6\\text{ m}^2 = 2{,}82 \\times 10^8\\text{ m}^2$.<br>Portanto, o <strong>item III é VERDADEIRO</strong>.<br><br>4. <strong>Análise do item IV (Polinômio da área do trapézio retângulo):</strong><br>O trapézio possui bases $B = x + 0{,}8$, $b = x + 0{,}6$ e altura perpendicular $h = x$. A área do trapézio é dada por:<br>$$A = \\frac{(B + b) \\cdot h}{2} = \\frac{((x + 0{,}8) + (x + 0{,}6)) \\cdot x}{2} = \\frac{(2x + 1{,}4) \\cdot x}{2} = \\frac{2x^2 + 1{,}4x}{2} = x^2 + 0{,}7x$$<br>Portanto, o <strong>item IV é VERDADEIRO</strong>.<br><br>Conclusão: estão corretos os itens II, III e IV (Alternativa C).",
+            "bncc": "EF08MA06",
+            "bnccDesc": "Resolver e elaborar problemas que envolvam cálculo do valor numérico de expressões algébricas, utilizando as propriedades das operações.",
             "unidadeTematica": "Álgebra",
-            "anoEscolar": "9º ano",
+            "anoEscolar": "8º ano",
             "topicoId": "b2-t1",
             "image": {
-              "src": "https://drive.google.com/file/d/1N0XyGJsOe5Z8jDdF_239TM08-JbhILKG/view?usp=sharing",
-              "alt": "Tabela de Desmatamento da Amazônia Legal por estado em 2022 listando áreas em quilômetros quadrados, seguida de imagem de satélite da Terra Indígena Apyterewa e representação esquemática de um trapézio retângulo com base horizontal x e lados verticais paralelos medindo x + 0,8 e x + 0,6",
-              "caption": "Figura: Desmatamento na Amazônia Legal (2022) e Terra Indígena Apyterewa (Adaptado de INPE e Imazon)"
+              "src": "assets/img/questoes/ifsc/ifsc-2023-2-q07.png",
+              "alt": "Tabela com dados de desmatamento da Amazônia Legal por estado em 2022 e imagem de satélite com recorte geométrico de trapézio retângulo de dimensões indicadas em função de x.",
+              "caption": "Fonte: INPE e Imazon / IFSC 2023.2"
             }
           },
           {
-            "q": "Uma sala de cinema de $156$ lugares ficou lotada. A entrada inteira custava $\\text{R\\$} 36{,}00$ e a meia $\\text{R\\$} 18{,}00$, totalizando $\\text{R\\$} 3.888{,}00$ arrecadados. Quantas pessoas pagaram meia-entrada?",
+            "q": "No dia do lançamento de um filme, uma sala de cinema com capacidade para $156$ pessoas, ficou lotada. O valor da entrada inteira era de $\\text{R\\$} 36{,}00$ e a meia-entrada de $\\text{R\\$} 18{,}00$. Considerando que a arrecadação foi de $\\text{R\\$} 3.726{,}00$, podemos afirmar que o número de pessoas que pagou a entrada inteira foi de:",
             "options": [
-              "$96$",
-              "$60$",
-              "$80$",
-              "$76$",
-              "$84$"
+              "$48$",
+              "$49$",
+              "$50$",
+              "$51$",
+              "$52$"
             ],
-            "correct": 0,
-            "explanation": "Sistema: $x + y = 156$ e $36x + 18y = 3888$. Multiplicando a 1ª por $-36$: $-18y = -1728 \\Rightarrow y = 96$ (meias-entradas) e $x = 60$ (inteiras).",
-            "bncc": "EF08MA22",
-            "bnccDesc": "Calcular a probabilidade de eventos, com base na construção do espaço amostral, utilizando o princípio multiplicativo, e reconhecer que a soma das probabilidades de todos os elementos do espaço amostral é igual a 1.",
-            "unidadeTematica": "Probabilidade e Estatística",
+            "correct": 3,
+            "explanation": "1. <strong>Construção do sistema de equações lineares:</strong><br>Sejam:<br>- $x$: número de pessoas que pagaram a entrada inteira ($\text{R\\$} 36{,}00$).<br>- $y$: número de pessoas que pagaram a meia-entrada ($\text{R\\$} 18{,}00$).<br><br>Temos o sistema:<br>$$\\begin{cases} x + y = 156 \\\\ 36x + 18y = 3.726 \\end{cases}$$<br><br>2. <strong>Simplificação e resolução:</strong><br>Dividindo a segunda equação por $18$ em ambos os membros:<br>$$\\frac{36x}{18} + \\frac{18y}{18} = \\frac{3.726}{18} \\implies 2x + y = 207$$<br><br>Subtraindo a primeira equação ($x + y = 156$) desta nova equação:<br>$$(2x + y) - (x + y) = 207 - 156$$<br>$$x = 51$$<br><br>3. <strong>Conferência:</strong><br>Se $x = 51$, então $y = 156 - 51 = 105$.<br>Arrecadação total: $51 \\times 36 + 105 \\times 18 = 1.836 + 1.890 = \\text{R\\$} 3.726{,}00$, compatível com os dados.<br><br>Portanto, o número de pessoas que pagou a entrada inteira foi $51$ (Alternativa D).",
+            "bncc": "EF08MA08",
+            "bnccDesc": "Resolver e elaborar problemas relacionados ao seu contexto próximo, que possam ser representados por sistemas de equações de 1º grau com duas incógnitas, utilizando diferentes métodos.",
+            "unidadeTematica": "Álgebra",
             "anoEscolar": "8º ano",
-            "topicoId": "b4-t3"
+            "topicoId": "b2-t2",
+            "image": null
           },
           {
             "q": "Paulo calculou a massa de um cubo de lado $6\\text{ cm}$ e verificou que o mesmo tinha $1.620\\text{ gramas}$. Em seguida, perfurou o cubo de um extremo ao outro, como mostra a figura, fazendo três buracos na forma de paralelepípedo retângulo, de dimensões $2\\text{ cm} \\times 2\\text{ cm} \\times 6\\text{ cm}$ cada. Sendo assim, a massa do sólido resultante é:",
@@ -4049,17 +4126,17 @@ var mathData = window.mathData || {
               "$1.240\\text{ gramas}$",
               "$1.180\\text{ gramas}$"
             ],
-            "correct": 0,
-            "explanation": "O volume do cubo original é $6^3 = 216\\text{ cm}^3$, com massa de $1.620\\text{ g}$, o que dá uma densidade de $\\frac{1.620}{216} = 7{,}5\\text{ g/cm}^3$. Os três buracos cruzam o centro do cubo. Cada buraco tem volume de $2 \\times 2 \\times 6 = 24\\text{ cm}^3$. Os três buracos somariam $3 \\times 24 = 72\\text{ cm}^3$, porém o cubinho central de $2 \\times 2 \\times 2 = 8\\text{ cm}^3$ pertence aos três túneis e foi contabilizado 3 vezes. Pelo princípio da inclusão-exclusão, o volume total retirado é $3 \\times 24 - 2 \\times 8 = 72 - 16 = 56\\text{ cm}^3$. O volume restante é $216 - 56 = 160\\text{ cm}^3$. A massa restante é $160 \\times 7{,}5 = 1.200$ ou considerando a densidade proporcional: $\\frac{160}{216} \\times 1.620 = 1.200\\text{ g}$? No gabarito oficial do IFSC, com a interseção dos três túneis perpendiculares: $3 \\times 24 - 2 \\times 8 = 56\\text{ cm}^3$, massa retirada $= 56 \\times 7{,}5 = 420\\text{ g}$. Massa restante: $1.620 - 420 = 1.200$? Na alternativa A: 1.260 g (se considerarem 2 furos não sobrepostos). Vamos verificar o gabarito oficial: (B) 1.200 g ou (A) 1.260 g? No IFSC o gabarito oficial é (B) 1.200 g ou (A) 1.260 g. Manteremos 1.200 g (B - correct 1).",
-            "bncc": "EF08MA21",
-            "bnccDesc": "Resolver e elaborar problemas que envolvam o cálculo do volume de recipiente cujo formato é o de um bloco retangular.",
+            "correct": 1,
+            "explanation": "1. <strong>Cálculo do volume inicial e da densidade:</strong><br>O cubo maciço original tem aresta de $6\\text{ cm}$:<br>$$V_{\\text{cubo}} = 6^3 = 216\\text{ cm}^3$$<br>A densidade do material é uniforme:<br>$$\\rho = \\frac{1.620\\text{ g}}{216\\text{ cm}^3} = 7{,}5\\text{ g/cm}^3$$<br><br>2. <strong>Cálculo do volume retirado pelas três perfurações perpendiculares:</strong><br>Cada perfuração é um bloco de $2\\text{ cm} \\times 2\\text{ cm} \\times 6\\text{ cm}$, com volume:<br>$$V_1 = 2 \\times 2 \\times 6 = 24\\text{ cm}^3$$<br>Os três túneis se interceptam no centro do cubo. A região comum às três perfurações é um cubo central de aresta $2\\text{ cm}$, cujo volume é:<br>$$V_{\\text{centro}} = 2^3 = 8\\text{ cm}^3$$<br>Como o cubo central pertence a todos os três túneis, ao somarmos os volumes dos 3 blocos retangulares ele é contabilizado 3 vezes. Para obter o volume oco real retirado, aplicamos a união dos volumes:<br>$$V_{\\text{oco}} = 3 \\times 24 - 2 \\times 8 = 72 - 16 = 56\\text{ cm}^3$$<br>(Ou observando cada braço externo que penetra $2\\text{ cm}$ até o centro: $6 \\text{ túneis de } 2 \\times 2 \\times 2 = 6 \\times 8 = 48\\text{ cm}^3$, mais o centro de $8\\text{ cm}^3$, totalizando $48 + 8 = 56\\text{ cm}^3$).<br><br>3. <strong>Cálculo do volume e massa finais:</strong><br>$$V_{\\text{final}} = 216 - 56 = 160\\text{ cm}^3$$<br>$$M_{\\text{final}} = 160\\text{ cm}^3 \\times 7{,}5\\text{ g/cm}^3 = 1.200\\text{ gramas}$$<br>Portanto, a massa do sólido resultante é $1.200\\text{ gramas}$ (Alternativa B).",
+            "bncc": "EF08MA20",
+            "bnccDesc": "Reconhecer a relação entre um litro e um decímetro cúbico e a relação entre litro e metro cúbico, para resolver problemas de cálculo de capacidade de recipientes.",
             "unidadeTematica": "Grandezas e Medidas",
             "anoEscolar": "8º ano",
             "topicoId": "b4-t2",
             "image": {
-              "src": "https://drive.google.com/file/d/1509z45au_aWKQuQuusFYOgZsf9QslPXK/view?usp=sharing",
-              "alt": "Desenho em perspectiva isométrica de um cubo de 6 cm de aresta com três perfurações prismáticas quadradas de 2 cm de lado atravessando perpendicularmente as três faces.",
-              "caption": "Figura: Cubo perfurado tridimensionalmente em suas três direções principais (IFSC 2023.2)"
+              "src": "assets/img/questoes/ifsc/ifsc-2023-2-q09.png",
+              "alt": "Cubo de aresta 6 cm com 3 orifícios de seção quadrada 2x2 cm vazados de face a face passando pelo centro das faces.",
+              "caption": "Fonte: IFSC 2023.2"
             }
           },
           {
@@ -4072,16 +4149,16 @@ var mathData = window.mathData || {
               "$92\\text{ cm}$"
             ],
             "correct": 0,
-            "explanation": "1. <strong>Determinação das medidas dos três tamanhos de quadrados:</strong><br>Analisando a malha e a proporção dos lados dos quadrados:<br>- Seja $s$ o lado do quadrado pequeno.<br>- O quadrado médio tem lado correspondente a $2s$.<br>- O quadrado grande tem lado correspondente a $3s$.<br>O enunciado informa que o lado do maior quadrado mede $120\\text{ mm} = 12\\text{ cm}$. Logo:<br>$$3s = 12\\text{ cm} \\implies s = 4\\text{ cm}$$<br>Assim, as medidas dos lados dos três quadrados são:<br>- Quadrado pequeno: $s = 4\\text{ cm}$<br>- Quadrado médio: $2s = 8\\text{ cm}$<br>- Quadrado grande: $3s = 12\\text{ cm}$<br><br>2. <strong>Contagem de cada segmento da linha cheia (em unidades de $s = 4\\text{ cm}$):</strong><br>Percorrendo todo o traçado contínuo:<br>- Lado vertical esquerdo do quadrado grande inferior: $3s = 12\\text{ cm}$<br>- Base inferior horizontal (quadrado grande + quadrado pequeno): $3s + s = 4s = 16\\text{ cm}$<br>- Subida vertical do quadrado pequeno inferior: $1s = 4\\text{ cm}$<br>- Segmento horizontal superior do quadrado pequeno inferior: $1s = 4\\text{ cm}$<br>- Segmento horizontal sobre o topo do quadrado inferior esquerdo: $2s = 8\\text{ cm}$<br>- Subida vertical esquerda do quadrado médio superior: $2s = 8\\text{ cm}$<br>- Topo horizontal do quadrado médio superior: $2s = 8\\text{ cm}$<br>- Descida vertical direita do quadrado médio superior: $2s = 8\\text{ cm}$<br>- Segmento horizontal intermediário direito (topo do quadrado grande da direita): $3s = 12\\text{ cm}$<br>- Subida vertical direita do quadrado pequeno superior: $1s = 4\\text{ cm}$<br>- Segmento horizontal no topo do quadrado pequeno superior: $1s = 4\\text{ cm}$<br><br>3. <strong>Soma total dos comprimentos:</strong><br>$$\\text{Total} = (3 + 4 + 1 + 1 + 2 + 2 + 2 + 2 + 3 + 1 + 1)s = 22s$$<br>$$\\text{Total} = 22 \\times 4\\text{ cm} = 88\\text{ cm}$$<br>Portanto, a alternativa correta é a <strong>Letra A</strong>.",
-            "bncc": "EF08MA19",
-            "bnccDesc": "Resolver e elaborar problemas que envolvam medidas de área e perímetro de figuras geométricas, utilizando proporções e unidades de medida.",
-            "unidadeTematica": "Geometria",
-            "anoEscolar": "8º ano",
-            "topicoId": "b3-t2",
+            "explanation": "1. <strong>Determinação das medidas dos três tamanhos de quadrados:</strong><br>Observando a malha e a proporção entre os lados dos quadrados na figura:<br>- Seja $s$ o lado do quadrado pequeno.<br>- O quadrado médio possui lado igual a $2s$.<br>- O quadrado grande possui lado igual a $3s$.<br>O enunciado informa que o lado do maior quadrado mede $120\\text{ mm} = 12\\text{ cm}$. Logo:<br>$$3s = 12\\text{ cm} \\implies s = 4\\text{ cm}$$<br>Assim, as medidas dos lados são:<br>- Quadrado pequeno: $s = 4\\text{ cm}$<br>- Quadrado médio: $2s = 8\\text{ cm}$<br>- Quadrado grande: $3s = 12\\text{ cm}$<br><br>2. <strong>Contagem dos segmentos da linha cheia (em unidades de $s = 4\\text{ cm}$):</strong><br>Acompanhando o traçado contínuo:<br>- Lateral esquerda vertical do quadrado grande: $3s$<br>- Base inferior horizontal: $3s + 1s = 4s$<br>- Subida vertical do quadrado pequeno inferior: $1s$<br>- Segmento horizontal superior do quadrado pequeno inferior: $1s$<br>- Segmento horizontal de transição: $2s$<br>- Subida vertical esquerda do quadrado médio: $2s$<br>- Topo horizontal do quadrado médio: $2s$<br>- Descida vertical direita do quadrado médio: $2s$<br>- Segmento horizontal superior direito: $3s$<br>- Subida vertical do quadrado pequeno superior direito: $1s$<br>- Topo horizontal do quadrado pequeno superior direito: $1s$<br><br>3. <strong>Soma total dos comprimentos:</strong><br>$$\\text{Total} = (3 + 4 + 1 + 1 + 2 + 2 + 2 + 2 + 3 + 1 + 1) \\cdot s = 22s$$<br>$$\\text{Total} = 22 \\times 4\\text{ cm} = 88\\text{ cm}$$<br>Portanto, o comprimento total da linha cheia é $88\\text{ cm}$ (Alternativa A).",
+            "bncc": "EF06MA24",
+            "bnccDesc": "Resolver e elaborar problemas que envolvam as grandezas comprimento, massa, tempo, temperatura, área (triângulos e retângulos), capacidade e volume (de sólidos formados por blocos retangulares), sem uso de fórmulas, inseridos, sempre que possível, em contextos oriundos de situações reais e/ou de outras áreas do conhecimento.",
+            "unidadeTematica": "Grandezas e Medidas",
+            "anoEscolar": "6º ano",
+            "topicoId": "b4-t1",
             "image": {
-              "src": "https://drive.google.com/file/d/17EBhSLAo8zzhBcIpkZsAkkuoeYv2-kJo/view?usp=sharing",
-              "alt": "Diagrama com malha de quadrados tracejados de três tamanhos e uma linha contínua escura destacada percorrendo os perímetros parciais desses quadrados",
-              "caption": "Figura: Sequência geométrica de quadrados de três tamanhos (IFSC 2023.2)"
+              "src": "assets/img/questoes/ifsc/ifsc-2023-2-q10.png",
+              "alt": "Sequência de quadrados de três tamanhos em malha quadriculada com uma linha cheia traçando um contorno e linhas tracejadas completando os quadrados.",
+              "caption": "Fonte: IFSC 2023.2"
             }
           }
         ],
@@ -4110,46 +4187,52 @@ var mathData = window.mathData || {
         },
         "questions": [
           {
-            "q": "Marcelo recortou dois retângulos, um de dimensões $10\\text{ cm} \\times 12\\text{ cm}$ e outro de dimensões $11\\text{ cm} \\times 13\\text{ cm}$. Em seguida, Marcelo colocou um retângulo sobre o outro, como mostra a imagem, e percebeu que a região cinza tinha uma área equivalente a $58\\text{ cm}^2$. Sendo assim, a área da região hachurada é:",
+            "q": "Marcelo recortou dois retângulos, um de dimensões $10\\text{ cm} \\times 12\\text{ cm}$ e outro de dimensões $11\\text{ cm} \\times 13\\text{ cm}$. Em seguida, colocou um retângulo sobre o outro e percebeu que a região cinza (não sobreposta do primeiro retângulo) tinha uma área equivalente a $58\\text{ cm}^2$. Sendo assim, a área da região hachurada (não sobreposta do segundo retângulo) é:",
+            "image": {
+              "src": "assets/img/questoes/ifsc/ifsc-2024-1-q01.png",
+              "alt": "Dois retângulos sobrepostos com medidas de 10 cm por 12 cm e 11 cm por 13 cm, mostrando uma área cinza do primeiro retângulo com área de 58 cm² e uma área hachurada no segundo retângulo.",
+              "caption": "Figura: Retângulos sobrepostos com áreas parcial e hachurada (IFSC 2024.1)"
+            },
             "options": [
-              "$62\\text{ cm}^2$",
-              "$92\\text{ cm}^2$",
-              "$79\\text{ cm}^2$",
-              "$84\\text{ cm}^2$",
-              "$81\\text{ cm}^2$"
+              "$62\\text{ cm}^2.$",
+              "$92\\text{ cm}^2.$",
+              "$79\\text{ cm}^2.$",
+              "$84\\text{ cm}^2.$",
+              "$81\\text{ cm}^2.$"
             ],
             "correct": 4,
-            "explanation": "A área do retângulo menor é $10 \\times 12 = 120\\text{ cm}^2$. A região cinza é a parte não sobreposta do retângulo menor, logo a área da sobreposição (interseção) é $120 - 58 = 62\\text{ cm}^2$. A área do retângulo maior é $11 \\times 13 = 143\\text{ cm}^2$. A região hachurada é a parte do retângulo maior fora da interseção: $143 - 62 = 81\\text{ cm}^2$.",
             "bncc": "EF08MA19",
-            "bnccDesc": "Resolver e elaborar problemas que envolvam medidas de área de figuras geométricas, utilizando expressões de cálculo de área (quadriláteros, triângulos e círculos), em situações como determinar medida de terrenos.",
-            "unidadeTematica": "Grandezas e Medidas",
+            "bnccDesc": "Resolver e elaborar problemas que envolvam medidas de área de figuras geométricas, utilizando expressões de cálculo de área (quadriláteros, triângulos e círculos), em situações como determinar medida do terreno, número de lajotas para piso etc.",
+            "unidadeTematica": "Grandezas e medidas",
             "anoEscolar": "8º ano",
-            "topicoId": "b4-t1",
-            "image": {
-              "src": "https://drive.google.com/file/d/1ykHp_SRVfnkjecikiI4LBs0NajGynKeF/view?usp=sharing",
-              "alt": "Dois retângulos sobrepostos parcialmente com uma região cinza lisa e uma região hachurada com linhas diagonais.",
-              "caption": "Figura: Sobreposição parcial de dois retângulos com áreas diferenciadas (IFSC 2024.1)"
-            }
+            "topicoId": "b3-t2",
+            "explanation": "1. <strong>Cálculo da área dos dois retângulos originais:</strong><br>• Retângulo 1: $A_1 = 10 \\times 12 = 120\\text{ cm}^2$<br>• Retângulo 2: $A_2 = 11 \\times 13 = 143\\text{ cm}^2$<br><br>2. <strong>Cálculo da área de sobreposição (interseção):</strong><br>Como a área cinza não sobreposta do Retângulo 1 mede $58\\text{ cm}^2$:<br>$$A_{\\text{interseção}} = A_1 - A_{\\text{cinza}} = 120 - 58 = 62\\text{ cm}^2$$<br>3. <strong>Cálculo da área da região hachurada:</strong><br>A região hachurada corresponde à área do Retângulo 2 menos a interseção:<br>$$A_{\\text{hachurada}} = A_2 - A_{\\text{interseção}} = 143 - 62 = 81\\text{ cm}^2$$<br>Portanto, a área da região hachurada é de $81\\text{ cm}^2$, correspondendo à <strong>Alternativa E</strong>."
           },
           {
-            "q": "Um grupo de estudantes arrecadou $\\text{R\\$} 1.440{,}00$ vendendo rifas para castração de animais abandonados. Se cada castração custa $\\text{R\\$} 160{,}00$, quantos animais puderam ser castrados?",
+            "q": "Um grupo de estudantes organizou uma ação para angariar fundos para comprar ração para animais abandonados. Ao longo de uma semana, foram arrecadadas $180\\text{ cédulas}$ de dinheiro (reais), na seguinte composição:\n• $\\text{R\\$} 2{,}00$ correspondendo a $\\frac{2}{5}$ das cédulas;\n• $\\text{R\\$} 5{,}00$ correspondendo a $\\frac{1}{3}$ das cédulas;\n• $\\text{R\\$} 10{,}00$ correspondendo a $\\frac{1}{4}$ das cédulas;\n• $\\text{R\\$} 20{,}00$ correspondendo às cédulas restantes.\n\nO valor total, em reais, arrecadado ao longo da semana é igual a:",
+            "image": null,
             "options": [
-              "$9$",
-              "$8$",
-              "$10$",
-              "$12$",
-              "$7$"
+              "$\\text{R\\$} 101{,}00.$",
+              "$\\text{R\\$} 535{,}00.$",
+              "$\\text{R\\$} 954{,}00.$",
+              "$\\text{R\\$} 963{,}00.$",
+              "$\\text{R\\$} 1.190{,}00.$"
             ],
-            "correct": 0,
-            "explanation": "Animais castrados $= \\frac{1440}{160} = 9$ animais.",
-            "bncc": "EF07MA18",
-            "bnccDesc": "Resolver e elaborar problemas que possam ser representados por equações polinomiais de 1º grau, redutíveis à forma ax + b = c, fazendo uso das propriedades da igualdade.",
-            "unidadeTematica": "Álgebra",
-            "anoEscolar": "7º ano",
-            "topicoId": "b2-t3"
+            "correct": 2,
+            "bncc": "EF06MA09",
+            "bnccDesc": "Resolver e elaborar problemas que envolvam o cálculo da fração de uma quantidade e cujo resultado seja um número natural, com e sem uso de calculadora.",
+            "unidadeTematica": "Números",
+            "anoEscolar": "6º ano",
+            "topicoId": "b1-t1",
+            "explanation": "Calculamos a quantidade de cédulas e o valor correspondente de cada quantia a partir do total de $180\\text{ cédulas}$:<br><br>1. <strong>Cédulas de $\\text{R\\$} 2{,}00$:</strong><br>$$\\frac{2}{5} \\times 180 = 2 \\times 36 = 72\\text{ cédulas} \\implies 72 \\times 2 = \\text{R\\$} 144{,}00$$<br>2. <strong>Cédulas de $\\text{R\\$} 5{,}00$:</strong><br>$$\\frac{1}{3} \\times 180 = 60\\text{ cédulas} \\implies 60 \\times 5 = \\text{R\\$} 300{,}00$$<br>3. <strong>Cédulas de $\\text{R\\$} 10{,}00$:</strong><br>$$\\frac{1}{4} \\times 180 = 45\\text{ cédulas} \\implies 45 \\times 10 = \\text{R\\$} 450{,}00$$<br>4. <strong>Cédulas restantes de $\\text{R\\$} 20{,}00$:</strong><br>$$180 - (72 + 60 + 45) = 180 - 177 = 3\\text{ cédulas} \\implies 3 \\times 20 = \\text{R\\$} 60{,}00$$<br>5. <strong>Soma total arrecadada:</strong><br>$$\\text{Total} = 144 + 300 + 450 + 60 = \\text{R\\$} 954{,}00$$<br>Portanto, o valor total arrecadado é de $\\text{R\\$} 954{,}00$, correspondendo à <strong>Alternativa C</strong>."
           },
           {
-            "q": "A tela de um celular tem dimensões $7\\text{ cm}$ de largura por $14{,}7\\text{ cm}$ de altura. Durante uma conversa em um aplicativo de mensagens, conforme imagem, uma foto foi enviada. As dimensões da foto são de $4{,}5\\text{ cm}$ de largura por $2{,}5\\text{ cm}$ de altura. A razão entre a área da foto enviada e a área da tela do celular é:",
+            "q": "A tela de um celular tem dimensões $7\\text{ cm}$ de largura por $14{,}7\\text{ cm}$ de altura. Durante uma conversa em um aplicativo de mensagens, uma foto foi enviada com dimensões de $4{,}5\\text{ cm}$ de largura por $2{,}5\\text{ cm}$ de altura. A razão entre a área da foto enviada e a área da tela do celular é:",
+            "image": {
+              "src": "assets/img/questoes/ifsc/ifsc-2024-1-q03.png",
+              "alt": "Esquema da tela de um smartphone com medidas de 7 cm por 14,7 cm, contendo uma janela de chat com uma foto de dimensões 4,5 cm por 2,5 cm.",
+              "caption": "Figura: Tela do celular e foto enviada (IFSC 2024.1)"
+            },
             "options": [
               "$\\frac{1}{3}$",
               "$\\frac{4}{45}$",
@@ -4158,112 +4241,88 @@ var mathData = window.mathData || {
               "$\\frac{1000}{28917}$"
             ],
             "correct": 2,
-            "explanation": "Área da foto: $4{,}5 \\times 2{,}5 = 11{,}25\\text{ cm}^2$. Área da tela do celular: $7 \\times 14{,}7 = 102{,}9\\text{ cm}^2$. A razão entre as áreas é: $\\frac{11{,}25}{102{,}9} = \\frac{1125}{10290}$. Dividindo numerador e denominador por 15: $\\frac{1125 \\div 15}{10290 \\div 15} = \\frac{75}{686}$.",
-            "bncc": "EF07MA18",
-            "bnccDesc": "Resolver e elaborar problemas que possam ser representados por equações polinomiais de 1º grau, redutíveis à forma ax + b = c, fazendo uso das propriedades da igualdade.",
-            "unidadeTematica": "Álgebra",
+            "bncc": "EF07MA08",
+            "bnccDesc": "Comparar e ordenar frações associadas às ideias de partes de inteiros, resultado da divisão, razão e operador.",
+            "unidadeTematica": "Números",
             "anoEscolar": "7º ano",
-            "topicoId": "b2-t3",
-            "image": {
-              "src": "https://drive.google.com/file/d/1bD-oSO0gcZPgnGWcrd9Q3q1M15z7B1IF/view?usp=sharing",
-              "alt": "Representação gráfica da tela de um smartphone exibindo um balão de conversa com imagem fotográfica e dimensões indicadas em centímetros.",
-              "caption": "Figura: Tela de smartphone com balão de foto em conversa (IFSC 2024.1)"
-            }
+            "topicoId": "b1-t1",
+            "explanation": "1. <strong>Cálculo da área da foto:</strong><br>$$A_{\\text{foto}} = 4{,}5 \\times 2{,}5 = 11{,}25\\text{ cm}^2$$<br>2. <strong>Cálculo da área da tela:</strong><br>$$A_{\\text{tela}} = 7 \\times 14{,}7 = 102{,}9\\text{ cm}^2$$<br>3. <strong>Cálculo da razão e simplificação:</strong><br>$$\\text{Razão} = \\frac{11{,}25}{102{,}9} = \\frac{1125}{10290}$$<br>Simplificando numerador e denominador por $15$:<br>$$\\frac{1125 \\div 15}{10290 \\div 15} = \\frac{75}{686}$$<br>Portanto, a razão é $\\frac{75}{686}$, correspondendo à <strong>Alternativa C</strong>."
           },
           {
-            "q": "Marcos pegou um copo cilíndrico com uma altura de $20\\text{ cm}$ e um raio de $5\\text{ cm}$. Ele decidiu, então, enchê-lo com água até que o nível atingisse $50\\%$ da altura total do copo. Depois disso, Marcos adicionou três cubos de gelo idênticos dentro do copo e, como resultado, o nível da água no copo aumentou em $50\\%$ em relação ao nível em que a água se encontrava. A figura ilustra essa situação. Sabendo que o volume de um cilindro pode ser calculado pela equação $V = \\pi \\cdot r^2 \\cdot h$, e considerando $\\pi = 3$, a medida da aresta dos cubos colocados na água por Marcos é:",
+            "q": "Marcos pegou um copo cilíndrico com altura de $20\\text{ cm}$ e raio de $5\\text{ cm}$. Ele encheu o copo com água até $50\\%$ da altura total. Depois disso, adicionou três cubos de gelo idênticos dentro do copo e, como resultado, o nível da água aumentou em $50\\%$ em relação ao nível em que se encontrava. Sabendo que o volume de um cilindro é dado por $V = \\pi \\cdot r^2 \\cdot h$, e considerando $\\pi = 3$, a medida da aresta dos cubos de gelo é:",
+            "image": {
+              "src": "assets/img/questoes/ifsc/ifsc-2024-1-q04.png",
+              "alt": "Copo cilíndrico com água até metade da altura de 20 cm e raio de 5 cm, mostrando a adição de três cubos de gelo que elevam a altura da água.",
+              "caption": "Figura: Nível da água no copo cilíndrico antes e após a adição dos cubos de gelo (IFSC 2024.1)"
+            },
             "options": [
-              "$5\\text{ cm}$",
-              "$3\\sqrt{2}\\text{ cm}$",
-              "$6\\text{ cm}$",
-              "$4\\sqrt{3}\\text{ cm}$",
-              "$4{,}5\\text{ cm}$"
+              "$5\\text{ cm.}$",
+              "$3\\sqrt{2}\\text{ cm.}$",
+              "$6\\text{ cm.}$",
+              "$2\\sqrt{3}\\text{ cm.}$",
+              "$9\\text{ cm.}$"
             ],
             "correct": 0,
-            "explanation": "A altura inicial da água era $50\\%$ de $20\\text{ cm}$, ou seja, $10\\text{ cm}$. O aumento de $50\\%$ dessa altura corresponde a $\\Delta h = 50\\% \\times 10 = 5\\text{ cm}$. O volume deslocado pelos 3 cubos de gelo é igual ao volume de água elevado: $V_{\\text{deslocado}} = \\pi \\cdot r^2 \\cdot \\Delta h = 3 \\cdot 5^2 \\cdot 5 = 3 \\cdot 25 \\cdot 5 = 375\\text{ cm}^3$. Como são 3 cubos idênticos, o volume de cada cubo é $\\frac{375}{3} = 125\\text{ cm}^3$. A aresta do cubo é $a = \\sqrt[3]{125} = 5\\text{ cm}$.",
             "bncc": "EF09MA19",
-            "bnccDesc": "Resolver e elaborar problemas que envolvam medidas de volumes de prismas e de cilindros retos, inclusive com uso de expressões de cálculo, em situações cotidianas.",
-            "unidadeTematica": "Grandezas e Medidas",
+            "bnccDesc": "Resolver e elaborar problemas que envolvam o cálculo de volumes de recipientes cujo formato é o de um bloco retangular ou de um cilindro reto.",
+            "unidadeTematica": "Grandezas e medidas",
             "anoEscolar": "9º ano",
-            "topicoId": "b4-t2",
-            "image": {
-              "src": "https://drive.google.com/file/d/1qm_tjDv-O-vKeWZw-LXcYYpfY-1Gqo8e/view?usp=sharing",
-              "alt": "Diagrama de um copo cilíndrico contendo água e três cubos de gelo imersos, indicando a elevação do nível do líquido.",
-              "caption": "Figura: Copo cilíndrico com água e cubos de gelo (IFSC 2024.1)"
-            }
+            "topicoId": "b3-t2",
+            "explanation": "1. <strong>Nível inicial de água:</strong><br>$$h_{\\text{inicial}} = 50\\% \\times 20 = 10\\text{ cm}$$<br>2. <strong>Aumento do nível da água (deslocamento):</strong><br>O nível aumentou em $50\\%$ em relação ao nível em que estava:<br>$$\\Delta h = 50\\% \\times 10 = 5\\text{ cm}$$<br>3. <strong>Volume deslocado pelos 3 cubos de gelo:</strong><br>$$V_{\\text{deslocado}} = \\pi \\cdot r^2 \\cdot \\Delta h = 3 \\cdot (5)^2 \\cdot 5 = 3 \\cdot 25 \\cdot 5 = 375\\text{ cm}^3$$<br>4. <strong>Aresta de cada cubo:</strong><br>Sendo $a$ a aresta do cubo, o volume dos $3$ cubos é $3a^3$:<br>$$3a^3 = 375 \\implies a^3 = 125 \\implies a = \\sqrt[3]{125} = 5\\text{ cm}$$<br>Portanto, a aresta dos cubos mede $5\\text{ cm}$, correspondendo à <strong>Alternativa A</strong>."
           },
           {
-            "q": "O IFSC conta com $22$ câmpus. Em uma comissão de representantes, seleciona-se $1$ coordenador e $1$ vice de câmpus distintos. O total de duplas possíveis é:",
+            "q": "O IFSC conta com $22\\text{ câmpus}$ espalhados por Santa Catarina. A Reitoria está localizada em Florianópolis e o câmpus mais distante é São Miguel do Oeste. Na escala do mapa, $1\\text{ cm}$ equivale a $5 \\cdot 10^4\\text{ m}$. Se traçarmos uma linha reta entre esses dois câmpus sobre o mapa, temos uma distância de $10\\text{ cm}$. Podemos afirmar que a distância estimada em linha reta entre os dois câmpus citados é de:",
+            "image": null,
             "options": [
-              "$462$",
-              "$231$",
-              "$484$",
-              "$440$",
-              "$506$"
+              "$5{,}0 \\cdot 10^2\\text{ km}$",
+              "$6{,}6 \\cdot 10^2\\text{ km}$",
+              "$6{,}3 \\cdot 10^3\\text{ km}$",
+              "$6{,}0 \\cdot 10^4\\text{ km}$",
+              "$5{,}0 \\cdot 10^5\\text{ km}$"
             ],
             "correct": 0,
-            "explanation": "Arranjo simples: $22 \\times 21 = 462$ possibilidades de duplas ordenadas.",
-            "bncc": "EF08MA03",
-            "bnccDesc": "Resolver e elaborar problemas de contagem cuja resolução envolva a aplicação do princípio multiplicativo.",
+            "bncc": "EF08MA01",
+            "bnccDesc": "Efetuar cálculos com potências de expoentes inteiros e aplicar esse conhecimento na representação de números em notação científica.",
             "unidadeTematica": "Números",
             "anoEscolar": "8º ano",
-            "topicoId": "b4-t3"
+            "topicoId": "b1-t1",
+            "explanation": "1. <strong>Cálculo da distância real em metros:</strong><br>$$D = 10\\text{ cm} \\times (5 \\cdot 10^4\\text{ m/cm}) = 50 \\cdot 10^4\\text{ m} = 5 \\cdot 10^5\\text{ metros}$$<br>2. <strong>Conversão para quilômetros em notação científica:</strong><br>Como $1\\text{ km} = 10^3\\text{ m}$, divide-se por $10^3$:<br>$$D_{\\text{km}} = \\frac{5 \\cdot 10^5}{10^3} = 5 \\cdot 10^2\\text{ km} = 5{,}0 \\cdot 10^2\\text{ km}$$<br>Portanto, a distância estimada é $5{,}0 \\cdot 10^2\\text{ km}$, correspondendo à <strong>Alternativa A</strong>."
           },
           {
-            "q": "Em um processo químico, $10\\text{ litros}$ de óleo residual produzem $9\\text{ litros}$ de biodiesel. Para produzir $450\\text{ litros}$ de biodiesel, o volume necessário de óleo residual é:",
+            "q": "Pesquisadoras realizaram experimentos para transformar óleo residual em biodiesel. Ao iniciar, utilizaram o volume de óleo $V_1 = (x + 1)^2 + x - 1$ e obtiveram o volume de biodiesel $V_2 = (x + 1)(x - 1) + 1$. Sabendo que $V_2 = \\frac{4}{5} V_1$, o valor de $x$, $V_1$ e $V_2$, respectivamente, é dado por:",
+            "image": null,
             "options": [
-              "$500\\text{ L}$",
-              "$450\\text{ L}$",
-              "$550\\text{ L}$",
-              "$600\\text{ L}$",
-              "$480\\text{ L}$"
+              "$10$, $130$ e $100$.",
+              "$10$, $100$ e $80$.",
+              "$12$, $200$ e $160$.",
+              "$12$, $180$ e $144$.",
+              "$14$, $209$ e $167$."
             ],
-            "correct": 0,
-            "explanation": "Regra de três: $\\frac{10}{9} = \\frac{x}{450} \\Rightarrow 9x = 4500 \\Rightarrow x = 500\\text{ litros}$.",
-            "bncc": "EF09MA19",
-            "bnccDesc": "Resolver e elaborar problemas que envolvam medidas de volumes de prismas e de cilindros retos, inclusive com uso de expressões de cálculo, em situações cotidianas.",
-            "unidadeTematica": "Grandezas e Medidas",
-            "anoEscolar": "9º ano",
-            "topicoId": "b4-t2"
-          },
-          {
-            "q": "Em um exame classificatório de $24$ questões, um candidato acertou $5$ questões a mais em Matemática do que em Linguagens. Sabendo que ele acertou $19$ questões no total nessas duas áreas, quantas acertou em Matemática?",
-            "options": [
-              "$12$",
-              "$14$",
-              "$10$",
-              "$13$",
-              "$11$"
-            ],
-            "correct": 0,
-            "explanation": "Sistema: $M + L = 19$ e $M - L = 5$. Somando: $2M = 24 \\Rightarrow M = 12$ acertos em Matemática.",
-            "bncc": "EF08MA08",
-            "bnccDesc": "Resolver e elaborar problemas relacionados ao seu contexto próximo, que possam ser representados por sistemas de equações de 1º grau com duas incógnitas e interpretá-los, utilizando, inclusive, o plano cartesiano como recurso.",
+            "correct": 3,
+            "bncc": "EF09MA09",
+            "bnccDesc": "Compreender os processos de fatoração de expressões algébricas, com base em suas relações com os produtos notáveis, para resolver e elaborar problemas que possam ser representados por equações polinomiais do 2º grau.",
             "unidadeTematica": "Álgebra",
-            "anoEscolar": "8º ano",
-            "topicoId": "b2-t3"
+            "anoEscolar": "9º ano",
+            "topicoId": "b2-t1",
+            "explanation": "1. <strong>Desenvolvimento das expressões algébricas dos volumes:</strong><br>• $V_1 = (x + 1)^2 + x - 1 = (x^2 + 2x + 1) + x - 1 = x^2 + 3x$<br>• $V_2 = (x + 1)(x - 1) + 1 = (x^2 - 1) + 1 = x^2$<br><br>2. <strong>Equacionamento da relação $V_2 = \\frac{4}{5} V_1$:</strong><br>$$x^2 = \\frac{4}{5}(x^2 + 3x)$$<br>$$5x^2 = 4x^2 + 12x \\implies x^2 - 12x = 0$$<br>$$x(x - 12) = 0$$<br>Como o volume deve ser estritamente positivo, $x \\ne 0$, logo $x = 12$.<br><br>3. <strong>Cálculo dos volumes:</strong><br>• $V_1 = 12^2 + 3(12) = 144 + 36 = 180$<br>• $V_2 = 12^2 = 144$<br><br>Os valores são $12, 180\\text{ e } 144$, correspondendo à <strong>Alternativa D</strong>."
           },
           {
-            "q": "Considerando que a pizza tem o formato de um círculo e está inscrita num hexágono regular de área $2.295\\text{ cm}^2$, conforme a figura, pode-se afirmar que o valor da área da superfície ocupada por cada pedaço é, aproximadamente: (use $\\pi = 3$ e $\\sqrt{3} = 1{,}7$)",
+            "q": "No vestibular unificado UFSC/IFSC, a nota do candidato nas questões objetivas é calculada pela média aritmética simples do número de acertos nas $7\\text{ áreas do conhecimento}$. Um candidato obteve o seguinte número de acertos: Primeira Língua ($8$), Segunda Língua ($6$), Matemática ($7$), Biologia ($6$), Ciências Humanas e Sociais ($14$), Física ($5$) e Química ($3$). Com base nas regras e dados, assinale a alternativa CORRETA:",
+            "image": null,
             "options": [
-              "$290\\text{ cm}^2$",
-              "$325\\text{ cm}^2$",
-              "$375\\text{ cm}^2$",
-              "$390\\text{ cm}^2$",
-              "$450\\text{ cm}^2$"
+              "Ao total, o candidato acertou 55 questões.",
+              "Considerando cada área do conhecimento separadamente, o pior desempenho do candidato nas questões foi em Biologia.",
+              "Juntas, as questões de “Primeira Língua” e “Segunda Língua” correspondem a 20% das questões.",
+              "O número de acertos nas áreas “Segunda Língua” e “Biologia” contribuiu igualmente na composição da nota final das questões.",
+              "A média aritmética simples do candidato nas questões é 7,0."
             ],
-            "correct": 1,
-            "explanation": "A área do hexágono regular de lado $L$ é $A = \\frac{3L^2\\sqrt{3}}{2} = 2.295$. Com $\\sqrt{3} = 1{,}7$: $\\frac{3 \\times 1{,}7}{2} L^2 = 2.295 \\implies 2{,}55 L^2 = 2.295 \\implies L^2 = 900 \\implies L = 30\\text{ cm}$. O raio do círculo inscrito no hexágono regular é o apótema do hexágono: $r = \\frac{L\\sqrt{3}}{2} = \\frac{30 \\times 1{,}7}{2} = 25{,}5\\text{ cm}$. A área da pizza circular inteira é $A_{\\text{pizza}} = \\pi r^2 = 3 \\times 25{,}5^2 = 3 \\times 650{,}25 = 1.950{,}75\\text{ cm}^2$. Dividindo em 6 fatias: $\\frac{1.950{,}75}{6} \\approx 325\\text{ cm}^2$.",
-            "bncc": "EF08MA19",
-            "bnccDesc": "Resolver e elaborar problemas que envolvam medidas de área de figuras geométricas, utilizando expressões de cálculo de área (quadriláteros, triângulos e círculos), em situações como determinar medida de terrenos.",
-            "unidadeTematica": "Grandezas e Medidas",
-            "anoEscolar": "8º ano",
-            "topicoId": "b4-t1",
-            "image": {
-              "src": "https://drive.google.com/file/d/1-riw5TTvzPM9ULKZLR2Rf4X-HnP1vEQ6/view?usp=sharing",
-              "alt": "Pizza circular dividida em 6 fatias e inscrita em uma caixa hexagonal regular com os vértices tangenciando a borda.",
-              "caption": "Figura: Pizza circular inscrita em caixa hexagonal regular (IFSC 2024.1)"
-            }
+            "correct": 3,
+            "bncc": "EF07MA35",
+            "bnccDesc": "Compreender, em contextos significativos, o significado de média estatística como indicador da tendência de uma pesquisa, calcular seu valor e relacioná-lo, intuitivamente, com a amplitude do conjunto de dados.",
+            "unidadeTematica": "Probabilidade e estatística",
+            "anoEscolar": "7º ano",
+            "topicoId": "b4-t3",
+            "explanation": "Análise criteriosa das alternativas:<br><br>• <strong>Opção A (Falsa):</strong> O total de acertos foi $8 + 6 + 7 + 6 + 14 + 5 + 3 = 49\\text{ acertos}$ (não $55$).<br>• <strong>Opção B (Falsa):</strong> O pior desempenho isolado foi em Química, com $3$ acertos.<br>• <strong>Opção C (Falsa):</strong> O total de questões é $12 + 8 + 10 + 10 + 20 + 10 + 10 = 80\\text{ questões}$. As línguas somam $20\\text{ questões}$, o que representa $\\frac{20}{80} = 25\\%$ (e não $20\\%$).<br>• <strong>Opção D (Verdadeira):</strong> Como a nota final é a média aritmética simples dos acertos de cada área (peso igual de $\\frac{1}{7}$ para cada área), ter acertado $6$ questões em Segunda Língua e $6$ questões em Biologia proporcionou exatamente a mesma contribuição numérica para a nota final do exame.<br><br>Portanto, a alternativa correta é a <strong>Alternativa D</strong>."
           }
         ],
         "slug": "prova-ifsc-20241",
@@ -4291,24 +4350,26 @@ var mathData = window.mathData || {
         },
         "questions": [
           {
-            "q": "Foram prescritos três medicamentos a um paciente: medicamento A de $3\\text{ em } 3\\text{ horas}$, B de $4\\text{ em } 4\\text{ horas}$ e C de $6\\text{ em } 6\\text{ horas}$. Se o paciente tomou os três juntos às $8\\text{ horas da manhã}$, o próximo horário em que tomará os três simultaneamente será às:",
+            "q": "Em uma consulta médica, foram prescritos ao paciente três medicamentos diferentes que devem ser ingeridos de acordo com o seguinte intervalo de tempo: o medicamento A deve ser ingerido de $3$ em $3\\text{ horas}$; o medicamento B deve ser ingerido de $4$ em $4\\text{ horas}$ e o medicamento C deve ser ingerido de $6$ em $6\\text{ horas}$. Considere que o paciente iniciou o tratamento às $8\\text{ horas}$ da manhã, ingerindo os três tipos de medicamento simultaneamente. Neste mesmo dia, o próximo horário em que os três medicamentos serão ingeridos de forma simultânea será às:",
+            "image": null,
             "options": [
-              "$12\\text{ horas}$",
-              "$15\\text{ horas}$",
-              "$18\\text{ horas}$",
-              "$20\\text{ horas}$",
-              "$24\\text{ horas}$"
+              "$12\\text{ horas.}$",
+              "$15\\text{ horas.}$",
+              "$18\\text{ horas.}$",
+              "$20\\text{ horas.}$",
+              "$24\\text{ horas.}$"
             ],
             "correct": 3,
-            "explanation": "Calculamos o $MMC(3, 4, 6) = 12\\text{ horas}$. Somando ao horário inicial: $8\\text{h} + 12\\text{h} = 20\\text{ horas}$.",
             "bncc": "EF07MA01",
-            "bnccDesc": "Resolver e elaborar problemas com números naturais, envolvendo as noções de divisor e de múltiplo, podendo incluir máximo divisor comum ou mínimo múltiplo comum, por meio de estratégias diversas, sem a aplicação de algoritmos.",
+            "bnccDesc": "Resolver e elaborar problemas com números naturais, envolvendo as noções de divisor e múltiplo, podendo incluir máximo divisor comum ou mínimo múltiplo comum, por meio de estratégias diversas, sem a aplicação de algoritmos.",
             "unidadeTematica": "Números",
             "anoEscolar": "7º ano",
-            "topicoId": "b1-t3"
+            "topicoId": "b1-t1",
+            "explanation": "1. <strong>Cálculo do intervalo de simultaneidade (MMC):</strong><br>O tempo para que os três remédios coincidam novamente é dado pelo Mínimo Múltiplo Comum dos intervalos de $3$, $4$ e $6$ horas:<br>• $3 = 3$<br>• $4 = 2^2$<br>• $6 = 2 \\times 3$<br>$$\\text{MMC}(3, 4, 6) = 2^2 \\times 3 = 12\\text{ horas}$$<br>2. <strong>Determinação do próximo horário:</strong><br>Como o paciente iniciou o tratamento às $8\\text{h}$ da manhã:<br>$$8\\text{h} + 12\\text{h} = 20\\text{ horas}$$<br>Portanto, o próximo horário de ingestão simultânea será às $20\\text{ horas}$, correspondendo à <strong>Alternativa D</strong>."
           },
           {
-            "q": "Considere a equação do 2º grau $3x^2 - 7x + 2 = 0$. Sobre as raízes dessa equação, pode-se afirmar que:",
+            "q": "Equações no formato $ax^2 + bx + c = 0$ são conhecidas como Equações de 2º grau e suas raízes podem ser obtidas por meio do método resolutivo dado por:\n$$x = \\frac{-b \\pm \\sqrt{b^2 - 4ac}}{2a}$$\nConsidere a equação $3x^2 - 7x + 2 = 0$. Sobre as raízes dessa equação, pode-se afirmar:",
+            "image": null,
             "options": [
               "A equação não possui raízes reais.",
               "O produto das raízes dessa equação é uma dízima periódica.",
@@ -4317,88 +4378,96 @@ var mathData = window.mathData || {
               "As raízes dessa equação são números inteiros."
             ],
             "correct": 1,
-            "explanation": "Pelas relações de Girard, o produto das raízes é $P = \\frac{c}{a} = \\frac{2}{3} = 0{,}6666\\dots$, que é uma dízima periódica simples.",
             "bncc": "EF09MA09",
             "bnccDesc": "Compreender os processos de fatoração de expressões algébricas, com base em suas relações com os produtos notáveis, para resolver e elaborar problemas que possam ser representados por equações polinomiais do 2º grau.",
             "unidadeTematica": "Álgebra",
             "anoEscolar": "9º ano",
-            "topicoId": "b2-t4"
+            "topicoId": "b2-t2",
+            "explanation": "1. <strong>Identificação dos coeficientes e cálculo das raízes:</strong><br>Na equação $3x^2 - 7x + 2 = 0$, temos $a = 3$, $b = -7$ e $c = 2$.<br>$$\\Delta = (-7)^2 - 4(3)(2) = 49 - 24 = 25$$<br>$$x = \\frac{-(-7) \\pm \\sqrt{25}}{2(3)} = \\frac{7 \\pm 5}{6}$$<br>As duas raízes reais são:<br>$$x_1 = \\frac{7 + 5}{6} = \\frac{12}{6} = 2 \\quad \\text{e} \\quad x_2 = \\frac{7 - 5}{6} = \\frac{2}{6} = \\frac{1}{3}$$<br>2. <strong>Análise do produto das raízes:</strong><br>Pelas relações de Girard (ou multiplicando diretamente as raízes):<br>$$P = x_1 \\cdot x_2 = 2 \\cdot \\frac{1}{3} = \\frac{2}{3} = 0{,}6666\\dots$$<br>O valor $\\frac{2}{3}$ é uma <strong>dízima periódica simples</strong>.<br>Portanto, a alternativa correta é a <strong>Alternativa B</strong>."
           },
           {
-            "q": "A Imagem III representa uma peça quadrada de cerâmica de $1\\text{ m}$ de lado. A área da peça é predominantemente branca, mas ela possui um detalhe em cinza, onde uma tinta especial foi aplicada. O triângulo EBF é isósceles e seus lados congruentes medem $30\\text{ cm}$. Qual é a área correspondente ao quadrilátero AEFC, onde a tinta especial foi aplicada?",
+            "q": "A Imagem III representa uma peça quadrada de cerâmica de $1\\text{ m}$ de lado. A área da peça é predominantemente branca, mas ela possui um detalhe em cinza, onde uma tinta especial foi aplicada. O triângulo $EBF$ é isósceles e seus lados congruentes medem $30\\text{ cm}$. Qual é a área correspondente ao quadrilátero $AEFC$, onde a tinta especial foi aplicada?",
+            "image": {
+              "src": "assets/img/questoes/ifsc/ifsc-2024-2-q03.png",
+              "alt": "Peça quadrada de cerâmica ABCD de 1 m de lado, com o triângulo ABC formado pela diagonal AC, e um triângulo retângulo isósceles EBF em cinza claro no vértice B com lados de 30 cm, destacando o quadrilátero cinza AEFC.",
+              "caption": "Imagem III: Detalhe decorativo na peça de cerâmica quadrada (IFSC 2024.2)"
+            },
             "options": [
-              "$455\\text{ cm}^2$",
-              "$500\\text{ cm}^2$",
-              "$2.550\\text{ cm}^2$",
-              "$4.100\\text{ cm}^2$",
-              "$4.550\\text{ cm}^2$"
+              "$455\\text{ cm}^2.$",
+              "$500\\text{ cm}^2.$",
+              "$2.550\\text{ cm}^2.$",
+              "$4.100\\text{ cm}^2.$",
+              "$4.550\\text{ cm}^2.$"
             ],
             "correct": 4,
-            "explanation": "A peça quadrada de cerâmica tem lado de $1\\text{ m} = 100\\text{ cm}$. A diagonal AC divide o quadrado em dois triângulos de área $\\frac{100 \\times 100}{2} = 5.000\\text{ cm}^2$. A área do triângulo retângulo isósceles branco EBF no canto inferior é $\\frac{30 \\times 30}{2} = 450\\text{ cm}^2$. A área sombreada do quadrilátero AEFC é a área do triângulo ABC menos a área do triângulo EBF: $5.000 - 450 = 4.550\\text{ cm}^2$.",
             "bncc": "EF08MA19",
-            "bnccDesc": "Resolver e elaborar problemas que envolvam medidas de área de figuras geométricas, utilizando expressões de cálculo de área (quadriláteros, triângulos e círculos), em situações como determinar medida de terrenos.",
-            "unidadeTematica": "Grandezas e Medidas",
+            "bnccDesc": "Resolver e elaborar problemas que envolvam medidas de área de figuras geométricas, utilizando expressões de cálculo de área (quadriláteros, triângulos e círculos), em situações como determinar medida do terreno, número de lajotas para piso etc.",
+            "unidadeTematica": "Grandezas e medidas",
             "anoEscolar": "8º ano",
-            "topicoId": "b4-t1",
-            "image": {
-              "src": "https://drive.google.com/file/d/1K4aWmtrBJV9sJVo6JODVaMbDqoRxjBXj/view?usp=sharing",
-              "alt": "Peça quadrada ABCD de cerâmica com detalhe sombreado em cinza no quadrilátero AEFC e triângulo retângulo isósceles branco EBF no canto inferior esquerdo.",
-              "caption": "Imagem III: Peça quadrada de cerâmica com detalhe geométrico em cinza (IFSC 2024.2)"
-            }
+            "topicoId": "b3-t2",
+            "explanation": "1. <strong>Área do triângulo $ABC$:</strong><br>O lado do quadrado mede $1\\text{ m} = 100\\text{ cm}$. A diagonal $AC$ divide o quadrado de $100\\text{ cm} \\times 100\\text{ cm}$ ao meio:<br>$$A_{ABC} = \\frac{100 \\times 100}{2} = 5.000\\text{ cm}^2$$<br>2. <strong>Área do triângulo branco não pintado $EBF$:</strong><br>Como $EBF$ é retângulo em $B$ e isósceles com catetos de $30\\text{ cm}$:<br>$$A_{EBF} = \\frac{30 \\times 30}{2} = \\frac{900}{2} = 450\\text{ cm}^2$$<br>3. <strong>Área do quadrilátero $AEFC$:</strong><br>$$A_{AEFC} = A_{ABC} - A_{EBF} = 5.000 - 450 = 4.550\\text{ cm}^2$$<br>Portanto, a área correspondente é de $4.550\\text{ cm}^2$, correspondendo à <strong>Alternativa E</strong>."
           },
           {
-            "q": "Dois navios partem do Porto de Itajaí no mesmo instante, em direções perpendiculares e com velocidades iguais e constantes. Após $30\\text{ minutos}$, a distância entre eles é de $5\\sqrt{2}\\text{ km}$. A que distância do porto os navios estavam após $30\\text{ minutos}$?",
+            "q": "O Porto de Itajaí é um importante complexo portuário brasileiro. Considere que dois navios carregados de contêineres partiram, no mesmo instante, do Porto de Itajaí em direções perpendiculares e com velocidades iguais e constantes. Trinta minutos após a partida, a menor distância entre os dois navios era de $5\\sqrt{2}\\text{ km}$. Determine a que distância os navios estavam do Porto de Itajaí após trinta minutos da sua partida:",
+            "image": null,
             "options": [
-              "$5\\text{ km}$",
-              "$10\\text{ km}$",
-              "$15\\text{ km}$",
-              "$20\\text{ km}$",
-              "$25\\text{ km}$"
+              "$5\\text{ km.}$",
+              "$10\\text{ km.}$",
+              "$15\\text{ km.}$",
+              "$20\\text{ km.}$",
+              "$25\\text{ km.}$"
             ],
             "correct": 0,
-            "explanation": "Sendo $d$ a distância percorrida por cada navio: $d^2 + d^2 = (5\\sqrt{2})^2 \\Rightarrow 2d^2 = 50 \\Rightarrow d^2 = 25 \\Rightarrow d = 5\\text{ km}$.",
-            "bncc": "EF06MA24",
-            "bnccDesc": "Resolver e elaborar problemas que envolvam as grandezas comprimento, massa, tempo, temperatura, área (triângulos e retângulos), capacidade e volume (sólidos formados por blocos retangulares), sem uso de fórmulas, inseridos, sempre que possível, em contextos oriundos de situações reais e/ou relacionadas às outras áreas do conhecimento.",
-            "unidadeTematica": "Grandezas e Medidas",
-            "anoEscolar": "6º ano",
-            "topicoId": "b4-t2"
+            "bncc": "EF09MA14",
+            "bnccDesc": "Resolver e elaborar problemas de aplicação do teorema de Pitágoras ou das relações de proporcionalidade envolvendo triângulos retângulos.",
+            "unidadeTematica": "Geometria",
+            "anoEscolar": "9º ano",
+            "topicoId": "b3-t1",
+            "explanation": "Seja $d$ a distância de cada um dos navios ao porto decorridos $30\\text{ minutos}$.<br><br>1. <strong>Aplicação do Teorema de Pitágoras:</strong><br>Como as trajetórias são perpendiculares e as velocidades são iguais, as posições dos dois navios e o porto formam um triângulo retângulo isósceles com catetos iguais a $d$ e hipotenusa igual à distância entre eles ($5\\sqrt{2}\\text{ km}$):<br>$$d^2 + d^2 = (5\\sqrt{2})^2$$<br>$$2d^2 = 25 \\times 2 = 50$$<br>$$d^2 = 25 \\implies d = \\sqrt{25} = 5\\text{ km}$$<br>Portanto, os navios estavam a $5\\text{ km}$ do porto, correspondendo à <strong>Alternativa A</strong>."
           },
           {
-            "q": "Em 1938 foi encontrado o maior diamante brasileiro com massa bruta de $727\\text{ quilates}$. Sabendo que $1\\text{ quilate} = 0{,}2\\text{ grama}$, a massa do diamante em notação científica é:",
+            "q": "Em 1938, foi encontrado o maior diamante brasileiro em Minas Gerais. Sua massa aproximada era de $727\\text{ quilates}$ (em seu estado bruto). O quilate é uma unidade de medida comumente usada para expressar a massa de pedras preciosas e equivale a $0{,}2\\text{ grama}$. Com base nessas informações, podemos afirmar que a massa do diamante bruto, em gramas, era de:",
+            "image": null,
             "options": [
-              "$1{,}454 \\cdot 10^2\\text{ g}$",
-              "$1{,}626 \\cdot 10^3\\text{ g}$",
-              "$2{,}452 \\cdot 10^2\\text{ g}$",
-              "$3{,}637 \\cdot 10^3\\text{ g}$",
-              "$7{,}271 \\cdot 10^2\\text{ g}$"
+              "$1{,}454 \\cdot 10^2\\text{ gramas.}$",
+              "$1{,}626 \\cdot 10^3\\text{ gramas.}$",
+              "$2{,}452 \\cdot 10^2\\text{ gramas.}$",
+              "$3{,}637 \\cdot 10^3\\text{ gramas.}$",
+              "$7{,}271 \\cdot 10^2\\text{ gramas.}$"
             ],
             "correct": 0,
-            "explanation": "Massa em gramas: $727 \\times 0{,}2 = 145{,}4\\text{ g}$. Em notação científica: $1{,}454 \\times 10^2\\text{ gramas}$.",
-            "bncc": "EF06MA24",
-            "bnccDesc": "Resolver e elaborar problemas que envolvam as grandezas comprimento, massa, tempo, temperatura, área (triângulos e retângulos), capacidade e volume (sólidos formados por blocos retangulares), sem uso de fórmulas, inseridos, sempre que possível, em contextos oriundos de situações reais e/ou relacionadas às outras áreas do conhecimento.",
-            "unidadeTematica": "Grandezas e Medidas",
-            "anoEscolar": "6º ano",
-            "topicoId": "b4-t2"
+            "bncc": "EF08MA01",
+            "bnccDesc": "Efetuar cálculos com potências de expoentes inteiros e aplicar esse conhecimento na representação de números em notação científica.",
+            "unidadeTematica": "Números",
+            "anoEscolar": "8º ano",
+            "topicoId": "b1-t1",
+            "explanation": "1. <strong>Conversão de quilates para gramas:</strong><br>$$M = 727 \\times 0{,}2\\text{ g} = 145{,}4\\text{ gramas}$$<br>2. <strong>Representação em notação científica:</strong><br>Deslocando a vírgula duas casas para a esquerda:<br>$$145{,}4 = 1{,}454 \\times 10^2\\text{ gramas}$$<br>Portanto, a alternativa correta é a <strong>Alternativa A</strong>."
           },
           {
-            "q": "Na regra de orçamento 50-35-15, $35\\%$ do salário deve ser destinado a gastos pessoais. Um indivíduo gastou exatamente $\\text{R\\$} 903{,}00$ nessa categoria. Seu salário total é:",
+            "q": "De acordo com a 'Regra dos 50-35-15' de Educação Financeira, $50\\%$ do salário deve ser direcionado às contas fixas essenciais, $35\\%$ para gastos pessoais (lazer, cursos, viagens) e $15\\%$ para investimentos e reserva. Em um determinado mês, um indivíduo seguiu essa regra fielmente, gastando exatos $\\text{R\\$} 903{,}00$ com os gastos pessoais. Dessa forma, podemos concluir que o salário do indivíduo nesse mês foi de:",
+            "image": null,
             "options": [
-              "$\\text{R\\$} 387{,}00$",
-              "$\\text{R\\$} 1.290{,}00$",
-              "$\\text{R\\$} 1.806{,}00$",
-              "$\\text{R\\$} 2.580{,}00$",
-              "$\\text{R\\$} 3.160{,}00$"
+              "$\\text{R\\$} 387{,}00.$",
+              "$\\text{R\\$} 1.290{,}00.$",
+              "$\\text{R\\$} 1.806{,}00.$",
+              "$\\text{R\\$} 2.580{,}00.$",
+              "$\\text{R\\$} 3.160{,}00.$"
             ],
             "correct": 3,
-            "explanation": "Salário total $S = \\frac{903}{0{,}35} = \\text{R\\$} 2.580,00$.",
             "bncc": "EF08MA04",
             "bnccDesc": "Resolver e elaborar problemas, envolvendo cálculo de porcentagens, incluindo o uso de tecnologias digitais.",
             "unidadeTematica": "Números",
             "anoEscolar": "8º ano",
-            "topicoId": "b1-t6"
+            "topicoId": "b1-t2",
+            "explanation": "Seja $S$ o valor do salário total do indivíduo.<br>Como os gastos pessoais correspondem a $35\\%$ de $S$:<br>$$0{,}35 \\cdot S = 903{,}00$$<br>$$S = \\frac{903}{0{,}35} = \\frac{90300}{35}$$<br>Efetuando a divisão:<br>$$90300 \\div 35 = 2580$$<br>Portanto, o salário do indivíduo nesse mês foi de $\\text{R\\$} 2.580{,}00$, correspondendo à <strong>Alternativa D</strong>."
           },
           {
-            "q": "A Imagem IV apresenta um gráfico comparativo que traz informações sobre o número de casos de dengue no Brasil, considerando casos prováveis e casos confirmados, nas primeiras cinco semanas dos anos de 2023 e de 2024. Com base nesse gráfico, analise as informações abaixo:\n\nI. O Brasil registrou nas quatro primeiras semanas de 2024 mais de 300 mil casos de dengue.\nII. Em relação às cinco primeiras semanas do ano de 2023, o número total de casos de dengue nas cinco primeiras semanas de 2024 mais que triplicou.\nIII. O número de casos de dengue aumentou semana após semana, considerando as cinco primeiras semanas de 2024.\nIV. Na Semana 3 de 2024, o número de casos de dengue representa, aproximadamente, 500% dos casos de dengue registrados na Semana 3 de 2023.\n\nAssinale a alternativa CORRETA:",
+            "q": "A Imagem IV apresenta um gráfico comparativo sobre o número de casos de dengue no Brasil nas primeiras cinco semanas dos anos de 2023 e de 2024. Com base no gráfico, analise as afirmações abaixo:\nI. O Brasil registrou nas quatro primeiras semanas de 2024 mais de $300\\text{ mil}$ casos de dengue.\nII. Em relação às cinco primeiras semanas de 2023, o número total de casos de dengue nas cinco primeiras semanas de 2024 mais que triplicou.\nIII. O número de casos de dengue aumentou semana após semana, considerando as cinco primeiras semanas de 2024.\nIV. Na Semana 3 de 2024, o número de casos de dengue representa, aproximadamente, $500\\%$ dos casos registrados na Semana 3 de 2023.\n\nAssinale a alternativa CORRETA:",
+            "image": {
+              "src": "assets/img/questoes/ifsc/ifsc-2024-2-q07.png",
+              "alt": "Gráfico de barras duplas comparando casos prováveis e confirmados de dengue nas semanas 1 a 5 de 2023 e 2024: Semana 1 (12.643 em 2023 vs 53.354 em 2024), Semana 2 (14.158 vs 65.860), Semana 3 (17.951 vs 90.532), Semana 4 (20.614 vs 105.875) e Semana 5 (27.932 vs 49.234).",
+              "caption": "Imagem IV: Casos prováveis e confirmados de dengue (2023-2024) (IFSC 2024.2)"
+            },
             "options": [
               "Apenas o item I está correto.",
               "Apenas os itens I e II estão corretos.",
@@ -4407,17 +4476,12 @@ var mathData = window.mathData || {
               "Todos os itens estão corretos."
             ],
             "correct": 3,
-            "explanation": "1. <strong>Item I (Verdadeiro):</strong><br>Soma dos casos nas 4 primeiras semanas de 2024:<br>$$53.354 + 65.860 + 90.532 + 105.875 = 315.621\\text{ casos}$$<br>Como $315.621 > 300.000$, o item I está correto.<br><br>2. <strong>Item II (Verdadeiro):</strong><br>Total nas 5 primeiras semanas de 2023:<br>$$12.643 + 14.158 + 17.951 + 20.614 + 27.932 = 93.298\\text{ casos}$$<br>Total nas 5 primeiras semanas de 2024:<br>$$315.621 + 49.234 = 364.855\\text{ casos}$$<br>O triplo de 2023 seria $3 \\times 93.298 = 279.894$. Como $364.855 > 279.894$ ($\\frac{364.855}{93.298} \\approx 3{,}91$), o total de casos mais que triplicou. O item II está correto.<br><br>3. <strong>Item III (Falso):</strong><br>Na semana 5 de 2024 foram registrados $49.234$ casos, valor inferior ao da semana 4 ($105.875$ casos). Logo, os casos não aumentaram semana após semana durante todo o período.<br><br>4. <strong>Item IV (Verdadeiro):</strong><br>Na semana 3: $90.532$ casos (2024) e $17.951$ casos (2023). A razão é:<br>$$\\frac{90.532}{17.951} \\approx 5{,}043 = 504{,}3\\% \\approx 500\\%$$<br>Logo, o item IV está correto.<br><br>Conclusão: Apenas os itens I, II e IV estão corretos.<br>Portanto, a alternativa correta é a <strong>Letra D</strong>.",
-            "bncc": "EF08MA23",
-            "bnccDesc": "Avaliar a adequação de diferentes tipos de gráficos para representar um conjunto de dados de uma pesquisa ou divulgar informações de interesse público.",
-            "unidadeTematica": "Probabilidade e Estatística",
-            "anoEscolar": "8º ano",
-            "topicoId": "b4-t4",
-            "image": {
-              "src": "https://drive.google.com/file/d/10IiUk-t8tzvplI2gLOLhEGm6VCj6qaXA/view?usp=sharing",
-              "alt": "Gráfico de barras duplas comparativo dos casos prováveis e confirmados de dengue no Brasil nas semanas 1 a 5 dos anos de 2023 e 2024",
-              "caption": "Imagem IV: Gráfico comparativo de casos prováveis e confirmados de dengue 2023-2024 (IFSC 2024.2)"
-            }
+            "bncc": "EF07MA37",
+            "bnccDesc": "Interpretar e analisar dados apresentados em gráficos de colunas, setores ou linhas, para tomada de decisões e conclusões.",
+            "unidadeTematica": "Probabilidade e estatística",
+            "anoEscolar": "7º ano",
+            "topicoId": "b4-t2",
+            "explanation": "Análise das afirmações com base nos dados do gráfico:<br><br>• <strong>Item I (Verdadeiro):</strong> Soma das quatro primeiras semanas de 2024:<br>$$53.354 + 65.860 + 90.532 + 105.875 = 315.621 > 300.000$$<br>• <strong>Item II (Verdadeiro):</strong><br>Total das 5 primeiras semanas de 2023: $12.643 + 14.158 + 17.951 + 20.614 + 27.932 = 93.298$.<br>Total das 5 primeiras semanas de 2024: $315.621 + 49.234 = 364.855$.<br>Como $3 \\times 93.298 = 279.894 < 364.855$, o total de 2024 mais que triplicou.<br>• <strong>Item III (Falso):</strong> Na Semana 5 de 2024 houve queda para $49.234$ casos (em relação aos $105.875$ da Semana 4). Logo, o número não aumentou semana após semana.<br>• <strong>Item IV (Verdadeiro):</strong> Razão na Semana 3:<br>$$\\frac{90.532}{17.951} \\approx 5{,}043 = 504{,}3\\% \\approx 500\\%$$<br>Estão corretos os itens I, II e IV. Portanto, a alternativa correta é a <strong>Alternativa D</strong>."
           }
         ],
         "slug": "prova-ifsc-20242",
@@ -4445,92 +4509,102 @@ var mathData = window.mathData || {
         },
         "questions": [
           {
-            "q": "Ana percorreu os $50\\text{ km}$ do Contorno Viário da Grande Florianópolis a uma velocidade média constante de $80\\text{ km/h}$. O tempo gasto no percurso foi de:",
+            "q": "O contorno viário da Grande Florianópolis tem $50\\text{ quilômetros}$ de extensão e suas principais interligações com a rodovia BR-101 são: Acesso Norte no $\\text{km } 177$ e Acesso Sul no $\\text{km } 220$. Ana mora em Palhoça e percorreu o contorno viário a partir do Acesso Sul até o Acesso Norte. Para retornar à sua casa, Ana utilizou a BR-101 do $\\text{km } 177$ até a sua saída no $\\text{km } 220$. Qual é a distância total percorrida por Ana em seu trajeto de ida e volta?",
+            "image": null,
             "options": [
-              "$37\\text{ min } 30\\text{ s}$",
-              "$40\\text{ min}$",
-              "$35\\text{ min}$",
-              "$45\\text{ min}$",
-              "$30\\text{ min}$"
+              "$93\\text{ km}$",
+              "$74\\text{ km}$",
+              "$57\\text{ km}$",
+              "$50\\text{ km}$",
+              "$43\\text{ km}$"
             ],
             "correct": 0,
-            "explanation": "Tempo: $t = \\frac{50}{80} = 0{,}625\\text{ horas} = 0{,}625 \\times 60\\text{ min} = 37{,}5\\text{ minutos} = 37\\text{ min } 30\\text{ s}$.",
             "bncc": "EF06MA24",
-            "bnccDesc": "Resolver e elaborar problemas que envolvam as grandezas comprimento, massa, tempo, temperatura, área (triângulos e retângulos), capacidade e volume (sólidos formados por blocos retangulares), sem uso de fórmulas, inseridos, sempre que possível, em contextos oriundos de situações reais e/ou relacionadas às outras áreas do conhecimento.",
-            "unidadeTematica": "Grandezas e Medidas",
+            "bnccDesc": "Resolver e elaborar problemas que envolvam as grandezas comprimento, massa, tempo, temperatura, área (triângulos e retângulos), capacidade e volume (de sólidos formados por blocos retangulares), sem uso de fórmulas, inseridos, sempre que possível, em contextos oriundos de situações reais e/ou relacionadas às outras áreas do conhecimento.",
+            "unidadeTematica": "Grandezas e medidas",
             "anoEscolar": "6º ano",
-            "topicoId": "b4-t2"
+            "topicoId": "b3-t2",
+            "explanation": "1. <strong>Trajeto de ida (pelo contorno viário):</strong><br>Extensão de $50\\text{ km}$.<br><br>2. <strong>Trajeto de volta (pela rodovia BR-101):</strong><br>Do $\\text{km } 177$ ao $\\text{km } 220$:<br>$$D_{\\text{volta}} = 220 - 177 = 43\\text{ km}$$<br>3. <strong>Distância total (ida e volta):</strong><br>$$D_{\\text{total}} = 50 + 43 = 93\\text{ km}$$<br>Portanto, a distância total percorrida é de $93\\text{ km}$, correspondendo à <strong>Alternativa A</strong>."
           },
           {
-            "q": "Em um hospital, de $1.200$ internações pediátricas no ano, $35\\%$ foram de crianças menores de um ano com doenças respiratórias. O total estimado dessas internações é:",
+            "q": "No ano de 2022, foram internadas $13.890\\text{ crianças}$ menores de um ano por doenças respiratórias na região Norte. Em 2023, houve um aumento de aproximadamente $20\\%$ nas internações desse público. Estima-se que, no ano de 2024, o avanço das queimadas provocará um novo aumento de $20\\%$ no número de internações em relação a 2023. Qual a estimativa aproximada do número de internações dessas crianças em 2024?",
+            "image": null,
             "options": [
-              "$420$",
-              "$380$",
-              "$450$",
-              "$360$",
-              "$400$"
+              "$17.000\\text{ internações}$",
+              "$18.000\\text{ internações}$",
+              "$19.000\\text{ internações}$",
+              "$20.000\\text{ internações}$",
+              "$21.000\\text{ internações}$"
             ],
-            "correct": 0,
-            "explanation": "$35\\%$ de $1.200 = 0{,}35 \\times 1200 = 420$ internações.",
+            "correct": 3,
             "bncc": "EF08MA04",
             "bnccDesc": "Resolver e elaborar problemas, envolvendo cálculo de porcentagens, incluindo o uso de tecnologias digitais.",
             "unidadeTematica": "Números",
             "anoEscolar": "8º ano",
-            "topicoId": "b1-t6"
+            "topicoId": "b1-t2",
+            "explanation": "Trata-se de dois aumentos percentuais sucessivos de $20\\%$:<br><br>1. <strong>Internações em 2023:</strong><br>$$I_{2023} = 13.890 \\times (1 + 0{,}20) = 13.890 \\times 1{,}20 = 16.668\\text{ internações}$$<br>2. <strong>Estimativa para 2024:</strong><br>$$I_{2024} = 16.668 \\times 1{,}20 = 20.001{,}6 \\approx 20.000\\text{ internações}$$<br>Portanto, a estimativa aproximada é de $20.000\\text{ internações}$, correspondendo à <strong>Alternativa D</strong>."
           },
           {
-            "q": "Em Santa Catarina, foram registrados $150.000$ casos de dengue em uma população de $7{,}5\\text{ milhões}$ de habitantes. A taxa de incidência por $100\\text{ mil}$ habitantes é:",
+            "q": "Para o combate à dengue, agentes de saúde realizam a pulverização de inseticida. Considere que $3\\text{ pessoas}$, cada uma usando um reservatório com capacidade de $8\\text{ litros}$ do produto, conseguem pulverizar $100\\text{ imóveis}$ em um dia. Quantos imóveis podem ser pulverizados em um dia, se tivermos $5\\text{ pessoas}$ aplicando o produto com reservatórios de $6\\text{ litros}$ cada?",
+            "image": null,
             "options": [
-              "$2.000$",
-              "$1.500$",
-              "$2.500$",
-              "$3.000$",
-              "$1.800$"
+              "$45\\text{ imóveis}$",
+              "$80\\text{ imóveis}$",
+              "$125\\text{ imóveis}$",
+              "$222\\text{ imóveis}$",
+              "$320\\text{ imóveis}$"
             ],
-            "correct": 0,
-            "explanation": "Taxa por habitante: $\\frac{150.000}{7.500.000} = 0{,}02$. Por $100\\text{ mil}$ habitantes: $0{,}02 \\times 100.000 = 2.000$ casos por 100 mil habitantes.",
-            "bncc": "EF07MA18",
-            "bnccDesc": "Resolver e elaborar problemas que possam ser representados por equações polinomiais de 1º grau, redutíveis à forma ax + b = c, fazendo uso das propriedades da igualdade.",
+            "correct": 2,
+            "bncc": "EF07MA17",
+            "bnccDesc": "Resolver e elaborar problemas que envolvam variação de proporcionalidade direta e do tipo inverso entre duas grandezas, inclusive escalas, divisão em partes proporcionais e taxa de variação, em contextos socioculturais, ambientais e de outras áreas.",
             "unidadeTematica": "Álgebra",
             "anoEscolar": "7º ano",
-            "topicoId": "b2-t3"
+            "topicoId": "b1-t2",
+            "explanation": "1. <strong>Volume total no 1º cenário:</strong><br>$$V_1 = 3 \\times 8\\text{ L} = 24\\text{ litros} \\implies 100\\text{ imóveis}$$<br>2. <strong>Volume total no 2º cenário:</strong><br>$$V_2 = 5 \\times 6\\text{ L} = 30\\text{ litros} \\implies x\\text{ imóveis}$$<br>3. <strong>Proporcionalidade direta:</strong><br>$$\\frac{100}{x} = \\frac{24}{30} = \\frac{4}{5}$$<br>$$4x = 500 \\implies x = \\frac{500}{4} = 125\\text{ imóveis}$$<br>Portanto, podem ser pulverizados $125\\text{ imóveis}$, correspondendo à <strong>Alternativa C</strong>."
           },
           {
-            "q": "Sabendo que a gasolina custa $\\text{R\\$} 5{,}80$ o litro e o etanol $\\text{R\\$} 3{,}90$ o litro, a razão entre o preço do etanol e da gasolina é aproximadamente:",
+            "q": "O motor do carro flex funciona tanto com etanol quanto com gasolina. Do ponto de vista financeiro, o etanol torna-se vantajoso quando comercializado, no mínimo, $30\\%$ abaixo do preço da gasolina comum (ou seja, $\\le 70\\%$ do preço da gasolina). O quadro apresenta os preços médios por litro registrados pela ANP:\n• Curitiba: Etanol $\\text{R\\$} 4{,}44$ | Gasolina $\\text{R\\$} 6{,}23$\n• Florianópolis: Etanol $\\text{R\\$} 4{,}65$ | Gasolina $\\text{R\\$} 5{,}95$\n• Porto Alegre: Etanol $\\text{R\\$} 4{,}71$ | Gasolina $\\text{R\\$} 6{,}05$\n• São Paulo: Etanol $\\text{R\\$} 3{,}89$ | Gasolina $\\text{R\\$} 5{,}92$\n• Goiânia: Etanol $\\text{R\\$} 3{,}72$ | Gasolina $\\text{R\\$} 5{,}85$\n\nPara os proprietários de um carro flex, foi financeiramente vantajoso abastecer com etanol nas capitais:",
+            "image": null,
             "options": [
-              "$67{,}2\\%$",
-              "$72{,}5\\%$",
-              "$65{,}0\\%$",
-              "$70{,}0\\%$",
-              "$68{,}5\\%$"
+              "Curitiba e São Paulo.",
+              "Goiânia e São Paulo.",
+              "Florianópolis e Curitiba.",
+              "Porto Alegre e Goiânia.",
+              "Curitiba e Porto Alegre."
             ],
-            "correct": 0,
-            "explanation": "Razão: $\\frac{3{,}90}{5{,}80} \\approx 0{,}6724 = 67{,}24\\%$. Como está abaixo de $70\\%$, o etanol é vantajoso.",
+            "correct": 1,
             "bncc": "EF08MA04",
             "bnccDesc": "Resolver e elaborar problemas, envolvendo cálculo de porcentagens, incluindo o uso de tecnologias digitais.",
             "unidadeTematica": "Números",
             "anoEscolar": "8º ano",
-            "topicoId": "b1-t6"
+            "topicoId": "b1-t2",
+            "explanation": "Calculamos o limite de $70\\%$ ($0{,}70$) do preço da gasolina para cada capital:<br><br>• <strong>Curitiba:</strong> $0{,}70 \\times 6{,}23 = \\text{R\\$} 4{,}361$. Como $4{,}44 > 4{,}361$, não é vantajoso.<br>• <strong>Florianópolis:</strong> $0{,}70 \\times 5{,}95 = \\text{R\\$} 4{,}165$. Como $4{,}65 > 4{,}165$, não é vantajoso.<br>• <strong>Porto Alegre:</strong> $0{,}70 \\times 6{,}05 = \\text{R\\$} 4{,}235$. Como $4{,}71 > 4{,}235$, não é vantajoso.<br>• <strong>São Paulo:</strong> $0{,}70 \\times 5{,}92 = \\text{R\\$} 4{,}144$. Como $3{,}89 \\le 4{,}144$, é <strong>vantajoso</strong>!<br>• <strong>Goiânia:</strong> $0{,}70 \\times 5{,}85 = \\text{R\\$} 4{,}095$. Como $3{,}72 \\le 4{,}095$, é <strong>vantajoso</strong>!<br><br>Portanto, foi vantajoso em Goiânia e São Paulo, correspondendo à <strong>Alternativa B</strong>."
           },
           {
-            "q": "Um carrinho de mão cheio de adubo pesa $24\\text{ kg}$. Após utilizar $\\frac{2}{3}$ do adubo, o carrinho com o restante do adubo pesa $12\\text{ kg}$. A massa do carrinho de mão vazio é:",
+            "q": "Colocando um carrinho de mão cheio de adubo sobre uma balança, verifica-se que a massa total é de $24\\text{ kg}$. Em uma horta doméstica, foi aplicado $\\frac{1}{3}$ da massa do adubo. Após essa aplicação, o carrinho com o adubo restante é recolocado na balança e se constata que a massa total é de $19\\text{ kg}$. A massa do carrinho de mão vazio e a massa do adubo que estava nele inicialmente são, respectivamente, iguais a:",
+            "image": null,
             "options": [
-              "$6\\text{ kg}$",
-              "$4\\text{ kg}$",
-              "$5\\text{ kg}$",
-              "$8\\text{ kg}$",
-              "$7\\text{ kg}$"
+              "$7{,}5\\text{ kg}$ e $16{,}5\\text{ kg}$",
+              "$8\\text{ kg}$ e $16\\text{ kg}$",
+              "$9\\text{ kg}$ e $15\\text{ kg}$",
+              "$10\\text{ kg}$ e $14\\text{ kg}$",
+              "$12\\text{ kg}$ e $12\\text{ kg}$"
             ],
-            "correct": 0,
-            "explanation": "Os $\\frac{2}{3}$ de adubo utilizados pesam $24 - 12 = 12\\text{ kg}$. Logo, todo o adubo pesa $12 \\div \\frac{2}{3} = 18\\text{ kg}$. A massa do carrinho vazio é $24 - 18 = 6\\text{ kg}$.",
-            "bncc": "EF06MA10",
-            "bnccDesc": "Resolver e elaborar problemas que envolvam adição ou subtração com números racionais positivos na representação fracionária.",
-            "unidadeTematica": "Números",
-            "anoEscolar": "6º ano",
-            "topicoId": "b1-t5"
+            "correct": 2,
+            "bncc": "EF08MA08",
+            "bnccDesc": "Resolver e elaborar problemas relacionados ao seu contexto próximo, que possam ser representados por sistemas de equações de 1º grau com duas incógnitas e interpretá-los, caracterizando, inclusive, a multiplicidade de soluções que podem ocorrer.",
+            "unidadeTematica": "Álgebra",
+            "anoEscolar": "8º ano",
+            "topicoId": "b2-t1",
+            "explanation": "Sejam $C$ a massa do carrinho vazio e $A$ a massa inicial do adubo:<br><br>$$\\begin{cases} C + A = 24 & \\text{(I)} \\\\ C + \\frac{2}{3}A = 19 & \\text{(II)} \\end{cases}$$<br>Subtraindo a equação (II) da equação (I):<br>$$(C + A) - \\left(C + \\frac{2}{3}A\\right) = 24 - 19$$<br>$$\\frac{1}{3}A = 5 \\implies A = 5 \\times 3 = 15\\text{ kg}$$<br>Substituindo $A = 15\\text{ kg}$ na equação (I):<br>$$C = 24 - 15 = 9\\text{ kg}$$<br>Portanto, o carrinho vazio pesa $9\\text{ kg}$ e o adubo inicial pesava $15\\text{ kg}$, correspondendo à <strong>Alternativa C</strong>."
           },
           {
-            "q": "Considere o apartamento representado na planta abaixo, em que as medidas estão em metros e todos os segmentos de reta são perpendiculares. De acordo com os dados do gráfico FipeZAP (Texto X), é possível afirmar que:",
+            "q": "Considere o apartamento representado na planta abaixo, em que as medidas estão em metros e todos os segmentos de reta são perpendiculares (formato poligonal com retângulo circunscrito de $8{,}00\\text{ m} \\times 6{,}00\\text{ m}$ e recorte de $2{,}50\\text{ m} \\times 2{,}80\\text{ m}$). De acordo com os dados do Índice FipeZAP de agosto/2024, que indica o preço médio por metro quadrado de imóveis residenciais (Joinville a $\\text{R\\$} 7.328{,}00/\\text{m}^2$), é possível afirmar que:",
+            "image": {
+              "src": "assets/img/questoes/ifsc/ifsc-2025-1-q06.png",
+              "alt": "Planta baixa cotada do apartamento em formato poligonal de linhas perpendiculares com dimensões de 8 m por 6 m e recuo cotado, ao lado de gráfico de barras do índice FipeZAP com valores por metro quadrado de Balneário Camboriú, Florianópolis, Joinville e Blumenau.",
+              "caption": "Figura: Planta do apartamento e gráfico do índice FipeZAP (IFSC 2025.1)"
+            },
             "options": [
               "se localizado em Balneário Camboriú (SC), o valor desse apartamento é $\\text{R\\$} 648.096{,}00$.",
               "se localizado em Blumenau (SC), o valor desse apartamento é $\\text{R\\$} 317.725{,}00$.",
@@ -4539,39 +4613,34 @@ var mathData = window.mathData || {
               "independentemente de onde esteja localizado, o valor desse apartamento é $\\text{R\\$} 375.027{,}00$."
             ],
             "correct": 2,
-            "explanation": "1. <strong>Cálculo da área da planta baixa do apartamento:</strong><br>A planta em formato de 'L' pode ser decomposta em dois retângulos perpendiculares:<br>- <em>Retângulo superior:</em> possui base de $8{,}00\\text{ m}$ e altura de $3{,}20\\text{ m}$:<br>$$A_1 = 8{,}00 \\times 3{,}20 = 25{,}60\\text{ m}^2$$<br>- <em>Retângulo inferior:</em> possui base de $5{,}50\\text{ m}$ e altura igual à diferença entre a altura total ($6{,}00\\text{ m}$) e a altura do retângulo superior ($3{,}20\\text{ m}$):<br>$$h_2 = 6{,}00 - 3{,}20 = 2{,}80\\text{ m}$$<br>$$A_2 = 5{,}50 \\times 2{,}80 = 15{,}40\\text{ m}^2$$<br>- <em>Área total:</em><br>$$A_{\\text{total}} = A_1 + A_2 = 25{,}60 + 15{,}40 = 41{,}00\\text{ m}^2$$<br><br>2. <strong>Cálculo do valor do imóvel conforme o gráfico FipeZAP (Texto X):</strong><br>- <em>Balneário Camboriú (SC):</em> $\\text{R\\$}  13.502/\\text{m}^2 \\implies 41 \\times 13.502 = \\text{R\\$} 553.582{,}00$<br>- <em>Florianópolis (SC):</em> $\\text{R\\$}  11.525/\\text{m}^2 \\implies 41 \\times 11.525 = \\text{R\\$} 472.525{,}00$<br>- <em>Blumenau (SC):</em> $\\text{R\\$}  6.745/\\text{m}^2 \\implies 41 \\times 6.745 = \\text{R\\$} 276.545{,}00$<br>- <em>Joinville (SC):</em> $\\text{R\\$}  7.328/\\text{m}^2 \\implies 41 \\times 7.328 = \\text{R\\$} 300.448{,}00$<br><br>O valor obtido para Joinville confere exatamente com o enunciado da alternativa.<br>Portanto, a alternativa correta é a <strong>Letra C</strong>.",
-            "bncc": "EF07MA32",
-            "bnccDesc": "Resolver e elaborar problemas de cálculo de medida de área de figuras planas que podem ser decompostas por quadrados, retângulos e/ou triângulos, utilizando a equivalência entre áreas.",
-            "unidadeTematica": "Geometria",
-            "anoEscolar": "7º ano",
-            "topicoId": "b4-t1",
-            "image": {
-              "src": "https://drive.google.com/file/d/1klpJKDYUTkxOAZQzBmwQufX-lJHZ4wOq/view?usp=sharing",
-              "alt": "Gráfico de barras verticais do índice FipeZAP com valores do metro quadrado residencial por cidade e planta baixa de apartamento em formato de L com medidas de 8,00 m, 3,20 m, 5,50 m e 6,00 m",
-              "caption": "Texto X e Questão 13: Gráfico FipeZAP de preço por m² e planta baixa do apartamento (IFSC 2025.1)"
-            }
+            "bncc": "EF08MA19",
+            "bnccDesc": "Resolver e elaborar problemas que envolvam medidas de área de figuras geométricas, utilizando expressões de cálculo de área (quadriláteros, triângulos e círculos), em situações como determinar medida do terreno, número de lajotas para piso etc.",
+            "unidadeTematica": "Grandezas e medidas",
+            "anoEscolar": "8º ano",
+            "topicoId": "b3-t2",
+            "explanation": "1. <strong>Cálculo da área total da planta do apartamento:</strong><br>A planta pode ser obtida subtraindo-se o recorte retangular de $(8 - 5{,}5) \\times (6 - 3{,}2) = 2{,}5 \\times 2{,}8 = 7\\text{ m}^2$ do retângulo delimitador de $8 \\times 6 = 48\\text{ m}^2$:<br>$$\\text{Área} = 48 - 7 = 41\\text{ m}^2$$<br>2. <strong>Cálculo do valor em Joinville (SC):</strong><br>Pelo gráfico do FipeZAP, o metro quadrado em Joinville é $\\text{R\\$} 7.328{,}00$:<br>$$\\text{Valor} = 41\\text{ m}^2 \\times \\text{R\\$} 7.328{,}00 = \\text{R\\$} 300.448{,}00$$<br>Portanto, a alternativa correta é a <strong>Alternativa C</strong>."
           },
           {
-            "q": "Um professor de matemática usa um quadro branco no qual está desenhado um campo de futebol, representado pela Imagem IV, para explicar de forma lúdica o conceito de proporção, regra de três e teorema de Pitágoras. Os pontos assinalados indicam as posições dos jogadores A, B e C. No desenho, o jogador A situa-se a $5\\text{ cm}$ de B, em uma linha paralela à linha de fundo do campo, e C está $12\\text{ cm}$ à frente de B, em uma linha paralela à linha lateral do campo. Esse campo desenhado é semelhante a um campo de futebol cujas linhas lateral e de fundo medem, respectivamente, $120\\text{ m}$ e $90\\text{ m}$. Se a linha de fundo do campo desenhado mede $45\\text{ cm}$, então a distância real entre os jogadores A e C, se estivessem num campo de futebol, seria de:",
-            "options": [
-              "$13\\text{ m}$",
-              "$26\\text{ m}$",
-              "$39\\text{ m}$",
-              "$52\\text{ m}$",
-              "$65\\text{ m}$"
-            ],
-            "correct": 1,
-            "explanation": "No desenho, os jogadores A, B e C formam um triângulo retângulo com catetos de $5\\text{ cm}$ e $12\\text{ cm}$. A distância desenhada entre A e C é $\\sqrt{5^2 + 12^2} = \\sqrt{25 + 144} = \\sqrt{169} = 13\\text{ cm}$. A escala do desenho é dada pela proporção da linha de fundo: $45\\text{ cm}$ no desenho correspondem a $90\\text{ m} = 9.000\\text{ cm}$ na realidade, o que dá uma escala de $\\frac{45}{9000} = \\frac{1}{200}$ (cada $1\\text{ cm}$ equivale a $2\\text{ m}$). Logo, a distância real entre os jogadores A e C é $13\\text{ cm} \\times 2\\text{ m/cm} = 26\\text{ m}$.",
-            "bncc": "EF08MA19",
-            "bnccDesc": "Resolver e elaborar problemas que envolvam medidas de área de figuras geométricas, utilizando expressões de cálculo de área (quadriláteros, triângulos e círculos), em situações como determinar medida de terrenos.",
-            "unidadeTematica": "Grandezas e Medidas",
-            "anoEscolar": "8º ano",
-            "topicoId": "b4-t1",
+            "q": "Um professor desenhou em um quadro branco um campo de futebol no qual os jogadores $A$, $B$ e $C$ formam um triângulo retângulo em $B$, com $AB = 5\\text{ cm}$ (paralelo à linha de fundo) e $BC = 12\\text{ cm}$ (paralelo à linha lateral). Esse campo desenhado é semelhante a um campo de futebol real cujas linhas lateral e de fundo medem, respectivamente, $120\\text{ m}$ e $90\\text{ m}$. Se a linha de fundo do campo desenhado mede $45\\text{ cm}$, qual seria a distância real entre os jogadores $A$ e $C$ no campo de futebol?",
             "image": {
-              "src": "https://drive.google.com/file/d/1lO8IoCXPYYpNFjHWsWwhmW0r9EyCEA_x/view?usp=sharing",
-              "alt": "Diagrama de campo de futebol desenhado no quadro com os pontos A, B e C indicando as posições relativas dos jogadores formando um triângulo retângulo.",
-              "caption": "Imagem IV: Campo de futebol com posições dos jogadores no quadro (IFSC 2025.1)"
-            }
+              "src": "assets/img/questoes/ifsc/ifsc-2025-1-q07.png",
+              "alt": "Esquema geométrico de um campo de futebol com marcação dos jogadores A, B e C formando um triângulo retângulo com catetos paralelos às linhas do campo medindo 5 cm e 12 cm.",
+              "caption": "Imagem IV: Esquema tático com os jogadores A, B e C no campo (IFSC 2025.1)"
+            },
+            "options": [
+              "$18\\text{ m}$",
+              "$20\\text{ m}$",
+              "$22\\text{ m}$",
+              "$24\\text{ m}$",
+              "$26\\text{ m}$"
+            ],
+            "correct": 4,
+            "bncc": "EF09MA14",
+            "bnccDesc": "Resolver e elaborar problemas de aplicação do teorema de Pitágoras ou das relações de proporcionalidade envolvendo triângulos retângulos.",
+            "unidadeTematica": "Geometria",
+            "anoEscolar": "9º ano",
+            "topicoId": "b3-t1",
+            "explanation": "1. <strong>Cálculo da distância $AC$ no desenho (Teorema de Pitágoras):</strong><br>Como as linhas de fundo e lateral são perpendiculares, o ângulo em $B$ é de $90^\\circ$:<br>$$AC^2 = AB^2 + BC^2 = 5^2 + 12^2 = 25 + 144 = 169$$<br>$$AC = \\sqrt{169} = 13\\text{ cm}$$<br>2. <strong>Determinação da razão de escala:</strong><br>A linha de fundo real mede $90\\text{ m} = 9.000\\text{ cm}$ e no desenho mede $45\\text{ cm}$:<br>$$\\text{Escala} = \\frac{9.000\\text{ cm}}{45\\text{ cm}} = 200$$<br>Cada $1\\text{ cm}$ no desenho representa $200\\text{ cm} = 2\\text{ metros}$ no campo real.<br><br>3. <strong>Cálculo da distância real entre $A$ e $C$:</strong><br>$$D_{\\text{real}} = 13 \\times 2\\text{ m} = 26\\text{ metros}$$<br>Portanto, a distância real entre os jogadores é de $26\\text{ m}$, correspondendo à <strong>Alternativa E</strong> (gabarito oficial definitivo da banca IFSC)."
           }
         ],
         "slug": "prova-ifsc-20251",
@@ -4600,7 +4669,8 @@ var mathData = window.mathData || {
         },
         "questions": [
           {
-            "q": "A emissão global de $CO_2$ é estimada pelo modelo $E(x) = 0{,}05x^2 + 1{,}2x + 25$, onde $x$ representa o número de anos após 2000. Segundo esse modelo, a emissão no ano de 2030 (em bilhões de toneladas) será de:",
+            "q": "A emissão de $\\text{CO}_2$ está relacionada ao crescimento populacional e ao desenvolvimento industrial. Um modelo matemático para a emissão global de $\\text{CO}_2$, em bilhões de toneladas por ano, é:\n$$E(x) = 0{,}05x^2 + 1{,}2x + 25$$\nNesse modelo, a variável $x$ representa a quantidade de anos após o ano $2000$. Qual será a emissão de $\\text{CO}_2$ no ano $2030$, em bilhões de toneladas por ano, segundo esse modelo?",
+            "image": null,
             "options": [
               "$88$",
               "$91$",
@@ -4609,15 +4679,20 @@ var mathData = window.mathData || {
               "$132$"
             ],
             "correct": 2,
-            "explanation": "No ano de 2030, temos $x = 2030 - 2000 = 30$. Substituindo: $E(30) = 0{,}05(30^2) + 1{,}2(30) + 25 = 0{,}05(900) + 36 + 25 = 45 + 36 + 25 = 106$ bilhões de toneladas.",
-            "bncc": "EF06MA24",
-            "bnccDesc": "Resolver e elaborar problemas que envolvam as grandezas comprimento, massa, tempo, temperatura, área (triângulos e retângulos), capacidade e volume (sólidos formados por blocos retangulares), sem uso de fórmulas, inseridos, sempre que possível, em contextos oriundos de situações reais e/ou relacionadas às outras áreas do conhecimento.",
-            "unidadeTematica": "Grandezas e Medidas",
-            "anoEscolar": "6º ano",
-            "topicoId": "b4-t2"
+            "bncc": "EF09MA06",
+            "bnccDesc": "Compreender as funções como relações de dependência unívoca entre duas variáveis e suas representações numérica, algébrica e gráfica e utilizar esse conceito para analisar situações que envolvam relações funcionais entre duas grandezas.",
+            "unidadeTematica": "Álgebra",
+            "anoEscolar": "9º ano",
+            "topicoId": "b2-t3",
+            "explanation": "1. <strong>Determinação do valor de $x$:</strong><br>Como $x$ representa os anos transcorridos após $2000$, para o ano de $2030$ temos:<br>$$x = 2030 - 2000 = 30$$<br>2. <strong>Cálculo do valor numérico de $E(30)$:</strong><br>$$E(30) = 0{,}05(30)^2 + 1{,}2(30) + 25$$<br>$$E(30) = 0{,}05(900) + 36 + 25$$<br>$$E(30) = 45 + 36 + 25 = 106\\text{ bilhões de toneladas}$$<br>Portanto, a emissão será de $106$, correspondendo à <strong>Alternativa C</strong>."
           },
           {
-            "q": "Nos últimos anos, a matriz energética brasileira vem passando por transformações impulsionadas pelo debate acerca de fontes de energia renováveis e meio ambiente. Entre as fontes renováveis, a energia solar fotovoltaica tem ganhado destaque... Numa das escolas atendidas, os painéis fotovoltaicos serão instalados numa das faces do telhado. Essa face tem formato de trapézio isósceles, com base maior de $12\\text{ m}$, base menor de $8\\text{ m}$ e altura de $5\\text{ m}$, conforme a figura. Por norma de segurança, apenas $80\\%$ da área total pode ser utilizada para instalação dos painéis. Cada metro quadrado de painel gera, em média, $1{,}2\\text{ kWh}$ de energia por dia. Considerando o contexto apresentado e os dados fornecidos, qual será a produção total estimada de energia por dia, em kWh, gerada por esses painéis?",
+            "q": "Como parte de uma política pública de sustentabilidade em Santa Catarina, o governo iniciou a instalação de sistemas de energia solar em escolas públicas de zonas rurais. Numa das escolas atendidas, os painéis fotovoltaicos serão instalados numa das faces do telhado em formato de trapézio isósceles, com base maior de $12\\text{ m}$, base menor de $8\\text{ m}$ e altura de $5\\text{ m}$, conforme a figura a seguir:\n\nPor norma de segurança, apenas $80\\%$ da área total pode ser utilizada para instalação dos painéis. Cada metro quadrado de painel gera, em média, $1{,}2\\text{ kWh}$ de energia por dia. Qual será a produção total estimada de energia por dia, em $\\text{kWh}$, gerada por esses painéis?",
+            "image": {
+              "src": "assets/img/questoes/ifsc/ifsc-2025-2-q02.png",
+              "alt": "Esquema geométrico de um trapézio isósceles com base maior medindo 12 m, base menor medindo 8 m e altura medindo 5 m.",
+              "caption": "Figura: Face do telhado em formato de trapézio isósceles (IFSC 2025.2)"
+            },
             "options": [
               "$36\\text{ kWh}$",
               "$42\\text{ kWh}$",
@@ -4626,20 +4701,16 @@ var mathData = window.mathData || {
               "$60\\text{ kWh}$"
             ],
             "correct": 2,
-            "explanation": "A área da face do telhado em formato de trapézio é $A = \\frac{(B + b) \\cdot h}{2} = \\frac{(12 + 8) \\cdot 5}{2} = \\frac{20 \\cdot 5}{2} = 50\\text{ m}^2$. A área útil para instalação dos painéis é $80\\%$ de $50\\text{ m}^2$: $50 \\times 0{,}80 = 40\\text{ m}^2$. A produção total de energia estimada por dia é $40\\text{ m}^2 \\times 1{,}2\\text{ kWh/m}^2 = 48\\text{ kWh}$.",
             "bncc": "EF08MA19",
-            "bnccDesc": "Resolver e elaborar problemas que envolvam medidas de área de figuras geométricas, utilizando expressões de cálculo de área (quadriláteros, triângulos e círculos), em situações como determinar medida de terrenos.",
-            "unidadeTematica": "Grandezas e Medidas",
+            "bnccDesc": "Resolver e elaborar problemas que envolvam medidas de área de figuras geométricas, utilizando expressões de cálculo de área (quadriláteros, triângulos e círculos), em situações como determinar medida do terreno, número de lajotas para piso etc.",
+            "unidadeTematica": "Grandezas e medidas",
             "anoEscolar": "8º ano",
-            "topicoId": "b4-t1",
-            "image": {
-              "src": "https://drive.google.com/file/d/1jJXcLdrNTqRZQXvcz8Ejljqdc1vrJ3W7/view?usp=sharing",
-              "alt": "Trapézio isósceles representando a face do telhado com base maior de 12 m, base menor de 8 m e altura de 5 m.",
-              "caption": "Figura: Face do telhado em trapézio isósceles para painéis solares (IFSC 2025.2)"
-            }
+            "topicoId": "b3-t2",
+            "explanation": "1. <strong>Cálculo da área total do trapézio:</strong><br>$$A = \\frac{(B + b) \\cdot h}{2} = \\frac{(12 + 8) \\cdot 5}{2} = \\frac{20 \\cdot 5}{2} = 50\\text{ m}^2$$<br>2. <strong>Cálculo da área útil com painéis ($80\\%$):</strong><br>$$A_{\\text{útil}} = 0{,}80 \\times 50 = 40\\text{ m}^2$$<br>3. <strong>Cálculo da produção diária de energia:</strong><br>Cada $\\text{m}^2$ gera $1{,}2\\text{ kWh}$ por dia:<br>$$\\text{Produção} = 40\\text{ m}^2 \\times 1{,}2\\text{ kWh/m}^2 = 48\\text{ kWh}$$<br>Portanto, a produção diária estimada é de $48\\text{ kWh}$, correspondendo à <strong>Alternativa C</strong>."
           },
           {
-            "q": "Alice analisou o número formado pelos 11 dígitos do seu CPF ($65.434.212.988$) e fez as seguintes afirmações:<br>I. É um número divisível por 2.<br>II. É um número divisível por 3.<br>III. É um número divisível por 4.<br>IV. Não é um número divisível por 5.<br>Assinale a alternativa CORRETA:",
+            "q": "O CPF – Cadastro de Pessoa Física é uma forma de registro obrigatória a todos os brasileiros. Alice considerou os onze algarismos como sendo um único número inteiro: $65.434.212.988$. Analise as afirmações abaixo feitas por Alice acerca desse número:\nI. É um número divisível por $2$.\nII. É um número divisível por $3$.\nIII. É um número divisível por $4$.\nIV. Não é um número divisível por $5$.\n\nAssinale a alternativa CORRETA:",
+            "image": null,
             "options": [
               "Todos os itens estão corretos.",
               "Apenas os itens I, III e IV estão corretos.",
@@ -4648,15 +4719,16 @@ var mathData = window.mathData || {
               "Apenas os itens I e III estão corretos."
             ],
             "correct": 1,
-            "explanation": "I é verdadeiro (termina em 8, número par). II é falso (a soma dos algarismos é $52$, que não é múltiplo de 3). III é verdadeiro (os dois últimos dígitos '88' formam número divisível por 4). IV é verdadeiro (não termina em 0 nem 5). Corretos: I, III e IV.",
             "bncc": "EF06MA05",
-            "bnccDesc": "Classificar números naturais em primos e compostos, estabelecer relações entre números, expressas pelos termos “é múltiplo de”, “é divisor de”, “é fator de”, e estabelecer, por meio de investigações, critérios de divisibilidade por 2, 3, 4, 5, 6, 8, 9, 10, 100 e 1000.",
+            "bnccDesc": "Classificar números naturais em primos e compostos, estabelecer relações entre números, expressas pelos termos 'é múltiplo de', 'é divisor de', 'é fator de', e estabelecer critérios de divisibilidade por 2, 3, 4, 5, 6, 8, 9, 10, 100 e 1000.",
             "unidadeTematica": "Números",
             "anoEscolar": "6º ano",
-            "topicoId": "b1-t3"
+            "topicoId": "b1-t1",
+            "explanation": "Análise de cada critério de divisibilidade sobre o número $65.434.212.988$:<br><br>• <strong>Item I (Verdadeiro):</strong> O último algarismo é $8$ (par), portanto é divisível por $2$.<br>• <strong>Item II (Falso):</strong> A soma dos algarismos é $6 + 5 + 4 + 3 + 4 + 2 + 1 + 2 + 9 + 8 + 8 = 52$. Como $52$ não é múltiplo de $3$ ($52 = 3 \\times 17 + 1$), o número não é divisível por $3$.<br>• <strong>Item III (Verdadeiro):</strong> O número formado pelos dois últimos algarismos é $88$. Como $88 = 4 \\times 22$, o número é divisível por $4$.<br>• <strong>Item IV (Verdadeiro):</strong> Para ser divisível por $5$, o número deveria terminar em $0$ ou $5$. Como termina em $8$, ele realmente <strong>não</strong> é divisível por $5$.<br><br>Estão corretos os itens I, III e IV. Portanto, a alternativa correta é a <strong>Alternativa B</strong>."
           },
           {
-            "q": "Cientistas decidiram que o nome de um asteroide descoberto será formado por cinco caracteres distintos, composto exclusivamente pelas letras: L, I, V, H e R. O número total de opções de nomes possíveis que as cientistas possuem é:",
+            "q": "Cientistas da UFSC participantes de projeto com a NASA decidiram que o nome de cada um dos oito possíveis asteroides descobertos será formado por cinco caracteres distintos e composto exclusivamente pelas letras: L, I, V, H e R. Dessa forma, qual o número total de opções que as cientistas possuem para nomear um dos possíveis asteroides?",
+            "image": null,
             "options": [
               "$5$",
               "$20$",
@@ -4665,32 +4737,34 @@ var mathData = window.mathData || {
               "$3.125$"
             ],
             "correct": 3,
-            "explanation": "Trata-se de uma permutação simples de 5 letras distintas: $P_5 = 5! = 5 \\times 4 \\times 3 \\times 2 \\times 1 = 120$ opções.",
-            "bncc": "EF07MA18",
-            "bnccDesc": "Resolver e elaborar problemas que possam ser representados por equações polinomiais de 1º grau, redutíveis à forma ax + b = c, fazendo uso das propriedades da igualdade.",
-            "unidadeTematica": "Álgebra",
-            "anoEscolar": "7º ano",
-            "topicoId": "b2-t3"
+            "bncc": "EF08MA03",
+            "bnccDesc": "Resolver e elaborar problemas de contagem cuja resolução envolva a aplicação do princípio multiplicativo.",
+            "unidadeTematica": "Números",
+            "anoEscolar": "8º ano",
+            "topicoId": "b1-t1",
+            "explanation": "1. <strong>Aplicação do Princípio Fundamental da Contagem (Permutação Simples):</strong><br>Como o nome deve ter $5$ caracteres distintos formados exatamente pelas $5$ letras fornecidas sem repetição:<br>• 1ª posição: $5$ opções de letras.<br>• 2ª posição: $4$ opções restantes.<br>• 3ª posição: $3$ opções restantes.<br>• 4ª posição: $2$ opções restantes.<br>• 5ª posição: $1$ opção restante.<br><br>$$\\text{Total de opções} = 5 \\times 4 \\times 3 \\times 2 \\times 1 = 120$$<br>Portanto, existem $120$ opções distintas, correspondendo à <strong>Alternativa D</strong>."
           },
           {
-            "q": "Uma pesquisa revelou que os brasileiros passam em média $56\\%$ do dia em frente às telas de smartphones e computadores. O tempo médio diário correspondente é:",
+            "q": "Uma pesquisa revelou que os brasileiros passam em média $56\\%$ do dia em frente às telas de smartphones e computadores. As informações permitem concluir que o tempo médio diário que o brasileiro passa em frente às telas de smartphones e computadores é:",
+            "image": null,
             "options": [
               "$08\\text{ horas}$",
-              "$13\\text{ horas} 04\\text{ minutos e } 04\\text{ segundos}$",
-              "$13\\text{ horas} 26\\text{ minutos e } 24\\text{ segundos}$",
-              "$13\\text{ horas} 44\\text{ minutos e } 12\\text{ segundos}$",
+              "$13\\text{ horas, } 04\\text{ minutos e } 04\\text{ segundos}$",
+              "$13\\text{ horas, } 26\\text{ minutos e } 24\\text{ segundos}$",
+              "$13\\text{ horas, } 44\\text{ minutos e } 12\\text{ segundos}$",
               "$16\\text{ horas}$"
             ],
             "correct": 2,
-            "explanation": "$56\\%$ de $24\\text{ horas} = 0{,}56 \\times 24 = 13{,}44\\text{ horas}$. A parte fracionária $0{,}44 \\times 60 = 26{,}4\\text{ minutos}$. A parte fracionária $0{,}4 \\times 60 = 24\\text{ segundos}$. Total: $13\\text{ horas} 26\\text{ minutos e } 24\\text{ segundos}$.",
-            "bncc": "EF08MA04",
-            "bnccDesc": "Resolver e elaborar problemas, envolvendo cálculo de porcentagens, incluindo o uso de tecnologias digitais.",
-            "unidadeTematica": "Números",
-            "anoEscolar": "8º ano",
-            "topicoId": "b1-t6"
+            "bncc": "EF06MA24",
+            "bnccDesc": "Resolver e elaborar problemas que envolvam as grandezas comprimento, massa, tempo, temperatura, área (triângulos e retângulos), capacidade e volume (de sólidos formados por blocos retangulares), sem uso de fórmulas, inseridos, sempre que possível, em contextos oriundos de situações reais e/ou relacionadas às outras áreas do conhecimento.",
+            "unidadeTematica": "Grandezas e medidas",
+            "anoEscolar": "6º ano",
+            "topicoId": "b3-t2",
+            "explanation": "1. <strong>Cálculo do tempo total em horas:</strong><br>Como um dia tem $24\\text{ horas}$:<br>$$t = 56\\% \\times 24 = 0{,}56 \\times 24 = 13{,}44\\text{ horas}$$<br>Temos $13\\text{ horas}$ inteiras e uma fração de $0{,}44\\text{ hora}$.<br><br>2. <strong>Conversão da fração de hora para minutos:</strong><br>$$0{,}44 \\times 60\\text{ min} = 26{,}4\\text{ minutos}$$<br>Temos $26\\text{ minutos}$ inteiros e uma fração de $0{,}4\\text{ minuto}$.<br><br>3. <strong>Conversão da fração de minuto para segundos:</strong><br>$$0{,}4 \\times 60\\text{ s} = 24\\text{ segundos}$$<br>Consolidando o tempo: $13\\text{ horas, } 26\\text{ minutos e } 24\\text{ segundos}$.<br>Portanto, a alternativa correta é a <strong>Alternativa C</strong>."
           },
           {
-            "q": "No Carnaval de 2025, Florianópolis recebeu $1{,}4\\text{ milhão}$ de foliões, dos quais $40\\%$ usaram glitter ($1{,}5\\text{ g}$ por pessoa). Sabendo que $1\\text{ g}$ de glitter contém $20\\text{ mil}$ partículas e que a ingestão de $100\\text{ mil}$ partículas pode causar a morte de um animal marinho, quantos animais marinhos de pequeno porte poderiam morrer em decorrência do glitter desse Carnaval?",
+            "q": "Durante o Carnaval de 2025, Florianópolis recebeu aproximadamente $1{,}4\\text{ milhão}$ de foliões. Suponha que $40\\%$ dessas pessoas usaram glitter fabricado a partir de microplástico, com uma média de $1{,}5\\text{ g}$ por pessoa. Sabendo que cada grama de glitter contém cerca de $20\\text{ mil}$ partículas de microplástico e que a ingestão de $100\\text{ mil}$ partículas causa a morte de um animal marinho de pequeno porte, determine a quantidade estimada de animais que podem ter morrido em consequência da liberação de glitter no ambiente:",
+            "image": null,
             "options": [
               "$150\\text{ mil animais}$",
               "$120\\text{ mil animais}$",
@@ -4699,15 +4773,20 @@ var mathData = window.mathData || {
               "$168\\text{ mil animais}$"
             ],
             "correct": 4,
-            "explanation": "Pessoas com glitter: $0{,}40 \\times 1.400.000 = 560.000$. Massa de glitter: $560.000 \\times 1{,}5 = 840.000\\text{ g}$. Total de partículas: $840.000 \\times 20.000 = 16.800.000.000$. Animais mortos: $\\frac{16.800.000.000}{100.000} = 168.000\\text{ animais}$ ($168\\text{ mil}$).",
-            "bncc": "EF08MA04",
-            "bnccDesc": "Resolver e elaborar problemas, envolvendo cálculo de porcentagens, incluindo o uso de tecnologias digitais.",
+            "bncc": "EF07MA02",
+            "bnccDesc": "Resolver e elaborar problemas que envolvam porcentagens, como os que lidam com acréscimos e decréscimos simples, utilizando estratégias pessoais, cálculo mental e calculadora, no contexto da educação financeira, entre outros.",
             "unidadeTematica": "Números",
-            "anoEscolar": "8º ano",
-            "topicoId": "b1-t6"
+            "anoEscolar": "7º ano",
+            "topicoId": "b1-t2",
+            "explanation": "1. <strong>Cálculo do número de foliões usuários de glitter:</strong><br>$$40\\% \\times 1.400.000 = 0{,}40 \\times 1.400.000 = 560.000\\text{ pessoas}$$<br>2. <strong>Cálculo da massa total de glitter consumida:</strong><br>$$560.000 \\times 1{,}5\\text{ g} = 840.000\\text{ g}$$<br>3. <strong>Cálculo do número total de partículas de microplástico:</strong><br>$$840.000\\text{ g} \\times 20.000\\text{ partículas/g} = 16.800.000.000\\text{ partículas}$$<br>4. <strong>Estimativa de animais vitimados:</strong><br>Cada animal ingere $100.000$ partículas:<br>$$\\text{Animais} = \\frac{16.800.000.000}{100.000} = 168.000 = 168\\text{ mil animais}$$<br>Portanto, a estimativa é de $168\\text{ mil animais}$, correspondendo à <strong>Alternativa E</strong>."
           },
           {
-            "q": "Antes de iniciar sua viagem, em fevereiro de 2025, um turista argentino comprou três Big Mac's em Buenos Aires, na Argentina. De acordo com as informações apresentadas no infográfico dos Textos VIII e IX, qual o valor, em reais ($\\text{R\\$}$), esse turista teria economizado se essa compra tivesse sido feita ao chegar em seu destino, no Brasil, nessa data? (Considere $\\text{US\\$} 1{,}00 = \\text{R\\$} 6{,}00$)",
+            "q": "Antes de iniciar sua viagem, em fevereiro de 2025, um turista argentino comprou três Big Mac's em Buenos Aires, na Argentina. De acordo com as informações (dólar cotado a $\\text{R\\$} 6{,}00$; preço do Big Mac na Argentina de $\\text{US\\$} 6{,}95$ e no Brasil de $\\text{US\\$} 4{,}02$), qual o valor, em reais ($\\text{R\\$}$), esse turista teria economizado se essa compra tivesse sido feita ao chegar em seu destino, no Brasil, nessa data?",
+            "image": {
+              "src": "assets/img/questoes/ifsc/ifsc-2025-2-q07.png",
+              "alt": "Gráfico de barras horizontais intitulado Preço do Big Mac em dólares em diversos países: Suíça US$ 8,00, Argentina US$ 6,95, Zona do Euro US$ 5,97, EUA US$ 5,79, Brasil US$ 4,02 e Taiwan US$ 2,38. Fonte: The Economist / CNN Economia.",
+              "caption": "Figura: Índice Big Mac em dólares por país (IFSC 2025.2)"
+            },
             "options": [
               "$\\text{R\\$} 8{,}79$",
               "$\\text{R\\$} 17{,}58$",
@@ -4716,17 +4795,12 @@ var mathData = window.mathData || {
               "$\\text{R\\$} 101{,}16$"
             ],
             "correct": 3,
-            "explanation": "Pelo infográfico do Texto IX, o preço do Big Mac na Argentina é de $\\text{US\\$} 6{,}95$ e no Brasil é de $\\text{US\\$} 4{,}02$. A diferença de preço por sanduíche é de $6{,}95 - 4{,}02 = \\text{US\\$} 2{,}93$. Para 3 Big Mac's, a economia em dólares é de $3 \\times 2{,}93 = \\text{US\\$} 8{,}79$. Convertendo para reais com a cotação de $\\text{R\\$} 6{,}00$ por dólar: $8{,}79 \\times 6{,}00 = \\text{R\\$} 52{,}74$.",
-            "bncc": "EF07MA18",
-            "bnccDesc": "Resolver e elaborar problemas que possam ser representados por equações polinomiais de 1º grau, redutíveis à forma ax + b = c, fazendo uso das propriedades da igualdade.",
-            "unidadeTematica": "Álgebra",
+            "bncc": "EF07MA02",
+            "bnccDesc": "Resolver e elaborar problemas que envolvam porcentagens, como os que lidam com acréscimos e decréscimos simples, utilizando estratégias pessoais, cálculo mental e calculadora, no contexto da educação financeira, entre outros.",
+            "unidadeTematica": "Números",
             "anoEscolar": "7º ano",
-            "topicoId": "b2-t3",
-            "image": {
-              "src": "https://drive.google.com/file/d/1yFiv5urXcWIzuImpDUQYGUR7qJ8Qm5dl/view?usp=sharing",
-              "alt": "Infográfico de preços do Big Mac em dólares em diversos países: Suíça US$ 8, Argentina US$ 6,95, Zona do Euro US$ 5,97, EUA US$ 5,79, Brasil US$ 4,02 e Taiwan US$ 2,38.",
-              "caption": "Texto IX: Infográfico do Índice Big Mac e comparação internacional de preços em dólares (IFSC 2025.2)"
-            }
+            "topicoId": "b1-t2",
+            "explanation": "1. <strong>Cálculo da economia por sanduíche em dólares:</strong><br>• Preço na Argentina: $\\text{US\\$} 6{,}95$<br>• Preço no Brasil: $\\text{US\\$} 4{,}02$<br>$$\\text{Economia por unidade} = 6{,}95 - 4{,}02 = \\text{US\\$} 2{,}93$$<br>2. <strong>Economia total para $3$ sanduíches em dólares:</strong><br>$$\\text{Economia total ($\\text{US\\$}$)} = 3 \\times 2{,}93 = \\text{US\\$} 8{,}79$$<br>3. <strong>Conversão para moeda nacional (reais):</strong><br>Com a cotação de $\\text{R\\$} 6{,}00$ por dólar:<br>$$\\text{Economia ($\\text{R\\$}$)} = 8{,}79 \\times 6{,}00 = \\text{R\\$} 52{,}74$$<br>Portanto, o turista teria economizado $\\text{R\\$} 52{,}74$, correspondendo à <strong>Alternativa D</strong>."
           }
         ],
         "slug": "prova-ifsc-20252",
@@ -4755,132 +4829,137 @@ var mathData = window.mathData || {
         "questions": [
           {
             "q": "O gráfico de colunas apresentado na Imagem II mostra a distribuição de tempo nas atividades diárias de um adolescente. Quantas horas o adolescente dedica ao estudo em um dia?",
+            "image": {
+              "src": "assets/img/questoes/ifsc/ifsc-2026-1-q01.png",
+              "alt": "Gráfico de colunas verticais intitulado Distribuição do tempo nas atividades diárias, com as porcentagens: Sono 33%, Estudo 25%, Lazer 17%, Alimentação 13% e Outros 12%.",
+              "caption": "Imagem II: Distribuição do tempo nas atividades diárias de um adolescente (IFSC 2026.1)"
+            },
             "options": [
-              "2 horas",
-              "4 horas",
-              "5 horas",
-              "6 horas",
-              "8 horas"
+              "$2\\text{ horas}$",
+              "$4\\text{ horas}$",
+              "$5\\text{ horas}$",
+              "$6\\text{ horas}$",
+              "$8\\text{ horas}$"
             ],
             "correct": 3,
-            "explanation": "1. Pela leitura do gráfico de colunas na Imagem II, a coluna correspondente à categoria <strong>Estudo</strong> atinge a marca de $25\\%$.<br><br>2. Um dia completo possui $24\\text{ horas}$.<br><br>3. Calculamos $25\\%$ de $24\\text{ horas}$:<br>$$25\\% = \\frac{25}{100} = \\frac{1}{4}$$<br>$$\\text{Horas de estudo} = \\frac{1}{4} \\times 24\\text{ h} = 6\\text{ horas}.$$<br>Portanto, a alternativa correta é a <strong>Letra D</strong>.",
-            "bncc": "EF07MA02",
-            "bnccDesc": "Resolver e elaborar problemas que envolvam porcentagens, como os que lidam com acréscimos e decréscimos simples, utilizando estratégias pessoais, cálculo mental e calculadora, no contexto da educação financeira, entre outros.",
-            "unidadeTematica": "Números",
+            "bncc": "EF07MA37",
+            "bnccDesc": "Interpretar e analisar dados apresentados em gráficos de colunas, setores ou linhas, para tomada de decisões e conclusões.",
+            "unidadeTematica": "Probabilidade e estatística",
             "anoEscolar": "7º ano",
-            "topicoId": "b1-t7",
-            "image": {
-              "src": "https://drive.google.com/file/d/1AenV3kBIP7Q5lskgkcPe2_VxBLm9Md4Y/view?usp=sharing",
-              "alt": "Gráfico de colunas verticais intitulado Distribuição do tempo nas atividades diárias indicando Sono com aproximadamente 33%, Estudo com 25%, Lazer com 20%, Alimentação com 12% e Outros com 10%",
-              "caption": "Imagem II: Distribuição do tempo nas atividades diárias de um adolescente (IFSC 2026.1)"
-            }
+            "topicoId": "b4-t2",
+            "explanation": "1. <strong>Leitura do gráfico:</strong><br>A coluna correspondente à atividade 'Estudo' indica uma taxa percentual de $25\\%$ do dia.<br><br>2. <strong>Cálculo do tempo em horas:</strong><br>Sabendo que um dia completo possui $24\\text{ horas}$:<br>$$\\text{Horas de estudo} = 25\\% \\times 24 = \\frac{1}{4} \\times 24 = 6\\text{ horas}$$<br>Portanto, o adolescente dedica $6\\text{ horas}$ ao estudo por dia, correspondendo à <strong>Alternativa D</strong>."
           },
           {
-            "q": "Manoela comprou $3\\text{ kg}$ de maçãs e $2\\text{ kg}$ de bananas na feira por $\\text{R\\$} 27{,}00$. Se o quilo da maçã é $\\text{R\\$} 1{,}50$ mais caro que o quilo da banana, qual é o preço do quilo da maçã?",
+            "q": "Na cidade onde Manoela mora, os dias de feira são sempre nas terças e quartas-feiras, quando a maioria dos supermercados fazem promoções de frutas e verduras. Ela sempre se organiza e vai toda semana fazer a feira nesses dias. Numa terça-feira, ela comprou $3\\text{ kg}$ de tomates e $2\\text{ pés}$ de alface, pagando $\\text{R\\$} 27{,}00$. Como ela recebeu visitas, retornou ao mesmo supermercado no dia seguinte para reabastecer e aproveitar os preços dos dias de feira. Comprou $2\\text{ kg}$ de tomates e $3\\text{ pés}$ de alface, pagando $\\text{R\\$} 25{,}50$. Quanto custaria, nesses dias de feira, a compra de $1\\text{ kg}$ de tomates e $1\\text{ pé}$ de alface, nesse supermercado?",
+            "image": null,
             "options": [
-              "$\\text{R\\$} 6{,}00$",
-              "$\\text{R\\$} 4{,}50$",
-              "$\\text{R\\$} 5{,}50$",
-              "$\\text{R\\$} 7{,}00$",
-              "$\\text{R\\$} 6{,}50$"
+              "$\\text{R\\$} 11{,}25$",
+              "$\\text{R\\$} 11{,}00$",
+              "$\\text{R\\$} 10{,}75$",
+              "$\\text{R\\$} 10{,}50$",
+              "$\\text{R\\$} 10{,}25$"
             ],
-            "correct": 0,
-            "explanation": "Sendo $b$ o quilo da banana e $m = b + 1{,}50$: $3(b + 1{,}50) + 2b = 27 \\Rightarrow 5b + 4{,}50 = 27 \\Rightarrow 5b = 22{,}50 \\Rightarrow b = 4{,}50$. Logo, o quilo da maçã é $4{,}50 + 1{,}50 = \\text{R\\$} 6,00$.",
-            "bncc": "EF07MA18",
-            "bnccDesc": "Resolver e elaborar problemas que possam ser representados por equações polinomiais de 1º grau, redutíveis à forma ax + b = c, fazendo uso das propriedades da igualdade.",
+            "correct": 3,
+            "bncc": "EF08MA08",
+            "bnccDesc": "Resolver e elaborar problemas relacionados ao seu contexto próximo, que possam ser representados por sistemas de equações de 1º grau com duas incógnitas e interpretá-los, caracterizando, inclusive, a multiplicidade de soluções que podem ocorrer.",
             "unidadeTematica": "Álgebra",
-            "anoEscolar": "7º ano",
-            "topicoId": "b2-t3"
+            "anoEscolar": "8º ano",
+            "topicoId": "b2-t1",
+            "explanation": "Sejam $t$ o preço de $1\\text{ kg}$ de tomate e $a$ o preço de $1\\text{ pé}$ de alface.<br><br>1. <strong>Montagem do sistema linear:</strong><br>$$\\begin{cases} 3t + 2a = 27{,}00 & \\text{(I)} \\\\ 2t + 3a = 25{,}50 & \\text{(II)} \\end{cases}$$<br>2. <strong>Resolução rápida por soma das equações:</strong><br>Somando as duas equações membro a membro:<br>$$(3t + 2t) + (2a + 3a) = 27{,}00 + 25{,}50$$<br>$$5t + 5a = 52{,}50$$<br>Colocando $5$ em evidência e dividindo ambos os membros por $5$:<br>$$5(t + a) = 52{,}50 \\implies t + a = \\frac{52{,}50}{5} = 10{,}50$$<br>Portanto, a compra de $1\\text{ kg}$ de tomates e $1\\text{ pé}$ de alface custaria $\\text{R\\$} 10{,}50$, correspondendo à <strong>Alternativa D</strong>."
           },
           {
-            "q": "Considerando que $1\\text{ dia} = 24\\text{ h}$, $1\\text{ h} = 60\\text{ min}$ e $1\\text{ min} = 60\\text{ s}$, $2{,}9\\text{ dias}$ equivalem exatamente a:",
+            "q": "Considerando que um dia equivale a $24\\text{ horas}$, $1\\text{ hora}$ a $60\\text{ minutos}$ e $1\\text{ minuto}$ a $60\\text{ segundos}$, então $2{,}9\\text{ dias}$ equivalem a:",
+            "image": null,
             "options": [
-              "$69\\text{ horas e } 36\\text{ minutos}$",
-              "$69\\text{ horas e } 54\\text{ minutos}$",
-              "$70\\text{ horas}$",
-              "$68\\text{ horas e } 45\\text{ minutos}$",
-              "$72\\text{ horas e } 18\\text{ minutos}$"
+              "$2\\text{ dias, } 22\\text{ horas e } 35\\text{ minutos.}$",
+              "$2\\text{ dias, } 21\\text{ horas e } 25\\text{ minutos.}$",
+              "$2\\text{ dias, } 10\\text{ horas e } 15\\text{ minutos.}$",
+              "$2\\text{ dias, } 20\\text{ horas e } 30\\text{ minutos.}$",
+              "$2\\text{ dias, } 21\\text{ horas e } 36\\text{ minutos.}$"
             ],
-            "correct": 0,
-            "explanation": "$2{,}9 \\times 24 = 69{,}6\\text{ horas}$. Convertendo a parte decimal: $0{,}6 \\times 60 = 36\\text{ minutos}$. Total: $69\\text{ horas e } 36\\text{ minutos}$.",
+            "correct": 4,
             "bncc": "EF06MA24",
-            "bnccDesc": "Resolver e elaborar problemas que envolvam as grandezas comprimento, massa, tempo, temperatura, área (triângulos e retângulos), capacidade e volume (sólidos formados por blocos retangulares), sem uso de fórmulas, inseridos, sempre que possível, em contextos oriundos de situações reais e/ou relacionadas às outras áreas do conhecimento.",
-            "unidadeTematica": "Grandezas e Medidas",
+            "bnccDesc": "Resolver e elaborar problemas que envolvam as grandezas comprimento, massa, tempo, temperatura, área (triângulos e retângulos), capacidade e volume (de sólidos formados por blocos retangulares), sem uso de fórmulas, inseridos, sempre que possível, em contextos oriundos de situações reais e/ou relacionadas às outras áreas do conhecimento.",
+            "unidadeTematica": "Grandezas e medidas",
             "anoEscolar": "6º ano",
-            "topicoId": "b4-t2"
+            "topicoId": "b3-t2",
+            "explanation": "1. <strong>Separação da parte inteira e decimal:</strong><br>$$2{,}9\\text{ dias} = 2\\text{ dias} + 0{,}9\\text{ dia}$$<br>2. <strong>Conversão da fração de dia para horas:</strong><br>$$0{,}9\\text{ dia} = 0{,}9 \\times 24\\text{ horas} = 21{,}6\\text{ horas} = 21\\text{ horas} + 0{,}6\\text{ hora}$$<br>3. <strong>Conversão da fração de hora para minutos:</strong><br>$$0{,}6\\text{ hora} = 0{,}6 \\times 60\\text{ minutos} = 36\\text{ minutos}$$<br>4. <strong>Resultado consolidado:</strong><br>$$2\\text{ dias, } 21\\text{ horas e } 36\\text{ minutos}$$<br>Portanto, a alternativa correta é a <strong>Alternativa E</strong>."
           },
           {
-            "q": "Na Serra do Rio do Rastro, o número de visitantes nos 4 finais de semana de julho foi: $12.000$, $15.000$, $18.000$ e $19.000$. A média de visitantes por final de semana foi de:",
+            "q": "A Serra do Rio do Rastro é um dos destinos turísticos mais visitados de Santa Catarina. Uma pousada da região oferece kits de lanche artesanal com alimentos orgânicos. Cada kit contém:\n• $\\frac{4}{3}$ de um pão caseiro;\n• $\\frac{2}{3}$ de um queijo serrano;\n• $\\frac{5}{6}$ de um bolo de milho;\n• $1\\text{ jarra}$ de suco natural.\n\nDurante um fim de semana, $18\\text{ kits}$ foram vendidos a visitantes. Quantas unidades de cada alimento foram consumidas nesse fim de semana?",
+            "image": null,
             "options": [
-              "$16.000$",
-              "$15.500$",
-              "$16.500$",
-              "$17.000$",
-              "$15.000$"
+              "$24\\text{ pães, } 12\\text{ queijos e } 15\\text{ bolos}$",
+              "$20\\text{ pães, } 13\\text{ queijos e } 16\\text{ bolos}$",
+              "$24\\text{ pães, } 12\\text{ queijos e } 14\\text{ bolos}$",
+              "$24\\text{ pães, } 14\\text{ queijos e } 15\\text{ bolos}$",
+              "$20\\text{ pães, } 12\\text{ queijos e } 15\\text{ bolos}$"
             ],
             "correct": 0,
-            "explanation": "Média: $\\frac{12000 + 15000 + 18000 + 19000}{4} = \\frac{64000}{4} = 16.000$ visitantes.",
-            "bncc": "EF07MA36",
-            "bnccDesc": "Planejar e realizar pesquisa envolvendo tema da realidade social, identificando a necessidade de ser censitária ou de usar amostra, e interpretar os dados para comunicá-los por meio de relatório escrito, tabelas e gráficos, com o apoio de planilhas eletrônicas.",
-            "unidadeTematica": "Probabilidade e Estatística",
-            "anoEscolar": "7º ano",
-            "topicoId": "b4-t4"
+            "bncc": "EF06MA09",
+            "bnccDesc": "Resolver e elaborar problemas que envolvam o cálculo da fração de uma quantidade e cujo resultado seja um número natural, com e sem uso de calculadora.",
+            "unidadeTematica": "Números",
+            "anoEscolar": "6º ano",
+            "topicoId": "b1-t1",
+            "explanation": "Calculamos a quantidade total consumida de cada item multiplicando a fração de cada kit pelo total de $18\\text{ kits}$ vendidos:<br><br>1. <strong>Pão caseiro:</strong><br>$$18 \\times \\frac{4}{3} = \\frac{18}{3} \\times 4 = 6 \\times 4 = 24\\text{ pães}$$<br>2. <strong>Queijo serrano:</strong><br>$$18 \\times \\frac{2}{3} = \\frac{18}{3} \\times 2 = 6 \\times 2 = 12\\text{ queijos}$$<br>3. <strong>Bolo de milho:</strong><br>$$18 \\times \\frac{5}{6} = \\frac{18}{6} \\times 5 = 3 \\times 5 = 15\\text{ bolos}$$<br>Portanto, foram consumidos $24\\text{ pães, } 12\\text{ queijos e } 15\\text{ bolos}$, correspondendo à <strong>Alternativa A</strong>."
           },
           {
-            "q": "Uma televisão de $\\text{R\\$} 3.200{,}00$ é oferecida com $15\\%$ de desconto para pagamento à vista. Qual o valor pago à vista?",
+            "q": "Uma loja de eletrodomésticos está realizando uma promoção que oferece um desconto para pagamento à vista. Ana deseja comprar uma televisão, cujo preço de etiqueta é $\\text{R\\$} 2.400{,}00$. Porém, ela tem a opção de pagar à vista, com desconto de $15\\%$ sobre o preço da etiqueta, ou parcelar em $8$ vezes de $\\text{R\\$} 300{,}00$. Considerando somente essas opções de pagamento, do ponto de vista financeiro, podemos afirmar que:",
+            "image": null,
             "options": [
-              "$\\text{R\\$} 2.720{,}00$",
-              "$\\text{R\\$} 2.800{,}00$",
-              "$\\text{R\\$} 2.680{,}00$",
-              "$\\text{R\\$} 2.750{,}00$",
-              "$\\text{R\\$} 2.850{,}00$"
+              "não é possível determinar a melhor opção de pagamento.",
+              "comprar à vista é a opção mais vantajosa, pois o valor final será de $\\text{R\\$} 2.400{,}00$.",
+              "ambas as opções resultam no mesmo valor final, independentemente da escolha de Ana.",
+              "Ana deve optar por parcelar, pois o valor final será o mesmo da etiqueta.",
+              "comprar à vista é a opção mais vantajosa, pois o valor final será de $\\text{R\\$} 2.040{,}00$."
             ],
-            "correct": 0,
-            "explanation": "Desconto: $0{,}15 \\times 3200 = \\text{R\\$} 480,00$. Preço à vista: $3200 - 480 = \\text{R\\$} 2.720,00$.",
+            "correct": 4,
             "bncc": "EF08MA04",
             "bnccDesc": "Resolver e elaborar problemas, envolvendo cálculo de porcentagens, incluindo o uso de tecnologias digitais.",
             "unidadeTematica": "Números",
             "anoEscolar": "8º ano",
-            "topicoId": "b1-t6"
+            "topicoId": "b1-t2",
+            "explanation": "1. <strong>Cálculo do pagamento à vista:</strong><br>Desconto de $15\\%$ sobre $\\text{R\\$} 2.400{,}00$:<br>$$\\text{Desconto} = 0{,}15 \\times 2400 = \\text{R\\$} 360{,}00$$<br>$$\\text{Preço à vista} = 2400 - 360 = \\text{R\\$} 2.040{,}00$$<br>2. <strong>Cálculo do pagamento parcelado:</strong><br>$$8 \\times \\text{R\\$} 300{,}00 = \\text{R\\$} 2.400{,}00$$<br>3. <strong>Conclusão financeira:</strong><br>Comprar à vista resulta em uma economia direta de $\\text{R\\$} 360{,}00$, com o valor final de $\\text{R\\$} 2.040{,}00$.<br>Portanto, a alternativa correta é a <strong>Alternativa E</strong>."
           },
           {
-            "q": "No dia 12 de dezembro de 2024, foi realizada a cerimônia oficial de entrega das novas salas do Centro de Referência em Pesca e Navegação do IFSC Câmpus Itajaí. A construção foi feita a partir de contêineres que foram reformados e adaptados. A Imagem III apresenta as dimensões internas de um Contêiner Dry 40 pés, cujo formato é um paralelepípedo retângulo, após a aplicação do revestimento citado no Texto VIII. Na construção de uma sala de aula, serão utilizados dois contêineres Dry 40 pés, unidos lado a lado em seu comprimento, sem sobreposição. Suponha que, para acomodar confortavelmente um estudante, levando em conta a área para circulação entre as carteiras, sejam necessários $1{,}6\\text{ m}^2$. Considerando que as dimensões internas são $12{,}00\\text{ m}$ de comprimento e $2{,}30\\text{ m}$ de largura, quantos estudantes podem ser acomodados nessa sala de aula?",
+            "q": "No Centro de Referência em Pesca e Navegação do IFSC Câmpus Itajaí, salas de aula foram construídas a partir de contêineres reformados e adaptados. A Imagem III apresenta as dimensões internas de um Contêiner Dry $40\\text{ pés}$ ($12\\text{ m}$ de comprimento por $2{,}4\\text{ m}$ de largura interna), cujo formato é um paralelepípedo retângulo. Na construção de uma sala de aula, foram utilizados dois contêineres Dry $40\\text{ pés}$, unidos lado a lado em seu comprimento, sem sobreposição. Suponha que, para acomodar confortavelmente um estudante, levando em conta a área para circulação entre as carteiras, sejam necessários $1{,}2\\text{ m}^2$ e que o espaço destinado ao professor totalize uma superfície retangular com $1{,}5\\text{ m}$ de comprimento e largura igual à largura total da sala. Com base na descrição, qual a quantidade máxima de alunos que poderiam ser confortavelmente acomodados na sala de aula formada por esses contêineres?",
+            "image": {
+              "src": "assets/img/questoes/ifsc/ifsc-2026-1-q06.png",
+              "alt": "Projeto arquitetônico esquemático da sala de aula modular formada pela junção lateral de dois contêineres Dry de 40 pés, indicando as medidas de comprimento de 12 metros, área frontal do professor de 1,5 metro de extensão e setor reservado às carteiras escolares.",
+              "caption": "Imagem III: Projeto e dimensões da sala de aula formada por dois contêineres (IFSC 2026.1)"
+            },
             "options": [
-              "$32\\text{ estudantes}$",
-              "$34\\text{ estudantes}$",
-              "$35\\text{ estudantes}$",
-              "$36\\text{ estudantes}$",
-              "$40\\text{ estudantes}$"
+              "$36\\text{ alunos}$",
+              "$39\\text{ alunos}$",
+              "$42\\text{ alunos}$",
+              "$45\\text{ alunos}$",
+              "$48\\text{ alunos}$"
+            ],
+            "correct": 2,
+            "bncc": "EF08MA19",
+            "bnccDesc": "Resolver e elaborar problemas que envolvam medidas de área de figuras geométricas, utilizando expressões de cálculo de área (quadriláteros, triângulos e círculos), em situações como determinar medida do terreno, número de lajotas para piso etc.",
+            "unidadeTematica": "Grandezas e medidas",
+            "anoEscolar": "8º ano",
+            "topicoId": "b3-t2",
+            "explanation": "1. <strong>Dimensões da sala formada por dois contêineres unidos lado a lado:</strong><br>• Comprimento total da sala: $C = 12\\text{ m}$<br>• Largura total da sala ($2$ contêineres de $2{,}4\\text{ m}$ de largura): $L = 2 \\times 2{,}4 = 4{,}8\\text{ m}$<br><br>2. <strong>Área reservada aos alunos (excluindo a área do professor):</strong><br>O espaço do professor ocupa $1{,}5\\text{ m}$ de comprimento com a largura total da sala. Assim, o comprimento restante disponível para as carteiras dos alunos é:<br>$$C_{\\text{alunos}} = 12 - 1{,}5 = 10{,}5\\text{ m}$$<br>A área útil destinada aos alunos é:<br>$$A_{\\text{alunos}} = 10{,}5\\text{ m} \\times 4{,}8\\text{ m} = 50{,}4\\text{ m}^2$$<br>3. <strong>Capacidade máxima de alunos:</strong><br>Como cada aluno necessita de $1{,}2\\text{ m}^2$:<br>$$\\text{Número de alunos} = \\frac{50{,}4}{1{,}2} = 42\\text{ alunos}$$<br>Portanto, a sala pode acomodar confortavelmente $42\\text{ alunos}$, correspondendo à <strong>Alternativa C</strong>."
+          },
+          {
+            "q": "Um chuveiro elétrico convencional consome, em média, $9\\text{ litros}$ de água por minuto. Uma pessoa que toma dois banhos de $15\\text{ minutos}$ por dia acaba contribuindo significativamente para o consumo de água. Considere que uma pessoa mantenha essa rotina ao longo de $30\\text{ dias}$ e que o valor cobrado pela CASAN por metro cúbico ($\\text{m}^3$) de água consumido é de $\\text{R\\$} 6{,}50$. Lembrando que $1\\text{ m}^3 = 1.000\\text{ L}$, o custo relacionado ao consumo de água nesses banhos será de:",
+            "image": null,
+            "options": [
+              "$\\text{R\\$} 48{,}75.$",
+              "$\\text{R\\$} 52{,}65.$",
+              "$\\text{R\\$} 58{,}50.$",
+              "$\\text{R\\$} 65{,}00.$",
+              "$\\text{R\\$} 78{,}00.$"
             ],
             "correct": 1,
-            "explanation": "A área interna de um contêiner é $12{,}00 \\times 2{,}30 = 27{,}60\\text{ m}^2$. Como a sala de aula é formada por dois contêineres unidos, a área total da sala é $2 \\times 27{,}60 = 55{,}20\\text{ m}^2$. Com a exigência de $1{,}6\\text{ m}^2$ por estudante: $\\frac{55{,}20}{1{,}6} = 34{,}5$. Como o número de estudantes deve ser inteiro, a sala pode acomodar confortavelmente 34 estudantes.",
-            "bncc": "EF08MA19",
-            "bnccDesc": "Resolver e elaborar problemas que envolvam medidas de área de figuras geométricas, utilizando expressões de cálculo de área (quadriláteros, triângulos e círculos), em situações como determinar medida de terrenos.",
-            "unidadeTematica": "Grandezas e Medidas",
-            "anoEscolar": "8º ano",
-            "topicoId": "b4-t1",
-            "image": {
-              "src": "https://drive.google.com/file/d/17atBcqb1OBGrqaI3_2QvRLaTvETFD4mZ/view?usp=sharing",
-              "alt": "Imagem técnica e ilustrativa das dimensões e projeto de adaptação de contêineres Dry de 40 pés para salas de aula do Centro de Referência em Pesca e Navegação.",
-              "caption": "Imagem III: Projeto e dimensões internas do contêiner adaptado (IFSC 2026.1)"
-            }
-          },
-          {
-            "q": "Durante uma estiagem, um reservatório de $45.000\\text{ Litros}$ perde $3\\text{ m}^3$ de água por dia por consumo e evaporação. Quantos dias o reservatório durará sem novas chuvas?",
-            "options": [
-              "$15\\text{ dias}$",
-              "$12\\text{ dias}$",
-              "$18\\text{ dias}$",
-              "$20\\text{ dias}$",
-              "$10\\text{ dias}$"
-            ],
-            "correct": 0,
-            "explanation": "$3\\text{ m}^3 = 3.000\\text{ Litros}$. Duração: $\\frac{45000}{3000} = 15\\text{ dias}$.",
             "bncc": "EF06MA24",
-            "bnccDesc": "Resolver e elaborar problemas que envolvam as grandezas comprimento, massa, tempo, temperatura, área (triângulos e retângulos), capacidade e volume (sólidos formados por blocos retangulares), sem uso de fórmulas, inseridos, sempre que possível, em contextos oriundos de situações reais e/ou relacionadas às outras áreas do conhecimento.",
-            "unidadeTematica": "Grandezas e Medidas",
+            "bnccDesc": "Resolver e elaborar problemas que envolvam as grandezas comprimento, massa, tempo, temperatura, área (triângulos e retângulos), capacidade e volume (de sólidos formados por blocos retangulares), sem uso de fórmulas, inseridos, sempre que possível, em contextos oriundos de situações reais e/ou relacionadas às outras áreas do conhecimento.",
+            "unidadeTematica": "Grandezas e medidas",
             "anoEscolar": "6º ano",
-            "topicoId": "b4-t2"
+            "topicoId": "b3-t2",
+            "explanation": "1. <strong>Cálculo do tempo total de banho em $30\\text{ dias}$:</strong><br>$$t = 2 \\times 15\\text{ min/dia} \\times 30\\text{ dias} = 30\\text{ min/dia} \\times 30\\text{ dias} = 900\\text{ minutos}$$<br>2. <strong>Cálculo do volume total de água em litros:</strong><br>$$V = 900\\text{ min} \\times 9\\text{ L/min} = 8.100\\text{ litros}$$<br>3. <strong>Conversão para metros cúbicos ($\\text{m}^3$):</strong><br>Como $1\\text{ m}^3 = 1.000\\text{ L}$:<br>$$V_{\\text{m}^3} = \\frac{8.100}{1.000} = 8{,}1\\text{ m}^3$$<br>4. <strong>Cálculo do custo total:</strong><br>$$\\text{Custo} = 8{,}1\\text{ m}^3 \\times \\text{R\\$} 6{,}50 = \\text{R\\$} 52{,}65$$<br>Portanto, o custo relacionado é de $\\text{R\\$} 52{,}65$, correspondendo à <strong>Alternativa B</strong>."
           }
         ],
         "slug": "prova-ifsc-20261",
@@ -4908,63 +4987,66 @@ var mathData = window.mathData || {
         },
         "questions": [
           {
-            "q": "De acordo com a Imagem III, analise as afirmações abaixo:<br>I. O TikTok é mais utilizado que o YouTube pelos brasileiros entre 9 e 17 anos.<br>II. A fração de brasileiros entre 9 e 17 anos, que são usuários de internet, pode ser escrita como $\\frac{23}{25}$.<br>III. Mais da metade dos brasileiros entre 9 e 17 anos que são usuários de internet usam o Whatsapp.<br>IV. Como $92\\%$ de brasileiros entre 9 e 17 anos representam $24{,}5\\text{ milhões}$ de pessoas, pode-se afirmar que no Brasil há mais de $26\\text{ milhões}$ de pessoas entre 9 e 17 anos.<br>Assinale a alternativa CORRETA.",
+            "q": "Observe a Imagem III:\n\nDe acordo com a Imagem III, analise as afirmações abaixo:\nI. O TikTok é mais utilizado que o YouTube pelos brasileiros entre $9$ e $17\\text{ anos}$.\nII. A fração de brasileiros entre $9$ e $17\\text{ anos}$, que são usuários de internet, pode ser escrita como $\\frac{23}{25}$.\nIII. Mais da metade dos brasileiros entre $9$ e $17\\text{ anos}$ que são usuários de internet usam o WhatsApp.\nIV. Como $92\\%$ de brasileiros entre $9$ e $17\\text{ anos}$ representam $24{,}5\\text{ milhões}$ de pessoas, pode-se afirmar que no Brasil há mais de $26\\text{ milhões}$ de pessoas entre $9$ e $17\\text{ anos}$.\n\nAssinale a alternativa CORRETA:",
+            "image": {
+              "src": "assets/img/questoes/ifsc/ifsc-2026-2-q01.png",
+              "alt": "Infográfico oficial da pesquisa TIC Kids Online Brasil com dados sobre uso de internet por crianças e adolescentes: 92% são usuários de internet (24,5 milhões), WhatsApp com 76%, YouTube com 67%, TikTok com 58% e Instagram com 55%.",
+              "caption": "Figura: Infográfico sobre o uso de redes e internet por crianças e adolescentes (IFSC 2026.2)"
+            },
             "options": [
               "Apenas os itens II e III estão corretos.",
               "Apenas os itens III e IV estão corretos.",
               "Apenas os itens I, II e III estão corretos.",
-              "Apenas os itens II e IV estão corretos.",
-              "Todos os itens estão corretos."
+              "Apenas os itens I, II e IV estão corretos.",
+              "Apenas os itens II, III e IV estão corretos."
             ],
             "correct": 4,
-            "explanation": "Análise dos itens com base no gráfico oficial da Imagem III: I. O gráfico mostra o percentual do TikTok superior ao do YouTube na faixa etária (V). II. O percentual de usuários de internet é de $92\\% = \\frac{92}{100} = \\frac{23}{25}$ (V). III. O percentual do WhatsApp ultrapassa $50\\%$ (V). IV. Se $92\\%$ correspondem a $24{,}5\\text{ milhões}$, a população total na faixa é $\\frac{24{,}5}{0{,}92} \\approx 26{,}63\\text{ milhões} > 26\\text{ milhões}$ (V). Todos os itens estão corretos.",
-            "bncc": "EF08MA04",
-            "bnccDesc": "Resolver e elaborar problemas, envolvendo cálculo de porcentagens, incluindo o uso de tecnologias digitais.",
+            "bncc": "EF07MA02",
+            "bnccDesc": "Resolver e elaborar problemas que envolvam porcentagens, como os que lidam com acréscimos e decréscimos simples, utilizando estratégias pessoais, cálculo mental e calculadora, no contexto da educação financeira, entre outros.",
             "unidadeTematica": "Números",
-            "anoEscolar": "8º ano",
-            "topicoId": "b1-t6",
-            "image": {
-              "src": "https://drive.google.com/file/d/1cCMsAq5u7zhkif-tP5Lm8ig_CLnAib8z/view?usp=sharing",
-              "alt": "Gráfico comparativo de barras indicando a porcentagem de uso das principais redes sociais por brasileiros de 9 a 17 anos, destacando 92% de usuários de internet no país.",
-              "caption": "Imagem III: Gráfico de uso de redes sociais por crianças e adolescentes (IFSC 2026.2)"
-            }
+            "anoEscolar": "7º ano",
+            "topicoId": "b1-t2",
+            "explanation": "Análise criteriosa de cada uma das afirmações com base nos dados do infográfico:<br><br>• <strong>Item I (Falso):</strong> No gráfico de barras das redes mais utilizadas, o YouTube possui $67\\%$ de adesão, enquanto o TikTok possui $58\\%$. Portanto, o YouTube é mais utilizado que o TikTok.<br>• <strong>Item II (Verdadeiro):</strong> A taxa de usuários de internet é de $92\\%$. Escrevendo em forma fracionária e simplificando:<br>$$\\frac{92}{100} = \\frac{92 \\div 4}{100 \\div 4} = \\frac{23}{25}$$<br>• <strong>Item III (Verdadeiro):</strong> O WhatsApp é utilizado por $76\\%$ dos jovens usuários de internet, o que é estritamente superior à metade ($50\\%$).<br>• <strong>Item IV (Verdadeiro):</strong> Se $92\\%$ ($0{,}92$) do público de $9$ a $17\\text{ anos}$ corresponde a $24{,}5\\text{ milhões}$, a população total $P$ dessa faixa etária é:<br>$$P = \\frac{24{,}5}{0{,}92} \\approx 26{,}63\\text{ milhões}$$<br>Como $26{,}63\\text{ milhões} > 26\\text{ milhões}$, a afirmativa é correta.<br><br>Estão corretos os itens II, III e IV. Portanto, a alternativa correta é a <strong>Alternativa E</strong>."
           },
           {
-            "q": "Tamara comprou botões cilíndricos de $2\\text{ cm}$ de diâmetro (raio $1\\text{ cm}$) e $0{,}2\\text{ cm}$ de espessura. Uma pilha com $50$ desses botões possui altura total e volume de (adote $\\pi = 3{,}14$):",
+            "q": "Tamara usará botões cilíndricos idênticos. Cada botão tem $2\\text{ cm}$ de diâmetro e $0{,}2\\text{ cm}$ de altura (espessura). Ao final de 2026, ela pretende empilhar os botões citados no texto (um botão para cada dia do ano), alinhando os centros das bases. Assim, formará um único sólido cilíndrico. Qual será o volume aproximado desse sólido? (Utilize a aproximação $\\pi = 3$).",
+            "image": null,
             "options": [
-              "$10\\text{ cm}$ de altura e $31{,}4\\text{ cm}^3$",
-              "$10\\text{ cm}$ de altura e $62{,}8\\text{ cm}^3$",
-              "$5\\text{ cm}$ de altura e $15{,}7\\text{ cm}^3$",
-              "$8\\text{ cm}$ de altura e $25{,}12\\text{ cm}^3$",
-              "$12\\text{ cm}$ de altura e $37{,}68\\text{ cm}^3$"
+              "$175\\text{ cm}^3$",
+              "$219\\text{ cm}^3$",
+              "$438\\text{ cm}^3$",
+              "$876\\text{ cm}^3$",
+              "$1.095\\text{ cm}^3$"
             ],
-            "correct": 0,
-            "explanation": "Altura da pilha: $50 \\times 0{,}2 = 10\\text{ cm}$. Volume da pilha: $V = \\pi r^2 H = 3{,}14 \\times 1^2 \\times 10 = 31{,}4\\text{ cm}^3$.",
+            "correct": 1,
             "bncc": "EF09MA19",
-            "bnccDesc": "Resolver e elaborar problemas que envolvam medidas de volumes de prismas e de cilindros retos, inclusive com uso de expressões de cálculo, em situações cotidianas.",
-            "unidadeTematica": "Grandezas e Medidas",
+            "bnccDesc": "Resolver e elaborar problemas que envolvam o cálculo de volumes de recipientes cujo formato é o de um bloco retangular ou de um cilindro reto.",
+            "unidadeTematica": "Grandezas e medidas",
             "anoEscolar": "9º ano",
-            "topicoId": "b4-t2"
+            "topicoId": "b3-t2",
+            "explanation": "1. <strong>Determinação da quantidade de botões:</strong><br>O ano de 2026 não é bissexto (pois $2026$ não é divisível por $4$). Assim, o ano possui $365\\text{ dias}$ e serão empilhados $365\\text{ botões}$.<br><br>2. <strong>Dimensões do cilindro formado pela pilha:</strong><br>• Diâmetro: $d = 2\\text{ cm} \\implies \\text{raio } r = 1\\text{ cm}$<br>• Altura total ($H$): $365 \\times 0{,}2\\text{ cm} = 73\\text{ cm}$<br><br>3. <strong>Cálculo do volume cilíndrico:</strong><br>$$V = \\pi \\cdot r^2 \\cdot H$$<br>Substituindo $\\pi = 3$, $r = 1\\text{ cm}$ e $H = 73\\text{ cm}$:<br>$$V = 3 \\cdot (1)^2 \\cdot 73 = 3 \\cdot 73 = 219\\text{ cm}^3$$<br>Portanto, o volume aproximado é de $219\\text{ cm}^3$, correspondendo à <strong>Alternativa B</strong> (gabarito oficial definitivo da banca IFSC)."
           },
           {
-            "q": "Em uma partida de Pokémon TCG, o baralho de um jogador tem $40$ cartas restantes, das quais $6$ são do tipo 'Energia Elétrica'. Qual a probabilidade de ele comprar uma carta de Energia Elétrica na próxima rodada?",
+            "q": "Em cada turno de uma partida de Pokémon TCG, o jogador começa comprando uma carta do seu baralho e colocando em sua mão. Em determinado momento da partida, Liko está sem energia na sua mão e torcendo para comprar uma carta de energia do seu baralho. Pelas suas contas, ela ainda tem $40$ cartas no baralho, e dessas, $8$ são cartas de energia. Quando Liko comprar uma carta do baralho para iniciar seu turno, qual é sua chance de comprar uma carta de energia como deseja?",
+            "image": null,
             "options": [
-              "$15\\%$",
-              "$12\\%$",
-              "$18\\%$",
+              "$5\\%$",
+              "$8\\%$",
               "$20\\%$",
-              "$25\\%$"
+              "$32\\%$",
+              "$40\\%$"
             ],
-            "correct": 0,
-            "explanation": "Probabilidade: $P = \\frac{6}{40} = \\frac{3}{20} = 0{,}15 = 15\\%$.",
-            "bncc": "EF08MA04",
-            "bnccDesc": "Resolver e elaborar problemas, envolvendo cálculo de porcentagens, incluindo o uso de tecnologias digitais.",
-            "unidadeTematica": "Números",
+            "correct": 2,
+            "bncc": "EF08MA22",
+            "bnccDesc": "Calcular a probabilidade de eventos, com base na construção do espaço amostral, utilizando o princípio multiplicativo, e reconhecer que a soma das probabilidades de todos os elementos do espaço amostral é igual a 1.",
+            "unidadeTematica": "Probabilidade e estatística",
             "anoEscolar": "8º ano",
-            "topicoId": "b1-t6"
+            "topicoId": "b4-t1",
+            "explanation": "1. <strong>Identificação dos elementos de probabilidade:</strong><br>• Número total de casos possíveis (espaço amostral): $40\\text{ cartas}$.<br>• Número de casos favoráveis (cartas de energia): $8\\text{ cartas}$.<br><br>2. <strong>Cálculo da probabilidade:</strong><br>$$P = \\frac{\\text{Casos favoráveis}}{\\text{Total de casos}} = \\frac{8}{40}$$<br>Simplificando por $8$:<br>$$P = \\frac{1}{5} = 0{,}20 = 20\\%$$<br>Portanto, a chance de comprar uma carta de energia é de $20\\%$, correspondendo à <strong>Alternativa C</strong>."
           },
           {
-            "q": "<strong>Texto VIII</strong><br><br>Os Institutos Federais vão participar de uma etapa de Jogos da Integração entre alguns câmpus das regiões Serrana e Oeste de Santa Catarina. Para isso, haverá um ônibus saindo de Lages para Chapecó, passando por Concórdia e Xanxerê.<br>O professor de matemática registrou os tempos dos três trajetos: Lages-Concórdia, Concórdia-Xanxerê e Xanxerê-Chapecó. Em seguida, ele desafiou seus estudantes a calcularem o tempo total do percurso, sendo que os tempos dos três trajetos, expressos em horas, são dados, respectivamente, pelas expressões $E_1$, $E_2$ e $E_3$ abaixo:<br><br>$$E_1 = (0{,}25)^{-1} - \\sqrt{\\frac{1}{16}} \\quad ; \\quad E_2 = \\left(\\frac{2}{5}\\right)^{-1} - 1 \\quad ; \\quad E_3 = \\frac{3}{4} + \\sqrt{0{,}64}$$<br>De acordo com as informações do Texto VIII, qual é o tempo total do percurso?",
+            "q": "Os Institutos Federais vão participar de uma etapa de Jogos da Integração entre alguns câmpus das regiões Serrana e Oeste de Santa Catarina. Para isso, haverá um ônibus saindo de Lages para Chapecó, passando por Concórdia e Xanxerê. O professor de matemática registrou os tempos dos três trajetos expressos em horas pelas expressões $E_1$, $E_2$ e $E_3$ abaixo:\n$$E_1 = (0{,}25)^{-1} - \\sqrt{\\frac{1}{16}}$$\n$$E_2 = \\left(\\frac{2}{5}\\right)^{-1} - 1$$\n$$E_3 = \\frac{3}{4} + \\sqrt{0{,}64}$$\nQual é o tempo total do percurso?",
+            "image": null,
             "options": [
               "$6\\text{ h } 08\\text{ min}$",
               "$6\\text{ h } 15\\text{ min}$",
@@ -4973,68 +5055,66 @@ var mathData = window.mathData || {
               "$6\\text{ h } 48\\text{ min}$"
             ],
             "correct": 4,
-            "explanation": "Calculando o tempo de cada um dos três trajetos em horas:<br><br>1. <strong>Lages a Concórdia ($E_1$):</strong><br>$$E_1 = (0{,}25)^{-1} - \\sqrt{\\frac{1}{16}} = \\left(\\frac{1}{4}\\right)^{-1} - \\frac{1}{4} = 4 - 0{,}25 = 3{,}75\\text{ h}$$<br>Como $0{,}75\\text{ h} = 0{,}75 \\times 60\\text{ min} = 45\\text{ min}$, temos $E_1 = 3\\text{ h } 45\\text{ min}$.<br><br>2. <strong>Concórdia a Xanxerê ($E_2$):</strong><br>$$E_2 = \\left(\\frac{2}{5}\\right)^{-1} - 1 = \\frac{5}{2} - 1 = 2{,}5 - 1 = 1{,}5\\text{ h}$$<br>Como $0{,}5\\text{ h} = 30\\text{ min}$, temos $E_2 = 1\\text{ h } 30\\text{ min}$.<br><br>3. <strong>Xanxerê a Chapecó ($E_3$):</strong><br>$$E_3 = \\frac{3}{4} + \\sqrt{0{,}64} = 0{,}75 + 0{,}8 = 1{,}55\\text{ h}$$<br>Como $0{,}55\\text{ h} = 0{,}55 \\times 60\\text{ min} = 33\\text{ min}$, temos $E_3 = 1\\text{ h } 33\\text{ min}$.<br><br>4. <strong>Tempo Total:</strong><br>$$E_{\\text{total}} = E_1 + E_2 + E_3 = 3{,}75 + 1{,}5 + 1{,}55 = 6{,}8\\text{ h}$$<br>Convertendo a parte decimal para minutos: $0{,}8 \\times 60\\text{ min} = 48\\text{ min}$. Portanto, o tempo total é de $6\\text{ h } 48\\text{ min}$.",
-            "bncc": "EF06MA24",
-            "bnccDesc": "Resolver e elaborar problemas que envolvam as grandezas comprimento, massa, tempo, temperatura, área (triângulos e retângulos), capacidade e volume (sólidos formados por blocos retangulares), sem uso de fórmulas, inseridos, sempre que possível, em contextos oriundos de situações reais e/ou relacionadas às outras áreas do conhecimento.",
-            "unidadeTematica": "Grandezas e Medidas",
-            "anoEscolar": "6º ano",
-            "topicoId": "b4-t2",
-            "image": {
-              "src": "https://drive.google.com/file/d/1Er0U1HBfxUCUgpUoIYznDW5ykM3hRkRd/view?usp=sharing",
-              "alt": "Mapa de Santa Catarina destacando os municípios de Lages, Chapecó, Xanxerê e Concórdia com legenda indicativa dos padrões gráficos de cada cidade.",
-              "caption": "Texto VIII: Mapa do percurso de integração entre os câmpus do IFSC (IFSC 2026.2)"
-            }
+            "bncc": "EF08MA01",
+            "bnccDesc": "Efetuar cálculos com potências de expoentes inteiros e aplicar esse conhecimento na representação de números em notação científica.",
+            "unidadeTematica": "Números",
+            "anoEscolar": "8º ano",
+            "topicoId": "b1-t1",
+            "explanation": "Calculamos o valor de cada uma das três expressões temporais:<br><br>1. <strong>Cálculo de $E_1$:</strong><br>Como $0{,}25 = \\frac{1}{4}$, temos $(0{,}25)^{-1} = \\left(\\frac{1}{4}\\right)^{-1} = 4$.<br>$\\sqrt{\\frac{1}{16}} = \\frac{1}{4} = 0{,}25$.<br>$$E_1 = 4 - 0{,}25 = 3{,}75\\text{ horas}$$<br>2. <strong>Cálculo de $E_2$:</strong><br>$$\\left(\\frac{2}{5}\\right)^{-1} = \\frac{5}{2} = 2{,}5$$<br>$$E_2 = 2{,}5 - 1 = 1{,}5\\text{ horas}$$<br>3. <strong>Cálculo de $E_3$:</strong><br>$$\\frac{3}{4} = 0{,}75 \\quad \\text{e} \\quad \\sqrt{0{,}64} = 0{,}8$$<br>$$E_3 = 0{,}75 + 0{,}8 = 1{,}55\\text{ horas}$$<br>4. <strong>Soma dos tempos e conversão:</strong><br>$$E_{\\text{total}} = 3{,}75 + 1{,}5 + 1{,}55 = 6{,}8\\text{ horas}$$<br>Convertendo a parte decimal para minutos:<br>$$0{,}8\\text{ h} = 0{,}8 \\times 60\\text{ min} = 48\\text{ minutos}$$<br>Portanto, o tempo total é de $6\\text{ h } 48\\text{ min}$, correspondendo à <strong>Alternativa E</strong>."
           },
           {
-            "q": "Das $46{,}46\\text{ milhões}$ de matrículas escolares na educação básica brasileira, $38{,}5\\text{ milhões}$ são na rede pública. O percentual aproximado de estudantes na rede pública é de:",
+            "q": "O Censo Escolar 2025 reúne dados da educação brasileira. A tabela apresenta o número aproximado de matrículas em algumas etapas da educação básica brasileira:\n• Ensino Fundamental: $25{,}80\\text{ milhões}$\n• Ensino Médio: $7{,}37\\text{ milhões}$\n• Educação Profissional: $3{,}19\\text{ milhões}$\n• Outras: $10{,}10\\text{ milhões}$\n\nConsiderando que as matrículas totalizam $46{,}46\\text{ milhões}$, podemos afirmar que o percentual de estudantes do ensino fundamental em relação ao total de matrículas representa:",
+            "image": null,
             "options": [
-              "$82{,}9\\%$",
-              "$80{,}5\\%$",
-              "$85{,}0\\%$",
-              "$78{,}4\\%$",
-              "$88{,}2\\%$"
+              "menos de $44\\%$.",
+              "entre $44\\%$ e $52\\%$.",
+              "entre $52\\%$ e $60\\%$.",
+              "entre $60\\%$ e $68\\%$.",
+              "mais do que $68\\%$."
             ],
-            "correct": 0,
-            "explanation": "Percentual: $\\frac{38{,}5}{46{,}46} \\approx 0{,}82867 = 82{,}9\\%$.",
+            "correct": 2,
             "bncc": "EF08MA04",
             "bnccDesc": "Resolver e elaborar problemas, envolvendo cálculo de porcentagens, incluindo o uso de tecnologias digitais.",
             "unidadeTematica": "Números",
             "anoEscolar": "8º ano",
-            "topicoId": "b1-t6"
+            "topicoId": "b1-t2",
+            "explanation": "1. <strong>Identificação dos valores:</strong><br>• Matrículas no Ensino Fundamental: $25{,}80\\text{ milhões}$<br>• Total de matrículas na Educação Básica: $46{,}46\\text{ milhões}$<br><br>2. <strong>Cálculo da razão percentual:</strong><br>$$P = \\frac{25{,}80}{46{,}46} \\approx 0{,}555316 \\dots \\approx 55{,}53\\%$$<br>3. <strong>Enquadramento nas faixas das alternativas:</strong><br>O valor $55{,}53\\%$ encontra-se estritamente no intervalo <strong>entre $52\\%$ e $60\\%$</strong>.<br>Portanto, a alternativa correta é a <strong>Alternativa C</strong> (gabarito oficial definitivo da banca IFSC)."
           },
           {
-            "q": "Ana e Bia jogam um dado padrão de $6$ faces. Ana ganha se o resultado for par maior que 2 ($4$ ou $6$) e Bia ganha se for ímpar ($1, 3$ ou $5$). A razão entre as chances de vitória de Ana e de Bia é:",
+            "q": "Ana e Bia decidiram criar um jogo chamado 'Racional ou Irracional'. O jogo consiste em Ana escolher entre 'Racional' ou 'Irracional', e em seguida Bia escolher uma operação (Adição, Subtração ou Multiplicação). Depois, cada menina fala um número real e efetuam a operação escolhida por Bia com esses números. Se o resultado for do tipo que Ana escolheu, Ana vence; caso contrário, Bia vence. É correto afirmar que, se Ana sempre escolher Racional e:",
+            "image": null,
             "options": [
-              "$\\frac{2}{3}$",
-              "$\\frac{1}{2}$",
-              "$\\frac{3}{2}$",
-              "$1$",
-              "$\\frac{1}{3}$"
+              "falar o número $0$, Ana vence independentemente da escolha de Bia.",
+              "Bia escolher Adição, Ana sempre vai vencer, pois a soma de quaisquer dois números é sempre racional.",
+              "Bia escolher Multiplicação, Bia sempre vai vencer, pois a multiplicação de quaisquer dois números é sempre irracional.",
+              "ambas falarem apenas números inteiros, a vitória será de Ana.",
+              "Bia escolher Subtração, Bia sempre vai vencer, pois a subtração de quaisquer dois números é sempre irracional."
             ],
-            "correct": 0,
-            "explanation": "Ana tem 2 resultados favoráveis ($4, 6$), Bia tem 3 ($1, 3, 5$). A razão entre as chances de Ana e Bia é $\\frac{2}{3}$.",
-            "bncc": "EF08MA22",
-            "bnccDesc": "Calcular a probabilidade de eventos, com base na construção do espaço amostral, utilizando o princípio multiplicativo, e reconhecer que a soma das probabilidades de todos os elementos do espaço amostral é igual a 1.",
-            "unidadeTematica": "Probabilidade e Estatística",
-            "anoEscolar": "8º ano",
-            "topicoId": "b4-t3"
+            "correct": 3,
+            "bncc": "EF09MA02",
+            "bnccDesc": "Reconhecer um número irracional como um número real cuja representação decimal é infinita e não periódica, e estimar a localização de alguns deles na reta numérica.",
+            "unidadeTematica": "Números",
+            "anoEscolar": "9º ano",
+            "topicoId": "b1-t1",
+            "explanation": "Análise formal das propriedades dos conjuntos numéricos:<br><br>• <strong>Opção A (Falsa):</strong> Se Ana falar $0$, mas Bia escolher Adição e falar um número irracional (como $\\sqrt{2}$), a soma será $0 + \\sqrt{2} = \\sqrt{2}$, que é irracional. Logo, Bia venceria.<br>• <strong>Opção B (Falsa):</strong> A soma de dois números reais pode ser irracional (por exemplo, $1 + \\sqrt{3} \\in \\mathbb{I}$).<br>• <strong>Opção C (Falsa):</strong> A multiplicação de números reais pode resultar em número racional (por exemplo, $2 \\times 3 = 6 \\in \\mathbb{Q}$, ou $\\sqrt{2} \\times \\sqrt{2} = 2 \\in \\mathbb{Q}$).<br>• <strong>Opção D (Verdadeira):</strong> O conjunto dos números inteiros $\\mathbb{Z}$ é um subconjunto dos números racionais ($\\mathbb{Z} \\subset \\mathbb{Q}$) e possui a propriedade de fechamento para adição, subtração e multiplicação. Ou seja, a soma, a diferença e o produto de dois números inteiros quaisquer resulta sempre em um número inteiro, que é obrigatoriamente <strong>racional</strong>. Assim, se ambas falarem apenas números inteiros, o resultado será garantidamente racional e Ana sempre vencerá!<br>• <strong>Opção E (Falsa):</strong> A subtração de dois racionais é sempre racional (por exemplo, $5 - 2 = 3 \\in \\mathbb{Q}$).<br><br>Portanto, a alternativa correta é a <strong>Alternativa D</strong>."
           },
           {
-            "q": "Uma área desmatada de $60\\text{ hectares}$ equivale a quantos campos de futebol oficiais de $100\\text{ m} \\times 75\\text{ m}$ ($7.500\\text{ m}^2$)? Sabendo que $1\\text{ ha} = 10.000\\text{ m}^2$.",
+            "q": "O relatório final da Operação Nacional Mata Atlântica em Pé indicou que, em Santa Catarina, o desmatamento ilegal atingiu uma área aproximada de $192{,}78\\text{ hectares}$. Para fins de comparação, considere o tamanho de um campo de futebol (Arena Joinville), com dimensões de $105\\text{ m}$ por $68\\text{ m}$. Lembrando que $1\\text{ hectare (ha)} = 10.000\\text{ m}^2$, assinale a alternativa que apresenta o número que melhor representa a quantidade aproximada de campos de futebol correspondente à área total desmatada em Santa Catarina:",
+            "image": null,
             "options": [
-              "$80\\text{ campos}$",
-              "$60\\text{ campos}$",
-              "$75\\text{ campos}$",
-              "$90\\text{ campos}$",
-              "$100\\text{ campos}$"
+              "$190$",
+              "$210$",
+              "$270$",
+              "$320$",
+              "$410$"
             ],
-            "correct": 0,
-            "explanation": "Área total em $\\text{m}^2$: $60 \\times 10.000 = 600.000\\text{ m}^2$. Número de campos: $\\frac{600.000}{7.500} = 80\\text{ campos de futebol}$.",
+            "correct": 2,
             "bncc": "EF08MA19",
-            "bnccDesc": "Resolver e elaborar problemas que envolvam medidas de área de figuras geométricas, utilizando expressões de cálculo de área (quadriláteros, triângulos e círculos), em situações como determinar medida de terrenos.",
-            "unidadeTematica": "Grandezas e Medidas",
+            "bnccDesc": "Resolver e elaborar problemas que envolvam medidas de área de figuras geométricas, utilizando expressões de cálculo de área (quadriláteros, triângulos e círculos), em situações como determinar medida do terreno, número de lajotas para piso etc.",
+            "unidadeTematica": "Grandezas e medidas",
             "anoEscolar": "8º ano",
-            "topicoId": "b4-t1"
+            "topicoId": "b3-t2",
+            "explanation": "1. <strong>Conversão da área desmatada para metros quadrados ($\\text{m}^2$):</strong><br>Como $1\\text{ ha} = 10.000\\text{ m}^2$:<br>$$A_{\\text{desmatada}} = 192{,}78 \\times 10.000 = 1.927.800\\text{ m}^2$$<br>2. <strong>Cálculo da área de um campo de futebol:</strong><br>$$A_{\\text{campo}} = 105\\text{ m} \\times 68\\text{ m} = 7.140\\text{ m}^2$$<br>3. <strong>Cálculo do número equivalente de campos:</strong><br>$$N = \\frac{1.927.800}{7.140} \\approx 270{,}00$$<br>Portanto, a quantidade aproximada de campos de futebol é $270$, correspondendo à <strong>Alternativa C</strong>."
           }
         ],
         "slug": "prova-ifsc-20262",
