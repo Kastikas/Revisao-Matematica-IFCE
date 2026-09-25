@@ -49,92 +49,166 @@
 
     <!-- Header / Navbar da Área de Provas (Parte 2 - Escuro-Azul) -->
     <header class="gradient-header-dark text-white shadow-xl sticky top-0 z-50 border-b border-slate-800">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="max-w-7xl mx-auto px-3 sm:px-6 lg:px-8">
             <div class="flex items-center justify-between h-16">
                 <!-- Logo Provas -->
-                <a href="../provas.html" class="flex items-center space-x-3 group">
-                    <div class="bg-blue-600 p-2 rounded-xl text-white font-bold shadow-md shadow-blue-500/20 flex items-center justify-center group-hover:scale-105 transition">
-                        <i data-lucide="file-check" class="w-6 h-6"></i>
+                <a href="../provas.html" class="flex items-center space-x-2 sm:space-x-3 group min-w-0 flex-shrink-0">
+                    <div class="bg-blue-600 p-1.5 sm:p-2 rounded-xl text-white font-bold shadow-md shadow-blue-500/20 flex items-center justify-center group-hover:scale-105 transition">
+                        <i data-lucide="file-check" class="w-5 h-5 sm:w-6 sm:h-6"></i>
                     </div>
-                    <div>
-                        <span class="font-extrabold text-xl tracking-tight text-white flex items-center gap-1.5">
+                    <div class="min-w-0">
+                        <span class="font-extrabold text-lg sm:text-xl tracking-tight text-white flex items-center gap-1 sm:gap-1.5">
                             Partiu<span class="text-sky-400">IF</span>
-                            <span class="text-[10px] font-bold uppercase tracking-wider bg-blue-500/30 text-sky-200 border border-blue-400/30 px-2 py-0.5 rounded-full">Provas</span>
+                            <span class="text-[9px] sm:text-[10px] font-bold uppercase tracking-wider bg-blue-500/30 text-sky-200 border border-blue-400/30 px-1.5 sm:px-2 py-0.5 rounded-full">Provas</span>
                         </span>
-                        <p class="text-xs text-slate-400 hidden sm:flex items-center gap-1">
+                        <p class="text-xs text-slate-400 hidden xl:flex items-center gap-1">
                             <i data-lucide="archive" class="w-3 h-3 text-sky-400"></i> Acervo Oficial com PDFs e Gabarito
                         </p>
                     </div>
                 </a>
 
                 <!-- Navegação Desktop -->
-                <nav class="hidden md:flex space-x-1 items-center">
+                <nav class="hidden lg:flex space-x-1.5 items-center">
                     <a href="../provas.html" class="px-3 py-2 rounded-lg text-sm transition flex items-center gap-1.5 text-slate-300 hover:bg-slate-800 hover:text-white">
-                <i data-lucide="layout-grid" class="w-4 h-4"></i> Todas as Provas
-            </a><a href="../pesquisa.html" class="px-3 py-2 rounded-lg text-sm transition flex items-center gap-1.5 text-slate-300 hover:bg-slate-800 hover:text-white">
-                <i data-lucide="search" class="w-4 h-4"></i> Pesquisa BNCC
-            </a><a href="../bloco-6-provas-ifce/index.html" class="px-3 py-2 rounded-lg text-sm transition flex items-center gap-1.5 text-slate-300 hover:bg-slate-800 hover:text-white">
-                <i data-lucide="award" class="w-4 h-4"></i> Provas IFCE (27)
-            </a><a href="../bloco-5-provas-ifsc/index.html" class="px-3 py-2 rounded-lg text-sm transition flex items-center gap-1.5 text-slate-300 hover:bg-slate-800 hover:text-white">
-                <i data-lucide="award" class="w-4 h-4"></i> Provas IFSC (16)
-            </a><a href="../bloco-7-provas-ifsp/index.html" class="px-3 py-2 rounded-lg text-sm transition flex items-center gap-1.5 text-slate-300 hover:bg-slate-800 hover:text-white">
-                <i data-lucide="award" class="w-4 h-4"></i> Provas IFSP (8)
-            </a><a href="../bloco-8-provas-ifmg/index.html" class="px-3 py-2 rounded-lg text-sm transition flex items-center gap-1.5 bg-blue-600 text-white font-semibold shadow-inner">
-                <i data-lucide="award" class="w-4 h-4"></i> Provas IFMG (11)
+                        <i data-lucide="layout-grid" class="w-4 h-4 text-sky-400"></i> Todas as Provas
+                    </a>
+
+                    <!-- Dropdown de Instituições -->
+                    <div class="relative" id="dropdown-instituicoes-container">
+                        <button id="btn-dropdown-instituicoes" class="px-3 py-2 rounded-lg text-sm transition flex items-center gap-1.5 bg-blue-600/90 text-white font-semibold shadow-inner border border-blue-400/40" aria-haspopup="true" aria-expanded="false" title="Filtrar por Instituto Federal">
+                            <i data-lucide="building-2" class="w-4 h-4 text-sky-400"></i>
+                            <span>Instituições</span>
+                            <span class="bg-blue-500/40 text-sky-200 border border-blue-400/40 text-[10px] font-bold px-1.5 py-0.5 rounded-full">IFMG</span>
+                            <i data-lucide="chevron-down" id="chevron-instituicoes" class="w-3.5 h-3.5 text-slate-400 transition-transform duration-200"></i>
+                        </button>
+
+                        <div id="dropdown-instituicoes-menu" class="hidden absolute left-0 mt-2 w-64 bg-slate-900/95 border border-slate-700/80 rounded-2xl shadow-2xl p-1.5 z-50 backdrop-blur-xl">
+                            <div class="px-3 py-1.5 text-[10px] font-bold uppercase tracking-wider text-slate-400 border-b border-slate-800/80 flex items-center justify-between">
+                                <span>Institutos Federais</span>
+                                <span class="text-sky-400 font-bold">62 Provas</span>
+                            </div>
+                            <div class="space-y-1 py-1">
+                                <a href="../bloco-6-provas-ifce/index.html" class="flex items-center justify-between px-3 py-2 rounded-xl text-xs transition text-slate-300 hover:bg-slate-800/80 hover:text-white">
+                <div class="flex items-center gap-2.5">
+                    <span class="w-2 h-2 rounded-full bg-slate-700"></span>
+                    <div>
+                        <div class="font-bold text-slate-100">IFCE <span class="text-slate-400 font-normal">(Ceará)</span></div>
+                        <div class="text-[10px] text-slate-400">27 provas cadastradas</div>
+                    </div>
+                </div>
+                <i data-lucide="chevron-right" class="w-3.5 h-3.5 text-slate-500"></i>
+            </a><a href="../bloco-5-provas-ifsc/index.html" class="flex items-center justify-between px-3 py-2 rounded-xl text-xs transition text-slate-300 hover:bg-slate-800/80 hover:text-white">
+                <div class="flex items-center gap-2.5">
+                    <span class="w-2 h-2 rounded-full bg-slate-700"></span>
+                    <div>
+                        <div class="font-bold text-slate-100">IFSC <span class="text-slate-400 font-normal">(Santa Catarina)</span></div>
+                        <div class="text-[10px] text-slate-400">16 provas cadastradas</div>
+                    </div>
+                </div>
+                <i data-lucide="chevron-right" class="w-3.5 h-3.5 text-slate-500"></i>
+            </a><a href="../bloco-7-provas-ifsp/index.html" class="flex items-center justify-between px-3 py-2 rounded-xl text-xs transition text-slate-300 hover:bg-slate-800/80 hover:text-white">
+                <div class="flex items-center gap-2.5">
+                    <span class="w-2 h-2 rounded-full bg-slate-700"></span>
+                    <div>
+                        <div class="font-bold text-slate-100">IFSP <span class="text-slate-400 font-normal">(São Paulo)</span></div>
+                        <div class="text-[10px] text-slate-400">8 provas cadastradas</div>
+                    </div>
+                </div>
+                <i data-lucide="chevron-right" class="w-3.5 h-3.5 text-slate-500"></i>
+            </a><a href="../bloco-8-provas-ifmg/index.html" class="flex items-center justify-between px-3 py-2 rounded-xl text-xs transition bg-blue-600/25 text-sky-200 font-semibold border-l-2 border-blue-400">
+                <div class="flex items-center gap-2.5">
+                    <span class="w-2 h-2 rounded-full bg-sky-400 animate-pulse"></span>
+                    <div>
+                        <div class="font-bold text-slate-100">IFMG <span class="text-slate-400 font-normal">(Minas Gerais)</span></div>
+                        <div class="text-[10px] text-slate-400">11 provas cadastradas</div>
+                    </div>
+                </div>
+                <i data-lucide="chevron-right" class="w-3.5 h-3.5 text-slate-500"></i>
             </a>
+                            </div>
+                            <div class="pt-1 border-t border-slate-800/80">
+                                <a href="../provas.html" class="flex items-center justify-between px-3 py-1.5 text-[11px] font-semibold text-sky-400 hover:bg-slate-800/80 rounded-xl transition">
+                                    <span>Ver matriz geral de provas</span>
+                                    <i data-lucide="arrow-right" class="w-3 h-3"></i>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <a href="../pesquisa.html" class="px-3 py-2 rounded-lg text-sm transition flex items-center gap-1.5 text-slate-300 hover:bg-slate-800 hover:text-white" title="Pesquisar questões por descritor BNCC">
+                        <i data-lucide="search" class="w-4 h-4 text-emerald-400"></i> Pesquisa BNCC
+                    </a>
                 </nav>
 
                 <!-- Ações do Usuário -->
-                <div class="flex items-center gap-2 sm:gap-3">
-                    <a href="../index.html" class="bg-slate-800/90 hover:bg-slate-700 text-slate-200 border border-slate-700 px-3.5 py-1.5 rounded-lg text-xs sm:text-sm font-semibold transition flex items-center gap-1.5 shadow-sm" title="Retornar à Teoria e Eixos Temáticos">
-                        <i data-lucide="arrow-left" class="w-4 h-4 text-emerald-400"></i> <span class="hidden sm:inline">Voltar para </span>Teoria
+                <div class="flex items-center gap-1.5 sm:gap-2.5 flex-shrink-0">
+                    <a href="../index.html" class="bg-slate-800/90 hover:bg-slate-700 text-slate-200 border border-slate-700 p-2 sm:px-3.5 sm:py-1.5 rounded-lg text-xs sm:text-sm font-semibold transition flex items-center gap-1.5 shadow-sm" title="Retornar à Teoria e Eixos Temáticos">
+                        <i data-lucide="arrow-left" class="w-4 h-4 text-emerald-400"></i>
+                        <span class="hidden sm:inline xl:hidden">Teoria</span>
+                        <span class="hidden xl:inline">Voltar para Teoria</span>
                     </a>
-                    <a href="../simulado.html" class="bg-blue-600 hover:bg-blue-500 text-white font-semibold px-3.5 py-1.5 rounded-lg text-xs sm:text-sm transition flex items-center gap-1.5 shadow">
-                        <i data-lucide="award" class="w-4 h-4"></i> Simulado
+                    <a href="../simulado.html" class="bg-blue-600 hover:bg-blue-500 text-white font-semibold p-2 sm:px-3.5 sm:py-1.5 rounded-lg text-xs sm:text-sm transition flex items-center gap-1.5 shadow" title="Simulado IF">
+                        <i data-lucide="award" class="w-4 h-4"></i>
+                        <span class="hidden sm:inline">Simulado</span>
                     </a>
-                    <button id="mobile-menu-btn" class="md:hidden p-2 rounded-lg text-slate-300 hover:text-white hover:bg-slate-800" aria-label="Abrir menu">
-                        <i data-lucide="menu" class="w-6 h-6"></i>
+                    <button id="mobile-menu-btn" class="lg:hidden p-2 rounded-lg text-slate-300 hover:text-white hover:bg-slate-800 transition" aria-label="Abrir menu">
+                        <i data-lucide="menu" class="w-5 h-5 sm:w-6 sm:h-6"></i>
                     </button>
                 </div>
             </div>
         </div>
 
         <!-- Menu Mobile -->
-        <div id="mobile-menu" class="hidden md:hidden bg-slate-950 border-t border-slate-800 px-4 pt-2 pb-4 space-y-1">
-            <a href="../provas.html" class="block px-3 py-2 rounded-md text-base font-medium text-white flex items-center gap-2 hover:bg-slate-800">
-                <i data-lucide="layout-grid" class="w-4 h-4"></i> Todas as Provas
-            </a><a href="../pesquisa.html" class="block px-3 py-2 rounded-md text-base font-medium text-white flex items-center gap-2 hover:bg-slate-800">
-                <i data-lucide="search" class="w-4 h-4"></i> Pesquisa BNCC
-            </a><a href="../bloco-6-provas-ifce/index.html" class="block px-3 py-2 rounded-md text-base font-medium text-white flex items-center gap-2 hover:bg-slate-800">
-                <i data-lucide="award" class="w-4 h-4"></i> Provas IFCE (27)
-            </a><a href="../bloco-5-provas-ifsc/index.html" class="block px-3 py-2 rounded-md text-base font-medium text-white flex items-center gap-2 hover:bg-slate-800">
-                <i data-lucide="award" class="w-4 h-4"></i> Provas IFSC (16)
-            </a><a href="../bloco-7-provas-ifsp/index.html" class="block px-3 py-2 rounded-md text-base font-medium text-white flex items-center gap-2 hover:bg-slate-800">
-                <i data-lucide="award" class="w-4 h-4"></i> Provas IFSP (8)
-            </a><a href="../bloco-8-provas-ifmg/index.html" class="block px-3 py-2 rounded-md text-base font-medium text-white flex items-center gap-2 bg-blue-600 font-bold">
-                <i data-lucide="award" class="w-4 h-4"></i> Provas IFMG (11)
+        <div id="mobile-menu" class="hidden lg:hidden bg-slate-950 border-t border-slate-800 px-4 pt-2 pb-4 space-y-1">
+            <a href="../provas.html" class="block px-3 py-2 rounded-md text-base font-medium text-white flex items-center justify-between gap-2 hover:bg-slate-800">
+                <span class="flex items-center gap-2"><i data-lucide="layout-grid" class="w-4 h-4 text-sky-400"></i> Todas as Provas</span>
+                <span class="text-xs bg-slate-800 px-2 py-0.5 rounded-full text-slate-300 font-bold">62 Provas</span>
             </a>
-            <a href="../index.html" class="block px-3 py-2 rounded-md text-base font-semibold text-slate-200 hover:bg-slate-800 flex items-center gap-2 mt-2 border-t border-slate-800 pt-3">
-                <i data-lucide="arrow-left" class="w-4 h-4 text-emerald-400"></i> Voltar para Teoria (Parte 1)
+            <a href="../pesquisa.html" class="block px-3 py-2 rounded-md text-base font-medium text-white flex items-center gap-2 hover:bg-slate-800">
+                <i data-lucide="search" class="w-4 h-4 text-emerald-400"></i> Pesquisa BNCC
             </a>
-            <a href="../simulado.html" class="block px-3 py-2 rounded-md text-base font-bold bg-blue-600 text-white flex items-center gap-2 mt-2">
-                <i data-lucide="award" class="w-4 h-4"></i> Simulado IF
+
+            <div class="pt-2 pb-1 px-3 text-[11px] font-bold uppercase tracking-wider text-slate-400">Provas por Instituição</div>
+            <a href="../bloco-6-provas-ifce/index.html" class="block px-3 py-2 rounded-md text-base font-medium text-white flex items-center justify-between gap-2 hover:bg-slate-800">
+                <span class="flex items-center gap-2"><i data-lucide="award" class="w-4 h-4 text-sky-400"></i> IFCE - Ceará</span>
+                <span class="text-xs bg-blue-900/60 text-sky-300 px-2 py-0.5 rounded-full font-bold">27</span>
             </a>
+            <a href="../bloco-5-provas-ifsc/index.html" class="block px-3 py-2 rounded-md text-base font-medium text-white flex items-center justify-between gap-2 hover:bg-slate-800">
+                <span class="flex items-center gap-2"><i data-lucide="award" class="w-4 h-4 text-sky-400"></i> IFSC - Santa Catarina</span>
+                <span class="text-xs bg-blue-900/60 text-sky-300 px-2 py-0.5 rounded-full font-bold">16</span>
+            </a>
+            <a href="../bloco-7-provas-ifsp/index.html" class="block px-3 py-2 rounded-md text-base font-medium text-white flex items-center justify-between gap-2 hover:bg-slate-800">
+                <span class="flex items-center gap-2"><i data-lucide="award" class="w-4 h-4 text-sky-400"></i> IFSP - São Paulo</span>
+                <span class="text-xs bg-blue-900/60 text-sky-300 px-2 py-0.5 rounded-full font-bold">8</span>
+            </a>
+            <a href="../bloco-8-provas-ifmg/index.html" class="block px-3 py-2 rounded-md text-base font-medium text-white flex items-center justify-between gap-2 bg-blue-600 font-bold">
+                <span class="flex items-center gap-2"><i data-lucide="award" class="w-4 h-4 text-sky-400"></i> IFMG - Minas Gerais</span>
+                <span class="text-xs bg-blue-900/60 text-sky-300 px-2 py-0.5 rounded-full font-bold">11</span>
+            </a>
+
+            <div class="pt-2 border-t border-slate-800 space-y-1">
+                <a href="../index.html" class="block px-3 py-2 rounded-md text-base font-semibold text-slate-200 hover:bg-slate-800 flex items-center gap-2">
+                    <i data-lucide="arrow-left" class="w-4 h-4 text-emerald-400"></i> Voltar para Teoria (Parte 1)
+                </a>
+                <a href="../simulado.html" class="block px-3 py-2 rounded-md text-base font-bold bg-blue-600 text-white flex items-center gap-2">
+                    <i data-lucide="award" class="w-4 h-4"></i> Simulado IF
+                </a>
+            </div>
         </div>
     </header>
 
 
     <main class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 flex-grow">
         <!-- Breadcrumbs -->
-        <nav class="flex text-xs font-medium text-slate-400 mb-6" aria-label="Breadcrumb">
-            <ol class="inline-flex items-center space-x-1 sm:space-x-2">
+        <nav class="text-xs font-medium text-slate-400 mb-6 overflow-x-auto custom-scrollbar pb-1" aria-label="Breadcrumb">
+            <ol class="inline-flex flex-wrap items-center gap-1 sm:gap-2">
                 <li><a href="../index.html" class="hover:text-sky-400 flex items-center gap-1"><i data-lucide="home" class="w-3.5 h-3.5"></i> Início</a></li>
                 <li><span class="text-slate-600">/</span></li>
                 <li><a href="../provas.html" class="hover:text-sky-400 flex items-center gap-1"><i data-lucide="archive" class="w-3.5 h-3.5"></i> Provas</a></li>
                 <li><span class="text-slate-600">/</span></li>
                 <li><a href="./index.html" class="hover:text-sky-400">Bloco 8: Provas Anteriores IFMG</a></li>
                 <li><span class="text-slate-600">/</span></li>
-                <li class="text-slate-200 font-semibold truncate max-w-xs sm:max-w-none">Prova IFMG 2026.1</li>
+                <li class="text-slate-200 font-semibold truncate max-w-[200px] sm:max-w-none">Prova IFMG 2026.1</li>
             </ol>
         </nav>
 
@@ -143,18 +217,18 @@
             <div class="lg:col-span-3 space-y-8">
                 
                 <!-- Cabeçalho do Exame -->
-                <div class="bg-slate-900/90 border border-slate-800 rounded-3xl p-6 sm:p-8 shadow-xl text-slate-100">
+                <div class="bg-slate-900/90 border border-slate-800 rounded-3xl p-4 sm:p-8 shadow-xl text-slate-100">
                     <div class="flex flex-wrap items-center justify-between gap-3 mb-4">
                         <span class="text-xs font-bold uppercase tracking-wider text-sky-300 bg-blue-950/80 px-3 py-1 rounded-full border border-blue-800/60">
                             BNCC: Revisão Geral
                         </span>
-                        <div class="flex items-center gap-2">
+                        <div class="flex flex-wrap items-center gap-2">
                             
-                        <a href="../provas/ifmg/IFMG_prova_2026_1.pdf" download class="bg-blue-600 hover:bg-blue-500 text-white font-bold px-4 py-2 rounded-xl text-sm transition flex items-center gap-2 shadow-lg shadow-blue-600/25" title="Baixar Caderno Oficial em PDF">
+                        <a href="../provas/ifmg/IFMG_prova_2026_1.pdf" download class="bg-blue-600 hover:bg-blue-500 text-white font-bold px-3 sm:px-4 py-2 rounded-xl text-xs sm:text-sm transition flex items-center gap-1.5 sm:gap-2 shadow-lg shadow-blue-600/25" title="Baixar Caderno Oficial em PDF">
                             <i data-lucide="download" class="w-4 h-4"></i> Baixar Caderno em PDF
                         </a>
                     
-                            <button id="btn-toggle-done-ifmg-2026-1" onclick="toggleTopicDone('ifmg-2026-1')" class="px-4 py-2 rounded-xl text-sm font-semibold border bg-slate-900 text-slate-300 border-slate-700 hover:bg-slate-800 transition flex items-center gap-2 shadow-sm">
+                            <button id="btn-toggle-done-ifmg-2026-1" onclick="toggleTopicDone('ifmg-2026-1')" class="px-3 sm:px-4 py-2 rounded-xl text-xs sm:text-sm font-semibold border bg-slate-900 text-slate-300 border-slate-700 hover:bg-slate-800 transition flex items-center gap-1.5 sm:gap-2 shadow-sm">
                                 <i data-lucide="square" class="w-4 h-4 text-slate-500"></i> Marcar como Concluída
                             </button>
                         </div>
@@ -254,7 +328,7 @@
                     
                         <div class="mb-8 border-b border-slate-800/80 pb-6 last:border-0 last:pb-0" id="q-container-ifmg-2026-1-q0">
                             <div class="flex items-center justify-between mb-3 flex-wrap gap-2">
-                                <div class="flex items-center gap-2">
+                                <div class="flex flex-wrap items-center gap-2">
                                     <span class="text-xs font-bold uppercase tracking-wider text-sky-300 bg-blue-950/60 px-2.5 py-0.5 rounded-full border border-blue-800/40">Questão 1</span>
                                     
                             <a href="../pesquisa.html?bncc=EF06MA04" class="text-[11px] font-mono font-bold text-emerald-300 bg-emerald-950/80 hover:bg-emerald-900/90 px-2.5 py-0.5 rounded-full border border-emerald-800/60 flex items-center gap-1 transition shadow-sm" title="Classificar números naturais em primos e compostos, estabelecer relações entre números expressas pelos termos 'é múltiplo de', 'é divisor de', 'é fator de', e reconhecer regularidades e padrões numéricos.">
@@ -263,14 +337,14 @@
                         
                                 </div>
                             </div>
-                            <p class="font-medium text-slate-100 mb-4 text-sm sm:text-base leading-relaxed">(IFMG 2026.1 - Q13) Disputada há mais de um século, a Copa América é a competição mais antiga do mundo entre seleções de futebol, reunindo as equipes nacionais do continente americano em confrontos históricos. Ao longo de sua trajetória, foi realizada em diferentes intervalos de tempo. A partir de sua edição de 1987 até 2001, ocorreu a cada 2 anos; de 2001 a 2007, passou a ser disputada a cada 3 anos; e, desde 2007, passou a ocorrer a cada 4 anos, formato que permanece até hoje.<br><br>A Copa do Mundo de Futebol, por sua vez, teve sua primeira edição em 1930, no Uruguai. Desde então, é realizada a cada 4 anos, com exceção de 1942 e 1946, quando não ocorreu devido à Segunda Guerra Mundial. As edições mais recentes foram disputadas em 2018, na Rússia, e em 2022, no Qatar.<br><br>Em quantas edições a Copa do Mundo e a Copa América ocorreram no mesmo ano desde 1987 até 2015?</p>
+                            <div class="q-text-container"><p class="q-paragraph font-medium text-slate-200 text-sm sm:text-base">Disputada há mais de um século, a Copa América é a competição mais antiga do mundo entre seleções de futebol, reunindo as equipes nacionais do continente americano em confrontos históricos. Ao longo de sua trajetória, foi realizada em diferentes intervalos de tempo. A partir de sua edição de 1987 até 2001, ocorreu a cada 2 anos; de 2001 a 2007, passou a ser disputada a cada 3 anos; e, desde 2007, passou a ocorrer a cada 4 anos, formato que permanece até hoje.</p><p class="q-paragraph font-medium text-slate-200 text-sm sm:text-base">A Copa do Mundo de Futebol, por sua vez, teve sua primeira edição em 1930, no Uruguai. Desde então, é realizada a cada 4 anos, com exceção de 1942 e 1946, quando não ocorreu devido à Segunda Guerra Mundial. As edições mais recentes foram disputadas em 2018, na Rússia, e em 2022, no Qatar.</p><p class="q-prompt text-slate-100 text-sm sm:text-base">Em quantas edições a Copa do Mundo e a Copa América ocorreram no mesmo ano desde 1987 até 2015?</p></div>
                             
                             <div class="space-y-2 mb-4" id="opts-ifmg-2026-1-q0">
                                 
                             <button onclick="selectOption('ifmg-2026-1-q0', 0)" id="btn-ifmg-2026-1-q0-0" class="w-full text-left p-3.5 rounded-xl border border-slate-800 bg-slate-950/60 hover:border-blue-500 hover:bg-slate-800/60 transition text-sm text-slate-200 flex items-start justify-between gap-3 group">
                                 <span class="flex items-start gap-2.5 flex-1 min-w-0">
                                     <strong class="text-sky-400 font-bold flex-shrink-0 mt-0.5">A)</strong>
-                                    <span class="flex-1 min-w-0 break-words leading-relaxed">0</span>
+                                    <span class="flex-1 min-w-0 break-words leading-relaxed">$0$</span>
                                 </span>
                                 <i data-lucide="circle" class="w-4 h-4 text-slate-600 opt-icon group-hover:text-blue-400 flex-shrink-0 mt-0.5"></i>
                             </button>
@@ -278,7 +352,7 @@
                             <button onclick="selectOption('ifmg-2026-1-q0', 1)" id="btn-ifmg-2026-1-q0-1" class="w-full text-left p-3.5 rounded-xl border border-slate-800 bg-slate-950/60 hover:border-blue-500 hover:bg-slate-800/60 transition text-sm text-slate-200 flex items-start justify-between gap-3 group">
                                 <span class="flex items-start gap-2.5 flex-1 min-w-0">
                                     <strong class="text-sky-400 font-bold flex-shrink-0 mt-0.5">B)</strong>
-                                    <span class="flex-1 min-w-0 break-words leading-relaxed">1</span>
+                                    <span class="flex-1 min-w-0 break-words leading-relaxed">$1$</span>
                                 </span>
                                 <i data-lucide="circle" class="w-4 h-4 text-slate-600 opt-icon group-hover:text-blue-400 flex-shrink-0 mt-0.5"></i>
                             </button>
@@ -286,7 +360,7 @@
                             <button onclick="selectOption('ifmg-2026-1-q0', 2)" id="btn-ifmg-2026-1-q0-2" class="w-full text-left p-3.5 rounded-xl border border-slate-800 bg-slate-950/60 hover:border-blue-500 hover:bg-slate-800/60 transition text-sm text-slate-200 flex items-start justify-between gap-3 group">
                                 <span class="flex items-start gap-2.5 flex-1 min-w-0">
                                     <strong class="text-sky-400 font-bold flex-shrink-0 mt-0.5">C)</strong>
-                                    <span class="flex-1 min-w-0 break-words leading-relaxed">2</span>
+                                    <span class="flex-1 min-w-0 break-words leading-relaxed">$2$</span>
                                 </span>
                                 <i data-lucide="circle" class="w-4 h-4 text-slate-600 opt-icon group-hover:text-blue-400 flex-shrink-0 mt-0.5"></i>
                             </button>
@@ -294,7 +368,7 @@
                             <button onclick="selectOption('ifmg-2026-1-q0', 3)" id="btn-ifmg-2026-1-q0-3" class="w-full text-left p-3.5 rounded-xl border border-slate-800 bg-slate-950/60 hover:border-blue-500 hover:bg-slate-800/60 transition text-sm text-slate-200 flex items-start justify-between gap-3 group">
                                 <span class="flex items-start gap-2.5 flex-1 min-w-0">
                                     <strong class="text-sky-400 font-bold flex-shrink-0 mt-0.5">D)</strong>
-                                    <span class="flex-1 min-w-0 break-words leading-relaxed">3</span>
+                                    <span class="flex-1 min-w-0 break-words leading-relaxed">$3$</span>
                                 </span>
                                 <i data-lucide="circle" class="w-4 h-4 text-slate-600 opt-icon group-hover:text-blue-400 flex-shrink-0 mt-0.5"></i>
                             </button>
@@ -310,7 +384,7 @@
                     
                         <div class="mb-8 border-b border-slate-800/80 pb-6 last:border-0 last:pb-0" id="q-container-ifmg-2026-1-q1">
                             <div class="flex items-center justify-between mb-3 flex-wrap gap-2">
-                                <div class="flex items-center gap-2">
+                                <div class="flex flex-wrap items-center gap-2">
                                     <span class="text-xs font-bold uppercase tracking-wider text-sky-300 bg-blue-950/60 px-2.5 py-0.5 rounded-full border border-blue-800/40">Questão 2</span>
                                     
                             <a href="../pesquisa.html?bncc=EF08MA25" class="text-[11px] font-mono font-bold text-emerald-300 bg-emerald-950/80 hover:bg-emerald-900/90 px-2.5 py-0.5 rounded-full border border-emerald-800/60 flex items-center gap-1 transition shadow-sm" title="Obter os valores de medidas de tendência central de uma pesquisa estatística (média, moda e mediana) com a compreensão de seus significados e relacioná-los com a dispersão de dados.">
@@ -319,13 +393,11 @@
                         
                                 </div>
                             </div>
-                            <p class="font-medium text-slate-100 mb-4 text-sm sm:text-base leading-relaxed">(IFMG 2026.1 - Q14) A tabela a seguir mostra as temperaturas mínimas registradas nos 10 primeiros dias do mês de julho de 2025 na Estação Belo Horizonte – Pampulha:
-
-A mediana das temperaturas mínimas apresentadas, em graus Celsius (°C), é</p>
+                            <div class="q-text-container"><p class="q-paragraph font-medium text-slate-200 text-sm sm:text-base">A tabela a seguir mostra as temperaturas mínimas registradas nos 10 primeiros dias do mês de julho de 2025 na Estação Belo Horizonte – Pampulha:</p><p class="q-prompt text-slate-100 text-sm sm:text-base">A mediana das temperaturas mínimas apresentadas, em graus Celsius ($^\circ\text{C}$), é:</p></div>
                             
         <div class="my-4 p-2 sm:p-3 rounded-2xl border bg-slate-950/70 border-slate-800 shadow-sm max-w-xl mx-auto flex flex-col items-center">
             <img src="https://lh3.googleusercontent.com/d/1EZynDYmMjQDQ0uYroB64-WQG-9-QOWWC" alt="Tabela de temperaturas mínimas registradas nos 10 primeiros dias do mês de julho de 2025 na Estação Belo Horizonte – Pampulha, com colunas Dia e Temperatura mínima (°C)." onerror="if(this.src!='../assets/img/questoes/ifmg/ifmg-2026-1-q14.png'){this.src='../assets/img/questoes/ifmg/ifmg-2026-1-q14.png';}" class="max-h-80 sm:max-h-96 w-auto max-w-full rounded-xl object-contain cursor-zoom-in hover:opacity-95 hover:scale-[1.01] transition duration-200" onclick="openImageModal('https://lh3.googleusercontent.com/d/1EZynDYmMjQDQ0uYroB64-WQG-9-QOWWC', 'Tabela de temperaturas mínimas registradas nos 10 primeiros dias do mês de julho de 2025 na Estação Belo Horizonte – Pampulha, com colunas Dia e Temperatura mínima (°C).')" title="Clique para ampliar a imagem" loading="lazy">
-            
+            <p class="text-xs text-slate-400 mt-2 text-center italic">Fonte: INMET (Estação A521 - Belo Horizonte/Pampulha, julho de 2025).</p>
         </div>
     
                             <div class="space-y-2 mb-4" id="opts-ifmg-2026-1-q1">
@@ -333,7 +405,7 @@ A mediana das temperaturas mínimas apresentadas, em graus Celsius (°C), é</p>
                             <button onclick="selectOption('ifmg-2026-1-q1', 0)" id="btn-ifmg-2026-1-q1-0" class="w-full text-left p-3.5 rounded-xl border border-slate-800 bg-slate-950/60 hover:border-blue-500 hover:bg-slate-800/60 transition text-sm text-slate-200 flex items-start justify-between gap-3 group">
                                 <span class="flex items-start gap-2.5 flex-1 min-w-0">
                                     <strong class="text-sky-400 font-bold flex-shrink-0 mt-0.5">A)</strong>
-                                    <span class="flex-1 min-w-0 break-words leading-relaxed">10,50</span>
+                                    <span class="flex-1 min-w-0 break-words leading-relaxed">$10{,}50$</span>
                                 </span>
                                 <i data-lucide="circle" class="w-4 h-4 text-slate-600 opt-icon group-hover:text-blue-400 flex-shrink-0 mt-0.5"></i>
                             </button>
@@ -341,7 +413,7 @@ A mediana das temperaturas mínimas apresentadas, em graus Celsius (°C), é</p>
                             <button onclick="selectOption('ifmg-2026-1-q1', 1)" id="btn-ifmg-2026-1-q1-1" class="w-full text-left p-3.5 rounded-xl border border-slate-800 bg-slate-950/60 hover:border-blue-500 hover:bg-slate-800/60 transition text-sm text-slate-200 flex items-start justify-between gap-3 group">
                                 <span class="flex items-start gap-2.5 flex-1 min-w-0">
                                     <strong class="text-sky-400 font-bold flex-shrink-0 mt-0.5">B)</strong>
-                                    <span class="flex-1 min-w-0 break-words leading-relaxed">10,80</span>
+                                    <span class="flex-1 min-w-0 break-words leading-relaxed">$10{,}80$</span>
                                 </span>
                                 <i data-lucide="circle" class="w-4 h-4 text-slate-600 opt-icon group-hover:text-blue-400 flex-shrink-0 mt-0.5"></i>
                             </button>
@@ -349,7 +421,7 @@ A mediana das temperaturas mínimas apresentadas, em graus Celsius (°C), é</p>
                             <button onclick="selectOption('ifmg-2026-1-q1', 2)" id="btn-ifmg-2026-1-q1-2" class="w-full text-left p-3.5 rounded-xl border border-slate-800 bg-slate-950/60 hover:border-blue-500 hover:bg-slate-800/60 transition text-sm text-slate-200 flex items-start justify-between gap-3 group">
                                 <span class="flex items-start gap-2.5 flex-1 min-w-0">
                                     <strong class="text-sky-400 font-bold flex-shrink-0 mt-0.5">C)</strong>
-                                    <span class="flex-1 min-w-0 break-words leading-relaxed">11,40</span>
+                                    <span class="flex-1 min-w-0 break-words leading-relaxed">$11{,}40$</span>
                                 </span>
                                 <i data-lucide="circle" class="w-4 h-4 text-slate-600 opt-icon group-hover:text-blue-400 flex-shrink-0 mt-0.5"></i>
                             </button>
@@ -357,7 +429,7 @@ A mediana das temperaturas mínimas apresentadas, em graus Celsius (°C), é</p>
                             <button onclick="selectOption('ifmg-2026-1-q1', 3)" id="btn-ifmg-2026-1-q1-3" class="w-full text-left p-3.5 rounded-xl border border-slate-800 bg-slate-950/60 hover:border-blue-500 hover:bg-slate-800/60 transition text-sm text-slate-200 flex items-start justify-between gap-3 group">
                                 <span class="flex items-start gap-2.5 flex-1 min-w-0">
                                     <strong class="text-sky-400 font-bold flex-shrink-0 mt-0.5">D)</strong>
-                                    <span class="flex-1 min-w-0 break-words leading-relaxed">11,54</span>
+                                    <span class="flex-1 min-w-0 break-words leading-relaxed">$11{,}54$</span>
                                 </span>
                                 <i data-lucide="circle" class="w-4 h-4 text-slate-600 opt-icon group-hover:text-blue-400 flex-shrink-0 mt-0.5"></i>
                             </button>
@@ -373,7 +445,7 @@ A mediana das temperaturas mínimas apresentadas, em graus Celsius (°C), é</p>
                     
                         <div class="mb-8 border-b border-slate-800/80 pb-6 last:border-0 last:pb-0" id="q-container-ifmg-2026-1-q2">
                             <div class="flex items-center justify-between mb-3 flex-wrap gap-2">
-                                <div class="flex items-center gap-2">
+                                <div class="flex flex-wrap items-center gap-2">
                                     <span class="text-xs font-bold uppercase tracking-wider text-sky-300 bg-blue-950/60 px-2.5 py-0.5 rounded-full border border-blue-800/40">Questão 3</span>
                                     
                             <a href="../pesquisa.html?bncc=EF07MA18" class="text-[11px] font-mono font-bold text-emerald-300 bg-emerald-950/80 hover:bg-emerald-900/90 px-2.5 py-0.5 rounded-full border border-emerald-800/60 flex items-center gap-1 transition shadow-sm" title="Resolver e elaborar problemas que possam ser representados por equações polinomiais de 1º grau, redutíveis à forma ax + b = c, fazendo uso das propriedades da igualdade.">
@@ -382,14 +454,14 @@ A mediana das temperaturas mínimas apresentadas, em graus Celsius (°C), é</p>
                         
                                 </div>
                             </div>
-                            <p class="font-medium text-slate-100 mb-4 text-sm sm:text-base leading-relaxed">(IFMG 2026.1 - Q15) O preço dinâmico em aplicativos de transporte é um sistema que ajusta o valor das corridas de acordo com a oferta de motoristas e a demanda de passageiros em tempo real. Em síntese, quando há muitos pedidos e poucos motoristas disponíveis, o preço sobe para incentivar mais motoristas a se conectarem ao aplicativo. Esse aumento é feito aplicando-se um fator multiplicador sobre o valor base da corrida. Além disso, existe uma taxa fixa, cobrada em todas as corridas, independentemente do fator aplicado.<br><br>Em determinado dia, o valor base de uma corrida era de $\text{R\$} 20{,}00$ e a taxa fixa era de $\text{R\$} 5{,}00$. Com a alta demanda, o preço total de uma corrida passou para $\text{R\$} 50{,}00$.<br><br>Qual foi o valor do fator multiplicador aplicado?</p>
+                            <div class="q-text-container"><p class="q-paragraph font-medium text-slate-200 text-sm sm:text-base">O preço dinâmico em aplicativos de transporte é um sistema que ajusta o valor das corridas de acordo com a oferta de motoristas e a demanda de passageiros em tempo real. Em síntese, quando há muitos pedidos e poucos motoristas disponíveis, o preço sobe para incentivar mais motoristas a se conectarem ao aplicativo. Esse aumento é feito aplicando-se um fator multiplicador sobre o valor base da corrida. Além disso, existe uma taxa fixa, cobrada em todas as corridas, independentemente do fator aplicado.</p><p class="q-paragraph font-medium text-slate-200 text-sm sm:text-base">Em determinado dia, o valor base de uma corrida era de $\text{R\$} 20{,}00$ e a taxa fixa era de $\text{R\$} 5{,}00$. Com a alta demanda, o preço total de uma corrida passou para $\text{R\$} 50{,}00$.</p><p class="q-prompt text-slate-100 text-sm sm:text-base">Qual foi o valor do fator multiplicador aplicado?</p></div>
                             
                             <div class="space-y-2 mb-4" id="opts-ifmg-2026-1-q2">
                                 
                             <button onclick="selectOption('ifmg-2026-1-q2', 0)" id="btn-ifmg-2026-1-q2-0" class="w-full text-left p-3.5 rounded-xl border border-slate-800 bg-slate-950/60 hover:border-blue-500 hover:bg-slate-800/60 transition text-sm text-slate-200 flex items-start justify-between gap-3 group">
                                 <span class="flex items-start gap-2.5 flex-1 min-w-0">
                                     <strong class="text-sky-400 font-bold flex-shrink-0 mt-0.5">A)</strong>
-                                    <span class="flex-1 min-w-0 break-words leading-relaxed">2,00</span>
+                                    <span class="flex-1 min-w-0 break-words leading-relaxed">$2{,}00$</span>
                                 </span>
                                 <i data-lucide="circle" class="w-4 h-4 text-slate-600 opt-icon group-hover:text-blue-400 flex-shrink-0 mt-0.5"></i>
                             </button>
@@ -397,7 +469,7 @@ A mediana das temperaturas mínimas apresentadas, em graus Celsius (°C), é</p>
                             <button onclick="selectOption('ifmg-2026-1-q2', 1)" id="btn-ifmg-2026-1-q2-1" class="w-full text-left p-3.5 rounded-xl border border-slate-800 bg-slate-950/60 hover:border-blue-500 hover:bg-slate-800/60 transition text-sm text-slate-200 flex items-start justify-between gap-3 group">
                                 <span class="flex items-start gap-2.5 flex-1 min-w-0">
                                     <strong class="text-sky-400 font-bold flex-shrink-0 mt-0.5">B)</strong>
-                                    <span class="flex-1 min-w-0 break-words leading-relaxed">2,25</span>
+                                    <span class="flex-1 min-w-0 break-words leading-relaxed">$2{,}25$</span>
                                 </span>
                                 <i data-lucide="circle" class="w-4 h-4 text-slate-600 opt-icon group-hover:text-blue-400 flex-shrink-0 mt-0.5"></i>
                             </button>
@@ -405,7 +477,7 @@ A mediana das temperaturas mínimas apresentadas, em graus Celsius (°C), é</p>
                             <button onclick="selectOption('ifmg-2026-1-q2', 2)" id="btn-ifmg-2026-1-q2-2" class="w-full text-left p-3.5 rounded-xl border border-slate-800 bg-slate-950/60 hover:border-blue-500 hover:bg-slate-800/60 transition text-sm text-slate-200 flex items-start justify-between gap-3 group">
                                 <span class="flex items-start gap-2.5 flex-1 min-w-0">
                                     <strong class="text-sky-400 font-bold flex-shrink-0 mt-0.5">C)</strong>
-                                    <span class="flex-1 min-w-0 break-words leading-relaxed">2,50</span>
+                                    <span class="flex-1 min-w-0 break-words leading-relaxed">$2{,}50$</span>
                                 </span>
                                 <i data-lucide="circle" class="w-4 h-4 text-slate-600 opt-icon group-hover:text-blue-400 flex-shrink-0 mt-0.5"></i>
                             </button>
@@ -413,7 +485,7 @@ A mediana das temperaturas mínimas apresentadas, em graus Celsius (°C), é</p>
                             <button onclick="selectOption('ifmg-2026-1-q2', 3)" id="btn-ifmg-2026-1-q2-3" class="w-full text-left p-3.5 rounded-xl border border-slate-800 bg-slate-950/60 hover:border-blue-500 hover:bg-slate-800/60 transition text-sm text-slate-200 flex items-start justify-between gap-3 group">
                                 <span class="flex items-start gap-2.5 flex-1 min-w-0">
                                     <strong class="text-sky-400 font-bold flex-shrink-0 mt-0.5">D)</strong>
-                                    <span class="flex-1 min-w-0 break-words leading-relaxed">2,75</span>
+                                    <span class="flex-1 min-w-0 break-words leading-relaxed">$2{,}75$</span>
                                 </span>
                                 <i data-lucide="circle" class="w-4 h-4 text-slate-600 opt-icon group-hover:text-blue-400 flex-shrink-0 mt-0.5"></i>
                             </button>
@@ -429,7 +501,7 @@ A mediana das temperaturas mínimas apresentadas, em graus Celsius (°C), é</p>
                     
                         <div class="mb-8 border-b border-slate-800/80 pb-6 last:border-0 last:pb-0" id="q-container-ifmg-2026-1-q3">
                             <div class="flex items-center justify-between mb-3 flex-wrap gap-2">
-                                <div class="flex items-center gap-2">
+                                <div class="flex flex-wrap items-center gap-2">
                                     <span class="text-xs font-bold uppercase tracking-wider text-sky-300 bg-blue-950/60 px-2.5 py-0.5 rounded-full border border-blue-800/40">Questão 4</span>
                                     
                             <a href="../pesquisa.html?bncc=EF06MA17" class="text-[11px] font-mono font-bold text-emerald-300 bg-emerald-950/80 hover:bg-emerald-900/90 px-2.5 py-0.5 rounded-full border border-emerald-800/60 flex items-center gap-1 transition shadow-sm" title="Quantificar e estabelecer relações entre o número de vértices, faces e arestas de prismas e pirâmides, em função do seu polígono da base, para resolver problemas e desenvolver a percepção espacial.">
@@ -438,7 +510,7 @@ A mediana das temperaturas mínimas apresentadas, em graus Celsius (°C), é</p>
                         
                                 </div>
                             </div>
-                            <p class="font-medium text-slate-100 mb-4 text-sm sm:text-base leading-relaxed">(IFMG 2026.1 - Q16) Uma confeitaria produz biscoitos em formatos inspirados em sólidos geométricos, tais quais os mostrados a seguir em formato de pirâmide de base quadrada, de cubo e de prisma de base pentagonal.<br><br>Qual o número de vértices, faces e arestas de cada um destes sólidos, nesta ordem?</p>
+                            <div class="q-text-container"><p class="q-paragraph font-medium text-slate-200 text-sm sm:text-base">Uma confeitaria produz biscoitos em formatos inspirados em sólidos geométricos, tais quais os mostrados a seguir em formato de pirâmide de base quadrada, de cubo e de prisma de base pentagonal.</p><p class="q-prompt text-slate-100 text-sm sm:text-base">Qual o número de vértices, faces e arestas de cada um destes sólidos, nesta ordem?</p></div>
                             
         <div class="my-4 p-2 sm:p-3 rounded-2xl border bg-slate-950/70 border-slate-800 shadow-sm max-w-xl mx-auto flex flex-col items-center">
             <img src="https://lh3.googleusercontent.com/d/1Ta1jYc1EsP1Bswg5McS_HnGufg9U9ZBC" alt="Três sólidos geométricos modelados como biscoitos: uma pirâmide de base quadrada, um cubo e um prisma reto de base pentagonal." onerror="if(this.src!='../assets/img/questoes/ifmg/ifmg-2026-1-q16.png'){this.src='../assets/img/questoes/ifmg/ifmg-2026-1-q16.png';}" class="max-h-80 sm:max-h-96 w-auto max-w-full rounded-xl object-contain cursor-zoom-in hover:opacity-95 hover:scale-[1.01] transition duration-200" onclick="openImageModal('https://lh3.googleusercontent.com/d/1Ta1jYc1EsP1Bswg5McS_HnGufg9U9ZBC', 'Três sólidos geométricos modelados como biscoitos: uma pirâmide de base quadrada, um cubo e um prisma reto de base pentagonal.')" title="Clique para ampliar a imagem" loading="lazy">
@@ -450,7 +522,7 @@ A mediana das temperaturas mínimas apresentadas, em graus Celsius (°C), é</p>
                             <button onclick="selectOption('ifmg-2026-1-q3', 0)" id="btn-ifmg-2026-1-q3-0" class="w-full text-left p-3.5 rounded-xl border border-slate-800 bg-slate-950/60 hover:border-blue-500 hover:bg-slate-800/60 transition text-sm text-slate-200 flex items-start justify-between gap-3 group">
                                 <span class="flex items-start gap-2.5 flex-1 min-w-0">
                                     <strong class="text-sky-400 font-bold flex-shrink-0 mt-0.5">A)</strong>
-                                    <span class="flex-1 min-w-0 break-words leading-relaxed">Pirâmide 4, 2 e 5; Cubo 7, 3 e 9; Prisma 9, 4 e 12.</span>
+                                    <span class="flex-1 min-w-0 break-words leading-relaxed">Pirâmide $4$, $2$ e $5$; Cubo $7$, $3$ e $9$; Prisma $9$, $4$ e $12$.</span>
                                 </span>
                                 <i data-lucide="circle" class="w-4 h-4 text-slate-600 opt-icon group-hover:text-blue-400 flex-shrink-0 mt-0.5"></i>
                             </button>
@@ -458,7 +530,7 @@ A mediana das temperaturas mínimas apresentadas, em graus Celsius (°C), é</p>
                             <button onclick="selectOption('ifmg-2026-1-q3', 1)" id="btn-ifmg-2026-1-q3-1" class="w-full text-left p-3.5 rounded-xl border border-slate-800 bg-slate-950/60 hover:border-blue-500 hover:bg-slate-800/60 transition text-sm text-slate-200 flex items-start justify-between gap-3 group">
                                 <span class="flex items-start gap-2.5 flex-1 min-w-0">
                                     <strong class="text-sky-400 font-bold flex-shrink-0 mt-0.5">B)</strong>
-                                    <span class="flex-1 min-w-0 break-words leading-relaxed">Pirâmide 5, 5 e 8; Cubo 6, 8 e 12; Prisma 10, 7 e 15.</span>
+                                    <span class="flex-1 min-w-0 break-words leading-relaxed">Pirâmide $5$, $5$ e $8$; Cubo $6$, $8$ e $12$; Prisma $10$, $7$ e $15$.</span>
                                 </span>
                                 <i data-lucide="circle" class="w-4 h-4 text-slate-600 opt-icon group-hover:text-blue-400 flex-shrink-0 mt-0.5"></i>
                             </button>
@@ -466,7 +538,7 @@ A mediana das temperaturas mínimas apresentadas, em graus Celsius (°C), é</p>
                             <button onclick="selectOption('ifmg-2026-1-q3', 2)" id="btn-ifmg-2026-1-q3-2" class="w-full text-left p-3.5 rounded-xl border border-slate-800 bg-slate-950/60 hover:border-blue-500 hover:bg-slate-800/60 transition text-sm text-slate-200 flex items-start justify-between gap-3 group">
                                 <span class="flex items-start gap-2.5 flex-1 min-w-0">
                                     <strong class="text-sky-400 font-bold flex-shrink-0 mt-0.5">C)</strong>
-                                    <span class="flex-1 min-w-0 break-words leading-relaxed">Pirâmide 4, 4 e 6; Cubo 8, 6 e 12; Prisma 12, 7 e 18.</span>
+                                    <span class="flex-1 min-w-0 break-words leading-relaxed">Pirâmide $4$, $4$ e $6$; Cubo $8$, $6$ e $12$; Prisma $12$, $7$ e $18$.</span>
                                 </span>
                                 <i data-lucide="circle" class="w-4 h-4 text-slate-600 opt-icon group-hover:text-blue-400 flex-shrink-0 mt-0.5"></i>
                             </button>
@@ -474,7 +546,7 @@ A mediana das temperaturas mínimas apresentadas, em graus Celsius (°C), é</p>
                             <button onclick="selectOption('ifmg-2026-1-q3', 3)" id="btn-ifmg-2026-1-q3-3" class="w-full text-left p-3.5 rounded-xl border border-slate-800 bg-slate-950/60 hover:border-blue-500 hover:bg-slate-800/60 transition text-sm text-slate-200 flex items-start justify-between gap-3 group">
                                 <span class="flex items-start gap-2.5 flex-1 min-w-0">
                                     <strong class="text-sky-400 font-bold flex-shrink-0 mt-0.5">D)</strong>
-                                    <span class="flex-1 min-w-0 break-words leading-relaxed">Pirâmide 5, 5 e 8; Cubo 8, 6 e 12; Prisma 10, 7 e 15.</span>
+                                    <span class="flex-1 min-w-0 break-words leading-relaxed">Pirâmide $5$, $5$ e $8$; Cubo $8$, $6$ e $12$; Prisma $10$, $7$ e $15$.</span>
                                 </span>
                                 <i data-lucide="circle" class="w-4 h-4 text-slate-600 opt-icon group-hover:text-blue-400 flex-shrink-0 mt-0.5"></i>
                             </button>
@@ -490,7 +562,7 @@ A mediana das temperaturas mínimas apresentadas, em graus Celsius (°C), é</p>
                     
                         <div class="mb-8 border-b border-slate-800/80 pb-6 last:border-0 last:pb-0" id="q-container-ifmg-2026-1-q4">
                             <div class="flex items-center justify-between mb-3 flex-wrap gap-2">
-                                <div class="flex items-center gap-2">
+                                <div class="flex flex-wrap items-center gap-2">
                                     <span class="text-xs font-bold uppercase tracking-wider text-sky-300 bg-blue-950/60 px-2.5 py-0.5 rounded-full border border-blue-800/40">Questão 5</span>
                                     
                             <a href="../pesquisa.html?bncc=EF08MA21" class="text-[11px] font-mono font-bold text-emerald-300 bg-emerald-950/80 hover:bg-emerald-900/90 px-2.5 py-0.5 rounded-full border border-emerald-800/60 flex items-center gap-1 transition shadow-sm" title="Resolver e elaborar problemas que envolvam o cálculo do volume de recipiente cujo formato é o de bloco retangular, relacionando medidas de volume com capacidades.">
@@ -499,14 +571,14 @@ A mediana das temperaturas mínimas apresentadas, em graus Celsius (°C), é</p>
                         
                                 </div>
                             </div>
-                            <p class="font-medium text-slate-100 mb-4 text-sm sm:text-base leading-relaxed">(IFMG 2026.1 - Q17) Durante uma gincana em comemoração ao Dia das Crianças, as turmas do 9ºA e 9ºB disputaram uma prova em que o vencedor seria quem conseguisse armazenar a maior quantidade de água em caixas em formato de prismas retangulares.<br><br>A turma do 9ºA encheu 6 caixas pequenas e a turma do 9ºB encheu 1 caixa grande. Cada caixa pequena comportava 500 mL de líquido. A caixa grande era duas vezes mais comprida, duas vezes mais larga e duas vezes mais alta do que a caixa pequena.<br><br>A turma vencedora e a quantidade de água armazenada por ela foi</p>
+                            <div class="q-text-container"><p class="q-paragraph font-medium text-slate-200 text-sm sm:text-base">Durante uma gincana em comemoração ao Dia das Crianças, as turmas do 9ºA e 9ºB disputaram uma prova em que o vencedor seria quem conseguisse armazenar a maior quantidade de água em caixas em formato de prismas retangulares.</p><p class="q-paragraph font-medium text-slate-200 text-sm sm:text-base">A turma do 9ºA encheu 6 caixas pequenas e a turma do 9ºB encheu 1 caixa grande. Cada caixa pequena comportava $500\text{ mL}$ de líquido. A caixa grande era duas vezes mais comprida, duas vezes mais larga e duas vezes mais alta do que a caixa pequena.</p><p class="q-prompt text-slate-100 text-sm sm:text-base">A turma vencedora e a quantidade de água armazenada por ela foi:</p></div>
                             
                             <div class="space-y-2 mb-4" id="opts-ifmg-2026-1-q4">
                                 
                             <button onclick="selectOption('ifmg-2026-1-q4', 0)" id="btn-ifmg-2026-1-q4-0" class="w-full text-left p-3.5 rounded-xl border border-slate-800 bg-slate-950/60 hover:border-blue-500 hover:bg-slate-800/60 transition text-sm text-slate-200 flex items-start justify-between gap-3 group">
                                 <span class="flex items-start gap-2.5 flex-1 min-w-0">
                                     <strong class="text-sky-400 font-bold flex-shrink-0 mt-0.5">A)</strong>
-                                    <span class="flex-1 min-w-0 break-words leading-relaxed">9ºA com 1 litro.</span>
+                                    <span class="flex-1 min-w-0 break-words leading-relaxed">9ºA com $1\text{ litro}$.</span>
                                 </span>
                                 <i data-lucide="circle" class="w-4 h-4 text-slate-600 opt-icon group-hover:text-blue-400 flex-shrink-0 mt-0.5"></i>
                             </button>
@@ -514,7 +586,7 @@ A mediana das temperaturas mínimas apresentadas, em graus Celsius (°C), é</p>
                             <button onclick="selectOption('ifmg-2026-1-q4', 1)" id="btn-ifmg-2026-1-q4-1" class="w-full text-left p-3.5 rounded-xl border border-slate-800 bg-slate-950/60 hover:border-blue-500 hover:bg-slate-800/60 transition text-sm text-slate-200 flex items-start justify-between gap-3 group">
                                 <span class="flex items-start gap-2.5 flex-1 min-w-0">
                                     <strong class="text-sky-400 font-bold flex-shrink-0 mt-0.5">B)</strong>
-                                    <span class="flex-1 min-w-0 break-words leading-relaxed">9ºB com 2 litros.</span>
+                                    <span class="flex-1 min-w-0 break-words leading-relaxed">9ºB com $2\text{ litros}$.</span>
                                 </span>
                                 <i data-lucide="circle" class="w-4 h-4 text-slate-600 opt-icon group-hover:text-blue-400 flex-shrink-0 mt-0.5"></i>
                             </button>
@@ -522,7 +594,7 @@ A mediana das temperaturas mínimas apresentadas, em graus Celsius (°C), é</p>
                             <button onclick="selectOption('ifmg-2026-1-q4', 2)" id="btn-ifmg-2026-1-q4-2" class="w-full text-left p-3.5 rounded-xl border border-slate-800 bg-slate-950/60 hover:border-blue-500 hover:bg-slate-800/60 transition text-sm text-slate-200 flex items-start justify-between gap-3 group">
                                 <span class="flex items-start gap-2.5 flex-1 min-w-0">
                                     <strong class="text-sky-400 font-bold flex-shrink-0 mt-0.5">C)</strong>
-                                    <span class="flex-1 min-w-0 break-words leading-relaxed">9ºA com 3 litros.</span>
+                                    <span class="flex-1 min-w-0 break-words leading-relaxed">9ºA com $3\text{ litros}$.</span>
                                 </span>
                                 <i data-lucide="circle" class="w-4 h-4 text-slate-600 opt-icon group-hover:text-blue-400 flex-shrink-0 mt-0.5"></i>
                             </button>
@@ -530,7 +602,7 @@ A mediana das temperaturas mínimas apresentadas, em graus Celsius (°C), é</p>
                             <button onclick="selectOption('ifmg-2026-1-q4', 3)" id="btn-ifmg-2026-1-q4-3" class="w-full text-left p-3.5 rounded-xl border border-slate-800 bg-slate-950/60 hover:border-blue-500 hover:bg-slate-800/60 transition text-sm text-slate-200 flex items-start justify-between gap-3 group">
                                 <span class="flex items-start gap-2.5 flex-1 min-w-0">
                                     <strong class="text-sky-400 font-bold flex-shrink-0 mt-0.5">D)</strong>
-                                    <span class="flex-1 min-w-0 break-words leading-relaxed">9ºB com 4 litros.</span>
+                                    <span class="flex-1 min-w-0 break-words leading-relaxed">9ºB com $4\text{ litros}$.</span>
                                 </span>
                                 <i data-lucide="circle" class="w-4 h-4 text-slate-600 opt-icon group-hover:text-blue-400 flex-shrink-0 mt-0.5"></i>
                             </button>
@@ -546,7 +618,7 @@ A mediana das temperaturas mínimas apresentadas, em graus Celsius (°C), é</p>
                     
                         <div class="mb-8 border-b border-slate-800/80 pb-6 last:border-0 last:pb-0" id="q-container-ifmg-2026-1-q5">
                             <div class="flex items-center justify-between mb-3 flex-wrap gap-2">
-                                <div class="flex items-center gap-2">
+                                <div class="flex flex-wrap items-center gap-2">
                                     <span class="text-xs font-bold uppercase tracking-wider text-sky-300 bg-blue-950/60 px-2.5 py-0.5 rounded-full border border-blue-800/40">Questão 6</span>
                                     
                             <a href="../pesquisa.html?bncc=EF06MA03" class="text-[11px] font-mono font-bold text-emerald-300 bg-emerald-950/80 hover:bg-emerald-900/90 px-2.5 py-0.5 rounded-full border border-emerald-800/60 flex items-center gap-1 transition shadow-sm" title="Resolver e elaborar problemas que envolvam cálculos (adição, subtração, multiplicação, divisão e potenciação) com números naturais, por meio de estratégias variadas.">
@@ -555,14 +627,16 @@ A mediana das temperaturas mínimas apresentadas, em graus Celsius (°C), é</p>
                         
                                 </div>
                             </div>
-                            <p class="font-medium text-slate-100 mb-4 text-sm sm:text-base leading-relaxed">(IFMG 2026.1 - Q18) Um centro de distribuição recebeu 480 caixas de produtos para serem armazenadas em três setores:<br>● No Setor A, foram organizadas 8 prateleiras com 12 caixas cada.<br>● No Setor B, foram organizadas 5 prateleiras com 18 caixas cada e mais 4 prateleiras com 15 caixas cada.<br>● As caixas restantes foram destinadas ao Setor C e organizadas em 6 prateleiras, de modo que cada prateleira recebeu a mesma quantidade de caixas.<br><br>O número de caixas em cada prateleira do Setor C é</p>
+                            <div class="q-text-container"><p class="q-paragraph font-medium text-slate-200 text-sm sm:text-base">Um centro de distribuição recebeu 480 caixas de produtos para serem armazenadas em três setores:</p><div class="q-item-card"><span class="text-sky-400 font-bold px-1.5 flex-shrink-0">•</span><span class="flex-1 min-w-0">No Setor A, foram organizadas 8 prateleiras com 12 caixas cada.
+• No Setor B, foram organizadas 5 prateleiras com 18 caixas cada e mais 4 prateleiras com 15 caixas cada.
+• As caixas restantes foram destinadas ao Setor C e organizadas em 6 prateleiras, de modo que cada prateleira recebeu a mesma quantidade de caixas.</span></div><p class="q-prompt text-slate-100 text-sm sm:text-base">O número de caixas em cada prateleira do Setor C é:</p></div>
                             
                             <div class="space-y-2 mb-4" id="opts-ifmg-2026-1-q5">
                                 
                             <button onclick="selectOption('ifmg-2026-1-q5', 0)" id="btn-ifmg-2026-1-q5-0" class="w-full text-left p-3.5 rounded-xl border border-slate-800 bg-slate-950/60 hover:border-blue-500 hover:bg-slate-800/60 transition text-sm text-slate-200 flex items-start justify-between gap-3 group">
                                 <span class="flex items-start gap-2.5 flex-1 min-w-0">
                                     <strong class="text-sky-400 font-bold flex-shrink-0 mt-0.5">A)</strong>
-                                    <span class="flex-1 min-w-0 break-words leading-relaxed">39</span>
+                                    <span class="flex-1 min-w-0 break-words leading-relaxed">$39$</span>
                                 </span>
                                 <i data-lucide="circle" class="w-4 h-4 text-slate-600 opt-icon group-hover:text-blue-400 flex-shrink-0 mt-0.5"></i>
                             </button>
@@ -570,7 +644,7 @@ A mediana das temperaturas mínimas apresentadas, em graus Celsius (°C), é</p>
                             <button onclick="selectOption('ifmg-2026-1-q5', 1)" id="btn-ifmg-2026-1-q5-1" class="w-full text-left p-3.5 rounded-xl border border-slate-800 bg-slate-950/60 hover:border-blue-500 hover:bg-slate-800/60 transition text-sm text-slate-200 flex items-start justify-between gap-3 group">
                                 <span class="flex items-start gap-2.5 flex-1 min-w-0">
                                     <strong class="text-sky-400 font-bold flex-shrink-0 mt-0.5">B)</strong>
-                                    <span class="flex-1 min-w-0 break-words leading-relaxed">41</span>
+                                    <span class="flex-1 min-w-0 break-words leading-relaxed">$41$</span>
                                 </span>
                                 <i data-lucide="circle" class="w-4 h-4 text-slate-600 opt-icon group-hover:text-blue-400 flex-shrink-0 mt-0.5"></i>
                             </button>
@@ -578,7 +652,7 @@ A mediana das temperaturas mínimas apresentadas, em graus Celsius (°C), é</p>
                             <button onclick="selectOption('ifmg-2026-1-q5', 2)" id="btn-ifmg-2026-1-q5-2" class="w-full text-left p-3.5 rounded-xl border border-slate-800 bg-slate-950/60 hover:border-blue-500 hover:bg-slate-800/60 transition text-sm text-slate-200 flex items-start justify-between gap-3 group">
                                 <span class="flex items-start gap-2.5 flex-1 min-w-0">
                                     <strong class="text-sky-400 font-bold flex-shrink-0 mt-0.5">C)</strong>
-                                    <span class="flex-1 min-w-0 break-words leading-relaxed">42</span>
+                                    <span class="flex-1 min-w-0 break-words leading-relaxed">$42$</span>
                                 </span>
                                 <i data-lucide="circle" class="w-4 h-4 text-slate-600 opt-icon group-hover:text-blue-400 flex-shrink-0 mt-0.5"></i>
                             </button>
@@ -586,7 +660,7 @@ A mediana das temperaturas mínimas apresentadas, em graus Celsius (°C), é</p>
                             <button onclick="selectOption('ifmg-2026-1-q5', 3)" id="btn-ifmg-2026-1-q5-3" class="w-full text-left p-3.5 rounded-xl border border-slate-800 bg-slate-950/60 hover:border-blue-500 hover:bg-slate-800/60 transition text-sm text-slate-200 flex items-start justify-between gap-3 group">
                                 <span class="flex items-start gap-2.5 flex-1 min-w-0">
                                     <strong class="text-sky-400 font-bold flex-shrink-0 mt-0.5">D)</strong>
-                                    <span class="flex-1 min-w-0 break-words leading-relaxed">47</span>
+                                    <span class="flex-1 min-w-0 break-words leading-relaxed">$47$</span>
                                 </span>
                                 <i data-lucide="circle" class="w-4 h-4 text-slate-600 opt-icon group-hover:text-blue-400 flex-shrink-0 mt-0.5"></i>
                             </button>
@@ -602,7 +676,7 @@ A mediana das temperaturas mínimas apresentadas, em graus Celsius (°C), é</p>
                     
                         <div class="mb-8 border-b border-slate-800/80 pb-6 last:border-0 last:pb-0" id="q-container-ifmg-2026-1-q6">
                             <div class="flex items-center justify-between mb-3 flex-wrap gap-2">
-                                <div class="flex items-center gap-2">
+                                <div class="flex flex-wrap items-center gap-2">
                                     <span class="text-xs font-bold uppercase tracking-wider text-sky-300 bg-blue-950/60 px-2.5 py-0.5 rounded-full border border-blue-800/40">Questão 7</span>
                                     
                             <a href="../pesquisa.html?bncc=EF08MA19" class="text-[11px] font-mono font-bold text-emerald-300 bg-emerald-950/80 hover:bg-emerald-900/90 px-2.5 py-0.5 rounded-full border border-emerald-800/60 flex items-center gap-1 transition shadow-sm" title="Resolver e elaborar problemas que envolvam medidas de área de figuras geométricas, utilizando expressões de cálculo de área (quadriláteros, triângulos e círculos) ou métodos de decomposição e contagem em malhas.">
@@ -611,7 +685,7 @@ A mediana das temperaturas mínimas apresentadas, em graus Celsius (°C), é</p>
                         
                                 </div>
                             </div>
-                            <p class="font-medium text-slate-100 mb-4 text-sm sm:text-base leading-relaxed">(IFMG 2026.1 - Q19) O Teorema de Pick é utilizado para calcular áreas de polígonos, cujos vértices são pontos de uma malha quadriculada, através da seguinte relação, em que $I$ é o número de pontos da malha quadriculada situados no interior do polígono e $B$ é o número de pontos da malha quadriculada situados sobre o contorno (borda) do polígono:<br>$$A = I + \frac{B}{2} - 1$$<br>Na figura a seguir, o Polígono X possui 9 pontos interiores e 10 pontos na borda, obtendo uma área de 13 unidades de área:<br><br>A área do polígono Y, em unidades de área, é</p>
+                            <div class="q-text-container"><p class="q-paragraph font-medium text-slate-200 text-sm sm:text-base">O Teorema de Pick é utilizado para calcular áreas de polígonos, cujos vértices são pontos de uma malha quadriculada, através da seguinte relação, em que $I$ é o número de pontos da malha quadriculada situados no interior do polígono e $B$ é o número de pontos da malha quadriculada situados sobre o contorno (borda) do polígono:</p><p class="q-paragraph font-medium text-slate-200 text-sm sm:text-base">$$A = I + \frac{B}{2} - 1$$</p><p class="q-paragraph font-medium text-slate-200 text-sm sm:text-base">Na figura a seguir, o Polígono X possui 9 pontos interiores e 10 pontos na borda, obtendo uma área de 13 unidades de área:</p><p class="q-prompt text-slate-100 text-sm sm:text-base">A área do polígono Y, em unidades de área, é:</p></div>
                             
         <div class="my-4 p-2 sm:p-3 rounded-2xl border bg-slate-950/70 border-slate-800 shadow-sm max-w-xl mx-auto flex flex-col items-center">
             <img src="https://lh3.googleusercontent.com/d/1S8b9Fyte4x-9ysaK65nRZnHXtzYoiwYE" alt="Malha quadriculada com dois polígonos sobrepostos a pontos de grade. À esquerda, o Polígono X com pontos interiores e de borda indicados. À direita, o Polígono Y cujos vértices e arestas passam pelos pontos da malha." onerror="if(this.src!='../assets/img/questoes/ifmg/ifmg-2026-1-q19.png'){this.src='../assets/img/questoes/ifmg/ifmg-2026-1-q19.png';}" class="max-h-80 sm:max-h-96 w-auto max-w-full rounded-xl object-contain cursor-zoom-in hover:opacity-95 hover:scale-[1.01] transition duration-200" onclick="openImageModal('https://lh3.googleusercontent.com/d/1S8b9Fyte4x-9ysaK65nRZnHXtzYoiwYE', 'Malha quadriculada com dois polígonos sobrepostos a pontos de grade. À esquerda, o Polígono X com pontos interiores e de borda indicados. À direita, o Polígono Y cujos vértices e arestas passam pelos pontos da malha.')" title="Clique para ampliar a imagem" loading="lazy">
@@ -623,7 +697,7 @@ A mediana das temperaturas mínimas apresentadas, em graus Celsius (°C), é</p>
                             <button onclick="selectOption('ifmg-2026-1-q6', 0)" id="btn-ifmg-2026-1-q6-0" class="w-full text-left p-3.5 rounded-xl border border-slate-800 bg-slate-950/60 hover:border-blue-500 hover:bg-slate-800/60 transition text-sm text-slate-200 flex items-start justify-between gap-3 group">
                                 <span class="flex items-start gap-2.5 flex-1 min-w-0">
                                     <strong class="text-sky-400 font-bold flex-shrink-0 mt-0.5">A)</strong>
-                                    <span class="flex-1 min-w-0 break-words leading-relaxed">15</span>
+                                    <span class="flex-1 min-w-0 break-words leading-relaxed">$15$</span>
                                 </span>
                                 <i data-lucide="circle" class="w-4 h-4 text-slate-600 opt-icon group-hover:text-blue-400 flex-shrink-0 mt-0.5"></i>
                             </button>
@@ -631,7 +705,7 @@ A mediana das temperaturas mínimas apresentadas, em graus Celsius (°C), é</p>
                             <button onclick="selectOption('ifmg-2026-1-q6', 1)" id="btn-ifmg-2026-1-q6-1" class="w-full text-left p-3.5 rounded-xl border border-slate-800 bg-slate-950/60 hover:border-blue-500 hover:bg-slate-800/60 transition text-sm text-slate-200 flex items-start justify-between gap-3 group">
                                 <span class="flex items-start gap-2.5 flex-1 min-w-0">
                                     <strong class="text-sky-400 font-bold flex-shrink-0 mt-0.5">B)</strong>
-                                    <span class="flex-1 min-w-0 break-words leading-relaxed">16</span>
+                                    <span class="flex-1 min-w-0 break-words leading-relaxed">$16$</span>
                                 </span>
                                 <i data-lucide="circle" class="w-4 h-4 text-slate-600 opt-icon group-hover:text-blue-400 flex-shrink-0 mt-0.5"></i>
                             </button>
@@ -639,7 +713,7 @@ A mediana das temperaturas mínimas apresentadas, em graus Celsius (°C), é</p>
                             <button onclick="selectOption('ifmg-2026-1-q6', 2)" id="btn-ifmg-2026-1-q6-2" class="w-full text-left p-3.5 rounded-xl border border-slate-800 bg-slate-950/60 hover:border-blue-500 hover:bg-slate-800/60 transition text-sm text-slate-200 flex items-start justify-between gap-3 group">
                                 <span class="flex items-start gap-2.5 flex-1 min-w-0">
                                     <strong class="text-sky-400 font-bold flex-shrink-0 mt-0.5">C)</strong>
-                                    <span class="flex-1 min-w-0 break-words leading-relaxed">17</span>
+                                    <span class="flex-1 min-w-0 break-words leading-relaxed">$17$</span>
                                 </span>
                                 <i data-lucide="circle" class="w-4 h-4 text-slate-600 opt-icon group-hover:text-blue-400 flex-shrink-0 mt-0.5"></i>
                             </button>
@@ -647,7 +721,7 @@ A mediana das temperaturas mínimas apresentadas, em graus Celsius (°C), é</p>
                             <button onclick="selectOption('ifmg-2026-1-q6', 3)" id="btn-ifmg-2026-1-q6-3" class="w-full text-left p-3.5 rounded-xl border border-slate-800 bg-slate-950/60 hover:border-blue-500 hover:bg-slate-800/60 transition text-sm text-slate-200 flex items-start justify-between gap-3 group">
                                 <span class="flex items-start gap-2.5 flex-1 min-w-0">
                                     <strong class="text-sky-400 font-bold flex-shrink-0 mt-0.5">D)</strong>
-                                    <span class="flex-1 min-w-0 break-words leading-relaxed">18</span>
+                                    <span class="flex-1 min-w-0 break-words leading-relaxed">$18$</span>
                                 </span>
                                 <i data-lucide="circle" class="w-4 h-4 text-slate-600 opt-icon group-hover:text-blue-400 flex-shrink-0 mt-0.5"></i>
                             </button>
@@ -663,7 +737,7 @@ A mediana das temperaturas mínimas apresentadas, em graus Celsius (°C), é</p>
                     
                         <div class="mb-8 border-b border-slate-800/80 pb-6 last:border-0 last:pb-0" id="q-container-ifmg-2026-1-q7">
                             <div class="flex items-center justify-between mb-3 flex-wrap gap-2">
-                                <div class="flex items-center gap-2">
+                                <div class="flex flex-wrap items-center gap-2">
                                     <span class="text-xs font-bold uppercase tracking-wider text-sky-300 bg-blue-950/60 px-2.5 py-0.5 rounded-full border border-blue-800/40">Questão 8</span>
                                     
                             <a href="../pesquisa.html?bncc=EF08MA04" class="text-[11px] font-mono font-bold text-emerald-300 bg-emerald-950/80 hover:bg-emerald-900/90 px-2.5 py-0.5 rounded-full border border-emerald-800/60 flex items-center gap-1 transition shadow-sm" title="Resolver e elaborar problemas, envolvendo cálculo de porcentagens, incluindo o uso de tecnologias digitais, no contexto da educação financeira.">
@@ -672,14 +746,14 @@ A mediana das temperaturas mínimas apresentadas, em graus Celsius (°C), é</p>
                         
                                 </div>
                             </div>
-                            <p class="font-medium text-slate-100 mb-4 text-sm sm:text-base leading-relaxed">(IFMG 2026.1 - Q20) O Imposto de Renda é um tributo federal cobrado sobre o salário dos trabalhadores. Atualmente, quem recebe até dois salários mínimos por mês está isento do pagamento, ou seja, não paga imposto. Para quem ganha acima desse valor, o imposto é calculado aplicando-se uma alíquota (percentual) sobre a parcela que ultrapassa a faixa de isenção.<br><br>Uma professora que possui salário mensal de $\text{R\$} 3.224{,}00$ tem Imposto de Renda mensal calculado aplicando-se uma alíquota de 7{,}5% sobre o valor que excede a faixa de isenção. Até abril de 2025, essa faixa correspondia a $\text{R\$} 2.824{,}00$, a partir de maio de 2025, passou para $\text{R\$} 3.036{,}00$.<br><br>A redução no valor do imposto pago mensalmente por essa professora a partir de maio de 2025 foi de</p>
+                            <div class="q-text-container"><p class="q-paragraph font-medium text-slate-200 text-sm sm:text-base">O Imposto de Renda é um tributo federal cobrado sobre o salário dos trabalhadores. Atualmente, quem recebe até dois salários mínimos por mês está isento do pagamento, ou seja, não paga imposto. Para quem ganha acima desse valor, o imposto é calculado aplicando-se uma alíquota (percentual) sobre a parcela que ultrapassa a faixa de isenção.</p><p class="q-paragraph font-medium text-slate-200 text-sm sm:text-base">Uma professora que possui salário mensal de $\text{R\$} 3.224{,}00$ tem Imposto de Renda mensal calculado aplicando-se uma alíquota de $7{,}5\%$ sobre o valor que excede a faixa de isenção. Até abril de 2025, essa faixa correspondia a $\text{R\$} 2.824{,}00$; a partir de maio de 2025, passou para $\text{R\$} 3.036{,}00$.</p><p class="q-prompt text-slate-100 text-sm sm:text-base">A redução no valor do imposto pago mensalmente por essa professora a partir de maio de 2025 foi de:</p></div>
                             
                             <div class="space-y-2 mb-4" id="opts-ifmg-2026-1-q7">
                                 
                             <button onclick="selectOption('ifmg-2026-1-q7', 0)" id="btn-ifmg-2026-1-q7-0" class="w-full text-left p-3.5 rounded-xl border border-slate-800 bg-slate-950/60 hover:border-blue-500 hover:bg-slate-800/60 transition text-sm text-slate-200 flex items-start justify-between gap-3 group">
                                 <span class="flex items-start gap-2.5 flex-1 min-w-0">
                                     <strong class="text-sky-400 font-bold flex-shrink-0 mt-0.5">A)</strong>
-                                    <span class="flex-1 min-w-0 break-words leading-relaxed">11%</span>
+                                    <span class="flex-1 min-w-0 break-words leading-relaxed">$11\%$</span>
                                 </span>
                                 <i data-lucide="circle" class="w-4 h-4 text-slate-600 opt-icon group-hover:text-blue-400 flex-shrink-0 mt-0.5"></i>
                             </button>
@@ -687,7 +761,7 @@ A mediana das temperaturas mínimas apresentadas, em graus Celsius (°C), é</p>
                             <button onclick="selectOption('ifmg-2026-1-q7', 1)" id="btn-ifmg-2026-1-q7-1" class="w-full text-left p-3.5 rounded-xl border border-slate-800 bg-slate-950/60 hover:border-blue-500 hover:bg-slate-800/60 transition text-sm text-slate-200 flex items-start justify-between gap-3 group">
                                 <span class="flex items-start gap-2.5 flex-1 min-w-0">
                                     <strong class="text-sky-400 font-bold flex-shrink-0 mt-0.5">B)</strong>
-                                    <span class="flex-1 min-w-0 break-words leading-relaxed">47%</span>
+                                    <span class="flex-1 min-w-0 break-words leading-relaxed">$47\%$</span>
                                 </span>
                                 <i data-lucide="circle" class="w-4 h-4 text-slate-600 opt-icon group-hover:text-blue-400 flex-shrink-0 mt-0.5"></i>
                             </button>
@@ -695,7 +769,7 @@ A mediana das temperaturas mínimas apresentadas, em graus Celsius (°C), é</p>
                             <button onclick="selectOption('ifmg-2026-1-q7', 2)" id="btn-ifmg-2026-1-q7-2" class="w-full text-left p-3.5 rounded-xl border border-slate-800 bg-slate-950/60 hover:border-blue-500 hover:bg-slate-800/60 transition text-sm text-slate-200 flex items-start justify-between gap-3 group">
                                 <span class="flex items-start gap-2.5 flex-1 min-w-0">
                                     <strong class="text-sky-400 font-bold flex-shrink-0 mt-0.5">C)</strong>
-                                    <span class="flex-1 min-w-0 break-words leading-relaxed">53%</span>
+                                    <span class="flex-1 min-w-0 break-words leading-relaxed">$53\%$</span>
                                 </span>
                                 <i data-lucide="circle" class="w-4 h-4 text-slate-600 opt-icon group-hover:text-blue-400 flex-shrink-0 mt-0.5"></i>
                             </button>
@@ -703,7 +777,7 @@ A mediana das temperaturas mínimas apresentadas, em graus Celsius (°C), é</p>
                             <button onclick="selectOption('ifmg-2026-1-q7', 3)" id="btn-ifmg-2026-1-q7-3" class="w-full text-left p-3.5 rounded-xl border border-slate-800 bg-slate-950/60 hover:border-blue-500 hover:bg-slate-800/60 transition text-sm text-slate-200 flex items-start justify-between gap-3 group">
                                 <span class="flex items-start gap-2.5 flex-1 min-w-0">
                                     <strong class="text-sky-400 font-bold flex-shrink-0 mt-0.5">D)</strong>
-                                    <span class="flex-1 min-w-0 break-words leading-relaxed">89%</span>
+                                    <span class="flex-1 min-w-0 break-words leading-relaxed">$89\%$</span>
                                 </span>
                                 <i data-lucide="circle" class="w-4 h-4 text-slate-600 opt-icon group-hover:text-blue-400 flex-shrink-0 mt-0.5"></i>
                             </button>
@@ -719,7 +793,7 @@ A mediana das temperaturas mínimas apresentadas, em graus Celsius (°C), é</p>
                     
                         <div class="mb-8 border-b border-slate-800/80 pb-6 last:border-0 last:pb-0" id="q-container-ifmg-2026-1-q8">
                             <div class="flex items-center justify-between mb-3 flex-wrap gap-2">
-                                <div class="flex items-center gap-2">
+                                <div class="flex flex-wrap items-center gap-2">
                                     <span class="text-xs font-bold uppercase tracking-wider text-sky-300 bg-blue-950/60 px-2.5 py-0.5 rounded-full border border-blue-800/40">Questão 9</span>
                                     
                             <a href="../pesquisa.html?bncc=EF08MA15" class="text-[11px] font-mono font-bold text-emerald-300 bg-emerald-950/80 hover:bg-emerald-900/90 px-2.5 py-0.5 rounded-full border border-emerald-800/60 flex items-center gap-1 transition shadow-sm" title="Construir, utilizando instrumentos de desenho ou softwares de geometria dinâmica, mediatriz, bissetriz, ângulos de 90°, 60°, 45° e 30° e polígonos regulares.">
@@ -728,7 +802,7 @@ A mediana das temperaturas mínimas apresentadas, em graus Celsius (°C), é</p>
                         
                                 </div>
                             </div>
-                            <p class="font-medium text-slate-100 mb-4 text-sm sm:text-base leading-relaxed">(IFMG 2026.1 - Q21) A figura a seguir apresenta o mapa de uma cidade, cuja área foi dividida em áreas hexagonais, em que os lados desses hexágonos regulares são ruas. O hexágono em destaque possui três ruas internas retas, sendo os pontos A, B, C e D pertencentes a essas ruas, com o ponto A no centro e os demais nos pontos médios dos lados.<br><br>A medida, em graus, do menor ângulo formado pelos segmentos AC e AD é</p>
+                            <div class="q-text-container"><p class="q-paragraph font-medium text-slate-200 text-sm sm:text-base">A figura a seguir apresenta o mapa de uma cidade, cuja área foi dividida em áreas hexagonais, em que os lados desses hexágonos regulares são ruas. O hexágono em destaque possui três ruas internas retas, sendo os pontos A, B, C e D pertencentes a essas ruas, com o ponto A no centro e os demais nos pontos médios dos lados.</p><p class="q-prompt text-slate-100 text-sm sm:text-base">A medida, em graus, do menor ângulo formado pelos segmentos $\overline{AC}$ e $\overline{AD}$ é:</p></div>
                             
         <div class="my-4 p-2 sm:p-3 rounded-2xl border bg-slate-950/70 border-slate-800 shadow-sm max-w-xl mx-auto flex flex-col items-center">
             <img src="https://lh3.googleusercontent.com/d/1uFBayvmvAQfqmRYTtWdhYtsGK7pZLm1c" alt="Mapa aéreo de bairro planejado dividido em módulos hexagonais regulares adjacentes. No hexágono em destaque, o ponto A está localizado no centro geométrico, o ponto C no ponto médio do lado superior horizontal e os pontos B e D nos pontos médios dos lados adjacentes." onerror="if(this.src!='../assets/img/questoes/ifmg/ifmg-2026-1-q21.png'){this.src='../assets/img/questoes/ifmg/ifmg-2026-1-q21.png';}" class="max-h-80 sm:max-h-96 w-auto max-w-full rounded-xl object-contain cursor-zoom-in hover:opacity-95 hover:scale-[1.01] transition duration-200" onclick="openImageModal('https://lh3.googleusercontent.com/d/1uFBayvmvAQfqmRYTtWdhYtsGK7pZLm1c', 'Mapa aéreo de bairro planejado dividido em módulos hexagonais regulares adjacentes. No hexágono em destaque, o ponto A está localizado no centro geométrico, o ponto C no ponto médio do lado superior horizontal e os pontos B e D nos pontos médios dos lados adjacentes.')" title="Clique para ampliar a imagem" loading="lazy">
@@ -740,7 +814,7 @@ A mediana das temperaturas mínimas apresentadas, em graus Celsius (°C), é</p>
                             <button onclick="selectOption('ifmg-2026-1-q8', 0)" id="btn-ifmg-2026-1-q8-0" class="w-full text-left p-3.5 rounded-xl border border-slate-800 bg-slate-950/60 hover:border-blue-500 hover:bg-slate-800/60 transition text-sm text-slate-200 flex items-start justify-between gap-3 group">
                                 <span class="flex items-start gap-2.5 flex-1 min-w-0">
                                     <strong class="text-sky-400 font-bold flex-shrink-0 mt-0.5">A)</strong>
-                                    <span class="flex-1 min-w-0 break-words leading-relaxed">60</span>
+                                    <span class="flex-1 min-w-0 break-words leading-relaxed">$60^\circ$</span>
                                 </span>
                                 <i data-lucide="circle" class="w-4 h-4 text-slate-600 opt-icon group-hover:text-blue-400 flex-shrink-0 mt-0.5"></i>
                             </button>
@@ -748,7 +822,7 @@ A mediana das temperaturas mínimas apresentadas, em graus Celsius (°C), é</p>
                             <button onclick="selectOption('ifmg-2026-1-q8', 1)" id="btn-ifmg-2026-1-q8-1" class="w-full text-left p-3.5 rounded-xl border border-slate-800 bg-slate-950/60 hover:border-blue-500 hover:bg-slate-800/60 transition text-sm text-slate-200 flex items-start justify-between gap-3 group">
                                 <span class="flex items-start gap-2.5 flex-1 min-w-0">
                                     <strong class="text-sky-400 font-bold flex-shrink-0 mt-0.5">B)</strong>
-                                    <span class="flex-1 min-w-0 break-words leading-relaxed">90</span>
+                                    <span class="flex-1 min-w-0 break-words leading-relaxed">$90^\circ$</span>
                                 </span>
                                 <i data-lucide="circle" class="w-4 h-4 text-slate-600 opt-icon group-hover:text-blue-400 flex-shrink-0 mt-0.5"></i>
                             </button>
@@ -756,7 +830,7 @@ A mediana das temperaturas mínimas apresentadas, em graus Celsius (°C), é</p>
                             <button onclick="selectOption('ifmg-2026-1-q8', 2)" id="btn-ifmg-2026-1-q8-2" class="w-full text-left p-3.5 rounded-xl border border-slate-800 bg-slate-950/60 hover:border-blue-500 hover:bg-slate-800/60 transition text-sm text-slate-200 flex items-start justify-between gap-3 group">
                                 <span class="flex items-start gap-2.5 flex-1 min-w-0">
                                     <strong class="text-sky-400 font-bold flex-shrink-0 mt-0.5">C)</strong>
-                                    <span class="flex-1 min-w-0 break-words leading-relaxed">120</span>
+                                    <span class="flex-1 min-w-0 break-words leading-relaxed">$120^\circ$</span>
                                 </span>
                                 <i data-lucide="circle" class="w-4 h-4 text-slate-600 opt-icon group-hover:text-blue-400 flex-shrink-0 mt-0.5"></i>
                             </button>
@@ -764,7 +838,7 @@ A mediana das temperaturas mínimas apresentadas, em graus Celsius (°C), é</p>
                             <button onclick="selectOption('ifmg-2026-1-q8', 3)" id="btn-ifmg-2026-1-q8-3" class="w-full text-left p-3.5 rounded-xl border border-slate-800 bg-slate-950/60 hover:border-blue-500 hover:bg-slate-800/60 transition text-sm text-slate-200 flex items-start justify-between gap-3 group">
                                 <span class="flex items-start gap-2.5 flex-1 min-w-0">
                                     <strong class="text-sky-400 font-bold flex-shrink-0 mt-0.5">D)</strong>
-                                    <span class="flex-1 min-w-0 break-words leading-relaxed">300</span>
+                                    <span class="flex-1 min-w-0 break-words leading-relaxed">$300^\circ$</span>
                                 </span>
                                 <i data-lucide="circle" class="w-4 h-4 text-slate-600 opt-icon group-hover:text-blue-400 flex-shrink-0 mt-0.5"></i>
                             </button>
@@ -780,7 +854,7 @@ A mediana das temperaturas mínimas apresentadas, em graus Celsius (°C), é</p>
                     
                         <div class="mb-8 border-b border-slate-800/80 pb-6 last:border-0 last:pb-0" id="q-container-ifmg-2026-1-q9">
                             <div class="flex items-center justify-between mb-3 flex-wrap gap-2">
-                                <div class="flex items-center gap-2">
+                                <div class="flex flex-wrap items-center gap-2">
                                     <span class="text-xs font-bold uppercase tracking-wider text-sky-300 bg-blue-950/60 px-2.5 py-0.5 rounded-full border border-blue-800/40">Questão 10</span>
                                     
                             <a href="../pesquisa.html?bncc=EF08MA08" class="text-[11px] font-mono font-bold text-emerald-300 bg-emerald-950/80 hover:bg-emerald-900/90 px-2.5 py-0.5 rounded-full border border-emerald-800/60 flex items-center gap-1 transition shadow-sm" title="Resolver e elaborar problemas relacionados ao seu contexto próximo, que possam ser representados por sistemas de equações de 1º grau com duas incógnitas e interpretá-los.">
@@ -789,7 +863,7 @@ A mediana das temperaturas mínimas apresentadas, em graus Celsius (°C), é</p>
                         
                                 </div>
                             </div>
-                            <p class="font-medium text-slate-100 mb-4 text-sm sm:text-base leading-relaxed">(IFMG 2026.1 - Q22) *(Nota pedagógica: Questão originalmente anulada no exame oficial do IFMG e readaptada para fins de treino, preservando a habilidade cobrada)*<br><br>Uma reportagem noticiou que os Correios investirão na modernização de sua frota com a aquisição de $5.000$ veículos elétricos. Suponha que essa quantidade de $5.000$ veículos seja dividida exclusivamente em dois tipos, motos e carros, e que, para futuras manutenções na frota, os Correios decidam adquirir a quantidade exata de pneus que esses veículos necessitam para rodar. Sabe-se ainda que serão adquiridos $16.400$ pneus no total e que cada moto utiliza 2 pneus, enquanto cada carro utiliza 4 pneus (desconsiderando estepes).<br><br>Quantos pneus de moto serão adquiridos?</p>
+                            <div class="q-text-container"><div class="q-pedagogical-note"><div class="flex items-center gap-1.5 font-bold mb-1 text-amber-500 dark:text-amber-400"><i data-lucide="info" class="w-4 h-4"></i> Nota Pedagógica</div><div>*(Nota pedagógica: Questão originalmente anulada no exame oficial do IFMG por conflito factual na manchete original, readaptada para fins de treino, preservando a habilidade cobrada)*</div></div><p class="q-paragraph font-medium text-slate-200 text-sm sm:text-base">Uma reportagem noticiou que os Correios investirão na modernização de sua frota com a aquisição de $5.000$ veículos elétricos. Suponha que essa quantidade de $5.000$ veículos seja dividida exclusivamente em dois tipos, motos e carros, e que, para futuras manutenções na frota, os Correios decidam adquirir a quantidade exata de pneus que esses veículos necessitam para rodar. Sabe-se ainda que serão adquiridos $16.400$ pneus no total e que cada moto utiliza 2 pneus, enquanto cada carro utiliza 4 pneus (desconsiderando estepes).</p><p class="q-prompt text-slate-100 text-sm sm:text-base">Quantos pneus de moto serão adquiridos?</p></div>
                             
         <div class="my-4 p-2 sm:p-3 rounded-2xl border bg-slate-950/70 border-slate-800 shadow-sm max-w-xl mx-auto flex flex-col items-center">
             <img src="https://lh3.googleusercontent.com/d/1nT99fKJxOOIrNJyZVnrP17uGiy9z88VC" alt="Recorte de matéria jornalística sobre o investimento dos Correios na renovação sustentável de frota de veículos elétricos." onerror="if(this.src!='../assets/img/questoes/ifmg/ifmg-2026-1-q22.png'){this.src='../assets/img/questoes/ifmg/ifmg-2026-1-q22.png';}" class="max-h-80 sm:max-h-96 w-auto max-w-full rounded-xl object-contain cursor-zoom-in hover:opacity-95 hover:scale-[1.01] transition duration-200" onclick="openImageModal('https://lh3.googleusercontent.com/d/1nT99fKJxOOIrNJyZVnrP17uGiy9z88VC', 'Recorte de matéria jornalística sobre o investimento dos Correios na renovação sustentável de frota de veículos elétricos.')" title="Clique para ampliar a imagem" loading="lazy">
@@ -801,7 +875,7 @@ A mediana das temperaturas mínimas apresentadas, em graus Celsius (°C), é</p>
                             <button onclick="selectOption('ifmg-2026-1-q9', 0)" id="btn-ifmg-2026-1-q9-0" class="w-full text-left p-3.5 rounded-xl border border-slate-800 bg-slate-950/60 hover:border-blue-500 hover:bg-slate-800/60 transition text-sm text-slate-200 flex items-start justify-between gap-3 group">
                                 <span class="flex items-start gap-2.5 flex-1 min-w-0">
                                     <strong class="text-sky-400 font-bold flex-shrink-0 mt-0.5">A)</strong>
-                                    <span class="flex-1 min-w-0 break-words leading-relaxed">1.200</span>
+                                    <span class="flex-1 min-w-0 break-words leading-relaxed">$1.200$</span>
                                 </span>
                                 <i data-lucide="circle" class="w-4 h-4 text-slate-600 opt-icon group-hover:text-blue-400 flex-shrink-0 mt-0.5"></i>
                             </button>
@@ -809,7 +883,7 @@ A mediana das temperaturas mínimas apresentadas, em graus Celsius (°C), é</p>
                             <button onclick="selectOption('ifmg-2026-1-q9', 1)" id="btn-ifmg-2026-1-q9-1" class="w-full text-left p-3.5 rounded-xl border border-slate-800 bg-slate-950/60 hover:border-blue-500 hover:bg-slate-800/60 transition text-sm text-slate-200 flex items-start justify-between gap-3 group">
                                 <span class="flex items-start gap-2.5 flex-1 min-w-0">
                                     <strong class="text-sky-400 font-bold flex-shrink-0 mt-0.5">B)</strong>
-                                    <span class="flex-1 min-w-0 break-words leading-relaxed">3.600</span>
+                                    <span class="flex-1 min-w-0 break-words leading-relaxed">$3.600$</span>
                                 </span>
                                 <i data-lucide="circle" class="w-4 h-4 text-slate-600 opt-icon group-hover:text-blue-400 flex-shrink-0 mt-0.5"></i>
                             </button>
@@ -817,7 +891,7 @@ A mediana das temperaturas mínimas apresentadas, em graus Celsius (°C), é</p>
                             <button onclick="selectOption('ifmg-2026-1-q9', 2)" id="btn-ifmg-2026-1-q9-2" class="w-full text-left p-3.5 rounded-xl border border-slate-800 bg-slate-950/60 hover:border-blue-500 hover:bg-slate-800/60 transition text-sm text-slate-200 flex items-start justify-between gap-3 group">
                                 <span class="flex items-start gap-2.5 flex-1 min-w-0">
                                     <strong class="text-sky-400 font-bold flex-shrink-0 mt-0.5">C)</strong>
-                                    <span class="flex-1 min-w-0 break-words leading-relaxed">3.800</span>
+                                    <span class="flex-1 min-w-0 break-words leading-relaxed">$3.800$</span>
                                 </span>
                                 <i data-lucide="circle" class="w-4 h-4 text-slate-600 opt-icon group-hover:text-blue-400 flex-shrink-0 mt-0.5"></i>
                             </button>
@@ -825,7 +899,7 @@ A mediana das temperaturas mínimas apresentadas, em graus Celsius (°C), é</p>
                             <button onclick="selectOption('ifmg-2026-1-q9', 3)" id="btn-ifmg-2026-1-q9-3" class="w-full text-left p-3.5 rounded-xl border border-slate-800 bg-slate-950/60 hover:border-blue-500 hover:bg-slate-800/60 transition text-sm text-slate-200 flex items-start justify-between gap-3 group">
                                 <span class="flex items-start gap-2.5 flex-1 min-w-0">
                                     <strong class="text-sky-400 font-bold flex-shrink-0 mt-0.5">D)</strong>
-                                    <span class="flex-1 min-w-0 break-words leading-relaxed">6.400</span>
+                                    <span class="flex-1 min-w-0 break-words leading-relaxed">$6.400$</span>
                                 </span>
                                 <i data-lucide="circle" class="w-4 h-4 text-slate-600 opt-icon group-hover:text-blue-400 flex-shrink-0 mt-0.5"></i>
                             </button>
@@ -841,7 +915,7 @@ A mediana das temperaturas mínimas apresentadas, em graus Celsius (°C), é</p>
                     
                         <div class="mb-8 border-b border-slate-800/80 pb-6 last:border-0 last:pb-0" id="q-container-ifmg-2026-1-q10">
                             <div class="flex items-center justify-between mb-3 flex-wrap gap-2">
-                                <div class="flex items-center gap-2">
+                                <div class="flex flex-wrap items-center gap-2">
                                     <span class="text-xs font-bold uppercase tracking-wider text-sky-300 bg-blue-950/60 px-2.5 py-0.5 rounded-full border border-blue-800/40">Questão 11</span>
                                     
                             <a href="../pesquisa.html?bncc=EF07MA17" class="text-[11px] font-mono font-bold text-emerald-300 bg-emerald-950/80 hover:bg-emerald-900/90 px-2.5 py-0.5 rounded-full border border-emerald-800/60 flex items-center gap-1 transition shadow-sm" title="Resolver e elaborar problemas que envolvam variação de proporcionalidade direta e do tipo inversa entre duas grandezas, utilizando estratégias variadas.">
@@ -850,7 +924,7 @@ A mediana das temperaturas mínimas apresentadas, em graus Celsius (°C), é</p>
                         
                                 </div>
                             </div>
-                            <p class="font-medium text-slate-100 mb-4 text-sm sm:text-base leading-relaxed">(IFMG 2026.1 - Q23) A seguir tem-se os ingredientes necessários para se fazer um pão caseiro:<br><br>O dono de uma padaria possui 200g de fermento biológico seco e pretende utilizá-lo integralmente na fabricação de pães caseiros, seguindo as proporções da receita apresentada.<br><br>Quantas xícaras de água morna ele vai precisar?</p>
+                            <div class="q-text-container"><p class="q-paragraph font-medium text-slate-200 text-sm sm:text-base">A seguir tem-se os ingredientes necessários para se fazer um pão caseiro:</p><p class="q-paragraph font-medium text-slate-200 text-sm sm:text-base">O dono de uma padaria possui $200\text{ g}$ de fermento biológico seco e pretende utilizá-lo integralmente na fabricação de pães caseiros, seguindo as proporções da receita apresentada.</p><p class="q-prompt text-slate-100 text-sm sm:text-base">Quantas xícaras de água morna ele vai precisar?</p></div>
                             
         <div class="my-4 p-2 sm:p-3 rounded-2xl border bg-slate-950/70 border-slate-800 shadow-sm max-w-xl mx-auto flex flex-col items-center">
             <img src="https://lh3.googleusercontent.com/d/1_tj2r0DM4odrgNXhYds075Bfow75Fb8Q" alt="Infográfico com a lista de ingredientes para 3 porções de pão caseiro: 1 kg de farinha de trigo, 1/2 xícara de água morna, 4 colheres de sopa de açúcar, 2 ovos, 1 e 1/2 xícara de leite morno, 1/2 xícara de óleo, 1 colher de sopa de sal e 10 g de fermento biológico seco." onerror="if(this.src!='../assets/img/questoes/ifmg/ifmg-2026-1-q23.png'){this.src='../assets/img/questoes/ifmg/ifmg-2026-1-q23.png';}" class="max-h-80 sm:max-h-96 w-auto max-w-full rounded-xl object-contain cursor-zoom-in hover:opacity-95 hover:scale-[1.01] transition duration-200" onclick="openImageModal('https://lh3.googleusercontent.com/d/1_tj2r0DM4odrgNXhYds075Bfow75Fb8Q', 'Infográfico com a lista de ingredientes para 3 porções de pão caseiro: 1 kg de farinha de trigo, 1/2 xícara de água morna, 4 colheres de sopa de açúcar, 2 ovos, 1 e 1/2 xícara de leite morno, 1/2 xícara de óleo, 1 colher de sopa de sal e 10 g de fermento biológico seco.')" title="Clique para ampliar a imagem" loading="lazy">
@@ -862,7 +936,7 @@ A mediana das temperaturas mínimas apresentadas, em graus Celsius (°C), é</p>
                             <button onclick="selectOption('ifmg-2026-1-q10', 0)" id="btn-ifmg-2026-1-q10-0" class="w-full text-left p-3.5 rounded-xl border border-slate-800 bg-slate-950/60 hover:border-blue-500 hover:bg-slate-800/60 transition text-sm text-slate-200 flex items-start justify-between gap-3 group">
                                 <span class="flex items-start gap-2.5 flex-1 min-w-0">
                                     <strong class="text-sky-400 font-bold flex-shrink-0 mt-0.5">A)</strong>
-                                    <span class="flex-1 min-w-0 break-words leading-relaxed">10</span>
+                                    <span class="flex-1 min-w-0 break-words leading-relaxed">$10$</span>
                                 </span>
                                 <i data-lucide="circle" class="w-4 h-4 text-slate-600 opt-icon group-hover:text-blue-400 flex-shrink-0 mt-0.5"></i>
                             </button>
@@ -870,7 +944,7 @@ A mediana das temperaturas mínimas apresentadas, em graus Celsius (°C), é</p>
                             <button onclick="selectOption('ifmg-2026-1-q10', 1)" id="btn-ifmg-2026-1-q10-1" class="w-full text-left p-3.5 rounded-xl border border-slate-800 bg-slate-950/60 hover:border-blue-500 hover:bg-slate-800/60 transition text-sm text-slate-200 flex items-start justify-between gap-3 group">
                                 <span class="flex items-start gap-2.5 flex-1 min-w-0">
                                     <strong class="text-sky-400 font-bold flex-shrink-0 mt-0.5">B)</strong>
-                                    <span class="flex-1 min-w-0 break-words leading-relaxed">20</span>
+                                    <span class="flex-1 min-w-0 break-words leading-relaxed">$20$</span>
                                 </span>
                                 <i data-lucide="circle" class="w-4 h-4 text-slate-600 opt-icon group-hover:text-blue-400 flex-shrink-0 mt-0.5"></i>
                             </button>
@@ -878,7 +952,7 @@ A mediana das temperaturas mínimas apresentadas, em graus Celsius (°C), é</p>
                             <button onclick="selectOption('ifmg-2026-1-q10', 2)" id="btn-ifmg-2026-1-q10-2" class="w-full text-left p-3.5 rounded-xl border border-slate-800 bg-slate-950/60 hover:border-blue-500 hover:bg-slate-800/60 transition text-sm text-slate-200 flex items-start justify-between gap-3 group">
                                 <span class="flex items-start gap-2.5 flex-1 min-w-0">
                                     <strong class="text-sky-400 font-bold flex-shrink-0 mt-0.5">C)</strong>
-                                    <span class="flex-1 min-w-0 break-words leading-relaxed">30</span>
+                                    <span class="flex-1 min-w-0 break-words leading-relaxed">$30$</span>
                                 </span>
                                 <i data-lucide="circle" class="w-4 h-4 text-slate-600 opt-icon group-hover:text-blue-400 flex-shrink-0 mt-0.5"></i>
                             </button>
@@ -886,7 +960,7 @@ A mediana das temperaturas mínimas apresentadas, em graus Celsius (°C), é</p>
                             <button onclick="selectOption('ifmg-2026-1-q10', 3)" id="btn-ifmg-2026-1-q10-3" class="w-full text-left p-3.5 rounded-xl border border-slate-800 bg-slate-950/60 hover:border-blue-500 hover:bg-slate-800/60 transition text-sm text-slate-200 flex items-start justify-between gap-3 group">
                                 <span class="flex items-start gap-2.5 flex-1 min-w-0">
                                     <strong class="text-sky-400 font-bold flex-shrink-0 mt-0.5">D)</strong>
-                                    <span class="flex-1 min-w-0 break-words leading-relaxed">40</span>
+                                    <span class="flex-1 min-w-0 break-words leading-relaxed">$40$</span>
                                 </span>
                                 <i data-lucide="circle" class="w-4 h-4 text-slate-600 opt-icon group-hover:text-blue-400 flex-shrink-0 mt-0.5"></i>
                             </button>
@@ -902,7 +976,7 @@ A mediana das temperaturas mínimas apresentadas, em graus Celsius (°C), é</p>
                     
                         <div class="mb-8 border-b border-slate-800/80 pb-6 last:border-0 last:pb-0" id="q-container-ifmg-2026-1-q11">
                             <div class="flex items-center justify-between mb-3 flex-wrap gap-2">
-                                <div class="flex items-center gap-2">
+                                <div class="flex flex-wrap items-center gap-2">
                                     <span class="text-xs font-bold uppercase tracking-wider text-sky-300 bg-blue-950/60 px-2.5 py-0.5 rounded-full border border-blue-800/40">Questão 12</span>
                                     
                             <a href="../pesquisa.html?bncc=EF09MA11" class="text-[11px] font-mono font-bold text-emerald-300 bg-emerald-950/80 hover:bg-emerald-900/90 px-2.5 py-0.5 rounded-full border border-emerald-800/60 flex items-center gap-1 transition shadow-sm" title="Resolver problemas por meio do estabelecimento de relações entre arcos, ângulos centrais e ângulos inscritos na circunferência ou propriedades de retas paralelas cortadas por transversais e ângulos de elevação e depressão.">
@@ -911,7 +985,7 @@ A mediana das temperaturas mínimas apresentadas, em graus Celsius (°C), é</p>
                         
                                 </div>
                             </div>
-                            <p class="font-medium text-slate-100 mb-4 text-sm sm:text-base leading-relaxed">(IFMG 2026.1 - Q24) Na figura a seguir o morador A avista o morador B com um ângulo de elevação de 40°, que por sua vez avista o morador C com um ângulo de elevação de 28°. Considere o ângulo de elevação como sendo o ângulo formado entre a linha que une os dois moradores e a horizontal e que os dois prédios estão sob um mesmo plano.<br><br>Em dado momento o morador B que avista o morador A eleva sua visão até visualizar o morador C.<br><br>Qual o ângulo, em graus, a visão do morador B percorreu?</p>
+                            <div class="q-text-container"><p class="q-paragraph font-medium text-slate-200 text-sm sm:text-base">Na figura a seguir o morador A avista o morador B com um ângulo de elevação de $40^\circ$, que por sua vez avista o morador C com um ângulo de elevação de $28^\circ$. Considere o ângulo de elevação como sendo o ângulo formado entre a linha que une os dois moradores e a horizontal e que os dois prédios estão sob um mesmo plano.</p><p class="q-paragraph font-medium text-slate-200 text-sm sm:text-base">Em dado momento o morador B que avista o morador A eleva sua visão até visualizar o morador C.</p><p class="q-prompt text-slate-100 text-sm sm:text-base">Qual o ângulo, em graus, a visão do morador B percorreu?</p></div>
                             
         <div class="my-4 p-2 sm:p-3 rounded-2xl border bg-slate-950/70 border-slate-800 shadow-sm max-w-xl mx-auto flex flex-col items-center">
             <img src="https://lh3.googleusercontent.com/d/14tSs90pa3h1RoQtx94MlB1beFf1E7N61" alt="Dois prédios vizinhos no mesmo plano horizontal. No prédio da esquerda está o morador B. No prédio da direita estão os moradores A em andar inferior e C em andar superior, com as linhas de visada conectando B a A e B a C." onerror="if(this.src!='../assets/img/questoes/ifmg/ifmg-2026-1-q24.png'){this.src='../assets/img/questoes/ifmg/ifmg-2026-1-q24.png';}" class="max-h-80 sm:max-h-96 w-auto max-w-full rounded-xl object-contain cursor-zoom-in hover:opacity-95 hover:scale-[1.01] transition duration-200" onclick="openImageModal('https://lh3.googleusercontent.com/d/14tSs90pa3h1RoQtx94MlB1beFf1E7N61', 'Dois prédios vizinhos no mesmo plano horizontal. No prédio da esquerda está o morador B. No prédio da direita estão os moradores A em andar inferior e C em andar superior, com as linhas de visada conectando B a A e B a C.')" title="Clique para ampliar a imagem" loading="lazy">
@@ -923,7 +997,7 @@ A mediana das temperaturas mínimas apresentadas, em graus Celsius (°C), é</p>
                             <button onclick="selectOption('ifmg-2026-1-q11', 0)" id="btn-ifmg-2026-1-q11-0" class="w-full text-left p-3.5 rounded-xl border border-slate-800 bg-slate-950/60 hover:border-blue-500 hover:bg-slate-800/60 transition text-sm text-slate-200 flex items-start justify-between gap-3 group">
                                 <span class="flex items-start gap-2.5 flex-1 min-w-0">
                                     <strong class="text-sky-400 font-bold flex-shrink-0 mt-0.5">A)</strong>
-                                    <span class="flex-1 min-w-0 break-words leading-relaxed">12</span>
+                                    <span class="flex-1 min-w-0 break-words leading-relaxed">$12^\circ$</span>
                                 </span>
                                 <i data-lucide="circle" class="w-4 h-4 text-slate-600 opt-icon group-hover:text-blue-400 flex-shrink-0 mt-0.5"></i>
                             </button>
@@ -931,7 +1005,7 @@ A mediana das temperaturas mínimas apresentadas, em graus Celsius (°C), é</p>
                             <button onclick="selectOption('ifmg-2026-1-q11', 1)" id="btn-ifmg-2026-1-q11-1" class="w-full text-left p-3.5 rounded-xl border border-slate-800 bg-slate-950/60 hover:border-blue-500 hover:bg-slate-800/60 transition text-sm text-slate-200 flex items-start justify-between gap-3 group">
                                 <span class="flex items-start gap-2.5 flex-1 min-w-0">
                                     <strong class="text-sky-400 font-bold flex-shrink-0 mt-0.5">B)</strong>
-                                    <span class="flex-1 min-w-0 break-words leading-relaxed">50</span>
+                                    <span class="flex-1 min-w-0 break-words leading-relaxed">$50^\circ$</span>
                                 </span>
                                 <i data-lucide="circle" class="w-4 h-4 text-slate-600 opt-icon group-hover:text-blue-400 flex-shrink-0 mt-0.5"></i>
                             </button>
@@ -939,7 +1013,7 @@ A mediana das temperaturas mínimas apresentadas, em graus Celsius (°C), é</p>
                             <button onclick="selectOption('ifmg-2026-1-q11', 2)" id="btn-ifmg-2026-1-q11-2" class="w-full text-left p-3.5 rounded-xl border border-slate-800 bg-slate-950/60 hover:border-blue-500 hover:bg-slate-800/60 transition text-sm text-slate-200 flex items-start justify-between gap-3 group">
                                 <span class="flex items-start gap-2.5 flex-1 min-w-0">
                                     <strong class="text-sky-400 font-bold flex-shrink-0 mt-0.5">C)</strong>
-                                    <span class="flex-1 min-w-0 break-words leading-relaxed">62</span>
+                                    <span class="flex-1 min-w-0 break-words leading-relaxed">$62^\circ$</span>
                                 </span>
                                 <i data-lucide="circle" class="w-4 h-4 text-slate-600 opt-icon group-hover:text-blue-400 flex-shrink-0 mt-0.5"></i>
                             </button>
@@ -947,7 +1021,7 @@ A mediana das temperaturas mínimas apresentadas, em graus Celsius (°C), é</p>
                             <button onclick="selectOption('ifmg-2026-1-q11', 3)" id="btn-ifmg-2026-1-q11-3" class="w-full text-left p-3.5 rounded-xl border border-slate-800 bg-slate-950/60 hover:border-blue-500 hover:bg-slate-800/60 transition text-sm text-slate-200 flex items-start justify-between gap-3 group">
                                 <span class="flex items-start gap-2.5 flex-1 min-w-0">
                                     <strong class="text-sky-400 font-bold flex-shrink-0 mt-0.5">D)</strong>
-                                    <span class="flex-1 min-w-0 break-words leading-relaxed">68</span>
+                                    <span class="flex-1 min-w-0 break-words leading-relaxed">$68^\circ$</span>
                                 </span>
                                 <i data-lucide="circle" class="w-4 h-4 text-slate-600 opt-icon group-hover:text-blue-400 flex-shrink-0 mt-0.5"></i>
                             </button>

@@ -49,92 +49,166 @@
 
     <!-- Header / Navbar da Área de Provas (Parte 2 - Escuro-Azul) -->
     <header class="gradient-header-dark text-white shadow-xl sticky top-0 z-50 border-b border-slate-800">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="max-w-7xl mx-auto px-3 sm:px-6 lg:px-8">
             <div class="flex items-center justify-between h-16">
                 <!-- Logo Provas -->
-                <a href="../provas.html" class="flex items-center space-x-3 group">
-                    <div class="bg-blue-600 p-2 rounded-xl text-white font-bold shadow-md shadow-blue-500/20 flex items-center justify-center group-hover:scale-105 transition">
-                        <i data-lucide="file-check" class="w-6 h-6"></i>
+                <a href="../provas.html" class="flex items-center space-x-2 sm:space-x-3 group min-w-0 flex-shrink-0">
+                    <div class="bg-blue-600 p-1.5 sm:p-2 rounded-xl text-white font-bold shadow-md shadow-blue-500/20 flex items-center justify-center group-hover:scale-105 transition">
+                        <i data-lucide="file-check" class="w-5 h-5 sm:w-6 sm:h-6"></i>
                     </div>
-                    <div>
-                        <span class="font-extrabold text-xl tracking-tight text-white flex items-center gap-1.5">
+                    <div class="min-w-0">
+                        <span class="font-extrabold text-lg sm:text-xl tracking-tight text-white flex items-center gap-1 sm:gap-1.5">
                             Partiu<span class="text-sky-400">IF</span>
-                            <span class="text-[10px] font-bold uppercase tracking-wider bg-blue-500/30 text-sky-200 border border-blue-400/30 px-2 py-0.5 rounded-full">Provas</span>
+                            <span class="text-[9px] sm:text-[10px] font-bold uppercase tracking-wider bg-blue-500/30 text-sky-200 border border-blue-400/30 px-1.5 sm:px-2 py-0.5 rounded-full">Provas</span>
                         </span>
-                        <p class="text-xs text-slate-400 hidden sm:flex items-center gap-1">
+                        <p class="text-xs text-slate-400 hidden xl:flex items-center gap-1">
                             <i data-lucide="archive" class="w-3 h-3 text-sky-400"></i> Acervo Oficial com PDFs e Gabarito
                         </p>
                     </div>
                 </a>
 
                 <!-- Navegação Desktop -->
-                <nav class="hidden md:flex space-x-1 items-center">
+                <nav class="hidden lg:flex space-x-1.5 items-center">
                     <a href="../provas.html" class="px-3 py-2 rounded-lg text-sm transition flex items-center gap-1.5 text-slate-300 hover:bg-slate-800 hover:text-white">
-                <i data-lucide="layout-grid" class="w-4 h-4"></i> Todas as Provas
-            </a><a href="../pesquisa.html" class="px-3 py-2 rounded-lg text-sm transition flex items-center gap-1.5 text-slate-300 hover:bg-slate-800 hover:text-white">
-                <i data-lucide="search" class="w-4 h-4"></i> Pesquisa BNCC
-            </a><a href="../bloco-6-provas-ifce/index.html" class="px-3 py-2 rounded-lg text-sm transition flex items-center gap-1.5 text-slate-300 hover:bg-slate-800 hover:text-white">
-                <i data-lucide="award" class="w-4 h-4"></i> Provas IFCE (27)
-            </a><a href="../bloco-5-provas-ifsc/index.html" class="px-3 py-2 rounded-lg text-sm transition flex items-center gap-1.5 bg-blue-600 text-white font-semibold shadow-inner">
-                <i data-lucide="award" class="w-4 h-4"></i> Provas IFSC (16)
-            </a><a href="../bloco-7-provas-ifsp/index.html" class="px-3 py-2 rounded-lg text-sm transition flex items-center gap-1.5 text-slate-300 hover:bg-slate-800 hover:text-white">
-                <i data-lucide="award" class="w-4 h-4"></i> Provas IFSP (8)
-            </a><a href="../bloco-8-provas-ifmg/index.html" class="px-3 py-2 rounded-lg text-sm transition flex items-center gap-1.5 text-slate-300 hover:bg-slate-800 hover:text-white">
-                <i data-lucide="award" class="w-4 h-4"></i> Provas IFMG (11)
+                        <i data-lucide="layout-grid" class="w-4 h-4 text-sky-400"></i> Todas as Provas
+                    </a>
+
+                    <!-- Dropdown de Instituições -->
+                    <div class="relative" id="dropdown-instituicoes-container">
+                        <button id="btn-dropdown-instituicoes" class="px-3 py-2 rounded-lg text-sm transition flex items-center gap-1.5 bg-blue-600/90 text-white font-semibold shadow-inner border border-blue-400/40" aria-haspopup="true" aria-expanded="false" title="Filtrar por Instituto Federal">
+                            <i data-lucide="building-2" class="w-4 h-4 text-sky-400"></i>
+                            <span>Instituições</span>
+                            <span class="bg-blue-500/40 text-sky-200 border border-blue-400/40 text-[10px] font-bold px-1.5 py-0.5 rounded-full">IFSC</span>
+                            <i data-lucide="chevron-down" id="chevron-instituicoes" class="w-3.5 h-3.5 text-slate-400 transition-transform duration-200"></i>
+                        </button>
+
+                        <div id="dropdown-instituicoes-menu" class="hidden absolute left-0 mt-2 w-64 bg-slate-900/95 border border-slate-700/80 rounded-2xl shadow-2xl p-1.5 z-50 backdrop-blur-xl">
+                            <div class="px-3 py-1.5 text-[10px] font-bold uppercase tracking-wider text-slate-400 border-b border-slate-800/80 flex items-center justify-between">
+                                <span>Institutos Federais</span>
+                                <span class="text-sky-400 font-bold">62 Provas</span>
+                            </div>
+                            <div class="space-y-1 py-1">
+                                <a href="../bloco-6-provas-ifce/index.html" class="flex items-center justify-between px-3 py-2 rounded-xl text-xs transition text-slate-300 hover:bg-slate-800/80 hover:text-white">
+                <div class="flex items-center gap-2.5">
+                    <span class="w-2 h-2 rounded-full bg-slate-700"></span>
+                    <div>
+                        <div class="font-bold text-slate-100">IFCE <span class="text-slate-400 font-normal">(Ceará)</span></div>
+                        <div class="text-[10px] text-slate-400">27 provas cadastradas</div>
+                    </div>
+                </div>
+                <i data-lucide="chevron-right" class="w-3.5 h-3.5 text-slate-500"></i>
+            </a><a href="../bloco-5-provas-ifsc/index.html" class="flex items-center justify-between px-3 py-2 rounded-xl text-xs transition bg-blue-600/25 text-sky-200 font-semibold border-l-2 border-blue-400">
+                <div class="flex items-center gap-2.5">
+                    <span class="w-2 h-2 rounded-full bg-sky-400 animate-pulse"></span>
+                    <div>
+                        <div class="font-bold text-slate-100">IFSC <span class="text-slate-400 font-normal">(Santa Catarina)</span></div>
+                        <div class="text-[10px] text-slate-400">16 provas cadastradas</div>
+                    </div>
+                </div>
+                <i data-lucide="chevron-right" class="w-3.5 h-3.5 text-slate-500"></i>
+            </a><a href="../bloco-7-provas-ifsp/index.html" class="flex items-center justify-between px-3 py-2 rounded-xl text-xs transition text-slate-300 hover:bg-slate-800/80 hover:text-white">
+                <div class="flex items-center gap-2.5">
+                    <span class="w-2 h-2 rounded-full bg-slate-700"></span>
+                    <div>
+                        <div class="font-bold text-slate-100">IFSP <span class="text-slate-400 font-normal">(São Paulo)</span></div>
+                        <div class="text-[10px] text-slate-400">8 provas cadastradas</div>
+                    </div>
+                </div>
+                <i data-lucide="chevron-right" class="w-3.5 h-3.5 text-slate-500"></i>
+            </a><a href="../bloco-8-provas-ifmg/index.html" class="flex items-center justify-between px-3 py-2 rounded-xl text-xs transition text-slate-300 hover:bg-slate-800/80 hover:text-white">
+                <div class="flex items-center gap-2.5">
+                    <span class="w-2 h-2 rounded-full bg-slate-700"></span>
+                    <div>
+                        <div class="font-bold text-slate-100">IFMG <span class="text-slate-400 font-normal">(Minas Gerais)</span></div>
+                        <div class="text-[10px] text-slate-400">11 provas cadastradas</div>
+                    </div>
+                </div>
+                <i data-lucide="chevron-right" class="w-3.5 h-3.5 text-slate-500"></i>
             </a>
+                            </div>
+                            <div class="pt-1 border-t border-slate-800/80">
+                                <a href="../provas.html" class="flex items-center justify-between px-3 py-1.5 text-[11px] font-semibold text-sky-400 hover:bg-slate-800/80 rounded-xl transition">
+                                    <span>Ver matriz geral de provas</span>
+                                    <i data-lucide="arrow-right" class="w-3 h-3"></i>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <a href="../pesquisa.html" class="px-3 py-2 rounded-lg text-sm transition flex items-center gap-1.5 text-slate-300 hover:bg-slate-800 hover:text-white" title="Pesquisar questões por descritor BNCC">
+                        <i data-lucide="search" class="w-4 h-4 text-emerald-400"></i> Pesquisa BNCC
+                    </a>
                 </nav>
 
                 <!-- Ações do Usuário -->
-                <div class="flex items-center gap-2 sm:gap-3">
-                    <a href="../index.html" class="bg-slate-800/90 hover:bg-slate-700 text-slate-200 border border-slate-700 px-3.5 py-1.5 rounded-lg text-xs sm:text-sm font-semibold transition flex items-center gap-1.5 shadow-sm" title="Retornar à Teoria e Eixos Temáticos">
-                        <i data-lucide="arrow-left" class="w-4 h-4 text-emerald-400"></i> <span class="hidden sm:inline">Voltar para </span>Teoria
+                <div class="flex items-center gap-1.5 sm:gap-2.5 flex-shrink-0">
+                    <a href="../index.html" class="bg-slate-800/90 hover:bg-slate-700 text-slate-200 border border-slate-700 p-2 sm:px-3.5 sm:py-1.5 rounded-lg text-xs sm:text-sm font-semibold transition flex items-center gap-1.5 shadow-sm" title="Retornar à Teoria e Eixos Temáticos">
+                        <i data-lucide="arrow-left" class="w-4 h-4 text-emerald-400"></i>
+                        <span class="hidden sm:inline xl:hidden">Teoria</span>
+                        <span class="hidden xl:inline">Voltar para Teoria</span>
                     </a>
-                    <a href="../simulado.html" class="bg-blue-600 hover:bg-blue-500 text-white font-semibold px-3.5 py-1.5 rounded-lg text-xs sm:text-sm transition flex items-center gap-1.5 shadow">
-                        <i data-lucide="award" class="w-4 h-4"></i> Simulado
+                    <a href="../simulado.html" class="bg-blue-600 hover:bg-blue-500 text-white font-semibold p-2 sm:px-3.5 sm:py-1.5 rounded-lg text-xs sm:text-sm transition flex items-center gap-1.5 shadow" title="Simulado IF">
+                        <i data-lucide="award" class="w-4 h-4"></i>
+                        <span class="hidden sm:inline">Simulado</span>
                     </a>
-                    <button id="mobile-menu-btn" class="md:hidden p-2 rounded-lg text-slate-300 hover:text-white hover:bg-slate-800" aria-label="Abrir menu">
-                        <i data-lucide="menu" class="w-6 h-6"></i>
+                    <button id="mobile-menu-btn" class="lg:hidden p-2 rounded-lg text-slate-300 hover:text-white hover:bg-slate-800 transition" aria-label="Abrir menu">
+                        <i data-lucide="menu" class="w-5 h-5 sm:w-6 sm:h-6"></i>
                     </button>
                 </div>
             </div>
         </div>
 
         <!-- Menu Mobile -->
-        <div id="mobile-menu" class="hidden md:hidden bg-slate-950 border-t border-slate-800 px-4 pt-2 pb-4 space-y-1">
-            <a href="../provas.html" class="block px-3 py-2 rounded-md text-base font-medium text-white flex items-center gap-2 hover:bg-slate-800">
-                <i data-lucide="layout-grid" class="w-4 h-4"></i> Todas as Provas
-            </a><a href="../pesquisa.html" class="block px-3 py-2 rounded-md text-base font-medium text-white flex items-center gap-2 hover:bg-slate-800">
-                <i data-lucide="search" class="w-4 h-4"></i> Pesquisa BNCC
-            </a><a href="../bloco-6-provas-ifce/index.html" class="block px-3 py-2 rounded-md text-base font-medium text-white flex items-center gap-2 hover:bg-slate-800">
-                <i data-lucide="award" class="w-4 h-4"></i> Provas IFCE (27)
-            </a><a href="../bloco-5-provas-ifsc/index.html" class="block px-3 py-2 rounded-md text-base font-medium text-white flex items-center gap-2 bg-blue-600 font-bold">
-                <i data-lucide="award" class="w-4 h-4"></i> Provas IFSC (16)
-            </a><a href="../bloco-7-provas-ifsp/index.html" class="block px-3 py-2 rounded-md text-base font-medium text-white flex items-center gap-2 hover:bg-slate-800">
-                <i data-lucide="award" class="w-4 h-4"></i> Provas IFSP (8)
-            </a><a href="../bloco-8-provas-ifmg/index.html" class="block px-3 py-2 rounded-md text-base font-medium text-white flex items-center gap-2 hover:bg-slate-800">
-                <i data-lucide="award" class="w-4 h-4"></i> Provas IFMG (11)
+        <div id="mobile-menu" class="hidden lg:hidden bg-slate-950 border-t border-slate-800 px-4 pt-2 pb-4 space-y-1">
+            <a href="../provas.html" class="block px-3 py-2 rounded-md text-base font-medium text-white flex items-center justify-between gap-2 hover:bg-slate-800">
+                <span class="flex items-center gap-2"><i data-lucide="layout-grid" class="w-4 h-4 text-sky-400"></i> Todas as Provas</span>
+                <span class="text-xs bg-slate-800 px-2 py-0.5 rounded-full text-slate-300 font-bold">62 Provas</span>
             </a>
-            <a href="../index.html" class="block px-3 py-2 rounded-md text-base font-semibold text-slate-200 hover:bg-slate-800 flex items-center gap-2 mt-2 border-t border-slate-800 pt-3">
-                <i data-lucide="arrow-left" class="w-4 h-4 text-emerald-400"></i> Voltar para Teoria (Parte 1)
+            <a href="../pesquisa.html" class="block px-3 py-2 rounded-md text-base font-medium text-white flex items-center gap-2 hover:bg-slate-800">
+                <i data-lucide="search" class="w-4 h-4 text-emerald-400"></i> Pesquisa BNCC
             </a>
-            <a href="../simulado.html" class="block px-3 py-2 rounded-md text-base font-bold bg-blue-600 text-white flex items-center gap-2 mt-2">
-                <i data-lucide="award" class="w-4 h-4"></i> Simulado IF
+
+            <div class="pt-2 pb-1 px-3 text-[11px] font-bold uppercase tracking-wider text-slate-400">Provas por Instituição</div>
+            <a href="../bloco-6-provas-ifce/index.html" class="block px-3 py-2 rounded-md text-base font-medium text-white flex items-center justify-between gap-2 hover:bg-slate-800">
+                <span class="flex items-center gap-2"><i data-lucide="award" class="w-4 h-4 text-sky-400"></i> IFCE - Ceará</span>
+                <span class="text-xs bg-blue-900/60 text-sky-300 px-2 py-0.5 rounded-full font-bold">27</span>
             </a>
+            <a href="../bloco-5-provas-ifsc/index.html" class="block px-3 py-2 rounded-md text-base font-medium text-white flex items-center justify-between gap-2 bg-blue-600 font-bold">
+                <span class="flex items-center gap-2"><i data-lucide="award" class="w-4 h-4 text-sky-400"></i> IFSC - Santa Catarina</span>
+                <span class="text-xs bg-blue-900/60 text-sky-300 px-2 py-0.5 rounded-full font-bold">16</span>
+            </a>
+            <a href="../bloco-7-provas-ifsp/index.html" class="block px-3 py-2 rounded-md text-base font-medium text-white flex items-center justify-between gap-2 hover:bg-slate-800">
+                <span class="flex items-center gap-2"><i data-lucide="award" class="w-4 h-4 text-sky-400"></i> IFSP - São Paulo</span>
+                <span class="text-xs bg-blue-900/60 text-sky-300 px-2 py-0.5 rounded-full font-bold">8</span>
+            </a>
+            <a href="../bloco-8-provas-ifmg/index.html" class="block px-3 py-2 rounded-md text-base font-medium text-white flex items-center justify-between gap-2 hover:bg-slate-800">
+                <span class="flex items-center gap-2"><i data-lucide="award" class="w-4 h-4 text-sky-400"></i> IFMG - Minas Gerais</span>
+                <span class="text-xs bg-blue-900/60 text-sky-300 px-2 py-0.5 rounded-full font-bold">11</span>
+            </a>
+
+            <div class="pt-2 border-t border-slate-800 space-y-1">
+                <a href="../index.html" class="block px-3 py-2 rounded-md text-base font-semibold text-slate-200 hover:bg-slate-800 flex items-center gap-2">
+                    <i data-lucide="arrow-left" class="w-4 h-4 text-emerald-400"></i> Voltar para Teoria (Parte 1)
+                </a>
+                <a href="../simulado.html" class="block px-3 py-2 rounded-md text-base font-bold bg-blue-600 text-white flex items-center gap-2">
+                    <i data-lucide="award" class="w-4 h-4"></i> Simulado IF
+                </a>
+            </div>
         </div>
     </header>
 
 
     <main class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 flex-grow">
         <!-- Breadcrumbs -->
-        <nav class="flex text-xs font-medium text-slate-400 mb-6" aria-label="Breadcrumb">
-            <ol class="inline-flex items-center space-x-1 sm:space-x-2">
+        <nav class="text-xs font-medium text-slate-400 mb-6 overflow-x-auto custom-scrollbar pb-1" aria-label="Breadcrumb">
+            <ol class="inline-flex flex-wrap items-center gap-1 sm:gap-2">
                 <li><a href="../index.html" class="hover:text-sky-400 flex items-center gap-1"><i data-lucide="home" class="w-3.5 h-3.5"></i> Início</a></li>
                 <li><span class="text-slate-600">/</span></li>
                 <li><a href="../provas.html" class="hover:text-sky-400 flex items-center gap-1"><i data-lucide="archive" class="w-3.5 h-3.5"></i> Provas</a></li>
                 <li><span class="text-slate-600">/</span></li>
                 <li><a href="./index.html" class="hover:text-sky-400">Bloco 5: Provas Anteriores IFSC</a></li>
                 <li><span class="text-slate-600">/</span></li>
-                <li class="text-slate-200 font-semibold truncate max-w-xs sm:max-w-none">Prova IFSC 2023.2</li>
+                <li class="text-slate-200 font-semibold truncate max-w-[200px] sm:max-w-none">Prova IFSC 2023.2</li>
             </ol>
         </nav>
 
@@ -143,18 +217,18 @@
             <div class="lg:col-span-3 space-y-8">
                 
                 <!-- Cabeçalho do Exame -->
-                <div class="bg-slate-900/90 border border-slate-800 rounded-3xl p-6 sm:p-8 shadow-xl text-slate-100">
+                <div class="bg-slate-900/90 border border-slate-800 rounded-3xl p-4 sm:p-8 shadow-xl text-slate-100">
                     <div class="flex flex-wrap items-center justify-between gap-3 mb-4">
                         <span class="text-xs font-bold uppercase tracking-wider text-sky-300 bg-blue-950/80 px-3 py-1 rounded-full border border-blue-800/60">
                             BNCC: Revisão Geral
                         </span>
-                        <div class="flex items-center gap-2">
+                        <div class="flex flex-wrap items-center gap-2">
                             
-                        <a href="https://drive.google.com/file/d/1PeS_ejhTpuEEDK4gPu0uyp00JUIHRB_O/view?usp=drive_web" target="_blank" rel="noopener noreferrer" class="bg-blue-600 hover:bg-blue-500 text-white font-bold px-4 py-2 rounded-xl text-sm transition flex items-center gap-2 shadow-lg shadow-blue-600/25" title="Abrir Caderno Oficial no Google Drive (Visualizar ou Baixar)">
+                        <a href="https://drive.google.com/file/d/1PeS_ejhTpuEEDK4gPu0uyp00JUIHRB_O/view?usp=drive_web" target="_blank" rel="noopener noreferrer" class="bg-blue-600 hover:bg-blue-500 text-white font-bold px-3 sm:px-4 py-2 rounded-xl text-xs sm:text-sm transition flex items-center gap-1.5 sm:gap-2 shadow-lg shadow-blue-600/25" title="Abrir Caderno Oficial no Google Drive (Visualizar ou Baixar)">
                             <i data-lucide="external-link" class="w-4 h-4"></i> Caderno Oficial no Drive
                         </a>
                     
-                            <button id="btn-toggle-done-ifsc-2023-2-matematica" onclick="toggleTopicDone('ifsc-2023-2-matematica')" class="px-4 py-2 rounded-xl text-sm font-semibold border bg-slate-900 text-slate-300 border-slate-700 hover:bg-slate-800 transition flex items-center gap-2 shadow-sm">
+                            <button id="btn-toggle-done-ifsc-2023-2-matematica" onclick="toggleTopicDone('ifsc-2023-2-matematica')" class="px-3 sm:px-4 py-2 rounded-xl text-xs sm:text-sm font-semibold border bg-slate-900 text-slate-300 border-slate-700 hover:bg-slate-800 transition flex items-center gap-1.5 sm:gap-2 shadow-sm">
                                 <i data-lucide="square" class="w-4 h-4 text-slate-500"></i> Marcar como Concluída
                             </button>
                         </div>
@@ -244,7 +318,7 @@
                     
                         <div class="mb-8 border-b border-slate-800/80 pb-6 last:border-0 last:pb-0" id="q-container-ifsc-2023-2-matematica-q0">
                             <div class="flex items-center justify-between mb-3 flex-wrap gap-2">
-                                <div class="flex items-center gap-2">
+                                <div class="flex flex-wrap items-center gap-2">
                                     <span class="text-xs font-bold uppercase tracking-wider text-sky-300 bg-blue-950/60 px-2.5 py-0.5 rounded-full border border-blue-800/40">Questão 1</span>
                                     
                             <a href="../pesquisa.html?bncc=EF09MA14" class="text-[11px] font-mono font-bold text-emerald-300 bg-emerald-950/80 hover:bg-emerald-900/90 px-2.5 py-0.5 rounded-full border border-emerald-800/60 flex items-center gap-1 transition shadow-sm" title="Resolver e elaborar problemas de aplicação do teorema de Pitágoras ou das relações de proporcionalidade envolvendo triângulos retângulos.">
@@ -253,9 +327,7 @@
                         
                                 </div>
                             </div>
-                            <p class="font-medium text-slate-100 mb-4 text-sm sm:text-base leading-relaxed">A figura ao lado representa uma peça retangular plana com três furos indicados por $F_1$, $F_2$ e $F_3$. As medidas, dadas em $\text{mm}$, indicam as distâncias dos centros dos furos (circunferências) em relação a dois lados da peça, um horizontal e outro vertical.
-
-Assinale a alternativa que indica CORRETAMENTE a menor distância entre os centros dos furos $F_2$ e $F_3$.</p>
+                            <div class="q-text-container"><p class="q-paragraph font-medium text-slate-200 text-sm sm:text-base">A figura ao lado representa uma peça retangular plana com três furos indicados por $F_1$, $F_2$ e $F_3$. As medidas, dadas em $\text{mm}$, indicam as distâncias dos centros dos furos (circunferências) em relação a dois lados da peça, um horizontal e outro vertical.</p><p class="q-prompt text-slate-100 text-sm sm:text-base">Assinale a alternativa que indica CORRETAMENTE a menor distância entre os centros dos furos $F_2$ e $F_3$.</p></div>
                             
         <div class="my-4 p-2 sm:p-3 rounded-2xl border bg-slate-950/70 border-slate-800 shadow-sm max-w-xl mx-auto flex flex-col items-center">
             <img src="https://lh3.googleusercontent.com/d/1p3zrrCDC1surnHntJ8qxC1wAcalOyxtG" alt="Peça retangular plana com indicação de três furos circulares F1, F2 e F3, cotados em milímetros a partir das bordas esquerda e inferior." onerror="if(this.src!='../assets/img/questoes/ifsc/ifsc-2023-2-q01.png'){this.src='../assets/img/questoes/ifsc/ifsc-2023-2-q01.png';}" class="max-h-80 sm:max-h-96 w-auto max-w-full rounded-xl object-contain cursor-zoom-in hover:opacity-95 hover:scale-[1.01] transition duration-200" onclick="openImageModal('https://lh3.googleusercontent.com/d/1p3zrrCDC1surnHntJ8qxC1wAcalOyxtG', 'Peça retangular plana com indicação de três furos circulares F1, F2 e F3, cotados em milímetros a partir das bordas esquerda e inferior.')" title="Clique para ampliar a imagem" loading="lazy">
@@ -315,7 +387,7 @@ Assinale a alternativa que indica CORRETAMENTE a menor distância entre os centr
                     
                         <div class="mb-8 border-b border-slate-800/80 pb-6 last:border-0 last:pb-0" id="q-container-ifsc-2023-2-matematica-q1">
                             <div class="flex items-center justify-between mb-3 flex-wrap gap-2">
-                                <div class="flex items-center gap-2">
+                                <div class="flex flex-wrap items-center gap-2">
                                     <span class="text-xs font-bold uppercase tracking-wider text-sky-300 bg-blue-950/60 px-2.5 py-0.5 rounded-full border border-blue-800/40">Questão 2</span>
                                     
                             <a href="../pesquisa.html?bncc=EF07MA02" class="text-[11px] font-mono font-bold text-emerald-300 bg-emerald-950/80 hover:bg-emerald-900/90 px-2.5 py-0.5 rounded-full border border-emerald-800/60 flex items-center gap-1 transition shadow-sm" title="Resolver e elaborar problemas que envolvam porcentagens, como os que lidam com acréscimos e decréscimos simples, utilizando estratégias pessoais, cálculo mental e calculadora, no contexto de educação financeira, entre outros.">
@@ -324,7 +396,7 @@ Assinale a alternativa que indica CORRETAMENTE a menor distância entre os centr
                         
                                 </div>
                             </div>
-                            <p class="font-medium text-slate-100 mb-4 text-sm sm:text-base leading-relaxed">Uma pizzaria que trabalha com o sistema de rodízio de pizzas, buscando atrair clientes e aumentar o seu lucro, lançou a promoção ao lado. Sabendo que, em um determinado dia, $50$ clientes compraram o rodízio de pizza e $70\%$ deles escolheram como brinde o refrigerante, quantos clientes optaram pela sobremesa como brinde?</p>
+                            <div class="q-text-container"><p class="q-paragraph font-medium text-slate-100 text-sm sm:text-base leading-relaxed">Uma pizzaria que trabalha com o sistema de rodízio de pizzas, buscando atrair clientes e aumentar o seu lucro, lançou a promoção ao lado. Sabendo que, em um determinado dia, $50$ clientes compraram o rodízio de pizza e $70\%$ deles escolheram como brinde o refrigerante, quantos clientes optaram pela sobremesa como brinde?</p></div>
                             
         <div class="my-4 p-2 sm:p-3 rounded-2xl border bg-slate-950/70 border-slate-800 shadow-sm max-w-xl mx-auto flex flex-col items-center">
             <img src="https://lh3.googleusercontent.com/d/1CFh8bRnVjLSY413Sk5WEcUmU5Lk2a-lg" alt="Banner promocional com a frase: COMPRE 1 RODÍZIO DE PIZZA E ESCOLHA ENTRE 1 REFRIGERANTE OU 1 SOBREMESA DE GRAÇA!" onerror="if(this.src!='../assets/img/questoes/ifsc/ifsc-2023-2-q02.png'){this.src='../assets/img/questoes/ifsc/ifsc-2023-2-q02.png';}" class="max-h-80 sm:max-h-96 w-auto max-w-full rounded-xl object-contain cursor-zoom-in hover:opacity-95 hover:scale-[1.01] transition duration-200" onclick="openImageModal('https://lh3.googleusercontent.com/d/1CFh8bRnVjLSY413Sk5WEcUmU5Lk2a-lg', 'Banner promocional com a frase: COMPRE 1 RODÍZIO DE PIZZA E ESCOLHA ENTRE 1 REFRIGERANTE OU 1 SOBREMESA DE GRAÇA!')" title="Clique para ampliar a imagem" loading="lazy">
@@ -384,7 +456,7 @@ Assinale a alternativa que indica CORRETAMENTE a menor distância entre os centr
                     
                         <div class="mb-8 border-b border-slate-800/80 pb-6 last:border-0 last:pb-0" id="q-container-ifsc-2023-2-matematica-q2">
                             <div class="flex items-center justify-between mb-3 flex-wrap gap-2">
-                                <div class="flex items-center gap-2">
+                                <div class="flex flex-wrap items-center gap-2">
                                     <span class="text-xs font-bold uppercase tracking-wider text-sky-300 bg-blue-950/60 px-2.5 py-0.5 rounded-full border border-blue-800/40">Questão 3</span>
                                     
                             <a href="../pesquisa.html?bncc=EF07MA02" class="text-[11px] font-mono font-bold text-emerald-300 bg-emerald-950/80 hover:bg-emerald-900/90 px-2.5 py-0.5 rounded-full border border-emerald-800/60 flex items-center gap-1 transition shadow-sm" title="Resolver e elaborar problemas que envolvam porcentagens, como os que lidam com acréscimos e decréscimos simples, utilizando estratégias pessoais, cálculo mental e calculadora, no contexto de educação financeira, entre outros.">
@@ -393,7 +465,7 @@ Assinale a alternativa que indica CORRETAMENTE a menor distância entre os centr
                         
                                 </div>
                             </div>
-                            <p class="font-medium text-slate-100 mb-4 text-sm sm:text-base leading-relaxed">Carlos, Fabiano e Bruna juntaram dinheiro para comprar uma barraca de acampamento. Fabiano contribuiu com $60\%$ do valor total da barraca. Carlos contribuiu com $40\%$ do que faltava pagar. Bruna, por fim, contribuiu com $\text{R\$} 30{,}00$. Sendo assim, o valor total da barraca foi:</p>
+                            <div class="q-text-container"><p class="q-paragraph font-medium text-slate-100 text-sm sm:text-base leading-relaxed">Carlos, Fabiano e Bruna juntaram dinheiro para comprar uma barraca de acampamento. Fabiano contribuiu com $60\%$ do valor total da barraca. Carlos contribuiu com $40\%$ do que faltava pagar. Bruna, por fim, contribuiu com $\text{R\$} 30{,}00$. Sendo assim, o valor total da barraca foi:</p></div>
                             
                             <div class="space-y-2 mb-4" id="opts-ifsc-2023-2-matematica-q2">
                                 
@@ -448,7 +520,7 @@ Assinale a alternativa que indica CORRETAMENTE a menor distância entre os centr
                     
                         <div class="mb-8 border-b border-slate-800/80 pb-6 last:border-0 last:pb-0" id="q-container-ifsc-2023-2-matematica-q3">
                             <div class="flex items-center justify-between mb-3 flex-wrap gap-2">
-                                <div class="flex items-center gap-2">
+                                <div class="flex flex-wrap items-center gap-2">
                                     <span class="text-xs font-bold uppercase tracking-wider text-sky-300 bg-blue-950/60 px-2.5 py-0.5 rounded-full border border-blue-800/40">Questão 4</span>
                                     
                             <a href="../pesquisa.html?bncc=EF06MA05" class="text-[11px] font-mono font-bold text-emerald-300 bg-emerald-950/80 hover:bg-emerald-900/90 px-2.5 py-0.5 rounded-full border border-emerald-800/60 flex items-center gap-1 transition shadow-sm" title="Classificar números naturais em primos e compostos, estabelecer relações entre números, expressas pelos termos "é múltiplo de", "é divisor de", "é fator de", e estabelecer critérios de divisibilidade por 2, 3, 4, 5, 6, 8, 9, 10, 100 e 1000.">
@@ -457,9 +529,7 @@ Assinale a alternativa que indica CORRETAMENTE a menor distância entre os centr
                         
                                 </div>
                             </div>
-                            <p class="font-medium text-slate-100 mb-4 text-sm sm:text-base leading-relaxed">Leia o Texto IX, a seguir.
-
-Com base no Texto IX, a autora do questionamento, Flavia, demostrou conhecimento a respeito dos números primos. Considerando esse tema e o contexto da postagem, assinale a alternativa CORRETA.</p>
+                            <div class="q-text-container"><p class="q-paragraph font-medium text-slate-200 text-sm sm:text-base">Leia o Texto IX, a seguir.</p><p class="q-prompt text-slate-100 text-sm sm:text-base">Com base no Texto IX, a autora do questionamento, Flavia, demostrou conhecimento a respeito dos números primos. Considerando esse tema e o contexto da postagem, assinale a alternativa CORRETA.</p></div>
                             
         <div class="my-4 p-2 sm:p-3 rounded-2xl border bg-slate-950/70 border-slate-800 shadow-sm max-w-xl mx-auto flex flex-col items-center">
             <img src="https://lh3.googleusercontent.com/d/1MsfS0RcfVZkpl5-OUIpx2pG9On38UW-H" alt="Publicação em rede social de Flavia Lambiasi questionando a Sadia por que vem treze unidades em um pacote de nuggets, pontuando que 13 é um número primo e que por isso só pode ser dividido igualmente se a pessoa estiver sozinha ou num bando de treze." onerror="if(this.src!='../assets/img/questoes/ifsc/ifsc-2023-2-q04.png'){this.src='../assets/img/questoes/ifsc/ifsc-2023-2-q04.png';}" class="max-h-80 sm:max-h-96 w-auto max-w-full rounded-xl object-contain cursor-zoom-in hover:opacity-95 hover:scale-[1.01] transition duration-200" onclick="openImageModal('https://lh3.googleusercontent.com/d/1MsfS0RcfVZkpl5-OUIpx2pG9On38UW-H', 'Publicação em rede social de Flavia Lambiasi questionando a Sadia por que vem treze unidades em um pacote de nuggets, pontuando que 13 é um número primo e que por isso só pode ser dividido igualmente se a pessoa estiver sozinha ou num bando de treze.')" title="Clique para ampliar a imagem" loading="lazy">
@@ -519,7 +589,7 @@ Com base no Texto IX, a autora do questionamento, Flavia, demostrou conhecimento
                     
                         <div class="mb-8 border-b border-slate-800/80 pb-6 last:border-0 last:pb-0" id="q-container-ifsc-2023-2-matematica-q4">
                             <div class="flex items-center justify-between mb-3 flex-wrap gap-2">
-                                <div class="flex items-center gap-2">
+                                <div class="flex flex-wrap items-center gap-2">
                                     <span class="text-xs font-bold uppercase tracking-wider text-sky-300 bg-blue-950/60 px-2.5 py-0.5 rounded-full border border-blue-800/40">Questão 5</span>
                                     
                             <a href="../pesquisa.html?bncc=EF08MA19" class="text-[11px] font-mono font-bold text-emerald-300 bg-emerald-950/80 hover:bg-emerald-900/90 px-2.5 py-0.5 rounded-full border border-emerald-800/60 flex items-center gap-1 transition shadow-sm" title="Resolver e elaborar problemas que envolvam medidas de área de figuras geométricas, utilizando expressões de cálculo de área (quadriláteros, triângulos e círculos), em situações como determinar medida de terrenos.">
@@ -528,7 +598,7 @@ Com base no Texto IX, a autora do questionamento, Flavia, demostrou conhecimento
                         
                                 </div>
                             </div>
-                            <p class="font-medium text-slate-100 mb-4 text-sm sm:text-base leading-relaxed">Para pesquisar a produção de hortaliças no Curso Técnico em Agroecologia do IFSC, foi construída uma estufa com $30\text{ metros}$ de comprimento por $8\text{ metros}$ de largura. Considerando que em $15\%$ da área da referida estufa foram plantadas alfaces e que cada unidade de alface ocupa o espaço de um quadrado de $25\text{ centímetros}$ de lado, podemos dizer que o número de unidades de alfaces nesta estufa é de:</p>
+                            <div class="q-text-container"><p class="q-paragraph font-medium text-slate-100 text-sm sm:text-base leading-relaxed">Para pesquisar a produção de hortaliças no Curso Técnico em Agroecologia do IFSC, foi construída uma estufa com $30\text{ metros}$ de comprimento por $8\text{ metros}$ de largura. Considerando que em $15\%$ da área da referida estufa foram plantadas alfaces e que cada unidade de alface ocupa o espaço de um quadrado de $25\text{ centímetros}$ de lado, podemos dizer que o número de unidades de alfaces nesta estufa é de:</p></div>
                             
                             <div class="space-y-2 mb-4" id="opts-ifsc-2023-2-matematica-q4">
                                 
@@ -583,7 +653,7 @@ Com base no Texto IX, a autora do questionamento, Flavia, demostrou conhecimento
                     
                         <div class="mb-8 border-b border-slate-800/80 pb-6 last:border-0 last:pb-0" id="q-container-ifsc-2023-2-matematica-q5">
                             <div class="flex items-center justify-between mb-3 flex-wrap gap-2">
-                                <div class="flex items-center gap-2">
+                                <div class="flex flex-wrap items-center gap-2">
                                     <span class="text-xs font-bold uppercase tracking-wider text-sky-300 bg-blue-950/60 px-2.5 py-0.5 rounded-full border border-blue-800/40">Questão 6</span>
                                     
                             <a href="../pesquisa.html?bncc=EF07MA33" class="text-[11px] font-mono font-bold text-emerald-300 bg-emerald-950/80 hover:bg-emerald-900/90 px-2.5 py-0.5 rounded-full border border-emerald-800/60 flex items-center gap-1 transition shadow-sm" title="Estabelecer o número pi como a razão entre a medida de uma circunferência e seu diâmetro, para compreender e resolver problemas, inclusive os de natureza histórica.">
@@ -592,7 +662,7 @@ Com base no Texto IX, a autora do questionamento, Flavia, demostrou conhecimento
                         
                                 </div>
                             </div>
-                            <p class="font-medium text-slate-100 mb-4 text-sm sm:text-base leading-relaxed">A roda gigante <em>Big Wheel</em>, de Balneário Camboriú, é mais uma atração da cidade litorânea que leva o apelido de “Dubai brasileira”. Inaugurada em dezembro de 2020, conta com 36 cabines com capacidade máxima para seis pessoas e o passeio na roda gigante dura entre 15 e 21 minutos, dependendo do clima. Oferece aos visitantes uma vista panorâmica da orla, da mata atlântica e dos arranha-céus, que são marca registrada do destino catarinense. A roda gigante está posicionada em um terreno que está a $17\text{ m}$ de altura em relação ao nível do mar e possui uma circunferência de $204\text{ m}$. Partindo das informações do texto e adotando $\pi = 3$, podemos afirmar que a maior altura que se pode estar nessa roda gigante, em relação ao nível do mar, é de:</p>
+                            <div class="q-text-container"><p class="q-paragraph font-medium text-slate-100 text-sm sm:text-base leading-relaxed">A roda gigante <em>Big Wheel</em>, de Balneário Camboriú, é mais uma atração da cidade litorânea que leva o apelido de “Dubai brasileira”. Inaugurada em dezembro de 2020, conta com 36 cabines com capacidade máxima para seis pessoas e o passeio na roda gigante dura entre 15 e 21 minutos, dependendo do clima. Oferece aos visitantes uma vista panorâmica da orla, da mata atlântica e dos arranha-céus, que são marca registrada do destino catarinense. A roda gigante está posicionada em um terreno que está a $17\text{ m}$ de altura em relação ao nível do mar e possui uma circunferência de $204\text{ m}$. Partindo das informações do texto e adotando $\pi = 3$, podemos afirmar que a maior altura que se pode estar nessa roda gigante, em relação ao nível do mar, é de:</p></div>
                             
                             <div class="space-y-2 mb-4" id="opts-ifsc-2023-2-matematica-q5">
                                 
@@ -647,7 +717,7 @@ Com base no Texto IX, a autora do questionamento, Flavia, demostrou conhecimento
                     
                         <div class="mb-8 border-b border-slate-800/80 pb-6 last:border-0 last:pb-0" id="q-container-ifsc-2023-2-matematica-q6">
                             <div class="flex items-center justify-between mb-3 flex-wrap gap-2">
-                                <div class="flex items-center gap-2">
+                                <div class="flex flex-wrap items-center gap-2">
                                     <span class="text-xs font-bold uppercase tracking-wider text-sky-300 bg-blue-950/60 px-2.5 py-0.5 rounded-full border border-blue-800/40">Questão 7</span>
                                     
                             <a href="../pesquisa.html?bncc=EF08MA06" class="text-[11px] font-mono font-bold text-emerald-300 bg-emerald-950/80 hover:bg-emerald-900/90 px-2.5 py-0.5 rounded-full border border-emerald-800/60 flex items-center gap-1 transition shadow-sm" title="Resolver e elaborar problemas que envolvam cálculo do valor numérico de expressões algébricas, utilizando as propriedades das operações.">
@@ -656,18 +726,10 @@ Com base no Texto IX, a autora do questionamento, Flavia, demostrou conhecimento
                         
                                 </div>
                             </div>
-                            <p class="font-medium text-slate-100 mb-4 text-sm sm:text-base leading-relaxed">Observe os dados da tabela sobre o desmatamento da Amazônia Legal, por estado em 2022 e a imagem de satélite de 2022, que mostra o desmatamento da Terra Indígena Apyterewa, território do povo Parakanã, que se localiza no Pará.
-
-Considere que uma parte da área desmatada em Apyterewa, mostrada na imagem de satélite, tenha a forma aproximada de um trapézio retângulo e dimensões indicadas na figura ao lado.
-
-Sobre os dados apresentados anteriormente, observe as seguintes afirmações:
-
-I. Se a área aproximada de um campo de futebol é $10.000\text{ m}^2$, a área desmatada do Pará equivale a $41.410$ campos de futebol.
+                            <div class="q-text-container"><p class="q-paragraph font-medium text-slate-200 text-sm sm:text-base">Observe os dados da tabela sobre o desmatamento da Amazônia Legal, por estado em 2022 e a imagem de satélite de 2022, que mostra o desmatamento da Terra Indígena Apyterewa, território do povo Parakanã, que se localiza no Pará.</p><p class="q-paragraph font-medium text-slate-200 text-sm sm:text-base">Considere que uma parte da área desmatada em Apyterewa, mostrada na imagem de satélite, tenha a forma aproximada de um trapézio retângulo e dimensões indicadas na figura ao lado.</p><p class="q-paragraph font-medium text-slate-200 text-sm sm:text-base">Sobre os dados apresentados anteriormente, observe as seguintes afirmações:</p><div class="q-item-card"><span class="q-item-badge">I</span><span class="flex-1 min-w-0">Se a área aproximada de um campo de futebol é $10.000\text{ m}^2$, a área desmatada do Pará equivale a $41.410$ campos de futebol.
 II. O percentual de desmatamento do Amazonas, em relação à medida de área total desmatada na Amazônia Legal, é de aproximadamente $22{,}5\%$.
 III. A área desmatada do Maranhão é de $2{,}82 \cdot 10^8\text{ m}^2$.
-IV. A parte da área desmatada da Terra Indígena Apyterewa, mostrada na Figura é dada pelo polinômio $x^2 + 0{,}7x$.
-
-Assinale a afirmativa CORRETA:</p>
+IV. A parte da área desmatada da Terra Indígena Apyterewa, mostrada na Figura é dada pelo polinômio $x^2 + 0{,}7x$.</span></div><p class="q-prompt text-slate-100 text-sm sm:text-base">Assinale a afirmativa CORRETA:</p></div>
                             
         <div class="my-4 p-2 sm:p-3 rounded-2xl border bg-slate-950/70 border-slate-800 shadow-sm max-w-xl mx-auto flex flex-col items-center">
             <img src="https://lh3.googleusercontent.com/d/1N0XyGJsOe5Z8jDdF_239TM08-JbhILKG" alt="Tabela com dados de desmatamento da Amazônia Legal por estado em 2022 e imagem de satélite com recorte geométrico de trapézio retângulo de dimensões indicadas em função de x." onerror="if(this.src!='../assets/img/questoes/ifsc/ifsc-2023-2-q07.png'){this.src='../assets/img/questoes/ifsc/ifsc-2023-2-q07.png';}" class="max-h-80 sm:max-h-96 w-auto max-w-full rounded-xl object-contain cursor-zoom-in hover:opacity-95 hover:scale-[1.01] transition duration-200" onclick="openImageModal('https://lh3.googleusercontent.com/d/1N0XyGJsOe5Z8jDdF_239TM08-JbhILKG', 'Tabela com dados de desmatamento da Amazônia Legal por estado em 2022 e imagem de satélite com recorte geométrico de trapézio retângulo de dimensões indicadas em função de x.')" title="Clique para ampliar a imagem" loading="lazy">
@@ -727,7 +789,7 @@ Assinale a afirmativa CORRETA:</p>
                     
                         <div class="mb-8 border-b border-slate-800/80 pb-6 last:border-0 last:pb-0" id="q-container-ifsc-2023-2-matematica-q7">
                             <div class="flex items-center justify-between mb-3 flex-wrap gap-2">
-                                <div class="flex items-center gap-2">
+                                <div class="flex flex-wrap items-center gap-2">
                                     <span class="text-xs font-bold uppercase tracking-wider text-sky-300 bg-blue-950/60 px-2.5 py-0.5 rounded-full border border-blue-800/40">Questão 8</span>
                                     
                             <a href="../pesquisa.html?bncc=EF08MA08" class="text-[11px] font-mono font-bold text-emerald-300 bg-emerald-950/80 hover:bg-emerald-900/90 px-2.5 py-0.5 rounded-full border border-emerald-800/60 flex items-center gap-1 transition shadow-sm" title="Resolver e elaborar problemas relacionados ao seu contexto próximo, que possam ser representados por sistemas de equações de 1º grau com duas incógnitas, utilizando diferentes métodos.">
@@ -736,7 +798,7 @@ Assinale a afirmativa CORRETA:</p>
                         
                                 </div>
                             </div>
-                            <p class="font-medium text-slate-100 mb-4 text-sm sm:text-base leading-relaxed">No dia do lançamento de um filme, uma sala de cinema com capacidade para $156$ pessoas, ficou lotada. O valor da entrada inteira era de $\text{R\$} 36{,}00$ e a meia-entrada de $\text{R\$} 18{,}00$. Considerando que a arrecadação foi de $\text{R\$} 3.726{,}00$, podemos afirmar que o número de pessoas que pagou a entrada inteira foi de:</p>
+                            <div class="q-text-container"><p class="q-paragraph font-medium text-slate-100 text-sm sm:text-base leading-relaxed">No dia do lançamento de um filme, uma sala de cinema com capacidade para $156$ pessoas, ficou lotada. O valor da entrada inteira era de $\text{R\$} 36{,}00$ e a meia-entrada de $\text{R\$} 18{,}00$. Considerando que a arrecadação foi de $\text{R\$} 3.726{,}00$, podemos afirmar que o número de pessoas que pagou a entrada inteira foi de:</p></div>
                             
                             <div class="space-y-2 mb-4" id="opts-ifsc-2023-2-matematica-q7">
                                 
@@ -791,7 +853,7 @@ Assinale a afirmativa CORRETA:</p>
                     
                         <div class="mb-8 border-b border-slate-800/80 pb-6 last:border-0 last:pb-0" id="q-container-ifsc-2023-2-matematica-q8">
                             <div class="flex items-center justify-between mb-3 flex-wrap gap-2">
-                                <div class="flex items-center gap-2">
+                                <div class="flex flex-wrap items-center gap-2">
                                     <span class="text-xs font-bold uppercase tracking-wider text-sky-300 bg-blue-950/60 px-2.5 py-0.5 rounded-full border border-blue-800/40">Questão 9</span>
                                     
                             <a href="../pesquisa.html?bncc=EF08MA20" class="text-[11px] font-mono font-bold text-emerald-300 bg-emerald-950/80 hover:bg-emerald-900/90 px-2.5 py-0.5 rounded-full border border-emerald-800/60 flex items-center gap-1 transition shadow-sm" title="Reconhecer a relação entre um litro e um decímetro cúbico e a relação entre litro e metro cúbico, para resolver problemas de cálculo de capacidade de recipientes.">
@@ -800,7 +862,7 @@ Assinale a afirmativa CORRETA:</p>
                         
                                 </div>
                             </div>
-                            <p class="font-medium text-slate-100 mb-4 text-sm sm:text-base leading-relaxed">Paulo calculou a massa de um cubo de lado $6\text{ cm}$ e verificou que o mesmo tinha $1.620\text{ gramas}$. Em seguida, perfurou o cubo de um extremo ao outro, como mostra a figura, fazendo três buracos na forma de paralelepípedo retângulo, de dimensões $2\text{ cm} \times 2\text{ cm} \times 6\text{ cm}$ cada. Sendo assim, a massa do sólido resultante é:</p>
+                            <div class="q-text-container"><p class="q-paragraph font-medium text-slate-100 text-sm sm:text-base leading-relaxed">Paulo calculou a massa de um cubo de lado $6\text{ cm}$ e verificou que o mesmo tinha $1.620\text{ gramas}$. Em seguida, perfurou o cubo de um extremo ao outro, como mostra a figura, fazendo três buracos na forma de paralelepípedo retângulo, de dimensões $2\text{ cm} \times 2\text{ cm} \times 6\text{ cm}$ cada. Sendo assim, a massa do sólido resultante é:</p></div>
                             
         <div class="my-4 p-2 sm:p-3 rounded-2xl border bg-slate-950/70 border-slate-800 shadow-sm max-w-xl mx-auto flex flex-col items-center">
             <img src="https://lh3.googleusercontent.com/d/1509z45au_aWKQuQuusFYOgZsf9QslPXK" alt="Cubo de aresta 6 cm com 3 orifícios de seção quadrada 2x2 cm vazados de face a face passando pelo centro das faces." onerror="if(this.src!='../assets/img/questoes/ifsc/ifsc-2023-2-q09.png'){this.src='../assets/img/questoes/ifsc/ifsc-2023-2-q09.png';}" class="max-h-80 sm:max-h-96 w-auto max-w-full rounded-xl object-contain cursor-zoom-in hover:opacity-95 hover:scale-[1.01] transition duration-200" onclick="openImageModal('https://lh3.googleusercontent.com/d/1509z45au_aWKQuQuusFYOgZsf9QslPXK', 'Cubo de aresta 6 cm com 3 orifícios de seção quadrada 2x2 cm vazados de face a face passando pelo centro das faces.')" title="Clique para ampliar a imagem" loading="lazy">
@@ -860,7 +922,7 @@ Assinale a afirmativa CORRETA:</p>
                     
                         <div class="mb-8 border-b border-slate-800/80 pb-6 last:border-0 last:pb-0" id="q-container-ifsc-2023-2-matematica-q9">
                             <div class="flex items-center justify-between mb-3 flex-wrap gap-2">
-                                <div class="flex items-center gap-2">
+                                <div class="flex flex-wrap items-center gap-2">
                                     <span class="text-xs font-bold uppercase tracking-wider text-sky-300 bg-blue-950/60 px-2.5 py-0.5 rounded-full border border-blue-800/40">Questão 10</span>
                                     
                             <a href="../pesquisa.html?bncc=EF06MA24" class="text-[11px] font-mono font-bold text-emerald-300 bg-emerald-950/80 hover:bg-emerald-900/90 px-2.5 py-0.5 rounded-full border border-emerald-800/60 flex items-center gap-1 transition shadow-sm" title="Resolver e elaborar problemas que envolvam as grandezas comprimento, massa, tempo, temperatura, área (triângulos e retângulos), capacidade e volume (de sólidos formados por blocos retangulares), sem uso de fórmulas, inseridos, sempre que possível, em contextos oriundos de situações reais e/ou de outras áreas do conhecimento.">
@@ -869,7 +931,7 @@ Assinale a afirmativa CORRETA:</p>
                         
                                 </div>
                             </div>
-                            <p class="font-medium text-slate-100 mb-4 text-sm sm:text-base leading-relaxed">Fernando desenha em uma folha A4 uma sequência de diversos quadrados, de 3 tamanhos diferentes, conforme a figura ao lado. Sabendo-se que o maior dos quadrados tem lado medindo $120\text{ mm}$, então o comprimento total, em centímetros, da linha cheia, é:</p>
+                            <div class="q-text-container"><p class="q-paragraph font-medium text-slate-100 text-sm sm:text-base leading-relaxed">Fernando desenha em uma folha A4 uma sequência de diversos quadrados, de 3 tamanhos diferentes, conforme a figura ao lado. Sabendo-se que o maior dos quadrados tem lado medindo $120\text{ mm}$, então o comprimento total, em centímetros, da linha cheia, é:</p></div>
                             
         <div class="my-4 p-2 sm:p-3 rounded-2xl border bg-slate-950/70 border-slate-800 shadow-sm max-w-xl mx-auto flex flex-col items-center">
             <img src="https://lh3.googleusercontent.com/d/17EBhSLAo8zzhBcIpkZsAkkuoeYv2-kJo" alt="Sequência de quadrados de três tamanhos em malha quadriculada com uma linha cheia traçando um contorno e linhas tracejadas completando os quadrados." onerror="if(this.src!='../assets/img/questoes/ifsc/ifsc-2023-2-q10.png'){this.src='../assets/img/questoes/ifsc/ifsc-2023-2-q10.png';}" class="max-h-80 sm:max-h-96 w-auto max-w-full rounded-xl object-contain cursor-zoom-in hover:opacity-95 hover:scale-[1.01] transition duration-200" onclick="openImageModal('https://lh3.googleusercontent.com/d/17EBhSLAo8zzhBcIpkZsAkkuoeYv2-kJo', 'Sequência de quadrados de três tamanhos em malha quadriculada com uma linha cheia traçando um contorno e linhas tracejadas completando os quadrados.')" title="Clique para ampliar a imagem" loading="lazy">

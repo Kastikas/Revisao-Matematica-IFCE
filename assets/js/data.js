@@ -12008,12 +12008,12 @@ var mathData = window.mathData || {
         },
         "questions": [
           {
-            "q": "(IFMG 2026.1 - Q13) Disputada há mais de um século, a Copa América é a competição mais antiga do mundo entre seleções de futebol, reunindo as equipes nacionais do continente americano em confrontos históricos. Ao longo de sua trajetória, foi realizada em diferentes intervalos de tempo. A partir de sua edição de 1987 até 2001, ocorreu a cada 2 anos; de 2001 a 2007, passou a ser disputada a cada 3 anos; e, desde 2007, passou a ocorrer a cada 4 anos, formato que permanece até hoje.<br><br>A Copa do Mundo de Futebol, por sua vez, teve sua primeira edição em 1930, no Uruguai. Desde então, é realizada a cada 4 anos, com exceção de 1942 e 1946, quando não ocorreu devido à Segunda Guerra Mundial. As edições mais recentes foram disputadas em 2018, na Rússia, e em 2022, no Qatar.<br><br>Em quantas edições a Copa do Mundo e a Copa América ocorreram no mesmo ano desde 1987 até 2015?",
+            "q": "Disputada há mais de um século, a Copa América é a competição mais antiga do mundo entre seleções de futebol, reunindo as equipes nacionais do continente americano em confrontos históricos. Ao longo de sua trajetória, foi realizada em diferentes intervalos de tempo. A partir de sua edição de 1987 até 2001, ocorreu a cada 2 anos; de 2001 a 2007, passou a ser disputada a cada 3 anos; e, desde 2007, passou a ocorrer a cada 4 anos, formato que permanece até hoje.\n\nA Copa do Mundo de Futebol, por sua vez, teve sua primeira edição em 1930, no Uruguai. Desde então, é realizada a cada 4 anos, com exceção de 1942 e 1946, quando não ocorreu devido à Segunda Guerra Mundial. As edições mais recentes foram disputadas em 2018, na Rússia, e em 2022, no Qatar.\n\nEm quantas edições a Copa do Mundo e a Copa América ocorreram no mesmo ano desde 1987 até 2015?",
             "options": [
-              "0",
-              "1",
-              "2",
-              "3"
+              "$0$",
+              "$1$",
+              "$2$",
+              "$3$"
             ],
             "correct": 0,
             "explanation": "Para responder à questão, devemos listar os anos em que cada torneio ocorreu no intervalo fechado de 1987 a 2015 e verificar quantos anos são comuns aos dois eventos.<br><br><strong>1. Anos da Copa do Mundo entre 1987 e 2015:</strong><br>Sabendo que a Copa do Mundo ocorre a cada 4 anos (como 2018 e 2022), recuando de 4 em 4 anos temos:<br>$$2022 - 4 = 2018$$<br>$$2018 - 4 = 2014$$<br>$$2014 - 4 = 2010$$<br>$$2010 - 4 = 2006$$<br>$$2006 - 4 = 2002$$<br>$$2002 - 4 = 1998$$<br>$$1998 - 4 = 1994$$<br>$$1994 - 4 = 1990$$<br>$$1990 - 4 = 1986 \\text{ (fora do intervalo)}$$<br>Portanto, os anos de Copa do Mundo no período são: <strong>1990, 1994, 1998, 2002, 2006, 2010 e 2014</strong>.<br><br><strong>2. Anos da Copa América entre 1987 e 2015:</strong><br>Seguindo rigorosamente os intervalos descritos no enunciado:<br>• De 1987 até 2001 (a cada 2 anos): <strong>1987, 1989, 1991, 1993, 1995, 1997, 1999 e 2001</strong> (todos ímpares);<br>• De 2001 a 2007 (a cada 3 anos): $2001 + 3 = \\mathbf{2004}$ e $2004 + 3 = \\mathbf{2007}$;<br>• Desde 2007 (a cada 4 anos): $2007 + 4 = \\mathbf{2011}$ e $2011 + 4 = \\mathbf{2015}$.<br>Assim, os anos da Copa América no período foram: <strong>1987, 1989, 1991, 1993, 1995, 1997, 1999, 2001, 2004, 2011 e 2015</strong>.<br><br><strong>3. Comparação dos anos:</strong><br>Nenhum dos anos de Copa América (1987, 1989, 1991, 1993, 1995, 1997, 1999, 2001, 2004, 2011, 2015) coincide com os anos de Copa do Mundo (1990, 1994, 1998, 2002, 2006, 2010, 2014). Portanto, não houve nenhuma edição coincidente (0 edições).<br><br>Portanto, a alternativa correta é a <strong>Letra A</strong>.",
@@ -12021,15 +12021,16 @@ var mathData = window.mathData || {
             "bnccDesc": "Classificar números naturais em primos e compostos, estabelecer relações entre números expressas pelos termos 'é múltiplo de', 'é divisor de', 'é fator de', e reconhecer regularidades e padrões numéricos.",
             "unidadeTematica": "Números",
             "anoEscolar": "6º ano",
-            "topicoId": "b1-t3"
+            "topicoId": "b1-t3",
+            "image": null
           },
           {
-            "q": "(IFMG 2026.1 - Q14) A tabela a seguir mostra as temperaturas mínimas registradas nos 10 primeiros dias do mês de julho de 2025 na Estação Belo Horizonte – Pampulha:\n\nA mediana das temperaturas mínimas apresentadas, em graus Celsius (°C), é",
+            "q": "A tabela a seguir mostra as temperaturas mínimas registradas nos 10 primeiros dias do mês de julho de 2025 na Estação Belo Horizonte – Pampulha:\n\nA mediana das temperaturas mínimas apresentadas, em graus Celsius ($^\\circ\\text{C}$), é:",
             "options": [
-              "10,50",
-              "10,80",
-              "11,40",
-              "11,54"
+              "$10{,}50$",
+              "$10{,}80$",
+              "$11{,}40$",
+              "$11{,}54$"
             ],
             "correct": 2,
             "explanation": "A mediana é a medida de tendência central que separa a metade superior da metade inferior de um conjunto de dados ordenados.<br><br><strong>Passo 1: Organizar os dados em rol (ordem crescente):</strong><br>Temos $n = 10$ observações de temperatura:<br>$$10{,}1 \\;\\le\\; 10{,}4 \\;\\le\\; 10{,}6 \\;\\le\\; 10{,}7 \\;\\le\\; \\mathbf{10{,}8} \\;\\le\\; \\mathbf{12{,}0} \\;\\le\\; 12{,}0 \\;\\le\\; 12{,}2 \\;\\le\\; 13{,}1 \\;\\le\\; 13{,}5$$<br><strong>Passo 2: Identificar a posição mediana:</strong><br>Como o número total de elementos é par ($n = 10$), a mediana é dada pela média aritmética dos dois termos centrais, que ocupam as posições $\\frac{n}{2} = 5^\\text{a}$ e $\\frac{n}{2} + 1 = 6^\\text{a}$:<br>• 5º termo: $10{,}8^\\circ\\text{C}$<br>• 6º termo: $12{,}0^\\circ\\text{C}$<br><br><strong>Passo 3: Calcular a média dos termos centrais:</strong><br>$$\\text{Mediana} = \\frac{10{,}8 + 12{,}0}{2} = \\frac{22{,}8}{2} = 11{,}40^\\circ\\text{C}$$<br>Portanto, a alternativa correta é a <strong>Letra C</strong>.",
@@ -12040,16 +12041,17 @@ var mathData = window.mathData || {
             "topicoId": "b4-t4",
             "image": {
               "src": "https://drive.google.com/file/d/1EZynDYmMjQDQ0uYroB64-WQG-9-QOWWC/view?usp=sharing",
-              "alt": "Tabela de temperaturas mínimas registradas nos 10 primeiros dias do mês de julho de 2025 na Estação Belo Horizonte – Pampulha, com colunas Dia e Temperatura mínima (°C)."
+              "alt": "Tabela de temperaturas mínimas registradas nos 10 primeiros dias do mês de julho de 2025 na Estação Belo Horizonte – Pampulha, com colunas Dia e Temperatura mínima (°C).",
+              "caption": "Fonte: INMET (Estação A521 - Belo Horizonte/Pampulha, julho de 2025)."
             }
           },
           {
-            "q": "(IFMG 2026.1 - Q15) O preço dinâmico em aplicativos de transporte é um sistema que ajusta o valor das corridas de acordo com a oferta de motoristas e a demanda de passageiros em tempo real. Em síntese, quando há muitos pedidos e poucos motoristas disponíveis, o preço sobe para incentivar mais motoristas a se conectarem ao aplicativo. Esse aumento é feito aplicando-se um fator multiplicador sobre o valor base da corrida. Além disso, existe uma taxa fixa, cobrada em todas as corridas, independentemente do fator aplicado.<br><br>Em determinado dia, o valor base de uma corrida era de $\\text{R\\$} 20{,}00$ e a taxa fixa era de $\\text{R\\$} 5{,}00$. Com a alta demanda, o preço total de uma corrida passou para $\\text{R\\$} 50{,}00$.<br><br>Qual foi o valor do fator multiplicador aplicado?",
+            "q": "O preço dinâmico em aplicativos de transporte é um sistema que ajusta o valor das corridas de acordo com a oferta de motoristas e a demanda de passageiros em tempo real. Em síntese, quando há muitos pedidos e poucos motoristas disponíveis, o preço sobe para incentivar mais motoristas a se conectarem ao aplicativo. Esse aumento é feito aplicando-se um fator multiplicador sobre o valor base da corrida. Além disso, existe uma taxa fixa, cobrada em todas as corridas, independentemente do fator aplicado.\n\nEm determinado dia, o valor base de uma corrida era de $\\text{R\\$} 20{,}00$ e a taxa fixa era de $\\text{R\\$} 5{,}00$. Com a alta demanda, o preço total de uma corrida passou para $\\text{R\\$} 50{,}00$.\n\nQual foi o valor do fator multiplicador aplicado?",
             "options": [
-              "2,00",
-              "2,25",
-              "2,50",
-              "2,75"
+              "$2{,}00$",
+              "$2{,}25$",
+              "$2{,}50$",
+              "$2{,}75$"
             ],
             "correct": 1,
             "explanation": "De acordo com o modelo tarifário descrito no enunciado, o valor final pago por uma corrida é composto pelo valor base multiplicado pelo fator dinâmico $k$, somado à taxa fixa:<br>$$\\text{Preço Total} = (\\text{Valor Base} \\times k) + \\text{Taxa Fixa}$$<br>Substituindo os valores fornecidos no enunciado:<br>• Valor Base = $\\text{R\\$} 20{,}00$<br>• Taxa Fixa = $\\text{R\\$} 5{,}00$<br>• Preço Total = $\\text{R\\$} 50{,}00$<br><br>Montamos a equação do 1º grau:<br>$$20k + 5 = 50$$<br>Subtraindo 5 de ambos os lados:<br>$$20k = 50 - 5 = 45$$<br>Isolando o fator $k$:<br>$$k = \\frac{45}{20} = \\frac{9}{4} = 2{,}25$$<br>Assim, o fator multiplicador aplicado foi de $2{,}25$.<br><br>Portanto, a alternativa correta é a <strong>Letra B</strong>.",
@@ -12057,20 +12059,21 @@ var mathData = window.mathData || {
             "bnccDesc": "Resolver e elaborar problemas que possam ser representados por equações polinomiais de 1º grau, redutíveis à forma ax + b = c, fazendo uso das propriedades da igualdade.",
             "unidadeTematica": "Álgebra",
             "anoEscolar": "7º ano",
-            "topicoId": "b2-t3"
+            "topicoId": "b2-t3",
+            "image": null
           },
           {
-            "q": "(IFMG 2026.1 - Q16) Uma confeitaria produz biscoitos em formatos inspirados em sólidos geométricos, tais quais os mostrados a seguir em formato de pirâmide de base quadrada, de cubo e de prisma de base pentagonal.<br><br>Qual o número de vértices, faces e arestas de cada um destes sólidos, nesta ordem?",
+            "q": "Uma confeitaria produz biscoitos em formatos inspirados em sólidos geométricos, tais quais os mostrados a seguir em formato de pirâmide de base quadrada, de cubo e de prisma de base pentagonal.\n\nQual o número de vértices, faces e arestas de cada um destes sólidos, nesta ordem?",
             "image": {
               "src": "https://drive.google.com/file/d/1Ta1jYc1EsP1Bswg5McS_HnGufg9U9ZBC/view?usp=sharing",
               "alt": "Três sólidos geométricos modelados como biscoitos: uma pirâmide de base quadrada, um cubo e um prisma reto de base pentagonal.",
               "caption": "Figura da questão apresentando os três sólidos geométricos."
             },
             "options": [
-              "Pirâmide 4, 2 e 5; Cubo 7, 3 e 9; Prisma 9, 4 e 12.",
-              "Pirâmide 5, 5 e 8; Cubo 6, 8 e 12; Prisma 10, 7 e 15.",
-              "Pirâmide 4, 4 e 6; Cubo 8, 6 e 12; Prisma 12, 7 e 18.",
-              "Pirâmide 5, 5 e 8; Cubo 8, 6 e 12; Prisma 10, 7 e 15."
+              "Pirâmide $4$, $2$ e $5$; Cubo $7$, $3$ e $9$; Prisma $9$, $4$ e $12$.",
+              "Pirâmide $5$, $5$ e $8$; Cubo $6$, $8$ e $12$; Prisma $10$, $7$ e $15$.",
+              "Pirâmide $4$, $4$ e $6$; Cubo $8$, $6$ e $12$; Prisma $12$, $7$ e $18$.",
+              "Pirâmide $5$, $5$ e $8$; Cubo $8$, $6$ e $12$; Prisma $10$, $7$ e $15$."
             ],
             "correct": 3,
             "explanation": "Vamos determinar os elementos fundamentais (número de vértices $V$, faces $F$ e arestas $A$) de cada um dos poliedros:<br><br><strong>1. Pirâmide de base quadrada:</strong><br>• Vértices ($V$): 4 vértices na base quadrada mais 1 vértice no ápice $\\implies V = 5$.<br>• Faces ($F$): 1 face quadrada na base mais 4 faces triangulares laterais $\\implies F = 5$.<br>• Arestas ($A$): 4 arestas na base mais 4 arestas laterais $\\implies A = 8$.<br><em>Ordem (V, F, A):</em> 5, 5 e 8. (Note que $V - A + F = 5 - 8 + 5 = 2$, satisfazendo Euler).<br><br><strong>2. Cubo (hexaedro regular):</strong><br>• Vértices ($V$): 4 no topo e 4 na base $\\implies V = 8$.<br>• Faces ($F$): 6 faces quadradas $\\implies F = 6$.<br>• Arestas ($A$): 4 superiores, 4 inferiores e 4 verticais $\\implies A = 12$.<br><em>Ordem (V, F, A):</em> 8, 6 e 12.<br><br><strong>3. Prisma de base pentagonal:</strong><br>• Vértices ($V$): 5 vértices na base inferior e 5 na base superior $\\implies V = 2 \\times 5 = 10$.<br>• Faces ($F$): 2 bases pentagonais mais 5 faces laterais retangulares $\\implies F = 2 + 5 = 7$.<br>• Arestas ($A$): 5 na base inferior, 5 na superior e 5 laterais $\\implies A = 3 \\times 5 = 15$.<br><em>Ordem (V, F, A):</em> 10, 7 e 15.<br><br>Assim, a resposta correta é Pirâmide 5, 5 e 8; Cubo 8, 6 e 12; Prisma 10, 7 e 15.<br><br>Portanto, a alternativa correta é a <strong>Letra D</strong>.",
@@ -12081,12 +12084,12 @@ var mathData = window.mathData || {
             "topicoId": "b3-t4"
           },
           {
-            "q": "(IFMG 2026.1 - Q17) Durante uma gincana em comemoração ao Dia das Crianças, as turmas do 9ºA e 9ºB disputaram uma prova em que o vencedor seria quem conseguisse armazenar a maior quantidade de água em caixas em formato de prismas retangulares.<br><br>A turma do 9ºA encheu 6 caixas pequenas e a turma do 9ºB encheu 1 caixa grande. Cada caixa pequena comportava 500 mL de líquido. A caixa grande era duas vezes mais comprida, duas vezes mais larga e duas vezes mais alta do que a caixa pequena.<br><br>A turma vencedora e a quantidade de água armazenada por ela foi",
+            "q": "Durante uma gincana em comemoração ao Dia das Crianças, as turmas do 9ºA e 9ºB disputaram uma prova em que o vencedor seria quem conseguisse armazenar a maior quantidade de água em caixas em formato de prismas retangulares.\n\nA turma do 9ºA encheu 6 caixas pequenas e a turma do 9ºB encheu 1 caixa grande. Cada caixa pequena comportava $500\\text{ mL}$ de líquido. A caixa grande era duas vezes mais comprida, duas vezes mais larga e duas vezes mais alta do que a caixa pequena.\n\nA turma vencedora e a quantidade de água armazenada por ela foi:",
             "options": [
-              "9ºA com 1 litro.",
-              "9ºB com 2 litros.",
-              "9ºA com 3 litros.",
-              "9ºB com 4 litros."
+              "9ºA com $1\\text{ litro}$.",
+              "9ºB com $2\\text{ litros}$.",
+              "9ºA com $3\\text{ litros}$.",
+              "9ºB com $4\\text{ litros}$."
             ],
             "correct": 3,
             "explanation": "Vamos calcular o volume total de água armazenado por cada uma das turmas:<br><br><strong>1. Volume armazenado pela turma do 9ºA:</strong><br>Cada caixa pequena comporta $500\\text{ mL} = 0{,}5\\text{ L}$. Como a turma encheu 6 caixas pequenas:<br>$$V_{9A} = 6 \\times 500\\text{ mL} = 3000\\text{ mL} = 3\\text{ L}$$<br><strong>2. Volume da caixa grande (turma do 9ºB):</strong><br>Seja a caixa pequena com dimensões $c$, $l$ e $h$. Seu volume é:<br>$$V_{\\text{peq}} = c \\cdot l \\cdot h = 500\\text{ mL}$$<br>A caixa grande tem comprimento $2c$, largura $2l$ e altura $2h$. O volume da caixa grande é dado por:<br>$$V_{\\text{grande}} = (2c) \\cdot (2l) \\cdot (2h) = 2^3 \\cdot (c \\cdot l \\cdot h) = 8 \\cdot V_{\\text{peq}}$$<br>Calculando numericamente:<br>$$V_{\\text{grande}} = 8 \\times 500\\text{ mL} = 4000\\text{ mL} = 4\\text{ L}$$<br>A turma do 9ºB encheu 1 caixa grande, logo armazenou $4\\text{ L}$.<br><br><strong>3. Comparação:</strong><br>Como $4\\text{ L} > 3\\text{ L}$, a turma vencedora foi o <strong>9ºB</strong>, armazenando <strong>4 litros</strong>.<br><br>Portanto, a alternativa correta é a <strong>Letra D</strong>.",
@@ -12094,15 +12097,16 @@ var mathData = window.mathData || {
             "bnccDesc": "Resolver e elaborar problemas que envolvam o cálculo do volume de recipiente cujo formato é o de bloco retangular, relacionando medidas de volume com capacidades.",
             "unidadeTematica": "Grandezas e Medidas",
             "anoEscolar": "8º ano",
-            "topicoId": "b4-t2"
+            "topicoId": "b4-t2",
+            "image": null
           },
           {
-            "q": "(IFMG 2026.1 - Q18) Um centro de distribuição recebeu 480 caixas de produtos para serem armazenadas em três setores:<br>● No Setor A, foram organizadas 8 prateleiras com 12 caixas cada.<br>● No Setor B, foram organizadas 5 prateleiras com 18 caixas cada e mais 4 prateleiras com 15 caixas cada.<br>● As caixas restantes foram destinadas ao Setor C e organizadas em 6 prateleiras, de modo que cada prateleira recebeu a mesma quantidade de caixas.<br><br>O número de caixas em cada prateleira do Setor C é",
+            "q": "Um centro de distribuição recebeu 480 caixas de produtos para serem armazenadas em três setores:\n\n• No Setor A, foram organizadas 8 prateleiras com 12 caixas cada.\n• No Setor B, foram organizadas 5 prateleiras com 18 caixas cada e mais 4 prateleiras com 15 caixas cada.\n• As caixas restantes foram destinadas ao Setor C e organizadas em 6 prateleiras, de modo que cada prateleira recebeu a mesma quantidade de caixas.\n\nO número de caixas em cada prateleira do Setor C é:",
             "options": [
-              "39",
-              "41",
-              "42",
-              "47"
+              "$39$",
+              "$41$",
+              "$42$",
+              "$47$"
             ],
             "correct": 0,
             "explanation": "Vamos acompanhar o fluxo de distribuição das 480 caixas:<br><br><strong>1. Quantidade de caixas no Setor A:</strong><br>São 8 prateleiras com 12 caixas cada:<br>$$N_A = 8 \\times 12 = 96\\text{ caixas}$$<br><strong>2. Quantidade de caixas no Setor B:</strong><br>São 5 prateleiras com 18 caixas e 4 prateleiras com 15 caixas:<br>$$N_B = (5 \\times 18) + (4 \\times 15) = 90 + 60 = 150\\text{ caixas}$$<br><strong>3. Caixas já armazenadas nos Setores A e B:</strong><br>$$N_{A+B} = 96 + 150 = 246\\text{ caixas}$$<br><strong>4. Caixas restantes destinadas ao Setor C:</strong><br>$$N_C = 480 - 246 = 234\\text{ caixas}$$<br><strong>5. Número de caixas por prateleira no Setor C:</strong><br>As 234 caixas foram divididas igualmente em 6 prateleiras:<br>$$\\text{Caixas por prateleira} = \\frac{234}{6} = 39\\text{ caixas}$$<br>Portanto, a alternativa correta é a <strong>Letra A</strong>.",
@@ -12110,20 +12114,21 @@ var mathData = window.mathData || {
             "bnccDesc": "Resolver e elaborar problemas que envolvam cálculos (adição, subtração, multiplicação, divisão e potenciação) com números naturais, por meio de estratégias variadas.",
             "unidadeTematica": "Números",
             "anoEscolar": "6º ano",
-            "topicoId": "b1-t2"
+            "topicoId": "b1-t2",
+            "image": null
           },
           {
-            "q": "(IFMG 2026.1 - Q19) O Teorema de Pick é utilizado para calcular áreas de polígonos, cujos vértices são pontos de uma malha quadriculada, através da seguinte relação, em que $I$ é o número de pontos da malha quadriculada situados no interior do polígono e $B$ é o número de pontos da malha quadriculada situados sobre o contorno (borda) do polígono:<br>$$A = I + \\frac{B}{2} - 1$$<br>Na figura a seguir, o Polígono X possui 9 pontos interiores e 10 pontos na borda, obtendo uma área de 13 unidades de área:<br><br>A área do polígono Y, em unidades de área, é",
+            "q": "O Teorema de Pick é utilizado para calcular áreas de polígonos, cujos vértices são pontos de uma malha quadriculada, através da seguinte relação, em que $I$ é o número de pontos da malha quadriculada situados no interior do polígono e $B$ é o número de pontos da malha quadriculada situados sobre o contorno (borda) do polígono:\n\n$$A = I + \\frac{B}{2} - 1$$\n\nNa figura a seguir, o Polígono X possui 9 pontos interiores e 10 pontos na borda, obtendo uma área de 13 unidades de área:\n\nA área do polígono Y, em unidades de área, é:",
             "image": {
               "src": "https://drive.google.com/file/d/1S8b9Fyte4x-9ysaK65nRZnHXtzYoiwYE/view?usp=sharing",
               "alt": "Malha quadriculada com dois polígonos sobrepostos a pontos de grade. À esquerda, o Polígono X com pontos interiores e de borda indicados. À direita, o Polígono Y cujos vértices e arestas passam pelos pontos da malha.",
               "caption": "Polígonos X e Y sobre malha quadriculada para aplicação do Teorema de Pick."
             },
             "options": [
-              "15",
-              "16",
-              "17",
-              "18"
+              "$15$",
+              "$16$",
+              "$17$",
+              "$18$"
             ],
             "correct": 0,
             "explanation": "O Teorema de Pick fornece a área $A$ de um polígono cujos vértices estão em nós de uma malha inteira:<br>$$A = I + \\frac{B}{2} - 1$$<br>onde $I$ é o número de pontos estritamente no interior e $B$ é o número de pontos sobre o contorno (borda).<br><br><strong>Contagem dos pontos no Polígono Y:</strong><br>1. <strong>Pontos interiores ($I$):</strong><br>Analisando a grade interna do Polígono Y (marcada pelos pontos cinzas):<br>• Linha superior interna: 2 pontos;<br>• Linha intermediária interna: 4 pontos;<br>• Linha inferior interna: 4 pontos.<br>Total de pontos interiores: $I = 2 + 4 + 4 = 10$.<br><br>2. <strong>Pontos de borda ($B$):</strong><br>Percorrendo todo o perímetro do Polígono Y (marcado pelos pontos pretos):<br>• Vértice inferior esquerdo e base inferior horizontal: 5 pontos (do vértice esquerdo até o início da inclinação);<br>• Segmento inclinado inferior direito e aresta vertical direita: 3 pontos;<br>• Segmento inclinado superior direito: 1 ponto intermediário + 1 vértice no topo direito = 2 pontos;<br>• Segmento horizontal superior: 1 vértice no topo esquerdo;<br>• Arestas da lateral esquerda (segmento vertical e segmento inclinado até a base): 1 ponto intermediário.<br>Somando todos os pontos de contorno na borda: $B = 12$ pontos.<br><br><strong>Cálculo da área pelo Teorema de Pick:</strong><br>$$A = 10 + \\frac{12}{2} - 1 = 10 + 6 - 1 = 15\\text{ unidades de área}$$<br>Portanto, a alternativa correta é a <strong>Letra A</strong>.",
@@ -12134,12 +12139,12 @@ var mathData = window.mathData || {
             "topicoId": "b4-t1"
           },
           {
-            "q": "(IFMG 2026.1 - Q20) O Imposto de Renda é um tributo federal cobrado sobre o salário dos trabalhadores. Atualmente, quem recebe até dois salários mínimos por mês está isento do pagamento, ou seja, não paga imposto. Para quem ganha acima desse valor, o imposto é calculado aplicando-se uma alíquota (percentual) sobre a parcela que ultrapassa a faixa de isenção.<br><br>Uma professora que possui salário mensal de $\\text{R\\$} 3.224{,}00$ tem Imposto de Renda mensal calculado aplicando-se uma alíquota de 7{,}5% sobre o valor que excede a faixa de isenção. Até abril de 2025, essa faixa correspondia a $\\text{R\\$} 2.824{,}00$, a partir de maio de 2025, passou para $\\text{R\\$} 3.036{,}00$.<br><br>A redução no valor do imposto pago mensalmente por essa professora a partir de maio de 2025 foi de",
+            "q": "O Imposto de Renda é um tributo federal cobrado sobre o salário dos trabalhadores. Atualmente, quem recebe até dois salários mínimos por mês está isento do pagamento, ou seja, não paga imposto. Para quem ganha acima desse valor, o imposto é calculado aplicando-se uma alíquota (percentual) sobre a parcela que ultrapassa a faixa de isenção.\n\nUma professora que possui salário mensal de $\\text{R\\$} 3.224{,}00$ tem Imposto de Renda mensal calculado aplicando-se uma alíquota de $7{,}5\\%$ sobre o valor que excede a faixa de isenção. Até abril de 2025, essa faixa correspondia a $\\text{R\\$} 2.824{,}00$; a partir de maio de 2025, passou para $\\text{R\\$} 3.036{,}00$.\n\nA redução no valor do imposto pago mensalmente por essa professora a partir de maio de 2025 foi de:",
             "options": [
-              "11%",
-              "47%",
-              "53%",
-              "89%"
+              "$11\\%$",
+              "$47\\%$",
+              "$53\\%$",
+              "$89\\%$"
             ],
             "correct": 2,
             "explanation": "Vamos calcular o imposto devido pela professora nos dois períodos e a respectiva variação percentual:<br><br><strong>1. Situação até abril de 2025:</strong><br>• Salário: $\\text{R\\$} 3.224{,}00$<br>• Faixa de isenção: $\\text{R\\$} 2.824{,}00$<br>• Parcela tributável excedente: $3.224 - 2.824 = \\text{R\\$} 400{,}00$<br>• Imposto devido: $I_1 = 7{,}5\\% \\times 400 = 0{,}075 \\times 400 = \\text{R\\$} 30{,}00$<br><br><strong>2. Situação a partir de maio de 2025:</strong><br>• Salário: $\\text{R\\$} 3.224{,}00$<br>• Nova faixa de isenção: $\\text{R\\$} 3.036{,}00$<br>• Nova parcela tributável excedente: $3.224 - 3.036 = \\text{R\\$} 188{,}00$<br>• Imposto devido: $I_2 = 7{,}5\\% \\times 188 = 0{,}075 \\times 188 = \\text{R\\$} 14{,}10$<br><br><strong>3. Redução percentual no valor do imposto:</strong><br>A redução em reais foi de:<br>$$\\Delta I = 30{,}00 - 14{,}10 = \\text{R\\$} 15{,}90$$<br>Em relação ao valor pago anteriormente ($I_1 = \\text{R\\$} 30{,}00$):<br>$$\\text{Percentual de redução} = \\frac{15{,}90}{30{,}00} = \\frac{15{,}9}{30} = 0{,}53 = 53\\%$$<br><em>(Nota: Como a alíquota de 7{,}5% é constante, a redução percentual do imposto é idêntica à redução percentual da base de cálculo: $\\frac{400 - 188}{400} = \\frac{212}{400} = 53\\%$).</em><br><br>Portanto, a alternativa correta é a <strong>Letra C</strong>.",
@@ -12147,20 +12152,21 @@ var mathData = window.mathData || {
             "bnccDesc": "Resolver e elaborar problemas, envolvendo cálculo de porcentagens, incluindo o uso de tecnologias digitais, no contexto da educação financeira.",
             "unidadeTematica": "Números",
             "anoEscolar": "8º ano",
-            "topicoId": "b1-t6"
+            "topicoId": "b1-t6",
+            "image": null
           },
           {
-            "q": "(IFMG 2026.1 - Q21) A figura a seguir apresenta o mapa de uma cidade, cuja área foi dividida em áreas hexagonais, em que os lados desses hexágonos regulares são ruas. O hexágono em destaque possui três ruas internas retas, sendo os pontos A, B, C e D pertencentes a essas ruas, com o ponto A no centro e os demais nos pontos médios dos lados.<br><br>A medida, em graus, do menor ângulo formado pelos segmentos AC e AD é",
+            "q": "A figura a seguir apresenta o mapa de uma cidade, cuja área foi dividida em áreas hexagonais, em que os lados desses hexágonos regulares são ruas. O hexágono em destaque possui três ruas internas retas, sendo os pontos A, B, C e D pertencentes a essas ruas, com o ponto A no centro e os demais nos pontos médios dos lados.\n\nA medida, em graus, do menor ângulo formado pelos segmentos $\\overline{AC}$ e $\\overline{AD}$ é:",
             "image": {
               "src": "https://drive.google.com/file/d/1uFBayvmvAQfqmRYTtWdhYtsGK7pZLm1c/view?usp=sharing",
               "alt": "Mapa aéreo de bairro planejado dividido em módulos hexagonais regulares adjacentes. No hexágono em destaque, o ponto A está localizado no centro geométrico, o ponto C no ponto médio do lado superior horizontal e os pontos B e D nos pontos médios dos lados adjacentes.",
               "caption": "Módulo hexagonal regular com ponto central A e pontos médios periféricos C e D."
             },
             "options": [
-              "60",
-              "90",
-              "120",
-              "300"
+              "$60^\\circ$",
+              "$90^\\circ$",
+              "$120^\\circ$",
+              "$300^\\circ$"
             ],
             "correct": 0,
             "explanation": "Vamos analisar a geometria do hexágono regular:<br><br>1. O ponto $A$ é o centro geométrico do hexágono regular.<br>2. Os pontos $C$ e $D$ são pontos médios de dois lados consecutivos do hexágono regular.<br>3. O segmento que une o centro de um polígono regular ao ponto médio de qualquer um de seus lados é denominado <strong>apótema</strong>.<br>4. Em um polígono regular de $n$ lados, as retas que contêm as apótemas de lados consecutivos formam no centro um ângulo igual ao <strong>ângulo central</strong> do polígono:<br>$$\\theta = \\frac{360^\\circ}{n}$$<br>Como a figura é um hexágono ($n = 6$):<br>$$\\theta = \\frac{360^\\circ}{6} = 60^\\circ$$<br>Portanto, o menor ângulo formado pelos segmentos $AC$ e $AD$ mede exatamente $60^\\circ$.<br><br>Portanto, a alternativa correta é a <strong>Letra A</strong>.",
@@ -12171,17 +12177,17 @@ var mathData = window.mathData || {
             "topicoId": "b3-t1"
           },
           {
-            "q": "(IFMG 2026.1 - Q22) *(Nota pedagógica: Questão originalmente anulada no exame oficial do IFMG e readaptada para fins de treino, preservando a habilidade cobrada)*<br><br>Uma reportagem noticiou que os Correios investirão na modernização de sua frota com a aquisição de $5.000$ veículos elétricos. Suponha que essa quantidade de $5.000$ veículos seja dividida exclusivamente em dois tipos, motos e carros, e que, para futuras manutenções na frota, os Correios decidam adquirir a quantidade exata de pneus que esses veículos necessitam para rodar. Sabe-se ainda que serão adquiridos $16.400$ pneus no total e que cada moto utiliza 2 pneus, enquanto cada carro utiliza 4 pneus (desconsiderando estepes).<br><br>Quantos pneus de moto serão adquiridos?",
+            "q": "*(Nota pedagógica: Questão originalmente anulada no exame oficial do IFMG por conflito factual na manchete original, readaptada para fins de treino, preservando a habilidade cobrada)*\n\nUma reportagem noticiou que os Correios investirão na modernização de sua frota com a aquisição de $5.000$ veículos elétricos. Suponha que essa quantidade de $5.000$ veículos seja dividida exclusivamente em dois tipos, motos e carros, e que, para futuras manutenções na frota, os Correios decidam adquirir a quantidade exata de pneus que esses veículos necessitam para rodar. Sabe-se ainda que serão adquiridos $16.400$ pneus no total e que cada moto utiliza 2 pneus, enquanto cada carro utiliza 4 pneus (desconsiderando estepes).\n\nQuantos pneus de moto serão adquiridos?",
             "image": {
               "src": "https://drive.google.com/file/d/1nT99fKJxOOIrNJyZVnrP17uGiy9z88VC/view?usp=sharing",
               "alt": "Recorte de matéria jornalística sobre o investimento dos Correios na renovação sustentável de frota de veículos elétricos.",
               "caption": "Manchete jornalística que contextualiza a renovação de frota sustentável."
             },
             "options": [
-              "1.200",
-              "3.600",
-              "3.800",
-              "6.400"
+              "$1.200$",
+              "$3.600$",
+              "$3.800$",
+              "$6.400$"
             ],
             "correct": 1,
             "explanation": "<strong>Nota sobre a anulação no exame oficial:</strong> No caderno de prova original, a questão gerou recurso e foi anulada porque o número total de veículos constava em manchete jornalística como 'frota de 5 mil carros elétricos' (conflitando com a existência de motos e carros). Nesta versão readaptada, o enunciado explicita claramente o total de $5.000$ veículos elétricos compostos por carros e motos.<br><br><strong>Resolução da questão readaptada:</strong><br>Sejam:<br>• $m$: número de motos elétricas<br>• $c$: número de carros elétricos<br><br>Montamos o sistema linear com base nas duas informações:<br>1) Total de veículos: $m + c = 5.000$<br>2) Total de pneus: $2m + 4c = 16.400$<br><br>Dividindo a segunda equação por 2:<br>$$m + 2c = 8.200$$<br>Subtraindo a primeira equação da equação simplificada:<br>$$(m + 2c) - (m + c) = 8.200 - 5.000$$<br>$$c = 3.200\\text{ carros}$$<br>Substituindo $c = 3.200$ na primeira equação:<br>$$m = 5.000 - 3.200 = 1.800\\text{ motos}$$<br>O problema pergunta especificamente a quantidade de <strong>pneus de moto</strong> a serem adquiridos. Como cada moto utiliza 2 pneus:<br>$$\\text{Total de pneus de moto} = 2 \\times 1.800 = 3.600\\text{ pneus}$$<br>Portanto, a alternativa correta é a <strong>Letra B</strong>.",
@@ -12192,17 +12198,17 @@ var mathData = window.mathData || {
             "topicoId": "b2-t3"
           },
           {
-            "q": "(IFMG 2026.1 - Q23) A seguir tem-se os ingredientes necessários para se fazer um pão caseiro:<br><br>O dono de uma padaria possui 200g de fermento biológico seco e pretende utilizá-lo integralmente na fabricação de pães caseiros, seguindo as proporções da receita apresentada.<br><br>Quantas xícaras de água morna ele vai precisar?",
+            "q": "A seguir tem-se os ingredientes necessários para se fazer um pão caseiro:\n\nO dono de uma padaria possui $200\\text{ g}$ de fermento biológico seco e pretende utilizá-lo integralmente na fabricação de pães caseiros, seguindo as proporções da receita apresentada.\n\nQuantas xícaras de água morna ele vai precisar?",
             "image": {
               "src": "https://drive.google.com/file/d/1_tj2r0DM4odrgNXhYds075Bfow75Fb8Q/view?usp=sharing",
               "alt": "Infográfico com a lista de ingredientes para 3 porções de pão caseiro: 1 kg de farinha de trigo, 1/2 xícara de água morna, 4 colheres de sopa de açúcar, 2 ovos, 1 e 1/2 xícara de leite morno, 1/2 xícara de óleo, 1 colher de sopa de sal e 10 g de fermento biológico seco.",
               "caption": "Receita de pão caseiro com proporções de ingredientes para 3 porções."
             },
             "options": [
-              "10",
-              "20",
-              "30",
-              "40"
+              "$10$",
+              "$20$",
+              "$30$",
+              "$40$"
             ],
             "correct": 0,
             "explanation": "Na receita fornecida, a relação entre a quantidade de fermento biológico seco e de água morna é diretamente proporcional:<br>• Para cada $10\\text{ g}$ de fermento biológico seco, utiliza-se $\\frac{1}{2}$ xícara de água morna.<br><br>O padeiro dispõe de $200\\text{ g}$ de fermento biológico seco. O fator de multiplicação da receita é:<br>$$k = \\frac{200\\text{ g}}{10\\text{ g}} = 20\\text{ vezes a receita padrão}$$<br>Dessa forma, a quantidade de água morna necessária será:<br>$$\\text{Quantidade de água} = 20 \\times \\frac{1}{2} = 10\\text{ xícaras}$$<br>Portanto, a alternativa correta é a <strong>Letra A</strong>.",
@@ -12213,17 +12219,17 @@ var mathData = window.mathData || {
             "topicoId": "b2-t2"
           },
           {
-            "q": "(IFMG 2026.1 - Q24) Na figura a seguir o morador A avista o morador B com um ângulo de elevação de 40°, que por sua vez avista o morador C com um ângulo de elevação de 28°. Considere o ângulo de elevação como sendo o ângulo formado entre a linha que une os dois moradores e a horizontal e que os dois prédios estão sob um mesmo plano.<br><br>Em dado momento o morador B que avista o morador A eleva sua visão até visualizar o morador C.<br><br>Qual o ângulo, em graus, a visão do morador B percorreu?",
+            "q": "Na figura a seguir o morador A avista o morador B com um ângulo de elevação de $40^\\circ$, que por sua vez avista o morador C com um ângulo de elevação de $28^\\circ$. Considere o ângulo de elevação como sendo o ângulo formado entre a linha que une os dois moradores e a horizontal e que os dois prédios estão sob um mesmo plano.\n\nEm dado momento o morador B que avista o morador A eleva sua visão até visualizar o morador C.\n\nQual o ângulo, em graus, a visão do morador B percorreu?",
             "image": {
               "src": "https://drive.google.com/file/d/14tSs90pa3h1RoQtx94MlB1beFf1E7N61/view?usp=sharing",
               "alt": "Dois prédios vizinhos no mesmo plano horizontal. No prédio da esquerda está o morador B. No prédio da direita estão os moradores A em andar inferior e C em andar superior, com as linhas de visada conectando B a A e B a C.",
               "caption": "Esquema geométrico dos ângulos visuais entre os moradores B, A e C."
             },
             "options": [
-              "12",
-              "50",
-              "62",
-              "68"
+              "$12^\\circ$",
+              "$50^\\circ$",
+              "$62^\\circ$",
+              "$68^\\circ$"
             ],
             "correct": 3,
             "explanation": "Considere o plano vertical que contém os dois prédios e trace as linhas horizontais que passam por cada um dos moradores:<br><br>1. O morador A olha para o morador B com um ângulo de elevação de $40^\\circ$ em relação à linha horizontal de A.<br>2. Pela propriedade dos ângulos <strong>alternos internos</strong> formados por duas retas horizontais paralelas cortadas pela reta transversal que une B e A, a linha visual de B para A forma um ângulo de <strong>depressão</strong> de $40^\\circ$ abaixo da linha horizontal que passa pelos olhos de B.<br>3. Por sua vez, o morador B avista o morador C com um ângulo de <strong>elevação</strong> de $28^\\circ$, isto é, a linha visual de B para C está $28^\\circ$ acima da sua horizontal.<br>4. Quando o morador B estava olhando para A e eleva o olhar até atingir C, sua visão percorre:<br>• Os $40^\\circ$ da depressão até atingir a sua horizontal;<br>• Mais os $28^\\circ$ da elevação da horizontal até atingir C.<br><br>Logo, a amplitude total do ângulo percorrido pelo olhar do morador B é:<br>$$\\theta = 40^\\circ + 28^\\circ = 68^\\circ$$<br>Portanto, a alternativa correta é a <strong>Letra D</strong>.",
@@ -12260,7 +12266,7 @@ var mathData = window.mathData || {
         },
         "questions": [
           {
-            "q": "(IFMG 2025.1 - Q16) Em uma empresa, há um total de 800 caixas do produto A, 1500 caixas do produto B e 2250 caixas do produto C. Um operador precisa formar pacotes contendo exatamente 4 caixas do produto A, 6 caixas do produto B e 10 caixas do produto C.<br><br>Quantas caixas do produto A e quantas caixas do produto C o operador precisará adquirir para formar o maior número possível de pacotes, de modo que não sobre nenhuma caixa do produto B?",
+            "q": "Em uma empresa, há um total de 800 caixas do produto A, 1500 caixas do produto B e 2250 caixas do produto C. Um operador precisa formar pacotes contendo exatamente 4 caixas do produto A, 6 caixas do produto B e 10 caixas do produto C.\n\nQuantas caixas do produto A e quantas caixas do produto C o operador precisará adquirir para formar o maior número possível de pacotes, de modo que não sobre nenhuma caixa do produto B?",
             "options": [
               "100 caixas do produto A e 225 caixas do produto C.",
               "200 caixas do produto A e 225 caixas do produto C.",
@@ -12273,10 +12279,11 @@ var mathData = window.mathData || {
             "bnccDesc": "Resolver e elaborar problemas que envolvam cálculos (adição, subtração, multiplicação, divisão) com números naturais, por meio de estratégias variadas.",
             "unidadeTematica": "Números",
             "anoEscolar": "6º ano",
-            "topicoId": "b1-t2"
+            "topicoId": "b1-t2",
+            "image": null
           },
           {
-            "q": "(IFMG 2025.1 - Q17) O gráfico abaixo, divulgado pelo Ministério da Saúde, mostra os casos prováveis de dengue no Brasil ao longo das 25 primeiras Semanas Epidemiológicas nos anos de 2023 (representados pela linha) e de 2024 (representados pelas barras):<br><br>Com base nas informações apresentadas, assinale a afirmativa correta:",
+            "q": "O gráfico abaixo, divulgado pelo Ministério da Saúde, mostra os casos prováveis de dengue no Brasil ao longo das 25 primeiras Semanas Epidemiológicas dos anos de 2023 e 2024:\n\nCom base nas informações do gráfico, é correto afirmar que:",
             "image": {
               "src": "https://drive.google.com/file/d/14ZBYepEFfxhZD8-fLjoRCImYhucPSPNB/view?usp=sharing",
               "alt": "Gráfico de barras e linha mostrando o número de casos prováveis de dengue no Brasil ao longo de 25 semanas epidemiológicas. As barras representam o ano de 2024 e a linha contínua representa o ano de 2023.",
@@ -12284,7 +12291,7 @@ var mathData = window.mathData || {
             },
             "options": [
               "Nas quatro primeiras Semanas Epidemiológicas de 2023, houve uma redução no número de casos prováveis de dengue, enquanto no mesmo período de 2024, o número de casos permaneceu constante.",
-              "Na 5ª Semana Epidemiológica de 2024, o Brasil superou a marca de 200.000 casos prováveis de dengue, o que representa um crescimento de 50% em relação à mesma semana de 2023.",
+              "Na 5ª Semana Epidemiológica de 2024, o Brasil superou a marca de 200.000 casos prováveis de dengue, o que representa um crescimento de $50\\%$ em relação à mesma semana de 2023.",
               "Na 12ª Semana Epidemiológica de 2024, o número de casos prováveis de dengue foi o mais alto do ano, superior a quatro vezes o valor registrado na mesma semana de 2023.",
               "Na 20ª Semana Epidemiológica de 2024, o número de casos prováveis de dengue foi o dobro do registrado na semana anterior."
             ],
@@ -12297,17 +12304,17 @@ var mathData = window.mathData || {
             "topicoId": "b4-t4"
           },
           {
-            "q": "(IFMG 2025.1 - Q18) O jogo de celular Snake, também conhecido como 'jogo da serpente', foi lançado no início dos anos 2000 e permanece popular até os dias de hoje. No jogo, a serpente se desloca em um plano, coletando itens e aumentando de tamanho, enquanto evita colidir com as paredes ou consigo mesma. Suponha que, em determinada partida, a serpente se desloque do ponto A ao ponto F, realizando mudanças de direção em ângulos de 90°, conforme ilustrado na figura.<br><br>Com base nas medidas indicadas na figura, em unidades de comprimento, qual seria a distância percorrida pela serpente caso o jogo a permitisse seguir o caminho mais curto entre os pontos A e F? Desconsidere as dimensões da serpente.",
+            "q": "O jogo de celular Snake, também conhecido como \"jogo da serpente\", foi lançado no início dos anos 2000 e permanece popular até os dias de hoje. No jogo, a serpente se desloca em um plano, coletando itens e aumentando de tamanho, enquanto evita colidir com as paredes ou consigo mesma. Suponha que, em determinada partida, a serpente se desloque do ponto A ao ponto F, realizando mudanças de direção em ângulos de $90^\\circ$, conforme ilustrado na figura:\n\nCom base nas medidas indicadas na figura, em unidades de comprimento, qual seria a distância percorrida pela serpente caso o jogo a permitisse seguir o caminho mais curto entre os pontos A e F? Desconsidere as dimensões da serpente.",
             "image": {
               "src": "https://drive.google.com/file/d/1zDQcPyQ8nNGIinAAP431r-B4KgnPs08g/view?usp=sharing",
-              "alt": "Trajetória poligonal em grade ortogonal partindo do ponto A ao ponto F. Segmento horizontal AB mede 3 para a direita; BC mede 5 para baixo; CD mede 9 para a esquerda; DE mede 7 para baixo; EF mede 11 para a direita.",
+              "alt": "Trajetória poligonal ortogonal da serpente sobre o plano conectando os pontos A, B, C, D, E e F com segmentos cotados.",
               "caption": "Trajetória ortogonal da serpente entre os pontos A e F."
             },
             "options": [
-              "12",
-              "13",
-              "23",
-              "35"
+              "$12$",
+              "$13$",
+              "$23$",
+              "$35$"
             ],
             "correct": 1,
             "explanation": "O caminho mais curto entre os pontos $A$ e $F$ em um plano é o segmento de reta que os une diretamente. Para encontrar a medida de $AF$, determinamos os deslocamentos horizontal (eixo $x$) e vertical (eixo $y$) de $F$ em relação a $A$:<br><br>Definindo $A$ na origem $(0, 0)$:<br>1. $A \\to B$: 3 unidades para a direita $\\implies B = (3, 0)$<br>2. $B \\to C$: 5 unidades para baixo $\\implies C = (3, -5)$<br>3. $C \\to D$: 9 unidades para a esquerda $\\implies D = (3 - 9, -5) = (-6, -5)$<br>4. $D \\to E$: 7 unidades para baixo $\\implies E = (-6, -5 - 7) = (-6, -12)$<br>5. $E \\to F$: 11 unidades para a direita $\\implies F = (-6 + 11, -12) = (5, -12)$<br><br>Deslocamento total entre $A(0{,}0)$ e $F(5, -12)$:<br>• Deslocamento horizontal: $\\Delta x = 5 - 0 = 5$<br>• Deslocamento vertical: $|\\Delta y| = |-12 - 0| = 12$<br><br>Pelo Teorema de Pitágoras no triângulo retângulo formado por esses catetos:<br>$$d(A, F) = \\sqrt{(\\Delta x)^2 + (\\Delta y)^2} = \\sqrt{5^2 + 12^2} = \\sqrt{25 + 144} = \\sqrt{169} = 13$$<br>Portanto, a menor distância entre os pontos A e F é 13.<br><br>Portanto, a alternativa correta é a <strong>Letra B</strong>.",
@@ -12318,12 +12325,12 @@ var mathData = window.mathData || {
             "topicoId": "b3-t2"
           },
           {
-            "q": "(IFMG 2025.1 - Q19) A área de um retângulo é dada pela expressão $A = a^2 + 2ab + b^2$, com $a > b > 0$. Sabe-se que a largura desse retângulo é dada por $L = a^2 - b^2$.<br><br>Qual é a medida do comprimento $C$ desse retângulo, quando $a = 2025$ e $b = 2024$?",
+            "q": "A área de um retângulo é dada pela expressão $A = a^2 + 2ab + b^2$, com $a > b > 0$. Sabe-se que a largura desse retângulo é dada por $L = a^2 - b^2$.\n\nQual é a medida do comprimento $C$ desse retângulo, quando $a = 2025$ e $b = 2024$?",
             "options": [
-              "1",
-              "2024",
-              "2025",
-              "4049"
+              "$1$",
+              "$2024$",
+              "$2025$",
+              "$4049$"
             ],
             "correct": 3,
             "explanation": "Sabemos que a área de um retângulo é o produto do comprimento pela largura:<br>$$A = C \\times L \\implies C = \\frac{A}{L}$$<br>Fatorando algebricamente as expressões da área e da largura:<br>• A área é um trinômio quadrado perfeito: $A = a^2 + 2ab + b^2 = (a + b)^2$<br>• A largura é uma diferença de dois quadrados: $L = a^2 - b^2 = (a + b)(a - b)$<br><br>Substituindo na razão:<br>$$C = \\frac{(a + b)^2}{(a + b)(a - b)} = \\frac{a + b}{a - b}$$<br>Substituindo agora os valores numéricos $a = 2025$ e $b = 2024$:<br>$$a + b = 2025 + 2024 = 4049$$<br>$$a - b = 2025 - 2024 = 1$$<br>Portanto:<br>$$C = \\frac{4049}{1} = 4049$$<br>Portanto, a alternativa correta é a <strong>Letra D</strong>.",
@@ -12331,15 +12338,16 @@ var mathData = window.mathData || {
             "bnccDesc": "Compreender os processos de fatoração de expressões algébricas, com base em suas relações com os produtos notáveis, para resolver e elaborar problemas.",
             "unidadeTematica": "Álgebra",
             "anoEscolar": "9º ano",
-            "topicoId": "b2-t4"
+            "topicoId": "b2-t4",
+            "image": null
           },
           {
-            "q": "(IFMG 2025.1 - Q20) “Você está no sofá, acompanhando uma prova de ginástica artística e fica completamente abismado com uma série. Aí, na hora da pontuação, vem um número quebrado, muitas vezes acima do 10, para confusão geral dos telespectadores.”<br><br>A nota final na ginástica artística é obtida pela soma das notas atribuídas por duas bancas de juízes: uma que avalia a dificuldade e outra que avalia a execução. A banca de execução é composta por cinco juízes. Ao atribuírem as notas, a maior e a menor são descartadas, e a nota final dessa banca é calculada pela média aritmética das três pontuações restantes.<br><br>Supondo que as notas de execução de uma ginasta tenham sido: 9,500; 9,350; 9,100; 10,000 e 9,500, a nota final da banca de execução para essa ginasta foi:",
+            "q": "“Você está no sofá, acompanhando uma prova de ginástica artística e fica completamente abismado com uma série. Aí, na hora da pontuação, vem um número quebrado, muitas vezes acima do 10, para confusão geral dos telespectadores.”\n\nDisponível em: https://ge.globo.com/olimpiadas/reportagem/2024/07/20/notas-da-ginastica-artistica-entenda-criterios-de-pontuacao.ghtml. Acesso em 20 ago. 2024\n\nA nota final na ginástica artística é obtida pela soma das notas atribuídas por duas bancas de juízes: uma que avalia a dificuldade e outra que avalia a execução. A banca de execução é composta por cinco juízes. Ao atribuírem as notas, a maior e a menor são descartadas, e a nota final dessa banca é calculada pela média aritmética das três pontuações restantes.\n\nSupondo que as notas de execução de uma ginasta tenham sido: $9{,}500$; $9{,}350$; $9{,}100$; $10{,}000$ e $9{,}500$, a nota final da banca de execução para essa ginasta foi:",
             "options": [
-              "9,450",
-              "9,483",
-              "9,490",
-              "9,500"
+              "$9{,}450$",
+              "$9{,}483$",
+              "$9{,}490$",
+              "$9{,}500$"
             ],
             "correct": 0,
             "explanation": "Seguindo o regulamento estabelecido no texto:<br>1. <strong>Notas dos 5 juízes em ordem crescente:</strong><br>$$9{,}100 \\;\\le\\; 9{,}350 \\;\\le\\; 9{,}500 \\;\\le\\; 9{,}500 \\;\\le\\; 10{,}000$$<br>2. <strong>Descarte dos valores extremos:</strong><br>• Menor nota descartada: $9{,}100$<br>• Maior nota descartada: $10{,}000$<br><br>3. <strong>Média aritmética das 3 notas restantes:</strong><br>As notas válidas são: $9{,}350$, $9{,}500$ e $9{,}500$.<br>$$\\text{Média} = \\frac{9{,}350 + 9{,}500 + 9{,}500}{3} = \\frac{28{,}350}{3} = 9{,}450$$<br>Portanto, a alternativa correta é a <strong>Letra A</strong>.",
@@ -12347,15 +12355,16 @@ var mathData = window.mathData || {
             "bnccDesc": "Compreender, em contextos significativos, o significado de média estatística como indicador da tendência de uma pesquisa, calcular seu valor e relacioná-lo, intuitivamente, com a amplitude dos dados.",
             "unidadeTematica": "Probabilidade e Estatística",
             "anoEscolar": "7º ano",
-            "topicoId": "b4-t4"
+            "topicoId": "b4-t4",
+            "image": null
           },
           {
-            "q": "(IFMG 2025.1 - Q21) De 26 de julho a 11 de agosto de 2024, ocorreram em Paris os Jogos Olímpicos. A equipe do Brasil terminou as competições na 20ª colocação geral, enquanto a equipe anfitriã, a França, terminou em 5º lugar geral.<br><br>O número de medalhas de ouro da equipe francesa correspondeu a 1/4 do total de medalhas conquistadas por essa equipe, e o número de medalhas de bronze foi equivalente a 11/13 do número de medalhas de prata conquistadas por ela.<br><br>Sabendo que em uma Olimpíada só existem medalhas de ouro, prata e bronze, e que o número de medalhas de bronze da equipe francesa foi 22, o total de medalhas conquistadas pela equipe francesa foi de:",
+            "q": "De 26 de julho a 11 de agosto de 2024, ocorreram em Paris os Jogos Olímpicos. A equipe do Brasil terminou as competições na 20ª colocação geral, enquanto a equipe anfitriã, a França, terminou em 5º lugar geral. O número de medalhas de ouro da equipe francesa correspondeu a $\\frac{1}{4}$ do total de medalhas conquistadas por essa equipe, e o número de medalhas de bronze foi equivalente a $\\frac{11}{13}$ do número de medalhas de prata conquistadas por ela.\n\nSabendo que em uma Olimpíada só existem medalhas de ouro, prata e bronze, e que o número de medalhas de bronze da equipe francesa foi 22, o total de medalhas conquistadas pela equipe francesa foi de:",
             "options": [
-              "64",
-              "60",
-              "50",
-              "48"
+              "$64$",
+              "$60$",
+              "$50$",
+              "$48$"
             ],
             "correct": 0,
             "explanation": "Seja $T$ o total de medalhas conquistadas pela França, composto exclusivamente pelas medalhas de ouro ($O$), prata ($P$) e bronze ($B$):<br>$$T = O + P + B$$<br>Dos dados do problema:<br>1. O número de medalhas de bronze é $B = 22$.<br>2. $B = \\frac{11}{13} P$:<br>$$22 = \\frac{11}{13} P \\implies P = \\frac{22 \\times 13}{11} = 2 \\times 13 = 26\\text{ medalhas de prata}$$<br>3. A soma das medalhas de prata e bronze é:<br>$$P + B = 26 + 22 = 48\\text{ medalhas}$$<br>4. As medalhas de ouro correspondem a $\\frac{1}{4}$ do total $T$:<br>$$O = \\frac{1}{4} T$$<br>Substituindo na expressão total:<br>$$T = \\frac{1}{4} T + (P + B) \\implies T = \\frac{1}{4} T + 48$$<br>$$T - \\frac{1}{4} T = 48 \\implies \\frac{3}{4} T = 48$$<br>$$T = \\frac{48 \\times 4}{3} = 16 \\times 4 = 64\\text{ medalhas}$$<br>Portanto, a alternativa correta é a <strong>Letra A</strong>.",
@@ -12363,20 +12372,21 @@ var mathData = window.mathData || {
             "bnccDesc": "Comparar e ordenar frações associadas às ideias de partes de inteiros, resultado da divisão, razão e operador, resolvendo problemas que envolvem operações fracionárias.",
             "unidadeTematica": "Números",
             "anoEscolar": "7º ano",
-            "topicoId": "b1-t5"
+            "topicoId": "b1-t5",
+            "image": null
           },
           {
-            "q": "(IFMG 2025.1 - Q22) Uma equação do primeiro grau com duas incógnitas, $ax + by + c = 0$, com $a, b, c \\in \\mathbb{R}$ e $a$ e $b$ não simultaneamente nulos, representa uma reta no plano cartesiano. Assim, pode-se representar geometricamente a solução de um sistema de equações do primeiro grau pela interseção entre duas retas no plano cartesiano.<br><br>Dado o sistema de equações a seguir<br>$$\\begin{cases} 2x + y = 5 \\\\ x - 2y = 0 \\end{cases}$$<br>a alternativa que apresenta as retas e a solução deste sistema é:",
+            "q": "Uma equação do primeiro grau com duas incógnitas, $ax + by + c = 0$, com $a, b, c \\in \\mathbb{R}$ e $a$ e $b$ não simultaneamente nulos, representa uma reta no plano cartesiano. Assim, pode-se representar geometricamente a solução de um sistema de equações do primeiro grau pela interseção entre duas retas no plano cartesiano.\n\nDado o sistema de equações a seguir:\n\n$$\\begin{cases} x + y = 3 \\\\ 2x - y = 0 \\end{cases}$$\n\na alternativa que apresenta as retas e a solução deste sistema é:",
             "image": {
               "src": "https://drive.google.com/file/d/1GupKq4VUr8uTGkTU0L_WpLRTr4457Uj8/view?usp=sharing",
-              "alt": "Quatro gráficos em eixos cartesianos com graduação de -8 a 9 no eixo horizontal e de -5 a 6 no eixo vertical. Cada alternativa exibe duas retas concorrentes cujos pontos de interseção e coeficientes angulares devem ser identificados.",
-              "caption": "Representações gráficas no plano cartesiano correspondentes às opções a, b, c e d."
+              "alt": "Quatro gráficos em eixos cartesianos representando pares de retas com pontos de interseção indicados.",
+              "caption": "Representações gráficas do sistema de equações lineares no plano cartesiano."
             },
             "options": [
-              "Gráfico da alternativa A",
-              "Gráfico da alternativa B",
-              "Gráfico da alternativa C",
-              "Gráfico da alternativa D"
+              "Retas concorrentes no ponto $(2, 1)$, com equações $x + y = 3$ e $2x - y = 0$.",
+              "Retas concorrentes no ponto $(1, 2)$, com equações $x + y = 3$ e $2x - y = 0$.",
+              "Retas paralelas sem ponto de interseção.",
+              "Retas concorrentes no ponto $(3, 0)$."
             ],
             "correct": 1,
             "explanation": "Vamos encontrar a solução algébrica do sistema e determinar as características geométricas das duas retas:<br><br><strong>1. Resolução do sistema linear:</strong><br>$$\\begin{cases} 2x + y = 5 \\quad \\text{(I)} \\\\ x - 2y = 0 \\quad \\text{(II)} \\end{cases}$$<br>Da equação (II): $x = 2y$.<br>Substituindo em (I):<br>$$2(2y) + y = 5 \\implies 4y + y = 5 \\implies 5y = 5 \\implies y = 1$$<br>Logo, $x = 2(1) = 2$. O ponto de interseção das retas é exatamente <strong>$(2, 1)$</strong>.<br><br><strong>2. Análise geométrica das retas:</strong><br>• Reta $r_1: 2x + y = 5 \\iff y = -2x + 5$: reta decrescente que intersecta o eixo $y$ no ponto $(0, 5)$ e passa pelo ponto $(2, 1)$.<br>• Reta $r_2: x - 2y = 0 \\iff y = \\frac{1}{2}x$: reta crescente que passa pela origem $(0, 0)$ e pelos pontos $(2, 1)$ e $(4, 2)$.<br><br><strong>3. Análise dos gráficos:</strong><br>• No <strong>Gráfico B</strong>, o ponto de interseção é $(2, 1)$, a reta decrescente corta o eixo $y$ em $(0, 5)$ e a reta crescente passa pela origem $(0, 0)$ com inclinação positiva suave de $\\frac{1}{2}$. É a representação exata do sistema.<br>• No Gráfico A, a reta crescente passa por $(0, -1)$, tendo inclinação 1 ($y = x - 1$).<br>• No Gráfico C, a interseção ocorre no ponto $(1, 2)$.<br>• No Gráfico D, a interseção ocorre no ponto $(-2, 1)$.<br><br>Portanto, a alternativa correta é a <strong>Letra B</strong>.",
@@ -12387,11 +12397,11 @@ var mathData = window.mathData || {
             "topicoId": "b2-t3"
           },
           {
-            "q": "(IFMG 2025.1 - Q23) A empresa GEOM possui uma área retangular gramada em seu terreno, com dimensões de 12 metros de comprimento por 7 metros de largura, conforme ilustrado na Figura 1. Essa empresa planeja expandir essa área gramada em 120 metros quadrados, aumentando igualmente as dimensões do retângulo, conforme ilustrado na Figura 2.<br><br>A quantidade $b$ a ser acrescida é um número:",
+            "q": "A empresa GEOM possui uma área retangular gramada em seu terreno, com dimensões de $12\\text{ metros}$ de comprimento por $7\\text{ metros}$ de largura, conforme ilustrado na Figura 1. Essa empresa planeja expandir essa área gramada em $120\\text{ metros quadrados}$, aumentando igualmente as dimensões do retângulo, conforme ilustrado na Figura 2:\n\nA quantidade $b$ a ser acrescida é um número:",
             "image": {
               "src": "https://drive.google.com/file/d/155DLVeHjIf9GxC2cjAJfAWvLsN_Qs-Qz/view?usp=sharing",
-              "alt": "Diagrama com dois retângulos. A Figura 1 mostra um retângulo inicial de 12 m de comprimento por 7 m de largura. A Figura 2 mostra a ampliação do retângulo onde tanto o comprimento quanto a largura recebem um acréscimo de medida b.",
-              "caption": "Figura 1: Área gramada original; Figura 2: Área gramada após expansão por acréscimo b."
+              "alt": "Figura 1: retângulo de 12 por 7 metros. Figura 2: ampliação do retângulo acrescentando uma faixa de largura b em ambos os lados.",
+              "caption": "Figura 1 e Figura 2: ampliação da área gramada da empresa GEOM."
             },
             "options": [
               "primo",
@@ -12408,7 +12418,7 @@ var mathData = window.mathData || {
             "topicoId": "b2-t5"
           },
           {
-            "q": "(IFMG 2025.1 - Q24) Em 2024, o Brasil celebra os 30 anos do Plano Real, um marco econômico que retirou o país de uma era de hiperinflação. Uma das estratégias do plano foi equiparar o valor da nova moeda, o Real ($\\text{R\\$}$), ao Dólar ($\\text{US\\$}$), permitindo que o câmbio flutuante ajustasse esse valor ao longo do tempo, conforme a oferta e demanda.<br><br>Inicialmente, de forma surpreendente, o Real superou o valor do Dólar, chegando a uma cotação de aproximadamente $\\text{R\\$} 0{,}80$ por $\\text{US\\$} 1{,}00$ (ou seja, com 80 centavos de Real comprava-se 1 Dólar). Após 30 anos, o Real se desvalorizou, chegando a atingir recentemente $\\text{R\\$} 5{,}80$ por $\\text{US\\$} 1{,}00$, mas a estabilização econômica permanece como um legado dessa iniciativa.<br><br>Considere que um investidor, na época inicial do Plano Real, utilizou sua reserva financeira de $\\text{R\\$} 8.000{,}00$ para comprar Dólares pela cotação de $\\text{R\\$} 0{,}80$ por $\\text{US\\$} 1{,}00$ e investiu seus Dólares em um fundo de baixo risco.<br><br>Quantos Reais esse investidor pode adquirir atualmente com seus Dólares, considerando que seu investimento teve um rendimento de 200% nesse período e supondo a cotação de venda de $\\text{R\\$} 5{,}80$ por $\\text{US\\$} 1{,}00$?",
+            "q": "Em 2024, o Brasil celebra os 30 anos do Plano Real, um marco econômico que retirou o país de uma era de hiperinflação. Uma das estratégias do plano foi equiparar o valor da nova moeda, o Real ($\\text{R\\$}$), ao Dólar ($\\text{US\\$}$), permitindo que o câmbio flutuante ajustasse esse valor ao longo do tempo, conforme a oferta e demanda. Inicialmente, de forma surpreendente, o Real superou o valor do Dólar, chegando a uma cotação de aproximadamente $\\text{R\\$} 0{,}80$ por $\\text{US\\$} 1{,}00$ (ou seja, com 80 centavos de Real comprava-se 1 Dólar). Após 30 anos, o Real se desvalorizou, chegando a atingir recentemente $\\text{R\\$} 5{,}80$ por $\\text{US\\$} 1{,}00$, mas a estabilização econômica permanece como um legado dessa iniciativa.\n\nConsidere que um investidor, na época inicial do Plano Real, utilizou sua reserva financeira de $\\text{R\\$} 8.000{,}00$ para comprar Dólares pela cotação de $\\text{R\\$} 0{,}80$ por $\\text{US\\$} 1{,}00$ e investiu seus Dólares em um fundo de baixo risco.\n\nQuantos Reais esse investidor pode adquirir atualmente com seus Dólares, considerando que seu investimento teve um rendimento de $200\\%$ nesse período e supondo a cotação de venda de $\\text{R\\$} 5{,}80$ por $\\text{US\\$} 1{,}00$?",
             "options": [
               "$\\text{R\\$} 58.000{,}00$",
               "$\\text{R\\$} 111.360{,}00$",
@@ -12421,14 +12431,15 @@ var mathData = window.mathData || {
             "bnccDesc": "Resolver e elaborar problemas, envolvendo cálculo de porcentagens, incluindo o uso de tecnologias digitais, no contexto da educação financeira.",
             "unidadeTematica": "Números",
             "anoEscolar": "8º ano",
-            "topicoId": "b1-t6"
+            "topicoId": "b1-t6",
+            "image": null
           },
           {
-            "q": "(IFMG 2025.1 - Q25) Com o objetivo de proporcionar uma sensação de amplitude ao seu comércio, Arthur decide instalar um grande espelho na parede dos fundos do estabelecimento.<br><br>Ao chegar para fazer o orçamento, o vidraceiro percebe que será necessário fazer um recorte no vidro devido a uma estrutura retangular presente na parede, exatamente no local onde o espelho será instalado.<br><br>Ele explica a Arthur que o custo do espelho será de $\\text{R\\$} 200{,}00$ o metro quadrado de vidro (desconsiderando a área do recorte), mas que cobrará $\\text{R\\$} 300{,}00$ o metro linear referente ao perímetro do recorte, devido à complexidade do serviço.<br><br>O espelho terá o formato mostrado na figura a seguir:<br><br>O valor desse espelho, conforme o orçamento apresentado, é de",
+            "q": "Com o objetivo de proporcionar uma sensação de amplitude ao seu comércio, Arthur decide instalar um grande espelho na parede dos fundos do estabelecimento.\n\nAo chegar para fazer o orçamento, o vidraceiro percebe que será necessário fazer um recorte no vidro devido a uma estrutura retangular presente na parede, exatamente no local onde o espelho será instalado.\n\nEle explica a Arthur que o custo do espelho será de $\\text{R\\$} 200{,}00$ o metro quadrado de vidro (desconsiderando a área do recorte), mas que cobrará $\\text{R\\$} 300{,}00$ o metro linear referente ao perímetro do recorte, devido à complexidade do serviço.\n\nO espelho terá o formato mostrado na figura a seguir:\n\nO valor desse espelho, conforme o orçamento apresentado, é de:",
             "image": {
               "src": "https://drive.google.com/file/d/19X0NWO4OEWNJKh9EIRVv71K1qD-QFzEp/view?usp=sharing",
-              "alt": "Placa de vidro retangular de 4 m de comprimento por 2 m de largura contendo um recorte retangular interno de 120 cm de altura por 50 cm de largura.",
-              "caption": "Dimensões do espelho retangular e de seu recorte interno."
+              "alt": "Formato do espelho retangular contendo um recorte retangular com cotas das dimensões externas e do recorte.",
+              "caption": "Esquema cotado do espelho com recorte para a estrutura retangular."
             },
             "options": [
               "$\\text{R\\$} 1.990{,}00$",
@@ -12445,17 +12456,17 @@ var mathData = window.mathData || {
             "topicoId": "b4-t1"
           },
           {
-            "q": "(IFMG 2025.1 - Q26) Durante sua visita a uma feira de ciências, Sávio se deparou com um interessante problema: medir a densidade (razão entre a massa e o volume) de um objeto de formato irregular utilizando apenas os materiais disponíveis no laboratório de Química.<br><br>Sem hesitar, ele pesou o objeto na balança e verificou que a massa era de 400 g. Em seguida, pegou um recipiente com a forma de um prisma reto de base quadrada, mediu o lado dessa base obtendo o valor de 10 cm, e encheu-o com água até a altura de 15 cm. Depois, mergulhou completamente o objeto no recipiente, como mostrado na figura a seguir, e observou que a altura do líquido subiu para 17 cm.<br><br>Com as medidas fornecidas, e sabendo que o objeto não absorve água, Sávio concluiu corretamente que a densidade do objeto é de",
+            "q": "Durante sua visita a uma feira de ciências, Sávio se deparou com um interessante problema: medir a densidade (razão entre a massa e o volume) de um objeto de formato irregular utilizando apenas os materiais disponíveis no laboratório de Química.\n\nSem hesitar, ele pesou o objeto na balança e verificou que a massa era de $400\\text{ g}$. Em seguida, pegou um recipiente com a forma de um prisma reto de base quadrada, mediu o lado dessa base obtendo o valor de $10\\text{ cm}$, e encheu-o com água até a altura de $15\\text{ cm}$. Depois, mergulhou completamente o objeto no recipiente, como mostrado na figura a seguir, e observou que a altura do líquido subiu para $17\\text{ cm}$.\n\nCom as medidas fornecidas, e sabendo que o objeto não absorve água, Sávio concluiu corretamente que a densidade do objeto é de:",
             "image": {
               "src": "https://drive.google.com/file/d/1b6t4J5NZXxkW_XDEfuGajGU9kAMk67V5/view?usp=sharing",
-              "alt": "Dois recipientes prismáticos retos de base quadrada de 10 cm de lado. O primeiro com nível de água em 15 cm de altura e o segundo com o objeto irregular totalmente submerso elevando a coluna d'água para 17 cm.",
-              "caption": "Variação do nível de líquido após a imersão completa do objeto."
+              "alt": "Recipiente prismático de base quadrada contendo água com nível inicial em 15 cm e nível final em 17 cm após a imersão de um objeto sólido irregular.",
+              "caption": "Variação do nível de água após a imersão total do objeto sólido."
             },
             "options": [
-              "2,00 g/cm³",
-              "2,35 g/cm³",
-              "2,67 g/cm³",
-              "4,00 g/cm³"
+              "$2{,}00\\text{ g/cm}^3$",
+              "$2{,}35\\text{ g/cm}^3$",
+              "$2{,}67\\text{ g/cm}^3$",
+              "$4{,}00\\text{ g/cm}^3$"
             ],
             "correct": 0,
             "explanation": "Pelo Princípio de Arquimedes, o volume de um sólido completamente submerso em um líquido é exatamente igual ao volume do líquido por ele deslocado.<br><br>1. <strong>Área da base do recipiente prismático:</strong><br>A base é um quadrado de lado $L = 10\\text{ cm}$:<br>$$A_{\\text{base}} = 10 \\times 10 = 100\\text{ cm}^2$$<br>2. <strong>Variação da altura da coluna d'água (deslocamento):</strong><br>$$\\Delta h = 17\\text{ cm} - 15\\text{ cm} = 2\\text{ cm}$$<br>3. <strong>Volume do objeto:</strong><br>$$V = A_{\\text{base}} \\times \\Delta h = 100\\text{ cm}^2 \\times 2\\text{ cm} = 200\\text{ cm}^3$$<br>4. <strong>Cálculo da densidade:</strong><br>Com massa $m = 400\\text{ g}$ e volume $V = 200\\text{ cm}^3$:<br>$$d = \\frac{m}{V} = \\frac{400\\text{ g}}{200\\text{ cm}^3} = 2{,}00\\text{ g/cm}^3$$<br>Portanto, a alternativa correta é a <strong>Letra A</strong>.",
@@ -12466,11 +12477,11 @@ var mathData = window.mathData || {
             "topicoId": "b4-t2"
           },
           {
-            "q": "(IFMG 2025.1 - Q27 - Adaptada para o site) Um professor de Matemática do IFMG propôs um desafio. Ele selecionou quatro alunos de uma turma do curso técnico em Automação Industrial e solicitou que cada um sugerisse um número de quatro algarismos, que poderia ser o resultado da soma, como a imagem a seguir:<br><br>Cada uma das letras A, F, G, I, M, O correspondem a um algarismo do sistema de numeração decimal. Letras distintas representam algarismos diferentes, e letras iguais representam o mesmo algarismo.<br><br>Os alunos escolhidos pelo professor foram Ana, Beto, Carlos e Daniela, que apresentaram os seguintes números:<br>• Ana: 2435<br>• Beto: 1297<br>• Carlos: 9820<br>• Daniela: 1093<br><br>Com base nas respostas dos alunos, o professor de Matemática concluiu que apenas um deles indicou um número que realmente poderia ser representado pela sigla \"IFMG\". Esse aluno foi:",
+            "q": "Um professor de Matemática do IFMG propôs um desafio. Ele selecionou quatro alunos de uma turma do curso técnico em Automação Industrial e solicitou que cada um sugerisse um número de quatro algarismos, que poderia ser o resultado da seguinte soma:\n\nCada uma das letras A, F, G, I, M, O correspondem a um algarismo do sistema de numeração decimal. Letras distintas representam algarismos distintos e letras iguais representam o mesmo algarismo.\n\nOs alunos escolhidos pelo professor foram Ana, Beto, Carlos e Daniela, que apresentaram os seguintes números:\n\n• Ana: 2435\n• Beto: 1297\n• Carlos: 9820\n• Daniela: 1093\n\nCom base nas respostas dos alunos, o professor de Matemática concluiu que apenas um deles indicou um número que realmente poderia ser representado pela sigla \"IFMG\". Esse aluno foi:",
             "image": {
               "src": "https://drive.google.com/file/d/1cc2cKEM5GakKpBksiHpRUSJqEaEggCTT/view?usp=sharing",
-              "alt": "Operação de adição vertical com letras: IGO somado a MOA resulta em IFMG.",
-              "caption": "Criptoaritmética: IGO + MOA = IFMG."
+              "alt": "Criptaritmo vertical com a adição das parcelas literais cujo resultado é a sigla IFMG.",
+              "caption": "Adição de parcelas com letras representando algarismos decimais distintos."
             },
             "options": [
               "Ana.",
@@ -12487,12 +12498,12 @@ var mathData = window.mathData || {
             "topicoId": "b1-t1"
           },
           {
-            "q": "(IFMG 2025.1 - Q28) Um cubo utilizado como um dado convencional é formado por seis faces numeradas de 1 a 6, e a soma dos números das faces opostas é sempre igual a 7. No entanto, por um descuido, uma empresa construiu um destes dados de forma não convencional, cujas seis faces também são numeradas de 1 a 6, porém a soma dos números de suas faces opostas não é necessariamente igual a 7. Esse dado não convencional será utilizado em um jogo de tabuleiro e será lançado em uma superfície plana e horizontal por um determinado jogador duas vezes.<br><br>No primeiro lançamento, a soma dos números obtidos nas quatro faces laterais, que são as faces do dado perpendiculares à superfície, é igual a 13. No segundo lançamento, a soma dos números obtidos nas quatro faces laterais é igual a 16.<br><br>Com base nessas informações, pode-se concluir que o número na face oposta ao número 1, nesse dado não convencional, é:",
+            "q": "Um cubo utilizado como um dado convencional é formado por seis faces numeradas de 1 a 6, e a soma dos números das faces opostas é sempre igual a 7. No entanto, por um descuido, uma empresa construiu um destes dados de forma não convencional, cujas seis faces também são numeradas de 1 a 6, porém a soma dos números de suas faces opostas não é necessariamente igual a 7. Esse dado não convencional será utilizado em um jogo de tabuleiro e será lançado em uma superfície plana e horizontal por um determinado jogador duas vezes.\n\nNo primeiro lançamento, a soma dos números obtidos nas quatro faces laterais, que são as faces do dado perpendiculares à superfície, é igual a 13. No segundo lançamento, a soma dos números obtidos nas quatro faces laterais é igual a 16.\n\nCom base nessas informações, pode-se concluir que o número na face oposta ao número 1, nesse dado não convencional, é:",
             "options": [
-              "2",
-              "4",
-              "5",
-              "6"
+              "$2$",
+              "$4$",
+              "$5$",
+              "$6$"
             ],
             "correct": 1,
             "explanation": "A soma total dos números em todas as seis faces do dado é:<br>$$S_{\\text{total}} = 1 + 2 + 3 + 4 + 5 + 6 = 21$$<br>Quando o dado repousa sobre a mesa, as 4 faces laterais somadas às 2 faces horizontais (topo e base) completam todas as 6 faces. Como o topo e a base são <strong>faces opostas</strong>:<br>$$\\text{Soma do par de faces opostas} = 21 - S_{\\text{laterais}}$$br><br>1. No 1º lançamento: $S_{\\text{laterais}} = 13 \\implies$ o par de faces opostas (topo e base) soma:<br>$$21 - 13 = 8$$<br>2. No 2º lançamento: $S_{\\text{laterais}} = 16 \\implies$ o par de faces opostas soma:<br>$$21 - 16 = 5$$<br>3. Como o cubo possui exatamente 3 pares de faces opostas e a soma dos três pares é 21, a soma do terceiro par de faces opostas é:<br>$$21 - 8 - 5 = 8$$<br>Assim, os três pares de faces opostas somam <strong>5, 8 e 8</strong>.<br><br>4. Vamos analisar quais pares com números de 1 a 6 podem somar 5:<br>As únicas duplas com soma 5 são $\\{1, 4\\}$ ou $\\{2, 3\\}$.<br>• Se o par que soma 5 fosse $\\{2, 3\\}$, os números restantes seriam $\\{1, 4, 5, 6\\}$. Para somar 8 com o número 1, precisaríamos do número 7, que não existe no dado ($1 + 7 = 8$). Logo, $\\{2, 3\\}$ é descartado.<br>• Logo, o par que soma 5 deve ser <strong>$\\{1, 4\\}$</strong>! Com isso, sobram $\\{2, 3, 5, 6\\}$, que formam os dois pares de soma 8: $\\{2, 6\\}$ ($2+6=8$) e $\\{3, 5\\}$ ($3+5=8$).<br><br>Portanto, a face oposta ao número 1 é a face com o número <strong>4</strong>.<br><br>Portanto, a alternativa correta é a <strong>Letra B</strong>.",
@@ -12500,20 +12511,21 @@ var mathData = window.mathData || {
             "bnccDesc": "Resolver e elaborar problemas que envolvam relações numéricas, propriedades geométricas de poliedros regulares (cubo) e raciocínio lógico dedutivo.",
             "unidadeTematica": "Geometria",
             "anoEscolar": "6º ano",
-            "topicoId": "b3-t4"
+            "topicoId": "b3-t4",
+            "image": null
           },
           {
-            "q": "(IFMG 2025.1 - Q29) A sequência de figuras abaixo foi construída utilizando quantidades de bolinhas que representam números quadrados perfeitos.<br><br>Cada figura contém um certo número de bolinhas claras e, acima da diagonal do quadrado, há uma certa quantidade de bolinhas escuras, seguindo um padrão lógico.<br>• A Figura 1 tem $1^2 = 1$ bolinha clara e 0 bolinha escura;<br>• A Figura 2 tem $2^2 = 4$ bolinhas, sendo 3 bolinhas claras e 1 bolinha escura;<br>• A Figura 3 tem $3^2 = 9$ bolinhas, sendo 6 bolinhas claras e 3 bolinhas escuras;<br>• A Figura 4 tem $4^2 = 16$ bolinhas, sendo 10 bolinhas claras e 6 bolinhas escuras;<br>• A Figura 5 tem $5^2 = 25$ bolinhas, sendo 15 bolinhas claras e 10 bolinhas escuras;<br>e assim sucessivamente, até a figura 20.<br><br>Escolhendo aleatoriamente uma bolinha na figura 20, qual é a probabilidade de essa bolinha escolhida ser escura?",
+            "q": "A sequência de figuras abaixo foi construída utilizando quantidades de bolinhas que representam números quadrados perfeitos:\n\nCada figura contém um certo número de bolinhas claras e, acima da diagonal do quadrado, há uma certa quantidade de bolinhas escuras, seguindo um padrão lógico:\n\n• A Figura 1 tem $1^2 = 1$ bolinha clara e $0$ bolinha escura;\n• A Figura 2 tem $2^2 = 4$ bolinhas, sendo $3$ bolinhas claras e $1$ bolinha escura;\n• A Figura 3 tem $3^2 = 9$ bolinhas, sendo $6$ bolinhas claras e $3$ bolinhas escuras;\n• A Figura 4 tem $4^2 = 16$ bolinhas, sendo $10$ bolinhas claras e $6$ bolinhas escuras;\n• A Figura 5 tem $5^2 = 25$ bolinhas, sendo $15$ bolinhas claras e $10$ bolinhas escuras;\n\ne assim sucessivamente, até a figura 20.\n\nEscolhendo aleatoriamente uma bolinha na figura 20, qual é a probabilidade de essa bolinha escolhida ser escura?",
             "image": {
               "src": "https://drive.google.com/file/d/1Jy51SOq9GRM0667LcFE0Wg3jef5iYMLP/view?usp=sharing",
-              "alt": "Sequência de arranjos quadrados de bolinhas para n de 1 a 5. Na Figura n, o total de bolinhas é n ao quadrado, onde as bolinhas escuras formam um padrão triangular acima da diagonal principal.",
-              "caption": "Padrão de bolinhas claras e escuras nas figuras 1 a 5."
+              "alt": "Sequência geométrica de arranjos quadrados de bolinhas para N = 1 a 5, separadas em claras e escuras pela diagonal.",
+              "caption": "Padrão de bolinhas claras e escuras em arranjos de quadrados perfeitos."
             },
             "options": [
-              "42,5%",
-              "45,0%",
-              "47,5%",
-              "50,0%"
+              "$42{,}5\\%$",
+              "$45{,}0\\%$",
+              "$47{,}5\\%$",
+              "$50{,}0\\%$"
             ],
             "correct": 2,
             "explanation": "Vamos analisar o padrão da quantidade de bolinhas na Figura $n$:<br><br>1. <strong>Total de bolinhas na Figura $n$:</strong><br>$$N_{\\text{total}} = n^2$$<br>Para $n = 20$, o total de bolinhas é $N_{\\text{total}} = 20^2 = 400$.<br><br>2. <strong>Quantidade de bolinhas escuras na Figura $n$:</strong><br>Observando a sequência de bolinhas escuras para $n = 1, 2, 3, 4, 5$:<br>• Figura 1: $0$<br>• Figura 2: $1$<br>• Figura 3: $3 = 1 + 2$<br>• Figura 4: $6 = 1 + 2 + 3$<br>• Figura 5: $10 = 1 + 2 + 3 + 4$<br>As bolinhas escuras formam exatamente a sequência dos números triangulares de ordem $(n-1)$:<br>$$E_n = \\frac{n(n-1)}{2}$$<br>Para a Figura 20 ($n = 20$):<br>$$E_{20} = \\frac{20 \\times 19}{2} = 10 \\times 19 = 190\\text{ bolinhas escuras}$$<br>3. <strong>Probabilidade de sortear uma bolinha escura:</strong><br>$$P = \\frac{E_{20}}{N_{\\text{total}}} = \\frac{190}{400} = \\frac{19}{40} = 0{,}475 = 47{,}5\\%$$<br>Portanto, a alternativa correta é a <strong>Letra C</strong>.",
@@ -12524,12 +12536,12 @@ var mathData = window.mathData || {
             "topicoId": "b4-t3"
           },
           {
-            "q": "(IFMG 2025.1 - Q30) Hipátia e Thales são irmãos e irão realizar, individualmente, uma determinada tarefa. Thales consegue realizá-la sozinho em 10 minutos.<br><br>Sabendo que Hipátia é 25% mais eficiente que Thales na execução da referida tarefa (considerando que ser mais eficiente significa realizar uma maior parte da tarefa no mesmo intervalo de tempo), qual fração dessa tarefa Hipátia terá concluído em 4 minutos?",
+            "q": "Hipátia e Thales são irmãos e irão realizar, individualmente, uma determinada tarefa. Thales consegue realizá-la sozinho em $10\\text{ minutos}$.\n\nSabendo que Hipátia é $25\\%$ mais eficiente que Thales na execução da referida tarefa (considerando que ser mais eficiente significa realizar uma maior parte da tarefa no mesmo intervalo de tempo), qual fração dessa tarefa Hipátia terá concluído em $4\\text{ minutos}$?",
             "options": [
-              "8/25",
-              "1/2",
-              "8/10",
-              "2/1"
+              "$\\frac{8}{25}$",
+              "$\\frac{1}{2}$",
+              "$\\frac{8}{10}$",
+              "$\\frac{2}{1}$"
             ],
             "correct": 1,
             "explanation": "Vamos determinar a taxa de trabalho de cada irmão:<br><br>1. <strong>Taxa de trabalho de Thales ($R_T$):</strong><br>Thales realiza 1 tarefa completa em 10 minutos:<br>$$R_T = \\frac{1}{10}\\text{ da tarefa por minuto}$$<br>2. <strong>Taxa de trabalho de Hipátia ($R_H$):</strong><br>Hipátia é $25\\%$ mais eficiente que Thales (sua taxa de trabalho é $1 + 0{,}25 = 1{,}25 = \\frac{5}{4}$ da taxa de Thales):<br>$$R_H = R_T \\times 1{,}25 = \\frac{1}{10} \\times \\frac{5}{4} = \\frac{5}{40} = \\frac{1}{8}\\text{ da tarefa por minuto}$$<br><em>(Isso indica que Hipátia faria a tarefa inteira sozinha em 8 minutos).</em><br><br>3. <strong>Fração da tarefa realizada por Hipátia em 4 minutos:</strong><br>$$\\text{Fração concluída} = R_H \\times 4 = \\frac{1}{8} \\times 4 = \\frac{4}{8} = \\frac{1}{2}$$<br>Portanto, em 4 minutos Hipátia terá concluído metade ($\\frac{1}{2}$) da tarefa.<br><br>Portanto, a alternativa correta é a <strong>Letra B</strong>.",
@@ -12537,7 +12549,8 @@ var mathData = window.mathData || {
             "bnccDesc": "Resolver e elaborar problemas que envolvam grandezas e proporcionalidade, utilizando noções de taxas de variação temporal e frações.",
             "unidadeTematica": "Álgebra",
             "anoEscolar": "7º ano",
-            "topicoId": "b2-t2"
+            "topicoId": "b2-t2",
+            "image": null
           }
         ],
         "slug": "prova-ifmg-20251",
@@ -12566,17 +12579,17 @@ var mathData = window.mathData || {
         },
         "questions": [
           {
-            "q": "(IFMG 2024.1 - Q16) As balanças a seguir estão em perfeito equilíbrio e possuem diferentes minerais colocados sobre seus pratos, cada um identificado por uma letra:<br><br>Qual das alternativas é a única que não contraria nenhuma das balanças em relação ao peso dos minerais?",
+            "q": "As balanças a seguir estão em perfeito equilíbrio e possuem diferentes minerais colocados sobre seus pratos, cada um identificado por uma letra:\n\nQual das alternativas é a única que não contraria nenhuma das balanças em relação ao peso dos minerais?",
             "image": {
               "src": "https://drive.google.com/file/d/1de7-YuiiVUEH4p9blhrBqs5ukI90qyJI/view?usp=sharing",
-              "alt": "Duas balanças de dois pratos em equilíbrio estático. A primeira balança possui 4 blocos S e 1 bloco Q no prato esquerdo equilibrando 1 bloco T no prato direito. A segunda balança possui 3 blocos R no prato esquerdo equilibrando 2 blocos T no prato direito.",
-              "caption": "Balanças em equilíbrio com blocos de minerais S, Q, T e R."
+              "alt": "Quatro balanças de pratos em equilíbrio com combinações dos pesos identificados pelas letras S, Q, T e R.",
+              "caption": "Balanças de dois pratos em equilíbrio com minerais S, Q, T e R."
             },
             "options": [
-              "S = 1, Q = 9, T = 13 e R = 9",
-              "S = 2, Q = 7, T = 15 e R = 10",
-              "S = 3, Q = 8, T = 20 e R = 13",
-              "S = 4, Q = 3, T = 18 e R = 13"
+              "$S = 1$, $Q = 9$, $T = 13$ e $R = 9$",
+              "$S = 2$, $Q = 7$, $T = 15$ e $R = 10$",
+              "$S = 3$, $Q = 8$, $T = 20$ e $R = 13$",
+              "$S = 4$, $Q = 3$, $T = 18$ e $R = 13$"
             ],
             "correct": 1,
             "explanation": "Como as balanças estão em perfeito equilíbrio, podemos traduzir seus pratos em equações lineares:<br>1. Primeira balança: 4 blocos de massa $S$ e 1 bloco de massa $Q$ equilibram 1 bloco de massa $T$:<br>$$4S + Q = T$$<br>2. Segunda balança: 3 blocos de massa $R$ equilibram 2 blocos de massa $T$:<br>$$3R = 2T$$<br>Vamos testar as alternativas fornecidas:<br><br>• <strong>Opção A ($S=1, Q=9, T=13, R=9$):</strong><br>  $4(1) + 9 = 13 = T$ (válida na 1ª balança)<br>  $3(9) = 27 \\ne 2(13) = 26$ (contraria a 2ª balança).<br><br>• <strong>Opção B ($S=2, Q=7, T=15, R=10$):</strong><br>  $4(2) + 7 = 8 + 7 = 15 = T$ (válida na 1ª balança!)<br>  $3(10) = 30$ e $2(15) = 30$ (válida na 2ª balança!)<br>  Esta alternativa satisfaz plenamente ambas as balanças.<br><br>• <strong>Opção C ($S=3, Q=8, T=20, R=13$):</strong><br>  $3(13) = 39 \\ne 2(20) = 40$ (contraria a 2ª balança).<br><br>• <strong>Opção D ($S=4, Q=3, T=18, R=13$):</strong><br>  $4(4) + 3 = 19 \\ne 18$ (contraria a 1ª balança).<br><br>Portanto, a alternativa correta é a <strong>Letra B</strong>.",
@@ -12587,17 +12600,17 @@ var mathData = window.mathData || {
             "topicoId": "b2-t3"
           },
           {
-            "q": "(IFMG 2024.1 - Q17) Um determinado jogo com várias cartas com desenhos de animais é jogado com as seguintes regras, em ordem:<br>(1) A banca sorteia e mostra 4 cartas, ainda sem uma ordem definida;<br>(2) Cada jogador recebe outras 3 cartas e as coloca lado a lado em uma ordem que não poderá ser mudada;<br>(3) A banca agora pega as 4 cartas sorteadas no começo e as coloca lado a lado de forma aleatória;<br>(4) Vence o jogador que conseguir enxergar exatamente sua sequência, da esquerda para direita, dentro da sequência da banca.<br><br>Considere agora as cartas sorteadas pela banca em determinada partida, ainda fora de ordem, conforme regra (1), e a sequência de 3 cartas do jogador, conforme regra (2):<br><br>A banca então embaralha suas quatro cartas sorteadas e irá colocá-las em ordem de forma aleatória. Neste momento, a probabilidade deste jogador vencer a partida conforme as regras é de, aproximadamente,",
+            "q": "Um determinado jogo com várias cartas com desenhos de animais é jogado com as seguintes regras, em ordem:\n\n(1) A banca sorteia e mostra 4 cartas, ainda sem uma ordem definida;\n(2) Cada jogador recebe outras 3 cartas e as coloca lado a lado em uma ordem que não poderá ser mudada;\n(3) A banca agora pega as 4 cartas sorteadas no começo e as coloca lado a lado de forma aleatória;\n(4) Vence o jogador que conseguir enxergar exatamente sua sequência, da esquerda para direita, dentro da sequência da banca.\n\nConsidere agora as cartas sorteadas pela banca em determinada partida, ainda fora de ordem, conforme regra (1):\n\nNesta partida, certo jogador recebeu e organizou suas 3 cartas na seguinte sequência, conforme regra (2):\n\nNote que se, por exemplo, a sequência da banca fosse a apresentada, o jogador ganharia a partida, pois sua sequência aparece dentro da sequência da banca.\n\nA banca então embaralha suas quatro cartas sorteadas e irá colocá-las em ordem de forma aleatória.\n\nNeste momento, a probabilidade deste jogador vencer a partida conforme as regras é de, aproximadamente:",
             "image": {
               "src": "https://drive.google.com/file/d/1sW0YMM_hsb7hChcwnar0QZ1h7P_WmxB3/view?usp=sharing",
-              "alt": "Cartas com ilustrações de animais. Acima, as cartas da banca: Vaca 1, Porco, Vaca 2 e Cavalo. Abaixo, a sequência do jogador: Porco, Vaca e Cavalo.",
-              "caption": "Cartas da banca e sequência fixa do jogador."
+              "alt": "Cartas com ilustrações de animais exibindo o conjunto sorteado pela banca e a sequência de três cartas do jogador.",
+              "caption": "Cartas da banca e sequência de cartas do jogador no jogo de animais."
             },
             "options": [
-              "4%",
-              "8%",
-              "17%",
-              "75%"
+              "$4\\%$",
+              "$8\\%$",
+              "$17\\%$",
+              "$75\\%$"
             ],
             "correct": 2,
             "explanation": "Vamos analisar detalhadamente as cartas envolvidas:<br><br>1. <strong>Composição das 4 cartas da banca:</strong><br>A banca sorteou: <strong>{Vaca 1, Porco, Vaca 2, Cavalo}</strong>.<br>Note que existem <strong>duas cartas com desenho de vaca</strong> ($V_1$ e $V_2$), uma de porco ($P$) e uma de cavalo ($C$).<br><br>2. <strong>Espaço amostral:</strong><br>Ao colocar as 4 cartas físicas em ordem aleatória lado a lado, existem $4! = 24$ permutações equiprováveis.<br><br>3. <strong>Condição de vitória do jogador:</strong><br>O jogador possui a sequência ordenada: <strong>(Porco, Vaca, Cavalo)</strong>, isto é, $(P, V, C)$.<br>Para o jogador vencer, o trio $(P, V, C)$ deve aparecer como um bloco contíguo na banca da esquerda para a direita. Isso pode acontecer usando a Vaca 1 ($V_1$) ou a Vaca 2 ($V_2$):<br>• <strong>Caso 1: O trio ocupa as 3 primeiras posições (posições 1, 2, 3):</strong><br>  - Formato $(P, V_1, C, V_2) \\implies 1$ permutação;<br>  - Formato $(P, V_2, C, V_1) \\implies 1$ permutação.<br>• <strong>Caso 2: O trio ocupa as 3 últimas posições (posições 2, 3, 4):</strong><br>  - Formato $(V_2, P, V_1, C) \\implies 1$ permutação;<br>  - Formato $(V_1, P, V_2, C) \\implies 1$ permutação.<br><br>4. <strong>Cálculo da probabilidade:</strong><br>Há exatamente $1 + 1 + 1 + 1 = 4$ permutações favoráveis dentre as 24 possíveis:<br>$$P = \\frac{4}{24} = \\frac{1}{6} \\approx 0{,}1667 = 16{,}67\\% \\approx 17\\%$$<br>Portanto, a probabilidade aproximada de vitória é de $17\\%$.<br><br>Portanto, a alternativa correta é a <strong>Letra C</strong>.",
@@ -12608,7 +12621,7 @@ var mathData = window.mathData || {
             "topicoId": "b4-t3"
           },
           {
-            "q": "(IFMG 2024.1 - Q18) Próximo a realização de uma eleição presidencial no Brasil é muito comum serem realizadas pesquisas de intenção de votos com a finalidade de identificar uma tendência de momento sobre a preferência dos eleitores. Sobre este tipo de pesquisa estatística, classifique cada afirmativa como (V) se for verdadeira e (F) se falsa:<br><br>i - É realizada através de um censo, considerando toda a população brasileira.<br>ii - Pode ser feita através de uma amostra casual simples, selecionando aleatoriamente alguns indivíduos da população.<br>iii - É realizada considerando estratos de ordem econômica, mantendo uma proporção para cada faixa de renda da amostra em relação a população.<br>iv - Se realizada apenas nas capitais dos estados será muito mais precisa.<br><br>Marque a alternativa que apresenta a correta avaliação das afirmativas na ordem em que foram apresentadas.",
+            "q": "Próximo a realização de uma eleição presidencial no Brasil é muito comum serem realizadas pesquisas de intenção de votos com a finalidade de identificar uma tendência de momento sobre a preferência dos eleitores. Sobre este tipo de pesquisa estatística, classifique cada afirmativa como (V) se for verdadeira e (F) se falsa:\n\ni - É realizada através de um censo, considerando toda a população brasileira.\nii - Pode ser feita através de uma amostra casual simples, selecionando aleatoriamente alguns indivíduos da população.\niii - É realizada considerando estratos de ordem econômica, mantendo uma proporção para cada faixa de renda da amostra em relação a população.\niv - Se realizada apenas nas capitais dos estados será muito mais precisa.\n\nMarque a alternativa que apresenta a correta avaliação das afirmativas na ordem em que foram apresentadas:",
             "options": [
               "FVVF",
               "FFVF",
@@ -12621,15 +12634,16 @@ var mathData = window.mathData || {
             "bnccDesc": "Selecionar razões, de diferentes naturezas (física, ética ou econômica), que justificam a realização de pesquisas amostrais e não censitárias, e compreender as etapas e o viés de uma pesquisa.",
             "unidadeTematica": "Probabilidade e Estatística",
             "anoEscolar": "8º ano",
-            "topicoId": "b4-t4"
+            "topicoId": "b4-t4",
+            "image": null
           },
           {
-            "q": "(IFMG 2024.1 - Q19) O espaço é grande, GRANDE MESMO. Não dá para acreditar o quanto ele é desmesuradamente inconcebivelmente estonteantemente grande. Você pode achar que da sua casa até a farmácia é longe, mas isso não é nada em comparação com o espaço.<br><em>(ADAMS, Douglas. O guia do mochileiro das galáxias. 1979)</em><br><br>Esta frase ajuda a entender porque devemos usar unidades de medida de comprimento diferentes das usuais para medir distâncias no espaço. Uma delas é a Unidade Astronômica (UA) que corresponde a distância entre a Terra e o Sol e equivale a cerca de 1,5 milhões de quilômetros. Outra é a Distância Lunar (DL), que corresponde à distância entre a Terra e a Lua e equivale a cerca de 384 mil quilômetros.<br><br>A distância da Terra à Lua, medida em UA, é igual, aproximadamente, a",
+            "q": "O espaço é grande, GRANDE MESMO. Não dá para acreditar o quanto ele é desmesuradamente inconcebivelmente estonteantemente grande. Você pode achar que da sua casa até a farmácia é longe, mas isso não é nada em comparação com o espaço.\n\nADAMS, Douglas. O guia do mochileiro das galáxias. 1979.\n\nEsta frase ajuda a entender porque devemos usar unidades de medida de comprimento diferentes das usuais para medir distâncias no espaço. Uma delas é a Unidade Astronômica (UA) que corresponde a distância entre a Terra e o Sol e equivale a cerca de $1{,}5\\text{ milhões de quilômetros}$. Outra é a Distância Lunar (DL), que corresponde à distância entre a Terra e a Lua e equivale a cerca de $384\\text{ mil quilômetros}$.\n\nA distância da Terra à Lua, medida em UA, é igual, aproximadamente, a:",
             "options": [
-              "0,004",
-              "0,256",
-              "3,906",
-              "256,0"
+              "$0{,}004$",
+              "$0{,}256$",
+              "$3{,}906$",
+              "$256{,}0$"
             ],
             "correct": 1,
             "explanation": "Vamos converter a distância da Terra à Lua para Unidades Astronômicas (UA):<br><br>1. <strong>Valores fornecidos:</strong><br>• $1\\text{ UA} \\approx 1{,}5\\text{ milhões de km} = 1.500.000\\text{ km}$<br>• Distância Terra-Lua: $d = 384\\text{ mil km} = 384.000\\text{ km}$<br><br>2. <strong>Cálculo da razão:</strong><br>$$d_{\\text{UA}} = \\frac{384.000\\text{ km}}{1.500.000\\text{ km}} = \\frac{384}{1.500}$$<br>Dividindo numerador e denominador por 3:<br>$$\\frac{384 \\div 3}{1.500 \\div 3} = \\frac{128}{500}$$<br>Multiplicando por 2 para obter denominador 1.000:<br>$$\\frac{128 \\times 2}{500 \\times 2} = \\frac{256}{1.000} = 0{,}256\\text{ UA}$$<br>Portanto, a alternativa correta é a <strong>Letra B</strong>.",
@@ -12637,10 +12651,11 @@ var mathData = window.mathData || {
             "bnccDesc": "Efetuar cálculos com potências de expoentes inteiros e aplicar esse conhecimento na representação de números em notação científica e grandezas de ordens de grandeza diversas.",
             "unidadeTematica": "Números",
             "anoEscolar": "8º ano",
-            "topicoId": "b1-t7"
+            "topicoId": "b1-t7",
+            "image": null
           },
           {
-            "q": "(IFMG 2024.1 - Q20) O termo em inglês cashback, que em tradução livre significa “dinheiro de volta”, é um programa de recompensas que muitas empresas estão adotando e que consiste em reembolsar ao cliente parte do valor de uma compra. A intenção destes programas é estimular os clientes a comprarem mais, já que em alguns casos estes reembolsos necessariamente devem ser gastos na mesma loja ou empresa.<br><br>A Manaus, uma grande loja de vendas online, oferece um programa de cashback para compra do novo smartphone da marca PEAR, no valor de $\\text{R\\$} 1200{,}00$, com duas opções:<br>1 - Compra à vista com 3% de cashback ou;<br>2 - Dividida em três parcelas iguais, sendo uma entrada, sem cashback, e outras duas parcelas, estas com 5% de cashback cada.<br><br>Assinale a alternativa que apresenta o maior valor correto de cashback dentre as opções de compra.",
+            "q": "O termo em inglês cashback, que em tradução livre significa “dinheiro de volta”, é um programa de recompensas que muitas empresas estão adotando e que consiste em reembolsar ao cliente parte do valor de uma compra. A intenção destes programas é estimular os clientes a comprarem mais, já que em alguns casos estes reembolsos necessariamente devem ser gastos na mesma loja ou empresa.\n\nA Manaus, uma grande loja de vendas online, oferece um programa de cashback para compra do novo smartphone da marca PEAR, no valor de $\\text{R\\$} 1.200{,}00$, com duas opções:\n\n1 - Compra à vista com $3\\%$ de cashback ou;\n2 - Dividida em três parcelas iguais, sendo uma entrada, sem cashback, e outras duas parcelas, estas com $5\\%$ de cashback cada.\n\nAssinale a alternativa que apresenta o maior valor correto de cashback dentre as opções de compra:",
             "options": [
               "Opção 1, com $\\text{R\\$} 360{,}00$ de cashback.",
               "Opção 1, com $\\text{R\\$} 3{,}60$ de cashback.",
@@ -12653,15 +12668,16 @@ var mathData = window.mathData || {
             "bnccDesc": "Resolver e elaborar problemas, envolvendo cálculo de porcentagens, no contexto da educação financeira e análise de decisões de consumo.",
             "unidadeTematica": "Números",
             "anoEscolar": "8º ano",
-            "topicoId": "b1-t6"
+            "topicoId": "b1-t6",
+            "image": null
           },
           {
-            "q": "(IFMG 2024.1 - Q21) Em setembro e início de outubro deste ano de 2023 aconteceram as semanas de moda internacionais. A temporada começou em Nova York, passando por Londres, Milão e terminando em Paris, com as marcas e estilistas destas quatro capitais apresentando as suas coleções de verão 2024.<br><br>Além das tendências, vimos a retomada por maior simplicidade das apresentações de alta-costura continuarem. Todos os desfiles ocorreram em período de 23 dias e 79 marcas e estilistas fizeram parte do evento. Considerando que os desfiles de Milão e Paris ocorreram em um total de 14 dias e que 42 marcas e estilistas participaram do evento nestas cidades; qual foi a média, aproximada, de desfiles diários em Paris e Milão?",
+            "q": "Em setembro e início de outubro deste ano de 2023 aconteceram as semanas de moda internacionais. A temporada começou em Nova York, passando por Londres, Milão e terminando em Paris, com as marcas e estilistas destas quatro capitais apresentando as suas coleções de verão 2024.\n\nAlém das tendências, vimos a retomada por maior simplicidade das apresentações de alta-costura continuarem.\n\nTodos os desfiles ocorreram em período de 23 dias e 79 marcas e estilistas fizeram parte do evento. Considerando que os desfiles de Milão e Paris ocorreram em um total de 14 dias e que 42 marcas e estilistas participaram do evento nestas cidades; qual foi a média, aproximada, de desfiles diários em Paris e Milão?",
             "options": [
-              "2",
-              "3",
-              "6",
-              "20"
+              "$2$",
+              "$3$",
+              "$6$",
+              "$20$"
             ],
             "correct": 1,
             "explanation": "O enunciado requer o cálculo da média diária de desfiles exclusivamente para as cidades de Milão e Paris.<br><br>Dados para Milão e Paris:<br>• Total de marcas e estilistas participantes (desfiles): 42<br>• Duração total do evento nestas duas cidades: 14 dias<br><br>Calculando a média diária:<br>$$\\text{Média} = \\frac{\\text{Total de desfiles}}{\\text{Total de dias}} = \\frac{42}{14} = 3\\text{ desfiles diários}$$<br>Portanto, a alternativa correta é a <strong>Letra B</strong>.",
@@ -12669,15 +12685,16 @@ var mathData = window.mathData || {
             "bnccDesc": "Compreender, em contextos significativos, o significado de média estatística como indicador da tendência de uma pesquisa e calcular seu valor.",
             "unidadeTematica": "Probabilidade e Estatística",
             "anoEscolar": "7º ano",
-            "topicoId": "b4-t4"
+            "topicoId": "b4-t4",
+            "image": null
           },
           {
-            "q": "(IFMG 2024.1 - Q22) As concessionárias de energia calculam o consumo das residências mensalmente efetuando a diferença entre a leitura do mês atual e do mês anterior. Cada cidade é regida por concessionárias diferentes e o período de leitura pode variar entre 27 e 33 dias. Essas informações podem ser lidas na conta de energia elétrica.<br><br>Digamos que a tarifa definida em um determinado estado seja de $\\text{R\\$} 0{,}50$ por consumo de kWh (quilowatt-hora). Em uma residência deste estado, a leitura do mês atual foi 58921 kWh e a leitura do mês anterior foi 58601 kWh. Foi considerado um período de leitura de 27 dias.<br><br>O consumo e o valor a ser pago são, respectivamente",
+            "q": "As concessionárias de energia calculam o consumo das residências mensalmente efetuando a diferença entre a leitura do mês atual e do mês anterior. Cada cidade é regida por concessionárias diferentes e o período de leitura pode variar entre 27 e 33 dias. Essas informações podem ser lidas na conta de energia elétrica.\n\nDigamos que a tarifa definida em um determinado estado seja de $\\text{R\\$} 0{,}50$ por consumo de $\\text{kWh}$ (quilowatt-hora). Em uma residência deste estado, a leitura do mês atual foi $58.921\\text{ kWh}$ e a leitura do mês anterior foi $58.601\\text{ kWh}$. Foi considerado um período de leitura de 27 dias.\n\nO consumo e o valor a ser pago são, respectivamente:",
             "options": [
-              "320 kWh e $\\text{R\\$} 160{,}00$",
-              "320 kWh e $\\text{R\\$} 173{,}50$",
-              "347 kWh e $\\text{R\\$} 160{,}00$",
-              "347 kWh e $\\text{R\\$} 173{,}50$"
+              "$320\\text{ kWh}$ e $\\text{R\\$} 160{,}00$",
+              "$320\\text{ kWh}$ e $\\text{R\\$} 173{,}50$",
+              "$347\\text{ kWh}$ e $\\text{R\\$} 160{,}00$",
+              "$347\\text{ kWh}$ e $\\text{R\\$} 173{,}50$"
             ],
             "correct": 0,
             "explanation": "Seguindo a regra de cálculo descrita no enunciado:<br><br>1. <strong>Cálculo do consumo de energia no período:</strong><br>$$\\text{Consumo} = \\text{Leitura Atual} - \\text{Leitura Anterior} = 58.921 - 58.601 = 320\\text{ kWh}$$<br>2. <strong>Cálculo do valor monetário a ser pago:</strong><br>Multiplica-se o consumo pela tarifa de $\\text{R\\$} 0{,}50$ por kWh:<br>$$\\text{Valor} = 320 \\times 0{,}50 = \\text{R\\$} 160{,}00$$<br>Assim, o consumo e o valor a ser pago são, respectivamente, <strong>320 kWh</strong> e <strong>$\\text{R\\$} 160{,}00$</strong>.<br><br>Portanto, a alternativa correta é a <strong>Letra A</strong>.",
@@ -12685,20 +12702,21 @@ var mathData = window.mathData || {
             "bnccDesc": "Resolver e elaborar problemas que envolvam cálculos com números naturais e decimais por meio de estratégias variadas.",
             "unidadeTematica": "Números",
             "anoEscolar": "6º ano",
-            "topicoId": "b1-t2"
+            "topicoId": "b1-t2",
+            "image": null
           },
           {
-            "q": "(IFMG 2024.1 - Q23) Na figura a seguir, temos que o segmento $\\overline{AB}$ mede 6cm e que a área do retângulo ABCD é de 33cm².<br><br>Sabendo que N é o ponto médio do segmento $\\overline{DC}$ e que M é o ponto médio do segmento $\\overline{AD}$; o comprimento, em centímetros, do segmento $\\overline{AM}$ é",
+            "q": "Na figura a seguir, temos que o segmento $\\overline{AB}$ mede $6\\text{ cm}$ e que a área do retângulo $ABCD$ é de $33\\text{ cm}^2$.\n\nSabendo que $N$ é o ponto médio do segmento $\\overline{AD}$ e que $M$ é o ponto médio do segmento $\\overline{BC}$; o comprimento, em centímetros, do segmento $\\overline{MN}$ é:",
             "image": {
               "src": "https://drive.google.com/file/d/1xbjNLudroqVaQPN9sAsu4Kmuw_Lts8Li/view?usp=sharing",
-              "alt": "Retângulo ABCD com base horizontal AB medindo 6 cm. O ponto N é o ponto médio do lado superior DC e o ponto M é o ponto médio do lado vertical esquerdo AD.",
-              "caption": "Retângulo ABCD com pontos médios M e N."
+              "alt": "Retângulo ABCD com pontos médios M em BC e N em AD, com segmento MN conectando os lados opostos.",
+              "caption": "Retângulo ABCD com pontos médios M e N destacados."
             },
             "options": [
-              "2,75",
-              "8,25",
-              "11,5",
-              "23,0"
+              "$2{,}75$",
+              "$8{,}25$",
+              "$11{,}5$",
+              "$23{,}0$"
             ],
             "correct": 0,
             "explanation": "No retângulo $ABCD$:<br>• Base $AB = 6\\text{ cm}$<br>• Área total: $\\text{Área} = AB \\times AD = 33\\text{ cm}^2$<br><br>1. <strong>Cálculo do lado vertical $AD$:</strong><br>$$AD = \\frac{\\text{Área}}{AB} = \\frac{33}{6} = \\frac{11}{2} = 5{,}5\\text{ cm}$$<br>2. <strong>Cálculo do segmento $AM$:</strong><br>Como $M$ é o ponto médio do segmento $\\overline{AD}$:<br>$$AM = \\frac{AD}{2} = \\frac{5{,}5}{2} = 2{,}75\\text{ cm}$$<br>Portanto, a alternativa correta é a <strong>Letra A</strong>.",
@@ -12709,17 +12727,17 @@ var mathData = window.mathData || {
             "topicoId": "b4-t1"
           },
           {
-            "q": "(IFMG 2024.1 - Q24) Uma das marcas registradas da Praça Sete, situada no centro de Belo Horizonte – MG, é o monumento conhecido como Pirulito, que foi esculpido por ideia do então presidente do Estado, Raul Soares. O obelisco tem 13,57 metros de altura total, é feito de granito e tem o formato de uma agulha, com sete metros de altura, apoiada em um pedestal. A peça foi desenhada pelo arquiteto Antônio Rego e construído pelo engenheiro Antônio Gonçalves Gravatá, proprietário da pedreira em Betim de onde foram extraídas as pedras utilizadas na construção do marco.<br><br>Um pássaro voou em linha reta do topo do “Pirulito” até um determinado ponto X no chão. A distância do centro da base do obelisco até o ponto X é igual a 13,29 metros. Qual foi a distância aproximada, em metros, percorrida por este pássaro?",
+            "q": "Uma das marcas registradas da Praça Sete, situada no centro de Belo Horizonte – MG, é o monumento conhecido como Pirulito, que foi esculpido por ideia do então presidente do Estado, Raul Soares. O obelisco tem $13{,}57\\text{ metros}$ de altura total, é feito de granito e tem o formato de uma agulha, com sete metros de altura, apoiada em um pedestal. A peça foi desenhada pelo arquiteto Antônio Rego e construído pelo engenheiro Antônio Gonçalves Gravatá, proprietário da pedreira em Betim de onde foram extraídas as pedras utilizadas na construção do marco.\n\nUm pássaro voou em linha reta do topo do “Pirulito” até um determinado ponto X no chão. A distância do centro da base do obelisco até o ponto X é igual a $13{,}29\\text{ metros}$. Qual foi a distância aproximada, em metros, percorrida por este pássaro?",
             "image": {
               "src": "https://drive.google.com/file/d/1mEWZYPcwks0JuZ9iyP3Rg9BMauaG3l9L/view?usp=sharing",
-              "alt": "Fotografia em preto e branco do obelisco comemorativo do centenário da independência (Pirulito da Praça Sete) situado no centro de Belo Horizonte.",
-              "caption": "Monumento 'Pirulito da Praça Sete', Belo Horizonte - MG."
+              "alt": "Fotografia histórica do obelisco Monumento à Independência na Praça Sete em Belo Horizonte.",
+              "caption": "Monumento comemorativo da Praça Sete (Belo Horizonte - MG)."
             },
             "options": [
-              "0,3",
-              "19",
-              "27",
-              "361"
+              "$0{,}3$",
+              "$19$",
+              "$27$",
+              "$361$"
             ],
             "correct": 1,
             "explanation": "A situação forma um triângulo retângulo no espaço vertical:<br>• Cateto vertical (altura total do obelisco): $h = 13{,}57\\text{ m}$<br>• Cateto horizontal (distância da base ao ponto $X$ no chão): $d = 13{,}29\\text{ m}$<br>• Hipotenusa (trajetória retilínea do pássaro): $D$<br><br>Aplicando o Teorema de Pitágoras:<br>$$D^2 = h^2 + d^2 = (13{,}57)^2 + (13{,}29)^2$$<br>Calculando os quadrados das medidas:<br>$$(13{,}57)^2 \\approx 184{,}14$$<br>$$(13{,}29)^2 \\approx 176{,}62$$<br>$$D^2 \\approx 184{,}14 + 176{,}62 = 360{,}76$$<br>Extraindo a raiz quadrada:<br>$$D \\approx \\sqrt{361} = 19\\text{ metros}$$<br>Portanto, a alternativa correta é a <strong>Letra B</strong>.",
@@ -12730,12 +12748,12 @@ var mathData = window.mathData || {
             "topicoId": "b3-t2"
           },
           {
-            "q": "(IFMG 2024.1 - Q25) Seja z um número real maior que 1. A expressão<br>$$\\frac{\\sqrt[7]{z^8 \\sqrt[3]{\\sqrt{z^8}}}}{\\sqrt[3]{z}}$$é equivalente a",
+            "q": "Seja $z$ um número real maior que 1. A expressão\n\n$$\\frac{\\sqrt[7]{z^8 \\sqrt[3]{\\sqrt{z^8}}}}{\\sqrt[3]{z}}$$\n\né equivalente a:",
             "options": [
-              "z^{25/21}",
-              "z^{5/3}",
-              "z",
-              "z^4"
+              "$z^{25/21}$",
+              "$z^{5/3}$",
+              "$z$",
+              "$z^4$"
             ],
             "correct": 2,
             "explanation": "Vamos simplificar a expressão utilizando as propriedades operatórias de potenciação e radiciação:<br><br><strong>1. Simplificação do radical interno:</strong><br>$$\\sqrt[3]{\\sqrt{z^8}} = \\sqrt[3 \\times 2]{z^8} = \\sqrt[6]{z^8} = z^{\\frac{8}{6}} = z^{\\frac{4}{3}}$$<br><em>(Ou: $\\sqrt{z^8} = z^4 \\implies \\sqrt[3]{z^4} = z^{\\frac{4}{3}}$)</em>.<br><br><strong>2. Multiplicação no radicando do numerador:</strong><br>$$z^8 \\cdot \\sqrt[3]{\\sqrt{z^8}} = z^8 \\cdot z^{\\frac{4}{3}} = z^{8 + \\frac{4}{3}} = z^{\\frac{24 + 4}{3}} = z^{\\frac{28}{3}}$$<br><strong>3. Aplicação da raiz sétima:</strong><br>$$\\sqrt[7]{z^{\\frac{28}{3}}} = \\left(z^{\\frac{28}{3}}\\right)^{\\frac{1}{7}} = z^{\\frac{28}{21}} = z^{\\frac{4}{3}}$$<br><strong>4. Divisão pelo denominador $\\sqrt[3]{z} = z^{\\frac{1}{3}}$:</strong><br>$$\\frac{z^{\\frac{4}{3}}}{z^{\\frac{1}{3}}} = z^{\\frac{4}{3} - \\frac{1}{3}} = z^{\\frac{3}{3}} = z^1 = z$$<br>Portanto, a alternativa correta é a <strong>Letra C</strong>.",
@@ -12743,20 +12761,21 @@ var mathData = window.mathData || {
             "bnccDesc": "Efetuar cálculos com números reais, inclusive potências com expoentes fracionários e propriedades de radicais.",
             "unidadeTematica": "Números",
             "anoEscolar": "9º ano",
-            "topicoId": "b1-t7"
+            "topicoId": "b1-t7",
+            "image": null
           },
           {
-            "q": "(IFMG 2024.1 - Q26) Um professor de matemática do IFMG pediu que Antônio, o seu monitor bolsista, resolvesse dois sistemas lineares. Porém, Ana apagou parte dos sistemas, conforme ilustração na lousa a seguir:<br><br>Essa atitude de Ana dificultou para Antônio a resolução dos dois sistemas, mas ele lembrou de uma informação dada pelo professor de que os segundos membros apagados das equações eram constantes e iguais entre si, e, que os sistemas eram equivalentes, ou seja, que apresentavam a mesma solução.<br><br>Dessa forma, os membros constantes apagados eram iguais a",
+            "q": "Um professor de matemática do IFMG pediu que Antônio, o seu monitor bolsista, resolvesse dois sistemas lineares. Porém, Ana apagou parte dos sistemas, conforme ilustração na lousa a seguir:\n\nEssa atitude de Ana dificultou para Antônio a resolução dos dois sistemas, mas ele lembrou de uma informação dada pelo professor de que os segundos membros apagados das equações eram constantes e iguais entre si, e, que os sistemas eram equivalentes, ou seja, que apresentavam a mesma solução.\n\nDessa forma, os membros constantes apagados eram iguais a:",
             "image": {
               "src": "https://drive.google.com/file/d/1TayCxRZkzWD-7hVYhlBC05bZ5YpD2IMS/view?usp=sharing",
-              "alt": "Ilustração de lousa escolar com o título 'QUESTÃO 01 - SISTEMAS DE EQUAÇÕES'. No primeiro sistema há as equações 2x - y = [apagado] e -x + y = -3. No segundo sistema há a equação x - 3y = [apagado].",
-              "caption": "Sistemas de equações com membros constantes apagados na lousa."
+              "alt": "Lousa com dois sistemas lineares com os termos constantes após a igualdade parcialmente apagados.",
+              "caption": "Sistemas lineares equivalentes anotados na lousa."
             },
             "options": [
-              "– 6",
-              "– 5",
-              "– 3",
-              "5"
+              "$-6$",
+              "$-5$",
+              "$-3$",
+              "$5$"
             ],
             "correct": 3,
             "explanation": "Seja $k$ o valor da constante comum que foi apagada dos sistemas lineares.<br><br>As equações visíveis nos sistemas são:<br>• Da 1ª linha do Sistema 1: $2x - y = k$<br>• Da 2ª linha do Sistema 1: $-x + y = -3$<br>• Da 1ª linha do Sistema 2: $x - 3y = k$<br><br>Como os sistemas são <strong>equivalentes</strong>, possuem o mesmo par ordenado solução $(x, y)$.<br><br>1. <strong>Igualando as duas expressões que equivalem a $k$:</strong><br>$$2x - y = x - 3y$$<br>$$2x - x = -3y + y \\implies x = -2y$$<br>2. <strong>Substituindo na equação completa $-x + y = -3$:</strong><br>$$-(-2y) + y = -3$$<br>$$2y + y = -3 \\implies 3y = -3 \\implies y = -1$$<br>3. <strong>Encontrando o valor de $x$:</strong><br>$$x = -2(-1) = 2$$<br>4. <strong>Determinando a constante apagada $k$:</strong><br>Substituindo $x = 2$ e $y = -1$ em $k = 2x - y$:<br>$$k = 2(2) - (-1) = 4 + 1 = 5$$<br>Conferindo na terceira equação: $x - 3y = 2 - 3(-1) = 2 + 3 = 5$.<br><br>Logo, os membros constantes apagados eram iguais a <strong>5</strong>.<br><br>Portanto, a alternativa correta é a <strong>Letra D</strong>.",
@@ -12767,12 +12786,12 @@ var mathData = window.mathData || {
             "topicoId": "b2-t3"
           },
           {
-            "q": "(IFMG 2024.1 - Q27) A equação $y = ax + b$ é comumente denominada “equação reduzida da reta”. A preferência a esse formato se dá pelo fato de se evidenciar o coeficiente angular “a”, importante elemento por caracterizar a inclinação da reta, ou a taxa de variação das grandezas envolvidas em um problema de modelagem. Ela também evidencia o ponto em que a reta intersecta o eixo y, definido por (0,b) no plano cartesiano. Através da equação reduzida da reta é possível encontrar também o ponto de intersecção da reta com o eixo x, cuja abscissa é dada por $x = -\\frac{b}{a}$.<br><br>Sejam duas retas r e s contidas no plano cartesiano. A reta r de equação $y = \\frac{2}{5}x + 2$ intersecta o eixo x no ponto A e o eixo y no ponto B. Já a reta s de equação $y = \\frac{4}{7}x - 4$ intersecta o eixo x no ponto C e o eixo y no ponto D. Ligando-se os pontos A, B, C e D, obtém-se o quadrilátero ABCD.<br><br>Desta forma, a área desse quadrilátero, em unidades de área, é",
+            "q": "A equação $y = ax + b$ é comumente denominada “equação reduzida da reta”. A preferência a esse formato se dá pelo fato de se evidenciar o coeficiente angular “a”, importante elemento por caracterizar a inclinação da reta, ou a taxa de variação das grandezas envolvidas em um problema de modelagem. Ela também evidencia o ponto em que a reta intersecta o eixo y, definido por $(0, b)$ no plano cartesiano. Através da equação reduzida da reta é possível encontrar também o ponto de intersecção da reta com o eixo x, cuja abscissa é dada por $x = -\\frac{b}{a}$.\n\nSejam duas retas $r$ e $s$ contidas no plano cartesiano. A reta $r$ de equação $y = \\frac{2}{5}x + 2$ intersecta o eixo x no ponto A e o eixo y no ponto B. Já a reta $s$ de equação $y = \\frac{4}{7}x - 4$ intersecta o eixo x no ponto C e o eixo y no ponto D. Ligando-se os pontos A, B, C e D, obtém-se o quadrilátero ABCD.\n\nDesta forma, a área desse quadrilátero, em unidades de área, é:",
             "options": [
-              "36",
-              "38",
-              "43",
-              "72"
+              "$36$",
+              "$38$",
+              "$43$",
+              "$72$"
             ],
             "correct": 0,
             "explanation": "Vamos encontrar as coordenadas dos quatro vértices do quadrilátero $ABCD$ através dos pontos de interseção com os eixos coordenados:<br><br><strong>1. Reta $r: y = \\frac{2}{5}x + 2$:</strong><br>• Ponto $A$ (interseção com eixo $x$, $y = 0$):<br>  $$0 = \\frac{2}{5}x + 2 \\implies \\frac{2}{5}x = -2 \\implies x = -5 \\implies A = (-5, 0)$$<br>• Ponto $B$ (interseção com eixo $y$, $x = 0$):<br>  $$y = 2 \\implies B = (0, 2)$$<br><strong>2. Reta $s: y = \\frac{4}{7}x - 4$:</strong><br>• Ponto $C$ (interseção com eixo $x$, $y = 0$):<br>  $$0 = \\frac{4}{7}x - 4 \\implies \\frac{4}{7}x = 4 \\implies x = 7 \\implies C = (7, 0)$$<br>• Ponto $D$ (interseção com eixo $y$, $x = 0$):<br>  $$y = -4 \\implies D = (0, -4)$$<br><strong>3. Área do quadrilátero $ABCD$:</strong><br>Observe que os vértices $A(-5, 0)$ e $C(7, 0)$ estão sobre o eixo horizontal $x$, enquanto os vértices $B(0, 2)$ e $D(0, -4)$ estão sobre o eixo vertical $y$.<br>Como os eixos cartesianos são perpendiculares, as diagonais do quadrilátero são perpendiculares entre si:<br>• Diagonal horizontal $AC = 7 - (-5) = 12$<br>• Diagonal vertical $BD = 2 - (-4) = 6$<br><br>A área de qualquer quadrilátero com diagonais ortogonais é:<br>$$\\text{Área} = \\frac{d_1 \\times d_2}{2} = \\frac{AC \\times BD}{2} = \\frac{12 \\times 6}{2} = \\frac{72}{2} = 36\\text{ unidades de área}$$<br>Portanto, a alternativa correta é a <strong>Letra A</strong>.",
@@ -12780,20 +12799,21 @@ var mathData = window.mathData || {
             "bnccDesc": "Compreender as funções do 1º grau, suas representações algébrica e gráfica no plano cartesiano, e calcular áreas de figuras determinadas por retas.",
             "unidadeTematica": "Álgebra",
             "anoEscolar": "9º ano",
-            "topicoId": "b4-t1"
+            "topicoId": "b4-t1",
+            "image": null
           },
           {
-            "q": "(IFMG 2024.1 - Q28) O trapézio retângulo ABCD representado na figura a seguir tem a base maior medindo 16 cm, base menor medindo 4 cm.<br><br>Conforme a figura, as diagonais AC e BD se intersectam no ponto E formando um ângulo de 90°.<br><br>A medida do segmento BC, em cm, é",
+            "q": "O trapézio retângulo ABCD representado na figura a seguir tem a base maior medindo $16\\text{ cm}$, base menor medindo $4\\text{ cm}$.\n\nConforme a figura, as diagonais AC e BD se intersectam no ponto E formando um ângulo de $90^\\circ$.\n\nA medida do segmento $\\overline{BC}$, em $\\text{cm}$, é:",
             "image": {
               "src": "https://drive.google.com/file/d/1Tmqt3jf4LndOuChdv9wPnNAYt3SKb4AT/view?usp=sharing",
-              "alt": "Trapézio retângulo ABCD com ângulos retos em A e D. Base menor DC mede 4 cm e base maior AB mede 16 cm. As diagonais AC e BD são perpendiculares entre si no ponto E.",
-              "caption": "Trapézio retângulo com diagonais perpendiculares."
+              "alt": "Trapézio retângulo ABCD com bases de 16 cm e 4 cm e diagonais perpendiculares interceptando-se no ponto E.",
+              "caption": "Trapézio retângulo ABCD com diagonais perpendiculares no ponto E."
             },
             "options": [
-              "10",
-              "4\\sqrt{13}",
-              "2\\sqrt{61}",
-              "20"
+              "$10$",
+              "$4\\sqrt{13}$",
+              "$2\\sqrt{61}$",
+              "$20$"
             ],
             "correct": 1,
             "explanation": "No trapézio retângulo $ABCD$, temos $\\angle DAB = \\angle ADC = 90^\\circ$, $AB = 16\\text{ cm}$ e $CD = 4\\text{ cm}$. As diagonais $AC$ e $BD$ são perpendiculares no ponto $E$.<br><br><strong>Passo 1: Determinar a altura $h = AD$ do trapézio:</strong><br>Podemos utilizar a semelhança dos triângulos retângulos formados pelas diagonais ou geometria analítica:<br>• Seja $A = (0, 0)$, $D = (0, h)$, $C = (4, h)$ e $B = (16, 0)$.<br>• Coeficiente angular da diagonal $AC$: $m_{AC} = \\frac{h - 0}{4 - 0} = \\frac{h}{4}$.<br>• Coeficiente angular da diagonal $BD$: $m_{BD} = \\frac{h - 0}{0 - 16} = -\\frac{h}{16}$.<br>Como as diagonais são perpendiculares, o produto de seus coeficientes angulares é $-1$:<br>$$m_{AC} \\times m_{BD} = -1 \\implies \\left(\\frac{h}{4}\\right) \\left(-\\frac{h}{16}\\right) = -1$$<br>$$\\frac{h^2}{64} = 1 \\implies h^2 = 64 \\implies h = 8\\text{ cm}$$<br>Assim, a altura do trapézio é $AD = 8\\text{ cm}$.<br><br><strong>Passo 2: Calcular a medida do lado oblíquo $BC$:</strong><br>Traçando a altura perpendicular do vértice $C$ até a base maior $AB$, obtemos o ponto $H$ sobre $AB$ tal que:<br>• $AH = CD = 4\\text{ cm}$<br>• $HB = AB - AH = 16 - 4 = 12\\text{ cm}$<br>• $CH = AD = 8\\text{ cm}$<br><br>Aplicando o Teorema de Pitágoras no triângulo retângulo $CHB$:<br>$$BC^2 = CH^2 + HB^2 = 8^2 + 12^2 = 64 + 144 = 208$$<br>Fatorando 208 em fatores primos ($208 = 16 \\times 13$):<br>$$BC = \\sqrt{208} = \\sqrt{16 \\times 13} = 4\\sqrt{13}\\text{ cm}$$<br>Portanto, a alternativa correta é a <strong>Letra B</strong>.",
@@ -12804,7 +12824,7 @@ var mathData = window.mathData || {
             "topicoId": "b3-t2"
           },
           {
-            "q": "(IFMG 2024.1 - Q29) Atualmente os livros didáticos deixaram de abordar diversos critérios de divisibilidade envolvendo números primos como são os casos dos critérios de divisibilidade por 7, 13, 17, 19, 23, 29, etc. Uma curiosidade é que todos esses critérios citados acima envolvendo esses números primos apresentam regras distintas e algumas bastantes parecidas como as apresentadas a seguir.<br><br>Divisibilidade por 7: Um número é divisível por 7 se ao subtrairmos esse número sem o algarismo da 1ª ordem pelo dobro desse algarismo de 1ª ordem, resultar em um número divisível por 7. Caso ainda não seja suficiente identificar se o número resultante dessa operação é divisível por 7, repete-se o processo até que se possa verificar a divisibilidade por 7.<br>Exemplo: 203 é divisível por 7, pois 20 – 2(3) = 14. E 14 é divisível por 7.<br><br>Divisibilidade por 13: Um número é divisível por 13 se ao somarmos esse número sem o algarismo da 1ª ordem com quádruplo desse algarismo de 1ª ordem, resultar em um número divisível por 13. Caso ainda não seja suficiente identificar se o número resultante dessa operação é divisível por 13, repete-se o processo até que se possa verificar a divisibilidade por 13.<br>Exemplo: 624 é divisível por 13, pois 62 + 4(4) = 62 + 16 = 78. É fácil perceber que 78 é divisível por 13, pois 6 × 13 = 78. Mas podemos continuar o processo, pois 7 + 4(8) = 39 que é divisível por 13.<br><br>Essa regra também ocorre em alguns critérios de divisibilidade por 17, 19, 23, 29, etc... diferindo-se apenas no fator multiplicativo e na operação (adição ou subtração) em que eles estão envolvidos.<br><br>Sabendo-se que o número inteiro positivo A54321, formado por exatamente 6 algarismos do sistema de numeração decimal, é divisível por 13, então o algarismo A é",
+            "q": "Atualmente os livros didáticos deixaram de abordar diversos critérios de divisibilidade envolvendo números primos como são os casos dos critérios de divisibilidade por 7, 13, 17, 19, 23, 29, etc. Uma curiosidade é que todos esses critérios citados acima envolvendo esses números primos apresentam regras distintas e algumas bastantes parecidas como as apresentadas a seguir.\n\n**Divisibilidade por 7:** Um número é divisível por 7 se ao subtrairmos esse número sem o algarismo da 1ª ordem pelo dobro desse algarismo de 1ª ordem, resultar em um número divisível por 7. Caso ainda não seja suficiente identificar se o número resultante dessa operação é divisível por 7, repete-se o processo até que se possa verificar a divisibilidade por 7.\n*Exemplo:* 203 é divisível por 7, pois $20 - 2(3) = 14$, e 14 é divisível por 7.\n\n**Divisibilidade por 13:** Um número é divisível por 13 se ao somarmos esse número sem o algarismo da 1ª ordem com quádruplo desse algarismo de 1ª ordem, resultar em um número divisível por 13. Caso ainda não seja suficiente identificar se o número resultante dessa operação é divisível por 13, repete-se o processo até que se possa verificar a divisibilidade por 13.\n*Exemplo:* 624 é divisível por 13, pois $62 + 4(4) = 62 + 16 = 78$. É fácil perceber que 78 é divisível por 13, pois $6 \\times 13 = 78$. Mas podemos continuar o processo, pois $7 + 4(8) = 39$, que é divisível por 13.\n\nEssa regra também ocorre em alguns critérios de divisibilidade por 17, 19, 23, 29, etc., diferindo-se apenas no fator multiplicativo e na operação (adição ou subtração) em que eles estão envolvidos.\n\nSabendo-se que o número inteiro positivo A54321, formado por exatamente 6 algarismos do sistema de numeração decimal, é divisível por 13, então o algarismo A é:",
             "options": [
               "um número ímpar.",
               "um quadrado perfeito.",
@@ -12817,15 +12837,16 @@ var mathData = window.mathData || {
             "bnccDesc": "Classificar números naturais em primos e compostos, estabelecer relações entre números expressas pelos termos 'é múltiplo de', 'é divisor de', e aplicar critérios de divisibilidade.",
             "unidadeTematica": "Números",
             "anoEscolar": "6º ano",
-            "topicoId": "b1-t3"
+            "topicoId": "b1-t3",
+            "image": null
           },
           {
-            "q": "(IFMG 2024.1 - Q30) O conjunto dos números racionais ($\\mathbb{Q}$) é infinito, porém enumerável. Todos os números racionais podem ser representados por uma fração da forma $\\frac{p}{q}$, sendo $p$ um número inteiro ($p \\in \\mathbb{Z}$) e $q$ um número inteiro não nulo ($q \\in \\mathbb{Z}^*$). Dessa forma, é sempre possível determinar a quantidade de frações compreendidas entre duas frações que apresentam um determinado denominador específico.<br><br>A quantidade de frações compreendidas entre $\\frac{5}{13}$ e $\\frac{4}{7}$, cujo denominador é 91 e o numerador é um número par, é",
+            "q": "O conjunto dos números racionais ($\\mathbb{Q}$) é infinito, porém enumerável. Todos os números racionais podem ser representados por uma fração da forma $\\frac{p}{q}$, sendo $p$ um número inteiro ($p \\in \\mathbb{Z}$) e $q$ um número inteiro não nulo ($q \\in \\mathbb{Z}^*$). Dessa forma, é sempre possível determinar a quantidade de frações compreendidas entre duas frações que apresentam um determinado denominador específico.\n\nA quantidade de frações compreendidas entre $\\frac{5}{13}$ e $\\frac{4}{7}$, cujo denominador é 91 e o numerador é um número par, é:",
             "options": [
-              "1",
-              "2",
-              "3",
-              "8"
+              "$1$",
+              "$2$",
+              "$3$",
+              "$8$"
             ],
             "correct": 3,
             "explanation": "Queremos encontrar frações da forma $\\frac{k}{91}$, em que $k$ é um número inteiro par, satisfazendo a desigualdade estrita:<br>$$\\frac{5}{13} < \\frac{k}{91} < \\frac{4}{7}$$<br>Como o mínimo múltiplo comum entre 13 e 7 é $13 \\times 7 = 91$, escrevemos as frações extremas com denominador 91:<br>• $\\frac{5}{13} = \\frac{5 \\times 7}{13 \\times 7} = \\frac{35}{91}$<br>• $\\frac{4}{7} = \\frac{4 \\times 13}{7 \\times 13} = \\frac{52}{91}$<br><br>Assim, a condição para o numerador inteiro $k$ é:<br>$$35 < k < 52$$<br>Os valores pares de $k$ nesse intervalo são:<br>$$k \\in \\{36, 38, 40, 42, 44, 46, 48, 50\\}$$<br>Contando esses elementos:<br>$$\\text{Quantidade} = \\frac{50 - 36}{2} + 1 = \\frac{14}{2} + 1 = 7 + 1 = 8\\text{ números}$$<br>Portanto, existem exatamente <strong>8 frações</strong> que satisfazem todas as condições dadas.<br><br>Portanto, a alternativa correta é a <strong>Letra D</strong>.",
@@ -12833,7 +12854,8 @@ var mathData = window.mathData || {
             "bnccDesc": "Resolver um mesmo problema utilizando diferentes algoritmos e comparar e ordenar frações associadas às ideias de partes de inteiros e ordenação na reta numérica.",
             "unidadeTematica": "Números",
             "anoEscolar": "7º ano",
-            "topicoId": "b1-t4"
+            "topicoId": "b1-t4",
+            "image": null
           }
         ],
         "slug": "prova-ifmg-20241",
@@ -12887,12 +12909,12 @@ var mathData = window.mathData || {
             }
           },
           {
-            "q": "O Banco Central (BC) estabelece metas para a inflação medida pelo Índice de Preços ao Consumidor Amplo (IPCA). Suponha que para o ano de 2023 a meta de inflação esteja definida em $3{,}5\\%$ ao ano, com uma margem de tolerância de $\\pm 1{,}5\\%$, ou seja, a taxa anual pode oscilar entre $2\\%$ (piso da meta) e $5\\%$ (teto da meta) para ser considerada formalmente atendida.\n\nConsiderando-se que no primeiro semestre de 2023 o IPCA acumulou $3\\%$, e no segundo semestre a taxa acumulada do IPCA foi de $2\\%$, pode-se afirmar que:",
+            "q": "**Banco Central mantém taxa Selic em 13,75%**\n\nO Banco Central decidiu nesta quarta-feira (22) manter, novamente, a taxa Selic em $13{,}75\\%$. A decisão foi tomada por unanimidade pelo Comitê de Política Monetária (Copom). A manutenção já era esperada por analistas do mercado financeiro, mesmo após fortes críticas do governo federal. A Selic é uma taxa importante na vida de todos os brasileiros porque ela é o índice que interfere em todos os juros que nós pagamos.\n\n*(Publicado em 22/03/2023 - Rádio Nacional – Brasília)*\n\nA reportagem acima aborda a taxa Selic, importante instrumento do Banco Central (BC) para o controle da taxa de inflação (Índice de Preços ao Consumidor Amplo - IPCA). Uma taxa Selic alta tende a reduzir a inflação, convergindo-a para a meta anual definida pelo BC.\n\nSuponha que para o ano de 2023 a meta de inflação esteja definida para $3{,}5\\%$ ao ano, com uma margem de erro de $1{,}5\\%$, ou seja, a meta pode oscilar entre $2\\%$ (piso da meta) e $5\\%$ (teto da meta) anuais sendo considerada como atendida.\n\nConsiderando-se que no primeiro semestre de 2023 o IPCA esteja acumulado em $3\\%$, se a taxa do segundo semestre para o IPCA for de $2\\%$, pode-se afirmar que:",
             "options": [
-              "a meta estabelecida pelo BC foi atendida, já que o valor acumulado é de 2,5% no ano.",
-              "a meta estabelecida pelo BC foi atendida, já que o valor acumulado é de 5% no ano.",
-              "a meta estabelecida pelo BC não foi atendida, já que o valor acumulado é de 5,06% no ano.",
-              "a meta estabelecida pelo BC não foi atendida, já que o valor acumulado é de 6% no ano."
+              "a meta estabelecida pelo BC foi atendida, já que o valor acumulado é de $2{,}5\\%$ no ano.",
+              "a meta estabelecida pelo BC foi atendida, já que o valor acumulado é de $5\\%$ no ano.",
+              "a meta estabelecida pelo BC não foi atendida, já que o valor acumulado é de $5{,}06\\%$ no ano.",
+              "a meta estabelecida pelo BC não foi atendida, já que o valor acumulado é de $6\\%$ no ano."
             ],
             "correct": 2,
             "explanation": "A taxa de inflação acumulada no ano resulta da composição multiplicativa das taxas semestrais:<br>$$(1 + i_{\\text{ano}}) = (1 + i_1) \\cdot (1 + i_2)$$Com $i_1 = 3\\% = 0{,}03$ e $i_2 = 2\\% = 0{,}02$:<br>$$(1 + i_{\\text{ano}}) = (1 + 0{,}03)(1 + 0{,}02) = 1{,}03 \\times 1{,}02 = 1{,}0506$$Subtraindo 1:<br>$$i_{\\text{ano}} = 1{,}0506 - 1 = 0{,}0506 = 5{,}06\\%$$Como o teto da meta estabelecido pelo BC era de $5\\%$ e $5{,}06\\% > 5\\%$, a meta anual não foi atendida.<br><br>Portanto, a alternativa correta é a <strong>Letra C</strong>.",
@@ -12903,7 +12925,7 @@ var mathData = window.mathData || {
             "topicoId": "b1-t6"
           },
           {
-            "q": "Um pesquisador, após anos de trabalho, descobre pelos seus estudos que duas variáveis $x$ e $y$ estavam relacionadas entre si pela seguinte equação:\n$$x = k \\cdot y^{2/3}$$\nna qual $k$ representa uma constante característica dos objetos em estudo.\n\nSegundo essa equação, caso a variável $y$ sofra um aumento de 64 vezes, pode-se afirmar que a variável $x$ sofrerá um(a)",
+            "q": "Um pesquisador, após anos de trabalho, descobre pelos seus estudos que duas variáveis $x$ e $y$ estavam relacionadas entre si pela seguinte equação:\n$$x = k \\cdot y^{2/3}$$\nna qual $k$ representa uma constante característica dos objetos em estudo.\n\nSegundo essa equação, caso a variável $y$ sofra um aumento de 64 vezes, pode-se afirmar que a variável $x$ sofrerá um(a):",
             "options": [
               "redução de 4 vezes.",
               "redução de 16 vezes.",
@@ -12939,12 +12961,12 @@ var mathData = window.mathData || {
             "topicoId": "b4-t1"
           },
           {
-            "q": "Euler é um menino que adora Matemática e, consequentemente, de identificar padrões. Certa vez, analisando um problema de crescimento populacional, observou uma relação interessante no que tange ao valor total de uma população que sofre um acréscimo do dobro do valor anterior a cada intervalo de tempo:\n\nEuler notou pelos dados apresentados que não seria necessário preencher toda a tabela para deduzir a população total {\\text{Total}}$ no tempo  = 20$, identificada por $ na tabela. A soma dos algarismos de $ vale:",
+            "q": "Euler é um menino que adora Matemática e, consequentemente, de identificar padrões. Certa vez, analisando um problema de crescimento populacional, observou uma relação interessante no que tange ao valor total de uma população que sofre um acréscimo do dobro do valor anterior a cada intervalo de tempo:\n\nEuler notou pelos dados apresentados que não seria necessário preencher toda a tabela para deduzir a população total $P_{\\text{Total}}$ no tempo $T = 20$, identificada por $n$ na tabela. A soma dos algarismos de $n$ vale:",
             "options": [
-              "25",
-              "27",
-              "30",
-              "31"
+              "$25$",
+              "$27$",
+              "$30$",
+              "$31$"
             ],
             "correct": 0,
             "explanation": "Observando os valores obtidos na coluna da população total:<br>• Para $T = 0$: $P = 1 = 2^1 - 1$<br>• Para $T = 1$: $P = 3 = 2^2 - 1$<br>• Para $T = 2$: $P = 7 = 2^3 - 1$<br>• Para $T = 3$: $P = 15 = 2^4 - 1$<br>• Para $T = 4$: $P = 31 = 2^5 - 1$<br>Seguindo esse padrão consistente (soma dos termos de uma PG de razão 2), no tempo $T = 20$, temos:<br>$$n = 2^{21} - 1 = 2 \\times 2^{20} - 1$$Como a tabela informa que $2^{20} = 1.048.576$:<br>$$n = 2 \\times 1.048.576 - 1 = 2.097.152 - 1 = 2.097.151$$Calculando a soma dos algarismos de $n$:<br>$$2 + 0 + 9 + 7 + 1 + 5 + 1 = 25$$Portanto, a alternativa correta é a <strong>Letra A</strong>.",
@@ -12959,12 +12981,12 @@ var mathData = window.mathData || {
             }
           },
           {
-            "q": "Para calcular o valor a ser pago para um técnico em enfermagem por um plantão extra em que ele tenha que atuar durante o mês, deve-se primeiro obter o valor pago por hora para cada profissional, considerar que cada plantão compreende o período de 12 horas e, ao final, acrescentar 50% a esse valor.\n\nNestas condições, o valor a ser pago, em reais, por cada plantão extra para um técnico em enfermagem que recebe $\\text{R\\$} 1.430{,}00$ por 220 horas mensais de trabalho é",
+            "q": "Para calcular o valor a ser pago para um técnico em enfermagem por um plantão extra em que ele tenha que atuar durante o mês, deve-se primeiro obter o valor pago por hora para cada profissional, considerar que cada plantão compreende o período de 12 horas e, ao final, acrescentar $50\\%$ a esse valor.\n\nNestas condições, o valor a ser pago, em reais, por cada plantão extra para um técnico em enfermagem que recebe $\\text{R\\$} 1.430{,}00$ por 220 horas mensais de trabalho é:",
             "options": [
-              "39",
-              "108",
-              "117",
-              "156"
+              "$39$",
+              "$108$",
+              "$117$",
+              "$156$"
             ],
             "correct": 2,
             "explanation": "Seguindo os passos estabelecidos no enunciado:<br>1. Cálculo do valor recebido por hora normal de trabalho:<br>$$\\text{Valor por hora} = \\frac{\\text{R\\$} 1.430{,}00}{220} = \\text{R\\$} 6{,}50\\text{ por hora}$$2. Valor base para um plantão de 12 horas:<br>$$12 \\times \\text{R\\$} 6{,}50 = \\text{R\\$} 78{,}00$$3. Acréscimo de $50\\%$ sobre o valor do plantão:<br>$$\\text{Valor final} = 78{,}00 \\times 1{,}50 = 78{,}00 + 39{,}00 = \\text{R\\$} 117{,}00$$Portanto, a alternativa correta é a <strong>Letra C</strong>.",
@@ -12975,12 +12997,12 @@ var mathData = window.mathData || {
             "topicoId": "b1-t6"
           },
           {
-            "q": "Com intuito de analisar questões relativas à segurança do trabalho, um engenheiro solicitou os dados sobre a quantidade de acidentes e a frequência com que aconteceram ao longo de um mês. O encarregado então enviou a seguinte tabela com as informações solicitadas:\n\nDe acordo com os dados fornecidos, a média de acidentes por dia é aproximadamente igual a",
+            "q": "Com intuito de analisar questões relativas à segurança do trabalho, um engenheiro solicitou os dados sobre a quantidade de acidentes e a frequência com que aconteceram ao longo de um mês. O encarregado então enviou a seguinte tabela com as informações solicitadas:\n\nDe acordo com os dados fornecidos, a média de acidentes por dia é aproximadamente igual a:",
             "options": [
-              "0,33",
-              "1,00",
-              "1,77",
-              "2,00"
+              "$0{,}33$",
+              "$1{,}00$",
+              "$1{,}77$",
+              "$2{,}00$"
             ],
             "correct": 2,
             "explanation": "Calcula-se a média aritmética ponderada multiplicando cada quantidade de acidentes pela sua respectiva frequência em dias, e dividindo pelo total de dias observados:<br>• Total de dias: $5 + 9 + 7 + 6 + 3 = 30\\text{ dias}$<br>• Total ponderado de acidentes:<br>$$0 \\times 5 + 1 \\times 9 + 2 \\times 7 + 3 \\times 6 + 4 \\times 3 = 0 + 9 + 14 + 18 + 12 = 53\\text{ acidentes}$$Calculando a média diária:<br>$$\\bar{x} = \\frac{53}{30} \\approx 1{,}7667... \\approx 1{,}77\\text{ acidentes por dia}$$Portanto, a alternativa correta é a <strong>Letra C</strong>.",
@@ -12995,7 +13017,7 @@ var mathData = window.mathData || {
             }
           },
           {
-            "q": "Dentro da saga de filmes Harry Potter a estação de metrô de King's Cross em Londres ficou muito famosa por ser a porta de entrada para Hogwarts e o ponto de partida da história do bruxo que dá nome aos filmes. Essa plataforma utiliza um número de identificação na forma de uma fração mista, conforme a figura:\n\nA representação em forma de fração imprópria do número da plataforma é",
+            "q": "Dentro da saga de filmes Harry Potter a estação de metrô de King's Cross em Londres ficou muito famosa por ser a porta de entrada para Hogwarts e o ponto de partida da história do bruxo que dá nome aos filmes. Essa plataforma utiliza um número de identificação na forma de uma fração mista, conforme a figura:\n\nA representação em forma de fração imprópria do número da plataforma é:",
             "options": [
               "$\\frac{12}{4}$",
               "$\\frac{27}{4}$",
@@ -13015,12 +13037,12 @@ var mathData = window.mathData || {
             "topicoId": "b1-t4"
           },
           {
-            "q": "Um famoso jogo de tabuleiro que simula uma guerra, utiliza dois dados especiais para quando são realizados ataques de avião dentro da partida. Esses dois dados possuem os seguintes números em suas faces:\nDado de ataque: 0, 0, 1, 2, 3, 4\nDado de defesa: 0, 0, 0, 1, 1, 2\n\nAo lançar um dado de ataque e um dado de defesa, a probabilidade do dado de ataque obter um resultado maior que o dado de defesa é de aproximadamente",
+            "q": "Um famoso jogo de tabuleiro que simula uma guerra, utiliza dois dados especiais para quando são realizados ataques de avião dentro da partida. Esses dois dados possuem os seguintes números em suas faces:\n\n• Dado de ataque: $0, 0, 1, 2, 3, 4$\n\n• Dado de defesa: $0, 0, 0, 1, 1, 2$\n\nAo lançar um dado de ataque e um dado de defesa, a probabilidade do dado de ataque obter um resultado maior que o dado de defesa é de aproximadamente:",
             "options": [
-              "67%.",
-              "56%.",
-              "33%.",
-              "17%."
+              "$67\\%$",
+              "$56\\%$",
+              "$33\\%$",
+              "$17\\%$"
             ],
             "correct": 1,
             "explanation": "Como cada dado possui 6 faces equiprováveis, o número total de pares de resultados possíveis é $n(\\Omega) = 6 \\times 6 = 36$.<br>Analisamos os casos favoráveis em que a face de ataque é estritamente maior que a face de defesa ($A > D$):<br>• Se $A = 0$ (2 faces): não há face de defesa menor que 0 ($0$ casos).<br>• Se $A = 1$ (1 face): vence se $D = 0$ (3 faces de valor 0) $\\implies 1 \\times 3 = 3$ casos.<br>• Se $A = 2$ (1 face): vence se $D \\in \\{0, 1\\}$ (3 faces de 0 e 2 faces de 1 = 5 faces) $\\implies 1 \\times 5 = 5$ casos.<br>• Se $A = 3$ (1 face): vence de todas as 6 faces da defesa $\\implies 1 \\times 6 = 6$ casos.<br>• Se $A = 4$ (1 face): vence de todas as 6 faces da defesa $\\implies 1 \\times 6 = 6$ casos.<br>Somando os casos favoráveis:<br>$$n(E) = 0 + 3 + 5 + 6 + 6 = 20\\text{ casos}$$Calculando a probabilidade:<br>$$P = \\frac{20}{36} = \\frac{5}{9} \\approx 0{,}5556 = 55{,}56\\% \\approx 56\\%$$Portanto, a alternativa correta é a <strong>Letra B</strong>.",
@@ -13053,10 +13075,10 @@ var mathData = window.mathData || {
           {
             "q": "Considerando a inflação de $6\\%$ no ano de 2023, de $4{,}18\\%$ em 2024 e que os produtos da cesta básica sofreram estes acréscimos, considere uma pessoa, que mora no Brasil, que vai ao supermercado fazer a compra da cesta básica do mês. Tendo como base que em dezembro de 2023 o aumento será de $6\\%$ e em janeiro de 2024, de $4{,}18\\%$; qual será, aproximadamente, o percentual total acrescido ao valor da cesta básica após estes dois meses?",
             "options": [
-              "10,16",
-              "10,18",
-              "10,43",
-              "11,49"
+              "$10{,}16\\%$",
+              "$10{,}18\\%$",
+              "$10{,}43\\%$",
+              "$11{,}49\\%$"
             ],
             "correct": 2,
             "explanation": "Dois aumentos percentuais sucessivos de $6\\%$ e $4{,}18\\%$ acumulam-se através do produto dos seus respectivos fatores de aumento:<br>$$F_{\\text{total}} = (1 + 0{,}06) \\times (1 + 0{,}0418) = 1{,}06 \\times 1{,}0418$$Efetuando a multiplicação:<br>$$1{,}06 \\times 1{,}0418 = 1{,}104308$$O percentual de aumento acumulado é obtido subtraindo 1 do fator total:<br>$$i_{\\text{total}} = 1{,}104308 - 1 = 0{,}104308 = 10{,}4308\\% \\approx 10{,}43\\%$$Portanto, a alternativa correta é a <strong>Letra C</strong>.",
@@ -13069,10 +13091,10 @@ var mathData = window.mathData || {
           {
             "q": "A expressão decimal $0{,}3212121\\dots$ é uma dízima periódica composta e representa um número racional.\n\nDeterminando a fração geratriz desta dízima e a escrevendo como $\\frac{x}{y}$, onde $x$ é o numerador e $y$ é o denominador da geratriz irredutível, podemos afirmar que $\\left(\\frac{x - \\frac{y}{5}}{10}\\right)^2$ assume o valor:",
             "options": [
-              "0,0016",
-              "1,21",
-              "1,44",
-              "4"
+              "$0{,}0016$",
+              "$1{,}21$",
+              "$1{,}44$",
+              "$4$"
             ],
             "correct": 3,
             "explanation": "Seja $S = 0{,}3212121\\dots$ a dízima periódica com anti-período 3 (1 casa decimal) e período 21 (2 casas decimais).<br>Multiplicando por 10 e por 1000:<br>$$10S = 3{,}212121\\dots$$\n$$1000S = 321{,}212121\\dots$$Subtraindo as equações:<br>$$1000S - 10S = 321 - 3 \\implies 990S = 318 \\implies S = \\frac{318}{990}$$Simplificando a fração dividindo numerador e denominador por 6:<br>$$\\frac{318 \\div 6}{990 \\div 6} = \\frac{53}{165}$$Como 53 é número primo, a fração é irredutível, logo $x = 53$ e $y = 165$.<br>Substituindo na expressão pedida:<br>$$x - \\frac{y}{5} = 53 - \\frac{165}{5} = 53 - 33 = 20$$Agora, calculando a fração e a potência:<br>$$\\left(\\frac{20}{10}\\right)^2 = 2^2 = 4$$Portanto, a alternativa correta é a <strong>Letra D</strong>.",
@@ -13083,7 +13105,7 @@ var mathData = window.mathData || {
             "topicoId": "b1-t4"
           },
           {
-            "q": "A família de Mariana gasta, em média, X reais para fazer as compras da semana. A família de Débora gasta $\\text{R\\$} 90{,}00$ a mais que a família de Mariana.\n\nSabendo que o total gasto pelas famílias foi de $\\text{R\\$} 480{,}00$ podemos afirmar que o valor gasto pela família de Débora foi de:",
+            "q": "A família de Mariana gasta, em média, $X$ reais para fazer as compras da semana. A família de Débora gasta $\\text{R\\$} 90{,}00$ a mais que a família de Mariana.\n\nSabendo que o total gasto pelas famílias foi de $\\text{R\\$} 480{,}00$, podemos afirmar que o valor gasto pela família de Débora foi de:",
             "options": [
               "$\\text{R\\$} 90{,}00$",
               "$\\text{R\\$} 195{,}00$",
@@ -13099,12 +13121,12 @@ var mathData = window.mathData || {
             "topicoId": "b2-t3"
           },
           {
-            "q": "Uma loja trabalha com vendas de produtos esportivos e, neste mês, visando aumentar suas vendas, resolveu investir no aumento de estoque de três produtos específicos: camiseta do time de futebol A, tênis e chuteiras. As camisetas serão vendidas por $\\text{R\\$} 250{,}00$; os pares de tênis por $\\text{R\\$} 150{,}00$ e os pares de chuteiras por $\\text{R\\$} 210{,}00$.\n\nSe chamarmos de Y a quantidade de camisetas, de X a quantidade de pares de tênis e de Z a quantidade de pares de chuteiras do estoque; podemos afirmar que a expressão algébrica do valor arrecadado pela venda de todos estes itens é dada por:",
+            "q": "Uma loja trabalha com vendas de produtos esportivos e, neste mês, visando aumentar suas vendas, resolveu investir no aumento de estoque de três produtos específicos: camiseta do time de futebol A, tênis e chuteiras. As camisetas serão vendidas por $\\text{R\\$} 250{,}00$; os pares de tênis por $\\text{R\\$} 150{,}00$ e os pares de chuteiras por $\\text{R\\$} 210{,}00$.\n\nSe chamarmos de $Y$ a quantidade de camisetas, de $X$ a quantidade de pares de tênis e de $Z$ a quantidade de pares de chuteiras do estoque, podemos afirmar que a expressão algébrica do valor arrecadado pela venda de todos estes itens é dada por:",
             "options": [
-              "V = 250.X + 150.Y + 210.Z",
-              "V = 250.Y + 150.X + 210.Z",
-              "V = 250.Z + 150.Y + 210.X",
-              "V = 250.X + 150.Z + 210.Y"
+              "$V = 250X + 150Y + 210Z$",
+              "$V = 250Y + 150X + 210Z$",
+              "$V = 250Z + 150Y + 210X$",
+              "$V = 250X + 150Z + 210Y$"
             ],
             "correct": 1,
             "explanation": "O valor total arrecadado $V$ é obtido multiplicando-se o preço unitário de cada item pela sua respectiva quantidade em estoque:<br>• Camisetas: $Y$ unidades a $\\text{R\\$} 250{,}00$ $\\implies 250 \\cdot Y$<br>• Tênis: $X$ pares a $\\text{R\\$} 150{,}00$ $\\implies 150 \\cdot X$<br>• Chuteiras: $Z$ pares a $\\text{R\\$} 210{,}00$ $\\implies 210 \\cdot Z$<br>Somando os valores:<br>$$V = 250 \\cdot Y + 150 \\cdot X + 210 \\cdot Z$$Portanto, a alternativa correta é a <strong>Letra B</strong>.",
@@ -13117,10 +13139,10 @@ var mathData = window.mathData || {
           {
             "q": "Sejam $x$ e $y$ números reais positivos não nulos, sendo $x \\ne y$.\n\nA expressão a seguir é equivalente a:\n$$\\left[(x^{-1} + y^{-1})^{-1} + \\left(y \\cdot \\sqrt{\\frac{x}{y}} - x \\cdot \\sqrt{\\frac{y}{x}}\\right)^2\\right] \\cdot (x^2 - y^2)$$",
             "options": [
-              "x².y – x.y²",
-              "x.y² – x².y",
-              "x².y + x.y²",
-              "x.y² + x².y"
+              "$x^2 y - x y^2$",
+              "$x y^2 - x^2 y$",
+              "$x^2 y + x y^2$",
+              "$x y^2 + x^2 y$"
             ],
             "correct": 0,
             "explanation": "Vamos simplificar os termos da expressão:<br>1. Primeiro termo:<br>$$(x^{-1} + y^{-1})^{-1} = \\left(\\frac{1}{x} + \\frac{1}{y}\\right)^{-1} = \\left(\\frac{x + y}{xy}\\right)^{-1} = \\frac{xy}{x + y}$$2. Segundo termo (introduzindo os fatores externos nos radicais para $x, y > 0$):<br>$$y \\cdot \\sqrt{\\frac{x}{y}} = \\sqrt{y^2 \\cdot \\frac{x}{y}} = \\sqrt{xy}$$\n$$x \\cdot \\sqrt{\\frac{y}{x}} = \\sqrt{x^2 \\cdot \\frac{y}{x}} = \\sqrt{xy}$$Subtraindo esses termos:<br>$$\\left(y \\cdot \\sqrt{\\frac{x}{y}} - x \\cdot \\sqrt{\\frac{y}{x}}\\right) = \\sqrt{xy} - \\sqrt{xy} = 0$$Elevando ao quadrado: $0^2 = 0$.<br>3. Substituindo de volta na expressão e multiplicando pela diferença de quadrados $(x^2 - y^2) = (x + y)(x - y)$:<br>$$\\left[\\frac{xy}{x + y} + 0\\right] \\cdot (x^2 - y^2) = \\frac{xy}{x + y} \\cdot (x + y)(x - y) = xy(x - y) = x^2 y - x y^2$$Portanto, a alternativa correta é a <strong>Letra A</strong>.",
@@ -13158,7 +13180,7 @@ var mathData = window.mathData || {
         "driveUrl": "",
         "questions": [
           {
-            "q": "Certo de que as pequenas economias podem gerar grandes resultados, um professor do IFMG realizou comparativos entre a eficiência do seu automóvel, considerada por ele como a distância percorrida por litro de combustível consumido, com a utilização dos quatro combustíveis disponíveis para seu modelo: gasolina comum, gasolina aditivada, etanol e etanol aditivado. Conforme os dados obtidos por ele, o carro apresenta redução de 30% de eficiência quando abastecido com etanol, redução de 25% de eficiência quando abastecido com etanol aditivado e aumento de 5% de eficiência quando abastecido com gasolina aditivada, isso quando comparados ao abastecimento com gasolina comum.\n\nNum certo dia, ele se depara com a seguinte tabela de preços no posto de sua preferência:\n\nConsiderando-se apenas o quesito eficiência como descrito acima, qual a melhor escolha de combustível em termos de custo/benefício para os preços apresentados na tabela?",
+            "q": "Certo de que as pequenas economias podem gerar grandes resultados, um professor do IFMG realizou comparativos entre a eficiência do seu automóvel, considerada por ele como a distância percorrida por litro de combustível consumido, com a utilização dos quatro combustíveis disponíveis para seu modelo: gasolina comum, gasolina aditivada, etanol e etanol aditivado. Conforme os dados obtidos por ele, o carro apresenta redução de $30\\%$ de eficiência quando abastecido com etanol, redução de $25\\%$ de eficiência quando abastecido com etanol aditivado e aumento de $5\\%$ de eficiência quando abastecido com gasolina aditivada, isso quando comparados ao abastecimento com gasolina comum.\n\nNum certo dia, ele se depara com a seguinte tabela de preços no posto de sua preferência:\n\nConsiderando-se apenas o quesito eficiência como descrito acima, qual a melhor escolha de combustível em termos de custo/benefício para os preços apresentados na tabela?",
             "options": [
               "Etanol",
               "Etanol Aditivado",
@@ -13178,12 +13200,12 @@ var mathData = window.mathData || {
             }
           },
           {
-            "q": "A figura a seguir representa parte de um infográfico que ilustra como o telescópio espacial James Webb consegue “enxergar o passado”, fornecendo espetaculares imagens de galáxias muito distantes da Terra, tanto em tempo como em espaço.\n\nBaseando-se nos dados do infográfico, pode-se afirmar que a ordem de grandeza (a potência de 10 mais próxima) da velocidade da luz no vácuo, em metros por segundo (m/s), e o tempo aproximado, em segundos (s), decorrido entre a emissão e a recepção de uma imagem do telescópio Webb para a Terra (considerando que elas são enviadas com a própria velocidade da luz no vácuo) são, respectivamente",
+            "q": "A figura a seguir representa parte de um infográfico que ilustra como o telescópio espacial James Webb consegue “enxergar o passado”, fornecendo espetaculares imagens de galáxias muito distantes da Terra, tanto em tempo como em espaço.\n\nBaseando-se nos dados do infográfico, pode-se afirmar que a ordem de grandeza (a potência de 10 mais próxima) da velocidade da luz no vácuo, em metros por segundo (m/s), e o tempo aproximado, em segundos (s), decorrido entre a emissão e a recepção de uma imagem do telescópio Webb para a Terra (considerando que elas são enviadas com a própria velocidade da luz no vácuo) são, respectivamente:",
             "options": [
-              "$10^7$ e 0,085.",
-              "$10^7$ e 5.",
-              "$10^8$ e 0,085.",
-              "$10^8$ e 5."
+              "$10^7$ e $0{,}085$",
+              "$10^7$ e $5$",
+              "$10^8$ e $0{,}085$",
+              "$10^8$ e $5$"
             ],
             "correct": 3,
             "image": {
@@ -13198,12 +13220,12 @@ var mathData = window.mathData || {
             "topicoId": "b1-t7"
           },
           {
-            "q": "Observe o gráfico a seguir que ilustra a redução das verbas para a Educação no Brasil desde 2016, constante no Informativo Conjunto nº 1/2022 do Projeto de Lei de Diretrizes Orçamentárias para 2023:\n\nConsiderando-se essa queda como linear no período ilustrado, tomando-se como pontos que definem a reta os valores de 2016 e 2021, pode-se afirmar que, mantida essa tendência, o orçamento da função Educação no ano de 2023 será, em bilhões de reais, no valor aproximado de",
+            "q": "Observe o gráfico a seguir que ilustra a redução das verbas para a Educação no Brasil desde 2016, constante no Informativo Conjunto nº 1/2022 do Projeto de Lei de Diretrizes Orçamentárias para 2023:\n\nConsiderando-se essa queda como linear no período ilustrado, tomando-se como pontos que definem a reta os valores de 2016 e 2021, pode-se afirmar que, mantida essa tendência, o orçamento da função Educação no ano de 2023 será, em bilhões de reais, no valor aproximado de:",
             "options": [
-              "32,2",
-              "71,7",
-              "75,7",
-              "76,3"
+              "$32{,}2$",
+              "$71{,}7$",
+              "$75{,}7$",
+              "$76{,}3$"
             ],
             "correct": 1,
             "image": {
@@ -13218,9 +13240,9 @@ var mathData = window.mathData || {
             "topicoId": "b2-t6"
           },
           {
-            "q": "“Reduflação é a prática de reduzir o tamanho das embalagens, o conteúdo dos produtos ou a quantidade de unidades sem que uma redução nos preços acompanhe”, explica o administrador Ulysses Reis, coordenador do Núcleo de Varejo da Fundação Getúlio Vargas (FGV), no Rio de Janeiro. “Na prática, é uma estratégia de vendas maquiada, em que o consumidor acredita estar pagando o mesmo valor, [...] mas está obtendo uma quantidade menor de produto.”\n\nNa tentativa de diminuir o impacto da alta inflação no consumo de seu produto, um empresário do ramo de chocolates resolve adotar a técnica da reduflação, reduzindo o preço unitário do item, porém reduzindo também o volume de chocolate vendido a cada item, alterando as suas dimensões. Esse produtor confecciona chocolates no formato de prisma de base quadrada, como ilustra a figura:\n\nPara tal, o empreendedor reduziu a dimensão da área da base quadrada e a dimensão da altura do seu chocolate ambas em 10%, reduzindo também o preço de seu produto em 20%.\n\nDesconsiderando alterações nos demais custos de fabricação, pode-se afirmar que, com essas alterações, o seu produto para o consumidor se tornou:",
+            "q": "“Reduflação é a prática de reduzir o tamanho das embalagens, o conteúdo dos produtos ou a quantidade de unidades sem que uma redução nos preços acompanhe”, explica o administrador Ulysses Reis, coordenador do Núcleo de Varejo da Fundação Getúlio Vargas (FGV), no Rio de Janeiro. “Na prática, é uma estratégia de vendas maquiada, em que o consumidor acredita estar pagando o mesmo valor, [...] mas está obtendo uma quantidade menor de produto.”\n\nNa tentativa de diminuir o impacto da alta inflação no consumo de seu produto, um empresário do ramo de chocolates resolve adotar a técnica da reduflação, reduzindo o preço unitário do item, porém reduzindo também o volume de chocolate vendido a cada item, alterando as suas dimensões. Esse produtor confecciona chocolates no formato de prisma de base quadrada, como ilustra a figura:\n\nPara tal, o empreendedor reduziu a dimensão da área da base quadrada e a dimensão da altura do seu chocolate ambas em $10\\%$, reduzindo também o preço de seu produto em $20\\%$.\n\nDesconsiderando alterações nos demais custos de fabricação, pode-se afirmar que, com essas alterações, o seu produto para o consumidor se tornou:",
             "options": [
-              "de mesmo preço, pois tanto o preço quanto o volume de chocolate reduziram em 20%.",
+              "de mesmo preço, pois tanto o preço quanto o volume de chocolate reduziram em $20\\%$.",
               "mais caro, pois houve uma maior redução percentual no seu volume que no seu preço.",
               "mais barato, pois houve uma maior redução percentual no seu volume que no seu preço.",
               "mais barato, pois houve uma maior redução percentual no seu preço que no seu volume."
@@ -13238,12 +13260,12 @@ var mathData = window.mathData || {
             "topicoId": "b1-t6"
           },
           {
-            "q": "Certo jogo de celular consiste de um avião que se desloca em um sistema de coordenadas cartesianas atirando em alvos distribuídos neste plano. Quando o avião passa pelo ponto médio exato entre dois pontos destacados na tela por estrelas de seis pontas, ele pode emitir um tiro “especial” que explode os alvos que seriam indestrutíveis para os tiros comuns. Os tiros se deslocam em linha reta.\n\nEm um determinado momento nesse jogo, um “player” se depara com um desses alvos que exige um tiro “especial” no ponto C (14, -1). Ele percebe a existência de dois pontos destacados nas coordenadas A (11, 6) e B (7, 4) como mostra a figura a seguir.\n\nExímio jogador que é, o tiro sai com perfeição e atinge o alvo, o destruindo!\n\nDesconsiderando-se as dimensões dos objetos envolvidos e tomando-se as coordenadas inteiras nas quais eles se localizam, pode-se afirmar que a distância percorrida por esse tiro, do local em que é emitido até atingir o alvo, foi de aproximadamente",
+            "q": "Certo jogo de celular consiste de um avião que se desloca em um sistema de coordenadas cartesianas atirando em alvos distribuídos neste plano. Quando o avião passa pelo ponto médio exato entre dois pontos destacados na tela por estrelas de seis pontas, ele pode emitir um tiro “especial” que explode os alvos que seriam indestrutíveis para os tiros comuns. Os tiros se deslocam em linha reta.\n\nEm um determinado momento nesse jogo, um jogador se depara com um desses alvos que exige um tiro “especial” no ponto $C(14, -1)$. Ele percebe a existência de dois pontos destacados nas coordenadas $A(11, 6)$ e $B(7, 4)$ como mostra a figura a seguir.\n\nExímio jogador que é, o tiro sai com perfeição e atinge o alvo, o destruindo!\n\nDesconsiderando-se as dimensões dos objetos envolvidos e tomando-se as coordenadas inteiras nas quais eles se localizam, pode-se afirmar que a distância percorrida por esse tiro, do local em que é emitido até atingir o alvo, foi de aproximadamente:",
             "options": [
-              "7,8 unidades",
-              "8,0 unidades",
-              "8,6 unidades",
-              "11,0 unidades"
+              "$7{,}8$ unidades",
+              "$8{,}0$ unidades",
+              "$8{,}6$ unidades",
+              "$11{,}0$ unidades"
             ],
             "correct": 0,
             "image": {
@@ -13258,7 +13280,7 @@ var mathData = window.mathData || {
             "topicoId": "b3-t5"
           },
           {
-            "q": "JORGE, um namorado muito dedicado, mandou fazer para presentear sua amada uma coleção de cinco moedas em que em uma das faces foram desenhadas as letras de seu nome e na outra as letras do nome de ALINE. Elas foram feitas de forma que a primeira moeda tenha a letra J em uma das faces e a letra A na outra, a segunda moeda tenha a letra O em uma face e a letra L na outra, e assim sucessivamente.\n\nA probabilidade de lançadas todas as moedas, uma por vez, na ordem dos nomes, e se formar exatamente JORGE ou ALINE é igual a",
+            "q": "JORGE, um namorado muito dedicado, mandou fazer para presentear sua amada uma coleção de cinco moedas em que em uma das faces foram desenhadas as letras de seu nome e na outra as letras do nome de ALINE. Elas foram feitas de forma que a primeira moeda tenha a letra J em uma das faces e a letra A na outra, a segunda moeda tenha a letra O em uma face e a letra L na outra, e assim sucessivamente.\n\nA probabilidade de lançadas todas as moedas, uma por vez, na ordem dos nomes, e se formar exatamente JORGE ou ALINE é igual a:",
             "options": [
               "$\\frac{1}{2}$",
               "$\\frac{1}{8}$",
@@ -13274,12 +13296,12 @@ var mathData = window.mathData || {
             "topicoId": "b4-t3"
           },
           {
-            "q": "Em exames de seleção para cargos públicos é muito comum se utilizar da mediana entre as notas dos avaliadores para determinar a pontuação final de cada candidato. A seguir está representada uma tabela com as notas de um candidato específico, dadas pelos quatro avaliadores em que a nota final é calculada da seguinte forma:\n\ni. Faz-se a média das notas dos 3 quesitos avaliados individualmente para cada avaliador;\nii. Seleciona-se a mediana entre as notas de todos os avaliadores obtidas no passo anterior.\n\nDe acordo com os dados fornecidos, a nota final do candidato será igual a",
+            "q": "Em exames de seleção para cargos públicos é muito comum se utilizar da mediana e da média aritmética para definir uma classificação final entre os candidatos.\n\nConsidere uma seleção em que um candidato foi submetido a uma avaliação por uma banca examinadora contendo 4 avaliadores e que a nota de cada avaliador varia de 0 a 10 para cada um dos 3 quesitos avaliados.\n\nA nota final do candidato é obtida em duas etapas:\n\ni. Calcula-se a nota de cada um dos quatro avaliadores efetuando a soma de suas notas atribuídas aos três quesitos.\n\nii. Seleciona-se a mediana entre as notas de todos os avaliadores obtidas no passo anterior.\n\nDe acordo com os dados fornecidos, a nota final do candidato será igual a:",
             "options": [
-              "22",
-              "25",
-              "26",
-              "27"
+              "$22$",
+              "$25$",
+              "$26$",
+              "$27$"
             ],
             "correct": 3,
             "explanation": "1. <strong>Cálculo da média das notas de cada avaliador:</strong><br>• Avaliador 1: $\\frac{20 + 30 + 40}{3} = \\frac{90}{3} = 30$<br>• Avaliador 2: $\\frac{10 + 15 + 32}{3} = \\frac{57}{3} = 19$<br>• Avaliador 3: $\\frac{15 + 20 + 40}{3} = \\frac{75}{3} = 25$<br>• Avaliador 4: $\\frac{18 + 27 + 42}{3} = \\frac{87}{3} = 29$<br><br>2. <strong>Determinação da mediana das notas obtidas:</strong><br>Organizando as quatro médias em rol crescente:<br>$$19, \\; 25, \\; 29, \\; 30$$Como o número de elementos é par ($n = 4$), a mediana é a média aritmética dos dois valores centrais:<br>$$\\text{Mediana} = \\frac{25 + 29}{2} = \\frac{54}{2} = 27$$Portanto, a alternativa correta é a <strong>Letra D</strong>.",
@@ -13294,12 +13316,12 @@ var mathData = window.mathData || {
             }
           },
           {
-            "q": "Um problema matemático que circulou pelas redes sociais recentemente na forma de um desafio era o de se encontrar valores desconhecidos para certas figuras, de acordo com relações algébricas que eram apresentadas entre estas figuras.\n\nUm exemplo desse tipo de desafio pode ser visto a seguir:\n\nNeste desenho, o valor representado pela estrela é",
+            "q": "Um problema matemático que circulou pelas redes sociais recentemente na forma de um desafio era o de se encontrar valores desconhecidos para certas figuras, de acordo com relações algébricas que eram apresentadas entre estas figuras.\n\nUm exemplo desse tipo de desafio pode ser visto a seguir:\n\nNeste desenho, o valor representado pela estrela é:",
             "options": [
-              "24",
-              "36",
-              "44",
-              "56"
+              "$24$",
+              "$36$",
+              "$44$",
+              "$56$"
             ],
             "correct": 0,
             "image": {
@@ -13314,12 +13336,12 @@ var mathData = window.mathData || {
             "topicoId": "b2-t3"
           },
           {
-            "q": "A logomarca de uma empresa de engenharia foi elaborada dispondo-se três triângulos retângulos isósceles, de forma que do maior para o menor, a medida dos catetos é sempre metade da medida dos catetos do triângulo anterior, conforme figura a seguir:\n\nA empresa deseja fazer uma chapa de aço com a logomarca da empresa para afixar na fachada da sede de seu escritório, usando como referência que o maior triângulo tenha catetos de 4 metros cada um.\n\nSendo assim, a área da chapa de aço a ser fabricada, em $\\text{m}^2$, é igual a",
+            "q": "A logomarca de uma empresa de engenharia foi elaborada dispondo-se três triângulos retângulos isósceles, de forma que do maior para o menor, a medida dos catetos é sempre metade da medida dos catetos do triângulo anterior, conforme figura a seguir:\n\nA empresa deseja fazer uma chapa de aço com a logomarca da empresa para afixar na fachada da sede de seu escritório, usando como referência que o maior triângulo tenha catetos de $4\\text{ metros}$ cada um.\n\nSendo assim, a área da chapa de aço a ser fabricada, em $\\text{m}^2$, é igual a:",
             "options": [
-              "10,5",
-              "12,0",
-              "21,0",
-              "28,0"
+              "$10{,}5$",
+              "$12{,}0$",
+              "$21{,}0$",
+              "$28{,}0$"
             ],
             "correct": 0,
             "image": {
@@ -13334,12 +13356,12 @@ var mathData = window.mathData || {
             "topicoId": "b4-t1"
           },
           {
-            "q": "Paloma é uma cinéfila que metodicamente assiste a um filme e um episódio de uma série todos os dias antes de dormir, sem uma ordem definida. Sabe-se que, além disso, ela nunca passa mais do que 3 horas na frente da TV durante a noite por recomendações médicas.\n\nCerta noite estão disponíveis os seguintes títulos para assistir:\n\nA quantidade de formas diferentes que Paloma pode cumprir seu ritual de entretenimento nesta noite é igual a",
+            "q": "Paloma é uma cinéfila que metodicamente assiste a um filme e um episódio de uma série todos os dias antes de dormir, sem uma ordem definida. Sabe-se que, além disso, ela nunca passa mais do que 3 horas na frente da TV durante a noite por recomendações médicas.\n\nCerta noite estão disponíveis os seguintes títulos para assistir:\n\nA quantidade de formas diferentes que Paloma pode cumprir seu ritual de entretenimento nesta noite é igual a:",
             "options": [
-              "36",
-              "26",
-              "18",
-              "13"
+              "$36$",
+              "$26$",
+              "$18$",
+              "$13$"
             ],
             "correct": 1,
             "explanation": "O limite máximo de duração é de $3\\text{ horas} = 180\\text{ minutos}$. Como ela assiste a um filme e um episódio de série 'sem uma ordem definida', a sequência em que assiste importa (pode assistir primeiro o filme e depois a série, ou primeiro a série e depois o filme: $2$ ordens para cada par escolhido).<br><br>Vamos analisar as séries possíveis para cada filme:<br>1. <strong>Filme 1 (2h 10min = 130 min):</strong><br>Tempo restante para a série: $180 - 130 = 50\\text{ minutos}$.<br>Séries com duração $\\le 50\\text{ min}$:<br>• A casa de papelão (45 min)<br>• Coisas estranhas (45 min)<br>• Os brincos do poder (30 min)<br>• O bafo do dragão (45 min)<br>• Todo mundo ama o Cris (30 min)<br>Total de séries compatíveis: $5$.<br><br>2. <strong>Filme 2 (2h = 120 min):</strong><br>Tempo restante para a série: $180 - 120 = 60\\text{ minutos}$.<br>Todas as 6 séries possuem duração $\\le 60\\text{ min}$ (a mais longa dura 55 min).<br>Total de séries compatíveis: $6$.<br><br>3. <strong>Filme 3 (2h 20min = 140 min):</strong><br>Tempo restante para a série: $180 - 140 = 40\\text{ minutos}$.<br>Séries com duração $\\le 40\\text{ min}$:<br>• Os brincos do poder (30 min)<br>• Todo mundo ama o Cris (30 min)<br>Total de séries compatíveis: $2$.<br><br>Total de pares possíveis: $5 + 6 + 2 = 13$ pares.<br>Considerando as 2 ordens temporais possíveis para cada par:<br>$$\\text{Total de formas} = 13 \\times 2 = 26$$Portanto, a alternativa correta é a <strong>Letra B</strong>.",
@@ -13354,12 +13376,12 @@ var mathData = window.mathData || {
             }
           },
           {
-            "q": "O designer de interiores é um profissional responsável por elaborar um espaço coerentemente, seguindo normas técnicas de ergonomia, acústica, térmico e luminotécnica, buscando captar as reais necessidades dos clientes.\n\nUm designer foi contratado por um casal para elaborar o espaço de um cômodo quadrado de lado com medida de 4 metros. Buscando agradar as duas pessoas do casal, o designer propôs criar no mesmo ambiente duas atmosferas distintas que seriam marcadas pelo uso de cores quentes e de cores com tom pastel. Para tal consideraria a diagonal que divide o espaço. Desta forma, qual será a área do ambiente destinado à atmosfera marcada por cores em tom pastel?",
+            "q": "O designer de interiores é um profissional responsável por elaborar um espaço coerentemente, seguindo normas técnicas de ergonomia, acústica, térmico e luminotécnica, buscando captar as reais necessidades dos clientes.\n\nUm designer foi contratado por um casal para elaborar o espaço de um cômodo quadrado de lado com medida de $4\\text{ metros}$. Buscando agradar as duas pessoas do casal, o designer propôs criar no mesmo ambiente duas atmosferas distintas que seriam marcadas pelo uso de cores quentes e de cores com tom pastel. Para tal consideraria a diagonal que divide o espaço. Desta forma, qual será a área do ambiente destinado à atmosfera marcada por cores em tom pastel?",
             "options": [
-              "4 m²",
-              "8 m²",
-              "16 m²",
-              "32 m²"
+              "$4\\text{ m}^2$",
+              "$8\\text{ m}^2$",
+              "$16\\text{ m}^2$",
+              "$32\\text{ m}^2$"
             ],
             "correct": 1,
             "explanation": "A área total do cômodo quadrado de lado $L = 4\\text{ m}$ é dada por:<br>$$A_{\\text{quadrado}} = L^2 = 4^2 = 16\\text{ m}^2$$A diagonal de um quadrado divide o espaço em dois triângulos retângulos isósceles congruentes de mesma área.<br>Assim, a área destinada à atmosfera de cores em tom pastel é a metade da área total:<br>$$A = \\frac{16\\text{ m}^2}{2} = 8\\text{ m}^2$$Portanto, a alternativa correta é a <strong>Letra B</strong>.",
@@ -13370,7 +13392,7 @@ var mathData = window.mathData || {
             "topicoId": "b4-t1"
           },
           {
-            "q": "Analise as afirmações a seguir sobre múltiplos e divisores inteiros do número 390:\n\nI. A soma dos divisores inteiros de 390 é 0.\nII. O número de divisores naturais de 390 é 16.\nIII. A soma dos divisores naturais de 390 é maior que 390.\nIV. No intervalo de 0 a 400, o número 390 possui 16 múltiplos.\nV. A diferença entre o maior e o menor divisor natural de 390 é 388.\n\nTendo como base as afirmativas anteriores, pode-se afirmar que",
+            "q": "Analise as afirmações a seguir sobre múltiplos e divisores inteiros do número 390:\n\nI. A soma dos divisores inteiros de 390 é 0.\n\nII. O número de divisores naturais de 390 é 16.\n\nIII. A soma dos divisores naturais de 390 é maior que 390.\n\nIV. No intervalo de 0 a 400, o número 390 possui 16 múltiplos.\n\nV. A diferença entre o maior e o menor divisor natural de 390 é 388.\n\nTendo como base as afirmativas anteriores, pode-se afirmar que:",
             "options": [
               "somente as afirmações IV e V estão incorretas.",
               "somente a afirmação II está incorreta.",
@@ -13386,12 +13408,12 @@ var mathData = window.mathData || {
             "topicoId": "b1-t2"
           },
           {
-            "q": "(IFMG 2023.1 - Q28) *(Nota pedagógica: Questão originalmente anulada no exame oficial do IFMG por imprecisão formal na redação da função, readaptada para fins pedagógicos mantendo a modelagem quadrática e a habilidade cobrada)*\n\n“Há pouco tempo, o fenômeno da internet transformou o jornalismo, contribuindo para a democratização das notícias e a possibilidade de cada um de nós termos nossos ‘cinco minutos de fama’ -- validando a previsão do pintor pop Andy Warhol. [...] Já a mídia social trouxe voz a todos. Alguns personagens tornam-se influenciadores com milhares de seguidores [...].” (FRANCO, Pedro. Influência do bem. Gazeta do Povo, 2022).\n\nPodemos definir como ‘bolhas’ os grupos segregados que aparecem nas redes sociais. Ao analisar-se o comportamento de crescimento de uma bolha específica, verificou-se que a quantidade de pessoas $P(t)$ atingidas por esta bolha em função do tempo $t$ (em dias, sendo $t = 0$ o dia de seu aparecimento) é modelada pela função quadrática:\n$$P(t) = -5t^2 + 310t$$\nEsta expressão é válida durante todo o período de existência da bolha.\n\nO dia em que a bolha atingirá o número máximo de pessoas e o número máximo de pessoas atingidas são, respectivamente:",
+            "q": "*(Nota pedagógica: Questão originalmente anulada no exame oficial do IFMG por imprecisão formal na redação da função, readaptada para fins pedagógicos mantendo a modelagem quadrática e a habilidade cobrada)*\n\n“Há pouco tempo, o fenômeno da internet transformou o jornalismo, contribuindo para a democratização das notícias e a possibilidade de cada um de nós termos nossos ‘cinco minutos de fama’ -- validando a previsão do pintor pop Andy Warhol. [...] Já a mídia social trouxe voz a todos. Alguns personagens tornam-se influenciadores com milhares de seguidores [...].” (FRANCO, Pedro. Influência do bem. Gazeta do Povo, 2022).\n\nPodemos definir como ‘bolhas’ os grupos segregados que aparecem nas redes sociais. Ao analisar-se o comportamento de crescimento de uma bolha específica, verificou-se que a quantidade de pessoas $P(t)$ atingidas por esta bolha em função do tempo $t$ (em dias, sendo $t = 0$ o dia de seu aparecimento) é modelada pela função quadrática:\n$$P(t) = -5t^2 + 310t$$\nEsta expressão é válida durante todo o período de existência da bolha.\n\nO dia em que a bolha atingirá o número máximo de pessoas e o número máximo de pessoas atingidas são, respectivamente:",
             "options": [
-              "31 e 4.805",
-              "31 e 96.100",
-              "62 e 96.100",
-              "4.805 e 31"
+              "$31$ e $4.805$",
+              "$31$ e $96.100$",
+              "$62$ e $96.100$",
+              "$4.805$ e $31$"
             ],
             "correct": 0,
             "explanation": "<strong>Nota sobre a anulação no exame original:</strong> No caderno original, a banca grafou '-5t² + 310t = 0' chamando de equação em vez de expressar a função $P(t) = -5t^2 + 310t$, o que gerou recurso e cancelamento formal. Nesta versão readaptada, o modelo é expresso corretamente como função quadrática.<br><br><strong>Resolução da questão:</strong><br>A função $P(t) = -5t^2 + 310t$ é uma parábola com concavidade voltada para baixo ($a = -5 < 0$), atingindo seu valor máximo no vértice:<br><br>1. <strong>Dia do ápice ($t_v$):</strong><br>$$t_v = -\\frac{b}{2a} = -\\frac{310}{2 \\times (-5)} = \\frac{310}{10} = 31\\text{ dias}$$<br>2. <strong>Número máximo de pessoas ($P_{\\max}$):</strong><br>Substituindo $t = 31$ na função:<br>$$P(31) = -5(31)^2 + 310(31) = -5(961) + 9.610 = -4.805 + 9.610 = 4.805\\text{ pessoas}$$Assim, a bolha atinge o máximo no dia 31, com 4.805 pessoas.<br><br>Portanto, a alternativa correta é a <strong>Letra A</strong>.",
@@ -13402,12 +13424,12 @@ var mathData = window.mathData || {
             "topicoId": "b2-t5"
           },
           {
-            "q": "Em uma escola foi feita uma pesquisa nas turmas do ensino médio em relação ao uso das redes sociais. Dos 165 alunos que responderam à pesquisa, 60% responderam que destinam quatro horas diárias ou mais ao uso da internet, 22% até três horas diárias e 18% dos alunos até duas horas diárias. A maioria dos alunos usa a internet para realizar seus estudos, sendo que cerca de 80% dos participantes utilizam a internet para estudar por meio de vídeos e leituras de documentos pesquisados.\n\nConsiderando os dados da pesquisa, pode-se afirmar que o número de alunos que destinam menos de quatro horas diárias ao uso da internet e o número de alunos que não utilizam a internet para estudar por meio de vídeos e leituras de documentos pesquisados são, respectivamente:",
+            "q": "Em uma escola foi feita uma pesquisa nas turmas do ensino médio em relação ao uso das redes sociais. Dos 165 alunos que responderam à pesquisa, $60\\%$ responderam que destinam quatro horas diárias ou mais ao uso da internet, $22\\%$ até três horas diárias e $18\\%$ dos alunos até duas horas diárias. A maioria dos alunos usa a internet para realizar seus estudos, sendo que cerca de $80\\%$ dos participantes utilizam a internet para estudar por meio de vídeos e leituras de documentos pesquisados.\n\nConsiderando os dados da pesquisa, pode-se afirmar que o número de alunos que destinam menos de quatro horas diárias ao uso da internet e o número de alunos que não utilizam a internet para estudar por meio de vídeos e leituras de documentos pesquisados são, respectivamente:",
             "options": [
-              "66 e 0",
-              "66 e 33",
-              "66 e 99",
-              "132 e 33"
+              "$66$ e $0$",
+              "$66$ e $33$",
+              "$66$ e $99$",
+              "$132$ e $33$"
             ],
             "correct": 1,
             "explanation": "Total de participantes da pesquisa: $N = 165\\text{ alunos}$.<br><br>1. <strong>Alunos que destinam menos de quatro horas diárias:</strong><br>Se $60\\%$ destinam quatro horas ou mais, o percentual dos que destinam menos de quatro horas é:<br>$$100\\% - 60\\% = 40\\%$$\\text{Quantidade} = 40\\% \\times 165 = 0{,}40 \\times 165 = 66\\text{ alunos}<br><br>2. <strong>Alunos que não utilizam a internet para estudar por vídeos/leituras:</strong><br>Como $80\\%$ utilizam para esses estudos, o percentual dos que não utilizam é:<br>$$100\\% - 80\\% = 20\\%$$\\text{Quantidade} = 20\\% \\times 165 = 0{,}20 \\times 165 = 33\\text{ alunos}<br><br>Portanto, os valores são, respectivamente, 66 e 33.<br><br>Portanto, a alternativa correta é a <strong>Letra B</strong>.",
@@ -13418,7 +13440,7 @@ var mathData = window.mathData || {
             "topicoId": "b1-t6"
           },
           {
-            "q": "Considere o quadrilátero PQRS em que O é o ponto de encontro de suas diagonais e que a medida do segmento RS é a mesma medida do segmento PQ. Como mostra a figura, SO e OQ têm mesma medida, PO e OR também possuem mesma medida.\n\nConsidere as seguintes afirmações:\n\nI. Os triângulos POS e ROQ são congruentes.\nII. Os triângulos ROS e POQ são congruentes.\nIII. Se os polígonos ROS e POQ são congruentes consequentemente eles são semelhantes.\nIV. As diagonais se cruzam em seus respectivos pontos médios, logo o quadrilátero convexo PQRS é um paralelogramo.\nV. Os triângulos RSQ e PQR são congruentes.\n\nPode-se afirmar que são corretas:",
+            "q": "Considere o quadrilátero $PQRS$ em que $O$ é o ponto de encontro de suas diagonais e que a medida do segmento $RS$ é a mesma medida do segmento $PQ$. Como mostra a figura, $SO$ e $OQ$ têm mesma medida, $PO$ e $OR$ também possuem mesma medida.\n\nConsidere as seguintes afirmações:\n\nI. Os triângulos $POS$ e $ROQ$ são congruentes.\n\nII. Os triângulos $ROS$ e $POQ$ são congruentes.\n\nIII. Se os polígonos $ROS$ e $POQ$ são congruentes consequentemente eles são semelhantes.\n\nIV. As diagonais se cruzam em seus respectivos pontos médios, logo o quadrilátero convexo $PQRS$ é um paralelogramo.\n\nV. Os triângulos $RSQ$ e $PQR$ são congruentes.\n\nPode-se afirmar que são corretas:",
             "options": [
               "III e V",
               "II, IV e V",
@@ -13465,12 +13487,12 @@ var mathData = window.mathData || {
         "driveUrl": "",
         "questions": [
           {
-            "q": "Ciente das dificuldades apresentadas pelos alunos na sua disciplina de Estatística, um professor do IFMG resolveu abrir processo seletivo para seleção de um monitor. O processo consistiu de 3 etapas: apresentação do coeficiente do aluno na disciplina, uma avaliação teórica sobre o conteúdo e uma aula teste ministrada pelo candidato a uma banca contendo o professor da disciplina e um pedagogo.\n\nQuatro alunos realizaram o processo seletivo. As notas obtidas por cada candidato e os pesos atribuídos a cada etapa podem ser visualizados na tabela a seguir:\n\nO aluno selecionado seria aquele com maior média ponderada, conforme os pesos ilustrados na tabela. Caso houvesse empate na média, seria escolhido o aluno de resultados mais homogêneos, com menor amplitude nas notas (ou seja, menor diferença entre as notas máxima e mínima).\n\nSegundo esses critérios, o selecionado como monitor da disciplina foi o aluno",
+            "q": "Ciente das dificuldades apresentadas pelos alunos na sua disciplina de Estatística, um professor do IFMG resolveu abrir processo seletivo para seleção de um monitor. O processo consistiu de 3 etapas: apresentação do coeficiente do aluno na disciplina, uma avaliação teórica sobre o conteúdo e uma aula teste ministrada pelo candidato a uma banca contendo o professor da disciplina e um pedagogo.\n\nQuatro alunos realizaram o processo seletivo. As notas obtidas por cada candidato e os pesos atribuídos a cada etapa podem ser visualizados na tabela a seguir:\n\nO aluno selecionado seria aquele com maior média ponderada, conforme os pesos ilustrados na tabela. Caso houvesse empate na média, seria escolhido o aluno de resultados mais homogêneos, com menor amplitude nas notas (ou seja, menor diferença entre as notas máxima e mínima).\n\nSegundo esses critérios, o selecionado como monitor da disciplina foi o aluno:",
             "options": [
-              "1",
-              "2",
-              "3",
-              "4"
+              "$1$",
+              "$2$",
+              "$3$",
+              "$4$"
             ],
             "correct": 0,
             "explanation": "Calculamos a média ponderada de cada aluno (soma dos pesos = $1 + 2 + 3 = 6$):<br><br>• <strong>Aluno 1:</strong><br>$$\\bar{x}_1 = \\frac{6 \\times 1 + 4 \\times 2 + 6 \\times 3}{6} = \\frac{6 + 8 + 18}{6} = \\frac{32}{6} \\approx 5{,}33$$Amplitude: $6 - 4 = 2$.<br><br>• <strong>Aluno 2:</strong><br>$$\\bar{x}_2 = \\frac{8 \\times 1 + 5 \\times 2 + 4 \\times 3}{6} = \\frac{8 + 10 + 12}{6} = \\frac{30}{6} = 5{,}00$$<br>• <strong>Aluno 3:</strong><br>$$\\bar{x}_3 = \\frac{6 \\times 1 + 4 \\times 2 + 5 \\times 3}{6} = \\frac{6 + 8 + 15}{6} = \\frac{29}{6} \\approx 4{,}83$$<br>• <strong>Aluno 4:</strong><br>$$\\bar{x}_4 = \\frac{8 \\times 1 + 3 \\times 2 + 6 \\times 3}{6} = \\frac{8 + 6 + 18}{6} = \\frac{32}{6} \\approx 5{,}33$$Amplitude: $8 - 3 = 5$.<br><br>Houve empate na maior média ponderada entre o Aluno 1 e o Aluno 4 (ambos com $\\frac{32}{6}$).<br>Aplicando o critério de desempate da <strong>menor amplitude</strong>:<br>$$\\text{Amplitude}(1) = 2 < 5 = \\text{Amplitude}(4)$$Portanto, o aluno selecionado foi o Aluno 1.<br><br>Portanto, a alternativa correta é a <strong>Letra A</strong>.",
@@ -13485,7 +13507,7 @@ var mathData = window.mathData || {
             }
           },
           {
-            "q": "Após ser considerado o grande vilão da inflação mundial no ano de 2021, com aumentos acumulados próximos a 50% ao ano no Brasil, alguns veículos de comunicação noticiaram a possibilidade de uma estabilidade dos preços dos combustíveis em 2022, como ilustra a imagem a seguir.\n\nPorém, influências internas, como o aumento de demanda, e externas, como a guerra entre Rússia e Ucrânia, mantiveram essa tendência de alta durante o ano de 2022.\n\nConsidere um país hipotético no qual a gasolina sofreu dois aumentos sucessivos durante o ano de 2022. Um aumento de 10% ao final do primeiro semestre e um aumento de 20% ao final do segundo semestre. Podemos dizer que um consumidor deste país, que costumava gastar 200 reais para encher o tanque do seu carro, após esses dois acréscimos terá de arcar, para cada novo enchimento, com o valor de",
+            "q": "Após ser considerado o grande vilão da inflação mundial no ano de 2021, com aumentos acumulados próximos a $50\\%$ ao ano no Brasil, alguns veículos de comunicação noticiaram a possibilidade de uma estabilidade dos preços dos combustíveis em 2022, como ilustra a imagem a seguir.\n\nPorém, influências internas, como o aumento de demanda, e externas, como a guerra entre Rússia e Ucrânia, mantiveram essa tendência de alta durante o ano de 2022.\n\nConsidere um país hipotético no qual a gasolina sofreu dois aumentos sucessivos durante o ano de 2022: um aumento de $10\\%$ ao final do primeiro semestre e um aumento de $20\\%$ ao final do segundo semestre. Podemos dizer que um consumidor deste país, que costumava gastar $\\text{R\\$} 200{,}00$ para encher o tanque do seu carro, após esses dois acréscimos terá de arcar, para cada novo enchimento, com o valor de:",
             "options": [
               "$\\text{R\\$} 230{,}00$",
               "$\\text{R\\$} 240{,}00$",
@@ -13507,10 +13529,10 @@ var mathData = window.mathData || {
           {
             "q": "Em alguns jogos de celular do estilo “puzzles”, os jogadores vão acumulando e desenvolvendo heróis para utilizá-los como equipes de ataque ou defesa em combates online. Nesses jogos, em geral, os heróis são divididos nas seguintes classes: vermelho (fogo), azul (água), verde (natureza), amarelo (luz) e roxo (trevas).\n\nConsidere que um determinado jogador possui a seguinte quantidade de heróis, distribuídos pelas suas respectivas cores: 3 heróis vermelhos, 5 heróis azuis, 4 heróis verdes, 6 heróis amarelos e 3 heróis roxos.\n\nEsse jogador deverá formar uma equipe de dois heróis para um combate online e, pelas características do adversário, resolve escolher um herói azul (que ocupará a posição da esquerda) e um herói amarelo (que ocupará a posição da direita).\n\nQuantas são as equipes distintas que esse jogador poderá montar?",
             "options": [
-              "11",
-              "15",
-              "30",
-              "60"
+              "$11$",
+              "$15$",
+              "$30$",
+              "$60$"
             ],
             "correct": 2,
             "explanation": "Pelo Princípio Fundamental da Contagem (PFC):<br>• Para a posição da esquerda, o jogador deve escolher 1 herói azul dentre os 5 disponíveis: $5\\text{ opções}$.<br>• Para a posição da direita, o jogador deve escolher 1 herói amarelo dentre os 6 disponíveis: $6\\text{ opções}$.<br><br>O número total de equipes distintas é o produto das possibilidades:<br>$$\\text{Total de equipes} = 5 \\times 6 = 30$$Portanto, a alternativa correta é a <strong>Letra C</strong>.",
@@ -13521,12 +13543,12 @@ var mathData = window.mathData || {
             "topicoId": "b4-t2"
           },
           {
-            "q": "Suponha que no mesmo jogo com os 21 heróis (3 vermelhos, 5 azuis, 4 verdes, 6 amarelos e 3 roxos), após a escolha do herói azul para ocupar a posição da esquerda, um “bug” (erro ou defeito) no jogo selecionou aleatoriamente o herói que ocupou a posição da direita, independente da sua cor, entre todos os heróis disponíveis do jogador.\n\nA chance de o elemento escolhido ser amarelo é",
+            "q": "Suponha que no mesmo jogo com os 21 heróis (3 vermelhos, 5 azuis, 4 verdes, 6 amarelos e 3 roxos), após a escolha do herói azul para ocupar a posição da esquerda, um “bug” (erro ou defeito) no jogo selecionou aleatoriamente o herói que ocupou a posição da direita, independente da sua cor, entre todos os heróis disponíveis do jogador.\n\nA chance de o elemento escolhido ser amarelo é:",
             "options": [
-              "6/21",
-              "3/10",
-              "3/5",
-              "20/21"
+              "$\\frac{6}{21}$",
+              "$\\frac{3}{10}$",
+              "$\\frac{3}{5}$",
+              "$\\frac{20}{21}$"
             ],
             "correct": 1,
             "explanation": "Inicialmente, o jogador possuía um total de heróis igual a:<br>$$3 + 5 + 4 + 6 + 3 = 21\\text{ heróis}$$Após a escolha do herói azul para a primeira posição, restaram no conjunto disponível:<br>$$21 - 1 = 20\\text{ heróis}$$Dentre os 20 heróis restantes, a quantidade de heróis amarelos permaneceu intacta ($6$ heróis amarelos).<br>Portanto, a probabilidade de o herói sorteado ser amarelo é:<br>$$P = \\frac{6}{20} = \\frac{3}{10}$$Portanto, a alternativa correta é a <strong>Letra B</strong>.",
@@ -13537,12 +13559,12 @@ var mathData = window.mathData || {
             "topicoId": "b4-t3"
           },
           {
-            "q": "Após concluírem o curso de Administração em um campus do IFMG, os irmãos Diones e Dionatan resolveram abrir uma empresa de confecção de chinelos. Como primeiro passo, decidiram criar a marca da empresa. Concordaram então que a logomarca seria construída a partir de dois triângulos retângulos não congruentes contendo um segmento de reta comum AB, representando os “D”s das iniciais de seus nomes, como ilustra a figura a seguir:\n\nOs triângulos teriam suas dimensões correspondentes na mesma razão entre as idades dos irmãos quando da idealização da empresa: Diones com 24 anos e Dionatan com 36 anos nessa data.\n\nEm um folheto construído para o lançamento da empresa, a dimensão do segmento AB era de 15 cm. Sabendo-se que o segmento BC neste folheto media 12 cm, qual a medida do segmento CE, sendo E ponto de intersecção dos segmentos AB e CD, neste mesmo folheto?",
+            "q": "Após concluírem o curso de Administração em um campus do IFMG, os irmãos Diones e Dionatan resolveram abrir uma empresa de confecção de chinelos. Como primeiro passo, decidiram criar a marca da empresa. Concordaram então que a logomarca seria construída a partir de dois triângulos retângulos não congruentes contendo um segmento de reta comum $\\overline{AB}$, representando os “D”s das iniciais de seus nomes, como ilustra a figura a seguir:\n\nOs triângulos teriam suas dimensões correspondentes na mesma razão entre as idades dos irmãos quando da idealização da empresa: Diones com 24 anos e Dionatan com 36 anos nessa data.\n\nEm um folheto construído para o lançamento da empresa, a dimensão do segmento $\\overline{AB}$ era de $15\\text{ cm}$. Sabendo-se que o segmento $\\overline{BC}$ neste folheto media $12\\text{ cm}$, qual a medida do segmento $\\overline{CE}$, sendo $E$ ponto de intersecção dos segmentos $\\overline{AB}$ e $\\overline{CD}$, neste mesmo folheto?",
             "options": [
-              "6 cm",
-              "9 cm",
-              "15 cm",
-              "21 cm"
+              "$6\\text{ cm}$",
+              "$9\\text{ cm}$",
+              "$15\\text{ cm}$",
+              "$21\\text{ cm}$"
             ],
             "correct": 2,
             "image": {
@@ -13557,12 +13579,12 @@ var mathData = window.mathData || {
             "topicoId": "b3-t3"
           },
           {
-            "q": "Dois dos maiores jogadores de futebol de todos os tempos, o argentino Lionel Messi e o português Cristiano Ronaldo, rivalizaram nos últimos anos as disputas de melhor jogador da temporada. Uma das maneiras de comparar o desempenho de ambos é através da média de gols por jogo, mostrada nas tabelas a seguir, separadas por equipe:\n\nO jogador que possui maior média de gols por jogo considerando toda a carreira e o respectivo valor dessa média, aproximadamente, é",
+            "q": "Dois dos maiores jogadores de futebol de todos os tempos, o argentino Lionel Messi e o português Cristiano Ronaldo, rivalizaram nos últimos anos as disputas de melhor jogador da temporada. Uma das maneiras de comparar o desempenho de ambos é através da média de gols por jogo, mostrada nas tabelas a seguir, separadas por equipe:\n\nO jogador que possui maior média de gols por jogo considerando toda a carreira e o respectivo valor dessa média, aproximadamente, é:",
             "options": [
-              "Cristiano Ronaldo com 0,60.",
-              "Cristiano Ronaldo com 1,03.",
-              "Lionel Messi com 0,57.",
-              "Lionel Messi com 0,79."
+              "Cristiano Ronaldo com $0{,}60$.",
+              "Cristiano Ronaldo com $1{,}03$.",
+              "Lionel Messi com $0{,}57$.",
+              "Lionel Messi com $0{,}79$."
             ],
             "correct": 3,
             "image": {
@@ -13579,10 +13601,10 @@ var mathData = window.mathData || {
           {
             "q": "A pandemia que se iniciou no Brasil em 2020 teve impactos globais que serão sentidos ainda por alguns anos. Dentre os diversos impactos negativos, o econômico é um daqueles que o País ainda não conseguiu se recuperar. O gráfico a seguir, retirado do perfil oficial da Secretaria Especial de Comunicação Social da Presidência da República e publicado em 03/12/2020, traz informações sobre o Produto Interno Bruto (PIB) do Brasil e apresenta um texto que sugere uma retomada do crescimento, ainda no período pandêmico.\n\nA informação de retomada do crescimento econômico apresentada pelo gráfico pode levar a uma interpretação equivocada, pois a variação do PIB no ano de 2020 foi de, aproximadamente:",
             "options": [
-              "– 4,10%",
-              "– 3,40%",
-              "– 3,05%",
-              "– 2,30%"
+              "$-4{,}10\\%$",
+              "$-3{,}40\\%$",
+              "$-3{,}05\\%$",
+              "$-2{,}30\\%$"
             ],
             "correct": 0,
             "image": {
@@ -13597,12 +13619,12 @@ var mathData = window.mathData || {
             "topicoId": "b1-t6"
           },
           {
-            "q": "O ano-luz é uma unidade de comprimento usada para expressar distâncias astronômicas e corresponde a distância que a luz percorre, no vácuo, durante um ano. Para calcular o valor do ano-luz deve-se efetuar o produto da quantidade de segundos em um ano pela velocidade da luz, que é cerca de 300.000 km/s.\n\nSendo assim, o valor do ano-luz em quilômetros é, aproximadamente, igual a",
+            "q": "O ano-luz é uma unidade de comprimento usada para expressar distâncias astronômicas e corresponde à distância que a luz percorre, no vácuo, durante um ano. Para calcular o valor do ano-luz deve-se efetuar o produto da quantidade de segundos em um ano pela velocidade da luz, que é cerca de $300.000\\text{ km/s}$.\n\nSendo assim, o valor do ano-luz em quilômetros é, aproximadamente, igual a:",
             "options": [
-              "1,05 × 10²",
-              "1,10 × 10⁸",
-              "1,58 × 10¹¹",
-              "9,46 × 10¹²"
+              "$1{,}05 \\times 10^2$",
+              "$1{,}10 \\times 10^8$",
+              "$1{,}58 \\times 10^{11}$",
+              "$9{,}46 \\times 10^{12}$"
             ],
             "correct": 3,
             "explanation": "1. <strong>Cálculo do número de segundos em um ano padrão (365 dias):</strong><br>$$1\\text{ ano} = 365 \\times 24 \\times 60 \\times 60 = 31.536.000\\text{ segundos} \\approx 3{,}1536 \\times 10^7\\text{ s}$$<br>2. <strong>Velocidade da luz em km/s:</strong><br>$$c = 300.000\\text{ km/s} = 3 \\times 10^5\\text{ km/s}$$<br>3. <strong>Cálculo da distância percorrida (ano-luz):</strong><br>$$d = c \\times t = (3 \\times 10^5) \\times (3{,}1536 \\times 10^7) = 9{,}4608 \\times 10^{12}\\text{ km} \\approx 9{,}46 \\times 10^{12}\\text{ km}$$Portanto, a alternativa correta é a <strong>Letra D</strong>.",
@@ -13613,12 +13635,12 @@ var mathData = window.mathData || {
             "topicoId": "b1-t7"
           },
           {
-            "q": "Circulou pelas redes sociais recentemente um meme com a expressão a seguir que ficou conhecida como “expressão numérica da vergonha”, pela quantidade de respostas erradas que eram inseridas nos comentários:\n$$(-5)^2 - (-5^2)$$\n\nO valor correto para a “expressão numérica da vergonha” é",
+            "q": "Circulou pelas redes sociais recentemente um meme com a expressão a seguir que ficou conhecida como “expressão numérica da vergonha”, pela quantidade de respostas erradas que eram inseridas nos comentários:\n$$(-5)^2 - (-5^2)$$\n\nO valor correto para a “expressão numérica da vergonha” é:",
             "options": [
-              "-50",
-              "0",
-              "20",
-              "50"
+              "$-50$",
+              "$0$",
+              "$20$",
+              "$50$"
             ],
             "correct": 3,
             "explanation": "Resolvemos cada termo observando atentamente a presença ou ausência dos parênteses na base da potência:<br><br>1. <strong>Primeiro termo $(-5)^2$:</strong><br>A base inteira é o número negativo $-5$, pois está entre parênteses:<br>$$(-5)^2 = (-5) \\times (-5) = +25$$<br>2. <strong>Segundo termo $(-5^2)$:</strong><br>O expoente 2 atua exclusivamente sobre o número 5, preservando o sinal negativo interno:<br>$$-5^2 = -(5^2) = -25$$Logo, $(-5^2) = -25$.<br><br>3. <strong>Efetuação da subtração:</strong><br>$$(-5)^2 - (-5^2) = 25 - (-25) = 25 + 25 = 50$$Portanto, a alternativa correta é a <strong>Letra D</strong>.",
@@ -13629,7 +13651,7 @@ var mathData = window.mathData || {
             "topicoId": "b1-t3"
           },
           {
-            "q": "Os quadriláteros podem ser classificados pela relação entre as medidas dos ângulos, dos lados e o paralelismo entre eles. Algumas destas classificações são as seguintes:\n\n• Quadrados: lados de mesma medida e ângulos de mesma medida.\n• Retângulo: ângulos de mesma medida.\n• Paralelogramo: lados opostos paralelos.\n• Losango: lados de mesma medida.\n• Trapézio: um par de lados opostos paralelos.\n\nCom base nas definições e nos conceitos geométricos de polígonos descritos anteriormente, pode-se concluir que",
+            "q": "Os quadriláteros podem ser classificados pela relação entre as medidas dos ângulos, dos lados e o paralelismo entre eles. Algumas destas classificações são as seguintes:\n\n• Quadrados: lados de mesma medida e ângulos de mesma medida.\n\n• Retângulo: ângulos de mesma medida.\n\n• Paralelogramo: lados opostos paralelos.\n\n• Losango: lados de mesma medida.\n\n• Trapézio: um par de lados opostos paralelos.\n\nCom base nas definições e nos conceitos geométricos de polígonos descritos anteriormente, pode-se concluir que:",
             "options": [
               "todo losango é um quadrado.",
               "todo paralelogramo é um trapézio.",
@@ -13645,12 +13667,12 @@ var mathData = window.mathData || {
             "topicoId": "b3-t2"
           },
           {
-            "q": "Márcia foi contratada como vendedora em uma loja de cosméticos e em seu contrato ficou acordado que seu salário mensal será de $\\text{R\\$} 1.212{,}00$ fixos mais 3,5% sobre o valor total x em reais das vendas do mês. Contudo, no mês em que Márcia atingir a meta de vendas, a parte fixa de seu salário também sofrerá um acréscimo de 0,5%.\n\nConsiderando que neste mês Márcia atingiu a meta de vendas, qual expressão representa o salário que Márcia receberá?",
+            "q": "Márcia foi contratada como vendedora em uma loja de cosméticos e em seu contrato ficou acordado que seu salário mensal será de $\\text{R\\$} 1.212{,}00$ fixos mais $3{,}5\\%$ sobre o valor total $x$ em reais das vendas do mês. Contudo, no mês em que Márcia atingir a meta de vendas, a parte fixa de seu salário também sofrerá um acréscimo de $0{,}5\\%$.\n\nConsiderando que neste mês Márcia atingiu a meta de vendas, qual expressão representa o salário que Márcia receberá?",
             "options": [
-              "y = 1.212 + 0,035x",
-              "y = 1.212 + 0,040x",
-              "y = 1.218,06 + 0,035x",
-              "y = 1.218,06 + 0,040x"
+              "$y = 1.212 + 0{,}035x$",
+              "$y = 1.212 + 0{,}040x$",
+              "$y = 1.218{,}06 + 0{,}035x$",
+              "$y = 1.218{,}06 + 0{,}040x$"
             ],
             "correct": 2,
             "explanation": "Vamos compor as partes fixa e variável do salário de Márcia no mês da meta:<br><br>1. <strong>Parte Fixa com bônus de 0,5%:</strong><br>A remuneração fixa original é $\\text{R\\$} 1.212{,}00$. Com acréscimo de $0{,}5\\% = 0{,}005$:<br>$$\\text{Fixo} = 1.212 \\times (1 + 0{,}005) = 1.212 \\times 1{,}005 = 1.212 + 6{,}06 = 1.218{,}06$$\\text{reais}.<br><br>2. <strong>Parte Variável (comissão):</strong><br>A comissão é de $3{,}5\\% = 0{,}035$ sobre o total de vendas $x$:<br>$$\\text{Comissão} = 0{,}035x$$<br>3. <strong>Expressão final do salário $y$:</strong><br>$$y = 1.218{,}06 + 0{,}035x$$Portanto, a alternativa correta é a <strong>Letra C</strong>.",
@@ -13661,12 +13683,12 @@ var mathData = window.mathData || {
             "topicoId": "b2-t6"
           },
           {
-            "q": "Preço da gasolina já supera $\\text{R\\$} 8$ por litro em postos de 11 estados\n\nO estado com o maior valor é o Rio de Janeiro, onde o litro chegou a $\\text{R\\$} 8{,}99$, o mesmo preço da gasolina aditivada. Segundo levantamento da ANP (Agência Nacional do Petróleo, Gás e Biocombustíveis), realizado entre os dias 8 e 14 de maio, o valor máximo encontrado foi de $\\text{R\\$} 8{,}990$, no Rio de Janeiro [...]. ($\\text{R\\$} 7$ Notícias, 2022).\n\nUm carro consumiu 40 litros de gasolina para percorrer 480 Km. Em condições equivalentes, qual foi o valor pago em combustível, considerando o consumo deste carro para que ele percorra 1320 Km e que o abastecimento tenha ocorrido no Rio de Janeiro, considerando o preço do litro informado no texto para este estado?",
+            "q": "**Preço da gasolina já supera $\\text{R\\$} 8$ por litro em postos de 11 estados**\n\nO estado com o maior valor é o Rio de Janeiro, onde o litro chegou a $\\text{R\\$} 8{,}99$, o mesmo preço da gasolina aditivada. Segundo levantamento da ANP (Agência Nacional do Petróleo, Gás e Biocombustíveis), realizado entre os dias 8 e 14 de maio, o valor máximo encontrado foi de $\\text{R\\$} 8{,}990$, no Rio de Janeiro [...]. (R7 Notícias, 2022).\n\nUm carro consumiu 40 litros de gasolina para percorrer $480\\text{ km}$. Em condições equivalentes, qual foi o valor pago em combustível, considerando o consumo deste carro para que ele percorra $1.320\\text{ km}$ e que o abastecimento tenha ocorrido no Rio de Janeiro, considerando o preço do litro informado no texto para este estado?",
             "options": [
               "$\\text{R\\$} 880{,}00$",
               "$\\text{R\\$} 887{,}70$",
               "$\\text{R\\$} 988{,}90$",
-              "$\\text{R\\$} 1348{,}50$"
+              "$\\text{R\\$} 1.348{,}50$"
             ],
             "correct": 2,
             "explanation": "1. <strong>Rendimento do automóvel:</strong><br>Com 40 litros o carro percorre 480 km:<br>$$\\text{Rendimento} = \\frac{480\\text{ km}}{40\\text{ L}} = 12\\text{ km/L}$$<br>2. <strong>Volume necessário para percorrer 1.320 km:</strong><br>$$V = \\frac{1.320\\text{ km}}{12\\text{ km/L}} = 110\\text{ litros}$$<br>3. <strong>Custo total no Rio de Janeiro:</strong><br>Conforme destacado no texto da reportagem, o preço por litro no estado do Rio de Janeiro atingiu $\\text{R\\$} 8{,}99$:<br>$$\\text{Custo total} = 110 \\times 8{,}99 = \\text{R\\$} 988{,}90$$Portanto, a alternativa correta é a <strong>Letra C</strong>.",
@@ -13677,7 +13699,7 @@ var mathData = window.mathData || {
             "topicoId": "b1-t6"
           },
           {
-            "q": "Velocidade média é a variação da posição (deslocamento) de um móvel em relação a um referencial durante determinado intervalo de tempo: $v_m = \\frac{\\Delta s}{\\Delta t}$.\n\nUma pessoa, em sua viagem de férias, resolveu que iria para a cidade de sua família e para isso alugou um carro. O aluguel será pago em uma parcela fixa de $\\text{R\\$} 494{,}00$, que inclui 220km, e será acrescido um valor de $\\text{R\\$} 2{,}30$ por quilômetro percorrido acima destes 220km.\n\nA viagem foi efetuada em duas etapas. Na primeira foram percorridos 180 km à uma velocidade média de 90 km/h. A segunda etapa foi realizada em 3h à uma velocidade média de 70 km/h. Considere que o carro foi devolvido em uma filial da empresa no local de destino.\n\nAnalise as informações de I a IV a seguir:\n\nI - A viagem durou 4 horas e 25 minutos\nII - O total percorrido foi de 390 Km\nIII - O total pago para a empresa de aluguel veicular foi de $\\text{R\\$} 885{,}00$\nIV - A segunda etapa da viagem durou menos tempo que a primeira etapa\n\nPode-se afirmar que:",
+            "q": "Velocidade média é a variação da posição (deslocamento) de um móvel em relação a um referencial durante determinado intervalo de tempo: $v_m = \\frac{\\Delta s}{\\Delta t}$.\n\nUma pessoa, em sua viagem de férias, resolveu que iria para a cidade de sua família e para isso alugou um carro. O aluguel será pago em uma parcela fixa de $\\text{R\\$} 494{,}00$, que inclui $220\\text{ km}$, e será acrescido um valor de $\\text{R\\$} 2{,}30$ por quilômetro percorrido acima destes $220\\text{ km}$.\n\nA viagem foi efetuada em duas etapas. Na primeira foram percorridos $180\\text{ km}$ à uma velocidade média de $90\\text{ km/h}$. A segunda etapa foi realizada em $3\\text{ h}$ à uma velocidade média de $70\\text{ km/h}$. Considere que o carro foi devolvido em uma filial da empresa no local de destino.\n\nAnalise as informações de I a IV a seguir:\n\nI - A viagem durou 4 horas e 25 minutos\n\nII - O total percorrido foi de $390\\text{ km}$\n\nIII - O total pago para a empresa de aluguel veicular foi de $\\text{R\\$} 885{,}00$\n\nIV - A segunda etapa da viagem durou menos tempo que a primeira etapa\n\nPode-se afirmar que:",
             "options": [
               "I, II e III estão corretas",
               "I, II e IV estão corretas",
@@ -13697,7 +13719,7 @@ var mathData = window.mathData || {
             "topicoId": "b2-t6"
           },
           {
-            "q": "O gráfico a seguir indica como será calculado o desconto no bônus anual de um funcionário por atrasos acumulados. O eixo y representa o desconto, em reais, sofrido por cada minuto de atraso e o eixo x o tempo de atraso em minutos:\n\nConsiderando os dados descritos no problema e o gráfico dado, quanto será descontado no bônus do funcionário, se este atrasar 1 hora e 41 minutos ao longo do ano?",
+            "q": "O gráfico a seguir indica como será calculado o desconto no bônus anual de um funcionário por atrasos acumulados. O eixo $y$ representa o desconto, em reais, sofrido por cada minuto de atraso e o eixo $x$ o tempo de atraso em minutos:\n\nConsiderando os dados descritos no problema e o gráfico dado, quanto será descontado no bônus do funcionário, se este atrasar 1 hora e 41 minutos ao longo do ano?",
             "options": [
               "$\\text{R\\$} 12{,}15$",
               "$\\text{R\\$} 26{,}00$",
@@ -13717,7 +13739,7 @@ var mathData = window.mathData || {
             "topicoId": "b2-t6"
           },
           {
-            "q": "Um hexágono é dito regular quando possui todos os seus lados congruentes e consequentemente seus ângulos também serão congruentes. O hexágono regular pode ser dividido em 6 triângulos equiláteros, isto é, triângulos com as medidas de todos os lados iguais, conforme pode-se ver na figura a seguir:\n\nSabendo que o perímetro do hexágono regular dado é de 30 cm, qual será a área deste polígono?",
+            "q": "Um hexágono é dito regular quando possui todos os seus lados congruentes e consequentemente seus ângulos também serão congruentes. O hexágono regular pode ser dividido em 6 triângulos equiláteros, isto é, triângulos com as medidas de todos os lados iguais, conforme pode-se ver na figura a seguir:\n\nSabendo que o perímetro do hexágono regular dado é de $30\\text{ cm}$, qual será a área deste polígono?",
             "options": [
               "$5\\text{ cm}^2$",
               "$\\frac{5\\sqrt{3}}{2}\\text{ cm}^2$",
@@ -13764,12 +13786,12 @@ var mathData = window.mathData || {
         "driveUrl": "",
         "questions": [
           {
-            "q": "Considere a expressão:\n$$\\frac{\\left(2^{\\sqrt{2}}\\right)^{\\sqrt{2}}}{5^0} - \\frac{2}{\\sqrt{2^3 \\cdot 2^7}} = \\frac{N}{D}$$\n\nSabendo que N e D são números primos entre si, qual o valor de N?",
+            "q": "Considere a expressão:\n$$\\frac{\\left(2^{\\sqrt{2}}\\right)^{\\sqrt{2}}}{5^0} - \\frac{2}{\\sqrt{2^3 \\cdot 2^7}} = \\frac{N}{D}$$\n\nSabendo que $N$ e $D$ são números primos entre si, qual o valor de $N$?",
             "options": [
-              "65",
-              "63",
-              "59",
-              "15"
+              "$65$",
+              "$63$",
+              "$59$",
+              "$15$"
             ],
             "correct": 1,
             "explanation": "Vamos simplificar os termos da expressão:<br><br>1. <strong>Primeiro termo:</strong><br>Aplicando a propriedade de potência de potência $\\left(a^m\\right)^n = a^{m \\cdot n}$ e notando que todo número não nulo elevado a zero é $1$ ($5^0 = 1$):<br>$$\\left(2^{\\sqrt{2}}\\right)^{\\sqrt{2}} = 2^{\\sqrt{2} \\cdot \\sqrt{2}} = 2^2 = 4$$Logo:<br>$$\\frac{\\left(2^{\\sqrt{2}}\\right)^{\\sqrt{2}}}{5^0} = \\frac{4}{1} = 4$$<br>2. <strong>Segundo termo:</strong><br>Multiplicando as potências de mesma base no radicando:<br>$$2^3 \\cdot 2^7 = 2^{3+7} = 2^{10}$$\n$$\\sqrt{2^{10}} = 2^{10/2} = 2^5 = 32$$Logo:<br>$$\\frac{2}{\\sqrt{2^3 \\cdot 2^7}} = \\frac{2}{32} = \\frac{1}{16}$$<br>3. <strong>Subtração e obtenção da fração irredutível:</strong><br>$$4 - \\frac{1}{16} = \\frac{4 \\times 16 - 1}{16} = \\frac{64 - 1}{16} = \\frac{63}{16}$$Como $63 = 3^2 \\times 7$ e $16 = 2^4$, eles não possuem fatores primos comuns, logo $N = 63$ e $D = 16$ são primos entre si.<br>Portanto, o valor de $N$ é $63$.<br><br>Portanto, a alternativa correta é a <strong>Letra B</strong>.",
@@ -13798,10 +13820,10 @@ var mathData = window.mathData || {
           {
             "q": "Um pedreiro de uma pequena cidade de Minas Gerais foi solicitado a executar o orçamento de um muro de arrimo de uma construção. O muro possui formato de um trapézio retângulo, e o pedreiro cobra $\\text{R\\$} 60{,}00$ para cada metro quadrado de muro construído. Para não correr risco de errar os cálculos, ele recorre ao seu manual de mestre de obras para realizar o orçamento, e se depara com a seguinte gravura:\n\nSabe-se que para o muro a ser orçado, têm-se $a = 1{,}2\\text{ m}$, $b = 2{,}8\\text{ m}$ e $c = 7\\text{ m}$.\n\nO valor total, em reais, da mão de obra cobrado pelo pedreiro será de:",
             "options": [
-              "1 428",
-              "1 212",
-              "840",
-              "624"
+              "$1.428$",
+              "$1.212$",
+              "$840$",
+              "$624$"
             ],
             "correct": 2,
             "image": {
@@ -13816,12 +13838,12 @@ var mathData = window.mathData || {
             "topicoId": "b4-t1"
           },
           {
-            "q": "Um professor recém-formado acaba de receber sua primeira oferta de emprego. Ele foi convidado para trabalhar como professor no Ensino Médio de uma escola da rede privada de sua cidade. Conversando com outros professores dessa escola, ele descobre que o salário mensal desses profissionais é calculado pelo produto de três fatores:\n• O número de horas-aula semanais.\n• O valor da hora-aula.\n• 4,5 (número de semanas consideradas a cada mês).\n\nNessas mesmas conversas, descobre ainda que o valor da hora-aula para o Ensino Médio é de $\\text{R\\$} 40{,}00$, pago igualmente a todos os professores. No dia da efetivação do contrato de trabalho, o professor é informado que receberá um salário mensal de $\\text{R\\$} 5.400{,}00$.\n\nDessa forma, o seu contrato estabelece uma carga semanal de horas-aula referente a",
+            "q": "Um professor recém-formado acaba de receber sua primeira oferta de emprego. Ele foi convidado para trabalhar como professor no Ensino Médio de uma escola da rede privada de sua cidade. Conversando com outros professores dessa escola, ele descobre que o salário mensal desses profissionais é calculado pelo produto de três fatores:\n\n• O número de horas-aula semanais.\n\n• O valor da hora-aula.\n\n• $4{,}5$ (número de semanas consideradas a cada mês).\n\nNessas mesmas conversas, descobre ainda que o valor da hora-aula para o Ensino Médio é de $\\text{R\\$} 40{,}00$, pago igualmente a todos os professores. No dia da efetivação do contrato de trabalho, o professor é informado que receberá um salário mensal de $\\text{R\\$} 5.400{,}00$.\n\nDessa forma, o seu contrato estabelece uma carga semanal de horas-aula referente a:",
             "options": [
-              "8 aulas.",
-              "9 aulas.",
-              "30 aulas.",
-              "135 aulas."
+              "$8$ aulas",
+              "$9$ aulas",
+              "$30$ aulas",
+              "$135$ aulas"
             ],
             "correct": 2,
             "explanation": "Seja $h$ o número de horas-aula semanais contratadas.<br>De acordo com a fórmula estabelecida pela escola:<br>$$\\text{Salário} = h \\times (\\text{valor da hora-aula}) \\times 4{,}5$$Substituindo os dados do contrato:<br>$$5.400 = h \\times 40{,}00 \\times 4{,}5$$Multiplicando os fatores numéricos:<br>$$40 \\times 4{,}5 = 180$$\n$$180 h = 5.400 \\implies h = \\frac{5.400}{180} = 30\\text{ aulas semanais}$$Portanto, a alternativa correta é a <strong>Letra C</strong>.",
@@ -13832,12 +13854,12 @@ var mathData = window.mathData || {
             "topicoId": "b2-t3"
           },
           {
-            "q": "Uma mulher pretende levar toda sua família (ela, marido e três filhos) ao cinema para assistir o episódio final de sua saga favorita. Sempre precavida, ela já está separando o dinheiro necessário para as entradas. Ela se recorda que das duas últimas vezes que parte da família frequentou o cinema, os gastos com as entradas foram os seguintes:\n\n• Para seu marido (adulto) e dois de seus filhos (crianças), custo total de $\\text{R\\$} 25{,}50$.\n• Para ela e seu marido (adultos) e um de seus filhos (criança), custo total de $\\text{R\\$} 31{,}50$.\n\nSabe-se que os ingressos de adultos e crianças possuem valores distintos, e que esses valores se mantiveram inalterados desde as duas últimas idas ao cinema.\n\nQual valor total, em reais, ela pagará pelas entradas se dessa vez toda a família for ao cinema?",
+            "q": "Uma mulher pretende levar toda sua família (ela, marido e três filhos) ao cinema para assistir o episódio final de sua saga favorita. Sempre precavida, ela já está separando o dinheiro necessário para as entradas. Ela se recorda que das duas últimas vezes que parte da família frequentou o cinema, os gastos com as entradas foram os seguintes:\n\n• Para seu marido (adulto) e dois de seus filhos (crianças), custo total de $\\text{R\\$} 25{,}50$.\n\n• Para ela e seu marido (adultos) e um de seus filhos (criança), custo total de $\\text{R\\$} 31{,}50$.\n\nSabe-se que os ingressos de adultos e crianças possuem valores distintos, e que esses valores se mantiveram inalterados desde as duas últimas idas ao cinema.\n\nQual valor total, em reais, ela pagará pelas entradas se dessa vez toda a família for ao cinema?",
             "options": [
-              "41,25",
-              "44,50",
-              "47,00",
-              "57,00"
+              "$41{,}25$",
+              "$44{,}50$",
+              "$47{,}00$",
+              "$57{,}00$"
             ],
             "correct": 1,
             "explanation": "Sejam $A$ o preço do ingresso de adulto e $C$ o preço do ingresso de criança.<br>Montamos o sistema linear a partir das compras anteriores:<br>$$\\begin{cases} A + 2C = 25{,}50 \\\\ 2A + C = 31{,}50 \\end{cases}$$Somando membro a membro as duas equações:<br>$$(A + 2A) + (2C + C) = 25{,}50 + 31{,}50$$\n$$3A + 3C = 57{,}00 \\implies A + C = 19{,}00$$\\text{reais}.<br><br>Subtraindo a primeira equação da segunda:<br>$$(2A + C) - (A + 2C) = 31{,}50 - 25{,}50 \\implies A - C = 6{,}00$$Somando $(A + C) + (A - C)$:<br>$$2A = 25{,}00 \\implies A = 12{,}50\\text{ reais}$$E para a criança: $C = 19{,}00 - 12{,}50 = 6{,}50\\text{ reais}$.<br><br>A família inteira é formada por 2 adultos (ela e marido) e 3 crianças (seus três filhos):<br>$$\\text{Total} = 2A + 3C = 2(12{,}50) + 3(6{,}50) = 25{,}00 + 19{,}50 = \\text{R\\$} 44{,}50$$Portanto, a alternativa correta é a <strong>Letra B</strong>.",
@@ -13848,12 +13870,12 @@ var mathData = window.mathData || {
             "topicoId": "b2-t3"
           },
           {
-            "q": "François Viète foi um matemático francês nascido no século XVI e que, entre outras contribuições, desenvolveu um método de resolução de equações de 2º grau. Aplicando o método de Viète para a equação $x^2 - 4x + 3 = 0$:\n\n1) Faz-se $x = m + n$ e substitui-se na equação: $(m + n)^2 - 4(m + n) + 3 = 0$\n2) Resolve-se o produto notável, aplicando a propriedade distributiva: $m^2 + 2mn + n^2 - 4m - 4n + 3 = 0$\n3) Reorganizam-se os termos da equação considerando a incógnita principal: $n^2 + (2m - 4)n + (m^2 - 4m + 3) = 0$\n4) Usando a notação tradicional para equações do 2º grau, tem-se na incógnita $n$: $a = 1, b = 2m - 4, c = m^2 - 4m + 3$\n5) O método consiste, então, em anular o termo em $n$, obtendo assim o valor de $m$: $2m - 4 = 0 \\implies m = 2$\n6) Substituindo na equação do passo 3 o valor de $m$ encontrado, tem-se agora uma equação incompleta que permite encontrar facilmente os valores de $n$.\n7) Com os valores de $m$ e $n$, obtém-se $x$ pela expressão $x = m + n$.\n\nDe acordo com esse método, todos os possíveis valores de $n$ e $x$ são:",
+            "q": "François Viète foi um matemático francês nascido no século XVI e que, entre outras contribuições, desenvolveu um método de resolução de equações de 2º grau. Aplicando o método de Viète para a equação $x^2 - 4x + 3 = 0$:\n\n1) Faz-se $x = m + n$ e substitui-se na equação: $(m + n)^2 - 4(m + n) + 3 = 0$\n\n2) Resolve-se o produto notável, aplicando a propriedade distributiva: $m^2 + 2mn + n^2 - 4m - 4n + 3 = 0$\n\n3) Reorganizam-se os termos da equação considerando a incógnita principal: $n^2 + (2m - 4)n + (m^2 - 4m + 3) = 0$\n\n4) Usando a notação tradicional para equações do 2º grau, tem-se na incógnita $n$: $a = 1$, $b = 2m - 4$, $c = m^2 - 4m + 3$\n\n5) O método consiste, então, em anular o termo em $n$, obtendo assim o valor de $m$: $2m - 4 = 0 \\implies m = 2$\n\n6) Substituindo na equação do passo 3 o valor de $m$ encontrado, tem-se agora uma equação incompleta que permite encontrar facilmente os valores de $n$.\n\n7) Com os valores de $m$ e $n$, obtém-se $x$ pela expressão $x = m + n$.\n\nDe acordo com esse método, todos os possíveis valores de $n$ e $x$ são:",
             "options": [
-              "n = 1 e x = 3",
-              "n = –1 e x = 1",
-              "n = 1 e x = 1 ou x = 3",
-              "n = ± 1 e x = 1 ou x = 3"
+              "$n = 1$ e $x = 3$",
+              "$n = -1$ e $x = 1$",
+              "$n = 1$ e $x = 1$ ou $x = 3$",
+              "$n = \\pm 1$ e $x = 1$ ou $x = 3$"
             ],
             "correct": 3,
             "explanation": "Seguindo os passos 6 e 7 do método de Viète com $m = 2$:<br><br>1. <strong>Passo 6:</strong> Substituição de $m = 2$ na equação do passo 3:<br>$$n^2 + (2(2) - 4)n + (2^2 - 4(2) + 3) = 0$$\n$$n^2 + 0n + (4 - 8 + 3) = 0$$\n$$n^2 - 1 = 0 \\implies n^2 = 1 \\implies n = \\pm 1$$<br>2. <strong>Passo 7:</strong> Obtenção das raízes $x = m + n$ com $m = 2$:<br>• Para $n = +1$: $x = 2 + 1 = 3$<br>• Para $n = -1$: $x = 2 - 1 = 1$<br><br>Portanto, $n = \\pm 1$ e $x = 1$ ou $x = 3$.<br><br>Portanto, a alternativa correta é a <strong>Letra D</strong>.",
@@ -13864,7 +13886,7 @@ var mathData = window.mathData || {
             "topicoId": "b2-t4"
           },
           {
-            "q": "O suicídio é um sério problema de saúde pública global. Está entre as vinte principais causas de morte em todo o mundo, com mais mortes do que a malária, o câncer de mama ou a guerra e o homicídio. Cerca de 800 000 pessoas morrem por suicídio todos os anos.\n\nO gráfico a seguir é parte de um estudo realizado pela Organização Mundial de Saúde (OMS) que apresenta a taxa anual de suicídios para cada 100 000 habitantes no período de 2000 a 2016 dividida por regiões do planeta:\n\nDe acordo com o gráfico, é correto afirmar que a taxa de suicídios a cada 100 000 habitantes no período de 2000 a 2016",
+            "q": "O suicídio é um sério problema de saúde pública global. Está entre as vinte principais causas de morte em todo o mundo, com mais mortes do que a malária, o câncer de mama ou a guerra e o homicídio. Cerca de $800.000$ pessoas morrem por suicídio todos os anos.\n\nO gráfico a seguir é parte de um estudo realizado pela Organização Mundial de Saúde (OMS) que apresenta a taxa anual de suicídios para cada $100.000$ habitantes no período de 2000 a 2016 dividida por regiões do planeta:\n\nDe acordo com o gráfico, é correto afirmar que a taxa de suicídios a cada $100.000$ habitantes no período de 2000 a 2016:",
             "options": [
               "foi sempre maior na Europa.",
               "diminuiu em todas as regiões do mundo.",
@@ -13884,12 +13906,12 @@ var mathData = window.mathData || {
             "topicoId": "b4-t4"
           },
           {
-            "q": "Três pilotos de avião, preparando um novo show de acrobacias, esquematizaram parte do show em que um dos aviões (A) cruzaria o rastro de fumaça deixado pelos outros dois (B e C), nos pontos D e E, que estariam voando paralelamente, como apresenta a figura a seguir:\n\nNo instante apresentado na figura, a distância entre A e B é 600 m e entre A e C é 1 500 m.\n\nNesse momento, qual a distância, em metros, entre os pontos D e E?",
+            "q": "Três pilotos de avião, preparando um novo show de acrobacias, esquematizaram parte do show em que um dos aviões (A) cruzaria o rastro de fumaça deixado pelos outros dois (B e C), nos pontos D e E, que estariam voando paralelamente, como apresenta a figura a seguir:\n\nNo instante apresentado na figura, a distância entre A e B é $600\\text{ m}$ e entre A e C é $1.500\\text{ m}$.\n\nNesse momento, qual a distância, em metros, entre os pontos D e E?",
             "options": [
-              "1 000",
-              "1 200",
-              "1 800",
-              "2 400"
+              "$1.000$",
+              "$1.200$",
+              "$1.800$",
+              "$2.400$"
             ],
             "correct": 2,
             "image": {
@@ -13906,10 +13928,10 @@ var mathData = window.mathData || {
           {
             "q": "Um pesquisador da área de tecnologia está trabalhando na modelagem da potência de dois emissores de ondas eletromagnéticas, que serão usados em avanços na área de biodiagnóstico. Segundo seus levantamentos estatísticos, as potências ($P_1$ e $P_2$) emitidas pelas fontes, em função do tempo ($t$), em segundos, em que estão em funcionamento, são dadas pelas equações:\n$$P_1 = t^2 - 8t \\quad \\text{e} \\quad P_2 = -5t + 18$$\n\nQuantos segundos após o início do funcionamento ($t = 0$) as potências dessas duas fontes se igualam?",
             "options": [
-              "0",
-              "3",
-              "6",
-              "18"
+              "$0$",
+              "$3$",
+              "$6$",
+              "$18$"
             ],
             "correct": 2,
             "explanation": "As potências emitidas pelas duas fontes se igualam quando $P_1 = P_2$:<br>$$t^2 - 8t = -5t + 18$$Passando todos os termos para o primeiro membro:<br>$$t^2 - 8t + 5t - 18 = 0 \\implies t^2 - 3t - 18 = 0$$Fatorando o trinômio do segundo grau:<br>$$(t - 6)(t + 3) = 0$$Como $t$ representa o tempo decorrido após o início do funcionamento ($t > 0$), descartamos a raiz negativa $t = -3$.<br>Logo:<br>$$t = 6\\text{ segundos}$$Portanto, a alternativa correta é a <strong>Letra C</strong>.",
@@ -13920,12 +13942,12 @@ var mathData = window.mathData || {
             "topicoId": "b2-t4"
           },
           {
-            "q": "Um aluno do IFMG resolveu desenhar parte da logo da instituição em uma folha A4 (Fig. 1) seguindo parte dos padrões estabelecidos no manual de identidade visual IFMG (Fig. 2).\n\nSabe-se que esse aluno utilizará margens de 10,5 mm em todos os lados da folha e que irá desenhar apenas as letras I e F.\n\nO maior tamanho inteiro possível, em milímetros, para o lado x do módulo apresentado no manual, é:",
+            "q": "Um aluno do IFMG resolveu desenhar parte da logo da instituição em uma folha A4 (Fig. 1) seguindo parte dos padrões estabelecidos no manual de identidade visual IFMG (Fig. 2).\n\nSabe-se que esse aluno utilizará margens de $10{,}5\\text{ mm}$ em todos os lados da folha e que irá desenhar apenas as letras I e F.\n\nO maior tamanho inteiro possível, em milímetros, para o lado $x$ do módulo apresentado no manual, é:",
             "options": [
-              "55",
-              "60",
-              "61",
-              "63"
+              "$55$",
+              "$60$",
+              "$61$",
+              "$63$"
             ],
             "correct": 0,
             "image": {
@@ -13960,7 +13982,7 @@ var mathData = window.mathData || {
             "topicoId": "b4-t1"
           },
           {
-            "q": "Alguns esportes usam medidas angulares, em graus, para denominar suas manobras, entre eles o surf e o skate. O skate ficou marcado por três manobras consideradas radicais, todas realizadas por skatistas estadunidenses. A primeira foi o “540” realizada por Mike McGill em 1985, a segunda o famoso “900” de Tony Hawk, realizada em 1999 e, recentemente, em 2012 Tom Schaar, que tinha apenas 12 anos de idade na época, tornou-se o primeiro atleta a realizar a manobra “1 080”.\n\nA denominação “1 080” refere-se ao número de graus que o atleta gira, no ar, em torno de seu próprio corpo, que, no caso, corresponde a",
+            "q": "Alguns esportes usam medidas angulares, em graus, para denominar suas manobras, entre eles o surf e o skate. O skate ficou marcado por três manobras consideradas radicais, todas realizadas por skatistas estadunidenses. A primeira foi o “540” realizada por Mike McGill em 1985, a segunda o famoso “900” de Tony Hawk, realizada em 1999 e, recentemente, em 2012 Tom Schaar, que tinha apenas 12 anos de idade na época, tornou-se o primeiro atleta a realizar a manobra “1 080”.\n\nA denominação “1 080” refere-se ao número de graus que o atleta gira, no ar, em torno de seu próprio corpo, que, no caso, corresponde a:",
             "options": [
               "duas voltas e meia.",
               "três voltas completas.",
@@ -13976,12 +13998,12 @@ var mathData = window.mathData || {
             "topicoId": "b3-t1"
           },
           {
-            "q": "A Volta Internacional da Pampulha é uma corrida de rua que acontece em Belo Horizonte todo ano, desde 1999. No ano de 2019, chegou à sua 21ª edição. O recorde masculino da prova foi estabelecido em 2013, pelo queniano Lawrence Kiprotich, que cumpriu os 17 800 m da prova em 52 min. e 23 seg.\n\nO tempo médio, em minutos, que o atleta levou para percorrer cada quilômetro da prova foi, aproximadamente,",
+            "q": "A Volta Internacional da Pampulha é uma corrida de rua que acontece em Belo Horizonte todo ano, desde 1999. No ano de 2019, chegou à sua 21ª edição. O recorde masculino da prova foi estabelecido em 2013, pelo queniano Lawrence Kiprotich, que cumpriu os $17.800\\text{ m}$ da prova em 52 min e 23 seg.\n\nO tempo médio, em minutos, que o atleta levou para percorrer cada quilômetro da prova foi, aproximadamente:",
             "options": [
-              "0,3",
-              "3",
-              "30",
-              "300"
+              "$0{,}3$",
+              "$3$",
+              "$30$",
+              "$300$"
             ],
             "correct": 1,
             "explanation": "1. <strong>Conversão da distância da prova para quilômetros:</strong><br>$$17.800\\text{ m} = \\frac{17.800}{1.000} = 17{,}8\\text{ km}$$<br>2. <strong>Conversão do tempo para minutos:</strong><br>$$52\\text{ min e } 23\\text{ s} = 52 + \\frac{23}{60} \\approx 52 + 0{,}383 = 52{,}383\\text{ minutos}$$<br>3. <strong>Cálculo do ritmo médio (minutos por quilômetro):</strong><br>$$\\text{Ritmo} = \\frac{52{,}383\\text{ min}}{17{,}8\\text{ km}} \\approx 2{,}94\\text{ min/km} \\approx 3\\text{ minutos por quilômetro}$$Portanto, a alternativa correta é a <strong>Letra B</strong>.",
@@ -14014,10 +14036,10 @@ var mathData = window.mathData || {
           {
             "q": "Com o objetivo de deixar seus alunos atarefados por um longo intervalo de tempo, uma professora solicitou à classe que fornecesse o resultado numérico da expressão:\n$$\\frac{a^2 - 2ab + b^2 + 4a^2 - 4b^2}{5a + 3b}$$\npara $a = 2{,}7134$ e $b = -1{,}7813$.\n\nO resultado, no entanto, foi obtido rapidamente pelo aluno mais estudioso da classe, que determinou, em poucos segundos, que o resultado correto é:",
             "options": [
-              "0,9321",
-              "2,1138",
-              "4,4947",
-              "14,1614"
+              "$0{,}9321$",
+              "$2{,}1138$",
+              "$4{,}4947$",
+              "$14{,}1614$"
             ],
             "correct": 2,
             "explanation": "Em vez de substituir os valores decimais diretamente, fatoramos o numerador da expressão algébrica:<br><br>1. <strong>Redução dos termos semelhantes no numerador:</strong><br>$$(a^2 + 4a^2) - 2ab + (b^2 - 4b^2) = 5a^2 - 2ab - 3b^2$$<br>2. <strong>Fatoração por agrupamento:</strong><br>Reescrevemos o termo médio $-2ab$ como $-5ab + 3ab$:<br>$$5a^2 - 5ab + 3ab - 3b^2 = 5a(a - b) + 3b(a - b) = (5a + 3b)(a - b)$$<br>3. <strong>Simplificação da fração:</strong><br>$$\\frac{(5a + 3b)(a - b)}{5a + 3b} = a - b$$<br>4. <strong>Cálculo do valor numérico:</strong><br>Substituindo $a = 2{,}7134$ e $b = -1{,}7813$:<br>$$a - b = 2{,}7134 - (-1{,}7813) = 2{,}7134 + 1{,}7813 = 4{,}4947$$Portanto, a alternativa correta é a <strong>Letra C</strong>.",
@@ -14053,12 +14075,12 @@ var mathData = window.mathData || {
         },
         "questions": [
           {
-            "q": "Uma televisão inteligente, chamada de Smart TV, que tem seu preço à vista no valor de $\\text{R\\$} 2.000{,}00$, pode ser adquirida de duas formas diferentes de pagamento:\n\n• **Opção 1:** $3$ parcelas fixas de $\\text{R\\$} 900{,}00$.\n• **Opção 2:** ao final de $12$ meses após a compra, em parcela única, a uma taxa de juros simples de $2\\%$ ao mês.\n\nSabendo disso, qual a diferença, em reais, entre a Opção 1 e a Opção 2?",
+            "q": "Uma televisão inteligente, chamada de Smart TV, que tem seu preço à vista no valor de $\\text{R\\$} 2.000{,}00$, pode ser adquirida de duas formas diferentes de pagamento:\n\n• **Opção 1:** $3$ parcelas fixas de $\\text{R\\$} 900{,}00$.\n\n• **Opção 2:** ao final de $12$ meses após a compra, em parcela única, a uma taxa de juros simples de $2\\%$ ao mês.\n\nSabendo disso, qual a diferença, em reais, entre a Opção 1 e a Opção 2?",
             "options": [
-              "220,00",
-              "480,00",
-              "660,00",
-              "700,00"
+              "$\\text{R\\$} 220{,}00$",
+              "$\\text{R\\$} 480{,}00$",
+              "$\\text{R\\$} 660{,}00$",
+              "$\\text{R\\$} 700{,}00$"
             ],
             "correct": 0,
             "explanation": "Vamos calcular o valor final pago em cada uma das opções:\n\n1. **Opção 1:**\nO total pago é o produto das 3 parcelas de $\\text{R\\$} 900{,}00$:\n$$V_1 = 3 \\times 900{,}00 = \\text{R\\$} 2.700{,}00$$\n\n2. **Opção 2:**\nO regime é de juros simples com capital $C = 2000$ ($\\text{R\\$} 2.000{,}00$), taxa $i = 2\\% = 0{,}02\\text{ ao mês}$ e tempo $t = 12\\text{ meses}$:\n$$J = C \\cdot i \\cdot t = 2000 \\times 0{,}02 \\times 12 = 2000 \\times 0{,}24 = \\text{R\\$} 480{,}00$$\nO montante final na Opção 2 é:\n$$M = C + J = 2000{,}00 + 480{,}00 = \\text{R\\$} 2.480{,}00$$\n\n3. **Diferença entre as opções:**\n$$\\Delta = V_1 - M = 2700{,}00 - 2480{,}00 = \\text{R\\$} 220{,}00$$\n\nPortanto, a alternativa correta é a <strong>Letra A</strong>.",
@@ -14069,12 +14091,12 @@ var mathData = window.mathData || {
             "topicoId": "b1-t6"
           },
           {
-            "q": "Uma pesquisa foi realizada em uma escola para identificar a preferência de 1.000 (mil) alunos em relação a filmes de super-heróis e histórias em quadrinhos (HQs). As respostas estão apresentadas na tabela a seguir:\n\nQual o total de alunos que não gostam de HQs e nem de versões cinematográficas?",
+            "q": "No dia 25 de abril de 2019, estreou no Brasil o filme “Vingadores: Ultimato”. O longa da Marvel é o 22º de uma série iniciada em 2008, com o título “Homem de Ferro”, em que é possível perceber que os personagens (super-heróis) possuem poderes excepcionais, mas, mesmo assim, são ameaçados a todo tempo, pois enfrentam, ao longo da trama, adversários igualmente poderosos. Muitos filmes de super-heróis vêm sendo produzidos nos últimos anos com base em histórias em quadrinhos (HQs), em muitos casos, com releituras completamente distintas. Tal estratégia pode não agradar totalmente aos fãs de HQs, porém, tem tido sucesso, uma vez que é possível perceber grande aumento do público que prestigia tais produções.\n\nUma pesquisa foi realizada em uma escola para identificar a preferência de 1.000 (mil) alunos. As respostas estão apresentadas na tabela a seguir:\n\nQual o total de alunos que não gostam de HQs e nem de versões cinematográficas?",
             "options": [
-              "90",
-              "180",
-              "270",
-              "380"
+              "$90$",
+              "$180$",
+              "$270$",
+              "$380$"
             ],
             "correct": 2,
             "explanation": "Sejam $H$ o conjunto dos alunos que gostam de HQs e $C$ o conjunto dos alunos que gostam das versões cinematográficas.\n\nPelo Princípio da Inclusão-Exclusão para dois conjuntos, o número de alunos que gostam de pelo menos uma das mídias é dado por:\n$$n(H \\cup C) = n(H) + n(C) - n(H \\cap C)$$\nSubstituindo os valores da tabela:\n$$n(H \\cup C) = 350 + 470 - 90 = 820 - 90 = 730$$\n\nComo a pesquisa foi realizada com um total de $1.000$ alunos, o total de alunos que não gostam de nenhuma das duas versões é a diferença:\n$$N = 1000 - n(H \\cup C) = 1000 - 730 = 270$$\n\nPortanto, a alternativa correta é a <strong>Letra C</strong>.",
@@ -14091,10 +14113,10 @@ var mathData = window.mathData || {
           {
             "q": "Um fazendeiro contratou um engenheiro agrônomo para estudar a relação entre a quantidade de ração consumida por vacas leiteiras e a quantidade de leite produzido por elas. Após o estudo, o engenheiro constatou que, para cada $1{,}5\\text{ kg}$ consumido de ração, as vacas produziam $1\\text{ litro}$ de leite.\n\nSabendo que, num determinado dia, as vacas leiteiras consumiram $3\\text{ toneladas}$ de ração, qual foi o total, em litros, de leite produzido?",
             "options": [
-              "2",
-              "20",
-              "200",
-              "2000"
+              "$2$",
+              "$20$",
+              "$200$",
+              "$2.000$"
             ],
             "correct": 3,
             "explanation": "1. Primeiro convertemos a quantidade de ração consumida para quilogramas, sabendo que $1\\text{ tonelada} = 1.000\\text{ kg}$:\n$$3\\text{ toneladas} = 3 \\times 1000 = 3.000\\text{ kg}$$\n\n2. Sabendo que cada $1{,}5\\text{ kg}$ de ração produz $1\\text{ litro}$ de leite, a produção total de leite $L$ é proporcional à massa consumida:\n$$L = \\frac{3000\\text{ kg}}{1{,}5\\text{ kg/litro}} = \\frac{30000}{15} = 2.000\\text{ litros}$$\n\nPortanto, a alternativa correta é a <strong>Letra D</strong>.",
@@ -14105,12 +14127,12 @@ var mathData = window.mathData || {
             "topicoId": "b2-t2"
           },
           {
-            "q": "Uma empresa produz leite fermentado vendido em embalagens cilíndricas. A empresa resolveu vender o produto em uma nova embalagem cilíndrica, cujo raio da base e a altura são, respectivamente, o dobro e o triplo da embalagem original. Dessa forma o rótulo do produto teve que ser alterado para a nova embalagem.\n\nSabendo que os rótulos das embalagens ocupam exatamente toda a área lateral dos cilindros, a área do rótulo da embalagem nova equivale a quantas vezes a área do rótulo da embalagem original?",
+            "q": "Uma empresa produz leite fermentado, que é vendido em embalagens cilíndricas. Após 2 anos de venda, o setor de marketing fez um estudo de mercado e concluiu que esse produto venderia mais se o seu volume fosse maior. Com base no estudo, a empresa resolveu vender o produto em uma nova embalagem cilíndrica, cujo raio da base e a altura são, respectivamente, o dobro e o triplo da embalagem original. Dessa forma o rótulo do produto teve que ser alterado para a nova embalagem.\n\nSabendo que os rótulos das embalagens ocupam exatamente toda a área lateral dos cilindros, a área do rótulo da embalagem nova equivale a quantas vezes a área do rótulo da embalagem original?",
             "options": [
-              "2",
-              "3",
-              "5",
-              "6"
+              "$2$",
+              "$3$",
+              "$5$",
+              "$6$"
             ],
             "correct": 3,
             "explanation": "A área lateral $A_L$ de um cilindro circular reto de raio da base $r$ e altura $h$ é dada pela fórmula:\n$$A_L = 2\\pi r h$$\n\nPara a nova embalagem, as novas dimensões são o raio $r' = 2r$ e a altura $h' = 3h$. Calculamos a nova área lateral $A'_L$:\n$$A'_L = 2\\pi r' h' = 2\\pi (2r)(3h) = (2 \\times 3) \\cdot (2\\pi r h) = 6 \\cdot A_L$$\n\nAssim, a área do novo rótulo equivale a $6$ vezes a área do rótulo original.\n\nPortanto, a alternativa correta é a <strong>Letra D</strong>.",
@@ -14121,12 +14143,12 @@ var mathData = window.mathData || {
             "topicoId": "b4-t1"
           },
           {
-            "q": "É possível realizar uma interpretação geométrica do produto notável $(a + b)^2 = a^2 + 2ab + b^2$, conforme o desenho a seguir:\n\nConsidere que o quadrado de lado $a + b$ tem área $81\\text{ m}^2$ e o quadrado de lado $b$ tem área $9\\text{ m}^2$. O comprimento $a$ mede, em metros,",
+            "q": "É possível realizar uma interpretação geométrica do produto notável $(a + b)^2 = a^2 + 2ab + b^2$, conforme o desenho a seguir:\n\nConsidere que o quadrado de lado $a + b$ tem área $81\\text{ m}^2$ e o quadrado de lado $b$ tem área $9\\text{ m}^2$. O comprimento $a$ mede, em metros:",
             "options": [
-              "3",
-              "6",
-              "12",
-              "18"
+              "$3$",
+              "$6$",
+              "$12$",
+              "$18$"
             ],
             "correct": 1,
             "explanation": "Pela geometria do problema:\n\n1. O quadrado de lado $a + b$ tem área igual a $81\\text{ m}^2$:\n$$(a + b)^2 = 81$$\nComo $a + b > 0$, extraímos a raiz quadrada:\n$$a + b = \\sqrt{81} = 9\\text{ m}$$\n\n2. O quadrado menor de lado $b$ tem área igual a $9\\text{ m}^2$:\n$$b^2 = 9 \\implies b = \\sqrt{9} = 3\\text{ m}$$\n\n3. Substituindo o valor de $b$ na primeira equação:\n$$a + 3 = 9 \\implies a = 9 - 3 = 6\\text{ m}$$\n\nPortanto, a alternativa correta é a <strong>Letra B</strong>.",
@@ -14144,10 +14166,10 @@ var mathData = window.mathData || {
           {
             "q": "No Brasil, a Agência Nacional de Petróleo, Gás Natural e Biocombustíveis (ANP) determina que a gasolina do tipo Premium, utilizada para abastecer carros, deve ter $25\\%$ de etanol em sua mistura. Carros do tipo bicombustíveis podem ser abastecidos tanto com gasolina quanto com etanol. Um consumidor com um carro bicombustível está com metade do tanque cheio com gasolina Premium e abastece, completando seu tanque, com etanol.\n\nNessa situação, qual a razão entre a quantidade de etanol e a quantidade de gasolina no carro?",
             "options": [
-              "5/5",
-              "5/3",
-              "5/6",
-              "5/8"
+              "$\\frac{5}{5}$",
+              "$\\frac{5}{3}$",
+              "$\\frac{5}{6}$",
+              "$\\frac{5}{8}$"
             ],
             "correct": 1,
             "explanation": "Seja $V$ a capacidade total do tanque do veículo. Vamos adotar convenientemente $V = 100\\text{ litros}$ para facilitar a visualização dos cálculos percentuais:\n\n1. O carro está com metade do tanque ($50\\text{ litros}$) preenchido com gasolina Premium. Como a gasolina Premium contém $25\\%$ de etanol e $75\\%$ de gasolina pura:\n• Volume de etanol inicial: $0{,}25 \\times 50 = 12{,}5\\text{ litros}$\n• Volume de gasolina pura inicial: $0{,}75 \\times 50 = 37{,}5\\text{ litros}$\n\n2. O motorista completa a outra metade do tanque ($50\\text{ litros}$) inteiramente com etanol puro. Logo, a nova quantidade total de etanol presente no tanque é:\n$$V_{\\text{etanol}} = 12{,}5 + 50 = 62{,}5\\text{ litros}$$\n\n3. A quantidade de gasolina pura permanece a mesma:\n$$V_{\\text{gasolina}} = 37{,}5\\text{ litros}$$\n\n4. Calculamos a razão entre a quantidade total de etanol e a de gasolina:\n$$\\frac{V_{\\text{etanol}}}{V_{\\text{gasolina}}} = \\frac{62{,}5}{37{,}5} = \\frac{625}{375}$$\nDividindo numerador e denominador por $125$:\n$$\\frac{625 \\div 125}{375 \\div 125} = \\frac{5}{3}$$\n\nPortanto, a alternativa correta é a <strong>Letra B</strong>.",
@@ -14158,7 +14180,7 @@ var mathData = window.mathData || {
             "topicoId": "b2-t2"
           },
           {
-            "q": "João resolveu construir um dado comum em que a soma das faces opostas resulta em sete e encontrou dois esquemas, conforme apresentado a seguir:\n\nDessa forma, para conseguir um dado, João precisa",
+            "q": "João resolveu construir um dado comum em que a soma das faces opostas resulta em sete e encontrou dois esquemas, conforme apresentado a seguir:\n\nDessa forma, para conseguir um dado, João precisa:",
             "options": [
               "dobrar as abas da planificação do Esquema 1.",
               "dobrar as abas da planificação do Esquema 2.",
@@ -14179,7 +14201,7 @@ var mathData = window.mathData || {
             "topicoId": "b3-t4"
           },
           {
-            "q": "Tetris é um jogo de blocos muito popular que surgiu na década de 80. O objetivo principal desse jogo é encaixar blocos, sem deixar espaços vagos. As figuras numeradas de 1 a 8 a seguir representam alguns tipos de blocos do Tetris.\n\nO desafio deste jogo está em ajustar o encaixe de polígonos não convexos, como os blocos identificados pelos números",
+            "q": "Tetris é um jogo de blocos muito popular que surgiu na década de 80. O objetivo principal desse jogo é encaixar blocos, sem deixar espaços vagos. As figuras numeradas de 1 a 8 a seguir representam alguns tipos de blocos do Tetris.\n\nO desafio deste jogo está em ajustar o encaixe de polígonos não convexos, como os blocos identificados pelos números:",
             "options": [
               "1 e 2.",
               "3 e 4.",
@@ -14200,7 +14222,7 @@ var mathData = window.mathData || {
             "topicoId": "b3-t1"
           },
           {
-            "q": "Pedro estava brincando de dobraduras. Com uma folha quadrada, ele procedeu da seguinte maneira: primeiro dobrou a folha ao meio pela diagonal, depois dobrou novamente dividindo o ângulo de um dos vértices ao meio. Apertou bem a dobradura para marcar o papel e abriu novamente.\n\nAs marcas das dobras no papel formavam",
+            "q": "Pedro estava brincando de dobraduras. Com uma folha quadrada, ele procedeu da seguinte maneira: primeiro dobrou a folha ao meio pela diagonal, depois dobrou novamente dividindo o ângulo de um dos vértices ao meio. Apertou bem a dobradura para marcar o papel e abriu novamente.\n\nAs marcas das dobras no papel formavam:",
             "options": [
               "quadrados.",
               "somente triângulos.",
@@ -14216,7 +14238,7 @@ var mathData = window.mathData || {
             "topicoId": "b3-t1"
           },
           {
-            "q": "O professor Leonardo, ao apresentar sua aula sobre conjuntos numéricos, pretendia fazer uso de uma fração que pudesse representar um número racional e ao mesmo tempo fosse capaz de ilustrar um número natural.\n\nUm exemplo de uma fração que representa um número racional e que também seja um número natural que o professor poderá usar é",
+            "q": "O professor Leonardo, ao apresentar sua aula sobre conjuntos numéricos, pretendia fazer uso de uma fração que pudesse representar um número racional e ao mesmo tempo fosse capaz de ilustrar um número natural.\n\nUm exemplo de uma fração que representa um número racional e que também seja um número natural que o professor poderá usar é:",
             "options": [
               "$\\frac{-12}{4}$",
               "$\\frac{2}{5}$",
@@ -14232,7 +14254,7 @@ var mathData = window.mathData || {
             "topicoId": "b1-t4"
           },
           {
-            "q": "Dada uma folha triangular, dobram-se duas de suas pontas até encostarem na terceira ponta, formando-se assim um quadrado, conforme a figura a seguir:\n\nAo final da dobradura, cada triângulo dobrado",
+            "q": "Dada uma folha triangular, dobram-se duas de suas pontas até encostarem na terceira ponta, formando-se assim um quadrado, conforme a figura a seguir:\n\nAo final da dobradura, cada triângulo dobrado:",
             "options": [
               "é congruente com a folha triangular.",
               "é um triângulo retângulo isósceles.",
@@ -14253,12 +14275,12 @@ var mathData = window.mathData || {
             "topicoId": "b3-t1"
           },
           {
-            "q": "Júlia e sua família viajarão por uma companhia aérea que realiza os seguintes descontos:\n\n• Criança com idade menor que dois anos viajando no colo paga $\\frac{1}{10}$ da tarifa do adulto e viajando ocupando um assento com cadeirinha de bebê, $\\frac{3}{4}$ da tarifa do adulto.\n• Criança com idade entre dois e doze anos paga $\\frac{1}{5}$ da tarifa do adulto.\n• Acima de doze anos o valor cobrado é igual ao de adulto.\n\nA família de Júlia é composta por ela, seu esposo, duas filhas com idade igual a oito e seis anos cada e um bebê de um ano e três meses. Todos irão viajar e o bebê irá no colo, pagando o total de $\\text{R\\$} 5.280{,}00$ para as passagens de ida e volta.\n\nPara um adulto, o valor cobrado em reais, de ida e volta, pela companhia aérea, é",
+            "q": "Júlia e sua família viajarão por uma companhia aérea que realiza os seguintes descontos:\n\n• Criança com idade menor que dois anos viajando no colo paga $\\frac{1}{10}$ da tarifa do adulto e viajando ocupando um assento com cadeirinha de bebê, $\\frac{3}{4}$ da tarifa do adulto.\n\n• Criança com idade entre dois e doze anos paga $\\frac{1}{5}$ da tarifa do adulto.\n\n• Acima de doze anos o valor cobrado é igual ao de adulto.\n\nA família de Júlia é composta por ela, seu esposo, duas filhas com idade igual a oito e seis anos cada e um bebê de um ano e três meses. Todos irão viajar e o bebê irá no colo, pagando o total de $\\text{R\\$} 5.280{,}00$ para as passagens de ida e volta.\n\nPara um adulto, o valor cobrado em reais, de ida e volta, pela companhia aérea, é:",
             "options": [
-              "2640",
-              "2112",
-              "1760",
-              "1056"
+              "$2.640$",
+              "$2.112$",
+              "$1.760$",
+              "$1.056$"
             ],
             "correct": 1,
             "explanation": "Seja $T$ o valor cobrado, em reais, pela passagem de ida e volta de um adulto. Vamos estruturar a composição das passagens da família:\n\n1. **Dois adultos** (Júlia e o esposo): cada um paga a tarifa integral $T$, somando:\n$$2 \\times T = 2T$$\n\n2. **Duas crianças entre 2 e 12 anos** (filhas de 8 e 6 anos): cada uma paga $\\frac{1}{5}$ da tarifa de adulto:\n$$2 \\times \\left(\\frac{1}{5}T\\right) = \\frac{2}{5}T = 0{,}4T$$\n\n3. **Um bebê menor de dois anos no colo** (1 ano e 3 meses): paga $\\frac{1}{10}$ da tarifa de adulto:\n$$1 \\times \\left(\\frac{1}{10}T\\right) = 0{,}1T$$\n\n4. Somando todos os valores cobrados e igualando ao total de $\\text{R\\$} 5.280{,}00$:\n$$2T + 0{,}4T + 0{,}1T = 5280$$\n$$2{,}5T = 5280$$\n$$T = \\frac{5280}{2{,}5} = \\frac{5280 \\times 2}{5} = \\frac{10560}{5} = \\text{R\\$} 2.112{,}00$$\n\nPortanto, a alternativa correta é a <strong>Letra B</strong>.",
@@ -14271,10 +14293,10 @@ var mathData = window.mathData || {
           {
             "q": "Na compra de material para fazer desenhos manuais, um projetista A comprou dois compassos técnicos pelo preço de três escalímetros mais o valor de $\\text{R\\$} 20{,}00$. Um outro projetista B investiu $\\text{R\\$} 250{,}00$ na compra de três compassos técnicos mais um escalímetro.\n\nQual o valor investido, em reais, na compra do material técnico, pelo projetista A?",
             "options": [
-              "140,00",
-              "120,00",
-              "110,00",
-              "100,00"
+              "$\\text{R\\$} 140{,}00$",
+              "$\\text{R\\$} 120{,}00$",
+              "$\\text{R\\$} 110{,}00$",
+              "$\\text{R\\$} 100{,}00$"
             ],
             "correct": 0,
             "explanation": "Sejam $c$ o preço unitário do compasso técnico e $e$ o preço unitário do escalímetro.\n\nMontamos o sistema de equações a partir das informações fornecidas:\n1. O projetista A comprou $2$ compassos pelo valor de $3$ escalímetros mais $\\text{R\\$} 20{,}00$:\n$$2c = 3e + 20 \\implies 2c - 3e = 20$$\n\n2. O projetista B comprou $3$ compassos mais $1$ escalímetro por $\\text{R\\$} 250{,}00$:\n$$3c + e = 250 \\implies e = 250 - 3c$$\n\n3. Substituindo a expressão de $e$ na primeira equação:\n$$2c - 3(250 - 3c) = 20$$\n$$2c - 750 + 9c = 20$$\n$$11c = 770 \\implies c = \\frac{770}{11} = 70$$\n\n4. O valor investido pelo projetista A foi na compra de $2$ compassos técnicos:\n$$V_A = 2c = 2 \\times 70{,}00 = \\text{R\\$} 140{,}00$$\n\n(Verificação: o preço do escalímetro é $e = 250 - 3(70) = 40{,}00$, e $3(40) + 20 = 120 + 20 = 140{,}00$).\n\nPortanto, a alternativa correta é a <strong>Letra A</strong>.",
@@ -14287,10 +14309,10 @@ var mathData = window.mathData || {
           {
             "q": "A Copa do Mundo de 2018 teve algumas curiosidades e recordes. Leia sobre isso no texto a seguir:\n\n“De acordo com dados da Fifa, o grandalhão do mundial defende as cores da Croácia. O goleiro Lovre Kalinic tem $2{,}01\\text{ m}$ de altura e é o jogador mais alto na Copa. O dinamarquês Jannik Vestergaard e o belga Thibaut Courtois, ambos com $1{,}99\\text{ m}$, completam a lista. O atleta mais baixinho, Yahia Al-Shehri, defende a Arábia Saudita. O meio campo mede $1{,}64\\text{ m}$.”\n*(Disponível em: http://dc.clicrbs.com.br. Acesso em: 03 de maio de 2019, adaptado).*\n\nSegundo os dados da Fifa, a média das alturas, em metros, dos jogadores relatados no texto é, aproximadamente:",
             "options": [
-              "1,82",
-              "1,88",
-              "1,91",
-              "1,99"
+              "$1{,}82$",
+              "$1{,}88$",
+              "$1{,}91$",
+              "$1{,}99$"
             ],
             "correct": 2,
             "explanation": "Os 4 jogadores relatados no texto e suas respectivas alturas são:\n1. Lovre Kalinic: $2{,}01\\text{ m}$\n2. Jannik Vestergaard: $1{,}99\\text{ m}$\n3. Thibaut Courtois: $1{,}99\\text{ m}$\n4. Yahia Al-Shehri: $1{,}64\\text{ m}$\n\nCalculamos a média aritmética $\\bar{X}$ somando as 4 alturas e dividindo por 4:\n$$\\sum h = 2{,}01 + 1{,}99 + 1{,}99 + 1{,}64 = 7{,}63\\text{ m}$$\n$$\\bar{X} = \\frac{7{,}63}{4} = 1{,}9075\\text{ m}$$\n\nArredondando para duas casas decimais, obtemos aproximadamente $1{,}91\\text{ m}$.\n\nPortanto, a alternativa correta é a <strong>Letra C</strong>.",
@@ -14301,7 +14323,7 @@ var mathData = window.mathData || {
             "topicoId": "b4-t4"
           },
           {
-            "q": "Helena, Victor e Luisa resolveram brincar com um dado não viciado com as faces numeradas de 1 a 6. E, para isso, estipulararam algumas regras:\n\n1) Cada participante escolhe 3 números de 1 a 6;\n2) Ao se jogar o dado, ganha 1 ponto quem tiver escolhido o número que aparece na face de cima;\n3) Vence quem conseguir somar 5 pontos primeiro.\n\nDessa forma, Helena escolheu os números pares, Victor escolheu os números ímpares e Luisa escolheu os três maiores números.\n\nAo se jogar o dado pela primeira vez,",
+            "q": "Helena, Victor e Luisa resolveram brincar com um dado não viciado com as faces numeradas de 1 a 6. E, para isso, estipulararam algumas regras:\n\n1) Cada participante escolhe 3 números de 1 a 6;\n\n2) Ao se jogar o dado, ganha 1 ponto quem tiver escolhido o número que aparece na face de cima;\n\n3) Vence quem conseguir somar 5 pontos primeiro.\n\nDessa forma, Helena escolheu os números pares, Victor escolheu os números ímpares e Luisa escolheu os três maiores números.\n\nAo se jogar o dado pela primeira vez,",
             "options": [
               "é possível que nenhum deles marque ponto.",
               "Helena marcará ponto se Victor não marcar.",
@@ -14342,7 +14364,7 @@ var mathData = window.mathData || {
         },
         "questions": [
           {
-            "q": "Um jogo de tabuleiro utiliza um dado com números que vão de $10$ a $60$, de $10$ em $10$, e a soma dos números das faces opostas sempre resulta em $70$.\n\nAssinale a alternativa que representa uma planificação do dado desse jogo.",
+            "q": "O jogo “Múltiplo de 10” utiliza um dado cúbico em que cada face é numerada com um número de 10 a 60 variando de 10 em 10, e a soma dos números das faces opostas sempre resulta em 70.\n\nAssinale a alternativa que representa uma planificação do dado desse jogo.",
             "options": [
               "Planificação A",
               "Planificação B",
@@ -14365,10 +14387,10 @@ var mathData = window.mathData || {
           {
             "q": "O logotipo de uma empresa foi criado a partir de um disco de raio $2\\text{ cm}$. O designer dividiu o disco em 4 setores circulares iguais. Um dos setores foi substituído por outro setor circular, mas com área medindo metade da área do setor original. A seguir, um esboço do logotipo.\n\nLogo, a medida do raio, em centímetros, do menor setor circular que compõe o logotipo é:",
             "options": [
-              "1",
+              "$1$",
               "$\\sqrt{2}$",
               "$\\frac{\\pi}{2}$",
-              "2"
+              "$2$"
             ],
             "correct": 1,
             "explanation": "1. O disco original possui raio $R = 2\\text{ cm}$. A área de cada um dos $4$ setores circulares de $90^\\circ$ em que o disco foi dividido é:\n$$A_{\\text{setor original}} = \\frac{\\pi R^2}{4} = \\frac{\\pi (2^2)}{4} = \\frac{4\\pi}{4} = \\pi\\text{ cm}^2$$\n\n2. O setor circular menor mantém o mesmo ângulo central de $90^\\circ$, mas possui metade da área do setor original:\n$$A_{\\text{menor}} = \\frac{\\pi}{2}\\text{ cm}^2$$\n\n3. Sabendo que a área de um setor de $90^\\circ$ de raio $r$ é dada por $\\frac{\\pi r^2}{4}$, igualamos:\n$$\\frac{\\pi r^2}{4} = \\frac{\\pi}{2} \\implies r^2 = \\frac{4}{2} = 2 \\implies r = \\sqrt{2}\\text{ cm}$$\n\nPortanto, a alternativa correta é a <strong>Letra B</strong>.",
@@ -14386,10 +14408,10 @@ var mathData = window.mathData || {
           {
             "q": "Certa prefeitura recebeu uma verba para a reforma de uma praça, que tem a forma de um triângulo. Para não interditar toda a praça, o arquiteto responsável pela obra decidiu dividi-la em duas partes, colocando uma fita de isolamento paralela a um dos lados, conforme a figura a seguir.\n\nAssim, o comprimento da fita de isolamento, em metros, usada para essa finalidade é de:",
             "options": [
-              "4,8",
-              "7,2",
-              "8,0",
-              "10,0"
+              "$4{,}8$",
+              "$7{,}2$",
+              "$8{,}0$",
+              "$10{,}0$"
             ],
             "correct": 0,
             "explanation": "Na figura, a fita de isolamento é paralela à base do triângulo maior, que mede $12\\text{ m}$.\n\n1. O lado direito do triângulo é dividido pela fita em um segmento superior de $4\\text{ m}$ e um segmento inferior de $6\\text{ m}$. Assim, o comprimento total do lado do triângulo maior é:\n$$L = 4 + 6 = 10\\text{ m}$$\n\n2. Pelo Teorema Fundamental da Proporcionalidade e Semelhança de Triângulos, o triângulo superior é semelhante ao triângulo maior:\n$$\\frac{x}{12} = \\frac{4}{10}$$\n$$x = \\frac{12 \\times 4}{10} = \\frac{48}{10} = 4{,}8\\text{ m}$$\n\nPortanto, a alternativa correta é a <strong>Letra A</strong>.",
@@ -14405,12 +14427,12 @@ var mathData = window.mathData || {
             "topicoId": "b3-t2"
           },
           {
-            "q": "Uma equipe de salvamento aéreo foi acionada para um resgate de um grupo de cinco pessoas que se encontravam desaparecidas após saírem para a realização de uma trilha em uma região de difícil acesso. Foi repassado ao piloto do helicóptero, que estava responsável pelas buscas, um local que apresentava, inicialmente, como coordenada geográfica uma latitude de $22^\\circ\\ 15'\\ 10''\\text{ sul}$ e longitude de $21^\\circ\\ 26'\\ 12''\\text{ leste}$. Após deixar a base de salvamento, o piloto do helicóptero foi informado, pelo rádio, de que precisaria acrescentar um ângulo de $3^\\circ\\ 48'\\ 52''$ na latitude.\n\nAssim, a nova coordenada geográfica terá uma latitude de",
+            "q": "Uma equipe de salvamento aéreo foi acionada para um resgate de um grupo de cinco pessoas que se encontravam desaparecidas após saírem para a realização de uma trilha em uma região de difícil acesso. Foi repassado ao piloto do helicóptero, que estava responsável pelas buscas, um local que apresentava, inicialmente, como coordenada geográfica uma latitude de $22^\\circ\\ 15'\\ 10''\\text{ sul}$ e longitude de $21^\\circ\\ 26'\\ 12''\\text{ leste}$. Após deixar a base de salvamento, o piloto do helicóptero foi informado, pelo rádio, de que precisaria acrescentar um ângulo de $3^\\circ\\ 48'\\ 52''$ na latitude.\n\nAssim, a nova coordenada geográfica terá uma latitude de:",
             "options": [
-              "26° 04’ 02”.",
-              "25° 63’ 62”.",
-              "26° 03’ 02”.",
-              "25° 64’ 02”."
+              "$26^\\circ\\ 04'\\ 02''$",
+              "$25^\\circ\\ 63'\\ 62''$",
+              "$26^\\circ\\ 03'\\ 02''$",
+              "$25^\\circ\\ 64'\\ 02''$"
             ],
             "correct": 0,
             "explanation": "Devemos efetuar a adição das medidas de ângulos no sistema sexagesimal:\n$$22^\\circ\\ 15'\\ 10'' + 3^\\circ\\ 48'\\ 52''$$\n\n1. Somamos os segundos:\n$$10'' + 52'' = 62'' = 1'\\ 02''$$\n(Ficam $02''$ e vai $1'$ para a ordem dos minutos).\n\n2. Somamos os minutos:\n$$15' + 48' + 1' = 64' = 1^\\circ\\ 04'$$\n(Ficam $04'$ e vai $1^\\circ$ para a ordem dos graus).\n\n3. Somamos os graus:\n$$22^\\circ + 3^\\circ + 1^\\circ = 26^\\circ$$\n\nPortanto, a nova latitude é $26^\\circ\\ 04'\\ 02''$.\n\nPortanto, a alternativa correta é a <strong>Letra A</strong>.",
@@ -14423,10 +14445,10 @@ var mathData = window.mathData || {
           {
             "q": "Carlos e Daniel são dois amigos e entusiastas do ciclismo e, após pesquisarem sobre qual seria a bicicleta ideal para a prática do esporte, decidiram comprar bicicletas de aros 26 e 29 polegadas, respectivamente. A imagem a seguir evidencia a diferença entre as dimensões dos aros escolhidos.\n\nConsiderando $3{,}0$ como uma aproximação para $\\pi$ e que os amigos percorreram a distância de $1.980\\text{ m}$ com suas bicicletas, qual é o valor aproximado da diferença entre a quantidade de voltas efetuadas pelas rodas das bicicletas dos dois amigos?",
             "options": [
-              "41 voltas",
-              "54 voltas",
-              "83 voltas",
-              "108 voltas"
+              "$41$ voltas",
+              "$54$ voltas",
+              "$83$ voltas",
+              "$108$ voltas"
             ],
             "correct": 3,
             "explanation": "Pela figura oficial, os diâmetros externos das rodas são:\n• Aro 29\": diâmetro $D_{29} = 74\\text{ cm} = 0{,}74\\text{ m}$\n• Aro 26\": diâmetro $D_{26} = 66\\text{ cm} = 0{,}66\\text{ m}$\n\n1. Comprimento percorrido por uma volta completa de cada roda ($C = \\pi D$, com $\\pi \\approx 3{,}0$):\n$$C_{29} = 3{,}0 \\times 0{,}74 = 2{,}22\\text{ m}$$\n$$C_{26} = 3{,}0 \\times 0{,}66 = 1{,}98\\text{ m}$$\n\n2. Número de voltas necessárias para percorrer a distância de $1.980\\text{ m}$:\n• Roda aro 26\":\n$$N_{26} = \\frac{1980}{1{,}98} = 1.000\\text{ voltas}$$\n• Roda aro 29\":\n$$N_{29} = \\frac{1980}{2{,}22} = \\frac{198000}{222} \\approx 891{,}89\\text{ voltas}$$\n\n3. Diferença entre a quantidade de voltas:\n$$\\Delta N = N_{26} - N_{29} \\approx 1000 - 891{,}89 = 108{,}11 \\approx 108\\text{ voltas}$$\n\nPortanto, a alternativa correta é a <strong>Letra D</strong>.",
@@ -14442,7 +14464,7 @@ var mathData = window.mathData || {
             "topicoId": "b3-t3"
           },
           {
-            "q": "A família Silva reservou em seu orçamento doméstico o limite máximo de $\\text{R\\$} 600{,}00$ mensais para contratar uma diarista que auxilie na limpeza da casa. A empresa Limpe Tudo ofereceu dois planos para a família avaliar:\n\n• **Plano I – Contrato avulso:** cada diária custa $\\text{R\\$} 80{,}00$.\n• **Plano II – Contrato mensal:** paga-se $\\text{R\\$} 120{,}00$ de mensalidade mais $\\text{R\\$} 50{,}00$ por diária.\n\nTendo em vista o valor reservado para pagamento das faxinas e considerando o maior número de faxinas por mês, a família Silva optou pelo",
+            "q": "A família Silva reservou em seu orçamento doméstico o limite máximo de $\\text{R\\$} 600{,}00$ mensais para contratar uma diarista que auxilie na limpeza da casa. A empresa Limpe Tudo ofereceu dois planos para a família avaliar:\n\n• **Plano I – Contrato avulso:** cada diária custa $\\text{R\\$} 80{,}00$.\n\n• **Plano II – Contrato mensal:** paga-se $\\text{R\\$} 120{,}00$ de mensalidade mais $\\text{R\\$} 50{,}00$ por diária.\n\nTendo em vista o valor reservado para pagamento das faxinas e considerando o maior número de faxinas por mês, a família Silva optou pelo:",
             "options": [
               "plano I, contratando 7 diárias.",
               "plano I, contratando 8 diárias.",
@@ -14460,10 +14482,10 @@ var mathData = window.mathData || {
           {
             "q": "Oliveira construiu uma casa de campo em um terreno retangular com área igual a $108\\text{ m}^2$. Ele deixou um afastamento de mesma largura entre a casa e as divisas do terreno. A casa construída tem $8{,}0\\text{ m}$ de comprimento e $5{,}0\\text{ m}$ de largura. A seguir, a figura com o esboço da construção.\n\nAssim, qual é a medida do afastamento, em metros?",
             "options": [
-              "2,00",
-              "4,00",
-              "8,50",
-              "17,00"
+              "$2{,}00$",
+              "$4{,}00$",
+              "$8{,}50$",
+              "$17{,}00$"
             ],
             "correct": 0,
             "explanation": "Seja $X$ a medida da largura do afastamento (em metros) deixado em torno de toda a casa.\n\n1. As dimensões da casa são $8{,}0\\text{ m} \\times 5{,}0\\text{ m}$. Com o afastamento $X$ em ambos os lados em cada dimensão, as dimensões totais do terreno são:\n• Comprimento total: $8 + 2X$\n• Largura total: $5 + 2X$\n\n2. A área do terreno retangular é de $108\\text{ m}^2$:\n$$(8 + 2X)(5 + 2X) = 108$$\n$$40 + 16X + 10X + 4X^2 = 108$$\n$$4X^2 + 26X - 68 = 0$$\n\n3. Dividindo toda a equação por $2$:\n$$2X^2 + 13X - 34 = 0$$\nCalculando o discriminante $\\Delta$:\n$$\\Delta = 13^2 - 4(2)(-34) = 169 + 272 = 441 = 21^2$$\nAs raízes são:\n$$X = \\frac{-13 \\pm 21}{2(2)} = \\frac{-13 \\pm 21}{4}$$\nComo o afastamento é uma medida estritamente positiva ($X > 0$):\n$$X = \\frac{-13 + 21}{4} = \\frac{8}{4} = 2{,}00\\text{ m}$$\n\nPortanto, a alternativa correta é a <strong>Letra A</strong>.",
@@ -14481,10 +14503,10 @@ var mathData = window.mathData || {
           {
             "q": "Um corredor de 100 metros rasos faz treinos diários para melhorar seu desempenho. Em um dia, ele fez $10$ corridas na pista e obteve uma média de tempo de exatos $11$ segundos. No dia seguinte, ele fez apenas $5$ corridas e obteve os seguintes tempos: $11$ segundos; $10{,}5$ segundos; $11{,}2$ segundos; $10{,}4$ segundos e $10{,}4$ segundos.\n\nA média de todos os tempos obtidos pelo corredor nesses dois dias, em segundos, foi de:",
             "options": [
-              "10,70",
-              "10,75",
-              "10,85",
-              "10,90"
+              "$10{,}70$",
+              "$10{,}75$",
+              "$10{,}85$",
+              "$10{,}90$"
             ],
             "correct": 3,
             "explanation": "Para calcular a média global dos dois dias de treino, determinamos a soma dos tempos de todas as corridas e dividimos pelo total de corridas:\n\n1. **Primeiro dia:** foram $10$ corridas com média de $11\\text{ s}$:\n$$\\text{Soma}_1 = 10 \\times 11 = 110\\text{ segundos}$$\n\n2. **Segundo dia:** foram $5$ corridas com tempos individuais somando:\n$$\\text{Soma}_2 = 11 + 10{,}5 + 11{,}2 + 10{,}4 + 10{,}4 = 53{,}5\\text{ segundos}$$\n\n3. **Média global dos dois dias:** com um total de $10 + 5 = 15$ corridas:\n$$\\bar{X} = \\frac{110 + 53{,}5}{15} = \\frac{163{,}5}{15} = 10{,}90\\text{ segundos}$$\n\nPortanto, a alternativa correta é a <strong>Letra D</strong>.",
@@ -14495,12 +14517,12 @@ var mathData = window.mathData || {
             "topicoId": "b4-t4"
           },
           {
-            "q": "Ao acessar o portal do Instituto Federal de Minas Gerais - IFMG para realizar sua inscrição no vestibular, um candidato indeciso depara-se com o mapa a seguir, que mostra todas cidades em que o IFMG oferece cursos. Ele fecha os olhos e aponta aleatoriamente para uma das cidades da região do Vale do Rio Doce, a qual escolhe para fazer sua inscrição no vestibular.\n\nA probabilidade de o candidato indeciso ter se inscrito para estudar no IFMG campus São João Evangelista é de, aproximadamente,",
+            "q": "Ao acessar o portal do Instituto Federal de Minas Gerais - IFMG para realizar sua inscrição no vestibular, um candidato indeciso depara-se com o mapa a seguir, que mostra todas cidades em que o IFMG oferece cursos. Ele fecha os olhos e aponta aleatoriamente para uma das cidades da região do Vale do Rio Doce, a qual escolhe para fazer sua inscrição no vestibular.\n\nA probabilidade de o candidato indeciso ter se inscrito para estudar no IFMG campus São João Evangelista é de, aproximadamente:",
             "options": [
-              "6%.",
-              "17%.",
-              "33%.",
-              "61%."
+              "$6\\%$",
+              "$17\\%$",
+              "$33\\%$",
+              "$61\\%$"
             ],
             "correct": 2,
             "explanation": "O enunciado informa que o candidato restringiu sua escolha aleatória **exclusivamente às cidades da região do Vale do Rio Doce**.\n\nPela listagem oficial da região do Vale do Rio Doce apresentada na figura:\n• 5 – Governador Valadares\n• 11 – São João Evangelista\n• 15 – Ipatinga\n\nLogo, o espaço amostral restrito dessa escolha contém $3$ elementos ($n(\\Omega) = 3$). Como cada uma das 3 cidades possui a mesma probabilidade de ser apontada ao acaso, a probabilidade de escolher o campus São João Evangelista é:\n$$P = \\frac{1}{3} \\approx 0{,}3333 = 33{,}33\\% \\approx 33\\%$$\n\nPortanto, a alternativa correta é a <strong>Letra C</strong>.",
@@ -14516,7 +14538,7 @@ var mathData = window.mathData || {
             "topicoId": "b4-t3"
           },
           {
-            "q": "Para eleição do representante de uma turma de 9º ano, três candidatos receberam a seguinte quantidade de votos:\n\n• Cirilo – $25$ votos.\n• Ferdinando – $18$ votos.\n• Jairo – $7$ votos.\n\nAssinale o gráfico que representa corretamente esses dados.",
+            "q": "Para eleição do representante de uma turma de 9º ano, três candidatos receberam a seguinte quantidade de votos:\n\n• Cirilo – $25$ votos.\n\n• Ferdinando – $18$ votos.\n\n• Jairo – $7$ votos.\n\nAssinale o gráfico que representa corretamente esses dados.",
             "options": [
               "Gráfico A",
               "Gráfico B",
@@ -14539,8 +14561,8 @@ var mathData = window.mathData || {
           {
             "q": "Para diversificar a produção, sr. João dividiu o seu terreno em três regiões, como apresentado na figura a seguir.\n\nDessa forma, a área, em $\\text{m}^2$, reservada pelo sr. João para o plantio de milho foi de:",
             "options": [
-              "26",
-              "20",
+              "$26$",
+              "$20$",
               "$10\\sqrt{5}$",
               "$\\frac{50}{3}$"
             ],
@@ -14560,10 +14582,10 @@ var mathData = window.mathData || {
           {
             "q": "Um artista plástico pretende fazer uma sequência de mosaicos com ladrilhos pretos e brancos, como apresentado na figura a seguir.\n\nUtilizando o mesmo padrão da sequência dos mosaicos 1, 2 e 3, qual é a quantidade de ladrilhos pretos necessários para confeccionar o mosaico 4?",
             "options": [
-              "40",
-              "44",
-              "45",
-              "57"
+              "$40$",
+              "$44$",
+              "$45$",
+              "$57$"
             ],
             "correct": 0,
             "explanation": "Vamos analisar a evolução da quantidade de ladrilhos pretos nos mosaicos da sequência:\n\n• **Mosaico 1:** possui $16$ ladrilhos pretos em torno do núcleo central de ladrilhos brancos.\n• **Mosaico 2:** cada uma das 4 pontas da cruz é alongada em $1$ unidade de ladrilho branco, o que exige adicionar $2$ ladrilhos pretos nas laterais de cada um dos $4$ braços:\n$$4 \\times 2 = 8\\text{ ladrilhos pretos a mais}$$\nAssim, o Mosaico 2 possui $16 + 8 = 24$ ladrilhos pretos.\n• **Mosaico 3:** repetindo o padrão de crescimento, somam-se mais $8$ ladrilhos pretos:\n$$24 + 8 = 32\\text{ ladrilhos pretos}$$\n• **Mosaico 4:** seguindo a mesma progressão aritmética de razão $8$:\n$$P_4 = 32 + 8 = 40\\text{ ladrilhos pretos}$$\n\n(Ou pela fórmula do termo geral de PA: $a_n = 16 + (n - 1) \\times 8 \\implies a_4 = 16 + 24 = 40$).\n\nPortanto, a alternativa correta é a <strong>Letra A</strong>.",
@@ -14611,7 +14633,7 @@ var mathData = window.mathData || {
             "topicoId": "b1-t5"
           },
           {
-            "q": "Um problema dado em uma aula de Matemática pedia que se calculasse o valor de $a/b$, sendo $a$ e $b$ dados pelas expressões a seguir:\n\n$$a = \\left(\\frac{1}{2}\\right)^2 - (16)^{\\frac{1}{4}} \\quad \\text{e} \\quad b = 3^{-1} + 2$$\n\nO número encontrado foi:",
+            "q": "Um problema dado em uma aula de Matemática pedia que se calculasse o valor de $a/b$, sendo $a$ e $b$ dados pelas expressões a seguir:\n$$a = \\left(\\frac{1}{2}\\right)^2 - (16)^{\\frac{1}{4}} \\quad \\text{e} \\quad b = 3^{-1} + 2$$\n\nO número encontrado foi:",
             "options": [
               "$-\\frac{4}{3}$",
               "$-\\frac{3}{4}$",
@@ -14654,10 +14676,10 @@ var mathData = window.mathData || {
           {
             "q": "Dois médicos de especialidades distintas trabalham em uma clínica pelo mesmo plano de saúde. Segundo as regras do plano, os dois devem iniciar o plantão no mesmo horário e este não pode durar mais que 12 horas. Em determinado dia, os dois atenderam pacientes ininterruptamente até irem embora juntos, sendo que cada atendimento do primeiro durou 45 minutos e do segundo, 50 minutos.\n\nQual o número total de pacientes atendidos naquele dia pelos dois médicos segundo as regras do plano?",
             "options": [
-              "450",
-              "19",
-              "225",
-              "5"
+              "$5$",
+              "$19$",
+              "$225$",
+              "$450$"
             ],
             "correct": 1,
             "explanation": "Como os dois médicos iniciaram o plantão juntos e foram embora juntos atendendo ininterruptamente, a duração total do plantão deve ser um múltiplo comum de $45\\text{ min}$ e $50\\text{ min}$:\n\n1. Calculamos o Mínimo Múltiplo Comum:\n$$45 = 3^2 \\times 5$$\n$$50 = 2 \\times 5^2$$\n$$\\text{MMC}(45, 50) = 2 \\times 3^2 \\times 5^2 = 2 \\times 9 \\times 25 = 450\\text{ minutos}$$\n\n2. Convertendo $450$ minutos para horas:\n$$450\\text{ min} = \\frac{450}{60} = 7{,}5\\text{ horas} = 7\\text{h } 30\\text{min}$$\nComo o plantão não pode ultrapassar $12\\text{ horas}$, o tempo de plantão foi exatamente $450\\text{ minutos}$ (o próximo múltiplo seria $900\\text{ min} = 15\\text{ h} > 12\\text{ h}$).\n\n3. Calculamos o número de pacientes atendidos por cada médico:\n• Primeiro médico: $\\frac{450}{45} = 10\\text{ pacientes}$\n• Segundo médico: $\\frac{450}{50} = 9\\text{ pacientes}$\n\n4. O número total de pacientes atendidos pelos dois médicos foi:\n$$10 + 9 = 19\\text{ pacientes}$$\n\nPortanto, a alternativa correta é a <strong>Letra B</strong>.",
@@ -14668,12 +14690,12 @@ var mathData = window.mathData || {
             "topicoId": "b1-t3"
           },
           {
-            "q": "Num trabalho escolar, Antônio dispunha de dois pedaços de palito de sorvete para montar um triângulo retângulo. Um dos pedaços media $16\\text{ centímetros}$ e o outro, $8\\text{ centímetros}$. O pedaço de $8\\text{ centímetros}$ foi utilizado como um cateto horizontal, o outro pedaço foi partido a uma distância $x$ de uma de suas extremidades. A figura seguinte ilustra o que Antônio fez.\n\nO valor de $x$, em centímetros, é",
+            "q": "Num trabalho escolar, Antônio dispunha de dois pedaços de palito de sorvete para montar um triângulo retângulo. Um dos pedaços media $16\\text{ centímetros}$ e o outro, $8\\text{ centímetros}$. O pedaço de $8\\text{ centímetros}$ foi utilizado como um cateto horizontal, o outro pedaço foi partido a uma distância $x$ de uma de suas extremidades. A figura seguinte ilustra o que Antônio fez.\n\nO valor de $x$, em centímetros, é:",
             "options": [
-              "2",
-              "6",
-              "8",
-              "10"
+              "$2$",
+              "$6$",
+              "$8$",
+              "$10$"
             ],
             "correct": 1,
             "explanation": "O palito de $16\\text{ cm}$ foi partido em duas partes:\n1. O cateto vertical do triângulo, de comprimento $x$.\n2. A hipotenusa do triângulo retângulo, que mede o restante do palito: $16 - x$.\n\nO cateto horizontal mede $8\\text{ cm}$. Aplicamos o Teorema de Pitágoras no triângulo retângulo formado:\n$$x^2 + 8^2 = (16 - x)^2$$\n$$x^2 + 64 = 256 - 32x + x^2$$\n$$64 = 256 - 32x$$\n$$32x = 256 - 64 = 192$$\n$$x = \\frac{192}{32} = 6\\text{ cm}$$\n\n(Verificação: os lados do triângulo retângulo são catetos $6\\text{ cm}$ e $8\\text{ cm}$, e hipotenusa $10\\text{ cm}$, formando o clássico terno pitagórico $3-4-5$ multiplicado por 2).\n\nPortanto, a alternativa correta é a <strong>Letra B</strong>.",
@@ -14689,12 +14711,12 @@ var mathData = window.mathData || {
             "topicoId": "b3-t2"
           },
           {
-            "q": "Pedro estava calculando valores para a expressão algébrica $x^2 + y^2 + 8x - 5y + 8$. Ao substituir $x = 3$ e $y = 2$ na expressão, o valor que ele vai encontrar é",
+            "q": "Pedro estava calculando valores para a expressão algébrica $x^2 + y^2 + 8x - 5y + 8$. Ao substituir $x = 3$ e $y = 2$ na expressão, o valor que ele vai encontrar é:",
             "options": [
-              "22",
-              "32",
-              "35",
-              "51"
+              "$22$",
+              "$32$",
+              "$35$",
+              "$51$"
             ],
             "correct": 2,
             "explanation": "Substituímos os valores $x = 3$ e $y = 2$ na expressão algébrica e calculamos passo a passo:\n$$E = x^2 + y^2 + 8x - 5y + 8$$\n$$E = 3^2 + 2^2 + 8(3) - 5(2) + 8$$\n$$E = 9 + 4 + 24 - 10 + 8$$\n$$E = 13 + 24 - 10 + 8 = 37 - 10 + 8 = 27 + 8 = 35$$\n\nPortanto, a alternativa correta é a <strong>Letra C</strong>.",
@@ -14707,10 +14729,10 @@ var mathData = window.mathData || {
           {
             "q": "Joana possui uma coleção de livros de romance e drama. Ela costuma estipular metas para o crescimento dessa coleção de acordo com os livros que mais lhe agradam. Atualmente, Joana possui $18$ livros. Sua próxima meta é acumular $51$ livros, de modo a quadruplicar o número de romances e ao mesmo tempo que doará $3$ livros de drama que pouco lhe agradaram.\n\nDesta forma, quantos livros de drama restarão nesta coleção?",
             "options": [
-              "3",
-              "4",
-              "7",
-              "9"
+              "$3$",
+              "$4$",
+              "$7$",
+              "$9$"
             ],
             "correct": 0,
             "explanation": "Sejam $R$ a quantidade atual de livros de romance e $D$ a quantidade atual de livros de drama.\n\n1. Atualmente ela possui $18$ livros no total:\n$$R + D = 18 \\implies D = 18 - R$$\n\n2. Na nova meta, ela quadruplica os romances ($4R$) e doa 3 dramas ($D - 3$), totalizando $51$ livros:\n$$4R + (D - 3) = 51$$\n$$4R + D = 54$$\n\n3. Substituindo $D = 18 - R$:\n$$4R + 18 - R = 54$$\n$$3R = 54 - 18 = 36 \\implies R = \\frac{36}{3} = 12$$\n\n4. A quantidade inicial de livros de drama era:\n$$D = 18 - 12 = 6$$\nComo ela doará $3$ livros de drama, a quantidade que **restará** na coleção é:\n$$D - 3 = 6 - 3 = 3\\text{ livros de drama}$$\n\nPortanto, a alternativa correta é a <strong>Letra A</strong>.",
@@ -14723,10 +14745,10 @@ var mathData = window.mathData || {
           {
             "q": "Em suas compras, o senhor Leopoldo colocou em uma mesma sacola $0{,}9\\text{ kg}$ de carne vermelha, $500\\text{ g}$ de castanhas e $70\\text{ g}$ de pimenta do reino. Assinale a opção de resposta que representa o peso total dos produtos comprados pelo senhor Leopoldo.",
             "options": [
-              "1,27 kg",
-              "1,37 kg",
-              "1,47 kg",
-              "1,57 kg"
+              "$1{,}27\\text{ kg}$",
+              "$1{,}37\\text{ kg}$",
+              "$1{,}47\\text{ kg}$",
+              "$1{,}57\\text{ kg}$"
             ],
             "correct": 2,
             "explanation": "Para determinar a massa total dos produtos em quilogramas ($\\text{kg}$), convertemos todas as medidas para a mesma unidade, sabendo que $1\\text{ kg} = 1.000\\text{ g}$:\n\n• Carne vermelha: $0{,}9\\text{ kg}$\n• Castanhas: $500\\text{ g} = \\frac{500}{1000} = 0{,}5\\text{ kg}$\n• Pimenta do reino: $70\\text{ g} = \\frac{70}{1000} = 0{,}07\\text{ kg}$\n\nSomando todas as parcelas:\n$$M = 0{,}9 + 0{,}5 + 0{,}07 = 1{,}47\\text{ kg}$$\n\nPortanto, a alternativa correta é a <strong>Letra C</strong>.",
@@ -14739,10 +14761,10 @@ var mathData = window.mathData || {
           {
             "q": "O Censo 2010, realizado pelo Instituto Brasileiro de Geografia e Estatística (IBGE), detectou que a população brasileira era de, aproximadamente, $190{,}7$ milhões de pessoas. Dentre essas, a cada $80$ pessoas com perfeita visão existiam $20$ outras com alguma deficiência visual.\n\nAproximadamente, quantos milhões de pessoas no Brasil possuíam alguma deficiência visual em 2010?",
             "options": [
-              "8,4",
-              "10,5",
-              "38,1",
-              "47,7"
+              "$8{,}4$",
+              "$10{,}5$",
+              "$38{,}1$",
+              "$47{,}7$"
             ],
             "correct": 2,
             "explanation": "De acordo com o texto, em cada grupo composto por $80$ pessoas com visão perfeita e $20$ pessoas com deficiência visual, há um total de:\n$$80 + 20 = 100\\text{ pessoas}$$\n\nAssim, a proporção de pessoas com deficiência visual na população é de:\n$$P = \\frac{20}{100} = 20\\%$$\n\nAplicando esse percentual sobre a população total de $190{,}7$ milhões de habitantes:\n$$N = 0{,}20 \\times 190{,}7 = 38{,}14\\text{ milhões} \\approx 38{,}1\\text{ milhões}$$\n\nPortanto, a alternativa correta é a <strong>Letra C</strong>.",
@@ -14769,12 +14791,12 @@ var mathData = window.mathData || {
             "topicoId": "b3-t1"
           },
           {
-            "q": "No bairro de Paula, as ruas Rocha e Sousa são paralelas. Atravessando essas duas ruas transversalmente, estão as ruas Toledo e Vieira. No cruzamento entre as ruas Toledo e Vieira, forma-se um ângulo $m$, conforme figura a seguir.\n\nO valor do ângulo $m$, em graus, é",
+            "q": "No bairro de Paula, as ruas Rocha e Sousa são paralelas. Atravessando essas duas ruas transversalmente, estão as ruas Toledo e Vieira. No cruzamento entre as ruas Toledo e Vieira, forma-se um ângulo $m$, conforme figura a seguir.\n\nO valor do ângulo $m$, em graus, é:",
             "options": [
-              "100",
-              "110",
-              "120",
-              "130"
+              "$100$",
+              "$110$",
+              "$120$",
+              "$130$"
             ],
             "correct": 1,
             "explanation": "Na figura, as ruas verticais Rocha e Sousa são retas paralelas ($r \\parallel s$):\n\n1. A transversal Rua Vieira forma com a vertical Rua Rocha um ângulo interno de $50^\\circ$.\n2. A transversal Rua Toledo forma com a vertical Rua Sousa um ângulo externo de $120^\\circ$. Como o ângulo raso mede $180^\\circ$, o ângulo interno formado pela Rua Toledo com a vertical é seu suplementar:\n$$180^\\circ - 120^\\circ = 60^\\circ$$\n3. Traçando pelo ponto de cruzamento entre as ruas Vieira e Toledo uma reta imaginária auxiliar paralela às ruas Rocha e Sousa, o ângulo $m$ fica dividido em dois ângulos que são alternos internos em relação às paralelas:\n• O ângulo superior com a paralela auxiliar mede $50^\\circ$.\n• O ângulo inferior com a paralela auxiliar mede $60^\\circ$.\n\nSomando essas duas parcelas (conhecida geometricamente como regra do bico):\n$$m = 50^\\circ + 60^\\circ = 110^\\circ$$\n\nPortanto, a alternativa correta é a <strong>Letra B</strong>.",
@@ -14790,12 +14812,12 @@ var mathData = window.mathData || {
             "topicoId": "b3-t1"
           },
           {
-            "q": "Dois dados não viciados, distintos, cujas faces estão numeradas de 1 a 6, foram lançados simultaneamente. A probabilidade de obtermos um par de números primos é dado por",
+            "q": "Dois dados não viciados, distintos, cujas faces estão numeradas de 1 a 6, foram lançados simultaneamente. A probabilidade de obtermos um par de números primos é dado por:",
             "options": [
-              "1/9",
-              "1/4",
-              "1/3",
-              "5/9"
+              "$\\frac{1}{9}$",
+              "$\\frac{1}{4}$",
+              "$\\frac{1}{3}$",
+              "$\\frac{5}{9}$"
             ],
             "correct": 1,
             "explanation": "No lançamento de um dado comum de 6 faces, os resultados possíveis são $\\{1, 2, 3, 4, 5, 6\\}$.\n\n1. Os números primos nesse conjunto são $\\{2, 3, 5\\}$ (total de $3$ números primos).\n2. A probabilidade de sair um número primo em um dado é:\n$$P(\\text{primo}) = \\frac{3}{6} = \\frac{1}{2}$$\n3. Como o lançamento de dois dados distintos constitui eventos independentes, a probabilidade de ambos os números serem primos é o produto das probabilidades individuais:\n$$P = \\frac{1}{2} \\times \\frac{1}{2} = \\frac{1}{4}$$\n\n(Ou considerando o espaço amostral total de $6 \\times 6 = 36$ pares ordenados, há $3 \\times 3 = 9$ pares favoráveis formados por primos, logo $\\frac{9}{36} = \\frac{1}{4}$).\n\nPortanto, a alternativa correta é a <strong>Letra B</strong>.",
@@ -14806,7 +14828,7 @@ var mathData = window.mathData || {
             "topicoId": "b4-t3"
           },
           {
-            "q": "Na figura a seguir, o raio da circunferência menor vale $2\\text{ cm}$, o quadrado está inscrito na circunferência maior e circunscrito na circunferência menor.\n\nO valor da área colorida, em $\\text{cm}^2$, é",
+            "q": "Na figura a seguir, o raio da circunferência menor vale $2\\text{ cm}$, o quadrado está inscrito na circunferência maior e circunscrito na circunferência menor.\n\nO valor da área colorida, em $\\text{cm}^2$, é:",
             "options": [
               "$2\\pi - 1$",
               "$2\\pi - 2$",
@@ -14829,10 +14851,10 @@ var mathData = window.mathData || {
           {
             "q": "Um terreno em formato de trapézio isósceles e área de $12\\text{ m}^2$ possui dimensões, em metros, descritas conforme a figura a seguir, em que $X$ representa o comprimento da base menor e da altura relativa à base maior:\n\nQual o comprimento $X$ indicado na figura?",
             "options": [
-              "2",
-              "4",
-              "6",
-              "12"
+              "$2$",
+              "$4$",
+              "$6$",
+              "$12$"
             ],
             "correct": 0,
             "explanation": "Pela figura oficial do trapézio isósceles:\n• Base maior: $B = 10\\text{ m}$\n• Base menor: $b = X$\n• Altura: $h = X$\n• Área: $A = 12\\text{ m}^2$\n\n1. Aplicamos a fórmula da área do trapézio:\n$$A = \\frac{(B + b) \\cdot h}{2}$$\n$$12 = \\frac{(10 + X) \\cdot X}{2}$$\n$$24 = 10X + X^2$$\n$$X^2 + 10X - 24 = 0$$\n\n2. Fatorando o trinômio do 2º grau por soma e produto (dois números com soma $-10$ e produto $-24$ são $2$ e $-12$):\n$$(X - 2)(X + 12) = 0$$\n\nComo $X$ é uma medida de comprimento, temos $X > 0$, logo:\n$$X = 2\\text{ m}$$\n\nPortanto, a alternativa correta é a <strong>Letra A</strong>.",
@@ -14850,10 +14872,10 @@ var mathData = window.mathData || {
           {
             "q": "Na figura seguinte, temos um mapa de dois terrenos com frente para as ruas A e B. As laterais dos terrenos são paralelas entre si. Os dois terrenos juntos têm $70\\text{ metros}$ de frente para a Rua A e $105\\text{ metros}$ de frente para a Rua B, conforme a figura a seguir. O terreno I tem $40\\text{ metros}$ de frente para a Rua A.\n\nO terreno I tem quantos metros de frente para a Rua B?",
             "options": [
-              "26,7",
-              "60,0",
-              "78,8",
-              "93,3"
+              "$26{,}7$",
+              "$60{,}0$",
+              "$78{,}8$",
+              "$93{,}3$"
             ],
             "correct": 1,
             "explanation": "Como as laterais dos terrenos são retas paralelas entre si cortadas pelas duas transversais (Rua A e Rua B), aplicamos o **Teorema de Tales**, que estabelece a proporcionalidade direta entre os segmentos correspondentes:\n\n$$\\frac{\\text{Frente do Terreno I na Rua B}}{\\text{Frente Total na Rua B}} = \\frac{\\text{Frente do Terreno I na Rua A}}{\\text{Frente Total na Rua A}}$$\n\nSeja $y$ a medida da frente do Terreno I para a Rua B:\n$$\\frac{y}{105} = \\frac{40}{70}$$\n$$\\frac{y}{105} = \\frac{4}{7}$$\n$$y = \\frac{4 \\times 105}{7} = 4 \\times 15 = 60{,}0\\text{ metros}$$\n\nPortanto, a alternativa correta é a <strong>Letra B</strong>.",
@@ -14871,10 +14893,10 @@ var mathData = window.mathData || {
           {
             "q": "O gráfico da função quadrática de equação $f(x) = x^2 - 3x + 2$ é interceptado por uma reta de inclinação $3$ em uma de suas raízes, conforme a seguinte figura:\n\nO valor do coeficiente linear da equação que define a reta apresentada na figura é:",
             "options": [
-              "-6",
-              "-3",
-              "1",
-              "2"
+              "$-6$",
+              "$-3$",
+              "$1$",
+              "$2$"
             ],
             "correct": 1,
             "explanation": "1. Determinamos as raízes da função quadrática $f(x) = x^2 - 3x + 2$ igualando a zero:\n$$x^2 - 3x + 2 = 0 \\implies (x - 1)(x - 2) = 0$$\nAs raízes são $x_1 = 1$ e $x_2 = 2$.\n\n2. Pela figura oficial, a reta intercepta o eixo $x$ na primeira raiz positiva à direita da origem, que é o ponto $(1, 0)$ (com o vértice da parábola situado à direita desse ponto de interseção).\n\n3. A equação reduzida da reta com inclinação (coeficiente angular) $m = 3$ que passa pelo ponto $(x_0, y_0) = (1, 0)$ é dada por:\n$$y - y_0 = m(x - x_0)$$\n$$y - 0 = 3(x - 1)$$\n$$y = 3x - 3$$\n\nO coeficiente linear da reta é o seu termo independente, que vale $-3$.\n\nPortanto, a alternativa correta é a <strong>Letra B</strong>.",
@@ -14890,12 +14912,12 @@ var mathData = window.mathData || {
             "topicoId": "b2-t5"
           },
           {
-            "q": "Dados os números reais $x = 0{,}5$, $y = \\frac{16}{36}$ e $z = 0{,}0625$, o valor numérico da expressão $y^x + z^x$ é igual a",
+            "q": "Dados os números reais $x = 0{,}5$, $y = \\frac{16}{36}$ e $z = 0{,}0625$, o valor numérico da expressão $y^x + z^x$ é igual a:",
             "options": [
-              "5/12",
-              "7/12",
-              "11/12",
-              "19/12"
+              "$\\frac{5}{12}$",
+              "$\\frac{7}{12}$",
+              "$\\frac{11}{12}$",
+              "$\\frac{19}{12}$"
             ],
             "correct": 2,
             "explanation": "Observamos que o expoente $x = 0{,}5 = \\frac{1}{2}$ corresponde à operação de raiz quadrada, pois $a^{\\frac{1}{2}} = \\sqrt{a}$.\n\n1. Para o primeiro termo $y^x$:\n$$y = \\frac{16}{36} = \\frac{4}{9}$$\n$$y^x = \\left(\\frac{4}{9}\\right)^{\\frac{1}{2}} = \\sqrt{\\frac{4}{9}} = \\frac{2}{3}$$\n\n2. Para o segundo termo $z^x$:\n$$z = 0{,}0625 = \\frac{625}{10000} = \\frac{1}{16}$$\n$$z^x = \\left(\\frac{1}{16}\\right)^{\\frac{1}{2}} = \\sqrt{\\frac{1}{16}} = \\frac{1}{4}$$\n\n3. Somamos as duas frações através do MMC entre 3 e 4 (que é 12):\n$$y^x + z^x = \\frac{2}{3} + \\frac{1}{4} = \\frac{8 + 3}{12} = \\frac{11}{12}$$\n\nPortanto, a alternativa correta é a <strong>Letra C</strong>.",
@@ -14906,12 +14928,12 @@ var mathData = window.mathData || {
             "topicoId": "b1-t7"
           },
           {
-            "q": "Jorge ganhou um presente que foi embalado numa caixa em forma de um prisma reto de base pentagonal regular. Depois de receber o presente, Jorge passou a observar a caixa e imaginar como seria sua planificação. Algumas ideias de planificações estão representadas nas figuras a seguir.\n\nA planificação correta dessa caixa é",
+            "q": "Jorge ganhou um presente que foi embalado numa caixa em forma de um prisma reto de base pentagonal regular. Depois de receber o presente, Jorge passou a observar a caixa e imaginar como seria sua planificação. Algumas ideias de planificações estão representadas nas figuras a seguir.\n\nA planificação correta dessa caixa é:",
             "options": [
-              "A",
-              "B",
-              "C",
-              "D"
+              "Planificação A",
+              "Planificação B",
+              "Planificação C",
+              "Planificação D"
             ],
             "correct": 2,
             "explanation": "Um prisma reto de base pentagonal possui:\n• $2$ bases pentagonais regulares congruentes e paralelas.\n• $5$ faces laterais retangulares congruentes.\n\nAnalisando as planificações propostas:\n• **Planificação A:** apresenta apenas $1$ pentágono (falta a outra base).\n• **Planificação B:** apresenta as duas bases pentagonais presas no mesmo lado da faixa lateral de retângulos, de modo que ao dobrar as duas bases se sobreporiam no mesmo plano superior, deixando o fundo aberto.\n• **Planificação D:** a organização das faces laterais em formato de cruz não permite o fechamento contínuo das 5 faces laterais cilíndricas ao redor do pentágono.\n• **Planificação C:** apresenta uma faixa contínua de $5$ retângulos com uma base pentagonal acoplada no bordo superior e a outra base pentagonal acoplada no bordo inferior em posição adequada para fechar o prisma com topo e fundo perfeitos.\n\nPortanto, a alternativa correta é a <strong>Letra C</strong>.",
@@ -14969,10 +14991,10 @@ var mathData = window.mathData || {
           {
             "q": "Eduardo possui uma coleção de livros. Ao tentar organizar sua coleção em grupos de 5 livros, sobraram 2 livros. O mesmo ocorreu quando ele tentou organizar os livros em grupos de 4 ou 3 livros, sempre sobravam 2 livros. Sabendo que Eduardo possui entre 100 e 150 livros, qual dos valores abaixo representa a quantidade de livros que ele possui?",
             "options": [
-              "120",
-              "122",
-              "42",
-              "140"
+              "$120$",
+              "$122$",
+              "$42$",
+              "$140$"
             ],
             "correct": 1,
             "explanation": "Seja $N$ o número de livros da coleção de Eduardo. De acordo com as divisões com resto:\n• $N$ dividido por 5 deixa resto 2: $N = 5q_1 + 2$\n• $N$ dividido por 4 deixa resto 2: $N = 4q_2 + 2$\n• $N$ dividido por 3 deixa resto 2: $N = 3q_3 + 2$\n\n1. Subtraindo $2$ livros da coleção, a quantidade $N - 2$ passa a ser divisível simultaneamente por 3, 4 e 5:\n$$N - 2 = k \\cdot \\text{MMC}(3, 4, 5)$$\n\n2. Como 3, 4 e 5 são primos entre si dois a dois:\n$$\\text{MMC}(3, 4, 5) = 3 \\times 4 \\times 5 = 60$$\nLogo, $N - 2$ é um múltiplo de 60: $N - 2 \\in \\{60, 120, 180, \\dots\\}$, o que nos dá:\n$$N \\in \\{62, 122, 182, \\dots\\}$$\n\n3. O enunciado afirma que Eduardo possui **entre 100 e 150 livros**:\n$$100 < 122 < 150$$\n\nPortanto, Eduardo possui $122$ livros.\n\nPortanto, a alternativa correta é a <strong>Letra B</strong>.",
@@ -15001,10 +15023,10 @@ var mathData = window.mathData || {
           {
             "q": "Qual o valor numérico da expressão $\\frac{x^2 - 2x + 1}{x^2 - 1}$ para $x = 9.999$?",
             "options": [
-              "19.997",
-              "- 9.998",
-              "0,9998",
-              "-1,9997"
+              "$19.997$",
+              "$-9.998$",
+              "$0{,}9998$",
+              "$-1{,}9997$"
             ],
             "correct": 2,
             "explanation": "Em vez de substituir diretamente o valor elevado de $x$, simplificamos a fração algébrica fatorando o numerador e o denominador:\n\n1. O numerador é um trinômio quadrado perfeito:\n$$x^2 - 2x + 1 = (x - 1)^2$$\n\n2. O denominador é uma diferença de dois quadrados:\n$$x^2 - 1 = (x - 1)(x + 1)$$\n\n3. Simplificamos a fração algébrica cancelando o fator comum $(x - 1)$, válido para $x \\neq 1$:\n$$\\frac{x^2 - 2x + 1}{x^2 - 1} = \\frac{(x - 1)^2}{(x - 1)(x + 1)} = \\frac{x - 1}{x + 1}$$\n\n4. Substituímos agora o valor $x = 9.999$:\n$$\\frac{9999 - 1}{9999 + 1} = \\frac{9998}{10000} = 0{,}9998$$\n\nPortanto, a alternativa correta é a <strong>Letra C</strong>.",

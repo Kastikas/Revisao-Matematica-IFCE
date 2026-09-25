@@ -509,9 +509,65 @@ function initMobileMenu() {
     }
 }
 
+// Dropdowns nos Cabeçalhos (Instituições e Eixos Temáticos de Teoria)
+function setupHeaderDropdown(containerId, btnId, menuId, chevronId) {
+    const container = document.getElementById(containerId);
+    const btn = document.getElementById(btnId);
+    const menu = document.getElementById(menuId);
+    const chevron = document.getElementById(chevronId);
+
+    if (!container || !btn || !menu) return;
+
+    function openDropdown() {
+        menu.classList.remove("hidden");
+        menu.classList.add("dropdown-menu-animate");
+        btn.setAttribute("aria-expanded", "true");
+        if (chevron) chevron.classList.add("rotate-180");
+    }
+
+    function closeDropdown() {
+        menu.classList.add("hidden");
+        menu.classList.remove("dropdown-menu-animate");
+        btn.setAttribute("aria-expanded", "false");
+        if (chevron) chevron.classList.remove("rotate-180");
+    }
+
+    btn.addEventListener("click", (e) => {
+        e.stopPropagation();
+        const isOpen = !menu.classList.contains("hidden");
+        if (isOpen) {
+            closeDropdown();
+        } else {
+            // Fecha outros dropdowns abertos antes
+            document.querySelectorAll(".dropdown-menu-animate").forEach(el => el.classList.add("hidden"));
+            document.querySelectorAll("[aria-expanded='true']").forEach(el => el.setAttribute("aria-expanded", "false"));
+            openDropdown();
+        }
+    });
+
+    document.addEventListener("click", (e) => {
+        if (!container.contains(e.target)) {
+            closeDropdown();
+        }
+    });
+
+    document.addEventListener("keydown", (e) => {
+        if (e.key === "Escape" && !menu.classList.contains("hidden")) {
+            closeDropdown();
+            btn.focus();
+        }
+    });
+}
+
+function initHeaderDropdowns() {
+    setupHeaderDropdown("dropdown-instituicoes-container", "btn-dropdown-instituicoes", "dropdown-instituicoes-menu", "chevron-instituicoes");
+    setupHeaderDropdown("dropdown-teoria-container", "btn-dropdown-teoria", "dropdown-teoria-menu", "chevron-teoria");
+}
+
 // Execução ao carregar a página
 document.addEventListener("DOMContentLoaded", () => {
     initMobileMenu();
+    initHeaderDropdowns();
     initTopicSearch();
     initImageModal();
     if (window.lucide) lucide.createIcons();

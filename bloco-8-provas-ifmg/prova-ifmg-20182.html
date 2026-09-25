@@ -49,92 +49,166 @@
 
     <!-- Header / Navbar da Área de Provas (Parte 2 - Escuro-Azul) -->
     <header class="gradient-header-dark text-white shadow-xl sticky top-0 z-50 border-b border-slate-800">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="max-w-7xl mx-auto px-3 sm:px-6 lg:px-8">
             <div class="flex items-center justify-between h-16">
                 <!-- Logo Provas -->
-                <a href="../provas.html" class="flex items-center space-x-3 group">
-                    <div class="bg-blue-600 p-2 rounded-xl text-white font-bold shadow-md shadow-blue-500/20 flex items-center justify-center group-hover:scale-105 transition">
-                        <i data-lucide="file-check" class="w-6 h-6"></i>
+                <a href="../provas.html" class="flex items-center space-x-2 sm:space-x-3 group min-w-0 flex-shrink-0">
+                    <div class="bg-blue-600 p-1.5 sm:p-2 rounded-xl text-white font-bold shadow-md shadow-blue-500/20 flex items-center justify-center group-hover:scale-105 transition">
+                        <i data-lucide="file-check" class="w-5 h-5 sm:w-6 sm:h-6"></i>
                     </div>
-                    <div>
-                        <span class="font-extrabold text-xl tracking-tight text-white flex items-center gap-1.5">
+                    <div class="min-w-0">
+                        <span class="font-extrabold text-lg sm:text-xl tracking-tight text-white flex items-center gap-1 sm:gap-1.5">
                             Partiu<span class="text-sky-400">IF</span>
-                            <span class="text-[10px] font-bold uppercase tracking-wider bg-blue-500/30 text-sky-200 border border-blue-400/30 px-2 py-0.5 rounded-full">Provas</span>
+                            <span class="text-[9px] sm:text-[10px] font-bold uppercase tracking-wider bg-blue-500/30 text-sky-200 border border-blue-400/30 px-1.5 sm:px-2 py-0.5 rounded-full">Provas</span>
                         </span>
-                        <p class="text-xs text-slate-400 hidden sm:flex items-center gap-1">
+                        <p class="text-xs text-slate-400 hidden xl:flex items-center gap-1">
                             <i data-lucide="archive" class="w-3 h-3 text-sky-400"></i> Acervo Oficial com PDFs e Gabarito
                         </p>
                     </div>
                 </a>
 
                 <!-- Navegação Desktop -->
-                <nav class="hidden md:flex space-x-1 items-center">
+                <nav class="hidden lg:flex space-x-1.5 items-center">
                     <a href="../provas.html" class="px-3 py-2 rounded-lg text-sm transition flex items-center gap-1.5 text-slate-300 hover:bg-slate-800 hover:text-white">
-                <i data-lucide="layout-grid" class="w-4 h-4"></i> Todas as Provas
-            </a><a href="../pesquisa.html" class="px-3 py-2 rounded-lg text-sm transition flex items-center gap-1.5 text-slate-300 hover:bg-slate-800 hover:text-white">
-                <i data-lucide="search" class="w-4 h-4"></i> Pesquisa BNCC
-            </a><a href="../bloco-6-provas-ifce/index.html" class="px-3 py-2 rounded-lg text-sm transition flex items-center gap-1.5 text-slate-300 hover:bg-slate-800 hover:text-white">
-                <i data-lucide="award" class="w-4 h-4"></i> Provas IFCE (27)
-            </a><a href="../bloco-5-provas-ifsc/index.html" class="px-3 py-2 rounded-lg text-sm transition flex items-center gap-1.5 text-slate-300 hover:bg-slate-800 hover:text-white">
-                <i data-lucide="award" class="w-4 h-4"></i> Provas IFSC (16)
-            </a><a href="../bloco-7-provas-ifsp/index.html" class="px-3 py-2 rounded-lg text-sm transition flex items-center gap-1.5 text-slate-300 hover:bg-slate-800 hover:text-white">
-                <i data-lucide="award" class="w-4 h-4"></i> Provas IFSP (8)
-            </a><a href="../bloco-8-provas-ifmg/index.html" class="px-3 py-2 rounded-lg text-sm transition flex items-center gap-1.5 bg-blue-600 text-white font-semibold shadow-inner">
-                <i data-lucide="award" class="w-4 h-4"></i> Provas IFMG (11)
+                        <i data-lucide="layout-grid" class="w-4 h-4 text-sky-400"></i> Todas as Provas
+                    </a>
+
+                    <!-- Dropdown de Instituições -->
+                    <div class="relative" id="dropdown-instituicoes-container">
+                        <button id="btn-dropdown-instituicoes" class="px-3 py-2 rounded-lg text-sm transition flex items-center gap-1.5 bg-blue-600/90 text-white font-semibold shadow-inner border border-blue-400/40" aria-haspopup="true" aria-expanded="false" title="Filtrar por Instituto Federal">
+                            <i data-lucide="building-2" class="w-4 h-4 text-sky-400"></i>
+                            <span>Instituições</span>
+                            <span class="bg-blue-500/40 text-sky-200 border border-blue-400/40 text-[10px] font-bold px-1.5 py-0.5 rounded-full">IFMG</span>
+                            <i data-lucide="chevron-down" id="chevron-instituicoes" class="w-3.5 h-3.5 text-slate-400 transition-transform duration-200"></i>
+                        </button>
+
+                        <div id="dropdown-instituicoes-menu" class="hidden absolute left-0 mt-2 w-64 bg-slate-900/95 border border-slate-700/80 rounded-2xl shadow-2xl p-1.5 z-50 backdrop-blur-xl">
+                            <div class="px-3 py-1.5 text-[10px] font-bold uppercase tracking-wider text-slate-400 border-b border-slate-800/80 flex items-center justify-between">
+                                <span>Institutos Federais</span>
+                                <span class="text-sky-400 font-bold">62 Provas</span>
+                            </div>
+                            <div class="space-y-1 py-1">
+                                <a href="../bloco-6-provas-ifce/index.html" class="flex items-center justify-between px-3 py-2 rounded-xl text-xs transition text-slate-300 hover:bg-slate-800/80 hover:text-white">
+                <div class="flex items-center gap-2.5">
+                    <span class="w-2 h-2 rounded-full bg-slate-700"></span>
+                    <div>
+                        <div class="font-bold text-slate-100">IFCE <span class="text-slate-400 font-normal">(Ceará)</span></div>
+                        <div class="text-[10px] text-slate-400">27 provas cadastradas</div>
+                    </div>
+                </div>
+                <i data-lucide="chevron-right" class="w-3.5 h-3.5 text-slate-500"></i>
+            </a><a href="../bloco-5-provas-ifsc/index.html" class="flex items-center justify-between px-3 py-2 rounded-xl text-xs transition text-slate-300 hover:bg-slate-800/80 hover:text-white">
+                <div class="flex items-center gap-2.5">
+                    <span class="w-2 h-2 rounded-full bg-slate-700"></span>
+                    <div>
+                        <div class="font-bold text-slate-100">IFSC <span class="text-slate-400 font-normal">(Santa Catarina)</span></div>
+                        <div class="text-[10px] text-slate-400">16 provas cadastradas</div>
+                    </div>
+                </div>
+                <i data-lucide="chevron-right" class="w-3.5 h-3.5 text-slate-500"></i>
+            </a><a href="../bloco-7-provas-ifsp/index.html" class="flex items-center justify-between px-3 py-2 rounded-xl text-xs transition text-slate-300 hover:bg-slate-800/80 hover:text-white">
+                <div class="flex items-center gap-2.5">
+                    <span class="w-2 h-2 rounded-full bg-slate-700"></span>
+                    <div>
+                        <div class="font-bold text-slate-100">IFSP <span class="text-slate-400 font-normal">(São Paulo)</span></div>
+                        <div class="text-[10px] text-slate-400">8 provas cadastradas</div>
+                    </div>
+                </div>
+                <i data-lucide="chevron-right" class="w-3.5 h-3.5 text-slate-500"></i>
+            </a><a href="../bloco-8-provas-ifmg/index.html" class="flex items-center justify-between px-3 py-2 rounded-xl text-xs transition bg-blue-600/25 text-sky-200 font-semibold border-l-2 border-blue-400">
+                <div class="flex items-center gap-2.5">
+                    <span class="w-2 h-2 rounded-full bg-sky-400 animate-pulse"></span>
+                    <div>
+                        <div class="font-bold text-slate-100">IFMG <span class="text-slate-400 font-normal">(Minas Gerais)</span></div>
+                        <div class="text-[10px] text-slate-400">11 provas cadastradas</div>
+                    </div>
+                </div>
+                <i data-lucide="chevron-right" class="w-3.5 h-3.5 text-slate-500"></i>
             </a>
+                            </div>
+                            <div class="pt-1 border-t border-slate-800/80">
+                                <a href="../provas.html" class="flex items-center justify-between px-3 py-1.5 text-[11px] font-semibold text-sky-400 hover:bg-slate-800/80 rounded-xl transition">
+                                    <span>Ver matriz geral de provas</span>
+                                    <i data-lucide="arrow-right" class="w-3 h-3"></i>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <a href="../pesquisa.html" class="px-3 py-2 rounded-lg text-sm transition flex items-center gap-1.5 text-slate-300 hover:bg-slate-800 hover:text-white" title="Pesquisar questões por descritor BNCC">
+                        <i data-lucide="search" class="w-4 h-4 text-emerald-400"></i> Pesquisa BNCC
+                    </a>
                 </nav>
 
                 <!-- Ações do Usuário -->
-                <div class="flex items-center gap-2 sm:gap-3">
-                    <a href="../index.html" class="bg-slate-800/90 hover:bg-slate-700 text-slate-200 border border-slate-700 px-3.5 py-1.5 rounded-lg text-xs sm:text-sm font-semibold transition flex items-center gap-1.5 shadow-sm" title="Retornar à Teoria e Eixos Temáticos">
-                        <i data-lucide="arrow-left" class="w-4 h-4 text-emerald-400"></i> <span class="hidden sm:inline">Voltar para </span>Teoria
+                <div class="flex items-center gap-1.5 sm:gap-2.5 flex-shrink-0">
+                    <a href="../index.html" class="bg-slate-800/90 hover:bg-slate-700 text-slate-200 border border-slate-700 p-2 sm:px-3.5 sm:py-1.5 rounded-lg text-xs sm:text-sm font-semibold transition flex items-center gap-1.5 shadow-sm" title="Retornar à Teoria e Eixos Temáticos">
+                        <i data-lucide="arrow-left" class="w-4 h-4 text-emerald-400"></i>
+                        <span class="hidden sm:inline xl:hidden">Teoria</span>
+                        <span class="hidden xl:inline">Voltar para Teoria</span>
                     </a>
-                    <a href="../simulado.html" class="bg-blue-600 hover:bg-blue-500 text-white font-semibold px-3.5 py-1.5 rounded-lg text-xs sm:text-sm transition flex items-center gap-1.5 shadow">
-                        <i data-lucide="award" class="w-4 h-4"></i> Simulado
+                    <a href="../simulado.html" class="bg-blue-600 hover:bg-blue-500 text-white font-semibold p-2 sm:px-3.5 sm:py-1.5 rounded-lg text-xs sm:text-sm transition flex items-center gap-1.5 shadow" title="Simulado IF">
+                        <i data-lucide="award" class="w-4 h-4"></i>
+                        <span class="hidden sm:inline">Simulado</span>
                     </a>
-                    <button id="mobile-menu-btn" class="md:hidden p-2 rounded-lg text-slate-300 hover:text-white hover:bg-slate-800" aria-label="Abrir menu">
-                        <i data-lucide="menu" class="w-6 h-6"></i>
+                    <button id="mobile-menu-btn" class="lg:hidden p-2 rounded-lg text-slate-300 hover:text-white hover:bg-slate-800 transition" aria-label="Abrir menu">
+                        <i data-lucide="menu" class="w-5 h-5 sm:w-6 sm:h-6"></i>
                     </button>
                 </div>
             </div>
         </div>
 
         <!-- Menu Mobile -->
-        <div id="mobile-menu" class="hidden md:hidden bg-slate-950 border-t border-slate-800 px-4 pt-2 pb-4 space-y-1">
-            <a href="../provas.html" class="block px-3 py-2 rounded-md text-base font-medium text-white flex items-center gap-2 hover:bg-slate-800">
-                <i data-lucide="layout-grid" class="w-4 h-4"></i> Todas as Provas
-            </a><a href="../pesquisa.html" class="block px-3 py-2 rounded-md text-base font-medium text-white flex items-center gap-2 hover:bg-slate-800">
-                <i data-lucide="search" class="w-4 h-4"></i> Pesquisa BNCC
-            </a><a href="../bloco-6-provas-ifce/index.html" class="block px-3 py-2 rounded-md text-base font-medium text-white flex items-center gap-2 hover:bg-slate-800">
-                <i data-lucide="award" class="w-4 h-4"></i> Provas IFCE (27)
-            </a><a href="../bloco-5-provas-ifsc/index.html" class="block px-3 py-2 rounded-md text-base font-medium text-white flex items-center gap-2 hover:bg-slate-800">
-                <i data-lucide="award" class="w-4 h-4"></i> Provas IFSC (16)
-            </a><a href="../bloco-7-provas-ifsp/index.html" class="block px-3 py-2 rounded-md text-base font-medium text-white flex items-center gap-2 hover:bg-slate-800">
-                <i data-lucide="award" class="w-4 h-4"></i> Provas IFSP (8)
-            </a><a href="../bloco-8-provas-ifmg/index.html" class="block px-3 py-2 rounded-md text-base font-medium text-white flex items-center gap-2 bg-blue-600 font-bold">
-                <i data-lucide="award" class="w-4 h-4"></i> Provas IFMG (11)
+        <div id="mobile-menu" class="hidden lg:hidden bg-slate-950 border-t border-slate-800 px-4 pt-2 pb-4 space-y-1">
+            <a href="../provas.html" class="block px-3 py-2 rounded-md text-base font-medium text-white flex items-center justify-between gap-2 hover:bg-slate-800">
+                <span class="flex items-center gap-2"><i data-lucide="layout-grid" class="w-4 h-4 text-sky-400"></i> Todas as Provas</span>
+                <span class="text-xs bg-slate-800 px-2 py-0.5 rounded-full text-slate-300 font-bold">62 Provas</span>
             </a>
-            <a href="../index.html" class="block px-3 py-2 rounded-md text-base font-semibold text-slate-200 hover:bg-slate-800 flex items-center gap-2 mt-2 border-t border-slate-800 pt-3">
-                <i data-lucide="arrow-left" class="w-4 h-4 text-emerald-400"></i> Voltar para Teoria (Parte 1)
+            <a href="../pesquisa.html" class="block px-3 py-2 rounded-md text-base font-medium text-white flex items-center gap-2 hover:bg-slate-800">
+                <i data-lucide="search" class="w-4 h-4 text-emerald-400"></i> Pesquisa BNCC
             </a>
-            <a href="../simulado.html" class="block px-3 py-2 rounded-md text-base font-bold bg-blue-600 text-white flex items-center gap-2 mt-2">
-                <i data-lucide="award" class="w-4 h-4"></i> Simulado IF
+
+            <div class="pt-2 pb-1 px-3 text-[11px] font-bold uppercase tracking-wider text-slate-400">Provas por Instituição</div>
+            <a href="../bloco-6-provas-ifce/index.html" class="block px-3 py-2 rounded-md text-base font-medium text-white flex items-center justify-between gap-2 hover:bg-slate-800">
+                <span class="flex items-center gap-2"><i data-lucide="award" class="w-4 h-4 text-sky-400"></i> IFCE - Ceará</span>
+                <span class="text-xs bg-blue-900/60 text-sky-300 px-2 py-0.5 rounded-full font-bold">27</span>
             </a>
+            <a href="../bloco-5-provas-ifsc/index.html" class="block px-3 py-2 rounded-md text-base font-medium text-white flex items-center justify-between gap-2 hover:bg-slate-800">
+                <span class="flex items-center gap-2"><i data-lucide="award" class="w-4 h-4 text-sky-400"></i> IFSC - Santa Catarina</span>
+                <span class="text-xs bg-blue-900/60 text-sky-300 px-2 py-0.5 rounded-full font-bold">16</span>
+            </a>
+            <a href="../bloco-7-provas-ifsp/index.html" class="block px-3 py-2 rounded-md text-base font-medium text-white flex items-center justify-between gap-2 hover:bg-slate-800">
+                <span class="flex items-center gap-2"><i data-lucide="award" class="w-4 h-4 text-sky-400"></i> IFSP - São Paulo</span>
+                <span class="text-xs bg-blue-900/60 text-sky-300 px-2 py-0.5 rounded-full font-bold">8</span>
+            </a>
+            <a href="../bloco-8-provas-ifmg/index.html" class="block px-3 py-2 rounded-md text-base font-medium text-white flex items-center justify-between gap-2 bg-blue-600 font-bold">
+                <span class="flex items-center gap-2"><i data-lucide="award" class="w-4 h-4 text-sky-400"></i> IFMG - Minas Gerais</span>
+                <span class="text-xs bg-blue-900/60 text-sky-300 px-2 py-0.5 rounded-full font-bold">11</span>
+            </a>
+
+            <div class="pt-2 border-t border-slate-800 space-y-1">
+                <a href="../index.html" class="block px-3 py-2 rounded-md text-base font-semibold text-slate-200 hover:bg-slate-800 flex items-center gap-2">
+                    <i data-lucide="arrow-left" class="w-4 h-4 text-emerald-400"></i> Voltar para Teoria (Parte 1)
+                </a>
+                <a href="../simulado.html" class="block px-3 py-2 rounded-md text-base font-bold bg-blue-600 text-white flex items-center gap-2">
+                    <i data-lucide="award" class="w-4 h-4"></i> Simulado IF
+                </a>
+            </div>
         </div>
     </header>
 
 
     <main class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 flex-grow">
         <!-- Breadcrumbs -->
-        <nav class="flex text-xs font-medium text-slate-400 mb-6" aria-label="Breadcrumb">
-            <ol class="inline-flex items-center space-x-1 sm:space-x-2">
+        <nav class="text-xs font-medium text-slate-400 mb-6 overflow-x-auto custom-scrollbar pb-1" aria-label="Breadcrumb">
+            <ol class="inline-flex flex-wrap items-center gap-1 sm:gap-2">
                 <li><a href="../index.html" class="hover:text-sky-400 flex items-center gap-1"><i data-lucide="home" class="w-3.5 h-3.5"></i> Início</a></li>
                 <li><span class="text-slate-600">/</span></li>
                 <li><a href="../provas.html" class="hover:text-sky-400 flex items-center gap-1"><i data-lucide="archive" class="w-3.5 h-3.5"></i> Provas</a></li>
                 <li><span class="text-slate-600">/</span></li>
                 <li><a href="./index.html" class="hover:text-sky-400">Bloco 8: Provas Anteriores IFMG</a></li>
                 <li><span class="text-slate-600">/</span></li>
-                <li class="text-slate-200 font-semibold truncate max-w-xs sm:max-w-none">Prova IFMG 2018.2</li>
+                <li class="text-slate-200 font-semibold truncate max-w-[200px] sm:max-w-none">Prova IFMG 2018.2</li>
             </ol>
         </nav>
 
@@ -143,18 +217,18 @@
             <div class="lg:col-span-3 space-y-8">
                 
                 <!-- Cabeçalho do Exame -->
-                <div class="bg-slate-900/90 border border-slate-800 rounded-3xl p-6 sm:p-8 shadow-xl text-slate-100">
+                <div class="bg-slate-900/90 border border-slate-800 rounded-3xl p-4 sm:p-8 shadow-xl text-slate-100">
                     <div class="flex flex-wrap items-center justify-between gap-3 mb-4">
                         <span class="text-xs font-bold uppercase tracking-wider text-sky-300 bg-blue-950/80 px-3 py-1 rounded-full border border-blue-800/60">
                             BNCC: Exame Oficial
                         </span>
-                        <div class="flex items-center gap-2">
+                        <div class="flex flex-wrap items-center gap-2">
                             
-                        <a href="../provas/ifmg/IFMG_prova_2018_2.pdf" download class="bg-blue-600 hover:bg-blue-500 text-white font-bold px-4 py-2 rounded-xl text-sm transition flex items-center gap-2 shadow-lg shadow-blue-600/25" title="Baixar Caderno Oficial em PDF">
+                        <a href="../provas/ifmg/IFMG_prova_2018_2.pdf" download class="bg-blue-600 hover:bg-blue-500 text-white font-bold px-3 sm:px-4 py-2 rounded-xl text-xs sm:text-sm transition flex items-center gap-1.5 sm:gap-2 shadow-lg shadow-blue-600/25" title="Baixar Caderno Oficial em PDF">
                             <i data-lucide="download" class="w-4 h-4"></i> Baixar Caderno em PDF
                         </a>
                     
-                            <button id="btn-toggle-done-ifmg-2018-2" onclick="toggleTopicDone('ifmg-2018-2')" class="px-4 py-2 rounded-xl text-sm font-semibold border bg-slate-900 text-slate-300 border-slate-700 hover:bg-slate-800 transition flex items-center gap-2 shadow-sm">
+                            <button id="btn-toggle-done-ifmg-2018-2" onclick="toggleTopicDone('ifmg-2018-2')" class="px-3 sm:px-4 py-2 rounded-xl text-xs sm:text-sm font-semibold border bg-slate-900 text-slate-300 border-slate-700 hover:bg-slate-800 transition flex items-center gap-1.5 sm:gap-2 shadow-sm">
                                 <i data-lucide="square" class="w-4 h-4 text-slate-500"></i> Marcar como Concluída
                             </button>
                         </div>
@@ -254,7 +328,7 @@
                     
                         <div class="mb-8 border-b border-slate-800/80 pb-6 last:border-0 last:pb-0" id="q-container-ifmg-2018-2-q0">
                             <div class="flex items-center justify-between mb-3 flex-wrap gap-2">
-                                <div class="flex items-center gap-2">
+                                <div class="flex flex-wrap items-center gap-2">
                                     <span class="text-xs font-bold uppercase tracking-wider text-sky-300 bg-blue-950/60 px-2.5 py-0.5 rounded-full border border-blue-800/40">Questão 1</span>
                                     
                             <a href="../pesquisa.html?bncc=EF07MA01" class="text-[11px] font-mono font-bold text-emerald-300 bg-emerald-950/80 hover:bg-emerald-900/90 px-2.5 py-0.5 rounded-full border border-emerald-800/60 flex items-center gap-1 transition shadow-sm" title="Resolver e elaborar problemas com números naturais envolvendo Mínimo Múltiplo Comum (MMC).">
@@ -263,16 +337,14 @@
                         
                                 </div>
                             </div>
-                            <p class="font-medium text-slate-100 mb-4 text-sm sm:text-base leading-relaxed">Dois médicos de especialidades distintas trabalham em uma clínica pelo mesmo plano de saúde. Segundo as regras do plano, os dois devem iniciar o plantão no mesmo horário e este não pode durar mais que 12 horas. Em determinado dia, os dois atenderam pacientes ininterruptamente até irem embora juntos, sendo que cada atendimento do primeiro durou 45 minutos e do segundo, 50 minutos.
-
-Qual o número total de pacientes atendidos naquele dia pelos dois médicos segundo as regras do plano?</p>
+                            <div class="q-text-container"><p class="q-paragraph font-medium text-slate-200 text-sm sm:text-base">Dois médicos de especialidades distintas trabalham em uma clínica pelo mesmo plano de saúde. Segundo as regras do plano, os dois devem iniciar o plantão no mesmo horário e este não pode durar mais que 12 horas. Em determinado dia, os dois atenderam pacientes ininterruptamente até irem embora juntos, sendo que cada atendimento do primeiro durou 45 minutos e do segundo, 50 minutos.</p><p class="q-prompt text-slate-100 text-sm sm:text-base">Qual o número total de pacientes atendidos naquele dia pelos dois médicos segundo as regras do plano?</p></div>
                             
                             <div class="space-y-2 mb-4" id="opts-ifmg-2018-2-q0">
                                 
                             <button onclick="selectOption('ifmg-2018-2-q0', 0)" id="btn-ifmg-2018-2-q0-0" class="w-full text-left p-3.5 rounded-xl border border-slate-800 bg-slate-950/60 hover:border-blue-500 hover:bg-slate-800/60 transition text-sm text-slate-200 flex items-start justify-between gap-3 group">
                                 <span class="flex items-start gap-2.5 flex-1 min-w-0">
                                     <strong class="text-sky-400 font-bold flex-shrink-0 mt-0.5">A)</strong>
-                                    <span class="flex-1 min-w-0 break-words leading-relaxed">450</span>
+                                    <span class="flex-1 min-w-0 break-words leading-relaxed">$5$</span>
                                 </span>
                                 <i data-lucide="circle" class="w-4 h-4 text-slate-600 opt-icon group-hover:text-blue-400 flex-shrink-0 mt-0.5"></i>
                             </button>
@@ -280,7 +352,7 @@ Qual o número total de pacientes atendidos naquele dia pelos dois médicos segu
                             <button onclick="selectOption('ifmg-2018-2-q0', 1)" id="btn-ifmg-2018-2-q0-1" class="w-full text-left p-3.5 rounded-xl border border-slate-800 bg-slate-950/60 hover:border-blue-500 hover:bg-slate-800/60 transition text-sm text-slate-200 flex items-start justify-between gap-3 group">
                                 <span class="flex items-start gap-2.5 flex-1 min-w-0">
                                     <strong class="text-sky-400 font-bold flex-shrink-0 mt-0.5">B)</strong>
-                                    <span class="flex-1 min-w-0 break-words leading-relaxed">19</span>
+                                    <span class="flex-1 min-w-0 break-words leading-relaxed">$19$</span>
                                 </span>
                                 <i data-lucide="circle" class="w-4 h-4 text-slate-600 opt-icon group-hover:text-blue-400 flex-shrink-0 mt-0.5"></i>
                             </button>
@@ -288,7 +360,7 @@ Qual o número total de pacientes atendidos naquele dia pelos dois médicos segu
                             <button onclick="selectOption('ifmg-2018-2-q0', 2)" id="btn-ifmg-2018-2-q0-2" class="w-full text-left p-3.5 rounded-xl border border-slate-800 bg-slate-950/60 hover:border-blue-500 hover:bg-slate-800/60 transition text-sm text-slate-200 flex items-start justify-between gap-3 group">
                                 <span class="flex items-start gap-2.5 flex-1 min-w-0">
                                     <strong class="text-sky-400 font-bold flex-shrink-0 mt-0.5">C)</strong>
-                                    <span class="flex-1 min-w-0 break-words leading-relaxed">225</span>
+                                    <span class="flex-1 min-w-0 break-words leading-relaxed">$225$</span>
                                 </span>
                                 <i data-lucide="circle" class="w-4 h-4 text-slate-600 opt-icon group-hover:text-blue-400 flex-shrink-0 mt-0.5"></i>
                             </button>
@@ -296,7 +368,7 @@ Qual o número total de pacientes atendidos naquele dia pelos dois médicos segu
                             <button onclick="selectOption('ifmg-2018-2-q0', 3)" id="btn-ifmg-2018-2-q0-3" class="w-full text-left p-3.5 rounded-xl border border-slate-800 bg-slate-950/60 hover:border-blue-500 hover:bg-slate-800/60 transition text-sm text-slate-200 flex items-start justify-between gap-3 group">
                                 <span class="flex items-start gap-2.5 flex-1 min-w-0">
                                     <strong class="text-sky-400 font-bold flex-shrink-0 mt-0.5">D)</strong>
-                                    <span class="flex-1 min-w-0 break-words leading-relaxed">5</span>
+                                    <span class="flex-1 min-w-0 break-words leading-relaxed">$450$</span>
                                 </span>
                                 <i data-lucide="circle" class="w-4 h-4 text-slate-600 opt-icon group-hover:text-blue-400 flex-shrink-0 mt-0.5"></i>
                             </button>
@@ -312,7 +384,7 @@ Qual o número total de pacientes atendidos naquele dia pelos dois médicos segu
                     
                         <div class="mb-8 border-b border-slate-800/80 pb-6 last:border-0 last:pb-0" id="q-container-ifmg-2018-2-q1">
                             <div class="flex items-center justify-between mb-3 flex-wrap gap-2">
-                                <div class="flex items-center gap-2">
+                                <div class="flex flex-wrap items-center gap-2">
                                     <span class="text-xs font-bold uppercase tracking-wider text-sky-300 bg-blue-950/60 px-2.5 py-0.5 rounded-full border border-blue-800/40">Questão 2</span>
                                     
                             <a href="../pesquisa.html?bncc=EF09MA14" class="text-[11px] font-mono font-bold text-emerald-300 bg-emerald-950/80 hover:bg-emerald-900/90 px-2.5 py-0.5 rounded-full border border-emerald-800/60 flex items-center gap-1 transition shadow-sm" title="Descrever, por escrito e por meio de um fluxograma, algoritmos para a resolução do Teorema de Pitágoras.">
@@ -321,9 +393,7 @@ Qual o número total de pacientes atendidos naquele dia pelos dois médicos segu
                         
                                 </div>
                             </div>
-                            <p class="font-medium text-slate-100 mb-4 text-sm sm:text-base leading-relaxed">Num trabalho escolar, Antônio dispunha de dois pedaços de palito de sorvete para montar um triângulo retângulo. Um dos pedaços media $16\text{ centímetros}$ e o outro, $8\text{ centímetros}$. O pedaço de $8\text{ centímetros}$ foi utilizado como um cateto horizontal, o outro pedaço foi partido a uma distância $x$ de uma de suas extremidades. A figura seguinte ilustra o que Antônio fez.
-
-O valor de $x$, em centímetros, é</p>
+                            <div class="q-text-container"><p class="q-paragraph font-medium text-slate-200 text-sm sm:text-base">Num trabalho escolar, Antônio dispunha de dois pedaços de palito de sorvete para montar um triângulo retângulo. Um dos pedaços media $16\text{ centímetros}$ e o outro, $8\text{ centímetros}$. O pedaço de $8\text{ centímetros}$ foi utilizado como um cateto horizontal, o outro pedaço foi partido a uma distância $x$ de uma de suas extremidades. A figura seguinte ilustra o que Antônio fez.</p><p class="q-prompt text-slate-100 text-sm sm:text-base">O valor de $x$, em centímetros, é:</p></div>
                             
         <div class="my-4 p-2 sm:p-3 rounded-2xl border bg-slate-950/70 border-slate-800 shadow-sm max-w-xl mx-auto flex flex-col items-center">
             <img src="https://lh3.googleusercontent.com/d/1utEvLwN9MJ7IACPD4JLo5TEBlmQoZDmt" alt="Triângulo retângulo formado por palitos de sorvete com cateto horizontal de 8 cm, cateto vertical de medida x e hipotenusa inclinada completando a figura com ângulo reto indicado." onerror="if(this.src!='../assets/img/questoes/ifmg/ifmg-2018-2-q17.png'){this.src='../assets/img/questoes/ifmg/ifmg-2018-2-q17.png';}" class="max-h-80 sm:max-h-96 w-auto max-w-full rounded-xl object-contain cursor-zoom-in hover:opacity-95 hover:scale-[1.01] transition duration-200" onclick="openImageModal('https://lh3.googleusercontent.com/d/1utEvLwN9MJ7IACPD4JLo5TEBlmQoZDmt', 'Triângulo retângulo formado por palitos de sorvete com cateto horizontal de 8 cm, cateto vertical de medida x e hipotenusa inclinada completando a figura com ângulo reto indicado.')" title="Clique para ampliar a imagem" loading="lazy">
@@ -335,7 +405,7 @@ O valor de $x$, em centímetros, é</p>
                             <button onclick="selectOption('ifmg-2018-2-q1', 0)" id="btn-ifmg-2018-2-q1-0" class="w-full text-left p-3.5 rounded-xl border border-slate-800 bg-slate-950/60 hover:border-blue-500 hover:bg-slate-800/60 transition text-sm text-slate-200 flex items-start justify-between gap-3 group">
                                 <span class="flex items-start gap-2.5 flex-1 min-w-0">
                                     <strong class="text-sky-400 font-bold flex-shrink-0 mt-0.5">A)</strong>
-                                    <span class="flex-1 min-w-0 break-words leading-relaxed">2</span>
+                                    <span class="flex-1 min-w-0 break-words leading-relaxed">$2$</span>
                                 </span>
                                 <i data-lucide="circle" class="w-4 h-4 text-slate-600 opt-icon group-hover:text-blue-400 flex-shrink-0 mt-0.5"></i>
                             </button>
@@ -343,7 +413,7 @@ O valor de $x$, em centímetros, é</p>
                             <button onclick="selectOption('ifmg-2018-2-q1', 1)" id="btn-ifmg-2018-2-q1-1" class="w-full text-left p-3.5 rounded-xl border border-slate-800 bg-slate-950/60 hover:border-blue-500 hover:bg-slate-800/60 transition text-sm text-slate-200 flex items-start justify-between gap-3 group">
                                 <span class="flex items-start gap-2.5 flex-1 min-w-0">
                                     <strong class="text-sky-400 font-bold flex-shrink-0 mt-0.5">B)</strong>
-                                    <span class="flex-1 min-w-0 break-words leading-relaxed">6</span>
+                                    <span class="flex-1 min-w-0 break-words leading-relaxed">$6$</span>
                                 </span>
                                 <i data-lucide="circle" class="w-4 h-4 text-slate-600 opt-icon group-hover:text-blue-400 flex-shrink-0 mt-0.5"></i>
                             </button>
@@ -351,7 +421,7 @@ O valor de $x$, em centímetros, é</p>
                             <button onclick="selectOption('ifmg-2018-2-q1', 2)" id="btn-ifmg-2018-2-q1-2" class="w-full text-left p-3.5 rounded-xl border border-slate-800 bg-slate-950/60 hover:border-blue-500 hover:bg-slate-800/60 transition text-sm text-slate-200 flex items-start justify-between gap-3 group">
                                 <span class="flex items-start gap-2.5 flex-1 min-w-0">
                                     <strong class="text-sky-400 font-bold flex-shrink-0 mt-0.5">C)</strong>
-                                    <span class="flex-1 min-w-0 break-words leading-relaxed">8</span>
+                                    <span class="flex-1 min-w-0 break-words leading-relaxed">$8$</span>
                                 </span>
                                 <i data-lucide="circle" class="w-4 h-4 text-slate-600 opt-icon group-hover:text-blue-400 flex-shrink-0 mt-0.5"></i>
                             </button>
@@ -359,7 +429,7 @@ O valor de $x$, em centímetros, é</p>
                             <button onclick="selectOption('ifmg-2018-2-q1', 3)" id="btn-ifmg-2018-2-q1-3" class="w-full text-left p-3.5 rounded-xl border border-slate-800 bg-slate-950/60 hover:border-blue-500 hover:bg-slate-800/60 transition text-sm text-slate-200 flex items-start justify-between gap-3 group">
                                 <span class="flex items-start gap-2.5 flex-1 min-w-0">
                                     <strong class="text-sky-400 font-bold flex-shrink-0 mt-0.5">D)</strong>
-                                    <span class="flex-1 min-w-0 break-words leading-relaxed">10</span>
+                                    <span class="flex-1 min-w-0 break-words leading-relaxed">$10$</span>
                                 </span>
                                 <i data-lucide="circle" class="w-4 h-4 text-slate-600 opt-icon group-hover:text-blue-400 flex-shrink-0 mt-0.5"></i>
                             </button>
@@ -375,7 +445,7 @@ O valor de $x$, em centímetros, é</p>
                     
                         <div class="mb-8 border-b border-slate-800/80 pb-6 last:border-0 last:pb-0" id="q-container-ifmg-2018-2-q2">
                             <div class="flex items-center justify-between mb-3 flex-wrap gap-2">
-                                <div class="flex items-center gap-2">
+                                <div class="flex flex-wrap items-center gap-2">
                                     <span class="text-xs font-bold uppercase tracking-wider text-sky-300 bg-blue-950/60 px-2.5 py-0.5 rounded-full border border-blue-800/40">Questão 3</span>
                                     
                             <a href="../pesquisa.html?bncc=EF07MA14" class="text-[11px] font-mono font-bold text-emerald-300 bg-emerald-950/80 hover:bg-emerald-900/90 px-2.5 py-0.5 rounded-full border border-emerald-800/60 flex items-center gap-1 transition shadow-sm" title="Classificar sequências em recursivas e não recursivas e calcular o valor numérico de expressões algébricas.">
@@ -384,14 +454,14 @@ O valor de $x$, em centímetros, é</p>
                         
                                 </div>
                             </div>
-                            <p class="font-medium text-slate-100 mb-4 text-sm sm:text-base leading-relaxed">Pedro estava calculando valores para a expressão algébrica $x^2 + y^2 + 8x - 5y + 8$. Ao substituir $x = 3$ e $y = 2$ na expressão, o valor que ele vai encontrar é</p>
+                            <div class="q-text-container"><p class="q-paragraph font-medium text-slate-100 text-sm sm:text-base leading-relaxed">Pedro estava calculando valores para a expressão algébrica $x^2 + y^2 + 8x - 5y + 8$. Ao substituir $x = 3$ e $y = 2$ na expressão, o valor que ele vai encontrar é:</p></div>
                             
                             <div class="space-y-2 mb-4" id="opts-ifmg-2018-2-q2">
                                 
                             <button onclick="selectOption('ifmg-2018-2-q2', 0)" id="btn-ifmg-2018-2-q2-0" class="w-full text-left p-3.5 rounded-xl border border-slate-800 bg-slate-950/60 hover:border-blue-500 hover:bg-slate-800/60 transition text-sm text-slate-200 flex items-start justify-between gap-3 group">
                                 <span class="flex items-start gap-2.5 flex-1 min-w-0">
                                     <strong class="text-sky-400 font-bold flex-shrink-0 mt-0.5">A)</strong>
-                                    <span class="flex-1 min-w-0 break-words leading-relaxed">22</span>
+                                    <span class="flex-1 min-w-0 break-words leading-relaxed">$22$</span>
                                 </span>
                                 <i data-lucide="circle" class="w-4 h-4 text-slate-600 opt-icon group-hover:text-blue-400 flex-shrink-0 mt-0.5"></i>
                             </button>
@@ -399,7 +469,7 @@ O valor de $x$, em centímetros, é</p>
                             <button onclick="selectOption('ifmg-2018-2-q2', 1)" id="btn-ifmg-2018-2-q2-1" class="w-full text-left p-3.5 rounded-xl border border-slate-800 bg-slate-950/60 hover:border-blue-500 hover:bg-slate-800/60 transition text-sm text-slate-200 flex items-start justify-between gap-3 group">
                                 <span class="flex items-start gap-2.5 flex-1 min-w-0">
                                     <strong class="text-sky-400 font-bold flex-shrink-0 mt-0.5">B)</strong>
-                                    <span class="flex-1 min-w-0 break-words leading-relaxed">32</span>
+                                    <span class="flex-1 min-w-0 break-words leading-relaxed">$32$</span>
                                 </span>
                                 <i data-lucide="circle" class="w-4 h-4 text-slate-600 opt-icon group-hover:text-blue-400 flex-shrink-0 mt-0.5"></i>
                             </button>
@@ -407,7 +477,7 @@ O valor de $x$, em centímetros, é</p>
                             <button onclick="selectOption('ifmg-2018-2-q2', 2)" id="btn-ifmg-2018-2-q2-2" class="w-full text-left p-3.5 rounded-xl border border-slate-800 bg-slate-950/60 hover:border-blue-500 hover:bg-slate-800/60 transition text-sm text-slate-200 flex items-start justify-between gap-3 group">
                                 <span class="flex items-start gap-2.5 flex-1 min-w-0">
                                     <strong class="text-sky-400 font-bold flex-shrink-0 mt-0.5">C)</strong>
-                                    <span class="flex-1 min-w-0 break-words leading-relaxed">35</span>
+                                    <span class="flex-1 min-w-0 break-words leading-relaxed">$35$</span>
                                 </span>
                                 <i data-lucide="circle" class="w-4 h-4 text-slate-600 opt-icon group-hover:text-blue-400 flex-shrink-0 mt-0.5"></i>
                             </button>
@@ -415,7 +485,7 @@ O valor de $x$, em centímetros, é</p>
                             <button onclick="selectOption('ifmg-2018-2-q2', 3)" id="btn-ifmg-2018-2-q2-3" class="w-full text-left p-3.5 rounded-xl border border-slate-800 bg-slate-950/60 hover:border-blue-500 hover:bg-slate-800/60 transition text-sm text-slate-200 flex items-start justify-between gap-3 group">
                                 <span class="flex items-start gap-2.5 flex-1 min-w-0">
                                     <strong class="text-sky-400 font-bold flex-shrink-0 mt-0.5">D)</strong>
-                                    <span class="flex-1 min-w-0 break-words leading-relaxed">51</span>
+                                    <span class="flex-1 min-w-0 break-words leading-relaxed">$51$</span>
                                 </span>
                                 <i data-lucide="circle" class="w-4 h-4 text-slate-600 opt-icon group-hover:text-blue-400 flex-shrink-0 mt-0.5"></i>
                             </button>
@@ -431,7 +501,7 @@ O valor de $x$, em centímetros, é</p>
                     
                         <div class="mb-8 border-b border-slate-800/80 pb-6 last:border-0 last:pb-0" id="q-container-ifmg-2018-2-q3">
                             <div class="flex items-center justify-between mb-3 flex-wrap gap-2">
-                                <div class="flex items-center gap-2">
+                                <div class="flex flex-wrap items-center gap-2">
                                     <span class="text-xs font-bold uppercase tracking-wider text-sky-300 bg-blue-950/60 px-2.5 py-0.5 rounded-full border border-blue-800/40">Questão 4</span>
                                     
                             <a href="../pesquisa.html?bncc=EF08MA08" class="text-[11px] font-mono font-bold text-emerald-300 bg-emerald-950/80 hover:bg-emerald-900/90 px-2.5 py-0.5 rounded-full border border-emerald-800/60 flex items-center gap-1 transition shadow-sm" title="Resolver e elaborar problemas que possam ser representados por sistemas de equações de 1º grau com duas incógnitas.">
@@ -440,16 +510,14 @@ O valor de $x$, em centímetros, é</p>
                         
                                 </div>
                             </div>
-                            <p class="font-medium text-slate-100 mb-4 text-sm sm:text-base leading-relaxed">Joana possui uma coleção de livros de romance e drama. Ela costuma estipular metas para o crescimento dessa coleção de acordo com os livros que mais lhe agradam. Atualmente, Joana possui $18$ livros. Sua próxima meta é acumular $51$ livros, de modo a quadruplicar o número de romances e ao mesmo tempo que doará $3$ livros de drama que pouco lhe agradaram.
-
-Desta forma, quantos livros de drama restarão nesta coleção?</p>
+                            <div class="q-text-container"><p class="q-paragraph font-medium text-slate-200 text-sm sm:text-base">Joana possui uma coleção de livros de romance e drama. Ela costuma estipular metas para o crescimento dessa coleção de acordo com os livros que mais lhe agradam. Atualmente, Joana possui $18$ livros. Sua próxima meta é acumular $51$ livros, de modo a quadruplicar o número de romances e ao mesmo tempo que doará $3$ livros de drama que pouco lhe agradaram.</p><p class="q-prompt text-slate-100 text-sm sm:text-base">Desta forma, quantos livros de drama restarão nesta coleção?</p></div>
                             
                             <div class="space-y-2 mb-4" id="opts-ifmg-2018-2-q3">
                                 
                             <button onclick="selectOption('ifmg-2018-2-q3', 0)" id="btn-ifmg-2018-2-q3-0" class="w-full text-left p-3.5 rounded-xl border border-slate-800 bg-slate-950/60 hover:border-blue-500 hover:bg-slate-800/60 transition text-sm text-slate-200 flex items-start justify-between gap-3 group">
                                 <span class="flex items-start gap-2.5 flex-1 min-w-0">
                                     <strong class="text-sky-400 font-bold flex-shrink-0 mt-0.5">A)</strong>
-                                    <span class="flex-1 min-w-0 break-words leading-relaxed">3</span>
+                                    <span class="flex-1 min-w-0 break-words leading-relaxed">$3$</span>
                                 </span>
                                 <i data-lucide="circle" class="w-4 h-4 text-slate-600 opt-icon group-hover:text-blue-400 flex-shrink-0 mt-0.5"></i>
                             </button>
@@ -457,7 +525,7 @@ Desta forma, quantos livros de drama restarão nesta coleção?</p>
                             <button onclick="selectOption('ifmg-2018-2-q3', 1)" id="btn-ifmg-2018-2-q3-1" class="w-full text-left p-3.5 rounded-xl border border-slate-800 bg-slate-950/60 hover:border-blue-500 hover:bg-slate-800/60 transition text-sm text-slate-200 flex items-start justify-between gap-3 group">
                                 <span class="flex items-start gap-2.5 flex-1 min-w-0">
                                     <strong class="text-sky-400 font-bold flex-shrink-0 mt-0.5">B)</strong>
-                                    <span class="flex-1 min-w-0 break-words leading-relaxed">4</span>
+                                    <span class="flex-1 min-w-0 break-words leading-relaxed">$4$</span>
                                 </span>
                                 <i data-lucide="circle" class="w-4 h-4 text-slate-600 opt-icon group-hover:text-blue-400 flex-shrink-0 mt-0.5"></i>
                             </button>
@@ -465,7 +533,7 @@ Desta forma, quantos livros de drama restarão nesta coleção?</p>
                             <button onclick="selectOption('ifmg-2018-2-q3', 2)" id="btn-ifmg-2018-2-q3-2" class="w-full text-left p-3.5 rounded-xl border border-slate-800 bg-slate-950/60 hover:border-blue-500 hover:bg-slate-800/60 transition text-sm text-slate-200 flex items-start justify-between gap-3 group">
                                 <span class="flex items-start gap-2.5 flex-1 min-w-0">
                                     <strong class="text-sky-400 font-bold flex-shrink-0 mt-0.5">C)</strong>
-                                    <span class="flex-1 min-w-0 break-words leading-relaxed">7</span>
+                                    <span class="flex-1 min-w-0 break-words leading-relaxed">$7$</span>
                                 </span>
                                 <i data-lucide="circle" class="w-4 h-4 text-slate-600 opt-icon group-hover:text-blue-400 flex-shrink-0 mt-0.5"></i>
                             </button>
@@ -473,7 +541,7 @@ Desta forma, quantos livros de drama restarão nesta coleção?</p>
                             <button onclick="selectOption('ifmg-2018-2-q3', 3)" id="btn-ifmg-2018-2-q3-3" class="w-full text-left p-3.5 rounded-xl border border-slate-800 bg-slate-950/60 hover:border-blue-500 hover:bg-slate-800/60 transition text-sm text-slate-200 flex items-start justify-between gap-3 group">
                                 <span class="flex items-start gap-2.5 flex-1 min-w-0">
                                     <strong class="text-sky-400 font-bold flex-shrink-0 mt-0.5">D)</strong>
-                                    <span class="flex-1 min-w-0 break-words leading-relaxed">9</span>
+                                    <span class="flex-1 min-w-0 break-words leading-relaxed">$9$</span>
                                 </span>
                                 <i data-lucide="circle" class="w-4 h-4 text-slate-600 opt-icon group-hover:text-blue-400 flex-shrink-0 mt-0.5"></i>
                             </button>
@@ -489,7 +557,7 @@ Desta forma, quantos livros de drama restarão nesta coleção?</p>
                     
                         <div class="mb-8 border-b border-slate-800/80 pb-6 last:border-0 last:pb-0" id="q-container-ifmg-2018-2-q4">
                             <div class="flex items-center justify-between mb-3 flex-wrap gap-2">
-                                <div class="flex items-center gap-2">
+                                <div class="flex flex-wrap items-center gap-2">
                                     <span class="text-xs font-bold uppercase tracking-wider text-sky-300 bg-blue-950/60 px-2.5 py-0.5 rounded-full border border-blue-800/40">Questão 5</span>
                                     
                             <a href="../pesquisa.html?bncc=EF06MA24" class="text-[11px] font-mono font-bold text-emerald-300 bg-emerald-950/80 hover:bg-emerald-900/90 px-2.5 py-0.5 rounded-full border border-emerald-800/60 flex items-center gap-1 transition shadow-sm" title="Resolver e elaborar problemas que envolvam as grandezas massa e suas unidades de medida usuais.">
@@ -498,14 +566,14 @@ Desta forma, quantos livros de drama restarão nesta coleção?</p>
                         
                                 </div>
                             </div>
-                            <p class="font-medium text-slate-100 mb-4 text-sm sm:text-base leading-relaxed">Em suas compras, o senhor Leopoldo colocou em uma mesma sacola $0{,}9\text{ kg}$ de carne vermelha, $500\text{ g}$ de castanhas e $70\text{ g}$ de pimenta do reino. Assinale a opção de resposta que representa o peso total dos produtos comprados pelo senhor Leopoldo.</p>
+                            <div class="q-text-container"><p class="q-paragraph font-medium text-slate-100 text-sm sm:text-base leading-relaxed">Em suas compras, o senhor Leopoldo colocou em uma mesma sacola $0{,}9\text{ kg}$ de carne vermelha, $500\text{ g}$ de castanhas e $70\text{ g}$ de pimenta do reino. Assinale a opção de resposta que representa o peso total dos produtos comprados pelo senhor Leopoldo.</p></div>
                             
                             <div class="space-y-2 mb-4" id="opts-ifmg-2018-2-q4">
                                 
                             <button onclick="selectOption('ifmg-2018-2-q4', 0)" id="btn-ifmg-2018-2-q4-0" class="w-full text-left p-3.5 rounded-xl border border-slate-800 bg-slate-950/60 hover:border-blue-500 hover:bg-slate-800/60 transition text-sm text-slate-200 flex items-start justify-between gap-3 group">
                                 <span class="flex items-start gap-2.5 flex-1 min-w-0">
                                     <strong class="text-sky-400 font-bold flex-shrink-0 mt-0.5">A)</strong>
-                                    <span class="flex-1 min-w-0 break-words leading-relaxed">1,27 kg</span>
+                                    <span class="flex-1 min-w-0 break-words leading-relaxed">$1{,}27\text{ kg}$</span>
                                 </span>
                                 <i data-lucide="circle" class="w-4 h-4 text-slate-600 opt-icon group-hover:text-blue-400 flex-shrink-0 mt-0.5"></i>
                             </button>
@@ -513,7 +581,7 @@ Desta forma, quantos livros de drama restarão nesta coleção?</p>
                             <button onclick="selectOption('ifmg-2018-2-q4', 1)" id="btn-ifmg-2018-2-q4-1" class="w-full text-left p-3.5 rounded-xl border border-slate-800 bg-slate-950/60 hover:border-blue-500 hover:bg-slate-800/60 transition text-sm text-slate-200 flex items-start justify-between gap-3 group">
                                 <span class="flex items-start gap-2.5 flex-1 min-w-0">
                                     <strong class="text-sky-400 font-bold flex-shrink-0 mt-0.5">B)</strong>
-                                    <span class="flex-1 min-w-0 break-words leading-relaxed">1,37 kg</span>
+                                    <span class="flex-1 min-w-0 break-words leading-relaxed">$1{,}37\text{ kg}$</span>
                                 </span>
                                 <i data-lucide="circle" class="w-4 h-4 text-slate-600 opt-icon group-hover:text-blue-400 flex-shrink-0 mt-0.5"></i>
                             </button>
@@ -521,7 +589,7 @@ Desta forma, quantos livros de drama restarão nesta coleção?</p>
                             <button onclick="selectOption('ifmg-2018-2-q4', 2)" id="btn-ifmg-2018-2-q4-2" class="w-full text-left p-3.5 rounded-xl border border-slate-800 bg-slate-950/60 hover:border-blue-500 hover:bg-slate-800/60 transition text-sm text-slate-200 flex items-start justify-between gap-3 group">
                                 <span class="flex items-start gap-2.5 flex-1 min-w-0">
                                     <strong class="text-sky-400 font-bold flex-shrink-0 mt-0.5">C)</strong>
-                                    <span class="flex-1 min-w-0 break-words leading-relaxed">1,47 kg</span>
+                                    <span class="flex-1 min-w-0 break-words leading-relaxed">$1{,}47\text{ kg}$</span>
                                 </span>
                                 <i data-lucide="circle" class="w-4 h-4 text-slate-600 opt-icon group-hover:text-blue-400 flex-shrink-0 mt-0.5"></i>
                             </button>
@@ -529,7 +597,7 @@ Desta forma, quantos livros de drama restarão nesta coleção?</p>
                             <button onclick="selectOption('ifmg-2018-2-q4', 3)" id="btn-ifmg-2018-2-q4-3" class="w-full text-left p-3.5 rounded-xl border border-slate-800 bg-slate-950/60 hover:border-blue-500 hover:bg-slate-800/60 transition text-sm text-slate-200 flex items-start justify-between gap-3 group">
                                 <span class="flex items-start gap-2.5 flex-1 min-w-0">
                                     <strong class="text-sky-400 font-bold flex-shrink-0 mt-0.5">D)</strong>
-                                    <span class="flex-1 min-w-0 break-words leading-relaxed">1,57 kg</span>
+                                    <span class="flex-1 min-w-0 break-words leading-relaxed">$1{,}57\text{ kg}$</span>
                                 </span>
                                 <i data-lucide="circle" class="w-4 h-4 text-slate-600 opt-icon group-hover:text-blue-400 flex-shrink-0 mt-0.5"></i>
                             </button>
@@ -545,7 +613,7 @@ Desta forma, quantos livros de drama restarão nesta coleção?</p>
                     
                         <div class="mb-8 border-b border-slate-800/80 pb-6 last:border-0 last:pb-0" id="q-container-ifmg-2018-2-q5">
                             <div class="flex items-center justify-between mb-3 flex-wrap gap-2">
-                                <div class="flex items-center gap-2">
+                                <div class="flex flex-wrap items-center gap-2">
                                     <span class="text-xs font-bold uppercase tracking-wider text-sky-300 bg-blue-950/60 px-2.5 py-0.5 rounded-full border border-blue-800/40">Questão 6</span>
                                     
                             <a href="../pesquisa.html?bncc=EF07MA02" class="text-[11px] font-mono font-bold text-emerald-300 bg-emerald-950/80 hover:bg-emerald-900/90 px-2.5 py-0.5 rounded-full border border-emerald-800/60 flex items-center gap-1 transition shadow-sm" title="Resolver problemas que envolvam porcentagens em contextos sociais e demográficos.">
@@ -554,16 +622,14 @@ Desta forma, quantos livros de drama restarão nesta coleção?</p>
                         
                                 </div>
                             </div>
-                            <p class="font-medium text-slate-100 mb-4 text-sm sm:text-base leading-relaxed">O Censo 2010, realizado pelo Instituto Brasileiro de Geografia e Estatística (IBGE), detectou que a população brasileira era de, aproximadamente, $190{,}7$ milhões de pessoas. Dentre essas, a cada $80$ pessoas com perfeita visão existiam $20$ outras com alguma deficiência visual.
-
-Aproximadamente, quantos milhões de pessoas no Brasil possuíam alguma deficiência visual em 2010?</p>
+                            <div class="q-text-container"><p class="q-paragraph font-medium text-slate-200 text-sm sm:text-base">O Censo 2010, realizado pelo Instituto Brasileiro de Geografia e Estatística (IBGE), detectou que a população brasileira era de, aproximadamente, $190{,}7$ milhões de pessoas. Dentre essas, a cada $80$ pessoas com perfeita visão existiam $20$ outras com alguma deficiência visual.</p><p class="q-prompt text-slate-100 text-sm sm:text-base">Aproximadamente, quantos milhões de pessoas no Brasil possuíam alguma deficiência visual em 2010?</p></div>
                             
                             <div class="space-y-2 mb-4" id="opts-ifmg-2018-2-q5">
                                 
                             <button onclick="selectOption('ifmg-2018-2-q5', 0)" id="btn-ifmg-2018-2-q5-0" class="w-full text-left p-3.5 rounded-xl border border-slate-800 bg-slate-950/60 hover:border-blue-500 hover:bg-slate-800/60 transition text-sm text-slate-200 flex items-start justify-between gap-3 group">
                                 <span class="flex items-start gap-2.5 flex-1 min-w-0">
                                     <strong class="text-sky-400 font-bold flex-shrink-0 mt-0.5">A)</strong>
-                                    <span class="flex-1 min-w-0 break-words leading-relaxed">8,4</span>
+                                    <span class="flex-1 min-w-0 break-words leading-relaxed">$8{,}4$</span>
                                 </span>
                                 <i data-lucide="circle" class="w-4 h-4 text-slate-600 opt-icon group-hover:text-blue-400 flex-shrink-0 mt-0.5"></i>
                             </button>
@@ -571,7 +637,7 @@ Aproximadamente, quantos milhões de pessoas no Brasil possuíam alguma deficiê
                             <button onclick="selectOption('ifmg-2018-2-q5', 1)" id="btn-ifmg-2018-2-q5-1" class="w-full text-left p-3.5 rounded-xl border border-slate-800 bg-slate-950/60 hover:border-blue-500 hover:bg-slate-800/60 transition text-sm text-slate-200 flex items-start justify-between gap-3 group">
                                 <span class="flex items-start gap-2.5 flex-1 min-w-0">
                                     <strong class="text-sky-400 font-bold flex-shrink-0 mt-0.5">B)</strong>
-                                    <span class="flex-1 min-w-0 break-words leading-relaxed">10,5</span>
+                                    <span class="flex-1 min-w-0 break-words leading-relaxed">$10{,}5$</span>
                                 </span>
                                 <i data-lucide="circle" class="w-4 h-4 text-slate-600 opt-icon group-hover:text-blue-400 flex-shrink-0 mt-0.5"></i>
                             </button>
@@ -579,7 +645,7 @@ Aproximadamente, quantos milhões de pessoas no Brasil possuíam alguma deficiê
                             <button onclick="selectOption('ifmg-2018-2-q5', 2)" id="btn-ifmg-2018-2-q5-2" class="w-full text-left p-3.5 rounded-xl border border-slate-800 bg-slate-950/60 hover:border-blue-500 hover:bg-slate-800/60 transition text-sm text-slate-200 flex items-start justify-between gap-3 group">
                                 <span class="flex items-start gap-2.5 flex-1 min-w-0">
                                     <strong class="text-sky-400 font-bold flex-shrink-0 mt-0.5">C)</strong>
-                                    <span class="flex-1 min-w-0 break-words leading-relaxed">38,1</span>
+                                    <span class="flex-1 min-w-0 break-words leading-relaxed">$38{,}1$</span>
                                 </span>
                                 <i data-lucide="circle" class="w-4 h-4 text-slate-600 opt-icon group-hover:text-blue-400 flex-shrink-0 mt-0.5"></i>
                             </button>
@@ -587,7 +653,7 @@ Aproximadamente, quantos milhões de pessoas no Brasil possuíam alguma deficiê
                             <button onclick="selectOption('ifmg-2018-2-q5', 3)" id="btn-ifmg-2018-2-q5-3" class="w-full text-left p-3.5 rounded-xl border border-slate-800 bg-slate-950/60 hover:border-blue-500 hover:bg-slate-800/60 transition text-sm text-slate-200 flex items-start justify-between gap-3 group">
                                 <span class="flex items-start gap-2.5 flex-1 min-w-0">
                                     <strong class="text-sky-400 font-bold flex-shrink-0 mt-0.5">D)</strong>
-                                    <span class="flex-1 min-w-0 break-words leading-relaxed">47,7</span>
+                                    <span class="flex-1 min-w-0 break-words leading-relaxed">$47{,}7$</span>
                                 </span>
                                 <i data-lucide="circle" class="w-4 h-4 text-slate-600 opt-icon group-hover:text-blue-400 flex-shrink-0 mt-0.5"></i>
                             </button>
@@ -603,7 +669,7 @@ Aproximadamente, quantos milhões de pessoas no Brasil possuíam alguma deficiê
                     
                         <div class="mb-8 border-b border-slate-800/80 pb-6 last:border-0 last:pb-0" id="q-container-ifmg-2018-2-q6">
                             <div class="flex items-center justify-between mb-3 flex-wrap gap-2">
-                                <div class="flex items-center gap-2">
+                                <div class="flex flex-wrap items-center gap-2">
                                     <span class="text-xs font-bold uppercase tracking-wider text-sky-300 bg-blue-950/60 px-2.5 py-0.5 rounded-full border border-blue-800/40">Questão 7</span>
                                     
                             <a href="../pesquisa.html?bncc=EF06MA19" class="text-[11px] font-mono font-bold text-emerald-300 bg-emerald-950/80 hover:bg-emerald-900/90 px-2.5 py-0.5 rounded-full border border-emerald-800/60 flex items-center gap-1 transition shadow-sm" title="Identificar características dos quadriláteros, classificá-los em relação a lados e a ângulos e reconhecer a inclusão e propriedades de trapézios e paralelogramos.">
@@ -612,9 +678,7 @@ Aproximadamente, quantos milhões de pessoas no Brasil possuíam alguma deficiê
                         
                                 </div>
                             </div>
-                            <p class="font-medium text-slate-100 mb-4 text-sm sm:text-base leading-relaxed">Carlos e Pedro fizeram um jogo para estudar as propriedades de alguns quadriláteros. Um fala as propriedades de um quadrilátero e o outro responde com o nome correto do quadrilátero. Pedro falou as seguintes propriedades: a figura é um quadrilátero convexo, possui dois lados paralelos e dois lados não paralelos e apresenta dois pares de ângulos adjacentes suplementares. Carlos respondeu rápido e corretamente.
-
-Qual a resposta de Carlos?</p>
+                            <div class="q-text-container"><p class="q-paragraph font-medium text-slate-200 text-sm sm:text-base">Carlos e Pedro fizeram um jogo para estudar as propriedades de alguns quadriláteros. Um fala as propriedades de um quadrilátero e o outro responde com o nome correto do quadrilátero. Pedro falou as seguintes propriedades: a figura é um quadrilátero convexo, possui dois lados paralelos e dois lados não paralelos e apresenta dois pares de ângulos adjacentes suplementares. Carlos respondeu rápido e corretamente.</p><p class="q-prompt text-slate-100 text-sm sm:text-base">Qual a resposta de Carlos?</p></div>
                             
                             <div class="space-y-2 mb-4" id="opts-ifmg-2018-2-q6">
                                 
@@ -661,7 +725,7 @@ Qual a resposta de Carlos?</p>
                     
                         <div class="mb-8 border-b border-slate-800/80 pb-6 last:border-0 last:pb-0" id="q-container-ifmg-2018-2-q7">
                             <div class="flex items-center justify-between mb-3 flex-wrap gap-2">
-                                <div class="flex items-center gap-2">
+                                <div class="flex flex-wrap items-center gap-2">
                                     <span class="text-xs font-bold uppercase tracking-wider text-sky-300 bg-blue-950/60 px-2.5 py-0.5 rounded-full border border-blue-800/40">Questão 8</span>
                                     
                             <a href="../pesquisa.html?bncc=EF07MA23" class="text-[11px] font-mono font-bold text-emerald-300 bg-emerald-950/80 hover:bg-emerald-900/90 px-2.5 py-0.5 rounded-full border border-emerald-800/60 flex items-center gap-1 transition shadow-sm" title="Verificar relações entre os ângulos formados por retas paralelas cortadas por uma transversal, com ou sem o uso de softwares de geometria dinâmica.">
@@ -670,9 +734,7 @@ Qual a resposta de Carlos?</p>
                         
                                 </div>
                             </div>
-                            <p class="font-medium text-slate-100 mb-4 text-sm sm:text-base leading-relaxed">No bairro de Paula, as ruas Rocha e Sousa são paralelas. Atravessando essas duas ruas transversalmente, estão as ruas Toledo e Vieira. No cruzamento entre as ruas Toledo e Vieira, forma-se um ângulo $m$, conforme figura a seguir.
-
-O valor do ângulo $m$, em graus, é</p>
+                            <div class="q-text-container"><p class="q-paragraph font-medium text-slate-200 text-sm sm:text-base">No bairro de Paula, as ruas Rocha e Sousa são paralelas. Atravessando essas duas ruas transversalmente, estão as ruas Toledo e Vieira. No cruzamento entre as ruas Toledo e Vieira, forma-se um ângulo $m$, conforme figura a seguir.</p><p class="q-prompt text-slate-100 text-sm sm:text-base">O valor do ângulo $m$, em graus, é:</p></div>
                             
         <div class="my-4 p-2 sm:p-3 rounded-2xl border bg-slate-950/70 border-slate-800 shadow-sm max-w-xl mx-auto flex flex-col items-center">
             <img src="https://lh3.googleusercontent.com/d/1dmKJIMIn458OJlW5K8-HTu7NAtPqeoQt" alt="Duas retas verticais paralelas nomeadas Rua Rocha e Rua Sousa cortadas por duas retas transversais nomeadas Rua Vieira e Rua Toledo, destacando um ângulo de 50 graus, um de 120 graus e o ângulo m entre as transversais." onerror="if(this.src!='../assets/img/questoes/ifmg/ifmg-2018-2-q23.png'){this.src='../assets/img/questoes/ifmg/ifmg-2018-2-q23.png';}" class="max-h-80 sm:max-h-96 w-auto max-w-full rounded-xl object-contain cursor-zoom-in hover:opacity-95 hover:scale-[1.01] transition duration-200" onclick="openImageModal('https://lh3.googleusercontent.com/d/1dmKJIMIn458OJlW5K8-HTu7NAtPqeoQt', 'Duas retas verticais paralelas nomeadas Rua Rocha e Rua Sousa cortadas por duas retas transversais nomeadas Rua Vieira e Rua Toledo, destacando um ângulo de 50 graus, um de 120 graus e o ângulo m entre as transversais.')" title="Clique para ampliar a imagem" loading="lazy">
@@ -684,7 +746,7 @@ O valor do ângulo $m$, em graus, é</p>
                             <button onclick="selectOption('ifmg-2018-2-q7', 0)" id="btn-ifmg-2018-2-q7-0" class="w-full text-left p-3.5 rounded-xl border border-slate-800 bg-slate-950/60 hover:border-blue-500 hover:bg-slate-800/60 transition text-sm text-slate-200 flex items-start justify-between gap-3 group">
                                 <span class="flex items-start gap-2.5 flex-1 min-w-0">
                                     <strong class="text-sky-400 font-bold flex-shrink-0 mt-0.5">A)</strong>
-                                    <span class="flex-1 min-w-0 break-words leading-relaxed">100</span>
+                                    <span class="flex-1 min-w-0 break-words leading-relaxed">$100$</span>
                                 </span>
                                 <i data-lucide="circle" class="w-4 h-4 text-slate-600 opt-icon group-hover:text-blue-400 flex-shrink-0 mt-0.5"></i>
                             </button>
@@ -692,7 +754,7 @@ O valor do ângulo $m$, em graus, é</p>
                             <button onclick="selectOption('ifmg-2018-2-q7', 1)" id="btn-ifmg-2018-2-q7-1" class="w-full text-left p-3.5 rounded-xl border border-slate-800 bg-slate-950/60 hover:border-blue-500 hover:bg-slate-800/60 transition text-sm text-slate-200 flex items-start justify-between gap-3 group">
                                 <span class="flex items-start gap-2.5 flex-1 min-w-0">
                                     <strong class="text-sky-400 font-bold flex-shrink-0 mt-0.5">B)</strong>
-                                    <span class="flex-1 min-w-0 break-words leading-relaxed">110</span>
+                                    <span class="flex-1 min-w-0 break-words leading-relaxed">$110$</span>
                                 </span>
                                 <i data-lucide="circle" class="w-4 h-4 text-slate-600 opt-icon group-hover:text-blue-400 flex-shrink-0 mt-0.5"></i>
                             </button>
@@ -700,7 +762,7 @@ O valor do ângulo $m$, em graus, é</p>
                             <button onclick="selectOption('ifmg-2018-2-q7', 2)" id="btn-ifmg-2018-2-q7-2" class="w-full text-left p-3.5 rounded-xl border border-slate-800 bg-slate-950/60 hover:border-blue-500 hover:bg-slate-800/60 transition text-sm text-slate-200 flex items-start justify-between gap-3 group">
                                 <span class="flex items-start gap-2.5 flex-1 min-w-0">
                                     <strong class="text-sky-400 font-bold flex-shrink-0 mt-0.5">C)</strong>
-                                    <span class="flex-1 min-w-0 break-words leading-relaxed">120</span>
+                                    <span class="flex-1 min-w-0 break-words leading-relaxed">$120$</span>
                                 </span>
                                 <i data-lucide="circle" class="w-4 h-4 text-slate-600 opt-icon group-hover:text-blue-400 flex-shrink-0 mt-0.5"></i>
                             </button>
@@ -708,7 +770,7 @@ O valor do ângulo $m$, em graus, é</p>
                             <button onclick="selectOption('ifmg-2018-2-q7', 3)" id="btn-ifmg-2018-2-q7-3" class="w-full text-left p-3.5 rounded-xl border border-slate-800 bg-slate-950/60 hover:border-blue-500 hover:bg-slate-800/60 transition text-sm text-slate-200 flex items-start justify-between gap-3 group">
                                 <span class="flex items-start gap-2.5 flex-1 min-w-0">
                                     <strong class="text-sky-400 font-bold flex-shrink-0 mt-0.5">D)</strong>
-                                    <span class="flex-1 min-w-0 break-words leading-relaxed">130</span>
+                                    <span class="flex-1 min-w-0 break-words leading-relaxed">$130$</span>
                                 </span>
                                 <i data-lucide="circle" class="w-4 h-4 text-slate-600 opt-icon group-hover:text-blue-400 flex-shrink-0 mt-0.5"></i>
                             </button>
@@ -724,7 +786,7 @@ O valor do ângulo $m$, em graus, é</p>
                     
                         <div class="mb-8 border-b border-slate-800/80 pb-6 last:border-0 last:pb-0" id="q-container-ifmg-2018-2-q8">
                             <div class="flex items-center justify-between mb-3 flex-wrap gap-2">
-                                <div class="flex items-center gap-2">
+                                <div class="flex flex-wrap items-center gap-2">
                                     <span class="text-xs font-bold uppercase tracking-wider text-sky-300 bg-blue-950/60 px-2.5 py-0.5 rounded-full border border-blue-800/40">Questão 9</span>
                                     
                             <a href="../pesquisa.html?bncc=EF08MA22" class="text-[11px] font-mono font-bold text-emerald-300 bg-emerald-950/80 hover:bg-emerald-900/90 px-2.5 py-0.5 rounded-full border border-emerald-800/60 flex items-center gap-1 transition shadow-sm" title="Calcular a probabilidade de eventos equiprováveis e de eventos independentes simultâneos.">
@@ -733,14 +795,14 @@ O valor do ângulo $m$, em graus, é</p>
                         
                                 </div>
                             </div>
-                            <p class="font-medium text-slate-100 mb-4 text-sm sm:text-base leading-relaxed">Dois dados não viciados, distintos, cujas faces estão numeradas de 1 a 6, foram lançados simultaneamente. A probabilidade de obtermos um par de números primos é dado por</p>
+                            <div class="q-text-container"><p class="q-paragraph font-medium text-slate-100 text-sm sm:text-base leading-relaxed">Dois dados não viciados, distintos, cujas faces estão numeradas de 1 a 6, foram lançados simultaneamente. A probabilidade de obtermos um par de números primos é dado por:</p></div>
                             
                             <div class="space-y-2 mb-4" id="opts-ifmg-2018-2-q8">
                                 
                             <button onclick="selectOption('ifmg-2018-2-q8', 0)" id="btn-ifmg-2018-2-q8-0" class="w-full text-left p-3.5 rounded-xl border border-slate-800 bg-slate-950/60 hover:border-blue-500 hover:bg-slate-800/60 transition text-sm text-slate-200 flex items-start justify-between gap-3 group">
                                 <span class="flex items-start gap-2.5 flex-1 min-w-0">
                                     <strong class="text-sky-400 font-bold flex-shrink-0 mt-0.5">A)</strong>
-                                    <span class="flex-1 min-w-0 break-words leading-relaxed">1/9</span>
+                                    <span class="flex-1 min-w-0 break-words leading-relaxed">$\frac{1}{9}$</span>
                                 </span>
                                 <i data-lucide="circle" class="w-4 h-4 text-slate-600 opt-icon group-hover:text-blue-400 flex-shrink-0 mt-0.5"></i>
                             </button>
@@ -748,7 +810,7 @@ O valor do ângulo $m$, em graus, é</p>
                             <button onclick="selectOption('ifmg-2018-2-q8', 1)" id="btn-ifmg-2018-2-q8-1" class="w-full text-left p-3.5 rounded-xl border border-slate-800 bg-slate-950/60 hover:border-blue-500 hover:bg-slate-800/60 transition text-sm text-slate-200 flex items-start justify-between gap-3 group">
                                 <span class="flex items-start gap-2.5 flex-1 min-w-0">
                                     <strong class="text-sky-400 font-bold flex-shrink-0 mt-0.5">B)</strong>
-                                    <span class="flex-1 min-w-0 break-words leading-relaxed">1/4</span>
+                                    <span class="flex-1 min-w-0 break-words leading-relaxed">$\frac{1}{4}$</span>
                                 </span>
                                 <i data-lucide="circle" class="w-4 h-4 text-slate-600 opt-icon group-hover:text-blue-400 flex-shrink-0 mt-0.5"></i>
                             </button>
@@ -756,7 +818,7 @@ O valor do ângulo $m$, em graus, é</p>
                             <button onclick="selectOption('ifmg-2018-2-q8', 2)" id="btn-ifmg-2018-2-q8-2" class="w-full text-left p-3.5 rounded-xl border border-slate-800 bg-slate-950/60 hover:border-blue-500 hover:bg-slate-800/60 transition text-sm text-slate-200 flex items-start justify-between gap-3 group">
                                 <span class="flex items-start gap-2.5 flex-1 min-w-0">
                                     <strong class="text-sky-400 font-bold flex-shrink-0 mt-0.5">C)</strong>
-                                    <span class="flex-1 min-w-0 break-words leading-relaxed">1/3</span>
+                                    <span class="flex-1 min-w-0 break-words leading-relaxed">$\frac{1}{3}$</span>
                                 </span>
                                 <i data-lucide="circle" class="w-4 h-4 text-slate-600 opt-icon group-hover:text-blue-400 flex-shrink-0 mt-0.5"></i>
                             </button>
@@ -764,7 +826,7 @@ O valor do ângulo $m$, em graus, é</p>
                             <button onclick="selectOption('ifmg-2018-2-q8', 3)" id="btn-ifmg-2018-2-q8-3" class="w-full text-left p-3.5 rounded-xl border border-slate-800 bg-slate-950/60 hover:border-blue-500 hover:bg-slate-800/60 transition text-sm text-slate-200 flex items-start justify-between gap-3 group">
                                 <span class="flex items-start gap-2.5 flex-1 min-w-0">
                                     <strong class="text-sky-400 font-bold flex-shrink-0 mt-0.5">D)</strong>
-                                    <span class="flex-1 min-w-0 break-words leading-relaxed">5/9</span>
+                                    <span class="flex-1 min-w-0 break-words leading-relaxed">$\frac{5}{9}$</span>
                                 </span>
                                 <i data-lucide="circle" class="w-4 h-4 text-slate-600 opt-icon group-hover:text-blue-400 flex-shrink-0 mt-0.5"></i>
                             </button>
@@ -780,7 +842,7 @@ O valor do ângulo $m$, em graus, é</p>
                     
                         <div class="mb-8 border-b border-slate-800/80 pb-6 last:border-0 last:pb-0" id="q-container-ifmg-2018-2-q9">
                             <div class="flex items-center justify-between mb-3 flex-wrap gap-2">
-                                <div class="flex items-center gap-2">
+                                <div class="flex flex-wrap items-center gap-2">
                                     <span class="text-xs font-bold uppercase tracking-wider text-sky-300 bg-blue-950/60 px-2.5 py-0.5 rounded-full border border-blue-800/40">Questão 10</span>
                                     
                             <a href="../pesquisa.html?bncc=EF09MA19" class="text-[11px] font-mono font-bold text-emerald-300 bg-emerald-950/80 hover:bg-emerald-900/90 px-2.5 py-0.5 rounded-full border border-emerald-800/60 flex items-center gap-1 transition shadow-sm" title="Resolver e elaborar problemas que envolvam cálculo de áreas de figuras planas compostas e regiões circulares.">
@@ -789,9 +851,7 @@ O valor do ângulo $m$, em graus, é</p>
                         
                                 </div>
                             </div>
-                            <p class="font-medium text-slate-100 mb-4 text-sm sm:text-base leading-relaxed">Na figura a seguir, o raio da circunferência menor vale $2\text{ cm}$, o quadrado está inscrito na circunferência maior e circunscrito na circunferência menor.
-
-O valor da área colorida, em $\text{cm}^2$, é</p>
+                            <div class="q-text-container"><p class="q-paragraph font-medium text-slate-200 text-sm sm:text-base">Na figura a seguir, o raio da circunferência menor vale $2\text{ cm}$, o quadrado está inscrito na circunferência maior e circunscrito na circunferência menor.</p><p class="q-prompt text-slate-100 text-sm sm:text-base">O valor da área colorida, em $\text{cm}^2$, é:</p></div>
                             
         <div class="my-4 p-2 sm:p-3 rounded-2xl border bg-slate-950/70 border-slate-800 shadow-sm max-w-xl mx-auto flex flex-col items-center">
             <img src="https://lh3.googleusercontent.com/d/1b2d37kLtiEoscjf4lpiD7X1l29a5Dxry" alt="Quadrado inscrito em uma circunferência maior e circunscrito a uma circunferência menor de raio r = 2 cm, com um dos quatro segmentos circulares externos ao quadrado destacado em preto." onerror="if(this.src!='../assets/img/questoes/ifmg/ifmg-2018-2-q25.png'){this.src='../assets/img/questoes/ifmg/ifmg-2018-2-q25.png';}" class="max-h-80 sm:max-h-96 w-auto max-w-full rounded-xl object-contain cursor-zoom-in hover:opacity-95 hover:scale-[1.01] transition duration-200" onclick="openImageModal('https://lh3.googleusercontent.com/d/1b2d37kLtiEoscjf4lpiD7X1l29a5Dxry', 'Quadrado inscrito em uma circunferência maior e circunscrito a uma circunferência menor de raio r = 2 cm, com um dos quatro segmentos circulares externos ao quadrado destacado em preto.')" title="Clique para ampliar a imagem" loading="lazy">
@@ -843,7 +903,7 @@ O valor da área colorida, em $\text{cm}^2$, é</p>
                     
                         <div class="mb-8 border-b border-slate-800/80 pb-6 last:border-0 last:pb-0" id="q-container-ifmg-2018-2-q10">
                             <div class="flex items-center justify-between mb-3 flex-wrap gap-2">
-                                <div class="flex items-center gap-2">
+                                <div class="flex flex-wrap items-center gap-2">
                                     <span class="text-xs font-bold uppercase tracking-wider text-sky-300 bg-blue-950/60 px-2.5 py-0.5 rounded-full border border-blue-800/40">Questão 11</span>
                                     
                             <a href="../pesquisa.html?bncc=EF09MA09" class="text-[11px] font-mono font-bold text-emerald-300 bg-emerald-950/80 hover:bg-emerald-900/90 px-2.5 py-0.5 rounded-full border border-emerald-800/60 flex items-center gap-1 transition shadow-sm" title="Resolver problemas que podem ser representados por equações polinomiais de 2º grau associadas a áreas de polígonos.">
@@ -852,9 +912,7 @@ O valor da área colorida, em $\text{cm}^2$, é</p>
                         
                                 </div>
                             </div>
-                            <p class="font-medium text-slate-100 mb-4 text-sm sm:text-base leading-relaxed">Um terreno em formato de trapézio isósceles e área de $12\text{ m}^2$ possui dimensões, em metros, descritas conforme a figura a seguir, em que $X$ representa o comprimento da base menor e da altura relativa à base maior:
-
-Qual o comprimento $X$ indicado na figura?</p>
+                            <div class="q-text-container"><p class="q-paragraph font-medium text-slate-200 text-sm sm:text-base">Um terreno em formato de trapézio isósceles e área de $12\text{ m}^2$ possui dimensões, em metros, descritas conforme a figura a seguir, em que $X$ representa o comprimento da base menor e da altura relativa à base maior:</p><p class="q-prompt text-slate-100 text-sm sm:text-base">Qual o comprimento $X$ indicado na figura?</p></div>
                             
         <div class="my-4 p-2 sm:p-3 rounded-2xl border bg-slate-950/70 border-slate-800 shadow-sm max-w-xl mx-auto flex flex-col items-center">
             <img src="https://lh3.googleusercontent.com/d/1TvdrYQArvToyiJPG7Vyx3Yriz4Rogw-q" alt="Trapézio isósceles com base maior igual a 10, base menor indicada pela incógnita X e altura tracejada perpendicular à base maior indicada pela incógnita X." onerror="if(this.src!='../assets/img/questoes/ifmg/ifmg-2018-2-q26.png'){this.src='../assets/img/questoes/ifmg/ifmg-2018-2-q26.png';}" class="max-h-80 sm:max-h-96 w-auto max-w-full rounded-xl object-contain cursor-zoom-in hover:opacity-95 hover:scale-[1.01] transition duration-200" onclick="openImageModal('https://lh3.googleusercontent.com/d/1TvdrYQArvToyiJPG7Vyx3Yriz4Rogw-q', 'Trapézio isósceles com base maior igual a 10, base menor indicada pela incógnita X e altura tracejada perpendicular à base maior indicada pela incógnita X.')" title="Clique para ampliar a imagem" loading="lazy">
@@ -866,7 +924,7 @@ Qual o comprimento $X$ indicado na figura?</p>
                             <button onclick="selectOption('ifmg-2018-2-q10', 0)" id="btn-ifmg-2018-2-q10-0" class="w-full text-left p-3.5 rounded-xl border border-slate-800 bg-slate-950/60 hover:border-blue-500 hover:bg-slate-800/60 transition text-sm text-slate-200 flex items-start justify-between gap-3 group">
                                 <span class="flex items-start gap-2.5 flex-1 min-w-0">
                                     <strong class="text-sky-400 font-bold flex-shrink-0 mt-0.5">A)</strong>
-                                    <span class="flex-1 min-w-0 break-words leading-relaxed">2</span>
+                                    <span class="flex-1 min-w-0 break-words leading-relaxed">$2$</span>
                                 </span>
                                 <i data-lucide="circle" class="w-4 h-4 text-slate-600 opt-icon group-hover:text-blue-400 flex-shrink-0 mt-0.5"></i>
                             </button>
@@ -874,7 +932,7 @@ Qual o comprimento $X$ indicado na figura?</p>
                             <button onclick="selectOption('ifmg-2018-2-q10', 1)" id="btn-ifmg-2018-2-q10-1" class="w-full text-left p-3.5 rounded-xl border border-slate-800 bg-slate-950/60 hover:border-blue-500 hover:bg-slate-800/60 transition text-sm text-slate-200 flex items-start justify-between gap-3 group">
                                 <span class="flex items-start gap-2.5 flex-1 min-w-0">
                                     <strong class="text-sky-400 font-bold flex-shrink-0 mt-0.5">B)</strong>
-                                    <span class="flex-1 min-w-0 break-words leading-relaxed">4</span>
+                                    <span class="flex-1 min-w-0 break-words leading-relaxed">$4$</span>
                                 </span>
                                 <i data-lucide="circle" class="w-4 h-4 text-slate-600 opt-icon group-hover:text-blue-400 flex-shrink-0 mt-0.5"></i>
                             </button>
@@ -882,7 +940,7 @@ Qual o comprimento $X$ indicado na figura?</p>
                             <button onclick="selectOption('ifmg-2018-2-q10', 2)" id="btn-ifmg-2018-2-q10-2" class="w-full text-left p-3.5 rounded-xl border border-slate-800 bg-slate-950/60 hover:border-blue-500 hover:bg-slate-800/60 transition text-sm text-slate-200 flex items-start justify-between gap-3 group">
                                 <span class="flex items-start gap-2.5 flex-1 min-w-0">
                                     <strong class="text-sky-400 font-bold flex-shrink-0 mt-0.5">C)</strong>
-                                    <span class="flex-1 min-w-0 break-words leading-relaxed">6</span>
+                                    <span class="flex-1 min-w-0 break-words leading-relaxed">$6$</span>
                                 </span>
                                 <i data-lucide="circle" class="w-4 h-4 text-slate-600 opt-icon group-hover:text-blue-400 flex-shrink-0 mt-0.5"></i>
                             </button>
@@ -890,7 +948,7 @@ Qual o comprimento $X$ indicado na figura?</p>
                             <button onclick="selectOption('ifmg-2018-2-q10', 3)" id="btn-ifmg-2018-2-q10-3" class="w-full text-left p-3.5 rounded-xl border border-slate-800 bg-slate-950/60 hover:border-blue-500 hover:bg-slate-800/60 transition text-sm text-slate-200 flex items-start justify-between gap-3 group">
                                 <span class="flex items-start gap-2.5 flex-1 min-w-0">
                                     <strong class="text-sky-400 font-bold flex-shrink-0 mt-0.5">D)</strong>
-                                    <span class="flex-1 min-w-0 break-words leading-relaxed">12</span>
+                                    <span class="flex-1 min-w-0 break-words leading-relaxed">$12$</span>
                                 </span>
                                 <i data-lucide="circle" class="w-4 h-4 text-slate-600 opt-icon group-hover:text-blue-400 flex-shrink-0 mt-0.5"></i>
                             </button>
@@ -906,7 +964,7 @@ Qual o comprimento $X$ indicado na figura?</p>
                     
                         <div class="mb-8 border-b border-slate-800/80 pb-6 last:border-0 last:pb-0" id="q-container-ifmg-2018-2-q11">
                             <div class="flex items-center justify-between mb-3 flex-wrap gap-2">
-                                <div class="flex items-center gap-2">
+                                <div class="flex flex-wrap items-center gap-2">
                                     <span class="text-xs font-bold uppercase tracking-wider text-sky-300 bg-blue-950/60 px-2.5 py-0.5 rounded-full border border-blue-800/40">Questão 12</span>
                                     
                             <a href="../pesquisa.html?bncc=EF09MA12" class="text-[11px] font-mono font-bold text-emerald-300 bg-emerald-950/80 hover:bg-emerald-900/90 px-2.5 py-0.5 rounded-full border border-emerald-800/60 flex items-center gap-1 transition shadow-sm" title="Reconhecer as condições necessárias para aplicar o Teorema de Tales na divisão proporcional de segmentos.">
@@ -915,9 +973,7 @@ Qual o comprimento $X$ indicado na figura?</p>
                         
                                 </div>
                             </div>
-                            <p class="font-medium text-slate-100 mb-4 text-sm sm:text-base leading-relaxed">Na figura seguinte, temos um mapa de dois terrenos com frente para as ruas A e B. As laterais dos terrenos são paralelas entre si. Os dois terrenos juntos têm $70\text{ metros}$ de frente para a Rua A e $105\text{ metros}$ de frente para a Rua B, conforme a figura a seguir. O terreno I tem $40\text{ metros}$ de frente para a Rua A.
-
-O terreno I tem quantos metros de frente para a Rua B?</p>
+                            <div class="q-text-container"><p class="q-paragraph font-medium text-slate-200 text-sm sm:text-base">Na figura seguinte, temos um mapa de dois terrenos com frente para as ruas A e B. As laterais dos terrenos são paralelas entre si. Os dois terrenos juntos têm $70\text{ metros}$ de frente para a Rua A e $105\text{ metros}$ de frente para a Rua B, conforme a figura a seguir. O terreno I tem $40\text{ metros}$ de frente para a Rua A.</p><p class="q-prompt text-slate-100 text-sm sm:text-base">O terreno I tem quantos metros de frente para a Rua B?</p></div>
                             
         <div class="my-4 p-2 sm:p-3 rounded-2xl border bg-slate-950/70 border-slate-800 shadow-sm max-w-xl mx-auto flex flex-col items-center">
             <img src="https://lh3.googleusercontent.com/d/1oD2gKWc_Hg0sdF3fVuFIj64vB9HCbdo2" alt="Mapa esquemático de dois lotes (Terreno I e Terreno II) entre as ruas A e B, com divisas laterais paralelas. A frente total para a Rua A mede 70 m (sendo 40 m do Terreno I) e a frente total para a Rua B mede 105 m." onerror="if(this.src!='../assets/img/questoes/ifmg/ifmg-2018-2-q27.png'){this.src='../assets/img/questoes/ifmg/ifmg-2018-2-q27.png';}" class="max-h-80 sm:max-h-96 w-auto max-w-full rounded-xl object-contain cursor-zoom-in hover:opacity-95 hover:scale-[1.01] transition duration-200" onclick="openImageModal('https://lh3.googleusercontent.com/d/1oD2gKWc_Hg0sdF3fVuFIj64vB9HCbdo2', 'Mapa esquemático de dois lotes (Terreno I e Terreno II) entre as ruas A e B, com divisas laterais paralelas. A frente total para a Rua A mede 70 m (sendo 40 m do Terreno I) e a frente total para a Rua B mede 105 m.')" title="Clique para ampliar a imagem" loading="lazy">
@@ -929,7 +985,7 @@ O terreno I tem quantos metros de frente para a Rua B?</p>
                             <button onclick="selectOption('ifmg-2018-2-q11', 0)" id="btn-ifmg-2018-2-q11-0" class="w-full text-left p-3.5 rounded-xl border border-slate-800 bg-slate-950/60 hover:border-blue-500 hover:bg-slate-800/60 transition text-sm text-slate-200 flex items-start justify-between gap-3 group">
                                 <span class="flex items-start gap-2.5 flex-1 min-w-0">
                                     <strong class="text-sky-400 font-bold flex-shrink-0 mt-0.5">A)</strong>
-                                    <span class="flex-1 min-w-0 break-words leading-relaxed">26,7</span>
+                                    <span class="flex-1 min-w-0 break-words leading-relaxed">$26{,}7$</span>
                                 </span>
                                 <i data-lucide="circle" class="w-4 h-4 text-slate-600 opt-icon group-hover:text-blue-400 flex-shrink-0 mt-0.5"></i>
                             </button>
@@ -937,7 +993,7 @@ O terreno I tem quantos metros de frente para a Rua B?</p>
                             <button onclick="selectOption('ifmg-2018-2-q11', 1)" id="btn-ifmg-2018-2-q11-1" class="w-full text-left p-3.5 rounded-xl border border-slate-800 bg-slate-950/60 hover:border-blue-500 hover:bg-slate-800/60 transition text-sm text-slate-200 flex items-start justify-between gap-3 group">
                                 <span class="flex items-start gap-2.5 flex-1 min-w-0">
                                     <strong class="text-sky-400 font-bold flex-shrink-0 mt-0.5">B)</strong>
-                                    <span class="flex-1 min-w-0 break-words leading-relaxed">60,0</span>
+                                    <span class="flex-1 min-w-0 break-words leading-relaxed">$60{,}0$</span>
                                 </span>
                                 <i data-lucide="circle" class="w-4 h-4 text-slate-600 opt-icon group-hover:text-blue-400 flex-shrink-0 mt-0.5"></i>
                             </button>
@@ -945,7 +1001,7 @@ O terreno I tem quantos metros de frente para a Rua B?</p>
                             <button onclick="selectOption('ifmg-2018-2-q11', 2)" id="btn-ifmg-2018-2-q11-2" class="w-full text-left p-3.5 rounded-xl border border-slate-800 bg-slate-950/60 hover:border-blue-500 hover:bg-slate-800/60 transition text-sm text-slate-200 flex items-start justify-between gap-3 group">
                                 <span class="flex items-start gap-2.5 flex-1 min-w-0">
                                     <strong class="text-sky-400 font-bold flex-shrink-0 mt-0.5">C)</strong>
-                                    <span class="flex-1 min-w-0 break-words leading-relaxed">78,8</span>
+                                    <span class="flex-1 min-w-0 break-words leading-relaxed">$78{,}8$</span>
                                 </span>
                                 <i data-lucide="circle" class="w-4 h-4 text-slate-600 opt-icon group-hover:text-blue-400 flex-shrink-0 mt-0.5"></i>
                             </button>
@@ -953,7 +1009,7 @@ O terreno I tem quantos metros de frente para a Rua B?</p>
                             <button onclick="selectOption('ifmg-2018-2-q11', 3)" id="btn-ifmg-2018-2-q11-3" class="w-full text-left p-3.5 rounded-xl border border-slate-800 bg-slate-950/60 hover:border-blue-500 hover:bg-slate-800/60 transition text-sm text-slate-200 flex items-start justify-between gap-3 group">
                                 <span class="flex items-start gap-2.5 flex-1 min-w-0">
                                     <strong class="text-sky-400 font-bold flex-shrink-0 mt-0.5">D)</strong>
-                                    <span class="flex-1 min-w-0 break-words leading-relaxed">93,3</span>
+                                    <span class="flex-1 min-w-0 break-words leading-relaxed">$93{,}3$</span>
                                 </span>
                                 <i data-lucide="circle" class="w-4 h-4 text-slate-600 opt-icon group-hover:text-blue-400 flex-shrink-0 mt-0.5"></i>
                             </button>
@@ -969,7 +1025,7 @@ O terreno I tem quantos metros de frente para a Rua B?</p>
                     
                         <div class="mb-8 border-b border-slate-800/80 pb-6 last:border-0 last:pb-0" id="q-container-ifmg-2018-2-q12">
                             <div class="flex items-center justify-between mb-3 flex-wrap gap-2">
-                                <div class="flex items-center gap-2">
+                                <div class="flex flex-wrap items-center gap-2">
                                     <span class="text-xs font-bold uppercase tracking-wider text-sky-300 bg-blue-950/60 px-2.5 py-0.5 rounded-full border border-blue-800/40">Questão 13</span>
                                     
                             <a href="../pesquisa.html?bncc=EF09MA06" class="text-[11px] font-mono font-bold text-emerald-300 bg-emerald-950/80 hover:bg-emerald-900/90 px-2.5 py-0.5 rounded-full border border-emerald-800/60 flex items-center gap-1 transition shadow-sm" title="Compreender as funções afim e quadrática, identificando coeficientes angulares e lineares e pontos notáveis.">
@@ -978,9 +1034,7 @@ O terreno I tem quantos metros de frente para a Rua B?</p>
                         
                                 </div>
                             </div>
-                            <p class="font-medium text-slate-100 mb-4 text-sm sm:text-base leading-relaxed">O gráfico da função quadrática de equação $f(x) = x^2 - 3x + 2$ é interceptado por uma reta de inclinação $3$ em uma de suas raízes, conforme a seguinte figura:
-
-O valor do coeficiente linear da equação que define a reta apresentada na figura é:</p>
+                            <div class="q-text-container"><p class="q-paragraph font-medium text-slate-200 text-sm sm:text-base">O gráfico da função quadrática de equação $f(x) = x^2 - 3x + 2$ é interceptado por uma reta de inclinação $3$ em uma de suas raízes, conforme a seguinte figura:</p><p class="q-prompt text-slate-100 text-sm sm:text-base">O valor do coeficiente linear da equação que define a reta apresentada na figura é:</p></div>
                             
         <div class="my-4 p-2 sm:p-3 rounded-2xl border bg-slate-950/70 border-slate-800 shadow-sm max-w-xl mx-auto flex flex-col items-center">
             <img src="https://lh3.googleusercontent.com/d/1hPD6Ja0wSjaby6iBKdiZSAbvDTPBPX5e" alt="Gráfico cartesiano mostrando uma parábola com concavidade voltada para cima interceptando o eixo x em dois pontos, e uma reta crescente cortando a primeira raiz da parábola no eixo x." onerror="if(this.src!='../assets/img/questoes/ifmg/ifmg-2018-2-q28.png'){this.src='../assets/img/questoes/ifmg/ifmg-2018-2-q28.png';}" class="max-h-80 sm:max-h-96 w-auto max-w-full rounded-xl object-contain cursor-zoom-in hover:opacity-95 hover:scale-[1.01] transition duration-200" onclick="openImageModal('https://lh3.googleusercontent.com/d/1hPD6Ja0wSjaby6iBKdiZSAbvDTPBPX5e', 'Gráfico cartesiano mostrando uma parábola com concavidade voltada para cima interceptando o eixo x em dois pontos, e uma reta crescente cortando a primeira raiz da parábola no eixo x.')" title="Clique para ampliar a imagem" loading="lazy">
@@ -992,7 +1046,7 @@ O valor do coeficiente linear da equação que define a reta apresentada na figu
                             <button onclick="selectOption('ifmg-2018-2-q12', 0)" id="btn-ifmg-2018-2-q12-0" class="w-full text-left p-3.5 rounded-xl border border-slate-800 bg-slate-950/60 hover:border-blue-500 hover:bg-slate-800/60 transition text-sm text-slate-200 flex items-start justify-between gap-3 group">
                                 <span class="flex items-start gap-2.5 flex-1 min-w-0">
                                     <strong class="text-sky-400 font-bold flex-shrink-0 mt-0.5">A)</strong>
-                                    <span class="flex-1 min-w-0 break-words leading-relaxed">-6</span>
+                                    <span class="flex-1 min-w-0 break-words leading-relaxed">$-6$</span>
                                 </span>
                                 <i data-lucide="circle" class="w-4 h-4 text-slate-600 opt-icon group-hover:text-blue-400 flex-shrink-0 mt-0.5"></i>
                             </button>
@@ -1000,7 +1054,7 @@ O valor do coeficiente linear da equação que define a reta apresentada na figu
                             <button onclick="selectOption('ifmg-2018-2-q12', 1)" id="btn-ifmg-2018-2-q12-1" class="w-full text-left p-3.5 rounded-xl border border-slate-800 bg-slate-950/60 hover:border-blue-500 hover:bg-slate-800/60 transition text-sm text-slate-200 flex items-start justify-between gap-3 group">
                                 <span class="flex items-start gap-2.5 flex-1 min-w-0">
                                     <strong class="text-sky-400 font-bold flex-shrink-0 mt-0.5">B)</strong>
-                                    <span class="flex-1 min-w-0 break-words leading-relaxed">-3</span>
+                                    <span class="flex-1 min-w-0 break-words leading-relaxed">$-3$</span>
                                 </span>
                                 <i data-lucide="circle" class="w-4 h-4 text-slate-600 opt-icon group-hover:text-blue-400 flex-shrink-0 mt-0.5"></i>
                             </button>
@@ -1008,7 +1062,7 @@ O valor do coeficiente linear da equação que define a reta apresentada na figu
                             <button onclick="selectOption('ifmg-2018-2-q12', 2)" id="btn-ifmg-2018-2-q12-2" class="w-full text-left p-3.5 rounded-xl border border-slate-800 bg-slate-950/60 hover:border-blue-500 hover:bg-slate-800/60 transition text-sm text-slate-200 flex items-start justify-between gap-3 group">
                                 <span class="flex items-start gap-2.5 flex-1 min-w-0">
                                     <strong class="text-sky-400 font-bold flex-shrink-0 mt-0.5">C)</strong>
-                                    <span class="flex-1 min-w-0 break-words leading-relaxed">1</span>
+                                    <span class="flex-1 min-w-0 break-words leading-relaxed">$1$</span>
                                 </span>
                                 <i data-lucide="circle" class="w-4 h-4 text-slate-600 opt-icon group-hover:text-blue-400 flex-shrink-0 mt-0.5"></i>
                             </button>
@@ -1016,7 +1070,7 @@ O valor do coeficiente linear da equação que define a reta apresentada na figu
                             <button onclick="selectOption('ifmg-2018-2-q12', 3)" id="btn-ifmg-2018-2-q12-3" class="w-full text-left p-3.5 rounded-xl border border-slate-800 bg-slate-950/60 hover:border-blue-500 hover:bg-slate-800/60 transition text-sm text-slate-200 flex items-start justify-between gap-3 group">
                                 <span class="flex items-start gap-2.5 flex-1 min-w-0">
                                     <strong class="text-sky-400 font-bold flex-shrink-0 mt-0.5">D)</strong>
-                                    <span class="flex-1 min-w-0 break-words leading-relaxed">2</span>
+                                    <span class="flex-1 min-w-0 break-words leading-relaxed">$2$</span>
                                 </span>
                                 <i data-lucide="circle" class="w-4 h-4 text-slate-600 opt-icon group-hover:text-blue-400 flex-shrink-0 mt-0.5"></i>
                             </button>
@@ -1032,7 +1086,7 @@ O valor do coeficiente linear da equação que define a reta apresentada na figu
                     
                         <div class="mb-8 border-b border-slate-800/80 pb-6 last:border-0 last:pb-0" id="q-container-ifmg-2018-2-q13">
                             <div class="flex items-center justify-between mb-3 flex-wrap gap-2">
-                                <div class="flex items-center gap-2">
+                                <div class="flex flex-wrap items-center gap-2">
                                     <span class="text-xs font-bold uppercase tracking-wider text-sky-300 bg-blue-950/60 px-2.5 py-0.5 rounded-full border border-blue-800/40">Questão 14</span>
                                     
                             <a href="../pesquisa.html?bncc=EF09MA03" class="text-[11px] font-mono font-bold text-emerald-300 bg-emerald-950/80 hover:bg-emerald-900/90 px-2.5 py-0.5 rounded-full border border-emerald-800/60 flex items-center gap-1 transition shadow-sm" title="Efetuar cálculos com números reais, inclusive potências com expoentes fracionários e números decimais.">
@@ -1041,14 +1095,14 @@ O valor do coeficiente linear da equação que define a reta apresentada na figu
                         
                                 </div>
                             </div>
-                            <p class="font-medium text-slate-100 mb-4 text-sm sm:text-base leading-relaxed">Dados os números reais $x = 0{,}5$, $y = \frac{16}{36}$ e $z = 0{,}0625$, o valor numérico da expressão $y^x + z^x$ é igual a</p>
+                            <div class="q-text-container"><p class="q-paragraph font-medium text-slate-100 text-sm sm:text-base leading-relaxed">Dados os números reais $x = 0{,}5$, $y = \frac{16}{36}$ e $z = 0{,}0625$, o valor numérico da expressão $y^x + z^x$ é igual a:</p></div>
                             
                             <div class="space-y-2 mb-4" id="opts-ifmg-2018-2-q13">
                                 
                             <button onclick="selectOption('ifmg-2018-2-q13', 0)" id="btn-ifmg-2018-2-q13-0" class="w-full text-left p-3.5 rounded-xl border border-slate-800 bg-slate-950/60 hover:border-blue-500 hover:bg-slate-800/60 transition text-sm text-slate-200 flex items-start justify-between gap-3 group">
                                 <span class="flex items-start gap-2.5 flex-1 min-w-0">
                                     <strong class="text-sky-400 font-bold flex-shrink-0 mt-0.5">A)</strong>
-                                    <span class="flex-1 min-w-0 break-words leading-relaxed">5/12</span>
+                                    <span class="flex-1 min-w-0 break-words leading-relaxed">$\frac{5}{12}$</span>
                                 </span>
                                 <i data-lucide="circle" class="w-4 h-4 text-slate-600 opt-icon group-hover:text-blue-400 flex-shrink-0 mt-0.5"></i>
                             </button>
@@ -1056,7 +1110,7 @@ O valor do coeficiente linear da equação que define a reta apresentada na figu
                             <button onclick="selectOption('ifmg-2018-2-q13', 1)" id="btn-ifmg-2018-2-q13-1" class="w-full text-left p-3.5 rounded-xl border border-slate-800 bg-slate-950/60 hover:border-blue-500 hover:bg-slate-800/60 transition text-sm text-slate-200 flex items-start justify-between gap-3 group">
                                 <span class="flex items-start gap-2.5 flex-1 min-w-0">
                                     <strong class="text-sky-400 font-bold flex-shrink-0 mt-0.5">B)</strong>
-                                    <span class="flex-1 min-w-0 break-words leading-relaxed">7/12</span>
+                                    <span class="flex-1 min-w-0 break-words leading-relaxed">$\frac{7}{12}$</span>
                                 </span>
                                 <i data-lucide="circle" class="w-4 h-4 text-slate-600 opt-icon group-hover:text-blue-400 flex-shrink-0 mt-0.5"></i>
                             </button>
@@ -1064,7 +1118,7 @@ O valor do coeficiente linear da equação que define a reta apresentada na figu
                             <button onclick="selectOption('ifmg-2018-2-q13', 2)" id="btn-ifmg-2018-2-q13-2" class="w-full text-left p-3.5 rounded-xl border border-slate-800 bg-slate-950/60 hover:border-blue-500 hover:bg-slate-800/60 transition text-sm text-slate-200 flex items-start justify-between gap-3 group">
                                 <span class="flex items-start gap-2.5 flex-1 min-w-0">
                                     <strong class="text-sky-400 font-bold flex-shrink-0 mt-0.5">C)</strong>
-                                    <span class="flex-1 min-w-0 break-words leading-relaxed">11/12</span>
+                                    <span class="flex-1 min-w-0 break-words leading-relaxed">$\frac{11}{12}$</span>
                                 </span>
                                 <i data-lucide="circle" class="w-4 h-4 text-slate-600 opt-icon group-hover:text-blue-400 flex-shrink-0 mt-0.5"></i>
                             </button>
@@ -1072,7 +1126,7 @@ O valor do coeficiente linear da equação que define a reta apresentada na figu
                             <button onclick="selectOption('ifmg-2018-2-q13', 3)" id="btn-ifmg-2018-2-q13-3" class="w-full text-left p-3.5 rounded-xl border border-slate-800 bg-slate-950/60 hover:border-blue-500 hover:bg-slate-800/60 transition text-sm text-slate-200 flex items-start justify-between gap-3 group">
                                 <span class="flex items-start gap-2.5 flex-1 min-w-0">
                                     <strong class="text-sky-400 font-bold flex-shrink-0 mt-0.5">D)</strong>
-                                    <span class="flex-1 min-w-0 break-words leading-relaxed">19/12</span>
+                                    <span class="flex-1 min-w-0 break-words leading-relaxed">$\frac{19}{12}$</span>
                                 </span>
                                 <i data-lucide="circle" class="w-4 h-4 text-slate-600 opt-icon group-hover:text-blue-400 flex-shrink-0 mt-0.5"></i>
                             </button>
@@ -1088,7 +1142,7 @@ O valor do coeficiente linear da equação que define a reta apresentada na figu
                     
                         <div class="mb-8 border-b border-slate-800/80 pb-6 last:border-0 last:pb-0" id="q-container-ifmg-2018-2-q14">
                             <div class="flex items-center justify-between mb-3 flex-wrap gap-2">
-                                <div class="flex items-center gap-2">
+                                <div class="flex flex-wrap items-center gap-2">
                                     <span class="text-xs font-bold uppercase tracking-wider text-sky-300 bg-blue-950/60 px-2.5 py-0.5 rounded-full border border-blue-800/40">Questão 15</span>
                                     
                             <a href="../pesquisa.html?bncc=EF06MA17" class="text-[11px] font-mono font-bold text-emerald-300 bg-emerald-950/80 hover:bg-emerald-900/90 px-2.5 py-0.5 rounded-full border border-emerald-800/60 flex items-center gap-1 transition shadow-sm" title="Quantificar e estabelecer relações entre faces, vértices e arestas de prismas através de sua planificação.">
@@ -1097,9 +1151,7 @@ O valor do coeficiente linear da equação que define a reta apresentada na figu
                         
                                 </div>
                             </div>
-                            <p class="font-medium text-slate-100 mb-4 text-sm sm:text-base leading-relaxed">Jorge ganhou um presente que foi embalado numa caixa em forma de um prisma reto de base pentagonal regular. Depois de receber o presente, Jorge passou a observar a caixa e imaginar como seria sua planificação. Algumas ideias de planificações estão representadas nas figuras a seguir.
-
-A planificação correta dessa caixa é</p>
+                            <div class="q-text-container"><p class="q-paragraph font-medium text-slate-200 text-sm sm:text-base">Jorge ganhou um presente que foi embalado numa caixa em forma de um prisma reto de base pentagonal regular. Depois de receber o presente, Jorge passou a observar a caixa e imaginar como seria sua planificação. Algumas ideias de planificações estão representadas nas figuras a seguir.</p><p class="q-prompt text-slate-100 text-sm sm:text-base">A planificação correta dessa caixa é:</p></div>
                             
         <div class="my-4 p-2 sm:p-3 rounded-2xl border bg-slate-950/70 border-slate-800 shadow-sm max-w-xl mx-auto flex flex-col items-center">
             <img src="https://lh3.googleusercontent.com/d/1JQygMCuUHN53z9ZRkv2fzZsFsmPuLIf9" alt="Desenho de uma caixa montada em prisma pentagonal reto e quatro opções de planificação identificadas pelas letras A, B, C e D." onerror="if(this.src!='../assets/img/questoes/ifmg/ifmg-2018-2-q30.png'){this.src='../assets/img/questoes/ifmg/ifmg-2018-2-q30.png';}" class="max-h-80 sm:max-h-96 w-auto max-w-full rounded-xl object-contain cursor-zoom-in hover:opacity-95 hover:scale-[1.01] transition duration-200" onclick="openImageModal('https://lh3.googleusercontent.com/d/1JQygMCuUHN53z9ZRkv2fzZsFsmPuLIf9', 'Desenho de uma caixa montada em prisma pentagonal reto e quatro opções de planificação identificadas pelas letras A, B, C e D.')" title="Clique para ampliar a imagem" loading="lazy">
@@ -1111,7 +1163,7 @@ A planificação correta dessa caixa é</p>
                             <button onclick="selectOption('ifmg-2018-2-q14', 0)" id="btn-ifmg-2018-2-q14-0" class="w-full text-left p-3.5 rounded-xl border border-slate-800 bg-slate-950/60 hover:border-blue-500 hover:bg-slate-800/60 transition text-sm text-slate-200 flex items-start justify-between gap-3 group">
                                 <span class="flex items-start gap-2.5 flex-1 min-w-0">
                                     <strong class="text-sky-400 font-bold flex-shrink-0 mt-0.5">A)</strong>
-                                    <span class="flex-1 min-w-0 break-words leading-relaxed">A</span>
+                                    <span class="flex-1 min-w-0 break-words leading-relaxed">Planificação A</span>
                                 </span>
                                 <i data-lucide="circle" class="w-4 h-4 text-slate-600 opt-icon group-hover:text-blue-400 flex-shrink-0 mt-0.5"></i>
                             </button>
@@ -1119,7 +1171,7 @@ A planificação correta dessa caixa é</p>
                             <button onclick="selectOption('ifmg-2018-2-q14', 1)" id="btn-ifmg-2018-2-q14-1" class="w-full text-left p-3.5 rounded-xl border border-slate-800 bg-slate-950/60 hover:border-blue-500 hover:bg-slate-800/60 transition text-sm text-slate-200 flex items-start justify-between gap-3 group">
                                 <span class="flex items-start gap-2.5 flex-1 min-w-0">
                                     <strong class="text-sky-400 font-bold flex-shrink-0 mt-0.5">B)</strong>
-                                    <span class="flex-1 min-w-0 break-words leading-relaxed">B</span>
+                                    <span class="flex-1 min-w-0 break-words leading-relaxed">Planificação B</span>
                                 </span>
                                 <i data-lucide="circle" class="w-4 h-4 text-slate-600 opt-icon group-hover:text-blue-400 flex-shrink-0 mt-0.5"></i>
                             </button>
@@ -1127,7 +1179,7 @@ A planificação correta dessa caixa é</p>
                             <button onclick="selectOption('ifmg-2018-2-q14', 2)" id="btn-ifmg-2018-2-q14-2" class="w-full text-left p-3.5 rounded-xl border border-slate-800 bg-slate-950/60 hover:border-blue-500 hover:bg-slate-800/60 transition text-sm text-slate-200 flex items-start justify-between gap-3 group">
                                 <span class="flex items-start gap-2.5 flex-1 min-w-0">
                                     <strong class="text-sky-400 font-bold flex-shrink-0 mt-0.5">C)</strong>
-                                    <span class="flex-1 min-w-0 break-words leading-relaxed">C</span>
+                                    <span class="flex-1 min-w-0 break-words leading-relaxed">Planificação C</span>
                                 </span>
                                 <i data-lucide="circle" class="w-4 h-4 text-slate-600 opt-icon group-hover:text-blue-400 flex-shrink-0 mt-0.5"></i>
                             </button>
@@ -1135,7 +1187,7 @@ A planificação correta dessa caixa é</p>
                             <button onclick="selectOption('ifmg-2018-2-q14', 3)" id="btn-ifmg-2018-2-q14-3" class="w-full text-left p-3.5 rounded-xl border border-slate-800 bg-slate-950/60 hover:border-blue-500 hover:bg-slate-800/60 transition text-sm text-slate-200 flex items-start justify-between gap-3 group">
                                 <span class="flex items-start gap-2.5 flex-1 min-w-0">
                                     <strong class="text-sky-400 font-bold flex-shrink-0 mt-0.5">D)</strong>
-                                    <span class="flex-1 min-w-0 break-words leading-relaxed">D</span>
+                                    <span class="flex-1 min-w-0 break-words leading-relaxed">Planificação D</span>
                                 </span>
                                 <i data-lucide="circle" class="w-4 h-4 text-slate-600 opt-icon group-hover:text-blue-400 flex-shrink-0 mt-0.5"></i>
                             </button>

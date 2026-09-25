@@ -49,92 +49,166 @@
 
     <!-- Header / Navbar da Área de Provas (Parte 2 - Escuro-Azul) -->
     <header class="gradient-header-dark text-white shadow-xl sticky top-0 z-50 border-b border-slate-800">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="max-w-7xl mx-auto px-3 sm:px-6 lg:px-8">
             <div class="flex items-center justify-between h-16">
                 <!-- Logo Provas -->
-                <a href="../provas.html" class="flex items-center space-x-3 group">
-                    <div class="bg-blue-600 p-2 rounded-xl text-white font-bold shadow-md shadow-blue-500/20 flex items-center justify-center group-hover:scale-105 transition">
-                        <i data-lucide="file-check" class="w-6 h-6"></i>
+                <a href="../provas.html" class="flex items-center space-x-2 sm:space-x-3 group min-w-0 flex-shrink-0">
+                    <div class="bg-blue-600 p-1.5 sm:p-2 rounded-xl text-white font-bold shadow-md shadow-blue-500/20 flex items-center justify-center group-hover:scale-105 transition">
+                        <i data-lucide="file-check" class="w-5 h-5 sm:w-6 sm:h-6"></i>
                     </div>
-                    <div>
-                        <span class="font-extrabold text-xl tracking-tight text-white flex items-center gap-1.5">
+                    <div class="min-w-0">
+                        <span class="font-extrabold text-lg sm:text-xl tracking-tight text-white flex items-center gap-1 sm:gap-1.5">
                             Partiu<span class="text-sky-400">IF</span>
-                            <span class="text-[10px] font-bold uppercase tracking-wider bg-blue-500/30 text-sky-200 border border-blue-400/30 px-2 py-0.5 rounded-full">Provas</span>
+                            <span class="text-[9px] sm:text-[10px] font-bold uppercase tracking-wider bg-blue-500/30 text-sky-200 border border-blue-400/30 px-1.5 sm:px-2 py-0.5 rounded-full">Provas</span>
                         </span>
-                        <p class="text-xs text-slate-400 hidden sm:flex items-center gap-1">
+                        <p class="text-xs text-slate-400 hidden xl:flex items-center gap-1">
                             <i data-lucide="archive" class="w-3 h-3 text-sky-400"></i> Acervo Oficial com PDFs e Gabarito
                         </p>
                     </div>
                 </a>
 
                 <!-- Navegação Desktop -->
-                <nav class="hidden md:flex space-x-1 items-center">
+                <nav class="hidden lg:flex space-x-1.5 items-center">
                     <a href="../provas.html" class="px-3 py-2 rounded-lg text-sm transition flex items-center gap-1.5 text-slate-300 hover:bg-slate-800 hover:text-white">
-                <i data-lucide="layout-grid" class="w-4 h-4"></i> Todas as Provas
-            </a><a href="../pesquisa.html" class="px-3 py-2 rounded-lg text-sm transition flex items-center gap-1.5 text-slate-300 hover:bg-slate-800 hover:text-white">
-                <i data-lucide="search" class="w-4 h-4"></i> Pesquisa BNCC
-            </a><a href="../bloco-6-provas-ifce/index.html" class="px-3 py-2 rounded-lg text-sm transition flex items-center gap-1.5 text-slate-300 hover:bg-slate-800 hover:text-white">
-                <i data-lucide="award" class="w-4 h-4"></i> Provas IFCE (27)
-            </a><a href="../bloco-5-provas-ifsc/index.html" class="px-3 py-2 rounded-lg text-sm transition flex items-center gap-1.5 bg-blue-600 text-white font-semibold shadow-inner">
-                <i data-lucide="award" class="w-4 h-4"></i> Provas IFSC (16)
-            </a><a href="../bloco-7-provas-ifsp/index.html" class="px-3 py-2 rounded-lg text-sm transition flex items-center gap-1.5 text-slate-300 hover:bg-slate-800 hover:text-white">
-                <i data-lucide="award" class="w-4 h-4"></i> Provas IFSP (8)
-            </a><a href="../bloco-8-provas-ifmg/index.html" class="px-3 py-2 rounded-lg text-sm transition flex items-center gap-1.5 text-slate-300 hover:bg-slate-800 hover:text-white">
-                <i data-lucide="award" class="w-4 h-4"></i> Provas IFMG (11)
+                        <i data-lucide="layout-grid" class="w-4 h-4 text-sky-400"></i> Todas as Provas
+                    </a>
+
+                    <!-- Dropdown de Instituições -->
+                    <div class="relative" id="dropdown-instituicoes-container">
+                        <button id="btn-dropdown-instituicoes" class="px-3 py-2 rounded-lg text-sm transition flex items-center gap-1.5 bg-blue-600/90 text-white font-semibold shadow-inner border border-blue-400/40" aria-haspopup="true" aria-expanded="false" title="Filtrar por Instituto Federal">
+                            <i data-lucide="building-2" class="w-4 h-4 text-sky-400"></i>
+                            <span>Instituições</span>
+                            <span class="bg-blue-500/40 text-sky-200 border border-blue-400/40 text-[10px] font-bold px-1.5 py-0.5 rounded-full">IFSC</span>
+                            <i data-lucide="chevron-down" id="chevron-instituicoes" class="w-3.5 h-3.5 text-slate-400 transition-transform duration-200"></i>
+                        </button>
+
+                        <div id="dropdown-instituicoes-menu" class="hidden absolute left-0 mt-2 w-64 bg-slate-900/95 border border-slate-700/80 rounded-2xl shadow-2xl p-1.5 z-50 backdrop-blur-xl">
+                            <div class="px-3 py-1.5 text-[10px] font-bold uppercase tracking-wider text-slate-400 border-b border-slate-800/80 flex items-center justify-between">
+                                <span>Institutos Federais</span>
+                                <span class="text-sky-400 font-bold">62 Provas</span>
+                            </div>
+                            <div class="space-y-1 py-1">
+                                <a href="../bloco-6-provas-ifce/index.html" class="flex items-center justify-between px-3 py-2 rounded-xl text-xs transition text-slate-300 hover:bg-slate-800/80 hover:text-white">
+                <div class="flex items-center gap-2.5">
+                    <span class="w-2 h-2 rounded-full bg-slate-700"></span>
+                    <div>
+                        <div class="font-bold text-slate-100">IFCE <span class="text-slate-400 font-normal">(Ceará)</span></div>
+                        <div class="text-[10px] text-slate-400">27 provas cadastradas</div>
+                    </div>
+                </div>
+                <i data-lucide="chevron-right" class="w-3.5 h-3.5 text-slate-500"></i>
+            </a><a href="../bloco-5-provas-ifsc/index.html" class="flex items-center justify-between px-3 py-2 rounded-xl text-xs transition bg-blue-600/25 text-sky-200 font-semibold border-l-2 border-blue-400">
+                <div class="flex items-center gap-2.5">
+                    <span class="w-2 h-2 rounded-full bg-sky-400 animate-pulse"></span>
+                    <div>
+                        <div class="font-bold text-slate-100">IFSC <span class="text-slate-400 font-normal">(Santa Catarina)</span></div>
+                        <div class="text-[10px] text-slate-400">16 provas cadastradas</div>
+                    </div>
+                </div>
+                <i data-lucide="chevron-right" class="w-3.5 h-3.5 text-slate-500"></i>
+            </a><a href="../bloco-7-provas-ifsp/index.html" class="flex items-center justify-between px-3 py-2 rounded-xl text-xs transition text-slate-300 hover:bg-slate-800/80 hover:text-white">
+                <div class="flex items-center gap-2.5">
+                    <span class="w-2 h-2 rounded-full bg-slate-700"></span>
+                    <div>
+                        <div class="font-bold text-slate-100">IFSP <span class="text-slate-400 font-normal">(São Paulo)</span></div>
+                        <div class="text-[10px] text-slate-400">8 provas cadastradas</div>
+                    </div>
+                </div>
+                <i data-lucide="chevron-right" class="w-3.5 h-3.5 text-slate-500"></i>
+            </a><a href="../bloco-8-provas-ifmg/index.html" class="flex items-center justify-between px-3 py-2 rounded-xl text-xs transition text-slate-300 hover:bg-slate-800/80 hover:text-white">
+                <div class="flex items-center gap-2.5">
+                    <span class="w-2 h-2 rounded-full bg-slate-700"></span>
+                    <div>
+                        <div class="font-bold text-slate-100">IFMG <span class="text-slate-400 font-normal">(Minas Gerais)</span></div>
+                        <div class="text-[10px] text-slate-400">11 provas cadastradas</div>
+                    </div>
+                </div>
+                <i data-lucide="chevron-right" class="w-3.5 h-3.5 text-slate-500"></i>
             </a>
+                            </div>
+                            <div class="pt-1 border-t border-slate-800/80">
+                                <a href="../provas.html" class="flex items-center justify-between px-3 py-1.5 text-[11px] font-semibold text-sky-400 hover:bg-slate-800/80 rounded-xl transition">
+                                    <span>Ver matriz geral de provas</span>
+                                    <i data-lucide="arrow-right" class="w-3 h-3"></i>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <a href="../pesquisa.html" class="px-3 py-2 rounded-lg text-sm transition flex items-center gap-1.5 text-slate-300 hover:bg-slate-800 hover:text-white" title="Pesquisar questões por descritor BNCC">
+                        <i data-lucide="search" class="w-4 h-4 text-emerald-400"></i> Pesquisa BNCC
+                    </a>
                 </nav>
 
                 <!-- Ações do Usuário -->
-                <div class="flex items-center gap-2 sm:gap-3">
-                    <a href="../index.html" class="bg-slate-800/90 hover:bg-slate-700 text-slate-200 border border-slate-700 px-3.5 py-1.5 rounded-lg text-xs sm:text-sm font-semibold transition flex items-center gap-1.5 shadow-sm" title="Retornar à Teoria e Eixos Temáticos">
-                        <i data-lucide="arrow-left" class="w-4 h-4 text-emerald-400"></i> <span class="hidden sm:inline">Voltar para </span>Teoria
+                <div class="flex items-center gap-1.5 sm:gap-2.5 flex-shrink-0">
+                    <a href="../index.html" class="bg-slate-800/90 hover:bg-slate-700 text-slate-200 border border-slate-700 p-2 sm:px-3.5 sm:py-1.5 rounded-lg text-xs sm:text-sm font-semibold transition flex items-center gap-1.5 shadow-sm" title="Retornar à Teoria e Eixos Temáticos">
+                        <i data-lucide="arrow-left" class="w-4 h-4 text-emerald-400"></i>
+                        <span class="hidden sm:inline xl:hidden">Teoria</span>
+                        <span class="hidden xl:inline">Voltar para Teoria</span>
                     </a>
-                    <a href="../simulado.html" class="bg-blue-600 hover:bg-blue-500 text-white font-semibold px-3.5 py-1.5 rounded-lg text-xs sm:text-sm transition flex items-center gap-1.5 shadow">
-                        <i data-lucide="award" class="w-4 h-4"></i> Simulado
+                    <a href="../simulado.html" class="bg-blue-600 hover:bg-blue-500 text-white font-semibold p-2 sm:px-3.5 sm:py-1.5 rounded-lg text-xs sm:text-sm transition flex items-center gap-1.5 shadow" title="Simulado IF">
+                        <i data-lucide="award" class="w-4 h-4"></i>
+                        <span class="hidden sm:inline">Simulado</span>
                     </a>
-                    <button id="mobile-menu-btn" class="md:hidden p-2 rounded-lg text-slate-300 hover:text-white hover:bg-slate-800" aria-label="Abrir menu">
-                        <i data-lucide="menu" class="w-6 h-6"></i>
+                    <button id="mobile-menu-btn" class="lg:hidden p-2 rounded-lg text-slate-300 hover:text-white hover:bg-slate-800 transition" aria-label="Abrir menu">
+                        <i data-lucide="menu" class="w-5 h-5 sm:w-6 sm:h-6"></i>
                     </button>
                 </div>
             </div>
         </div>
 
         <!-- Menu Mobile -->
-        <div id="mobile-menu" class="hidden md:hidden bg-slate-950 border-t border-slate-800 px-4 pt-2 pb-4 space-y-1">
-            <a href="../provas.html" class="block px-3 py-2 rounded-md text-base font-medium text-white flex items-center gap-2 hover:bg-slate-800">
-                <i data-lucide="layout-grid" class="w-4 h-4"></i> Todas as Provas
-            </a><a href="../pesquisa.html" class="block px-3 py-2 rounded-md text-base font-medium text-white flex items-center gap-2 hover:bg-slate-800">
-                <i data-lucide="search" class="w-4 h-4"></i> Pesquisa BNCC
-            </a><a href="../bloco-6-provas-ifce/index.html" class="block px-3 py-2 rounded-md text-base font-medium text-white flex items-center gap-2 hover:bg-slate-800">
-                <i data-lucide="award" class="w-4 h-4"></i> Provas IFCE (27)
-            </a><a href="../bloco-5-provas-ifsc/index.html" class="block px-3 py-2 rounded-md text-base font-medium text-white flex items-center gap-2 bg-blue-600 font-bold">
-                <i data-lucide="award" class="w-4 h-4"></i> Provas IFSC (16)
-            </a><a href="../bloco-7-provas-ifsp/index.html" class="block px-3 py-2 rounded-md text-base font-medium text-white flex items-center gap-2 hover:bg-slate-800">
-                <i data-lucide="award" class="w-4 h-4"></i> Provas IFSP (8)
-            </a><a href="../bloco-8-provas-ifmg/index.html" class="block px-3 py-2 rounded-md text-base font-medium text-white flex items-center gap-2 hover:bg-slate-800">
-                <i data-lucide="award" class="w-4 h-4"></i> Provas IFMG (11)
+        <div id="mobile-menu" class="hidden lg:hidden bg-slate-950 border-t border-slate-800 px-4 pt-2 pb-4 space-y-1">
+            <a href="../provas.html" class="block px-3 py-2 rounded-md text-base font-medium text-white flex items-center justify-between gap-2 hover:bg-slate-800">
+                <span class="flex items-center gap-2"><i data-lucide="layout-grid" class="w-4 h-4 text-sky-400"></i> Todas as Provas</span>
+                <span class="text-xs bg-slate-800 px-2 py-0.5 rounded-full text-slate-300 font-bold">62 Provas</span>
             </a>
-            <a href="../index.html" class="block px-3 py-2 rounded-md text-base font-semibold text-slate-200 hover:bg-slate-800 flex items-center gap-2 mt-2 border-t border-slate-800 pt-3">
-                <i data-lucide="arrow-left" class="w-4 h-4 text-emerald-400"></i> Voltar para Teoria (Parte 1)
+            <a href="../pesquisa.html" class="block px-3 py-2 rounded-md text-base font-medium text-white flex items-center gap-2 hover:bg-slate-800">
+                <i data-lucide="search" class="w-4 h-4 text-emerald-400"></i> Pesquisa BNCC
             </a>
-            <a href="../simulado.html" class="block px-3 py-2 rounded-md text-base font-bold bg-blue-600 text-white flex items-center gap-2 mt-2">
-                <i data-lucide="award" class="w-4 h-4"></i> Simulado IF
+
+            <div class="pt-2 pb-1 px-3 text-[11px] font-bold uppercase tracking-wider text-slate-400">Provas por Instituição</div>
+            <a href="../bloco-6-provas-ifce/index.html" class="block px-3 py-2 rounded-md text-base font-medium text-white flex items-center justify-between gap-2 hover:bg-slate-800">
+                <span class="flex items-center gap-2"><i data-lucide="award" class="w-4 h-4 text-sky-400"></i> IFCE - Ceará</span>
+                <span class="text-xs bg-blue-900/60 text-sky-300 px-2 py-0.5 rounded-full font-bold">27</span>
             </a>
+            <a href="../bloco-5-provas-ifsc/index.html" class="block px-3 py-2 rounded-md text-base font-medium text-white flex items-center justify-between gap-2 bg-blue-600 font-bold">
+                <span class="flex items-center gap-2"><i data-lucide="award" class="w-4 h-4 text-sky-400"></i> IFSC - Santa Catarina</span>
+                <span class="text-xs bg-blue-900/60 text-sky-300 px-2 py-0.5 rounded-full font-bold">16</span>
+            </a>
+            <a href="../bloco-7-provas-ifsp/index.html" class="block px-3 py-2 rounded-md text-base font-medium text-white flex items-center justify-between gap-2 hover:bg-slate-800">
+                <span class="flex items-center gap-2"><i data-lucide="award" class="w-4 h-4 text-sky-400"></i> IFSP - São Paulo</span>
+                <span class="text-xs bg-blue-900/60 text-sky-300 px-2 py-0.5 rounded-full font-bold">8</span>
+            </a>
+            <a href="../bloco-8-provas-ifmg/index.html" class="block px-3 py-2 rounded-md text-base font-medium text-white flex items-center justify-between gap-2 hover:bg-slate-800">
+                <span class="flex items-center gap-2"><i data-lucide="award" class="w-4 h-4 text-sky-400"></i> IFMG - Minas Gerais</span>
+                <span class="text-xs bg-blue-900/60 text-sky-300 px-2 py-0.5 rounded-full font-bold">11</span>
+            </a>
+
+            <div class="pt-2 border-t border-slate-800 space-y-1">
+                <a href="../index.html" class="block px-3 py-2 rounded-md text-base font-semibold text-slate-200 hover:bg-slate-800 flex items-center gap-2">
+                    <i data-lucide="arrow-left" class="w-4 h-4 text-emerald-400"></i> Voltar para Teoria (Parte 1)
+                </a>
+                <a href="../simulado.html" class="block px-3 py-2 rounded-md text-base font-bold bg-blue-600 text-white flex items-center gap-2">
+                    <i data-lucide="award" class="w-4 h-4"></i> Simulado IF
+                </a>
+            </div>
         </div>
     </header>
 
 
     <main class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 flex-grow">
         <!-- Breadcrumbs -->
-        <nav class="flex text-xs font-medium text-slate-400 mb-6" aria-label="Breadcrumb">
-            <ol class="inline-flex items-center space-x-1 sm:space-x-2">
+        <nav class="text-xs font-medium text-slate-400 mb-6 overflow-x-auto custom-scrollbar pb-1" aria-label="Breadcrumb">
+            <ol class="inline-flex flex-wrap items-center gap-1 sm:gap-2">
                 <li><a href="../index.html" class="hover:text-sky-400 flex items-center gap-1"><i data-lucide="home" class="w-3.5 h-3.5"></i> Início</a></li>
                 <li><span class="text-slate-600">/</span></li>
                 <li><a href="../provas.html" class="hover:text-sky-400 flex items-center gap-1"><i data-lucide="archive" class="w-3.5 h-3.5"></i> Provas</a></li>
                 <li><span class="text-slate-600">/</span></li>
                 <li><a href="./index.html" class="hover:text-sky-400">Bloco 5: Provas Anteriores IFSC</a></li>
                 <li><span class="text-slate-600">/</span></li>
-                <li class="text-slate-200 font-semibold truncate max-w-xs sm:max-w-none">Prova IFSC 2022.2</li>
+                <li class="text-slate-200 font-semibold truncate max-w-[200px] sm:max-w-none">Prova IFSC 2022.2</li>
             </ol>
         </nav>
 
@@ -143,18 +217,18 @@
             <div class="lg:col-span-3 space-y-8">
                 
                 <!-- Cabeçalho do Exame -->
-                <div class="bg-slate-900/90 border border-slate-800 rounded-3xl p-6 sm:p-8 shadow-xl text-slate-100">
+                <div class="bg-slate-900/90 border border-slate-800 rounded-3xl p-4 sm:p-8 shadow-xl text-slate-100">
                     <div class="flex flex-wrap items-center justify-between gap-3 mb-4">
                         <span class="text-xs font-bold uppercase tracking-wider text-sky-300 bg-blue-950/80 px-3 py-1 rounded-full border border-blue-800/60">
                             BNCC: Revisão Geral
                         </span>
-                        <div class="flex items-center gap-2">
+                        <div class="flex flex-wrap items-center gap-2">
                             
-                        <a href="https://drive.google.com/file/d/1KUcKzu18MkLOEcyniCQY0Y7ZF95YETh-/view?usp=drive_web" target="_blank" rel="noopener noreferrer" class="bg-blue-600 hover:bg-blue-500 text-white font-bold px-4 py-2 rounded-xl text-sm transition flex items-center gap-2 shadow-lg shadow-blue-600/25" title="Abrir Caderno Oficial no Google Drive (Visualizar ou Baixar)">
+                        <a href="https://drive.google.com/file/d/1KUcKzu18MkLOEcyniCQY0Y7ZF95YETh-/view?usp=drive_web" target="_blank" rel="noopener noreferrer" class="bg-blue-600 hover:bg-blue-500 text-white font-bold px-3 sm:px-4 py-2 rounded-xl text-xs sm:text-sm transition flex items-center gap-1.5 sm:gap-2 shadow-lg shadow-blue-600/25" title="Abrir Caderno Oficial no Google Drive (Visualizar ou Baixar)">
                             <i data-lucide="external-link" class="w-4 h-4"></i> Caderno Oficial no Drive
                         </a>
                     
-                            <button id="btn-toggle-done-ifsc-2022-2-matematica" onclick="toggleTopicDone('ifsc-2022-2-matematica')" class="px-4 py-2 rounded-xl text-sm font-semibold border bg-slate-900 text-slate-300 border-slate-700 hover:bg-slate-800 transition flex items-center gap-2 shadow-sm">
+                            <button id="btn-toggle-done-ifsc-2022-2-matematica" onclick="toggleTopicDone('ifsc-2022-2-matematica')" class="px-3 sm:px-4 py-2 rounded-xl text-xs sm:text-sm font-semibold border bg-slate-900 text-slate-300 border-slate-700 hover:bg-slate-800 transition flex items-center gap-1.5 sm:gap-2 shadow-sm">
                                 <i data-lucide="square" class="w-4 h-4 text-slate-500"></i> Marcar como Concluída
                             </button>
                         </div>
@@ -244,7 +318,7 @@
                     
                         <div class="mb-8 border-b border-slate-800/80 pb-6 last:border-0 last:pb-0" id="q-container-ifsc-2022-2-matematica-q0">
                             <div class="flex items-center justify-between mb-3 flex-wrap gap-2">
-                                <div class="flex items-center gap-2">
+                                <div class="flex flex-wrap items-center gap-2">
                                     <span class="text-xs font-bold uppercase tracking-wider text-sky-300 bg-blue-950/60 px-2.5 py-0.5 rounded-full border border-blue-800/40">Questão 1</span>
                                     
                             <a href="../pesquisa.html?bncc=EF09MA09" class="text-[11px] font-mono font-bold text-emerald-300 bg-emerald-950/80 hover:bg-emerald-900/90 px-2.5 py-0.5 rounded-full border border-emerald-800/60 flex items-center gap-1 transition shadow-sm" title="Compreender os processos de fatoração de expressões algébricas, com base em suas relações com os produtos notáveis, para resolver e elaborar problemas que possam ser representados por equações polinomiais do 2º grau.">
@@ -253,15 +327,11 @@
                         
                                 </div>
                             </div>
-                            <p class="font-medium text-slate-100 mb-4 text-sm sm:text-base leading-relaxed">*(Questão adaptada do IFSC 2022.2)* Considerando as propriedades dos produtos notáveis válidas para quaisquer números reais $x$ e $y$, analise as igualdades a seguir:
-
-$I. (x - y)^2 = x^2 - y^2$
+                            <div class="q-text-container"><p class="q-paragraph font-medium text-slate-200 text-sm sm:text-base">*(Questão adaptada do IFSC 2022.2)* Considerando as propriedades dos produtos notáveis válidas para quaisquer números reais $x$ e $y$, analise as igualdades a seguir:</p><p class="q-paragraph font-medium text-slate-200 text-sm sm:text-base">$I. (x - y)^2 = x^2 - y^2$
 $II. (x - y)^2 = x^2 - 2xy + y^2$
 $III. (x - y)^2 = x^2 + y^2$
 $IV. (x + y)^2 = x^2 + y^2$
-$V. (x + y)^2 = x^2 + 2xy + y^2$
-
-Assinale a alternativa que indica quais expressões são verdadeiras como identidades algébricas para quaisquer $x, y \in \mathbb{R}$.</p>
+$V. (x + y)^2 = x^2 + 2xy + y^2$</p><p class="q-prompt text-slate-100 text-sm sm:text-base">Assinale a alternativa que indica quais expressões são verdadeiras como identidades algébricas para quaisquer $x, y \in \mathbb{R}$.</p></div>
                             
                             <div class="space-y-2 mb-4" id="opts-ifsc-2022-2-matematica-q0">
                                 
@@ -316,7 +386,7 @@ Assinale a alternativa que indica quais expressões são verdadeiras como identi
                     
                         <div class="mb-8 border-b border-slate-800/80 pb-6 last:border-0 last:pb-0" id="q-container-ifsc-2022-2-matematica-q1">
                             <div class="flex items-center justify-between mb-3 flex-wrap gap-2">
-                                <div class="flex items-center gap-2">
+                                <div class="flex flex-wrap items-center gap-2">
                                     <span class="text-xs font-bold uppercase tracking-wider text-sky-300 bg-blue-950/60 px-2.5 py-0.5 rounded-full border border-blue-800/40">Questão 2</span>
                                     
                             <a href="../pesquisa.html?bncc=EF09MA13" class="text-[11px] font-mono font-bold text-emerald-300 bg-emerald-950/80 hover:bg-emerald-900/90 px-2.5 py-0.5 rounded-full border border-emerald-800/60 flex items-center gap-1 transition shadow-sm" title="Demonstrar relações métricas do triângulo retângulo, entre elas o teorema de Pitágoras, utilizando, inclusive, a semelhança de triângulos.">
@@ -325,9 +395,7 @@ Assinale a alternativa que indica quais expressões são verdadeiras como identi
                         
                                 </div>
                             </div>
-                            <p class="font-medium text-slate-100 mb-4 text-sm sm:text-base leading-relaxed">Calcule a altura da Torre Eiffel, considerando as informações apresentadas na figura:
-
-Assinale a alternativa CORRETA.</p>
+                            <div class="q-text-container"><p class="q-paragraph font-medium text-slate-200 text-sm sm:text-base">Calcule a altura da Torre Eiffel, considerando as informações apresentadas na figura:</p><p class="q-prompt text-slate-100 text-sm sm:text-base">Assinale a alternativa CORRETA.</p></div>
                             
         <div class="my-4 p-2 sm:p-3 rounded-2xl border bg-slate-950/70 border-slate-800 shadow-sm max-w-xl mx-auto flex flex-col items-center">
             <img src="https://lh3.googleusercontent.com/d/1iTd80Tx4jTvlUO7OTg32P2DmbGgerQai" alt="Ilustração da Torre Eiffel com um triângulo retângulo associado, indicando base de 324 metros e ângulo de 45 graus no vértice inferior direito." onerror="if(this.src!='../assets/img/questoes/ifsc/ifsc-2022-2-q02.png'){this.src='../assets/img/questoes/ifsc/ifsc-2022-2-q02.png';}" class="max-h-80 sm:max-h-96 w-auto max-w-full rounded-xl object-contain cursor-zoom-in hover:opacity-95 hover:scale-[1.01] transition duration-200" onclick="openImageModal('https://lh3.googleusercontent.com/d/1iTd80Tx4jTvlUO7OTg32P2DmbGgerQai', 'Ilustração da Torre Eiffel com um triângulo retângulo associado, indicando base de 324 metros e ângulo de 45 graus no vértice inferior direito.')" title="Clique para ampliar a imagem" loading="lazy">
@@ -387,7 +455,7 @@ Assinale a alternativa CORRETA.</p>
                     
                         <div class="mb-8 border-b border-slate-800/80 pb-6 last:border-0 last:pb-0" id="q-container-ifsc-2022-2-matematica-q2">
                             <div class="flex items-center justify-between mb-3 flex-wrap gap-2">
-                                <div class="flex items-center gap-2">
+                                <div class="flex flex-wrap items-center gap-2">
                                     <span class="text-xs font-bold uppercase tracking-wider text-sky-300 bg-blue-950/60 px-2.5 py-0.5 rounded-full border border-blue-800/40">Questão 3</span>
                                     
                             <a href="../pesquisa.html?bncc=EF07MA02" class="text-[11px] font-mono font-bold text-emerald-300 bg-emerald-950/80 hover:bg-emerald-900/90 px-2.5 py-0.5 rounded-full border border-emerald-800/60 flex items-center gap-1 transition shadow-sm" title="Resolver e elaborar problemas que envolvam porcentagens, como os que lidam com acréscimos e decréscimos simples, utilizando estratégias pessoais, cálculo mental e calculadora, no contexto de educação financeira, entre outros.">
@@ -396,9 +464,7 @@ Assinale a alternativa CORRETA.</p>
                         
                                 </div>
                             </div>
-                            <p class="font-medium text-slate-100 mb-4 text-sm sm:text-base leading-relaxed">A COVID-19 é uma doença infecciosa causada pelo coronavírus SARS-CoV-2 e que tem causado muitos problemas para a população em geral. Para reduzir os efeitos, os governos do mundo todo têm disponibilizado vacinas e diariamente é possível acompanhar os índices de vacinação da população. Segundo o Instituto Brasileiro de Geografia e Estatística (IBGE), a população vacinável em Santa Catarina é de $6.765.914$ pessoas. Em um determinado dia do mês de abril de 2022, foi informado que a população vacinada com a terceira dose, também conhecida como dose de reforço, foi de $2.430.329$. Dessa forma, a porcentagem de vacinados com a terceira dose, neste dia, foi de aproximadamente:
-
-Assinale a alternativa CORRETA.</p>
+                            <div class="q-text-container"><p class="q-paragraph font-medium text-slate-200 text-sm sm:text-base">A COVID-19 é uma doença infecciosa causada pelo coronavírus SARS-CoV-2 e que tem causado muitos problemas para a população em geral. Para reduzir os efeitos, os governos do mundo todo têm disponibilizado vacinas e diariamente é possível acompanhar os índices de vacinação da população. Segundo o Instituto Brasileiro de Geografia e Estatística (IBGE), a população vacinável em Santa Catarina é de $6.765.914$ pessoas. Em um determinado dia do mês de abril de 2022, foi informado que a população vacinada com a terceira dose, também conhecida como dose de reforço, foi de $2.430.329$. Dessa forma, a porcentagem de vacinados com a terceira dose, neste dia, foi de aproximadamente:</p><p class="q-prompt text-slate-100 text-sm sm:text-base">Assinale a alternativa CORRETA.</p></div>
                             
                             <div class="space-y-2 mb-4" id="opts-ifsc-2022-2-matematica-q2">
                                 
@@ -453,7 +519,7 @@ Assinale a alternativa CORRETA.</p>
                     
                         <div class="mb-8 border-b border-slate-800/80 pb-6 last:border-0 last:pb-0" id="q-container-ifsc-2022-2-matematica-q3">
                             <div class="flex items-center justify-between mb-3 flex-wrap gap-2">
-                                <div class="flex items-center gap-2">
+                                <div class="flex flex-wrap items-center gap-2">
                                     <span class="text-xs font-bold uppercase tracking-wider text-sky-300 bg-blue-950/60 px-2.5 py-0.5 rounded-full border border-blue-800/40">Questão 4</span>
                                     
                             <a href="../pesquisa.html?bncc=EF08MA08" class="text-[11px] font-mono font-bold text-emerald-300 bg-emerald-950/80 hover:bg-emerald-900/90 px-2.5 py-0.5 rounded-full border border-emerald-800/60 flex items-center gap-1 transition shadow-sm" title="Resolver e elaborar problemas relacionados ao seu contexto próximo, que possam ser representados por sistemas de equações de 1º grau com duas incógnitas, utilizando diferentes métodos.">
@@ -462,9 +528,7 @@ Assinale a alternativa CORRETA.</p>
                         
                                 </div>
                             </div>
-                            <p class="font-medium text-slate-100 mb-4 text-sm sm:text-base leading-relaxed">Uma microempreendedora comprou $100$ toalhas de dois tamanhos diferentes, médio e grande, para iniciar seu pequeno negócio na área de vendas. Ela investiu $\text{R\$} 5.480{,}00$ nesta compra. Cada toalha de tamanho médio custou $\text{R\$} 50{,}00$, e cada unidade de toalha grande custou $\text{R\$} 60{,}00$. Quantas toalhas de tamanho médio e grande, respectivamente, ela comprou?
-
-Assinale a alternativa CORRETA.</p>
+                            <div class="q-text-container"><p class="q-paragraph font-medium text-slate-200 text-sm sm:text-base">Uma microempreendedora comprou $100$ toalhas de dois tamanhos diferentes, médio e grande, para iniciar seu pequeno negócio na área de vendas. Ela investiu $\text{R\$} 5.480{,}00$ nesta compra. Cada toalha de tamanho médio custou $\text{R\$} 50{,}00$, e cada unidade de toalha grande custou $\text{R\$} 60{,}00$. Quantas toalhas de tamanho médio e grande, respectivamente, ela comprou?</p><p class="q-prompt text-slate-100 text-sm sm:text-base">Assinale a alternativa CORRETA.</p></div>
                             
                             <div class="space-y-2 mb-4" id="opts-ifsc-2022-2-matematica-q3">
                                 
@@ -519,7 +583,7 @@ Assinale a alternativa CORRETA.</p>
                     
                         <div class="mb-8 border-b border-slate-800/80 pb-6 last:border-0 last:pb-0" id="q-container-ifsc-2022-2-matematica-q4">
                             <div class="flex items-center justify-between mb-3 flex-wrap gap-2">
-                                <div class="flex items-center gap-2">
+                                <div class="flex flex-wrap items-center gap-2">
                                     <span class="text-xs font-bold uppercase tracking-wider text-sky-300 bg-blue-950/60 px-2.5 py-0.5 rounded-full border border-blue-800/40">Questão 5</span>
                                     
                             <a href="../pesquisa.html?bncc=EF07MA17" class="text-[11px] font-mono font-bold text-emerald-300 bg-emerald-950/80 hover:bg-emerald-900/90 px-2.5 py-0.5 rounded-full border border-emerald-800/60 flex items-center gap-1 transition shadow-sm" title="Resolver e elaborar problemas que envolvam variação de proporcionalidade direta e do tipo inversa entre duas grandezas, utilizando sentença algébrica para expressar a relação entre elas.">
@@ -528,9 +592,7 @@ Assinale a alternativa CORRETA.</p>
                         
                                 </div>
                             </div>
-                            <p class="font-medium text-slate-100 mb-4 text-sm sm:text-base leading-relaxed">Dois trabalhadores realizam um determinado serviço em $9$ dias, recebendo o valor de $\text{R\$} 10.000{,}00$. Quanto receberão pelo mesmo serviço, se trabalharem $15$ dias e contratarem um ajudante com a mesma capacidade de trabalho?
-
-Assinale a alternativa CORRETA.</p>
+                            <div class="q-text-container"><p class="q-paragraph font-medium text-slate-200 text-sm sm:text-base">Dois trabalhadores realizam um determinado serviço em $9$ dias, recebendo o valor de $\text{R\$} 10.000{,}00$. Quanto receberão pelo mesmo serviço, se trabalharem $15$ dias e contratarem um ajudante com a mesma capacidade de trabalho?</p><p class="q-prompt text-slate-100 text-sm sm:text-base">Assinale a alternativa CORRETA.</p></div>
                             
                             <div class="space-y-2 mb-4" id="opts-ifsc-2022-2-matematica-q4">
                                 
@@ -585,7 +647,7 @@ Assinale a alternativa CORRETA.</p>
                     
                         <div class="mb-8 border-b border-slate-800/80 pb-6 last:border-0 last:pb-0" id="q-container-ifsc-2022-2-matematica-q5">
                             <div class="flex items-center justify-between mb-3 flex-wrap gap-2">
-                                <div class="flex items-center gap-2">
+                                <div class="flex flex-wrap items-center gap-2">
                                     <span class="text-xs font-bold uppercase tracking-wider text-sky-300 bg-blue-950/60 px-2.5 py-0.5 rounded-full border border-blue-800/40">Questão 6</span>
                                     
                             <a href="../pesquisa.html?bncc=EF06MA03" class="text-[11px] font-mono font-bold text-emerald-300 bg-emerald-950/80 hover:bg-emerald-900/90 px-2.5 py-0.5 rounded-full border border-emerald-800/60 flex items-center gap-1 transition shadow-sm" title="Resolver e elaborar problemas que envolvam cálculos (adição, subtração, multiplicação, divisão e potenciação) com números naturais, por meio de estratégias variadas, com compreensão dos processos neles envolvidos.">
@@ -594,19 +656,13 @@ Assinale a alternativa CORRETA.</p>
                         
                                 </div>
                             </div>
-                            <p class="font-medium text-slate-100 mb-4 text-sm sm:text-base leading-relaxed">Em uma turma de primeira fase do Curso Técnico Integrado do IFSC há $32$ alunos. A professora de Educação Física realizou uma pesquisa com esses alunos para identificar sua(s) modalidade(s) esportiva(s) preferida(s), dentre vôlei, basquete e futebol. Com a pesquisa, ela descobriu que:
-
-- $6$ alunos gostam somente de vôlei;
+                            <div class="q-text-container"><p class="q-paragraph font-medium text-slate-200 text-sm sm:text-base">Em uma turma de primeira fase do Curso Técnico Integrado do IFSC há $32$ alunos. A professora de Educação Física realizou uma pesquisa com esses alunos para identificar sua(s) modalidade(s) esportiva(s) preferida(s), dentre vôlei, basquete e futebol. Com a pesquisa, ela descobriu que:</p><div class="q-item-card"><span class="text-sky-400 font-bold px-1.5 flex-shrink-0">•</span><span class="flex-1 min-w-0">$6$ alunos gostam somente de vôlei;
 - $10$ alunos gostam somente de futebol;
 - $5$ alunos gostam somente de basquete;
 - $5$ alunos gostam de vôlei e futebol;
 - $6$ alunos gostam de basquete e futebol;
 - $4$ alunos gostam de vôlei e basquete; e
-- $3$ alunos gostam das três modalidades.
-
-Com estas informações, a professora de Educação Física concluiu que a quantidade de alunos que não gosta de nenhuma das três modalidades é:
-
-Assinale a alternativa CORRETA.</p>
+- $3$ alunos gostam das três modalidades.</span></div><p class="q-paragraph font-medium text-slate-200 text-sm sm:text-base">Com estas informações, a professora de Educação Física concluiu que a quantidade de alunos que não gosta de nenhuma das três modalidades é:</p><p class="q-prompt text-slate-100 text-sm sm:text-base">Assinale a alternativa CORRETA.</p></div>
                             
                             <div class="space-y-2 mb-4" id="opts-ifsc-2022-2-matematica-q5">
                                 
@@ -661,7 +717,7 @@ Assinale a alternativa CORRETA.</p>
                     
                         <div class="mb-8 border-b border-slate-800/80 pb-6 last:border-0 last:pb-0" id="q-container-ifsc-2022-2-matematica-q6">
                             <div class="flex items-center justify-between mb-3 flex-wrap gap-2">
-                                <div class="flex items-center gap-2">
+                                <div class="flex flex-wrap items-center gap-2">
                                     <span class="text-xs font-bold uppercase tracking-wider text-sky-300 bg-blue-950/60 px-2.5 py-0.5 rounded-full border border-blue-800/40">Questão 7</span>
                                     
                             <a href="../pesquisa.html?bncc=EF09MA09" class="text-[11px] font-mono font-bold text-emerald-300 bg-emerald-950/80 hover:bg-emerald-900/90 px-2.5 py-0.5 rounded-full border border-emerald-800/60 flex items-center gap-1 transition shadow-sm" title="Compreender os processos de fatoração de expressões algébricas, com base em suas relações com os produtos notáveis, para resolver e elaborar problemas que possam ser representados por equações polinomiais do 2º grau.">
@@ -670,11 +726,7 @@ Assinale a alternativa CORRETA.</p>
                         
                                 </div>
                             </div>
-                            <p class="font-medium text-slate-100 mb-4 text-sm sm:text-base leading-relaxed">A equação abaixo é uma equação quadrática que possui duas raízes reais e distintas, que podem ser representadas por $x_1$ e $x_2$. Assumindo $x_1 > x_2$, assinale a alternativa que apresenta o valor da diferença entre essas raízes, ou seja, $x_1 - x_2$.
-
-Equação: $(x - 4)^2 = x - 4$
-
-Assinale a alternativa CORRETA.</p>
+                            <div class="q-text-container"><p class="q-paragraph font-medium text-slate-200 text-sm sm:text-base">A equação abaixo é uma equação quadrática que possui duas raízes reais e distintas, que podem ser representadas por $x_1$ e $x_2$. Assumindo $x_1 > x_2$, assinale a alternativa que apresenta o valor da diferença entre essas raízes, ou seja, $x_1 - x_2$.</p><p class="q-paragraph font-medium text-slate-200 text-sm sm:text-base">Equação: $(x - 4)^2 = x - 4$</p><p class="q-prompt text-slate-100 text-sm sm:text-base">Assinale a alternativa CORRETA.</p></div>
                             
                             <div class="space-y-2 mb-4" id="opts-ifsc-2022-2-matematica-q6">
                                 
@@ -729,7 +781,7 @@ Assinale a alternativa CORRETA.</p>
                     
                         <div class="mb-8 border-b border-slate-800/80 pb-6 last:border-0 last:pb-0" id="q-container-ifsc-2022-2-matematica-q7">
                             <div class="flex items-center justify-between mb-3 flex-wrap gap-2">
-                                <div class="flex items-center gap-2">
+                                <div class="flex flex-wrap items-center gap-2">
                                     <span class="text-xs font-bold uppercase tracking-wider text-sky-300 bg-blue-950/60 px-2.5 py-0.5 rounded-full border border-blue-800/40">Questão 8</span>
                                     
                             <a href="../pesquisa.html?bncc=EF08MA20" class="text-[11px] font-mono font-bold text-emerald-300 bg-emerald-950/80 hover:bg-emerald-900/90 px-2.5 py-0.5 rounded-full border border-emerald-800/60 flex items-center gap-1 transition shadow-sm" title="Reconhecer a relação entre um litro e um decímetro cúbico e a relação entre litro e metro cúbico, para resolver problemas de cálculo de capacidade de recipientes.">
@@ -738,9 +790,7 @@ Assinale a alternativa CORRETA.</p>
                         
                                 </div>
                             </div>
-                            <p class="font-medium text-slate-100 mb-4 text-sm sm:text-base leading-relaxed">Ao realizar a vistoria em imóveis devido à existência de focos do mosquito da dengue, os fiscais se depararam com uma casa abandonada, na qual havia uma piscina circular de raio igual a $3\text{ metros}$ e de altura igual a $1{,}2\text{ metros}$. Como encontraram larvas do mosquito na água parada dentro da piscina, retirada a água, decidiram chamar um caminhão caçamba com areia para encher a piscina. As dimensões da caçamba eram de $2{,}2\text{ metros}$ de largura, $6{,}3\text{ metros}$ de comprimento, $2{,}5\text{ metros}$ de altura e estava totalmente carregada. Considerando $\pi = 3$, podemos concluir que:
-
-Assinale a alternativa CORRETA.</p>
+                            <div class="q-text-container"><p class="q-paragraph font-medium text-slate-200 text-sm sm:text-base">Ao realizar a vistoria em imóveis devido à existência de focos do mosquito da dengue, os fiscais se depararam com uma casa abandonada, na qual havia uma piscina circular de raio igual a $3\text{ metros}$ e de altura igual a $1{,}2\text{ metros}$. Como encontraram larvas do mosquito na água parada dentro da piscina, retirada a água, decidiram chamar um caminhão caçamba com areia para encher a piscina. As dimensões da caçamba eram de $2{,}2\text{ metros}$ de largura, $6{,}3\text{ metros}$ de comprimento, $2{,}5\text{ metros}$ de altura e estava totalmente carregada. Considerando $\pi = 3$, podemos concluir que:</p><p class="q-prompt text-slate-100 text-sm sm:text-base">Assinale a alternativa CORRETA.</p></div>
                             
                             <div class="space-y-2 mb-4" id="opts-ifsc-2022-2-matematica-q7">
                                 
@@ -795,7 +845,7 @@ Assinale a alternativa CORRETA.</p>
                     
                         <div class="mb-8 border-b border-slate-800/80 pb-6 last:border-0 last:pb-0" id="q-container-ifsc-2022-2-matematica-q8">
                             <div class="flex items-center justify-between mb-3 flex-wrap gap-2">
-                                <div class="flex items-center gap-2">
+                                <div class="flex flex-wrap items-center gap-2">
                                     <span class="text-xs font-bold uppercase tracking-wider text-sky-300 bg-blue-950/60 px-2.5 py-0.5 rounded-full border border-blue-800/40">Questão 9</span>
                                     
                             <a href="../pesquisa.html?bncc=EF09MA09" class="text-[11px] font-mono font-bold text-emerald-300 bg-emerald-950/80 hover:bg-emerald-900/90 px-2.5 py-0.5 rounded-full border border-emerald-800/60 flex items-center gap-1 transition shadow-sm" title="Compreender os processos de fatoração de expressões algébricas, com base em suas relações com os produtos notáveis, para resolver e elaborar problemas que possam ser representados por equações polinomiais do 2º grau.">
@@ -804,8 +854,8 @@ Assinale a alternativa CORRETA.</p>
                         
                                 </div>
                             </div>
-                            <p class="font-medium text-slate-100 mb-4 text-sm sm:text-base leading-relaxed">*(Questão adaptada do IFSC 2022.2)* Resolva a desigualdade nos números reais e assinale a alternativa que representa o conjunto solução da inequação:
-$$(x + 5)(x - 1)(x - 2) > 0$$</p>
+                            <div class="q-text-container"><p class="q-paragraph font-medium text-slate-100 text-sm sm:text-base leading-relaxed">*(Questão adaptada do IFSC 2022.2)* Resolva a desigualdade nos números reais e assinale a alternativa que representa o conjunto solução da inequação:
+$$(x + 5)(x - 1)(x - 2) > 0$$</p></div>
                             
                             <div class="space-y-2 mb-4" id="opts-ifsc-2022-2-matematica-q8">
                                 
@@ -860,7 +910,7 @@ $$(x + 5)(x - 1)(x - 2) > 0$$</p>
                     
                         <div class="mb-8 border-b border-slate-800/80 pb-6 last:border-0 last:pb-0" id="q-container-ifsc-2022-2-matematica-q9">
                             <div class="flex items-center justify-between mb-3 flex-wrap gap-2">
-                                <div class="flex items-center gap-2">
+                                <div class="flex flex-wrap items-center gap-2">
                                     <span class="text-xs font-bold uppercase tracking-wider text-sky-300 bg-blue-950/60 px-2.5 py-0.5 rounded-full border border-blue-800/40">Questão 10</span>
                                     
                             <a href="../pesquisa.html?bncc=EF07MA18" class="text-[11px] font-mono font-bold text-emerald-300 bg-emerald-950/80 hover:bg-emerald-900/90 px-2.5 py-0.5 rounded-full border border-emerald-800/60 flex items-center gap-1 transition shadow-sm" title="Resolver e elaborar problemas que possam ser representados por equações polinomiais de 1º grau, redutíveis à forma ax + b = c, fazendo uso das propriedades da igualdade.">
@@ -869,9 +919,7 @@ $$(x + 5)(x - 1)(x - 2) > 0$$</p>
                         
                                 </div>
                             </div>
-                            <p class="font-medium text-slate-100 mb-4 text-sm sm:text-base leading-relaxed">Uma empresa de transporte rodoviário oferece a linha São Miguel do Oeste/Florianópolis. Essa linha inicia em São Miguel do Oeste e termina em Florianópolis, fazendo paradas em Chapecó, Concórdia e Lages. Certo dia, o motorista responsável pela linha contou $P$ passageiros embarcados em São Miguel do Oeste. Chegando a Chapecó, um terço dos passageiros que estava no ônibus desembarcou, e $6$ novos passageiros embarcaram. Em Concórdia, novamente um terço dos passageiros que estava no ônibus naquele momento desembarcou, e $5$ novos passageiros embarcaram. Em Lages, dois quintos dos passageiros que estavam no ônibus naquele momento desembarcaram, e $4$ novos passageiros embarcaram. Ao chegar a Florianópolis, todos os passageiros que estavam no ônibus desembarcaram, pois era o ponto final da linha. Se o motorista contou $19$ passageiros desembarcando em Florianópolis, assinale a alternativa que apresenta a quantidade $P$ de passageiros que embarcaram em São Miguel do Oeste.
-
-Assinale a alternativa CORRETA.</p>
+                            <div class="q-text-container"><p class="q-paragraph font-medium text-slate-200 text-sm sm:text-base">Uma empresa de transporte rodoviário oferece a linha São Miguel do Oeste/Florianópolis. Essa linha inicia em São Miguel do Oeste e termina em Florianópolis, fazendo paradas em Chapecó, Concórdia e Lages. Certo dia, o motorista responsável pela linha contou $P$ passageiros embarcados em São Miguel do Oeste. Chegando a Chapecó, um terço dos passageiros que estava no ônibus desembarcou, e $6$ novos passageiros embarcaram. Em Concórdia, novamente um terço dos passageiros que estava no ônibus naquele momento desembarcou, e $5$ novos passageiros embarcaram. Em Lages, dois quintos dos passageiros que estavam no ônibus naquele momento desembarcaram, e $4$ novos passageiros embarcaram. Ao chegar a Florianópolis, todos os passageiros que estavam no ônibus desembarcaram, pois era o ponto final da linha. Se o motorista contou $19$ passageiros desembarcando em Florianópolis, assinale a alternativa que apresenta a quantidade $P$ de passageiros que embarcaram em São Miguel do Oeste.</p><p class="q-prompt text-slate-100 text-sm sm:text-base">Assinale a alternativa CORRETA.</p></div>
                             
                             <div class="space-y-2 mb-4" id="opts-ifsc-2022-2-matematica-q9">
                                 

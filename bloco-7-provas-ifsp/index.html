@@ -49,85 +49,159 @@
 
     <!-- Header / Navbar da Área de Provas (Parte 2 - Escuro-Azul) -->
     <header class="gradient-header-dark text-white shadow-xl sticky top-0 z-50 border-b border-slate-800">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="max-w-7xl mx-auto px-3 sm:px-6 lg:px-8">
             <div class="flex items-center justify-between h-16">
                 <!-- Logo Provas -->
-                <a href="../provas.html" class="flex items-center space-x-3 group">
-                    <div class="bg-blue-600 p-2 rounded-xl text-white font-bold shadow-md shadow-blue-500/20 flex items-center justify-center group-hover:scale-105 transition">
-                        <i data-lucide="file-check" class="w-6 h-6"></i>
+                <a href="../provas.html" class="flex items-center space-x-2 sm:space-x-3 group min-w-0 flex-shrink-0">
+                    <div class="bg-blue-600 p-1.5 sm:p-2 rounded-xl text-white font-bold shadow-md shadow-blue-500/20 flex items-center justify-center group-hover:scale-105 transition">
+                        <i data-lucide="file-check" class="w-5 h-5 sm:w-6 sm:h-6"></i>
                     </div>
-                    <div>
-                        <span class="font-extrabold text-xl tracking-tight text-white flex items-center gap-1.5">
+                    <div class="min-w-0">
+                        <span class="font-extrabold text-lg sm:text-xl tracking-tight text-white flex items-center gap-1 sm:gap-1.5">
                             Partiu<span class="text-sky-400">IF</span>
-                            <span class="text-[10px] font-bold uppercase tracking-wider bg-blue-500/30 text-sky-200 border border-blue-400/30 px-2 py-0.5 rounded-full">Provas</span>
+                            <span class="text-[9px] sm:text-[10px] font-bold uppercase tracking-wider bg-blue-500/30 text-sky-200 border border-blue-400/30 px-1.5 sm:px-2 py-0.5 rounded-full">Provas</span>
                         </span>
-                        <p class="text-xs text-slate-400 hidden sm:flex items-center gap-1">
+                        <p class="text-xs text-slate-400 hidden xl:flex items-center gap-1">
                             <i data-lucide="archive" class="w-3 h-3 text-sky-400"></i> Acervo Oficial com PDFs e Gabarito
                         </p>
                     </div>
                 </a>
 
                 <!-- Navegação Desktop -->
-                <nav class="hidden md:flex space-x-1 items-center">
+                <nav class="hidden lg:flex space-x-1.5 items-center">
                     <a href="../provas.html" class="px-3 py-2 rounded-lg text-sm transition flex items-center gap-1.5 text-slate-300 hover:bg-slate-800 hover:text-white">
-                <i data-lucide="layout-grid" class="w-4 h-4"></i> Todas as Provas
-            </a><a href="../pesquisa.html" class="px-3 py-2 rounded-lg text-sm transition flex items-center gap-1.5 text-slate-300 hover:bg-slate-800 hover:text-white">
-                <i data-lucide="search" class="w-4 h-4"></i> Pesquisa BNCC
-            </a><a href="../bloco-6-provas-ifce/index.html" class="px-3 py-2 rounded-lg text-sm transition flex items-center gap-1.5 text-slate-300 hover:bg-slate-800 hover:text-white">
-                <i data-lucide="award" class="w-4 h-4"></i> Provas IFCE (27)
-            </a><a href="../bloco-5-provas-ifsc/index.html" class="px-3 py-2 rounded-lg text-sm transition flex items-center gap-1.5 text-slate-300 hover:bg-slate-800 hover:text-white">
-                <i data-lucide="award" class="w-4 h-4"></i> Provas IFSC (16)
-            </a><a href="../bloco-7-provas-ifsp/index.html" class="px-3 py-2 rounded-lg text-sm transition flex items-center gap-1.5 bg-blue-600 text-white font-semibold shadow-inner">
-                <i data-lucide="award" class="w-4 h-4"></i> Provas IFSP (8)
-            </a><a href="../bloco-8-provas-ifmg/index.html" class="px-3 py-2 rounded-lg text-sm transition flex items-center gap-1.5 text-slate-300 hover:bg-slate-800 hover:text-white">
-                <i data-lucide="award" class="w-4 h-4"></i> Provas IFMG (11)
+                        <i data-lucide="layout-grid" class="w-4 h-4 text-sky-400"></i> Todas as Provas
+                    </a>
+
+                    <!-- Dropdown de Instituições -->
+                    <div class="relative" id="dropdown-instituicoes-container">
+                        <button id="btn-dropdown-instituicoes" class="px-3 py-2 rounded-lg text-sm transition flex items-center gap-1.5 bg-blue-600/90 text-white font-semibold shadow-inner border border-blue-400/40" aria-haspopup="true" aria-expanded="false" title="Filtrar por Instituto Federal">
+                            <i data-lucide="building-2" class="w-4 h-4 text-sky-400"></i>
+                            <span>Instituições</span>
+                            <span class="bg-blue-500/40 text-sky-200 border border-blue-400/40 text-[10px] font-bold px-1.5 py-0.5 rounded-full">IFSP</span>
+                            <i data-lucide="chevron-down" id="chevron-instituicoes" class="w-3.5 h-3.5 text-slate-400 transition-transform duration-200"></i>
+                        </button>
+
+                        <div id="dropdown-instituicoes-menu" class="hidden absolute left-0 mt-2 w-64 bg-slate-900/95 border border-slate-700/80 rounded-2xl shadow-2xl p-1.5 z-50 backdrop-blur-xl">
+                            <div class="px-3 py-1.5 text-[10px] font-bold uppercase tracking-wider text-slate-400 border-b border-slate-800/80 flex items-center justify-between">
+                                <span>Institutos Federais</span>
+                                <span class="text-sky-400 font-bold">62 Provas</span>
+                            </div>
+                            <div class="space-y-1 py-1">
+                                <a href="../bloco-6-provas-ifce/index.html" class="flex items-center justify-between px-3 py-2 rounded-xl text-xs transition text-slate-300 hover:bg-slate-800/80 hover:text-white">
+                <div class="flex items-center gap-2.5">
+                    <span class="w-2 h-2 rounded-full bg-slate-700"></span>
+                    <div>
+                        <div class="font-bold text-slate-100">IFCE <span class="text-slate-400 font-normal">(Ceará)</span></div>
+                        <div class="text-[10px] text-slate-400">27 provas cadastradas</div>
+                    </div>
+                </div>
+                <i data-lucide="chevron-right" class="w-3.5 h-3.5 text-slate-500"></i>
+            </a><a href="../bloco-5-provas-ifsc/index.html" class="flex items-center justify-between px-3 py-2 rounded-xl text-xs transition text-slate-300 hover:bg-slate-800/80 hover:text-white">
+                <div class="flex items-center gap-2.5">
+                    <span class="w-2 h-2 rounded-full bg-slate-700"></span>
+                    <div>
+                        <div class="font-bold text-slate-100">IFSC <span class="text-slate-400 font-normal">(Santa Catarina)</span></div>
+                        <div class="text-[10px] text-slate-400">16 provas cadastradas</div>
+                    </div>
+                </div>
+                <i data-lucide="chevron-right" class="w-3.5 h-3.5 text-slate-500"></i>
+            </a><a href="../bloco-7-provas-ifsp/index.html" class="flex items-center justify-between px-3 py-2 rounded-xl text-xs transition bg-blue-600/25 text-sky-200 font-semibold border-l-2 border-blue-400">
+                <div class="flex items-center gap-2.5">
+                    <span class="w-2 h-2 rounded-full bg-sky-400 animate-pulse"></span>
+                    <div>
+                        <div class="font-bold text-slate-100">IFSP <span class="text-slate-400 font-normal">(São Paulo)</span></div>
+                        <div class="text-[10px] text-slate-400">8 provas cadastradas</div>
+                    </div>
+                </div>
+                <i data-lucide="chevron-right" class="w-3.5 h-3.5 text-slate-500"></i>
+            </a><a href="../bloco-8-provas-ifmg/index.html" class="flex items-center justify-between px-3 py-2 rounded-xl text-xs transition text-slate-300 hover:bg-slate-800/80 hover:text-white">
+                <div class="flex items-center gap-2.5">
+                    <span class="w-2 h-2 rounded-full bg-slate-700"></span>
+                    <div>
+                        <div class="font-bold text-slate-100">IFMG <span class="text-slate-400 font-normal">(Minas Gerais)</span></div>
+                        <div class="text-[10px] text-slate-400">11 provas cadastradas</div>
+                    </div>
+                </div>
+                <i data-lucide="chevron-right" class="w-3.5 h-3.5 text-slate-500"></i>
             </a>
+                            </div>
+                            <div class="pt-1 border-t border-slate-800/80">
+                                <a href="../provas.html" class="flex items-center justify-between px-3 py-1.5 text-[11px] font-semibold text-sky-400 hover:bg-slate-800/80 rounded-xl transition">
+                                    <span>Ver matriz geral de provas</span>
+                                    <i data-lucide="arrow-right" class="w-3 h-3"></i>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <a href="../pesquisa.html" class="px-3 py-2 rounded-lg text-sm transition flex items-center gap-1.5 text-slate-300 hover:bg-slate-800 hover:text-white" title="Pesquisar questões por descritor BNCC">
+                        <i data-lucide="search" class="w-4 h-4 text-emerald-400"></i> Pesquisa BNCC
+                    </a>
                 </nav>
 
                 <!-- Ações do Usuário -->
-                <div class="flex items-center gap-2 sm:gap-3">
-                    <a href="../index.html" class="bg-slate-800/90 hover:bg-slate-700 text-slate-200 border border-slate-700 px-3.5 py-1.5 rounded-lg text-xs sm:text-sm font-semibold transition flex items-center gap-1.5 shadow-sm" title="Retornar à Teoria e Eixos Temáticos">
-                        <i data-lucide="arrow-left" class="w-4 h-4 text-emerald-400"></i> <span class="hidden sm:inline">Voltar para </span>Teoria
+                <div class="flex items-center gap-1.5 sm:gap-2.5 flex-shrink-0">
+                    <a href="../index.html" class="bg-slate-800/90 hover:bg-slate-700 text-slate-200 border border-slate-700 p-2 sm:px-3.5 sm:py-1.5 rounded-lg text-xs sm:text-sm font-semibold transition flex items-center gap-1.5 shadow-sm" title="Retornar à Teoria e Eixos Temáticos">
+                        <i data-lucide="arrow-left" class="w-4 h-4 text-emerald-400"></i>
+                        <span class="hidden sm:inline xl:hidden">Teoria</span>
+                        <span class="hidden xl:inline">Voltar para Teoria</span>
                     </a>
-                    <a href="../simulado.html" class="bg-blue-600 hover:bg-blue-500 text-white font-semibold px-3.5 py-1.5 rounded-lg text-xs sm:text-sm transition flex items-center gap-1.5 shadow">
-                        <i data-lucide="award" class="w-4 h-4"></i> Simulado
+                    <a href="../simulado.html" class="bg-blue-600 hover:bg-blue-500 text-white font-semibold p-2 sm:px-3.5 sm:py-1.5 rounded-lg text-xs sm:text-sm transition flex items-center gap-1.5 shadow" title="Simulado IF">
+                        <i data-lucide="award" class="w-4 h-4"></i>
+                        <span class="hidden sm:inline">Simulado</span>
                     </a>
-                    <button id="mobile-menu-btn" class="md:hidden p-2 rounded-lg text-slate-300 hover:text-white hover:bg-slate-800" aria-label="Abrir menu">
-                        <i data-lucide="menu" class="w-6 h-6"></i>
+                    <button id="mobile-menu-btn" class="lg:hidden p-2 rounded-lg text-slate-300 hover:text-white hover:bg-slate-800 transition" aria-label="Abrir menu">
+                        <i data-lucide="menu" class="w-5 h-5 sm:w-6 sm:h-6"></i>
                     </button>
                 </div>
             </div>
         </div>
 
         <!-- Menu Mobile -->
-        <div id="mobile-menu" class="hidden md:hidden bg-slate-950 border-t border-slate-800 px-4 pt-2 pb-4 space-y-1">
-            <a href="../provas.html" class="block px-3 py-2 rounded-md text-base font-medium text-white flex items-center gap-2 hover:bg-slate-800">
-                <i data-lucide="layout-grid" class="w-4 h-4"></i> Todas as Provas
-            </a><a href="../pesquisa.html" class="block px-3 py-2 rounded-md text-base font-medium text-white flex items-center gap-2 hover:bg-slate-800">
-                <i data-lucide="search" class="w-4 h-4"></i> Pesquisa BNCC
-            </a><a href="../bloco-6-provas-ifce/index.html" class="block px-3 py-2 rounded-md text-base font-medium text-white flex items-center gap-2 hover:bg-slate-800">
-                <i data-lucide="award" class="w-4 h-4"></i> Provas IFCE (27)
-            </a><a href="../bloco-5-provas-ifsc/index.html" class="block px-3 py-2 rounded-md text-base font-medium text-white flex items-center gap-2 hover:bg-slate-800">
-                <i data-lucide="award" class="w-4 h-4"></i> Provas IFSC (16)
-            </a><a href="../bloco-7-provas-ifsp/index.html" class="block px-3 py-2 rounded-md text-base font-medium text-white flex items-center gap-2 bg-blue-600 font-bold">
-                <i data-lucide="award" class="w-4 h-4"></i> Provas IFSP (8)
-            </a><a href="../bloco-8-provas-ifmg/index.html" class="block px-3 py-2 rounded-md text-base font-medium text-white flex items-center gap-2 hover:bg-slate-800">
-                <i data-lucide="award" class="w-4 h-4"></i> Provas IFMG (11)
+        <div id="mobile-menu" class="hidden lg:hidden bg-slate-950 border-t border-slate-800 px-4 pt-2 pb-4 space-y-1">
+            <a href="../provas.html" class="block px-3 py-2 rounded-md text-base font-medium text-white flex items-center justify-between gap-2 hover:bg-slate-800">
+                <span class="flex items-center gap-2"><i data-lucide="layout-grid" class="w-4 h-4 text-sky-400"></i> Todas as Provas</span>
+                <span class="text-xs bg-slate-800 px-2 py-0.5 rounded-full text-slate-300 font-bold">62 Provas</span>
             </a>
-            <a href="../index.html" class="block px-3 py-2 rounded-md text-base font-semibold text-slate-200 hover:bg-slate-800 flex items-center gap-2 mt-2 border-t border-slate-800 pt-3">
-                <i data-lucide="arrow-left" class="w-4 h-4 text-emerald-400"></i> Voltar para Teoria (Parte 1)
+            <a href="../pesquisa.html" class="block px-3 py-2 rounded-md text-base font-medium text-white flex items-center gap-2 hover:bg-slate-800">
+                <i data-lucide="search" class="w-4 h-4 text-emerald-400"></i> Pesquisa BNCC
             </a>
-            <a href="../simulado.html" class="block px-3 py-2 rounded-md text-base font-bold bg-blue-600 text-white flex items-center gap-2 mt-2">
-                <i data-lucide="award" class="w-4 h-4"></i> Simulado IF
+
+            <div class="pt-2 pb-1 px-3 text-[11px] font-bold uppercase tracking-wider text-slate-400">Provas por Instituição</div>
+            <a href="../bloco-6-provas-ifce/index.html" class="block px-3 py-2 rounded-md text-base font-medium text-white flex items-center justify-between gap-2 hover:bg-slate-800">
+                <span class="flex items-center gap-2"><i data-lucide="award" class="w-4 h-4 text-sky-400"></i> IFCE - Ceará</span>
+                <span class="text-xs bg-blue-900/60 text-sky-300 px-2 py-0.5 rounded-full font-bold">27</span>
             </a>
+            <a href="../bloco-5-provas-ifsc/index.html" class="block px-3 py-2 rounded-md text-base font-medium text-white flex items-center justify-between gap-2 hover:bg-slate-800">
+                <span class="flex items-center gap-2"><i data-lucide="award" class="w-4 h-4 text-sky-400"></i> IFSC - Santa Catarina</span>
+                <span class="text-xs bg-blue-900/60 text-sky-300 px-2 py-0.5 rounded-full font-bold">16</span>
+            </a>
+            <a href="../bloco-7-provas-ifsp/index.html" class="block px-3 py-2 rounded-md text-base font-medium text-white flex items-center justify-between gap-2 bg-blue-600 font-bold">
+                <span class="flex items-center gap-2"><i data-lucide="award" class="w-4 h-4 text-sky-400"></i> IFSP - São Paulo</span>
+                <span class="text-xs bg-blue-900/60 text-sky-300 px-2 py-0.5 rounded-full font-bold">8</span>
+            </a>
+            <a href="../bloco-8-provas-ifmg/index.html" class="block px-3 py-2 rounded-md text-base font-medium text-white flex items-center justify-between gap-2 hover:bg-slate-800">
+                <span class="flex items-center gap-2"><i data-lucide="award" class="w-4 h-4 text-sky-400"></i> IFMG - Minas Gerais</span>
+                <span class="text-xs bg-blue-900/60 text-sky-300 px-2 py-0.5 rounded-full font-bold">11</span>
+            </a>
+
+            <div class="pt-2 border-t border-slate-800 space-y-1">
+                <a href="../index.html" class="block px-3 py-2 rounded-md text-base font-semibold text-slate-200 hover:bg-slate-800 flex items-center gap-2">
+                    <i data-lucide="arrow-left" class="w-4 h-4 text-emerald-400"></i> Voltar para Teoria (Parte 1)
+                </a>
+                <a href="../simulado.html" class="block px-3 py-2 rounded-md text-base font-bold bg-blue-600 text-white flex items-center gap-2">
+                    <i data-lucide="award" class="w-4 h-4"></i> Simulado IF
+                </a>
+            </div>
         </div>
     </header>
 
 
     <main class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 flex-grow">
         <!-- Breadcrumbs -->
-        <nav class="flex text-xs font-medium text-slate-400 mb-6" aria-label="Breadcrumb">
-            <ol class="inline-flex items-center space-x-1 sm:space-x-2">
+        <nav class="text-xs font-medium text-slate-400 mb-6 overflow-x-auto custom-scrollbar pb-1" aria-label="Breadcrumb">
+            <ol class="inline-flex flex-wrap items-center gap-1 sm:gap-2">
                 <li><a href="../index.html" class="hover:text-sky-400 flex items-center gap-1"><i data-lucide="home" class="w-3.5 h-3.5"></i> Início</a></li>
                 <li><span class="text-slate-600">/</span></li>
                 <li><a href="../provas.html" class="hover:text-sky-400 flex items-center gap-1"><i data-lucide="archive" class="w-3.5 h-3.5"></i> Acervo de Provas</a></li>
@@ -169,7 +243,7 @@
         <!-- Grade de Provas -->
         <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
             
-                    <div class="bg-slate-900/90 border border-slate-800 hover:border-blue-500/50 rounded-3xl p-6 shadow-xl hover-card flex flex-col justify-between text-slate-100 transition" data-topic-id="ifsp-2025-1-a">
+                    <div class="bg-slate-900/90 border border-slate-800 hover:border-blue-500/50 rounded-3xl p-5 sm:p-6 shadow-xl hover-card flex flex-col justify-between text-slate-100 transition" data-topic-id="ifsp-2025-1-a">
                         <div>
                             <div class="flex items-center justify-between mb-3">
                                 <span class="text-xs font-bold text-sky-300 bg-blue-950/80 px-2.5 py-1 rounded-lg border border-blue-800/60">
@@ -183,24 +257,24 @@
                             <p class="text-slate-400 text-xs sm:text-sm leading-relaxed mb-4 line-clamp-2">15 questões de Matemática aplicadas no Processo Seletivo IFSP 2025.1 (Edital Nº 088/2024 - Prova A) para os Cursos Técnicos Integrados.</p>
                         </div>
 
-                        <div class="pt-4 border-t border-slate-800 flex items-center justify-between gap-2">
+                        <div class="pt-4 border-t border-slate-800 flex flex-wrap items-center justify-between gap-2">
                             <span class="text-xs text-slate-400 flex items-center gap-1">
                                 <i data-lucide="help-circle" class="w-3.5 h-3.5 text-sky-400"></i> 15 Questões
                             </span>
-                            <div class="flex items-center gap-2">
+                            <div class="flex flex-wrap items-center gap-2">
                                 
                         <a href="https://drive.google.com/file/d/1v4uNGN7qvsnD3H7Owmx0hTMT6yqS9isk/view?usp=drive_web" target="_blank" rel="noopener noreferrer" class="bg-slate-800 hover:bg-slate-700 text-slate-200 font-semibold px-3 py-2 rounded-xl text-xs transition flex items-center gap-1.5 border border-slate-700" title="Abrir Caderno Oficial no Google Drive (Visualizar ou Baixar)">
                             <i data-lucide="external-link" class="w-3.5 h-3.5 text-sky-400"></i> PDF Drive
                         </a>
                     
-                                <a href="./prova-ifsp-20251-a.html" class="bg-blue-600 hover:bg-blue-500 text-white font-bold px-4 py-2 rounded-xl text-xs transition flex items-center gap-1.5 shadow-md shadow-blue-600/20">
+                                <a href="./prova-ifsp-20251-a.html" class="bg-blue-600 hover:bg-blue-500 text-white font-bold px-3.5 sm:px-4 py-2 rounded-xl text-xs transition flex items-center gap-1.5 shadow-md shadow-blue-600/20">
                                     Resolver Prova <i data-lucide="arrow-right" class="w-3.5 h-3.5"></i>
                                 </a>
                             </div>
                         </div>
                     </div>
                 
-                    <div class="bg-slate-900/90 border border-slate-800 hover:border-blue-500/50 rounded-3xl p-6 shadow-xl hover-card flex flex-col justify-between text-slate-100 transition" data-topic-id="ifsp-2025-1-b">
+                    <div class="bg-slate-900/90 border border-slate-800 hover:border-blue-500/50 rounded-3xl p-5 sm:p-6 shadow-xl hover-card flex flex-col justify-between text-slate-100 transition" data-topic-id="ifsp-2025-1-b">
                         <div>
                             <div class="flex items-center justify-between mb-3">
                                 <span class="text-xs font-bold text-sky-300 bg-blue-950/80 px-2.5 py-1 rounded-lg border border-blue-800/60">
@@ -214,24 +288,24 @@
                             <p class="text-slate-400 text-xs sm:text-sm leading-relaxed mb-4 line-clamp-2">15 questões de Matemática aplicadas no Processo Seletivo IFSP 2025.1 (Edital Nº 088/2024 - Prova B) para os Cursos Técnicos Integrados.</p>
                         </div>
 
-                        <div class="pt-4 border-t border-slate-800 flex items-center justify-between gap-2">
+                        <div class="pt-4 border-t border-slate-800 flex flex-wrap items-center justify-between gap-2">
                             <span class="text-xs text-slate-400 flex items-center gap-1">
                                 <i data-lucide="help-circle" class="w-3.5 h-3.5 text-sky-400"></i> 15 Questões
                             </span>
-                            <div class="flex items-center gap-2">
+                            <div class="flex flex-wrap items-center gap-2">
                                 
                         <a href="https://drive.google.com/file/d/1WBuUt1yuDNGmp_O1yLpMBRXKXmJTYEy4/view?usp=drive_link" target="_blank" rel="noopener noreferrer" class="bg-slate-800 hover:bg-slate-700 text-slate-200 font-semibold px-3 py-2 rounded-xl text-xs transition flex items-center gap-1.5 border border-slate-700" title="Abrir Caderno Oficial no Google Drive (Visualizar ou Baixar)">
                             <i data-lucide="external-link" class="w-3.5 h-3.5 text-sky-400"></i> PDF Drive
                         </a>
                     
-                                <a href="./prova-ifsp-20251-b.html" class="bg-blue-600 hover:bg-blue-500 text-white font-bold px-4 py-2 rounded-xl text-xs transition flex items-center gap-1.5 shadow-md shadow-blue-600/20">
+                                <a href="./prova-ifsp-20251-b.html" class="bg-blue-600 hover:bg-blue-500 text-white font-bold px-3.5 sm:px-4 py-2 rounded-xl text-xs transition flex items-center gap-1.5 shadow-md shadow-blue-600/20">
                                     Resolver Prova <i data-lucide="arrow-right" class="w-3.5 h-3.5"></i>
                                 </a>
                             </div>
                         </div>
                     </div>
                 
-                    <div class="bg-slate-900/90 border border-slate-800 hover:border-blue-500/50 rounded-3xl p-6 shadow-xl hover-card flex flex-col justify-between text-slate-100 transition" data-topic-id="ifsp-2024-1-a">
+                    <div class="bg-slate-900/90 border border-slate-800 hover:border-blue-500/50 rounded-3xl p-5 sm:p-6 shadow-xl hover-card flex flex-col justify-between text-slate-100 transition" data-topic-id="ifsp-2024-1-a">
                         <div>
                             <div class="flex items-center justify-between mb-3">
                                 <span class="text-xs font-bold text-sky-300 bg-blue-950/80 px-2.5 py-1 rounded-lg border border-blue-800/60">
@@ -245,24 +319,24 @@
                             <p class="text-slate-400 text-xs sm:text-sm leading-relaxed mb-4 line-clamp-2">15 questões de Matemática aplicadas no Processo Seletivo IFSP 2024.1 (Edital Nº 449/2023 - Prova A) para os Cursos Técnicos Integrados.</p>
                         </div>
 
-                        <div class="pt-4 border-t border-slate-800 flex items-center justify-between gap-2">
+                        <div class="pt-4 border-t border-slate-800 flex flex-wrap items-center justify-between gap-2">
                             <span class="text-xs text-slate-400 flex items-center gap-1">
                                 <i data-lucide="help-circle" class="w-3.5 h-3.5 text-sky-400"></i> 15 Questões
                             </span>
-                            <div class="flex items-center gap-2">
+                            <div class="flex flex-wrap items-center gap-2">
                                 
                         <a href="https://drive.google.com/file/d/1kQnCGH-fubxYlWm2dhJqXKIzErDREBsM/view?usp=drive_web" target="_blank" rel="noopener noreferrer" class="bg-slate-800 hover:bg-slate-700 text-slate-200 font-semibold px-3 py-2 rounded-xl text-xs transition flex items-center gap-1.5 border border-slate-700" title="Abrir Caderno Oficial no Google Drive (Visualizar ou Baixar)">
                             <i data-lucide="external-link" class="w-3.5 h-3.5 text-sky-400"></i> PDF Drive
                         </a>
                     
-                                <a href="./prova-ifsp-20241-a.html" class="bg-blue-600 hover:bg-blue-500 text-white font-bold px-4 py-2 rounded-xl text-xs transition flex items-center gap-1.5 shadow-md shadow-blue-600/20">
+                                <a href="./prova-ifsp-20241-a.html" class="bg-blue-600 hover:bg-blue-500 text-white font-bold px-3.5 sm:px-4 py-2 rounded-xl text-xs transition flex items-center gap-1.5 shadow-md shadow-blue-600/20">
                                     Resolver Prova <i data-lucide="arrow-right" class="w-3.5 h-3.5"></i>
                                 </a>
                             </div>
                         </div>
                     </div>
                 
-                    <div class="bg-slate-900/90 border border-slate-800 hover:border-blue-500/50 rounded-3xl p-6 shadow-xl hover-card flex flex-col justify-between text-slate-100 transition" data-topic-id="ifsp-2024-1-b">
+                    <div class="bg-slate-900/90 border border-slate-800 hover:border-blue-500/50 rounded-3xl p-5 sm:p-6 shadow-xl hover-card flex flex-col justify-between text-slate-100 transition" data-topic-id="ifsp-2024-1-b">
                         <div>
                             <div class="flex items-center justify-between mb-3">
                                 <span class="text-xs font-bold text-sky-300 bg-blue-950/80 px-2.5 py-1 rounded-lg border border-blue-800/60">
@@ -276,24 +350,24 @@
                             <p class="text-slate-400 text-xs sm:text-sm leading-relaxed mb-4 line-clamp-2">15 questões de Matemática aplicadas no Processo Seletivo IFSP 2024.1 (Edital Nº 449/2023 - Prova B) para os Cursos Técnicos Integrados.</p>
                         </div>
 
-                        <div class="pt-4 border-t border-slate-800 flex items-center justify-between gap-2">
+                        <div class="pt-4 border-t border-slate-800 flex flex-wrap items-center justify-between gap-2">
                             <span class="text-xs text-slate-400 flex items-center gap-1">
                                 <i data-lucide="help-circle" class="w-3.5 h-3.5 text-sky-400"></i> 15 Questões
                             </span>
-                            <div class="flex items-center gap-2">
+                            <div class="flex flex-wrap items-center gap-2">
                                 
                         <a href="https://drive.google.com/file/d/1PYMGV9Smnak5FYUrLJJ8nwg59rYd1lsu/view?usp=drive_web" target="_blank" rel="noopener noreferrer" class="bg-slate-800 hover:bg-slate-700 text-slate-200 font-semibold px-3 py-2 rounded-xl text-xs transition flex items-center gap-1.5 border border-slate-700" title="Abrir Caderno Oficial no Google Drive (Visualizar ou Baixar)">
                             <i data-lucide="external-link" class="w-3.5 h-3.5 text-sky-400"></i> PDF Drive
                         </a>
                     
-                                <a href="./prova-ifsp-20241-b.html" class="bg-blue-600 hover:bg-blue-500 text-white font-bold px-4 py-2 rounded-xl text-xs transition flex items-center gap-1.5 shadow-md shadow-blue-600/20">
+                                <a href="./prova-ifsp-20241-b.html" class="bg-blue-600 hover:bg-blue-500 text-white font-bold px-3.5 sm:px-4 py-2 rounded-xl text-xs transition flex items-center gap-1.5 shadow-md shadow-blue-600/20">
                                     Resolver Prova <i data-lucide="arrow-right" class="w-3.5 h-3.5"></i>
                                 </a>
                             </div>
                         </div>
                     </div>
                 
-                    <div class="bg-slate-900/90 border border-slate-800 hover:border-blue-500/50 rounded-3xl p-6 shadow-xl hover-card flex flex-col justify-between text-slate-100 transition" data-topic-id="ifsp-2023-1-a">
+                    <div class="bg-slate-900/90 border border-slate-800 hover:border-blue-500/50 rounded-3xl p-5 sm:p-6 shadow-xl hover-card flex flex-col justify-between text-slate-100 transition" data-topic-id="ifsp-2023-1-a">
                         <div>
                             <div class="flex items-center justify-between mb-3">
                                 <span class="text-xs font-bold text-sky-300 bg-blue-950/80 px-2.5 py-1 rounded-lg border border-blue-800/60">
@@ -307,24 +381,24 @@
                             <p class="text-slate-400 text-xs sm:text-sm leading-relaxed mb-4 line-clamp-2">15 questões de Matemática aplicadas no Processo Seletivo IFSP 2023.1 (Edital Nº 609/2022 - Prova A) para os Cursos Técnicos Integrados.</p>
                         </div>
 
-                        <div class="pt-4 border-t border-slate-800 flex items-center justify-between gap-2">
+                        <div class="pt-4 border-t border-slate-800 flex flex-wrap items-center justify-between gap-2">
                             <span class="text-xs text-slate-400 flex items-center gap-1">
                                 <i data-lucide="help-circle" class="w-3.5 h-3.5 text-sky-400"></i> 15 Questões
                             </span>
-                            <div class="flex items-center gap-2">
+                            <div class="flex flex-wrap items-center gap-2">
                                 
                         <a href="https://drive.google.com/file/d/1Psm44i6AVeRc4NmOpZaiG6EFJ0rVk9a2/view?usp=drive_web" target="_blank" rel="noopener noreferrer" class="bg-slate-800 hover:bg-slate-700 text-slate-200 font-semibold px-3 py-2 rounded-xl text-xs transition flex items-center gap-1.5 border border-slate-700" title="Abrir Caderno Oficial no Google Drive (Visualizar ou Baixar)">
                             <i data-lucide="external-link" class="w-3.5 h-3.5 text-sky-400"></i> PDF Drive
                         </a>
                     
-                                <a href="./prova-ifsp-20231-a.html" class="bg-blue-600 hover:bg-blue-500 text-white font-bold px-4 py-2 rounded-xl text-xs transition flex items-center gap-1.5 shadow-md shadow-blue-600/20">
+                                <a href="./prova-ifsp-20231-a.html" class="bg-blue-600 hover:bg-blue-500 text-white font-bold px-3.5 sm:px-4 py-2 rounded-xl text-xs transition flex items-center gap-1.5 shadow-md shadow-blue-600/20">
                                     Resolver Prova <i data-lucide="arrow-right" class="w-3.5 h-3.5"></i>
                                 </a>
                             </div>
                         </div>
                     </div>
                 
-                    <div class="bg-slate-900/90 border border-slate-800 hover:border-blue-500/50 rounded-3xl p-6 shadow-xl hover-card flex flex-col justify-between text-slate-100 transition" data-topic-id="ifsp-2023-1-b">
+                    <div class="bg-slate-900/90 border border-slate-800 hover:border-blue-500/50 rounded-3xl p-5 sm:p-6 shadow-xl hover-card flex flex-col justify-between text-slate-100 transition" data-topic-id="ifsp-2023-1-b">
                         <div>
                             <div class="flex items-center justify-between mb-3">
                                 <span class="text-xs font-bold text-sky-300 bg-blue-950/80 px-2.5 py-1 rounded-lg border border-blue-800/60">
@@ -338,24 +412,24 @@
                             <p class="text-slate-400 text-xs sm:text-sm leading-relaxed mb-4 line-clamp-2">15 questões de Matemática aplicadas no Processo Seletivo IFSP 2023.1 (Edital Nº 609/2022 - Prova B) para os Cursos Técnicos Integrados.</p>
                         </div>
 
-                        <div class="pt-4 border-t border-slate-800 flex items-center justify-between gap-2">
+                        <div class="pt-4 border-t border-slate-800 flex flex-wrap items-center justify-between gap-2">
                             <span class="text-xs text-slate-400 flex items-center gap-1">
                                 <i data-lucide="help-circle" class="w-3.5 h-3.5 text-sky-400"></i> 15 Questões
                             </span>
-                            <div class="flex items-center gap-2">
+                            <div class="flex flex-wrap items-center gap-2">
                                 
                         <a href="https://drive.google.com/file/d/10paYCbo72ndG1U1qdDaXGe8FB6zFW7at/view?usp=drive_web" target="_blank" rel="noopener noreferrer" class="bg-slate-800 hover:bg-slate-700 text-slate-200 font-semibold px-3 py-2 rounded-xl text-xs transition flex items-center gap-1.5 border border-slate-700" title="Abrir Caderno Oficial no Google Drive (Visualizar ou Baixar)">
                             <i data-lucide="external-link" class="w-3.5 h-3.5 text-sky-400"></i> PDF Drive
                         </a>
                     
-                                <a href="./prova-ifsp-20231-b.html" class="bg-blue-600 hover:bg-blue-500 text-white font-bold px-4 py-2 rounded-xl text-xs transition flex items-center gap-1.5 shadow-md shadow-blue-600/20">
+                                <a href="./prova-ifsp-20231-b.html" class="bg-blue-600 hover:bg-blue-500 text-white font-bold px-3.5 sm:px-4 py-2 rounded-xl text-xs transition flex items-center gap-1.5 shadow-md shadow-blue-600/20">
                                     Resolver Prova <i data-lucide="arrow-right" class="w-3.5 h-3.5"></i>
                                 </a>
                             </div>
                         </div>
                     </div>
                 
-                    <div class="bg-slate-900/90 border border-slate-800 hover:border-blue-500/50 rounded-3xl p-6 shadow-xl hover-card flex flex-col justify-between text-slate-100 transition" data-topic-id="ifsp-2022-1-manha">
+                    <div class="bg-slate-900/90 border border-slate-800 hover:border-blue-500/50 rounded-3xl p-5 sm:p-6 shadow-xl hover-card flex flex-col justify-between text-slate-100 transition" data-topic-id="ifsp-2022-1-manha">
                         <div>
                             <div class="flex items-center justify-between mb-3">
                                 <span class="text-xs font-bold text-sky-300 bg-blue-950/80 px-2.5 py-1 rounded-lg border border-blue-800/60">
@@ -369,24 +443,24 @@
                             <p class="text-slate-400 text-xs sm:text-sm leading-relaxed mb-4 line-clamp-2">15 questões de Matemática aplicadas no Processo Seletivo IFSP 2022.1 (Turno Manhã) para os Cursos Técnicos Integrados.</p>
                         </div>
 
-                        <div class="pt-4 border-t border-slate-800 flex items-center justify-between gap-2">
+                        <div class="pt-4 border-t border-slate-800 flex flex-wrap items-center justify-between gap-2">
                             <span class="text-xs text-slate-400 flex items-center gap-1">
                                 <i data-lucide="help-circle" class="w-3.5 h-3.5 text-sky-400"></i> 15 Questões
                             </span>
-                            <div class="flex items-center gap-2">
+                            <div class="flex flex-wrap items-center gap-2">
                                 
                         <a href="https://drive.google.com/file/d/1zd8sN6zn9dAmFev7-NimuTNt3yX6rfGf/view?usp=drive_web" target="_blank" rel="noopener noreferrer" class="bg-slate-800 hover:bg-slate-700 text-slate-200 font-semibold px-3 py-2 rounded-xl text-xs transition flex items-center gap-1.5 border border-slate-700" title="Abrir Caderno Oficial no Google Drive (Visualizar ou Baixar)">
                             <i data-lucide="external-link" class="w-3.5 h-3.5 text-sky-400"></i> PDF Drive
                         </a>
                     
-                                <a href="./prova-ifsp-20221-manha.html" class="bg-blue-600 hover:bg-blue-500 text-white font-bold px-4 py-2 rounded-xl text-xs transition flex items-center gap-1.5 shadow-md shadow-blue-600/20">
+                                <a href="./prova-ifsp-20221-manha.html" class="bg-blue-600 hover:bg-blue-500 text-white font-bold px-3.5 sm:px-4 py-2 rounded-xl text-xs transition flex items-center gap-1.5 shadow-md shadow-blue-600/20">
                                     Resolver Prova <i data-lucide="arrow-right" class="w-3.5 h-3.5"></i>
                                 </a>
                             </div>
                         </div>
                     </div>
                 
-                    <div class="bg-slate-900/90 border border-slate-800 hover:border-blue-500/50 rounded-3xl p-6 shadow-xl hover-card flex flex-col justify-between text-slate-100 transition" data-topic-id="ifsp-2022-1-tarde">
+                    <div class="bg-slate-900/90 border border-slate-800 hover:border-blue-500/50 rounded-3xl p-5 sm:p-6 shadow-xl hover-card flex flex-col justify-between text-slate-100 transition" data-topic-id="ifsp-2022-1-tarde">
                         <div>
                             <div class="flex items-center justify-between mb-3">
                                 <span class="text-xs font-bold text-sky-300 bg-blue-950/80 px-2.5 py-1 rounded-lg border border-blue-800/60">
@@ -400,17 +474,17 @@
                             <p class="text-slate-400 text-xs sm:text-sm leading-relaxed mb-4 line-clamp-2">15 questões de Matemática aplicadas no Processo Seletivo IFSP 2022.1 (Turno Tarde) para os Cursos Técnicos Integrados.</p>
                         </div>
 
-                        <div class="pt-4 border-t border-slate-800 flex items-center justify-between gap-2">
+                        <div class="pt-4 border-t border-slate-800 flex flex-wrap items-center justify-between gap-2">
                             <span class="text-xs text-slate-400 flex items-center gap-1">
                                 <i data-lucide="help-circle" class="w-3.5 h-3.5 text-sky-400"></i> 15 Questões
                             </span>
-                            <div class="flex items-center gap-2">
+                            <div class="flex flex-wrap items-center gap-2">
                                 
                         <a href="https://drive.google.com/file/d/1wdOYRiUdJM9y5baq1ozWZXQZWitP8Pur/view?usp=drive_web" target="_blank" rel="noopener noreferrer" class="bg-slate-800 hover:bg-slate-700 text-slate-200 font-semibold px-3 py-2 rounded-xl text-xs transition flex items-center gap-1.5 border border-slate-700" title="Abrir Caderno Oficial no Google Drive (Visualizar ou Baixar)">
                             <i data-lucide="external-link" class="w-3.5 h-3.5 text-sky-400"></i> PDF Drive
                         </a>
                     
-                                <a href="./prova-ifsp-20221-tarde.html" class="bg-blue-600 hover:bg-blue-500 text-white font-bold px-4 py-2 rounded-xl text-xs transition flex items-center gap-1.5 shadow-md shadow-blue-600/20">
+                                <a href="./prova-ifsp-20221-tarde.html" class="bg-blue-600 hover:bg-blue-500 text-white font-bold px-3.5 sm:px-4 py-2 rounded-xl text-xs transition flex items-center gap-1.5 shadow-md shadow-blue-600/20">
                                     Resolver Prova <i data-lucide="arrow-right" class="w-3.5 h-3.5"></i>
                                 </a>
                             </div>

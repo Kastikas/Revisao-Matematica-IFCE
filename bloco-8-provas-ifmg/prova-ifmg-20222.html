@@ -49,92 +49,166 @@
 
     <!-- Header / Navbar da Área de Provas (Parte 2 - Escuro-Azul) -->
     <header class="gradient-header-dark text-white shadow-xl sticky top-0 z-50 border-b border-slate-800">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="max-w-7xl mx-auto px-3 sm:px-6 lg:px-8">
             <div class="flex items-center justify-between h-16">
                 <!-- Logo Provas -->
-                <a href="../provas.html" class="flex items-center space-x-3 group">
-                    <div class="bg-blue-600 p-2 rounded-xl text-white font-bold shadow-md shadow-blue-500/20 flex items-center justify-center group-hover:scale-105 transition">
-                        <i data-lucide="file-check" class="w-6 h-6"></i>
+                <a href="../provas.html" class="flex items-center space-x-2 sm:space-x-3 group min-w-0 flex-shrink-0">
+                    <div class="bg-blue-600 p-1.5 sm:p-2 rounded-xl text-white font-bold shadow-md shadow-blue-500/20 flex items-center justify-center group-hover:scale-105 transition">
+                        <i data-lucide="file-check" class="w-5 h-5 sm:w-6 sm:h-6"></i>
                     </div>
-                    <div>
-                        <span class="font-extrabold text-xl tracking-tight text-white flex items-center gap-1.5">
+                    <div class="min-w-0">
+                        <span class="font-extrabold text-lg sm:text-xl tracking-tight text-white flex items-center gap-1 sm:gap-1.5">
                             Partiu<span class="text-sky-400">IF</span>
-                            <span class="text-[10px] font-bold uppercase tracking-wider bg-blue-500/30 text-sky-200 border border-blue-400/30 px-2 py-0.5 rounded-full">Provas</span>
+                            <span class="text-[9px] sm:text-[10px] font-bold uppercase tracking-wider bg-blue-500/30 text-sky-200 border border-blue-400/30 px-1.5 sm:px-2 py-0.5 rounded-full">Provas</span>
                         </span>
-                        <p class="text-xs text-slate-400 hidden sm:flex items-center gap-1">
+                        <p class="text-xs text-slate-400 hidden xl:flex items-center gap-1">
                             <i data-lucide="archive" class="w-3 h-3 text-sky-400"></i> Acervo Oficial com PDFs e Gabarito
                         </p>
                     </div>
                 </a>
 
                 <!-- Navegação Desktop -->
-                <nav class="hidden md:flex space-x-1 items-center">
+                <nav class="hidden lg:flex space-x-1.5 items-center">
                     <a href="../provas.html" class="px-3 py-2 rounded-lg text-sm transition flex items-center gap-1.5 text-slate-300 hover:bg-slate-800 hover:text-white">
-                <i data-lucide="layout-grid" class="w-4 h-4"></i> Todas as Provas
-            </a><a href="../pesquisa.html" class="px-3 py-2 rounded-lg text-sm transition flex items-center gap-1.5 text-slate-300 hover:bg-slate-800 hover:text-white">
-                <i data-lucide="search" class="w-4 h-4"></i> Pesquisa BNCC
-            </a><a href="../bloco-6-provas-ifce/index.html" class="px-3 py-2 rounded-lg text-sm transition flex items-center gap-1.5 text-slate-300 hover:bg-slate-800 hover:text-white">
-                <i data-lucide="award" class="w-4 h-4"></i> Provas IFCE (27)
-            </a><a href="../bloco-5-provas-ifsc/index.html" class="px-3 py-2 rounded-lg text-sm transition flex items-center gap-1.5 text-slate-300 hover:bg-slate-800 hover:text-white">
-                <i data-lucide="award" class="w-4 h-4"></i> Provas IFSC (16)
-            </a><a href="../bloco-7-provas-ifsp/index.html" class="px-3 py-2 rounded-lg text-sm transition flex items-center gap-1.5 text-slate-300 hover:bg-slate-800 hover:text-white">
-                <i data-lucide="award" class="w-4 h-4"></i> Provas IFSP (8)
-            </a><a href="../bloco-8-provas-ifmg/index.html" class="px-3 py-2 rounded-lg text-sm transition flex items-center gap-1.5 bg-blue-600 text-white font-semibold shadow-inner">
-                <i data-lucide="award" class="w-4 h-4"></i> Provas IFMG (11)
+                        <i data-lucide="layout-grid" class="w-4 h-4 text-sky-400"></i> Todas as Provas
+                    </a>
+
+                    <!-- Dropdown de Instituições -->
+                    <div class="relative" id="dropdown-instituicoes-container">
+                        <button id="btn-dropdown-instituicoes" class="px-3 py-2 rounded-lg text-sm transition flex items-center gap-1.5 bg-blue-600/90 text-white font-semibold shadow-inner border border-blue-400/40" aria-haspopup="true" aria-expanded="false" title="Filtrar por Instituto Federal">
+                            <i data-lucide="building-2" class="w-4 h-4 text-sky-400"></i>
+                            <span>Instituições</span>
+                            <span class="bg-blue-500/40 text-sky-200 border border-blue-400/40 text-[10px] font-bold px-1.5 py-0.5 rounded-full">IFMG</span>
+                            <i data-lucide="chevron-down" id="chevron-instituicoes" class="w-3.5 h-3.5 text-slate-400 transition-transform duration-200"></i>
+                        </button>
+
+                        <div id="dropdown-instituicoes-menu" class="hidden absolute left-0 mt-2 w-64 bg-slate-900/95 border border-slate-700/80 rounded-2xl shadow-2xl p-1.5 z-50 backdrop-blur-xl">
+                            <div class="px-3 py-1.5 text-[10px] font-bold uppercase tracking-wider text-slate-400 border-b border-slate-800/80 flex items-center justify-between">
+                                <span>Institutos Federais</span>
+                                <span class="text-sky-400 font-bold">62 Provas</span>
+                            </div>
+                            <div class="space-y-1 py-1">
+                                <a href="../bloco-6-provas-ifce/index.html" class="flex items-center justify-between px-3 py-2 rounded-xl text-xs transition text-slate-300 hover:bg-slate-800/80 hover:text-white">
+                <div class="flex items-center gap-2.5">
+                    <span class="w-2 h-2 rounded-full bg-slate-700"></span>
+                    <div>
+                        <div class="font-bold text-slate-100">IFCE <span class="text-slate-400 font-normal">(Ceará)</span></div>
+                        <div class="text-[10px] text-slate-400">27 provas cadastradas</div>
+                    </div>
+                </div>
+                <i data-lucide="chevron-right" class="w-3.5 h-3.5 text-slate-500"></i>
+            </a><a href="../bloco-5-provas-ifsc/index.html" class="flex items-center justify-between px-3 py-2 rounded-xl text-xs transition text-slate-300 hover:bg-slate-800/80 hover:text-white">
+                <div class="flex items-center gap-2.5">
+                    <span class="w-2 h-2 rounded-full bg-slate-700"></span>
+                    <div>
+                        <div class="font-bold text-slate-100">IFSC <span class="text-slate-400 font-normal">(Santa Catarina)</span></div>
+                        <div class="text-[10px] text-slate-400">16 provas cadastradas</div>
+                    </div>
+                </div>
+                <i data-lucide="chevron-right" class="w-3.5 h-3.5 text-slate-500"></i>
+            </a><a href="../bloco-7-provas-ifsp/index.html" class="flex items-center justify-between px-3 py-2 rounded-xl text-xs transition text-slate-300 hover:bg-slate-800/80 hover:text-white">
+                <div class="flex items-center gap-2.5">
+                    <span class="w-2 h-2 rounded-full bg-slate-700"></span>
+                    <div>
+                        <div class="font-bold text-slate-100">IFSP <span class="text-slate-400 font-normal">(São Paulo)</span></div>
+                        <div class="text-[10px] text-slate-400">8 provas cadastradas</div>
+                    </div>
+                </div>
+                <i data-lucide="chevron-right" class="w-3.5 h-3.5 text-slate-500"></i>
+            </a><a href="../bloco-8-provas-ifmg/index.html" class="flex items-center justify-between px-3 py-2 rounded-xl text-xs transition bg-blue-600/25 text-sky-200 font-semibold border-l-2 border-blue-400">
+                <div class="flex items-center gap-2.5">
+                    <span class="w-2 h-2 rounded-full bg-sky-400 animate-pulse"></span>
+                    <div>
+                        <div class="font-bold text-slate-100">IFMG <span class="text-slate-400 font-normal">(Minas Gerais)</span></div>
+                        <div class="text-[10px] text-slate-400">11 provas cadastradas</div>
+                    </div>
+                </div>
+                <i data-lucide="chevron-right" class="w-3.5 h-3.5 text-slate-500"></i>
             </a>
+                            </div>
+                            <div class="pt-1 border-t border-slate-800/80">
+                                <a href="../provas.html" class="flex items-center justify-between px-3 py-1.5 text-[11px] font-semibold text-sky-400 hover:bg-slate-800/80 rounded-xl transition">
+                                    <span>Ver matriz geral de provas</span>
+                                    <i data-lucide="arrow-right" class="w-3 h-3"></i>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <a href="../pesquisa.html" class="px-3 py-2 rounded-lg text-sm transition flex items-center gap-1.5 text-slate-300 hover:bg-slate-800 hover:text-white" title="Pesquisar questões por descritor BNCC">
+                        <i data-lucide="search" class="w-4 h-4 text-emerald-400"></i> Pesquisa BNCC
+                    </a>
                 </nav>
 
                 <!-- Ações do Usuário -->
-                <div class="flex items-center gap-2 sm:gap-3">
-                    <a href="../index.html" class="bg-slate-800/90 hover:bg-slate-700 text-slate-200 border border-slate-700 px-3.5 py-1.5 rounded-lg text-xs sm:text-sm font-semibold transition flex items-center gap-1.5 shadow-sm" title="Retornar à Teoria e Eixos Temáticos">
-                        <i data-lucide="arrow-left" class="w-4 h-4 text-emerald-400"></i> <span class="hidden sm:inline">Voltar para </span>Teoria
+                <div class="flex items-center gap-1.5 sm:gap-2.5 flex-shrink-0">
+                    <a href="../index.html" class="bg-slate-800/90 hover:bg-slate-700 text-slate-200 border border-slate-700 p-2 sm:px-3.5 sm:py-1.5 rounded-lg text-xs sm:text-sm font-semibold transition flex items-center gap-1.5 shadow-sm" title="Retornar à Teoria e Eixos Temáticos">
+                        <i data-lucide="arrow-left" class="w-4 h-4 text-emerald-400"></i>
+                        <span class="hidden sm:inline xl:hidden">Teoria</span>
+                        <span class="hidden xl:inline">Voltar para Teoria</span>
                     </a>
-                    <a href="../simulado.html" class="bg-blue-600 hover:bg-blue-500 text-white font-semibold px-3.5 py-1.5 rounded-lg text-xs sm:text-sm transition flex items-center gap-1.5 shadow">
-                        <i data-lucide="award" class="w-4 h-4"></i> Simulado
+                    <a href="../simulado.html" class="bg-blue-600 hover:bg-blue-500 text-white font-semibold p-2 sm:px-3.5 sm:py-1.5 rounded-lg text-xs sm:text-sm transition flex items-center gap-1.5 shadow" title="Simulado IF">
+                        <i data-lucide="award" class="w-4 h-4"></i>
+                        <span class="hidden sm:inline">Simulado</span>
                     </a>
-                    <button id="mobile-menu-btn" class="md:hidden p-2 rounded-lg text-slate-300 hover:text-white hover:bg-slate-800" aria-label="Abrir menu">
-                        <i data-lucide="menu" class="w-6 h-6"></i>
+                    <button id="mobile-menu-btn" class="lg:hidden p-2 rounded-lg text-slate-300 hover:text-white hover:bg-slate-800 transition" aria-label="Abrir menu">
+                        <i data-lucide="menu" class="w-5 h-5 sm:w-6 sm:h-6"></i>
                     </button>
                 </div>
             </div>
         </div>
 
         <!-- Menu Mobile -->
-        <div id="mobile-menu" class="hidden md:hidden bg-slate-950 border-t border-slate-800 px-4 pt-2 pb-4 space-y-1">
-            <a href="../provas.html" class="block px-3 py-2 rounded-md text-base font-medium text-white flex items-center gap-2 hover:bg-slate-800">
-                <i data-lucide="layout-grid" class="w-4 h-4"></i> Todas as Provas
-            </a><a href="../pesquisa.html" class="block px-3 py-2 rounded-md text-base font-medium text-white flex items-center gap-2 hover:bg-slate-800">
-                <i data-lucide="search" class="w-4 h-4"></i> Pesquisa BNCC
-            </a><a href="../bloco-6-provas-ifce/index.html" class="block px-3 py-2 rounded-md text-base font-medium text-white flex items-center gap-2 hover:bg-slate-800">
-                <i data-lucide="award" class="w-4 h-4"></i> Provas IFCE (27)
-            </a><a href="../bloco-5-provas-ifsc/index.html" class="block px-3 py-2 rounded-md text-base font-medium text-white flex items-center gap-2 hover:bg-slate-800">
-                <i data-lucide="award" class="w-4 h-4"></i> Provas IFSC (16)
-            </a><a href="../bloco-7-provas-ifsp/index.html" class="block px-3 py-2 rounded-md text-base font-medium text-white flex items-center gap-2 hover:bg-slate-800">
-                <i data-lucide="award" class="w-4 h-4"></i> Provas IFSP (8)
-            </a><a href="../bloco-8-provas-ifmg/index.html" class="block px-3 py-2 rounded-md text-base font-medium text-white flex items-center gap-2 bg-blue-600 font-bold">
-                <i data-lucide="award" class="w-4 h-4"></i> Provas IFMG (11)
+        <div id="mobile-menu" class="hidden lg:hidden bg-slate-950 border-t border-slate-800 px-4 pt-2 pb-4 space-y-1">
+            <a href="../provas.html" class="block px-3 py-2 rounded-md text-base font-medium text-white flex items-center justify-between gap-2 hover:bg-slate-800">
+                <span class="flex items-center gap-2"><i data-lucide="layout-grid" class="w-4 h-4 text-sky-400"></i> Todas as Provas</span>
+                <span class="text-xs bg-slate-800 px-2 py-0.5 rounded-full text-slate-300 font-bold">62 Provas</span>
             </a>
-            <a href="../index.html" class="block px-3 py-2 rounded-md text-base font-semibold text-slate-200 hover:bg-slate-800 flex items-center gap-2 mt-2 border-t border-slate-800 pt-3">
-                <i data-lucide="arrow-left" class="w-4 h-4 text-emerald-400"></i> Voltar para Teoria (Parte 1)
+            <a href="../pesquisa.html" class="block px-3 py-2 rounded-md text-base font-medium text-white flex items-center gap-2 hover:bg-slate-800">
+                <i data-lucide="search" class="w-4 h-4 text-emerald-400"></i> Pesquisa BNCC
             </a>
-            <a href="../simulado.html" class="block px-3 py-2 rounded-md text-base font-bold bg-blue-600 text-white flex items-center gap-2 mt-2">
-                <i data-lucide="award" class="w-4 h-4"></i> Simulado IF
+
+            <div class="pt-2 pb-1 px-3 text-[11px] font-bold uppercase tracking-wider text-slate-400">Provas por Instituição</div>
+            <a href="../bloco-6-provas-ifce/index.html" class="block px-3 py-2 rounded-md text-base font-medium text-white flex items-center justify-between gap-2 hover:bg-slate-800">
+                <span class="flex items-center gap-2"><i data-lucide="award" class="w-4 h-4 text-sky-400"></i> IFCE - Ceará</span>
+                <span class="text-xs bg-blue-900/60 text-sky-300 px-2 py-0.5 rounded-full font-bold">27</span>
             </a>
+            <a href="../bloco-5-provas-ifsc/index.html" class="block px-3 py-2 rounded-md text-base font-medium text-white flex items-center justify-between gap-2 hover:bg-slate-800">
+                <span class="flex items-center gap-2"><i data-lucide="award" class="w-4 h-4 text-sky-400"></i> IFSC - Santa Catarina</span>
+                <span class="text-xs bg-blue-900/60 text-sky-300 px-2 py-0.5 rounded-full font-bold">16</span>
+            </a>
+            <a href="../bloco-7-provas-ifsp/index.html" class="block px-3 py-2 rounded-md text-base font-medium text-white flex items-center justify-between gap-2 hover:bg-slate-800">
+                <span class="flex items-center gap-2"><i data-lucide="award" class="w-4 h-4 text-sky-400"></i> IFSP - São Paulo</span>
+                <span class="text-xs bg-blue-900/60 text-sky-300 px-2 py-0.5 rounded-full font-bold">8</span>
+            </a>
+            <a href="../bloco-8-provas-ifmg/index.html" class="block px-3 py-2 rounded-md text-base font-medium text-white flex items-center justify-between gap-2 bg-blue-600 font-bold">
+                <span class="flex items-center gap-2"><i data-lucide="award" class="w-4 h-4 text-sky-400"></i> IFMG - Minas Gerais</span>
+                <span class="text-xs bg-blue-900/60 text-sky-300 px-2 py-0.5 rounded-full font-bold">11</span>
+            </a>
+
+            <div class="pt-2 border-t border-slate-800 space-y-1">
+                <a href="../index.html" class="block px-3 py-2 rounded-md text-base font-semibold text-slate-200 hover:bg-slate-800 flex items-center gap-2">
+                    <i data-lucide="arrow-left" class="w-4 h-4 text-emerald-400"></i> Voltar para Teoria (Parte 1)
+                </a>
+                <a href="../simulado.html" class="block px-3 py-2 rounded-md text-base font-bold bg-blue-600 text-white flex items-center gap-2">
+                    <i data-lucide="award" class="w-4 h-4"></i> Simulado IF
+                </a>
+            </div>
         </div>
     </header>
 
 
     <main class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 flex-grow">
         <!-- Breadcrumbs -->
-        <nav class="flex text-xs font-medium text-slate-400 mb-6" aria-label="Breadcrumb">
-            <ol class="inline-flex items-center space-x-1 sm:space-x-2">
+        <nav class="text-xs font-medium text-slate-400 mb-6 overflow-x-auto custom-scrollbar pb-1" aria-label="Breadcrumb">
+            <ol class="inline-flex flex-wrap items-center gap-1 sm:gap-2">
                 <li><a href="../index.html" class="hover:text-sky-400 flex items-center gap-1"><i data-lucide="home" class="w-3.5 h-3.5"></i> Início</a></li>
                 <li><span class="text-slate-600">/</span></li>
                 <li><a href="../provas.html" class="hover:text-sky-400 flex items-center gap-1"><i data-lucide="archive" class="w-3.5 h-3.5"></i> Provas</a></li>
                 <li><span class="text-slate-600">/</span></li>
                 <li><a href="./index.html" class="hover:text-sky-400">Bloco 8: Provas Anteriores IFMG</a></li>
                 <li><span class="text-slate-600">/</span></li>
-                <li class="text-slate-200 font-semibold truncate max-w-xs sm:max-w-none">Prova IFMG 2022.2</li>
+                <li class="text-slate-200 font-semibold truncate max-w-[200px] sm:max-w-none">Prova IFMG 2022.2</li>
             </ol>
         </nav>
 
@@ -143,18 +217,18 @@
             <div class="lg:col-span-3 space-y-8">
                 
                 <!-- Cabeçalho do Exame -->
-                <div class="bg-slate-900/90 border border-slate-800 rounded-3xl p-6 sm:p-8 shadow-xl text-slate-100">
+                <div class="bg-slate-900/90 border border-slate-800 rounded-3xl p-4 sm:p-8 shadow-xl text-slate-100">
                     <div class="flex flex-wrap items-center justify-between gap-3 mb-4">
                         <span class="text-xs font-bold uppercase tracking-wider text-sky-300 bg-blue-950/80 px-3 py-1 rounded-full border border-blue-800/60">
                             BNCC: Revisão Geral
                         </span>
-                        <div class="flex items-center gap-2">
+                        <div class="flex flex-wrap items-center gap-2">
                             
-                        <a href="../provas/ifmg/IFMG_prova_2022_2.pdf" download class="bg-blue-600 hover:bg-blue-500 text-white font-bold px-4 py-2 rounded-xl text-sm transition flex items-center gap-2 shadow-lg shadow-blue-600/25" title="Baixar Caderno Oficial em PDF">
+                        <a href="../provas/ifmg/IFMG_prova_2022_2.pdf" download class="bg-blue-600 hover:bg-blue-500 text-white font-bold px-3 sm:px-4 py-2 rounded-xl text-xs sm:text-sm transition flex items-center gap-1.5 sm:gap-2 shadow-lg shadow-blue-600/25" title="Baixar Caderno Oficial em PDF">
                             <i data-lucide="download" class="w-4 h-4"></i> Baixar Caderno em PDF
                         </a>
                     
-                            <button id="btn-toggle-done-ifmg-2022-2" onclick="toggleTopicDone('ifmg-2022-2')" class="px-4 py-2 rounded-xl text-sm font-semibold border bg-slate-900 text-slate-300 border-slate-700 hover:bg-slate-800 transition flex items-center gap-2 shadow-sm">
+                            <button id="btn-toggle-done-ifmg-2022-2" onclick="toggleTopicDone('ifmg-2022-2')" class="px-3 sm:px-4 py-2 rounded-xl text-xs sm:text-sm font-semibold border bg-slate-900 text-slate-300 border-slate-700 hover:bg-slate-800 transition flex items-center gap-1.5 sm:gap-2 shadow-sm">
                                 <i data-lucide="square" class="w-4 h-4 text-slate-500"></i> Marcar como Concluída
                             </button>
                         </div>
@@ -254,7 +328,7 @@
                     
                         <div class="mb-8 border-b border-slate-800/80 pb-6 last:border-0 last:pb-0" id="q-container-ifmg-2022-2-q0">
                             <div class="flex items-center justify-between mb-3 flex-wrap gap-2">
-                                <div class="flex items-center gap-2">
+                                <div class="flex flex-wrap items-center gap-2">
                                     <span class="text-xs font-bold uppercase tracking-wider text-sky-300 bg-blue-950/60 px-2.5 py-0.5 rounded-full border border-blue-800/40">Questão 1</span>
                                     
                             <a href="../pesquisa.html?bncc=EF08MA25" class="text-[11px] font-mono font-bold text-emerald-300 bg-emerald-950/80 hover:bg-emerald-900/90 px-2.5 py-0.5 rounded-full border border-emerald-800/60 flex items-center gap-1 transition shadow-sm" title="Obter os valores de medidas de tendência central de uma pesquisa estatística (média, mediana e moda) e interpretar seus significados.">
@@ -263,13 +337,7 @@
                         
                                 </div>
                             </div>
-                            <p class="font-medium text-slate-100 mb-4 text-sm sm:text-base leading-relaxed">Ciente das dificuldades apresentadas pelos alunos na sua disciplina de Estatística, um professor do IFMG resolveu abrir processo seletivo para seleção de um monitor. O processo consistiu de 3 etapas: apresentação do coeficiente do aluno na disciplina, uma avaliação teórica sobre o conteúdo e uma aula teste ministrada pelo candidato a uma banca contendo o professor da disciplina e um pedagogo.
-
-Quatro alunos realizaram o processo seletivo. As notas obtidas por cada candidato e os pesos atribuídos a cada etapa podem ser visualizados na tabela a seguir:
-
-O aluno selecionado seria aquele com maior média ponderada, conforme os pesos ilustrados na tabela. Caso houvesse empate na média, seria escolhido o aluno de resultados mais homogêneos, com menor amplitude nas notas (ou seja, menor diferença entre as notas máxima e mínima).
-
-Segundo esses critérios, o selecionado como monitor da disciplina foi o aluno</p>
+                            <div class="q-text-container"><p class="q-paragraph font-medium text-slate-200 text-sm sm:text-base">Ciente das dificuldades apresentadas pelos alunos na sua disciplina de Estatística, um professor do IFMG resolveu abrir processo seletivo para seleção de um monitor. O processo consistiu de 3 etapas: apresentação do coeficiente do aluno na disciplina, uma avaliação teórica sobre o conteúdo e uma aula teste ministrada pelo candidato a uma banca contendo o professor da disciplina e um pedagogo.</p><p class="q-paragraph font-medium text-slate-200 text-sm sm:text-base">Quatro alunos realizaram o processo seletivo. As notas obtidas por cada candidato e os pesos atribuídos a cada etapa podem ser visualizados na tabela a seguir:</p><p class="q-paragraph font-medium text-slate-200 text-sm sm:text-base">O aluno selecionado seria aquele com maior média ponderada, conforme os pesos ilustrados na tabela. Caso houvesse empate na média, seria escolhido o aluno de resultados mais homogêneos, com menor amplitude nas notas (ou seja, menor diferença entre as notas máxima e mínima).</p><p class="q-prompt text-slate-100 text-sm sm:text-base">Segundo esses critérios, o selecionado como monitor da disciplina foi o aluno:</p></div>
                             
         <div class="my-4 p-2 sm:p-3 rounded-2xl border bg-slate-950/70 border-slate-800 shadow-sm max-w-xl mx-auto flex flex-col items-center">
             <img src="https://lh3.googleusercontent.com/d/1OTUvaFAO8QWh8y3K_3yAlfyjA-XE8PJp" alt="Tabela com as notas dos 4 alunos nas etapas Coeficiente (peso 1), Avaliação Teórica (peso 2) e Aula Teste (peso 3)." onerror="if(this.src!='../assets/img/questoes/ifmg/ifmg-2022-2-q16.png'){this.src='../assets/img/questoes/ifmg/ifmg-2022-2-q16.png';}" class="max-h-80 sm:max-h-96 w-auto max-w-full rounded-xl object-contain cursor-zoom-in hover:opacity-95 hover:scale-[1.01] transition duration-200" onclick="openImageModal('https://lh3.googleusercontent.com/d/1OTUvaFAO8QWh8y3K_3yAlfyjA-XE8PJp', 'Tabela com as notas dos 4 alunos nas etapas Coeficiente (peso 1), Avaliação Teórica (peso 2) e Aula Teste (peso 3).')" title="Clique para ampliar a imagem" loading="lazy">
@@ -281,7 +349,7 @@ Segundo esses critérios, o selecionado como monitor da disciplina foi o aluno</
                             <button onclick="selectOption('ifmg-2022-2-q0', 0)" id="btn-ifmg-2022-2-q0-0" class="w-full text-left p-3.5 rounded-xl border border-slate-800 bg-slate-950/60 hover:border-blue-500 hover:bg-slate-800/60 transition text-sm text-slate-200 flex items-start justify-between gap-3 group">
                                 <span class="flex items-start gap-2.5 flex-1 min-w-0">
                                     <strong class="text-sky-400 font-bold flex-shrink-0 mt-0.5">A)</strong>
-                                    <span class="flex-1 min-w-0 break-words leading-relaxed">1</span>
+                                    <span class="flex-1 min-w-0 break-words leading-relaxed">$1$</span>
                                 </span>
                                 <i data-lucide="circle" class="w-4 h-4 text-slate-600 opt-icon group-hover:text-blue-400 flex-shrink-0 mt-0.5"></i>
                             </button>
@@ -289,7 +357,7 @@ Segundo esses critérios, o selecionado como monitor da disciplina foi o aluno</
                             <button onclick="selectOption('ifmg-2022-2-q0', 1)" id="btn-ifmg-2022-2-q0-1" class="w-full text-left p-3.5 rounded-xl border border-slate-800 bg-slate-950/60 hover:border-blue-500 hover:bg-slate-800/60 transition text-sm text-slate-200 flex items-start justify-between gap-3 group">
                                 <span class="flex items-start gap-2.5 flex-1 min-w-0">
                                     <strong class="text-sky-400 font-bold flex-shrink-0 mt-0.5">B)</strong>
-                                    <span class="flex-1 min-w-0 break-words leading-relaxed">2</span>
+                                    <span class="flex-1 min-w-0 break-words leading-relaxed">$2$</span>
                                 </span>
                                 <i data-lucide="circle" class="w-4 h-4 text-slate-600 opt-icon group-hover:text-blue-400 flex-shrink-0 mt-0.5"></i>
                             </button>
@@ -297,7 +365,7 @@ Segundo esses critérios, o selecionado como monitor da disciplina foi o aluno</
                             <button onclick="selectOption('ifmg-2022-2-q0', 2)" id="btn-ifmg-2022-2-q0-2" class="w-full text-left p-3.5 rounded-xl border border-slate-800 bg-slate-950/60 hover:border-blue-500 hover:bg-slate-800/60 transition text-sm text-slate-200 flex items-start justify-between gap-3 group">
                                 <span class="flex items-start gap-2.5 flex-1 min-w-0">
                                     <strong class="text-sky-400 font-bold flex-shrink-0 mt-0.5">C)</strong>
-                                    <span class="flex-1 min-w-0 break-words leading-relaxed">3</span>
+                                    <span class="flex-1 min-w-0 break-words leading-relaxed">$3$</span>
                                 </span>
                                 <i data-lucide="circle" class="w-4 h-4 text-slate-600 opt-icon group-hover:text-blue-400 flex-shrink-0 mt-0.5"></i>
                             </button>
@@ -305,7 +373,7 @@ Segundo esses critérios, o selecionado como monitor da disciplina foi o aluno</
                             <button onclick="selectOption('ifmg-2022-2-q0', 3)" id="btn-ifmg-2022-2-q0-3" class="w-full text-left p-3.5 rounded-xl border border-slate-800 bg-slate-950/60 hover:border-blue-500 hover:bg-slate-800/60 transition text-sm text-slate-200 flex items-start justify-between gap-3 group">
                                 <span class="flex items-start gap-2.5 flex-1 min-w-0">
                                     <strong class="text-sky-400 font-bold flex-shrink-0 mt-0.5">D)</strong>
-                                    <span class="flex-1 min-w-0 break-words leading-relaxed">4</span>
+                                    <span class="flex-1 min-w-0 break-words leading-relaxed">$4$</span>
                                 </span>
                                 <i data-lucide="circle" class="w-4 h-4 text-slate-600 opt-icon group-hover:text-blue-400 flex-shrink-0 mt-0.5"></i>
                             </button>
@@ -321,7 +389,7 @@ Segundo esses critérios, o selecionado como monitor da disciplina foi o aluno</
                     
                         <div class="mb-8 border-b border-slate-800/80 pb-6 last:border-0 last:pb-0" id="q-container-ifmg-2022-2-q1">
                             <div class="flex items-center justify-between mb-3 flex-wrap gap-2">
-                                <div class="flex items-center gap-2">
+                                <div class="flex flex-wrap items-center gap-2">
                                     <span class="text-xs font-bold uppercase tracking-wider text-sky-300 bg-blue-950/60 px-2.5 py-0.5 rounded-full border border-blue-800/40">Questão 2</span>
                                     
                             <a href="../pesquisa.html?bncc=EF09MA05" class="text-[11px] font-mono font-bold text-emerald-300 bg-emerald-950/80 hover:bg-emerald-900/90 px-2.5 py-0.5 rounded-full border border-emerald-800/60 flex items-center gap-1 transition shadow-sm" title="Resolver e elaborar problemas que envolvam porcentagens, com a ideia de aplicação de percentuais sucessivos e a determinação das taxas percentuais.">
@@ -330,11 +398,7 @@ Segundo esses critérios, o selecionado como monitor da disciplina foi o aluno</
                         
                                 </div>
                             </div>
-                            <p class="font-medium text-slate-100 mb-4 text-sm sm:text-base leading-relaxed">Após ser considerado o grande vilão da inflação mundial no ano de 2021, com aumentos acumulados próximos a 50% ao ano no Brasil, alguns veículos de comunicação noticiaram a possibilidade de uma estabilidade dos preços dos combustíveis em 2022, como ilustra a imagem a seguir.
-
-Porém, influências internas, como o aumento de demanda, e externas, como a guerra entre Rússia e Ucrânia, mantiveram essa tendência de alta durante o ano de 2022.
-
-Considere um país hipotético no qual a gasolina sofreu dois aumentos sucessivos durante o ano de 2022. Um aumento de 10% ao final do primeiro semestre e um aumento de 20% ao final do segundo semestre. Podemos dizer que um consumidor deste país, que costumava gastar 200 reais para encher o tanque do seu carro, após esses dois acréscimos terá de arcar, para cada novo enchimento, com o valor de</p>
+                            <div class="q-text-container"><p class="q-paragraph font-medium text-slate-200 text-sm sm:text-base">Após ser considerado o grande vilão da inflação mundial no ano de 2021, com aumentos acumulados próximos a $50\%$ ao ano no Brasil, alguns veículos de comunicação noticiaram a possibilidade de uma estabilidade dos preços dos combustíveis em 2022, como ilustra a imagem a seguir.</p><p class="q-paragraph font-medium text-slate-200 text-sm sm:text-base">Porém, influências internas, como o aumento de demanda, e externas, como a guerra entre Rússia e Ucrânia, mantiveram essa tendência de alta durante o ano de 2022.</p><p class="q-prompt text-slate-100 text-sm sm:text-base">Considere um país hipotético no qual a gasolina sofreu dois aumentos sucessivos durante o ano de 2022: um aumento de $10\%$ ao final do primeiro semestre e um aumento de $20\%$ ao final do segundo semestre. Podemos dizer que um consumidor deste país, que costumava gastar $\text{R\$} 200{,}00$ para encher o tanque do seu carro, após esses dois acréscimos terá de arcar, para cada novo enchimento, com o valor de:</p></div>
                             
         <div class="my-4 p-2 sm:p-3 rounded-2xl border bg-slate-950/70 border-slate-800 shadow-sm max-w-xl mx-auto flex flex-col items-center">
             <img src="https://lh3.googleusercontent.com/d/1OjVEkCCgizIs8I9wqRVulYAJNgQG3rcO" alt="Manchete jornalística anunciando combustíveis como vilões da inflação em 2021 e prevendo possível estabilidade de preços em 2022." onerror="if(this.src!='../assets/img/questoes/ifmg/ifmg-2022-2-q17.png'){this.src='../assets/img/questoes/ifmg/ifmg-2022-2-q17.png';}" class="max-h-80 sm:max-h-96 w-auto max-w-full rounded-xl object-contain cursor-zoom-in hover:opacity-95 hover:scale-[1.01] transition duration-200" onclick="openImageModal('https://lh3.googleusercontent.com/d/1OjVEkCCgizIs8I9wqRVulYAJNgQG3rcO', 'Manchete jornalística anunciando combustíveis como vilões da inflação em 2021 e prevendo possível estabilidade de preços em 2022.')" title="Clique para ampliar a imagem" loading="lazy">
@@ -386,7 +450,7 @@ Considere um país hipotético no qual a gasolina sofreu dois aumentos sucessivo
                     
                         <div class="mb-8 border-b border-slate-800/80 pb-6 last:border-0 last:pb-0" id="q-container-ifmg-2022-2-q2">
                             <div class="flex items-center justify-between mb-3 flex-wrap gap-2">
-                                <div class="flex items-center gap-2">
+                                <div class="flex flex-wrap items-center gap-2">
                                     <span class="text-xs font-bold uppercase tracking-wider text-sky-300 bg-blue-950/60 px-2.5 py-0.5 rounded-full border border-blue-800/40">Questão 3</span>
                                     
                             <a href="../pesquisa.html?bncc=EF08MA03" class="text-[11px] font-mono font-bold text-emerald-300 bg-emerald-950/80 hover:bg-emerald-900/90 px-2.5 py-0.5 rounded-full border border-emerald-800/60 flex items-center gap-1 transition shadow-sm" title="Resolver e elaborar problemas de contagem cuja resolução envolva a aplicação do princípio multiplicativo.">
@@ -395,20 +459,14 @@ Considere um país hipotético no qual a gasolina sofreu dois aumentos sucessivo
                         
                                 </div>
                             </div>
-                            <p class="font-medium text-slate-100 mb-4 text-sm sm:text-base leading-relaxed">Em alguns jogos de celular do estilo “puzzles”, os jogadores vão acumulando e desenvolvendo heróis para utilizá-los como equipes de ataque ou defesa em combates online. Nesses jogos, em geral, os heróis são divididos nas seguintes classes: vermelho (fogo), azul (água), verde (natureza), amarelo (luz) e roxo (trevas).
-
-Considere que um determinado jogador possui a seguinte quantidade de heróis, distribuídos pelas suas respectivas cores: 3 heróis vermelhos, 5 heróis azuis, 4 heróis verdes, 6 heróis amarelos e 3 heróis roxos.
-
-Esse jogador deverá formar uma equipe de dois heróis para um combate online e, pelas características do adversário, resolve escolher um herói azul (que ocupará a posição da esquerda) e um herói amarelo (que ocupará a posição da direita).
-
-Quantas são as equipes distintas que esse jogador poderá montar?</p>
+                            <div class="q-text-container"><p class="q-paragraph font-medium text-slate-200 text-sm sm:text-base">Em alguns jogos de celular do estilo “puzzles”, os jogadores vão acumulando e desenvolvendo heróis para utilizá-los como equipes de ataque ou defesa em combates online. Nesses jogos, em geral, os heróis são divididos nas seguintes classes: vermelho (fogo), azul (água), verde (natureza), amarelo (luz) e roxo (trevas).</p><p class="q-paragraph font-medium text-slate-200 text-sm sm:text-base">Considere que um determinado jogador possui a seguinte quantidade de heróis, distribuídos pelas suas respectivas cores: 3 heróis vermelhos, 5 heróis azuis, 4 heróis verdes, 6 heróis amarelos e 3 heróis roxos.</p><p class="q-paragraph font-medium text-slate-200 text-sm sm:text-base">Esse jogador deverá formar uma equipe de dois heróis para um combate online e, pelas características do adversário, resolve escolher um herói azul (que ocupará a posição da esquerda) e um herói amarelo (que ocupará a posição da direita).</p><p class="q-prompt text-slate-100 text-sm sm:text-base">Quantas são as equipes distintas que esse jogador poderá montar?</p></div>
                             
                             <div class="space-y-2 mb-4" id="opts-ifmg-2022-2-q2">
                                 
                             <button onclick="selectOption('ifmg-2022-2-q2', 0)" id="btn-ifmg-2022-2-q2-0" class="w-full text-left p-3.5 rounded-xl border border-slate-800 bg-slate-950/60 hover:border-blue-500 hover:bg-slate-800/60 transition text-sm text-slate-200 flex items-start justify-between gap-3 group">
                                 <span class="flex items-start gap-2.5 flex-1 min-w-0">
                                     <strong class="text-sky-400 font-bold flex-shrink-0 mt-0.5">A)</strong>
-                                    <span class="flex-1 min-w-0 break-words leading-relaxed">11</span>
+                                    <span class="flex-1 min-w-0 break-words leading-relaxed">$11$</span>
                                 </span>
                                 <i data-lucide="circle" class="w-4 h-4 text-slate-600 opt-icon group-hover:text-blue-400 flex-shrink-0 mt-0.5"></i>
                             </button>
@@ -416,7 +474,7 @@ Quantas são as equipes distintas que esse jogador poderá montar?</p>
                             <button onclick="selectOption('ifmg-2022-2-q2', 1)" id="btn-ifmg-2022-2-q2-1" class="w-full text-left p-3.5 rounded-xl border border-slate-800 bg-slate-950/60 hover:border-blue-500 hover:bg-slate-800/60 transition text-sm text-slate-200 flex items-start justify-between gap-3 group">
                                 <span class="flex items-start gap-2.5 flex-1 min-w-0">
                                     <strong class="text-sky-400 font-bold flex-shrink-0 mt-0.5">B)</strong>
-                                    <span class="flex-1 min-w-0 break-words leading-relaxed">15</span>
+                                    <span class="flex-1 min-w-0 break-words leading-relaxed">$15$</span>
                                 </span>
                                 <i data-lucide="circle" class="w-4 h-4 text-slate-600 opt-icon group-hover:text-blue-400 flex-shrink-0 mt-0.5"></i>
                             </button>
@@ -424,7 +482,7 @@ Quantas são as equipes distintas que esse jogador poderá montar?</p>
                             <button onclick="selectOption('ifmg-2022-2-q2', 2)" id="btn-ifmg-2022-2-q2-2" class="w-full text-left p-3.5 rounded-xl border border-slate-800 bg-slate-950/60 hover:border-blue-500 hover:bg-slate-800/60 transition text-sm text-slate-200 flex items-start justify-between gap-3 group">
                                 <span class="flex items-start gap-2.5 flex-1 min-w-0">
                                     <strong class="text-sky-400 font-bold flex-shrink-0 mt-0.5">C)</strong>
-                                    <span class="flex-1 min-w-0 break-words leading-relaxed">30</span>
+                                    <span class="flex-1 min-w-0 break-words leading-relaxed">$30$</span>
                                 </span>
                                 <i data-lucide="circle" class="w-4 h-4 text-slate-600 opt-icon group-hover:text-blue-400 flex-shrink-0 mt-0.5"></i>
                             </button>
@@ -432,7 +490,7 @@ Quantas são as equipes distintas que esse jogador poderá montar?</p>
                             <button onclick="selectOption('ifmg-2022-2-q2', 3)" id="btn-ifmg-2022-2-q2-3" class="w-full text-left p-3.5 rounded-xl border border-slate-800 bg-slate-950/60 hover:border-blue-500 hover:bg-slate-800/60 transition text-sm text-slate-200 flex items-start justify-between gap-3 group">
                                 <span class="flex items-start gap-2.5 flex-1 min-w-0">
                                     <strong class="text-sky-400 font-bold flex-shrink-0 mt-0.5">D)</strong>
-                                    <span class="flex-1 min-w-0 break-words leading-relaxed">60</span>
+                                    <span class="flex-1 min-w-0 break-words leading-relaxed">$60$</span>
                                 </span>
                                 <i data-lucide="circle" class="w-4 h-4 text-slate-600 opt-icon group-hover:text-blue-400 flex-shrink-0 mt-0.5"></i>
                             </button>
@@ -448,7 +506,7 @@ Quantas são as equipes distintas que esse jogador poderá montar?</p>
                     
                         <div class="mb-8 border-b border-slate-800/80 pb-6 last:border-0 last:pb-0" id="q-container-ifmg-2022-2-q3">
                             <div class="flex items-center justify-between mb-3 flex-wrap gap-2">
-                                <div class="flex items-center gap-2">
+                                <div class="flex flex-wrap items-center gap-2">
                                     <span class="text-xs font-bold uppercase tracking-wider text-sky-300 bg-blue-950/60 px-2.5 py-0.5 rounded-full border border-blue-800/40">Questão 4</span>
                                     
                             <a href="../pesquisa.html?bncc=EF07MA34" class="text-[11px] font-mono font-bold text-emerald-300 bg-emerald-950/80 hover:bg-emerald-900/90 px-2.5 py-0.5 rounded-full border border-emerald-800/60 flex items-center gap-1 transition shadow-sm" title="Planejar e realizar experimentos aleatórios ou simulações que envolvem cálculo de probabilidades ou estimativas por meio de frequência de ocorrências.">
@@ -457,16 +515,14 @@ Quantas são as equipes distintas que esse jogador poderá montar?</p>
                         
                                 </div>
                             </div>
-                            <p class="font-medium text-slate-100 mb-4 text-sm sm:text-base leading-relaxed">Suponha que no mesmo jogo com os 21 heróis (3 vermelhos, 5 azuis, 4 verdes, 6 amarelos e 3 roxos), após a escolha do herói azul para ocupar a posição da esquerda, um “bug” (erro ou defeito) no jogo selecionou aleatoriamente o herói que ocupou a posição da direita, independente da sua cor, entre todos os heróis disponíveis do jogador.
-
-A chance de o elemento escolhido ser amarelo é</p>
+                            <div class="q-text-container"><p class="q-paragraph font-medium text-slate-200 text-sm sm:text-base">Suponha que no mesmo jogo com os 21 heróis (3 vermelhos, 5 azuis, 4 verdes, 6 amarelos e 3 roxos), após a escolha do herói azul para ocupar a posição da esquerda, um “bug” (erro ou defeito) no jogo selecionou aleatoriamente o herói que ocupou a posição da direita, independente da sua cor, entre todos os heróis disponíveis do jogador.</p><p class="q-prompt text-slate-100 text-sm sm:text-base">A chance de o elemento escolhido ser amarelo é:</p></div>
                             
                             <div class="space-y-2 mb-4" id="opts-ifmg-2022-2-q3">
                                 
                             <button onclick="selectOption('ifmg-2022-2-q3', 0)" id="btn-ifmg-2022-2-q3-0" class="w-full text-left p-3.5 rounded-xl border border-slate-800 bg-slate-950/60 hover:border-blue-500 hover:bg-slate-800/60 transition text-sm text-slate-200 flex items-start justify-between gap-3 group">
                                 <span class="flex items-start gap-2.5 flex-1 min-w-0">
                                     <strong class="text-sky-400 font-bold flex-shrink-0 mt-0.5">A)</strong>
-                                    <span class="flex-1 min-w-0 break-words leading-relaxed">6/21</span>
+                                    <span class="flex-1 min-w-0 break-words leading-relaxed">$\frac{6}{21}$</span>
                                 </span>
                                 <i data-lucide="circle" class="w-4 h-4 text-slate-600 opt-icon group-hover:text-blue-400 flex-shrink-0 mt-0.5"></i>
                             </button>
@@ -474,7 +530,7 @@ A chance de o elemento escolhido ser amarelo é</p>
                             <button onclick="selectOption('ifmg-2022-2-q3', 1)" id="btn-ifmg-2022-2-q3-1" class="w-full text-left p-3.5 rounded-xl border border-slate-800 bg-slate-950/60 hover:border-blue-500 hover:bg-slate-800/60 transition text-sm text-slate-200 flex items-start justify-between gap-3 group">
                                 <span class="flex items-start gap-2.5 flex-1 min-w-0">
                                     <strong class="text-sky-400 font-bold flex-shrink-0 mt-0.5">B)</strong>
-                                    <span class="flex-1 min-w-0 break-words leading-relaxed">3/10</span>
+                                    <span class="flex-1 min-w-0 break-words leading-relaxed">$\frac{3}{10}$</span>
                                 </span>
                                 <i data-lucide="circle" class="w-4 h-4 text-slate-600 opt-icon group-hover:text-blue-400 flex-shrink-0 mt-0.5"></i>
                             </button>
@@ -482,7 +538,7 @@ A chance de o elemento escolhido ser amarelo é</p>
                             <button onclick="selectOption('ifmg-2022-2-q3', 2)" id="btn-ifmg-2022-2-q3-2" class="w-full text-left p-3.5 rounded-xl border border-slate-800 bg-slate-950/60 hover:border-blue-500 hover:bg-slate-800/60 transition text-sm text-slate-200 flex items-start justify-between gap-3 group">
                                 <span class="flex items-start gap-2.5 flex-1 min-w-0">
                                     <strong class="text-sky-400 font-bold flex-shrink-0 mt-0.5">C)</strong>
-                                    <span class="flex-1 min-w-0 break-words leading-relaxed">3/5</span>
+                                    <span class="flex-1 min-w-0 break-words leading-relaxed">$\frac{3}{5}$</span>
                                 </span>
                                 <i data-lucide="circle" class="w-4 h-4 text-slate-600 opt-icon group-hover:text-blue-400 flex-shrink-0 mt-0.5"></i>
                             </button>
@@ -490,7 +546,7 @@ A chance de o elemento escolhido ser amarelo é</p>
                             <button onclick="selectOption('ifmg-2022-2-q3', 3)" id="btn-ifmg-2022-2-q3-3" class="w-full text-left p-3.5 rounded-xl border border-slate-800 bg-slate-950/60 hover:border-blue-500 hover:bg-slate-800/60 transition text-sm text-slate-200 flex items-start justify-between gap-3 group">
                                 <span class="flex items-start gap-2.5 flex-1 min-w-0">
                                     <strong class="text-sky-400 font-bold flex-shrink-0 mt-0.5">D)</strong>
-                                    <span class="flex-1 min-w-0 break-words leading-relaxed">20/21</span>
+                                    <span class="flex-1 min-w-0 break-words leading-relaxed">$\frac{20}{21}$</span>
                                 </span>
                                 <i data-lucide="circle" class="w-4 h-4 text-slate-600 opt-icon group-hover:text-blue-400 flex-shrink-0 mt-0.5"></i>
                             </button>
@@ -506,7 +562,7 @@ A chance de o elemento escolhido ser amarelo é</p>
                     
                         <div class="mb-8 border-b border-slate-800/80 pb-6 last:border-0 last:pb-0" id="q-container-ifmg-2022-2-q4">
                             <div class="flex items-center justify-between mb-3 flex-wrap gap-2">
-                                <div class="flex items-center gap-2">
+                                <div class="flex flex-wrap items-center gap-2">
                                     <span class="text-xs font-bold uppercase tracking-wider text-sky-300 bg-blue-950/60 px-2.5 py-0.5 rounded-full border border-blue-800/40">Questão 5</span>
                                     
                             <a href="../pesquisa.html?bncc=EF09MA12" class="text-[11px] font-mono font-bold text-emerald-300 bg-emerald-950/80 hover:bg-emerald-900/90 px-2.5 py-0.5 rounded-full border border-emerald-800/60 flex items-center gap-1 transition shadow-sm" title="Reconhecer as condições necessárias e suficientes para que dois triângulos sejam semelhantes.">
@@ -515,11 +571,7 @@ A chance de o elemento escolhido ser amarelo é</p>
                         
                                 </div>
                             </div>
-                            <p class="font-medium text-slate-100 mb-4 text-sm sm:text-base leading-relaxed">Após concluírem o curso de Administração em um campus do IFMG, os irmãos Diones e Dionatan resolveram abrir uma empresa de confecção de chinelos. Como primeiro passo, decidiram criar a marca da empresa. Concordaram então que a logomarca seria construída a partir de dois triângulos retângulos não congruentes contendo um segmento de reta comum AB, representando os “D”s das iniciais de seus nomes, como ilustra a figura a seguir:
-
-Os triângulos teriam suas dimensões correspondentes na mesma razão entre as idades dos irmãos quando da idealização da empresa: Diones com 24 anos e Dionatan com 36 anos nessa data.
-
-Em um folheto construído para o lançamento da empresa, a dimensão do segmento AB era de 15 cm. Sabendo-se que o segmento BC neste folheto media 12 cm, qual a medida do segmento CE, sendo E ponto de intersecção dos segmentos AB e CD, neste mesmo folheto?</p>
+                            <div class="q-text-container"><p class="q-paragraph font-medium text-slate-200 text-sm sm:text-base">Após concluírem o curso de Administração em um campus do IFMG, os irmãos Diones e Dionatan resolveram abrir uma empresa de confecção de chinelos. Como primeiro passo, decidiram criar a marca da empresa. Concordaram então que a logomarca seria construída a partir de dois triângulos retângulos não congruentes contendo um segmento de reta comum $\overline{AB}$, representando os “D”s das iniciais de seus nomes, como ilustra a figura a seguir:</p><p class="q-paragraph font-medium text-slate-200 text-sm sm:text-base">Os triângulos teriam suas dimensões correspondentes na mesma razão entre as idades dos irmãos quando da idealização da empresa: Diones com 24 anos e Dionatan com 36 anos nessa data.</p><p class="q-prompt text-slate-100 text-sm sm:text-base">Em um folheto construído para o lançamento da empresa, a dimensão do segmento $\overline{AB}$ era de $15\text{ cm}$. Sabendo-se que o segmento $\overline{BC}$ neste folheto media $12\text{ cm}$, qual a medida do segmento $\overline{CE}$, sendo $E$ ponto de intersecção dos segmentos $\overline{AB}$ e $\overline{CD}$, neste mesmo folheto?</p></div>
                             
         <div class="my-4 p-2 sm:p-3 rounded-2xl border bg-slate-950/70 border-slate-800 shadow-sm max-w-xl mx-auto flex flex-col items-center">
             <img src="https://lh3.googleusercontent.com/d/1JSy0DxYakvvl9CoYra_hcohsJEVfLyJD" alt="Logomarca geométrica com dois triângulos retângulos semelhantes opostos pelo vértice E compartilhando a reta suporte AB." onerror="if(this.src!='../assets/img/questoes/ifmg/ifmg-2022-2-q20.png'){this.src='../assets/img/questoes/ifmg/ifmg-2022-2-q20.png';}" class="max-h-80 sm:max-h-96 w-auto max-w-full rounded-xl object-contain cursor-zoom-in hover:opacity-95 hover:scale-[1.01] transition duration-200" onclick="openImageModal('https://lh3.googleusercontent.com/d/1JSy0DxYakvvl9CoYra_hcohsJEVfLyJD', 'Logomarca geométrica com dois triângulos retângulos semelhantes opostos pelo vértice E compartilhando a reta suporte AB.')" title="Clique para ampliar a imagem" loading="lazy">
@@ -531,7 +583,7 @@ Em um folheto construído para o lançamento da empresa, a dimensão do segmento
                             <button onclick="selectOption('ifmg-2022-2-q4', 0)" id="btn-ifmg-2022-2-q4-0" class="w-full text-left p-3.5 rounded-xl border border-slate-800 bg-slate-950/60 hover:border-blue-500 hover:bg-slate-800/60 transition text-sm text-slate-200 flex items-start justify-between gap-3 group">
                                 <span class="flex items-start gap-2.5 flex-1 min-w-0">
                                     <strong class="text-sky-400 font-bold flex-shrink-0 mt-0.5">A)</strong>
-                                    <span class="flex-1 min-w-0 break-words leading-relaxed">6 cm</span>
+                                    <span class="flex-1 min-w-0 break-words leading-relaxed">$6\text{ cm}$</span>
                                 </span>
                                 <i data-lucide="circle" class="w-4 h-4 text-slate-600 opt-icon group-hover:text-blue-400 flex-shrink-0 mt-0.5"></i>
                             </button>
@@ -539,7 +591,7 @@ Em um folheto construído para o lançamento da empresa, a dimensão do segmento
                             <button onclick="selectOption('ifmg-2022-2-q4', 1)" id="btn-ifmg-2022-2-q4-1" class="w-full text-left p-3.5 rounded-xl border border-slate-800 bg-slate-950/60 hover:border-blue-500 hover:bg-slate-800/60 transition text-sm text-slate-200 flex items-start justify-between gap-3 group">
                                 <span class="flex items-start gap-2.5 flex-1 min-w-0">
                                     <strong class="text-sky-400 font-bold flex-shrink-0 mt-0.5">B)</strong>
-                                    <span class="flex-1 min-w-0 break-words leading-relaxed">9 cm</span>
+                                    <span class="flex-1 min-w-0 break-words leading-relaxed">$9\text{ cm}$</span>
                                 </span>
                                 <i data-lucide="circle" class="w-4 h-4 text-slate-600 opt-icon group-hover:text-blue-400 flex-shrink-0 mt-0.5"></i>
                             </button>
@@ -547,7 +599,7 @@ Em um folheto construído para o lançamento da empresa, a dimensão do segmento
                             <button onclick="selectOption('ifmg-2022-2-q4', 2)" id="btn-ifmg-2022-2-q4-2" class="w-full text-left p-3.5 rounded-xl border border-slate-800 bg-slate-950/60 hover:border-blue-500 hover:bg-slate-800/60 transition text-sm text-slate-200 flex items-start justify-between gap-3 group">
                                 <span class="flex items-start gap-2.5 flex-1 min-w-0">
                                     <strong class="text-sky-400 font-bold flex-shrink-0 mt-0.5">C)</strong>
-                                    <span class="flex-1 min-w-0 break-words leading-relaxed">15 cm</span>
+                                    <span class="flex-1 min-w-0 break-words leading-relaxed">$15\text{ cm}$</span>
                                 </span>
                                 <i data-lucide="circle" class="w-4 h-4 text-slate-600 opt-icon group-hover:text-blue-400 flex-shrink-0 mt-0.5"></i>
                             </button>
@@ -555,7 +607,7 @@ Em um folheto construído para o lançamento da empresa, a dimensão do segmento
                             <button onclick="selectOption('ifmg-2022-2-q4', 3)" id="btn-ifmg-2022-2-q4-3" class="w-full text-left p-3.5 rounded-xl border border-slate-800 bg-slate-950/60 hover:border-blue-500 hover:bg-slate-800/60 transition text-sm text-slate-200 flex items-start justify-between gap-3 group">
                                 <span class="flex items-start gap-2.5 flex-1 min-w-0">
                                     <strong class="text-sky-400 font-bold flex-shrink-0 mt-0.5">D)</strong>
-                                    <span class="flex-1 min-w-0 break-words leading-relaxed">21 cm</span>
+                                    <span class="flex-1 min-w-0 break-words leading-relaxed">$21\text{ cm}$</span>
                                 </span>
                                 <i data-lucide="circle" class="w-4 h-4 text-slate-600 opt-icon group-hover:text-blue-400 flex-shrink-0 mt-0.5"></i>
                             </button>
@@ -571,7 +623,7 @@ Em um folheto construído para o lançamento da empresa, a dimensão do segmento
                     
                         <div class="mb-8 border-b border-slate-800/80 pb-6 last:border-0 last:pb-0" id="q-container-ifmg-2022-2-q5">
                             <div class="flex items-center justify-between mb-3 flex-wrap gap-2">
-                                <div class="flex items-center gap-2">
+                                <div class="flex flex-wrap items-center gap-2">
                                     <span class="text-xs font-bold uppercase tracking-wider text-sky-300 bg-blue-950/60 px-2.5 py-0.5 rounded-full border border-blue-800/40">Questão 6</span>
                                     
                             <a href="../pesquisa.html?bncc=EF08MA25" class="text-[11px] font-mono font-bold text-emerald-300 bg-emerald-950/80 hover:bg-emerald-900/90 px-2.5 py-0.5 rounded-full border border-emerald-800/60 flex items-center gap-1 transition shadow-sm" title="Obter os valores de medidas de tendência central de uma pesquisa estatística (média, mediana e moda) e interpretar seus significados.">
@@ -580,9 +632,7 @@ Em um folheto construído para o lançamento da empresa, a dimensão do segmento
                         
                                 </div>
                             </div>
-                            <p class="font-medium text-slate-100 mb-4 text-sm sm:text-base leading-relaxed">Dois dos maiores jogadores de futebol de todos os tempos, o argentino Lionel Messi e o português Cristiano Ronaldo, rivalizaram nos últimos anos as disputas de melhor jogador da temporada. Uma das maneiras de comparar o desempenho de ambos é através da média de gols por jogo, mostrada nas tabelas a seguir, separadas por equipe:
-
-O jogador que possui maior média de gols por jogo considerando toda a carreira e o respectivo valor dessa média, aproximadamente, é</p>
+                            <div class="q-text-container"><p class="q-paragraph font-medium text-slate-200 text-sm sm:text-base">Dois dos maiores jogadores de futebol de todos os tempos, o argentino Lionel Messi e o português Cristiano Ronaldo, rivalizaram nos últimos anos as disputas de melhor jogador da temporada. Uma das maneiras de comparar o desempenho de ambos é através da média de gols por jogo, mostrada nas tabelas a seguir, separadas por equipe:</p><p class="q-prompt text-slate-100 text-sm sm:text-base">O jogador que possui maior média de gols por jogo considerando toda a carreira e o respectivo valor dessa média, aproximadamente, é:</p></div>
                             
         <div class="my-4 p-2 sm:p-3 rounded-2xl border bg-slate-950/70 border-slate-800 shadow-sm max-w-xl mx-auto flex flex-col items-center">
             <img src="https://lh3.googleusercontent.com/d/10jOrFfPGYmIvrtsQIxAtYKahB6Mjsld0" alt="Tabelas de estatísticas de jogos e gols por equipe na carreira de Cristiano Ronaldo e Lionel Messi até a temporada 2021/2022." onerror="if(this.src!='../assets/img/questoes/ifmg/ifmg-2022-2-q21.png'){this.src='../assets/img/questoes/ifmg/ifmg-2022-2-q21.png';}" class="max-h-80 sm:max-h-96 w-auto max-w-full rounded-xl object-contain cursor-zoom-in hover:opacity-95 hover:scale-[1.01] transition duration-200" onclick="openImageModal('https://lh3.googleusercontent.com/d/10jOrFfPGYmIvrtsQIxAtYKahB6Mjsld0', 'Tabelas de estatísticas de jogos e gols por equipe na carreira de Cristiano Ronaldo e Lionel Messi até a temporada 2021/2022.')" title="Clique para ampliar a imagem" loading="lazy">
@@ -594,7 +644,7 @@ O jogador que possui maior média de gols por jogo considerando toda a carreira 
                             <button onclick="selectOption('ifmg-2022-2-q5', 0)" id="btn-ifmg-2022-2-q5-0" class="w-full text-left p-3.5 rounded-xl border border-slate-800 bg-slate-950/60 hover:border-blue-500 hover:bg-slate-800/60 transition text-sm text-slate-200 flex items-start justify-between gap-3 group">
                                 <span class="flex items-start gap-2.5 flex-1 min-w-0">
                                     <strong class="text-sky-400 font-bold flex-shrink-0 mt-0.5">A)</strong>
-                                    <span class="flex-1 min-w-0 break-words leading-relaxed">Cristiano Ronaldo com 0,60.</span>
+                                    <span class="flex-1 min-w-0 break-words leading-relaxed">Cristiano Ronaldo com $0{,}60$.</span>
                                 </span>
                                 <i data-lucide="circle" class="w-4 h-4 text-slate-600 opt-icon group-hover:text-blue-400 flex-shrink-0 mt-0.5"></i>
                             </button>
@@ -602,7 +652,7 @@ O jogador que possui maior média de gols por jogo considerando toda a carreira 
                             <button onclick="selectOption('ifmg-2022-2-q5', 1)" id="btn-ifmg-2022-2-q5-1" class="w-full text-left p-3.5 rounded-xl border border-slate-800 bg-slate-950/60 hover:border-blue-500 hover:bg-slate-800/60 transition text-sm text-slate-200 flex items-start justify-between gap-3 group">
                                 <span class="flex items-start gap-2.5 flex-1 min-w-0">
                                     <strong class="text-sky-400 font-bold flex-shrink-0 mt-0.5">B)</strong>
-                                    <span class="flex-1 min-w-0 break-words leading-relaxed">Cristiano Ronaldo com 1,03.</span>
+                                    <span class="flex-1 min-w-0 break-words leading-relaxed">Cristiano Ronaldo com $1{,}03$.</span>
                                 </span>
                                 <i data-lucide="circle" class="w-4 h-4 text-slate-600 opt-icon group-hover:text-blue-400 flex-shrink-0 mt-0.5"></i>
                             </button>
@@ -610,7 +660,7 @@ O jogador que possui maior média de gols por jogo considerando toda a carreira 
                             <button onclick="selectOption('ifmg-2022-2-q5', 2)" id="btn-ifmg-2022-2-q5-2" class="w-full text-left p-3.5 rounded-xl border border-slate-800 bg-slate-950/60 hover:border-blue-500 hover:bg-slate-800/60 transition text-sm text-slate-200 flex items-start justify-between gap-3 group">
                                 <span class="flex items-start gap-2.5 flex-1 min-w-0">
                                     <strong class="text-sky-400 font-bold flex-shrink-0 mt-0.5">C)</strong>
-                                    <span class="flex-1 min-w-0 break-words leading-relaxed">Lionel Messi com 0,57.</span>
+                                    <span class="flex-1 min-w-0 break-words leading-relaxed">Lionel Messi com $0{,}57$.</span>
                                 </span>
                                 <i data-lucide="circle" class="w-4 h-4 text-slate-600 opt-icon group-hover:text-blue-400 flex-shrink-0 mt-0.5"></i>
                             </button>
@@ -618,7 +668,7 @@ O jogador que possui maior média de gols por jogo considerando toda a carreira 
                             <button onclick="selectOption('ifmg-2022-2-q5', 3)" id="btn-ifmg-2022-2-q5-3" class="w-full text-left p-3.5 rounded-xl border border-slate-800 bg-slate-950/60 hover:border-blue-500 hover:bg-slate-800/60 transition text-sm text-slate-200 flex items-start justify-between gap-3 group">
                                 <span class="flex items-start gap-2.5 flex-1 min-w-0">
                                     <strong class="text-sky-400 font-bold flex-shrink-0 mt-0.5">D)</strong>
-                                    <span class="flex-1 min-w-0 break-words leading-relaxed">Lionel Messi com 0,79.</span>
+                                    <span class="flex-1 min-w-0 break-words leading-relaxed">Lionel Messi com $0{,}79$.</span>
                                 </span>
                                 <i data-lucide="circle" class="w-4 h-4 text-slate-600 opt-icon group-hover:text-blue-400 flex-shrink-0 mt-0.5"></i>
                             </button>
@@ -634,7 +684,7 @@ O jogador que possui maior média de gols por jogo considerando toda a carreira 
                     
                         <div class="mb-8 border-b border-slate-800/80 pb-6 last:border-0 last:pb-0" id="q-container-ifmg-2022-2-q6">
                             <div class="flex items-center justify-between mb-3 flex-wrap gap-2">
-                                <div class="flex items-center gap-2">
+                                <div class="flex flex-wrap items-center gap-2">
                                     <span class="text-xs font-bold uppercase tracking-wider text-sky-300 bg-blue-950/60 px-2.5 py-0.5 rounded-full border border-blue-800/40">Questão 7</span>
                                     
                             <a href="../pesquisa.html?bncc=EF09MA05" class="text-[11px] font-mono font-bold text-emerald-300 bg-emerald-950/80 hover:bg-emerald-900/90 px-2.5 py-0.5 rounded-full border border-emerald-800/60 flex items-center gap-1 transition shadow-sm" title="Resolver e elaborar problemas que envolvam porcentagens, com a ideia de aplicação de percentuais sucessivos.">
@@ -643,9 +693,7 @@ O jogador que possui maior média de gols por jogo considerando toda a carreira 
                         
                                 </div>
                             </div>
-                            <p class="font-medium text-slate-100 mb-4 text-sm sm:text-base leading-relaxed">A pandemia que se iniciou no Brasil em 2020 teve impactos globais que serão sentidos ainda por alguns anos. Dentre os diversos impactos negativos, o econômico é um daqueles que o País ainda não conseguiu se recuperar. O gráfico a seguir, retirado do perfil oficial da Secretaria Especial de Comunicação Social da Presidência da República e publicado em 03/12/2020, traz informações sobre o Produto Interno Bruto (PIB) do Brasil e apresenta um texto que sugere uma retomada do crescimento, ainda no período pandêmico.
-
-A informação de retomada do crescimento econômico apresentada pelo gráfico pode levar a uma interpretação equivocada, pois a variação do PIB no ano de 2020 foi de, aproximadamente:</p>
+                            <div class="q-text-container"><p class="q-paragraph font-medium text-slate-200 text-sm sm:text-base">A pandemia que se iniciou no Brasil em 2020 teve impactos globais que serão sentidos ainda por alguns anos. Dentre os diversos impactos negativos, o econômico é um daqueles que o País ainda não conseguiu se recuperar. O gráfico a seguir, retirado do perfil oficial da Secretaria Especial de Comunicação Social da Presidência da República e publicado em 03/12/2020, traz informações sobre o Produto Interno Bruto (PIB) do Brasil e apresenta um texto que sugere uma retomada do crescimento, ainda no período pandêmico.</p><p class="q-prompt text-slate-100 text-sm sm:text-base">A informação de retomada do crescimento econômico apresentada pelo gráfico pode levar a uma interpretação equivocada, pois a variação do PIB no ano de 2020 foi de, aproximadamente:</p></div>
                             
         <div class="my-4 p-2 sm:p-3 rounded-2xl border bg-slate-950/70 border-slate-800 shadow-sm max-w-xl mx-auto flex flex-col items-center">
             <img src="https://lh3.googleusercontent.com/d/1f5ZMktnYt7UIb5Jzra3L6JBfBKAaMHCu" alt="Gráfico em linha da variação do PIB brasileiro indicando -1,5% de jan-mar/2020, -9,6% de abr-jun/2020 e +7,7% de jul-set/2020." onerror="if(this.src!='../assets/img/questoes/ifmg/ifmg-2022-2-q22.png'){this.src='../assets/img/questoes/ifmg/ifmg-2022-2-q22.png';}" class="max-h-80 sm:max-h-96 w-auto max-w-full rounded-xl object-contain cursor-zoom-in hover:opacity-95 hover:scale-[1.01] transition duration-200" onclick="openImageModal('https://lh3.googleusercontent.com/d/1f5ZMktnYt7UIb5Jzra3L6JBfBKAaMHCu', 'Gráfico em linha da variação do PIB brasileiro indicando -1,5% de jan-mar/2020, -9,6% de abr-jun/2020 e +7,7% de jul-set/2020.')" title="Clique para ampliar a imagem" loading="lazy">
@@ -657,7 +705,7 @@ A informação de retomada do crescimento econômico apresentada pelo gráfico p
                             <button onclick="selectOption('ifmg-2022-2-q6', 0)" id="btn-ifmg-2022-2-q6-0" class="w-full text-left p-3.5 rounded-xl border border-slate-800 bg-slate-950/60 hover:border-blue-500 hover:bg-slate-800/60 transition text-sm text-slate-200 flex items-start justify-between gap-3 group">
                                 <span class="flex items-start gap-2.5 flex-1 min-w-0">
                                     <strong class="text-sky-400 font-bold flex-shrink-0 mt-0.5">A)</strong>
-                                    <span class="flex-1 min-w-0 break-words leading-relaxed">– 4,10%</span>
+                                    <span class="flex-1 min-w-0 break-words leading-relaxed">$-4{,}10\%$</span>
                                 </span>
                                 <i data-lucide="circle" class="w-4 h-4 text-slate-600 opt-icon group-hover:text-blue-400 flex-shrink-0 mt-0.5"></i>
                             </button>
@@ -665,7 +713,7 @@ A informação de retomada do crescimento econômico apresentada pelo gráfico p
                             <button onclick="selectOption('ifmg-2022-2-q6', 1)" id="btn-ifmg-2022-2-q6-1" class="w-full text-left p-3.5 rounded-xl border border-slate-800 bg-slate-950/60 hover:border-blue-500 hover:bg-slate-800/60 transition text-sm text-slate-200 flex items-start justify-between gap-3 group">
                                 <span class="flex items-start gap-2.5 flex-1 min-w-0">
                                     <strong class="text-sky-400 font-bold flex-shrink-0 mt-0.5">B)</strong>
-                                    <span class="flex-1 min-w-0 break-words leading-relaxed">– 3,40%</span>
+                                    <span class="flex-1 min-w-0 break-words leading-relaxed">$-3{,}40\%$</span>
                                 </span>
                                 <i data-lucide="circle" class="w-4 h-4 text-slate-600 opt-icon group-hover:text-blue-400 flex-shrink-0 mt-0.5"></i>
                             </button>
@@ -673,7 +721,7 @@ A informação de retomada do crescimento econômico apresentada pelo gráfico p
                             <button onclick="selectOption('ifmg-2022-2-q6', 2)" id="btn-ifmg-2022-2-q6-2" class="w-full text-left p-3.5 rounded-xl border border-slate-800 bg-slate-950/60 hover:border-blue-500 hover:bg-slate-800/60 transition text-sm text-slate-200 flex items-start justify-between gap-3 group">
                                 <span class="flex items-start gap-2.5 flex-1 min-w-0">
                                     <strong class="text-sky-400 font-bold flex-shrink-0 mt-0.5">C)</strong>
-                                    <span class="flex-1 min-w-0 break-words leading-relaxed">– 3,05%</span>
+                                    <span class="flex-1 min-w-0 break-words leading-relaxed">$-3{,}05\%$</span>
                                 </span>
                                 <i data-lucide="circle" class="w-4 h-4 text-slate-600 opt-icon group-hover:text-blue-400 flex-shrink-0 mt-0.5"></i>
                             </button>
@@ -681,7 +729,7 @@ A informação de retomada do crescimento econômico apresentada pelo gráfico p
                             <button onclick="selectOption('ifmg-2022-2-q6', 3)" id="btn-ifmg-2022-2-q6-3" class="w-full text-left p-3.5 rounded-xl border border-slate-800 bg-slate-950/60 hover:border-blue-500 hover:bg-slate-800/60 transition text-sm text-slate-200 flex items-start justify-between gap-3 group">
                                 <span class="flex items-start gap-2.5 flex-1 min-w-0">
                                     <strong class="text-sky-400 font-bold flex-shrink-0 mt-0.5">D)</strong>
-                                    <span class="flex-1 min-w-0 break-words leading-relaxed">– 2,30%</span>
+                                    <span class="flex-1 min-w-0 break-words leading-relaxed">$-2{,}30\%$</span>
                                 </span>
                                 <i data-lucide="circle" class="w-4 h-4 text-slate-600 opt-icon group-hover:text-blue-400 flex-shrink-0 mt-0.5"></i>
                             </button>
@@ -697,7 +745,7 @@ A informação de retomada do crescimento econômico apresentada pelo gráfico p
                     
                         <div class="mb-8 border-b border-slate-800/80 pb-6 last:border-0 last:pb-0" id="q-container-ifmg-2022-2-q7">
                             <div class="flex items-center justify-between mb-3 flex-wrap gap-2">
-                                <div class="flex items-center gap-2">
+                                <div class="flex flex-wrap items-center gap-2">
                                     <span class="text-xs font-bold uppercase tracking-wider text-sky-300 bg-blue-950/60 px-2.5 py-0.5 rounded-full border border-blue-800/40">Questão 8</span>
                                     
                             <a href="../pesquisa.html?bncc=EF08MA01" class="text-[11px] font-mono font-bold text-emerald-300 bg-emerald-950/80 hover:bg-emerald-900/90 px-2.5 py-0.5 rounded-full border border-emerald-800/60 flex items-center gap-1 transition shadow-sm" title="Efetuar cálculos com potências de expoentes inteiros e aplicar esse conhecimento na representação de números em notação científica.">
@@ -706,16 +754,14 @@ A informação de retomada do crescimento econômico apresentada pelo gráfico p
                         
                                 </div>
                             </div>
-                            <p class="font-medium text-slate-100 mb-4 text-sm sm:text-base leading-relaxed">O ano-luz é uma unidade de comprimento usada para expressar distâncias astronômicas e corresponde a distância que a luz percorre, no vácuo, durante um ano. Para calcular o valor do ano-luz deve-se efetuar o produto da quantidade de segundos em um ano pela velocidade da luz, que é cerca de 300.000 km/s.
-
-Sendo assim, o valor do ano-luz em quilômetros é, aproximadamente, igual a</p>
+                            <div class="q-text-container"><p class="q-paragraph font-medium text-slate-200 text-sm sm:text-base">O ano-luz é uma unidade de comprimento usada para expressar distâncias astronômicas e corresponde à distância que a luz percorre, no vácuo, durante um ano. Para calcular o valor do ano-luz deve-se efetuar o produto da quantidade de segundos em um ano pela velocidade da luz, que é cerca de $300.000\text{ km/s}$.</p><p class="q-prompt text-slate-100 text-sm sm:text-base">Sendo assim, o valor do ano-luz em quilômetros é, aproximadamente, igual a:</p></div>
                             
                             <div class="space-y-2 mb-4" id="opts-ifmg-2022-2-q7">
                                 
                             <button onclick="selectOption('ifmg-2022-2-q7', 0)" id="btn-ifmg-2022-2-q7-0" class="w-full text-left p-3.5 rounded-xl border border-slate-800 bg-slate-950/60 hover:border-blue-500 hover:bg-slate-800/60 transition text-sm text-slate-200 flex items-start justify-between gap-3 group">
                                 <span class="flex items-start gap-2.5 flex-1 min-w-0">
                                     <strong class="text-sky-400 font-bold flex-shrink-0 mt-0.5">A)</strong>
-                                    <span class="flex-1 min-w-0 break-words leading-relaxed">1,05 × 10²</span>
+                                    <span class="flex-1 min-w-0 break-words leading-relaxed">$1{,}05 \times 10^2$</span>
                                 </span>
                                 <i data-lucide="circle" class="w-4 h-4 text-slate-600 opt-icon group-hover:text-blue-400 flex-shrink-0 mt-0.5"></i>
                             </button>
@@ -723,7 +769,7 @@ Sendo assim, o valor do ano-luz em quilômetros é, aproximadamente, igual a</p>
                             <button onclick="selectOption('ifmg-2022-2-q7', 1)" id="btn-ifmg-2022-2-q7-1" class="w-full text-left p-3.5 rounded-xl border border-slate-800 bg-slate-950/60 hover:border-blue-500 hover:bg-slate-800/60 transition text-sm text-slate-200 flex items-start justify-between gap-3 group">
                                 <span class="flex items-start gap-2.5 flex-1 min-w-0">
                                     <strong class="text-sky-400 font-bold flex-shrink-0 mt-0.5">B)</strong>
-                                    <span class="flex-1 min-w-0 break-words leading-relaxed">1,10 × 10⁸</span>
+                                    <span class="flex-1 min-w-0 break-words leading-relaxed">$1{,}10 \times 10^8$</span>
                                 </span>
                                 <i data-lucide="circle" class="w-4 h-4 text-slate-600 opt-icon group-hover:text-blue-400 flex-shrink-0 mt-0.5"></i>
                             </button>
@@ -731,7 +777,7 @@ Sendo assim, o valor do ano-luz em quilômetros é, aproximadamente, igual a</p>
                             <button onclick="selectOption('ifmg-2022-2-q7', 2)" id="btn-ifmg-2022-2-q7-2" class="w-full text-left p-3.5 rounded-xl border border-slate-800 bg-slate-950/60 hover:border-blue-500 hover:bg-slate-800/60 transition text-sm text-slate-200 flex items-start justify-between gap-3 group">
                                 <span class="flex items-start gap-2.5 flex-1 min-w-0">
                                     <strong class="text-sky-400 font-bold flex-shrink-0 mt-0.5">C)</strong>
-                                    <span class="flex-1 min-w-0 break-words leading-relaxed">1,58 × 10¹¹</span>
+                                    <span class="flex-1 min-w-0 break-words leading-relaxed">$1{,}58 \times 10^{11}$</span>
                                 </span>
                                 <i data-lucide="circle" class="w-4 h-4 text-slate-600 opt-icon group-hover:text-blue-400 flex-shrink-0 mt-0.5"></i>
                             </button>
@@ -739,7 +785,7 @@ Sendo assim, o valor do ano-luz em quilômetros é, aproximadamente, igual a</p>
                             <button onclick="selectOption('ifmg-2022-2-q7', 3)" id="btn-ifmg-2022-2-q7-3" class="w-full text-left p-3.5 rounded-xl border border-slate-800 bg-slate-950/60 hover:border-blue-500 hover:bg-slate-800/60 transition text-sm text-slate-200 flex items-start justify-between gap-3 group">
                                 <span class="flex items-start gap-2.5 flex-1 min-w-0">
                                     <strong class="text-sky-400 font-bold flex-shrink-0 mt-0.5">D)</strong>
-                                    <span class="flex-1 min-w-0 break-words leading-relaxed">9,46 × 10¹²</span>
+                                    <span class="flex-1 min-w-0 break-words leading-relaxed">$9{,}46 \times 10^{12}$</span>
                                 </span>
                                 <i data-lucide="circle" class="w-4 h-4 text-slate-600 opt-icon group-hover:text-blue-400 flex-shrink-0 mt-0.5"></i>
                             </button>
@@ -755,7 +801,7 @@ Sendo assim, o valor do ano-luz em quilômetros é, aproximadamente, igual a</p>
                     
                         <div class="mb-8 border-b border-slate-800/80 pb-6 last:border-0 last:pb-0" id="q-container-ifmg-2022-2-q8">
                             <div class="flex items-center justify-between mb-3 flex-wrap gap-2">
-                                <div class="flex items-center gap-2">
+                                <div class="flex flex-wrap items-center gap-2">
                                     <span class="text-xs font-bold uppercase tracking-wider text-sky-300 bg-blue-950/60 px-2.5 py-0.5 rounded-full border border-blue-800/40">Questão 9</span>
                                     
                             <a href="../pesquisa.html?bncc=EF07MA03" class="text-[11px] font-mono font-bold text-emerald-300 bg-emerald-950/80 hover:bg-emerald-900/90 px-2.5 py-0.5 rounded-full border border-emerald-800/60 flex items-center gap-1 transition shadow-sm" title="Comparar e ordenar números inteiros em diferentes contextos, incluindo o histórico, e efetuar operações com números inteiros.">
@@ -764,17 +810,15 @@ Sendo assim, o valor do ano-luz em quilômetros é, aproximadamente, igual a</p>
                         
                                 </div>
                             </div>
-                            <p class="font-medium text-slate-100 mb-4 text-sm sm:text-base leading-relaxed">Circulou pelas redes sociais recentemente um meme com a expressão a seguir que ficou conhecida como “expressão numérica da vergonha”, pela quantidade de respostas erradas que eram inseridas nos comentários:
-$$(-5)^2 - (-5^2)$$
-
-O valor correto para a “expressão numérica da vergonha” é</p>
+                            <div class="q-text-container"><p class="q-paragraph font-medium text-slate-200 text-sm sm:text-base">Circulou pelas redes sociais recentemente um meme com a expressão a seguir que ficou conhecida como “expressão numérica da vergonha”, pela quantidade de respostas erradas que eram inseridas nos comentários:
+$$(-5)^2 - (-5^2)$$</p><p class="q-prompt text-slate-100 text-sm sm:text-base">O valor correto para a “expressão numérica da vergonha” é:</p></div>
                             
                             <div class="space-y-2 mb-4" id="opts-ifmg-2022-2-q8">
                                 
                             <button onclick="selectOption('ifmg-2022-2-q8', 0)" id="btn-ifmg-2022-2-q8-0" class="w-full text-left p-3.5 rounded-xl border border-slate-800 bg-slate-950/60 hover:border-blue-500 hover:bg-slate-800/60 transition text-sm text-slate-200 flex items-start justify-between gap-3 group">
                                 <span class="flex items-start gap-2.5 flex-1 min-w-0">
                                     <strong class="text-sky-400 font-bold flex-shrink-0 mt-0.5">A)</strong>
-                                    <span class="flex-1 min-w-0 break-words leading-relaxed">-50</span>
+                                    <span class="flex-1 min-w-0 break-words leading-relaxed">$-50$</span>
                                 </span>
                                 <i data-lucide="circle" class="w-4 h-4 text-slate-600 opt-icon group-hover:text-blue-400 flex-shrink-0 mt-0.5"></i>
                             </button>
@@ -782,7 +826,7 @@ O valor correto para a “expressão numérica da vergonha” é</p>
                             <button onclick="selectOption('ifmg-2022-2-q8', 1)" id="btn-ifmg-2022-2-q8-1" class="w-full text-left p-3.5 rounded-xl border border-slate-800 bg-slate-950/60 hover:border-blue-500 hover:bg-slate-800/60 transition text-sm text-slate-200 flex items-start justify-between gap-3 group">
                                 <span class="flex items-start gap-2.5 flex-1 min-w-0">
                                     <strong class="text-sky-400 font-bold flex-shrink-0 mt-0.5">B)</strong>
-                                    <span class="flex-1 min-w-0 break-words leading-relaxed">0</span>
+                                    <span class="flex-1 min-w-0 break-words leading-relaxed">$0$</span>
                                 </span>
                                 <i data-lucide="circle" class="w-4 h-4 text-slate-600 opt-icon group-hover:text-blue-400 flex-shrink-0 mt-0.5"></i>
                             </button>
@@ -790,7 +834,7 @@ O valor correto para a “expressão numérica da vergonha” é</p>
                             <button onclick="selectOption('ifmg-2022-2-q8', 2)" id="btn-ifmg-2022-2-q8-2" class="w-full text-left p-3.5 rounded-xl border border-slate-800 bg-slate-950/60 hover:border-blue-500 hover:bg-slate-800/60 transition text-sm text-slate-200 flex items-start justify-between gap-3 group">
                                 <span class="flex items-start gap-2.5 flex-1 min-w-0">
                                     <strong class="text-sky-400 font-bold flex-shrink-0 mt-0.5">C)</strong>
-                                    <span class="flex-1 min-w-0 break-words leading-relaxed">20</span>
+                                    <span class="flex-1 min-w-0 break-words leading-relaxed">$20$</span>
                                 </span>
                                 <i data-lucide="circle" class="w-4 h-4 text-slate-600 opt-icon group-hover:text-blue-400 flex-shrink-0 mt-0.5"></i>
                             </button>
@@ -798,7 +842,7 @@ O valor correto para a “expressão numérica da vergonha” é</p>
                             <button onclick="selectOption('ifmg-2022-2-q8', 3)" id="btn-ifmg-2022-2-q8-3" class="w-full text-left p-3.5 rounded-xl border border-slate-800 bg-slate-950/60 hover:border-blue-500 hover:bg-slate-800/60 transition text-sm text-slate-200 flex items-start justify-between gap-3 group">
                                 <span class="flex items-start gap-2.5 flex-1 min-w-0">
                                     <strong class="text-sky-400 font-bold flex-shrink-0 mt-0.5">D)</strong>
-                                    <span class="flex-1 min-w-0 break-words leading-relaxed">50</span>
+                                    <span class="flex-1 min-w-0 break-words leading-relaxed">$50$</span>
                                 </span>
                                 <i data-lucide="circle" class="w-4 h-4 text-slate-600 opt-icon group-hover:text-blue-400 flex-shrink-0 mt-0.5"></i>
                             </button>
@@ -814,7 +858,7 @@ O valor correto para a “expressão numérica da vergonha” é</p>
                     
                         <div class="mb-8 border-b border-slate-800/80 pb-6 last:border-0 last:pb-0" id="q-container-ifmg-2022-2-q9">
                             <div class="flex items-center justify-between mb-3 flex-wrap gap-2">
-                                <div class="flex items-center gap-2">
+                                <div class="flex flex-wrap items-center gap-2">
                                     <span class="text-xs font-bold uppercase tracking-wider text-sky-300 bg-blue-950/60 px-2.5 py-0.5 rounded-full border border-blue-800/40">Questão 10</span>
                                     
                             <a href="../pesquisa.html?bncc=EF08MA14" class="text-[11px] font-mono font-bold text-emerald-300 bg-emerald-950/80 hover:bg-emerald-900/90 px-2.5 py-0.5 rounded-full border border-emerald-800/60 flex items-center gap-1 transition shadow-sm" title="Demonstrar propriedades de quadriláteros por meio da identificação da congruência de triângulos.">
@@ -823,15 +867,7 @@ O valor correto para a “expressão numérica da vergonha” é</p>
                         
                                 </div>
                             </div>
-                            <p class="font-medium text-slate-100 mb-4 text-sm sm:text-base leading-relaxed">Os quadriláteros podem ser classificados pela relação entre as medidas dos ângulos, dos lados e o paralelismo entre eles. Algumas destas classificações são as seguintes:
-
-• Quadrados: lados de mesma medida e ângulos de mesma medida.
-• Retângulo: ângulos de mesma medida.
-• Paralelogramo: lados opostos paralelos.
-• Losango: lados de mesma medida.
-• Trapézio: um par de lados opostos paralelos.
-
-Com base nas definições e nos conceitos geométricos de polígonos descritos anteriormente, pode-se concluir que</p>
+                            <div class="q-text-container"><p class="q-paragraph font-medium text-slate-200 text-sm sm:text-base">Os quadriláteros podem ser classificados pela relação entre as medidas dos ângulos, dos lados e o paralelismo entre eles. Algumas destas classificações são as seguintes:</p><div class="q-item-card"><span class="text-sky-400 font-bold px-1.5 flex-shrink-0">•</span><span class="flex-1 min-w-0">Quadrados: lados de mesma medida e ângulos de mesma medida.</span></div><div class="q-item-card"><span class="text-sky-400 font-bold px-1.5 flex-shrink-0">•</span><span class="flex-1 min-w-0">Retângulo: ângulos de mesma medida.</span></div><div class="q-item-card"><span class="text-sky-400 font-bold px-1.5 flex-shrink-0">•</span><span class="flex-1 min-w-0">Paralelogramo: lados opostos paralelos.</span></div><div class="q-item-card"><span class="text-sky-400 font-bold px-1.5 flex-shrink-0">•</span><span class="flex-1 min-w-0">Losango: lados de mesma medida.</span></div><div class="q-item-card"><span class="text-sky-400 font-bold px-1.5 flex-shrink-0">•</span><span class="flex-1 min-w-0">Trapézio: um par de lados opostos paralelos.</span></div><p class="q-prompt text-slate-100 text-sm sm:text-base">Com base nas definições e nos conceitos geométricos de polígonos descritos anteriormente, pode-se concluir que:</p></div>
                             
                             <div class="space-y-2 mb-4" id="opts-ifmg-2022-2-q9">
                                 
@@ -878,7 +914,7 @@ Com base nas definições e nos conceitos geométricos de polígonos descritos a
                     
                         <div class="mb-8 border-b border-slate-800/80 pb-6 last:border-0 last:pb-0" id="q-container-ifmg-2022-2-q10">
                             <div class="flex items-center justify-between mb-3 flex-wrap gap-2">
-                                <div class="flex items-center gap-2">
+                                <div class="flex flex-wrap items-center gap-2">
                                     <span class="text-xs font-bold uppercase tracking-wider text-sky-300 bg-blue-950/60 px-2.5 py-0.5 rounded-full border border-blue-800/40">Questão 11</span>
                                     
                             <a href="../pesquisa.html?bncc=EF09MA06" class="text-[11px] font-mono font-bold text-emerald-300 bg-emerald-950/80 hover:bg-emerald-900/90 px-2.5 py-0.5 rounded-full border border-emerald-800/60 flex items-center gap-1 transition shadow-sm" title="Compreender as funções como relações de dependência unívoca entre duas variáveis e suas representações numérica, algébrica e gráfica.">
@@ -887,16 +923,14 @@ Com base nas definições e nos conceitos geométricos de polígonos descritos a
                         
                                 </div>
                             </div>
-                            <p class="font-medium text-slate-100 mb-4 text-sm sm:text-base leading-relaxed">Márcia foi contratada como vendedora em uma loja de cosméticos e em seu contrato ficou acordado que seu salário mensal será de $\text{R\$} 1.212{,}00$ fixos mais 3,5% sobre o valor total x em reais das vendas do mês. Contudo, no mês em que Márcia atingir a meta de vendas, a parte fixa de seu salário também sofrerá um acréscimo de 0,5%.
-
-Considerando que neste mês Márcia atingiu a meta de vendas, qual expressão representa o salário que Márcia receberá?</p>
+                            <div class="q-text-container"><p class="q-paragraph font-medium text-slate-200 text-sm sm:text-base">Márcia foi contratada como vendedora em uma loja de cosméticos e em seu contrato ficou acordado que seu salário mensal será de $\text{R\$} 1.212{,}00$ fixos mais $3{,}5\%$ sobre o valor total $x$ em reais das vendas do mês. Contudo, no mês em que Márcia atingir a meta de vendas, a parte fixa de seu salário também sofrerá um acréscimo de $0{,}5\%$.</p><p class="q-prompt text-slate-100 text-sm sm:text-base">Considerando que neste mês Márcia atingiu a meta de vendas, qual expressão representa o salário que Márcia receberá?</p></div>
                             
                             <div class="space-y-2 mb-4" id="opts-ifmg-2022-2-q10">
                                 
                             <button onclick="selectOption('ifmg-2022-2-q10', 0)" id="btn-ifmg-2022-2-q10-0" class="w-full text-left p-3.5 rounded-xl border border-slate-800 bg-slate-950/60 hover:border-blue-500 hover:bg-slate-800/60 transition text-sm text-slate-200 flex items-start justify-between gap-3 group">
                                 <span class="flex items-start gap-2.5 flex-1 min-w-0">
                                     <strong class="text-sky-400 font-bold flex-shrink-0 mt-0.5">A)</strong>
-                                    <span class="flex-1 min-w-0 break-words leading-relaxed">y = 1.212 + 0,035x</span>
+                                    <span class="flex-1 min-w-0 break-words leading-relaxed">$y = 1.212 + 0{,}035x$</span>
                                 </span>
                                 <i data-lucide="circle" class="w-4 h-4 text-slate-600 opt-icon group-hover:text-blue-400 flex-shrink-0 mt-0.5"></i>
                             </button>
@@ -904,7 +938,7 @@ Considerando que neste mês Márcia atingiu a meta de vendas, qual expressão re
                             <button onclick="selectOption('ifmg-2022-2-q10', 1)" id="btn-ifmg-2022-2-q10-1" class="w-full text-left p-3.5 rounded-xl border border-slate-800 bg-slate-950/60 hover:border-blue-500 hover:bg-slate-800/60 transition text-sm text-slate-200 flex items-start justify-between gap-3 group">
                                 <span class="flex items-start gap-2.5 flex-1 min-w-0">
                                     <strong class="text-sky-400 font-bold flex-shrink-0 mt-0.5">B)</strong>
-                                    <span class="flex-1 min-w-0 break-words leading-relaxed">y = 1.212 + 0,040x</span>
+                                    <span class="flex-1 min-w-0 break-words leading-relaxed">$y = 1.212 + 0{,}040x$</span>
                                 </span>
                                 <i data-lucide="circle" class="w-4 h-4 text-slate-600 opt-icon group-hover:text-blue-400 flex-shrink-0 mt-0.5"></i>
                             </button>
@@ -912,7 +946,7 @@ Considerando que neste mês Márcia atingiu a meta de vendas, qual expressão re
                             <button onclick="selectOption('ifmg-2022-2-q10', 2)" id="btn-ifmg-2022-2-q10-2" class="w-full text-left p-3.5 rounded-xl border border-slate-800 bg-slate-950/60 hover:border-blue-500 hover:bg-slate-800/60 transition text-sm text-slate-200 flex items-start justify-between gap-3 group">
                                 <span class="flex items-start gap-2.5 flex-1 min-w-0">
                                     <strong class="text-sky-400 font-bold flex-shrink-0 mt-0.5">C)</strong>
-                                    <span class="flex-1 min-w-0 break-words leading-relaxed">y = 1.218,06 + 0,035x</span>
+                                    <span class="flex-1 min-w-0 break-words leading-relaxed">$y = 1.218{,}06 + 0{,}035x$</span>
                                 </span>
                                 <i data-lucide="circle" class="w-4 h-4 text-slate-600 opt-icon group-hover:text-blue-400 flex-shrink-0 mt-0.5"></i>
                             </button>
@@ -920,7 +954,7 @@ Considerando que neste mês Márcia atingiu a meta de vendas, qual expressão re
                             <button onclick="selectOption('ifmg-2022-2-q10', 3)" id="btn-ifmg-2022-2-q10-3" class="w-full text-left p-3.5 rounded-xl border border-slate-800 bg-slate-950/60 hover:border-blue-500 hover:bg-slate-800/60 transition text-sm text-slate-200 flex items-start justify-between gap-3 group">
                                 <span class="flex items-start gap-2.5 flex-1 min-w-0">
                                     <strong class="text-sky-400 font-bold flex-shrink-0 mt-0.5">D)</strong>
-                                    <span class="flex-1 min-w-0 break-words leading-relaxed">y = 1.218,06 + 0,040x</span>
+                                    <span class="flex-1 min-w-0 break-words leading-relaxed">$y = 1.218{,}06 + 0{,}040x$</span>
                                 </span>
                                 <i data-lucide="circle" class="w-4 h-4 text-slate-600 opt-icon group-hover:text-blue-400 flex-shrink-0 mt-0.5"></i>
                             </button>
@@ -936,7 +970,7 @@ Considerando que neste mês Márcia atingiu a meta de vendas, qual expressão re
                     
                         <div class="mb-8 border-b border-slate-800/80 pb-6 last:border-0 last:pb-0" id="q-container-ifmg-2022-2-q11">
                             <div class="flex items-center justify-between mb-3 flex-wrap gap-2">
-                                <div class="flex items-center gap-2">
+                                <div class="flex flex-wrap items-center gap-2">
                                     <span class="text-xs font-bold uppercase tracking-wider text-sky-300 bg-blue-950/60 px-2.5 py-0.5 rounded-full border border-blue-800/40">Questão 12</span>
                                     
                             <a href="../pesquisa.html?bncc=EF07MA02" class="text-[11px] font-mono font-bold text-emerald-300 bg-emerald-950/80 hover:bg-emerald-900/90 px-2.5 py-0.5 rounded-full border border-emerald-800/60 flex items-center gap-1 transition shadow-sm" title="Resolver e elaborar problemas que envolvam grandezas proporcionais.">
@@ -945,11 +979,7 @@ Considerando que neste mês Márcia atingiu a meta de vendas, qual expressão re
                         
                                 </div>
                             </div>
-                            <p class="font-medium text-slate-100 mb-4 text-sm sm:text-base leading-relaxed">Preço da gasolina já supera $\text{R\$} 8$ por litro em postos de 11 estados
-
-O estado com o maior valor é o Rio de Janeiro, onde o litro chegou a $\text{R\$} 8{,}99$, o mesmo preço da gasolina aditivada. Segundo levantamento da ANP (Agência Nacional do Petróleo, Gás e Biocombustíveis), realizado entre os dias 8 e 14 de maio, o valor máximo encontrado foi de $\text{R\$} 8{,}990$, no Rio de Janeiro [...]. ($\text{R\$} 7$ Notícias, 2022).
-
-Um carro consumiu 40 litros de gasolina para percorrer 480 Km. Em condições equivalentes, qual foi o valor pago em combustível, considerando o consumo deste carro para que ele percorra 1320 Km e que o abastecimento tenha ocorrido no Rio de Janeiro, considerando o preço do litro informado no texto para este estado?</p>
+                            <div class="q-text-container"><h4 class="q-headline">Preço da gasolina já supera $\text{R\$} 8$ por litro em postos de 11 estados</h4><p class="q-paragraph font-medium text-slate-200 text-sm sm:text-base">O estado com o maior valor é o Rio de Janeiro, onde o litro chegou a $\text{R\$} 8{,}99$, o mesmo preço da gasolina aditivada. Segundo levantamento da ANP (Agência Nacional do Petróleo, Gás e Biocombustíveis), realizado entre os dias 8 e 14 de maio, o valor máximo encontrado foi de $\text{R\$} 8{,}990$, no Rio de Janeiro [...]. (R7 Notícias, 2022).</p><p class="q-prompt text-slate-100 text-sm sm:text-base">Um carro consumiu 40 litros de gasolina para percorrer $480\text{ km}$. Em condições equivalentes, qual foi o valor pago em combustível, considerando o consumo deste carro para que ele percorra $1.320\text{ km}$ e que o abastecimento tenha ocorrido no Rio de Janeiro, considerando o preço do litro informado no texto para este estado?</p></div>
                             
                             <div class="space-y-2 mb-4" id="opts-ifmg-2022-2-q11">
                                 
@@ -980,7 +1010,7 @@ Um carro consumiu 40 litros de gasolina para percorrer 480 Km. Em condições eq
                             <button onclick="selectOption('ifmg-2022-2-q11', 3)" id="btn-ifmg-2022-2-q11-3" class="w-full text-left p-3.5 rounded-xl border border-slate-800 bg-slate-950/60 hover:border-blue-500 hover:bg-slate-800/60 transition text-sm text-slate-200 flex items-start justify-between gap-3 group">
                                 <span class="flex items-start gap-2.5 flex-1 min-w-0">
                                     <strong class="text-sky-400 font-bold flex-shrink-0 mt-0.5">D)</strong>
-                                    <span class="flex-1 min-w-0 break-words leading-relaxed">$\text{R\$} 1348{,}50$</span>
+                                    <span class="flex-1 min-w-0 break-words leading-relaxed">$\text{R\$} 1.348{,}50$</span>
                                 </span>
                                 <i data-lucide="circle" class="w-4 h-4 text-slate-600 opt-icon group-hover:text-blue-400 flex-shrink-0 mt-0.5"></i>
                             </button>
@@ -996,7 +1026,7 @@ Um carro consumiu 40 litros de gasolina para percorrer 480 Km. Em condições eq
                     
                         <div class="mb-8 border-b border-slate-800/80 pb-6 last:border-0 last:pb-0" id="q-container-ifmg-2022-2-q12">
                             <div class="flex items-center justify-between mb-3 flex-wrap gap-2">
-                                <div class="flex items-center gap-2">
+                                <div class="flex flex-wrap items-center gap-2">
                                     <span class="text-xs font-bold uppercase tracking-wider text-sky-300 bg-blue-950/60 px-2.5 py-0.5 rounded-full border border-blue-800/40">Questão 13</span>
                                     
                             <a href="../pesquisa.html?bncc=EF09MA06" class="text-[11px] font-mono font-bold text-emerald-300 bg-emerald-950/80 hover:bg-emerald-900/90 px-2.5 py-0.5 rounded-full border border-emerald-800/60 flex items-center gap-1 transition shadow-sm" title="Compreender as funções como relações de dependência unívoca entre duas variáveis e suas representações numérica, algébrica e gráfica.">
@@ -1005,20 +1035,7 @@ Um carro consumiu 40 litros de gasolina para percorrer 480 Km. Em condições eq
                         
                                 </div>
                             </div>
-                            <p class="font-medium text-slate-100 mb-4 text-sm sm:text-base leading-relaxed">Velocidade média é a variação da posição (deslocamento) de um móvel em relação a um referencial durante determinado intervalo de tempo: $v_m = \frac{\Delta s}{\Delta t}$.
-
-Uma pessoa, em sua viagem de férias, resolveu que iria para a cidade de sua família e para isso alugou um carro. O aluguel será pago em uma parcela fixa de $\text{R\$} 494{,}00$, que inclui 220km, e será acrescido um valor de $\text{R\$} 2{,}30$ por quilômetro percorrido acima destes 220km.
-
-A viagem foi efetuada em duas etapas. Na primeira foram percorridos 180 km à uma velocidade média de 90 km/h. A segunda etapa foi realizada em 3h à uma velocidade média de 70 km/h. Considere que o carro foi devolvido em uma filial da empresa no local de destino.
-
-Analise as informações de I a IV a seguir:
-
-I - A viagem durou 4 horas e 25 minutos
-II - O total percorrido foi de 390 Km
-III - O total pago para a empresa de aluguel veicular foi de $\text{R\$} 885{,}00$
-IV - A segunda etapa da viagem durou menos tempo que a primeira etapa
-
-Pode-se afirmar que:</p>
+                            <div class="q-text-container"><p class="q-paragraph font-medium text-slate-200 text-sm sm:text-base">Velocidade média é a variação da posição (deslocamento) de um móvel em relação a um referencial durante determinado intervalo de tempo: $v_m = \frac{\Delta s}{\Delta t}$.</p><p class="q-paragraph font-medium text-slate-200 text-sm sm:text-base">Uma pessoa, em sua viagem de férias, resolveu que iria para a cidade de sua família e para isso alugou um carro. O aluguel será pago em uma parcela fixa de $\text{R\$} 494{,}00$, que inclui $220\text{ km}$, e será acrescido um valor de $\text{R\$} 2{,}30$ por quilômetro percorrido acima destes $220\text{ km}$.</p><p class="q-paragraph font-medium text-slate-200 text-sm sm:text-base">A viagem foi efetuada em duas etapas. Na primeira foram percorridos $180\text{ km}$ à uma velocidade média de $90\text{ km/h}$. A segunda etapa foi realizada em $3\text{ h}$ à uma velocidade média de $70\text{ km/h}$. Considere que o carro foi devolvido em uma filial da empresa no local de destino.</p><p class="q-paragraph font-medium text-slate-200 text-sm sm:text-base">Analise as informações de I a IV a seguir:</p><p class="q-paragraph font-medium text-slate-200 text-sm sm:text-base">I - A viagem durou 4 horas e 25 minutos</p><p class="q-paragraph font-medium text-slate-200 text-sm sm:text-base">II - O total percorrido foi de $390\text{ km}$</p><p class="q-paragraph font-medium text-slate-200 text-sm sm:text-base">III - O total pago para a empresa de aluguel veicular foi de $\text{R\$} 885{,}00$</p><p class="q-paragraph font-medium text-slate-200 text-sm sm:text-base">IV - A segunda etapa da viagem durou menos tempo que a primeira etapa</p><p class="q-prompt text-slate-100 text-sm sm:text-base">Pode-se afirmar que:</p></div>
                             
         <div class="my-4 p-2 sm:p-3 rounded-2xl border bg-slate-950/70 border-slate-800 shadow-sm max-w-xl mx-auto flex flex-col items-center">
             <img src="https://lh3.googleusercontent.com/d/1EYOPuEKDpjnPND-zTzvZjM_ck4WH-H2k" alt="Fórmula da velocidade média expressa pela razão entre a variação de deslocamento delta s e a variação de tempo delta t." onerror="if(this.src!='../assets/img/questoes/ifmg/ifmg-2022-2-q28.png'){this.src='../assets/img/questoes/ifmg/ifmg-2022-2-q28.png';}" class="max-h-80 sm:max-h-96 w-auto max-w-full rounded-xl object-contain cursor-zoom-in hover:opacity-95 hover:scale-[1.01] transition duration-200" onclick="openImageModal('https://lh3.googleusercontent.com/d/1EYOPuEKDpjnPND-zTzvZjM_ck4WH-H2k', 'Fórmula da velocidade média expressa pela razão entre a variação de deslocamento delta s e a variação de tempo delta t.')" title="Clique para ampliar a imagem" loading="lazy">
@@ -1070,7 +1087,7 @@ Pode-se afirmar que:</p>
                     
                         <div class="mb-8 border-b border-slate-800/80 pb-6 last:border-0 last:pb-0" id="q-container-ifmg-2022-2-q13">
                             <div class="flex items-center justify-between mb-3 flex-wrap gap-2">
-                                <div class="flex items-center gap-2">
+                                <div class="flex flex-wrap items-center gap-2">
                                     <span class="text-xs font-bold uppercase tracking-wider text-sky-300 bg-blue-950/60 px-2.5 py-0.5 rounded-full border border-blue-800/40">Questão 14</span>
                                     
                             <a href="../pesquisa.html?bncc=EF09MA06" class="text-[11px] font-mono font-bold text-emerald-300 bg-emerald-950/80 hover:bg-emerald-900/90 px-2.5 py-0.5 rounded-full border border-emerald-800/60 flex items-center gap-1 transition shadow-sm" title="Compreender as funções afins e relacionar seus coeficientes angulares e lineares com suas representações gráficas.">
@@ -1079,9 +1096,7 @@ Pode-se afirmar que:</p>
                         
                                 </div>
                             </div>
-                            <p class="font-medium text-slate-100 mb-4 text-sm sm:text-base leading-relaxed">O gráfico a seguir indica como será calculado o desconto no bônus anual de um funcionário por atrasos acumulados. O eixo y representa o desconto, em reais, sofrido por cada minuto de atraso e o eixo x o tempo de atraso em minutos:
-
-Considerando os dados descritos no problema e o gráfico dado, quanto será descontado no bônus do funcionário, se este atrasar 1 hora e 41 minutos ao longo do ano?</p>
+                            <div class="q-text-container"><p class="q-paragraph font-medium text-slate-200 text-sm sm:text-base">O gráfico a seguir indica como será calculado o desconto no bônus anual de um funcionário por atrasos acumulados. O eixo $y$ representa o desconto, em reais, sofrido por cada minuto de atraso e o eixo $x$ o tempo de atraso em minutos:</p><p class="q-prompt text-slate-100 text-sm sm:text-base">Considerando os dados descritos no problema e o gráfico dado, quanto será descontado no bônus do funcionário, se este atrasar 1 hora e 41 minutos ao longo do ano?</p></div>
                             
         <div class="my-4 p-2 sm:p-3 rounded-2xl border bg-slate-950/70 border-slate-800 shadow-sm max-w-xl mx-auto flex flex-col items-center">
             <img src="https://lh3.googleusercontent.com/d/1rvDp4gBkTycigi89_ph2y02912OWRDPY" alt="Gráfico linear da função afim de desconto passando pelos pontos A (4/3, 3) e B (10, 5) em malha quadriculada." onerror="if(this.src!='../assets/img/questoes/ifmg/ifmg-2022-2-q29.png'){this.src='../assets/img/questoes/ifmg/ifmg-2022-2-q29.png';}" class="max-h-80 sm:max-h-96 w-auto max-w-full rounded-xl object-contain cursor-zoom-in hover:opacity-95 hover:scale-[1.01] transition duration-200" onclick="openImageModal('https://lh3.googleusercontent.com/d/1rvDp4gBkTycigi89_ph2y02912OWRDPY', 'Gráfico linear da função afim de desconto passando pelos pontos A (4/3, 3) e B (10, 5) em malha quadriculada.')" title="Clique para ampliar a imagem" loading="lazy">
@@ -1133,7 +1148,7 @@ Considerando os dados descritos no problema e o gráfico dado, quanto será desc
                     
                         <div class="mb-8 border-b border-slate-800/80 pb-6 last:border-0 last:pb-0" id="q-container-ifmg-2022-2-q14">
                             <div class="flex items-center justify-between mb-3 flex-wrap gap-2">
-                                <div class="flex items-center gap-2">
+                                <div class="flex flex-wrap items-center gap-2">
                                     <span class="text-xs font-bold uppercase tracking-wider text-sky-300 bg-blue-950/60 px-2.5 py-0.5 rounded-full border border-blue-800/40">Questão 15</span>
                                     
                             <a href="../pesquisa.html?bncc=EF08MA19" class="text-[11px] font-mono font-bold text-emerald-300 bg-emerald-950/80 hover:bg-emerald-900/90 px-2.5 py-0.5 rounded-full border border-emerald-800/60 flex items-center gap-1 transition shadow-sm" title="Resolver e elaborar problemas que envolvam medidas de área de figuras geométricas.">
@@ -1142,9 +1157,7 @@ Considerando os dados descritos no problema e o gráfico dado, quanto será desc
                         
                                 </div>
                             </div>
-                            <p class="font-medium text-slate-100 mb-4 text-sm sm:text-base leading-relaxed">Um hexágono é dito regular quando possui todos os seus lados congruentes e consequentemente seus ângulos também serão congruentes. O hexágono regular pode ser dividido em 6 triângulos equiláteros, isto é, triângulos com as medidas de todos os lados iguais, conforme pode-se ver na figura a seguir:
-
-Sabendo que o perímetro do hexágono regular dado é de 30 cm, qual será a área deste polígono?</p>
+                            <div class="q-text-container"><p class="q-paragraph font-medium text-slate-200 text-sm sm:text-base">Um hexágono é dito regular quando possui todos os seus lados congruentes e consequentemente seus ângulos também serão congruentes. O hexágono regular pode ser dividido em 6 triângulos equiláteros, isto é, triângulos com as medidas de todos os lados iguais, conforme pode-se ver na figura a seguir:</p><p class="q-prompt text-slate-100 text-sm sm:text-base">Sabendo que o perímetro do hexágono regular dado é de $30\text{ cm}$, qual será a área deste polígono?</p></div>
                             
         <div class="my-4 p-2 sm:p-3 rounded-2xl border bg-slate-950/70 border-slate-800 shadow-sm max-w-xl mx-auto flex flex-col items-center">
             <img src="https://lh3.googleusercontent.com/d/1Ar4lrjpUjhc9B2ufH_PqsBX1uVo4StVZ" alt="Hexágono regular decomposto a partir do seu centro em seis triângulos equiláteros congruentes." onerror="if(this.src!='../assets/img/questoes/ifmg/ifmg-2022-2-q30.png'){this.src='../assets/img/questoes/ifmg/ifmg-2022-2-q30.png';}" class="max-h-80 sm:max-h-96 w-auto max-w-full rounded-xl object-contain cursor-zoom-in hover:opacity-95 hover:scale-[1.01] transition duration-200" onclick="openImageModal('https://lh3.googleusercontent.com/d/1Ar4lrjpUjhc9B2ufH_PqsBX1uVo4StVZ', 'Hexágono regular decomposto a partir do seu centro em seis triângulos equiláteros congruentes.')" title="Clique para ampliar a imagem" loading="lazy">

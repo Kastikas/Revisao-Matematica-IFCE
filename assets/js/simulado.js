@@ -58,6 +58,128 @@ function getInstBadgeClass(inst) {
 }
 
 /**
+ * Renderiza o enunciado com estruturação semântica de blocos (parágrafos, manchetes,
+ * citações/textos de apoio, afirmações romanas e comando final destacado).
+ */
+function renderQuestionText(qText, isDark) {
+    if (!qText || typeof qText !== 'string') return '';
+    var rawBlocks = qText.split('\n\n').map(function(b) { return b.trim(); }).filter(Boolean);
+    if (!rawBlocks.length) return '';
+
+    if (rawBlocks.length === 1) {
+        var single = rawBlocks[0];
+        if (single.indexOf('\n• ') !== -1 || single.indexOf('\nI. ') !== -1 || single.indexOf('\n1) ') !== -1 || single.indexOf('\n1. ') !== -1) {
+            rawBlocks = single.split(/\n(?=[•\-]|\b(?:I|II|III|IV|V|VI|VII|VIII|IX|X)\.|\b\d+[\.\)])/).map(function(p) { return p.trim(); }).filter(Boolean);
+        }
+    }
+
+    if (rawBlocks.length === 1) {
+        var textColor = isDark ? 'text-slate-100' : 'text-gray-900';
+        return '<div class="q-text-container"><p class="q-paragraph font-medium ' + textColor + ' text-sm sm:text-base leading-relaxed">' + rawBlocks[0] + '</p></div>';
+    }
+
+    var htmlParts = [];
+    var totalBlocks = rawBlocks.length;
+
+    for (var idx = 0; idx < totalBlocks; idx++) {
+        var block = rawBlocks[idx];
+        var isLast = (idx === totalBlocks - 1);
+
+        // 1. Nota pedagógica
+        if (block.indexOf('*(Nota pedagógica') === 0 || block.indexOf('*Nota pedagógica') === 0) {
+            htmlParts.push(
+                '<div class="q-pedagogical-note">' +
+                    '<div class="flex items-center gap-1.5 font-bold mb-1 text-amber-600 dark:text-amber-400"><i data-lucide="info" class="w-4 h-4"></i> Nota Pedagógica</div>' +
+                    '<div>' + block + '</div>' +
+                '</div>'
+            );
+            continue;
+        }
+
+        // 2. Manchete / Título em negrito (**Título**)
+        if (/^\*\*[^*]+\*\*$/.test(block)) {
+            var titleText = block.replace(/^\*\*|\*\*$/g, '');
+            htmlParts.push('<h4 class="q-headline">' + titleText + '</h4>');
+            continue;
+        }
+
+        // 3. Fonte / Citação em itálico curta
+        if (/^\*\(.*?\)\*$/.test(block) || /^\(?(?:Fonte:|Disponível em:|Publicado em).*?\)?$/i.test(block)) {
+            htmlParts.push('<p class="q-source-text">' + block + '</p>');
+            continue;
+        }
+
+        // 4. Afirmação romana (I., II., III...)
+        var mRoman = block.match(/^(?:([I|V|X]+)\.|\(([I|V|X]+)\))\s+([\s\S]*)$/);
+        if (mRoman) {
+            var numeral = mRoman[1] || mRoman[2];
+            var romanContent = mRoman[3];
+            htmlParts.push(
+                '<div class="q-item-card">' +
+                    '<span class="q-item-badge">' + numeral + '</span>' +
+                    '<span class="flex-1 min-w-0">' + romanContent + '</span>' +
+                '</div>'
+            );
+            continue;
+        }
+
+        // 5. Passo numerado (1), 2) ou 1., 2.)
+        var mNum = block.match(/^(?:(\d+)[\)\.]|Passo\s+(\d+)[:\.]?)\s+([\s\S]*)$/);
+        if (mNum) {
+            var num = mNum[1] || mNum[2];
+            var numContent = mNum[3];
+            htmlParts.push(
+                '<div class="q-item-card">' +
+                    '<span class="q-item-badge">' + num + '</span>' +
+                    '<span class="flex-1 min-w-0">' + numContent + '</span>' +
+                '</div>'
+            );
+            continue;
+        }
+
+        // 6. Lista com marcador (• ou - ou »)
+        var mBullet = block.match(/^[•\-»]\s+([\s\S]*)$/);
+        if (mBullet) {
+            var bulletContent = mBullet[1];
+            var bulletColor = isDark ? 'text-sky-400' : 'text-blue-600';
+            htmlParts.push(
+                '<div class="q-item-card">' +
+                    '<span class="' + bulletColor + ' font-bold px-1.5 flex-shrink-0">•</span>' +
+                    '<span class="flex-1 min-w-0">' + bulletContent + '</span>' +
+                '</div>'
+            );
+            continue;
+        }
+
+        // 7. Citação longa / Texto motivador
+        if ((block.charAt(0) === '“' || block.charAt(0) === '"') && block.length > 80) {
+            htmlParts.push(
+                '<blockquote class="q-support-card">' +
+                    '<p class="italic leading-relaxed">' + block + '</p>' +
+                '</blockquote>'
+            );
+            continue;
+        }
+
+        // 8. Comando final da questão
+        var isPrompt = isLast && (
+            block.endsWith('?') || block.endsWith(':') ||
+            /\b(assinale|qual|pode-se afirmar|sabendo disso|nessas condições|segundo|de acordo|tendo como base|determine|calcule|o valor)\b/i.test(block)
+        );
+
+        if (isPrompt) {
+            var promptColor = isDark ? 'text-slate-100' : 'text-gray-900';
+            htmlParts.push('<p class="q-prompt ' + promptColor + ' text-sm sm:text-base">' + block + '</p>');
+        } else {
+            var pColor = isDark ? 'text-slate-200' : 'text-gray-800';
+            htmlParts.push('<p class="q-paragraph font-medium ' + pColor + ' text-sm sm:text-base">' + block + '</p>');
+        }
+    }
+
+    return '<div class="q-text-container">' + htmlParts.join('') + '</div>';
+}
+
+/**
  * Normaliza o nome da Unidade Temática para evitar inconsistências
  */
 function normalizeUnidadeTematica(ut) {
@@ -495,7 +617,7 @@ function renderCurrentSimQuestion() {
             '<div>' +
                 badgesHtml +
                 bnccDescHtml +
-                '<p class="font-medium text-gray-900 text-base leading-relaxed mb-4">' + q.q + '</p>' +
+                renderQuestionText(q.q, false) +
                 imgHtml +
             '</div>' +
             '<div class="space-y-2.5 my-4">' +
@@ -650,7 +772,7 @@ function finishSimulado() {
         var originTitle = q.isOfficialExam ? (q.topicTitle + ' — Questão ' + q.qNumber) : (q.blockTitle + ' • ' + q.topicTitle);
 
         reviewHtml.push(
-            '<div class="bg-white border border-gray-200 rounded-3xl p-6 sm:p-7 shadow-sm space-y-4">' +
+            '<div class="bg-white border border-gray-200 rounded-3xl p-4 sm:p-7 shadow-sm space-y-4">' +
                 '<div class="flex flex-wrap items-center justify-between gap-2 pb-3 border-b border-gray-100">' +
                     '<div class="flex flex-wrap items-center gap-2">' +
                         '<span class="text-xs font-bold uppercase tracking-wider text-brand-700">Questão ' + (idx + 1) + ' de ' + total + '</span>' +
@@ -662,11 +784,11 @@ function finishSimulado() {
                     '</span>' +
                 '</div>' +
 
-                '<div class="text-xs text-gray-500 font-medium flex items-center gap-1.5">' +
-                    '<i data-lucide="archive" class="w-3.5 h-3.5 text-brand-600"></i> ' + originTitle +
+                '<div class="text-xs text-gray-500 font-medium flex items-center gap-1.5 min-w-0">' +
+                    '<i data-lucide="archive" class="w-3.5 h-3.5 text-brand-600 flex-shrink-0"></i> <span class="truncate">' + originTitle + '</span>' +
                 '</div>' +
 
-                '<p class="font-semibold text-gray-900 text-sm sm:text-base leading-relaxed">' + q.q + '</p>' +
+                renderQuestionText(q.q, false) +
                 imgHtml +
 
                 '<div class="space-y-2">' +

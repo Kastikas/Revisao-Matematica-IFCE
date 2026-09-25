@@ -49,92 +49,166 @@
 
     <!-- Header / Navbar da Área de Provas (Parte 2 - Escuro-Azul) -->
     <header class="gradient-header-dark text-white shadow-xl sticky top-0 z-50 border-b border-slate-800">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="max-w-7xl mx-auto px-3 sm:px-6 lg:px-8">
             <div class="flex items-center justify-between h-16">
                 <!-- Logo Provas -->
-                <a href="../provas.html" class="flex items-center space-x-3 group">
-                    <div class="bg-blue-600 p-2 rounded-xl text-white font-bold shadow-md shadow-blue-500/20 flex items-center justify-center group-hover:scale-105 transition">
-                        <i data-lucide="file-check" class="w-6 h-6"></i>
+                <a href="../provas.html" class="flex items-center space-x-2 sm:space-x-3 group min-w-0 flex-shrink-0">
+                    <div class="bg-blue-600 p-1.5 sm:p-2 rounded-xl text-white font-bold shadow-md shadow-blue-500/20 flex items-center justify-center group-hover:scale-105 transition">
+                        <i data-lucide="file-check" class="w-5 h-5 sm:w-6 sm:h-6"></i>
                     </div>
-                    <div>
-                        <span class="font-extrabold text-xl tracking-tight text-white flex items-center gap-1.5">
+                    <div class="min-w-0">
+                        <span class="font-extrabold text-lg sm:text-xl tracking-tight text-white flex items-center gap-1 sm:gap-1.5">
                             Partiu<span class="text-sky-400">IF</span>
-                            <span class="text-[10px] font-bold uppercase tracking-wider bg-blue-500/30 text-sky-200 border border-blue-400/30 px-2 py-0.5 rounded-full">Provas</span>
+                            <span class="text-[9px] sm:text-[10px] font-bold uppercase tracking-wider bg-blue-500/30 text-sky-200 border border-blue-400/30 px-1.5 sm:px-2 py-0.5 rounded-full">Provas</span>
                         </span>
-                        <p class="text-xs text-slate-400 hidden sm:flex items-center gap-1">
+                        <p class="text-xs text-slate-400 hidden xl:flex items-center gap-1">
                             <i data-lucide="archive" class="w-3 h-3 text-sky-400"></i> Acervo Oficial com PDFs e Gabarito
                         </p>
                     </div>
                 </a>
 
                 <!-- Navegação Desktop -->
-                <nav class="hidden md:flex space-x-1 items-center">
+                <nav class="hidden lg:flex space-x-1.5 items-center">
                     <a href="../provas.html" class="px-3 py-2 rounded-lg text-sm transition flex items-center gap-1.5 text-slate-300 hover:bg-slate-800 hover:text-white">
-                <i data-lucide="layout-grid" class="w-4 h-4"></i> Todas as Provas
-            </a><a href="../pesquisa.html" class="px-3 py-2 rounded-lg text-sm transition flex items-center gap-1.5 text-slate-300 hover:bg-slate-800 hover:text-white">
-                <i data-lucide="search" class="w-4 h-4"></i> Pesquisa BNCC
-            </a><a href="../bloco-6-provas-ifce/index.html" class="px-3 py-2 rounded-lg text-sm transition flex items-center gap-1.5 text-slate-300 hover:bg-slate-800 hover:text-white">
-                <i data-lucide="award" class="w-4 h-4"></i> Provas IFCE (27)
-            </a><a href="../bloco-5-provas-ifsc/index.html" class="px-3 py-2 rounded-lg text-sm transition flex items-center gap-1.5 text-slate-300 hover:bg-slate-800 hover:text-white">
-                <i data-lucide="award" class="w-4 h-4"></i> Provas IFSC (16)
-            </a><a href="../bloco-7-provas-ifsp/index.html" class="px-3 py-2 rounded-lg text-sm transition flex items-center gap-1.5 bg-blue-600 text-white font-semibold shadow-inner">
-                <i data-lucide="award" class="w-4 h-4"></i> Provas IFSP (8)
-            </a><a href="../bloco-8-provas-ifmg/index.html" class="px-3 py-2 rounded-lg text-sm transition flex items-center gap-1.5 text-slate-300 hover:bg-slate-800 hover:text-white">
-                <i data-lucide="award" class="w-4 h-4"></i> Provas IFMG (11)
+                        <i data-lucide="layout-grid" class="w-4 h-4 text-sky-400"></i> Todas as Provas
+                    </a>
+
+                    <!-- Dropdown de Instituições -->
+                    <div class="relative" id="dropdown-instituicoes-container">
+                        <button id="btn-dropdown-instituicoes" class="px-3 py-2 rounded-lg text-sm transition flex items-center gap-1.5 bg-blue-600/90 text-white font-semibold shadow-inner border border-blue-400/40" aria-haspopup="true" aria-expanded="false" title="Filtrar por Instituto Federal">
+                            <i data-lucide="building-2" class="w-4 h-4 text-sky-400"></i>
+                            <span>Instituições</span>
+                            <span class="bg-blue-500/40 text-sky-200 border border-blue-400/40 text-[10px] font-bold px-1.5 py-0.5 rounded-full">IFSP</span>
+                            <i data-lucide="chevron-down" id="chevron-instituicoes" class="w-3.5 h-3.5 text-slate-400 transition-transform duration-200"></i>
+                        </button>
+
+                        <div id="dropdown-instituicoes-menu" class="hidden absolute left-0 mt-2 w-64 bg-slate-900/95 border border-slate-700/80 rounded-2xl shadow-2xl p-1.5 z-50 backdrop-blur-xl">
+                            <div class="px-3 py-1.5 text-[10px] font-bold uppercase tracking-wider text-slate-400 border-b border-slate-800/80 flex items-center justify-between">
+                                <span>Institutos Federais</span>
+                                <span class="text-sky-400 font-bold">62 Provas</span>
+                            </div>
+                            <div class="space-y-1 py-1">
+                                <a href="../bloco-6-provas-ifce/index.html" class="flex items-center justify-between px-3 py-2 rounded-xl text-xs transition text-slate-300 hover:bg-slate-800/80 hover:text-white">
+                <div class="flex items-center gap-2.5">
+                    <span class="w-2 h-2 rounded-full bg-slate-700"></span>
+                    <div>
+                        <div class="font-bold text-slate-100">IFCE <span class="text-slate-400 font-normal">(Ceará)</span></div>
+                        <div class="text-[10px] text-slate-400">27 provas cadastradas</div>
+                    </div>
+                </div>
+                <i data-lucide="chevron-right" class="w-3.5 h-3.5 text-slate-500"></i>
+            </a><a href="../bloco-5-provas-ifsc/index.html" class="flex items-center justify-between px-3 py-2 rounded-xl text-xs transition text-slate-300 hover:bg-slate-800/80 hover:text-white">
+                <div class="flex items-center gap-2.5">
+                    <span class="w-2 h-2 rounded-full bg-slate-700"></span>
+                    <div>
+                        <div class="font-bold text-slate-100">IFSC <span class="text-slate-400 font-normal">(Santa Catarina)</span></div>
+                        <div class="text-[10px] text-slate-400">16 provas cadastradas</div>
+                    </div>
+                </div>
+                <i data-lucide="chevron-right" class="w-3.5 h-3.5 text-slate-500"></i>
+            </a><a href="../bloco-7-provas-ifsp/index.html" class="flex items-center justify-between px-3 py-2 rounded-xl text-xs transition bg-blue-600/25 text-sky-200 font-semibold border-l-2 border-blue-400">
+                <div class="flex items-center gap-2.5">
+                    <span class="w-2 h-2 rounded-full bg-sky-400 animate-pulse"></span>
+                    <div>
+                        <div class="font-bold text-slate-100">IFSP <span class="text-slate-400 font-normal">(São Paulo)</span></div>
+                        <div class="text-[10px] text-slate-400">8 provas cadastradas</div>
+                    </div>
+                </div>
+                <i data-lucide="chevron-right" class="w-3.5 h-3.5 text-slate-500"></i>
+            </a><a href="../bloco-8-provas-ifmg/index.html" class="flex items-center justify-between px-3 py-2 rounded-xl text-xs transition text-slate-300 hover:bg-slate-800/80 hover:text-white">
+                <div class="flex items-center gap-2.5">
+                    <span class="w-2 h-2 rounded-full bg-slate-700"></span>
+                    <div>
+                        <div class="font-bold text-slate-100">IFMG <span class="text-slate-400 font-normal">(Minas Gerais)</span></div>
+                        <div class="text-[10px] text-slate-400">11 provas cadastradas</div>
+                    </div>
+                </div>
+                <i data-lucide="chevron-right" class="w-3.5 h-3.5 text-slate-500"></i>
             </a>
+                            </div>
+                            <div class="pt-1 border-t border-slate-800/80">
+                                <a href="../provas.html" class="flex items-center justify-between px-3 py-1.5 text-[11px] font-semibold text-sky-400 hover:bg-slate-800/80 rounded-xl transition">
+                                    <span>Ver matriz geral de provas</span>
+                                    <i data-lucide="arrow-right" class="w-3 h-3"></i>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <a href="../pesquisa.html" class="px-3 py-2 rounded-lg text-sm transition flex items-center gap-1.5 text-slate-300 hover:bg-slate-800 hover:text-white" title="Pesquisar questões por descritor BNCC">
+                        <i data-lucide="search" class="w-4 h-4 text-emerald-400"></i> Pesquisa BNCC
+                    </a>
                 </nav>
 
                 <!-- Ações do Usuário -->
-                <div class="flex items-center gap-2 sm:gap-3">
-                    <a href="../index.html" class="bg-slate-800/90 hover:bg-slate-700 text-slate-200 border border-slate-700 px-3.5 py-1.5 rounded-lg text-xs sm:text-sm font-semibold transition flex items-center gap-1.5 shadow-sm" title="Retornar à Teoria e Eixos Temáticos">
-                        <i data-lucide="arrow-left" class="w-4 h-4 text-emerald-400"></i> <span class="hidden sm:inline">Voltar para </span>Teoria
+                <div class="flex items-center gap-1.5 sm:gap-2.5 flex-shrink-0">
+                    <a href="../index.html" class="bg-slate-800/90 hover:bg-slate-700 text-slate-200 border border-slate-700 p-2 sm:px-3.5 sm:py-1.5 rounded-lg text-xs sm:text-sm font-semibold transition flex items-center gap-1.5 shadow-sm" title="Retornar à Teoria e Eixos Temáticos">
+                        <i data-lucide="arrow-left" class="w-4 h-4 text-emerald-400"></i>
+                        <span class="hidden sm:inline xl:hidden">Teoria</span>
+                        <span class="hidden xl:inline">Voltar para Teoria</span>
                     </a>
-                    <a href="../simulado.html" class="bg-blue-600 hover:bg-blue-500 text-white font-semibold px-3.5 py-1.5 rounded-lg text-xs sm:text-sm transition flex items-center gap-1.5 shadow">
-                        <i data-lucide="award" class="w-4 h-4"></i> Simulado
+                    <a href="../simulado.html" class="bg-blue-600 hover:bg-blue-500 text-white font-semibold p-2 sm:px-3.5 sm:py-1.5 rounded-lg text-xs sm:text-sm transition flex items-center gap-1.5 shadow" title="Simulado IF">
+                        <i data-lucide="award" class="w-4 h-4"></i>
+                        <span class="hidden sm:inline">Simulado</span>
                     </a>
-                    <button id="mobile-menu-btn" class="md:hidden p-2 rounded-lg text-slate-300 hover:text-white hover:bg-slate-800" aria-label="Abrir menu">
-                        <i data-lucide="menu" class="w-6 h-6"></i>
+                    <button id="mobile-menu-btn" class="lg:hidden p-2 rounded-lg text-slate-300 hover:text-white hover:bg-slate-800 transition" aria-label="Abrir menu">
+                        <i data-lucide="menu" class="w-5 h-5 sm:w-6 sm:h-6"></i>
                     </button>
                 </div>
             </div>
         </div>
 
         <!-- Menu Mobile -->
-        <div id="mobile-menu" class="hidden md:hidden bg-slate-950 border-t border-slate-800 px-4 pt-2 pb-4 space-y-1">
-            <a href="../provas.html" class="block px-3 py-2 rounded-md text-base font-medium text-white flex items-center gap-2 hover:bg-slate-800">
-                <i data-lucide="layout-grid" class="w-4 h-4"></i> Todas as Provas
-            </a><a href="../pesquisa.html" class="block px-3 py-2 rounded-md text-base font-medium text-white flex items-center gap-2 hover:bg-slate-800">
-                <i data-lucide="search" class="w-4 h-4"></i> Pesquisa BNCC
-            </a><a href="../bloco-6-provas-ifce/index.html" class="block px-3 py-2 rounded-md text-base font-medium text-white flex items-center gap-2 hover:bg-slate-800">
-                <i data-lucide="award" class="w-4 h-4"></i> Provas IFCE (27)
-            </a><a href="../bloco-5-provas-ifsc/index.html" class="block px-3 py-2 rounded-md text-base font-medium text-white flex items-center gap-2 hover:bg-slate-800">
-                <i data-lucide="award" class="w-4 h-4"></i> Provas IFSC (16)
-            </a><a href="../bloco-7-provas-ifsp/index.html" class="block px-3 py-2 rounded-md text-base font-medium text-white flex items-center gap-2 bg-blue-600 font-bold">
-                <i data-lucide="award" class="w-4 h-4"></i> Provas IFSP (8)
-            </a><a href="../bloco-8-provas-ifmg/index.html" class="block px-3 py-2 rounded-md text-base font-medium text-white flex items-center gap-2 hover:bg-slate-800">
-                <i data-lucide="award" class="w-4 h-4"></i> Provas IFMG (11)
+        <div id="mobile-menu" class="hidden lg:hidden bg-slate-950 border-t border-slate-800 px-4 pt-2 pb-4 space-y-1">
+            <a href="../provas.html" class="block px-3 py-2 rounded-md text-base font-medium text-white flex items-center justify-between gap-2 hover:bg-slate-800">
+                <span class="flex items-center gap-2"><i data-lucide="layout-grid" class="w-4 h-4 text-sky-400"></i> Todas as Provas</span>
+                <span class="text-xs bg-slate-800 px-2 py-0.5 rounded-full text-slate-300 font-bold">62 Provas</span>
             </a>
-            <a href="../index.html" class="block px-3 py-2 rounded-md text-base font-semibold text-slate-200 hover:bg-slate-800 flex items-center gap-2 mt-2 border-t border-slate-800 pt-3">
-                <i data-lucide="arrow-left" class="w-4 h-4 text-emerald-400"></i> Voltar para Teoria (Parte 1)
+            <a href="../pesquisa.html" class="block px-3 py-2 rounded-md text-base font-medium text-white flex items-center gap-2 hover:bg-slate-800">
+                <i data-lucide="search" class="w-4 h-4 text-emerald-400"></i> Pesquisa BNCC
             </a>
-            <a href="../simulado.html" class="block px-3 py-2 rounded-md text-base font-bold bg-blue-600 text-white flex items-center gap-2 mt-2">
-                <i data-lucide="award" class="w-4 h-4"></i> Simulado IF
+
+            <div class="pt-2 pb-1 px-3 text-[11px] font-bold uppercase tracking-wider text-slate-400">Provas por Instituição</div>
+            <a href="../bloco-6-provas-ifce/index.html" class="block px-3 py-2 rounded-md text-base font-medium text-white flex items-center justify-between gap-2 hover:bg-slate-800">
+                <span class="flex items-center gap-2"><i data-lucide="award" class="w-4 h-4 text-sky-400"></i> IFCE - Ceará</span>
+                <span class="text-xs bg-blue-900/60 text-sky-300 px-2 py-0.5 rounded-full font-bold">27</span>
             </a>
+            <a href="../bloco-5-provas-ifsc/index.html" class="block px-3 py-2 rounded-md text-base font-medium text-white flex items-center justify-between gap-2 hover:bg-slate-800">
+                <span class="flex items-center gap-2"><i data-lucide="award" class="w-4 h-4 text-sky-400"></i> IFSC - Santa Catarina</span>
+                <span class="text-xs bg-blue-900/60 text-sky-300 px-2 py-0.5 rounded-full font-bold">16</span>
+            </a>
+            <a href="../bloco-7-provas-ifsp/index.html" class="block px-3 py-2 rounded-md text-base font-medium text-white flex items-center justify-between gap-2 bg-blue-600 font-bold">
+                <span class="flex items-center gap-2"><i data-lucide="award" class="w-4 h-4 text-sky-400"></i> IFSP - São Paulo</span>
+                <span class="text-xs bg-blue-900/60 text-sky-300 px-2 py-0.5 rounded-full font-bold">8</span>
+            </a>
+            <a href="../bloco-8-provas-ifmg/index.html" class="block px-3 py-2 rounded-md text-base font-medium text-white flex items-center justify-between gap-2 hover:bg-slate-800">
+                <span class="flex items-center gap-2"><i data-lucide="award" class="w-4 h-4 text-sky-400"></i> IFMG - Minas Gerais</span>
+                <span class="text-xs bg-blue-900/60 text-sky-300 px-2 py-0.5 rounded-full font-bold">11</span>
+            </a>
+
+            <div class="pt-2 border-t border-slate-800 space-y-1">
+                <a href="../index.html" class="block px-3 py-2 rounded-md text-base font-semibold text-slate-200 hover:bg-slate-800 flex items-center gap-2">
+                    <i data-lucide="arrow-left" class="w-4 h-4 text-emerald-400"></i> Voltar para Teoria (Parte 1)
+                </a>
+                <a href="../simulado.html" class="block px-3 py-2 rounded-md text-base font-bold bg-blue-600 text-white flex items-center gap-2">
+                    <i data-lucide="award" class="w-4 h-4"></i> Simulado IF
+                </a>
+            </div>
         </div>
     </header>
 
 
     <main class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 flex-grow">
         <!-- Breadcrumbs -->
-        <nav class="flex text-xs font-medium text-slate-400 mb-6" aria-label="Breadcrumb">
-            <ol class="inline-flex items-center space-x-1 sm:space-x-2">
+        <nav class="text-xs font-medium text-slate-400 mb-6 overflow-x-auto custom-scrollbar pb-1" aria-label="Breadcrumb">
+            <ol class="inline-flex flex-wrap items-center gap-1 sm:gap-2">
                 <li><a href="../index.html" class="hover:text-sky-400 flex items-center gap-1"><i data-lucide="home" class="w-3.5 h-3.5"></i> Início</a></li>
                 <li><span class="text-slate-600">/</span></li>
                 <li><a href="../provas.html" class="hover:text-sky-400 flex items-center gap-1"><i data-lucide="archive" class="w-3.5 h-3.5"></i> Provas</a></li>
                 <li><span class="text-slate-600">/</span></li>
                 <li><a href="./index.html" class="hover:text-sky-400">Bloco 7: Provas Anteriores IFSP</a></li>
                 <li><span class="text-slate-600">/</span></li>
-                <li class="text-slate-200 font-semibold truncate max-w-xs sm:max-w-none">Prova IFSP 2025.1 - Prova A</li>
+                <li class="text-slate-200 font-semibold truncate max-w-[200px] sm:max-w-none">Prova IFSP 2025.1 - Prova A</li>
             </ol>
         </nav>
 
@@ -143,18 +217,18 @@
             <div class="lg:col-span-3 space-y-8">
                 
                 <!-- Cabeçalho do Exame -->
-                <div class="bg-slate-900/90 border border-slate-800 rounded-3xl p-6 sm:p-8 shadow-xl text-slate-100">
+                <div class="bg-slate-900/90 border border-slate-800 rounded-3xl p-4 sm:p-8 shadow-xl text-slate-100">
                     <div class="flex flex-wrap items-center justify-between gap-3 mb-4">
                         <span class="text-xs font-bold uppercase tracking-wider text-sky-300 bg-blue-950/80 px-3 py-1 rounded-full border border-blue-800/60">
                             BNCC: Revisão Geral
                         </span>
-                        <div class="flex items-center gap-2">
+                        <div class="flex flex-wrap items-center gap-2">
                             
-                        <a href="https://drive.google.com/file/d/1v4uNGN7qvsnD3H7Owmx0hTMT6yqS9isk/view?usp=drive_web" target="_blank" rel="noopener noreferrer" class="bg-blue-600 hover:bg-blue-500 text-white font-bold px-4 py-2 rounded-xl text-sm transition flex items-center gap-2 shadow-lg shadow-blue-600/25" title="Abrir Caderno Oficial no Google Drive (Visualizar ou Baixar)">
+                        <a href="https://drive.google.com/file/d/1v4uNGN7qvsnD3H7Owmx0hTMT6yqS9isk/view?usp=drive_web" target="_blank" rel="noopener noreferrer" class="bg-blue-600 hover:bg-blue-500 text-white font-bold px-3 sm:px-4 py-2 rounded-xl text-xs sm:text-sm transition flex items-center gap-1.5 sm:gap-2 shadow-lg shadow-blue-600/25" title="Abrir Caderno Oficial no Google Drive (Visualizar ou Baixar)">
                             <i data-lucide="external-link" class="w-4 h-4"></i> Caderno Oficial no Drive
                         </a>
                     
-                            <button id="btn-toggle-done-ifsp-2025-1-a" onclick="toggleTopicDone('ifsp-2025-1-a')" class="px-4 py-2 rounded-xl text-sm font-semibold border bg-slate-900 text-slate-300 border-slate-700 hover:bg-slate-800 transition flex items-center gap-2 shadow-sm">
+                            <button id="btn-toggle-done-ifsp-2025-1-a" onclick="toggleTopicDone('ifsp-2025-1-a')" class="px-3 sm:px-4 py-2 rounded-xl text-xs sm:text-sm font-semibold border bg-slate-900 text-slate-300 border-slate-700 hover:bg-slate-800 transition flex items-center gap-1.5 sm:gap-2 shadow-sm">
                                 <i data-lucide="square" class="w-4 h-4 text-slate-500"></i> Marcar como Concluída
                             </button>
                         </div>
@@ -249,7 +323,7 @@
                     
                         <div class="mb-8 border-b border-slate-800/80 pb-6 last:border-0 last:pb-0" id="q-container-ifsp-2025-1-a-q0">
                             <div class="flex items-center justify-between mb-3 flex-wrap gap-2">
-                                <div class="flex items-center gap-2">
+                                <div class="flex flex-wrap items-center gap-2">
                                     <span class="text-xs font-bold uppercase tracking-wider text-sky-300 bg-blue-950/60 px-2.5 py-0.5 rounded-full border border-blue-800/40">Questão 1</span>
                                     
                             <a href="../pesquisa.html?bncc=EF09MA03" class="text-[11px] font-mono font-bold text-emerald-300 bg-emerald-950/80 hover:bg-emerald-900/90 px-2.5 py-0.5 rounded-full border border-emerald-800/60 flex items-center gap-1 transition shadow-sm" title="Efetuar cálculos com números reais, inclusive potências com expoentes fracionários.">
@@ -258,7 +332,7 @@
                         
                                 </div>
                             </div>
-                            <p class="font-medium text-slate-100 mb-4 text-sm sm:text-base leading-relaxed">Em uma aula de matemática, a professora passou para sua turma uma lista de exercícios, na qual era necessário calcular o valor decimal de $\sqrt{7}$ e era permitido aos alunos o uso da calculadora. Um aluno falou que não iria conseguir realizar a atividade, pois a tecla de calcular raiz quadrada de sua calculadora estava quebrada. A professora sugeriu, então, que ele transformasse a raiz em potência com expoente fracionário. Qual a representação de $\sqrt{7}$ que o aluno precisa utilizar?</p>
+                            <div class="q-text-container"><p class="q-paragraph font-medium text-slate-100 text-sm sm:text-base leading-relaxed">Em uma aula de matemática, a professora passou para sua turma uma lista de exercícios, na qual era necessário calcular o valor decimal de $\sqrt{7}$ e era permitido aos alunos o uso da calculadora. Um aluno falou que não iria conseguir realizar a atividade, pois a tecla de calcular raiz quadrada de sua calculadora estava quebrada. A professora sugeriu, então, que ele transformasse a raiz em potência com expoente fracionário. Qual a representação de $\sqrt{7}$ que o aluno precisa utilizar?</p></div>
                             
                             <div class="space-y-2 mb-4" id="opts-ifsp-2025-1-a-q0">
                                 
@@ -305,7 +379,7 @@
                     
                         <div class="mb-8 border-b border-slate-800/80 pb-6 last:border-0 last:pb-0" id="q-container-ifsp-2025-1-a-q1">
                             <div class="flex items-center justify-between mb-3 flex-wrap gap-2">
-                                <div class="flex items-center gap-2">
+                                <div class="flex flex-wrap items-center gap-2">
                                     <span class="text-xs font-bold uppercase tracking-wider text-sky-300 bg-blue-950/60 px-2.5 py-0.5 rounded-full border border-blue-800/40">Questão 2</span>
                                     
                             <a href="../pesquisa.html?bncc=EF08MA03" class="text-[11px] font-mono font-bold text-emerald-300 bg-emerald-950/80 hover:bg-emerald-900/90 px-2.5 py-0.5 rounded-full border border-emerald-800/60 flex items-center gap-1 transition shadow-sm" title="Resolver e elaborar problemas de contagem cuja resolução envolva a aplicação do princípio multiplicativo.">
@@ -314,7 +388,7 @@
                         
                                 </div>
                             </div>
-                            <p class="font-medium text-slate-100 mb-4 text-sm sm:text-base leading-relaxed">O jogo de xadrez possui peças brancas e pretas. Entre elas, existem as torres que se movimentam em linhas retas, tanto na vertical quanto na horizontal, quantas casas o jogador quiser. Na imagem a seguir é possível ver um tabuleiro especial de xadrez $4 \times 4$, contendo 16 casas e uma configuração na qual as referidas peças não estão alinhadas na vertical e nem na horizontal. A quantidade de maneiras que podemos colocar uma torre branca e outra torre preta nesse tabuleiro de modo que não estejam alinhadas na vertical ou na horizontal (impossibilitando um ataque mútuo) é:</p>
+                            <div class="q-text-container"><p class="q-paragraph font-medium text-slate-100 text-sm sm:text-base leading-relaxed">O jogo de xadrez possui peças brancas e pretas. Entre elas, existem as torres que se movimentam em linhas retas, tanto na vertical quanto na horizontal, quantas casas o jogador quiser. Na imagem a seguir é possível ver um tabuleiro especial de xadrez $4 \times 4$, contendo 16 casas e uma configuração na qual as referidas peças não estão alinhadas na vertical e nem na horizontal. A quantidade de maneiras que podemos colocar uma torre branca e outra torre preta nesse tabuleiro de modo que não estejam alinhadas na vertical ou na horizontal (impossibilitando um ataque mútuo) é:</p></div>
                             
         <div class="my-4 p-2 sm:p-3 rounded-2xl border bg-slate-950/70 border-slate-800 shadow-sm max-w-xl mx-auto flex flex-col items-center">
             <img src="https://lh3.googleusercontent.com/d/1jdiwn6ou16wwer-3pRSl6ALEAJ-h3Ob2" alt="Tabuleiro quadriculado de xadrez 4 por 4 com uma torre preta no canto superior esquerdo e uma torre branca no quadrante inferior direito, com setas indicando os movimentos vertical e horizontal de cada torre" onerror="if(this.src!='../assets/img/questoes/ifsp/ifsp-2025-1a-q02.png'){this.src='../assets/img/questoes/ifsp/ifsp-2025-1a-q02.png';}" class="max-h-80 sm:max-h-96 w-auto max-w-full rounded-xl object-contain cursor-zoom-in hover:opacity-95 hover:scale-[1.01] transition duration-200" onclick="openImageModal('https://lh3.googleusercontent.com/d/1jdiwn6ou16wwer-3pRSl6ALEAJ-h3Ob2', 'Tabuleiro quadriculado de xadrez 4 por 4 com uma torre preta no canto superior esquerdo e uma torre branca no quadrante inferior direito, com setas indicando os movimentos vertical e horizontal de cada torre')" title="Clique para ampliar a imagem" loading="lazy">
@@ -366,7 +440,7 @@
                     
                         <div class="mb-8 border-b border-slate-800/80 pb-6 last:border-0 last:pb-0" id="q-container-ifsp-2025-1-a-q2">
                             <div class="flex items-center justify-between mb-3 flex-wrap gap-2">
-                                <div class="flex items-center gap-2">
+                                <div class="flex flex-wrap items-center gap-2">
                                     <span class="text-xs font-bold uppercase tracking-wider text-sky-300 bg-blue-950/60 px-2.5 py-0.5 rounded-full border border-blue-800/40">Questão 3</span>
                                     
                             <a href="../pesquisa.html?bncc=EF08MA09" class="text-[11px] font-mono font-bold text-emerald-300 bg-emerald-950/80 hover:bg-emerald-900/90 px-2.5 py-0.5 rounded-full border border-emerald-800/60 flex items-center gap-1 transition shadow-sm" title="Resolver e elaborar, com e sem uso de tecnologias, problemas que possam ser representados por equações polinomiais de 2º grau do tipo ax2 = b.">
@@ -375,7 +449,7 @@
                         
                                 </div>
                             </div>
-                            <p class="font-medium text-slate-100 mb-4 text-sm sm:text-base leading-relaxed">A figura a seguir representa um canteiro destinado a uma horta comunitária que está sendo planejada por um campus do IFSP. As plantações ficarão na área I, as áreas II e III serão para circulação e organização da colheita. Na área IV será criada uma cabana para guardar materiais que serão utilizados na horta. Sabendo que $x > 0$ e que a área destinada para a plantação (Área I) será de $81\text{ m}^2$, pode-se concluir que a área total do canteiro, em $\text{m}^2$, será de:</p>
+                            <div class="q-text-container"><p class="q-paragraph font-medium text-slate-100 text-sm sm:text-base leading-relaxed">A figura a seguir representa um canteiro destinado a uma horta comunitária que está sendo planejada por um campus do IFSP. As plantações ficarão na área I, as áreas II e III serão para circulação e organização da colheita. Na área IV será criada uma cabana para guardar materiais que serão utilizados na horta. Sabendo que $x > 0$ e que a área destinada para a plantação (Área I) será de $81\text{ m}^2$, pode-se concluir que a área total do canteiro, em $\text{m}^2$, será de:</p></div>
                             
         <div class="my-4 p-2 sm:p-3 rounded-2xl border bg-slate-950/70 border-slate-800 shadow-sm max-w-xl mx-auto flex flex-col items-center">
             <img src="https://lh3.googleusercontent.com/d/1b90NuNmoABLZNkZcT2F_-kTJpvWylPeQ" alt="Canteiro quadrado dividido em quatro partes: Área I (quadrado de lado 2x por 2x), Área II (retângulo de largura 2 e altura 2x), Área III (retângulo de largura 2x e altura 2) e Área IV (quadrado de lado 2 por 2)" onerror="if(this.src!='../assets/img/questoes/ifsp/ifsp-2025-1a-q03.png'){this.src='../assets/img/questoes/ifsp/ifsp-2025-1a-q03.png';}" class="max-h-80 sm:max-h-96 w-auto max-w-full rounded-xl object-contain cursor-zoom-in hover:opacity-95 hover:scale-[1.01] transition duration-200" onclick="openImageModal('https://lh3.googleusercontent.com/d/1b90NuNmoABLZNkZcT2F_-kTJpvWylPeQ', 'Canteiro quadrado dividido em quatro partes: Área I (quadrado de lado 2x por 2x), Área II (retângulo de largura 2 e altura 2x), Área III (retângulo de largura 2x e altura 2) e Área IV (quadrado de lado 2 por 2)')" title="Clique para ampliar a imagem" loading="lazy">
@@ -427,7 +501,7 @@
                     
                         <div class="mb-8 border-b border-slate-800/80 pb-6 last:border-0 last:pb-0" id="q-container-ifsp-2025-1-a-q3">
                             <div class="flex items-center justify-between mb-3 flex-wrap gap-2">
-                                <div class="flex items-center gap-2">
+                                <div class="flex flex-wrap items-center gap-2">
                                     <span class="text-xs font-bold uppercase tracking-wider text-sky-300 bg-blue-950/60 px-2.5 py-0.5 rounded-full border border-blue-800/40">Questão 4</span>
                                     
                             <a href="../pesquisa.html?bncc=EF08MA22" class="text-[11px] font-mono font-bold text-emerald-300 bg-emerald-950/80 hover:bg-emerald-900/90 px-2.5 py-0.5 rounded-full border border-emerald-800/60 flex items-center gap-1 transition shadow-sm" title="Calcular a probabilidade de eventos, com base na construção do espaço amostral, utilizando o princípio multiplicativo, e reconhecer que a soma das probabilidades de todos os elementos do espaço amostral é igual a 1.">
@@ -436,7 +510,7 @@
                         
                                 </div>
                             </div>
-                            <p class="font-medium text-slate-100 mb-4 text-sm sm:text-base leading-relaxed">Um professor desenvolveu um dispositivo eletrônico, parecido com o ilustrado na figura a seguir, para utilizar em uma atividade com seus alunos. O dispositivo é composto por um botão (B) e um retângulo dividido em 6 partes de tamanhos iguais, numeradas de 1 a 6. Cada vez que o botão é pressionado, uma única parte do retângulo fica iluminada. Cada uma das partes com um número par tem probabilidade $P$ de ficar iluminada e cada uma das partes com um número ímpar tem probabilidade $3P$ de ficar iluminada. Dessa maneira, quando o professor pressionar o botão, a probabilidade de que uma parte com um número primo fique iluminada é:</p>
+                            <div class="q-text-container"><p class="q-paragraph font-medium text-slate-100 text-sm sm:text-base leading-relaxed">Um professor desenvolveu um dispositivo eletrônico, parecido com o ilustrado na figura a seguir, para utilizar em uma atividade com seus alunos. O dispositivo é composto por um botão (B) e um retângulo dividido em 6 partes de tamanhos iguais, numeradas de 1 a 6. Cada vez que o botão é pressionado, uma única parte do retângulo fica iluminada. Cada uma das partes com um número par tem probabilidade $P$ de ficar iluminada e cada uma das partes com um número ímpar tem probabilidade $3P$ de ficar iluminada. Dessa maneira, quando o professor pressionar o botão, a probabilidade de que uma parte com um número primo fique iluminada é:</p></div>
                             
         <div class="my-4 p-2 sm:p-3 rounded-2xl border bg-slate-950/70 border-slate-800 shadow-sm max-w-xl mx-auto flex flex-col items-center">
             <img src="https://lh3.googleusercontent.com/d/1ExHE_5WV5OBkTlKjlTbf_s9j_E7ZMCKp" alt="Dispositivo eletrônico com um botão circular marcado com a letra B à esquerda e um visor retangular dividido em 6 compartimentos numerados sequencialmente de 1 a 6" onerror="if(this.src!='../assets/img/questoes/ifsp/ifsp-2025-1a-q04.png'){this.src='../assets/img/questoes/ifsp/ifsp-2025-1a-q04.png';}" class="max-h-80 sm:max-h-96 w-auto max-w-full rounded-xl object-contain cursor-zoom-in hover:opacity-95 hover:scale-[1.01] transition duration-200" onclick="openImageModal('https://lh3.googleusercontent.com/d/1ExHE_5WV5OBkTlKjlTbf_s9j_E7ZMCKp', 'Dispositivo eletrônico com um botão circular marcado com a letra B à esquerda e um visor retangular dividido em 6 compartimentos numerados sequencialmente de 1 a 6')" title="Clique para ampliar a imagem" loading="lazy">
@@ -488,7 +562,7 @@
                     
                         <div class="mb-8 border-b border-slate-800/80 pb-6 last:border-0 last:pb-0" id="q-container-ifsp-2025-1-a-q4">
                             <div class="flex items-center justify-between mb-3 flex-wrap gap-2">
-                                <div class="flex items-center gap-2">
+                                <div class="flex flex-wrap items-center gap-2">
                                     <span class="text-xs font-bold uppercase tracking-wider text-sky-300 bg-blue-950/60 px-2.5 py-0.5 rounded-full border border-blue-800/40">Questão 5</span>
                                     
                             <a href="../pesquisa.html?bncc=EF08MA04" class="text-[11px] font-mono font-bold text-emerald-300 bg-emerald-950/80 hover:bg-emerald-900/90 px-2.5 py-0.5 rounded-full border border-emerald-800/60 flex items-center gap-1 transition shadow-sm" title="Resolver e elaborar problemas, envolvendo cálculo de porcentagens, incluindo o uso de tecnologias digitais.">
@@ -497,7 +571,7 @@
                         
                                 </div>
                             </div>
-                            <p class="font-medium text-slate-100 mb-4 text-sm sm:text-base leading-relaxed">Se considerarmos que o preço inicial do litro da gasolina é de $\text{R\$} 5{,}60$, e que na Black Friday ocorra um desconto de 50%, é correto afirmar que:</p>
+                            <div class="q-text-container"><p class="q-paragraph font-medium text-slate-100 text-sm sm:text-base leading-relaxed">Se considerarmos que o preço inicial do litro da gasolina é de $\text{R\$} 5{,}60$, e que na Black Friday ocorra um desconto de 50%, é correto afirmar que:</p></div>
                             
                             <div class="space-y-2 mb-4" id="opts-ifsp-2025-1-a-q4">
                                 
@@ -544,7 +618,7 @@
                     
                         <div class="mb-8 border-b border-slate-800/80 pb-6 last:border-0 last:pb-0" id="q-container-ifsp-2025-1-a-q5">
                             <div class="flex items-center justify-between mb-3 flex-wrap gap-2">
-                                <div class="flex items-center gap-2">
+                                <div class="flex flex-wrap items-center gap-2">
                                     <span class="text-xs font-bold uppercase tracking-wider text-sky-300 bg-blue-950/60 px-2.5 py-0.5 rounded-full border border-blue-800/40">Questão 6</span>
                                     
                             <a href="../pesquisa.html?bncc=EF07MA18" class="text-[11px] font-mono font-bold text-emerald-300 bg-emerald-950/80 hover:bg-emerald-900/90 px-2.5 py-0.5 rounded-full border border-emerald-800/60 flex items-center gap-1 transition shadow-sm" title="Resolver e elaborar problemas que possam ser representados por equações polinomiais de 1º grau, redutíveis à forma ax + b = c, fazendo uso das propriedades da igualdade.">
@@ -553,7 +627,7 @@
                         
                                 </div>
                             </div>
-                            <p class="font-medium text-slate-100 mb-4 text-sm sm:text-base leading-relaxed">Seja $2x - 2y = 4$ uma equação linear de 1º grau. A representação gráfica dessa equação no plano cartesiano é uma reta que intersecta os eixos cartesianos nos pontos:</p>
+                            <div class="q-text-container"><p class="q-paragraph font-medium text-slate-100 text-sm sm:text-base leading-relaxed">Seja $2x - 2y = 4$ uma equação linear de 1º grau. A representação gráfica dessa equação no plano cartesiano é uma reta que intersecta os eixos cartesianos nos pontos:</p></div>
                             
                             <div class="space-y-2 mb-4" id="opts-ifsp-2025-1-a-q5">
                                 
@@ -600,7 +674,7 @@
                     
                         <div class="mb-8 border-b border-slate-800/80 pb-6 last:border-0 last:pb-0" id="q-container-ifsp-2025-1-a-q6">
                             <div class="flex items-center justify-between mb-3 flex-wrap gap-2">
-                                <div class="flex items-center gap-2">
+                                <div class="flex flex-wrap items-center gap-2">
                                     <span class="text-xs font-bold uppercase tracking-wider text-sky-300 bg-blue-950/60 px-2.5 py-0.5 rounded-full border border-blue-800/40">Questão 7</span>
                                     
                             <a href="../pesquisa.html?bncc=EF08MA03" class="text-[11px] font-mono font-bold text-emerald-300 bg-emerald-950/80 hover:bg-emerald-900/90 px-2.5 py-0.5 rounded-full border border-emerald-800/60 flex items-center gap-1 transition shadow-sm" title="Resolver e elaborar problemas de contagem cuja resolução envolva a aplicação do princípio multiplicativo.">
@@ -609,7 +683,7 @@
                         
                                 </div>
                             </div>
-                            <p class="font-medium text-slate-100 mb-4 text-sm sm:text-base leading-relaxed">Uma pessoa deseja comprar um ingresso para um show que terá 4 categorias: pista, pista premium, área vip e camarote. As formas de pagamento disponíveis são 3: Pix, cartão de débito e cartão de crédito. Considerando que todas as combinações são igualmente prováveis, qual a probabilidade de a pessoa comprar o ingresso de pista e pagar por Pix?</p>
+                            <div class="q-text-container"><p class="q-paragraph font-medium text-slate-100 text-sm sm:text-base leading-relaxed">Uma pessoa deseja comprar um ingresso para um show que terá 4 categorias: pista, pista premium, área vip e camarote. As formas de pagamento disponíveis são 3: Pix, cartão de débito e cartão de crédito. Considerando que todas as combinações são igualmente prováveis, qual a probabilidade de a pessoa comprar o ingresso de pista e pagar por Pix?</p></div>
                             
                             <div class="space-y-2 mb-4" id="opts-ifsp-2025-1-a-q6">
                                 
@@ -656,7 +730,7 @@
                     
                         <div class="mb-8 border-b border-slate-800/80 pb-6 last:border-0 last:pb-0" id="q-container-ifsp-2025-1-a-q7">
                             <div class="flex items-center justify-between mb-3 flex-wrap gap-2">
-                                <div class="flex items-center gap-2">
+                                <div class="flex flex-wrap items-center gap-2">
                                     <span class="text-xs font-bold uppercase tracking-wider text-sky-300 bg-blue-950/60 px-2.5 py-0.5 rounded-full border border-blue-800/40">Questão 8</span>
                                     
                             <a href="../pesquisa.html?bncc=EF06MA24" class="text-[11px] font-mono font-bold text-emerald-300 bg-emerald-950/80 hover:bg-emerald-900/90 px-2.5 py-0.5 rounded-full border border-emerald-800/60 flex items-center gap-1 transition shadow-sm" title="Resolver e elaborar problemas que envolvam as grandezas comprimento, massa, tempo, temperatura, área (triângulos e retângulos), capacidade e volume (sólidos formados por blocos retangulares), sem uso de fórmulas, inseridos, sempre que possível, em contextos oriundos de situações reais e/ou relacionadas às outras áreas do conhecimento.">
@@ -665,8 +739,8 @@
                         
                                 </div>
                             </div>
-                            <p class="font-medium text-slate-100 mb-4 text-sm sm:text-base leading-relaxed">Uma nutricionista analisou que para 325 alunos eram consumidos $195\text{ kg}$ de alimentos em um restaurante estudantil do IFSP. Certo dia, ela percebeu que para 210 alunos foram consumidos apenas $126\text{ kg}$ de alimentos. Com base nessas informações, ela elaborou o seguinte gráfico que relaciona a quantidade de alimentos (em kg) e a quantidade de alunos:
-Com base no gráfico, é possível determinar que a quantidade de alimento consumido por aluno, em gramas, é de:</p>
+                            <div class="q-text-container"><p class="q-paragraph font-medium text-slate-100 text-sm sm:text-base leading-relaxed">Uma nutricionista analisou que para 325 alunos eram consumidos $195\text{ kg}$ de alimentos em um restaurante estudantil do IFSP. Certo dia, ela percebeu que para 210 alunos foram consumidos apenas $126\text{ kg}$ de alimentos. Com base nessas informações, ela elaborou o seguinte gráfico que relaciona a quantidade de alimentos (em kg) e a quantidade de alunos:
+Com base no gráfico, é possível determinar que a quantidade de alimento consumido por aluno, em gramas, é de:</p></div>
                             
         <div class="my-4 p-2 sm:p-3 rounded-2xl border bg-slate-950/70 border-slate-800 shadow-sm max-w-xl mx-auto flex flex-col items-center">
             <img src="https://lh3.googleusercontent.com/d/1DUzTFuV7Pb87rQ4QEcVO4TxcoUV1-9xT" alt="Gráfico no plano cartesiano mostrando no eixo vertical a quantidade de alimento em quilogramas de 0 a 300 e no eixo horizontal a quantidade de alunos de 0 a 450, com uma reta passando pela origem e pelos pontos (210, 126) e (325, 195)" onerror="if(this.src!='../assets/img/questoes/ifsp/ifsp-2025-1a-q08.png'){this.src='../assets/img/questoes/ifsp/ifsp-2025-1a-q08.png';}" class="max-h-80 sm:max-h-96 w-auto max-w-full rounded-xl object-contain cursor-zoom-in hover:opacity-95 hover:scale-[1.01] transition duration-200" onclick="openImageModal('https://lh3.googleusercontent.com/d/1DUzTFuV7Pb87rQ4QEcVO4TxcoUV1-9xT', 'Gráfico no plano cartesiano mostrando no eixo vertical a quantidade de alimento em quilogramas de 0 a 300 e no eixo horizontal a quantidade de alunos de 0 a 450, com uma reta passando pela origem e pelos pontos (210, 126) e (325, 195)')" title="Clique para ampliar a imagem" loading="lazy">
@@ -718,7 +792,7 @@ Com base no gráfico, é possível determinar que a quantidade de alimento consu
                     
                         <div class="mb-8 border-b border-slate-800/80 pb-6 last:border-0 last:pb-0" id="q-container-ifsp-2025-1-a-q8">
                             <div class="flex items-center justify-between mb-3 flex-wrap gap-2">
-                                <div class="flex items-center gap-2">
+                                <div class="flex flex-wrap items-center gap-2">
                                     <span class="text-xs font-bold uppercase tracking-wider text-sky-300 bg-blue-950/60 px-2.5 py-0.5 rounded-full border border-blue-800/40">Questão 9</span>
                                     
                             <a href="../pesquisa.html?bncc=EF07MA18" class="text-[11px] font-mono font-bold text-emerald-300 bg-emerald-950/80 hover:bg-emerald-900/90 px-2.5 py-0.5 rounded-full border border-emerald-800/60 flex items-center gap-1 transition shadow-sm" title="Resolver e elaborar problemas que possam ser representados por equações polinomiais de 1º grau, redutíveis à forma ax + b = c, fazendo uso das propriedades da igualdade.">
@@ -727,9 +801,7 @@ Com base no gráfico, é possível determinar que a quantidade de alimento consu
                         
                                 </div>
                             </div>
-                            <p class="font-medium text-slate-100 mb-4 text-sm sm:text-base leading-relaxed">Ao treinar um funcionário responsável pela balança digital de uma rede de supermercados presente nos estados das regiões Sudeste e Sul, um gerente construiu um quadro com os preços de determinados produtos, a partir das informações disponíveis no portal do Programa Brasileiro de Modernização do Mercado Hortigranjeiro (Prohort):
-
-O gerente pediu ao funcionário para calcular o valor de uma compra de $1\text{ kg}$ de Abacate, $2\text{ kg}$ de Berinjela e $3\text{ kg}$ de Limão Taiti, utilizando uma balança digital para obter o valor total a pagar em cada estado. Considerando os valores apresentados na tabela e que foi possível realizar a pesagem exata de cada uma dessas quantidades, em qual estado a compra terá o menor valor total?</p>
+                            <div class="q-text-container"><p class="q-paragraph font-medium text-slate-200 text-sm sm:text-base">Ao treinar um funcionário responsável pela balança digital de uma rede de supermercados presente nos estados das regiões Sudeste e Sul, um gerente construiu um quadro com os preços de determinados produtos, a partir das informações disponíveis no portal do Programa Brasileiro de Modernização do Mercado Hortigranjeiro (Prohort):</p><p class="q-prompt text-slate-100 text-sm sm:text-base">O gerente pediu ao funcionário para calcular o valor de uma compra de $1\text{ kg}$ de Abacate, $2\text{ kg}$ de Berinjela e $3\text{ kg}$ de Limão Taiti, utilizando uma balança digital para obter o valor total a pagar em cada estado. Considerando os valores apresentados na tabela e que foi possível realizar a pesagem exata de cada uma dessas quantidades, em qual estado a compra terá o menor valor total?</p></div>
                             
         <div class="my-4 p-2 sm:p-3 rounded-2xl border bg-slate-950/70 border-slate-800 shadow-sm max-w-xl mx-auto flex flex-col items-center">
             <img src="https://lh3.googleusercontent.com/d/1HRY_HZWaev4pJ17Xieq0Jl2eIH4zkPOt" alt="Quadro com preços médios por quilo de Abacate, Berinjela e Limão Taiti cotados em 2023 nos estados ES, MG, PR, RJ, RS, SC e SP." onerror="if(this.src!='../assets/img/questoes/ifsp/ifsp-2025-1-a-q09.png'){this.src='../assets/img/questoes/ifsp/ifsp-2025-1-a-q09.png';}" class="max-h-80 sm:max-h-96 w-auto max-w-full rounded-xl object-contain cursor-zoom-in hover:opacity-95 hover:scale-[1.01] transition duration-200" onclick="openImageModal('https://lh3.googleusercontent.com/d/1HRY_HZWaev4pJ17Xieq0Jl2eIH4zkPOt', 'Quadro com preços médios por quilo de Abacate, Berinjela e Limão Taiti cotados em 2023 nos estados ES, MG, PR, RJ, RS, SC e SP.')" title="Clique para ampliar a imagem" loading="lazy">
@@ -781,7 +853,7 @@ O gerente pediu ao funcionário para calcular o valor de uma compra de $1\text{ 
                     
                         <div class="mb-8 border-b border-slate-800/80 pb-6 last:border-0 last:pb-0" id="q-container-ifsp-2025-1-a-q9">
                             <div class="flex items-center justify-between mb-3 flex-wrap gap-2">
-                                <div class="flex items-center gap-2">
+                                <div class="flex flex-wrap items-center gap-2">
                                     <span class="text-xs font-bold uppercase tracking-wider text-sky-300 bg-blue-950/60 px-2.5 py-0.5 rounded-full border border-blue-800/40">Questão 10</span>
                                     
                             <a href="../pesquisa.html?bncc=EF09MA14" class="text-[11px] font-mono font-bold text-emerald-300 bg-emerald-950/80 hover:bg-emerald-900/90 px-2.5 py-0.5 rounded-full border border-emerald-800/60 flex items-center gap-1 transition shadow-sm" title="Resolver e elaborar problemas de aplicação do teorema de Pitágoras ou das relações de proporcionalidade envolvendo retas paralelas cortadas por secantes.">
@@ -790,7 +862,7 @@ O gerente pediu ao funcionário para calcular o valor de uma compra de $1\text{ 
                         
                                 </div>
                             </div>
-                            <p class="font-medium text-slate-100 mb-4 text-sm sm:text-base leading-relaxed">Um professor propôs aos alunos calcularem os valores $X$, $Y$ e $Z$ a partir do Teorema de Pitágoras ($h^2 = a^2 + b^2$):<br>1º Conjunto: $h = \sqrt{3}$, $a = X$ e $b = 1$<br>2º Conjunto: $h = 5$, $a = 1$ e $b = Y$<br>3º Conjunto: $h = Z$, $a = 2$ e $b = \sqrt{3}$<br>Ao colocar esses números irracionais em ordem crescente, a sequência correta é:</p>
+                            <div class="q-text-container"><p class="q-paragraph font-medium text-slate-100 text-sm sm:text-base leading-relaxed">Um professor propôs aos alunos calcularem os valores $X$, $Y$ e $Z$ a partir do Teorema de Pitágoras ($h^2 = a^2 + b^2$):<br>1º Conjunto: $h = \sqrt{3}$, $a = X$ e $b = 1$<br>2º Conjunto: $h = 5$, $a = 1$ e $b = Y$<br>3º Conjunto: $h = Z$, $a = 2$ e $b = \sqrt{3}$<br>Ao colocar esses números irracionais em ordem crescente, a sequência correta é:</p></div>
                             
                             <div class="space-y-2 mb-4" id="opts-ifsp-2025-1-a-q9">
                                 
@@ -837,7 +909,7 @@ O gerente pediu ao funcionário para calcular o valor de uma compra de $1\text{ 
                     
                         <div class="mb-8 border-b border-slate-800/80 pb-6 last:border-0 last:pb-0" id="q-container-ifsp-2025-1-a-q10">
                             <div class="flex items-center justify-between mb-3 flex-wrap gap-2">
-                                <div class="flex items-center gap-2">
+                                <div class="flex flex-wrap items-center gap-2">
                                     <span class="text-xs font-bold uppercase tracking-wider text-sky-300 bg-blue-950/60 px-2.5 py-0.5 rounded-full border border-blue-800/40">Questão 11</span>
                                     
                             <a href="../pesquisa.html?bncc=EF09MA12" class="text-[11px] font-mono font-bold text-emerald-300 bg-emerald-950/80 hover:bg-emerald-900/90 px-2.5 py-0.5 rounded-full border border-emerald-800/60 flex items-center gap-1 transition shadow-sm" title="Reconhecer as condições necessárias e suficientes para que dois triângulos sejam semelhantes.">
@@ -846,8 +918,8 @@ O gerente pediu ao funcionário para calcular o valor de uma compra de $1\text{ 
                         
                                 </div>
                             </div>
-                            <p class="font-medium text-slate-100 mb-4 text-sm sm:text-base leading-relaxed">Observe atentamente os triângulos $ABC$ e $DEF$ representados na figura a seguir:
-Estes triângulos foram construídos de maneira que $DE = 2 \cdot AB$, $DF = 2 \cdot AC$ e $FE = 2 \cdot BC$. Considerando essa informação, podemos afirmar que $ABC$ e $DEF$ são triângulos semelhantes porque:</p>
+                            <div class="q-text-container"><p class="q-paragraph font-medium text-slate-100 text-sm sm:text-base leading-relaxed">Observe atentamente os triângulos $ABC$ e $DEF$ representados na figura a seguir:
+Estes triângulos foram construídos de maneira que $DE = 2 \cdot AB$, $DF = 2 \cdot AC$ e $FE = 2 \cdot BC$. Considerando essa informação, podemos afirmar que $ABC$ e $DEF$ são triângulos semelhantes porque:</p></div>
                             
         <div class="my-4 p-2 sm:p-3 rounded-2xl border bg-slate-950/70 border-slate-800 shadow-sm max-w-xl mx-auto flex flex-col items-center">
             <img src="https://lh3.googleusercontent.com/d/1OhxukFpsueFVAldWM8-F5StaoGVaP0ge" alt="Dois triângulos escalenos semelhantes ABC e DEF, onde o triângulo DEF possui todos os lados proporcionais com o dobro das medidas do triângulo ABC" onerror="if(this.src!='../assets/img/questoes/ifsp/ifsp-2025-1a-q11.png'){this.src='../assets/img/questoes/ifsp/ifsp-2025-1a-q11.png';}" class="max-h-80 sm:max-h-96 w-auto max-w-full rounded-xl object-contain cursor-zoom-in hover:opacity-95 hover:scale-[1.01] transition duration-200" onclick="openImageModal('https://lh3.googleusercontent.com/d/1OhxukFpsueFVAldWM8-F5StaoGVaP0ge', 'Dois triângulos escalenos semelhantes ABC e DEF, onde o triângulo DEF possui todos os lados proporcionais com o dobro das medidas do triângulo ABC')" title="Clique para ampliar a imagem" loading="lazy">
@@ -899,7 +971,7 @@ Estes triângulos foram construídos de maneira que $DE = 2 \cdot AB$, $DF = 2 \
                     
                         <div class="mb-8 border-b border-slate-800/80 pb-6 last:border-0 last:pb-0" id="q-container-ifsp-2025-1-a-q11">
                             <div class="flex items-center justify-between mb-3 flex-wrap gap-2">
-                                <div class="flex items-center gap-2">
+                                <div class="flex flex-wrap items-center gap-2">
                                     <span class="text-xs font-bold uppercase tracking-wider text-sky-300 bg-blue-950/60 px-2.5 py-0.5 rounded-full border border-blue-800/40">Questão 12</span>
                                     
                             <a href="../pesquisa.html?bncc=EF09MA11" class="text-[11px] font-mono font-bold text-emerald-300 bg-emerald-950/80 hover:bg-emerald-900/90 px-2.5 py-0.5 rounded-full border border-emerald-800/60 flex items-center gap-1 transition shadow-sm" title="Resolver problemas por meio do estabelecimento de relações entre arcos, ângulos centrais e ângulos inscritos na circunferência, fazendo uso, inclusive, de softwares de geometria dinâmica.">
@@ -908,7 +980,7 @@ Estes triângulos foram construídos de maneira que $DE = 2 \cdot AB$, $DF = 2 \
                         
                                 </div>
                             </div>
-                            <p class="font-medium text-slate-100 mb-4 text-sm sm:text-base leading-relaxed">A circunferência representada abaixo tem centro $C$ e diâmetro $AB$. Sobre o raio $CD$ construiu-se um triângulo equilátero unindo-se os pontos $B$ e $C$ ao ponto $D$, que está sobre a circunferência. Qual é a medida (em graus) do arco $\widehat{AD}$?</p>
+                            <div class="q-text-container"><p class="q-paragraph font-medium text-slate-100 text-sm sm:text-base leading-relaxed">A circunferência representada abaixo tem centro $C$ e diâmetro $AB$. Sobre o raio $CD$ construiu-se um triângulo equilátero unindo-se os pontos $B$ e $C$ ao ponto $D$, que está sobre a circunferência. Qual é a medida (em graus) do arco $\widehat{AD}$?</p></div>
                             
         <div class="my-4 p-2 sm:p-3 rounded-2xl border bg-slate-950/70 border-slate-800 shadow-sm max-w-xl mx-auto flex flex-col items-center">
             <img src="https://lh3.googleusercontent.com/d/1hvUOeiNp_OpA8VtZ7tfFZ2ifFkDKkx8s" alt="Circunferência com centro C e diâmetro vertical AB. O ponto D está na circunferência à esquerda, formando com os pontos B e C o triângulo equilátero BCD, com arcos de 60 graus indicados nos três vértices" onerror="if(this.src!='../assets/img/questoes/ifsp/ifsp-2025-1a-q12.png'){this.src='../assets/img/questoes/ifsp/ifsp-2025-1a-q12.png';}" class="max-h-80 sm:max-h-96 w-auto max-w-full rounded-xl object-contain cursor-zoom-in hover:opacity-95 hover:scale-[1.01] transition duration-200" onclick="openImageModal('https://lh3.googleusercontent.com/d/1hvUOeiNp_OpA8VtZ7tfFZ2ifFkDKkx8s', 'Circunferência com centro C e diâmetro vertical AB. O ponto D está na circunferência à esquerda, formando com os pontos B e C o triângulo equilátero BCD, com arcos de 60 graus indicados nos três vértices')" title="Clique para ampliar a imagem" loading="lazy">
@@ -960,7 +1032,7 @@ Estes triângulos foram construídos de maneira que $DE = 2 \cdot AB$, $DF = 2 \
                     
                         <div class="mb-8 border-b border-slate-800/80 pb-6 last:border-0 last:pb-0" id="q-container-ifsp-2025-1-a-q12">
                             <div class="flex items-center justify-between mb-3 flex-wrap gap-2">
-                                <div class="flex items-center gap-2">
+                                <div class="flex flex-wrap items-center gap-2">
                                     <span class="text-xs font-bold uppercase tracking-wider text-sky-300 bg-blue-950/60 px-2.5 py-0.5 rounded-full border border-blue-800/40">Questão 13</span>
                                     
                             <a href="../pesquisa.html?bncc=EF09MA14" class="text-[11px] font-mono font-bold text-emerald-300 bg-emerald-950/80 hover:bg-emerald-900/90 px-2.5 py-0.5 rounded-full border border-emerald-800/60 flex items-center gap-1 transition shadow-sm" title="Resolver e elaborar problemas de aplicação do teorema de Pitágoras ou das relações de proporcionalidade envolvendo retas paralelas cortadas por secantes.">
@@ -969,8 +1041,8 @@ Estes triângulos foram construídos de maneira que $DE = 2 \cdot AB$, $DF = 2 \
                         
                                 </div>
                             </div>
-                            <p class="font-medium text-slate-100 mb-4 text-sm sm:text-base leading-relaxed">"O Brasil sobe a rampa do Planalto." Este foi o título de muitos jornais brasileiros no dia primeiro de janeiro de 2023, devido à posse do novo presidente da República. A imagem a seguir mostra a rampa citada no título da matéria e destaca um triângulo $ABC$.
-Supondo que o triângulo $ABC$ é retângulo em $A$ e tem as medidas indicadas na figura ($AC = 4\text{ m}$ e $AB = 12\sqrt{7}\text{ m}$), quantos metros percorrerá uma pessoa que caminha em linha reta ao longo da rampa do planalto, do ponto $B$ ao ponto $C$, indicados na figura? Use: $(12\sqrt{7}\text{ m})^2 = 1008$.</p>
+                            <div class="q-text-container"><p class="q-paragraph font-medium text-slate-100 text-sm sm:text-base leading-relaxed">"O Brasil sobe a rampa do Planalto." Este foi o título de muitos jornais brasileiros no dia primeiro de janeiro de 2023, devido à posse do novo presidente da República. A imagem a seguir mostra a rampa citada no título da matéria e destaca um triângulo $ABC$.
+Supondo que o triângulo $ABC$ é retângulo em $A$ e tem as medidas indicadas na figura ($AC = 4\text{ m}$ e $AB = 12\sqrt{7}\text{ m}$), quantos metros percorrerá uma pessoa que caminha em linha reta ao longo da rampa do planalto, do ponto $B$ ao ponto $C$, indicados na figura? Use: $(12\sqrt{7}\text{ m})^2 = 1008$.</p></div>
                             
         <div class="my-4 p-2 sm:p-3 rounded-2xl border bg-slate-950/70 border-slate-800 shadow-sm max-w-xl mx-auto flex flex-col items-center">
             <img src="https://lh3.googleusercontent.com/d/15ApMYFvifJ44iaCp8nnAYwh6ctfrIfog" alt="Fotografia da fachada do Palácio do Planalto com a rampa de acesso em destaque sobreposta por um triângulo retângulo ABC, com cateto vertical AC de 4 metros e cateto horizontal AB de 12 raiz de 7 metros" onerror="if(this.src!='../assets/img/questoes/ifsp/ifsp-2025-1a-q13.png'){this.src='../assets/img/questoes/ifsp/ifsp-2025-1a-q13.png';}" class="max-h-80 sm:max-h-96 w-auto max-w-full rounded-xl object-contain cursor-zoom-in hover:opacity-95 hover:scale-[1.01] transition duration-200" onclick="openImageModal('https://lh3.googleusercontent.com/d/15ApMYFvifJ44iaCp8nnAYwh6ctfrIfog', 'Fotografia da fachada do Palácio do Planalto com a rampa de acesso em destaque sobreposta por um triângulo retângulo ABC, com cateto vertical AC de 4 metros e cateto horizontal AB de 12 raiz de 7 metros')" title="Clique para ampliar a imagem" loading="lazy">
@@ -1022,7 +1094,7 @@ Supondo que o triângulo $ABC$ é retângulo em $A$ e tem as medidas indicadas n
                     
                         <div class="mb-8 border-b border-slate-800/80 pb-6 last:border-0 last:pb-0" id="q-container-ifsp-2025-1-a-q13">
                             <div class="flex items-center justify-between mb-3 flex-wrap gap-2">
-                                <div class="flex items-center gap-2">
+                                <div class="flex flex-wrap items-center gap-2">
                                     <span class="text-xs font-bold uppercase tracking-wider text-sky-300 bg-blue-950/60 px-2.5 py-0.5 rounded-full border border-blue-800/40">Questão 14</span>
                                     
                             <a href="../pesquisa.html?bncc=EF06MA24" class="text-[11px] font-mono font-bold text-emerald-300 bg-emerald-950/80 hover:bg-emerald-900/90 px-2.5 py-0.5 rounded-full border border-emerald-800/60 flex items-center gap-1 transition shadow-sm" title="Resolver e elaborar problemas que envolvam as grandezas comprimento, massa, tempo, temperatura, área (triângulos e retângulos), capacidade e volume (sólidos formados por blocos retangulares), sem uso de fórmulas, inseridos, sempre que possível, em contextos oriundos de situações reais e/ou relacionadas às outras áreas do conhecimento.">
@@ -1031,7 +1103,7 @@ Supondo que o triângulo $ABC$ é retângulo em $A$ e tem as medidas indicadas n
                         
                                 </div>
                             </div>
-                            <p class="font-medium text-slate-100 mb-4 text-sm sm:text-base leading-relaxed">Um carro com velocidade constante de $60\text{ km/h}$ pode fazer um determinado percurso em $4\text{ horas}$. Se a velocidade do carro aumentasse para $80\text{ km/h}$, em quantas horas ele faria o mesmo percurso?</p>
+                            <div class="q-text-container"><p class="q-paragraph font-medium text-slate-100 text-sm sm:text-base leading-relaxed">Um carro com velocidade constante de $60\text{ km/h}$ pode fazer um determinado percurso em $4\text{ horas}$. Se a velocidade do carro aumentasse para $80\text{ km/h}$, em quantas horas ele faria o mesmo percurso?</p></div>
                             
                             <div class="space-y-2 mb-4" id="opts-ifsp-2025-1-a-q13">
                                 
@@ -1078,7 +1150,7 @@ Supondo que o triângulo $ABC$ é retângulo em $A$ e tem as medidas indicadas n
                     
                         <div class="mb-8 border-b border-slate-800/80 pb-6 last:border-0 last:pb-0" id="q-container-ifsp-2025-1-a-q14">
                             <div class="flex items-center justify-between mb-3 flex-wrap gap-2">
-                                <div class="flex items-center gap-2">
+                                <div class="flex flex-wrap items-center gap-2">
                                     <span class="text-xs font-bold uppercase tracking-wider text-sky-300 bg-blue-950/60 px-2.5 py-0.5 rounded-full border border-blue-800/40">Questão 15</span>
                                     
                             <a href="../pesquisa.html?bncc=EF08MA22" class="text-[11px] font-mono font-bold text-emerald-300 bg-emerald-950/80 hover:bg-emerald-900/90 px-2.5 py-0.5 rounded-full border border-emerald-800/60 flex items-center gap-1 transition shadow-sm" title="Calcular a probabilidade de eventos, com base na construção do espaço amostral, utilizando o princípio multiplicativo, e reconhecer que a soma das probabilidades de todos os elementos do espaço amostral é igual a 1.">
@@ -1087,7 +1159,7 @@ Supondo que o triângulo $ABC$ é retângulo em $A$ e tem as medidas indicadas n
                         
                                 </div>
                             </div>
-                            <p class="font-medium text-slate-100 mb-4 text-sm sm:text-base leading-relaxed">Considerando as unidades de armazenamento de dados binários em computação (onde $1\text{ KB} = 2^{10}\text{ bytes}$, $1\text{ MB} = 2^{20}\text{ bytes}$, $1\text{ GB} = 2^{30}\text{ bytes}$, $1\text{ TB} = 2^{40}\text{ bytes}$ e $1\text{ PB} = 2^{50}\text{ bytes}$), assinale a única afirmação correta:</p>
+                            <div class="q-text-container"><p class="q-paragraph font-medium text-slate-100 text-sm sm:text-base leading-relaxed">Considerando as unidades de armazenamento de dados binários em computação (onde $1\text{ KB} = 2^{10}\text{ bytes}$, $1\text{ MB} = 2^{20}\text{ bytes}$, $1\text{ GB} = 2^{30}\text{ bytes}$, $1\text{ TB} = 2^{40}\text{ bytes}$ e $1\text{ PB} = 2^{50}\text{ bytes}$), assinale a única afirmação correta:</p></div>
                             
                             <div class="space-y-2 mb-4" id="opts-ifsp-2025-1-a-q14">
                                 

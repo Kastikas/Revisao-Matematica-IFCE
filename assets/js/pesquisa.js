@@ -259,6 +259,128 @@ function normalizeDriveImageUrl(url) {
     return url;
 }
 
+/**
+ * Renderiza o enunciado com estruturação semântica de blocos (parágrafos, manchetes,
+ * citações/textos de apoio, afirmações romanas e comando final destacado).
+ */
+function renderQuestionText(qText, isDark) {
+    if (!qText || typeof qText !== 'string') return '';
+    var rawBlocks = qText.split('\n\n').map(function(b) { return b.trim(); }).filter(Boolean);
+    if (!rawBlocks.length) return '';
+
+    if (rawBlocks.length === 1) {
+        var single = rawBlocks[0];
+        if (single.indexOf('\n• ') !== -1 || single.indexOf('\nI. ') !== -1 || single.indexOf('\n1) ') !== -1 || single.indexOf('\n1. ') !== -1) {
+            rawBlocks = single.split(/\n(?=[•\-]|\b(?:I|II|III|IV|V|VI|VII|VIII|IX|X)\.|\b\d+[\.\)])/).map(function(p) { return p.trim(); }).filter(Boolean);
+        }
+    }
+
+    if (rawBlocks.length === 1) {
+        var textColor = isDark ? 'text-slate-100' : 'text-gray-900';
+        return '<div class="q-text-container"><p class="q-paragraph font-medium ' + textColor + ' text-sm sm:text-base leading-relaxed">' + rawBlocks[0] + '</p></div>';
+    }
+
+    var htmlParts = [];
+    var totalBlocks = rawBlocks.length;
+
+    for (var idx = 0; idx < totalBlocks; idx++) {
+        var block = rawBlocks[idx];
+        var isLast = (idx === totalBlocks - 1);
+
+        // 1. Nota pedagógica
+        if (block.indexOf('*(Nota pedagógica') === 0 || block.indexOf('*Nota pedagógica') === 0) {
+            htmlParts.push(
+                '<div class="q-pedagogical-note">' +
+                    '<div class="flex items-center gap-1.5 font-bold mb-1 text-amber-500 dark:text-amber-400"><i data-lucide="info" class="w-4 h-4"></i> Nota Pedagógica</div>' +
+                    '<div>' + block + '</div>' +
+                '</div>'
+            );
+            continue;
+        }
+
+        // 2. Manchete / Título em negrito (**Título**)
+        if (/^\*\*[^*]+\*\*$/.test(block)) {
+            var titleText = block.replace(/^\*\*|\*\*$/g, '');
+            htmlParts.push('<h4 class="q-headline">' + titleText + '</h4>');
+            continue;
+        }
+
+        // 3. Fonte / Citação em itálico curta
+        if (/^\*\(.*?\)\*$/.test(block) || /^\(?(?:Fonte:|Disponível em:|Publicado em).*?\)?$/i.test(block)) {
+            htmlParts.push('<p class="q-source-text">' + block + '</p>');
+            continue;
+        }
+
+        // 4. Afirmação romana (I., II., III...)
+        var mRoman = block.match(/^(?:([I|V|X]+)\.|\(([I|V|X]+)\))\s+([\s\S]*)$/);
+        if (mRoman) {
+            var numeral = mRoman[1] || mRoman[2];
+            var romanContent = mRoman[3];
+            htmlParts.push(
+                '<div class="q-item-card">' +
+                    '<span class="q-item-badge">' + numeral + '</span>' +
+                    '<span class="flex-1 min-w-0">' + romanContent + '</span>' +
+                '</div>'
+            );
+            continue;
+        }
+
+        // 5. Passo numerado (1), 2) ou 1., 2.)
+        var mNum = block.match(/^(?:(\d+)[\)\.]|Passo\s+(\d+)[:\.]?)\s+([\s\S]*)$/);
+        if (mNum) {
+            var num = mNum[1] || mNum[2];
+            var numContent = mNum[3];
+            htmlParts.push(
+                '<div class="q-item-card">' +
+                    '<span class="q-item-badge">' + num + '</span>' +
+                    '<span class="flex-1 min-w-0">' + numContent + '</span>' +
+                '</div>'
+            );
+            continue;
+        }
+
+        // 6. Lista com marcador (• ou - ou »)
+        var mBullet = block.match(/^[•\-»]\s+([\s\S]*)$/);
+        if (mBullet) {
+            var bulletContent = mBullet[1];
+            var bulletColor = isDark ? 'text-sky-400' : 'text-blue-600';
+            htmlParts.push(
+                '<div class="q-item-card">' +
+                    '<span class="' + bulletColor + ' font-bold px-1.5 flex-shrink-0">•</span>' +
+                    '<span class="flex-1 min-w-0">' + bulletContent + '</span>' +
+                '</div>'
+            );
+            continue;
+        }
+
+        // 7. Citação longa / Texto motivador
+        if ((block.charAt(0) === '“' || block.charAt(0) === '"') && block.length > 80) {
+            htmlParts.push(
+                '<blockquote class="q-support-card">' +
+                    '<p class="italic leading-relaxed">' + block + '</p>' +
+                '</blockquote>'
+            );
+            continue;
+        }
+
+        // 8. Comando final da questão
+        var isPrompt = isLast && (
+            block.endsWith('?') || block.endsWith(':') ||
+            /\b(assinale|qual|pode-se afirmar|sabendo disso|nessas condições|segundo|de acordo|tendo como base|determine|calcule|o valor)\b/i.test(block)
+        );
+
+        if (isPrompt) {
+            var promptColor = isDark ? 'text-slate-100' : 'text-gray-900';
+            htmlParts.push('<p class="q-prompt ' + promptColor + ' text-sm sm:text-base">' + block + '</p>');
+        } else {
+            var pColor = isDark ? 'text-slate-200' : 'text-gray-800';
+            htmlParts.push('<p class="q-paragraph font-medium ' + pColor + ' text-sm sm:text-base">' + block + '</p>');
+        }
+    }
+
+    return '<div class="q-text-container">' + htmlParts.join('') + '</div>';
+}
+
 function renderQuestionImageDarkHtml(q) {
     const imgData = q.image || q.imagem;
     if (!imgData) return '';
@@ -371,16 +493,16 @@ function renderResults() {
         }
 
         return `
-            <div class="exam-question-card bg-slate-900/90 border border-slate-800 rounded-2xl p-6 sm:p-7 shadow-xl space-y-4" id="card-${qId}">
+            <div class="exam-question-card bg-slate-900/90 border border-slate-800 rounded-2xl p-4 sm:p-7 shadow-xl space-y-4" id="card-${qId}">
                 
                 <!-- Cabeçalho com Localização da Prova e Selos BNCC -->
                 <div class="flex flex-wrap items-center justify-between gap-2.5 pb-3 border-b border-slate-800/80">
-                    <div class="flex flex-wrap items-center gap-2">
+                    <div class="flex flex-wrap items-center gap-2 min-w-0">
                         <!-- Onde se localiza -->
-                        <a href="${q.examUrl}#q-container-${qId}" target="_blank" class="inline-flex items-center gap-1.5 px-3 py-1 rounded-xl text-xs font-extrabold bg-blue-950/90 text-sky-300 border border-blue-700/60 hover:bg-blue-900 transition shadow-sm group" title="Abrir na prova original completa">
-                            <i data-lucide="archive" class="w-3.5 h-3.5 text-sky-400"></i>
-                            <span>${q.examTitle} — Questão ${q.qNumber}</span>
-                            <i data-lucide="external-link" class="w-3 h-3 opacity-70 group-hover:opacity-100"></i>
+                        <a href="${q.examUrl}#q-container-${qId}" target="_blank" class="inline-flex items-center gap-1.5 px-3 py-1 rounded-xl text-xs font-extrabold bg-blue-950/90 text-sky-300 border border-blue-700/60 hover:bg-blue-900 transition shadow-sm group min-w-0" title="Abrir na prova original completa">
+                            <i data-lucide="archive" class="w-3.5 h-3.5 text-sky-400 flex-shrink-0"></i>
+                            <span class="truncate max-w-[180px] sm:max-w-none">${q.examTitle} — Q${q.qNumber}</span>
+                            <i data-lucide="external-link" class="w-3 h-3 opacity-70 group-hover:opacity-100 flex-shrink-0"></i>
                         </a>
 
                         <!-- Selo do Instituto -->
@@ -389,7 +511,7 @@ function renderResults() {
                         </span>
                     </div>
 
-                    <div class="flex items-center gap-2 ml-auto">
+                    <div class="flex flex-wrap items-center gap-2">
                         <!-- Selo BNCC Clicável -->
                         <button onclick="filterByBnccBadge('${q.bncc}')" class="inline-flex items-center gap-1 px-2.5 py-1 rounded-full text-xs font-mono font-bold bg-emerald-950/90 text-emerald-300 border border-emerald-700/60 hover:bg-emerald-900 transition cursor-pointer shadow-sm" title="Clique para filtrar apenas esta habilidade">
                             <i data-lucide="bookmark" class="w-3 h-3 text-emerald-400"></i> BNCC: ${q.bncc}
@@ -406,10 +528,8 @@ function renderResults() {
                     </div>
                 </div>
 
-                <!-- Enunciado da Questão -->
-                <p class="font-medium text-slate-100 text-sm sm:text-base leading-relaxed">
-                    ${q.q}
-                </p>
+                <!-- Enunciado da Questão com Blocos Semânticos -->
+                ${renderQuestionText(q.q, true)}
 
                 ${renderQuestionImageDarkHtml(q)}
 
@@ -419,7 +539,7 @@ function renderResults() {
                 </div>
 
                 <!-- Ações -->
-                <div class="flex items-center justify-between gap-3 pt-2">
+                <div class="flex flex-wrap items-center justify-between gap-3 pt-2">
                     <button id="submit-btn-${qId}" onclick="submitPesquisaAnswer('${qId}', ${q.correct})" class="bg-blue-600 hover:bg-blue-500 text-white px-5 py-2.5 rounded-xl text-xs sm:text-sm font-bold transition flex items-center gap-1.5 shadow-md shadow-blue-600/25">
                         <i data-lucide="send" class="w-4 h-4"></i> Verificar Resposta
                     </button>
