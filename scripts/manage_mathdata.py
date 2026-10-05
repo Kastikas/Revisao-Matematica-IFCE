@@ -1340,7 +1340,8 @@ class MathDataManager:
                     "5": "bloco-5-provas-ifsc",
                     "6": "bloco-6-provas-ifce",
                     "7": "bloco-7-provas-ifsp",
-                    "8": "bloco-8-provas-ifmg"
+                    "8": "bloco-8-provas-ifmg",
+                    "9": "bloco-9-provas-cefet-ifce-historico"
                 }
                 new_topic["folder"] = folder_map.get(block_id, f"bloco-{block_id}")
 

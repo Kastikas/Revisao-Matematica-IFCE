@@ -26,7 +26,7 @@ function initQuestionPool() {
     }
 
     allExamQuestions = [];
-    const examBlocks = ['5', '6', '7', '8'];
+    const examBlocks = ['5', '6', '7', '8', '9'];
 
     examBlocks.forEach(bId => {
         const block = mathData[bId];
@@ -34,7 +34,8 @@ function initQuestionPool() {
 
         const bTitle = block.title || '';
         let inst = 'IFCE';
-        if (bTitle.toLowerCase().includes('ifsc')) inst = 'IFSC';
+        if (String(bId) === '9' || bTitle.toLowerCase().includes('cefet')) inst = 'CEFET-CE';
+        else if (bTitle.toLowerCase().includes('ifsc')) inst = 'IFSC';
         else if (bTitle.toLowerCase().includes('ifsp')) inst = 'IFSP';
         else if (bTitle.toLowerCase().includes('ifmg')) inst = 'IFMG';
 
@@ -453,7 +454,9 @@ function renderResults() {
                 ? 'bg-indigo-500/20 text-indigo-300 border-indigo-400/30' 
                 : q.inst === 'IFMG'
                     ? 'bg-emerald-500/20 text-emerald-300 border-emerald-400/30'
-                    : 'bg-amber-500/20 text-amber-300 border-amber-400/30';
+                    : q.inst === 'CEFET-CE'
+                        ? 'bg-rose-500/20 text-rose-300 border-rose-400/30'
+                        : 'bg-amber-500/20 text-amber-300 border-amber-400/30';
 
         const selectedOpt = pesquisaSelections[qId];
         const optionsHtml = (q.options || []).map((opt, optIdx) => {
@@ -509,6 +512,7 @@ function renderResults() {
                         <span class="text-[11px] font-bold px-2 py-0.5 rounded-md border ${instBadge}">
                             ${q.inst}
                         </span>
+                        ${q.inst === 'CEFET-CE' ? '<span class="text-[10px] font-bold px-1.5 py-0.5 rounded bg-rose-950/80 text-rose-300 border border-rose-700/60" title="Prova histórica de vestibular (Nível Médio)">Vestibular Histórico</span>' : ''}
                     </div>
 
                     <div class="flex flex-wrap items-center gap-2">

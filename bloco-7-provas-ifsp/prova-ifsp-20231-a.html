@@ -92,8 +92,17 @@
                 <div class="flex items-center gap-2.5">
                     <span class="w-2 h-2 rounded-full bg-slate-700"></span>
                     <div>
-                        <div class="font-bold text-slate-100">IFCE <span class="text-slate-400 font-normal">(Ceará)</span></div>
-                        <div class="text-[10px] text-slate-400">27 provas cadastradas</div>
+                        <div class="font-bold text-slate-100">IFCE <span class="text-slate-400 font-normal">(Cursos Técnicos Integrados)</span></div>
+                        <div class="text-[10px] text-slate-400">7 provas cadastradas</div>
+                    </div>
+                </div>
+                <i data-lucide="chevron-right" class="w-3.5 h-3.5 text-slate-500"></i>
+            </a><a href="../bloco-9-provas-cefet-ifce-historico/index.html" class="flex items-center justify-between px-3 py-2 rounded-xl text-xs transition text-slate-300 hover:bg-slate-800/80 hover:text-white">
+                <div class="flex items-center gap-2.5">
+                    <span class="w-2 h-2 rounded-full bg-slate-700"></span>
+                    <div>
+                        <div class="font-bold text-slate-100">CEFET-CE / IFCE <span class="text-slate-400 font-normal">(Vestibular Histórico (Nível Médio))</span></div>
+                        <div class="text-[10px] text-slate-400">20 provas cadastradas</div>
                     </div>
                 </div>
                 <i data-lucide="chevron-right" class="w-3.5 h-3.5 text-slate-500"></i>
@@ -170,8 +179,12 @@
 
             <div class="pt-2 pb-1 px-3 text-[11px] font-bold uppercase tracking-wider text-slate-400">Provas por Instituição</div>
             <a href="../bloco-6-provas-ifce/index.html" class="block px-3 py-2 rounded-md text-base font-medium text-white flex items-center justify-between gap-2 hover:bg-slate-800">
-                <span class="flex items-center gap-2"><i data-lucide="award" class="w-4 h-4 text-sky-400"></i> IFCE - Ceará</span>
-                <span class="text-xs bg-blue-900/60 text-sky-300 px-2 py-0.5 rounded-full font-bold">27</span>
+                <span class="flex items-center gap-2"><i data-lucide="award" class="w-4 h-4 text-sky-400"></i> IFCE - Integrado (Ceará)</span>
+                <span class="text-xs bg-blue-900/60 text-sky-300 px-2 py-0.5 rounded-full font-bold">7</span>
+            </a>
+            <a href="../bloco-9-provas-cefet-ifce-historico/index.html" class="block px-3 py-2 rounded-md text-base font-medium text-white flex items-center justify-between gap-2 hover:bg-slate-800">
+                <span class="flex items-center gap-2"><i data-lucide="history" class="w-4 h-4 text-rose-400"></i> CEFET-CE / IFCE - Histórico</span>
+                <span class="text-xs bg-rose-900/60 text-rose-300 px-2 py-0.5 rounded-full font-bold">20</span>
             </a>
             <a href="../bloco-5-provas-ifsc/index.html" class="block px-3 py-2 rounded-md text-base font-medium text-white flex items-center justify-between gap-2 hover:bg-slate-800">
                 <span class="flex items-center gap-2"><i data-lucide="award" class="w-4 h-4 text-sky-400"></i> IFSC - Santa Catarina</span>
@@ -219,15 +232,11 @@
                 <!-- Cabeçalho do Exame -->
                 <div class="bg-slate-900/90 border border-slate-800 rounded-3xl p-4 sm:p-8 shadow-xl text-slate-100">
                     <div class="flex flex-wrap items-center justify-between gap-3 mb-4">
-                        <span class="text-xs font-bold uppercase tracking-wider text-sky-300 bg-blue-950/80 px-3 py-1 rounded-full border border-blue-800/60">
-                            BNCC: Revisão Geral
+                        <span class="text-xs font-bold uppercase tracking-wider text-sky-300 bg-blue-950/80 border-blue-800/60 px-3 py-1 rounded-full border">
+                            BNCC: Exame Oficial
                         </span>
                         <div class="flex flex-wrap items-center gap-2">
                             
-                        <a href="https://drive.google.com/file/d/1Psm44i6AVeRc4NmOpZaiG6EFJ0rVk9a2/view?usp=drive_web" target="_blank" rel="noopener noreferrer" class="bg-blue-600 hover:bg-blue-500 text-white font-bold px-3 sm:px-4 py-2 rounded-xl text-xs sm:text-sm transition flex items-center gap-1.5 sm:gap-2 shadow-lg shadow-blue-600/25" title="Abrir Caderno Oficial no Google Drive (Visualizar ou Baixar)">
-                            <i data-lucide="external-link" class="w-4 h-4"></i> Caderno Oficial no Drive
-                        </a>
-                    
                             <button id="btn-toggle-done-ifsp-2023-1-a" onclick="toggleTopicDone('ifsp-2023-1-a')" class="px-3 sm:px-4 py-2 rounded-xl text-xs sm:text-sm font-semibold border bg-slate-900 text-slate-300 border-slate-700 hover:bg-slate-800 transition flex items-center gap-1.5 sm:gap-2 shadow-sm">
                                 <i data-lucide="square" class="w-4 h-4 text-slate-500"></i> Marcar como Concluída
                             </button>
@@ -238,7 +247,7 @@
                         Prova IFSP 2023.1 - Prova A
                     </h1>
                     <p class="text-slate-300 text-sm sm:text-base leading-relaxed mb-6">
-                        15 questões de Matemática aplicadas no Processo Seletivo IFSP 2023.1 (Edital Nº 609/2022 - Prova A) para os Cursos Técnicos Integrados.
+                        ['Geometria plana: bissetrizes e ângulos em triângulos isósceles, além de cálculo de áreas irregulares por decomposição de setores circulares.', 'Funções e gráficos: análise de funções afins decrescentes, coeficientes e interpretação de gráficos cartesianos.', 'Proporcionalidade e semelhança: aplicações práticas com semelhança de triângulos em rampas de acessibilidade e estruturas geométricas complexas.', 'Estatística e medidas: distinção entre pesquisas censitárias e amostrais, cálculo de média móvel temporal e manipulação de notação científica.']
                     </p>
 
                     <!-- Seção Teórica / Informações do Exame -->
@@ -247,7 +256,7 @@
                             <i data-lucide="book-open" class="w-4 h-4 text-sky-400"></i> Informações do Exame e Conteúdos Cobrados
                         </h2>
                         <div class="text-xs sm:text-sm text-slate-300 leading-relaxed space-y-2">
-                            <p>A Prova A do Processo Seletivo IFSP 2023.1 abordou geometria plana com semelhança e proporcionalidade de triângulos em modelos de asa delta, proporção direta em receitas culinárias, grandezas inversamente proporcionais no trânsito (velocidade média e tempo de percurso), análise gráfica de funções afins com determinação de raiz e taxa de variação, leitura e interpretação de tabelas populacionais e socioeconômicas, medidas e intervalos decimais em réguas e trenas, trigonometria e cálculo de alturas em brinquedos de parques de diversões, proporcionalidade em consumo e autonomia de carros elétricos, análise de dados de saúde pública e médias móveis, conversão de unidades agrárias (hectares para metros quadrados) no reflorestamento, sistemas lineares do 1º grau aplicados à venda de doces artesanais (trufas e pães de mel), cálculo de inclinação percentual em rampas de acessibilidade (norma NBR 9050), decomposição de figuras planas para cálculo de áreas irregulares, e metodologia estatística diferenciando pesquisas censitárias de pesquisas amostrais.</p>
+                            <p></p>
                         </div>
                     </div>
 
@@ -256,26 +265,6 @@
                         <h3 class="text-xs font-bold text-slate-400 uppercase tracking-wider mb-3">Conceitos Mais Cobrados Nesta Edição</h3>
                         <ul class="grid grid-cols-1 sm:grid-cols-2 gap-2">
                             
-                    <li class="flex items-start gap-2 text-xs sm:text-sm text-slate-300">
-                        <i data-lucide="check" class="w-4 h-4 text-sky-400 flex-shrink-0 mt-0.5"></i>
-                        <span>A inclinação de uma rampa em porcentagem é dada por $i = \frac{h}{c} \times 100\%$, onde $h$ é a altura e $c$ é o comprimento da projeção horizontal.</span>
-                    </li>
-                
-                    <li class="flex items-start gap-2 text-xs sm:text-sm text-slate-300">
-                        <i data-lucide="check" class="w-4 h-4 text-sky-400 flex-shrink-0 mt-0.5"></i>
-                        <span>1 hectare ($1\text{ ha}$) equivale a $10.000\text{ m}^2$, o que corresponde à área de um quadrado de $100\text{ m} \times 100\text{ m}$.</span>
-                    </li>
-                
-                    <li class="flex items-start gap-2 text-xs sm:text-sm text-slate-300">
-                        <i data-lucide="check" class="w-4 h-4 text-sky-400 flex-shrink-0 mt-0.5"></i>
-                        <span>Uma pesquisa censitária consulta a totalidade dos elementos da população, enquanto a pesquisa amostral investiga um subconjunto representativo.</span>
-                    </li>
-                
-                    <li class="flex items-start gap-2 text-xs sm:text-sm text-slate-300">
-                        <i data-lucide="check" class="w-4 h-4 text-sky-400 flex-shrink-0 mt-0.5"></i>
-                        <span>Em um sistema de equações lineares de 1º grau, o método da adição ou substituição permite determinar com exatidão o custo unitário de cada mercadoria.</span>
-                    </li>
-                
                         </ul>
                     </div>
 
@@ -287,7 +276,7 @@
                             </span>
                         </div>
                         <div class="text-sm sm:text-base font-mono overflow-x-auto py-2 text-center text-sky-200">
-                            $$i = \frac{h}{c} \times 100\%, \quad 1\text{ ha} = 10.000\text{ m}^2, \quad v = \frac{\Delta s}{\Delta t}, \quad A_{\text{trap}} = \frac{(B+b)h}{2}$$
+                            $$A_{\text{ret}} = b \cdot h, \quad A_{\text{círculo}} = \pi r^2, \quad \bar{x} = \frac{\sum x_i}{n}, \quad \frac{a}{a'} = \frac{b}{b'}$$
                         </div>
                     </div>
                 </div>
@@ -298,10 +287,10 @@
                         <i data-lucide="file-check-2" class="w-5 h-5 text-sky-400"></i> Resolução Comentada de Destaque
                     </h2>
                     <div class="bg-slate-950/90 border border-slate-800 rounded-2xl p-5 shadow-inner">
-                        <p class="text-sm sm:text-base font-semibold text-slate-100 mb-3">Uma rampa de pedestres vence um desnível de $1{,}2\text{ m}$ ao longo de uma distância horizontal de $15\text{ m}$. Qual é a inclinação percentual dessa rampa?</p>
+                        <p class="text-sm sm:text-base font-semibold text-slate-100 mb-3">Um cliente comprou $6$ pães de mel e $10$ trufas por $\text{R\$} 98{,}00$. Outro cliente comprou $2$ trufas e $8$ pães de mel por $\text{R\$} 74{,}00$. Qual o valor unitário da trufa e do pão de mel, respectivamente?</p>
                         <div class="text-xs sm:text-sm text-slate-300 leading-relaxed whitespace-pre-line border-t border-slate-800 pt-3">
                             <strong class="text-sky-300 block mb-1">Resolução Detalhada:</strong>
-                            Aplicando a relação de inclinação percentual:<br>$$i = \frac{h}{c} \times 100\% = \frac{1{,}2}{15} \times 100\% = 0{,}08 \times 100\% = 8\%.$$
+                            Montando o sistema com $t$ (trufa) e $p$ (pão de mel):<br>$$\begin{cases} 10t + 6p = 98 \implies 5t + 3p = 49 \\ 2t + 8p = 74 \implies t + 4p = 37 \implies t = 37 - 4p \end{cases}$$Substituindo na primeira equação:<br>$$5(37 - 4p) + 3p = 49 \implies 185 - 20p + 3p = 49 \implies 17p = 136 \implies p = \text{R\$} 8{,}00.$$Logo, $t = 37 - 4(8) = \text{R\$} 5{,}00$. Trufa: $\text{R\$} 5{,}00$ e pão de mel: $\text{R\$} 8{,}00$.
                         </div>
                     </div>
                 </section>
@@ -326,20 +315,25 @@
                                 <div class="flex flex-wrap items-center gap-2">
                                     <span class="text-xs font-bold uppercase tracking-wider text-sky-300 bg-blue-950/60 px-2.5 py-0.5 rounded-full border border-blue-800/40">Questão 1</span>
                                     
-                            <a href="../pesquisa.html?bncc=EF09MA12" class="text-[11px] font-mono font-bold text-emerald-300 bg-emerald-950/80 hover:bg-emerald-900/90 px-2.5 py-0.5 rounded-full border border-emerald-800/60 flex items-center gap-1 transition shadow-sm" title="Reconhecer as condições necessárias e suficientes para que dois triângulos sejam semelhantes.">
-                                <i data-lucide="bookmark" class="w-3 h-3 text-emerald-400"></i> BNCC: EF09MA12
+                            <a href="../pesquisa.html?bncc=EF08MA17" class="text-[11px] font-mono font-bold text-emerald-300 bg-emerald-950/80 hover:bg-emerald-900/90 px-2.5 py-0.5 rounded-full border border-emerald-800/60 flex items-center gap-1 transition shadow-sm" title="Aplicar os conceitos de bissetriz, mediatriz, alturas e medianas de triângulos para resolver problemas geométricos.">
+                                <i data-lucide="bookmark" class="w-3 h-3 text-emerald-400"></i> BNCC: EF08MA17
                             </a>
                         
                                 </div>
                             </div>
-                            <div class="q-text-container"><p class="q-paragraph font-medium text-slate-100 text-sm sm:text-base leading-relaxed">Um estudante interessado em aeromodelismo deseja construir um modelo de asa delta em escala reduzida. A asa delta real tem formato triangular isósceles com base de $10\text{ m}$ e lados congruentes de $6\text{ m}$. Se o modelo for construído com base medindo $25\text{ cm}$, qual deverá ser a medida de cada um dos lados congruentes no modelo para manter a semelhança?</p></div>
+                            <div class="q-text-container"><p class="q-paragraph font-medium text-slate-200 text-sm sm:text-base">Um estudante interessado em voos deseja imprimir em 3D o modelo de uma asa delta. Para iniciar seus estudos e a modelagem da impressão, desenhou um triângulo isósceles $ABC$, com $AC = BC$.</p><p class="q-paragraph font-medium text-slate-200 text-sm sm:text-base">A partir dos ângulos $C\hat{A}B$ e $A\hat{B}C$, o estudante desenhou, respectivamente, as bissetrizes $AP$ e $BP$, conforme figura a seguir:</p><p class="q-prompt text-slate-100 text-sm sm:text-base">Sabendo-se que a medida do ângulo $A\hat{P}B$ vale $140^\circ$, a medida do ângulo $P\hat{A}B$ vale:</p></div>
                             
+        <div class="my-4 p-2 sm:p-3 rounded-2xl border bg-slate-950/70 border-slate-800 shadow-sm max-w-xl mx-auto flex flex-col items-center">
+            <img src="../assets/img/questoes/ifsp/ifsp-2023-1a-q16.png" alt="Triângulo isósceles ABC com lados AC e BC congruentes. No interior, partem as bissetrizes AP e BP tracejadas que se intersectam no ponto P com ângulo indicado de 140 graus." class="max-h-80 sm:max-h-96 w-auto max-w-full rounded-xl object-contain cursor-zoom-in hover:opacity-95 hover:scale-[1.01] transition duration-200" onclick="openImageModal('../assets/img/questoes/ifsp/ifsp-2023-1a-q16.png', 'Triângulo isósceles ABC com lados AC e BC congruentes. No interior, partem as bissetrizes AP e BP tracejadas que se intersectam no ponto P com ângulo indicado de 140 graus.')" title="Clique para ampliar a imagem" loading="lazy">
+            
+        </div>
+    
                             <div class="space-y-2 mb-4" id="opts-ifsp-2023-1-a-q0">
                                 
                             <button onclick="selectOption('ifsp-2023-1-a-q0', 0)" id="btn-ifsp-2023-1-a-q0-0" class="w-full text-left p-3.5 rounded-xl border border-slate-800 bg-slate-950/60 hover:border-blue-500 hover:bg-slate-800/60 transition text-sm text-slate-200 flex items-start justify-between gap-3 group">
                                 <span class="flex items-start gap-2.5 flex-1 min-w-0">
                                     <strong class="text-sky-400 font-bold flex-shrink-0 mt-0.5">A)</strong>
-                                    <span class="flex-1 min-w-0 break-words leading-relaxed">$12\text{ cm}$</span>
+                                    <span class="flex-1 min-w-0 break-words leading-relaxed">$10^\circ$</span>
                                 </span>
                                 <i data-lucide="circle" class="w-4 h-4 text-slate-600 opt-icon group-hover:text-blue-400 flex-shrink-0 mt-0.5"></i>
                             </button>
@@ -347,7 +341,7 @@
                             <button onclick="selectOption('ifsp-2023-1-a-q0', 1)" id="btn-ifsp-2023-1-a-q0-1" class="w-full text-left p-3.5 rounded-xl border border-slate-800 bg-slate-950/60 hover:border-blue-500 hover:bg-slate-800/60 transition text-sm text-slate-200 flex items-start justify-between gap-3 group">
                                 <span class="flex items-start gap-2.5 flex-1 min-w-0">
                                     <strong class="text-sky-400 font-bold flex-shrink-0 mt-0.5">B)</strong>
-                                    <span class="flex-1 min-w-0 break-words leading-relaxed">$15\text{ cm}$</span>
+                                    <span class="flex-1 min-w-0 break-words leading-relaxed">$20^\circ$</span>
                                 </span>
                                 <i data-lucide="circle" class="w-4 h-4 text-slate-600 opt-icon group-hover:text-blue-400 flex-shrink-0 mt-0.5"></i>
                             </button>
@@ -355,7 +349,7 @@
                             <button onclick="selectOption('ifsp-2023-1-a-q0', 2)" id="btn-ifsp-2023-1-a-q0-2" class="w-full text-left p-3.5 rounded-xl border border-slate-800 bg-slate-950/60 hover:border-blue-500 hover:bg-slate-800/60 transition text-sm text-slate-200 flex items-start justify-between gap-3 group">
                                 <span class="flex items-start gap-2.5 flex-1 min-w-0">
                                     <strong class="text-sky-400 font-bold flex-shrink-0 mt-0.5">C)</strong>
-                                    <span class="flex-1 min-w-0 break-words leading-relaxed">$18\text{ cm}$</span>
+                                    <span class="flex-1 min-w-0 break-words leading-relaxed">$30^\circ$</span>
                                 </span>
                                 <i data-lucide="circle" class="w-4 h-4 text-slate-600 opt-icon group-hover:text-blue-400 flex-shrink-0 mt-0.5"></i>
                             </button>
@@ -363,7 +357,7 @@
                             <button onclick="selectOption('ifsp-2023-1-a-q0', 3)" id="btn-ifsp-2023-1-a-q0-3" class="w-full text-left p-3.5 rounded-xl border border-slate-800 bg-slate-950/60 hover:border-blue-500 hover:bg-slate-800/60 transition text-sm text-slate-200 flex items-start justify-between gap-3 group">
                                 <span class="flex items-start gap-2.5 flex-1 min-w-0">
                                     <strong class="text-sky-400 font-bold flex-shrink-0 mt-0.5">D)</strong>
-                                    <span class="flex-1 min-w-0 break-words leading-relaxed">$20\text{ cm}$</span>
+                                    <span class="flex-1 min-w-0 break-words leading-relaxed">$40^\circ$</span>
                                 </span>
                                 <i data-lucide="circle" class="w-4 h-4 text-slate-600 opt-icon group-hover:text-blue-400 flex-shrink-0 mt-0.5"></i>
                             </button>
@@ -382,20 +376,20 @@
                                 <div class="flex flex-wrap items-center gap-2">
                                     <span class="text-xs font-bold uppercase tracking-wider text-sky-300 bg-blue-950/60 px-2.5 py-0.5 rounded-full border border-blue-800/40">Questão 2</span>
                                     
-                            <a href="../pesquisa.html?bncc=EF09MA19" class="text-[11px] font-mono font-bold text-emerald-300 bg-emerald-950/80 hover:bg-emerald-900/90 px-2.5 py-0.5 rounded-full border border-emerald-800/60 flex items-center gap-1 transition shadow-sm" title="Resolver e elaborar problemas que envolvam medidas de volumes de prismas e de cilindros retos, inclusive com uso de expressões de cálculo, em situações cotidianas.">
-                                <i data-lucide="bookmark" class="w-3 h-3 text-emerald-400"></i> BNCC: EF09MA19
+                            <a href="../pesquisa.html?bncc=EF07MA30" class="text-[11px] font-mono font-bold text-emerald-300 bg-emerald-950/80 hover:bg-emerald-900/90 px-2.5 py-0.5 rounded-full border border-emerald-800/60 flex items-center gap-1 transition shadow-sm" title="Resolver e elaborar problemas de cálculo de medida do volume de blocos retangulares, envolvendo as unidades usuais (metro cúbico, decímetro cúbico, centímetro cúbico e litro).">
+                                <i data-lucide="bookmark" class="w-3 h-3 text-emerald-400"></i> BNCC: EF07MA30
                             </a>
                         
                                 </div>
                             </div>
-                            <div class="q-text-container"><p class="q-paragraph font-medium text-slate-100 text-sm sm:text-base leading-relaxed">Para preparar uma receita de gelatina que rende 4 porções são necessários $250\text{ mL}$ de água fervente e $250\text{ mL}$ de água fria. Se uma pessoa deseja preparar gelatina suficiente para servir exatamente 14 pessoas, mantendo a mesma proporção, qual o volume total de água (fervente + fria) que deverá utilizar?</p></div>
+                            <div class="q-text-container"><p class="q-paragraph font-medium text-slate-200 text-sm sm:text-base">Interessada em preparar gelatina de morango para comer após o almoço, uma pessoa procurou as informações de como fazer a sobremesa. No rótulo da embalagem do produto, leu a seguinte instrução:</p><p class="q-paragraph font-medium text-slate-200 text-sm sm:text-base">*Modo de preparo: Dissolva o conteúdo deste pacote (20 gramas) em $250\text{ mL}$ ($1/4$ de litro) de água fervente. Adicione $250\text{ mL}$ de água fria ou gelada e coloque em taças. Leve à geladeira até adquirir consistência.*</p><p class="q-paragraph font-medium text-slate-200 text-sm sm:text-base">Como a pessoa não tinha taças, pensou em usar as formas de gelo de formato retangular que estavam vazias no armário da cozinha. Cada forma tinha espaço para fazer $15$ cubinhos exatamente iguais. Para ter uma ideia da quantidade de gelatina que poderia caber em cada forma, a pessoa fez uma busca na internet pela marca do fabricante e descobriu as dimensões da forma: $20\text{ cm}$ de comprimento, $12\text{ cm}$ de largura e $2{,}5\text{ cm}$ de altura.</p><p class="q-prompt text-slate-100 text-sm sm:text-base">Sabendo que ela preparou a gelatina conforme a indicação apresentada no rótulo da embalagem, que possuía as formas com as medidas indicadas e que, ao despejar a gelatina ainda líquida na forma, encheria completamente cada cubinho, é correto dizer que:</p></div>
                             
                             <div class="space-y-2 mb-4" id="opts-ifsp-2023-1-a-q1">
                                 
                             <button onclick="selectOption('ifsp-2023-1-a-q1', 0)" id="btn-ifsp-2023-1-a-q1-0" class="w-full text-left p-3.5 rounded-xl border border-slate-800 bg-slate-950/60 hover:border-blue-500 hover:bg-slate-800/60 transition text-sm text-slate-200 flex items-start justify-between gap-3 group">
                                 <span class="flex items-start gap-2.5 flex-1 min-w-0">
                                     <strong class="text-sky-400 font-bold flex-shrink-0 mt-0.5">A)</strong>
-                                    <span class="flex-1 min-w-0 break-words leading-relaxed">$1.500\text{ mL}$</span>
+                                    <span class="flex-1 min-w-0 break-words leading-relaxed">O preparo de um pacote de gelatina não ocupou completamente todos os 15 cubinhos da forma.</span>
                                 </span>
                                 <i data-lucide="circle" class="w-4 h-4 text-slate-600 opt-icon group-hover:text-blue-400 flex-shrink-0 mt-0.5"></i>
                             </button>
@@ -403,7 +397,7 @@
                             <button onclick="selectOption('ifsp-2023-1-a-q1', 1)" id="btn-ifsp-2023-1-a-q1-1" class="w-full text-left p-3.5 rounded-xl border border-slate-800 bg-slate-950/60 hover:border-blue-500 hover:bg-slate-800/60 transition text-sm text-slate-200 flex items-start justify-between gap-3 group">
                                 <span class="flex items-start gap-2.5 flex-1 min-w-0">
                                     <strong class="text-sky-400 font-bold flex-shrink-0 mt-0.5">B)</strong>
-                                    <span class="flex-1 min-w-0 break-words leading-relaxed">$1.750\text{ mL}$</span>
+                                    <span class="flex-1 min-w-0 break-words leading-relaxed">Metade do preparo de um pacote de gelatina ocupa o espaço de 5 cubinhos da forma.</span>
                                 </span>
                                 <i data-lucide="circle" class="w-4 h-4 text-slate-600 opt-icon group-hover:text-blue-400 flex-shrink-0 mt-0.5"></i>
                             </button>
@@ -411,7 +405,7 @@
                             <button onclick="selectOption('ifsp-2023-1-a-q1', 2)" id="btn-ifsp-2023-1-a-q1-2" class="w-full text-left p-3.5 rounded-xl border border-slate-800 bg-slate-950/60 hover:border-blue-500 hover:bg-slate-800/60 transition text-sm text-slate-200 flex items-start justify-between gap-3 group">
                                 <span class="flex items-start gap-2.5 flex-1 min-w-0">
                                     <strong class="text-sky-400 font-bold flex-shrink-0 mt-0.5">C)</strong>
-                                    <span class="flex-1 min-w-0 break-words leading-relaxed">$2.000\text{ mL}$</span>
+                                    <span class="flex-1 min-w-0 break-words leading-relaxed">Cada cubinho da forma tem capacidade para armazenar 60ml da gelatina líquida.</span>
                                 </span>
                                 <i data-lucide="circle" class="w-4 h-4 text-slate-600 opt-icon group-hover:text-blue-400 flex-shrink-0 mt-0.5"></i>
                             </button>
@@ -419,7 +413,7 @@
                             <button onclick="selectOption('ifsp-2023-1-a-q1', 3)" id="btn-ifsp-2023-1-a-q1-3" class="w-full text-left p-3.5 rounded-xl border border-slate-800 bg-slate-950/60 hover:border-blue-500 hover:bg-slate-800/60 transition text-sm text-slate-200 flex items-start justify-between gap-3 group">
                                 <span class="flex items-start gap-2.5 flex-1 min-w-0">
                                     <strong class="text-sky-400 font-bold flex-shrink-0 mt-0.5">D)</strong>
-                                    <span class="flex-1 min-w-0 break-words leading-relaxed">$2.250\text{ mL}$</span>
+                                    <span class="flex-1 min-w-0 break-words leading-relaxed">São necessárias duas formas para o preparo de um pacote de gelatina.</span>
                                 </span>
                                 <i data-lucide="circle" class="w-4 h-4 text-slate-600 opt-icon group-hover:text-blue-400 flex-shrink-0 mt-0.5"></i>
                             </button>
@@ -438,20 +432,25 @@
                                 <div class="flex flex-wrap items-center gap-2">
                                     <span class="text-xs font-bold uppercase tracking-wider text-sky-300 bg-blue-950/60 px-2.5 py-0.5 rounded-full border border-blue-800/40">Questão 3</span>
                                     
-                            <a href="../pesquisa.html?bncc=EF06MA24" class="text-[11px] font-mono font-bold text-emerald-300 bg-emerald-950/80 hover:bg-emerald-900/90 px-2.5 py-0.5 rounded-full border border-emerald-800/60 flex items-center gap-1 transition shadow-sm" title="Resolver e elaborar problemas que envolvam as grandezas comprimento, massa, tempo, temperatura, área (triângulos e retângulos), capacidade e volume (sólidos formados por blocos retangulares), sem uso de fórmulas, inseridos, sempre que possível, em contextos oriundos de situações reais e/ou relacionadas às outras áreas do conhecimento.">
-                                <i data-lucide="bookmark" class="w-3 h-3 text-emerald-400"></i> BNCC: EF06MA24
+                            <a href="../pesquisa.html?bncc=EF07MA17" class="text-[11px] font-mono font-bold text-emerald-300 bg-emerald-950/80 hover:bg-emerald-900/90 px-2.5 py-0.5 rounded-full border border-emerald-800/60 flex items-center gap-1 transition shadow-sm" title="Resolver e elaborar problemas que envolvam variação de proporcionalidade direta e de proporcionalidade inversa entre duas grandezas, utilizando sentença algébrica para expressar a relação entre elas.">
+                                <i data-lucide="bookmark" class="w-3 h-3 text-emerald-400"></i> BNCC: EF07MA17
                             </a>
                         
                                 </div>
                             </div>
-                            <div class="q-text-container"><p class="q-paragraph font-medium text-slate-100 text-sm sm:text-base leading-relaxed">Um motorista fez uma viagem entre duas cidades em 39 minutos dirigindo a uma velocidade média de $80\text{ km/h}$. No retorno, enfrentou chuva e reduziu a velocidade média para $60\text{ km/h}$. Quanto tempo durou a viagem de volta?</p></div>
+                            <div class="q-text-container"><p class="q-paragraph font-medium text-slate-200 text-sm sm:text-base">Uma pessoa vai de carro de Osasco/SP a São Roque/SP em $39$ minutos à velocidade constante de $80\text{ km/h}$, seguindo a rota traçada pelo Google Maps:</p><p class="q-prompt text-slate-100 text-sm sm:text-base">Na volta, seguindo a mesma rota da ida, ela resolve manter uma velocidade constante igual ao limite de velocidade da rodovia, que é de $100\text{ km/h}$. Em quanto tempo, aproximadamente, ela fez o trajeto de volta?</p></div>
                             
+        <div class="my-4 p-2 sm:p-3 rounded-2xl border bg-slate-950/70 border-slate-800 shadow-sm max-w-xl mx-auto flex flex-col items-center">
+            <img src="../assets/img/questoes/ifsp/ifsp-2023-1a-q18.png" alt="Mapa do trajeto traçado no Google Maps ligando as cidades de Osasco/SP a São Roque/SP passando pelas rodovias da região metropolitana." class="max-h-80 sm:max-h-96 w-auto max-w-full rounded-xl object-contain cursor-zoom-in hover:opacity-95 hover:scale-[1.01] transition duration-200" onclick="openImageModal('../assets/img/questoes/ifsp/ifsp-2023-1a-q18.png', 'Mapa do trajeto traçado no Google Maps ligando as cidades de Osasco/SP a São Roque/SP passando pelas rodovias da região metropolitana.')" title="Clique para ampliar a imagem" loading="lazy">
+            
+        </div>
+    
                             <div class="space-y-2 mb-4" id="opts-ifsp-2023-1-a-q2">
                                 
                             <button onclick="selectOption('ifsp-2023-1-a-q2', 0)" id="btn-ifsp-2023-1-a-q2-0" class="w-full text-left p-3.5 rounded-xl border border-slate-800 bg-slate-950/60 hover:border-blue-500 hover:bg-slate-800/60 transition text-sm text-slate-200 flex items-start justify-between gap-3 group">
                                 <span class="flex items-start gap-2.5 flex-1 min-w-0">
                                     <strong class="text-sky-400 font-bold flex-shrink-0 mt-0.5">A)</strong>
-                                    <span class="flex-1 min-w-0 break-words leading-relaxed">48 minutos</span>
+                                    <span class="flex-1 min-w-0 break-words leading-relaxed">$52$ minutos.</span>
                                 </span>
                                 <i data-lucide="circle" class="w-4 h-4 text-slate-600 opt-icon group-hover:text-blue-400 flex-shrink-0 mt-0.5"></i>
                             </button>
@@ -459,7 +458,7 @@
                             <button onclick="selectOption('ifsp-2023-1-a-q2', 1)" id="btn-ifsp-2023-1-a-q2-1" class="w-full text-left p-3.5 rounded-xl border border-slate-800 bg-slate-950/60 hover:border-blue-500 hover:bg-slate-800/60 transition text-sm text-slate-200 flex items-start justify-between gap-3 group">
                                 <span class="flex items-start gap-2.5 flex-1 min-w-0">
                                     <strong class="text-sky-400 font-bold flex-shrink-0 mt-0.5">B)</strong>
-                                    <span class="flex-1 min-w-0 break-words leading-relaxed">52 minutos</span>
+                                    <span class="flex-1 min-w-0 break-words leading-relaxed">$49$ minutos.</span>
                                 </span>
                                 <i data-lucide="circle" class="w-4 h-4 text-slate-600 opt-icon group-hover:text-blue-400 flex-shrink-0 mt-0.5"></i>
                             </button>
@@ -467,7 +466,7 @@
                             <button onclick="selectOption('ifsp-2023-1-a-q2', 2)" id="btn-ifsp-2023-1-a-q2-2" class="w-full text-left p-3.5 rounded-xl border border-slate-800 bg-slate-950/60 hover:border-blue-500 hover:bg-slate-800/60 transition text-sm text-slate-200 flex items-start justify-between gap-3 group">
                                 <span class="flex items-start gap-2.5 flex-1 min-w-0">
                                     <strong class="text-sky-400 font-bold flex-shrink-0 mt-0.5">C)</strong>
-                                    <span class="flex-1 min-w-0 break-words leading-relaxed">56 minutos</span>
+                                    <span class="flex-1 min-w-0 break-words leading-relaxed">$31$ minutos.</span>
                                 </span>
                                 <i data-lucide="circle" class="w-4 h-4 text-slate-600 opt-icon group-hover:text-blue-400 flex-shrink-0 mt-0.5"></i>
                             </button>
@@ -475,7 +474,7 @@
                             <button onclick="selectOption('ifsp-2023-1-a-q2', 3)" id="btn-ifsp-2023-1-a-q2-3" class="w-full text-left p-3.5 rounded-xl border border-slate-800 bg-slate-950/60 hover:border-blue-500 hover:bg-slate-800/60 transition text-sm text-slate-200 flex items-start justify-between gap-3 group">
                                 <span class="flex items-start gap-2.5 flex-1 min-w-0">
                                     <strong class="text-sky-400 font-bold flex-shrink-0 mt-0.5">D)</strong>
-                                    <span class="flex-1 min-w-0 break-words leading-relaxed">60 minutos</span>
+                                    <span class="flex-1 min-w-0 break-words leading-relaxed">$18$ minutos.</span>
                                 </span>
                                 <i data-lucide="circle" class="w-4 h-4 text-slate-600 opt-icon group-hover:text-blue-400 flex-shrink-0 mt-0.5"></i>
                             </button>
@@ -494,21 +493,21 @@
                                 <div class="flex flex-wrap items-center gap-2">
                                     <span class="text-xs font-bold uppercase tracking-wider text-sky-300 bg-blue-950/60 px-2.5 py-0.5 rounded-full border border-blue-800/40">Questão 4</span>
                                     
-                            <a href="../pesquisa.html?bncc=EF09MA06" class="text-[11px] font-mono font-bold text-emerald-300 bg-emerald-950/80 hover:bg-emerald-900/90 px-2.5 py-0.5 rounded-full border border-emerald-800/60 flex items-center gap-1 transition shadow-sm" title="Compreender as funções como relações de dependência unívoca entre duas variáveis e suas representações numérica, algébrica e gráfica e utilizar esse conceito para analisar situações.">
+                            <a href="../pesquisa.html?bncc=EF09MA06" class="text-[11px] font-mono font-bold text-emerald-300 bg-emerald-950/80 hover:bg-emerald-900/90 px-2.5 py-0.5 rounded-full border border-emerald-800/60 flex items-center gap-1 transition shadow-sm" title="Compreender as funções como relações de dependência unívoca entre duas variáveis e suas representações numérica, algébrica e gráfica e utilizar esse conceito para analisar situações que envolvam relações funcionais entre duas variáveis.">
                                 <i data-lucide="bookmark" class="w-3 h-3 text-emerald-400"></i> BNCC: EF09MA06
                             </a>
                         
                                 </div>
                             </div>
-                            <div class="q-text-container"><p class="q-paragraph font-medium text-slate-200 text-sm sm:text-base">Uma das formas de se representar uma função é por meio de um gráfico. Esse tipo de representação mostra muitas informações sobre o comportamento da função. De acordo com a análise do gráfico abaixo, julgue as afirmações a seguir:</p><p class="q-paragraph font-medium text-slate-200 text-sm sm:text-base">I – O gráfico representa uma função afim, também conhecida como função polinomial de 1º grau.
+                            <div class="q-text-container"><p class="q-paragraph font-medium text-slate-200 text-sm sm:text-base">Umas das formas de se representar uma função é por meio de um gráfico. Esse tipo de representação mostra muitas informações sobre o comportamento da função. De acordo com a análise do gráfico abaixo, julgue as afirmações a seguir:</p><p class="q-paragraph font-medium text-slate-200 text-sm sm:text-base">I – O gráfico representa uma função afim, também conhecida como função polinomial de 1º grau.
 II – O gráfico representa uma função linear.
 III – À medida que os valores das abscissas aumentam, os valores das ordenadas diminuem.
-IV – A função intercepta o eixo das abscissas no ponto $(3{,}0)$.
+IV – A função intercepta o eixo das abscissas no ponto $(3,0)$.
 V – Os valores das ordenadas variam de forma diretamente proporcional aos valores das abscissas.</p><p class="q-prompt text-slate-100 text-sm sm:text-base">Estão corretas as afirmações:</p></div>
                             
         <div class="my-4 p-2 sm:p-3 rounded-2xl border bg-slate-950/70 border-slate-800 shadow-sm max-w-xl mx-auto flex flex-col items-center">
-            <img src="https://lh3.googleusercontent.com/d/1-pbj2xNTDNm1yBrPYEC72PwWJsGlP6aC" alt="Gráfico de uma função afim decrescente no plano cartesiano, mostrando uma reta verde que cruza o eixo vertical das ordenadas no ponto (0, 3) e o eixo horizontal das abscissas no ponto (3, 0)" onerror="if(this.src!='../assets/img/questoes/ifsp/ifsp-2023-1a-q04.png'){this.src='../assets/img/questoes/ifsp/ifsp-2023-1a-q04.png';}" class="max-h-80 sm:max-h-96 w-auto max-w-full rounded-xl object-contain cursor-zoom-in hover:opacity-95 hover:scale-[1.01] transition duration-200" onclick="openImageModal('https://lh3.googleusercontent.com/d/1-pbj2xNTDNm1yBrPYEC72PwWJsGlP6aC', 'Gráfico de uma função afim decrescente no plano cartesiano, mostrando uma reta verde que cruza o eixo vertical das ordenadas no ponto (0, 3) e o eixo horizontal das abscissas no ponto (3, 0)')" title="Clique para ampliar a imagem" loading="lazy">
-            <p class="text-xs text-slate-400 mt-2 text-center italic">Figura: Gráfico cartesiano de função afim no plano cartesiano (IFSP 2023.1)</p>
+            <img src="../assets/img/questoes/ifsp/ifsp-2023-1a-q19.png" alt="Gráfico no plano cartesiano mostrando uma reta decrescente que intersecta o eixo das ordenadas no ponto (0, 3) e o eixo das abscissas no ponto (3, 0)." class="max-h-80 sm:max-h-96 w-auto max-w-full rounded-xl object-contain cursor-zoom-in hover:opacity-95 hover:scale-[1.01] transition duration-200" onclick="openImageModal('../assets/img/questoes/ifsp/ifsp-2023-1a-q19.png', 'Gráfico no plano cartesiano mostrando uma reta decrescente que intersecta o eixo das ordenadas no ponto (0, 3) e o eixo das abscissas no ponto (3, 0).')" title="Clique para ampliar a imagem" loading="lazy">
+            
         </div>
     
                             <div class="space-y-2 mb-4" id="opts-ifsp-2023-1-a-q3">
@@ -559,20 +558,23 @@ V – Os valores das ordenadas variam de forma diretamente proporcional aos valo
                                 <div class="flex flex-wrap items-center gap-2">
                                     <span class="text-xs font-bold uppercase tracking-wider text-sky-300 bg-blue-950/60 px-2.5 py-0.5 rounded-full border border-blue-800/40">Questão 5</span>
                                     
-                            <a href="../pesquisa.html?bncc=EF08MA04" class="text-[11px] font-mono font-bold text-emerald-300 bg-emerald-950/80 hover:bg-emerald-900/90 px-2.5 py-0.5 rounded-full border border-emerald-800/60 flex items-center gap-1 transition shadow-sm" title="Resolver e elaborar problemas, envolvendo cálculo de porcentagens, incluindo o uso de tecnologias digitais.">
-                                <i data-lucide="bookmark" class="w-3 h-3 text-emerald-400"></i> BNCC: EF08MA04
+                            <a href="../pesquisa.html?bncc=EF08MA01" class="text-[11px] font-mono font-bold text-emerald-300 bg-emerald-950/80 hover:bg-emerald-900/90 px-2.5 py-0.5 rounded-full border border-emerald-800/60 flex items-center gap-1 transition shadow-sm" title="Efetuar cálculos com potências de expoentes inteiros e aplicar esse conhecimento na representação de números em notação científica.">
+                                <i data-lucide="bookmark" class="w-3 h-3 text-emerald-400"></i> BNCC: EF08MA01
                             </a>
                         
                                 </div>
                             </div>
-                            <div class="q-text-container"><p class="q-paragraph font-medium text-slate-100 text-sm sm:text-base leading-relaxed">Em uma pesquisa multidisciplinar, uma tabela registrou que em um grupo de 800 entrevistados, $45\%$ declararam consumir notícias prioritariamente por redes sociais, $35\%$ por televisão aberta e os demais por jornais digitais e impressos. Quantos entrevistados consomem notícias prioritariamente por jornais?</p></div>
+                            <div class="q-text-container"><p class="q-paragraph font-medium text-slate-200 text-sm sm:text-base">Em uma aula multidisciplinar de Geografia, Sociologia e Matemática, foram apresentados os seguintes dados aos estudantes:</p><div class="q-item-card"><span class="text-sky-400 font-bold px-1.5 flex-shrink-0">•</span><span class="flex-1 min-w-0">$8$ bilhões de pessoas vivem hoje no planeta.
+- Pouco mais de $215$ milhões de pessoas vivem no Brasil.
+- $828$ milhões de pessoas passavam fome no mundo em 2021.
+- $33{,}1$ milhões de brasileiros estão passando fome.</span></div><p class="q-paragraph font-medium text-slate-200 text-sm sm:text-base">De acordo com o texto, os números que representam a quantidade de pessoas que vivem no planeta, que vivem no Brasil e de brasileiros que estão passando fome, respectivamente:</p><p class="q-source-text">*(Fontes: ONU, IBGE, Olhe para a fome, 2022)*</p></div>
                             
                             <div class="space-y-2 mb-4" id="opts-ifsp-2023-1-a-q4">
                                 
                             <button onclick="selectOption('ifsp-2023-1-a-q4', 0)" id="btn-ifsp-2023-1-a-q4-0" class="w-full text-left p-3.5 rounded-xl border border-slate-800 bg-slate-950/60 hover:border-blue-500 hover:bg-slate-800/60 transition text-sm text-slate-200 flex items-start justify-between gap-3 group">
                                 <span class="flex items-start gap-2.5 flex-1 min-w-0">
                                     <strong class="text-sky-400 font-bold flex-shrink-0 mt-0.5">A)</strong>
-                                    <span class="flex-1 min-w-0 break-words leading-relaxed">120</span>
+                                    <span class="flex-1 min-w-0 break-words leading-relaxed">$8 \cdot 10^9$; $215 \cdot 10^6$; $33{,}1 \cdot 10^7$</span>
                                 </span>
                                 <i data-lucide="circle" class="w-4 h-4 text-slate-600 opt-icon group-hover:text-blue-400 flex-shrink-0 mt-0.5"></i>
                             </button>
@@ -580,7 +582,7 @@ V – Os valores das ordenadas variam de forma diretamente proporcional aos valo
                             <button onclick="selectOption('ifsp-2023-1-a-q4', 1)" id="btn-ifsp-2023-1-a-q4-1" class="w-full text-left p-3.5 rounded-xl border border-slate-800 bg-slate-950/60 hover:border-blue-500 hover:bg-slate-800/60 transition text-sm text-slate-200 flex items-start justify-between gap-3 group">
                                 <span class="flex items-start gap-2.5 flex-1 min-w-0">
                                     <strong class="text-sky-400 font-bold flex-shrink-0 mt-0.5">B)</strong>
-                                    <span class="flex-1 min-w-0 break-words leading-relaxed">160</span>
+                                    <span class="flex-1 min-w-0 break-words leading-relaxed">$800 \cdot 10^6$; $215 \cdot 10^6$; $3{,}31 \cdot 10^6$</span>
                                 </span>
                                 <i data-lucide="circle" class="w-4 h-4 text-slate-600 opt-icon group-hover:text-blue-400 flex-shrink-0 mt-0.5"></i>
                             </button>
@@ -588,7 +590,7 @@ V – Os valores das ordenadas variam de forma diretamente proporcional aos valo
                             <button onclick="selectOption('ifsp-2023-1-a-q4', 2)" id="btn-ifsp-2023-1-a-q4-2" class="w-full text-left p-3.5 rounded-xl border border-slate-800 bg-slate-950/60 hover:border-blue-500 hover:bg-slate-800/60 transition text-sm text-slate-200 flex items-start justify-between gap-3 group">
                                 <span class="flex items-start gap-2.5 flex-1 min-w-0">
                                     <strong class="text-sky-400 font-bold flex-shrink-0 mt-0.5">C)</strong>
-                                    <span class="flex-1 min-w-0 break-words leading-relaxed">200</span>
+                                    <span class="flex-1 min-w-0 break-words leading-relaxed">$8 \cdot 10^9$; $2{,}15 \cdot 10^8$; $3{,}31 \cdot 10^7$</span>
                                 </span>
                                 <i data-lucide="circle" class="w-4 h-4 text-slate-600 opt-icon group-hover:text-blue-400 flex-shrink-0 mt-0.5"></i>
                             </button>
@@ -596,7 +598,7 @@ V – Os valores das ordenadas variam de forma diretamente proporcional aos valo
                             <button onclick="selectOption('ifsp-2023-1-a-q4', 3)" id="btn-ifsp-2023-1-a-q4-3" class="w-full text-left p-3.5 rounded-xl border border-slate-800 bg-slate-950/60 hover:border-blue-500 hover:bg-slate-800/60 transition text-sm text-slate-200 flex items-start justify-between gap-3 group">
                                 <span class="flex items-start gap-2.5 flex-1 min-w-0">
                                     <strong class="text-sky-400 font-bold flex-shrink-0 mt-0.5">D)</strong>
-                                    <span class="flex-1 min-w-0 break-words leading-relaxed">240</span>
+                                    <span class="flex-1 min-w-0 break-words leading-relaxed">$80 \cdot 10^8$; $215 \cdot 10^9$; $33{,}1 \cdot 10^9$</span>
                                 </span>
                                 <i data-lucide="circle" class="w-4 h-4 text-slate-600 opt-icon group-hover:text-blue-400 flex-shrink-0 mt-0.5"></i>
                             </button>
@@ -615,16 +617,16 @@ V – Os valores das ordenadas variam de forma diretamente proporcional aos valo
                                 <div class="flex flex-wrap items-center gap-2">
                                     <span class="text-xs font-bold uppercase tracking-wider text-sky-300 bg-blue-950/60 px-2.5 py-0.5 rounded-full border border-blue-800/40">Questão 6</span>
                                     
-                            <a href="../pesquisa.html?bncc=EF07MA18" class="text-[11px] font-mono font-bold text-emerald-300 bg-emerald-950/80 hover:bg-emerald-900/90 px-2.5 py-0.5 rounded-full border border-emerald-800/60 flex items-center gap-1 transition shadow-sm" title="Resolver e elaborar problemas que possam ser representados por equações polinomiais de 1º grau, redutíveis à forma ax + b = c, fazendo uso das propriedades da igualdade.">
-                                <i data-lucide="bookmark" class="w-3 h-3 text-emerald-400"></i> BNCC: EF07MA18
+                            <a href="../pesquisa.html?bncc=EF09MA02" class="text-[11px] font-mono font-bold text-emerald-300 bg-emerald-950/80 hover:bg-emerald-900/90 px-2.5 py-0.5 rounded-full border border-emerald-800/60 flex items-center gap-1 transition shadow-sm" title="Reconhecer um número irracional como um número real cuja representação decimal é infinita e não periódica, e estimar a localização de alguns deles na reta numérica.">
+                                <i data-lucide="bookmark" class="w-3 h-3 text-emerald-400"></i> BNCC: EF09MA02
                             </a>
                         
                                 </div>
                             </div>
-                            <div class="q-text-container"><p class="q-paragraph font-medium text-slate-200 text-sm sm:text-base">Para medir utilizamos instrumentos como réguas ou trenas, que têm marcações inteiras e decimais. Porém, muitas vezes, ao fazer certa medição, o final do segmento de reta não cai exatamente na subdivisão demarcada no instrumento. Certa pessoa fez uma medição a partir da seguinte imagem:</p><p class="q-prompt text-slate-100 text-sm sm:text-base">Com relação à medida $a$ da peça, pode-se afirmar seguramente que $a$ é:</p></div>
+                            <div class="q-text-container"><p class="q-paragraph font-medium text-slate-200 text-sm sm:text-base">Para medir utilizamos instrumentos como réguas ou trenas, que têm marcações inteiras e decimais. Porém, muitas vezes, ao fazer certa medição, o final do segmento de reta não cai exatamente na subdivisão demarcada no instrumento. Certa pessoa fez uma medição a partir da seguinte imagem:</p><p class="q-prompt text-slate-100 text-sm sm:text-base">Com relação à medida “a” da peça, pode-se afirmar seguramente que “a” é:</p></div>
                             
         <div class="my-4 p-2 sm:p-3 rounded-2xl border bg-slate-950/70 border-slate-800 shadow-sm max-w-xl mx-auto flex flex-col items-center">
-            <img src="https://lh3.googleusercontent.com/d/1mJBAZuJ_CMXEKyeb-Ad3SFjsYhOgXcCI" alt="Setor circular com ângulo e medidas indicadas em uma régua ou instrumento de medição com valor 1,0 e medida a." onerror="if(this.src!='../assets/img/questoes/ifsp/ifsp-2023-1-a-q06.png'){this.src='../assets/img/questoes/ifsp/ifsp-2023-1-a-q06.png';}" class="max-h-80 sm:max-h-96 w-auto max-w-full rounded-xl object-contain cursor-zoom-in hover:opacity-95 hover:scale-[1.01] transition duration-200" onclick="openImageModal('https://lh3.googleusercontent.com/d/1mJBAZuJ_CMXEKyeb-Ad3SFjsYhOgXcCI', 'Setor circular com ângulo e medidas indicadas em uma régua ou instrumento de medição com valor 1,0 e medida a.')" title="Clique para ampliar a imagem" loading="lazy">
+            <img src="../assets/img/questoes/ifsp/ifsp-2023-1a-q21.png" alt="Construção geométrica com um triângulo retângulo isósceles hachurado de catetos 1,0 e 1,0, hipotenusa 'a', e arco circular projetando a medida 'a' sobre o segmento horizontal inferior." class="max-h-80 sm:max-h-96 w-auto max-w-full rounded-xl object-contain cursor-zoom-in hover:opacity-95 hover:scale-[1.01] transition duration-200" onclick="openImageModal('../assets/img/questoes/ifsp/ifsp-2023-1a-q21.png', 'Construção geométrica com um triângulo retângulo isósceles hachurado de catetos 1,0 e 1,0, hipotenusa \'a\', e arco circular projetando a medida \'a\' sobre o segmento horizontal inferior.')" title="Clique para ampliar a imagem" loading="lazy">
             
         </div>
     
@@ -633,7 +635,7 @@ V – Os valores das ordenadas variam de forma diretamente proporcional aos valo
                             <button onclick="selectOption('ifsp-2023-1-a-q5', 0)" id="btn-ifsp-2023-1-a-q5-0" class="w-full text-left p-3.5 rounded-xl border border-slate-800 bg-slate-950/60 hover:border-blue-500 hover:bg-slate-800/60 transition text-sm text-slate-200 flex items-start justify-between gap-3 group">
                                 <span class="flex items-start gap-2.5 flex-1 min-w-0">
                                     <strong class="text-sky-400 font-bold flex-shrink-0 mt-0.5">A)</strong>
-                                    <span class="flex-1 min-w-0 break-words leading-relaxed">Aproximadamente $1{,}41$.</span>
+                                    <span class="flex-1 min-w-0 break-words leading-relaxed">aproximadamente $1{,}41$.</span>
                                 </span>
                                 <i data-lucide="circle" class="w-4 h-4 text-slate-600 opt-icon group-hover:text-blue-400 flex-shrink-0 mt-0.5"></i>
                             </button>
@@ -641,7 +643,7 @@ V – Os valores das ordenadas variam de forma diretamente proporcional aos valo
                             <button onclick="selectOption('ifsp-2023-1-a-q5', 1)" id="btn-ifsp-2023-1-a-q5-1" class="w-full text-left p-3.5 rounded-xl border border-slate-800 bg-slate-950/60 hover:border-blue-500 hover:bg-slate-800/60 transition text-sm text-slate-200 flex items-start justify-between gap-3 group">
                                 <span class="flex items-start gap-2.5 flex-1 min-w-0">
                                     <strong class="text-sky-400 font-bold flex-shrink-0 mt-0.5">B)</strong>
-                                    <span class="flex-1 min-w-0 break-words leading-relaxed">Entre 1 e $1{,}41$.</span>
+                                    <span class="flex-1 min-w-0 break-words leading-relaxed">entre $1$ e $1{,}41$.</span>
                                 </span>
                                 <i data-lucide="circle" class="w-4 h-4 text-slate-600 opt-icon group-hover:text-blue-400 flex-shrink-0 mt-0.5"></i>
                             </button>
@@ -649,7 +651,7 @@ V – Os valores das ordenadas variam de forma diretamente proporcional aos valo
                             <button onclick="selectOption('ifsp-2023-1-a-q5', 2)" id="btn-ifsp-2023-1-a-q5-2" class="w-full text-left p-3.5 rounded-xl border border-slate-800 bg-slate-950/60 hover:border-blue-500 hover:bg-slate-800/60 transition text-sm text-slate-200 flex items-start justify-between gap-3 group">
                                 <span class="flex items-start gap-2.5 flex-1 min-w-0">
                                     <strong class="text-sky-400 font-bold flex-shrink-0 mt-0.5">C)</strong>
-                                    <span class="flex-1 min-w-0 break-words leading-relaxed">Aproximadamente 1.</span>
+                                    <span class="flex-1 min-w-0 break-words leading-relaxed">aproximadamente $1$.</span>
                                 </span>
                                 <i data-lucide="circle" class="w-4 h-4 text-slate-600 opt-icon group-hover:text-blue-400 flex-shrink-0 mt-0.5"></i>
                             </button>
@@ -657,7 +659,7 @@ V – Os valores das ordenadas variam de forma diretamente proporcional aos valo
                             <button onclick="selectOption('ifsp-2023-1-a-q5', 3)" id="btn-ifsp-2023-1-a-q5-3" class="w-full text-left p-3.5 rounded-xl border border-slate-800 bg-slate-950/60 hover:border-blue-500 hover:bg-slate-800/60 transition text-sm text-slate-200 flex items-start justify-between gap-3 group">
                                 <span class="flex items-start gap-2.5 flex-1 min-w-0">
                                     <strong class="text-sky-400 font-bold flex-shrink-0 mt-0.5">D)</strong>
-                                    <span class="flex-1 min-w-0 break-words leading-relaxed">Igual a 2.</span>
+                                    <span class="flex-1 min-w-0 break-words leading-relaxed">igual a $2$.</span>
                                 </span>
                                 <i data-lucide="circle" class="w-4 h-4 text-slate-600 opt-icon group-hover:text-blue-400 flex-shrink-0 mt-0.5"></i>
                             </button>
@@ -676,16 +678,16 @@ V – Os valores das ordenadas variam de forma diretamente proporcional aos valo
                                 <div class="flex flex-wrap items-center gap-2">
                                     <span class="text-xs font-bold uppercase tracking-wider text-sky-300 bg-blue-950/60 px-2.5 py-0.5 rounded-full border border-blue-800/40">Questão 7</span>
                                     
-                            <a href="../pesquisa.html?bncc=EF09MA14" class="text-[11px] font-mono font-bold text-emerald-300 bg-emerald-950/80 hover:bg-emerald-900/90 px-2.5 py-0.5 rounded-full border border-emerald-800/60 flex items-center gap-1 transition shadow-sm" title="Resolver e elaborar problemas de aplicação do teorema de Pitágoras ou das relações de proporcionalidade envolvendo retas paralelas cortadas por secantes.">
-                                <i data-lucide="bookmark" class="w-3 h-3 text-emerald-400"></i> BNCC: EF09MA14
+                            <a href="../pesquisa.html?bncc=EF09MA12" class="text-[11px] font-mono font-bold text-emerald-300 bg-emerald-950/80 hover:bg-emerald-900/90 px-2.5 py-0.5 rounded-full border border-emerald-800/60 flex items-center gap-1 transition shadow-sm" title="Reconhecer as condições necessárias e suficientes para que dois triângulos sejam semelhantes, e aplicar semelhança de triângulos na resolução de problemas cotidianos e geométricos.">
+                                <i data-lucide="bookmark" class="w-3 h-3 text-emerald-400"></i> BNCC: EF09MA12
                             </a>
                         
                                 </div>
                             </div>
-                            <div class="q-text-container"><p class="q-paragraph font-medium text-slate-100 text-sm sm:text-base leading-relaxed">Um brinquedo de um parque de diversões possui uma base em forma de triângulo isósceles $OPQ$, onde $OQ = 8\text{ m}$ e $OP = PQ = 12\text{ m}$, e um octógono regular $ABCDEFGH$ no qual $AH = 6\text{ m}$. Dado que $AH // OQ$, determine a altura do ponto $E$, com relação à base $OQ$, em metros:</p></div>
+                            <div class="q-text-container"><p class="q-paragraph font-medium text-slate-100 text-sm sm:text-base leading-relaxed">Um brinquedo de um parque de diversões possui uma base em forma de triângulo isósceles $OPQ$, onde $OQ = 8\text{ m}$ e $OP = PQ = 12\text{ m}$, e um octógono regular $ABCDEFGH$ no qual $AH = 6\text{ m}$. Dado que $AH \parallel OQ$ determine a altura do ponto $E$, com relação à base $OQ$, em metros:</p></div>
                             
         <div class="my-4 p-2 sm:p-3 rounded-2xl border bg-slate-950/70 border-slate-800 shadow-sm max-w-xl mx-auto flex flex-col items-center">
-            <img src="https://lh3.googleusercontent.com/d/1LrQfxf23WqWgu00AA7syUSBQDQW54PfM" alt="Ilustração de uma roda gigante sustentada por um triângulo isósceles OPQ de base OQ, e cabines formando um octógono regular ABCDEFGH de topo no ponto E." onerror="if(this.src!='../assets/img/questoes/ifsp/ifsp-2023-1-a-q07.png'){this.src='../assets/img/questoes/ifsp/ifsp-2023-1-a-q07.png';}" class="max-h-80 sm:max-h-96 w-auto max-w-full rounded-xl object-contain cursor-zoom-in hover:opacity-95 hover:scale-[1.01] transition duration-200" onclick="openImageModal('https://lh3.googleusercontent.com/d/1LrQfxf23WqWgu00AA7syUSBQDQW54PfM', 'Ilustração de uma roda gigante sustentada por um triângulo isósceles OPQ de base OQ, e cabines formando um octógono regular ABCDEFGH de topo no ponto E.')" title="Clique para ampliar a imagem" loading="lazy">
+            <img src="../assets/img/questoes/ifsp/ifsp-2023-1a-q22.png" alt="Roda-gigante estilizada com suporte em forma de triângulo isósceles OPQ apoiado na base OQ e vértice no centro P. Uma estrutura em forma de octógono regular ABCDEFGH possui o lado inferior horizontal AH e o topo com o lado ED contendo o ponto E." class="max-h-80 sm:max-h-96 w-auto max-w-full rounded-xl object-contain cursor-zoom-in hover:opacity-95 hover:scale-[1.01] transition duration-200" onclick="openImageModal('../assets/img/questoes/ifsp/ifsp-2023-1a-q22.png', 'Roda-gigante estilizada com suporte em forma de triângulo isósceles OPQ apoiado na base OQ e vértice no centro P. Uma estrutura em forma de octógono regular ABCDEFGH possui o lado inferior horizontal AH e o topo com o lado ED contendo o ponto E.')" title="Clique para ampliar a imagem" loading="lazy">
             
         </div>
     
@@ -737,20 +739,20 @@ V – Os valores das ordenadas variam de forma diretamente proporcional aos valo
                                 <div class="flex flex-wrap items-center gap-2">
                                     <span class="text-xs font-bold uppercase tracking-wider text-sky-300 bg-blue-950/60 px-2.5 py-0.5 rounded-full border border-blue-800/40">Questão 8</span>
                                     
-                            <a href="../pesquisa.html?bncc=EF08MA13" class="text-[11px] font-mono font-bold text-emerald-300 bg-emerald-950/80 hover:bg-emerald-900/90 px-2.5 py-0.5 rounded-full border border-emerald-800/60 flex items-center gap-1 transition shadow-sm" title="Resolver e elaborar problemas que envolvam grandezas diretamente ou inversamente proporcionais, por meio de estratégias variadas.">
-                                <i data-lucide="bookmark" class="w-3 h-3 text-emerald-400"></i> BNCC: EF08MA13
+                            <a href="../pesquisa.html?bncc=EF07MA02" class="text-[11px] font-mono font-bold text-emerald-300 bg-emerald-950/80 hover:bg-emerald-900/90 px-2.5 py-0.5 rounded-full border border-emerald-800/60 flex items-center gap-1 transition shadow-sm" title="Resolver e elaborar problemas que envolvam porcentagens e cálculos com números racionais, incluindo conversões de unidades de massa e proporcionalidade.">
+                                <i data-lucide="bookmark" class="w-3 h-3 text-emerald-400"></i> BNCC: EF07MA02
                             </a>
                         
                                 </div>
                             </div>
-                            <div class="q-text-container"><p class="q-paragraph font-medium text-slate-100 text-sm sm:text-base leading-relaxed">Um carro elétrico com bateria de $60\text{ kWh}$ tem uma autonomia de $420\text{ km}$ quando totalmente carregado. Mantendo essa mesma eficiência energética, quanta energia da bateria será consumida para percorrer uma distância de $140\text{ km}$?</p></div>
+                            <div class="q-text-container"><p class="q-paragraph font-medium text-slate-100 text-sm sm:text-base leading-relaxed">A ciência e tecnologia podem ajudar a preservar o meio ambiente. Exemplo disso, são os carros elétricos. Segundo matéria publicada pelo site UOL em julho de 2021, um carro a combustão emite $3$ toneladas de $\text{CO}_2$ na atmosfera a cada $20$ mil km rodados, enquanto um carro elétrico emite $70$ quilos de $\text{CO}_2$ para os mesmos $20$ mil quilômetros rodados. Sabendo que a frota brasileira é de $108$ milhões de carros e que, em média, um carro roda $20$ mil quilômetros por ano, quantos milhões de toneladas de $\text{CO}_2$ deixariam de ser despejadas na atmosfera em um ano, se $1/4$ da frota nacional fosse substituída por carros elétricos?</p></div>
                             
                             <div class="space-y-2 mb-4" id="opts-ifsp-2023-1-a-q7">
                                 
                             <button onclick="selectOption('ifsp-2023-1-a-q7', 0)" id="btn-ifsp-2023-1-a-q7-0" class="w-full text-left p-3.5 rounded-xl border border-slate-800 bg-slate-950/60 hover:border-blue-500 hover:bg-slate-800/60 transition text-sm text-slate-200 flex items-start justify-between gap-3 group">
                                 <span class="flex items-start gap-2.5 flex-1 min-w-0">
                                     <strong class="text-sky-400 font-bold flex-shrink-0 mt-0.5">A)</strong>
-                                    <span class="flex-1 min-w-0 break-words leading-relaxed">$15\text{ kWh}$</span>
+                                    <span class="flex-1 min-w-0 break-words leading-relaxed">$158{,}22$</span>
                                 </span>
                                 <i data-lucide="circle" class="w-4 h-4 text-slate-600 opt-icon group-hover:text-blue-400 flex-shrink-0 mt-0.5"></i>
                             </button>
@@ -758,7 +760,7 @@ V – Os valores das ordenadas variam de forma diretamente proporcional aos valo
                             <button onclick="selectOption('ifsp-2023-1-a-q7', 1)" id="btn-ifsp-2023-1-a-q7-1" class="w-full text-left p-3.5 rounded-xl border border-slate-800 bg-slate-950/60 hover:border-blue-500 hover:bg-slate-800/60 transition text-sm text-slate-200 flex items-start justify-between gap-3 group">
                                 <span class="flex items-start gap-2.5 flex-1 min-w-0">
                                     <strong class="text-sky-400 font-bold flex-shrink-0 mt-0.5">B)</strong>
-                                    <span class="flex-1 min-w-0 break-words leading-relaxed">$20\text{ kWh}$</span>
+                                    <span class="flex-1 min-w-0 break-words leading-relaxed">$82{,}89$</span>
                                 </span>
                                 <i data-lucide="circle" class="w-4 h-4 text-slate-600 opt-icon group-hover:text-blue-400 flex-shrink-0 mt-0.5"></i>
                             </button>
@@ -766,7 +768,7 @@ V – Os valores das ordenadas variam de forma diretamente proporcional aos valo
                             <button onclick="selectOption('ifsp-2023-1-a-q7', 2)" id="btn-ifsp-2023-1-a-q7-2" class="w-full text-left p-3.5 rounded-xl border border-slate-800 bg-slate-950/60 hover:border-blue-500 hover:bg-slate-800/60 transition text-sm text-slate-200 flex items-start justify-between gap-3 group">
                                 <span class="flex items-start gap-2.5 flex-1 min-w-0">
                                     <strong class="text-sky-400 font-bold flex-shrink-0 mt-0.5">C)</strong>
-                                    <span class="flex-1 min-w-0 break-words leading-relaxed">$25\text{ kWh}$</span>
+                                    <span class="flex-1 min-w-0 break-words leading-relaxed">$81{,}00$</span>
                                 </span>
                                 <i data-lucide="circle" class="w-4 h-4 text-slate-600 opt-icon group-hover:text-blue-400 flex-shrink-0 mt-0.5"></i>
                             </button>
@@ -774,7 +776,7 @@ V – Os valores das ordenadas variam de forma diretamente proporcional aos valo
                             <button onclick="selectOption('ifsp-2023-1-a-q7', 3)" id="btn-ifsp-2023-1-a-q7-3" class="w-full text-left p-3.5 rounded-xl border border-slate-800 bg-slate-950/60 hover:border-blue-500 hover:bg-slate-800/60 transition text-sm text-slate-200 flex items-start justify-between gap-3 group">
                                 <span class="flex items-start gap-2.5 flex-1 min-w-0">
                                     <strong class="text-sky-400 font-bold flex-shrink-0 mt-0.5">D)</strong>
-                                    <span class="flex-1 min-w-0 break-words leading-relaxed">$30\text{ kWh}$</span>
+                                    <span class="flex-1 min-w-0 break-words leading-relaxed">$79{,}11$</span>
                                 </span>
                                 <i data-lucide="circle" class="w-4 h-4 text-slate-600 opt-icon group-hover:text-blue-400 flex-shrink-0 mt-0.5"></i>
                             </button>
@@ -793,16 +795,16 @@ V – Os valores das ordenadas variam de forma diretamente proporcional aos valo
                                 <div class="flex flex-wrap items-center gap-2">
                                     <span class="text-xs font-bold uppercase tracking-wider text-sky-300 bg-blue-950/60 px-2.5 py-0.5 rounded-full border border-blue-800/40">Questão 9</span>
                                     
-                            <a href="../pesquisa.html?bncc=EF07MA35" class="text-[11px] font-mono font-bold text-emerald-300 bg-emerald-950/80 hover:bg-emerald-900/90 px-2.5 py-0.5 rounded-full border border-emerald-800/60 flex items-center gap-1 transition shadow-sm" title="Compreender, em contextos significativos, o significado de média estatística como indicador da tendência de uma pesquisa, calcular seu valor e relacioná-lo, intuitivamente, com a amplitude do conjunto de dados.">
-                                <i data-lucide="bookmark" class="w-3 h-3 text-emerald-400"></i> BNCC: EF07MA35
+                            <a href="../pesquisa.html?bncc=EF08MA25" class="text-[11px] font-mono font-bold text-emerald-300 bg-emerald-950/80 hover:bg-emerald-900/90 px-2.5 py-0.5 rounded-full border border-emerald-800/60 flex items-center gap-1 transition shadow-sm" title="Obter os valores de medidas de tendência central de uma pesquisa estatística (média, moda e mediana) com a compreensão de seus significados e relacioná-los com a dispersão de dados.">
+                                <i data-lucide="bookmark" class="w-3 h-3 text-emerald-400"></i> BNCC: EF08MA25
                             </a>
                         
                                 </div>
                             </div>
-                            <div class="q-text-container"><p class="q-paragraph font-medium text-slate-200 text-sm sm:text-base">A notícia mostrada na imagem a seguir trata do acompanhamento de casos de Covid-19 no Brasil, no final de agosto de 2021:</p><p class="q-prompt text-slate-100 text-sm sm:text-base">Como há um intervalo de tempo entre o momento em que um paciente é diagnosticado com a doença e o momento em que a doença é registrada pelas autoridades, a média móvel, que é a média aritmética dos registros dos últimos sete dias, costuma ser utilizada. A média móvel para o dia 31 de agosto de 2021 foi de:</p></div>
+                            <div class="q-text-container"><p class="q-paragraph font-medium text-slate-200 text-sm sm:text-base">A notícia mostrada trata do acompanhamento de casos de Covid-19 no Brasil, no final de agosto de 2021, destacando que o país registrou a menor média móvel de casos do ano.</p><p class="q-paragraph font-medium text-slate-200 text-sm sm:text-base">Como há um intervalo de tempo entre o momento em que um paciente é diagnosticado com a doença e o momento em que a doença é registrada pelas autoridades, a média móvel, que é a média aritmética dos casos computados nos últimos 7 dias, é um dado mais confiável sobre a real situação das contaminações do que simplesmente o número absoluto de casos registrados em algum dia.</p><p class="q-paragraph font-medium text-slate-200 text-sm sm:text-base">O gráfico a seguir mostra os novos casos registrados por dia, aos quais a notícia se refere:</p><p class="q-prompt text-slate-100 text-sm sm:text-base">Qual foi, aproximadamente, a média móvel em 31 de agosto de 2021, dia da publicação da notícia?</p></div>
                             
         <div class="my-4 p-2 sm:p-3 rounded-2xl border bg-slate-950/70 border-slate-800 shadow-sm max-w-xl mx-auto flex flex-col items-center">
-            <img src="https://lh3.googleusercontent.com/d/1Qn5BYNd5BjU7obj_vuB9KA5nVHP6-X-9" alt="Gráfico de linha de Novos Casos Registrados de Covid-19 no Brasil entre 21/08/2021 e 31/08/2021 com registros diários." onerror="if(this.src!='../assets/img/questoes/ifsp/ifsp-2023-1-a-q09.png'){this.src='../assets/img/questoes/ifsp/ifsp-2023-1-a-q09.png';}" class="max-h-80 sm:max-h-96 w-auto max-w-full rounded-xl object-contain cursor-zoom-in hover:opacity-95 hover:scale-[1.01] transition duration-200" onclick="openImageModal('https://lh3.googleusercontent.com/d/1Qn5BYNd5BjU7obj_vuB9KA5nVHP6-X-9', 'Gráfico de linha de Novos Casos Registrados de Covid-19 no Brasil entre 21/08/2021 e 31/08/2021 com registros diários.')" title="Clique para ampliar a imagem" loading="lazy">
+            <img src="../assets/img/questoes/ifsp/ifsp-2023-1a-q24.png" alt="Gráfico de linha de novos casos registrados de Covid-19 no Brasil por dia, entre 21/08/2021 e 31/08/2021, com marcações de valores para cada data correspondente." class="max-h-80 sm:max-h-96 w-auto max-w-full rounded-xl object-contain cursor-zoom-in hover:opacity-95 hover:scale-[1.01] transition duration-200" onclick="openImageModal('../assets/img/questoes/ifsp/ifsp-2023-1a-q24.png', 'Gráfico de linha de novos casos registrados de Covid-19 no Brasil por dia, entre 21/08/2021 e 31/08/2021, com marcações de valores para cada data correspondente.')" title="Clique para ampliar a imagem" loading="lazy">
             
         </div>
     
@@ -811,7 +813,7 @@ V – Os valores das ordenadas variam de forma diretamente proporcional aos valo
                             <button onclick="selectOption('ifsp-2023-1-a-q8', 0)" id="btn-ifsp-2023-1-a-q8-0" class="w-full text-left p-3.5 rounded-xl border border-slate-800 bg-slate-950/60 hover:border-blue-500 hover:bg-slate-800/60 transition text-sm text-slate-200 flex items-start justify-between gap-3 group">
                                 <span class="flex items-start gap-2.5 flex-1 min-w-0">
                                     <strong class="text-sky-400 font-bold flex-shrink-0 mt-0.5">A)</strong>
-                                    <span class="flex-1 min-w-0 break-words leading-relaxed">$21.000$</span>
+                                    <span class="flex-1 min-w-0 break-words leading-relaxed">$22.590$ casos por dia.</span>
                                 </span>
                                 <i data-lucide="circle" class="w-4 h-4 text-slate-600 opt-icon group-hover:text-blue-400 flex-shrink-0 mt-0.5"></i>
                             </button>
@@ -819,7 +821,7 @@ V – Os valores das ordenadas variam de forma diretamente proporcional aos valo
                             <button onclick="selectOption('ifsp-2023-1-a-q8', 1)" id="btn-ifsp-2023-1-a-q8-1" class="w-full text-left p-3.5 rounded-xl border border-slate-800 bg-slate-950/60 hover:border-blue-500 hover:bg-slate-800/60 transition text-sm text-slate-200 flex items-start justify-between gap-3 group">
                                 <span class="flex items-start gap-2.5 flex-1 min-w-0">
                                     <strong class="text-sky-400 font-bold flex-shrink-0 mt-0.5">B)</strong>
-                                    <span class="flex-1 min-w-0 break-words leading-relaxed">$23.143$</span>
+                                    <span class="flex-1 min-w-0 break-words leading-relaxed">$23.070$ casos por dia.</span>
                                 </span>
                                 <i data-lucide="circle" class="w-4 h-4 text-slate-600 opt-icon group-hover:text-blue-400 flex-shrink-0 mt-0.5"></i>
                             </button>
@@ -827,7 +829,7 @@ V – Os valores das ordenadas variam de forma diretamente proporcional aos valo
                             <button onclick="selectOption('ifsp-2023-1-a-q8', 2)" id="btn-ifsp-2023-1-a-q8-2" class="w-full text-left p-3.5 rounded-xl border border-slate-800 bg-slate-950/60 hover:border-blue-500 hover:bg-slate-800/60 transition text-sm text-slate-200 flex items-start justify-between gap-3 group">
                                 <span class="flex items-start gap-2.5 flex-1 min-w-0">
                                     <strong class="text-sky-400 font-bold flex-shrink-0 mt-0.5">C)</strong>
-                                    <span class="flex-1 min-w-0 break-words leading-relaxed">$24.500$</span>
+                                    <span class="flex-1 min-w-0 break-words leading-relaxed">$25.070$ casos por dia.</span>
                                 </span>
                                 <i data-lucide="circle" class="w-4 h-4 text-slate-600 opt-icon group-hover:text-blue-400 flex-shrink-0 mt-0.5"></i>
                             </button>
@@ -835,7 +837,7 @@ V – Os valores das ordenadas variam de forma diretamente proporcional aos valo
                             <button onclick="selectOption('ifsp-2023-1-a-q8', 3)" id="btn-ifsp-2023-1-a-q8-3" class="w-full text-left p-3.5 rounded-xl border border-slate-800 bg-slate-950/60 hover:border-blue-500 hover:bg-slate-800/60 transition text-sm text-slate-200 flex items-start justify-between gap-3 group">
                                 <span class="flex items-start gap-2.5 flex-1 min-w-0">
                                     <strong class="text-sky-400 font-bold flex-shrink-0 mt-0.5">D)</strong>
-                                    <span class="flex-1 min-w-0 break-words leading-relaxed">$25.500$</span>
+                                    <span class="flex-1 min-w-0 break-words leading-relaxed">$35.500$ casos por dia.</span>
                                 </span>
                                 <i data-lucide="circle" class="w-4 h-4 text-slate-600 opt-icon group-hover:text-blue-400 flex-shrink-0 mt-0.5"></i>
                             </button>
@@ -854,20 +856,20 @@ V – Os valores das ordenadas variam de forma diretamente proporcional aos valo
                                 <div class="flex flex-wrap items-center gap-2">
                                     <span class="text-xs font-bold uppercase tracking-wider text-sky-300 bg-blue-950/60 px-2.5 py-0.5 rounded-full border border-blue-800/40">Questão 10</span>
                                     
-                            <a href="../pesquisa.html?bncc=EF08MA19" class="text-[11px] font-mono font-bold text-emerald-300 bg-emerald-950/80 hover:bg-emerald-900/90 px-2.5 py-0.5 rounded-full border border-emerald-800/60 flex items-center gap-1 transition shadow-sm" title="Resolver e elaborar problemas que envolvam medidas de área de figuras geométricas, utilizando expressões de cálculo de área (quadriláteros, triângulos e círculos), em situações como determinar medida de terrenos.">
-                                <i data-lucide="bookmark" class="w-3 h-3 text-emerald-400"></i> BNCC: EF08MA19
+                            <a href="../pesquisa.html?bncc=EF07MA17" class="text-[11px] font-mono font-bold text-emerald-300 bg-emerald-950/80 hover:bg-emerald-900/90 px-2.5 py-0.5 rounded-full border border-emerald-800/60 flex items-center gap-1 transition shadow-sm" title="Resolver e elaborar problemas que envolvam variação de proporcionalidade direta e de proporcionalidade inversa entre duas grandezas.">
+                                <i data-lucide="bookmark" class="w-3 h-3 text-emerald-400"></i> BNCC: EF07MA17
                             </a>
                         
                                 </div>
                             </div>
-                            <div class="q-text-container"><p class="q-paragraph font-medium text-slate-100 text-sm sm:text-base leading-relaxed">Um projeto de reflorestamento no interior de São Paulo recuperou uma área nativa de $35\text{ hectares}$. Sabendo que $1\text{ hectare (ha)} = 10.000\text{ m}^2$, qual é a área recuperada expressa em metros quadrados?</p></div>
+                            <div class="q-text-container"><p class="q-paragraph font-medium text-slate-200 text-sm sm:text-base">Áreas verdes nativas do estado de São Paulo estão sendo recuperadas por meio do reflorestamento. Estudos indicam que, em dez anos, o verde nativo aumentou de $4.340.000$ para $5.670.000$ hectares no estado todo.</p><p class="q-source-text">*(Fonte: G1 / Jornal Nacional, 2020)*</p><p class="q-prompt text-slate-100 text-sm sm:text-base">Se o mesmo ritmo de restauração for mantido nos próximos cinco anos, quantos novos hectares serão reflorestados ao final desse período?</p></div>
                             
                             <div class="space-y-2 mb-4" id="opts-ifsp-2023-1-a-q9">
                                 
                             <button onclick="selectOption('ifsp-2023-1-a-q9', 0)" id="btn-ifsp-2023-1-a-q9-0" class="w-full text-left p-3.5 rounded-xl border border-slate-800 bg-slate-950/60 hover:border-blue-500 hover:bg-slate-800/60 transition text-sm text-slate-200 flex items-start justify-between gap-3 group">
                                 <span class="flex items-start gap-2.5 flex-1 min-w-0">
                                     <strong class="text-sky-400 font-bold flex-shrink-0 mt-0.5">A)</strong>
-                                    <span class="flex-1 min-w-0 break-words leading-relaxed">$3.500\text{ m}^2$</span>
+                                    <span class="flex-1 min-w-0 break-words leading-relaxed">$665.000$</span>
                                 </span>
                                 <i data-lucide="circle" class="w-4 h-4 text-slate-600 opt-icon group-hover:text-blue-400 flex-shrink-0 mt-0.5"></i>
                             </button>
@@ -875,7 +877,7 @@ V – Os valores das ordenadas variam de forma diretamente proporcional aos valo
                             <button onclick="selectOption('ifsp-2023-1-a-q9', 1)" id="btn-ifsp-2023-1-a-q9-1" class="w-full text-left p-3.5 rounded-xl border border-slate-800 bg-slate-950/60 hover:border-blue-500 hover:bg-slate-800/60 transition text-sm text-slate-200 flex items-start justify-between gap-3 group">
                                 <span class="flex items-start gap-2.5 flex-1 min-w-0">
                                     <strong class="text-sky-400 font-bold flex-shrink-0 mt-0.5">B)</strong>
-                                    <span class="flex-1 min-w-0 break-words leading-relaxed">$35.000\text{ m}^2$</span>
+                                    <span class="flex-1 min-w-0 break-words leading-relaxed">$1.995.000$</span>
                                 </span>
                                 <i data-lucide="circle" class="w-4 h-4 text-slate-600 opt-icon group-hover:text-blue-400 flex-shrink-0 mt-0.5"></i>
                             </button>
@@ -883,7 +885,7 @@ V – Os valores das ordenadas variam de forma diretamente proporcional aos valo
                             <button onclick="selectOption('ifsp-2023-1-a-q9', 2)" id="btn-ifsp-2023-1-a-q9-2" class="w-full text-left p-3.5 rounded-xl border border-slate-800 bg-slate-950/60 hover:border-blue-500 hover:bg-slate-800/60 transition text-sm text-slate-200 flex items-start justify-between gap-3 group">
                                 <span class="flex items-start gap-2.5 flex-1 min-w-0">
                                     <strong class="text-sky-400 font-bold flex-shrink-0 mt-0.5">C)</strong>
-                                    <span class="flex-1 min-w-0 break-words leading-relaxed">$350.000\text{ m}^2$</span>
+                                    <span class="flex-1 min-w-0 break-words leading-relaxed">$2.170.000$</span>
                                 </span>
                                 <i data-lucide="circle" class="w-4 h-4 text-slate-600 opt-icon group-hover:text-blue-400 flex-shrink-0 mt-0.5"></i>
                             </button>
@@ -891,7 +893,7 @@ V – Os valores das ordenadas variam de forma diretamente proporcional aos valo
                             <button onclick="selectOption('ifsp-2023-1-a-q9', 3)" id="btn-ifsp-2023-1-a-q9-3" class="w-full text-left p-3.5 rounded-xl border border-slate-800 bg-slate-950/60 hover:border-blue-500 hover:bg-slate-800/60 transition text-sm text-slate-200 flex items-start justify-between gap-3 group">
                                 <span class="flex items-start gap-2.5 flex-1 min-w-0">
                                     <strong class="text-sky-400 font-bold flex-shrink-0 mt-0.5">D)</strong>
-                                    <span class="flex-1 min-w-0 break-words leading-relaxed">$3.500.000\text{ m}^2$</span>
+                                    <span class="flex-1 min-w-0 break-words leading-relaxed">$2.835.000$</span>
                                 </span>
                                 <i data-lucide="circle" class="w-4 h-4 text-slate-600 opt-icon group-hover:text-blue-400 flex-shrink-0 mt-0.5"></i>
                             </button>
@@ -910,20 +912,20 @@ V – Os valores das ordenadas variam de forma diretamente proporcional aos valo
                                 <div class="flex flex-wrap items-center gap-2">
                                     <span class="text-xs font-bold uppercase tracking-wider text-sky-300 bg-blue-950/60 px-2.5 py-0.5 rounded-full border border-blue-800/40">Questão 11</span>
                                     
-                            <a href="../pesquisa.html?bncc=EF07MA01" class="text-[11px] font-mono font-bold text-emerald-300 bg-emerald-950/80 hover:bg-emerald-900/90 px-2.5 py-0.5 rounded-full border border-emerald-800/60 flex items-center gap-1 transition shadow-sm" title="Resolver e elaborar problemas com números naturais, envolvendo as noções de divisor e de múltiplo, podendo incluir máximo divisor comum ou mínimo múltiplo comum, por meio de estratégias diversas, sem a aplicação de algoritmos.">
-                                <i data-lucide="bookmark" class="w-3 h-3 text-emerald-400"></i> BNCC: EF07MA01
+                            <a href="../pesquisa.html?bncc=EF08MA01" class="text-[11px] font-mono font-bold text-emerald-300 bg-emerald-950/80 hover:bg-emerald-900/90 px-2.5 py-0.5 rounded-full border border-emerald-800/60 flex items-center gap-1 transition shadow-sm" title="Efetuar cálculos com potências de expoentes inteiros e aplicar esse conhecimento na representação de números em notação científica.">
+                                <i data-lucide="bookmark" class="w-3 h-3 text-emerald-400"></i> BNCC: EF08MA01
                             </a>
                         
                                 </div>
                             </div>
-                            <div class="q-text-container"><p class="q-paragraph font-medium text-slate-100 text-sm sm:text-base leading-relaxed">Em um laboratório de física, a razão entre a frequência de duas ondas sonoras é dada pela fração $\frac{440}{660}$. A forma simplificada irredutível dessa razão é:</p></div>
+                            <div class="q-text-container"><p class="q-paragraph font-medium text-slate-200 text-sm sm:text-base">Um professor de ciências elaborou uma experiência sobre difração de ondas para sua turma. Nesse experimento, explicou que seria possível medir a espessura de um fio de cabelo e que a unidade de medida utilizada seria o micrômetro ($\mu\text{m}$). Para demonstrar o experimento, o professor mediu de três formas distintas um mesmo fio de cabelo. Os valores encontrados foram: $45{,}2\ \mu\text{m}$, $48{,}5\ \mu\text{m}$, $53{,}9\ \mu\text{m}$.</p><p class="q-prompt text-slate-100 text-sm sm:text-base">Sabendo-se que $1\ \mu\text{m}$ equivale a $10^{-6}\text{ m}$, pode-se afirmar que a média aritmética dessas três medidas equivale a:</p></div>
                             
                             <div class="space-y-2 mb-4" id="opts-ifsp-2023-1-a-q10">
                                 
                             <button onclick="selectOption('ifsp-2023-1-a-q10', 0)" id="btn-ifsp-2023-1-a-q10-0" class="w-full text-left p-3.5 rounded-xl border border-slate-800 bg-slate-950/60 hover:border-blue-500 hover:bg-slate-800/60 transition text-sm text-slate-200 flex items-start justify-between gap-3 group">
                                 <span class="flex items-start gap-2.5 flex-1 min-w-0">
                                     <strong class="text-sky-400 font-bold flex-shrink-0 mt-0.5">A)</strong>
-                                    <span class="flex-1 min-w-0 break-words leading-relaxed">$\frac{4}{6}$</span>
+                                    <span class="flex-1 min-w-0 break-words leading-relaxed">$49{,}2 \cdot 10^{-2}\text{ m}$</span>
                                 </span>
                                 <i data-lucide="circle" class="w-4 h-4 text-slate-600 opt-icon group-hover:text-blue-400 flex-shrink-0 mt-0.5"></i>
                             </button>
@@ -931,7 +933,7 @@ V – Os valores das ordenadas variam de forma diretamente proporcional aos valo
                             <button onclick="selectOption('ifsp-2023-1-a-q10', 1)" id="btn-ifsp-2023-1-a-q10-1" class="w-full text-left p-3.5 rounded-xl border border-slate-800 bg-slate-950/60 hover:border-blue-500 hover:bg-slate-800/60 transition text-sm text-slate-200 flex items-start justify-between gap-3 group">
                                 <span class="flex items-start gap-2.5 flex-1 min-w-0">
                                     <strong class="text-sky-400 font-bold flex-shrink-0 mt-0.5">B)</strong>
-                                    <span class="flex-1 min-w-0 break-words leading-relaxed">$\frac{2}{3}$</span>
+                                    <span class="flex-1 min-w-0 break-words leading-relaxed">$1{,}476 \cdot 10^{-4}\text{ m}$</span>
                                 </span>
                                 <i data-lucide="circle" class="w-4 h-4 text-slate-600 opt-icon group-hover:text-blue-400 flex-shrink-0 mt-0.5"></i>
                             </button>
@@ -939,7 +941,7 @@ V – Os valores das ordenadas variam de forma diretamente proporcional aos valo
                             <button onclick="selectOption('ifsp-2023-1-a-q10', 2)" id="btn-ifsp-2023-1-a-q10-2" class="w-full text-left p-3.5 rounded-xl border border-slate-800 bg-slate-950/60 hover:border-blue-500 hover:bg-slate-800/60 transition text-sm text-slate-200 flex items-start justify-between gap-3 group">
                                 <span class="flex items-start gap-2.5 flex-1 min-w-0">
                                     <strong class="text-sky-400 font-bold flex-shrink-0 mt-0.5">C)</strong>
-                                    <span class="flex-1 min-w-0 break-words leading-relaxed">$\frac{11}{15}$</span>
+                                    <span class="flex-1 min-w-0 break-words leading-relaxed">$4{,}92 \cdot 10^{-5}\text{ m}$</span>
                                 </span>
                                 <i data-lucide="circle" class="w-4 h-4 text-slate-600 opt-icon group-hover:text-blue-400 flex-shrink-0 mt-0.5"></i>
                             </button>
@@ -947,7 +949,7 @@ V – Os valores das ordenadas variam de forma diretamente proporcional aos valo
                             <button onclick="selectOption('ifsp-2023-1-a-q10', 3)" id="btn-ifsp-2023-1-a-q10-3" class="w-full text-left p-3.5 rounded-xl border border-slate-800 bg-slate-950/60 hover:border-blue-500 hover:bg-slate-800/60 transition text-sm text-slate-200 flex items-start justify-between gap-3 group">
                                 <span class="flex items-start gap-2.5 flex-1 min-w-0">
                                     <strong class="text-sky-400 font-bold flex-shrink-0 mt-0.5">D)</strong>
-                                    <span class="flex-1 min-w-0 break-words leading-relaxed">$\frac{22}{33}$</span>
+                                    <span class="flex-1 min-w-0 break-words leading-relaxed">$147{,}6 \cdot 10^{-6}\text{ m}$</span>
                                 </span>
                                 <i data-lucide="circle" class="w-4 h-4 text-slate-600 opt-icon group-hover:text-blue-400 flex-shrink-0 mt-0.5"></i>
                             </button>
@@ -966,20 +968,20 @@ V – Os valores das ordenadas variam de forma diretamente proporcional aos valo
                                 <div class="flex flex-wrap items-center gap-2">
                                     <span class="text-xs font-bold uppercase tracking-wider text-sky-300 bg-blue-950/60 px-2.5 py-0.5 rounded-full border border-blue-800/40">Questão 12</span>
                                     
-                            <a href="../pesquisa.html?bncc=EF08MA08" class="text-[11px] font-mono font-bold text-emerald-300 bg-emerald-950/80 hover:bg-emerald-900/90 px-2.5 py-0.5 rounded-full border border-emerald-800/60 flex items-center gap-1 transition shadow-sm" title="Resolver e elaborar problemas relacionados ao seu contexto próximo, que possam ser representados por sistemas de equações de 1º grau com duas incógnitas e interpretá-los, utilizando, inclusive, o plano cartesiano como recurso.">
+                            <a href="../pesquisa.html?bncc=EF08MA08" class="text-[11px] font-mono font-bold text-emerald-300 bg-emerald-950/80 hover:bg-emerald-900/90 px-2.5 py-0.5 rounded-full border border-emerald-800/60 flex items-center gap-1 transition shadow-sm" title="Resolver e elaborar problemas relacionados ao seu contexto próximo, que possam ser representados por sistemas de equações de 1º grau com duas incógnitas.">
                                 <i data-lucide="bookmark" class="w-3 h-3 text-emerald-400"></i> BNCC: EF08MA08
                             </a>
                         
                                 </div>
                             </div>
-                            <div class="q-text-container"><p class="q-paragraph font-medium text-slate-100 text-sm sm:text-base leading-relaxed">Para complementar a renda familiar, uma doceira vende trufas a $\text{R\$} 3${,}00 cada e pães de mel a $\text{R\$} 5{,}00$ cada. Em um dia de evento, ela vendeu um total de 60 doces e arrecadou $\text{R\$} 240{,}00$. Quantas trufas foram vendidas nesse dia?</p></div>
+                            <div class="q-text-container"><p class="q-paragraph font-medium text-slate-100 text-sm sm:text-base leading-relaxed">Para ajudar na renda familiar, uma dona de casa decidiu preparar deliciosas trufas e pães de mel para venda, tudo feito com chocolate nobre. Um cliente comprou $6$ pães de mel e $10$ trufas e por esses itens pagou o valor de $\text{R\$} 98{,}00$. Outro cliente comprou somente $2$ trufas, mas adquiriu, também, $8$ pães de mel e pagou o valor de $\text{R\$} 74{,}00$ pelos itens. Qual o valor unitário da trufa e do pão de mel, respectivamente?</p></div>
                             
                             <div class="space-y-2 mb-4" id="opts-ifsp-2023-1-a-q11">
                                 
                             <button onclick="selectOption('ifsp-2023-1-a-q11', 0)" id="btn-ifsp-2023-1-a-q11-0" class="w-full text-left p-3.5 rounded-xl border border-slate-800 bg-slate-950/60 hover:border-blue-500 hover:bg-slate-800/60 transition text-sm text-slate-200 flex items-start justify-between gap-3 group">
                                 <span class="flex items-start gap-2.5 flex-1 min-w-0">
                                     <strong class="text-sky-400 font-bold flex-shrink-0 mt-0.5">A)</strong>
-                                    <span class="flex-1 min-w-0 break-words leading-relaxed">20</span>
+                                    <span class="flex-1 min-w-0 break-words leading-relaxed">$\text{R\$} 5{,}00\text{ e }\text{R\$} 8{,}00$</span>
                                 </span>
                                 <i data-lucide="circle" class="w-4 h-4 text-slate-600 opt-icon group-hover:text-blue-400 flex-shrink-0 mt-0.5"></i>
                             </button>
@@ -987,7 +989,7 @@ V – Os valores das ordenadas variam de forma diretamente proporcional aos valo
                             <button onclick="selectOption('ifsp-2023-1-a-q11', 1)" id="btn-ifsp-2023-1-a-q11-1" class="w-full text-left p-3.5 rounded-xl border border-slate-800 bg-slate-950/60 hover:border-blue-500 hover:bg-slate-800/60 transition text-sm text-slate-200 flex items-start justify-between gap-3 group">
                                 <span class="flex items-start gap-2.5 flex-1 min-w-0">
                                     <strong class="text-sky-400 font-bold flex-shrink-0 mt-0.5">B)</strong>
-                                    <span class="flex-1 min-w-0 break-words leading-relaxed">25</span>
+                                    <span class="flex-1 min-w-0 break-words leading-relaxed">$\text{R\$} 1{,}60\text{ e }\text{R\$} 8{,}85$</span>
                                 </span>
                                 <i data-lucide="circle" class="w-4 h-4 text-slate-600 opt-icon group-hover:text-blue-400 flex-shrink-0 mt-0.5"></i>
                             </button>
@@ -995,7 +997,7 @@ V – Os valores das ordenadas variam de forma diretamente proporcional aos valo
                             <button onclick="selectOption('ifsp-2023-1-a-q11', 2)" id="btn-ifsp-2023-1-a-q11-2" class="w-full text-left p-3.5 rounded-xl border border-slate-800 bg-slate-950/60 hover:border-blue-500 hover:bg-slate-800/60 transition text-sm text-slate-200 flex items-start justify-between gap-3 group">
                                 <span class="flex items-start gap-2.5 flex-1 min-w-0">
                                     <strong class="text-sky-400 font-bold flex-shrink-0 mt-0.5">C)</strong>
-                                    <span class="flex-1 min-w-0 break-words leading-relaxed">30</span>
+                                    <span class="flex-1 min-w-0 break-words leading-relaxed">$\text{R\$} 5{,}00\text{ e }\text{R\$} 1{,}60$</span>
                                 </span>
                                 <i data-lucide="circle" class="w-4 h-4 text-slate-600 opt-icon group-hover:text-blue-400 flex-shrink-0 mt-0.5"></i>
                             </button>
@@ -1003,7 +1005,7 @@ V – Os valores das ordenadas variam de forma diretamente proporcional aos valo
                             <button onclick="selectOption('ifsp-2023-1-a-q11', 3)" id="btn-ifsp-2023-1-a-q11-3" class="w-full text-left p-3.5 rounded-xl border border-slate-800 bg-slate-950/60 hover:border-blue-500 hover:bg-slate-800/60 transition text-sm text-slate-200 flex items-start justify-between gap-3 group">
                                 <span class="flex items-start gap-2.5 flex-1 min-w-0">
                                     <strong class="text-sky-400 font-bold flex-shrink-0 mt-0.5">D)</strong>
-                                    <span class="flex-1 min-w-0 break-words leading-relaxed">35</span>
+                                    <span class="flex-1 min-w-0 break-words leading-relaxed">$\text{R\$} 8{,}00\text{ e }\text{R\$} 5{,}00$</span>
                                 </span>
                                 <i data-lucide="circle" class="w-4 h-4 text-slate-600 opt-icon group-hover:text-blue-400 flex-shrink-0 mt-0.5"></i>
                             </button>
@@ -1022,20 +1024,20 @@ V – Os valores das ordenadas variam de forma diretamente proporcional aos valo
                                 <div class="flex flex-wrap items-center gap-2">
                                     <span class="text-xs font-bold uppercase tracking-wider text-sky-300 bg-blue-950/60 px-2.5 py-0.5 rounded-full border border-blue-800/40">Questão 13</span>
                                     
-                            <a href="../pesquisa.html?bncc=EF08MA04" class="text-[11px] font-mono font-bold text-emerald-300 bg-emerald-950/80 hover:bg-emerald-900/90 px-2.5 py-0.5 rounded-full border border-emerald-800/60 flex items-center gap-1 transition shadow-sm" title="Resolver e elaborar problemas, envolvendo cálculo de porcentagens, incluindo o uso de tecnologias digitais.">
-                                <i data-lucide="bookmark" class="w-3 h-3 text-emerald-400"></i> BNCC: EF08MA04
+                            <a href="../pesquisa.html?bncc=EF09MA12" class="text-[11px] font-mono font-bold text-emerald-300 bg-emerald-950/80 hover:bg-emerald-900/90 px-2.5 py-0.5 rounded-full border border-emerald-800/60 flex items-center gap-1 transition shadow-sm" title="Reconhecer as condições necessárias e suficientes para que dois triângulos sejam semelhantes, e aplicar semelhança de triângulos na resolução de problemas cotidianos e geométricos.">
+                                <i data-lucide="bookmark" class="w-3 h-3 text-emerald-400"></i> BNCC: EF09MA12
                             </a>
                         
                                 </div>
                             </div>
-                            <div class="q-text-container"><p class="q-paragraph font-medium text-slate-100 text-sm sm:text-base leading-relaxed">A norma de acessibilidade NBR 9050 estabelece que a inclinação percentual $i$ de uma rampa é calculada pela fórmula $i = \frac{h}{c} \times 100\%$, onde $h$ é o desnível vertical e $c$ é o comprimento da projeção horizontal. Se uma rampa vence uma altura $h = 0{,}80\text{ m}$ com uma inclinação de $8\%$, qual é o comprimento horizontal $c$ dessa rampa?</p></div>
+                            <div class="q-text-container"><p class="q-paragraph font-medium text-slate-100 text-sm sm:text-base leading-relaxed">Pensando em garantir a acessibilidade dos clientes, um shopping fez uma rampa de acesso na sua entrada principal que tem um desnível de $1{,}00\text{ metro}$ em relação ao nível da rua e fez um teste com um jovem cadeirante. Quando o jovem tinha percorrido $8{,}05\text{ metros}$, superou $0{,}70\text{ metros}$ do desnível. Quantos metros ainda falta o jovem percorrer na rampa para alcançar a entrada?</p></div>
                             
                             <div class="space-y-2 mb-4" id="opts-ifsp-2023-1-a-q12">
                                 
                             <button onclick="selectOption('ifsp-2023-1-a-q12', 0)" id="btn-ifsp-2023-1-a-q12-0" class="w-full text-left p-3.5 rounded-xl border border-slate-800 bg-slate-950/60 hover:border-blue-500 hover:bg-slate-800/60 transition text-sm text-slate-200 flex items-start justify-between gap-3 group">
                                 <span class="flex items-start gap-2.5 flex-1 min-w-0">
                                     <strong class="text-sky-400 font-bold flex-shrink-0 mt-0.5">A)</strong>
-                                    <span class="flex-1 min-w-0 break-words leading-relaxed">$6{,}4\text{ m}$</span>
+                                    <span class="flex-1 min-w-0 break-words leading-relaxed">$19{,}55$</span>
                                 </span>
                                 <i data-lucide="circle" class="w-4 h-4 text-slate-600 opt-icon group-hover:text-blue-400 flex-shrink-0 mt-0.5"></i>
                             </button>
@@ -1043,7 +1045,7 @@ V – Os valores das ordenadas variam de forma diretamente proporcional aos valo
                             <button onclick="selectOption('ifsp-2023-1-a-q12', 1)" id="btn-ifsp-2023-1-a-q12-1" class="w-full text-left p-3.5 rounded-xl border border-slate-800 bg-slate-950/60 hover:border-blue-500 hover:bg-slate-800/60 transition text-sm text-slate-200 flex items-start justify-between gap-3 group">
                                 <span class="flex items-start gap-2.5 flex-1 min-w-0">
                                     <strong class="text-sky-400 font-bold flex-shrink-0 mt-0.5">B)</strong>
-                                    <span class="flex-1 min-w-0 break-words leading-relaxed">$8{,}0\text{ m}$</span>
+                                    <span class="flex-1 min-w-0 break-words leading-relaxed">$11{,}50$</span>
                                 </span>
                                 <i data-lucide="circle" class="w-4 h-4 text-slate-600 opt-icon group-hover:text-blue-400 flex-shrink-0 mt-0.5"></i>
                             </button>
@@ -1051,7 +1053,7 @@ V – Os valores das ordenadas variam de forma diretamente proporcional aos valo
                             <button onclick="selectOption('ifsp-2023-1-a-q12', 2)" id="btn-ifsp-2023-1-a-q12-2" class="w-full text-left p-3.5 rounded-xl border border-slate-800 bg-slate-950/60 hover:border-blue-500 hover:bg-slate-800/60 transition text-sm text-slate-200 flex items-start justify-between gap-3 group">
                                 <span class="flex items-start gap-2.5 flex-1 min-w-0">
                                     <strong class="text-sky-400 font-bold flex-shrink-0 mt-0.5">C)</strong>
-                                    <span class="flex-1 min-w-0 break-words leading-relaxed">$10\text{ m}$</span>
+                                    <span class="flex-1 min-w-0 break-words leading-relaxed">$4{,}60$</span>
                                 </span>
                                 <i data-lucide="circle" class="w-4 h-4 text-slate-600 opt-icon group-hover:text-blue-400 flex-shrink-0 mt-0.5"></i>
                             </button>
@@ -1059,7 +1061,7 @@ V – Os valores das ordenadas variam de forma diretamente proporcional aos valo
                             <button onclick="selectOption('ifsp-2023-1-a-q12', 3)" id="btn-ifsp-2023-1-a-q12-3" class="w-full text-left p-3.5 rounded-xl border border-slate-800 bg-slate-950/60 hover:border-blue-500 hover:bg-slate-800/60 transition text-sm text-slate-200 flex items-start justify-between gap-3 group">
                                 <span class="flex items-start gap-2.5 flex-1 min-w-0">
                                     <strong class="text-sky-400 font-bold flex-shrink-0 mt-0.5">D)</strong>
-                                    <span class="flex-1 min-w-0 break-words leading-relaxed">$12\text{ m}$</span>
+                                    <span class="flex-1 min-w-0 break-words leading-relaxed">$3{,}45$</span>
                                 </span>
                                 <i data-lucide="circle" class="w-4 h-4 text-slate-600 opt-icon group-hover:text-blue-400 flex-shrink-0 mt-0.5"></i>
                             </button>
@@ -1078,20 +1080,17 @@ V – Os valores das ordenadas variam de forma diretamente proporcional aos valo
                                 <div class="flex flex-wrap items-center gap-2">
                                     <span class="text-xs font-bold uppercase tracking-wider text-sky-300 bg-blue-950/60 px-2.5 py-0.5 rounded-full border border-blue-800/40">Questão 14</span>
                                     
-                            <a href="../pesquisa.html?bncc=EF09MA19" class="text-[11px] font-mono font-bold text-emerald-300 bg-emerald-950/80 hover:bg-emerald-900/90 px-2.5 py-0.5 rounded-full border border-emerald-800/60 flex items-center gap-1 transition shadow-sm" title="Resolver e elaborar problemas que envolvam o cálculo da área de figuras planas por decomposição ou aproximação por figuras de áreas conhecidas.">
-                                <i data-lucide="bookmark" class="w-3 h-3 text-emerald-400"></i> BNCC: EF09MA19
+                            <a href="../pesquisa.html?bncc=EF08MA19" class="text-[11px] font-mono font-bold text-emerald-300 bg-emerald-950/80 hover:bg-emerald-900/90 px-2.5 py-0.5 rounded-full border border-emerald-800/60 flex items-center gap-1 transition shadow-sm" title="Resolver e elaborar problemas que envolvam medidas de área de figuras geométricas, utilizando expressões algébricas e fórmulas de polígonos regulares e círculos.">
+                                <i data-lucide="bookmark" class="w-3 h-3 text-emerald-400"></i> BNCC: EF08MA19
                             </a>
                         
                                 </div>
                             </div>
-                            <div class="q-text-container"><p class="q-paragraph font-medium text-slate-100 text-sm sm:text-base leading-relaxed">O cálculo da área de regiões irregulares pode ser realizado por meio da composição e decomposição de áreas de regiões regulares. A habilidade de utilizar expressões algébricas para calcular áreas, ainda que irregulares, pode ser muito útil em situações cotidianas. Um exemplo é o controle de desperdício de matéria-prima em processos produtivos que envolvem cortes circulares em regiões planas.
-Na figura a seguir, as regiões sombreadas representam três cortes em uma placa (retângulo $ABCD$) e a região listrada, o material que será descartado da placa, após os cortes.
-Lembre-se: $\text{Área de um círculo} = \pi r^2$
-Sabendo que, nesse caso, a razão entre o comprimento $x$ e a largura $y$ da placa retangular é igual a $\frac{5}{3}$, a área da região listrada, denotada por $A_L$, é:</p></div>
+                            <div class="q-text-container"><p class="q-paragraph font-medium text-slate-200 text-sm sm:text-base">O cálculo da área de regiões irregulares pode ser realizado por meio da composição e decomposição de áreas de regiões regulares. A habilidade de utilizar expressões algébricas para calcular áreas, ainda que irregulares, pode ser muito útil em situações cotidianas. Um exemplo é o controle de desperdício de matéria-prima em processos produtivos que envolvem cortes circulares em regiões planas.</p><p class="q-paragraph font-medium text-slate-200 text-sm sm:text-base">Na figura a seguir, as regiões sombreadas representam três cortes em uma placa (retângulo $ABCD$) e a região listrada, o material que será descartado da placa, após os cortes:</p><p class="q-paragraph font-medium text-slate-200 text-sm sm:text-base">*Lembre-se: Área de um círculo = $\pi r^2$*</p><p class="q-prompt text-slate-100 text-sm sm:text-base">Sabendo que, nesse caso, a razão entre o comprimento $x$ e a largura $y$ da placa retangular é igual a $\frac{5}{3}$, a área da região listrada, denotada por $A_L$, é:</p></div>
                             
         <div class="my-4 p-2 sm:p-3 rounded-2xl border bg-slate-950/70 border-slate-800 shadow-sm max-w-xl mx-auto flex flex-col items-center">
-            <img src="https://lh3.googleusercontent.com/d/1U1sSVrhU_JJyFbbwfN65Wf6TtOm5ECKs" alt="Placa retangular ABCD com comprimento horizontal x e largura vertical y, contendo três cortes circulares de 90 graus com centros nos vértices A, B e C tangentes entre si, restando a área listrada intermediária a ser descartada" onerror="if(this.src!='../assets/img/questoes/ifsp/ifsp-2023-1a-q14.png'){this.src='../assets/img/questoes/ifsp/ifsp-2023-1a-q14.png';}" class="max-h-80 sm:max-h-96 w-auto max-w-full rounded-xl object-contain cursor-zoom-in hover:opacity-95 hover:scale-[1.01] transition duration-200" onclick="openImageModal('https://lh3.googleusercontent.com/d/1U1sSVrhU_JJyFbbwfN65Wf6TtOm5ECKs', 'Placa retangular ABCD com comprimento horizontal x e largura vertical y, contendo três cortes circulares de 90 graus com centros nos vértices A, B e C tangentes entre si, restando a área listrada intermediária a ser descartada')" title="Clique para ampliar a imagem" loading="lazy">
-            <p class="text-xs text-slate-400 mt-2 text-center italic">Figura: Placa retangular ABCD com três cortes circulares e área listrada de descarte (IFSP 2023.1)</p>
+            <img src="../assets/img/questoes/ifsp/ifsp-2023-1a-q29.png" alt="Placa retangular ABCD de lados x e y contendo três setores circulares sombreados nos vértices A, B e C que tangenciam entre si, restando uma região listrada de descarte no interior do retângulo." class="max-h-80 sm:max-h-96 w-auto max-w-full rounded-xl object-contain cursor-zoom-in hover:opacity-95 hover:scale-[1.01] transition duration-200" onclick="openImageModal('../assets/img/questoes/ifsp/ifsp-2023-1a-q29.png', 'Placa retangular ABCD de lados x e y contendo três setores circulares sombreados nos vértices A, B e C que tangenciam entre si, restando uma região listrada de descarte no interior do retângulo.')" title="Clique para ampliar a imagem" loading="lazy">
+            
         </div>
     
                             <div class="space-y-2 mb-4" id="opts-ifsp-2023-1-a-q13">
@@ -1099,7 +1098,7 @@ Sabendo que, nesse caso, a razão entre o comprimento $x$ e a largura $y$ da pla
                             <button onclick="selectOption('ifsp-2023-1-a-q13', 0)" id="btn-ifsp-2023-1-a-q13-0" class="w-full text-left p-3.5 rounded-xl border border-slate-800 bg-slate-950/60 hover:border-blue-500 hover:bg-slate-800/60 transition text-sm text-slate-200 flex items-start justify-between gap-3 group">
                                 <span class="flex items-start gap-2.5 flex-1 min-w-0">
                                     <strong class="text-sky-400 font-bold flex-shrink-0 mt-0.5">A)</strong>
-                                    <span class="flex-1 min-w-0 break-words leading-relaxed">$A_L = \frac{x^2 \cdot (30 - 7\pi)}{18}$</span>
+                                    <span class="flex-1 min-w-0 break-words leading-relaxed">$A_L = x^2 \cdot \left(\frac{30 - 7\pi}{18}\right)$</span>
                                 </span>
                                 <i data-lucide="circle" class="w-4 h-4 text-slate-600 opt-icon group-hover:text-blue-400 flex-shrink-0 mt-0.5"></i>
                             </button>
@@ -1107,7 +1106,7 @@ Sabendo que, nesse caso, a razão entre o comprimento $x$ e a largura $y$ da pla
                             <button onclick="selectOption('ifsp-2023-1-a-q13', 1)" id="btn-ifsp-2023-1-a-q13-1" class="w-full text-left p-3.5 rounded-xl border border-slate-800 bg-slate-950/60 hover:border-blue-500 hover:bg-slate-800/60 transition text-sm text-slate-200 flex items-start justify-between gap-3 group">
                                 <span class="flex items-start gap-2.5 flex-1 min-w-0">
                                     <strong class="text-sky-400 font-bold flex-shrink-0 mt-0.5">B)</strong>
-                                    <span class="flex-1 min-w-0 break-words leading-relaxed">$A_L = \frac{x^2 \cdot (30 - 7\pi)}{50}$</span>
+                                    <span class="flex-1 min-w-0 break-words leading-relaxed">$A_L = x^2 \cdot \left(\frac{30 - 7\pi}{50}\right)$</span>
                                 </span>
                                 <i data-lucide="circle" class="w-4 h-4 text-slate-600 opt-icon group-hover:text-blue-400 flex-shrink-0 mt-0.5"></i>
                             </button>
@@ -1115,7 +1114,7 @@ Sabendo que, nesse caso, a razão entre o comprimento $x$ e a largura $y$ da pla
                             <button onclick="selectOption('ifsp-2023-1-a-q13', 2)" id="btn-ifsp-2023-1-a-q13-2" class="w-full text-left p-3.5 rounded-xl border border-slate-800 bg-slate-950/60 hover:border-blue-500 hover:bg-slate-800/60 transition text-sm text-slate-200 flex items-start justify-between gap-3 group">
                                 <span class="flex items-start gap-2.5 flex-1 min-w-0">
                                     <strong class="text-sky-400 font-bold flex-shrink-0 mt-0.5">C)</strong>
-                                    <span class="flex-1 min-w-0 break-words leading-relaxed">$A_L = \frac{x^2 \cdot (21\pi)}{50}$</span>
+                                    <span class="flex-1 min-w-0 break-words leading-relaxed">$A_L = x^2 \cdot \left(\frac{21\pi}{50}\right)$</span>
                                 </span>
                                 <i data-lucide="circle" class="w-4 h-4 text-slate-600 opt-icon group-hover:text-blue-400 flex-shrink-0 mt-0.5"></i>
                             </button>
@@ -1123,7 +1122,7 @@ Sabendo que, nesse caso, a razão entre o comprimento $x$ e a largura $y$ da pla
                             <button onclick="selectOption('ifsp-2023-1-a-q13', 3)" id="btn-ifsp-2023-1-a-q13-3" class="w-full text-left p-3.5 rounded-xl border border-slate-800 bg-slate-950/60 hover:border-blue-500 hover:bg-slate-800/60 transition text-sm text-slate-200 flex items-start justify-between gap-3 group">
                                 <span class="flex items-start gap-2.5 flex-1 min-w-0">
                                     <strong class="text-sky-400 font-bold flex-shrink-0 mt-0.5">D)</strong>
-                                    <span class="flex-1 min-w-0 break-words leading-relaxed">$A_L = \frac{x^2 \cdot (15 - 14\pi)}{50}$</span>
+                                    <span class="flex-1 min-w-0 break-words leading-relaxed">$A_L = x^2 \cdot \left(\frac{15 - 14\pi}{50}\right)$</span>
                                 </span>
                                 <i data-lucide="circle" class="w-4 h-4 text-slate-600 opt-icon group-hover:text-blue-400 flex-shrink-0 mt-0.5"></i>
                             </button>
@@ -1142,20 +1141,23 @@ Sabendo que, nesse caso, a razão entre o comprimento $x$ e a largura $y$ da pla
                                 <div class="flex flex-wrap items-center gap-2">
                                     <span class="text-xs font-bold uppercase tracking-wider text-sky-300 bg-blue-950/60 px-2.5 py-0.5 rounded-full border border-blue-800/40">Questão 15</span>
                                     
-                            <a href="../pesquisa.html?bncc=EF08MA04" class="text-[11px] font-mono font-bold text-emerald-300 bg-emerald-950/80 hover:bg-emerald-900/90 px-2.5 py-0.5 rounded-full border border-emerald-800/60 flex items-center gap-1 transition shadow-sm" title="Resolver e elaborar problemas, envolvendo cálculo de porcentagens, incluindo o uso de tecnologias digitais.">
-                                <i data-lucide="bookmark" class="w-3 h-3 text-emerald-400"></i> BNCC: EF08MA04
+                            <a href="../pesquisa.html?bncc=EF07MA36" class="text-[11px] font-mono font-bold text-emerald-300 bg-emerald-950/80 hover:bg-emerald-900/90 px-2.5 py-0.5 rounded-full border border-emerald-800/60 flex items-center gap-1 transition shadow-sm" title="Planejar e realizar pesquisa envolvendo tema da realidade social, identificando a necessidade de ser censitária ou de usar amostra, e interpretar os dados para tomada de decisões.">
+                                <i data-lucide="bookmark" class="w-3 h-3 text-emerald-400"></i> BNCC: EF07MA36
                             </a>
                         
                                 </div>
                             </div>
-                            <div class="q-text-container"><p class="q-paragraph font-medium text-slate-100 text-sm sm:text-base leading-relaxed">Em estatística, uma pesquisa é classificada como censitária quando:</p></div>
+                            <div class="q-text-container"><p class="q-paragraph font-medium text-slate-200 text-sm sm:text-base">Uma pesquisa estatística pode ser feita de forma censitária ou de forma amostral. A partir das características de cada um desses tipos de pesquisa estatística, identifique quais das afirmações abaixo são verdadeiras:</p><p class="q-paragraph font-medium text-slate-200 text-sm sm:text-base">I – A pesquisa amostral utiliza dados de toda a população de interesse.
+II – A pesquisa censitária utiliza dados de uma parte representativa da população de interesse.
+III – A pesquisa de intenção de voto é um tipo de pesquisa amostral.
+IV – A pesquisa de opinião é um tipo de pesquisa amostral.</p><p class="q-prompt text-slate-100 text-sm sm:text-base">As afirmações verdadeiras são:</p></div>
                             
                             <div class="space-y-2 mb-4" id="opts-ifsp-2023-1-a-q14">
                                 
                             <button onclick="selectOption('ifsp-2023-1-a-q14', 0)" id="btn-ifsp-2023-1-a-q14-0" class="w-full text-left p-3.5 rounded-xl border border-slate-800 bg-slate-950/60 hover:border-blue-500 hover:bg-slate-800/60 transition text-sm text-slate-200 flex items-start justify-between gap-3 group">
                                 <span class="flex items-start gap-2.5 flex-1 min-w-0">
                                     <strong class="text-sky-400 font-bold flex-shrink-0 mt-0.5">A)</strong>
-                                    <span class="flex-1 min-w-0 break-words leading-relaxed">analisa apenas uma amostra probabilística selecionada por sorteio da população.</span>
+                                    <span class="flex-1 min-w-0 break-words leading-relaxed">I e III.</span>
                                 </span>
                                 <i data-lucide="circle" class="w-4 h-4 text-slate-600 opt-icon group-hover:text-blue-400 flex-shrink-0 mt-0.5"></i>
                             </button>
@@ -1163,7 +1165,7 @@ Sabendo que, nesse caso, a razão entre o comprimento $x$ e a largura $y$ da pla
                             <button onclick="selectOption('ifsp-2023-1-a-q14', 1)" id="btn-ifsp-2023-1-a-q14-1" class="w-full text-left p-3.5 rounded-xl border border-slate-800 bg-slate-950/60 hover:border-blue-500 hover:bg-slate-800/60 transition text-sm text-slate-200 flex items-start justify-between gap-3 group">
                                 <span class="flex items-start gap-2.5 flex-1 min-w-0">
                                     <strong class="text-sky-400 font-bold flex-shrink-0 mt-0.5">B)</strong>
-                                    <span class="flex-1 min-w-0 break-words leading-relaxed">avalia todos os indivíduos pertencentes ao universo da população estudada.</span>
+                                    <span class="flex-1 min-w-0 break-words leading-relaxed">I e IV.</span>
                                 </span>
                                 <i data-lucide="circle" class="w-4 h-4 text-slate-600 opt-icon group-hover:text-blue-400 flex-shrink-0 mt-0.5"></i>
                             </button>
@@ -1171,7 +1173,7 @@ Sabendo que, nesse caso, a razão entre o comprimento $x$ e a largura $y$ da pla
                             <button onclick="selectOption('ifsp-2023-1-a-q14', 2)" id="btn-ifsp-2023-1-a-q14-2" class="w-full text-left p-3.5 rounded-xl border border-slate-800 bg-slate-950/60 hover:border-blue-500 hover:bg-slate-800/60 transition text-sm text-slate-200 flex items-start justify-between gap-3 group">
                                 <span class="flex items-start gap-2.5 flex-1 min-w-0">
                                     <strong class="text-sky-400 font-bold flex-shrink-0 mt-0.5">C)</strong>
-                                    <span class="flex-1 min-w-0 break-words leading-relaxed">utiliza dados exclusivamente obtidos por questionários online na internet.</span>
+                                    <span class="flex-1 min-w-0 break-words leading-relaxed">II e III.</span>
                                 </span>
                                 <i data-lucide="circle" class="w-4 h-4 text-slate-600 opt-icon group-hover:text-blue-400 flex-shrink-0 mt-0.5"></i>
                             </button>
@@ -1179,7 +1181,7 @@ Sabendo que, nesse caso, a razão entre o comprimento $x$ e a largura $y$ da pla
                             <button onclick="selectOption('ifsp-2023-1-a-q14', 3)" id="btn-ifsp-2023-1-a-q14-3" class="w-full text-left p-3.5 rounded-xl border border-slate-800 bg-slate-950/60 hover:border-blue-500 hover:bg-slate-800/60 transition text-sm text-slate-200 flex items-start justify-between gap-3 group">
                                 <span class="flex items-start gap-2.5 flex-1 min-w-0">
                                     <strong class="text-sky-400 font-bold flex-shrink-0 mt-0.5">D)</strong>
-                                    <span class="flex-1 min-w-0 break-words leading-relaxed">apresenta margem de erro estimada em 5% com intervalo de confiança de 95%.</span>
+                                    <span class="flex-1 min-w-0 break-words leading-relaxed">III e IV.</span>
                                 </span>
                                 <i data-lucide="circle" class="w-4 h-4 text-slate-600 opt-icon group-hover:text-blue-400 flex-shrink-0 mt-0.5"></i>
                             </button>
@@ -1304,9 +1306,11 @@ Sabendo que, nesse caso, a razão entre o comprimento $x$ e a largura $y$ da pla
                 </h4>
                 <ul class="space-y-2 text-xs text-slate-300">
                     <li><a href="../provas.html" class="hover:text-white transition flex items-center gap-1.5">• Ver Todas as Provas</a></li>
-                    <li><a href="../bloco-6-provas-ifce/index.html" class="hover:text-white transition flex items-center gap-1.5">• Provas IFCE (27 Cadernos)</a></li>
+                    <li><a href="../bloco-6-provas-ifce/index.html" class="hover:text-white transition flex items-center gap-1.5">• Provas IFCE Integrado (7 Cadernos)</a></li>
+                    <li><a href="../bloco-9-provas-cefet-ifce-historico/index.html" class="hover:text-white transition flex items-center gap-1.5">• Provas Históricas CEFET-CE / IFCE (20 Cadernos)</a></li>
                     <li><a href="../bloco-5-provas-ifsc/index.html" class="hover:text-white transition flex items-center gap-1.5">• Provas IFSC (16 Cadernos)</a></li>
                     <li><a href="../bloco-7-provas-ifsp/index.html" class="hover:text-white transition flex items-center gap-1.5">• Provas IFSP (8 Cadernos)</a></li>
+                    <li><a href="../bloco-8-provas-ifmg/index.html" class="hover:text-white transition flex items-center gap-1.5">• Provas IFMG (11 Cadernos)</a></li>
                     <li class="pt-2"><a href="../index.html" class="text-emerald-400 hover:text-emerald-300 font-semibold transition flex items-center gap-1.5">← Voltar para Teoria e Eixos Temáticos</a></li>
                 </ul>
             </div>

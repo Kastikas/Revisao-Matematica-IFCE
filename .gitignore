@@ -1,6 +1,8 @@
 # Python & System
 __pycache__/
 *.py[cod]
+*.bak
+scratch/
 .DS_Store
 .vscode/
 .idea/

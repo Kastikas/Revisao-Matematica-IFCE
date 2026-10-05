@@ -60,7 +60,7 @@ total_questions = sum(sum(len(t["questions"]) for t in b["topics"]) for b in mat
 def is_exam_block(b_id, block):
     """Verifica se o bloco pertence ao acervo de provas oficiais."""
     title = block.get("title", "").lower()
-    return str(b_id) in ["5", "6", "7", "8"] or "provas" in title or "oficiais" in title
+    return str(b_id) in ["5", "6", "7", "8", "9"] or "provas" in title or "oficiais" in title
 
 theory_blocks_data = {k: v for k, v in math_data.items() if not is_exam_block(k, v)}
 exam_blocks_data = {k: v for k, v in math_data.items() if is_exam_block(k, v)}
@@ -409,15 +409,18 @@ def get_navbar(active_key="", rel_root=".", is_exam=False):
     if is_exam:
         # Navbar da Parte 2 (Provas - Full Dark Mode Escuro-Azul)
         ifce_n = len(math_data.get("6", {}).get("topics", []))
+        cefet_n = len(math_data.get("9", {}).get("topics", []))
         ifsc_n = len(math_data.get("5", {}).get("topics", []))
         ifsp_n = len(math_data.get("7", {}).get("topics", []))
         ifmg_n = len(math_data.get("8", {}).get("topics", []))
-        total_provas = ifce_n + ifsc_n + ifsp_n + ifmg_n
+        total_provas = ifce_n + cefet_n + ifsc_n + ifsp_n + ifmg_n
 
         # Identificação de IF ativo para destacar no botão do dropdown
         active_if_badge = ""
         if active_key == "6":
-            active_if_badge = "IFCE"
+            active_if_badge = "IFCE Integrado"
+        elif active_key == "9":
+            active_if_badge = "CEFET Histórico"
         elif active_key == "5":
             active_if_badge = "IFSC"
         elif active_key == "7":
@@ -427,11 +430,12 @@ def get_navbar(active_key="", rel_root=".", is_exam=False):
 
         is_if_active = bool(active_if_badge)
         dropdown_btn_cls = "bg-blue-600/90 text-white font-semibold shadow-inner border border-blue-400/40" if is_if_active else "text-slate-300 hover:bg-slate-800 hover:text-white border border-transparent"
-        dropdown_badge_html = f'<span class="bg-blue-500/40 text-sky-200 border border-blue-400/40 text-[10px] font-bold px-1.5 py-0.5 rounded-full">{active_if_badge}</span>' if is_if_active else '<span class="bg-slate-800/80 text-slate-400 border border-slate-700/80 text-[10px] font-bold px-1.5 py-0.5 rounded-full">4 IFs</span>'
+        dropdown_badge_html = f'<span class="bg-blue-500/40 text-sky-200 border border-blue-400/40 text-[10px] font-bold px-1.5 py-0.5 rounded-full">{active_if_badge}</span>' if is_if_active else '<span class="bg-slate-800/80 text-slate-400 border border-slate-700/80 text-[10px] font-bold px-1.5 py-0.5 rounded-full">5 Acervos</span>'
 
         # Itens do Dropdown Desktop
         institutos = [
-            ("6", f"{rel_root}/bloco-6-provas-ifce/index.html", "IFCE", "Ceará", ifce_n),
+            ("6", f"{rel_root}/bloco-6-provas-ifce/index.html", "IFCE", "Cursos Técnicos Integrados", ifce_n),
+            ("9", f"{rel_root}/bloco-9-provas-cefet-ifce-historico/index.html", "CEFET-CE / IFCE", "Vestibular Histórico (Nível Médio)", cefet_n),
             ("5", f"{rel_root}/bloco-5-provas-ifsc/index.html", "IFSC", "Santa Catarina", ifsc_n),
             ("7", f"{rel_root}/bloco-7-provas-ifsp/index.html", "IFSP", "São Paulo", ifsp_n),
             ("8", f"{rel_root}/bloco-8-provas-ifmg/index.html", "IFMG", "Minas Gerais", ifmg_n),
@@ -546,8 +550,12 @@ def get_navbar(active_key="", rel_root=".", is_exam=False):
 
             <div class="pt-2 pb-1 px-3 text-[11px] font-bold uppercase tracking-wider text-slate-400">Provas por Instituição</div>
             <a href="{rel_root}/bloco-6-provas-ifce/index.html" class="block px-3 py-2 rounded-md text-base font-medium text-white flex items-center justify-between gap-2 {'bg-blue-600 font-bold' if active_key == '6' else 'hover:bg-slate-800'}">
-                <span class="flex items-center gap-2"><i data-lucide="award" class="w-4 h-4 text-sky-400"></i> IFCE - Ceará</span>
+                <span class="flex items-center gap-2"><i data-lucide="award" class="w-4 h-4 text-sky-400"></i> IFCE - Integrado (Ceará)</span>
                 <span class="text-xs bg-blue-900/60 text-sky-300 px-2 py-0.5 rounded-full font-bold">{ifce_n}</span>
+            </a>
+            <a href="{rel_root}/bloco-9-provas-cefet-ifce-historico/index.html" class="block px-3 py-2 rounded-md text-base font-medium text-white flex items-center justify-between gap-2 {'bg-rose-600 font-bold' if active_key == '9' else 'hover:bg-slate-800'}">
+                <span class="flex items-center gap-2"><i data-lucide="history" class="w-4 h-4 text-rose-400"></i> CEFET-CE / IFCE - Histórico</span>
+                <span class="text-xs bg-rose-900/60 text-rose-300 px-2 py-0.5 rounded-full font-bold">{cefet_n}</span>
             </a>
             <a href="{rel_root}/bloco-5-provas-ifsc/index.html" class="block px-3 py-2 rounded-md text-base font-medium text-white flex items-center justify-between gap-2 {'bg-blue-600 font-bold' if active_key == '5' else 'hover:bg-slate-800'}">
                 <span class="flex items-center gap-2"><i data-lucide="award" class="w-4 h-4 text-sky-400"></i> IFSC - Santa Catarina</span>
@@ -743,9 +751,11 @@ def get_footer(rel_root=".", is_exam=False):
                 </h4>
                 <ul class="space-y-2 text-xs text-slate-300">
                     <li><a href="{rel_root}/provas.html" class="hover:text-white transition flex items-center gap-1.5">• Ver Todas as Provas</a></li>
-                    <li><a href="{rel_root}/bloco-6-provas-ifce/index.html" class="hover:text-white transition flex items-center gap-1.5">• Provas IFCE ({len(math_data.get("6", {}).get("topics", []))} Cadernos)</a></li>
+                    <li><a href="{rel_root}/bloco-6-provas-ifce/index.html" class="hover:text-white transition flex items-center gap-1.5">• Provas IFCE Integrado ({len(math_data.get("6", {}).get("topics", []))} Cadernos)</a></li>
+                    <li><a href="{rel_root}/bloco-9-provas-cefet-ifce-historico/index.html" class="hover:text-white transition flex items-center gap-1.5">• Provas Históricas CEFET-CE / IFCE ({len(math_data.get("9", {}).get("topics", []))} Cadernos)</a></li>
                     <li><a href="{rel_root}/bloco-5-provas-ifsc/index.html" class="hover:text-white transition flex items-center gap-1.5">• Provas IFSC ({len(math_data.get("5", {}).get("topics", []))} Cadernos)</a></li>
                     <li><a href="{rel_root}/bloco-7-provas-ifsp/index.html" class="hover:text-white transition flex items-center gap-1.5">• Provas IFSP ({len(math_data.get("7", {}).get("topics", []))} Cadernos)</a></li>
+                    <li><a href="{rel_root}/bloco-8-provas-ifmg/index.html" class="hover:text-white transition flex items-center gap-1.5">• Provas IFMG ({len(math_data.get("8", {}).get("topics", []))} Cadernos)</a></li>
                     <li class="pt-2"><a href="{rel_root}/index.html" class="text-emerald-400 hover:text-emerald-300 font-semibold transition flex items-center gap-1.5">← Voltar para Teoria e Eixos Temáticos</a></li>
                 </ul>
             </div>
@@ -994,8 +1004,8 @@ def build_subtopic_pages():
                 <!-- Cabeçalho do Exame -->
                 <div class="bg-slate-900/90 border border-slate-800 rounded-3xl p-4 sm:p-8 shadow-xl text-slate-100">
                     <div class="flex flex-wrap items-center justify-between gap-3 mb-4">
-                        <span class="text-xs font-bold uppercase tracking-wider text-sky-300 bg-blue-950/80 px-3 py-1 rounded-full border border-blue-800/60">
-                            BNCC: {topic.get('bncc', 'Exame Oficial')}
+                        <span class="text-xs font-bold uppercase tracking-wider {'text-rose-300 bg-rose-950/80 border-rose-800/60' if b_id == '9' else 'text-sky-300 bg-blue-950/80 border-blue-800/60'} px-3 py-1 rounded-full border">
+                            {'Vestibular Histórico • Nível Médio' if b_id == '9' else f"BNCC: {topic.get('bncc', 'Exame Oficial')}"}
                         </span>
                         <div class="flex flex-wrap items-center gap-2">
                             {pdf_download_btn}
@@ -1438,6 +1448,52 @@ def build_block_overview_pages():
                     </div>
                 """)
 
+            pedagogical_banner = ""
+            if b_id == "9":
+                pedagogical_banner = """
+        <!-- Alerta Pedagógico de Transição Curricular e Nível de Ensino -->
+        <div class="bg-amber-950/40 border border-amber-500/40 rounded-3xl p-6 sm:p-7 shadow-xl mb-8 text-amber-200">
+            <div class="flex flex-col sm:flex-row items-start gap-4">
+                <div class="w-10 h-10 rounded-2xl bg-amber-500/20 border border-amber-400/40 flex items-center justify-center text-amber-400 flex-shrink-0">
+                    <i data-lucide="alert-triangle" class="w-5 h-5"></i>
+                </div>
+                <div class="space-y-2 text-xs sm:text-sm leading-relaxed">
+                    <h3 class="font-extrabold text-amber-300 text-sm sm:text-base flex items-center gap-2">
+                        Aviso Pedagógico: Acervo de Vestibular (Nível Médio)
+                    </h3>
+                    <p class="text-slate-300">
+                        Os <strong>20 cadernos</strong> reunidos neste bloco correspondem aos exames de <strong>Vestibular do antigo CEFET-CE e IFCE (1999 a 2010)</strong>, aplicados para seleção de candidatos com o Ensino Médio já concluído (cursos superiores e tecnologias).
+                    </p>
+                    <p class="text-slate-300">
+                        Por isso, estas provas cobram conteúdos de <strong>Ensino Médio</strong> — como <em>trigonometria no ciclo, matrizes, determinantes, polinômios e funções avançadas</em>. Elas são excelentes para <strong>aprofundamento avançado e treino de alto nível</strong>, mas <span class="text-amber-300 font-semibold">não representam a matriz atual do exame de ingresso no 1º ano do Ensino Médio</span>.
+                    </p>
+                    <div class="pt-2">
+                        <a href="../bloco-6-provas-ifce/index.html" class="inline-flex items-center gap-1.5 font-bold text-sky-400 hover:text-sky-300 underline">
+                            <i data-lucide="arrow-right" class="w-3.5 h-3.5"></i> Estudar as Provas do Técnico Integrado (2019 a 2025) no Bloco 6
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+                """
+            elif b_id == "6":
+                pedagogical_banner = """
+        <!-- Banner Informativo de Ensino Fundamental / Integrado -->
+        <div class="bg-blue-950/40 border border-blue-500/40 rounded-3xl p-5 sm:p-6 shadow-xl mb-8 text-sky-200">
+            <div class="flex items-start gap-3.5">
+                <div class="w-9 h-9 rounded-xl bg-blue-500/20 border border-blue-400/40 flex items-center justify-center text-sky-400 flex-shrink-0">
+                    <i data-lucide="check-circle-2" class="w-5 h-5"></i>
+                </div>
+                <div class="text-xs sm:text-sm leading-relaxed">
+                    <strong class="font-extrabold text-white block mb-0.5">Matriz Oficial dos Cursos Técnicos Integrados (9º Ano / Ensino Fundamental)</strong>
+                    <p class="text-slate-300">
+                        Estas 7 provas refletem fielmente o formato atual do processo seletivo do IFCE, com 10 questões oficiais de Matemática alinhadas rigorosamente às diretrizes da <strong>BNCC</strong>.
+                    </p>
+                </div>
+            </div>
+        </div>
+                """
+
             block_page_html = f"""{get_head(f"{block['title']} | PartiuIF", rel_root="..", theme="dark-blue")}
 {get_navbar(active_key=b_id, rel_root="..", is_exam=True)}
 
@@ -1456,13 +1512,13 @@ def build_block_overview_pages():
         <!-- Hero do Bloco de Provas -->
         <div class="gradient-hero-dark rounded-3xl p-6 sm:p-10 text-white mb-10 shadow-2xl relative overflow-hidden border border-slate-800">
             <div class="relative z-10 max-w-3xl">
-                <div class="inline-flex items-center gap-2 bg-blue-500/20 border border-blue-400/30 px-3 py-1 rounded-full text-xs font-bold text-sky-300 uppercase tracking-wider mb-4">
-                    <i data-lucide="award" class="w-3.5 h-3.5 text-sky-400"></i> Acervo de Provas Oficiais
+                <div class="inline-flex items-center gap-2 {'bg-rose-500/20 border-rose-400/30 text-rose-300' if b_id == '9' else 'bg-blue-500/20 border-blue-400/30 text-sky-300'} border px-3 py-1 rounded-full text-xs font-bold uppercase tracking-wider mb-4">
+                    <i data-lucide="{'history' if b_id == '9' else 'award'}" class="w-3.5 h-3.5"></i> {'Acervo Histórico de Vestibular' if b_id == '9' else 'Acervo de Provas Oficiais'}
                 </div>
                 <h1 class="text-3xl sm:text-4xl font-black tracking-tight mb-3">{block['title']}</h1>
                 <p class="text-slate-300 text-sm sm:text-base leading-relaxed mb-6">{block.get('description', '')}</p>
                 <div class="flex flex-wrap items-center gap-4">
-                    <a href="./{first_topic['filename']}" class="bg-blue-600 hover:bg-blue-500 text-white font-extrabold px-6 py-3.5 rounded-xl text-sm transition flex items-center gap-2 shadow-lg shadow-blue-600/30">
+                    <a href="./{first_topic['filename']}" class="{'bg-rose-600 hover:bg-rose-500 shadow-rose-600/30' if b_id == '9' else 'bg-blue-600 hover:bg-blue-500 shadow-blue-600/30'} text-white font-extrabold px-6 py-3.5 rounded-xl text-sm transition flex items-center gap-2 shadow-lg">
                         Começar pela Prova 01 <i data-lucide="arrow-right" class="w-4 h-4"></i>
                     </a>
                     <a href="../provas.html" class="bg-slate-800/90 hover:bg-slate-700 text-slate-200 font-bold px-5 py-3.5 rounded-xl text-sm transition flex items-center gap-2 border border-slate-700">
@@ -1471,6 +1527,8 @@ def build_block_overview_pages():
                 </div>
             </div>
         </div>
+
+        {pedagogical_banner}
 
         <!-- Barra de Progresso do Bloco -->
         <div class="bg-slate-900 border border-slate-800 rounded-2xl p-5 shadow-xl mb-8">
@@ -1702,6 +1760,7 @@ def build_homepage():
         """)
 
     ifce_n = len(math_data.get("6", {}).get("topics", []))
+    cefet_n = len(math_data.get("9", {}).get("topics", []))
     ifsc_n = len(math_data.get("5", {}).get("topics", []))
     ifsp_n = len(math_data.get("7", {}).get("topics", []))
     ifmg_n = len(math_data.get("8", {}).get("topics", []))
@@ -1844,10 +1903,14 @@ def build_homepage():
                         <p class="text-slate-300 text-sm sm:text-base leading-relaxed max-w-2xl">
                             Pratique em um ambiente imersivo com mais de <strong>{total_official_exams} cadernos oficiais</strong> do <strong>IFCE</strong>, <strong>IFSC</strong>, <strong>IFSP</strong> e <strong>IFMG</strong>. Resolva as questões com gabarito inteligente e resoluções completas KaTeX, ou faça o <strong>download direto dos cadernos originais em PDF</strong> para simular as condições reais do exame.
                         </p>
-                        <div class="grid grid-cols-2 sm:grid-cols-5 gap-3 pt-2 max-w-2xl">
+                        <div class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-3 pt-2 max-w-3xl">
                             <div class="bg-slate-900/90 border border-slate-800 p-3 rounded-2xl text-center">
                                 <span class="text-xl sm:text-2xl font-black text-sky-400 block">{ifce_n}</span>
-                                <span class="text-[11px] text-slate-400 uppercase font-bold">Provas IFCE</span>
+                                <span class="text-[11px] text-slate-400 uppercase font-bold">IFCE Integrado</span>
+                            </div>
+                            <div class="bg-slate-900/90 border border-slate-800 p-3 rounded-2xl text-center">
+                                <span class="text-xl sm:text-2xl font-black text-rose-400 block">{cefet_n}</span>
+                                <span class="text-[11px] text-slate-400 uppercase font-bold">CEFET Histórico</span>
                             </div>
                             <div class="bg-slate-900/90 border border-slate-800 p-3 rounded-2xl text-center">
                                 <span class="text-xl sm:text-2xl font-black text-indigo-400 block">{ifsc_n}</span>
@@ -1857,13 +1920,9 @@ def build_homepage():
                                 <span class="text-xl sm:text-2xl font-black text-amber-400 block">{ifsp_n}</span>
                                 <span class="text-[11px] text-slate-400 uppercase font-bold">Provas IFSP</span>
                             </div>
-                            <div class="bg-slate-900/90 border border-slate-800 p-3 rounded-2xl text-center">
+                            <div class="bg-slate-900/90 border border-slate-800 p-3 rounded-2xl text-center col-span-2 sm:col-span-1 lg:col-span-1">
                                 <span class="text-xl sm:text-2xl font-black text-purple-400 block">{ifmg_n}</span>
                                 <span class="text-[11px] text-slate-400 uppercase font-bold">Provas IFMG</span>
-                            </div>
-                            <div class="bg-slate-900/90 border border-slate-800 p-3 rounded-2xl text-center col-span-2 sm:col-span-1">
-                                <span class="text-xl sm:text-2xl font-black text-emerald-400 block">100%</span>
-                                <span class="text-[11px] text-slate-400 uppercase font-bold">Com PDFs</span>
                             </div>
                         </div>
                     </div>
@@ -1903,8 +1962,30 @@ def build_provas_hub():
     for b_id, block in exam_blocks_data.items():
         folder = get_block_folder(b_id, block)
         b_title = block.get("title", "")
-        inst = "IFCE" if "ifce" in b_title.lower() else "IFSC" if "ifsc" in b_title.lower() else "IFSP" if "ifsp" in b_title.lower() else "IFMG" if "ifmg" in b_title.lower() else "IF"
-        badge_style = "bg-blue-500/20 text-sky-300 border-blue-400/30" if inst == "IFCE" else "bg-indigo-500/20 text-indigo-300 border-indigo-400/30" if inst == "IFSC" else "bg-amber-500/20 text-amber-300 border-amber-400/30" if inst == "IFSP" else "bg-purple-500/20 text-purple-300 border-purple-400/30"
+        if str(b_id) == "9":
+            inst = "CEFET-CE"
+            level_pill = "Nível Médio • Vestibular"
+            badge_style = "bg-rose-500/20 text-rose-300 border-rose-400/30"
+        elif "ifce" in b_title.lower():
+            inst = "IFCE"
+            level_pill = "Ensino Fundamental • Integrado"
+            badge_style = "bg-blue-500/20 text-sky-300 border-blue-400/30"
+        elif "ifsc" in b_title.lower():
+            inst = "IFSC"
+            level_pill = "Ensino Fundamental • Integrado"
+            badge_style = "bg-indigo-500/20 text-indigo-300 border-indigo-400/30"
+        elif "ifsp" in b_title.lower():
+            inst = "IFSP"
+            level_pill = "Ensino Fundamental • Integrado"
+            badge_style = "bg-amber-500/20 text-amber-300 border-amber-400/30"
+        elif "ifmg" in b_title.lower():
+            inst = "IFMG"
+            level_pill = "Ensino Fundamental • Integrado"
+            badge_style = "bg-purple-500/20 text-purple-300 border-purple-400/30"
+        else:
+            inst = "IF"
+            level_pill = "Exame Oficial"
+            badge_style = "bg-blue-500/20 text-sky-300 border-blue-400/30"
         
         for idx, topic in enumerate(block["topics"]):
             t_id = topic["id"]
@@ -1930,9 +2011,14 @@ def build_provas_hub():
                 <div class="exam-card bg-slate-900/90 border border-slate-800 hover:border-blue-500/60 rounded-3xl p-5 sm:p-6 shadow-xl hover-card flex flex-col justify-between transition-all" data-inst="{inst}" data-search="{search_str}" data-topic-id="{t_id}">
                     <div>
                         <div class="flex items-center justify-between mb-3">
-                            <span class="text-xs font-extrabold uppercase tracking-wider px-3 py-1 rounded-full border {badge_style}">
-                                {inst}
-                            </span>
+                            <div class="flex items-center gap-1.5 flex-wrap">
+                                <span class="text-xs font-extrabold uppercase tracking-wider px-2.5 py-0.5 rounded-full border {badge_style}">
+                                    {inst}
+                                </span>
+                                <span class="text-[10px] font-medium text-slate-400 bg-slate-800/80 px-2 py-0.5 rounded-full border border-slate-700/60">
+                                    {level_pill}
+                                </span>
+                            </div>
                             <span id="status-badge-{t_id}" class="text-xs font-medium px-2.5 py-0.5 rounded-full bg-slate-800 text-slate-400 border border-slate-700">
                                 Pendente
                             </span>
@@ -1956,6 +2042,7 @@ def build_provas_hub():
             """)
 
     ifce_n = len(math_data.get("6", {}).get("topics", []))
+    cefet_n = len(math_data.get("9", {}).get("topics", []))
     ifsc_n = len(math_data.get("5", {}).get("topics", []))
     ifsp_n = len(math_data.get("7", {}).get("topics", []))
     ifmg_n = len(math_data.get("8", {}).get("topics", []))
@@ -1986,7 +2073,7 @@ def build_provas_hub():
                 </h1>
                 
                 <p class="text-slate-300 text-sm sm:text-base mb-8 leading-relaxed">
-                    Ambiente dedicado para simulação com os exames reais do <strong>IFCE</strong>, <strong>IFSC</strong>, <strong>IFSP</strong> e <strong>IFMG</strong>. Resolva os cadernos online com resoluções KaTeX comentadas e baixe os PDFs originais para simular o tempo de prova oficial.
+                    Ambiente dedicado para simulação com os exames reais do <strong>IFCE</strong> (Integrado e Histórico), <strong>IFSC</strong>, <strong>IFSP</strong> e <strong>IFMG</strong>. Resolva os cadernos online com resoluções KaTeX comentadas e baixe os PDFs originais para simular o tempo de prova oficial.
                 </p>
 
                 <div class="flex flex-wrap items-center gap-4">
@@ -2017,8 +2104,18 @@ def build_provas_hub():
                     <i data-lucide="award" class="w-5 h-5 sm:w-6 sm:h-6"></i>
                 </div>
                 <div class="min-w-0 flex-1">
-                    <span class="text-[11px] sm:text-xs text-slate-400 font-medium block truncate">IFCE</span>
+                    <span class="text-[11px] sm:text-xs text-slate-400 font-medium block truncate">IFCE Integrado</span>
                     <strong class="text-base sm:text-xl font-black text-sky-400 block truncate">{ifce_n} Provas</strong>
+                </div>
+            </div>
+
+            <div class="bg-slate-900/90 border border-slate-800 rounded-2xl p-3 sm:p-5 shadow-xl flex items-center gap-2.5 sm:gap-4 min-w-0">
+                <div class="w-9 h-9 sm:w-12 sm:h-12 rounded-xl bg-rose-950/80 border border-rose-800/40 flex items-center justify-center text-rose-400 flex-shrink-0">
+                    <i data-lucide="history" class="w-5 h-5 sm:w-6 sm:h-6"></i>
+                </div>
+                <div class="min-w-0 flex-1">
+                    <span class="text-[11px] sm:text-xs text-slate-400 font-medium block truncate">CEFET Histórico</span>
+                    <strong class="text-base sm:text-xl font-black text-rose-400 block truncate">{cefet_n} Provas</strong>
                 </div>
             </div>
 
@@ -2051,30 +2148,34 @@ def build_provas_hub():
                     <strong class="text-base sm:text-xl font-black text-purple-400 block truncate">{ifmg_n} Provas</strong>
                 </div>
             </div>
-
-            <div class="bg-slate-900/90 border border-slate-800 rounded-2xl p-3 sm:p-5 shadow-xl flex items-center gap-2.5 sm:gap-4 col-span-2 md:col-span-1 min-w-0">
-                <div class="w-9 h-9 sm:w-12 sm:h-12 rounded-xl bg-emerald-950/80 border border-emerald-800/40 flex items-center justify-center text-emerald-400 flex-shrink-0">
-                    <i data-lucide="download-cloud" class="w-5 h-5 sm:w-6 sm:h-6"></i>
-                </div>
-                <div class="min-w-0 flex-1">
-                    <span class="text-[11px] sm:text-xs text-slate-400 font-medium block truncate">PDFs Oficiais</span>
-                    <strong class="text-base sm:text-xl font-black text-emerald-400 block truncate">100% Grátis</strong>
-                </div>
-            </div>
         </div>
 
         <!-- Seção de Acesso Rápido aos Blocos de Cada IF -->
-        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 mb-12">
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5 gap-4 mb-12">
             <div class="bg-slate-900/90 border border-slate-800 hover:border-blue-500/50 rounded-3xl p-6 shadow-xl flex items-center justify-between transition">
                 <div>
                     <div class="flex items-center gap-2 mb-2">
-                        <span class="text-xs font-bold uppercase tracking-wider px-2.5 py-0.5 rounded-full bg-blue-500/20 text-sky-300 border border-blue-400/30">Ceará</span>
+                        <span class="text-xs font-bold uppercase tracking-wider px-2.5 py-0.5 rounded-full bg-blue-500/20 text-sky-300 border border-blue-400/30">Ceará • Integrado</span>
                         <span class="text-xs text-slate-400 font-medium">Bloco 6</span>
                     </div>
-                    <h3 class="text-lg font-extrabold text-white mb-1">Provas IFCE</h3>
-                    <p class="text-slate-400 text-xs leading-relaxed">{ifce_n} edições com resoluções e PDFs.</p>
+                    <h3 class="text-lg font-extrabold text-white mb-1">IFCE Integrado</h3>
+                    <p class="text-slate-400 text-xs leading-relaxed">{ifce_n} edições (2019-2025) alinhadas à BNCC.</p>
                 </div>
                 <a href="./bloco-6-provas-ifce/index.html" class="bg-blue-600 hover:bg-blue-500 text-white font-bold p-3 rounded-2xl transition shadow-lg shadow-blue-600/20 flex-shrink-0 ml-3">
+                    <i data-lucide="arrow-right" class="w-5 h-5"></i>
+                </a>
+            </div>
+
+            <div class="bg-slate-900/90 border border-slate-800 hover:border-rose-500/50 rounded-3xl p-6 shadow-xl flex items-center justify-between transition">
+                <div>
+                    <div class="flex items-center gap-2 mb-2">
+                        <span class="text-xs font-bold uppercase tracking-wider px-2.5 py-0.5 rounded-full bg-rose-500/20 text-rose-300 border border-rose-400/30">Ceará • Histórico</span>
+                        <span class="text-xs text-slate-400 font-medium">Bloco 9</span>
+                    </div>
+                    <h3 class="text-lg font-extrabold text-white mb-1">CEFET-CE / IFCE</h3>
+                    <p class="text-slate-400 text-xs leading-relaxed">{cefet_n} vestibulares históricos (1999-2010).</p>
+                </div>
+                <a href="./bloco-9-provas-cefet-ifce-historico/index.html" class="bg-rose-600 hover:bg-rose-500 text-white font-bold p-3 rounded-2xl transition shadow-lg shadow-rose-600/20 flex-shrink-0 ml-3">
                     <i data-lucide="arrow-right" class="w-5 h-5"></i>
                 </a>
             </div>
@@ -2208,7 +2309,10 @@ def build_provas_hub():
                         Todos ({total_official_exams})
                     </button>
                     <button onclick="filterExams('IFCE')" id="btn-filter-ifce" class="filter-btn px-4 py-1.5 rounded-xl text-xs font-semibold text-slate-400 hover:text-white transition">
-                        IFCE ({ifce_n})
+                        IFCE Integrado ({ifce_n})
+                    </button>
+                    <button onclick="filterExams('CEFET-CE')" id="btn-filter-cefet-ce" class="filter-btn px-4 py-1.5 rounded-xl text-xs font-semibold text-slate-400 hover:text-white transition">
+                        CEFET Histórico ({cefet_n})
                     </button>
                     <button onclick="filterExams('IFSC')" id="btn-filter-ifsc" class="filter-btn px-4 py-1.5 rounded-xl text-xs font-semibold text-slate-400 hover:text-white transition">
                         IFSC ({ifsc_n})
@@ -2412,7 +2516,18 @@ def build_simulado_page():
                             <span class="mt-2 text-[10px] font-extrabold uppercase px-2 py-0.5 rounded-full bg-indigo-200/90 text-indigo-800 self-start">Atividade Especial</span>
                         </label>
 
-                        <label class="cursor-pointer p-4 rounded-2xl border border-gray-200 hover:border-brand-300 flex items-start gap-3 transition sm:col-span-2 lg:col-span-2 bg-gray-50/60">
+                        <label class="cursor-pointer p-4 rounded-2xl border-2 border-rose-300 hover:border-rose-500 bg-rose-50/50 flex flex-col justify-between transition group relative">
+                            <div class="flex items-start gap-3">
+                                <input type="radio" name="sim-source" value="vestibular_historico" class="mt-1 text-rose-600 focus:ring-rose-500">
+                                <div>
+                                    <span class="block text-sm font-bold text-gray-900 group-hover:text-rose-900">Aprofundamento: Vestibular Histórico</span>
+                                    <span class="block text-xs text-gray-600 mt-0.5">CEFET-CE / IFCE (1999-2010) • Nível Médio, matrizes, trigonometria ({sum(len(t['questions']) for t in math_data.get("9", {}).get("topics", []))} questões)</span>
+                                </div>
+                            </div>
+                            <span class="mt-2 text-[10px] font-extrabold uppercase px-2 py-0.5 rounded-full bg-rose-200/90 text-rose-800 self-start">Nível Médio</span>
+                        </label>
+
+                        <label class="cursor-pointer p-4 rounded-2xl border border-gray-200 hover:border-brand-300 flex items-start gap-3 transition bg-gray-50/60">
                             <input type="radio" name="sim-source" value="teoria_all" class="mt-1 text-brand-600 focus:ring-brand-500">
                             <div>
                                 <span class="block text-sm font-bold text-gray-900">Fixação Teórica (Blocos Conceituais 1 a 4)</span>
@@ -2454,7 +2569,7 @@ def build_simulado_page():
                         </label>
                         <label class="cursor-pointer p-3 rounded-xl border border-gray-200 hover:border-brand-300 text-center font-medium text-xs sm:text-sm text-gray-800 transition flex items-center justify-center gap-2">
                             <input type="radio" name="sim-inst" value="IFCE" class="text-brand-600 focus:ring-brand-500">
-                            <span>IFCE</span>
+                            <span>IFCE (Integrado)</span>
                         </label>
                         <label class="cursor-pointer p-3 rounded-xl border border-gray-200 hover:border-brand-300 text-center font-medium text-xs sm:text-sm text-gray-800 transition flex items-center justify-center gap-2">
                             <input type="radio" name="sim-inst" value="IFSC" class="text-brand-600 focus:ring-brand-500">
@@ -2668,7 +2783,8 @@ def build_pesquisa_page():
                     </label>
                     <select id="filter-inst" onchange="applyFilters()" class="w-full bg-slate-950 border border-slate-700 rounded-xl px-3 py-2.5 text-xs text-slate-200 focus:outline-none focus:ring-2 focus:ring-amber-500 transition">
                         <option value="">Todas as Instituições</option>
-                        <option value="IFCE">IFCE (Ceará)</option>
+                        <option value="IFCE">IFCE - Integrado (Ceará)</option>
+                        <option value="CEFET-CE">CEFET-CE / IFCE - Vestibular Histórico</option>
                         <option value="IFSC">IFSC (Santa Catarina)</option>
                         <option value="IFSP">IFSP (São Paulo)</option>
                         <option value="IFMG">IFMG (Minas Gerais)</option>

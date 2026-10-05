@@ -245,7 +245,7 @@ function getAllQuestionsPool() {
     }
 
     var pool = [];
-    var examBlocks = ['5', '6', '7', '8'];
+    var examBlocks = ['5', '6', '7', '8', '9'];
 
     for (var bId in mathData) {
         if (!Object.prototype.hasOwnProperty.call(mathData, bId)) continue;
@@ -253,11 +253,13 @@ function getAllQuestionsPool() {
         if (!block || !block.topics) continue;
 
         var isExam = examBlocks.indexOf(String(bId)) !== -1;
+        var isHistorico = (String(bId) === '9');
         var inst = 'Teoria';
 
         if (isExam) {
             var bTitle = (block.title || '').toLowerCase();
-            if (bTitle.indexOf('ifsc') !== -1) inst = 'IFSC';
+            if (isHistorico) inst = 'CEFET-CE';
+            else if (bTitle.indexOf('ifsc') !== -1) inst = 'IFSC';
             else if (bTitle.indexOf('ifsp') !== -1) inst = 'IFSP';
             else if (bTitle.indexOf('ifmg') !== -1) inst = 'IFMG';
             else inst = 'IFCE';
@@ -288,6 +290,7 @@ function getAllQuestionsPool() {
                     anoEscolar: q.anoEscolar || '',
                     inst: inst,
                     isOfficialExam: isExam,
+                    isVestibularHistorico: isHistorico,
                     blockId: bId,
                     blockTitle: block.title || '',
                     topicId: t.id || '',
@@ -311,6 +314,16 @@ function filterQuestions(pool, source, inst) {
         // Modo Teoria
         if (source === 'teoria_all') {
             return !q.isOfficialExam;
+        }
+
+        // Modo Aprofundamento: Vestibular Histórico
+        if (source === 'vestibular_historico') {
+            return q.isVestibularHistorico === true;
+        }
+
+        // Modos gerais BNCC e outros: NUNCA permitir questões de vestibular histórico
+        if (q.isVestibularHistorico) {
+            return false;
         }
 
         // Atividade Especial: Geometria Plana
@@ -380,7 +393,7 @@ function updatePoolEstimate() {
         }
     }
 
-    if (source === 'teoria_all') {
+    if (source === 'teoria_all' || source === 'vestibular_historico') {
         if (instContainer) {
             instContainer.classList.add('opacity-40', 'pointer-events-none');
         }

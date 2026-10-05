@@ -291,7 +291,18 @@
                             <span class="mt-2 text-[10px] font-extrabold uppercase px-2 py-0.5 rounded-full bg-indigo-200/90 text-indigo-800 self-start">Atividade Especial</span>
                         </label>
 
-                        <label class="cursor-pointer p-4 rounded-2xl border border-gray-200 hover:border-brand-300 flex items-start gap-3 transition sm:col-span-2 lg:col-span-2 bg-gray-50/60">
+                        <label class="cursor-pointer p-4 rounded-2xl border-2 border-rose-300 hover:border-rose-500 bg-rose-50/50 flex flex-col justify-between transition group relative">
+                            <div class="flex items-start gap-3">
+                                <input type="radio" name="sim-source" value="vestibular_historico" class="mt-1 text-rose-600 focus:ring-rose-500">
+                                <div>
+                                    <span class="block text-sm font-bold text-gray-900 group-hover:text-rose-900">Aprofundamento: Vestibular Histórico</span>
+                                    <span class="block text-xs text-gray-600 mt-0.5">CEFET-CE / IFCE (1999-2010) • Nível Médio, matrizes, trigonometria (155 questões)</span>
+                                </div>
+                            </div>
+                            <span class="mt-2 text-[10px] font-extrabold uppercase px-2 py-0.5 rounded-full bg-rose-200/90 text-rose-800 self-start">Nível Médio</span>
+                        </label>
+
+                        <label class="cursor-pointer p-4 rounded-2xl border border-gray-200 hover:border-brand-300 flex items-start gap-3 transition bg-gray-50/60">
                             <input type="radio" name="sim-source" value="teoria_all" class="mt-1 text-brand-600 focus:ring-brand-500">
                             <div>
                                 <span class="block text-sm font-bold text-gray-900">Fixação Teórica (Blocos Conceituais 1 a 4)</span>
@@ -333,7 +344,7 @@
                         </label>
                         <label class="cursor-pointer p-3 rounded-xl border border-gray-200 hover:border-brand-300 text-center font-medium text-xs sm:text-sm text-gray-800 transition flex items-center justify-center gap-2">
                             <input type="radio" name="sim-inst" value="IFCE" class="text-brand-600 focus:ring-brand-500">
-                            <span>IFCE</span>
+                            <span>IFCE (Integrado)</span>
                         </label>
                         <label class="cursor-pointer p-3 rounded-xl border border-gray-200 hover:border-brand-300 text-center font-medium text-xs sm:text-sm text-gray-800 transition flex items-center justify-center gap-2">
                             <input type="radio" name="sim-inst" value="IFSC" class="text-brand-600 focus:ring-brand-500">
