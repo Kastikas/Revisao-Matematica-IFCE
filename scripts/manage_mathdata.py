@@ -40,6 +40,47 @@ MATH_DATA_PATH = os.path.join(ROOT_DIR, "mathData.json")
 
 
 # ==============================================================================
+# 0. CONSTANTES COM REGEX PRÉ-COMPILADOS PARA PERFORMANCE
+# ==============================================================================
+_RE_PDF_LIGATURES = [
+    (re.compile(pat, flags=re.IGNORECASE), rep) for pat, rep in [
+        (r"\bgráfi\s+co\b", "gráfico"), (r"\bgráfi\s+cos\b", "gráficos"),
+        (r"\bafi\s*rmati\s*va\b", "afirmativa"), (r"\bafi\s*rmati\s*vas\b", "afirmativas"),
+        (r"\bfi\s+gura\b", "figura"), (r"\bfi\s+guras\b", "figuras"),
+        (r"\bsuperfí\s+cie\b", "superfície"), (r"\bsuperfí\s+cies\b", "superfícies"),
+        (r"\buti\s+lizado\b", "utilizado"), (r"\buti\s+lizada\b", "utilizada"),
+        (r"\buti\s+lizados\b", "utilizados"), (r"\buti\s+lizadas\b", "utilizadas"),
+        (r"\buti\s+lizando\b", "utilizando"), (r"\bdisti\s+nta\b", "distinta"),
+        (r"\bdisti\s+ntas\b", "distintas"), (r"\bobti\s+do\b", "obtido"),
+        (r"\bobti\s+da\b", "obtida"), (r"\bobti\s+dos\b", "obtidos"),
+        (r"\bobti\s+das\b", "obtidas"), (r"\bquanti\s+dade\b", "quantidade"),
+        (r"\bquanti\s+dades\b", "quantidades"), (r"\balternati\s+va\b", "alternativa"),
+        (r"\balternati\s+vas\b", "alternativas"), (r"\bidenti\s+fi\s+car\b", "identificar"),
+        (r"\bsigni\s+fi\s+ca\b", "significa")
+    ]
+]
+_RE_HYPHENS_EOL = re.compile(r"(\w+)-\s*\n\s*(\w+)")
+_RE_MULTIPLE_SPACES = re.compile(r"[ \t]+")
+_RE_EMPTY_DECIMAL = re.compile(r"(\d+)\{\}(\d+)")
+_RE_DECIMAL_COMMA = re.compile(r"(\d+),(\d+)")
+_RE_DISPLAY_MATH = re.compile(r"\$\$([\s\S]*?)\$\$")
+_RE_INLINE_MATH = re.compile(r"(?<!\\)\$([^\$]+?)(?<!\\)\$")
+_RE_MMC_MDC = re.compile(r"(MMC|MDC|mmc|mdc)\s*\([^)]*$", re.IGNORECASE)
+
+_RE_ISOLATED_DOLLAR = re.compile(r"(?<![\\\$])\$(?!\$)\s*(Portanto|Assim|Logo)")
+_RE_MATH_TOKENS = re.compile(r"(\$\$[\s\S]*?\$\$|(?<![\\\$])\$[^\$]+?(?<![\\\$])\$)")
+_RE_CURRENCY_CONTEXT_R = re.compile(r"\((?:R|US)[\\]?\$?\)")
+_RE_CURRENCY_CONTEXT_1 = re.compile(r"\b(o Real|a moeda|reais)\s*\((?:R|US)[\\]?\$?\)")
+_RE_CURRENCY_CONTEXT_2 = re.compile(r"\b(o Dólar|dólares)\s*\((?:R|US)[\\]?\$?\)")
+_RE_CURRENCY_REGEX = re.compile(r"\b(R|US)[\\]?\$?\s*([0-9]+(?:\.[0-9]{3})*(?:\{,\}[0-9]+|,[0-9]+)?)(?!\w)")
+_RE_DOUBLE_DOLLAR_DISPLAY = re.compile(r"\$\$\s*\$\$")
+_RE_HTML_TAGS = re.compile(r"<[^>]+>")
+_RE_HTML_BR = re.compile(r"(<br\s*/?>)", flags=re.IGNORECASE)
+_RE_HTML_BR_EXACT = re.compile(r"^<br\s*/?>$", flags=re.IGNORECASE)
+_RE_HTML_ANY = re.compile(r"(<[^>]+>)")
+_RE_TEXT_MODE_CDOT = re.compile(r"\\text\{([^}]*?\\cdot[^}]*?)\}")
+
+# ==============================================================================
 # 1. HIGIENIZADOR E FORMATADOR DE TEXTO (TextSanitizer)
 # ==============================================================================
 class TextSanitizer:
@@ -50,7 +91,7 @@ class TextSanitizer:
             return text
 
         # Corrige notações vazias 3{}14 -> 3{,}14
-        text = re.sub(r"(\d+)\{\}(\d+)", r"\1{,}\2", text)
+        text = _RE_EMPTY_DECIMAL.sub(r"\1{,}\2", text)
 
         def fix_math_content(content):
             def repl_decimal(m):
@@ -63,7 +104,7 @@ class TextSanitizer:
                 if "\\{" in before and "\\}" in after:
                     return m.group(0)
                 # Preserva funções MMC, MDC
-                if re.search(r"(MMC|MDC|mmc|mdc)\s*\([^)]*$", before, re.IGNORECASE):
+                if _RE_MMC_MDC.search(before):
                     return m.group(0)
                 # Preserva coordenadas cartesianas (2, 3)
                 if before.endswith("(") and (after.startswith(")") or after.startswith(",")):
@@ -74,10 +115,10 @@ class TextSanitizer:
 
                 return f"{p1}{{,}}{p2}"
 
-            return re.sub(r"(\d+),(\d+)", repl_decimal, content)
+            return _RE_DECIMAL_COMMA.sub(repl_decimal, content)
 
         # Trata $$...$$
-        text = re.sub(r"\$\$([\s\S]*?)\$\$", lambda m: f"$${fix_math_content(m.group(1))}$$", text)
+        text = _RE_DISPLAY_MATH.sub(lambda m: f"$${fix_math_content(m.group(1))}$$", text)
 
         # Trata $...$ inline (sem casar com \$)
         def repl_inline(m):
@@ -86,12 +127,12 @@ class TextSanitizer:
                 return raw
             return f"${fix_math_content(m.group(1))}$"
 
-        text = re.sub(r"(?<!\\)\$([^\$]+?)(?<!\\)\$", repl_inline, text)
+        text = _RE_INLINE_MATH.sub(repl_inline, text)
         return text
 
     @staticmethod
     def fix_currency_delimiters(text: str) -> str:
-        """
+        r"""
         Padroniza valores monetários como $\text{R\$} ...$ e previne colisões com o
         delimitador inline do KaTeX ($).
         Exemplos:
@@ -113,18 +154,17 @@ class TextSanitizer:
         text = text.replace(r"\R$", r"\text{R\$}")
 
         # 2. Remove delimitadores $ espúrios isolados antes de palavras comuns como Portanto, Assim
-        text = re.sub(r"(?<![\\\$])\$(?!\$)\s*(Portanto|Assim|Logo)", r"\1", text)
+        text = _RE_ISOLATED_DOLLAR.sub(r"\1", text)
 
         def format_number_katex(num_str):
             if "{,}" in num_str:
                 return num_str
-            return re.sub(r"(\d+),(\d+)", r"\1{,}\2", num_str)
+            return _RE_DECIMAL_COMMA.sub(r"\1{,}\2", num_str)
 
         # 3. Tokeniza preservando blocos KaTeX existentes ($$...$$ e $...$)
-        pattern = r"(\$\$[\s\S]*?\$\$|(?<![\\\$])\$[^\$]+?(?<![\\\$])\$)"
         tokens = []
         last_end = 0
-        for m in re.finditer(pattern, text):
+        for m in _RE_MATH_TOKENS.finditer(text):
             start, end = m.span()
             if start > last_end:
                 tokens.append({"type": "text", "content": text[last_end:start]})
@@ -145,9 +185,9 @@ class TextSanitizer:
             else:
                 t = token["content"]
                 # Menções contextuais sem valor numérico: (R$), (R\$), etc.
-                t = re.sub(r"\((?:R|US)[\\]?\$?\)", lambda m: r"($\text{R\$}$)" if "R" in m.group(0) else r"($\text{US\$}$)", t)
-                t = re.sub(r"\b(o Real|a moeda|reais)\s*\((?:R|US)[\\]?\$?\)", lambda m: f"{m.group(1)} ($\\text{{R\\$}}$)", t)
-                t = re.sub(r"\b(o Dólar|dólares)\s*\((?:R|US)[\\]?\$?\)", lambda m: f"{m.group(1)} ($\\text{{US\\$}}$)", t)
+                t = _RE_CURRENCY_CONTEXT_R.sub(lambda m: r"($\text{R\$}$)" if "R" in m.group(0) else r"($\text{US\$}$)", t)
+                t = _RE_CURRENCY_CONTEXT_1.sub(lambda m: f"{m.group(1)} ($\\text{{R\\$}}$)", t)
+                t = _RE_CURRENCY_CONTEXT_2.sub(lambda m: f"{m.group(1)} ($\\text{{US\\$}}$)", t)
 
                 # Transforma valores monetários em texto para $\text{R\$} X{,}XX$
                 def repl_currency(m):
@@ -156,8 +196,7 @@ class TextSanitizer:
                     val_formatted = format_number_katex(val)
                     return f"$\\text{{{prefix}\\$}} {val_formatted}$"
 
-                curr_regex = r"\b(R|US)[\\]?\$?\s*([0-9]+(?:\.[0-9]{3})*(?:\{,\}[0-9]+|,[0-9]+)?)(?!\w)"
-                t = re.sub(curr_regex, repl_currency, t)
+                t = _RE_CURRENCY_REGEX.sub(repl_currency, t)
                 new_tokens.append(t)
 
         return "".join(new_tokens)
@@ -169,19 +208,19 @@ class TextSanitizer:
             return text
 
         # Trata duplicações de delimitadores display: $$$$ -> $$\n$$
-        text = re.sub(r"\$\$\s*\$\$", "$$\n$$", text)
+        text = _RE_DOUBLE_DOLLAR_DISPLAY.sub("$$\n$$", text)
 
         # Trata tags como $$<br>...$$ -> quebra em blocos válidos
         def clean_display_html(m):
             inner = m.group(1)
-            if re.search(r"<[^>]+>", inner):
-                parts = re.split(r"(<br\s*/?>)", inner, flags=re.IGNORECASE)
+            if _RE_HTML_TAGS.search(inner):
+                parts = _RE_HTML_BR.split(inner)
                 res = []
                 for p in parts:
-                    if re.match(r"^<br\s*/?>$", p, re.IGNORECASE):
+                    if _RE_HTML_BR_EXACT.match(p):
                         res.append(p)
                     elif p.strip():
-                        sub_parts = re.split(r"(<[^>]+>)", p)
+                        sub_parts = _RE_HTML_ANY.split(p)
                         for sp in sub_parts:
                             if sp.startswith("<"):
                                 res.append(sp)
@@ -192,7 +231,7 @@ class TextSanitizer:
                 return "".join(res)
             return m.group(0)
 
-        text = re.sub(r"\$\$([\s\S]*?)\$\$", clean_display_html, text)
+        text = _RE_DISPLAY_MATH.sub(clean_display_html, text)
         return text
 
     @staticmethod
@@ -204,7 +243,7 @@ class TextSanitizer:
             inner = m.group(1)
             parts = inner.split(r"\cdot")
             return " \\cdot ".join([f"\\text{{{p}}}" for p in parts if p.strip()])
-        text = re.sub(r"\\text\{([^}]*?\\cdot[^}]*?)\}", repl_text_cdot, text)
+        text = _RE_TEXT_MODE_CDOT.sub(repl_text_cdot, text)
         return text
 
     @staticmethod
@@ -212,23 +251,8 @@ class TextSanitizer:
         """Corrige quebras de ligaturas comuns em PDFs de processos seletivos (ti, fi, fl)."""
         if not text or not isinstance(text, str):
             return text
-        broken_fixes = [
-            (r"\bgráfi\s+co\b", "gráfico"), (r"\bgráfi\s+cos\b", "gráficos"),
-            (r"\bafi\s*rmati\s*va\b", "afirmativa"), (r"\bafi\s*rmati\s*vas\b", "afirmativas"),
-            (r"\bfi\s+gura\b", "figura"), (r"\bfi\s+guras\b", "figuras"),
-            (r"\bsuperfí\s+cie\b", "superfície"), (r"\bsuperfí\s+cies\b", "superfícies"),
-            (r"\buti\s+lizado\b", "utilizado"), (r"\buti\s+lizada\b", "utilizada"),
-            (r"\buti\s+lizados\b", "utilizados"), (r"\buti\s+lizadas\b", "utilizadas"),
-            (r"\buti\s+lizando\b", "utilizando"), (r"\bdisti\s+nta\b", "distinta"),
-            (r"\bdisti\s+ntas\b", "distintas"), (r"\bobti\s+do\b", "obtido"),
-            (r"\bobti\s+da\b", "obtida"), (r"\bobti\s+dos\b", "obtidos"),
-            (r"\bobti\s+das\b", "obtidas"), (r"\bquanti\s+dade\b", "quantidade"),
-            (r"\bquanti\s+dades\b", "quantidades"), (r"\balternati\s+va\b", "alternativa"),
-            (r"\balternati\s+vas\b", "alternativas"), (r"\bidenti\s+fi\s+car\b", "identificar"),
-            (r"\bsigni\s+fi\s+ca\b", "significa")
-        ]
-        for pat, rep in broken_fixes:
-            text = re.sub(pat, rep, text, flags=re.IGNORECASE)
+        for pat_re, rep in _RE_PDF_LIGATURES:
+            text = pat_re.sub(rep, text)
         return text
 
     @classmethod
@@ -684,7 +708,7 @@ class PDFParser:
         """Higieniza ligaduras do PDF, junta quebras de linha e remove excesso de espaços."""
         text = TextSanitizer.fix_pdf_ligatures(text)
         # Corrige hifens no fim da linha
-        text = re.sub(r"(\w+)-\s*\n\s*(\w+)", r"\1\2", text)
+        text = _RE_HYPHENS_EOL.sub(r"\1\2", text)
         lines = [l.strip() for l in text.splitlines()]
         joined = []
         for l in lines:
@@ -702,7 +726,7 @@ class PDFParser:
             else:
                 joined.append(l)
         res = "\n\n".join([j for j in joined if j])
-        return re.sub(r"[ \t]+", " ", res)
+        return _RE_MULTIPLE_SPACES.sub(" ", res)
 
     @staticmethod
     def split_enunciado_and_options(raw_text: str) -> tuple:
