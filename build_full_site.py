@@ -245,6 +245,11 @@ def render_question_text(q_text, is_dark=False):
     for idx, block in enumerate(raw_blocks):
         is_last = (idx == total_blocks - 1)
 
+        # 0. Bloco HTML customizado (diálogos, cards estilizados, tabelas)
+        if block.startswith("<div") or block.startswith("<table"):
+            html_parts.append(block)
+            continue
+
         # 1. Nota pedagógica
         if block.startswith("*(Nota pedagógica") or block.startswith("*Nota pedagógica"):
             html_parts.append(

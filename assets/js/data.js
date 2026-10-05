@@ -6625,7 +6625,7 @@ var mathData = window.mathData || {
     "topics": [
       {
         "id": "ifsp-2025-1-a",
-        "title": "Prova IFSP 2025.1 - Prova A",
+        "title": "IFSP 2025.1 - Prova A",
         "bncc": "Revisão Geral",
         "summary": "15 questões de Matemática aplicadas no Processo Seletivo IFSP 2025.1 (Edital Nº 088/2024 - Prova A) para os Cursos Técnicos Integrados.",
         "detailedTheory": "A Prova A do Processo Seletivo IFSP 2025.1 contemplou potenciação com expoentes fracionários e radiciação, análise combinatória em tabuleiros (posicionamento de peças independentes), geometria plana com áreas de figuras compostas e canteiros quadrangulares, probabilidade com espaços amostrais equiprováveis e não equiprováveis, porcentagem e descontos sucessivos no comércio (Black Friday), equações lineares do 1º grau com representação gráfica no plano cartesiano, razão e proporção com consumo por aluno, análise de tabelas de preços e conversão de grandezas monetárias, Teorema de Pitágoras com números irracionais e ordenação, semelhança de triângulos e proporcionalidade de lados, geometria métrica da circunferência com arcos e ângulos centrais em triângulos equiláteros, trigonometria/Pitágoras na rampa do Planalto, grandezas inversamente proporcionais (velocidade e tempo) e notação científica de unidades de armazenamento de dados binários.",
@@ -6647,6 +6647,7 @@ var mathData = window.mathData || {
         "pdf": "IFSP_prova_2025_1_a.pdf",
         "questions": [
           {
+            "id": "ifsp-2025-1a-q16",
             "q": "Em uma aula de matemática, a professora passou para sua turma uma lista de exercícios, na qual era necessário calcular o valor decimal de $\\sqrt{7}$ e era permitido aos alunos o uso da calculadora. Um aluno falou que não iria conseguir realizar a atividade, pois a tecla de calcular raiz quadrada de sua calculadora estava quebrada. A professora sugeriu, então, que ele transformasse a raiz em potência com expoente fracionário. Qual a representação de $\\sqrt{7}$ que o aluno precisa utilizar?",
             "options": [
               "$2^{\\frac{1}{7}}$",
@@ -6655,36 +6656,38 @@ var mathData = window.mathData || {
               "$7^{\\frac{1}{2}}$"
             ],
             "correct": 3,
-            "explanation": "Pela propriedade fundamental que relaciona radiciação e potenciação, temos que $\\sqrt[n]{a^m} = a^{\\frac{m}{n}}$.<br>No caso de $\\sqrt{7}$, o radicando tem expoente implícito $m = 1$ e o índice da raiz quadrada é $n = 2$:<br>$$\\sqrt{7} = \\sqrt[2]{7^1} = 7^{\\frac{1}{2}}$$Portanto, a alternativa correta é a <strong>Letra D</strong>.",
+            "explanation": "1. Pela propriedade fundamental dos radicais que relaciona radiciação e potenciação com expoente fracionário:\n$$\\sqrt[n]{a^m} = a^{\\frac{m}{n}}.$$\n\n2. Na raiz quadrada $\\sqrt{7}$, o índice implícito do radical é $n = 2$ e o expoente do radicando é $m = 1$ ($7 = 7^1$):\n$$\\sqrt{7} = \\sqrt[2]{7^1} = 7^{\\frac{1}{2}}.$$\n\nPortanto, a representação com expoente fracionário que o aluno deve utilizar é $7^{\\frac{1}{2}}$ (**Letra D**).",
             "bncc": "EF09MA03",
             "bnccDesc": "Efetuar cálculos com números reais, inclusive potências com expoentes fracionários.",
             "unidadeTematica": "Números",
             "anoEscolar": "9º ano",
-            "topicoId": "b1-t7"
+            "topicoId": "b1-t2"
           },
           {
-            "q": "O jogo de xadrez possui peças brancas e pretas. Entre elas, existem as torres que se movimentam em linhas retas, tanto na vertical quanto na horizontal, quantas casas o jogador quiser. Na imagem a seguir é possível ver um tabuleiro especial de xadrez $4 \\times 4$, contendo 16 casas e uma configuração na qual as referidas peças não estão alinhadas na vertical e nem na horizontal. A quantidade de maneiras que podemos colocar uma torre branca e outra torre preta nesse tabuleiro de modo que não estejam alinhadas na vertical ou na horizontal (impossibilitando um ataque mútuo) é:",
+            "id": "ifsp-2025-1a-q17",
+            "q": "O jogo de xadrez possui peças brancas e pretas. Entre elas, existem as torres que se movimentam em linhas retas, tanto na vertical quanto na horizontal, quantas casas o jogador quiser. Na imagem a seguir é possível ver um tabuleiro especial de xadrez, $4$ por $4$, contendo $16$ casas e uma configuração na qual as referidas peças não estão alinhadas na vertical e nem na horizontal.\n\nA quantidade de maneiras que podemos colocar uma torre branca e outra torre preta nesse tabuleiro de modo que não estejam alinhadas na vertical ou na horizontal, impossibilitando um ataque mútuo, é:",
             "options": [
-              "63",
-              "112",
-              "144",
-              "160"
+              "$63$",
+              "$112$",
+              "$144$",
+              "$160$"
             ],
             "correct": 2,
-            "explanation": "Vamos analisar o princípio multiplicativo de contagem:<br>1. A primeira torre (branca) pode ser colocada em qualquer uma das $16$ casas do tabuleiro.<br>2. Ao ocupar uma casa, ela passa a atacar todas as casas da sua mesma linha (4 casas) e da sua mesma coluna (4 casas). Como a casa onde ela está pertence a ambas, o total de casas atacadas ou bloqueadas é $4 + 4 - 1 = 7$ casas.<br>3. Para que as torres não estejam na mesma linha nem na mesma coluna, a torre preta deve ser posicionada em uma das casas restantes: $16 - 7 = 9$ casas livres.<br>4. Multiplicando as possibilidades:<br>$$\\text{Total} = 16 \\times 9 = 144\\text{ maneiras}.$$Portanto, a alternativa correta é a <strong>Letra C</strong>.",
+            "explanation": "1. O tabuleiro possui $16$ casas disponíveis no total ($4 \\times 4$). A torre branca pode ser posicionada em qualquer uma dessas $16$ casas.\n\n2. Para que não haja alinhamento na horizontal nem na vertical, a torre preta não pode ficar na mesma linha nem na mesma coluna ocupada pela torre branca.\n\n3. Como a linha tem $4$ casas e a coluna tem $4$ casas (e a interseção entre elas é a própria casa da torre branca), o total de casas na mesma linha ou coluna da torre branca é:\n$$4 + 4 - 1 = 7\\text{ casas}.$$\n\n4. Portanto, para cada uma das $16$ posições da torre branca, restam para a torre preta:\n$$16 - 7 = 9\\text{ casas livres}.$$\n*(Equivalentemente, sobram $3$ linhas e $3$ colunas desocupadas, totalizando $3 \\times 3 = 9$ casas disponíveis).*\n\n5. Pelo Princípio Fundamental da Contagem:\n$$\\text{Total de configurações} = 16 \\times 9 = 144.$$\n\nPortanto, existem $144$ maneiras distintas (**Letra C**).",
+            "image": {
+              "src": "https://drive.google.com/file/d/1oNVowsPtRGJ5yOBu61DEPHqmnsjBdejT/view?usp=sharing",
+              "alt": "Tabuleiro de xadrez 4 por 4 com dezesseis casas. Uma torre preta ocupa a casa superior esquerda e setas indicam sua movimentação horizontal e vertical; uma torre branca ocupa uma casa interior sem compartilhar a mesma linha nem coluna.",
+              "caption": "Fonte: IFSP, 2023."
+            },
             "bncc": "EF08MA03",
             "bnccDesc": "Resolver e elaborar problemas de contagem cuja resolução envolva a aplicação do princípio multiplicativo.",
-            "unidadeTematica": "Números",
+            "unidadeTematica": "Probabilidade e estatística",
             "anoEscolar": "8º ano",
-            "topicoId": "b4-t3",
-            "image": {
-              "src": "https://drive.google.com/file/d/1jdiwn6ou16wwer-3pRSl6ALEAJ-h3Ob2/view?usp=sharing",
-              "alt": "Tabuleiro quadriculado de xadrez 4 por 4 com uma torre preta no canto superior esquerdo e uma torre branca no quadrante inferior direito, com setas indicando os movimentos vertical e horizontal de cada torre",
-              "caption": "Figura: Tabuleiro 4 por 4 e movimentação das torres (IFSP 2025.1)"
-            }
+            "topicoId": "b4-t1"
           },
           {
-            "q": "A figura a seguir representa um canteiro destinado a uma horta comunitária que está sendo planejada por um campus do IFSP. As plantações ficarão na área I, as áreas II e III serão para circulação e organização da colheita. Na área IV será criada uma cabana para guardar materiais que serão utilizados na horta. Sabendo que $x > 0$ e que a área destinada para a plantação (Área I) será de $81\\text{ m}^2$, pode-se concluir que a área total do canteiro, em $\\text{m}^2$, será de:",
+            "id": "ifsp-2025-1a-q18",
+            "q": "A figura a seguir representa um canteiro destinado a uma horta comunitária que está sendo planejada por um campus do IFSP. As plantações ficarão na área I, as áreas II e III serão para circulação e organização da colheita. Na área IV será criada uma cabana para guardar materiais que serão utilizados na horta.\n\nSabendo que $x > 0$ e que a medida de área destinada para a plantação será de $81\\text{ m}^2$, pode-se concluir que a área total do canteiro, em $\\text{m}^2$, será de:",
             "options": [
               "$1.806{,}25$",
               "$121{,}00$",
@@ -6692,20 +6695,21 @@ var mathData = window.mathData || {
               "$102{,}01$"
             ],
             "correct": 1,
-            "explanation": "1. Conforme indicado na figura oficial, a área da plantação (Área I) é um quadrado com lados medindo $2x$. Como sua área é $81\\text{ m}^2$:<br>$$(2x)^2 = 81 \\implies 2x = \\sqrt{81} = 9\\text{ m}$$<br>2. O lado total do canteiro quadrado é composto pelo comprimento $2x$ mais a largura de $2\\text{ m}$ da faixa de circulação:<br>$$L = 2x + 2 = 9 + 2 = 11\\text{ m}$$<br>3. Calculando a área total do canteiro quadrado:<br>$$\\text{Área Total} = L^2 = 11^2 = 121\\text{ m}^2 = 121{,}00\\text{ m}^2.$$Portanto, a alternativa correta é a <strong>Letra B</strong>.",
-            "bncc": "EF08MA09",
-            "bnccDesc": "Resolver e elaborar, com e sem uso de tecnologias, problemas que possam ser representados por equações polinomiais de 2º grau do tipo ax2 = b.",
-            "unidadeTematica": "Álgebra",
-            "anoEscolar": "8º ano",
-            "topicoId": "b2-t5",
+            "explanation": "1. Observando as dimensões indicadas na figura, a área I (destinada à plantação) é um quadrado de lados $2x$ por $2x$:\n$$A_I = (2x) \\cdot (2x) = 4x^2 = 81\\text{ m}^2.$$\n\n2. Como $x > 0$, temos:\n$$2x = \\sqrt{81} = 9\\text{ m} \\implies x = 4{,}5\\text{ m}.$$\n\n3. O canteiro completo é formado por um grande quadrado cujo lado total é a soma do lado da área I ($2x$) com a largura das faixas laterais ($2$):\n$$\\text{Lado total} = 2x + 2 = 9 + 2 = 11\\text{ m}.$$\n\n4. Calculando a área total do canteiro:\n$$A_{\\text{total}} = 11^2 = 121\\text{ m}^2.$$\n\nPortanto, a área total do canteiro será de $121{,}00\\text{ m}^2$ (**Letra B**).",
             "image": {
-              "src": "https://drive.google.com/file/d/1b90NuNmoABLZNkZcT2F_-kTJpvWylPeQ/view?usp=sharing",
-              "alt": "Canteiro quadrado dividido em quatro partes: Área I (quadrado de lado 2x por 2x), Área II (retângulo de largura 2 e altura 2x), Área III (retângulo de largura 2x e altura 2) e Área IV (quadrado de lado 2 por 2)",
-              "caption": "Figura: Divisão das áreas do canteiro da horta (IFSP 2025.1)"
-            }
+              "src": "https://drive.google.com/file/d/1ORAhqlkq_W5EWOEYiSqp215to4jx6iPM/view?usp=sharing",
+              "alt": "Canteiro quadrado dividido em quatro áreas: área I quadrada com lados indicados por 2x, área II retangular de largura 2 e altura 2x, área III retangular de largura 2x e altura 2, e área IV quadrada de lado 2 por 2.",
+              "caption": "Fonte: IFSP, 2023."
+            },
+            "bncc": "EF09MA09",
+            "bnccDesc": "Compreender os processos de fatoração de expressões algébricas e resolver equações polinomiais de 2º grau.",
+            "unidadeTematica": "Álgebra",
+            "anoEscolar": "9º ano",
+            "topicoId": "b2-t4"
           },
           {
-            "q": "Um professor desenvolveu um dispositivo eletrônico, parecido com o ilustrado na figura a seguir, para utilizar em uma atividade com seus alunos. O dispositivo é composto por um botão (B) e um retângulo dividido em 6 partes de tamanhos iguais, numeradas de 1 a 6. Cada vez que o botão é pressionado, uma única parte do retângulo fica iluminada. Cada uma das partes com um número par tem probabilidade $P$ de ficar iluminada e cada uma das partes com um número ímpar tem probabilidade $3P$ de ficar iluminada. Dessa maneira, quando o professor pressionar o botão, a probabilidade de que uma parte com um número primo fique iluminada é:",
+            "id": "ifsp-2025-1a-q19",
+            "q": "Um professor desenvolveu um dispositivo eletrônico, parecido com o ilustrado na figura a seguir, para utilizar em uma atividade com seus alunos.\n\nO dispositivo é composto por um botão (B) e um retângulo dividido em $6$ partes de tamanhos iguais, numeradas de $1$ a $6$. Cada vez que o botão é pressionado, uma única parte do retângulo fica iluminada. Cada uma das partes com um número par tem probabilidade $P$ de ficar iluminada e cada uma das partes com um número ímpar tem probabilidade $3P$ de ficar iluminada. Dessa maneira, quando o professor pressionar o botão, a probabilidade de que uma parte com um número primo fique iluminada é:",
             "options": [
               "$\\frac{7}{12}$",
               "$\\frac{5}{6}$",
@@ -6713,52 +6717,60 @@ var mathData = window.mathData || {
               "$\\frac{1}{2}$"
             ],
             "correct": 0,
-            "explanation": "1. Os números de 1 a 6 dividem-se em:<br>- Pares: $\\{2, 4, 6\\}$ (3 números, cada um com probabilidade $P$)<br>- Ímpares: $\\{1, 3, 5\\}$ (3 números, cada um com probabilidade $3P$)<br><br>2. A soma de todas as probabilidades do espaço amostral deve ser igual a 1:<br>$$3 \\cdot P + 3 \\cdot (3P) = 1 \\implies 3P + 9P = 12P = 1 \\implies P = \\frac{1}{12}$$<br>3. Os números primos entre 1 e 6 são $\\{2, 3, 5\\}$ (lembrando que 1 não é primo):<br>- O número 2 é par: probabilidade $= P = \\frac{1}{12}$<br>- O número 3 é ímpar: probabilidade $= 3P = \\frac{3}{12}$<br>- O número 5 é ímpar: probabilidade $= 3P = \\frac{3}{12}$<br><br>4. Somando as probabilidades favoráveis:<br>$$P(\\text{primo}) = P + 3P + 3P = 7P = 7 \\times \\frac{1}{12} = \\frac{7}{12}.$$Portanto, a alternativa correta é a <strong>Letra A</strong>.",
-            "bncc": "EF08MA22",
-            "bnccDesc": "Calcular a probabilidade de eventos, com base na construção do espaço amostral, utilizando o princípio multiplicativo, e reconhecer que a soma das probabilidades de todos os elementos do espaço amostral é igual a 1.",
-            "unidadeTematica": "Probabilidade e Estatística",
-            "anoEscolar": "8º ano",
-            "topicoId": "b4-t3",
+            "explanation": "1. O espaço amostral é $\\{1, 2, 3, 4, 5, 6\\}$.\n- Os números pares são $\\{2, 4, 6\\}$, com probabilidade $P$ cada.\n- Os números ímpares são $\\{1, 3, 5\\}$, com probabilidade $3P$ cada.\n\n2. A soma das probabilidades de todos os resultados possíveis é igual a $1$:\n$$(3P) + (P) + (3P) + (P) + (3P) + (P) = 1$$\n$$9P + 3P = 12P = 1 \\implies P = \\frac{1}{12}.$$\n\n3. Os números primos do dispositivo são $\\{2, 3, 5\\}$:\n- $2$ é par: probabilidade $= P$.\n- $3$ é ímpar: probabilidade $= 3P$.\n- $5$ é ímpar: probabilidade $= 3P$.\n\n4. A probabilidade de obter um número primo é a soma:\n$$P(\\text{primo}) = P + 3P + 3P = 7P = 7 \\cdot \\frac{1}{12} = \\frac{7}{12}.$$\n\nPortanto, a probabilidade é $\\frac{7}{12}$ (**Letra A**).",
             "image": {
-              "src": "https://drive.google.com/file/d/1ExHE_5WV5OBkTlKjlTbf_s9j_E7ZMCKp/view?usp=sharing",
-              "alt": "Dispositivo eletrônico com um botão circular marcado com a letra B à esquerda e um visor retangular dividido em 6 compartimentos numerados sequencialmente de 1 a 6",
-              "caption": "Figura: Dispositivo eletrônico com botão e 6 partes numeradas (IFSP 2025.1)"
-            }
+              "src": "https://drive.google.com/file/d/16aUkdewiwDkS1nXY2I7M7qepYl1KRsJs/view?usp=sharing",
+              "alt": "Dispositivo eletrônico retangular cinza contendo um botão circular com a letra B à esquerda e uma barra dividida em seis compartimentos quadrados numerados sequencialmente de 1 a 6.",
+              "caption": "Fonte: IFSP, 2023."
+            },
+            "bncc": "EF09MA20",
+            "bnccDesc": "Reconhecer, em experimentos aleatórios, eventos independentes e dependentes e calcular a probabilidade de sua ocorrência.",
+            "unidadeTematica": "Probabilidade e estatística",
+            "anoEscolar": "9º ano",
+            "topicoId": "b4-t1"
           },
           {
-            "q": "Se considerarmos que o preço inicial do litro da gasolina é de $\\text{R\\$} 5{,}60$, e que na Black Friday ocorra um desconto de 50%, é correto afirmar que:",
+            "id": "ifsp-2025-1a-q20",
+            "q": "Em um noticiário humorístico brasileiro que veicula notícias fictícias engraçadas, nas redes sociais, um estudante encontrou a seguinte frase:\n\n*Brasileiros esperam que o preço do litro de combustível tenha aumento para que na Black Friday o desconto seja de 50%.*\n\nSe considerarmos que o preço inicial do litro da gasolina é de $\\text{R\\$} 5{,}60$, e que o desconto de $50\\%$ na Black Friday realmente aconteça, é correto afirmar que:",
             "options": [
-              "após um aumento de 40% e um desconto de 50% na Black Friday, o preço final do combustível será 10% menor que o preço inicial.",
-              "após um aumento de 60% e um desconto de 50% na Black Friday, o preço final do combustível será 10% maior que o preço inicial.",
-              "após um aumento de 70% e um desconto de 50% na Black Friday, o preço final do combustível será $\\text{R\\$} 5{,}88$.",
-              "após um aumento de 100% e um desconto de 50% na Black Friday, o preço final do combustível será exatamente igual ao preço inicial."
+              "após um aumento de $40\\%$ e um desconto de $50\\%$ na Black Friday, o preço final do combustível será $10\\%$ menor que o preço inicial.",
+              "após um aumento de $60\\%$ e um desconto de $50\\%$ na Black Friday, o preço final do combustível será $10\\%$ maior que o preço inicial.",
+              "após um aumento de $70\\%$ e um desconto de $50\\%$ na Black Friday, o preço final do combustível será $\\text{R\\$} 5{,}88$.",
+              "após um aumento de $100\\%$ e um desconto de $50\\%$ na Black Friday, o preço final do combustível será exatamente igual ao preço inicial."
             ],
             "correct": 3,
-            "explanation": "Vamos analisar os fatores de multiplicação para cada percentual:<br>1. Um aumento de $100\\%$ corresponde a multiplicar o valor por $(1 + 1{,}00) = 2$. O preço passa a ser $2 \\times 5{,}60 = \\text{R\\$}  11{,}20$.<br>2. Em seguida, um desconto de $50\\%$ corresponde a multiplicar por $(1 - 0{,}50) = 0{,}50$.<br>3. O preço final é:<br>$$\\text{Preço Final} = P_0 \\times 2 \\times 0{,}50 = P_0 \\times 1 = P_0$$<br>Logo, o preço final do combustível volta a ser exatamente igual ao preço inicial de $\\text{R\\$} 5{,}60$.<br>Portanto, a alternativa correta é a <strong>Letra D</strong>.",
-            "bncc": "EF08MA04",
-            "bnccDesc": "Resolver e elaborar problemas, envolvendo cálculo de porcentagens, incluindo o uso de tecnologias digitais.",
+            "explanation": "Seja $P_0$ o preço inicial ($\\text{R\\$} 5{,}60$). Um desconto de $50\\%$ equivale a multiplicar pelo fator de decréscimo $(1 - 0{,}50) = 0{,}50$.\n\nAnalisando cada alternativa:\n- **(A)** Aumento de $40\\%$ ($1{,}40$): $P_{\\text{final}} = P_0 \\cdot 1{,}40 \\cdot 0{,}50 = 0{,}70 \\cdot P_0$, o que representa uma redução de $30\\%$ (e não $10\\%$). Incorreta.\n- **(B)** Aumento de $60\\%$ ($1{,}60$): $P_{\\text{final}} = P_0 \\cdot 1{,}60 \\cdot 0{,}50 = 0{,}80 \\cdot P_0$, que é $20\\%$ menor (e não maior). Incorreta.\n- **(C)** Aumento de $70\\%$ ($1{,}70$): $P_{\\text{final}} = 5{,}60 \\cdot 1{,}70 \\cdot 0{,}50 = 5{,}60 \\cdot 0{,}85 = \\text{R\\$} 4{,}76 \\neq \\text{R\\$} 5{,}88$. Incorreta.\n- **(D)** Aumento de $100\\%$ ($1 + 1 = 2{,}00$): $P_{\\text{final}} = P_0 \\cdot 2{,}00 \\cdot 0{,}50 = P_0 \\cdot 1 = P_0 = \\text{R\\$} 5{,}60$. O preço final será exatamente igual ao preço inicial. **Correta**.\n\nPortanto, a alternativa correta é a **Letra D**.",
+            "bncc": "EF09MA05",
+            "bnccDesc": "Resolver problemas que envolvam porcentagens, como os que lidam com acréscimos e decréscimos simples e sucessivos.",
             "unidadeTematica": "Números",
-            "anoEscolar": "8º ano",
-            "topicoId": "b1-t6"
+            "anoEscolar": "9º ano",
+            "topicoId": "b1-t4"
           },
           {
-            "q": "Seja $2x - 2y = 4$ uma equação linear de 1º grau. A representação gráfica dessa equação no plano cartesiano é uma reta que intersecta os eixos cartesianos nos pontos:",
+            "id": "ifsp-2025-1a-q21",
+            "q": "Seja $2x - 2y = 4$ uma equação linear de grau 1. A representação gráfica dessa equação no plano cartesiano é:",
             "options": [
-              "$(0, 2)$ e $(2, 0)$",
-              "$(0, -2)$ e $(-2, 0)$",
-              "$(2, 0)$ e $(0, -2)$",
-              "$(0, 4)$ e $(4, 0)$"
+              "Gráfico (A)",
+              "Gráfico (B)",
+              "Gráfico (C)",
+              "Gráfico (D)"
             ],
-            "correct": 2,
-            "explanation": "Simplificando a equação $2x - 2y = 4$ dividindo todos os termos por 2:<br>$$x - y = 2 \\iff y = x - 2$$<br>Vamos determinar os interceptos com os eixos:<br>1. Intercepto com o eixo $x$ (onde $y = 0$):<br>$$x - 0 = 2 \\implies x = 2 \\implies (2, 0)$$<br>2. Intercepto com o eixo $y$ (onde $x = 0$):<br>$$0 - y = 2 \\implies y = -2 \\implies (0, -2)$$<br>Trata-se de uma reta crescente que corta o eixo $x$ em $2$ e o eixo $y$ em $-2$.<br>Portanto, a alternativa correta é a <strong>Letra C</strong>.",
-            "bncc": "EF07MA18",
-            "bnccDesc": "Resolver e elaborar problemas que possam ser representados por equações polinomiais de 1º grau, redutíveis à forma ax + b = c, fazendo uso das propriedades da igualdade.",
+            "correct": 3,
+            "explanation": "1. Simplificando a equação linear dada dividindo todos os termos por $2$:\n$$2x - 2y = 4 \\iff x - y = 2 \\iff y = x - 2.$$\n\n2. Determinando os pontos onde a reta intercepta os eixos cartesianos:\n- **Interseção com o eixo $y$ ($x = 0$):** $y = 0 - 2 = -2$, correspondendo ao ponto $(0, -2)$.\n- **Interseção com o eixo $x$ ($y = 0$):** $0 = x - 2 \\implies x = 2$, correspondendo ao ponto $(2, 0)$.\n\n3. Analisando os quatro gráficos da figura:\n- O **Gráfico (D)** é o único que exibe uma reta com inclinação positiva passando exatamente pelos pontos $(2, 0)$ no eixo horizontal e $(0, -2)$ no eixo vertical.\n\nPortanto, a alternativa correta é a **Letra D**.",
+            "image": {
+              "src": "https://drive.google.com/file/d/1D6a4dcP6pgkNt9clzaQuyxZq2FMYw2QK/view?usp=sharing",
+              "alt": "Quatro planos cartesianos com retas indicadas nas alternativas (A), (B), (C) e (D). O gráfico (D) mostra a reta passando pelos pontos (2, 0) no eixo x e (0, -2) no eixo y.",
+              "caption": "Fonte: IFSP, 2023."
+            },
+            "bncc": "EF08MA07",
+            "bnccDesc": "Associar uma equação linear de 1º grau com duas incógnitas a uma reta no plano cartesiano.",
             "unidadeTematica": "Álgebra",
-            "anoEscolar": "7º ano",
+            "anoEscolar": "8º ano",
             "topicoId": "b2-t3"
           },
           {
-            "q": "Uma pessoa deseja comprar um ingresso para um show que terá 4 categorias: pista, pista premium, área vip e camarote. As formas de pagamento disponíveis são 3: Pix, cartão de débito e cartão de crédito. Considerando que todas as combinações são igualmente prováveis, qual a probabilidade de a pessoa comprar o ingresso de pista e pagar por Pix?",
+            "id": "ifsp-2025-1a-q22",
+            "q": "Uma pessoa deseja comprar um ingresso para o show que irá ocorrer na sua cidade. O show terá as seguintes categorias de ingressos: pista, pista premium, área vip e camarote. As formas de pagamentos são: Pix, cartão de débito e cartão de crédito. Considerando que todas as opções são igualmente prováveis, qual a probabilidade da pessoa comprar o ingresso de pista e pagamento por Pix?",
             "options": [
               "$\\frac{1}{12}$",
               "$\\frac{1}{7}$",
@@ -6766,56 +6778,55 @@ var mathData = window.mathData || {
               "$\\frac{1}{3}$"
             ],
             "correct": 0,
-            "explanation": "1. O espaço amostral $\\Omega$ é formado por todas as combinações entre categoria de ingresso e forma de pagamento:<br>$$n(\\Omega) = 4 \\times 3 = 12\\text{ combinações possíveis}$$<br>2. O evento desejado é escolher especificamente a categoria pista E pagamento por Pix:<br>$$n(E) = 1\\text{ combinação}$$<br>3. A probabilidade é dada por:<br>$$P = \\frac{n(E)}{n(\\Omega)} = \\frac{1}{12}.$$Portanto, a alternativa correta é a <strong>Letra A</strong>.",
-            "bncc": "EF08MA03",
-            "bnccDesc": "Resolver e elaborar problemas de contagem cuja resolução envolva a aplicação do princípio multiplicativo.",
-            "unidadeTematica": "Números",
-            "anoEscolar": "8º ano",
-            "topicoId": "b4-t3"
+            "explanation": "1. O evento consiste na escolha combinada e independente de uma categoria de ingresso e uma forma de pagamento.\n\n2. Para as categorias de ingresso, há $4$ opções: {pista, pista premium, área vip, camarote}. A probabilidade de escolher pista é:\n$$P(\\text{pista}) = \\frac{1}{4}.$$\n\n3. Para as formas de pagamento, há $3$ opções: {Pix, cartão de débito, cartão de crédito}. A probabilidade de escolher Pix é:\n$$P(\\text{Pix}) = \\frac{1}{3}.$$\n\n4. Como todas as combinações são igualmente prováveis, a probabilidade conjunta é dada pelo produto das probabilidades:\n$$P(\\text{pista e Pix}) = \\frac{1}{4} \\times \\frac{1}{3} = \\frac{1}{12}.$$\n\nPortanto, a probabilidade é $\\frac{1}{12}$ (**Letra A**).",
+            "bncc": "EF09MA20",
+            "bnccDesc": "Reconhecer, em experimentos aleatórios, eventos independentes e dependentes e calcular a probabilidade de sua ocorrência.",
+            "unidadeTematica": "Probabilidade e estatística",
+            "anoEscolar": "9º ano",
+            "topicoId": "b4-t1"
           },
           {
-            "q": "Uma nutricionista analisou que para 325 alunos eram consumidos $195\\text{ kg}$ de alimentos em um restaurante estudantil do IFSP. Certo dia, ela percebeu que para 210 alunos foram consumidos apenas $126\\text{ kg}$ de alimentos. Com base nessas informações, ela elaborou o seguinte gráfico que relaciona a quantidade de alimentos (em kg) e a quantidade de alunos:\nCom base no gráfico, é possível determinar que a quantidade de alimento consumido por aluno, em gramas, é de:",
+            "id": "ifsp-2025-1a-q23",
+            "q": "Uma nutricionista analisou que para $325$ alunos eram consumidos $195\\text{ kg}$ de alimentos em um restaurante estudantil do IFSP. Certo dia, ela percebeu que para $210$ alunos foram consumidos apenas $126\\text{ kg}$ de alimentos. Com base nessas informações, ela elaborou o seguinte gráfico que relaciona a quantidade de alimentos (em $\\text{kg}$) e a quantidade de alunos:\n\nCom base no gráfico, é possível determinar que a quantidade de alimento consumido por aluno, em gramas, é de:",
             "options": [
-              "60",
-              "600",
-              "1.667",
-              "26.460"
+              "$60$",
+              "$600$",
+              "$1.667$",
+              "$26.460$"
             ],
             "correct": 1,
-            "explanation": "1. A razão entre a quantidade de alimento consumido e o número de alunos é constante e pode ser verificada por qualquer um dos pontos do gráfico:<br>$$\\text{Taxa} = \\frac{126\\text{ kg}}{210} = \\frac{195\\text{ kg}}{325} = 0{,}6\\text{ kg por aluno}$$<br>2. Como $1\\text{ kg} = 1.000\\text{ gramas}$, convertemos para gramas:<br>$$0{,}6 \\times 1.000 = 600\\text{ gramas por aluno}.$$Portanto, a alternativa correta é a <strong>Letra B</strong>.",
-            "bncc": "EF06MA24",
-            "bnccDesc": "Resolver e elaborar problemas que envolvam as grandezas comprimento, massa, tempo, temperatura, área (triângulos e retângulos), capacidade e volume (sólidos formados por blocos retangulares), sem uso de fórmulas, inseridos, sempre que possível, em contextos oriundos de situações reais e/ou relacionadas às outras áreas do conhecimento.",
-            "unidadeTematica": "Grandezas e Medidas",
-            "anoEscolar": "6º ano",
-            "topicoId": "b4-t2",
+            "explanation": "1. A quantidade de alimentos e o número de alunos são grandezas diretamente proporcionais. A taxa unitária de consumo em quilogramas por aluno é constante:\n$$\\text{Consumo por aluno} = \\frac{126\\text{ kg}}{210\\text{ alunos}} = \\frac{195\\text{ kg}}{325\\text{ alunos}}.$$\n\n2. Calculando a razão:\n$$\\frac{126}{210} = \\frac{3}{5} = 0{,}6\\text{ kg por aluno}.$$\n\n3. O enunciado solicita a resposta em gramas. Como $1\\text{ kg} = 1000\\text{ g}$:\n$$0{,}6 \\times 1000\\text{ g} = 600\\text{ g}.$$\n\nPortanto, cada aluno consome $600\\text{ g}$ de alimento (**Letra B**).",
             "image": {
-              "src": "https://drive.google.com/file/d/1DUzTFuV7Pb87rQ4QEcVO4TxcoUV1-9xT/view?usp=sharing",
-              "alt": "Gráfico no plano cartesiano mostrando no eixo vertical a quantidade de alimento em quilogramas de 0 a 300 e no eixo horizontal a quantidade de alunos de 0 a 450, com uma reta passando pela origem e pelos pontos (210, 126) e (325, 195)",
-              "caption": "Figura: Relação entre quantidade de alimentos consumidos e quantidade de alunos (IFSP 2025.1)"
-            }
+              "src": "https://drive.google.com/file/d/1-iuharfKuQJre_l4jhXSRm8f6eZVjhxY/view?usp=sharing",
+              "alt": "Gráfico de reta no primeiro quadrante com eixo horizontal indicando Quantidade de alunos e eixo vertical indicando Kg de alimento, destacando os pares ordenados (210, 126) e (325, 195).",
+              "caption": "Fonte: IFSP, 2023."
+            },
+            "bncc": "EF07MA17",
+            "bnccDesc": "Resolver e elaborar problemas que envolvam variação de proporcionalidade direta e do tipo inversa.",
+            "unidadeTematica": "Álgebra",
+            "anoEscolar": "7º ano",
+            "topicoId": "b2-t1"
           },
           {
-            "q": "Ao treinar um funcionário responsável pela balança digital de uma rede de supermercados presente nos estados das regiões Sudeste e Sul, um gerente construiu um quadro com os preços de determinados produtos, a partir das informações disponíveis no portal do Programa Brasileiro de Modernização do Mercado Hortigranjeiro (Prohort):\n\nO gerente pediu ao funcionário para calcular o valor de uma compra de $1\\text{ kg}$ de Abacate, $2\\text{ kg}$ de Berinjela e $3\\text{ kg}$ de Limão Taiti, utilizando uma balança digital para obter o valor total a pagar em cada estado. Considerando os valores apresentados na tabela e que foi possível realizar a pesagem exata de cada uma dessas quantidades, em qual estado a compra terá o menor valor total?",
+            "id": "ifsp-2025-1a-q24",
+            "q": "Uma balança digital, comum em estabelecimentos comerciais, é um instrumento que além de calcular o peso de um produto, possibilita que o usuário calcule o valor a ser pago para sua aquisição. De modo geral, além de um teclado numérico e outros botões com funções que envolvem memorizar resultados, a balança possui três painéis digitais que exibem ao consumidor: (1) o peso do produto, (2) o preço do produto digitado pelo usuário e (3) o preço a ser pago para a aquisição do produto, segundo a relação:\n\n$$\\text{Peso (em kg)} \\times \\text{Preço do Produto (em R\\$)} = \\text{Preço a ser pago (em R\\$)}$$\n\nAo treinar um funcionário responsável pela balança digital de uma rede de supermercados presente nos estados das regiões Sudeste e Sul, um gerente construiu um quadro com os preços de determinados produtos, a partir das informações disponíveis no portal do Prohort:\n\n| Produtos | ES | MG | PR | RJ | RS | SC | SP |\n| :--- | :---: | :---: | :---: | :---: | :---: | :---: | :---: |\n| Abacate (kg) | $\\text{R\\$} 1{,}70$ | $\\text{R\\$} 3{,}25$ | $\\text{R\\$} 3{,}50$ | $\\text{R\\$} 4{,}00$ | $\\text{R\\$} 3{,}30$ | $\\text{R\\$} 3{,}00$ | $\\text{R\\$} 2{,}50$ |\n| Berinjela (kg) | $\\text{R\\$} 3{,}00$ | $\\text{R\\$} 3{,}00$ | $\\text{R\\$} 4{,}20$ | $\\text{R\\$} 3{,}00$ | $\\text{R\\$} 5{,}00$ | $\\text{R\\$} 3{,}50$ | $\\text{R\\$} 3{,}60$ |\n| Limão Taiti (kg) | $\\text{R\\$} 3{,}50$ | $\\text{R\\$} 3{,}50$ | $\\text{R\\$} 3{,}00$ | $\\text{R\\$} 3{,}25$ | $\\text{R\\$} 2{,}80$ | $\\text{R\\$} 2{,}25$ | $\\text{R\\$} 2{,}20$ |\n\n*(Fonte: ceasa.gov.br. Valores arredondados. Acesso em: 25 jan. 2023)*\n\nO gerente pediu ao funcionário para calcular o valor de uma compra de $1\\text{ kg}$ de Abacate, $2\\text{ kg}$ de Berinjela e $3\\text{ kg}$ de Limão Taiti, utilizando uma balança digital para obter o valor total a pagar em cada estado.\n\nConsiderando os valores apresentados acima e que foi possível realizar a pesagem exata de cada uma dessas quantidades, é correto afirmar que:",
             "options": [
-              "como os preços individuais dos três produtos são diferentes em cada um dos estados, os valores totais encontrados em todas as pesagens serão diferentes.",
+              "como os preços individuais dos três produtos são diferentes em cada um dos estados, os valores totais encontrados em todas as pesagens, em cada estado, serão diferentes.",
               "o maior valor para a aquisição dos três produtos, a partir das pesagens indicadas, está em um estado em que pelo menos um produto é mais caro, quando comparado a outros estados.",
-              "o menor valor para a aquisição dos três produtos é obtido em dois estados distintos.",
+              "o menor valor para a aquisição dos três produtos, a partir das pesagens indicadas, é obtido em dois estados distintos.",
               "se em dois estados os valores totais das compras forem iguais, então os valores individuais de cada produto também serão iguais."
             ],
             "correct": 1,
-            "explanation": "Calculando o custo total $V = 1 \\cdot P_{\\text{abacate}} + 2 \\cdot P_{\\text{berinjela}} + 3 \\cdot P_{\\text{limão}}$ em cada estado:<br>- ES: $1(1{,}70) + 2(3{,}00) + 3(3{,}50) = 1{,}70 + 6{,}00 + 10{,}50 = 18{,}20$<br>- MG: $1(3{,}25) + 2(3{,}00) + 3(3{,}50) = 3{,}25 + 6{,}00 + 10{,}50 = 19{,}75$<br>- PR: $1(3{,}50) + 2(4{,}20) + 3(3{,}00) = 3{,}50 + 8{,}40 + 9{,}00 = 20{,}90$<br>- RJ: $1(4{,}00) + 2(3{,}00) + 3(3{,}25) = 4{,}00 + 6{,}00 + 9{,}75 = 19{,}75$<br>- RS: $1(3{,}30) + 2(5{,}00) + 3(2{,}80) = 3{,}30 + 10{,}00 + 8{,}40 = 21{,}70$ (maior valor!)<br>- SC: $1(3{,}00) + 2(3{,}50) + 3(2{,}25) = 3{,}00 + 7{,}00 + 6{,}75 = 16{,}75$<br>- SP: $1(2{,}50) + 2(3{,}60) + 3(2{,}20) = 2{,}50 + 7{,}20 + 6{,}60 = 16{,}30$ (menor valor)<br><br>O maior valor ocorreu no RS ($\\text{R\\$} 21${,}70), onde a berinjela tem o maior preço unitário da tabela ($\\text{R\\$} 5{,}00$).<br>Portanto, a alternativa correta é a <strong>Letra B</strong>.",
-            "bncc": "EF07MA18",
-            "bnccDesc": "Resolver e elaborar problemas que possam ser representados por equações polinomiais de 1º grau, redutíveis à forma ax + b = c, fazendo uso das propriedades da igualdade.",
-            "unidadeTematica": "Álgebra",
+            "explanation": "Calculando o custo total da compra ($1\\text{ kg de Abacate} + 2\\text{ kg de Berinjela} + 3\\text{ kg de Limão Taiti}$) para cada estado:\n- **ES:** $1(1{,}70) + 2(3{,}00) + 3(3{,}50) = 1{,}70 + 6{,}00 + 10{,}50 = \\text{R\\$} 18{,}20$.\n- **MG:** $1(3{,}25) + 2(3{,}00) + 3(3{,}50) = 3{,}25 + 6{,}00 + 10{,}50 = \\text{R\\$} 19{,}75$.\n- **PR:** $1(3{,}50) + 2(4{,}20) + 3(3{,}00) = 3{,}50 + 8{,}40 + 9{,}00 = \\text{R\\$} 20{,}90$.\n- **RJ:** $1(4{,}00) + 2(3{,}00) + 3(3{,}25) = 4{,}00 + 6{,}00 + 9{,}75 = \\text{R\\$} 19{,}75$.\n- **RS:** $1(3{,}30) + 2(5{,}00) + 3(2{,}80) = 3{,}30 + 10{,}00 + 8{,}40 = \\text{R\\$} 21{,}70$.\n- **SC:** $1(3{,}00) + 2(3{,}50) + 3(2{,}25) = 3{,}00 + 7{,}00 + 6{,}75 = \\text{R\\$} 16{,}75$.\n- **SP:** $1(2{,}50) + 2(3{,}60) + 3(2{,}20) = 2{,}50 + 7{,}20 + 6{,}60 = \\text{R\\$} 16{,}30$.\n\nAnalisando as afirmações:\n- **(A) Incorreta:** Em MG e RJ os valores totais foram rigorosamente iguais ($\\text{R\\$} 19{,}75$).\n- **(B) Correta:** O maior valor total foi de $\\text{R\\$} 21{,}70$, no estado do **RS**. Observando a tabela, no RS a Berinjela custa $\\text{R\\$} 5{,}00$, que é o valor mais alto desse produto entre todos os estados pesquisados.\n- **(C) Incorreta:** O menor valor foi obtido em um único estado (SP, com $\\text{R\\$} 16{,}30$).\n- **(D) Incorreta:** Em MG e RJ os totais foram iguais, mas os preços de cada produto são diferentes (ex.: abacate custa $\\text{R\\$} 3{,}25$ em MG e $\\text{R\\$} 4{,}00$ no RJ).\n\nPortanto, a afirmação correta é a da **Letra B**.",
+            "bncc": "EF07MA02",
+            "bnccDesc": "Resolver e elaborar problemas que envolvam porcentagens e operações com números racionais.",
+            "unidadeTematica": "Números",
             "anoEscolar": "7º ano",
-            "topicoId": "b2-t3",
-            "image": {
-              "src": "https://drive.google.com/file/d/1HRY_HZWaev4pJ17Xieq0Jl2eIH4zkPOt/view?usp=sharing",
-              "alt": "Quadro com preços médios por quilo de Abacate, Berinjela e Limão Taiti cotados em 2023 nos estados ES, MG, PR, RJ, RS, SC e SP."
-            }
+            "topicoId": "b1-t1"
           },
           {
-            "q": "Um professor propôs aos alunos calcularem os valores $X$, $Y$ e $Z$ a partir do Teorema de Pitágoras ($h^2 = a^2 + b^2$):<br>1º Conjunto: $h = \\sqrt{3}$, $a = X$ e $b = 1$<br>2º Conjunto: $h = 5$, $a = 1$ e $b = Y$<br>3º Conjunto: $h = Z$, $a = 2$ e $b = \\sqrt{3}$<br>Ao colocar esses números irracionais em ordem crescente, a sequência correta é:",
+            "id": "ifsp-2025-1a-q25",
+            "q": "Ao explicar o Teorema de Pitágoras para a turma do 9º ano de uma escola paulista, um professor de matemática escreveu na lousa:\n\n*Chamamos de terno pitagórico um conjunto de três números que satisfazem o Teorema de Pitágoras, que é uma relação matemática entre os lados de um triângulo retângulo. O teorema diz que, em um triângulo retângulo, o quadrado do valor do comprimento da hipotenusa é igual à soma dos quadrados dos valores dos comprimentos dos outros dois lados, chamados catetos.*\n\nO Teorema de Pitágoras é representado pela seguinte equação: $h^2 = a^2 + b^2$\n\nNa sequência, o professor colocou três conjuntos de números (que seriam medidas de lados de triângulos retângulos) para que os estudantes, usando o Teorema de Pitágoras, conseguissem encontrar alguns valores desconhecidos ($X$, $Y$ e $Z$). Os conjuntos foram:\n\n* $1^º$ Conjunto: $h = \\sqrt{3}$, $a = X$ e $b = 1$\n* $2^º$ Conjunto: $h = 5$, $a = 1$ e $b = Y$\n* $3^º$ Conjunto: $h = Z$, $a = 2$ e $b = \\sqrt{3}$\n\nO primeiro estudante que realizou essa tarefa identificou que $X$, $Y$ e $Z$ eram números irracionais. Ao colocar esses números em ordem crescente, a sequência correta é:",
             "options": [
               "$X, Z, Y$",
               "$X, Y, Z$",
@@ -6823,36 +6834,38 @@ var mathData = window.mathData || {
               "$Y, Z, X$"
             ],
             "correct": 0,
-            "explanation": "Aplicando o Teorema de Pitágoras $h^2 = a^2 + b^2$ em cada conjunto:<br>1. Para $X$: $(\\sqrt{3})^2 = X^2 + 1^2 \\implies 3 = X^2 + 1 \\implies X^2 = 2 \\implies X = \\sqrt{2} \\approx 1{,}414$<br>2. Para $Y$: $5^2 = 1^2 + Y^2 \\implies 25 = 1 + Y^2 \\implies Y^2 = 24 \\implies Y = \\sqrt{24} \\approx 4{,}899$<br>3. Para $Z$: $Z^2 = 2^2 + (\\sqrt{3})^2 \\implies Z^2 = 4 + 3 = 7 \\implies Z = \\sqrt{7} \\approx 2{,}646$<br><br>Comparando os radicandos: $2 < 7 < 24 \\implies \\sqrt{2} < \\sqrt{7} < \\sqrt{24}$, ou seja:<br>$$X < Z < Y$$Portanto, a alternativa correta é a <strong>Letra A</strong>.",
+            "explanation": "Aplicando a relação pitagórica $h^2 = a^2 + b^2$ em cada conjunto:\n\n1. **$1^º$ Conjunto ($h = \\sqrt{3}, a = X, b = 1$):**\n$$(\\sqrt{3})^2 = X^2 + 1^2 \\implies 3 = X^2 + 1 \\implies X^2 = 2 \\implies X = \\sqrt{2}.$$\n\n2. **$2^º$ Conjunto ($h = 5, a = 1, b = Y$):**\n$$5^2 = 1^2 + Y^2 \\implies 25 = 1 + Y^2 \\implies Y^2 = 24 \\implies Y = \\sqrt{24}.$$\n\n3. **$3^º$ Conjunto ($h = Z, a = 2, b = \\sqrt{3}$):**\n$$Z^2 = 2^2 + (\\sqrt{3})^2 = 4 + 3 = 7 \\implies Z = \\sqrt{7}.$$\n\n4. Comparando os radicais em ordem crescente:\n$$2 < 7 < 24 \\implies \\sqrt{2} < \\sqrt{7} < \\sqrt{24} \\implies X < Z < Y.$$\n\nPortanto, a sequência correta em ordem crescente é $X, Z, Y$ (**Letra A**).",
             "bncc": "EF09MA14",
-            "bnccDesc": "Resolver e elaborar problemas de aplicação do teorema de Pitágoras ou das relações de proporcionalidade envolvendo retas paralelas cortadas por secantes.",
+            "bnccDesc": "Resolver problemas de aplicação do teorema de Pitágoras.",
             "unidadeTematica": "Geometria",
             "anoEscolar": "9º ano",
-            "topicoId": "b3-t2"
+            "topicoId": "b3-t1"
           },
           {
-            "q": "Observe atentamente os triângulos $ABC$ e $DEF$ representados na figura a seguir:\nEstes triângulos foram construídos de maneira que $DE = 2 \\cdot AB$, $DF = 2 \\cdot AC$ e $FE = 2 \\cdot BC$. Considerando essa informação, podemos afirmar que $ABC$ e $DEF$ são triângulos semelhantes porque:",
+            "id": "ifsp-2025-1a-q26",
+            "q": "Observe atentamente os triângulos $ABC$ e $DEF$ representados na figura a seguir:\n\nEstes triângulos foram construídos de maneira que $DE = 2 \\cdot AB$, $DF = 2 \\cdot AC$ e $FE = 2 \\cdot BC$. Considerando essa informação, podemos afirmar que $ABC$ e $DEF$ são triângulos semelhantes porque:",
             "options": [
-              "as medidas dos lados do triângulo ABC são proporcionais às medidas dos lados do triângulo DEF.",
+              "as medidas dos lados do triângulo $ABC$ são proporcionais às medidas dos lados do triângulo $DEF$.",
               "nenhum dos dois triângulos possui um de seus ângulos internos igual a um ângulo reto.",
-              "a medida da área do triângulo DEF é quatro vezes maior que a medida da área do triângulo ABC.",
-              "a medida do perímetro do triângulo DEF é o dobro da medida do perímetro do triângulo ABC."
+              "a medida da área do triângulo $DEF$ é quatro vezes maior que a medida da área do triângulo $ABC$.",
+              "a medida do perímetro do triângulo $DEF$ é o dobro da medida do perímetro do triângulo $ABC$."
             ],
             "correct": 0,
-            "explanation": "Pelo critério de semelhança Lado-Lado-Lado (Caso LLL), dois triângulos são semelhantes se seus lados homólogos forem proporcionais:<br>$$\\frac{DE}{AB} = \\frac{DF}{AC} = \\frac{FE}{BC} = 2$$<br>Assim, a proporcionalidade entre as medidas dos lados é o motivo formal que garante a semelhança entre os dois triângulos.<br>Portanto, a alternativa correta é a <strong>Letra A</strong>.",
+            "explanation": "1. Pelo caso fundamental de semelhança Lado-Lado-Lado ($\\text{LLL}$), dois triângulos são semelhantes se, e somente se, todos os seus lados homólogos guardarem a mesma razão constante de proporcionalidade.\n\n2. As igualdades dadas no enunciado mostram que:\n$$\\frac{DE}{AB} = \\frac{DF}{AC} = \\frac{FE}{BC} = 2.$$\n\n3. Logo, a razão pela qual os triângulos são semelhantes é diretamente o fato de que as medidas de seus lados homólogos são proporcionais.\n\nPortanto, a afirmativa que justifica a semelhança é a da **Letra A**.",
+            "image": {
+              "src": "https://drive.google.com/file/d/1uhoaWcqAusMuDLHmnlKekiwtO_dvHL9u/view?usp=sharing",
+              "alt": "Dois triângulos ABC e DEF no plano, com vértices destacados por pontos pretos, onde o triângulo DEF é uma ampliação em proporção 2 para 1 do triângulo ABC.",
+              "caption": "Fonte: IFSP, 2023."
+            },
             "bncc": "EF09MA12",
             "bnccDesc": "Reconhecer as condições necessárias e suficientes para que dois triângulos sejam semelhantes.",
             "unidadeTematica": "Geometria",
             "anoEscolar": "9º ano",
-            "topicoId": "b3-t2",
-            "image": {
-              "src": "https://drive.google.com/file/d/1OhxukFpsueFVAldWM8-F5StaoGVaP0ge/view?usp=sharing",
-              "alt": "Dois triângulos escalenos semelhantes ABC e DEF, onde o triângulo DEF possui todos os lados proporcionais com o dobro das medidas do triângulo ABC",
-              "caption": "Figura: Triângulos ABC e DEF (IFSP 2025.1)"
-            }
+            "topicoId": "b3-t1"
           },
           {
-            "q": "A circunferência representada abaixo tem centro $C$ e diâmetro $AB$. Sobre o raio $CD$ construiu-se um triângulo equilátero unindo-se os pontos $B$ e $C$ ao ponto $D$, que está sobre a circunferência. Qual é a medida (em graus) do arco $\\widehat{AD}$?",
+            "id": "ifsp-2025-1a-q27",
+            "q": "A circunferência representada abaixo tem centro $C$ e diâmetro $AB$.\n\nSobre o raio $CD$ construiu-se um triângulo equilátero unindo-se os pontos $B$ e $C$ ao ponto $D$, que está sobre a circunferência. Qual é a medida (em graus) do arco $\\widehat{AD}$?",
             "options": [
               "$60^\\circ$",
               "$90^\\circ$",
@@ -6860,20 +6873,21 @@ var mathData = window.mathData || {
               "$180^\\circ$"
             ],
             "correct": 2,
-            "explanation": "1. Como o triângulo $BCD$ é equilátero, todos os seus três lados são congruentes e todos os seus ângulos internos medem $60^\\circ$. Logo, o ângulo central $\\widehat{BCD} = 60^\\circ$.<br>2. Como o segmento $AB$ é diâmetro da circunferência, os pontos $A$, $C$ e $B$ são colineares e formam o ângulo raso $\\widehat{ACB} = 180^\\circ$.<br>3. O ângulo central $\\widehat{ACD}$ e o ângulo $\\widehat{BCD}$ são suplementares:<br>$$\\widehat{ACD} = 180^\\circ - 60^\\circ = 120^\\circ$$<br>4. Como a medida do arco da circunferência é igual à medida de seu respectivo ângulo central, temos que a medida do arco $\\widehat{AD}$ é $120^\\circ$.<br>Portanto, a alternativa correta é a <strong>Letra C</strong>.",
+            "explanation": "1. Como $AB$ é um diâmetro da circunferência que passa pelo centro $C$, os pontos $A$, $C$ e $B$ estão alinhados, formando um ângulo raso de $180^\\circ$ no centro:\n$$\\angle ACB = 180^\\circ.$$\n\n2. O triângulo $BCD$ é equilátero, logo todos os seus três ângulos internos medem $60^\\circ$, em particular o ângulo central $\\angle BCD = 60^\\circ$.\n\n3. Os ângulos $\\angle ACD$ e $\\angle BCD$ são adjacentes suplementares sobre o diâmetro $AB$:\n$$\\angle ACD + \\angle BCD = 180^\\circ \\implies \\angle ACD + 60^\\circ = 180^\\circ \\implies \\angle ACD = 120^\\circ.$$\n\n4. A medida em graus de um arco de circunferência é numericamente igual à medida de seu respectivo ângulo central. Logo, a medida do arco $\\widehat{AD}$ é $120^\\circ$.\n\nPortanto, a resposta correta é $120^\\circ$ (**Letra C**).",
+            "image": {
+              "src": "https://drive.google.com/file/d/1xlpCKF3zzA6ROVKJe9FA-L9XYC2j7g0I/view?usp=sharing",
+              "alt": "Circunferência de centro C com diâmetro AB vertical. O ponto D está sobre a circunferência formando o triângulo BCD, com arcos de ângulo destacados em B, C e D.",
+              "caption": "Fonte: IFSP, 2023."
+            },
             "bncc": "EF09MA11",
-            "bnccDesc": "Resolver problemas por meio do estabelecimento de relações entre arcos, ângulos centrais e ângulos inscritos na circunferência, fazendo uso, inclusive, de softwares de geometria dinâmica.",
+            "bnccDesc": "Resolver problemas por meio do estabelecimento de relações entre arcos, ângulos centrais e ângulos inscritos na circunferência.",
             "unidadeTematica": "Geometria",
             "anoEscolar": "9º ano",
-            "topicoId": "b3-t1",
-            "image": {
-              "src": "https://drive.google.com/file/d/1hvUOeiNp_OpA8VtZ7tfFZ2ifFkDKkx8s/view?usp=sharing",
-              "alt": "Circunferência com centro C e diâmetro vertical AB. O ponto D está na circunferência à esquerda, formando com os pontos B e C o triângulo equilátero BCD, com arcos de 60 graus indicados nos três vértices",
-              "caption": "Figura: Circunferência de centro C, diâmetro AB e triângulo equilátero BCD (IFSP 2025.1)"
-            }
+            "topicoId": "b3-t1"
           },
           {
-            "q": "\"O Brasil sobe a rampa do Planalto.\" Este foi o título de muitos jornais brasileiros no dia primeiro de janeiro de 2023, devido à posse do novo presidente da República. A imagem a seguir mostra a rampa citada no título da matéria e destaca um triângulo $ABC$.\nSupondo que o triângulo $ABC$ é retângulo em $A$ e tem as medidas indicadas na figura ($AC = 4\\text{ m}$ e $AB = 12\\sqrt{7}\\text{ m}$), quantos metros percorrerá uma pessoa que caminha em linha reta ao longo da rampa do planalto, do ponto $B$ ao ponto $C$, indicados na figura? Use: $(12\\sqrt{7}\\text{ m})^2 = 1008$.",
+            "id": "ifsp-2025-1a-q28",
+            "q": "*O Brasil sobe a rampa do Planalto.*\n*(Fonte: cartacapital.com.br. Acesso em: 26 set. 2023)*\n\nEste foi o título de muitos jornais brasileiros no dia primeiro de janeiro de 2023, devido à posse do novo presidente da República. A imagem a seguir mostra a rampa citada no título da matéria e destaca um triângulo $ABC$.\n\nSupondo que o triângulo $ABC$ é retângulo em $A$ e tem as medidas indicadas na figura ($AC = 4\\text{ m}$ e $AB = 12\\sqrt{7}\\text{ m}$), quantos metros percorrerá uma pessoa que caminha em linha reta ao longo da rampa do planalto, do ponto $B$ ao ponto $C$, indicados na figura? Use: $(12\\sqrt{7}\\text{ m})^2 = 1008$.",
             "options": [
               "$1024\\text{ m}$",
               "$1008\\text{ m}$",
@@ -6881,36 +6895,38 @@ var mathData = window.mathData || {
               "$16\\text{ m}$"
             ],
             "correct": 2,
-            "explanation": "1. O triângulo $ABC$ é retângulo em $A$, onde os catetos são $AC = 4\\text{ m}$ e $AB = 12\\sqrt{7}\\text{ m}$. A distância percorrida ao longo da rampa é a hipotenusa $BC$.<br>2. Aplicando o Teorema de Pitágoras:<br>$$BC^2 = AC^2 + AB^2$$<br>$$BC^2 = 4^2 + (12\\sqrt{7})^2 = 16 + 1008 = 1024$$<br>3. Extraindo a raiz quadrada da hipotenusa:<br>$$BC = \\sqrt{1024} = 32\\text{ metros}.$$<br>Portanto, a alternativa correta é a <strong>Letra C</strong>.",
+            "explanation": "1. O triângulo $ABC$ é retângulo em $A$, com:\n- Cateto vertical: $AC = 4\\text{ m}$.\n- Cateto horizontal: $AB = 12\\sqrt{7}\\text{ m}$.\n- Hipotenusa: $BC$ (caminho em linha reta da rampa do ponto $B$ até o ponto $C$).\n\n2. Aplicando o Teorema de Pitágoras:\n$$BC^2 = AC^2 + AB^2.$$\n\n3. Substituindo as medidas e utilizando o dado $(12\\sqrt{7})^2 = 1008$:\n$$BC^2 = 4^2 + (12\\sqrt{7})^2 = 16 + 1008 = 1024.$$\n\n4. Calculando o comprimento de $BC$:\n$$BC = \\sqrt{1024} = 32\\text{ m}.$$\n\nPortanto, a pessoa percorrerá $32\\text{ m}$ (**Letra C**).",
+            "image": {
+              "src": "https://drive.google.com/file/d/1hUFKD53fvQCzQHl9SSUy2eblli8F4iBi/view?usp=sharing",
+              "alt": "Foto do Palácio do Planalto destacando o triângulo retângulo ABC formado pela rampa, indicando a altura AC de 4 metros e a base AB de 12 raiz de 7 metros.",
+              "caption": "Fonte: IFSP / Wikipedia, 2023."
+            },
             "bncc": "EF09MA14",
-            "bnccDesc": "Resolver e elaborar problemas de aplicação do teorema de Pitágoras ou das relações de proporcionalidade envolvendo retas paralelas cortadas por secantes.",
+            "bnccDesc": "Resolver problemas de aplicação do teorema de Pitágoras.",
             "unidadeTematica": "Geometria",
             "anoEscolar": "9º ano",
-            "topicoId": "b3-t2",
-            "image": {
-              "src": "https://drive.google.com/file/d/15ApMYFvifJ44iaCp8nnAYwh6ctfrIfog/view?usp=sharing",
-              "alt": "Fotografia da fachada do Palácio do Planalto com a rampa de acesso em destaque sobreposta por um triângulo retângulo ABC, com cateto vertical AC de 4 metros e cateto horizontal AB de 12 raiz de 7 metros",
-              "caption": "Figura: Vista da rampa do Palácio do Planalto com triângulo retângulo ABC destacado (IFSP 2025.1)"
-            }
+            "topicoId": "b3-t1"
           },
           {
-            "q": "Um carro com velocidade constante de $60\\text{ km/h}$ pode fazer um determinado percurso em $4\\text{ horas}$. Se a velocidade do carro aumentasse para $80\\text{ km/h}$, em quantas horas ele faria o mesmo percurso?",
+            "id": "ifsp-2025-1a-q29",
+            "q": "Durante o período de sua vida acadêmica, foi estudado que uma grandeza é tudo aquilo que pode ser medido e calculado. Volume, massa, comprimento, velocidade e o tempo são alguns exemplos de grandezas. Há situações em que duas ou mais grandezas podem estar relacionadas, sendo essa relação de proporcionalidade direta, inversa ou sem relação proporcional.\n\nRefletindo sobre a variação de proporcionalidade, resolva: um carro com velocidade de $60\\text{ km/h}$ pode fazer certo percurso em $4$ horas. Se a velocidade do carro aumentasse para $80\\text{ km/h}$, em quantas horas ele faria o mesmo percurso?",
             "options": [
-              "5,3",
-              "3,0",
-              "2,0",
-              "1,3"
+              "$5{,}3$",
+              "$3{,}0$",
+              "$2{,}0$",
+              "$1{,}3$"
             ],
             "correct": 1,
-            "explanation": "Velocidade e tempo são grandezas inversamente proporcionais para uma distância fixa $d$:<br>$$d = v_1 \\cdot t_1 = 60\\text{ km/h} \\times 4\\text{ h} = 240\\text{ km}$$<br>Com a nova velocidade de $80\\text{ km/h}$:<br>$$t_2 = \\frac{d}{v_2} = \\frac{240\\text{ km}}{80\\text{ km/h}} = 3\\text{ horas}.$$Portanto, a alternativa correta é a <strong>Letra B</strong>.",
-            "bncc": "EF06MA24",
-            "bnccDesc": "Resolver e elaborar problemas que envolvam as grandezas comprimento, massa, tempo, temperatura, área (triângulos e retângulos), capacidade e volume (sólidos formados por blocos retangulares), sem uso de fórmulas, inseridos, sempre que possível, em contextos oriundos de situações reais e/ou relacionadas às outras áreas do conhecimento.",
-            "unidadeTematica": "Grandezas e Medidas",
-            "anoEscolar": "6º ano",
-            "topicoId": "b4-t2"
+            "explanation": "1. A distância $d$ do percurso percorrido pelo carro é constante:\n$$d = v \\times t = 60\\text{ km/h} \\times 4\\text{ h} = 240\\text{ km}.$$\n\n2. Como velocidade e tempo são grandezas inversamente proporcionais para uma mesma distância:\n$$v_1 \\cdot t_1 = v_2 \\cdot t_2 \\implies 60 \\cdot 4 = 80 \\cdot t_2.$$\n\n3. Resolvendo para $t_2$:\n$$80 \\cdot t_2 = 240 \\implies t_2 = \\frac{240}{80} = 3{,}0\\text{ horas}.$$\n\nPortanto, ele faria o percurso em $3{,}0$ horas (**Letra B**).",
+            "bncc": "EF07MA17",
+            "bnccDesc": "Resolver e elaborar problemas que envolvam variação de proporcionalidade direta e do tipo inversa.",
+            "unidadeTematica": "Álgebra",
+            "anoEscolar": "7º ano",
+            "topicoId": "b2-t1"
           },
           {
-            "q": "Considerando as unidades de armazenamento de dados binários em computação (onde $1\\text{ KB} = 2^{10}\\text{ bytes}$, $1\\text{ MB} = 2^{20}\\text{ bytes}$, $1\\text{ GB} = 2^{30}\\text{ bytes}$, $1\\text{ TB} = 2^{40}\\text{ bytes}$ e $1\\text{ PB} = 2^{50}\\text{ bytes}$), assinale a única afirmação correta:",
+            "id": "ifsp-2025-1a-q30",
+            "q": "Para responder uma questão encaminhada por seu professor de matemática, um estudante recorreu a um chatbot online de inteligência artificial. Ele digitou “Quais são as unidades de armazenamento de informações?” e obteve a seguinte resposta:\n\n> *As unidades de armazenamento de informações são dispositivos ou meios utilizados para armazenar dados... As principais unidades incluem:*\n> * **Bit:** A menor unidade de informação...\n> * **Byte:** É composto por 8 bits...\n> * **Kilobyte (KB):** Equivale a $1024$ bytes, ou seja, $2^{10}$ bytes.\n> * **Megabyte (MB):** Equivale a $1024$ kilobytes ou $2^{20}$ bytes.\n> * **Gigabyte (GB):** Equivale a $1024$ megabytes ou $2^{30}$ bytes.\n> * **Terabyte (TB):** Equivale a $1024$ gigabytes ou $2^{40}$ bytes.\n> * **Petabyte (PB):** Equivale a $1024$ terabytes ou $2^{50}$ bytes.\n> * **Exabyte (EB):** Equivale a $1024$ petabytes ou $2^{60}$ bytes.\n> * **Zettabyte (ZB):** Equivale a $1024$ exabytes ou $2^{70}$ bytes.\n> * **Yottabyte (YB):** Equivale a $1024$ zettabytes ou $2^{80}$ bytes.\n\nNa tentativa de estabelecer relações entre as quantidades de bytes das unidades de medida presentes na resposta apresentada pelo chatbot online de inteligência artificial, o estudante escreveu quatro afirmações e entregou para seu professor de matemática. Das quatro, a única afirmação correta identificada pelo professor foi:",
             "options": [
               "Dois Terabytes têm $2^{80}$ bytes.",
               "Um Gigabyte tem a metade da quantidade de bytes de um Exabyte.",
@@ -6918,19 +6934,19 @@ var mathData = window.mathData || {
               "Um Petabyte tem mais bytes que a soma de um Gigabyte com um Terabyte."
             ],
             "correct": 3,
-            "explanation": "Vamos analisar cada alternativa:<br>1. Dois Terabytes: $2 \\times 2^{40} = 2^{41}\\text{ bytes} \\neq 2^{80}$ (Falsa).<br>2. Um Gigabyte ($2^{30}$) não é metade de um Exabyte ($2^{60}$); metade de $2^{60}$ seria $2^{59}$ (Falsa).<br>3. Um Megabyte ($2^{20} = 1.048.576\\text{ bytes}$) tem $1024$ vezes a quantidade de um Kilobyte ($2^{10} = 1024\\text{ bytes}$), e não o dobro (Falsa).<br>4. Um Petabyte equivale a $2^{50}\\text{ bytes} \\approx 1{,}126 \\times 10^{15}$. Já a soma de $1\\text{ GB} + 1\\text{ TB} = 2^{30} + 2^{40} \\approx 1{,}1 \\times 10^{12}\\text{ bytes}$. Como $2^{50}$ é ordens de grandeza maior que $2^{40} + 2^{30}$, a afirmação é verdadeira.<br>Portanto, a alternativa correta é a <strong>Letra D</strong>.",
-            "bncc": "EF08MA22",
-            "bnccDesc": "Calcular a probabilidade de eventos, com base na construção do espaço amostral, utilizando o princípio multiplicativo, e reconhecer que a soma das probabilidades de todos os elementos do espaço amostral é igual a 1.",
-            "unidadeTematica": "Probabilidade e Estatística",
-            "anoEscolar": "8º ano",
-            "topicoId": "b4-t3"
+            "explanation": "Com base nas potências de $2$ dadas na tabela:\n- $\\text{KB} = 2^{10}\\text{ bytes}$\n- $\\text{MB} = 2^{20}\\text{ bytes}$\n- $\\text{GB} = 2^{30}\\text{ bytes}$\n- $\\text{TB} = 2^{40}\\text{ bytes}$\n- $\\text{PB} = 2^{50}\\text{ bytes}$\n- $\\text{EB} = 2^{60}\\text{ bytes}$\n\nAnalisando as afirmações:\n- **(A) Incorreta:** $2\\text{ TB} = 2 \\times 2^{40} = 2^{41}\\text{ bytes} \\neq 2^{80}\\text{ bytes}$.\n- **(B) Incorreta:** A metade de um Exabyte é $\\frac{2^{60}}{2} = 2^{59}\\text{ bytes}$, valor muito superior a um Gigabyte ($2^{30}\\text{ bytes}$).\n- **(C) Incorreta:** O dobro de um Kilobyte é $2 \\times 2^{10} = 2^{11}\\text{ bytes}$, enquanto $1\\text{ MB} = 2^{20}\\text{ bytes}$ ($1024$ vezes maior).\n- **(D) Correta:** $1\\text{ PB} = 2^{50}\\text{ bytes}$. A soma de um Gigabyte com um Terabyte é $2^{30} + 2^{40}\\text{ bytes}$. Como $2^{50} = 1024 \\times 2^{40}$, é evidente que $2^{50} > 2^{40} + 2^{30}$.\n\nPortanto, a única afirmativa correta é a **Letra D**.",
+            "bncc": "EF09MA04",
+            "bnccDesc": "Resolver e elaborar problemas com números reais, inclusive em notação científica, envolvendo diferentes operações.",
+            "unidadeTematica": "Números",
+            "anoEscolar": "9º ano",
+            "topicoId": "b1-t2"
           }
         ],
         "driveUrl": "https://drive.google.com/file/d/1v4uNGN7qvsnD3H7Owmx0hTMT6yqS9isk/view?usp=drive_web"
       },
       {
         "id": "ifsp-2025-1-b",
-        "title": "Prova IFSP 2025.1 - Prova B",
+        "title": "IFSP 2025.1 - Prova B",
         "bncc": "Revisão Geral",
         "summary": "15 questões de Matemática aplicadas no Processo Seletivo IFSP 2025.1 (Edital Nº 088/2024 - Prova B) para os Cursos Técnicos Integrados.",
         "detailedTheory": "A Prova B do Processo Seletivo IFSP 2025.1 abordou padrões e sequências lógicas em peças de dominó, princípio fundamental da contagem na formação de senhas alfanuméricas com vogais e consoantes, geometria plana com áreas de figuras compostas (trapézio retângulo e galpão) e fração de área gramada, relações volumétricas e proporcionalidade cúbica em recipientes com variação de aresta, notação científica e operações com potências de base 10 em distâncias astronômicas de ida e volta, geometria analítica com cálculo de ponto médio de um segmento, progressões e modelagem de sequências em situações cotidianas, matemática financeira com descontos sucessivos de tarifas por hora, análise estatística com média aritmética de perdas populacionais no Censo do IBGE, conceitos e critérios de semelhança de triângulos (critérios LAL, AA e Teorema Fundamental), proporcionalidade direta no tempo de download de arquivos com conversão de minutos e segundos, estatística descritiva com determinação da moda e mediana em distribuição de frequências, valor numérico de expressões e sequências geradas por fluxogramas, construções geométricas com régua e compasso de triângulos equiláteros, e cálculo do raio de setores semicirculares com porcentagem de área total.",
@@ -6952,80 +6968,86 @@ var mathData = window.mathData || {
         "pdf": "IFSP_prova_2025_1_b.pdf",
         "questions": [
           {
-            "q": "O dominó é um jogo tradicionalmente formado por 28 peças com formatos retangulares. Cada uma dessas peças é dividida em duas metades, sendo que em cada metade são marcados pontos de zero a seis, como ilustrado a seguir:\n\nUm jogador seleciona aleatoriamente uma dessas 28 peças. A probabilidade de a soma dos pontos das duas metades dessa peça ser igual a 6 é de:",
+            "id": "ifsp-2025-1b-q16",
+            "q": "O dominó é um jogo tradicionalmente formado por $28$ peças com formatos retangulares. Cada peça é constituída por duas seções de formatos quadrangulares, nos quais os pontos são marcados por pequenos círculos. Cada formato quadrangular comporta de $0$ a $6$ círculos.\n\nAo pegar quatro peças do jogo, um estudante percebeu uma regularidade entre os pontos das quatro peças de dominó. A imagem seguinte apresenta as quatro peças, na ordem em que o estudante identificou a regularidade:\n\nSe o estudante quiser manter a regularidade, para a quinta peça, ele deverá escolher:",
             "options": [
-              "qualquer peça em que a soma dos pontos seja 9.",
+              "qualquer peça em que a soma dos pontos seja $9$.",
               "qualquer peça em que a soma dos pontos seja um número par.",
-              "uma peça em que a soma dos pontos seja 11.",
-              "uma peça em que a soma dos pontos seja 12."
+              "uma peça em que a soma dos pontos seja $11$.",
+              "uma peça em que a soma dos pontos seja $12$."
             ],
-            "correct": 2,
-            "explanation": "A sequência formada pelas somas dos pontos de cada peça é:<br>$$3, \\, 5, \\, 7, \\, 9, \\dots$$Trata-se de uma progressão aritmética de primeiro termo $a_1 = 3$ e razão $r = 2$ (números ímpares consecutivos).<br>O quinto termo da sequência é:<br>$$a_5 = 9 + 2 = 11$$Portanto, o estudante deverá escolher uma peça cuja soma dos pontos seja 11 (como a peça [5|6]).<br>Portanto, a alternativa correta é a <strong>Letra C</strong>.",
-            "bncc": "EF08MA06",
-            "bnccDesc": "Resolver e elaborar problemas que envolvam cálculo do valor numérico de expressões algébricas, utilizando as propriedades das operações.",
-            "unidadeTematica": "Álgebra",
-            "anoEscolar": "8º ano",
-            "topicoId": "b2-t1",
+            "correct": 3,
+            "explanation": "1. Calculando a soma dos pontos de cada uma das quatro peças apresentadas na imagem:\n- $1^a$ peça: $0 + 0 = 0$ ponto.\n- $2^a$ peça: $1 + 2 = 3$ pontos.\n- $3^a$ peça: $3 + 3 = 6$ pontos.\n- $4^a$ peça: $4 + 5 = 9$ pontos.\n\n2. As somas formam uma sequência aritmética de razão constante $r = 3$:\n$$(0, 3, 6, 9, \\dots)$$\n\n3. Para manter a mesma regularidade na quinta peça, a soma dos pontos deve ser:\n$$9 + 3 = 12.$$\n\nPortanto, o estudante deverá escolher uma peça em que a soma dos pontos seja $12$ (**Letra D**).",
             "image": {
-              "src": "https://drive.google.com/file/d/17kRP-EowYzuEp7ot-ezqcs7vsf-Idpfn/view?usp=sharing",
-              "alt": "Quatro peças de dominó retangulares ilustrativas divididas em duas metades com pontos de zero a seis."
-            }
+              "src": "https://drive.google.com/file/d/1mfAM6Uior3OxIdL6a-1Eu9pT0Pn9lp-I/view?usp=sharing",
+              "alt": "Quatro peças de dominó dispostas lado a lado: a primeira com 0 e 0 pontos (soma 0); a segunda com 1 e 2 pontos (soma 3); a terceira com 3 e 3 pontos (soma 6); a quarta com 4 e 5 pontos (soma 9).",
+              "caption": "Fonte: IFSP, 2023."
+            },
+            "bncc": "EF07MA16",
+            "bnccDesc": "Reconhecer se duas grandezas são ou não diretamente proporcionais ou identificar regularidades em sequências numéricas.",
+            "unidadeTematica": "Álgebra",
+            "anoEscolar": "7º ano",
+            "topicoId": "b2-t1"
           },
           {
-            "q": "Um adolescente deseja criar uma senha usando exatamente quatro letras minúsculas escolhidas entre as 26 do alfabeto. Ele decide que as duas primeiras letras serão consoantes diferentes entre si e que as duas últimas letras serão vogais também diferentes entre si. Nestas condições, quantas senhas diferentes ele pode criar?",
+            "id": "ifsp-2025-1b-q17",
+            "q": "Um adolescente deseja criar uma conta em uma nova rede social. Para isso, após escolher seu nome de usuário, ele deve criar uma senha usando exatamente quatro letras minúsculas, escolhidas entre as $26$ do alfabeto utilizado na escrita da língua portuguesa. Ele decide, então, que as duas primeiras letras da sua senha serão consoantes diferentes entre si e que as duas últimas serão vogais, também diferentes entre si. Nestas condições, quantas senhas diferentes ele pode criar?",
             "options": [
-              "8.400",
-              "11.025",
-              "358.800",
-              "456.976"
+              "$8.400$",
+              "$11.025$",
+              "$358.800$",
+              "$456.976$"
             ],
             "correct": 0,
-            "explanation": "No alfabeto de 26 letras da língua portuguesa, temos $5$ vogais (a, e, i, o, u) e $21$ consoantes.<br>Aplicando o princípio fundamental da contagem para as 4 posições da senha:<br>1. 1ª letra (consoante): $21$ opções.<br>2. 2ª letra (consoante diferente da 1ª): $20$ opções.<br>3. 3ª letra (vogal): $5$ opções.<br>4. 4ª letra (vogal diferente da 3ª): $4$ opções.<br><br>Multiplicando todas as possibilidades:<br>$$\\text{Total} = 21 \\times 20 \\times 5 \\times 4 = 420 \\times 20 = 8.400\\text{ senhas}.$$Portanto, a alternativa correta é a <strong>Letra A</strong>.",
+            "explanation": "1. O alfabeto português possui $26$ letras, divididas em:\n- $5$ vogais: {a, e, i, o, u}\n- $21$ consoantes: $26 - 5 = 21$\n\n2. A senha é composta por quatro posições na forma $(\\text{Consoante}_1, \\text{Consoante}_2, \\text{Vogal}_1, \\text{Vogal}_2)$:\n- Para a primeira consoante: $21$ escolhas possíveis.\n- Para a segunda consoante (diferente da primeira): $20$ escolhas possíveis.\n- Para a primeira vogal: $5$ escolhas possíveis.\n- Para a segunda vogal (diferente da anterior): $4$ escolhas possíveis.\n\n3. Pelo Princípio Fundamental da Contagem (multiplicativo):\n$$\\text{Total} = 21 \\times 20 \\times 5 \\times 4 = 420 \\times 20 = 8.400.$$\n\nPortanto, ele pode criar $8.400$ senhas distintas (**Letra A**).",
             "bncc": "EF08MA03",
             "bnccDesc": "Resolver e elaborar problemas de contagem cuja resolução envolva a aplicação do princípio multiplicativo.",
-            "unidadeTematica": "Números",
+            "unidadeTematica": "Probabilidade e estatística",
             "anoEscolar": "8º ano",
-            "topicoId": "b4-t3"
+            "topicoId": "b4-t1"
           },
           {
-            "q": "Em um terreno com a forma de um trapézio retângulo, um empreiteiro deseja construir um galpão cuja planta baixa tem o formato de um retângulo. A figura a seguir ilustra o projeto e apresenta algumas medidas.\nO empreiteiro decidiu que um terço da área externa (região cinza) ao galpão será pavimentado e o restante será coberto com grama. Deste modo, a área que o gramado ocupará na área externa, em $\\text{m}^2$, é igual a:",
+            "id": "ifsp-2025-1b-q18",
+            "q": "Em um terreno com a forma de um trapézio retângulo, um empreiteiro deseja construir um galpão cuja planta baixa tem o formato de um retângulo. A figura a seguir ilustra o projeto e apresenta algumas medidas.\n\nO empreiteiro decidiu que um terço da área externa (região cinza) ao galpão será pavimentado e o restante será coberto com grama. Deste modo, a área que o gramado ocupará na área externa, em $\\text{m}^2$, é igual a:",
             "options": [
-              "300",
-              "150",
-              "100",
-              "50"
+              "$300$",
+              "$150$",
+              "$100$",
+              "$50$"
             ],
             "correct": 2,
-            "explanation": "1. Calculamos a área total do terreno em formato de trapézio retângulo:<br>- Base menor $b = 12\\text{ m}$<br>- Base maior $B = 18\\text{ m}$<br>- Altura $h = 5 + 15 = 20\\text{ m}$<br>$$A_{\\text{trapézio}} = \\frac{(B + b) \\cdot h}{2} = \\frac{(18 + 12) \\cdot 20}{2} = \\frac{30 \\cdot 20}{2} = 300\\text{ m}^2$$<br>2. Calculamos a área do galpão retangular:<br>$$A_{\\text{galpão}} = 10 \\times 15 = 150\\text{ m}^2$$<br>3. A área externa ao galpão (região cinza) é a diferença:<br>$$A_{\\text{externa}} = 300 - 150 = 150\\text{ m}^2$$<br>4. Se $\\frac{1}{3}$ da área externa será pavimentada, o restante coberto com grama corresponde a $\\frac{2}{3}$:<br>$$A_{\\text{grama}} = \\frac{2}{3} \\times 150 = 100\\text{ m}^2.$$Portanto, a alternativa correta é a <strong>Letra C</strong>.",
-            "bncc": "EF08MA19",
-            "bnccDesc": "Resolver e elaborar problemas que envolvam medidas de área de figuras geométricas, utilizando expressões de cálculo de área (quadriláteros, triângulos e círculos), em situações como determinar medida de terrenos.",
-            "unidadeTematica": "Grandezas e Medidas",
-            "anoEscolar": "8º ano",
-            "topicoId": "b4-t1",
+            "explanation": "1. O terreno é um trapézio retângulo de base menor $b = 12\\text{ m}$, base maior $B = 18\\text{ m}$ e altura $h = 15 + 5 = 20\\text{ m}$. A área total do terreno é:\n$$A_{\\text{terreno}} = \\frac{(B + b) \\cdot h}{2} = \\frac{(18 + 12) \\cdot 20}{2} = \\frac{30 \\cdot 20}{2} = 300\\text{ m}^2.$$\n\n2. O galpão é um retângulo de largura $10\\text{ m}$ e altura $15\\text{ m}$:\n$$A_{\\text{galpão}} = 10 \\cdot 15 = 150\\text{ m}^2.$$\n\n3. A área externa (região cinza) corresponde à diferença:\n$$A_{\\text{externa}} = 300 - 150 = 150\\text{ m}^2.$$\n\n4. Se um terço da área externa será pavimentado, os dois terços restantes serão cobertos com grama:\n$$A_{\\text{gramado}} = \\frac{2}{3} \\cdot 150 = 100\\text{ m}^2.$$\n\nPortanto, a área que o gramado ocupará é de $100\\text{ m}^2$ (**Letra C**).",
             "image": {
-              "src": "https://drive.google.com/file/d/1zOebRYIWe9ZlXscJHeaaNGl1fGlYLpYP/view?usp=sharing",
-              "alt": "Planta baixa de terreno em trapézio retângulo com base superior de 12 metros, base inferior de 18 metros e altura total de 20 metros (5m mais 15m), contendo no interior um galpão retangular de 10 metros por 15 metros e a área externa sombreada em cinza",
-              "caption": "Figura: Projeto do terreno em trapézio retângulo e galpão (IFSP 2025.1)"
-            }
+              "src": "https://drive.google.com/file/d/1Q00cGMWVgg0C0me6tuQ8RPwDpuDG_BBN/view?usp=sharing",
+              "alt": "Planta do terreno em forma de trapézio retângulo com base superior de 12 metros, base inferior de 18 metros e altura lateral esquerda composta por segmentos de 5 metros e 15 metros. No centro da base inferior está o galpão retangular de 10 metros de largura por 15 metros de altura, cercado pela área externa cinza.",
+              "caption": "Fonte: IFSP, 2023."
+            },
+            "bncc": "EF07MA32",
+            "bnccDesc": "Resolver e elaborar problemas de cálculo de medida de área de figuras planas que podem ser decompostas por quadrados, retângulos e/ou triângulos.",
+            "unidadeTematica": "Grandezas e medidas",
+            "anoEscolar": "7º ano",
+            "topicoId": "b3-t2"
           },
           {
-            "q": "Desprezando a espessura de seus lados, sabe-se que um recipiente em formato cúbico de aresta igual a $10\\text{ cm}$ tem capacidade para armazenar $1\\text{ litro}$ de água. Nestas condições, quantos litros de água cabem em um recipiente cúbico cuja aresta é igual a $40\\text{ cm}$?",
+            "id": "ifsp-2025-1b-q19",
+            "q": "Desprezando a espessura de seus lados, sabemos que um recipiente em formato cúbico de aresta igual a $10\\text{ cm}$ tem capacidade de armazenar $1$ litro de água. Nestas condições, quantos litros de água cabem em um recipiente cúbico cuja aresta é igual a $40\\text{ cm}$?",
             "options": [
-              "120 litros",
-              "4 litros",
-              "64 litros",
-              "640 litros"
+              "$120$ litros",
+              "$4$ litros",
+              "$64$ litros",
+              "$640$ litros"
             ],
             "correct": 2,
-            "explanation": "1. O volume de um cubo é dado por $V = a^3$.<br>Para aresta $a_1 = 10\\text{ cm}$, temos $V_1 = 10^3 = 1000\\text{ cm}^3 = 1\\text{ litro}$.<br><br>2. Para o novo cubo de aresta $a_2 = 40\\text{ cm}$, a razão entre as arestas é:<br>$$k = \\frac{40}{10} = 4$$<br>3. Pela propriedade de semelhança de sólidos tridimensionais, o volume varia com o cubo da razão linear de semelhança ($k^3$):<br>$$V_2 = k^3 \\cdot V_1 = 4^3 \\times 1\\text{ litro} = 64 \\times 1 = 64\\text{ litros}.$$Portanto, a alternativa correta é a <strong>Letra C</strong>.",
+            "explanation": "1. O volume de um cubo de aresta $a$ é calculado por $V = a^3$.\n\n2. Para o cubo menor de aresta $10\\text{ cm}$:\n$$V_1 = 10^3 = 1000\\text{ cm}^3 = 1\\text{ litro}.$$\n\n3. Para o cubo maior de aresta $40\\text{ cm}$:\n$$V_2 = 40^3 = 64.000\\text{ cm}^3.$$\n*(Equivalentemente, como a aresta foi multiplicada por $k = \\frac{40}{10} = 4$, o volume é multiplicado por $k^3 = 4^3 = 64$)*.\n\n4. Convertendo para litros ($1000\\text{ cm}^3 = 1\\text{ litro}$):\n$$V_2 = \\frac{64.000}{1000} = 64\\text{ litros}.$$\n\nPortanto, cabem $64$ litros de água (**Letra C**).",
             "bncc": "EF08MA21",
             "bnccDesc": "Resolver e elaborar problemas que envolvam o cálculo do volume de recipiente cujo formato é o de um bloco retangular.",
-            "unidadeTematica": "Grandezas e Medidas",
+            "unidadeTematica": "Grandezas e medidas",
             "anoEscolar": "8º ano",
-            "topicoId": "b4-t2"
+            "topicoId": "b3-t3"
           },
           {
-            "q": "De acordo com dados astronômicos, a aproximação máxima teórica entre a Terra e Marte é de $54{,}6\\text{ milhões de quilômetros}$. Imagine que fosse possível viajar da Terra até Marte aproveitando essa aproximação máxima. Em notação científica, o total de quilômetros percorridos em uma viagem de ida e volta é de:",
+            "id": "ifsp-2025-1b-q20",
+            "q": "Leia o texto a seguir sobre as distâncias entre a Terra e Marte.\n\n> *(...) Marte é o segundo planeta mais próximo do nosso, depois de Vênus. Marte está localizado a 220 milhões de quilômetros do Sol (a Terra está a 150 milhões de quilômetros). O cálculo, portanto, parece simples: a distância entre a Terra e Marte é de 70 milhões de quilômetros. Mas, na realidade, os dois planetas estão em movimento ao redor do Sol, e em órbitas que não são circulares, mas elípticas. Teoricamente, a aproximação máxima que pode existir entre o Planeta Vermelho e a Terra é de 54,6 milhões de quilômetros (...)*\n*(Fonte: socientifica.com.br. Acesso em: 21 jul. 2023)*\n\nImagine que fosse possível viajar da Terra até Marte aproveitando que os planetas estejam na situação de aproximação máxima. Calcule, em notação científica, o total de quilômetros percorridos em uma viagem de ida e volta, de acordo com o fragmento de texto acima.",
             "options": [
               "$7{,}000 \\times 10^7$",
               "$5{,}460 \\times 10^7$",
@@ -7033,15 +7055,16 @@ var mathData = window.mathData || {
               "$1{,}092 \\times 10^8$"
             ],
             "correct": 3,
-            "explanation": "1. A distância de ida é de $54{,}6\\text{ milhões de km} = 54{,}6 \\times 10^6\\text{ km}$.<br>2. A viagem de ida e volta corresponde ao dobro dessa distância:<br>$$\\text{Distância Total} = 2 \\times (54{,}6 \\times 10^6) = 109{,}2 \\times 10^6\\text{ km}$$<br>3. Para converter para notação científica padrão ($1 \\le a < 10$):<br>$$109{,}2 \\times 10^6 = 1{,}092 \\times 10^2 \\times 10^6 = 1{,}092 \\times 10^8\\text{ km}.$$Portanto, a alternativa correta é a <strong>Letra D</strong>.",
+            "explanation": "1. A distância de aproximação máxima (trajeto de ida) é de $54{,}6$ milhões de quilômetros:\n$$d_{\\text{ida}} = 54{,}6 \\times 10^6\\text{ km}.$$\n\n2. Para uma viagem completa de ida e volta, a distância percorrida é o dobro:\n$$d_{\\text{total}} = 2 \\times 54{,}6 \\times 10^6 = 109{,}2 \\times 10^6\\text{ km}.$$\n\n3. Convertendo para a notação científica padrão $a \\times 10^n$, com $1 \\le a < 10$:\n$$109{,}2 \\times 10^6 = 1{,}092 \\times 10^2 \\times 10^6 = 1{,}092 \\times 10^8\\text{ km}.$$\n\nPortanto, a resposta em notação científica é $1{,}092 \\times 10^8$ (**Letra D**).",
             "bncc": "EF09MA04",
             "bnccDesc": "Resolver e elaborar problemas com números reais, inclusive em notação científica, envolvendo diferentes operações.",
             "unidadeTematica": "Números",
             "anoEscolar": "9º ano",
-            "topicoId": "b1-t7"
+            "topicoId": "b1-t2"
           },
           {
-            "q": "Ao saltar de um avião, um paraquedista aterrissou exatamente no ponto médio entre uma árvore localizada no ponto $A(2, 3)$ e um rochedo localizado no ponto $B(4, -5)$. O ponto médio $M(X_m, Y_m)$ onde o paraquedista aterrissou é:",
+            "id": "ifsp-2025-1b-q21",
+            "q": "Ao saltar de um avião, um Paraquedista aterrissou exatamente na metade do percurso entre uma árvore representada pelo ponto $A(2, 3)$ e um rochedo representado pelo ponto $B(4, -5)$. Utilizando os conhecimentos de geometria analítica, calcule o ponto médio $M(X_m, Y_m)$ onde o Paraquedista aterrissou.",
             "options": [
               "$M(3, -1)$",
               "$M(3, 4)$",
@@ -7049,36 +7072,38 @@ var mathData = window.mathData || {
               "$M(3, -4)$"
             ],
             "correct": 0,
-            "explanation": "As coordenadas do ponto médio $M(X_m, Y_m)$ de um segmento com extremidades $A(x_1, y_1)$ e $B(x_2, y_2)$ são dadas pela média aritmética das respectivas coordenadas:<br>$$X_m = \\frac{x_1 + x_2}{2} = \\frac{2 + 4}{2} = \\frac{6}{2} = 3$$<br>$$Y_m = \\frac{y_1 + y_2}{2} = \\frac{3 + (-5)}{2} = \\frac{-2}{2} = -1$$<br>Portanto, o ponto médio é $M(3, -1)$.<br>A alternativa correta é a <strong>Letra A</strong>.",
-            "bncc": "EF07MA35",
-            "bnccDesc": "Compreender, em contextos significativos, o significado de média estatística como indicador da tendência de uma pesquisa, calcular seu valor e relacioná-lo, intuitivamente, com a amplitude do conjunto de dados.",
-            "unidadeTematica": "Probabilidade e Estatística",
-            "anoEscolar": "7º ano",
-            "topicoId": "b4-t4"
+            "explanation": "1. As coordenadas do ponto médio $M(X_m, Y_m)$ de um segmento de reta de extremidades $A(x_A, y_A)$ e $B(x_B, y_B)$ correspondem às médias aritméticas de suas respectivas coordenadas:\n$$X_m = \\frac{x_A + x_B}{2} = \\frac{2 + 4}{2} = \\frac{6}{2} = 3.$$\n$$Y_m = \\frac{y_A + y_B}{2} = \\frac{3 + (-5)}{2} = \\frac{-2}{2} = -1.$$\n\n2. Assim, o ponto médio onde o paraquedista aterrissou é:\n$$M(3, -1).$$\n\nPortanto, a alternativa correta é a **Letra A**.",
+            "bncc": "EF09MA16",
+            "bnccDesc": "Determinar o ponto médio de um segmento de reta e a distância entre dois pontos no plano cartesiano.",
+            "unidadeTematica": "Geometria",
+            "anoEscolar": "9º ano",
+            "topicoId": "b3-t1"
           },
           {
-            "q": "As Tranças Nagô são um tipo de trança africana feita rente ao couro cabeludo. Uma cabeleireira tem seu método próprio para definir a quantidade máxima de tranças finas que é possível ser feita em relação ao volume do cabelo, conforme ilustrado na figura a seguir:\nSuponha que uma pessoa tenha volume de cabelo 8 na escala elaborada pela cabeleireira e que seu método se comporta como uma sequência. Diante disto, qual o número máximo de tranças finas que é possível ser feito no cabelo dessa pessoa?",
+            "id": "ifsp-2025-1b-q22",
+            "q": "As Tranças Nagô (Figura 1) são um tipo de trança africana feita rente ao couro cabeludo. Nagô era o nome dado a todos os negros da Costa dos Escravos que falavam a língua Iorubá. Atualmente, as Tranças Nagô continuam sendo símbolo de resistência, e a quantidade de tranças, finas ou mais grossas, que é possível ser feita depende do volume de cabelo que a pessoa tenha.\n\nUma cabelereira tem seu método próprio para definir a quantidade máxima de tranças finas que é possível ser feita em relação ao volume do cabelo sem que se precise utilizar cabelos sintéticos para dar mais volume. O seu método é representado pela Figura 2:\n\nSuponha que uma pessoa tenha volume de cabelo $8$ na escala elaborada pela cabelereira e que seu método se comporta como uma sequência. Diante disto, qual o número máximo de tranças finas que é possível ser feito no cabelo dessa pessoa?",
             "options": [
-              "33",
-              "38",
-              "36",
-              "43"
+              "$33$",
+              "$38$",
+              "$36$",
+              "$43$"
             ],
             "correct": 1,
-            "explanation": "1. Observando a tabela de quantidade máxima de tranças em relação ao volume de cabelo:<br>- Volume 1: 3 tranças<br>- Volume 2: $3 + 5 = 8$ tranças<br>- Volume 3: $8 + 5 = 13$ tranças<br>- Volume 4: $13 + 5 = 18$ tranças<br><br>2. A sequência das tranças forma uma Progressão Aritmética (PA) com primeiro termo $a_1 = 3$ e razão $r = 5$.<br><br>3. Para o volume de cabelo $n = 8$, calculamos o 8º termo da PA:<br>$$a_8 = a_1 + (8 - 1) \\cdot r = 3 + 7 \\cdot 5 = 3 + 35 = 38\\text{ tranças}.$$Portanto, a alternativa correta é a <strong>Letra B</strong>.",
-            "bncc": "EF08MA06",
-            "bnccDesc": "Resolver e elaborar problemas que envolvam cálculo do valor numérico de expressões algébricas, utilizando as propriedades das operações.",
+            "explanation": "1. Analisando as quantidades de tranças indicadas para cada volume de cabelo na Figura 2:\n- Volume $1$: $3$ tranças\n- Volume $2$: $8$ tranças\n- Volume $3$: $13$ tranças\n- Volume $4$: $18$ tranças\n\n2. Observa-se que a sequência forma uma Progressão Aritmética (PA) de primeiro termo $a_1 = 3$ e razão constante $r = 5$ ($8 - 3 = 13 - 8 = 18 - 13 = 5$).\n\n3. A fórmula do termo geral de uma progressão aritmética é:\n$$a_n = a_1 + (n - 1) \\cdot r.$$\n\n4. Para o volume $n = 8$:\n$$a_8 = 3 + (8 - 1) \\cdot 5 = 3 + 7 \\cdot 5 = 3 + 35 = 38.$$\n\nPortanto, o número máximo de tranças finas é $38$ (**Letra B**).",
+            "image": {
+              "src": "https://drive.google.com/file/d/1PxU9Oks3-55abOtdKzER6LVAlWFJAbtl/view?usp=sharing",
+              "alt": "Figura 1 mostrando modelos de Tranças Nagô vistos de cima e Figura 2 exibindo tabela com a quantidade máxima de tranças finas para os volumes de cabelo 1 (3 tranças), 2 (8 tranças), 3 (13 tranças) e 4 (18 tranças).",
+              "caption": "Fonte: IFSP / Voz das Comunidades, 2023."
+            },
+            "bncc": "EF08MA10",
+            "bnccDesc": "Identificar a regularidade de uma sequência numérica ou figural e expressá-la por meio de uma lei de formação recursiva ou não recursiva.",
             "unidadeTematica": "Álgebra",
             "anoEscolar": "8º ano",
-            "topicoId": "b2-t1",
-            "image": {
-              "src": "https://drive.google.com/file/d/1si_7bg6OEc-8nx44o0cqZV7l9aXfZ7A4/view?usp=sharing",
-              "alt": "Tabela com o método da cabeleireira relacionando os volumes de cabelo de 1 a 4 com a quantidade máxima de tranças finas: volume 1 tem 3 tranças, volume 2 tem 8 tranças, volume 3 tem 13 tranças e volume 4 tem 18 tranças",
-              "caption": "Figura: Método para definição da quantidade máxima de tranças (IFSP 2025.1)"
-            }
+            "topicoId": "b2-t1"
           },
           {
-            "q": "Um grupo de amigos deseja alugar uma quadra de futebol de areia por 4 horas. O valor normal é de $\\text{R\\$} 40{,}00$ a hora. Pelo aplicativo, há uma promoção: na 2ª hora há um desconto de 5% sobre o valor da 1ª hora, e da 3ª hora em diante há um desconto de 10% sobre o valor da 1ª hora para cada hora. Qual será o valor total pago pelo grupo se contratarem pelo aplicativo?",
+            "id": "ifsp-2025-1b-q23",
+            "q": "Um grupo de amigos deseja jogar futebol de areia durante quatro horas no final de semana. A administração da quadra cobra o valor de $\\text{R\\$} 40{,}00$ a hora, porém, está com uma promoção que, se contratada pelo aplicativo, o cliente terá na segunda hora um desconto de $5\\%$ sobre o valor da primeira hora e, para três horas ou mais, um desconto de $10\\%$ sobre o valor da primeira hora para cada hora. Qual será o valor pago pelo grupo de amigos, se utilizarem o aplicativo?",
             "options": [
               "$\\text{R\\$} 148{,}00$",
               "$\\text{R\\$} 150{,}00$",
@@ -7086,31 +7111,33 @@ var mathData = window.mathData || {
               "$\\text{R\\$} 160{,}00$"
             ],
             "correct": 1,
-            "explanation": "Vamos calcular o custo de cada uma das 4 horas:<br>1. 1ª hora: $\\text{R\\$}  40{,}00$<br>2. 2ª hora (desconto de 5% sobre $\\text{R\\$} 40{,}00$): $40{,}00 - 0{,}05 \\times 40{,}00 = 40{,}00 - 2{,}00 = \\text{R\\$}  38{,}00$<br>3. 3ª hora (desconto de 10% sobre $\\text{R\\$} 40{,}00$): $40{,}00 - 0{,}10 \\times 40{,}00 = 40{,}00 - 4{,}00 = \\text{R\\$}  36{,}00$<br>4. 4ª hora (desconto de 10% sobre $\\text{R\\$} 40{,}00$): $40{,}00 - 4{,}00 = \\text{R\\$}  36{,}00$<br><br>Somando os valores das 4 horas:<br>$$\\text{Total} = 40{,}00 + 38{,}00 + 36{,}00 + 36{,}00 = \\text{R\\$}  150{,}00.$$Portanto, a alternativa correta é a <strong>Letra B</strong>.",
-            "bncc": "EF08MA04",
-            "bnccDesc": "Resolver e elaborar problemas, envolvendo cálculo de porcentagens, incluindo o uso de tecnologias digitais.",
+            "explanation": "Calculando o custo de cada uma das $4$ horas conforme as regras de desconto sobre o valor inicial de $\\text{R\\$} 40{,}00$:\n\n1. **$1^a$ hora:** Valor integral:\n$$V_1 = \\text{R\\$} 40{,}00.$$\n\n2. **$2^a$ hora:** Desconto de $5\\%$ sobre $\\text{R\\$} 40{,}00$ ($0{,}05 \\times 40 = \\text{R\\$} 2{,}00$):\n$$V_2 = 40 - 2 = \\text{R\\$} 38{,}00.$$\n\n3. **$3^a$ e $4^a$ horas:** Desconto de $10\\%$ sobre $\\text{R\\$} 40{,}00$ ($0{,}10 \\times 40 = \\text{R\\$} 4{,}00$) para cada uma:\n$$V_3 = 40 - 4 = \\text{R\\$} 36{,}00.$$\n$$V_4 = 40 - 4 = \\text{R\\$} 36{,}00.$$\n\n4. Somando as quatro horas:\n$$V_{\\text{total}} = 40 + 38 + 36 + 36 = \\text{R\\$} 150{,}00.$$\n\nPortanto, o valor total pago será de $\\text{R\\$} 150{,}00$ (**Letra B**).",
+            "bncc": "EF07MA02",
+            "bnccDesc": "Resolver e elaborar problemas que envolvam porcentagens e operações com números racionais.",
             "unidadeTematica": "Números",
-            "anoEscolar": "8º ano",
-            "topicoId": "b1-t6"
+            "anoEscolar": "7º ano",
+            "topicoId": "b1-t4"
           },
           {
-            "q": "Segundo dados do Censo Demográfico do IBGE divulgados em uma notícia sobre o Oeste Paulista, cinco cidades registraram as seguintes perdas populacionais entre 2010 e 2022: Irapuru perdeu 1.851 habitantes, Euclides da Cunha Paulista perdeu 1.661, Flora Rica perdeu 265, Santo Anastácio perdeu 2.512 e Rosana perdeu 2.251 habitantes. Com base nesses dados, a média de habitantes perdidos por esses cinco municípios é de:",
+            "id": "ifsp-2025-1b-q24",
+            "q": "Em 2023 o Instituto Brasileiro de Geografia e Estatística (IBGE) divulgou os dados do Censo Demográfico realizado em 2022. Curioso em saber os resultados de sua região, um estudante do Oeste Paulista, encontrou a seguinte notícia:\n\n> **Censo 2022: 26 cidades do Oeste Paulista perderam população; Irapuru foi a que mais encolheu**\n>\n> *Das 56 cidades que compõem a região de Presidente Prudente (SP), 26 delas encolheram nos últimos 12 anos. Os municípios perderam, ao todo, 17.331 habitantes. O município de Irapuru (SP) foi o que mais perdeu habitantes, saindo de 7.789 para 5.938 habitantes (perda de 1.851 moradores).*\n> *Logo em seguida, Euclides da Cunha Paulista (SP) registrou diminuição de 17,33% (perda de 1.661 moradores).*\n> *Em terceiro lugar, Flora Rica (SP) apresentou queda de 15,13% (perda de 265 pessoas).*\n> *Santo Anastácio (SP) teve queda de 12,27% (perda de 2.512 moradores).*\n> *Em quinto lugar, Rosana (SP) apresentou 11,43% de queda (perda de 2.251 moradores).*\n*(Fonte: G1 Presidente Prudente / IBGE. Acesso em: 15 jul. 2023)*\n\nConsiderando os dados da notícia, o estudante observou corretamente que:",
             "options": [
-              "Ao todo, os cinco municípios perderam 17.331 habitantes.",
-              "Entre os cinco municípios, aquele com maior queda percentual perdeu a maior quantidade absoluta de habitantes.",
-              "Na região, o resultado 'a cidade encolheu' pode ser considerado como a mediana dos dados.",
-              "Os cinco municípios da notícia perderam, em média, 1.708 habitantes cada."
+              "Ao todo, os cinco municípios perderam $17.331$ habitantes.",
+              "Entre os cinco municípios da notícia, aquele que teve a maior queda percentual na taxa de crescimento populacional foi o que perdeu a maior quantidade de habitantes.",
+              "Na região de Presidente Prudente, o resultado “a cidade encolheu” pode ser considerado como a moda dos dados.",
+              "Os cinco municípios da notícia perderam, em média, $1.708$ habitantes cada."
             ],
             "correct": 3,
-            "explanation": "Calculamos a soma das perdas absolutas de habitantes nos 5 municípios citados:<br>$$\\text{Soma} = 1.851 + 1.661 + 265 + 2.512 + 2.251 = 8.540\\text{ habitantes}$$<br>Calculamos a média aritmética dividindo pelo número de municípios (5):<br>$$\\text{Média} = \\frac{8.540}{5} = 1.708\\text{ habitantes por município}.$$Portanto, a afirmação correta é a da <strong>Letra D</strong>.",
+            "explanation": "Analisando cada uma das alternativas:\n\n- **(A) Incorreta:** O total de $17.331$ habitantes perdidos refere-se às $26$ cidades que encolheram em toda a região de Presidente Prudente, e não apenas aos $5$ municípios citados.\n- **(B) Incorreta:** A cidade com maior queda percentual foi Irapuru ($23{,}76\\%$, perdendo $1.851$ habitantes). Porém, o município que perdeu a maior quantidade absoluta de pessoas foi Santo Anastácio ($2.512$ habitantes).\n- **(C) Incorreta:** Apenas $26$ das $56$ cidades encolheram, ou seja, menos da metade ($26 < 28$). A maioria das cidades ($30$) não encolheu, portanto essa não é a moda da amostra.\n- **(D) Correta:** Somando as perdas de habitantes dos $5$ municípios:\n$$1.851 + 1.661 + 265 + 2.512 + 2.251 = 8.540\\text{ habitantes}.$$\nCalculando a média aritmética entre esses $5$ municípios:\n$$\\text{Média} = \\frac{8.540}{5} = 1.708\\text{ habitantes por município}.$$\n\nPortanto, a alternativa correta é a **Letra D**.",
             "bncc": "EF08MA25",
-            "bnccDesc": "Obter os valores de medidas de tendência central de uma pesquisa estatística (média, moda e mediana) com a compreensão de seus significados e relacioná-los com a dispersão de dados, indicada pela amplitude.",
-            "unidadeTematica": "Probabilidade e Estatística",
+            "bnccDesc": "Obter os valores de medidas de tendência central de uma pesquisa estatística: média, moda e mediana.",
+            "unidadeTematica": "Probabilidade e estatística",
             "anoEscolar": "8º ano",
-            "topicoId": "b4-t4"
+            "topicoId": "b4-t2"
           },
           {
-            "q": "Analise as afirmações sobre semelhança de triângulos:<br>[ ] Toda reta paralela a um dos lados do triângulo, que intercepta os outros dois lados, determina um segundo triângulo que não é semelhante ao primeiro.<br>[ ] Dizemos que dois triângulos são semelhantes se dois lados são proporcionais e os ângulos entre esses lados são congruentes.<br>[ ] Dois triângulos que possuem apenas dois ângulos correspondentes congruentes não podem ser considerados semelhantes.<br>[ ] O quociente comum entre as medidas dos lados correspondentes é chamado de razão de semelhança entre dois triângulos.<br>A sequência correta de Verdadeiro (V) ou Falso (F), de cima para baixo, é:",
+            "id": "ifsp-2025-1b-q25",
+            "q": "A semelhança de triângulos nos permite calcular distâncias inacessíveis. Também é utilizada quando é preciso medir uma distância muito longa ou algum obstáculo. Dentre suas aplicabilidades estão: medir a distância entre as margens de um rio, a altura de um prédio, a profundidade de um poço etc.\n\nA respeito de semelhança de triângulos, assinale cada afirmação como verdadeira (V) ou falsa (F) e depois escolha a alternativa que corresponde à sequência, de cima para baixo, de V e F obtida:\n\n[ ] Toda reta paralela a um dos lados do triângulo, que intercepta os outros dois lados, determina um segundo triângulo, que não é semelhante ao primeiro.\n[ ] Dizemos que dois triângulos são semelhantes se dois lados são proporcionais e os ângulos entre esses lados são congruentes, isto é, iguais.\n[ ] Dois triângulos que possuem apenas dois ângulos correspondentes congruentes não podem ser considerados semelhantes.\n[ ] O quociente comum entre as medidas dos lados correspondentes é chamado de razão de semelhança entre dois triângulos.",
             "options": [
               "V - V - F - F",
               "V - F - V - F",
@@ -7118,72 +7145,72 @@ var mathData = window.mathData || {
               "F - F - V - V"
             ],
             "correct": 2,
-            "explanation": "Analisando cada proposição:<br>1. [ F ] Pelo Teorema Fundamental da Semelhança, toda reta paralela a um dos lados interceptando os outros dois forma um triângulo que É semelhante ao original.<br>2. [ V ] Corresponde ao caso LAL (Lado-Ângulo-Lado) de semelhança de triângulos.<br>3. [ F ] Pelo caso AA (Ângulo-Ângulo), se dois triângulos possuem dois ângulos congruentes, eles já são garantidamente semelhantes (pois o terceiro ângulo também será congruente).<br>4. [ V ] Por definição, o quociente entre as medidas de lados homólogos é a razão de semelhança $k$.<br>A sequência obtida é F - V - F - V.<br>Portanto, a alternativa correta é a <strong>Letra C</strong>.",
+            "explanation": "Análise minuciosa de cada uma das quatro afirmações:\n\n1. **(F)** *\"Toda reta paralela a um dos lados do triângulo... determina um segundo triângulo, que não é semelhante ao primeiro.\"* — **Falsa.** Pelo Teorema Fundamental da Semelhança de Triângulos, toda reta paralela a um lado determina sempre um triângulo semelhante ao original.\n2. **(V)** *\"Dizemos que dois triângulos são semelhantes se dois lados são proporcionais e os ângulos entre esses lados são congruentes...\"* — **Verdadeira.** Este é exatamente o critério de semelhança Lado-Ângulo-Lado ($\\text{LAL}$).\n3. **(F)** *\"Dois triângulos que possuem apenas dois ângulos correspondentes congruentes não podem ser considerados semelhantes.\"* — **Falsa.** Pelo critério Ângulo-Ângulo ($\\text{AA}$), ter dois pares de ângulos correspondentes congruentes é condição suficiente para garantir a semelhança.\n4. **(V)** *\"O quociente comum entre as medidas dos lados correspondentes é chamado de razão de semelhança entre dois triângulos.\"* — **Verdadeira.** Essa é a própria definição formal da constante de semelhança $k$.\n\nA sequência correta de cima para baixo é **F - V - F - V** (**Letra C**).",
             "bncc": "EF09MA12",
             "bnccDesc": "Reconhecer as condições necessárias e suficientes para que dois triângulos sejam semelhantes.",
             "unidadeTematica": "Geometria",
             "anoEscolar": "9º ano",
-            "topicoId": "b3-t2"
+            "topicoId": "b3-t1"
           },
           {
-            "q": "Um computador demora 6 minutos e 20 segundos para fazer o download de um arquivo de $1\\text{ GB}$. Mantendo essa mesma velocidade de transferência constante, quanto tempo esse computador levará para baixar um arquivo de $2{,}2\\text{ GB}$?",
+            "id": "ifsp-2025-1b-q26",
+            "q": "Um computador demora $6$ minutos e $20$ segundos para fazer o “download” de um arquivo de $1\\text{ GB}$. Se ele mantiver a mesma velocidade de download, quanto tempo esse computador levará para baixar um arquivo de $2{,}2\\text{ GB}$?",
             "options": [
-              "13 minutos e 56 segundos.",
-              "13 minutos e 20 segundos.",
-              "12 minutos e 40 segundos.",
-              "14 minutos e 04 segundos."
+              "$13$ minutos e $56$ segundos.",
+              "$13$ minutos e $20$ segundos.",
+              "$12$ minutos e $40$ segundos.",
+              "$14$ minutos e $04$ segundos."
             ],
             "correct": 0,
-            "explanation": "1. Convertemos o tempo para segundos:<br>$$6\\text{ min e } 20\\text{ s} = 6 \\times 60 + 20 = 360 + 20 = 380\\text{ segundos}$$<br>2. Como o tamanho do arquivo e o tempo são grandezas diretamente proporcionais:<br>$$t = 380 \\times 2{,}2 = 836\\text{ segundos}$$<br>3. Convertendo de volta para minutos e segundos:<br>$$836 \\div 60 = 13\\text{ minutos e resto } 56\\text{ segundos}$$<br>Logo, o tempo total é de 13 minutos e 56 segundos.<br>Portanto, a alternativa correta é a <strong>Letra A</strong>.",
-            "bncc": "EF06MA24",
-            "bnccDesc": "Resolver e elaborar problemas que envolvam as grandezas comprimento, massa, tempo, temperatura, área (triângulos e retângulos), capacidade e volume (sólidos formados por blocos retangulares), sem uso de fórmulas, inseridos, sempre que possível, em contextos oriundos de situações reais e/ou relacionadas às outras áreas do conhecimento.",
-            "unidadeTematica": "Grandezas e Medidas",
-            "anoEscolar": "6º ano",
+            "explanation": "1. Convertendo o tempo inicial em segundos:\n$$6\\text{ min e } 20\\text{ s} = 6 \\times 60 + 20 = 360 + 20 = 380\\text{ segundos}.$$\n\n2. Como tempo e tamanho do arquivo são grandezas diretamente proporcionais a velocidade constante:\n$$t = 2{,}2 \\times 380\\text{ s} = 836\\text{ segundos}.$$\n\n3. Convertendo $836$ segundos para minutos e segundos:\n$$836 = 13 \\times 60 + 56 = 780 + 56\\text{ segundos}.$$\n\nPortanto, o tempo de download será de $13$ minutos e $56$ segundos (**Letra A**).",
+            "bncc": "EF07MA17",
+            "bnccDesc": "Resolver e elaborar problemas que envolvam variação de proporcionalidade direta e do tipo inversa.",
+            "unidadeTematica": "Álgebra",
+            "anoEscolar": "7º ano",
+            "topicoId": "b2-t1"
+          },
+          {
+            "id": "ifsp-2025-1b-q27",
+            "q": "Um professor realizou uma pesquisa em uma turma composta por $40$ alunos, perguntando a quantidade de livros que cada um leu no ano anterior. O quadro a seguir mostra o resultado desta pesquisa:\n\n| Quantidade de livros lidos no ano anterior | Número de alunos |\n| :---: | :---: |\n| 0 | 2 |\n| 1 | 4 |\n| 2 | 7 |\n| 3 | 7 |\n| 4 | 10 |\n| 5 | 7 |\n| 6 | 3 |\n\nSendo $Y$ e $Z$, respectivamente, a mediana e a moda da quantidade de livros lidos no ano anterior pelos alunos desta turma, tem-se que $Y + Z$ é igual a:",
+            "options": [
+              "$7{,}0$",
+              "$7{,}5$",
+              "$10$",
+              "$10{,}5$"
+            ],
+            "correct": 1,
+            "explanation": "1. **Moda ($Z$):** O valor que apresenta a maior frequência absoluta é $4$ livros (lido por $10$ alunos). Logo:\n$$Z = 4.$$\n\n2. **Mediana ($Y$):** O conjunto de dados tem $N = 40$ valores ordenados. Como $N$ é par, a mediana é a média entre o $20^º$ e o $21^º$ elemento.\nCalculando a frequência acumulada:\n- Até $0$ livros: $2$ alunos (posições 1 a 2)\n- Até $1$ livro: $2 + 4 = 6$ alunos (posições 3 a 6)\n- Até $2$ livros: $6 + 7 = 13$ alunos (posições 7 a 13)\n- Até $3$ livros: $13 + 7 = 20$ alunos (posições 14 a 20) $\\implies 20^º\\text{ termo} = 3$.\n- Até $4$ livros: $20 + 10 = 30$ alunos (posições 21 a 30) $\\implies 21^º\\text{ termo} = 4$.\n\nCalculando a mediana $Y$:\n$$Y = \\frac{3 + 4}{2} = 3{,}5.$$\n\n3. Somando $Y + Z$:\n$$Y + Z = 3{,}5 + 4 = 7{,}5.$$\n\nPortanto, $Y + Z$ é igual a $7{,}5$ (**Letra B**).",
+            "bncc": "EF08MA25",
+            "bnccDesc": "Obter os valores de medidas de tendência central de uma pesquisa estatística: média, moda e mediana.",
+            "unidadeTematica": "Probabilidade e estatística",
+            "anoEscolar": "8º ano",
             "topicoId": "b4-t2"
           },
           {
-            "q": "Um professor realizou uma pesquisa em uma turma composta por 40 alunos, perguntando a quantidade de livros que cada um leu no ano anterior. O quadro a seguir mostra o resultado desta pesquisa:\n\nSendo $Y$ e $Z$, respectivamente, a mediana e a moda da quantidade de livros lidos no ano anterior pelos alunos desta turma, tem-se que $Y + Z$ é igual a:",
+            "id": "ifsp-2025-1b-q28",
+            "q": "Observe o fluxograma abaixo. Siga os passos indicados e encontre uma expressão para $T_n$.\n\nSe $n$ assumir os valores $1, 2, 3, 4, \\dots$ na expressão encontrada para $T_n$, obtém-se uma sequência de números $(T_1, T_2, T_3, T_4, \\dots)$. Qual das alternativas a seguir apresenta $3$ termos consecutivos dessa sequência?",
             "options": [
-              "7,0",
-              "7,5",
-              "10",
-              "10,5"
-            ],
-            "correct": 1,
-            "explanation": "1. Moda ($Z$): é o valor com maior frequência absoluta. A maior quantidade de alunos é $10$ (que leram $4$ livros). Logo:<br>$$Z = 4$$<br>2. Mediana ($Y$): como o total de alunos é $N = 40$ (número par), a mediana é a média entre o 20º e o 21º termos na lista ordenada.<br>Calculando as frequências acumuladas:<br>- Até 0 livros: 2 alunos (posições 1 a 2)<br>- Até 1 livro: 2 + 4 = 6 alunos (posições 3 a 6)<br>- Até 2 livros: 6 + 7 = 13 alunos (posições 7 a 13)<br>- Até 3 livros: 13 + 7 = 20 alunos (posições 14 a 20) $\\implies$ 20º aluno leu 3 livros.<br>- Até 4 livros: 20 + 10 = 30 alunos (posições 21 a 30) $\\implies$ 21º aluno leu 4 livros.<br>Logo, a mediana é:<br>$$Y = \\frac{3 + 4}{2} = 3{,}5$$<br>3. Calculando $Y + Z$:<br>$$Y + Z = 3{,}5 + 4 = 7{,}5.$$Portanto, a alternativa correta é a <strong>Letra B</strong>.",
-            "bncc": "EF08MA25",
-            "bnccDesc": "Obter os valores de medidas de tendência central de uma pesquisa estatística (média, moda e mediana) com a compreensão de seus significados e relacioná-los com a dispersão de dados, indicada pela amplitude.",
-            "unidadeTematica": "Probabilidade e Estatística",
-            "anoEscolar": "8º ano",
-            "topicoId": "b4-t4",
-            "image": {
-              "src": "https://drive.google.com/file/d/1jOg3TVcrgalfW3EXI2EYDycFhkg8TZ8l/view?usp=sharing",
-              "alt": "Tabela com a quantidade de livros lidos no ano anterior (de 0 a 6) e o respectivo número de alunos em uma turma de 40 alunos."
-            }
-          },
-          {
-            "q": "Observe o fluxograma abaixo. Siga os passos indicados e encontre uma expressão para $T_n$.\nSe $n$ assumir os valores $1, 2, 3, 4, \\dots$ na expressão encontrada para $T_n$, obtém-se uma sequência de números ($T_1, T_2, T_3, T_4, \\dots$). Qual das alternativas a seguir apresenta 3 termos consecutivos dessa sequência?",
-            "options": [
-              "$\\frac{3}{2}, \\frac{9}{2}, \\frac{27}{2}$",
-              "$\\frac{9}{2}, \\frac{18}{2}, \\frac{27}{2}$",
-              "$\\frac{27}{2}, \\frac{57}{2}, \\frac{99}{2}$",
-              "$\\frac{9}{2}, \\frac{57}{2}, \\frac{153}{2}$"
+              "$\\frac{3}{2},\\ \\frac{9}{2},\\ \\frac{27}{2}$",
+              "$\\frac{9}{2},\\ \\frac{18}{2},\\ \\frac{27}{2}$",
+              "$\\frac{27}{2},\\ \\frac{57}{2},\\ \\frac{99}{2}$",
+              "$\\frac{9}{2},\\ \\frac{57}{2},\\ \\frac{153}{2}$"
             ],
             "correct": 2,
-            "explanation": "1. Seguindo os blocos do fluxograma passo a passo:<br>- Passo 1: Considere uma variável $n$<br>- Passo 2: Eleve a variável $n$ ao quadrado $\\implies n^2$<br>- Passo 3: Encontre o triplo do resultado $\\implies 3n^2$<br>- Passo 4: Acrescente $\\frac{3}{2}$ ao resultado $\\implies 3n^2 + \\frac{3}{2} = \\frac{6n^2 + 3}{2}$<br>- Passo 5: Chame a expressão de $T_n \\implies T_n = 3n^2 + \\frac{3}{2}$<br><br>2. Calculando os primeiros termos para $n = 1, 2, 3, 4$:<br>- $T_1 = 3(1)^2 + 1{,}5 = 4{,}5 = \\frac{9}{2}$<br>- $T_2 = 3(4) + 1{,}5 = 13{,}5 = \\frac{27}{2}$<br>- $T_3 = 3(9) + 1{,}5 = 28{,}5 = \\frac{57}{2}$<br>- $T_4 = 3(16) + 1{,}5 = 49{,}5 = \\frac{99}{2}$<br><br>3. Para os termos consecutivos $T_2, T_3, T_4$ temos exatamente:<br>$$\\frac{27}{2}, \\frac{57}{2}, \\frac{99}{2}.$$Portanto, a alternativa correta é a <strong>Letra C</strong>.",
-            "bncc": "EF08MA06",
-            "bnccDesc": "Resolver e elaborar problemas que envolvam cálculo do valor numérico de expressões algébricas, utilizando as propriedades das operações.",
+            "explanation": "1. Seguindo a sequência de instruções descrita no fluxograma:\n- Comece com a variável $n$.\n- Eleve ao quadrado: $n^2$.\n- Multiplique por três: $3n^2$.\n- Some $\\frac{3}{2}$: $T_n = 3n^2 + \\frac{3}{2}$.\n\n2. Calculando os primeiros termos da sequência para $n = 1, 2, 3, 4$:\n- $T_1 = 3(1^2) + \\frac{3}{2} = 3 + \\frac{3}{2} = \\frac{9}{2}$.\n- $T_2 = 3(2^2) + \\frac{3}{2} = 12 + \\frac{3}{2} = \\frac{27}{2}$.\n- $T_3 = 3(3^2) + \\frac{3}{2} = 27 + \\frac{3}{2} = \\frac{57}{2}$.\n- $T_4 = 3(4^2) + \\frac{3}{2} = 48 + \\frac{3}{2} = \\frac{99}{2}$.\n\n3. Os termos $T_2, T_3$ e $T_4$ formam a sequência de termos consecutivos:\n$$\\frac{27}{2},\\ \\frac{57}{2},\\ \\frac{99}{2}.$$\n\nPortanto, a alternativa correta é a **Letra C**.",
+            "image": {
+              "src": "https://drive.google.com/file/d/1f6T_laxzZHHJIEwYKr2RDyDYwu0x0doM/view?usp=sharing",
+              "alt": "Fluxograma vertical: Início -> Considere uma variável n -> Eleve a variável n ao quadrado -> Encontre o triplo do resultado obtido no passo anterior -> Acrescente 3/2 ao resultado obtido no passo anterior -> Chame a expressão obtida de Tn -> Fim.",
+              "caption": "Fonte: IFSP, 2023."
+            },
+            "bncc": "EF08MA11",
+            "bnccDesc": "Identificar a regularidade de uma sequência numérica recursiva e construir um algoritmo por meio de um fluxograma que permita indicar os números seguintes.",
             "unidadeTematica": "Álgebra",
             "anoEscolar": "8º ano",
-            "topicoId": "b2-t1",
-            "image": {
-              "src": "https://drive.google.com/file/d/13CdQWhEQbevy4oy903PlR-evM4A4K2Xa/view?usp=sharing",
-              "alt": "Fluxograma vertical com blocos: Início -> Considere uma variável n -> Eleve a variável n ao quadrado -> Encontre o triplo do resultado obtido no passo anterior -> Acrescente 3/2 ao resultado obtido no passo anterior -> Chame a expressão obtida de Tn -> Fim",
-              "caption": "Figura: Fluxograma de passos para a expressão Tn (IFSP 2025.1)"
-            }
+            "topicoId": "b2-t1"
           },
           {
-            "q": "A figura a seguir ilustra a construção de um triângulo equilátero $ABC$ de lado qualquer usando apenas uma régua e compasso:\nEste triângulo equilátero pode ser construído em seis passos executados em uma sequência lógica. Qual é a sequência correta de passos que permite a realização da construção ilustrada na figura acima?",
+            "id": "ifsp-2025-1b-q29",
+            "q": "A figura a seguir ilustra a construção de um triângulo equilátero $ABC$ de lado qualquer usando apenas uma régua e compasso:\n\nEste triângulo equilátero pode ser construído em seis passos executados em uma sequência lógica. Qual é a sequência correta de passos que permite a realização da construção ilustrada na figura acima?",
             "options": [
               "Construir a reta suporte $r$ com o uso da régua. Sobre a reta $r$, determinar um segmento de reta cujo comprimento $AB$ seja a medida do lado do triângulo desejado. Traçar, com o compasso, uma circunferência de raio qualquer e centro $A$. Traçar, com o compasso, outra circunferência de raio qualquer com centro em $B$. Encontrar o ponto de interseção $C$ entre estas circunferências. Com a régua, traçar os segmentos $AC$ e $BC$.",
               "Construir a reta suporte $r$ com o uso da régua. Sobre a reta $r$, determinar um segmento de reta cujo comprimento $AB$ seja a medida do lado do triângulo desejado. Traçar, com o compasso, uma circunferência de centro $A$ e raio maior que a medida do segmento $AB$. Traçar, com o compasso, uma circunferência com centro em $B$ e raio maior que a medida do segmento $AB$. Encontrar o ponto de interseção $C$ entre estas circunferências. Com a régua, traçar os segmentos $AC$ e $BC$.",
@@ -7191,19 +7218,20 @@ var mathData = window.mathData || {
               "Construir a reta suporte $r$ com o uso da régua. Sobre a reta $r$, determinar um segmento de reta cujo comprimento $AB$ seja a medida do lado do triângulo desejado. Traçar, com o compasso, uma circunferência de centro $A$ e raio $AB$. Traçar outra circunferência, usando o compasso, com centro em $B$ e raio $AB$. Encontrar o ponto de interseção $C$ entre estas circunferências. Com a régua, traçar os segmentos $AC$ e $BC$."
             ],
             "correct": 3,
-            "explanation": "Para construir um triângulo equilátero de lado $AB$ com régua e compasso (Proposição 1 dos Elementos de Euclides):<br>1. Traça-se a reta suporte e determina-se o segmento de reta $AB$.<br>2. Abre-se o compasso com raio igual ao comprimento de $AB$.<br>3. Com centro em $A$, traça-se a circunferência de raio $AB$.<br>4. Com centro em $B$, traça-se a circunferência de mesmo raio $AB$.<br>5. O ponto de interseção entre as duas circunferências é o ponto $C$.<br>6. Traçam-se os segmentos $AC$ e $BC$, completando o triângulo equilátero $ABC$, pois $AC = AB = BC = \\text{raio}$.<br>Portanto, a alternativa correta é a <strong>Letra D</strong>.",
-            "bncc": "EF08MA19",
-            "bnccDesc": "Resolver e elaborar problemas que envolvam medidas de área de figuras geométricas, utilizando expressões de cálculo de área (quadriláteros, triângulos e círculos), em situações como determinar medida de terrenos.",
-            "unidadeTematica": "Grandezas e Medidas",
-            "anoEscolar": "8º ano",
-            "topicoId": "b4-t1",
+            "explanation": "1. Um triângulo equilátero possui todos os três lados de mesma medida: $AB = AC = BC$.\n\n2. Na construção geométrica clássica com régua e compasso:\n- Define-se o segmento base $AB$ sobre uma reta suporte $r$.\n- Abre-se o compasso com raio exatamente igual à medida do segmento $AB$ e traça-se uma circunferência com centro em $A$.\n- Com a mesma abertura de raio $AB$, traça-se outra circunferência com centro em $B$.\n- A interseção $C$ dessas duas circunferências dista exatamente $AB$ de $A$ e de $B$, assegurando que $AC = AB$ e $BC = AB$.\n- Unindo $A$ a $C$ e $B$ a $C$ com a régua, obtém-se o triângulo equilátero $ABC$.\n\nPortanto, a sequência correta é a descrita na **Letra D**.",
             "image": {
-              "src": "https://drive.google.com/file/d/1Vq-qmI5LleZGj7sdHj7f4O7ONvkNl3oj/view?usp=sharing",
-              "alt": "Construção geométrica clássica com régua e compasso sobre uma reta horizontal r mostrando o segmento AB e duas circunferências de raio AB com centros em A e B que se intersectam no vértice C, formando o triângulo equilátero ABC",
-              "caption": "Figura: Construção geométrica de triângulo equilátero com régua e compasso (IFSP 2025.1)"
-            }
+              "src": "https://drive.google.com/file/d/1ZDwd4J15KZUFC5GBO00zJNr5S_GoUZXg/view?usp=sharing",
+              "alt": "Construção com régua e compasso de um triângulo equilátero ABC sobre a reta suporte r, mostrando duas circunferências de centro A e B com raio AB que se interceptam no vértice C.",
+              "caption": "Fonte: IFSP, 2023."
+            },
+            "bncc": "EF08MA15",
+            "bnccDesc": "Construir, utilizando instrumentos de desenho ou softwares de geometria dinâmica, mediatriz, bissetriz, ângulos de 90°, 60°, 45° e 30° e polígonos regulares.",
+            "unidadeTematica": "Geometria",
+            "anoEscolar": "8º ano",
+            "topicoId": "b3-t1"
           },
           {
+            "id": "ifsp-2025-1b-q30",
             "q": "Ao comprar um terreno de formato retangular, com dimensões de $30\\text{ m}$ por $20\\text{ m}$, a nova proprietária pretende fazer um jardim semicircular, no canto superior esquerdo como mostrado na ilustração. Ela deseja que esse jardim tenha $5\\%$ da área total do terreno. Calcule a medida do raio a ser utilizado para o desenho do jardim. Utilize $\\pi = 3$.",
             "options": [
               "$5\\sqrt{2}\\text{ m}$",
@@ -7212,17 +7240,17 @@ var mathData = window.mathData || {
               "$\\sqrt{180}\\text{ m}$"
             ],
             "correct": 1,
-            "explanation": "1. A área total do terreno retangular é dada por:<br>$$A_{\\text{terreno}} = 30 \\times 20 = 600\\text{ m}^2$$<br>2. A área do jardim semicircular corresponde a $5\\%$ da área total:<br>$$A_{\\text{jardim}} = 0{,}05 \\times 600 = 30\\text{ m}^2$$<br>3. A área de um semicírculo de raio $R$ com $\\pi = 3$ é:<br>$$A_{\\text{jardim}} = \\frac{\\pi R^2}{2} = \\frac{3 R^2}{2} = 30$$<br>$$3 R^2 = 60 \\implies R^2 = 20$$<br>4. Extraindo a raiz quadrada e simplificando o radical:<br>$$R = \\sqrt{20} = \\sqrt{4 \\times 5} = 2\\sqrt{5}\\text{ metros}.$$<br>Portanto, a alternativa correta é a <strong>Letra B</strong>.",
-            "bncc": "EF08MA19",
-            "bnccDesc": "Resolver e elaborar problemas que envolvam medidas de área de figuras geométricas, utilizando expressões de cálculo de área (quadriláteros, triângulos e círculos), em situações como determinar medida de terrenos.",
-            "unidadeTematica": "Grandezas e Medidas",
-            "anoEscolar": "8º ano",
-            "topicoId": "b4-t1",
+            "explanation": "1. Calculando a área total do terreno retangular:\n$$A_{\\text{terreno}} = 30\\text{ m} \\times 20\\text{ m} = 600\\text{ m}^2.$$\n\n2. A área desejada para o jardim semicircular é $5\\%$ da área total:\n$$A_{\\text{jardim}} = 0{,}05 \\times 600 = 30\\text{ m}^2.$$\n\n3. A área de um semicírculo de raio $r$ é dada por $\\frac{\\pi r^2}{2}$. Utilizando a aproximação $\\pi = 3$:\n$$\\frac{3r^2}{2} = 30.$$\n\n4. Isolando o raio $r$:\n$$3r^2 = 60 \\implies r^2 = 20 \\implies r = \\sqrt{20}.$$\n\n5. Simplificando o radical:\n$$r = \\sqrt{4 \\times 5} = 2\\sqrt{5}\\text{ m}.$$\n\nPortanto, a medida do raio é $2\\sqrt{5}\\text{ m}$ (**Letra B**).",
             "image": {
-              "src": "https://drive.google.com/file/d/19A944aRX1oSTf7OU_5LqxZx5qtrs5o98/view?usp=sharing",
-              "alt": "Desenho de terreno retangular com padrão pontilhado e um jardim semicircular hachurado no canto superior esquerdo",
-              "caption": "Figura: Ilustração do terreno e jardim semicircular (IFSP 2025.1)"
-            }
+              "src": "https://drive.google.com/file/d/1Ax2vOEIsPJcxux-M2bFZfXxdbAiW4tK-/view?usp=sharing",
+              "alt": "Diagrama de um terreno retangular pontilhado de 30m por 20m contendo um jardim semicircular hachurado no canto superior esquerdo.",
+              "caption": "Fonte: IFSP, 2023."
+            },
+            "bncc": "EF08MA19",
+            "bnccDesc": "Resolver e elaborar problemas que envolvam medidas de área de figuras geométricas, como triângulos, quadriláteros e círculos.",
+            "unidadeTematica": "Grandezas e medidas",
+            "anoEscolar": "8º ano",
+            "topicoId": "b3-t2"
           }
         ],
         "driveUrl": "https://drive.google.com/file/d/1WBuUt1yuDNGmp_O1yLpMBRXKXmJTYEy4/view?usp=drive_link"
@@ -7230,140 +7258,145 @@ var mathData = window.mathData || {
       {
         "id": "ifsp-2024-1-a",
         "title": "Prova IFSP 2024.1 - Prova A",
-        "bncc": "Revisão Geral",
-        "summary": "15 questões de Matemática aplicadas no Processo Seletivo IFSP 2024.1 (Edital Nº 449/2023 - Prova A) para os Cursos Técnicos Integrados.",
-        "detailedTheory": "A Prova A do Processo Seletivo IFSP 2024.1 abordou conversão entre escalas termométricas (Fahrenheit e Celsius) via equação de 1º grau, Teorema de Pitágoras no cálculo de diagonais de terrenos retangulares, notação científica e ordens de grandeza em profundidades oceânicas, potenciação e propriedades operatórias de potências de 10, cálculo de perímetros em bases de pirâmides regulares, propriedades de paralelogramos e quadriláteros notáveis, equivalência de sistemas de equações lineares, modelagem de funções polinomiais de 1º grau para saldo monetário com compra de pacotes de figurinhas, Teorema de Tales em feixes de retas paralelas cortadas por transversais em mapas urbanos, relações métricas no triângulo retângulo com cálculo de altura relativa à hipotenusa, modelagem de funções discretas com distribuição de cupons de compras, geometria euclidiana plana com ângulos internos e externos em triângulos, análise e interpretação de gráficos estatísticos com taxas percentuais, raciocínio lógico-espacial com dados de seis faces empilhados e faces opostas, e sequências numéricas aplicadas à construção de castelos de cartas de baralho.",
-        "keyPoints": [
-          "A relação entre as escalas Celsius e Fahrenheit é dada por $C = \\frac{5}{9}(F - 32)$.",
-          "A diagonal de um retângulo de lados $a$ e $b$ é obtida pelo Teorema de Pitágoras: $d = \\sqrt{a^2 + b^2}$.",
-          "Pelo Teorema de Tales, um feixe de retas paralelas determina sobre retas transversais segmentos proporcionais: $\\frac{A_1B_1}{B_1C_1} = \\frac{A_2B_2}{B_2C_2}$.",
-          "Em qualquer dado convencional de seis faces, a soma dos pontos em faces opostas é sempre igual a 7."
-        ],
-        "formula": "C = \\frac{5}{9}(F - 32), \\quad d = \\sqrt{a^2 + b^2}, \\quad h^2 = m \\cdot n, \\quad \\frac{a}{b} = \\frac{c}{d}",
-        "solvedExample": {
-          "problem": "Um terreno retangular mede $5\\text{ m}$ por $12\\text{ m}$. Uma cerca reta é instalada ligando dois vértices opostos (diagonal). Qual é o comprimento dessa cerca?",
-          "solution": "Aplicando o Teorema de Pitágoras na diagonal do retângulo:<br>$$d^2 = 5^2 + 12^2 = 25 + 144 = 169 \\implies d = \\sqrt{169} = 13\\text{ metros}.$$"
-        },
-        "slug": "prova-ifsp-20241-a",
-        "filename": "prova-ifsp-20241-a.html",
         "folder": "bloco-7-provas-ifsp",
-        "blockId": "7",
-        "pdf": "IFSP_prova_2024_1_a.pdf",
         "questions": [
           {
-            "q": "A relação entre a temperatura na escala Celsius ($C$) e na escala Fahrenheit ($F$) é dada pela fórmula $C = \\frac{5}{9}(F - 32)$. Se um termômetro em uma cidade dos Estados Unidos registrar $14^\\circ\\text{F}$, qual é a temperatura correspondente na escala Celsius?",
+            "id": "ifsp-2024-1a-q16",
+            "q": "Fahrenheit é uma escala de temperatura proposta por Daniel Gabriel Fahrenheit em 1724 e que é muito utilizada por países que foram colonizados pelos britânicos. Sua unidade é o grau Fahrenheit (símbolo: °F). Nesta escala, o ponto de fusão da água é de $32^\\circ\\text{F}$ e o ponto de ebulição é de $212^\\circ\\text{F}$. Para converter graus Celsius em graus Fahrenheit, usa-se a fórmula:\n$$C = \\frac{5}{9}(F - 32)$$\nonde $F$ é a temperatura em graus Fahrenheit e $C$ é a temperatura em graus Celsius.\n\nNos Estados Unidos, uma determinada empresa importa carne brasileira e exige a temperatura de $29{,}3^\\circ\\text{F}$ durante o seu processo de logística. A temperatura em graus Celsius ($^\\circ\\text{C}$) exigida por essa empresa é:",
             "options": [
-              "$-10^\\circ\\text{C}$",
+              "$12{,}72^\\circ\\text{C}$",
               "$-0{,}3^\\circ\\text{C}$",
-              "$10^\\circ\\text{C}$",
-              "$25^\\circ\\text{C}$"
+              "$-1{,}5^\\circ\\text{C}$",
+              "$-13{,}5^\\circ\\text{C}$"
             ],
-            "correct": 0,
-            "explanation": "Substituindo $F = 14$ na fórmula dada:<br>$$C = \\frac{5}{9}(14 - 32) = \\frac{5}{9}(-18)$$<br>Dividindo $-18$ por $9$, obtemos $-2$:<br>$$C = 5 \\times (-2) = -10^\\circ\\text{C}.$$Portanto, a alternativa correta é a <strong>Letra A</strong>.",
-            "bncc": "EF08MA01",
-            "bnccDesc": "Efetuar cálculos com potências de expoentes inteiros e aplicar esse conhecimento na representação de números em notação científica.",
-            "unidadeTematica": "Números",
-            "anoEscolar": "8º ano",
-            "topicoId": "b1-t7"
+            "correct": 2,
+            "explanation": "1. Substituindo $F = 29{,}3$ na fórmula de conversão fornecida:\n$$C = \\frac{5}{9}(29{,}3 - 32)$$\n\n2. Realizando a subtração entre parênteses:\n$$29{,}3 - 32 = -2{,}7$$\n\n3. Multiplicando e calculando o valor final de $C$:\n$$C = \\frac{5}{9} \\times (-2{,}7) = 5 \\times (-0{,}3) = -1{,}5^\\circ\\text{C}.$$\n\nPortanto, a temperatura exigida é de $-1{,}5^\\circ\\text{C}$ (**Letra C**).",
+            "bncc": "EF09MA06",
+            "bnccDesc": "Compreender as funções como relações de dependência unívoca entre duas variáveis e suas representações numérica, algébrica e gráfica e utilizar esse conceito em situações práticas.",
+            "unidadeTematica": "Álgebra",
+            "anoEscolar": "9º ano",
+            "topicoId": "b2-t3"
           },
           {
-            "q": "Um terreno retangular cujos lados medem $5\\text{ m}$ e $12\\text{ m}$ será dividido em duas partes triangulares por uma cerca reta que liga dois vértices opostos através da diagonal. Qual é a extensão da cerca que será instalada?",
+            "id": "ifsp-2024-1a-q17",
+            "q": "Um terreno retangular cujos lados medem $5\\text{ m}$ e $12\\text{ m}$ será separado em duas partes a partir de uma de suas diagonais para que nelas sejam feitos cultivos diferentes. Pelo projeto inicial, a separação das duas regiões se dará pela instalação de uma cerca simples. A imagem abaixo ilustra como se pretende separar o terreno.\n\nQual é a extensão da cerca que será instalada para separar o terreno nas duas regiões desejadas?",
             "options": [
-              "$13\\text{ m}$",
-              "$17\\text{ m}$",
-              "$24\\text{ m}$",
-              "$60\\text{ m}$"
+              "$12\\text{ metros}$",
+              "$13\\text{ metros}$",
+              "$17\\text{ metros}$",
+              "$\\sqrt{34}\\text{ metros}$"
             ],
-            "correct": 0,
-            "explanation": "A cerca corresponde à diagonal do retângulo, que atua como hipotenusa de um triângulo retângulo cujos catetos medem $5\\text{ m}$ e $12\\text{ m}$.<br>Aplicando o Teorema de Pitágoras:<br>$$d^2 = 5^2 + 12^2 = 25 + 144 = 169$$<br>Extraindo a raiz quadrada:<br>$$d = \\sqrt{169} = 13\\text{ metros}.$$Portanto, a alternativa correta é a <strong>Letra A</strong>.",
+            "correct": 1,
+            "explanation": "1. A cerca instalada na diagonal do terreno retangular forma a hipotenusa $d$ de um triângulo retângulo cujos catetos medem $a = 5\\text{ m}$ e $b = 12\\text{ m}$.\n\n2. Aplicando o Teorema de Pitágoras:\n$$d^2 = a^2 + b^2$$\n$$d^2 = 5^2 + 12^2 = 25 + 144 = 169$$\n$$d = \\sqrt{169} = 13\\text{ m}.$$\n\nPortanto, a extensão da cerca que será instalada é de $13\\text{ metros}$ (**Letra B**).",
+            "image": {
+              "src": "https://drive.google.com/file/d/1_vAakQK0wbJzjiA9XJjM6emOND3pTvNt/view?usp=sharing",
+              "alt": "Terreno retangular dividido em duas regiões triangulares por uma linha tracejada diagonal indicada como cerca.",
+              "caption": "Fonte: IFSP, 2023."
+            },
             "bncc": "EF09MA14",
-            "bnccDesc": "Resolver e elaborar problemas de aplicação do teorema de Pitágoras ou das relações de proporcionalidade envolvendo retas paralelas cortadas por secantes.",
-            "unidadeTematica": "Geometria",
-            "anoEscolar": "9º ano",
-            "topicoId": "b3-t2"
-          },
-          {
-            "q": "Os destroços do navio Titanic estão a cerca de $3.800\\text{ metros}$ de profundidade no Oceano Atlântico. Em notação científica, essa profundidade expressa em quilômetros é igual a:",
-            "options": [
-              "$3{,}8 \\times 10^0\\text{ km}$",
-              "$3{,}8 \\times 10^3\\text{ km}$",
-              "$38 \\times 10^2\\text{ km}$",
-              "$0{,}38 \\times 10^1\\text{ km}$"
-            ],
-            "correct": 0,
-            "explanation": "1. Convertendo metros para quilômetros ($1\\text{ km} = 1.000\\text{ m}$):<br>$$3.800\\text{ m} = \\frac{3.800}{1.000} = 3{,}8\\text{ km}$$<br>2. Na forma de notação científica padrão $a \\times 10^b$ com $1 \\le a < 10$:<br>$$3{,}8 = 3{,}8 \\times 10^0\\text{ km}$$Portanto, a alternativa correta é a <strong>Letra A</strong>.",
-            "bncc": "EF09MA04",
-            "bnccDesc": "Resolver e elaborar problemas com números reais, inclusive em notação científica, envolvendo diferentes operações.",
-            "unidadeTematica": "Números",
-            "anoEscolar": "9º ano",
-            "topicoId": "b1-t7"
-          },
-          {
-            "q": "A potência de dez é um recurso matemático utilizado para representar quantidades muito grandes ou muito pequenas. Simplificando a expressão $\\frac{10^8 \\cdot 10^{-3}}{10^2}$, obtém-se:",
-            "options": [
-              "$10^3$",
-              "$10^7$",
-              "$10^9$",
-              "$10^{-3}$"
-            ],
-            "correct": 0,
-            "explanation": "Aplicando as propriedades de potenciação de mesma base:<br>1. No numerador (produto de potências de mesma base, somam-se os expoentes):<br>$$10^8 \\cdot 10^{-3} = 10^{8 + (-3)} = 10^5$$<br>2. Dividindo pelo denominador (quociente de potências de mesma base, subtraem-se os expoentes):<br>$$\\frac{10^5}{10^2} = 10^{5 - 2} = 10^3.$$Portanto, a alternativa correta é a <strong>Letra A</strong>.",
-            "bncc": "EF08MA01",
-            "bnccDesc": "Efetuar cálculos com potências de expoentes inteiros e aplicar esse conhecimento na representação de números em notação científica.",
-            "unidadeTematica": "Números",
-            "anoEscolar": "8º ano",
-            "topicoId": "b1-t7"
-          },
-          {
-            "q": "Uma pirâmide regular de base quadrada tem o lado de sua base medindo $24\\text{ metros}$. Se uma fita zebrada de isolamento for colocada ao redor de todo o perímetro de sua base, qual será o comprimento total dessa fita?",
-            "options": [
-              "$48\\text{ m}$",
-              "$72\\text{ m}$",
-              "$96\\text{ m}$",
-              "$576\\text{ m}$"
-            ],
-            "correct": 2,
-            "explanation": "A base da pirâmide é um quadrado de lado $L = 24\\text{ m}$.<br>O perímetro de um quadrado é a soma dos seus quatro lados congruentes:<br>$$2p = 4 \\times L = 4 \\times 24 = 96\\text{ metros}.$$Portanto, a alternativa correta é a <strong>Letra C</strong>.",
-            "bncc": "EF06MA29",
-            "bnccDesc": "Analisar e descrever mudanças que ocorrem no perímetro e na área de um quadrado ao se ampliarem ou reduzirem, igualmente, as medidas de seus lados, para compreender que o perímetro é proporcional à medida do lado, o que não ocorre com a área.",
-            "unidadeTematica": "Grandezas e Medidas",
-            "anoEscolar": "6º ano",
-            "topicoId": "b4-t1"
-          },
-          {
-            "q": "Quatro pontos distintos $A, B, C$ e $D$ estão dispostos em um plano formando um paralelogramo $ABCD$. A respeito das propriedades de qualquer paralelogramo, é correto afirmar que:",
-            "options": [
-              "seus quatro lados têm necessariamente medidas iguais.",
-              "suas diagonais são sempre perpendiculares entre si.",
-              "suas diagonais interceptam-se mutuamente em seus respectivos pontos médios.",
-              "seus ângulos consecutivos são sempre complementares."
-            ],
-            "correct": 2,
-            "explanation": "Em todo paralelogramo:<br>- Os lados opostos são paralelos e congruentes.<br>- Os ângulos opostos são congruentes e os ângulos consecutivos são suplementares (somam $180^\\circ$).<br>- A propriedade fundamental das diagonais de qualquer paralelogramo é que elas se cortam exatamente em seus respectivos <strong>pontos médios</strong>.<br>Portanto, a alternativa correta é a <strong>Letra C</strong>.",
-            "bncc": "EF07MA24",
-            "bnccDesc": "Construir triângulos, usando régua e compasso, reconhecer a condição de existência do triângulo quanto à medida dos lados e verificar que a soma das medidas dos ângulos internos de um triângulo é 180°.",
-            "unidadeTematica": "Geometria",
-            "anoEscolar": "7º ano",
-            "topicoId": "b3-t2"
-          },
-          {
-            "q": "Um professor de Matemática pediu para os alunos escreverem duas equações lineares de 1º grau com incógnitas $x$ e $y$ que formem um sistema cuja única solução seja o par ordenado $(3, 2)$. Qual par de equações satisfaz essa condição?",
-            "options": [
-              "$x + y = 5$ e $2x - y = 4$",
-              "$x + y = 6$ e $x - y = 2$",
-              "$2x + y = 7$ e $x + 2y = 8$",
-              "$x - y = 1$ e $3x + y = 12$"
-            ],
-            "correct": 0,
-            "explanation": "Testamos o par $(x = 3, y = 2)$ nas equações da Letra A:<br>1. $x + y = 3 + 2 = 5$ (Verdadeira).<br>2. $2x - y = 2(3) - 2 = 6 - 2 = 4$ (Verdadeira).<br>Como as retas $x + y = 5$ e $2x - y = 4$ possuem coeficientes angulares distintos (não são paralelas), o sistema é possível e determinado com solução única $(3, 2)$.<br>Portanto, a alternativa correta é a <strong>Letra A</strong>.",
-            "bncc": "EF09MA16",
-            "bnccDesc": "Determinar o ponto médio de um segmento de reta e a distância entre dois pontos quaisquer, dadas as coordenadas desses pontos no plano cartesiano, sem o uso de fórmulas, e utilizar esse conhecimento para calcular, por exemplo, medidas de perímetros e áreas de figuras planas construídas no plano.",
+            "bnccDesc": "Descrever, por escrito e por meio de um fluxograma, um algoritmo para a construção de um triângulo retângulo conhecidas as medidas dos catetos, e demonstrar o Teorema de Pitágoras.",
             "unidadeTematica": "Geometria",
             "anoEscolar": "9º ano",
             "topicoId": "b3-t1"
           },
           {
-            "q": "Carlinhos ganhou de sua mãe $\\text{R\\$} 100{,}00$. Ao invés de guardar o dinheiro, ele decidiu comprar um saquinho de figurinhas da Copa do Mundo por dia até acabar o dinheiro. Cada saquinho custa $\\text{R\\$} 4{,}00$. A tabela a seguir mostra a quantidade de pacotes comprada ($p$) e a quantia de dinheiro ($D$) que Carlinhos possui após a compra do pacote de figurinhas:\n\nAssinale a alternativa que apresenta a expressão correta da relação existente entre $D$ e a quantidade de pacotes de figurinhas e quantos pacotes ele precisou comprar para ter $D = \\text{R\\$} 40{,}00$.",
+            "id": "ifsp-2024-1a-q18",
+            "q": "Os destroços do navio Titanic estão acerca de $2^{\\frac{2974}{250}}$ metros de profundidade no fundo do Oceano Atlântico. Titan, um submarino que fazia uma excursão aos destroços do Titanic recentemente implodiu, devido à alta pressão no fundo do oceano. Supondo que o submarino Titan tenha começado a ter sérios problemas quando estava na metade da profundidade, responda: qual a distância da superfície em que Titan começou a ter esses problemas?",
+            "options": [
+              "$1^{\\frac{1487}{125}}$",
+              "$2^{\\frac{1487}{125}}$",
+              "$1^{\\frac{2974}{250}}$",
+              "$2^{\\frac{2724}{250}}$"
+            ],
+            "correct": 3,
+            "explanation": "1. A profundidade total é $P = 2^{\\frac{2974}{250}}\\text{ metros}$.\n\n2. O submarino começou a ter problemas na metade da profundidade, isto é, dividindo a profundidade total por $2 = 2^1$:\n$$d = \\frac{2^{\\frac{2974}{250}}}{2^1}.$$\n\n3. Utilizando a propriedade de divisão de potências de mesma base ($a^m \\div a^n = a^{m-n}$):\n$$d = 2^{\\frac{2974}{250} - 1} = 2^{\\frac{2974 - 250}{250}} = 2^{\\frac{2724}{250}}\\text{ metros}.$$\n\nPortanto, a distância da superfície é $2^{\\frac{2724}{250}}$ (**Letra D**).",
+            "bncc": "EF09MA03",
+            "bnccDesc": "Efetuar cálculos com números reais, inclusive potências com expoentes fracionários e radicais.",
+            "unidadeTematica": "Números",
+            "anoEscolar": "9º ano",
+            "topicoId": "b1-t2"
+          },
+          {
+            "id": "ifsp-2024-1a-q19",
+            "q": "A potência de Dez é um recurso matemático utilizado para representar de forma simplificada quantidades muito grandes ou muito pequenas por meio da multiplicação de um algarismo significativo pela base dez elevada a um expoente positivo ou negativo. Essa maneira de expressar quantidades é denominada notação científica. Com base nessa informação, identifique qual das potências representa de forma simplificada a expressão:\n$$\\frac{50000 \\times 35000}{0{,}0007}$$",
+            "options": [
+              "$2{,}5 \\times 10^{17}$",
+              "$2{,}5 \\times 10^{12}$",
+              "$2{,}5 \\times 10^{11}$",
+              "$2{,}5 \\times 10^4$"
+            ],
+            "correct": 1,
+            "explanation": "1. Escrevendo os termos em potências de base 10:\n- $50000 = 5 \\times 10^4$\n- $35000 = 35 \\times 10^3$\n- $0{,}0007 = 7 \\times 10^{-4}$\n\n2. Substituindo na expressão:\n$$E = \\frac{(5 \\times 10^4) \\times (35 \\times 10^3)}{7 \\times 10^{-4}} = \\left(\\frac{5 \\times 35}{7}\\right) \\times \\frac{10^4 \\times 10^3}{10^{-4}}$$\n\n3. Efetuando as simplificações numéricas:\n$$\\frac{5 \\times 35}{7} = 5 \\times 5 = 25$$\n$$\\frac{10^{4+3}}{10^{-4}} = \\frac{10^7}{10^{-4}} = 10^{7 - (-4)} = 10^{11}$$\n\n4. Convertendo o resultado $25 \\times 10^{11}$ para notação científica:\n$$25 \\times 10^{11} = 2{,}5 \\times 10^1 \\times 10^{11} = 2{,}5 \\times 10^{12}.$$\n\nPortanto, a alternativa correta é a **Letra B**.",
+            "bncc": "EF08MA01",
+            "bnccDesc": "Efetuar cálculos com potências de expoentes inteiros e aplicar esse conhecimento na representação de números em notação científica.",
+            "unidadeTematica": "Números",
+            "anoEscolar": "8º ano",
+            "topicoId": "b1-t2"
+          },
+          {
+            "id": "ifsp-2024-1a-q20",
+            "q": "As pirâmides são estruturas estudadas desde a Antiguidade. Hoje, a beleza de suas formas continua extasiando a todos, como é o caso da pirâmide de vidro do Museu do Louvre, em Paris. Elas são poliedros cuja base é um polígono qualquer e suas faces laterais são triângulos que concorrem para um vértice comum. Analise e calcule o volume da seguinte pirâmide, sabendo que sua base é um quadrado de aresta $a = 6\\text{ cm}$ e que a altura $h$ mede $15\\text{ cm}$.",
+            "options": [
+              "$540\\text{ cm}^3$",
+              "$450\\text{ cm}^3$",
+              "$180\\text{ cm}^3$",
+              "$90\\text{ cm}^3$"
+            ],
+            "correct": 2,
+            "explanation": "1. O volume $V$ de uma pirâmide reta de base quadrada é dado por:\n$$V = \\frac{1}{3} \\cdot A_{\\text{base}} \\cdot h$$\n\n2. Como a base é um quadrado de lado $a = 6\\text{ cm}$, sua área é:\n$$A_{\\text{base}} = 6^2 = 36\\text{ cm}^2.$$\n\n3. Multiplicando pela altura $h = 15\\text{ cm}$ e dividindo por $3$:\n$$V = \\frac{1}{3} \\cdot 36 \\cdot 15 = 12 \\cdot 15 = 180\\text{ cm}^3.$$\n\nPortanto, o volume da pirâmide é $180\\text{ cm}^3$ (**Letra C**).",
+            "image": {
+              "src": "https://drive.google.com/file/d/1BDYjWUL5n7UFBSuaaTRaPspZZ3N1KHiH/view?usp=sharing",
+              "alt": "Desenho geométrico de uma pirâmide reta de base quadrada destacando a aresta da base a e a altura h do vértice à base.",
+              "caption": "Fonte: IFSP, 2023."
+            },
+            "bncc": "EF09MA19",
+            "bnccDesc": "Desenvolver e utilizar fórmulas para o cálculo de volumes de prismas e pirâmides retas, em situações reais.",
+            "unidadeTematica": "Grandezas e medidas",
+            "anoEscolar": "9º ano",
+            "topicoId": "b4-t1"
+          },
+          {
+            "id": "ifsp-2024-1a-q21",
+            "q": "Quatro pontos distintos, $A$, $B$, $C$ e $D$, estão dispostos em um plano de modo que o polígono $ABCD$ seja um quadrilátero convexo. Analise as seguintes afirmações e identifique quais estão corretas:\n\nI. Se $ABCD$ for um losango, então suas diagonais são perpendiculares.\nII. Se as diagonais de $ABCD$ se intersectarem em seus respectivos pontos médios, então $ABCD$ é, necessariamente, um paralelogramo.\nIII. Se $ABCD$ for um paralelogramo e as suas diagonais tiverem comprimentos iguais, então $ABCD$ é, necessariamente, um retângulo.\n\nAs afirmações corretas são:",
+            "options": [
+              "I, II e III.",
+              "II e III apenas.",
+              "I e III apenas.",
+              "I e II apenas."
+            ],
+            "correct": 0,
+            "explanation": "1. **Afirmação I (Verdadeira):** Em qualquer losango, os quatro lados são congruentes e as diagonais são bissetrizes e concorrem perpendicularmente no ponto médio.\n\n2. **Afirmação II (Verdadeira):** A propriedade de ter as diagonais interceptando-se em seus pontos médios é condição necessária e suficiente para caracterizar um paralelogramo.\n\n3. **Afirmação III (Verdadeira):** Um paralelogramo cujas diagonais possuem comprimentos iguais possui necessariamente quatro ângulos retos ($90^\\circ$), configurando um retângulo.\n\nLogo, todas as afirmações I, II e III são corretas (**Letra A**).",
+            "bncc": "EF08MA14",
+            "bnccDesc": "Demonstrar propriedades de quadriláteros por meio da identificação da congruência de triângulos.",
+            "unidadeTematica": "Geometria",
+            "anoEscolar": "8º ano",
+            "topicoId": "b3-t1"
+          },
+          {
+            "id": "ifsp-2024-1a-q22",
+            "q": "Um professor de Matemática passou o seguinte exercício para seus alunos: “Escreva duas equações distintas de 1º grau com duas incógnitas que apresentem como solução o ponto $(2, 3)$. Depois, esboce a representação gráfica de tais equações no plano cartesiano”. Considere as duas incógnitas como “números reais”. Um estudante perguntou à inteligência artificial (IA) ChatGPT como resolver o primeiro comando do exercício. O ChatGPT retornou a resposta apresentada a seguir:\n\n<div class=\"my-4 space-y-3 font-sans max-w-xl mx-auto\">\n  <div class=\"flex items-start gap-2.5\">\n    <div class=\"w-8 h-8 rounded-full bg-slate-500 text-white flex items-center justify-center text-xs font-bold shrink-0\">E</div>\n    <div class=\"bg-slate-200 dark:bg-slate-800 text-slate-800 dark:text-slate-100 rounded-2xl rounded-tl-sm px-4 py-2.5 text-sm shadow-sm border border-slate-300 dark:border-slate-700\">\n      <div class=\"font-semibold text-xs text-slate-600 dark:text-slate-400 mb-1\">Estudante</div>\n      <p class=\"m-0\">Escreva duas equações distintas de 1º grau com duas incógnitas que apresentem como solução o ponto (2, 3)</p>\n    </div>\n  </div>\n  <div class=\"flex items-start gap-2.5\">\n    <div class=\"w-8 h-8 rounded-full bg-emerald-700 text-white flex items-center justify-center text-xs font-bold shrink-0\">AI</div>\n    <div class=\"bg-emerald-900 text-emerald-50 rounded-2xl rounded-tl-sm px-4 py-3 text-sm shadow-sm border border-emerald-800\">\n      <div class=\"font-semibold text-xs text-emerald-300 mb-1.5 flex items-center gap-1\">ChatGPT</div>\n      <p class=\"mb-2\">Com certeza! Aqui estão duas equações de primeiro grau com duas incógnitas que têm como solução o ponto $(2, 3)$:</p>\n      <div class=\"bg-emerald-950/60 rounded p-2 mb-2 border border-emerald-800/50 space-y-1 text-xs sm:text-sm font-mono\">\n        <p class=\"font-semibold text-emerald-200\">1. Equação 1: $x + 2y = 8$</p>\n        <p class=\"text-emerald-100\">Nesta equação, se substituirmos $x$ por 2 e $y$ por 3, obtemos:<br>$2 + 2(3) = 2 + 6 = 8$<br>Portanto, o ponto $(2, 3)$ é uma solução dessa equação.</p>\n        <p class=\"font-semibold text-emerald-200 mt-2\">2. Equação 2: $3x - y = 1$</p>\n        <p class=\"text-emerald-100\">Nesta equação, se substituirmos $x$ por 2 e $y$ por 3, obtemos:<br>$3(2) - 3 = 6 - 3 = 3 - 3 = 0$<br>Novamente, o ponto $(2, 3)$ é uma solução dessa equação.</p>\n      </div>\n      <p class=\"text-xs text-emerald-200/90 m-0\">Essas são duas equações lineares de primeiro grau com duas incógnitas que possuem o ponto $(2, 3)$ como solução. Lembre-se de que existem muitas outras equações possíveis que também têm essa solução.</p>\n    </div>\n  </div>\n</div>\n\nA partir das respostas do ChatGPT o estudante optou por usar o GeoGebra, um software de geometria, para esboçar as representações gráficas solicitadas pelo segundo comando do exercício e, com as representações em mãos, fez uma análise adequada da resposta inicialmente dada pelo ChatGPT.\n\nDentre as alternativas a seguir, qual apresenta as representações gráficas das duas equações fornecidas pelo ChatGPT e ao mesmo tempo fornece a análise correta do estudante?",
+            "options": [
+              "Gráfico (A): A partir das representações gráficas das equações, é possível concluir que o ChatGPT está correto, pois as duas equações distintas de 1º grau apresentam o ponto (2,3) como solução.",
+              "Gráfico (B): A partir das representações gráficas das equações, é possível concluir que o ChatGPT está correto, pois as duas equações distintas de 1º grau apresentam o ponto (2,3) como solução.",
+              "Gráfico (C): A partir das representações gráficas das equações, é possível concluir que o ChatGPT está errado, pois uma das duas equações distintas de 1º grau não apresenta o ponto (2,3) como solução.",
+              "Gráfico (D): A partir das representações gráficas das equações, é possível concluir que o ChatGPT está errado, pois uma das duas equações distintas de 1º grau não apresenta o ponto (2,3) como solução."
+            ],
+            "correct": 2,
+            "explanation": "1. **Equação 1 ($x + 2y = 8$):** Substituindo $(x = 2, y = 3) \\implies 2 + 2(3) = 8$. É verdadeira e o ponto $(2, 3)$ pertence à reta.\n\n2. **Equação 2 ($3x - y = 1$):** Substituindo $(x = 2, y = 3) \\implies 3(2) - 3 = 6 - 3 = 3 \\neq 1$. O ChatGPT cometeu um erro absurdo na resposta ao escrever $6 - 3 = 3 - 3 = 0$. Portanto, o ponto $(2, 3)$ **não é solução** da segunda equação.\n\n3. **Gráfico e análise do estudante:** O gráfico da alternativa **(C)** ilustra fielmente as duas retas do GeoGebra (a reta $x + 2y = 8$ decrescente e a reta $3x - y = 1$ com inclinação positiva que passa por $(1, 2)$ e $(2, 5)$), e o estudante conclui adequadamente que o ChatGPT errou pois uma das equações não tem $(2, 3)$ como solução.\n\nPortanto, a alternativa correta é a **Letra C**.",
+            "image": {
+              "src": "https://drive.google.com/file/d/1e3_ijxCbGhwRo--NNeaXIu5gKPNTx45-/view?usp=sharing",
+              "alt": "Quatro gráficos do GeoGebra identificados como A, B, C e D mostrando no plano cartesiano a reta verde da Equação 1 e a reta azul da Equação 2 acompanhadas das análises do estudante.",
+              "caption": "Fonte: IFSP, 2023."
+            },
+            "bncc": "EF08MA07",
+            "bnccDesc": "Associar uma equação linear de 1º grau com duas incógnitas a uma reta no plano cartesiano.",
+            "unidadeTematica": "Álgebra",
+            "anoEscolar": "8º ano",
+            "topicoId": "b2-t3"
+          },
+          {
+            "id": "ifsp-2024-1a-q23",
+            "q": "Carlinhos ganhou de sua mãe $\\text{R\\$} 100{,}00$. Ao invés de guardar o dinheiro, ele decidiu comprar um saquinho de figurinhas da Copa do Mundo por dia até acabar o dinheiro. Cada saquinho custa $\\text{R\\$} 4{,}00$. A tabela a seguir mostra a quantidade de pacotes comprada ($p$) e a quantia de dinheiro ($D$) que Carlinhos possui após a compra do pacote de figurinhas.\n\n| Pacotes ($p$) | Dinheiro ($D$) |\n| :---: | :---: |\n| 0 | 100 |\n| 1 | 96 |\n| 2 | 92 |\n| 3 | 88 |\n| 4 | 84 |\n| $\\dots$ | $\\dots$ |\n\n*(Fonte: IFSP, 2023)*\n\nAssinale a alternativa que apresenta a expressão correta da relação existente entre $D$ e a quantidades de pacotes de figurinhas e quantos pacotes ele precisou comprar para ter $D = \\text{R\\$} 40{,}00$.",
             "options": [
               "$D = 100 - p$, 60 pacotes",
               "$D = 100 - 2p$, 30 pacotes",
@@ -7371,19 +7404,16 @@ var mathData = window.mathData || {
               "$D = 100 - 4p$, 15 pacotes"
             ],
             "correct": 3,
-            "explanation": "1. O valor gasto com $p$ pacotes a $\\text{R\\$} 4${,}00 cada é $4p$.<br>Subtraindo do valor inicial de $\\text{R\\$} 100{,}00$, a função saldo é:<br>$$D(p) = 100 - 4p$$<br>2. Para que o saldo restante seja $D = 40$:<br>$$40 = 100 - 4p \\implies 4p = 100 - 40 = 60 \\implies p = \\frac{60}{4} = 15\\text{ pacotes}.$$Portanto, a alternativa correta é a <strong>Letra A</strong>.",
-            "bncc": "EF06MA10",
-            "bnccDesc": "Resolver e elaborar problemas que envolvam adição ou subtração com números racionais positivos na representação fracionária.",
-            "unidadeTematica": "Números",
-            "anoEscolar": "6º ano",
-            "topicoId": "b1-t5",
-            "image": {
-              "src": "https://drive.google.com/file/d/1OGa84zsWv8u3DFC1xRPH5Bl6BcbQ1QZF/view?usp=sharing",
-              "alt": "Tabela com a quantidade de pacotes comprados p (de 0 a 4) e a quantia de dinheiro D restante (de 100 a 84)."
-            }
+            "explanation": "1. Partindo do valor inicial de $\\text{R\\$} 100{,}00$ e subtraindo $\\text{R\\$} 4{,}00$ por pacote $p$, a função afim que descreve o saldo de Carlinhos é:\n$$D = 100 - 4p.$$\n\n2. Para determinar quantos pacotes foram comprados quando $D = \\text{R\\$} 40{,}00$:\n$$40 = 100 - 4p \\implies 4p = 100 - 40 = 60 \\implies p = \\frac{60}{4} = 15\\text{ pacotes}.$$\n\nPortanto, a alternativa correta é a **Letra D**.",
+            "bncc": "EF07MA18",
+            "bnccDesc": "Reconhecer se duas grandezas são diretamente proporcionais, inversamente proporcionais ou não proporcionais, expressando a relação por meio de uma sentença algébrica.",
+            "unidadeTematica": "Álgebra",
+            "anoEscolar": "7º ano",
+            "topicoId": "b2-t3"
           },
           {
-            "q": "No mapa abaixo a Avenida Costa do Marfim e a Rua Gana são transversais às ruas Etiópia e Senegal, que são paralelas.\nConhecendo alguns ângulos envolvendo o encontro dessas vias, tem-se que o valor de $x$ é igual a:",
+            "id": "ifsp-2024-1a-q24",
+            "q": "No mapa abaixo a Avenida Costa do Marfim e a Rua Gana são transversais às ruas Etiópia e Senegal, que são paralelas.\n\nConhecendo alguns ângulos envolvendo o encontro dessas vias, tem-se que o valor de $x$ é igual a:",
             "options": [
               "$35^\\circ$",
               "$70^\\circ$",
@@ -7391,20 +7421,21 @@ var mathData = window.mathData || {
               "$170^\\circ$"
             ],
             "correct": 0,
-            "explanation": "1. No triângulo formado pelas interseções entre a Avenida Costa do Marfim, a Rua Etiópia e a Rua Gana, o ângulo externo medindo $120^\\circ$ é igual à soma dos dois ângulos internos não adjacentes (Teorema do Ângulo Externo).<br><br>2. Como o ângulo interno com a Rua Etiópia mede $50^\\circ$, o ângulo interno $\\theta$ formado entre a Rua Gana e a Rua Etiópia é dado por:<br>$$\\theta + 50^\\circ = 120^\\circ \\implies \\theta = 120^\\circ - 50^\\circ = 70^\\circ$$<br>3. Sendo as ruas Etiópia e Senegal paralelas ($\\text{Rua Etiópia} \\parallel \\text{Rua Senegal}$) cortadas pela transversal Rua Gana, os ângulos correspondentes são congruentes:<br>$$2x = \\theta = 70^\\circ \\implies x = \\frac{70^\\circ}{2} = 35^\\circ.$$<br>Portanto, a alternativa correta é a <strong>Letra A</strong>.",
+            "explanation": "1. Como a Rua Etiópia e a Rua Senegal são retas paralelas cortadas pelas transversais:\n- Na interseção com a Rua Etiópia, a inclinação da Avenida Costa do Marfim determina um ângulo de $50^\\circ$.\n- O ângulo entre a Avenida Costa do Marfim e a Rua Gana mede $120^\\circ$, cujo ângulo adjacente suplementar mede $180^\\circ - 120^\\circ = 60^\\circ$.\n- No triângulo delimitado pelas vias entre as paralelas, a soma dos ângulos internos resulta em $180^\\circ$. Sendo os dois ângulos de base iguais a $50^\\circ$ e $60^\\circ$, o terceiro ângulo mede $180^\\circ - (50^\\circ + 60^\\circ) = 70^\\circ$.\n- O ângulo externo correspondente na Rua Senegal com a Rua Gana é $2x = 70^\\circ$, de onde:\n$$2x = 70^\\circ \\implies x = 35^\\circ.$$\n\nPortanto, $x = 35^\\circ$ (**Letra A**).",
+            "image": {
+              "src": "https://drive.google.com/file/d/1RHvXphmEejADbMEpEK1QMcQeFCHUOAFQ/view?usp=sharing",
+              "alt": "Mapa das vias com ruas paralelas cortadas por transversais com marcações de ângulos de 50 graus, 120 graus e 2x.",
+              "caption": "Fonte: IFSP, 2023."
+            },
             "bncc": "EF09MA10",
-            "bnccDesc": "Demonstrar relações entre ângulos formados por retas paralelas intersectadas por uma transversal.",
+            "bnccDesc": "Demonstrar relações entre ângulos formados por retas paralelas cortadas por uma transversal.",
             "unidadeTematica": "Geometria",
             "anoEscolar": "9º ano",
-            "topicoId": "b3-t1",
-            "image": {
-              "src": "https://drive.google.com/file/d/10LBuyDt9aet28EgFavYBgDdnlsKUBII8/view?usp=sharing",
-              "alt": "Mapa esquemático mostrando a Avenida Costa do Marfim e a Rua Gana como retas transversais que cruzam as ruas paralelas Etiópia e Senegal, indicando ângulos de 50 graus, 120 graus e 2x nos cruzamentos",
-              "caption": "Figura: Mapa de ruas paralelas e transversais com ângulos indicados (IFSP 2024.1)"
-            }
+            "topicoId": "b3-t1"
           },
           {
-            "q": "O triângulo $ABC$ da figura abaixo é retângulo em $C$ e o segmento $CD$ representa a sua altura. Qual é a medida, em unidades de comprimento (u.c.) do lado $AC$?",
+            "id": "ifsp-2024-1a-q25",
+            "q": "O triângulo $ABC$ da figura abaixo é retângulo em $C$ e o segmento $\\overline{CD}$ representa a sua altura.\n\nQual é a medida, em unidades de comprimento (u.c.) do lado $\\overline{AC}$ ?",
             "options": [
               "$8{,}0\\text{ u.c.}$",
               "$14{,}4\\text{ u.c.}$",
@@ -7412,72 +7443,77 @@ var mathData = window.mathData || {
               "$9{,}0\\text{ u.c.}$"
             ],
             "correct": 1,
-            "explanation": "1. No triângulo retângulo parcial $ADC$, reto em $D$ com catetos medindo $CD = 8$ e $AD = 12$, aplicamos o Teorema de Pitágoras para encontrar a hipotenusa $AC$:<br>$$AC^2 = CD^2 + AD^2 = 8^2 + 12^2 = 64 + 144 = 208$$<br>$$AC = \\sqrt{208} \\approx 14{,}42\\text{ u.c.}$$<br>Esta resolução correspondia à <strong>Letra B</strong> no gabarito preliminar da banca.<br><br>2. <strong>Nota de Anulação Oficial:</strong> A questão foi oficialmente <em>ANULADA</em> pelo IFSP no gabarito definitivo. Pela geometria euclidiana, em qualquer triângulo retângulo de altura $h$ e projeções $m$ e $n$ sobre a hipotenusa, deve valer a relação métrica $h^2 = m \\cdot n$. Com as medidas do enunciado teríamos $h^2 = 8^2 = 64$, enquanto $m \\cdot n = 12 \\times 6 = 72$. Como $64 \\neq 72$, o triângulo $ABC$ com essas dimensões não pode ser simultaneamente retângulo em $C$ e possuir altura $CD = 8$, justificando a anulação oficial pela banca.",
+            "explanation": "1. **Inconsistência geométrica:** No triângulo retângulo, a altura relativa à hipotenusa deve satisfazer $h^2 = m \\cdot n$. Pela figura, $h = 8$, $m = 12$ e $n = 6$. No entanto, $8^2 = 64 \\neq 12 \\cdot 6 = 72$, o que torna a configuração impossível na geometria plana euclidiana.\n\n2. Se aplicada a relação de Pitágoras no triângulo parcial $ADC$ com catetos $12$ e $8$, obter-se-ia $AC = \\sqrt{12^2 + 8^2} = \\sqrt{208} \\approx 14{,}4\\text{ u.c.}$, que motivou o gabarito preliminar (B).\n\n3. Por conter medidas geometricamente incompatíveis entre si em um triângulo retângulo, a questão foi oficialmente **ANULADA** pela banca examinadora do IFSP no gabarito definitivo.",
+            "image": {
+              "src": "https://drive.google.com/file/d/1JvyQiZMHF5JFy0DjWJj20f9pmkCZhhFb/view?usp=sharing",
+              "alt": "Triângulo ABC com vértice superior C, hipotenusa AB na base dividida pelo ponto D em segmentos de 12 e 6, altura CD de 8 e lado BC de 10.",
+              "caption": "Fonte: IFSP, 2023."
+            },
             "bncc": "EF09MA13",
             "bnccDesc": "Demonstrar relações métricas do triângulo retângulo, entre elas o teorema de Pitágoras, utilizando, inclusive, a semelhança de triângulos.",
             "unidadeTematica": "Geometria",
             "anoEscolar": "9º ano",
-            "topicoId": "b3-t2",
-            "image": {
-              "src": "https://drive.google.com/file/d/1f__-FlHf-MQHY2WVW9oql-qMQrtwUGlf/view?usp=sharing",
-              "alt": "Triângulo ABC com vértice superior C, hipotenusa horizontal AB dividida pelo ponto D em dois segmentos AD de 12 unidades e DB de 6 unidades, altura vertical CD de 8 unidades e lado BC de 10 unidades",
-              "caption": "Figura: Triângulo ABC com altura CD (IFSP 2024.1 - Questão Anulada Oficialmente)"
-            }
+            "topicoId": "b3-t1"
           },
           {
-            "q": "Uma promoção de um supermercado define que a cada $\\text{R\\$} 50${,}00 em compras, o cliente recebe 1 cupom para participar de um sorteio. Sendo $x$ o valor em reais da compra e $y$ o número de cupons recebidos, se um cliente realizou uma compra no valor de $\\text{R\\$} 380{,}00$, quantos cupons ele recebeu?",
+            "id": "ifsp-2024-1a-q26",
+            "q": "Uma promoção de um mercado define que a cada 50 reais em compras, o cliente recebe 1 cupom para participar de um sorteio de um vale-compras de 500 reais. Os cupons são recebidos na hora do pagamento da compra no caixa e os valores que não foram convertidos em cupons não são cumulativos. Sendo $x$ o valor da compra do cliente e $y$ o número de cupons que o cliente recebe, qual a função que mostra a relação entre as variáveis $x$ e $y$ e que calcula a quantia de cupons a ser recebido pelo cliente a cada compra?",
             "options": [
-              "6 cupons",
-              "7 cupons",
-              "8 cupons",
-              "9 cupons"
-            ],
-            "correct": 1,
-            "explanation": "O número de cupons corresponde à parte inteira da divisão do valor gasto por $\\text{R\\$} 50${,}00:<br>$$y = \\left\\lfloor \\frac{380}{50} \\right\\rfloor = \\lfloor 7{,}6 \\rfloor = 7\\text{ cupons completos}$$<br>Os $\\text{R\\$} 30{,}00$ restantes não atingem o valor mínimo de $\\text{R\\$} 50{,}00$ para gerar mais um cupom.<br>Portanto, o cliente recebeu 7 cupons.<br>A alternativa correta é a <strong>Letra B</strong>.",
-            "bncc": "EF09MA06",
-            "bnccDesc": "Compreender as funções como relações de dependência unívoca entre duas variáveis e suas representações numérica, algébrica e gráfica e utilizar esse conceito para analisar situações que envolvam relações funcionais entre duas variáveis.",
-            "unidadeTematica": "Álgebra",
-            "anoEscolar": "9º ano",
-            "topicoId": "b2-t5"
-          },
-          {
-            "q": "Em um triângulo $ABC$, o ângulo interno no vértice $A$ mede $65^\\circ$ e o ângulo no vértice $B$ mede $45^\\circ$. Qual é a medida do ângulo externo adjacente ao vértice $C$?",
-            "options": [
-              "$70^\\circ$",
-              "$100^\\circ$",
-              "$110^\\circ$",
-              "$120^\\circ$"
-            ],
-            "correct": 2,
-            "explanation": "Pelo Teorema do Ângulo Externo, a medida de qualquer ângulo externo de um triângulo é igual à soma das medidas dos dois ângulos internos não adjacentes a ele:<br>$$\\hat{e}_C = \\hat{A} + \\hat{B} = 65^\\circ + 45^\\circ = 110^\\circ$$<br>(Ou alternativamente: $\\hat{C} = 180^\\circ - (65^\\circ + 45^\\circ) = 70^\\circ$, logo o ângulo externo suplementar é $180^\\circ - 70^\\circ = 110^\\circ$).<br>Portanto, a alternativa correta é a <strong>Letra C</strong>.",
-            "bncc": "EF08MA13",
-            "bnccDesc": "Resolver e elaborar problemas que envolvam grandezas diretamente ou inversamente proporcionais, por meio de estratégias variadas.",
-            "unidadeTematica": "Álgebra",
-            "anoEscolar": "8º ano",
-            "topicoId": "b2-t2"
-          },
-          {
-            "q": "A pesquisa “Juventudes na escola, sentidos e buscas: Por que frequentam?” escutou as juventudes brasileiras para entender seus olhares sobre o contexto escolar, e uma das perguntas feitas aos 8.283 participantes investigou quais pessoas não gostariam de ter como colega de classe, conforme a tabela a seguir:\n\nUm professor do IFSP que atua no Ensino Médio Regular (EM), preocupado com os dados referentes à população LGBTQIA+, desenvolveu um debate sobre respeito às diversidades e buscou saber a quantidade aproximada de participantes do EM que indicaram travesti, homossexual, transexual ou transgênero. Sabendo que aproximadamente $69{,}4\\%$ dos participantes são do EM e que cada participante indicou apenas um aspecto, qual alternativa representa a expressão de cálculo e o resultado aproximado obtido pelo professor?",
-            "options": [
-              "$(8283 \\times 69{,}4) \\times (8{,}3 + 6{,}1 + 5{,}2 + 3) =$ e 1299 participantes aproximadamente",
-              "$8283 \\times (8{,}3 + 6{,}1 + 5{,}2 + 3) =$ e 1872 participantes aproximadamente",
-              "$8283 \\times (0{,}083 + 0{,}061 + 0{,}052 + 0{,}03) =$ e 1872 participantes aproximadamente",
-              "$(8283 \\times 0{,}694) \\times (0{,}083 + 0{,}061 + 0{,}052 + 0{,}03) =$ e 1299 participantes aproximadamente"
+              "$y(x) = 50x$",
+              "$y(x) = 50 + x$",
+              "$y(x) = 50 - x$",
+              "$y(x) = \\frac{x}{50}$"
             ],
             "correct": 3,
-            "explanation": "O total de participantes do Ensino Médio Regular é $8.283 \\times 0{,}694$. A soma dos percentuais dos quatro grupos no EM é $8{,}3\\% + 6{,}1\\% + 5{,}2\\% + 3{,}0\\% = 22{,}6\\% = 0{,}083 + 0{,}061 + 0{,}052 + 0{,}03$. Multiplicando, obtém-se aproximadamente $1.299$ participantes, correspondendo à <strong>Alternativa D</strong>.",
-            "bncc": "EF09MA09",
-            "bnccDesc": "Compreender os processos de fatoração de expressões algébricas, com base em suas relações com os produtos notáveis, para resolver e elaborar problemas que possam ser representados por equações polinomiais do 2º grau.",
+            "explanation": "1. Cada lote de $\\text{R\\$} 50{,}00$ em compras confere ao cliente $1$ cupom. Logo, a quantidade $y$ de cupons recebidos a partir de uma compra de valor $x$ reais é proporcional à divisão de $x$ por $50$:\n$$y(x) = \\frac{x}{50}.$$\n\nPortanto, a função correspondente é $y(x) = \\frac{x}{50}$ (**Letra D**).",
+            "bncc": "EF09MA06",
+            "bnccDesc": "Compreender as funções como relações de dependência unívoca entre duas variáveis e suas representações numérica, algébrica e gráfica e utilizar esse conceito em situações práticas.",
             "unidadeTematica": "Álgebra",
             "anoEscolar": "9º ano",
-            "topicoId": "b2-t4",
-            "image": {
-              "src": "https://drive.google.com/file/d/1XLY_BlbaPerrCkozMHtpW772qD511AXG/view?usp=sharing",
-              "alt": "Tabela com a indicação das pessoas que não se queria ter como colega de classe, segundo a modalidade de ensino (EJA, EM, PJU e Total)."
-            }
+            "topicoId": "b2-t3"
           },
           {
-            "q": "Uma estudante colocou três dados de seis faces, exatamente iguais, sobre uma mesa. Após essa organização, ela chamou um amigo para um desafio: identificar o resultado correto de algumas operações matemáticas. A imagem abaixo mostra a perspectiva de visão do amigo desafiado:\nSe o estudante desafiado sabe que a soma dos pontos de duas faces opostas de um dado sempre resulta em sete, e ele continuar olhando apenas as faces que estão indicadas na figura acima, sem se movimentar, ele acertará se responder que:",
+            "id": "ifsp-2024-1a-q27",
+            "q": "A violência nas escolas é uma questão atual e um problema complexo que demanda de educadores, estudantes, responsáveis, governo e sociedade medidas para que se busque e se promova a Cultura de Paz, que tem no diálogo e na mediação seus focos para a resolução de conflitos. A pesquisa “Juventudes na escola, sentidos e buscas: Por que frequentam?” escutou as juventudes brasileiras para entender seus olhares sobre o contexto escolar e uma das perguntas feitas aos $8.283$ participantes e que ajuda a compreender fatores que incitam violências foi: Qual das pessoas você não queria ter como colega de classe? A tabela abaixo indica as respostas à pergunta:\n\n**Tabela: Indicação das pessoas que não se queria ter como colega de classe, segundo modalidade de ensino dos alunos**\n\n| ASPECTO | EJA | EM | PJU | Total |\n| :--- | :---: | :---: | :---: | :---: |\n| Bagunceiros | 55,1% | 35,7% | 58,7% | 44,4% |\n| “Puxa-saco” dos professores | 23,6% | 29,5% | 23,5% | 27,8% |\n| Travestis | 4,3% | 8,3% | 3,7% | 7,1% |\n| Egressos de Unidades Prisionais | 4,0% | 6,2% | 1,9% | 5,5% |\n| Homossexuais | 3,4% | 6,1% | 2,7% | 5,3% |\n| Transexuais | 2,6% | 5,2% | 1,8% | 4,4% |\n| “Nerds” | 3,3% | 3,6% | 2,2% | 3,5% |\n| Transgêneros | 1,2% | 3,0% | 0,7% | 2,5% |\n| Pessoas de outros estados ou região | 1,2% | 0,7% | 1,8% | 0,9% |\n| Pobres | 0,4% | 0,8% | 1,6% | 0,7% |\n| Pessoas com deficiência | 0,6% | 0,6% | 0,7% | 0,6% |\n| Negros | 0,2% | 0,3% | 0,8% | 0,3% |\n| Total | 100,0% | 100,0% | 100,0% | 100,0% |\n\n*(Siglas: EJA: Educação de Jovens e Adultos. EM: Ensino Médio Regular. PJU: Projovem Urbano. Fonte: ABRAMOVAY et al., 2015)*\n\nUm professor do IFSP que atua na modalidade do Ensino Médio Regular (EM), preocupado com os dados presentes na tabela referentes à população LGBTQIA+, desenvolverá um projeto para dialogar sobre o respeito às diversidades e sobre o cultivo da Cultura de Paz. Ele observou a tabela e, para iniciar o debate sobre os preconceitos e violências, buscou saber a quantidade de participantes da pesquisa, na modalidade de ensino em que atua, que responderam que não queriam ter como colega de classe uma pessoa travesti, homossexual, transexual ou transgênero.\n\nSabe-se que o professor utilizou uma calculadora para saber tal quantidade, que cada participante respondeu à pergunta indicando apenas um aspecto e que aproximadamente $69{,}4\\%$ dos participantes são do EM. O visor da calculadora, que mostra o possível cálculo feito pelo professor e a quantidade aproximada encontrada, estão representados em qual das alternativas abaixo?",
+            "options": [
+              "$(8283 \\times 69{,}4) \\times (8{,}3 + 6{,}1 + 5{,}2 + 3) = $ e $1299$ participantes aproximadamente",
+              "$8283 \\times (8{,}3 + 6{,}1 + 5{,}2 + 3) = $ e $1872$ participantes aproximadamente",
+              "$8283(0{,}083 + 0{,}061 + 0{,}052 + 0{,}03) = $ e $1872$ participantes aproximadamente",
+              "$(8283 \\times 0{,}694) \\times (0{,}083 + 0{,}061 + 0{,}052 + 0{,}03) = $ e $1299$ participantes aproximadamente"
+            ],
+            "correct": 3,
+            "explanation": "1. O número de participantes no Ensino Médio Regular (EM) é $69{,}4\\%$ de $8.283$, que em representação decimal é dado por $8283 \\times 0{,}694$.\n\n2. O total de participantes do EM que rejeitaram ter colegas travestis ($8{,}3\\% = 0{,}083$), homossexuais ($6{,}1\\% = 0{,}061$), transexuais ($5{,}2\\% = 0{,}052$) ou transgêneros ($3{,}0\\% = 0{,}03$) corresponde à soma das respectivas taxas decimais: $(0{,}083 + 0{,}061 + 0{,}052 + 0{,}03) = 0{,}226$.\n\n3. O produto calculado é:\n$$(8283 \\times 0{,}694) \\times 0{,}226 \\approx 5748{,}4 \\times 0{,}226 \\approx 1299\\text{ participantes}.$$\n\nPortanto, a expressão correta na calculadora é a da **Letra D**.",
+            "bncc": "EF08MA22",
+            "bnccDesc": "Calcular a probabilidade de eventos, com base na construção do espaço amostral, e resolver problemas com tabelas e gráficos.",
+            "unidadeTematica": "Probabilidade e estatística",
+            "anoEscolar": "8º ano",
+            "topicoId": "b4-t2"
+          },
+          {
+            "id": "ifsp-2024-1a-q28",
+            "q": "A lei 13.104/2015 alterou o Código Penal Brasileiro, incluindo como qualificador do crime de homicídio o feminicídio. Feminicídio é o homicídio cometido contra mulheres que é motivado por violência doméstica ou discriminação de gênero. Em março/2023 foram divulgados números do Monitor da Violência, do portal G1, em parceria com o Núcleo de Estudos da Violência da USP (NEV-USP) e o Fórum Brasileiro de Segurança Pública (FBV). O estudo mostra uma preocupação, já que os casos de assassinatos de mulheres pelo fato de serem mulheres crescem em um cenário no qual os homicídios, como um todo, têm caído.\n\nO gráfico abaixo compara entre os anos de 2017 e 2022 o número total de mulheres assassinadas (homicídio doloso) e o número de assassinatos causados por feminicídios:\n\nPode-se concluir que nos últimos quatro anos a maior proporção de feminicídios em relação ao número total de mulheres assassinadas foi de aproximadamente $35{,}9\\%$, no ano de:",
+            "options": [
+              "2022",
+              "2021",
+              "2020",
+              "2019"
+            ],
+            "correct": 0,
+            "explanation": "1. A questão investiga em qual dos quatro últimos anos apresentados no gráfico (2019 a 2022) a razão entre feminicídios e homicídios dolosos totais atingiu aproximadamente $35{,}9\\%$.\n\n2. Calculando para cada ano:\n- **2019:** $\\frac{1330}{3966} \\approx 33{,}5\\%$\n- **2020:** $\\frac{1354}{3999} \\approx 33{,}9\\%$\n- **2021:** $\\frac{1337}{3831} \\approx 34{,}9\\%$\n- **2022:** $\\frac{1410}{3930} \\approx 0{,}35877 = 35{,}9\\%$\n\nPortanto, a maior proporção de $35{,}9\\%$ foi registrada em **2022** (**Letra A**).",
+            "image": {
+              "src": "https://drive.google.com/file/d/1fRsmSvWjIQ1yij-EJ6OMsE-DoPUL1Q7i/view?usp=sharing",
+              "alt": "Gráfico de barras duplas de 2017 a 2022 comparando a quantidade total de homicídios dolosos e de feminicídios de mulheres no Brasil.",
+              "caption": "Fonte: Monitor da Violência/G1, 2023."
+            },
+            "bncc": "EF09MA21",
+            "bnccDesc": "Analisar e identificar, em gráficos divulgados pela mídia, os elementos que podem induzir, às vezes propositadamente, a erros de leitura, como escalas e legendas inadequadas.",
+            "unidadeTematica": "Probabilidade e estatística",
+            "anoEscolar": "9º ano",
+            "topicoId": "b4-t2"
+          },
+          {
+            "id": "ifsp-2024-1a-q29",
+            "q": "Uma estudante colocou três dados de seis faces, exatamente iguais, sobre uma mesa. Após essa organização, ela chamou um amigo para um desafio: identificar o resultado correto de algumas operações matemáticas. A imagem abaixo mostra a perspectiva de visão do amigo desafiado:\n\nSe o estudante desafiado sabe que a soma dos pontos de duas faces opostas de um dado sempre resulta em sete, e ele continuar olhando apenas as faces que estão indicadas na figura acima, sem se movimentar, ele acertará se responder que:",
             "options": [
               "a soma dos pontos das faces que estão sobre a mesa é um número par.",
               "a soma dos pontos das faces, em um dos dados, que eu não vejo, é o dobro da soma dos pontos das faces que eu consigo ver.",
@@ -7485,36 +7521,44 @@ var mathData = window.mathData || {
               "a soma dos pontos das faces que eu não consigo ver nos três dados é um número par."
             ],
             "correct": 1,
-            "explanation": "1. A soma dos pontos de todas as seis faces de um dado convencional é dada por:<br>$$1 + 2 + 3 + 4 + 5 + 6 = 21$$<br>Como cada dado possui 3 faces visíveis e 3 faces ocultas da perspectiva da figura, calculamos as somas para cada um:<br><br>2. <strong>Primeiro dado (esquerda):</strong><br>- Faces visíveis: $1$ (topo), $5$ (frente) e $3$ (lado esquerdo). Soma visível $= 1 + 5 + 3 = 9$.<br>- Faces ocultas: $21 - 9 = 12$.<br><br>3. <strong>Segundo dado (centro):</strong><br>- Faces visíveis: $2$ (topo), $4$ (frente) e $1$ (lado esquerdo). Soma visível $= 2 + 4 + 1 = 7$.<br>- Faces ocultas: $21 - 7 = 14$.<br><br>4. <strong>Terceiro dado (direita):</strong><br>- Faces visíveis: $3$ (topo), $2$ (frente) e $1$ (lado esquerdo). Soma visível $= 3 + 2 + 1 = 6$.<br>- Faces ocultas: $21 - 6 = 15$.<br><br>5. No dado central, a soma das faces ocultas ($14$) é exatamente o dobro da soma das faces visíveis ($7$):<br>$$14 = 2 \\times 7$$<br>Portanto, a alternativa correta é a <strong>Letra B</strong>.",
+            "explanation": "1. A soma dos pontos das seis faces de um dado padrão é:\n$$1 + 2 + 3 + 4 + 5 + 6 = 21.$$\n\n2. Em cada dado, o estudante vê 3 faces e não vê outras 3 faces. Logo, a soma das faces não vistas é $21 - S_{\\text{vistas}}$.\n\n3. Calculando para o **segundo dado (do meio)**:\n- Faces visíveis: $2$ (topo), $1$ (esquerda) e $4$ (direita).\n- Soma visível: $2 + 1 + 4 = 7$.\n- Soma das faces não visíveis: $21 - 7 = 14$.\n\n4. Como $14 = 2 \\times 7$, a soma das faces que não se vê é exatamente o dobro da soma das faces visíveis.\n\nPortanto, a afirmação correta é a da **Letra B**.",
+            "image": {
+              "src": "https://drive.google.com/file/d/1oOmp-yPuDwTTTboPBYg7H1tuTedKbLMp/view?usp=sharing",
+              "alt": "Três dados cúbicos sobre a mesa mostrando faces: primeiro dado com 1, 3 e 5 pontos; segundo dado com 2, 1 e 4 pontos; terceiro dado com 3, 1 e 2 pontos.",
+              "caption": "Fonte: IFSP, 2023."
+            },
             "bncc": "EF07MA01",
-            "bnccDesc": "Resolver e elaborar problemas com números naturais, envolvendo as noções de divisor e múltiplo, raciocínio lógico e análise combinatória elementar.",
+            "bnccDesc": "Resolver e elaborar problemas com números naturais, envolvendo as quatro operações fundamentais.",
             "unidadeTematica": "Números",
             "anoEscolar": "7º ano",
-            "topicoId": "b1-t2",
-            "image": {
-              "src": "https://drive.google.com/file/d/12RDZgGDeT4JyZ2W2uPZ_Ei555ooEopat/view?usp=sharing",
-              "alt": "Três dados cúbicos brancos dispostos lado a lado sobre uma mesa plana: o primeiro dado mostra as faces 1 no topo, 5 na frente e 3 à esquerda; o segundo mostra 2 no topo, 4 na frente e 1 à esquerda; o terceiro mostra 3 no topo, 2 na frente e 1 à esquerda",
-              "caption": "Figura: Perspectiva dos três dados de seis faces sobre a mesa (IFSP 2024.1)"
-            }
+            "topicoId": "b1-t1"
           },
           {
-            "q": "Ao se construir um castelo com cartas de baralho, a base do primeiro andar é formada por 2 cartas inclinadas apoiadas entre si (formando uma tenda). No castelo de 2 andares, a base tem 2 tendas e 1 carta horizontal de suporte, e assim por diante. Para construir um castelo de 5 andares, o número total de cartas necessárias segue a progressão onde cada andar $k$ (de cima para baixo) requer $3k - 1$ cartas no topo e base. O total de cartas para 5 andares é:",
+            "id": "ifsp-2024-1a-q30",
+            "q": "Ao se construir um castelo com cartas de baralho é necessário uma superfície plana e que não seja lisa, um baralho feito em material que seja áspero, um ambiente sem vento e uma estrutura de torre em que, quando vista de frente, as cartas criem triângulos congruentes. Na figura 1 está representada uma torre de quatro andares em que $B\\hat{A}C \\cong E\\hat{G}F$ e $A\\hat{B}C \\cong F\\hat{E}G$.\n\nA partir dessas informações, e sabendo que o tamanho de uma carta é medido em milímetros, qual a altura aproximada da torre de cartas a partir da superfície plana?",
             "options": [
-              "35",
-              "40",
-              "45",
-              "50"
+              "$221{,}7\\text{ milímetros}$",
+              "$256{,}0\\text{ milímetros}$",
+              "$128{,}0\\text{ milímetros}$",
+              "$491{,}5\\text{ milímetros}$"
             ],
-            "correct": 1,
-            "explanation": "O número de cartas necessárias para um castelo de $n$ andares é dado pela soma:<br>$$C_n = \\frac{3n^2 + n}{2}$$<br>Para $n = 5$ andares:<br>$$C_5 = \\frac{3(5)^2 + 5}{2} = \\frac{3(25) + 5}{2} = \\frac{75 + 5}{2} = \\frac{80}{2} = 40\\text{ cartas}.$$Portanto, a alternativa correta é a <strong>Letra B</strong>.",
-            "bncc": "EF08MA22",
-            "bnccDesc": "Calcular a probabilidade de eventos, com base na construção do espaço amostral, utilizando o princípio multiplicativo, e reconhecer que a soma das probabilidades de todos os elementos do espaço amostral é igual a 1.",
-            "unidadeTematica": "Probabilidade e Estatística",
-            "anoEscolar": "8º ano",
-            "topicoId": "b4-t3"
+            "correct": 0,
+            "explanation": "1. **Medida do lado do triângulo (comprimento da carta):**\nPor congruência dos triângulos:\n$$8x - 8 = 73 - x \\implies 9x = 81 \\implies x = 9.$$\nO comprimento da carta é $L = 8(9) - 8 = 64\\text{ mm}$.\n\n2. **Altura de cada andar triangular equilátero:**\n$$h = \\frac{L\\sqrt{3}}{2} = \\frac{64\\sqrt{3}}{2} = 32\\sqrt{3} \\approx 32 \\times 1{,}73205 = 55{,}4256\\text{ mm}.$$\n\n3. **Altura total dos 4 andares:**\n$$H = 4 \\times h = 4 \\times 55{,}4256 \\approx 221{,}7\\text{ mm}.$$\n\nPortanto, a altura aproximada é de $221{,}7\\text{ milímetros}$ (**Letra A**).",
+            "image": {
+              "src": "https://drive.google.com/file/d/1Lj0IHBwgmWmTUegwuWznma8-pu8kTTzx/view?usp=sharing",
+              "alt": "Torre de 4 andares com triângulos congruentes formada por cartas de baralho indicando medidas 8x - 8 e 73 - x.",
+              "caption": "Fonte: IFSP, 2023."
+            },
+            "bncc": "EF09MA14",
+            "bnccDesc": "Descrever, por escrito e por meio de um fluxograma, um algoritmo para a construção de um triângulo retângulo conhecidas as medidas dos catetos, e demonstrar o Teorema de Pitágoras.",
+            "unidadeTematica": "Geometria",
+            "anoEscolar": "9º ano",
+            "topicoId": "b3-t1"
           }
         ],
-        "driveUrl": "https://drive.google.com/file/d/1kQnCGH-fubxYlWm2dhJqXKIzErDREBsM/view?usp=drive_web"
+        "blockId": "7",
+        "filename": "prova-ifsp-20241-a.html",
+        "slug": "prova-ifsp-20241-a"
       },
       {
         "id": "ifsp-2024-1-b",
@@ -7540,22 +7584,24 @@ var mathData = window.mathData || {
         "pdf": "IFSP_prova_2024_1_b.pdf",
         "questions": [
           {
-            "q": "Uma dízima periódica é um número que quando escrito no sistema decimal apresenta uma série infinita de algarismos que se repetem periodicamente. A fração geratriz irredutível que dá origem à dízima periódica simples $0{,}444\\dots$ é:",
+            "id": "ifsp-2024-1b-q16",
+            "q": "Dízima periódica é um número que quando escrito no sistema decimal apresenta uma série infinita de algarismos decimais que, a partir de certo algarismo, se repetem em grupos de um ou mais algarismos, ordenados sempre na mesma disposição, chamados de período.\n\n*(Fonte: pt.wikipedia.org/wiki/Dízima_periódica. Acesso em: 04 ago. 2023)*\n\nAs dízimas periódicas sempre podem ser representadas na forma de fração, com números inteiros na posição do numerador e do denominador. Com base nestas informações, qual o resultado do produto de $0{,}333\\dots$ por $\\frac{6}{5}$?",
             "options": [
-              "$\\frac{4}{9}$",
               "$\\frac{2}{5}$",
-              "$\\frac{4}{10}$",
-              "$\\frac{44}{99}$"
+              "$\\frac{1}{3}$",
+              "$\\frac{18}{5}$",
+              "$\\frac{5}{18}$"
             ],
             "correct": 0,
-            "explanation": "Seja $x = 0{,}444\\dots$<br>Multiplicando por 10:<br>$$10x = 4{,}444\\dots$$<br>Subtraindo a primeira equação da segunda:<br>$$10x - x = 4{,}444\\dots - 0{,}444\\dots \\implies 9x = 4 \\implies x = \\frac{4}{9}$$<br>Como $4$ e $9$ são primos entre si, a fração geratriz irredutível é $\\frac{4}{9}$.<br>Portanto, a alternativa correta é a <strong>Letra A</strong>.",
+            "explanation": "1. A fração geratriz da dízima periódica simples $0{,}333\\dots$ é obtida dividindo-se o período ($3$) por $9$:\n$$0{,}333\\dots = \\frac{3}{9} = \\frac{1}{3}.$$\n\n2. Efetuando o produto indicado:\n$$\\frac{1}{3} \\times \\frac{6}{5} = \\frac{6}{15}.$$\n\n3. Simplificando a fração por $3$ no numerador e no denominador:\n$$\\frac{6 \\div 3}{15 \\div 3} = \\frac{2}{5}.$$\n\nPortanto, o resultado do produto é $\\frac{2}{5}$ (**Letra A**).",
             "bncc": "EF08MA05",
             "bnccDesc": "Reconhecer e utilizar procedimentos para a obtenção de uma fração geratriz para uma dízima periódica.",
             "unidadeTematica": "Números",
             "anoEscolar": "8º ano",
-            "topicoId": "b1-t4"
+            "topicoId": "b1-t2"
           },
           {
+            "id": "ifsp-2024-1b-q17",
             "q": "Duas cidades têm seus marcos zero representados pelos pontos $A$ e $B$ de acordo com a imagem abaixo que estão conectados entre si pela Estrada 1. Em uma ação conjunta de reflorestamento elas decidiram plantar mudas de árvores ao longo da Estrada 2 que está a uma mesma distância dos pontos $A$ e $B$ e que conecta duas regiões rurais indicadas pelos pontos $C$ e $D$. Sabendo destas informações, indique corretamente o nome dado, em Geometria, à reta suporte do segmento $\\overline{CD}$, que representa a Estrada 2, em relação ao segmento de reta $\\overline{AB}$ que representa a Estrada 1.",
             "options": [
               "A reta suporte de $\\overline{CD}$ é a secante do segmento de reta $\\overline{AB}$.",
@@ -7564,36 +7610,43 @@ var mathData = window.mathData || {
               "A reta suporte de $\\overline{CD}$ é a paralela do segmento de reta $\\overline{AB}$."
             ],
             "correct": 1,
-            "explanation": "1. Em Geometria Plana, a <strong>mediatriz</strong> de um segmento de reta $\\overline{AB}$ é definida como o lugar geométrico de todos os pontos do plano que são equidistantes dos pontos $A$ e $B$.<br><br>2. Como a Estrada 2 (reta suporte do segmento $\\overline{CD}$) foi traçada de modo que cada um de seus pontos esteja a uma mesma distância dos marcos zero $A$ e $B$, essa reta é perpendicular ao segmento $\\overline{AB}$ e passa exatamente pelo seu ponto médio.<br><br>3. Portanto, a reta suporte de $\\overline{CD}$ é a mediatriz do segmento de reta $\\overline{AB}$.<br>Portanto, a alternativa correta é a <strong>Letra B</strong>.",
+            "explanation": "1. Em geometria plana, o lugar geométrico de todos os pontos que se encontram a uma mesma distância (equidistantes) de dois pontos distintos $A$ e $B$ é a reta perpendicular ao segmento $\\overline{AB}$ que passa pelo seu ponto médio.\n\n2. Essa reta é denominada **mediatriz** do segmento $\\overline{AB}$.\n\nPortanto, a reta suporte do segmento $\\overline{CD}$ é a **mediatriz** do segmento de reta $\\overline{AB}$ (**Letra B**).",
+            "image": {
+              "src": "https://drive.google.com/file/d/1mgrfjR6307DbTt106xuFAdLFeja8u0jw/view?usp=sharing",
+              "alt": "Dois centros urbanos representados pelos pontos A e B conectados pelo segmento Estrada 1, interceptado perpendicularmente no ponto médio pelo segmento Estrada 2 ligando os pontos C e D.",
+              "caption": "Fonte: IFSP, 2023."
+            },
             "bncc": "EF08MA17",
-            "bnccDesc": "Aplicar os conceitos de mediatriz e bissetriz como lugares geométricos na resolução de problemas.",
+            "bnccDesc": "Construir figuras geométricas planas usando instrumentos de desenho ou softwares de geometria dinâmica.",
             "unidadeTematica": "Geometria",
             "anoEscolar": "8º ano",
-            "topicoId": "b3-t1",
-            "image": {
-              "src": "https://drive.google.com/file/d/1p-YH-DVuonFyD6ZOVgKiJg3RXXC4zb4T/view?usp=sharing",
-              "alt": "Diagrama esquemático com duas cidades A e B conectadas pelo segmento de reta da Estrada 1 e duas regiões rurais C e D conectadas pela reta da Estrada 2, que corta perpendicularmente o segmento AB em seu ponto médio",
-              "caption": "Figura: Representação esquemática das Estradas 1 e 2 (IFSP 2024.1)"
-            }
+            "topicoId": "b3-t1"
           },
           {
-            "q": "Em geometria plana, o lugar geométrico dos pontos de um plano que equidistam dos extremos de um segmento de reta $AB$ é denominado:",
+            "id": "ifsp-2024-1b-q18",
+            "q": "O volume de um paralelepípedo pode ser obtido pelo produto de sua largura, altura e comprimento. Considere o paralelepípedo, mostrado na figura, em que representamos a largura por $x$, a altura por $x + 1$ e seu comprimento por $x - 3$. Sendo $x > 3$, qual das alternativas a seguir apresenta uma expressão que calcula o volume deste paralelepípedo?",
             "options": [
-              "Bissetriz",
-              "Mediatriz",
-              "Mediana",
-              "Altura"
+              "$V = x^2 + x$",
+              "$V = x^2 - 3x$",
+              "$V = x^3 - 2x^2 - 3x$",
+              "$V = x^2 - 2x - 3$"
             ],
-            "correct": 1,
-            "explanation": "Por definição geométrica, a <strong>mediatriz</strong> de um segmento de reta $AB$ é a reta perpendicular a $AB$ traçada pelo seu ponto médio. Qualquer ponto pertencente à mediatriz está à mesma distância dos pontos $A$ e $B$ ($PA = PB$).<br>Portanto, a alternativa correta é a <strong>Letra B</strong>.",
-            "bncc": "EF08MA25",
-            "bnccDesc": "Obter os valores de medidas de tendência central de uma pesquisa estatística (média, moda e mediana) com a compreensão de seus significados e relacioná-los com a dispersão de dados, indicada pela amplitude.",
-            "unidadeTematica": "Probabilidade e Estatística",
+            "correct": 2,
+            "explanation": "1. O volume $V$ de um paralelepípedo reto retângulo é dado pelo produto de suas três dimensões:\n$$V = x \\cdot (x + 1) \\cdot (x - 3).$$\n\n2. Multiplicando primeiro os dois binômios:\n$$(x + 1)(x - 3) = x^2 - 3x + x - 3 = x^2 - 2x - 3.$$\n\n3. Multiplicando agora por $x$:\n$$V = x \\cdot (x^2 - 2x - 3) = x^3 - 2x^2 - 3x.$$\n\nPortanto, a expressão correspondente é $V = x^3 - 2x^2 - 3x$ (**Letra C**).",
+            "image": {
+              "src": "https://drive.google.com/file/d/1HJF2ZF-U5fRfBgWUvw2cU6zunYBthIts/view?usp=sharing",
+              "alt": "Desenho em perspectiva de um paralelepípedo reto retângulo indicando largura x, comprimento x - 3 e altura x + 1.",
+              "caption": "Fonte: IFSP, 2023."
+            },
+            "bncc": "EF08MA06",
+            "bnccDesc": "Resolver e elaborar problemas que envolvam cálculo do valor numérico de expressões algébricas, utilizando as propriedades das operações.",
+            "unidadeTematica": "Álgebra",
             "anoEscolar": "8º ano",
-            "topicoId": "b4-t4"
+            "topicoId": "b2-t1"
           },
           {
-            "q": "Ao buscar informações a respeito dos clipes mais vistos da história do YouTube no Brasil, um estudante encontrou uma notícia de 2022, apresentada na imagem a seguir:\nAo olhar apenas para os dez primeiros clipes indicados na notícia, o estudante observou corretamente que:",
+            "id": "ifsp-2024-1b-q19",
+            "q": "Ao buscar informações a respeito dos clipes mais vistos da história do Youtube no Brasil, um estudante encontrou uma notícia de 2022.\n\n**Quais são os clipes mais vistos da história do YouTube no Brasil?**\n*A artista que mais aparece é Marília Mendonça, com 16 clipes, seguida por Anitta (8), Henrique e Juliano (7) e Gusttavo Lima (6). Os cinco estilos mais presentes são o sertanejo, com 45 clipes, seguido pelo funk (16), forró e pop (8 cada um), rap (7) e gospel (6). [...] Um dos destaques é o canal de funk Kondzilla, que tem três dos cinco vídeos mais tocados, inclusive o campeão, 'Bum bum Tam Tam', do MC Fioti. O levantamento considera todos os clipes brasileiros de música lançados desde o início do YouTube, em 2005. As visualizações são somadas de todos os países, não só da audiência no Brasil, até o dia 10 de junho de 2022. Não foram considerados vídeos de música infantil, como Galinha Pintadinha. Os dados são do próprio YouTube, coletados pelo site Kworb.*\n\n**Veja os clipes brasileiros mais vistos no YouTube:**\n- 1º Lugar: MC Fioti - Bum Bum Tam Tam (KondZilla) - 1.712.733.533\n- 2º Lugar: MC Kevinho - Olha a Explosão (KondZilla) - 1.181.620.288\n- 3º Lugar: Michel Teló - Ai Se Eu Te Pego - Video Oficial (Assim você me mata) - 1.069.753.979\n- 4º Lugar: Zé Neto e Cristiano – Largado às Traças - Zé Neto e Cristiano Acústico - 883.285.203\n- 5º Lugar: Amor de Verdade - MC Kekel e MC Rita (KondZilla) - 727.652.668\n- 6º Lugar: Zé Neto e Cristiano – Notificação Preferida - 727.050.893\n- 7º Lugar: Simone & Simaria - Loka ft. Anitta - 718.309.705\n- 8º Lugar: Preto no Branco - Ninguém Explica Deus (Ao Vivo) ft. Gabriela Rocha - 665.087.438\n- 9º Lugar: Anitta & J Balvin - Downtown - 632.360.723\n- 10º Lugar: MC Kevinho - O Grave Bater [Sintonia Soundtrack] (KondZilla) - 622.440.014\n\n*(Disponível em: g1.globo.com. Acesso em 15 jul. 2023)*\n\nAo olhar apenas para os dez primeiros clipes indicados na notícia, o estudante observou corretamente que:",
             "options": [
               "as visualizações dos dois clipes de MC Kevinho, que estão entre os 10 primeiros, ultrapassam a visualização do 1º colocado na lista.",
               "dos dez clipes listados, sete têm menos de 1 milhão de visualizações.",
@@ -7601,201 +7654,219 @@ var mathData = window.mathData || {
               "os dois clipes da dupla Zé Neto e Cristiano, que estão entre os 10 primeiros, não ultrapassam 1.510.336.096 visualizações."
             ],
             "correct": 0,
-            "explanation": "1. Analisando as visualizações dos dois clipes de MC Kevinho presentes no top 10:<br>- 2º Lugar (Olha a Explosão): $1.181.620.288$ visualizações.<br>- 10º Lugar (O Grave Bater): $622.440.014$ visualizações.<br>- Soma das visualizações de MC Kevinho:<br>$$1.181.620.288 + 622.440.014 = 1.804.060.302\\text{ visualizações}$$<br>2. Comparando com o 1º colocado (MC Fioti - Bum Bum Tam Tam):<br>$$1.712.733.533\\text{ visualizações}$$<br>Como $1.804.060.302 > 1.712.733.533$, as visualizações dos dois clipes de MC Kevinho somadas realmente ultrapassam a do 1º colocado.<br><br>3. Verificação das demais alternativas:<br>- (B) Falso: todos os 10 clipes têm mais de 600 milhões de visualizações.<br>- (C) Falso: os clipes da KondZilla somam $1.712.733.533 + 1.181.620.288 + 727.652.668 + 622.440.014 = 4.244.446.503$ ($> 4{,}2$ bilhões).<br>- (D) Falso: os clipes de Zé Neto e Cristiano somam $883.285.203 + 727.050.893 = 1.610.336.096$ ($> 1.510.336.096$).<br><br>Portanto, a alternativa correta é a <strong>Letra A</strong>.",
+            "explanation": "1. Os dois clipes de MC Kevinho presentes na lista dos 10 mais vistos são:\n- 2º Lugar (Olha a Explosão): $1.181.620.288$\n- 10º Lugar (O Grave Bater): $622.440.014$\n\n2. Somando as visualizações de ambos os clipes:\n$$1.181.620.288 + 622.440.014 = 1.804.060.302.$$\n\n3. O clipe em 1º lugar (MC Fioti) possui $1.712.733.533$ visualizações.\nComo $1.804.060.302 > 1.712.733.533$, a soma de visualizações dos dois clipes de MC Kevinho de fato ultrapassa a visualização do 1º colocado.\n\nPortanto, a alternativa correta é a **Letra A**.",
             "bncc": "EF07MA01",
-            "bnccDesc": "Resolver e elaborar problemas com números naturais, envolvendo operações fundamentais e ordens de grandeza.",
+            "bnccDesc": "Resolver e elaborar problemas com números naturais, envolvendo as quatro operações fundamentais.",
             "unidadeTematica": "Números",
             "anoEscolar": "7º ano",
-            "topicoId": "b1-t1",
-            "image": {
-              "src": "https://drive.google.com/file/d/1VhMO0zpN5l7b122qqP7EJw1yBaJPto6C/view?usp=sharing",
-              "alt": "Quadro informativo de notícia jornalística listando os 10 videoclipes mais vistos do YouTube no Brasil com suas respectivas contagens exatas de visualizações na ordem dos bilhões e centenas de milhões",
-              "caption": "Figura: Notícia com ranking dos clipes mais vistos no YouTube Brasil (IFSP 2024.1)"
-            }
+            "topicoId": "b1-t1"
           },
           {
-            "q": "Um produto eletrônico teve seu preço diminuído durante duas semanas seguidas. Na primeira semana o desconto foi de $10\\%$, e na segunda semana foi aplicado um novo desconto de $10\\%$ sobre o preço já reduzido. O desconto percentual total acumulado sobre o preço original foi de:",
+            "id": "ifsp-2024-1b-q20",
+            "q": "Um certo produto eletrônico teve seu preço diminuído durante duas semanas seguidas. Na primeira semana, o preço caiu $10\\%$, e na segunda semana sofreu nova queda e teve seu preço reduzido em mais $5\\%$. Se no começo da primeira semana este produto custava $\\text{R\\$} 800{,}00$, qual seu preço final após a aplicação dos dois descontos?",
             "options": [
-              "$18\\%$",
-              "$19\\%$",
-              "$20\\%$",
-              "$21\\%$"
+              "$\\text{R\\$} 680{,}00$",
+              "$\\text{R\\$} 684{,}00$",
+              "$\\text{R\\$} 720{,}00$",
+              "$\\text{R\\$} 760{,}00$"
             ],
             "correct": 1,
-            "explanation": "Aplicamos os fatores multiplicativos de desconto:<br>1. Primeiro desconto de $10\\%$: fator $(1 - 0{,}10) = 0{,}90$.<br>2. Segundo desconto de $10\\%$: fator $(1 - 0{,}10) = 0{,}90$.<br>3. Fator acumulado final:<br>$$F = 0{,}90 \\times 0{,}90 = 0{,}81$$<br>4. O desconto total acumulado é:<br>$$1 - 0{,}81 = 0{,}19 = 19\\%.$$Portanto, a alternativa correta é a <strong>Letra B</strong>.",
-            "bncc": "EF08MA04",
-            "bnccDesc": "Resolver e elaborar problemas, envolvendo cálculo de porcentagens, incluindo o uso de tecnologias digitais.",
+            "explanation": "1. Preço após o primeiro desconto de $10\\%$ sobre $\\text{R\\$} 800{,}00$:\n$$P_1 = 800 \\times (1 - 0{,}10) = 800 \\times 0{,}90 = \\text{R\\$} 720{,}00.$$\n\n2. Preço após a segunda redução de $5\\%$ aplicada sobre o novo preço de $\\text{R\\$} 720{,}00$:\n$$P_2 = 720 \\times (1 - 0{,}05) = 720 \\times 0{,}95 = \\text{R\\$} 684{,}00.$$\n\nPortanto, o preço final do produto foi de $\\text{R\\$} 684{,}00$ (**Letra B**).",
+            "bncc": "EF07MA02",
+            "bnccDesc": "Resolver e elaborar problemas que envolvam porcentagens, como os que lidam com acréscimos e decréscimos simples e sucessivos.",
             "unidadeTematica": "Números",
-            "anoEscolar": "8º ano",
-            "topicoId": "b1-t6"
+            "anoEscolar": "7º ano",
+            "topicoId": "b1-t3"
           },
           {
-            "q": "No jogo Minecraft, cada bloco é um cubo de aresta medindo $1\\text{ metro}$. Um jogador construiu uma sala em formato de paralelepípedo com dimensões internas de $5\\text{ m}$ de comprimento, $4\\text{ m}$ de largura e $3\\text{ m}$ de altura. Quantos blocos cúbicos de ar cabem no interior dessa sala?",
+            "id": "ifsp-2024-1b-q21",
+            "q": "Minecraft é um jogo eletrônico em que seus jogadores exploram um mundo feito em blocos. Nesse mundo é possível construir inúmeras coisas a partir dos diferentes blocos disponíveis. No modo criativo, os jogadores têm acesso a todos os recursos e itens proporcionados pelo jogo. Um jogador pretende construir um prédio retangular com blocos de minério de diamante no modo criativo. O prédio tem comprimento de 5 blocos, largura de 4 blocos e altura de 8 blocos de minério de diamante como mostra a figura 1:\n\nSabe-se que o prédio construído pelo jogador é oco por dentro e há somente blocos cobrindo o piso, o teto e as quatro paredes. Se cada bloco tem $1\\text{ cm}^3$ de volume, qual o volume da parte oca do prédio?",
             "options": [
-              "12",
-              "30",
-              "60",
-              "120"
+              "$160\\text{ cm}^3$",
+              "$124\\text{ cm}^3$",
+              "$42\\text{ cm}^3$",
+              "$36\\text{ cm}^3$"
+            ],
+            "correct": 3,
+            "explanation": "1. O prédio possui dimensões externas de $5$ blocos de comprimento, $4$ de largura e $8$ de altura.\n\n2. A camada que forma as paredes, o teto e o piso tem espessura de $1$ bloco. Subtraindo $2$ blocos em cada dimensão (um em cada extremidade):\n- Comprimento interno: $5 - 2 = 3\\text{ blocos}$\n- Largura interna: $4 - 2 = 2\\text{ blocos}$\n- Altura interna: $8 - 2 = 6\\text{ blocos}$\n\n3. O volume interno oco é:\n$$V = 3 \\times 2 \\times 6 = 36\\text{ blocos} = 36\\text{ cm}^3.$$\n\nPortanto, o volume da parte oca é de $36\\text{ cm}^3$ (**Letra D**).",
+            "image": {
+              "src": "https://drive.google.com/file/d/1hMxjZcu3sGPM0k_a1kpsvQvvNy8JV5Tg/view?usp=sharing",
+              "alt": "Desenho isométrico em estilo blocos de um prisma retangular formado por 5 blocos de comprimento, 4 blocos de largura e 8 blocos de altura.",
+              "caption": "Fonte: IFSP, 2023."
+            },
+            "bncc": "EF09MA19",
+            "bnccDesc": "Desenvolver e utilizar fórmulas para o cálculo de volumes de prismas e pirâmides retas, em situações reais.",
+            "unidadeTematica": "Grandezas e medidas",
+            "anoEscolar": "9º ano",
+            "topicoId": "b4-t1"
+          },
+          {
+            "id": "ifsp-2024-1b-q22",
+            "q": "Um estudante foi comer no intervalo das aulas e viu que seu lanche era como o da foto abaixo.\n\n*(UOL, 2017. Sanduíche na diagonal ou reto? Disponível em: uol.com.br. Acesso em: 31 jul. 2023)*\n\nConsiderando que o pão de forma, como o da foto, tem a forma de um quadrado de lado $12\\text{ cm}$, qual dos pontos marcados na reta real abaixo está mais próximo da medida da diagonal desse pão?",
+            "options": [
+              "Ponto A",
+              "Ponto B",
+              "Ponto C",
+              "Ponto D"
+            ],
+            "correct": 3,
+            "explanation": "1. A diagonal $d$ de um quadrado de lado $L = 12\\text{ cm}$ é dada por:\n$$d = L\\sqrt{2} = 12\\sqrt{2}\\text{ cm}.$$\n\n2. Tomando $\\sqrt{2} \\approx 1{,}4142$:\n$$d \\approx 12 \\times 1{,}4142 = 16{,}97\\text{ cm}.$$\n\n3. Analisando as posições marcadas na reta real:\n- Ponto A: $11$\n- Ponto B: $13$\n- Ponto C: $15$\n- Ponto D: $17$\n\nComo $16{,}97$ está extremamente próximo de $17$, o ponto correspondente é o **Ponto D**.\n\nPortanto, a alternativa correta é a **Letra D**.",
+            "image": {
+              "src": "https://drive.google.com/file/d/1OjbpkpCaBpo5hTTLyAQRKC9txD6RLxRm/view?usp=sharing",
+              "alt": "Fotografia de um sanduíche de pão de forma cortado na diagonal e reta numérica com os pontos A no 11, B no 13, C no 15 e D no 17.",
+              "caption": "Fonte: UOL, 2017 / IFSP, 2023."
+            },
+            "bncc": "EF09MA02",
+            "bnccDesc": "Reconhecer um número irracional como um número real cuja representação decimal é infinita e não periódica, e estimar a localização de alguns deles na reta numérica.",
+            "unidadeTematica": "Números",
+            "anoEscolar": "9º ano",
+            "topicoId": "b1-t2"
+          },
+          {
+            "id": "ifsp-2024-1b-q23",
+            "q": "Determinado engenheiro elaborou projetos de energia solar para uma residência e para um comércio. Foram previstos painéis solares de diferentes potências: menor potência para a residência e maior potência para a instalação comercial. Para isso foi realizado um pedido de $30$ painéis solares que custam no total $\\text{R\\$} 15.900{,}00$. O painel residencial custa $\\text{R\\$} 400{,}00$ enquanto o comercial $\\text{R\\$} 700{,}00$. Diante disso, a quantidade de painéis solares residenciais e a de comerciais pedidos totaliza, respectivamente:",
+            "options": [
+              "$15$ e $15$",
+              "$17$ e $13$",
+              "$24$ e $6$",
+              "$27$ e $3$"
+            ],
+            "correct": 1,
+            "explanation": "1. Montando o sistema com $x$ painéis residenciais e $y$ comerciais:\n$$\\begin{cases} x + y = 30 \\\\ 400x + 700y = 15.900 \\end{cases}$$\n\n2. Dividindo a segunda equação por $100$:\n$$4x + 7y = 159.$$\n\n3. Substituindo $x = 30 - y$:\n$$4(30 - y) + 7y = 159 \\implies 120 + 3y = 159 \\implies 3y = 39 \\implies y = 13.$$\n\n4. Calculando $x$:\n$$x = 30 - 13 = 17.$$\n\nPortanto, foram pedidos $17$ residenciais e $13$ comerciais (**Letra B**).",
+            "bncc": "EF08MA08",
+            "bnccDesc": "Resolver e elaborar problemas relacionados ao seu contexto próximo, que possam ser representados por sistemas de equações de 1º grau com duas incógnitas.",
+            "unidadeTematica": "Álgebra",
+            "anoEscolar": "8º ano",
+            "topicoId": "b2-t3"
+          },
+          {
+            "id": "ifsp-2024-1b-q24",
+            "q": "Uma piscina com formato de um bloco retangular tem capacidade de $23.500\\text{ litros}$, quando completamente cheia. Comprou-se um produto para a clarificação da água, cuja embalagem indica que devem ser utilizados $3\\text{ ml}$ do produto a cada $0{,}5\\text{ metro cúbico}$ de água. Considerando que a água da piscina precisa ser clarificada e que foi seguida a indicação da embalagem do produto, calcule a quantidade de produto a ser utilizada considerando que a piscina esteja completamente cheia.",
+            "options": [
+              "$705\\text{ litros}$",
+              "$70{,}5\\text{ ml}$",
+              "$0{,}141\\text{ ml}$",
+              "$0{,}141\\text{ litros}$"
+            ],
+            "correct": 3,
+            "explanation": "1. Convertendo a capacidade da piscina em metros cúbicos ($1\\text{ m}^3 = 1.000\\text{ L}$):\n$$V = \\frac{23.500}{1.000} = 23{,}5\\text{ m}^3.$$\n\n2. A dosagem é de $3\\text{ ml}$ a cada $0{,}5\\text{ m}^3$, o que equivale a $6\\text{ ml}$ por metro cúbico ($3 \\div 0{,}5 = 6$):\n$$Q = 23{,}5 \\times 6 = 141\\text{ ml}.$$\n\n3. Convertendo para litros ($1\\text{ L} = 1.000\\text{ ml}$):\n$$Q = \\frac{141}{1.000} = 0{,}141\\text{ litros}.$$\n\nPortanto, a quantidade a ser utilizada é de $0{,}141\\text{ litros}$ (**Letra D**).",
+            "bncc": "EF07MA29",
+            "bnccDesc": "Resolver e elaborar problemas que envolvam medidas de grandezas inseridos em contextos como os de outras áreas do conhecimento.",
+            "unidadeTematica": "Grandezas e medidas",
+            "anoEscolar": "7º ano",
+            "topicoId": "b4-t1"
+          },
+          {
+            "id": "ifsp-2024-1b-q25",
+            "q": "Em uma matéria sobre a produção de café no Brasil e no mundo, é citado que o mundo produziu, em 2022, $171{,}7\\text{ milhões de sacas}$ de café. Sabendo que uma saca é igual a $60\\text{ kg}$ de café, qual alternativa apresenta a produção aproximada de café, no ano de 2022, em kg?",
+            "options": [
+              "$10{,}3 \\times 10^9\\text{ kg}$",
+              "$17{,}1 \\times 10^7\\text{ kg}$",
+              "$10{,}3 \\times 10^3\\text{ kg}$",
+              "$17{,}1 \\times 10^5\\text{ kg}$"
+            ],
+            "correct": 0,
+            "explanation": "1. A produção mundial total em sacas é:\n$$171{,}7 \\times 10^6\\text{ sacas}.$$\n\n2. Multiplicando pelos $60\\text{ kg}$ de cada saca:\n$$M = 171{,}7 \\times 10^6 \\times 60 = 10.302 \\times 10^6\\text{ kg}.$$\n\n3. Expressando na ordem de magnitude $10^9$:\n$$M = 10{,}302 \\times 10^3 \\times 10^6 = 10{,}302 \\times 10^9 \\approx 10{,}3 \\times 10^9\\text{ kg}.$$\n\nPortanto, a alternativa correta é a **Letra A**.",
+            "bncc": "EF08MA01",
+            "bnccDesc": "Efetuar cálculos com potências de expoentes inteiros e aplicar esse conhecimento na representação de números em notação científica.",
+            "unidadeTematica": "Números",
+            "anoEscolar": "8º ano",
+            "topicoId": "b1-t2"
+          },
+          {
+            "id": "ifsp-2024-1b-q26",
+            "q": "A densidade demográfica é um conceito utilizado para medir o número de habitantes de uma determinada localidade em relação ao tamanho do território ocupado por esses habitantes. Na prática, para encontrar o valor da densidade demográfica, é necessário realizar o seguinte cálculo:\n$$\\text{Densidade Demográfica} = \\frac{\\text{número de habitantes}}{\\text{área ocupada por essa população (km}^2\\text{)}}$$\n\nO quadro a seguir reúne as densidades demográficas dos estados da Região Sudeste e também a do Brasil, nos dois últimos Censos realizados pelo Instituto Brasileiro de Geografia e Estatística (IBGE).\n\n| Localidade | Censo 2010 | Censo 2022 | Área |\n| :--- | :---: | :---: | :---: |\n| Espírito Santo | 76{,}25 | 83{,}20 | $46.074\\text{ km}^2$ |\n| Minas Gerais | 33{,}41 | 35{,}02 | $586.514\\text{ km}^2$ |\n| Rio de Janeiro | 365{,}23 | 366{,}96 | $43.750\\text{ km}^2$ |\n| São Paulo | 166{,}25 | 178{,}96 | $248.219\\text{ km}^2$ |\n| Brasil | 22{,}43 | 23{,}86 | $8.510.418\\text{ km}^2$ |\n\n*(Adaptado de IBGE, 2023. Censo demográfico)*\n\nA partir do conceito de densidade demográfica e os dados apresentados no quadro, é correto afirmar que:",
+            "options": [
+              "o Brasil, com $8.510.418\\text{ km}^2$, tem alta densidade demográfica.",
+              "o estado de Minas Gerais tem menos habitantes que o estado do Espírito Santo.",
+              "o estado de São Paulo teve o maior aumento populacional.",
+              "o estado do Rio de Janeiro é o mais populoso da Região Sudeste."
             ],
             "correct": 2,
-            "explanation": "O volume interno da sala é o produto de suas três dimensões:<br>$$V = c \\cdot l \\cdot h = 5 \\times 4 \\times 3 = 60\\text{ m}^3$$<br>Como cada bloco cúbico possui volume de $1\\text{ m}^3$ ($1\\text{ m} \\times 1\\text{ m} \\times 1\\text{ m}$), cabem exatamente $60$ blocos de ar.<br>Portanto, a alternativa correta é a <strong>Letra C</strong>.",
-            "bncc": "EF08MA21",
-            "bnccDesc": "Resolver e elaborar problemas que envolvam o cálculo do volume de recipiente cujo formato é o de um bloco retangular.",
-            "unidadeTematica": "Grandezas e Medidas",
-            "anoEscolar": "8º ano",
+            "explanation": "1. O aumento populacional absoluto de cada estado é dado por $(\\text{Densidade}_{2022} - \\text{Densidade}_{2010}) \\times \\text{Área}$.\n\n2. Efetuando o cálculo para os estados:\n- **São Paulo:** $(178{,}96 - 166{,}25) \\times 248.219 = 12{,}71 \\times 248.219 \\approx 3.154.863\\text{ pessoas}$\n- **Minas Gerais:** $(35{,}02 - 33{,}41) \\times 586.514 = 1{,}61 \\times 586.514 \\approx 944.287\\text{ pessoas}$\n- **Espírito Santo:** $(83{,}20 - 76{,}25) \\times 46.074 = 6{,}95 \\times 46.074 \\approx 320.214\\text{ pessoas}$\n- **Rio de Janeiro:** $(366{,}96 - 365{,}23) \\times 43.750 = 1{,}73 \\times 43.750 \\approx 75.687\\text{ pessoas}$\n\n3. Portanto, o estado de São Paulo obteve o maior aumento populacional absoluto da região Sudeste.\n\nLogo, a alternativa correta é a **Letra C**.",
+            "bncc": "EF09MA21",
+            "bnccDesc": "Analisar e identificar, em gráficos divulgados pela mídia, os elementos que podem induzir, às vezes propositadamente, a erros de leitura, como escalas e legendas inadequadas.",
+            "unidadeTematica": "Probabilidade e estatística",
+            "anoEscolar": "9º ano",
             "topicoId": "b4-t2"
           },
           {
-            "q": "Um sanduíche retangular de pão de forma com dimensões $6\\text{ cm} \\times 8\\text{ cm}$ foi cortado exatamente ao longo de sua diagonal em duas metades triangulares. Qual é o comprimento do corte diagonal realizado?",
+            "id": "ifsp-2024-1b-q27",
+            "q": "Uma família passeando pela rua viu uma placa de venda de dois terrenos, um no formato de um triângulo retângulo e outro ao lado em forma de quadrado, conforme mostra a figura abaixo. Entretanto, por causa da chuva, as informações dos terrenos que constam na placa ficaram ilegíveis. A única leitura possível foi a medida de dois lados do triângulo retângulo, $a = 6\\text{ metros}$ e $b = 8\\text{ metros}$. De acordo com as informações apresentadas, qual a área total do terreno (triângulo mais quadrado)?",
             "options": [
-              "$10\\text{ cm}$",
-              "$12\\text{ cm}$",
-              "$14\\text{ cm}$",
-              "$48\\text{ cm}$"
+              "$10$",
+              "$24$",
+              "$100$",
+              "$124$"
             ],
-            "correct": 0,
-            "explanation": "O corte diagonal é a hipotenusa de um triângulo retângulo cujos catetos medem $6\\text{ cm}$ e $8\\text{ cm}$.<br>Aplicando o Teorema de Pitágoras:<br>$$d^2 = 6^2 + 8^2 = 36 + 64 = 100 \\implies d = \\sqrt{100} = 10\\text{ cm}.$$Portanto, a alternativa correta é a <strong>Letra A</strong>.",
+            "correct": 3,
+            "explanation": "1. Calculando a hipotenusa $c$ do triângulo retângulo de catetos $a = 6\\text{ m}$ e $b = 8\\text{ m}$ pelo Teorema de Pitágoras:\n$$c^2 = a^2 + b^2 = 6^2 + 8^2 = 36 + 64 = 100 \\implies c = 10\\text{ m}.$$\n\n2. Área do triângulo retângulo:\n$$A_{\\text{triângulo}} = \\frac{a \\cdot b}{2} = \\frac{6 \\cdot 8}{2} = 24\\text{ m}^2.$$\n\n3. Área do quadrado de lado $c = 10\\text{ m}$:\n$$A_{\\text{quadrado}} = c^2 = 10^2 = 100\\text{ m}^2.$$\n\n4. Área total combinada dos terrenos:\n$$A_{\\text{total}} = 24 + 100 = 124\\text{ m}^2.$$\n\nPortanto, a área total do terreno é $124$ (**Letra D**).",
+            "image": {
+              "src": "https://drive.google.com/file/d/1JqqPPu6m5x8WJs7vox1GcpcAmKCZ-jMo/view?usp=sharing",
+              "alt": "Esquema geométrico de um triângulo retângulo com catetos a e b e hipotenusa c adjacente a um quadrado de lado c.",
+              "caption": "Fonte: IFSP, 2023."
+            },
             "bncc": "EF09MA14",
-            "bnccDesc": "Resolver e elaborar problemas de aplicação do teorema de Pitágoras ou das relações de proporcionalidade envolvendo retas paralelas cortadas por secantes.",
-            "unidadeTematica": "Geometria",
-            "anoEscolar": "9º ano",
-            "topicoId": "b3-t2"
-          },
-          {
-            "q": "Um engenheiro projetou uma praça cuja área total é formada por um retângulo central de $20\\text{ m} \\times 15\\text{ m}$ e dois triângulos congruentes com base de $15\\text{ m}$ e altura de $8\\text{ m}$ anexados aos lados opostos. A área total dessa praça, em $\\text{m}^2$, é igual a:",
-            "options": [
-              "$360\\text{ m}^2$",
-              "$420\\text{ m}^2$",
-              "$480\\text{ m}^2$",
-              "$540\\text{ m}^2$"
-            ],
-            "correct": 1,
-            "explanation": "1. Área do retângulo central:<br>$$A_{\\text{ret}} = 20 \\times 15 = 300\\text{ m}^2$$<br>2. Área de cada triângulo:<br>$$A_{\\text{tri}} = \\frac{b \\cdot h}{2} = \\frac{15 \\times 8}{2} = 60\\text{ m}^2$$<br>3. Como são dois triângulos idênticos:<br>$$A_{\\text{total}} = 300 + 2 \\times 60 = 300 + 120 = 420\\text{ m}^2.$$Portanto, a alternativa correta é a <strong>Letra B</strong>.",
-            "bncc": "EF09MA11",
-            "bnccDesc": "Resolver problemas por meio do estabelecimento de relações entre arcos, ângulos centrais e ângulos inscritos na circunferência, fazendo uso, inclusive, de softwares de geometria dinâmica.",
+            "bnccDesc": "Descrever, por escrito e por meio de um fluxograma, um algoritmo para a construção de um triângulo retângulo conhecidas as medidas dos catetos, e demonstrar o Teorema de Pitágoras.",
             "unidadeTematica": "Geometria",
             "anoEscolar": "9º ano",
             "topicoId": "b3-t1"
           },
           {
-            "q": "Uma piscina com formato de paralelepípedo reto-retângulo tem $8\\text{ m}$ de comprimento, $5\\text{ m}$ de largura e $1{,}5\\text{ m}$ de profundidade média. Estando completamente cheia, quantos litros de água essa piscina comporta?",
+            "id": "ifsp-2024-1b-q28",
+            "q": "Sejam $x$, $y$ e $z$ os números reais definidos abaixo:\n$$x = 4^{\\frac{3}{2}} \\qquad y = \\left(\\frac{1}{8}\\right)^{-2} \\qquad z = \\sqrt[4]{4}$$\n\nEscreva $x$, $y$ e $z$ numa forma mais simplificada e analise as igualdades a seguir, avaliando se são verdadeiras ou não:\n\nI) $x = \\sqrt{y}$\nII) $\\frac{x}{z^2} = \\sqrt[3]{y}$\nIII) $y = 2x \\cdot z^2$\n\nAs igualdades verdadeiras são aquelas apresentadas em:",
             "options": [
-              "$40.000\\text{ L}$",
-              "$60.000\\text{ L}$",
-              "$80.000\\text{ L}$",
-              "$120.000\\text{ L}$"
+              "I e II, apenas.",
+              "I e III, apenas.",
+              "II e III, apenas.",
+              "I, II e III."
             ],
-            "correct": 1,
-            "explanation": "1. Calculamos o volume da piscina em metros cúbicos:<br>$$V = c \\times l \\times h = 8 \\times 5 \\times 1{,}5 = 40 \\times 1{,}5 = 60\\text{ m}^3$$<br>2. Sabendo que $1\\text{ m}^3 = 1.000\\text{ litros}$:<br>$$\\text{Capacidade} = 60 \\times 1.000 = 60.000\\text{ litros}.$$Portanto, a alternativa correta é a <strong>Letra B</strong>.",
-            "bncc": "EF08MA21",
-            "bnccDesc": "Resolver e elaborar problemas que envolvam o cálculo do volume de recipiente cujo formato é o de um bloco retangular.",
-            "unidadeTematica": "Grandezas e Medidas",
-            "anoEscolar": "8º ano",
-            "topicoId": "b4-t2"
-          },
-          {
-            "q": "Uma fazenda produziu 1.200 sacas de café em uma safra. Desse total, $65\\%$ foram destinadas à exportação e as restantes foram comercializadas no mercado interno. Quantas sacas foram destinadas ao mercado interno?",
-            "options": [
-              "360",
-              "420",
-              "480",
-              "780"
-            ],
-            "correct": 1,
-            "explanation": "A porcentagem destinada ao mercado interno é:<br>$$100\\% - 65\\% = 35\\%$$<br>Calculando $35\\%$ de 1.200 sacas:<br>$$\\text{Sacas} = 0{,}35 \\times 1.200 = 420\\text{ sacas}.$$Portanto, a alternativa correta é a <strong>Letra B</strong>.",
-            "bncc": "EF08MA04",
-            "bnccDesc": "Resolver e elaborar problemas, envolvendo cálculo de porcentagens, incluindo o uso de tecnologias digitais.",
+            "correct": 0,
+            "explanation": "1. Simplificando os números reais:\n- $x = 4^{\\frac{3}{2}} = (2^2)^{\\frac{3}{2}} = 2^3 = 8$.\n- $y = \\left(\\frac{1}{8}\\right)^{-2} = (8^{-1})^{-2} = 8^2 = 64$.\n- $z = \\sqrt[4]{4} = (4)^{\\frac{1}{4}} = (2^2)^{\\frac{1}{4}} = 2^{\\frac{2}{4}} = 2^{\\frac{1}{2}} = \\sqrt{2}$. Logo, $z^2 = 2$.\n\n2. Julgando as afirmações:\n- **I) $x = \\sqrt{y}$:** $\\sqrt{64} = 8 = x$. (Verdadeira)\n- **II) $\\frac{x}{z^2} = \\sqrt[3]{y}$:** $\\frac{8}{2} = 4$ e $\\sqrt[3]{64} = 4$. (Verdadeira)\n- **III) $y = 2x \\cdot z^2$:** $2(8) \\cdot 2 = 32 \\neq 64$. (Falsa)\n\nPortanto, são verdadeiras as afirmações I e II, apenas (**Letra A**).",
+            "bncc": "EF09MA03",
+            "bnccDesc": "Efetuar cálculos com números reais, inclusive potências com expoentes fracionários e radicais.",
             "unidadeTematica": "Números",
-            "anoEscolar": "8º ano",
-            "topicoId": "b1-t6"
+            "anoEscolar": "9º ano",
+            "topicoId": "b1-t2"
           },
           {
-            "q": "A densidade demográfica é a razão entre o número de habitantes de uma determinada localidade e a área territorial ocupada ($D = \\frac{\\text{População}}{\\text{Área}}$). O quadro a seguir reúne as densidades demográficas dos estados da Região Sudeste e do Brasil nos dois últimos Censos realizados pelo IBGE:\n\nCom base nos dados fornecidos pelo quadro, assinale a alternativa correta:",
+            "id": "ifsp-2024-1b-q29",
+            "q": "A soma das idades dos primos $X$ e $Y$ é igual a $26\\text{ anos}$. Além disso, é sabido que o triplo da idade de $X$, menos metade da idade de $Y$ é igual a $15\\text{ anos}$. Sendo $X$ e $Y$ as idades dos primos em anos, assinale a alternativa que apresenta o sistema de equações que satisfaz as condições apresentadas.",
             "options": [
-              "O Brasil, com $8.510.418\\text{ km}^2$, tem alta densidade demográfica.",
-              "O estado de Minas Gerais tem menos habitantes que o estado do Espírito Santo.",
-              "O estado de São Paulo teve o maior aumento populacional.",
-              "O estado do Rio de Janeiro é o mais populoso da Região Sudeste."
+              "$$\\begin{cases} x + y = 26 \\\\ \\frac{y}{2} - 3x = 15 \\end{cases}$$",
+              "$$\\begin{cases} x + y = 26 \\\\ 3y - 0{,}5x = 15 \\end{cases}$$",
+              "$$\\begin{cases} x + y = 26 \\\\ 3x - \\frac{y}{2} = 15 \\end{cases}$$",
+              "$$\\begin{cases} x + y = 26 \\\\ 3x - \\frac{3y}{2} = 15 \\end{cases}$$"
             ],
             "correct": 2,
-            "explanation": "Calculamos a densidade demográfica aplicando a fórmula $D = \\frac{\\text{População}}{\\text{Área}}$:<br>$$D = \\frac{36.000}{4{,}5} = \\frac{360.000}{45} = 8.000\\text{ habitantes por km}^2.$$Portanto, a alternativa correta é a <strong>Letra B</strong>.",
-            "bncc": "EF08MA19",
-            "bnccDesc": "Resolver e elaborar problemas que envolvam medidas de área de figuras geométricas, utilizando expressões de cálculo de área (quadriláteros, triângulos e círculos), em situações como determinar medida de terrenos.",
-            "unidadeTematica": "Grandezas e Medidas",
-            "anoEscolar": "8º ano",
-            "topicoId": "b4-t1",
-            "image": {
-              "src": "https://drive.google.com/file/d/1Sp_3b9RaOwK2Ysk_R4XCspy0tcSZ5AZP/view?usp=sharing",
-              "alt": "Quadro com dados de densidade demográfica (Censos 2010 e 2022) e área territorial em km² dos estados da Região Sudeste e do Brasil."
-            }
-          },
-          {
-            "q": "Uma família passeando pela rua viu uma placa de venda de dois terrenos, um no formato de um triângulo retângulo e outro ao lado em forma de quadrado, conforme mostra a figura abaixo. Entretanto, por causa da chuva, as informações dos terrenos que constam na placa ficaram ilegíveis. A única leitura possível foi a medida de dois lados do triângulo retângulo, $a = 6\\text{ metros}$ e $b = 8\\text{ metros}$. De acordo com as informações apresentadas, qual a área total do terreno (triângulo mais quadrado)?",
-            "options": [
-              "$10\\text{ m}^2$",
-              "$24\\text{ m}^2$",
-              "$100\\text{ m}^2$",
-              "$124\\text{ m}^2$"
-            ],
-            "correct": 3,
-            "explanation": "A área do triângulo retângulo é $\\frac{a \\cdot b}{2} = \\frac{6 \\times 8}{2} = 24\\text{ m}^2$. Pelo Teorema de Pitágoras, a hipotenusa ao quadrado (que é exatamente a área do quadrado de lado $c$) vale $c^2 = a^2 + b^2 = 6^2 + 8^2 = 36 + 64 = 100\\text{ m}^2$. Portanto, a área total do terreno é $24 + 100 = 124\\text{ m}^2$, correspondendo à <strong>Letra D</strong>.",
-            "bncc": "EF08MA19",
-            "bnccDesc": "Resolver e elaborar problemas que envolvam medidas de área de figuras geométricas, utilizando expressões de cálculo de área (quadriláteros, triângulos e círculos), em situações como determinar medida de terrenos.",
-            "unidadeTematica": "Grandezas e Medidas",
-            "anoEscolar": "8º ano",
-            "topicoId": "b4-t1",
-            "image": {
-              "src": "https://drive.google.com/file/d/1o3zvY85qXsHgJRYuDz-hAGLtZl1DqL0r/view?usp=sharing",
-              "alt": "Diagrama de dois terrenos contíguos: um triângulo retângulo de catetos a e b e hipotenusa c, e um quadrado de lado c adjacente à hipotenusa."
-            }
-          },
-          {
-            "q": "Sejam os números reais $x = 4^{\\frac{3}{2}}$, $y = \\left(\\frac{1}{8}\\right)^{-2}$ e $z = \\sqrt[4]{4}$. Escrevendo $x, y$ e $z$ em ordem crescente, obtém-se:",
-            "options": [
-              "$z < x < y$",
-              "$x < z < y$",
-              "$z < y < x$",
-              "$y < x < z$"
-            ],
-            "correct": 0,
-            "explanation": "Calculando cada um dos valores:<br>1. $x = 4^{\\frac{3}{2}} = (\\sqrt{4})^3 = 2^3 = 8$<br>2. $y = \\left(\\frac{1}{8}\\right)^{-2} = 8^2 = 64$<br>3. $z = \\sqrt[4]{4} = \\sqrt[4]{2^2} = 2^{\\frac{2}{4}} = 2^{\\frac{1}{2}} = \\sqrt{2} \\approx 1{,}414$<br><br>Ordenando de forma crescente:<br>$$1{,}414 < 8 < 64 \\implies z < x < y.$$Portanto, a alternativa correta é a <strong>Letra A</strong>.",
-            "bncc": "EF08MA02",
-            "bnccDesc": "Resolver e elaborar problemas usando a relação entre potenciação e radiciação, para representar uma raiz como potência de expoente fracionário.",
-            "unidadeTematica": "Números",
-            "anoEscolar": "8º ano",
-            "topicoId": "b1-t7"
-          },
-          {
-            "q": "A soma das idades de dois primos, $X$ e $Y$, é igual a 26 anos. Além disso, sabe-se que o triplo da idade de $X$, menos a idade de $Y$, é igual a 14 anos. Qual é a idade de $X$?",
-            "options": [
-              "10 anos",
-              "12 anos",
-              "14 anos",
-              "16 anos"
-            ],
-            "correct": 0,
-            "explanation": "Montando o sistema de duas equações do 1º grau:<br>$$\\begin{cases} X + Y = 26 \\\\ 3X - Y = 14 \\end{cases}$$<br>Somando as duas equações membro a membro:<br>$$(X + 3X) + (Y - Y) = 26 + 14$$<br>$$4X = 40 \\implies X = 10\\text{ anos}$$<br>Substituindo de volta: $Y = 26 - 10 = 16\\text{ anos}$.<br>Portanto, a idade de $X$ é de 10 anos.<br>A alternativa correta é a <strong>Letra A</strong>.",
-            "bncc": "EF07MA18",
-            "bnccDesc": "Resolver e elaborar problemas que possam ser representados por equações polinomiais de 1º grau, redutíveis à forma ax + b = c, fazendo uso das propriedades da igualdade.",
+            "explanation": "1. A soma das idades de $X$ e $Y$ é igual a $26$, logo:\n$$x + y = 26.$$\n\n2. O triplo da idade de $X$ ($3x$) menos a metade da idade de $Y$ ($\\frac{y}{2}$) é igual a $15$, logo:\n$$3x - \\frac{y}{2} = 15.$$\n\n3. O sistema formado por ambas as relações é:\n$$\\begin{cases} x + y = 26 \\\\ 3x - \\frac{y}{2} = 15 \\end{cases}$$\n\nPortanto, a alternativa correta é a **Letra C**.",
+            "bncc": "EF08MA08",
+            "bnccDesc": "Resolver e elaborar problemas relacionados ao seu contexto próximo, que possam ser representados por sistemas de equações de 1º grau com duas incógnitas.",
             "unidadeTematica": "Álgebra",
-            "anoEscolar": "7º ano",
+            "anoEscolar": "8º ano",
             "topicoId": "b2-t3"
           },
           {
-            "q": "Ao aplicar o Teorema de Pitágoras no triângulo retângulo $ABC$, no qual os catetos medem $AC = 4\\text{ cm}$ e $AB = 3\\text{ cm}$, qual é a medida da hipotenusa $BC$?",
+            "id": "ifsp-2024-1b-q30",
+            "q": "Ao aplicar o teorema de Pitágoras no triângulo retângulo $ABC$ da figura a seguir, em que $AC = 4$ e $AB = 12\\sqrt{7}$, um estudante obteve o seguinte resultado:\n$$BC^2 = 4^2 + (12\\sqrt{7})^2 = 16 + 1008 = 1024$$\n\nUtilizando seus conhecimentos de fatoração, potenciação e radiciação, e considerando que o estudante determinou a medida de $BC$ corretamente, deixando o resultado em forma de potência, qual valor foi obtido para a medida da hipotenusa $BC$?",
             "options": [
-              "$5\\text{ cm}$",
-              "$6\\text{ cm}$",
-              "$7\\text{ cm}$",
-              "$25\\text{ cm}$"
+              "$2^{10}$",
+              "$2^8$",
+              "$2^5$",
+              "$2^{20}$"
             ],
-            "correct": 0,
-            "explanation": "Trata-se do clássico triângulo pitagórico de catetos 3 e 4.<br>Pelo Teorema de Pitágoras:<br>$$BC^2 = AC^2 + AB^2 = 4^2 + 3^2 = 16 + 9 = 25$$<br>Extraindo a raiz:<br>$$BC = \\sqrt{25} = 5\\text{ cm}.$$Portanto, a alternativa correta é a <strong>Letra A</strong>.",
-            "bncc": "EF09MA14",
-            "bnccDesc": "Resolver e elaborar problemas de aplicação do teorema de Pitágoras ou das relações de proporcionalidade envolvendo retas paralelas cortadas por secantes.",
-            "unidadeTematica": "Geometria",
+            "correct": 2,
+            "explanation": "1. Pelo resultado obtido com o Teorema de Pitágoras:\n$$BC = \\sqrt{1024}.$$\n\n2. Fatorando $1024$ na base $2$:\n$$1024 = 2^{10}.$$\n\n3. Extraindo a raiz quadrada em forma de potência com expoente fracionário:\n$$BC = \\sqrt{2^{10}} = 2^{\\frac{10}{2}} = 2^5.$$\n\nPortanto, o valor obtido para a hipotenusa é $2^5$ (**Letra C**).",
+            "image": {
+              "src": "https://drive.google.com/file/d/1T0J7tFP05nRLYVcmkjOYLWI5qKIwe4Wl/view?usp=sharing",
+              "alt": "Triângulo retângulo ABC com ângulo reto em A, cateto vertical AC medindo 4 e cateto horizontal AB medindo 12 raiz de 7.",
+              "caption": "Fonte: IFSP, 2023."
+            },
+            "bncc": "EF09MA03",
+            "bnccDesc": "Efetuar cálculos com números reais, inclusive potências com expoentes fracionários e radicais.",
+            "unidadeTematica": "Números",
             "anoEscolar": "9º ano",
-            "topicoId": "b3-t2"
+            "topicoId": "b1-t2"
           }
         ],
         "driveUrl": "https://drive.google.com/file/d/1PYMGV9Smnak5FYUrLJJ8nwg59rYd1lsu/view?usp=drive_web"
@@ -8117,156 +8188,174 @@ var mathData = window.mathData || {
       {
         "id": "ifsp-2023-1-b",
         "title": "Prova IFSP 2023.1 - Prova B",
-        "bncc": "Revisão Geral",
-        "summary": "15 questões de Matemática aplicadas no Processo Seletivo IFSP 2023.1 (Edital Nº 609/2022 - Prova B) para os Cursos Técnicos Integrados.",
-        "detailedTheory": "A Prova B do Processo Seletivo IFSP 2023.1 abordou interpretação estatística de índices de proficiência educacional, função afim na composição do salário docente (parcela fixa mais valor da hora-aula), porcentagem aplicada a promoções e descontos sucessivos no comércio de smartphones, dados demográficos do IBGE e pirâmides etárias, geometria espacial com volume e capacidade de reservatórios paralelepipédicos, geometria dinâmica com propriedades de polígonos regulares no GeoGebra, cálculo de nível de água em aquários retangulares, razão e proporção na análise de rótulos nutricionais de alimentos dietéticos, gráficos setoriais e diagramas circulares em pesquisas jornalísticas, perímetros e áreas em quadras poliesportivas e de Beach Tennis, porcentagem populacional sobre o acesso à internet e inclusão digital, notação científica e ordens de grandeza em medições astronômicas e microbiológicas, Teorema de Pitágoras no clássico problema da árvore quebrada por tempestade, e cálculo de áreas e perímetro em trapézios isósceles.",
-        "keyPoints": [
-          "A função afim $S(h) = b + a \\cdot h$ modela remunerações com salário-base fixo $b$ e adicional variável por hora-aula $a$.",
-          "No problema da árvore quebrada, a altura total da árvore é a soma da parte que ficou em pé com a parte tombada (hipotenusa do triângulo retângulo formado com o chão).",
-          "Em um trapézio isósceles, os lados oblíquos são congruentes e a projeção de cada lado oblíquo sobre a base maior é $\\frac{B - b}{2}$.",
-          "Para calcular a capacidade em litros de um reservatório em metros cúbicos, multiplica-se por $1.000$ ($1\\text{ m}^3 = 1.000\\text{ L}$)."
-        ],
-        "formula": "S(h) = b + a \\cdot h, \\quad V = c \\cdot l \\cdot h, \\quad h^2 + x^2 = c^2, \\quad A = \\frac{(B+b)h}{2}",
-        "solvedExample": {
-          "problem": "Um reservatório retangular tem $4\\text{ m}$ de comprimento, $3\\text{ m}$ de largura e $2\\text{ m}$ de altura. Qual é a sua capacidade máxima em litros de água?",
-          "solution": "Calculamos o volume:<br>$$V = 4 \\times 3 \\times 2 = 24\\text{ m}^3$$<br>Convertendo para litros ($1\\text{ m}^3 = 1.000\\text{ L}$):<br>$$24 \\times 1.000 = 24.000\\text{ litros}.$$"
-        },
-        "slug": "prova-ifsp-20231-b",
-        "filename": "prova-ifsp-20231-b.html",
-        "folder": "bloco-7-provas-ifsp",
-        "blockId": "7",
         "pdf": "IFSP_prova_2023_1_b.pdf",
+        "folder": "bloco-7-provas-ifsp",
+        "filename": "prova-ifsp-20231-b.html",
         "questions": [
           {
-            "q": "Em um teste internacional de resolução de problemas, estudantes brasileiros ficaram em 38º lugar entre 44 países participantes. Se a nota média dos brasileiros foi de 420 pontos e a nota do 1º colocado foi de 560 pontos, qual foi a diferença percentual da nota do 1º colocado em relação à nota brasileira?",
+            "id": "ifsp-2023-1b-q16",
+            "q": "Os estudantes brasileiros ficaram em 38° lugar entre jovens de 44 países em um teste de solução de problemas matemáticos realizado pela OCDE (Organização para a Cooperação e Desenvolvimento Econômico) e divulgado nesta terça-feira ($1^\\circ$). Enquanto os alunos de outros países da OCDE tiveram média de 500 pontos na avaliação realizada em 2012, os jovens brasileiros atingiram em média apenas 428 pontos. O relatório mostra ainda que $47{,}3\\%$ dos brasileiros tiveram baixa performance e só $1{,}8\\%$ conseguiu solucionar problemas complexos de matemática.\n\nNesse texto são apresentadas porcentagens, que frequentemente aparecem com valores arredondados por serem dízimas periódicas. Sabe-se que números racionais podem sempre ser expressos na forma de frações, nas quais o numerador e o denominador são números inteiros. As dízimas periódicas são exemplos de números racionais.\n\nAssim, qual das alternativas porta uma fração irredutível que representa o número $0{,}363636\\dots$ ?",
             "options": [
-              "$25\\%$",
-              "$33{,}3\\%$",
-              "$35\\%$",
-              "$40\\%$"
+              "$\\frac{12}{33}$",
+              "$\\frac{9}{25}$",
+              "$\\frac{5}{18}$",
+              "$\\frac{2}{5}$"
             ],
-            "correct": 1,
-            "explanation": "A diferença absoluta de pontuação é:<br>$$\\Delta = 560 - 420 = 140\\text{ pontos}$$<br>A diferença percentual em relação à pontuação brasileira (420 pontos) é:<br>$$\\text{Taxa} = \\frac{140}{420} = \\frac{1}{3} \\approx 0{,}3333 = 33{,}3\\%.$$Portanto, a alternativa correta é a <strong>Letra B</strong>.",
-            "bncc": "EF09MA09",
-            "bnccDesc": "Compreender os processos de fatoração de expressões algébricas, com base em suas relações com os produtos notáveis, para resolver e elaborar problemas que possam ser representados por equações polinomiais do 2º grau.",
+            "correct": 0,
+            "explanation": "1. Para encontrar a fração geratriz da dízima periódica simples $x = 0{,}363636\\dots$, multiplicamos ambos os membros por $100$ (já que o período $36$ tem dois algarismos):\n$$100x = 36{,}363636\\dots$$\n\n2. Subtraindo a equação inicial da multiplicada:\n$$100x - x = 36{,}363636\\dots - 0{,}363636\\dots \\implies 99x = 36 \\implies x = \\frac{36}{99}.$$\n\n3. Simplificando a fração por $3$ no numerador e no denominador:\n$$x = \\frac{36 \\div 3}{99 \\div 3} = \\frac{12}{33}.$$\n\n*(Nota: embora $\\frac{12}{33}$ possa ser simplificada para $\\frac{4}{11}$, a banca adotou $\\frac{12}{33}$ como a representação oficial na alternativa A).* \n\nPortanto, a alternativa correta é a **Letra A**.",
+            "bncc": "EF08MA05",
+            "bnccDesc": "Reconhecer e utilizar procedimentos para a obtenção de uma fração geratriz para uma dízima periódica.",
+            "unidadeTematica": "Números",
+            "anoEscolar": "8º ano",
+            "topicoId": "b1-t2"
+          },
+          {
+            "id": "ifsp-2023-1b-q17",
+            "q": "Um professor é contratado para dar aulas em uma escola de reforço de modo que seu salário bruto, sem considerar os descontos legais, vai depender proporcionalmente apenas do número de horas trabalhadas.\n\nQual dos gráficos abaixo melhor representa o salário bruto deste professor em relação à sua carga de trabalho?",
+            "options": [
+              "(A)",
+              "(B)",
+              "(C)",
+              "(D)"
+            ],
+            "correct": 0,
+            "explanation": "1. Uma grandeza $S$ (salário bruto) que depende de forma diretamente proporcional apenas da quantidade de horas trabalhadas $h$ é modelada por uma função linear da forma:\n$$S(h) = k \\cdot h,$$\nonde $k > 0$ representa a remuneração fixa por hora de trabalho.\n\n2. Propriedades desse gráfico no plano cartesiano:\n- Se o professor trabalhar zero horas ($h = 0$), seu salário proporcional será zero ($S(0) = 0$). Logo, a reta obrigatoriamente passa pela origem $(0, 0)$.\n- À medida que as horas aumentam, o salário cresce linearmente com taxa constante positiva $k$, descrevendo uma reta com inclinação positiva partindo da origem.\n\n3. O gráfico **(A)** é o único que parte da origem $(0, 0)$ e cresce de maneira diretamente proporcional.\n\nPortanto, a alternativa correta é a **Letra A**.",
+            "image": {
+              "src": "https://drive.google.com/file/d/1QQoHZ7U06RqtLakpQAX4ZKXVTGef-Xaf/view?usp=sharing",
+              "alt": "Quatro gráficos em eixos cartesianos com Salário Bruto no eixo vertical e Horas Trabalhadas no eixo horizontal. O gráfico A mostra uma reta partindo da origem (0, 0) com inclinação positiva. O gráfico B mostra uma reta com intercepto vertical positivo. O gráfico C mostra uma reta decrescente. O gráfico D mostra uma reta horizontal constante.",
+              "caption": "Fonte: IFSP, 2021."
+            },
+            "bncc": "EF09MA06",
+            "bnccDesc": "Compreender as funções como relações de dependência unívoca entre duas variáveis e suas representações numérica, algébrica e gráfica e utilizar esse conceito em situações práticas.",
             "unidadeTematica": "Álgebra",
             "anoEscolar": "9º ano",
-            "topicoId": "b2-t4"
+            "topicoId": "b2-t3"
           },
           {
-            "q": "Um professor foi contratado por uma escola de reforço com um salário mensal composto por uma parte fixa de $\\text{R\\$} 1.200{,}00$ mais $\\text{R\\$} 40{,}00$ por hora-aula ministrada. Se em determinado mês o professor trabalhou 35 horas-aulas, qual foi o seu salário bruto?",
+            "id": "ifsp-2023-1b-q18",
+            "q": "Uma loja de celulares busca aumentar suas vendas. O gerente teve a ideia de fazer uma promoção privilegiando pagamentos à vista e aniversariantes do mês. Então, anunciou:\n\n> *Desconto de $10\\%$ no preço de qualquer modelo de celular, e mais $10\\%$ sobre o novo preço para aniversariantes do mês!*\n\nUma pessoa escolheu comprar um modelo de celular que, inicialmente, custava $\\text{R\\$} 3.500{,}00$. Decidiu pagar à vista. Quando o vendedor calculou o novo preço, o comprador mostrou seu documento comprovando que faria aniversário naquele mês e o vendedor aplicou ao novo preço mais $10\\%$ de desconto. Qual foi o preço final pago pelo comprador na compra desse celular?",
             "options": [
-              "$\\text{R\\$} 2.400{,}00$",
-              "$\\text{R\\$} 2.600{,}00$",
               "$\\text{R\\$} 2.800{,}00$",
-              "$\\text{R\\$} 3.000{,}00$"
+              "$\\text{R\\$} 2.835{,}00$",
+              "$\\text{R\\$} 3.150{,}00$",
+              "$\\text{R\\$} 3.480{,}00$"
             ],
             "correct": 1,
-            "explanation": "A função salário em termos do número $h$ de horas-aulas é:<br>$$S(h) = 1.200 + 40h$$<br>Para $h = 35$ horas:<br>$$S(35) = 1.200 + 40 \\times 35 = 1.200 + 1.400 = \\text{R\\$}  2.600{,}00.$$Portanto, a alternativa correta é a <strong>Letra B</strong>.",
-            "bncc": "EF06MA24",
-            "bnccDesc": "Resolver e elaborar problemas que envolvam as grandezas comprimento, massa, tempo, temperatura, área (triângulos e retângulos), capacidade e volume (sólidos formados por blocos retangulares), sem uso de fórmulas, inseridos, sempre que possível, em contextos oriundos de situações reais e/ou relacionadas às outras áreas do conhecimento.",
-            "unidadeTematica": "Grandezas e Medidas",
-            "anoEscolar": "6º ano",
-            "topicoId": "b4-t2"
-          },
-          {
-            "q": "Uma loja de celulares anunciou uma promoção oferecendo $15\\%$ de desconto no pagamento à vista em um smartphone que custa $\\text{R\\$} 2.400{,}00$ a prazo. Qual é o valor do aparelho com o desconto aplicado?",
-            "options": [
-              "$\\text{R\\$} 1.980{,}00$",
-              "$\\text{R\\$} 2.040{,}00$",
-              "$\\text{R\\$} 2.100{,}00$",
-              "$\\text{R\\$} 2.160{,}00$"
-            ],
-            "correct": 1,
-            "explanation": "O valor do desconto de $15\\%$ é:<br>$$D = 0{,}15 \\times 2.400 = 360\\text{ reais}$$<br>O preço final à vista é:<br>$$2.400 - 360 = \\text{R\\$}  2.040{,}00.$$Portanto, a alternativa correta é a <strong>Letra B</strong>.",
-            "bncc": "EF08MA04",
-            "bnccDesc": "Resolver e elaborar problemas, envolvendo cálculo de porcentagens, incluindo o uso de tecnologias digitais.",
+            "explanation": "1. Cálculo do primeiro desconto de $10\\%$ pelo pagamento à vista sobre o preço original de $\\text{R\\$} 3.500{,}00$:\n$$P_1 = 3.500 \\times (1 - 0{,}10) = 3.500 \\times 0{,}90 = \\text{R\\$} 3.150{,}00.$$\n\n2. O segundo desconto de $10\\%$ é concedido especificamente sobre o **novo preço** ($P_1$):\n$$P_2 = 3.150 \\times (1 - 0{,}10) = 3.150 \\times 0{,}90 = \\text{R\\$} 2.835{,}00.$$\n\n*(Atenção: descontos sucessivos de $10\\%$ e $10\\%$ não equivalem a $20\\%$, mas sim a um desconto acumulado de $1 - (0{,}90 \\times 0{,}90) = 1 - 0{,}81 = 19\\%$).* \n\nPortanto, o preço final pago foi de $\\text{R\\$} 2.835{,}00$ (**Letra B**).",
+            "bncc": "EF07MA02",
+            "bnccDesc": "Resolver e elaborar problemas que envolvam porcentagens, como os que lidam com acréscimos e decréscimos simples e sucessivos.",
             "unidadeTematica": "Números",
-            "anoEscolar": "8º ano",
-            "topicoId": "b1-t6"
-          },
-          {
-            "q": "Em uma cidade de 50.000 habitantes, dados do IBGE mostram que $22\\%$ da população tem até 14 anos de idade, $66\\%$ tem entre 15 e 64 anos, e os demais são idosos com 65 anos ou mais. Quantos idosos com 65 anos ou mais vivem nessa cidade?",
-            "options": [
-              "4.000",
-              "5.000",
-              "6.000",
-              "7.000"
-            ],
-            "correct": 2,
-            "explanation": "O percentual de idosos com 65 anos ou mais é:<br>$$100\\% - (22\\% + 66\\%) = 100\\% - 88\\% = 12\\%$$<br>Calculando $12\\%$ de 50.000 habitantes:<br>$$\\text{Total} = 0{,}12 \\times 50.000 = 6.000\\text{ idosos}.$$Portanto, a alternativa correta é a <strong>Letra C</strong>.",
-            "bncc": "EF08MA04",
-            "bnccDesc": "Resolver e elaborar problemas, envolvendo cálculo de porcentagens, incluindo o uso de tecnologias digitais.",
-            "unidadeTematica": "Números",
-            "anoEscolar": "8º ano",
-            "topicoId": "b1-t6"
-          },
-          {
-            "q": "Um reservatório de água em formato de paralelepípedo reto-retângulo tem medidas internas de $3\\text{ m}$ de comprimento, $2\\text{ m}$ de largura e $1{,}8\\text{ m}$ de altura. Qual é a capacidade máxima de armazenamento de água desse reservatório em litros?",
-            "options": [
-              "$8.400\\text{ L}$",
-              "$10.800\\text{ L}$",
-              "$12.000\\text{ L}$",
-              "$14.400\\text{ L}$"
-            ],
-            "correct": 1,
-            "explanation": "1. Calculamos o volume interno em metros cúbicos:<br>$$V = c \\times l \\times h = 3 \\times 2 \\times 1{,}8 = 6 \\times 1{,}8 = 10{,}8\\text{ m}^3$$<br>2. Sabendo que $1\\text{ m}^3 = 1.000\\text{ litros}$:<br>$$\\text{Capacidade} = 10{,}8 \\times 1.000 = 10.800\\text{ litros}.$$Portanto, a alternativa correta é a <strong>Letra B</strong>.",
-            "bncc": "EF08MA21",
-            "bnccDesc": "Resolver e elaborar problemas que envolvam o cálculo do volume de recipiente cujo formato é o de um bloco retangular.",
-            "unidadeTematica": "Grandezas e Medidas",
-            "anoEscolar": "8º ano",
-            "topicoId": "b4-t2"
-          },
-          {
-            "q": "Em uma aula no software GeoGebra, um professor construiu um polígono regular de 8 lados (octógono regular). Qual é a medida de cada um dos ângulos internos desse octógono regular?",
-            "options": [
-              "$120^\\circ$",
-              "$135^\\circ$",
-              "$140^\\circ$",
-              "$144^\\circ$"
-            ],
-            "correct": 1,
-            "explanation": "A soma dos ângulos internos de um polígono de $n$ lados é $S_i = (n - 2) \\times 180^\\circ$.<br>Para um octógono ($n = 8$):<br>$$S_i = (8 - 2) \\times 180^\\circ = 6 \\times 180^\\circ = 1.080^\\circ$$<br>Como o polígono é regular, cada ângulo interno mede:<br>$$a_i = \\frac{S_i}{n} = \\frac{1.080^\\circ}{8} = 135^\\circ.$$Portanto, a alternativa correta é a <strong>Letra B</strong>.",
-            "bncc": "EF07MA24",
-            "bnccDesc": "Construir triângulos, usando régua e compasso, reconhecer a condição de existência do triângulo quanto à medida dos lados e verificar que a soma das medidas dos ângulos internos de um triângulo é 180°.",
-            "unidadeTematica": "Geometria",
             "anoEscolar": "7º ano",
+            "topicoId": "b1-t3"
+          },
+          {
+            "id": "ifsp-2023-1b-q19",
+            "q": "Entre as informações organizadas pelo Instituto Brasileiro de Geografia e Estatística (IBGE), está o tempo entre o casamento e o divórcio por meio dos dados estatísticos do Registro Civil. Essas informações são públicas e podem ser acessadas pelo site oficial do IBGE. As figuras a seguir apresentam os dados dos estados do Rio de Janeiro e de Minas Gerais:\n\nA partir das informações presentes nos gráficos, é correto afirmar que:",
+            "options": [
+              "O número de divórcios mineiros ocorridos no intervalo “1 a 4” anos é maior que o número de divórcios cariocas para o mesmo período.",
+              "O número de divórcios mineiros no intervalo “10 a 14” anos é maior que o número de divórcios cariocas.",
+              "O número de divórcios mineiros ocorridos nos intervalos “10 a 14”, “15 a 19” e “20 a 25” é sempre decrescente.",
+              "O maior número de divórcios ocorre no intervalo “5 a 9” anos nos dois estados."
+            ],
+            "correct": 3,
+            "explanation": "Analisando visualmente e quantitativamente as colunas dos dois gráficos:\n- **Figura 1 (Rio de Janeiro):** O pico máximo de divórcios ocorre na barra do intervalo **“5 a 9” anos**, que atinge mais de $9.000$ ocorrências.\n- **Figura 2 (Minas Gerais):** O pico máximo de divórcios ocorre igualmente no intervalo **“5 a 9” anos**, com mais de $8.500$ registros.\n\nVerificação das demais alternativas:\n- (A) Incorreta: no intervalo “1 a 4” anos, o RJ tem mais de $9.000$ divórcios e MG tem cerca de $8.100$.\n- (B) Incorreta: no intervalo “10 a 14” anos, o RJ tem cerca de $6.000$ divórcios e MG tem cerca de $5.800$.\n- (C) Incorreta: em MG, os valores são ~5.800 (10 a 14), ~4.100 (15 a 19) e ~4.400 (20 a 25), havendo um aumento de 15-19 para 20-25.\n\nPortanto, a afirmação correta é a **Letra D**.",
+            "image": {
+              "src": "https://drive.google.com/file/d/1swpbPJBgP4VR8KlqkinKFatO4fK5JAlU/view?usp=sharing",
+              "alt": "Dois gráficos de colunas com a distribuição da quantidade de divórcios pelo tempo de casamento em anos. O primeiro gráfico refere-se ao Rio de Janeiro e o segundo a Minas Gerais, com faixas de tempo: menos de 1 ano, 1 a 4 anos, 5 a 9 anos, 10 a 14 anos, 15 a 19 anos, 20 a 25 anos e 26 anos ou mais.",
+              "caption": "Fonte: IBGE, 2019 (adaptado)."
+            },
+            "bncc": "EF07MA37",
+            "bnccDesc": "Interpretar e analisar dados apresentados em gráfico de setores ou de colunas, para produzir texto com o objetivo de sintetizar conclusões.",
+            "unidadeTematica": "Probabilidade e Estatística",
+            "anoEscolar": "7º ano",
+            "topicoId": "b4-t3"
+          },
+          {
+            "id": "ifsp-2023-1b-q20",
+            "q": "Um reservatório, em forma de paralelepípedo reto-retângulo, foi construído para captar e armazenar a água da chuva. Este reservatório possui $2\\text{ metros}$ de comprimento, $180\\text{ centímetros}$ de largura e $1{,}25\\text{ metro}$ de altura. Em um período de chuvas intensas, a água armazenada atingiu $60\\text{ centímetros}$ de altura.\n\nQual o volume, em litros, existente dentro do reservatório?",
+            "options": [
+              "$450$",
+              "$2.160$",
+              "$3.000$",
+              "$4.500$"
+            ],
+            "correct": 1,
+            "explanation": "1. Para calcular diretamente a capacidade em litros, convertemos todas as medidas da coluna de água para decímetros ($\\text{dm}$), pois $1\\text{ dm}^3 = 1\\text{ litro}$:\n- Comprimento: $2\\text{ m} = 20\\text{ dm}$.\n- Largura: $180\\text{ cm} = 18\\text{ dm}$.\n- Altura da água: $60\\text{ cm} = 6\\text{ dm}$.\n\n2. O volume de água armazenado no interior do paralelepípedo é:\n$$V = \\text{comprimento} \\times \\text{largura} \\times \\text{altura da água}$$\n$$V = 20 \\times 18 \\times 6 = 2.160\\text{ dm}^3.$$\n\n3. Como $1\\text{ dm}^3 = 1\\text{ L}$, o volume existente é de $2.160\\text{ litros}$.\n\nPortanto, a alternativa correta é a **Letra B**.",
+            "bncc": "EF07MA30",
+            "bnccDesc": "Resolver e elaborar problemas de cálculo de medida de volume de blocos retangulares, envolvendo as unidades usuais e relação com capacidade (litro).",
+            "unidadeTematica": "Grandezas e Medidas",
+            "anoEscolar": "7º ano",
+            "topicoId": "b4-t1"
+          },
+          {
+            "id": "ifsp-2023-1b-q21",
+            "q": "Um professor de matemática que leciona para turmas do 8º ano do Ensino Fundamental utiliza o software GeoGebra para discutir a construção e o cálculo de áreas de figuras planas. Para a realização de uma atividade com os estudantes, ele compartilhou a imagem a seguir:\n\nA partir da comparação entre o triângulo (figura $AFE$), o trapézio (figura $ABGF$), o retângulo ($BCHG$), o quadrado (figura $CDIH$) e os dois semicírculos nas extremidades da figura, um estudante identificou corretamente que:",
+            "options": [
+              "A área do quadrado é igual a soma das áreas do triângulo e do retângulo.",
+              "A área do trapézio é menor que a soma das áreas do triângulo e do retângulo.",
+              "A área do triângulo é menor que área do retângulo.",
+              "Juntos, os dois semicírculos têm a mesma área do quadrado."
+            ],
+            "correct": 0,
+            "explanation": "Analisando a malha quadriculada unitária (cada quadradinho mede $1 \\times 1$ unidade de comprimento e tem área de $1\\text{ u}^2$):\n- **Triângulo $AFE$:** Base $EF = 2$ e altura $AE = 2$:\n$$A_{\\text{triângulo}} = \\frac{2 \\times 2}{2} = 2\\text{ u}^2.$$\n- **Retângulo $BCHG$:** Base $GH = 1$ e altura $BG = 2$:\n$$A_{\\text{retângulo}} = 1 \\times 2 = 2\\text{ u}^2.$$\n- **Quadrado $CDIH$:** Lado $HI = 2$ e altura $CD = 2$:\n$$A_{\\text{quadrado}} = 2 \\times 2 = 4\\text{ u}^2.$$\n\nComparando as medidas:\n$$A_{\\text{triângulo}} + A_{\\text{retângulo}} = 2 + 2 = 4\\text{ u}^2 = A_{\\text{quadrado}}.$$\n\nPortanto, a afirmação correta é a **Letra A**.",
+            "image": {
+              "src": "https://drive.google.com/file/d/1JSbW1dZE9sWKHv5ZcPhWA1k7Ol60YjfY/view?usp=sharing",
+              "alt": "Malha quadriculada no GeoGebra contendo uma figura plana composta por um triângulo retângulo AFE à esquerda de catetos 2 e 2 unidades, um trapézio ABGF de bases 2 e 4 com altura 2, um retângulo BCHG de base 1 e altura 2, um quadrado CDIH de lados 2 por 2, e dois semicírculos congruentes de raio 1 nas duas extremidades.",
+              "caption": "Fonte: IFSP, 2021."
+            },
+            "bncc": "EF08MA19",
+            "bnccDesc": "Resolver e elaborar problemas que envolvam medidas de área de figuras geométricas, utilizando expressões de cálculo de área.",
+            "unidadeTematica": "Grandezas e Medidas",
+            "anoEscolar": "8º ano",
             "topicoId": "b3-t2"
           },
           {
-            "q": "Um aquário retangular tem base de $60\\text{ cm} \\times 40\\text{ cm}$ e altura de $50\\text{ cm}$. Inicialmente, a água atinge $35\\text{ cm}$ de altura. Ao colocar pedras decorativas no fundo, o nível da água subiu $3\\text{ cm}$. Qual é o volume total ocupado pelas pedras em centímetros cúbicos?",
+            "id": "ifsp-2023-1b-q22",
+            "q": "A figura a seguir mostra um aquário em forma de paralelepípedo reto-retângulo cujas dimensões internas são $80\\text{ cm}$, $50\\text{ cm}$ e $70\\text{ cm}$ e uma pedra com formato irregular.\n\nInicialmente, coloca-se água no aquário até a altura de $30\\text{ cm}$. A pedra, então, é colocada dentro do aquário, ficando totalmente submersa. Nesse procedimento, não houve perda de água do aquário e observou-se que o nível da água subiu para $31\\text{ cm}$, como mostram as figuras a seguir:\n\nDessa maneira, podemos afirmar que o volume da pedra é de:",
             "options": [
-              "$4.800\\text{ cm}^3$",
-              "$7.200\\text{ cm}^3$",
-              "$8.400\\text{ cm}^3$",
-              "$12.000\\text{ cm}^3$"
+              "$930\\text{ cm}^3$",
+              "$1.550\\text{ cm}^3$",
+              "$1.500\\text{ cm}^3$",
+              "$4.000\\text{ cm}^3$"
             ],
-            "correct": 1,
-            "explanation": "Pelo princípio de Arquimedes, o volume das pedras submersas é exatamente igual ao volume do líquido deslocado:<br>$$V = A_{\\text{base}} \\times \\Delta h$$<br>Substituindo os valores:<br>$$V = (60\\text{ cm} \\times 40\\text{ cm}) \\times 3\\text{ cm} = 2.400 \\times 3 = 7.200\\text{ cm}^3.$$Portanto, a alternativa correta é a <strong>Letra B</strong>.",
-            "bncc": "EF09MA19",
-            "bnccDesc": "Resolver e elaborar problemas que envolvam medidas de volumes de prismas e de cilindros retos, inclusive com uso de expressões de cálculo, em situações cotidianas.",
+            "correct": 3,
+            "explanation": "1. Pelo Princípio de Arquimedes, o volume de um corpo completamente submerso em um líquido em repouso corresponde exatamente ao volume do líquido deslocado.\n\n2. O deslocamento da água ocorreu na vertical dentro do aquário de base retangular de dimensões $80\\text{ cm} \\times 50\\text{ cm}$:\n$$\\text{Área da Base} = 80\\text{ cm} \\times 50\\text{ cm} = 4.000\\text{ cm}^2.$$\n\n3. A variação da altura da coluna de água ($\\Delta h$) foi de:\n$$\\Delta h = 31\\text{ cm} - 30\\text{ cm} = 1\\text{ cm}.$$\n\n4. Logo, o volume da pedra é:\n$$V = \\text{Área da Base} \\times \\Delta h = 4.000\\text{ cm}^2 \\times 1\\text{ cm} = 4.000\\text{ cm}^3.$$\n\nPortanto, a alternativa correta é a **Letra D**.",
+            "image": {
+              "src": "https://drive.google.com/file/d/1tvK_0INIsbeyJfPO6oMNV5hhVwUogzf-/view?usp=sharing",
+              "alt": "Ilustração de um aquário com base retangular de 80 cm por 50 cm e altura de 70 cm. Ao lado, uma pedra irregular. Na parte inferior, duas situações: na primeira, a água atinge 30 cm de altura; na segunda, com a pedra totalmente submersa no fundo, o nível da água sobe para 31 cm.",
+              "caption": "Fonte: IFSP, 2021."
+            },
+            "bncc": "EF08MA20",
+            "bnccDesc": "Reconhecer a relação entre um litro e um decímetro cúbico e a relação entre litro e metro cúbico, para resolver problemas de cálculo de capacidade de recipientes.",
             "unidadeTematica": "Grandezas e Medidas",
-            "anoEscolar": "9º ano",
-            "topicoId": "b4-t2"
-          },
-          {
-            "q": "Uma barra de cereal dietética de $25\\text{ g}$ contém $4\\text{ g}$ de fibras alimentares. Em uma embalagem econômica com 6 dessas barras, qual é a quantidade total de fibras em gramas e qual o percentual de fibras por barra?",
-            "options": [
-              "$20\\text{ g}$ e $15\\%$",
-              "$24\\text{ g}$ e $16\\%$",
-              "$24\\text{ g}$ e $20\\%$",
-              "$30\\text{ g}$ e $16\\%$"
-            ],
-            "correct": 1,
-            "explanation": "1. Em 6 barras, a massa total de fibras é:<br>$$6 \\times 4\\text{ g} = 24\\text{ g}$$<br>2. O percentual de fibras em cada barra de 25 g é:<br>$$\\text{Percentual} = \\frac{4}{25} = \\frac{16}{100} = 16\\%.$$Portanto, a alternativa correta é a <strong>Letra B</strong>.",
-            "bncc": "EF08MA04",
-            "bnccDesc": "Resolver e elaborar problemas, envolvendo cálculo de porcentagens, incluindo o uso de tecnologias digitais.",
-            "unidadeTematica": "Números",
             "anoEscolar": "8º ano",
-            "topicoId": "b1-t6"
+            "topicoId": "b4-t1"
           },
           {
-            "q": "Uma reportagem do jornal “Folha de São Paulo”, de 05 de novembro de 2013, apresentou alguns dados de indicadores de violência da cidade de Nova Iorque, conforme gráfico a seguir:\nA apresentação de dados na forma de gráficos visa a facilitar e a resumir os resultados obtidos. De acordo com o gráfico de barras apresentado na reportagem, pode-se observar um problema para a interpretação de seus dados. Essa observação se justifica, pois:",
+            "id": "ifsp-2023-1b-q23",
+            "q": "Os produtos dietéticos são aqueles cuja composição não sofre a adição de carboidratos simples e nos quais a sacarose é substituída por outros edulcorantes que não alterem os níveis de glicemia. O gráfico a seguir representa o número de pessoas que responderam à pergunta “com qual frequência você consome produto dietético?”\n\nNestas condições, quantas pessoas foram entrevistadas e qual tipo de gráfico corresponde ao apresentado anteriormente?",
+            "options": [
+              "$70$ pessoas e gráfico em barras.",
+              "$39$ pessoas e gráfico em barras.",
+              "$70$ pessoas e gráfico de colunas.",
+              "$39$ pessoas e gráfico de colunas."
+            ],
+            "correct": 0,
+            "explanation": "1. Para obter o total de pessoas entrevistadas, somamos os valores numéricos correspondentes a cada categoria do gráfico:\n$$16 + 39 + 7 + 1 + 5 + 2 = 70\\text{ pessoas}.$$\n\n2. Em relação à tipologia gráfica estatística:\n- **Gráfico em barras (ou barras horizontais):** as categorias são dispostas no eixo vertical e as barras estendem-se horizontalmente ao longo do eixo horizontal (exatamente como ilustrado na questão).\n- **Gráfico de colunas (ou barras verticais):** as categorias ficam no eixo horizontal e as colunas erguem-se verticalmente.\n\nPortanto, foram entrevistadas $70$ pessoas em um gráfico em barras (**Letra A**).",
+            "image": {
+              "src": "https://drive.google.com/file/d/1ZUk8mBRInt8vY1jg_nO7NXEGSVvwy3GW/view?usp=sharing",
+              "alt": "Gráfico de barras horizontais indicando a frequência de consumo de produto dietético com as seguintes quantidades: Uma vez por semana: 16; De 2 a 4 vezes por semana: 39; A cada dia: 7; A cada mês: 1; Raramente: 5; Nunca: 2.",
+              "caption": "Fonte: IFSP, 2021."
+            },
+            "bncc": "EF06MA32",
+            "bnccDesc": "Interpretar e resolver situações que envolvam dados de pesquisas sobre contextos ambientais, sustentabilidade, trânsito etc., apresentados pela mídia em tabelas e em diferentes tipos de gráficos.",
+            "unidadeTematica": "Probabilidade e Estatística",
+            "anoEscolar": "6º ano",
+            "topicoId": "b4-t3"
+          },
+          {
+            "id": "ifsp-2023-1b-q24",
+            "q": "Uma reportagem do jornal “Folha de São Paulo”, de 05 de novembro de 2013, apresentou alguns dados de indicadores de violência da cidade de Nova Iorque, conforme gráfico a seguir:\n\nA apresentação de dados na forma de gráficos visa a facilitar e a resumir os resultados obtidos. De acordo com o gráfico de barras apresentado na reportagem, pode-se observar um problema para a interpretação de seus dados. Essa observação se justifica, pois:",
             "options": [
               "as barras de roubos e homicídios deveriam ser todas do mesmo tamanho, indicando estabilidade na violência na cidade de Nova Iorque.",
               "o gráfico do número de roubos e o de homicídios não deveriam ser apresentados juntos, pois as ordens de grandeza dessas informações são muito diferentes.",
@@ -8274,115 +8363,142 @@ var mathData = window.mathData || {
               "o gráfico de barras não é adequado para mostrar os resultados do tipo de pesquisa feita pela reportagem, pois não é possível notar diferenças nessa apresentação."
             ],
             "correct": 1,
-            "explanation": "1. Na representação de dados estatísticos por gráficos de barras ou colunas, as grandezas representadas no mesmo eixo devem ter escalas compatíveis e proporcionais para permitir uma comparação visual fidedigna.<br><br>2. No gráfico apresentado pela reportagem, o número de roubos situa-se na ordem das dezenas de milhares ($18.601$ a $27.229$), enquanto o número de homicídios situa-se na ordem das centenas ($419$ a $597$).<br><br>3. Como a ordem de grandeza dos roubos é cerca de $40$ a $50$ vezes maior que a dos homicídios, apresentá-los juntos no mesmo gráfico distorce a visualização (as barras de homicídios ficam quase imperceptíveis na base e impossibilitam uma leitura gráfica adequada das variações percentuais).<br><br>4. Portanto, a crítica metodológica se justifica porque o gráfico não deveria colocar juntos dados com ordens de grandeza tão discrepantes em um mesmo eixo de mesma escala.<br>Portanto, a alternativa correta é a <strong>Letra B</strong>.",
-            "bncc": "EF08MA23",
-            "bnccDesc": "Avaliar a adequação de diferentes tipos de gráficos para representar um conjunto de dados de uma pesquisa.",
+            "explanation": "1. Analisando as duas variáveis apresentadas em um mesmo par de eixos com escala linear única:\n- **Roubos:** valores na ordem de $20.000$ ocorrências ($10^4$).\n- **Homicídios:** valores na ordem de $500$ ocorrências ($10^2$).\n\n2. Como as ordens de grandeza são cerca de $40$ vezes distintas, as barras de homicídios aparecem comprimidas como minúsculos filetes na base do gráfico, tornando visualmente imperceptível a flutuação ou tendência dessa série histórica.\n\n3. A prática estatística correta recomenda usar escalas duplas (secundárias) ou gráficos independentes.\n\nPortanto, a alternativa correta é a **Letra B**.",
+            "image": {
+              "src": "https://drive.google.com/file/d/1pD0uPHvDF1FCLo74lfiYTVmNZVKDmlnD/view?usp=sharing",
+              "alt": "Gráfico comparativo da violência em Nova York com roubos em barras vermelhas altas (na casa dos 20 mil) e homicídios em pequenas barras azuis na base (na casa das centenas, em torno de 500), com eixos sem escala dupla, tornando as barras de homicídios quase imperceptíveis.",
+              "caption": "Fonte: Departamento de Polícia de Nova York / Folha de S. Paulo, 2013."
+            },
+            "bncc": "EF08MA27",
+            "bnccDesc": "Planejar e executar pesquisa amostral, selecionando uma técnica de amostragem adequada, e escrever relatório que contenha os gráficos apropriados para a interpretação dos resultados.",
             "unidadeTematica": "Probabilidade e Estatística",
             "anoEscolar": "8º ano",
-            "topicoId": "b4-t4",
+            "topicoId": "b4-t3"
+          },
+          {
+            "id": "ifsp-2023-1b-q25",
+            "q": "O popular tênis de praia (Beach Tennis) é uma modalidade esportiva que virou tendência nas cidades, principalmente em São Paulo, onde o jogo atrai cada vez mais simpatizantes. O gerente de uma academia deseja construir uma quadra de tênis de praia e oferecer aulas para seus alunos. Para decidir os melhores dias e turnos, realizou-se uma pesquisa com 115 alunos. O quadro a seguir apresenta o resultado dessa pesquisa:\n\n| Dia | Matutino | Tarde | Noite |\n| :--- | :---: | :---: | :---: |\n| Segunda-feira | 1 | 0 | 4 |\n| Terça-feira | 8 | 3 | 6 |\n| Quarta-feira | 10 | 7 | 15 |\n| Quinta-feira | 12 | 10 | 9 |\n| Sexta-feira | 4 | 6 | 20 |\n\nInicialmente, serão ofertadas três aulas na semana, sendo que o objetivo é atingir o maior número de alunos. Com base nos dados do quadro anterior, os dias e os turnos das aulas serão:",
+            "options": [
+              "Quarta-feira – Matutino, Quarta-feira – Tarde e Quarta-feira – Noite.",
+              "Quinta-feira – Matutino, Quinta-feira – Tarde e Quarta-feira – Noite.",
+              "Sexta-feira – Matutino, Sexta-feira – Tarde e Sexta-feira – Noite.",
+              "Sexta-feira – Noturno, Quarta-feira – Noturno e Quinta-feira – Matutino."
+            ],
+            "correct": 3,
+            "explanation": "Para maximizar o número total de alunos atendidos com apenas 3 opções de horário na semana, selecionam-se as três células da tabela com as maiores frequências absolutas:\n1. **Maior frequência (1º lugar):** Sexta-feira – Noite ($20$ alunos).\n2. **Segunda maior frequência (2º lugar):** Quarta-feira – Noite ($15$ alunos).\n3. **Terceira maior frequência (3º lugar):** Quinta-feira – Matutino ($12$ alunos).\n\nLogo, a combinação ideal corresponde a **Sexta-feira – Noturno, Quarta-feira – Noturno e Quinta-feira – Matutino** (**Letra D**).",
+            "bncc": "EF06MA31",
+            "bnccDesc": "Identificar as variáveis e suas frequências e os elementos constitutivos em diferentes tipos de gráfico e tabelas.",
+            "unidadeTematica": "Probabilidade e Estatística",
+            "anoEscolar": "6º ano",
+            "topicoId": "b4-t3"
+          },
+          {
+            "id": "ifsp-2023-1b-q26",
+            "q": "Leia o texto a seguir para responder ao que se pede:\n\n> **Uso da internet atingiu $81\\%$ da população em 2020**\n> *Pesquisa mostra que o Brasil tem 152 milhões de usuários. A quantidade da população brasileira que utiliza a internet aumentou em 2020, passando de $74\\%$ da população em 2019 para $81\\%$ no ano passado, o que representa 152 milhões de usuários acima de 10 anos. O crescimento do uso da rede de computadores foi maior nas classes econômicas mais baixas e impulsionado pela pandemia. Os dados são da pesquisa TIC Domicílios, realizada pelo Centro Regional de Estudos para o Desenvolvimento da Sociedade da Informação, divulgada em agosto deste ano.*\n\nBuscando ampliar a disponibilidade de internet a três cidades, uma operadora de celular pretende construir uma nova torre de transmissão, que envie sinal às antenas $A$, $B$ e $C$, já existentes nessas cidades de acordo com a figura. O ponto $D$ da figura é o circuncentro do triângulo $ABC$, o ponto $E$ é o incentro do triângulo $ABC$ e $H$ é um ponto externo ao triângulo $ABC$.\n\nSabendo que a torre deve estar situada em um local equidistante (com mesma distância) das três antenas existentes, o local adequado para a construção dessa torre corresponde ao:",
+            "options": [
+              "ponto $H$.",
+              "ponto $E$.",
+              "ponto $D$.",
+              "ponto $B$."
+            ],
+            "correct": 2,
+            "explanation": "1. Os pontos notáveis de um triângulo possuem propriedades geométricas específicas:\n- **Circuncentro:** é o ponto de interseção das três mediatrizes dos lados do triângulo. Por definição de mediatriz, qualquer ponto sobre ela é equidistante dos extremos do segmento. Logo, o circuncentro é o **único ponto equidistante dos três vértices** ($A$, $B$ e $C$), sendo o centro da circunferência circunscrita.\n- **Incentro:** é o ponto de encontro das bissetrizes internas e é equidistante dos três lados do triângulo (centro da circunferência inscrita).\n\n2. Como as antenas situam-se nos vértices $A$, $B$ e $C$, a nova torre precisa estar à mesma distância desses três vértices, devendo coincidir obrigatoriamente com o **circuncentro**, indicado na figura pelo **ponto $D$**.\n\nPortanto, a alternativa correta é a **Letra C**.",
             "image": {
-              "src": "https://drive.google.com/file/d/1niBlIMVCUmbwpsbnQExoAix_hGoo9G3c/view?usp=sharing",
-              "alt": "Gráfico de colunas publicado pela Folha de S. Paulo sobre violência em Nova York comparando o número anual de roubos na faixa de vinte mil com o número de homicídios na faixa de quinhentos entre 2002 e 2012",
-              "caption": "Figura: Gráfico de barras de indicadores de violência em Nova York (Fonte: Folha de S. Paulo / IFSP 2023.1)"
-            }
-          },
-          {
-            "q": "Uma quadra oficial de Beach Tennis para jogos de duplas tem formato retangular com $16\\text{ metros}$ de comprimento por $8\\text{ metros}$ de largura. O perímetro e a área dessa quadra são, respectivamente:",
-            "options": [
-              "$48\\text{ m}$ e $128\\text{ m}^2$",
-              "$48\\text{ m}$ e $64\\text{ m}^2$",
-              "$24\\text{ m}$ e $128\\text{ m}^2$",
-              "$32\\text{ m}$ e $128\\text{ m}^2$"
-            ],
-            "correct": 0,
-            "explanation": "1. O perímetro é a soma de todos os lados:<br>$$2p = 2 \\times (16 + 8) = 2 \\times 24 = 48\\text{ metros}$$<br>2. A área é o produto das dimensões:<br>$$A = 16 \\times 8 = 128\\text{ m}^2.$$Portanto, a alternativa correta é a <strong>Letra A</strong>.",
-            "bncc": "EF08MA19",
-            "bnccDesc": "Resolver e elaborar problemas que envolvam medidas de área de figuras geométricas, utilizando expressões de cálculo de área (quadriláteros, triângulos e círculos), em situações como determinar medida de terrenos.",
-            "unidadeTematica": "Grandezas e Medidas",
+              "src": "https://drive.google.com/file/d/1vLYrnQ4WO725e8quGbRRQIivfhSDpG9j/view?usp=sharing",
+              "alt": "Triângulo ABC escaleno em linha tracejada representando três antenas. Indicam-se os pontos D (circuncentro), E (incentro) e um ponto externo H.",
+              "caption": "Fonte: IFSP, 2021."
+            },
+            "bncc": "EF08MA14",
+            "bnccDesc": "Demonstrar propriedades de quadriláteros por meio de identificação dos pontos notáveis de triângulos.",
+            "unidadeTematica": "Geometria",
             "anoEscolar": "8º ano",
-            "topicoId": "b4-t1"
+            "topicoId": "b3-t1"
           },
           {
-            "q": "Segundo dados de uma pesquisa nacional, o uso da internet no Brasil atingiu $81\\%$ da população com 10 anos ou mais. Em uma cidade com $60.000$ habitantes nessa faixa etária, quantas pessoas têm acesso à internet?",
+            "id": "ifsp-2023-1b-q27",
+            "q": "Números reais que apresentam muitos algarismos podem dificultar a visualização, a comparação e a operacionalização entre eles. Chama-se notação científica a apresentação de um número real na forma $a \\times 10^n$, com $1 \\le a < 10$ e $n \\in \\mathbb{Z}$.\n\nAs figuras abaixo apresentam exemplos de medidas e suas respectivas apresentações em notação científica:\n\nAssinale a alternativa que apresenta o resultado da expressão $3000 + 500000 \\times 0{,}007$, em notação científica:",
             "options": [
-              "$45.600$",
-              "$48.600$",
-              "$50.400$",
-              "$52.200$"
+              "$3{,}521 \\times 10^3$",
+              "$65 \\times 10^2$",
+              "$6{,}5 \\times 10^3$",
+              "$3{,}521 \\times 10^{-3}$"
             ],
-            "correct": 1,
-            "explanation": "Calculando $81\\%$ de 60.000 pessoas:<br>$$\\text{Total} = 0{,}81 \\times 60.000 = 48.600\\text{ pessoas}.$$Portanto, a alternativa correta é a <strong>Letra B</strong>.",
-            "bncc": "EF08MA04",
-            "bnccDesc": "Resolver e elaborar problemas, envolvendo cálculo de porcentagens, incluindo o uso de tecnologias digitais.",
-            "unidadeTematica": "Números",
-            "anoEscolar": "8º ano",
-            "topicoId": "b1-t6"
-          },
-          {
-            "q": "O diâmetro aproximado de um glóbulo vermelho do sangue humano é de $0{,}0000075\\text{ metros}$. Em notação científica padrão, esse valor é escrito como:",
-            "options": [
-              "$75 \\times 10^{-7}\\text{ m}$",
-              "$7{,}5 \\times 10^{-6}\\text{ m}$",
-              "$7{,}5 \\times 10^{-5}\\text{ m}$",
-              "$0{,}75 \\times 10^{-5}\\text{ m}$"
-            ],
-            "correct": 1,
-            "explanation": "Deslocamos a vírgula para a direita até obter um número entre 1 e 10:<br>A vírgula avança 6 casas decimais:<br>$$0{,}0000075 = 7{,}5 \\times 10^{-6}\\text{ metros}.$$Portanto, a alternativa correta é a <strong>Letra B</strong>.",
+            "correct": 2,
+            "explanation": "1. Pela ordem de precedência das operações matemáticas, resolve-se primeiramente a multiplicação:\n$$500000 \\times 0{,}007 = 500.000 \\times \\frac{7}{1.000} = 500 \\times 7 = 3.500.$$\n\n2. Em seguida, realiza-se a soma:\n$$3000 + 3500 = 6.500.$$\n\n3. Para escrever $6.500$ em notação científica canônica ($a \\times 10^n$, com $1 \\le a < 10$):\n$$6.500 = 6{,}5 \\times 1.000 = 6{,}5 \\times 10^3.$$\n\nPortanto, a alternativa correta é a **Letra C**.",
+            "image": {
+              "src": "https://drive.google.com/file/d/1OU1ShXyfmoRSKXb3DKOZHYLVj2V0WtCK/view?usp=sharing",
+              "alt": "Dois exemplos ilustrados de notação científica: a distância da Terra ao Sol como 150000000000 m ou 1,5 x 10^11 m, e o tamanho da cabeça de um espermatozoide como 0,000008 m ou 8 x 10^-6 m.",
+              "caption": "Fonte: Blog Superinteressante (adaptado)."
+            },
             "bncc": "EF08MA01",
             "bnccDesc": "Efetuar cálculos com potências de expoentes inteiros e aplicar esse conhecimento na representação de números em notação científica.",
             "unidadeTematica": "Números",
             "anoEscolar": "8º ano",
-            "topicoId": "b1-t7"
+            "topicoId": "b1-t1"
           },
           {
-            "q": "Após fortes ventos em uma tempestade, uma árvore quebrou-se a uma altura de $3\\text{ metros}$ do solo. A parte superior tombou formando com o solo um triângulo retângulo, de modo que a ponta da árvore tocou o chão a uma distância de $4\\text{ metros}$ da sua base. Qual era a altura total original dessa árvore antes de quebrar?",
+            "id": "ifsp-2023-1b-q28",
+            "q": "Após ventos fortes atingirem uma grande cidade do interior do estado de São Paulo, no fim do mês de setembro de 2021, houve o rompimento de um poste, como ilustra a figura a seguir:\n\nEntre as alternativas a seguir, qual a que mais se aproxima da altura do poste em metros, antes do rompimento, respeitando os critérios de arredondamento de números decimais?",
             "options": [
-              "$5\\text{ metros}$",
-              "$6\\text{ metros}$",
-              "$7\\text{ metros}$",
-              "$8\\text{ metros}$"
+              "$13$",
+              "$12$",
+              "$8$",
+              "$7$"
             ],
-            "correct": 3,
-            "explanation": "1. A parte quebrada que tombou atua como hipotenusa $c$ de um triângulo retângulo cujos catetos são a altura do tronco em pé ($a = 3\\text{ m}$) e a distância até a base no chão ($b = 4\\text{ m}$).<br>2. Aplicando o Teorema de Pitágoras:<br>$$c^2 = 3^2 + 4^2 = 9 + 16 = 25 \\implies c = 5\\text{ metros}$$<br>3. A altura total original da árvore é a soma do tronco em pé com a ponta que tombou:<br>$$H_{\\text{total}} = 3\\text{ m} + 5\\text{ m} = 8\\text{ metros}.$$Portanto, a alternativa correta é a <strong>Letra D</strong>.",
+            "correct": 0,
+            "explanation": "1. A figura ilustra um triângulo retângulo onde:\n- Cateto vertical (tronco do poste que permaneceu em pé): $a = 5\\text{ m}$.\n- Cateto horizontal (distância da base até a ponta no solo): $b = 6\\text{ m}$.\n- Hipotenusa (parte rompida e inclinada do poste): $c$.\n\n2. Aplicando o Teorema de Pitágoras para encontrar o comprimento da parte rompida:\n$$c^2 = a^2 + b^2 = 5^2 + 6^2 = 25 + 36 = 61$$\n$$c = \\sqrt{61} \\approx 7{,}81\\text{ m}.$$\n\n3. A altura total original do poste corresponde à soma da parte em pé com a parte tombada:\n$$H = a + c = 5 + 7{,}81 = 12{,}81\\text{ m}.$$\n\n4. Respeitando os critérios oficiais de arredondamento decimal para o número inteiro mais próximo, como a primeira casa decimal é $8 \\ge 5$, arredonda-se para cima:\n$$H \\approx 13\\text{ metros}.$$\n\nPortanto, a alternativa correta é a **Letra A**.",
+            "image": {
+              "src": "https://drive.google.com/file/d/1y_LBdRbRdo5AoJ-zTFP3UKiGrfkZl0o7/view?usp=sharing",
+              "alt": "Ilustração de um poste partido pelo vento. A parte vertical restante em pé mede 5 metros de altura. O segmento superior quebrado e inclinado toca o solo a uma distância de 6 metros da base do poste.",
+              "caption": "Fonte: IFSP, 2021."
+            },
             "bncc": "EF09MA14",
-            "bnccDesc": "Resolver e elaborar problemas de aplicação do teorema de Pitágoras ou das relações de proporcionalidade envolvendo retas paralelas cortadas por secantes.",
+            "bnccDesc": "Resolver e elaborar problemas de aplicação do teorema de Pitágoras ou das relações de proporcionalidade envolvendo triângulos retângulos.",
             "unidadeTematica": "Geometria",
             "anoEscolar": "9º ano",
+            "topicoId": "b3-t1"
+          },
+          {
+            "id": "ifsp-2023-1b-q29",
+            "q": "Considere um trapézio isósceles $ABCD$, de bases $AB = 12\\text{ cm}$ e $CD = 8\\text{ cm}$, e com perímetro de $25\\text{ cm}$. Dentre as alternativas seguintes, qual equivale à área desse trapézio?",
+            "options": [
+              "$10\\text{ cm}^2$",
+              "$15\\text{ cm}^2$",
+              "$25\\text{ cm}^2$",
+              "$30\\text{ cm}^2$"
+            ],
+            "correct": 1,
+            "explanation": "1. Em um trapézio isósceles, os dois lados oblíquos não paralelos são congruentes ($AD = BC = L$). O perímetro é:\n$$\\text{Perímetro} = AB + CD + 2L = 25$$\n$$12 + 8 + 2L = 25 \\implies 20 + 2L = 25 \\implies 2L = 5 \\implies L = 2{,}5\\text{ cm}.$$\n\n2. Ao traçar as alturas a partir dos vértices da base menor $CD$ sobre a base maior $AB$, determinam-se duas projeções congruentes $x$ nas extremidades:\n$$x = \\frac{AB - CD}{2} = \\frac{12 - 8}{2} = 2\\text{ cm}.$$\n\n3. Aplicando o Teorema de Pitágoras no triângulo retângulo de catetos $h$ e $x$ e hipotenusa $L$:\n$$h^2 + x^2 = L^2 \\implies h^2 + 2^2 = (2{,}5)^2 \\implies h^2 + 4 = 6{,}25$$\n$$h^2 = 2{,}25 \\implies h = \\sqrt{2{,}25} = 1{,}5\\text{ cm}.$$\n\n4. Calculando a área do trapézio:\n$$A = \\frac{(B + b) \\times h}{2} = \\frac{(12 + 8) \\times 1{,}5}{2} = \\frac{20 \\times 1{,}5}{2} = 10 \\times 1{,}5 = 15\\text{ cm}^2.$$\n\nPortanto, a alternativa correta é a **Letra B**.",
+            "bncc": "EF08MA19",
+            "bnccDesc": "Resolver e elaborar problemas que envolvam medidas de área de figuras geométricas, utilizando expressões de cálculo de área.",
+            "unidadeTematica": "Geometria",
+            "anoEscolar": "8º ano",
             "topicoId": "b3-t2"
           },
           {
-            "q": "Considere um trapézio isósceles $ABCD$ de base maior $AB = 12\\text{ cm}$, base menor $CD = 8\\text{ cm}$ e perímetro de $26\\text{ cm}$. Qual é a medida de cada um dos lados oblíquos desse trapézio?",
+            "id": "ifsp-2023-1b-q30",
+            "q": "Na chamada “Sociedade da Informação”, em que grande parte da população pode ter acesso quase instantâneo a acontecimentos ao redor do mundo, a matemática se torna uma ferramenta importante para avaliar a enorme quantidade de informações que chegam todos os dias até nós. A seguir, uma notícia (fictícia) sobre a economia:\n\nQuando empregamos o conceito matemático de porcentagem ao contexto da notícia – de análise dos percentuais da economia nos anos de 2020 e 2021, a conclusão matematicamente adequada é a de que:",
             "options": [
-              "$2\\text{ cm}$",
-              "$3\\text{ cm}$",
-              "$4\\text{ cm}$",
-              "$6\\text{ cm}$"
+              "A notícia está matematicamente correta, pois houve recuperação dos 4% de 2020 que, somados aos 5% de 2021, resultam em 9% de crescimento em dois anos.",
+              "A notícia está matematicamente incorreta, pois 4% negativo em 2020 e 5% positivo em 2021 representam um crescimento total de 0,8% em dois anos.",
+              "A notícia está matematicamente correta, pois 4% do PIB do 1º ano é 0,04, enquanto 5% do PIB do 2º ano é 0,05, de modo que a soma de cada ano é 0,04 + 0,05 = 0,09 – que é o mesmo que 9% em dois anos.",
+              "A notícia está matematicamente incorreta, pois a soma de 5% positivo de 2021 com 4% negativo de 2020 indica um crescimento total de 1% positivo em dois anos."
             ],
             "correct": 1,
-            "explanation": "Em um trapézio isósceles, os dois lados oblíquos possuem a mesma medida $L$.<br>O perímetro é a soma de todos os lados:<br>$$2p = B + b + 2L = 12 + 8 + 2L = 26$$<br>$$20 + 2L = 26 \\implies 2L = 6 \\implies L = 3\\text{ cm}.$$Portanto, a alternativa correta é a <strong>Letra B</strong>.",
-            "bncc": "EF06MA29",
-            "bnccDesc": "Analisar e descrever mudanças que ocorrem no perímetro e na área de um quadrado ao se ampliarem ou reduzirem, igualmente, as medidas de seus lados, para compreender que o perímetro é proporcional à medida do lado, o que não ocorre com a área.",
-            "unidadeTematica": "Grandezas e Medidas",
-            "anoEscolar": "6º ano",
-            "topicoId": "b4-t1"
-          },
-          {
-            "q": "O tráfego de dados na internet dobra aproximadamente a cada 2 anos em escala global. Se em determinado ano o tráfego foi de $T_0$, a expressão que representa o tráfego após $t$ anos é dada pela função exponencial $T(t) = T_0 \\cdot 2^{\\frac{t}{2}}$. Após 6 anos, o tráfego de dados terá sido multiplicado por um fator de:",
-            "options": [
-              "4",
-              "6",
-              "8",
-              "16"
-            ],
-            "correct": 2,
-            "explanation": "Substituindo $t = 6$ anos na função:<br>$$\\frac{t}{2} = \\frac{6}{2} = 3$$<br>$$T(6) = T_0 \\cdot 2^3 = T_0 \\cdot 8$$<br>Logo, o volume de tráfego terá sido multiplicado por um fator de 8.<br>Portanto, a alternativa correta é a <strong>Letra C</strong>.",
-            "bncc": "EF08MA22",
-            "bnccDesc": "Calcular a probabilidade de eventos, com base na construção do espaço amostral, utilizando o princípio multiplicativo, e reconhecer que a soma das probabilidades de todos os elementos do espaço amostral é igual a 1.",
-            "unidadeTematica": "Probabilidade e Estatística",
-            "anoEscolar": "8º ano",
-            "topicoId": "b4-t3"
+            "explanation": "1. As variações percentuais sucessivas acumuladas ao longo de anos não são aditivas, mas sim multiplicativas por meio de fatores de variação:\n- Em 2020: queda de $4\\% \\implies F_1 = 1 - 0{,}04 = 0{,}96$.\n- Em 2021: crescimento de $5\\%$ sobre o PIB já retraído de 2020 $\\implies F_2 = 1 + 0{,}05 = 1{,}05$.\n\n2. O fator de variação acumulado no biênio é o produto dos fatores:\n$$F_{\\text{acum}} = F_1 \\times F_2 = 0{,}96 \\times 1{,}05 = 1{,}008.$$\n\n3. Convertendo o fator para taxa percentual:\n$$\\text{Taxa Acumulada} = (1{,}008 - 1) \\times 100\\% = +0{,}8\\%.$$\n\n4. Como a notícia afirmava erroneamente um crescimento de $9\\%$, conclui-se que ela está incorreta, pois o crescimento real foi de apenas $0{,}8\\%$.\n\nPortanto, a alternativa correta é a **Letra B**.",
+            "image": {
+              "src": "https://drive.google.com/file/d/1sYcM-Vsu8IG-srLD04KtzwEUGaV66fAf/view?usp=sharing",
+              "alt": "Recorte de notícia com manchete: Economia se recupera e terá crescimento de 9% em dois anos. Subtítulo: Especialistas em economia projetam crescimento de 5% para esse ano, depois de fecharmos o ano passado com queda de 4%.",
+              "caption": "Fonte: IFSP, 2021."
+            },
+            "bncc": "EF09MA05",
+            "bnccDesc": "Resolver e elaborar problemas que envolvam porcentagens, com a ideia de aplicação de percentuais sucessivos e a determinação das taxas equivalentes.",
+            "unidadeTematica": "Números",
+            "anoEscolar": "9º ano",
+            "topicoId": "b1-t3"
           }
         ],
+        "blockId": "7",
         "driveUrl": "https://drive.google.com/file/d/10paYCbo72ndG1U1qdDaXGe8FB6zFW7at/view?usp=drive_web"
       },
       {
@@ -9268,7 +9384,8 @@ var mathData = window.mathData || {
         "filename": "prova-ifmg-20261.html",
         "folder": "bloco-8-provas-ifmg",
         "blockId": "8",
-        "pdf": "IFMG_prova_2026_1.pdf"
+        "pdf": "IFMG_prova_2026_1.pdf",
+        "driveUrl": "https://drive.google.com/file/d/14Iv2BBzPmcbIsphZtyOiLviCEI9A7RWo/view?usp=sharing"
       },
       {
         "id": "ifmg-2025-1",
@@ -9581,7 +9698,8 @@ var mathData = window.mathData || {
         "filename": "prova-ifmg-20251.html",
         "folder": "bloco-8-provas-ifmg",
         "blockId": "8",
-        "pdf": "IFMG_prova_2025_1.pdf"
+        "pdf": "IFMG_prova_2025_1.pdf",
+        "driveUrl": "https://drive.google.com/file/d/12sqNCDTblFo2MxFL7eAnVRFHyVpXmdcv/view?usp=sharing"
       },
       {
         "id": "ifmg-2024-1",
@@ -9886,7 +10004,8 @@ var mathData = window.mathData || {
         "filename": "prova-ifmg-20241.html",
         "folder": "bloco-8-provas-ifmg",
         "blockId": "8",
-        "pdf": "IFMG_prova_2024_1.pdf"
+        "pdf": "IFMG_prova_2024_1.pdf",
+        "driveUrl": "https://drive.google.com/file/d/1v4lV0SiPhnwZZIyveqHZIuw-r1gQD8-k/view?usp=sharing"
       },
       {
         "id": "ifmg-2023-2",
@@ -9910,7 +10029,7 @@ var mathData = window.mathData || {
         "folder": "bloco-8-provas-ifmg",
         "blockId": "8",
         "pdf": "IFMG_prova_2023_2.pdf",
-        "driveUrl": "",
+        "driveUrl": "https://drive.google.com/file/d/1rjPcI2SO38_n6nkSI-3vVoIrhc8rYai7/view?usp=sharing",
         "questions": [
           {
             "q": "O Sr. Eudoxo, ao receber sua conta de água referente ao mês de setembro, ficou muito incomodado com a tabela “Dados dos Últimos 6 Meses”, que apresenta o consumo de sua residência, em $\\text{m}^3$, dos últimos seis meses anteriores à conta vigente:\n\nDessa forma, reuniu sua família, abordou o problema tanto no aspecto financeiro quanto no que se refere ao consumo responsável e sustentável de água e estabeleceu uma meta: considerando-se o consumo dos próximos dois meses (outubro e novembro), a média dos últimos seis meses deverá ser reduzida para um valor igual ou inferior a $25\\text{ m}^3$.\n\nSabendo-se que a conta do mês 09/2023 apresentou um consumo de $26\\text{ m}^3$, qual o máximo valor da média de consumo dos meses 10/2023 e 11/2023 de modo que a família do Sr. Eudoxo cumpra a meta definida por ele? (Considere apenas valores inteiros na solução, descartando a parte fracionária caso exista).",
@@ -10201,7 +10320,7 @@ var mathData = window.mathData || {
         "folder": "bloco-8-provas-ifmg",
         "blockId": "8",
         "pdf": "IFMG_prova_2023_1.pdf",
-        "driveUrl": "",
+        "driveUrl": "https://drive.google.com/file/d/14LsWGpStzX_ZEhrE3Hdds9dx7u9H7PuC/view?usp=sharing",
         "questions": [
           {
             "q": "Certo de que as pequenas economias podem gerar grandes resultados, um professor do IFMG realizou comparativos entre a eficiência do seu automóvel, considerada por ele como a distância percorrida por litro de combustível consumido, com a utilização dos quatro combustíveis disponíveis para seu modelo: gasolina comum, gasolina aditivada, etanol e etanol aditivado. Conforme os dados obtidos por ele, o carro apresenta redução de $30\\%$ de eficiência quando abastecido com etanol, redução de $25\\%$ de eficiência quando abastecido com etanol aditivado e aumento de $5\\%$ de eficiência quando abastecido com gasolina aditivada, isso quando comparados ao abastecimento com gasolina comum.\n\nNum certo dia, ele se depara com a seguinte tabela de preços no posto de sua preferência:\n\nConsiderando-se apenas o quesito eficiência como descrito acima, qual a melhor escolha de combustível em termos de custo/benefício para os preços apresentados na tabela?",
@@ -10508,7 +10627,7 @@ var mathData = window.mathData || {
         "folder": "bloco-8-provas-ifmg",
         "blockId": "8",
         "pdf": "IFMG_prova_2022_2.pdf",
-        "driveUrl": "",
+        "driveUrl": "https://drive.google.com/file/d/1y_4Z8YydeOeaY3LJxnEd0vj7Ky1-G085/view?usp=sharing",
         "questions": [
           {
             "q": "Ciente das dificuldades apresentadas pelos alunos na sua disciplina de Estatística, um professor do IFMG resolveu abrir processo seletivo para seleção de um monitor. O processo consistiu de 3 etapas: apresentação do coeficiente do aluno na disciplina, uma avaliação teórica sobre o conteúdo e uma aula teste ministrada pelo candidato a uma banca contendo o professor da disciplina e um pedagogo.\n\nQuatro alunos realizaram o processo seletivo. As notas obtidas por cada candidato e os pesos atribuídos a cada etapa podem ser visualizados na tabela a seguir:\n\nO aluno selecionado seria aquele com maior média ponderada, conforme os pesos ilustrados na tabela. Caso houvesse empate na média, seria escolhido o aluno de resultados mais homogêneos, com menor amplitude nas notas (ou seja, menor diferença entre as notas máxima e mínima).\n\nSegundo esses critérios, o selecionado como monitor da disciplina foi o aluno:",
@@ -10807,7 +10926,7 @@ var mathData = window.mathData || {
         "folder": "bloco-8-provas-ifmg",
         "blockId": "8",
         "pdf": "IFMG_prova_2020_1.pdf",
-        "driveUrl": "",
+        "driveUrl": "https://drive.google.com/file/d/1EpNTRmgVq2ad7yhKYWpcKBoAUAgindtP/view?usp=sharing",
         "questions": [
           {
             "q": "Considere a expressão:\n$$\\frac{\\left(2^{\\sqrt{2}}\\right)^{\\sqrt{2}}}{5^0} - \\frac{2}{\\sqrt{2^3 \\cdot 2^7}} = \\frac{N}{D}$$\n\nSabendo que $N$ e $D$ são números primos entre si, qual o valor de $N$?",
@@ -11362,7 +11481,8 @@ var mathData = window.mathData || {
             "anoEscolar": "7º ano",
             "topicoId": "b4-t3"
           }
-        ]
+        ],
+        "driveUrl": "https://drive.google.com/file/d/1WemTHAra0lmDw6RTDSnzLEveCYdDFEII/view?usp=sharing"
       },
       {
         "id": "ifmg-2019-1",
@@ -11672,7 +11792,8 @@ var mathData = window.mathData || {
             "anoEscolar": "9º ano",
             "topicoId": "b1-t7"
           }
-        ]
+        ],
+        "driveUrl": "https://drive.google.com/file/d/1ixXJP9Decma82GaeefwcXCXGkX5iV3h7/view?usp=sharing"
       },
       {
         "id": "ifmg-2018-2",
@@ -11972,7 +12093,8 @@ var mathData = window.mathData || {
             "anoEscolar": "6º ano",
             "topicoId": "b3-t4"
           }
-        ]
+        ],
+        "driveUrl": "https://drive.google.com/file/d/1vWq1rHPbh6eBl3AQPcJMWlSt9rhPCMYX/view?usp=sharing"
       },
       {
         "id": "ifmg-2017-1",
@@ -12060,7 +12182,8 @@ var mathData = window.mathData || {
             "anoEscolar": "9º ano",
             "topicoId": "b2-t4"
           }
-        ]
+        ],
+        "driveUrl": "https://drive.google.com/file/d/11LWVsIwQPalvxqZGlawD4OBFUByVh2Uu/view?usp=sharing"
       }
     ]
   },

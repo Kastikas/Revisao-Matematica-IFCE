@@ -113,7 +113,7 @@ class TextSanitizer:
         text = text.replace(r"\R$", r"\text{R\$}")
 
         # 2. Remove delimitadores $ espúrios isolados antes de palavras comuns como Portanto, Assim
-        text = re.sub(r"(?<![\\\$])\$(?!\$)\s*(Portanto|Assim|Logo)", r"\1", text)
+        text = re.sub(r"(?<![\\\$])\$(?!\$)[ \t]+(Portanto|Assim|Logo)\b", r"\1", text)
 
         def format_number_katex(num_str):
             if "{,}" in num_str:
@@ -594,11 +594,6 @@ class ImageExtractor:
         Recorta com alta precisão uma região do PDF, elimina margens brancas e otimiza via pngquant/optipng.
         """
         try:
-            import pymupdf
-        except ImportError:
-            raise ImportError("PyMuPDF não está instalado. Execute: pip install pymupdf")
-
-        try:
             from PIL import Image, ImageChops
         except ImportError:
             raise ImportError("Pillow (PIL) não está instalado. Execute: pip install pillow")
@@ -606,15 +601,39 @@ class ImageExtractor:
         if not os.path.exists(pdf_path):
             raise FileNotFoundError(f"PDF não encontrado: {pdf_path}")
 
-        doc = pymupdf.open(pdf_path)
-        if page_num < 1 or page_num > len(doc):
-            raise ValueError(f"Página inválida {page_num}. O PDF possui {len(doc)} páginas.")
+        try:
+            import pymupdf
+            doc = pymupdf.open(pdf_path)
+            if page_num < 1 or page_num > len(doc):
+                raise ValueError(f"Página inválida {page_num}. O PDF possui {len(doc)} páginas.")
 
-        page = doc[page_num - 1]
-        rect = pymupdf.Rect(*rect_coords)
-        pix = page.get_pixmap(clip=rect, dpi=dpi)
+            page = doc[page_num - 1]
+            rect = pymupdf.Rect(*rect_coords)
+            pix = page.get_pixmap(clip=rect, dpi=dpi)
+            img = Image.frombytes("RGB", [pix.width, pix.height], pix.samples)
+        except ImportError:
+            # Fallback robusto via pdftoppm (Poppler CLI nativo)
+            import tempfile, subprocess
+            with tempfile.TemporaryDirectory() as tmpdir:
+                prefix = os.path.join(tmpdir, "page")
+                cmd = ["pdftoppm", "-png", "-r", str(dpi), "-f", str(page_num), "-l", str(page_num), pdf_path, prefix]
+                res = subprocess.run(cmd, capture_output=True, text=True)
+                if res.returncode != 0:
+                    raise RuntimeError(f"pdftoppm falhou: {res.stderr}")
+                gen_files = sorted(os.listdir(tmpdir))
+                if not gen_files:
+                    raise FileNotFoundError("pdftoppm não gerou imagem da página.")
+                page_img_path = os.path.join(tmpdir, gen_files[0])
+                full_img = Image.open(page_img_path).convert("RGB")
 
-        img = Image.frombytes("RGB", [pix.width, pix.height], pix.samples)
+                # Converte coordenadas em pontos do PDF (72 dpi) para a resolução renderizada (dpi)
+                scale = dpi / 72.0
+                x0, y0, x1, y1 = rect_coords
+                left = max(0, int(x0 * scale))
+                top = max(0, int(y0 * scale))
+                right = min(full_img.width, int(x1 * scale))
+                bottom = min(full_img.height, int(y1 * scale))
+                img = full_img.crop((left, top, right, bottom))
 
         # Aparar margens brancas automaticamente
         bg = Image.new(img.mode, img.size, (255, 255, 255))
@@ -1347,7 +1366,12 @@ class MathDataManager:
 
             if tid in existing_indices:
                 idx = existing_indices[tid]
-                existing_topics[idx] = new_topic
+                merged = {**existing_topics[idx], **new_topic}
+                if "filename" not in merged or not merged["filename"]:
+                    # Dedução de filename padrão
+                    clean_id = tid.replace("ifsp-", "ifsp-").replace("-1-", "1-")
+                    merged["filename"] = f"prova-{clean_id}.html"
+                existing_topics[idx] = merged
                 updated_count += 1
             else:
                 existing_topics.append(new_topic)
@@ -1791,6 +1815,115 @@ class GoogleDriveManager:
             else:
                 print("Nenhuma referência precisava ser atualizada em mathData.json.")
 
+    @classmethod
+    def upload_pdf(cls, local_path, parent_folder_id=None, creds_path=None, subfolder_name="provas_ifmg", make_public=True):
+        """
+        Envia um PDF oficial para o Google Drive na subpasta correspondente,
+        aplica permissão pública de leitura e retorna {'id', 'url', 'name', 'subfolder'}.
+        """
+        from googleapiclient.http import MediaFileUpload
+
+        service, _ = cls.get_service(creds_path)
+        folder_id = cls.resolve_folder_id(parent_folder_id)
+        if not folder_id:
+            raise ValueError("ID da pasta raiz do Google Drive não configurado (use GOOGLE_DRIVE_FOLDER_ID ou --folder-id).")
+
+        abs_path = os.path.abspath(local_path)
+        if not os.path.exists(abs_path):
+            raise FileNotFoundError(f"PDF local não encontrado: {local_path}")
+
+        filename = os.path.basename(abs_path)
+        target_folder_id = cls.get_or_create_subfolder(service, folder_id, subfolder_name)
+
+        query = f"'{target_folder_id}' in parents and name = '{filename}' and trashed = false"
+        res = service.files().list(q=query, spaces="drive", fields="files(id, name)").execute()
+        existing = res.get("files", [])
+
+        if existing:
+            file_id = existing[0]["id"]
+            media = MediaFileUpload(abs_path, mimetype="application/pdf", resumable=True)
+            service.files().update(fileId=file_id, media_body=media).execute()
+        else:
+            file_metadata = {
+                "name": filename,
+                "parents": [target_folder_id]
+            }
+            media = MediaFileUpload(abs_path, mimetype="application/pdf", resumable=True)
+            new_file = service.files().create(body=file_metadata, media_body=media, fields="id").execute()
+            file_id = new_file.get("id")
+
+        if make_public:
+            try:
+                service.permissions().create(
+                    fileId=file_id,
+                    body={"role": "reader", "type": "anyone"}
+                ).execute()
+            except Exception:
+                pass
+
+        public_url = f"https://drive.google.com/file/d/{file_id}/view?usp=sharing"
+        return {
+            "id": file_id,
+            "url": public_url,
+            "name": filename,
+            "subfolder": subfolder_name
+        }
+
+    @classmethod
+    def sync_exam_pdfs(cls, pdfs_dir="provas/ifmg", folder_id=None, creds_path=None, subfolder_name="provas_ifmg", update_drive_links=True, build_site=False):
+        """
+        Envia todos os PDFs de pdfs_dir para o Google Drive e atualiza drive_links.json.
+        """
+        abs_dir = os.path.join(ROOT_DIR, pdfs_dir) if not os.path.isabs(pdfs_dir) else pdfs_dir
+        if not os.path.exists(abs_dir):
+            raise FileNotFoundError(f"Diretório de PDFs não encontrado: {abs_dir}")
+
+        pdf_files = [f for f in sorted(os.listdir(abs_dir)) if f.lower().endswith(".pdf")]
+        if not pdf_files:
+            print(f"Nenhum arquivo PDF encontrado em {abs_dir}")
+            return
+
+        print(f"📦 Encontrados {len(pdf_files)} PDFs em {abs_dir} para upload no Google Drive:")
+        for pf in pdf_files:
+            print(f"   • {pf}")
+
+        links_file = os.path.join(ROOT_DIR, "drive_links.json")
+        current_links = {}
+        if os.path.exists(links_file):
+            try:
+                with open(links_file, "r", encoding="utf-8") as f:
+                    current_links = json.load(f)
+            except Exception:
+                current_links = {}
+
+        uploaded_count = 0
+        new_links = {}
+        for idx, pf in enumerate(pdf_files, start=1):
+            pdf_path = os.path.join(abs_dir, pf)
+            print(f"\n[{idx}/{len(pdf_files)}] ☁️ Enviando {pf}...")
+            res = cls.upload_pdf(
+                local_path=pdf_path,
+                parent_folder_id=folder_id,
+                creds_path=creds_path,
+                subfolder_name=subfolder_name,
+                make_public=True
+            )
+            print(f"   ✅ Sucesso! Link público: {res['url']}")
+            new_links[pf] = res["url"]
+            uploaded_count += 1
+
+        if update_drive_links and new_links:
+            current_links.update(new_links)
+            with open(links_file, "w", encoding="utf-8") as f:
+                json.dump(current_links, f, indent=2, ensure_ascii=False)
+            print(f"\n💾 drive_links.json atualizado com {len(new_links)} novos links!")
+
+        if build_site:
+            print("\n🚀 Recompilando o site estático...")
+            subprocess.run([sys.executable, "build_full_site.py"], cwd=ROOT_DIR)
+
+        print(f"\n🎉 Processo de upload concluído! ({uploaded_count} PDFs sincronizados)")
+
 
 # ==============================================================================
 # 8. CLI E COMANDOS
@@ -1880,6 +2013,15 @@ def main():
     dsync_parser.add_argument("--dry-run", action="store_true", help="Simula a sincronização sem fazer uploads reais")
     dsync_parser.add_argument("--update-mathdata", action="store_true", help="Atualiza mathData.json com os links do Drive")
     dsync_parser.add_argument("--build", action="store_true", help="Executa build_full_site.py após atualizar mathData.json")
+
+    # Subcomando: drive-upload-pdfs
+    dpdfs_parser = subparsers.add_parser("drive-upload-pdfs", help="Envia cadernos de prova em PDF para o Google Drive e atualiza drive_links.json")
+    dpdfs_parser.add_argument("--dir", default="provas/ifmg", help="Diretório dos PDFs de provas (padrão: provas/ifmg)")
+    dpdfs_parser.add_argument("--subfolder", default="provas_ifmg", help="Subpasta no Google Drive (padrão: provas_ifmg)")
+    dpdfs_parser.add_argument("--folder-id", help="ID da pasta raiz no Google Drive (padrão: GOOGLE_DRIVE_FOLDER_ID do .env)")
+    dpdfs_parser.add_argument("-c", "--credentials", help="Caminho da chave JSON da Service Account")
+    dpdfs_parser.add_argument("--no-update-links", action="store_true", help="Não atualiza drive_links.json")
+    dpdfs_parser.add_argument("--build", action="store_true", help="Executa build_full_site.py após o upload")
 
     args = parser.parse_args()
     manager = MathDataManager()
@@ -2119,6 +2261,20 @@ def main():
             )
         except Exception as e:
             print(f"❌ Erro na sincronização: {e}")
+            sys.exit(1)
+
+    elif args.command == "drive-upload-pdfs":
+        try:
+            GoogleDriveManager.sync_exam_pdfs(
+                pdfs_dir=args.dir,
+                folder_id=args.folder_id,
+                creds_path=args.credentials,
+                subfolder_name=args.subfolder,
+                update_drive_links=not args.no_update_links,
+                build_site=args.build
+            )
+        except Exception as e:
+            print(f"❌ Erro no upload dos PDFs: {e}")
             sys.exit(1)
 
 
