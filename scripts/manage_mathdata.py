@@ -43,6 +43,9 @@ MATH_DATA_PATH = os.path.join(ROOT_DIR, "mathData.json")
 # 1. HIGIENIZADOR E FORMATADOR DE TEXTO (TextSanitizer)
 # ==============================================================================
 class TextSanitizer:
+
+    _KATEX_PATTERN = re.compile(r"(\$\$[\s\S]*?\$\$|(?<![\\\$])\$[^\$]+?(?<![\\\$])\$)")
+
     @staticmethod
     def fix_decimal_commas_in_math(text: str) -> str:
         """Converte vírgulas decimais em blocos KaTeX para {,} conforme regra 5 do GEMINI.md."""
@@ -121,10 +124,9 @@ class TextSanitizer:
             return re.sub(r"(\d+),(\d+)", r"\1{,}\2", num_str)
 
         # 3. Tokeniza preservando blocos KaTeX existentes ($$...$$ e $...$)
-        pattern = r"(\$\$[\s\S]*?\$\$|(?<![\\\$])\$[^\$]+?(?<![\\\$])\$)"
         tokens = []
         last_end = 0
-        for m in re.finditer(pattern, text):
+        for m in TextSanitizer._KATEX_PATTERN.finditer(text):
             start, end = m.span()
             if start > last_end:
                 tokens.append({"type": "text", "content": text[last_end:start]})
